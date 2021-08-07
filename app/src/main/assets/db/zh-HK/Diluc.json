@@ -1,0 +1,75 @@
+{
+  "name": "Diluc",
+  "rare": 5,
+  "area": "Mondstadt",
+  "element": "Pyro",
+  "weapon": "Claymore",
+  "sex": "Male",
+  "birth": "04/30",
+  "role": "Main_DPS",
+  "isComingSoon": false,
+  "nick":"晨曦的暗面",
+  "desc": "坐擁蒙德大半酒業的貴公子，財力、人望、能力都令人無法小覷。",
+  "battle_talent": {
+    "normal_name": "淬煉之劍",
+    "normal_img": "normal_atack_tempered_sword",
+    "normal_desc1": "進行至多四段的連續揮砍。",
+    "normal_desc2": "持續消耗體力，快速進行連續的斬擊。重擊結束時，會進行一次格外有力的揮砍。",
+    "normal_desc3": "從空中下墜衝擊地面，攻擊下落路徑上的敵人，並在落地時造成範圍傷害。",
+    "element_name": "逆焰之刃",
+    "element_img": "searing_onslaught",
+    "element_desc": "揮舞大劍向前劈砍，造成火元素傷害。<br><br>可以連續施放3次。若短時間內沒有施放，則會進入冷卻。<br><br><i>分別象徵迪盧克所秉持的正義、勇氣與責任。",
+    "final_name": "黎明",
+    "final_img": "dawn",
+    "final_desc": "爆發出烈焰的力量，擊退周圍的敵人，造成火元素傷害。隨後，將烈焰凝聚在武器上，揮出向前飛行的火之鳥，對路徑上的敵人造成高額火元素傷害，並在火之鳥行進的終點爆裂造成大量的火元素範圍傷害。<br>武器上凝聚的烈焰會使迪盧克獲得火元素附魔。<br><br>在黑暗中行走，是為了帶來光明。看遠方那在靜夜中亮起的火光，是破曉的先兆。"
+  },
+  "basic_talent": {
+    "talent1_name": "永不休止",
+    "talent1_img": "relentless",
+    "talent1_desc": "重擊的體力消耗減低50%，最大持續時間增加3秒。",
+    "talent2_name": "熔毀之翼",
+    "talent2_img": "blessing_of_phoenix",
+    "talent2_desc": "黎明提供的火元素附魔持續時間延長4秒；此外，在效果持續期間，迪盧克獲得20%火元素傷害加成。",
+    "talent3_name": "晨曦的傳統",
+    "talent3_img": "tradition_of_the_dawn_knight",
+    "talent3_desc": "鍛造雙手劍類武器時，返還15%消耗的礦石。"
+  },
+  "sof": {
+    "sof1_name": "罪罰裁斷",
+    "sof1_img": "conviction",
+    "sof1_desc": "對生命值高於50％的敵人，迪盧克造成的傷害提高15％",
+    "sof2_name": "炙熱餘燼",
+    "sof2_img": "searing_ember",
+    "sof2_desc": "迪盧克受到傷害時，攻擊力提高10％，攻擊速度提高5％，持續10秒。該效果至多疊加3層。每1.5秒只能觸發一次。",
+    "sof3_name": "鋼鐵熾焰",
+    "sof3_img": "steel_and_fire",
+    "sof3_desc": "逆焰之刃的技能等級提高3級。(最高提升至15級)。",
+    "sof4_name": "流火焦灼",
+    "sof4_img": "flowing_flame",
+    "sof4_desc": "釋放逆焰之刃的2秒後，下一段逆焰之刃的傷害提高40％，持續2秒。",
+    "sof5_name": "昭告黎明的火之鳥",
+    "sof5_img": "phoenix_harbinger_of_dawn",
+    "sof5_desc": "黎明的技能等級提高3級。(最高提升至15級)。",
+    "sof6_name": "清算黑暗的炎之劍",
+    "sof6_img": "flaming_sword_nemesis_of_dark",
+    "sof6_desc": "釋放逆焰之刃會使接下來6秒內的2次普通攻擊的攻擊速度提升30％，造成傷害提高30％。此外，逆焰之刃不再會中斷前兩段普通攻擊的連擊段數。"
+  },
+  "dps_weapons": [
+    "wolfs_gravestone",
+	"skyward_pride",
+	"the_unforged",
+	"blackcliff_slasher",
+	"lithic_blade",
+	"rainslasher"
+   ],
+  "dps_art1": [
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames",
+    "wanderers_troupe",
+    "wanderers_troupe"
+  ],
+  "team1":[
+	"Diluc","Xingqui","Sucrose","Bennett"
+  ]
+}

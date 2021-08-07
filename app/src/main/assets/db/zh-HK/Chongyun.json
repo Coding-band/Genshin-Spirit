@@ -1,93 +1,74 @@
 {
-  "name": "Barbara",
+  "name": "Chongyun",
   "rare": 4,
-  "area": "Mondstadt",
-  "element": "Hydro",
-  "weapon": "Catalyst",
-  "sex": "Female",
-  "birth": "07/05",
+  "area": "Liyue",
+  "element": "Cryo",
+  "weapon": "Claymore",
+  "sex": "Male",
+  "birth": "09/07",
   "role": "Support_DPS",
   "isComingSoon": false,
-  "nick":"闪耀偶像",
-  "desc": "蒙德城的大家都喜欢芭芭拉。「偶像」这个词是她从一本杂志里看到的。",
+  "nick":"雪融有蹤",
+  "desc": "驅邪世家的年輕方士，為壓制自身的【純陽之體】費盡心機。",
   "battle_talent": {
-    "normal_name": "水之浅唱",
-    "normal_img": "XPR",
-    "normal_desc1": "进行至多四段的水花攻击，造成水元素伤害。",
-    "normal_desc2": "消耗一定体力，短暂咏唱后，造成水元素范围伤害。",
-    "normal_desc3": "凝聚水元素的力量，从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成水元素范围伤害。",
-    "element_name": "演唱，开始♪",
-    "element_img": "XPR",
-    "element_desc": "唤出歌声般跃动的水珠，形成歌声之环，对周围的敌人造成水元素伤害，并施加潮湿状态。<br><br>歌声之环<br>·芭芭拉的普通攻击命中时，队伍中自己的角色，以及附近的友方角色恢复生命值，回复量受益于芭芭拉的生命值上限;<br>·重击命中时，能产生4倍回复量;<br>·每隔一段时间（5s），为当前场上自己的角色恢复生命值;<br>·对角色与触及的敌人施加潮湿状态。<br><br><i>芭芭拉的音乐就是治疗大家的魔法。",
-    "final_name": "闪耀奇迹♪",
-    "final_img": "XPR",
-    "final_desc": "为附近的友方角色与队伍中自己的角色恢复大量生命值，回复量受益于芭芭拉的生命值上限。<br><br><i>治愈大家的心就是芭芭拉战斗与歌唱的力量。"
+    "normal_name": "滅邪四式",
+    "normal_img": "normal_atack_demonbane",
+    "normal_desc1": "進行至多四段的連續揮砍。",
+    "normal_desc2": "持續消耗體力，旋轉大劍攻擊周圍的敵人。\n停止旋轉時，會進行一次格外有力的揮砍。",
+    "normal_desc3": "從空中下墜衝擊地面，攻擊下落路徑上的敵人，並在落地時造成範圍傷害。",
+    "element_name": "重華疊霜·靈刃",
+    "element_img": "spirit_blade_chonghuas",
+    "element_desc": "重雲揮動巨劍猛擊地面，在前方圓形範圍內引發冰爆，並對敵人造成冰元素傷害。<br><br>短暫延遲後，冰爆引發的寒氣彙聚成重華疊霜領域，其中的單手劍、雙手劍、長柄武器角色獲得冰元素附魔。<br><br><i>「琳琅振響，十方靜默。江河不動，重雲凝霜。如法開壇，諸邪退散。」",
+    "final_name": "閃耀奇跡♪",
+    "final_img": "spirit_blade_cloud_parting_star",
+    "final_desc": "重雲結印，在前方半空中連續召喚出三柄巨大靈刃，短時間內依次落向地面並爆裂。靈刃爆裂時，會造成冰元素範圍傷害，並擊飛敵人。<br><br><i>「卓劍天地動，冰淩霜寒生。如律令!」"
   },
   "basic_talent": {
-    "talent1_name": "光辉的季节",
-    "talent1_img": "XPR",
-    "talent1_desc": "角色在演唱，开始♪的歌声之环中时，体力消耗降低12％。",
-    "talent2_name": "安可",
-    "talent2_img": "XPR",
-    "talent2_desc": "当前场上自己的角色获得元素晶球或元素微粒时，延长演唱，开始♪歌声之环的持续时间1秒。
-通过这种方式，至多延长5秒。",
-    "talent3_name": "心意♪注入",
-    "talent3_img": "XPR",
-    "talent3_desc": "完美烹饪恢复类食物时，有12％概率获得2倍产出。"
+    "talent1_name": "吐納真定",
+    "talent1_img": "steady_breathing",
+    "talent1_desc": "處在靈刃·重華疊霜領域內的單手劍、雙手劍、長柄武器角色，普通攻擊的攻擊速度提升8%。",
+    "talent2_name": "追冰劍訣",
+    "talent2_img": "rimechaser_blade",
+    "talent2_desc": "靈刃·重華疊霜領域消失時，會喚出一柄靈刃自動攻擊附近的敵人，造成相當於靈刃·重華疊霜技能傷害100%的冰元素範圍傷害。被擊中的敵人冰元素抗性降低10%，持續8秒。",
+    "talent3_name": "雲遊山海",
+    "talent3_img": "gallant_journey",
+    "talent3_desc": "在璃月執行探索派遣任務時，消耗的時間縮短25%。"
   },
   "sof": {
-    "sof1_name": "彩色歌谣!",
-    "sof1_img": "XPR",
-    "sof1_desc": "芭芭拉每10秒恢复1点元素能量",
-    "sof2_name": "元气迸发",
-    "sof2_img": "XPR",
-    "sof2_desc": "演唱，开始♪的冷却时间降低15％。技能持续期间，当前场上自己的角色获得15%水元素伤害加成。",
-    "sof3_name": "明日之星",
-    "sof3_img": "XPR",
-    "sof3_desc": "闪耀奇迹♪的技能等级提高3级。至多提升至15级。",
-    "sof4_name": "努力即魔法",
-    "sof4_img": "XPR",
-    "sof4_desc": "芭芭拉使用重击时，每命中一个敌人，就恢复1点元素能量。\n通过这种方式，一次至多回复5点元素能量。",
-    "sof5_name": "纯真的羁绊",
-    "sof5_img": "XPR",
-    "sof5_desc": "演唱，开始♪的技能等级提高3级。至多提升至15级。",
-    "sof6_name": "将一切美好献给你",
-    "sof6_img": "XPR",
-    "sof6_desc": "芭芭拉处于队伍后台时，队伍中自己的角色倒下时，则立即复苏该角色将该角色生命值恢复至100％。该效果每15分钟只能触发一次。"
+    "sof1_name": "釋淩詠冰",
+    "sof1_img": "ice_unleashed",
+    "sof1_desc": "普通攻擊的最後一擊會向前方釋放三道冰之刃，每道冰之刃對沿途的敵人造成重雲50%攻擊力的冰元素傷害。",
+    "sof2_name": "周天運轉",
+    "sof2_img": "atmo_revolution",
+    "sof2_desc": "在靈刃·重華疊霜領域內施放的元素戰技與元素爆發的冷卻時間減少15%。",
+    "sof3_name": "雲盡光生",
+    "sof3_img": "cloudburst",
+    "sof3_desc": "靈刃·雲開星落的技能等級提高3級。\n至多提升至15級。",
+    "sof4_name": "浮雲霜天",
+    "sof4_img": "frozen_skies",
+    "sof4_desc": "重雲的所有攻擊命中受到冰元素影響的敵人時，自身將恢復1點元素能量。\n該效果每2秒最多觸發一次。",
+    "sof5_name": "真道正理",
+    "sof5_img": "the_true_path",
+    "sof5_desc": "靈刃·重華疊霜的技能等級提高3級。\n至多提升至15級。",
+    "sof6_name": "四靈捧聖",
+    "sof6_img": "rally_of_four_blades",
+    "sof6_desc": "靈刃·雲開星落對生命值百分比低於重雲的敵人造成傷害時，傷害提升15%;\n此外，施放時，會召喚一柄額外的靈刃。"
   },
-  "dps_weapons": [
-    "the_widsith"
-   ],
   "sup_dps_weapons": [
-    "mappa_mare",
-    "solar_pearl"
+    "prototype_aminus",
+    "debate_club"
   ],
-  "util_weapons": [
-    "prototype_malice",
-    "thrilling_tales_of_dragon_slayers"
-  ],
-  "dps_art1": [
-    "wanderers_troupe",
-    "wanderers_troupe",
-    "wanderers_troupe",
-    "wanderers_troupe",
-    "wanderers_troupe"
-  ],
-  "dps_art2": [
-    "noblesse_oblige",
-    "noblesse_oblige",
-    "noblesse_oblige",
-    "noblesse_oblige",
-    "noblesse_oblige"
-  ],
-  "util_art1": [
-    "thundersoother",
-    "thundersoother",
-    "thundersoother",
-    "thundersoother",
-    "thundersoother"
-  ],
+  "sup_dps_art1": [
+    "the_exile",
+    "the_exile",
+    "defenders_will",
+    "defenders_will",
+    "defenders_will"
+  ]
   "team1":[
-	"Diluc","Barbara","Bennett","Chongyun"
+	"Chongyun","Xingqui","Barbara","Diluc"
+  ],
+  "team2":[
+	"Chongyun","Xingqui","Razor","Bennett"
   ]
 }

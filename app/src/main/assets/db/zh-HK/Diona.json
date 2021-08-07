@@ -1,0 +1,92 @@
+{
+  "name": "Diona",
+  "rare": 4,
+  "area": "Mondstadt",
+  "element": "Cryo",
+  "weapon": "Bow",
+  "sex": "Female",
+  "birth": "01/18",
+  "role": "Utility",
+  "isComingSoon": false,
+  "nick":"貓尾特調",
+  "desc": "遺傳了稀薄的「非人」血統的少女,「貓尾酒館」的超人氣調酒師。貓耳娘，黑暗釀酒師",
+  "battle_talent": {
+    "normal_name": "獵人射術",
+    "normal_img": "normal_attack_katzlein_style",
+    "normal_desc1": "進行至多五段的連續弓箭射擊。",
+    "normal_desc2": "進行傷害更高、更為精准的瞄準射擊。\n瞄準時，冰霜散發的寒氣會憑附在箭矢上。聚滿了寒氣的箭矢會造成冰元素傷害。",
+    "normal_desc3": "從空中射出箭雨,並迅速下墜衝擊地面,在落地時造成範圍傷害。",
+    "element_name": "貓爪凍凍",
+    "element_img": "icy_paws",
+    "element_desc": "發射凍凍貓貓爪，對敵人造成冰元素傷害，並在命中時形成護盾。<br>護盾的傷害吸收量受益於迪奧娜的生命值上限，持續時間基於命中的凍凍貓貓爪數目。<br><br>點按<br>快速發射二枚凍凍貓貓爪。<br><br>長按<br>迅速後撤，並發射五枚凍凍貓貓爪。<br>通過長按產生的護盾獲得75%傷害吸收量加成。<br><br>護盾對冰元素傷害有250%的吸收效果，並會在形成時，為當前角色施加短暫的冰元素附著。<br><br><i>一開始，酒里加多少冰也傷害不了酒鬼。直到迪奧娜有了神之眼，然後就有了這些凍得人太陽穴疼的冰。好評!",
+    "final_name": "最烈特調",
+    "final_img": "signature_mix",
+    "final_desc": "拋出特別調製的冰釀烈調，造成冰元素範圍傷害，並產生冰氣酒霧領域。<br><br>冰氣酒霧領域<br>·對其中的敵人持續造成冰元素傷害；<br>·為其中的角色持續恢復生命值。<br><br><i>迪奧娜自己都覺得不人道的恐怖配方。前味恐怖，推薦留給敵人；後勁清冽，可惜只能用鼻子和皮膚享用。"
+  },
+  "basic_talent": {
+    "talent1_name": "貓尾隱藏菜單",
+    "talent1_img": "cats_tail_secret_menu",
+    "talent1_desc": "處於貓爪凍凍的護盾保護下的角色，移動速度提升10%，體力消耗降低10%。",
+    "talent2_name": "滑稽百出的醉相",
+    "talent2_img": "drunkards_farce",
+    "talent2_desc": "敵人進入最烈特調的領域後的15秒內，攻擊力降低10%。",
+    "talent3_name": "附贈的下酒菜",
+    "talent3_img": "complimentary_bar_food",
+    "talent3_desc": "完美烹飪恢復類食物時，有12%概率獲得2倍產出。"
+  },
+  "sof": {
+    "sof1_name": "特調的餘韻",
+    "sof1_img": "a_lingering_flavor",
+    "sof1_desc": "最烈特調的效果結束時，為迪奧娜恢復15點元素能量。",
+    "sof2_name": "貓爪冰搖",
+    "sof2_img": "shaken_not_purred",
+    "sof2_desc": "貓爪凍凍造成的傷害提高15%，護盾的傷害吸收量提高15%；\n此外，命中時，將為附近的當前其他場上角色生成一個傷害吸收量為貓爪凍凍50%的護盾，持續5秒。（注：該護盾吸收提高為獨立乘區）",
+    "sof3_name": "還、還要續杯？",
+    "sof3_img": "a_another_round",
+    "sof3_desc": "最烈特調的技能等級提高3級。\n至多提升至15級。",
+    "sof4_name": "「酒業殺手」",
+    "sof4_img": "wine_industry_slayer",
+    "sof4_desc": "在最烈特調的領域內，迪奧娜的瞄準射擊的所需的蓄力時間減少60%。",
+    "sof5_name": "雙份加冰",
+    "sof5_img": "double_shot_on_the_rocks",
+    "sof5_desc": "貓爪凍凍的技能等級提高3級。\n至多提升至15級。",
+    "sof6_name": "貓尾打烊之時",
+    "sof6_img": "cats_tail_closing_time",
+    "sof6_desc": "處在最烈特調領域內的角色，依據生命值獲得如下效果：\n·生命值低於或等於50%時，受治療加成提升30%；\n·生命值高於50%時，元素精通提升200。"
+  },
+  "util_weapons": [
+    "amos_bow",
+    "sacrificial_bow",
+    "prototype_crescent"
+  ],
+  "util_art1": [
+    "maiden_beloved",
+    "maiden_beloved",
+    "maiden_beloved",
+    "maiden_beloved",
+    "maiden_beloved"
+  ],
+  "util_art2": [
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "util_art3": [
+    "maiden_beloved",
+    "maiden_beloved",
+    "tenacity_of_the_millelith",
+    "tenacity_of_the_millelith",
+    "tenacity_of_the_millelith"
+  ],
+  "team1":[
+	"Ganyu","Venti","Mona","Diona"
+  ],
+  "team2":[
+	"Eula","Rosaria","Fischl","Diona"
+  ],
+  "team3":[
+	"Diluc","Xingqui","Bennett","Diona"
+  ]
+}
