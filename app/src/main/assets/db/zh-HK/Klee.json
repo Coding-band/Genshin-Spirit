@@ -1,0 +1,91 @@
+{
+  "name": "Klee",
+  "rare": 5,
+  "area": "Mondstadt",
+  "element": "Pyro",
+  "weapon": "Catalyst",
+  "sex": "Female",
+  "birth": "07/24",
+  "role": "Main_DPS",
+  "isComingSoon": false,
+  "nick": "逃跑的太陽",
+  "desc": "西風騎士團禁閉室的常客，蒙德的爆破大師。人稱「逃跑的太陽」。",
+  "battle_talent": {
+    "normal_name": "砰砰",
+    "normal_img": "normal_attack_wind_spirit_creation",
+    "normal_desc1": "投擲在碰撞後爆炸的好東西！進行至多三段的炸彈攻擊，造成火元素範圍傷害。",
+    "normal_desc2": "消耗一定體力，短暫詠唱後，轟擊敵人，造成火元素範圍傷害。",
+    "normal_desc3": "凝聚烈焰的力量，從空中下墜衝擊地面，攻擊下落路徑上的敵人，並在落地時造成火元素範圍傷害。",
+    "element_name": "蹦蹦炸彈",
+    "element_img": "jumpy_dumpy",
+    "element_desc": "投出帶來無限快樂的蹦蹦炸彈！蹦蹦炸彈會連續彈跳三次，每次彈跳都會引發爆炸，造成火元素範圍傷害。<br>第三次彈跳後，將分裂成許多(8個)詭雷。<br>詭雷會在接觸到敵人或一段時間後爆炸，造成火元素範圍傷害。<br>初始擁有2次可使用次數。<br><br><i>蹦蹦是可莉的「好朋友」…可莉總是忍不住向人介紹他們。",
+    "final_name": "轟轟火花",
+    "final_img": "nova_burst",
+    "final_desc": "可莉火力全開！在技能持續時間內，不停召喚轟轟火花攻擊附近的敵人，造成火元素範圍傷害。<br><br><i>騎士團的人相信，可莉從來不被自己的炸彈所傷，一定有幸運星眷顧著她吧…"
+  },
+  "basic_talent": {
+    "talent1_name": "砰砰禮物",
+    "talent1_img": "pounding_surprise",
+    "talent1_desc": "蹦蹦炸彈與普通攻擊造成傷害時，有50%的機率為可莉賦予一朵爆裂火花。釋放重擊時將消耗爆裂火花，使這次重擊不消耗體力，且造成的傷害提升50%。",
+    "talent2_name": "火花無限",
+    "talent2_img": "sparkling_burst",
+    "talent2_desc": "可莉的重擊造成暴擊後，為隊伍中所有角色恢復2點元素能量。",
+    "talent3_name": "全是寶藏",
+    "talent3_img": "all_of_my_treasures",
+    "talent3_desc": "在小地圖上顯示周圍的蒙德區域特產的位置。"
+  },
+  "sof": {
+    "sof1_name": "連環轟隆",
+    "sof1_img": "chained_reactions",
+    "sof1_desc": "攻擊與施放技能時，有機率召喚火花轟擊敵人，造成相當於轟轟火花（大招單段）攻擊傷害120％的傷害。",
+    "sof2_name": "破破彈片",
+    "sof2_img": "explosive_frags",
+    "sof2_desc": "蹦蹦炸彈的詭雷會使敵人防禦力降低23％，持續10秒。",
+    "sof3_name": "可莉特調",
+    "sof3_img": "exquisitive_compound",
+    "sof3_desc": "蹦蹦炸彈的技能等級提高3級。（最高提升至15級）",
+    "sof4_name": "一觸即發",
+    "sof4_img": "sparkly_explosion",
+    "sof4_desc": "如果在轟轟火花持續期間內退場，會引發爆炸，造成555％攻擊力的火元素範圍傷害。",
+    "sof5_name": "轟擊之星",
+    "sof5_img": "nova_burst",
+    "sof5_desc": "轟轟火花的技能等級提高3級。（最高提升至15級）",
+    "sof6_name": "火力全開",
+    "sof6_img": "blazing_delight",
+    "sof6_desc": "在轟轟火花的狀態下，會持續為隊伍中其他角色恢復元素能量（跳3次，共回復約9點）；施放轟轟火花後的25秒內，隊伍中所有角色獲得10％火元素傷害加成。"
+  },
+  "dps_weapons": [
+    "lost_prayer_to_the_sacred_winds",
+    "skyward_atlas",
+    "dodoco_tales",
+    "the_widsith",
+    "solar_pearl"
+  ],
+  "dps_art1": [
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames"
+  ],
+  "dps_art2": [
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames",
+    "gladiators_finale",
+    "gladiators_finale",
+    "gladiators_finale"
+  ],
+  "dps_art3": [
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "wanderers_troupe"
+  ],
+  "team1":[
+	"Klee","Lisa","Barbara","Noelle"
+  ],
+  "team2":[
+	"Klee","Bennett","Venti","Fischl"
+  ]
+}

@@ -1,0 +1,97 @@
+<resources>
+    <string name="app_name">原神小幫手</string>
+    <string name="title_char">Characters</string>
+    <string name="title_artifacts">Artifacts</string>
+    <string name="title_home">Home</string>
+    <string name="title_weapons">Weapons</string>
+    <string name="title_settings">Settings</string>
+
+    <string name="unknown">unknown</string>
+    <string name="dow_set1">Mon,Thur,Sun</string>
+    <string name="dow_set2">Tue,Fri,Sun</string>
+    <string name="dow_set3">Wed,Sat,Sun</string>
+
+    <string name="monday">Mon</string>
+    <string name="tuesday">Tue</string>
+    <string name="wednesday">Wed</string>
+    <string name="thursday">Thu</string>
+    <string name="friday">Fri</string>
+    <string name="saturday">Sat</string>
+    <string name="sunday">Sun</string>
+
+    <string name="teaching_of_ballad">「詩文」的教導</string>
+    <string name="teaching_of_diligence">「勤勞」的教導</string>
+    <string name="teaching_of_freedom">「自由」的教導</string>
+    <string name="teaching_of_gold">「黃金」的教導</string>
+    <string name="teaching_of_prosperity">「繁榮」的教導</string>
+    <string name="teaching_of_resistance">「抗爭」的教導</string>
+    <string name="teachings_of_elegance">「優雅」的教導</string>
+    <string name="teachings_of_light">「天光」的教導</string>
+    <string name="teachings_of_transience">「浮世」的教導</string>
+
+    <string name="tile_of_decarabians_tower">高塔孤王的破瓦</string>
+    <string name="luminous_sands_from_guyun">孤雲寒林的光砂</string>
+    <string name="coral_branch_of_a_distant_sea">遠海夷地的瑚枝</string>
+    <string name="mist_veiled_lead_elixir">霧海雲間的鉛丹</string>
+    <string name="boreal_wolfs_milk_tooth">凜風奔狼的始齔</string>
+    <string name="narukamis_wisdom">鳴神御靈的明惠</string>
+    <string name="grain_of_aerosiderite">漆黑隕鐵的一粒</string>
+    <string name="fetters_of_the_dandelion_gladiator">獅牙鬥士的枷鎖</string>
+    <string name="mask_of_the_wicked_lieutenant">今昔劇畫之惡尉</string>
+
+    <string name="aloy">Aloy</string>
+    <string name="kujou_sara">Kujou Sara</string>
+    <string name="sangonomiya_kokomi">Sangonomiya Kokomi</string>
+    <string name="raudeb_shougun">Raudeb Shougun</string>
+    <string name="sayu">Sayu</string>
+    <string name="yoimiya">Yoimiya</string>
+    <string name="kamisato_ayaka">Kamisato Ayaka</string>
+    <string name="kaedehara_kazuha">Kaedehara Kazuha</string>
+    <string name="yanfei">Yanfei</string>
+    <string name="eula">Eula</string>
+    <string name="rosaria">Rosaria</string>
+    <string name="xiao">Xiao</string>
+    <string name="hu_tao">Hu Tao</string>
+    <string name="ganyu">Ganyu</string>
+    <string name="albedo">Albedo</string>
+    <string name="zhongli">Zhongli</string>
+    <string name="xinyan">Xinyan</string>
+    <string name="tartaglia">Tartaglia</string>
+    <string name="diona">Diona</string>
+    <string name="xingqiu">Xingqiu</string>
+    <string name="xiangling">Xiangling</string>
+    <string name="venti">Venti</string>
+    <string name="traveler">Traveler</string>
+    <string name="sucrose">Sucrose</string>
+    <string name="razor">Razor</string>
+    <string name="qiqi">Qiqi</string>
+    <string name="noelle">Noelle</string>
+    <string name="ningguang">Ningguang</string>
+    <string name="mona">Mona</string>
+    <string name="lisa">Lisa</string>
+    <string name="klee">Klee</string>
+    <string name="keqing">Keqing</string>
+    <string name="kaeya">Kaeya</string>
+    <string name="jean">Jean</string>
+    <string name="fischl">Fischl</string>
+    <string name="diluc">Diluc</string>
+    <string name="chongyun">Chongyun</string>
+    <string name="bennett">Bennett</string>
+    <string name="beidou">Beidou</string>
+    <string name="barbara">Barbara</string>
+    <string name="amber">Amber</string>
+    <string name="search">Search...</string>
+    <string name="elements">Elements</string>
+    <string name="rarity">Rarity</string>
+    <string name="filters">Filters</string>
+    <string name="mondstadt">Mondstadt</string>
+    <string name="liyue">Liyue</string>
+    <string name="inazuma">Inazuma</string>
+    <string name="main_dps">Main DPS</string>
+    <string name="support_dps">Support DPS</string>
+    <string name="utility">Utility</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+
+
+</resources>

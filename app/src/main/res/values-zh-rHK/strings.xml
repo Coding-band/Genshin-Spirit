@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">原神小幫手</string>
+    <string name="unknown">未知</string>
+
+    <string name="title_char">角色</string>
+    <string name="title_artifacts">聖遺物</string>
+    <string name="title_home">焦點</string>
+    <string name="title_weapons">武器</string>
+    <string name="title_settings">設定</string>
+
+    <string name="dow_set1">逢星期一，四，日</string>
+    <string name="dow_set2">逢星期二，五，日</string>
+    <string name="dow_set3">逢星期三，六，日</string>
+
+    <string name="monday">星期一</string>
+    <string name="tuesday">星期二</string>
+    <string name="wednesday">星期三</string>
+    <string name="thursday">星期四</string>
+    <string name="friday">星期五</string>
+    <string name="saturday">星期六</string>
+    <string name="sunday">星期日</string>
+
+    <string name="teaching_of_ballad">「詩文」的教導</string>
+    <string name="teaching_of_diligence">「勤勞」的教導</string>
+    <string name="teaching_of_freedom">「自由」的教導</string>
+    <string name="teaching_of_gold">「黃金」的教導</string>
+    <string name="teaching_of_prosperity">「繁榮」的教導</string>
+    <string name="teaching_of_resistance">「抗爭」的教導</string>
+    <string name="teachings_of_elegance">「優雅」的教導</string>
+    <string name="teachings_of_light">「天光」的教導</string>
+    <string name="teachings_of_transience">「浮世」的教導</string>
+    <string name="tile_of_decarabians_tower">高塔孤王的破瓦</string>
+    <string name="luminous_sands_from_guyun">孤雲寒林的光砂</string>
+    <string name="coral_branch_of_a_distant_sea">遠海夷地的瑚枝</string>
+    <string name="mist_veiled_lead_elixir">霧海雲間的鉛丹</string>
+    <string name="boreal_wolfs_milk_tooth">凜風奔狼的始齔</string>
+    <string name="narukamis_wisdom">鳴神御靈的明惠</string>
+    <string name="grain_of_aerosiderite">漆黑隕鐵的一粒</string>
+    <string name="fetters_of_the_dandelion_gladiator">獅牙鬥士的枷鎖</string>
+    <string name="mask_of_the_wicked_lieutenant">今昔劇畫之惡尉</string>
+    <string name="aloy">埃洛伊</string>
+    <string name="kujou_sara">九條娑羅</string>
+    <string name="sangonomiya_kokomi">珊瑚宮心海</string>
+    <string name="raudeb_shougun">雷電將軍</string>
+    <string name="sayu">早柚</string>
+    <string name="yoimiya">宵宮</string>
+    <string name="kamisato_ayaka">神里綾華</string>
+    <string name="kaedehara_kazuha">楓原萬葉</string>
+    <string name="yanfei">煙緋</string>
+    <string name="eula">優菈</string>
+    <string name="rosaria">羅莎莉亞</string>
+    <string name="xiao">魈</string>
+    <string name="hu_tao">胡桃</string>
+    <string name="ganyu">甘雨</string>
+    <string name="albedo">阿貝多</string>
+    <string name="zhongli">鍾離</string>
+    <string name="xinyan">辛焱</string>
+    <string name="tartaglia">達達利亞</string>
+    <string name="diona">迪奧娜</string>
+    <string name="xingqiu">行秋</string>
+    <string name="xiangling">香菱</string>
+    <string name="venti">溫迪</string>
+    <string name="traveler">旅行者</string>
+    <string name="sucrose">砂糖</string>
+    <string name="razor">雷澤</string>
+    <string name="qiqi">七七</string>
+    <string name="noelle">諾艾爾</string>
+    <string name="ningguang">凝光</string>
+    <string name="mona">莫娜</string>
+    <string name="lisa">麗莎</string>
+    <string name="klee">可莉</string>
+    <string name="keqing">刻晴</string>
+    <string name="kaeya">凱亞</string>
+    <string name="jean">琴</string>
+    <string name="fischl">菲謝爾</string>
+    <string name="diluc">迪盧克</string>
+    <string name="chongyun">重雲</string>
+    <string name="bennett">班尼特</string>
+    <string name="beidou">北斗</string>
+    <string name="barbara">芭芭拉</string>
+    <string name="amber">安柏</string>
+    <string name="search">搜尋...</string>
+    <string name="elements">元素</string>
+    <string name="rarity">稀有度</string>
+    <string name="filters">篩選</string>
+    <string name="mondstadt">蒙德</string>
+    <string name="liyue">璃月</string>
+    <string name="inazuma">稻妻</string>
+    <string name="main_dps">主C</string>
+    <string name="support_dps">副C</string>
+    <string name="utility">輔助</string>
+    <string name="female">女</string>
+    <string name="male">男</string>
+
+
+</resources>

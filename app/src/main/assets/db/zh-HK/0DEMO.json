@@ -1,0 +1,93 @@
+{
+  "name": "Barbara",
+  "rare": 4,
+  "area": "Mondstadt",
+  "element": "Hydro",
+  "weapon": "Catalyst",
+  "sex": "Female",
+  "birth": "07/05",
+  "role": "Support_DPS",
+  "isComingSoon": false,
+  "nick":"闪耀偶像",
+  "desc": "蒙德城的大家都喜欢芭芭拉。「偶像」这个词是她从一本杂志里看到的。",
+  "battle_talent": {
+    "normal_name": "水之浅唱",
+    "normal_img": "XPR",
+    "normal_desc1": "进行至多四段的水花攻击，造成水元素伤害。",
+    "normal_desc2": "消耗一定体力，短暂咏唱后，造成水元素范围伤害。",
+    "normal_desc3": "凝聚水元素的力量，从空中下坠冲击地面，攻击下落路径上的敌人，并在落地时造成水元素范围伤害。",
+    "element_name": "演唱，开始♪",
+    "element_img": "XPR",
+    "element_desc": "唤出歌声般跃动的水珠，形成歌声之环，对周围的敌人造成水元素伤害，并施加潮湿状态。<br><br>歌声之环<br>·芭芭拉的普通攻击命中时，队伍中自己的角色，以及附近的友方角色恢复生命值，回复量受益于芭芭拉的生命值上限;<br>·重击命中时，能产生4倍回复量;<br>·每隔一段时间（5s），为当前场上自己的角色恢复生命值;<br>·对角色与触及的敌人施加潮湿状态。<br><br><i>芭芭拉的音乐就是治疗大家的魔法。",
+    "final_name": "闪耀奇迹♪",
+    "final_img": "XPR",
+    "final_desc": "为附近的友方角色与队伍中自己的角色恢复大量生命值，回复量受益于芭芭拉的生命值上限。<br><br><i>治愈大家的心就是芭芭拉战斗与歌唱的力量。"
+  },
+  "basic_talent": {
+    "talent1_name": "光辉的季节",
+    "talent1_img": "XPR",
+    "talent1_desc": "角色在演唱，开始♪的歌声之环中时，体力消耗降低12％。",
+    "talent2_name": "安可",
+    "talent2_img": "XPR",
+    "talent2_desc": "当前场上自己的角色获得元素晶球或元素微粒时，延长演唱，开始♪歌声之环的持续时间1秒。
+通过这种方式，至多延长5秒。",
+    "talent3_name": "心意♪注入",
+    "talent3_img": "XPR",
+    "talent3_desc": "完美烹饪恢复类食物时，有12％概率获得2倍产出。"
+  },
+  "sof": {
+    "sof1_name": "彩色歌谣!",
+    "sof1_img": "XPR",
+    "sof1_desc": "芭芭拉每10秒恢复1点元素能量",
+    "sof2_name": "元气迸发",
+    "sof2_img": "XPR",
+    "sof2_desc": "演唱，开始♪的冷却时间降低15％。技能持续期间，当前场上自己的角色获得15%水元素伤害加成。",
+    "sof3_name": "明日之星",
+    "sof3_img": "XPR",
+    "sof3_desc": "闪耀奇迹♪的技能等级提高3级。至多提升至15级。",
+    "sof4_name": "努力即魔法",
+    "sof4_img": "XPR",
+    "sof4_desc": "芭芭拉使用重击时，每命中一个敌人，就恢复1点元素能量。\n通过这种方式，一次至多回复5点元素能量。",
+    "sof5_name": "纯真的羁绊",
+    "sof5_img": "XPR",
+    "sof5_desc": "演唱，开始♪的技能等级提高3级。至多提升至15级。",
+    "sof6_name": "将一切美好献给你",
+    "sof6_img": "XPR",
+    "sof6_desc": "芭芭拉处于队伍后台时，队伍中自己的角色倒下时，则立即复苏该角色将该角色生命值恢复至100％。该效果每15分钟只能触发一次。"
+  },
+  "dps_weapons": [
+    "the_widsith"
+   ],
+  "sup_dps_weapons": [
+    "mappa_mare",
+    "solar_pearl"
+  ],
+  "util_weapons": [
+    "prototype_malice",
+    "thrilling_tales_of_dragon_slayers"
+  ],
+  "dps_art1": [
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "wanderers_troupe"
+  ],
+  "dps_art2": [
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "util_art1": [
+    "thundersoother",
+    "thundersoother",
+    "thundersoother",
+    "thundersoother",
+    "thundersoother"
+  ],
+  "team1":[
+	"Diluc","Barbara","Bennett","Chongyun"
+  ]
+}

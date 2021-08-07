@@ -1,0 +1,138 @@
+package com.voc.genshin_helper.data;
+
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+
+import com.voc.genshin_helper.R;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+/**
+ * Package com.voc.genshin_helper.data was
+ * Created by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2020 Xectorda 版權所有
+ */
+public class Characters_Rss {
+
+    public int[] char_names = {R.string.aloy,R.string.kujou_sara,R.string.sangonomiya_kokomi,R.string.raudeb_shougun,R.string.sayu,R.string.yoimiya,R.string.kamisato_ayaka,R.string.kaedehara_kazuha,R.string.yanfei,R.string.eula,R.string.rosaria,R.string.xiao,R.string.hu_tao,R.string.ganyu,R.string.albedo,R.string.zhongli,R.string.xinyan,R.string.tartaglia,R.string.diona,R.string.xingqiu,R.string.xiangling,R.string.venti,R.string.traveler,R.string.sucrose,R.string.razor,R.string.qiqi,R.string.noelle,R.string.ningguang,R.string.mona,R.string.lisa,R.string.klee,R.string.keqing,R.string.kaeya,R.string.jean,R.string.fischl,R.string.diluc,R.string.chongyun,R.string.bennett,R.string.beidou,R.string.barbara, R.string.amber};
+
+    public String LocaleStr(int x,Context context){
+        return context.getString(char_names[x]);
+    }
+
+    public String getLocaleName (String str,Context context) {
+        /** Area Name */
+        if (str.equals("Mondstadt")){return context.getString(R.string.mondstadt);}
+        else if (str.equals("Liyue")){return context.getString(R.string.liyue);}
+        else if (str.equals("Inazuma")){return context.getString(R.string.inazuma);}
+        /** Char's Role Name*/
+        else if (str.equals("Main_DPS")){return context.getString(R.string.main_dps);}
+        else if (str.equals("Support_DPS")){return context.getString(R.string.support_dps);}
+        else if (str.equals("Utility")){return context.getString(R.string.utility);}
+        /** Sex Name */
+        else if (str.equals("Female")){return context.getString(R.string.female);}
+        else if (str.equals("Male")){return context.getString(R.string.male);}
+
+        else {return "null";}
+    }
+
+    public int getWeaponTypeIMG (String str){
+        if(str.equals("Bow")){return R.drawable.ico_bow;}
+        else if(str.equals("Catalyst")){return R.drawable.ico_catalyst;}
+        else if(str.equals("Claymore")){return R.drawable.ico_claymore;}
+        else if(str.equals("Polearm")){return R.drawable.ico_polearm;}
+        else if(str.equals("Sword")){return R.drawable.ico_sword;}
+        else {return R.drawable.ic_baseline_av_timer_24;}
+    }
+
+    /**
+     * @param name is Char's Identify Name -> JSON
+     * @return IMG_ID , NAME_LOCAL , FULL_IMG_ID
+     */
+    public int[] getCharByName(String name) {
+        if(name.equals("Aloy")){return new int[] {R.drawable.aloy,R.string.aloy,R.drawable.aloy};}
+        else if(name.equals("Kujou Sara")){return new int[] {R.drawable.kujou_sara,R.string.kujou_sara,R.drawable.kujou_sara};}
+        else if(name.equals("Sangonomiya Kokomi")){return new int[] {R.drawable.sangonomiya_kokomi,R.string.sangonomiya_kokomi,R.drawable.sangonomiya_kokomi};}
+        else if(name.equals("Raudeb Shougun")){return new int[] {R.drawable.raudeb_shougun,R.string.raudeb_shougun,R.drawable.raudeb_shougun};}
+        else if(name.equals("Sayu")){return new int[] {R.drawable.sayu,R.string.sayu,R.drawable.sayu_full};}
+        else if(name.equals("Yoimiya")){return new int[] {R.drawable.yoimiya,R.string.yoimiya,R.drawable.yoimiya_full};}
+        else if(name.equals("Kamisato Ayaka")){return new int[] {R.drawable.ayaka,R.string.kamisato_ayaka,R.drawable.ayaka_full};}
+        else if(name.equals("Kaedehara Kazuha")){return new int[] {R.drawable.kazuha,R.string.kaedehara_kazuha,R.drawable.kazuha_full};}
+        else if(name.equals("Yanfei")){return new int[] {R.drawable.yanfei,R.string.yanfei,R.drawable.yanfei_full};}
+        else if(name.equals("Eula")){return new int[] {R.drawable.eula,R.string.eula,R.drawable.eula_full};}
+        else if(name.equals("Rosaria")){return new int[] {R.drawable.rosaria,R.string.rosaria,R.drawable.rosaria_full};}
+        else if(name.equals("Xiao")){return new int[] {R.drawable.xiao,R.string.xiao,R.drawable.xiao_full};}
+        else if(name.equals("Hu Tao")){return new int[] {R.drawable.hutao,R.string.hu_tao,R.drawable.hutao_full};}
+        else if(name.equals("Ganyu")){return new int[] {R.drawable.ganyu,R.string.ganyu,R.drawable.ganyu_full};}
+        else if(name.equals("Albedo")){return new int[] {R.drawable.albedo,R.string.albedo,R.drawable.albedo_full};}
+        else if(name.equals("Zhongli")){return new int[] {R.drawable.zhongli,R.string.zhongli,R.drawable.zhongli_full};}
+        else if(name.equals("Xinyan")){return new int[] {R.drawable.xinyan,R.string.xinyan,R.drawable.xinyan_full};}
+        else if(name.equals("Tartaglia")){return new int[] {R.drawable.tartaglia,R.string.tartaglia,R.drawable.tartaglia_full};}
+        else if(name.equals("Diona")){return new int[] {R.drawable.diona,R.string.diona,R.drawable.diona_full};}
+        else if(name.equals("Xingqiu")){return new int[] {R.drawable.xingqiu,R.string.xingqiu,R.drawable.xingqiu_full};}
+        else if(name.equals("Xiangling")){return new int[] {R.drawable.xiangling,R.string.xiangling,R.drawable.xiangling_full};}
+        else if(name.equals("Venti")){return new int[] {R.drawable.venti,R.string.venti,R.drawable.venti_full};}
+        else if(name.equals("Traveler")){return new int[] {R.drawable.traveler_female,R.string.traveler,R.drawable.traveler_full};}
+        else if(name.equals("Sucrose")){return new int[] {R.drawable.sucrose,R.string.sucrose,R.drawable.sucrose_full};}
+        else if(name.equals("Razor")){return new int[] {R.drawable.razor,R.string.razor,R.drawable.razor_full};}
+        else if(name.equals("Qiqi")){return new int[] {R.drawable.qiqi,R.string.qiqi,R.drawable.qiqi_full};}
+        else if(name.equals("Noelle")){return new int[] {R.drawable.noelle,R.string.noelle,R.drawable.noelle_full};}
+        else if(name.equals("Ningguang")){return new int[] {R.drawable.ningguang,R.string.ningguang,R.drawable.ningguang_full};}
+        else if(name.equals("Mona")){return new int[] {R.drawable.mona,R.string.mona,R.drawable.mona_full};}
+        else if(name.equals("Lisa")){return new int[] {R.drawable.lisa,R.string.lisa,R.drawable.lisa_full};}
+        else if(name.equals("Klee")){return new int[] {R.drawable.klee,R.string.klee,R.drawable.klee_full};}
+        else if(name.equals("Keqing")){return new int[] {R.drawable.keqing,R.string.keqing,R.drawable.keqing_full};}
+        else if(name.equals("Kaeya")){return new int[] {R.drawable.kaeya,R.string.kaeya,R.drawable.kaeya_full};}
+        else if(name.equals("Jean")){return new int[] {R.drawable.jean,R.string.jean,R.drawable.jean_full};}
+        else if(name.equals("Fischl")){return new int[] {R.drawable.fischl,R.string.fischl,R.drawable.fischl_full};}
+        else if(name.equals("Diluc")){return new int[] {R.drawable.diluc,R.string.diluc,R.drawable.diluc_full};}
+        else if(name.equals("Chongyun")){return new int[] {R.drawable.chongyun,R.string.chongyun,R.drawable.chongyun_full};}
+        else if(name.equals("Bennett")){return new int[] {R.drawable.bennett,R.string.bennett,R.drawable.bennett_full};}
+        else if(name.equals("Beidou")){return new int[] {R.drawable.beidou,R.string.beidou,R.drawable.beidou_full};}
+        else if(name.equals("Barbara")){return new int[] {R.drawable.barbara,R.string.barbara,R.drawable.barbara_full};}
+        else if(name.equals("Amber")){return new int[] {R.drawable.amber,R.string.amber,R.drawable.amber_full};}
+
+
+        return new int[] {R.drawable.paimon_full,R.string.unknown};
+    }
+
+    /**
+     * @param element Element Name
+     * @return ICON_ID , RAD_BG_ID , BG_COLOR_ID
+     */
+    public int[] getElementByName (String element) {
+        if(element.equals("Anemo")) {return new int[] {R.drawable.anemo,R.drawable.bg_anemo_char,R.color.anemo};}
+        else if(element.equals("Cryo")) {return new int[] {R.drawable.cryo,R.drawable.bg_cryo_char,R.color.cryo};}
+        else if(element.equals("Dendor")) {return new int[] {R.drawable.dendro,R.drawable.bg_dendro_char,R.color.dendor};}
+        else if(element.equals("Electro")) {return new int[] {R.drawable.electro,R.drawable.bg_electro_char,R.color.electro};}
+        else if(element.equals("Geo")) {return new int[] {R.drawable.geo,R.drawable.bg_geo_char,R.color.geo};}
+        else if(element.equals("Hydro")) {return new int[] {R.drawable.hydro,R.drawable.bg_hydro_char,R.color.hydro};}
+        else if(element.equals("Pyro")) {return new int[] {R.drawable.pyro,R.drawable.bg_pyro_char,R.color.pyro};}
+        else return new int[] {R.drawable.anemo,R.drawable.bg_anemo_char,R.color.anemo};
+    }
+
+    /*
+
+    public int getTalentByName (String name) {
+        return new int[] {0};
+    }
+     */
+
+    public Drawable getTalentIcoByName (String name, Context context){
+        InputStream ims = null;
+        try {
+            ims = context.getAssets().open("skills/"+name+".png");
+            // load image as Drawable
+            Drawable d = Drawable.createFromStream(ims, null);
+            // set image to ImageView
+            return d;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+}

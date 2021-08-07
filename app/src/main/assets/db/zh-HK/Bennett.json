@@ -1,0 +1,78 @@
+{
+  "name": "Bennett",
+  "rare": 4,
+  "area": "Mondstadt",
+  "element": "Pyro",
+  "weapon": "Sword",
+  "sex": "Male",
+  "birth": "02/29",
+  "role": "Support_DPS",
+  "isComingSoon": false,
+  "nick":"命運試金石",
+  "desc": "蒙德的冒險家少年，擁有與他的善良毫不相稱的黴運。",
+  "battle_talent": {
+    "normal_name": "好運劍",
+    "normal_img": "normal_atack_strike_of_fortune",
+    "normal_desc1": "進行至多五段的連續劍擊。",
+    "normal_desc2": "消耗一定體力，瞬間向前方揮出兩劍。",
+    "normal_desc3": "從空中下墜衝擊地面，攻擊下落路徑上的敵人，並在落地時，造成範圍傷害。",
+    "element_name": "熱情超載",
+    "element_img": "passion_overload",
+    "element_desc": "班尼特將火元素與冒險的熱情凝聚在劍上。根據熱情凝聚的程度，可能會發生不同的事情…<br><br>點按<br>快速向前揮出火焰一擊。造成火元素傷害。<br><br>長按<br>根據長按時間進行蓄力，釋放時依照蓄力段數造成不同的效果。<br>·一段蓄力：發動二段攻擊，造成火元素傷害並將敵人擊飛；<br>·二段蓄力：發動三段攻擊，造成火元素傷害。最後一擊會發生爆炸，將班尼特和敵人同時擊飛。被擊飛時，班尼特不會受到傷害。<br><br><i>班尼特聚集熱情與夢想與火元素的一擊。但熱情有時會過頭，而火元素有時會爆炸。",
+    "final_name": "美妙旅程",
+    "final_img": "fantastic_voyage",
+    "final_desc": "班尼特進行騰躍轟擊，造成火元素傷害，並生成鼓舞領域<br><br>鼓舞領域<br>·領域內的角色如果生命值低於或等於70％，會持續恢復生命值，回復量受益于班尼特的最大生命值；<br>·領域內的角色如果生命值高於70％，會基於班尼特的基礎攻擊力，以一定比例獲得攻擊力加成；<br>·為其中的角色施加火元素附著。<br><br><i>班尼特尼冒險團每一次探險之旅都充滿意外風險。儘管唯一的成員班尼特更傾向於說這是「精彩刺激又美妙的旅程」"
+  },
+  "basic_talent": {
+    "talent1_name": "熱情複燃",
+    "talent1_img": "rekindle",
+    "talent1_desc": "熱情超載的冷卻時間減少20%",
+    "talent2_name": "無畏的熱血",
+    "talent2_img": "fearnaught",
+    "talent2_desc": "在美妙旅程領域內，熱情超載具有如下效果：\n·冷卻時間減少50％。\n·二段蓄力不會將班尼特自身擊飛。",
+    "talent3_name": "應該安全",
+    "talent3_img": "it_should_be_safe",
+    "talent3_desc": "在蒙德執行探索派遣任務時，消耗的時間縮短25%。"
+  },
+  "sof": {
+    "sof1_name": "冒險憧憬",
+    "sof1_img": "grand_expectation",
+    "sof1_desc": "美妙旅程的攻擊力提升效果不再有血量限制，數值上追加班尼特基礎攻擊力的20%。",
+    "sof2_name": "踏破絕境",
+    "sof2_img": "impasse_conqueror",
+    "sof2_desc": "生命值低於70％時，元素充能效率提高30％。",
+    "sof3_name": "火熱激情",
+    "sof3_img": "unstoppable_fervor",
+    "sof3_desc": "熱情超載的技能等級提高3級。（最高提升至15級）",
+    "sof4_name": "熱情不滅",
+    "sof4_img": "unexpected_odyssey",
+    "sof4_desc": "施放一段蓄力的熱情超載時，在技能第二段攻擊中進行普通攻擊，可以施放額外的追擊。追擊的傷害等同于第二段攻擊的135%。",
+    "sof5_name": "開拓的心魂",
+    "sof5_img": "the_explorer",
+    "sof5_desc": "美妙旅程的技能等級提高3級。（最高提升至15級）",
+    "sof6_name": "烈火與勇氣",
+    "sof6_img": "fire_ventures_with_me",
+    "sof6_desc": "處在美妙旅程領域內的單手劍、雙手劍、長柄武器角色獲得15％火元素傷害加成，並將普通攻擊與重擊傷害轉為火元素。"
+  },
+  "dps_weapons": [
+    "the_widsith"
+   ],
+  "sup_dps_weapons": [
+    "mappa_mare",
+    "solar_pearl"
+  ],
+  "util_weapons": [
+    "prototype_malice",
+    "thrilling_tales_of_dragon_slayers"
+  ],
+  "util_art1": [
+    "the_exile",
+    "the_exile",
+    "defenders_will",
+    "defenders_will",
+    "defenders_will"
+  ],
+  "team1":[
+	"Bennett","Barbara","Fischl","Diluc"
+  ]
+}

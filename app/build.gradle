@@ -1,0 +1,113 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdkVersion 30
+    def ver
+    defaultConfig {
+        applicationId "com.voc.genshin_helper"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "2.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
+        ver =  versionCode
+        ndk{
+            abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86_64'
+        }
+    }
+
+    def versionPropsFile = file('version.properties')
+    if (versionPropsFile.canRead()) {
+        def Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionPropsFile))
+        def code = versionProps['VERSION_CODE'].toInteger() + 1
+        versionProps['VERSION_CODE'] = code.toString()
+        versionProps.store(versionPropsFile.newWriter(), null)
+
+        productFlavors {
+            dev {
+                versionCode = code
+                versionNameSuffix "-dev"
+                applicationId "com.voc.genshin_helper"
+            }
+            gp{
+                versionCode = code
+                versionNameSuffix "-prod" + " ("+code+")"
+                applicationId "com.voc.genshin_helper_gp"
+            }
+            discord {
+                versionCode = code
+                versionNameSuffix "-dc" + " ("+code+")"
+                applicationId "com.voc.genshin_helper_dc"
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            packagingOptions {
+                exclude 'META-INF/LICENSE'
+                exclude 'META-INF/LICENSE-FIREBASE.txt'
+                exclude 'META-INF/NOTICE'
+                exclude 'META-INF/DEPENDENCIES'
+            }
+            defaultConfig {
+                multiDexEnabled true
+            }
+        }
+
+
+        android.applicationVariants.all { variant ->
+            variant.outputs.all {
+                outputFileName = "genshin_helper_${variant.versionName}.apk"
+            }
+        }
+        tasks.whenTaskAdded { task ->
+            if (task.name.startsWith("bundle")) {
+                def renameTaskName = "rename${task.name.capitalize()}Aab"
+                def flavor = task.name.substring("bundle".length()).uncapitalize()
+                tasks.create(renameTaskName, Copy) {
+                    def path = "${buildDir}/outputs/bundle/${flavor}/"
+                    from(path)
+                    include "app.aab"
+                    destinationDir file("${buildDir}/outputs/renamedBundle/")
+                    rename "app.aab", "${flavor}.aab"
+                }
+
+                task.finalizedBy(renameTaskName)
+            }
+//@credit to David Medenjak for this block of code
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    implementation 'androidx.navigation:navigation-fragment:2.3.0'
+    implementation 'androidx.navigation:navigation-ui:2.3.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+    implementation 'commons-io:commons-io:2.6'
+}

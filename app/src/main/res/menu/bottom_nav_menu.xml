@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_char"
+        android:icon="@drawable/ic_baseline_people_24"
+        android:title="@string/title_char" />
+    <item
+        android:id="@+id/navigation_artifacts"
+        android:icon="@drawable/artifacts_ico"
+        android:title="@string/title_artifacts" />
+    <item
+        android:id="@+id/navigation_home"
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="@string/title_home" />
+    <item
+        android:id="@+id/navigation_weapons"
+        android:icon="@drawable/weapons_ico"
+        android:title="@string/title_weapons" />
+    <item
+        android:id="@+id/navigation_settings"
+        android:icon="@drawable/ic_baseline_settings_24"
+        android:title="@string/title_settings" />
+
+</menu>
