@@ -1,0 +1,86 @@
+{
+  "name": "Hu Tao",
+  "rare": 5,
+  "area": "Liyue",
+  "element": "Cryo",
+  "weapon": "Bow",
+  "sex": "Female",
+  "birth": "12/02",
+  "role": "Main_DPS",
+  "isComingSoon": false,
+  "nick":"雪霽梅香",
+  "desc": "「往生堂」七十七代堂主，年紀輕輕就已主掌璃月的葬儀事務。",
+  "battle_talent": {
+    "normal_name": "往生秘傳槍法",
+    "normal_img": "normal_attack_dough_fu",
+    "normal_desc1": "進行至多六段的連續槍擊。",
+    "normal_desc2": "消耗一定體力，向前方突進，對路徑上的敵人造成傷害。",
+    "normal_desc3": "從空中下墜衝擊地面，攻擊下落路徑上的敵人，並在落地時造成範圍傷害。",
+    "element_name": "蝶引來生",
+    "element_img": "rebirths_chaperone",
+    "element_desc": "只有永不間斷的烈焰可以洗淨世間的不淨之物。<br>胡桃消耗一部分生命值，擊退周圍敵人，進入彼岸蝶舞狀態。<br><br>彼岸蝶舞
+基於進入該狀態時胡桃的生命值上限，提高胡桃的攻擊力。通過這種方式獲得的攻擊力提升，不能超過胡桃基礎攻擊力的400%；<br>將攻擊傷害轉為火元素傷害，該元素轉化無法被附魔覆蓋；<br>重擊會為命中的敵人施加血梅香效果。<br>提高胡桃的抗打斷能力。<br><br>血梅香<br>處於血梅香狀態下的敵人，每4秒會受到一次火元素傷害。這個傷害視為元素戰技傷害。<br>同一個目標身上只能存在一個血梅香效果，且只能被胡桃自己刷新持續時間。<br><br>彼岸蝶舞將在持續時間結束、胡桃下場或倒下時解除。<br><br>備註：血梅香的第一次傷害在BUFF生效1秒後，重擊會完全刷新這個buff，而非刷新持續時間。<br><br><i>胡桃所習得的秘傳槍法，其口訣第一句是: 「槍開黃泉路，蝶引來世橋。」",
+    "final_name": "安神秘法",
+    "final_img": "godsoother",
+    "final_desc": "揮動熾熱的魂靈，造成大範圍火元素傷害。<br>命中敵人時，基於胡桃的生命值上限，恢復胡桃的生命值，這個效果最多對5個命中的敵人生效。<br>如果技能命中時胡桃的生命值低於或等於50%，則造成更高的傷害與治療量。<br><br><i>已經離開人世之物如果還在活蹦亂跳，就會讓往生堂十分焦慮。火葬是最能讓胡桃安定心神的手段，而她越焦慮，火力就越大。"
+  },
+  "basic_talent": {
+    "talent1_name": "蝶隱之時",
+    "talent1_img": "hutao_passive_2",
+    "talent1_desc": "蝶引來生施加的彼岸蝶舞狀態結束後，隊伍中所有角色（不包括胡桃自己）的暴擊率提高12%，持續8秒。",
+    "talent2_name": "血之灶火",
+    "talent2_img": "hutao_passive_3",
+    "talent2_desc": "胡桃的生命值低於或等於50%時,獲得33%火元素傷害加成。",
+    "talent3_name": "多多益善",
+    "talent3_img": "hutao_passive_1",
+    "talent3_desc": "烹飪食物時，有18%概率額外獲得一個「奇怪的」品質的同種料理。"
+  },
+  "sof": {
+    "sof1_name": "赤團開時斜飛去",
+    "sof1_img": "hutao_const_1",
+    "sof1_desc": "處於蝶引來生施加的彼岸蝶舞狀態下時，胡桃的重擊不會消耗體力。",
+    "sof2_name": "最不安神晴又複雨",
+    "sof2_img": "hutao_const_2",
+    "sof2_desc": "血梅香造成的傷害提高，提高值相當於效果附加時胡桃生命值上限的10%。\n此外，安神秘法會為命中的敵人施加血梅香效果。",
+    "sof3_name": "逗留采血色",
+    "sof3_img": "rebirths_chaperone",
+    "sof3_desc": "蝶引來生的技能等級提升3級。至多提升至15級。",
+    "sof4_name": "伴君眠花房",
+    "sof4_img": "hutao_const_4",
+    "sof4_desc": "處於胡桃自己施加的血梅香狀態影響下的敵人被擊敗時，附近的隊伍中所有角色（不包括胡桃自己）的暴擊率提高12%，持續15秒。",
+    "sof5_name": "無可奈何燃花作香",
+    "sof5_img": "godsoother",
+    "sof5_desc": "安神秘法的技能等級提升3級。至多提升至15級。",
+    "sof6_name": "幽蝶能留一縷芳",
+    "sof6_img": "hutao_const_6",
+    "sof6_desc": "胡桃的生命值降至25%以下，或承受足以使她倒下的傷害時觸發：\n此次傷害不會使胡桃倒下，並在接下來的10秒內，胡桃的所有元素抗性和物理抗性提高200%，暴擊率提高100%，並極大地提高抗打斷能力。\n這個效果在胡桃生命值為1時會自動觸發。\n該效果每60秒只能觸發一次。"
+  },
+  "dps_weapons": [
+    "staff_of_homa",
+    "primordial_jade_winged_spear",
+    "vortex_vanquisher",
+    "skyward_spine",
+    "deathmatch",
+    "dragons_bane"
+   ],
+  "dps_art1": [
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames"
+  ],
+  "dps_art2": [
+    "retracing_bolide",
+    "retracing_bolide",
+    "retracing_bolide",
+    "retracing_bolide",
+    "retracing_bolide"
+  ],
+  "team1":[
+	"Hu Tao","Xingqiu","Chongyun","Xiangling"
+  ],
+  "team2":[
+	"Hu Tao","Xingqiu","Zhongli","Xiangling"
+  ]
+}
