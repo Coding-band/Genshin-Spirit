@@ -1,0 +1,71 @@
+{
+  "name": "Lisa",
+  "rare": 4,
+  "area": "Mondstadt",
+  "element": "Electro",
+  "weapon": "Catalyst",
+  "sex": "Female",
+  "birth": "06/09",
+  "role": "Support_DPS",
+  "isComingSoon": false,
+  "nick":"薔薇魔女",
+  "desc": "慵懶而博學的圖書管理員，須彌教令院「兩百年一見」的天才畢業生。",
+  "battle_talent": {
+    "normal_name": "指尖雷暴",
+    "normal_img": "normal_atack_lightning_touch",
+    "normal_desc1": "進行至多四段的電擊，造成雷元素傷害。",
+    "normal_desc2": "消耗一定體力,短暫詠唱後，造成雷元素範圍傷害。",
+    "normal_desc3": "凝聚雷電的力量，從空中下墜衝擊地面，攻擊下落路徑上的敵人，並在落地時造成雷元素範圍傷害。",
+    "element_name": "蒼雷",
+    "element_img": "violet_ark",
+    "element_desc": "導引雷電的力量，把麻煩的東西都清理乾淨。<br><br>點按<br>放出能自行索敵的球形閃電。命中時，會造成雷元素傷害，並對小範圍內的敵人施加至多疊加3層的引雷狀態。<br><br>長按<br>持續詠唱後，召喚雷電從天而降，對附近的所有敵人造成大量雷元素傷害。對處於引雷狀態下的敵人，會根據疊加層數造成大量額外傷害,並清除引雷效果。<br><br><i>雷電的顏色就是薔薇魔女的顏色。",
+    "final_name": "薔薇的雷光",
+    "final_img": "lightning_rose",
+    "final_desc": "召喚薔薇雷光，釋放強大的雷電之力，擊退周圍的敵人並造成雷元素傷害。存在期間內，薔薇雷光會持續放電攻擊附近的敵人，造成雷元素傷害。<br><br><i>這朵薔薇固然美麗，卻也有著致命的刺。"
+  },
+  "basic_talent": {
+    "talent1_name": "電感餘震",
+    "talent1_img": "induced_aftershock",
+    "talent1_desc": "重擊命中時，會為敵人附加蒼雷的引雷效果。",
+    "talent2_name": "靜電場力",
+    "talent2_img": "static_electricity_field",
+    "talent2_desc": "敵人受到薔薇的雷光攻擊後，降低15%防禦力，持續10秒。",
+    "talent3_name": "藥劑通識",
+    "talent3_img": "general_pharmaceutics",
+    "talent3_desc": "合成藥劑時，有20%概率返還部分合成材料。"
+  },
+  "sof": {
+    "sof1_name": "無限的電回路",
+    "sof1_img": "infinite_circuit",
+    "sof1_desc": "蒼雷長按時,每個命中的敵人都會為麗莎恢復2點元素能量。通過這種方式，一次至多回復10點元素能量。",
+    "sof2_name": "空間電勢結界",
+    "sof2_img": "electromagnetic_field",
+    "sof2_desc": "蒼雷長按時具有如下效果：·防禦力提升25％；·提高麗莎的抗打斷能力。",
+    "sof3_name": "諧振的雷光",
+    "sof3_img": "resonant_thunder",
+    "sof3_desc": "薔薇的雷光的技能等級提高3級。至多提升至15級。",
+    "sof4_name": "如雨的電漿",
+    "sof4_img": "plasma_eruption",
+    "sof4_desc": "薔薇的雷光攻擊時，放出的閃電增加至1~3道。",
+    "sof5_name": "等離態的落雷",
+    "sof5_img": "electrocute",
+    "sof5_desc": "蒼雷的技能等級提高3級。至多提升至15級。",
+    "sof6_name": "脈衝的魔女",
+    "sof6_img": "pulsating_witch",
+    "sof6_desc": "麗莎登場時，對附近的敵人施加3層蒼雷的引雷效果。該效果每5秒只能觸發一次。"
+  },
+  "sup_dps_weapons": [
+    "sacrificial_fragments",
+    "mappa_mare"
+  ],
+  "sup_dps_art1": [
+    "thundering_fury",
+    "thundering_fury",
+    "thundering_fury",
+    "thundering_fury",
+    "thundering_fury"
+  ],
+  "team1":[
+	"Lisa","Traveler-Anemo","Kaeya","Barbara"
+  ]
+}
