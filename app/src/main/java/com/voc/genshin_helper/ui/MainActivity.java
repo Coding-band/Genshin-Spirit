@@ -17,9 +17,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
@@ -340,6 +344,55 @@ public class MainActivity extends AppCompatActivity {
                     art_pg.setVisibility(View.GONE);
                     weapon_pg.setVisibility(View.GONE);
                     setting_pg.setVisibility(View.GONE);
+
+                    LinearLayout calculator_ll = findViewById(R.id.calculator_ll);
+                    LinearLayout daily_login_ll = findViewById(R.id.daily_login_ll);
+                    LinearLayout map_ll = findViewById(R.id.map_ll);
+
+                    calculator_ll.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                        }
+                    });
+                    daily_login_ll.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+                            View view = View.inflate(context, R.layout.fragment_web, null);
+                            dialog.setContentView(view);
+                            dialog.setCanceledOnTouchOutside(true);
+
+                            WebView webview = view.findViewById(R.id.webView);
+                            ImageView back_btn = view.findViewById(R.id.back_btn);
+
+                            WebSettings webSettings = webview.getSettings();
+                            webSettings.setJavaScriptEnabled(true);
+                            webview.setWebViewClient(new WebViewClient());
+                            webview.loadUrl("https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481");
+
+                            back_btn.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    dialog.dismiss();
+                                }
+                            });
+
+                            Window dialogWindow = dialog.getWindow();
+                            WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+                            lp.width = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth());
+                            lp.height = WindowManager.LayoutParams.MATCH_PARENT;
+                            lp.gravity = Gravity.CENTER;
+                            dialogWindow.setAttributes(lp);
+                            dialog.show();
+                        }
+                    });
+                    map_ll.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                        }
+                    });
 
                     getDOW();
                     char_reload();
