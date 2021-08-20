@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_less_edge"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/alarm_t1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="周本"
+        android:textColor="@color/tv_color"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/alarm_t2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="樹脂"
+        android:textColor="@color/tv_color"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/alarm_t3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="洞天寶錢"
+        android:textColor="@color/tv_color"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/alarm_t4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="派遣"
+        android:textColor="@color/tv_color"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/alarm_t5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/page_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="16dp"
+        android:text="自定義"
+        android:textColor="@color/tv_color"
+        android:textSize="20sp" />
+</LinearLayout>

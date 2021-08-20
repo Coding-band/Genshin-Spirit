@@ -4,6 +4,7 @@ package com.voc.genshin_helper.ui;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -121,10 +122,11 @@ public class MainActivity extends AppCompatActivity {
         mList.setLayoutManager(mLayoutManager);
         mList.setAdapter(mAdapter);
         mList.removeAllViewsInLayout();
-
+        home();
         getDOW();
         char_reload();
         weapon_reload();
+
 
         nav_view = findViewById(R.id.nav_view);
         nav_view.setSelectedItemId(R.id.navigation_home);
@@ -138,9 +140,8 @@ public class MainActivity extends AppCompatActivity {
                     weapon_pg.setVisibility(View.GONE);
                     setting_pg.setVisibility(View.GONE);
 
-                    mList.removeAllViewsInLayout();
-
                     char_list_reload();
+
 
                     EditText char_et = findViewById(R.id.char_et);
                     char_et.addTextChangedListener(new TextWatcher() {
@@ -332,12 +333,16 @@ public class MainActivity extends AppCompatActivity {
                             dialog.show();
                         }
                     });
-                }else if (item.getItemId() == R.id.navigation_artifacts){
+                    return true;
+                }
+                else if (item.getItemId() == R.id.navigation_artifacts){
                     art_pg.setVisibility(View.VISIBLE);
                     char_pg.setVisibility(View.GONE);
                     home_pg.setVisibility(View.GONE);
                     weapon_pg.setVisibility(View.GONE);
                     setting_pg.setVisibility(View.GONE);
+
+                    return true;
                 }else if (item.getItemId() == R.id.navigation_home){
                     home_pg.setVisibility(View.VISIBLE);
                     char_pg.setVisibility(View.GONE);
@@ -345,78 +350,154 @@ public class MainActivity extends AppCompatActivity {
                     weapon_pg.setVisibility(View.GONE);
                     setting_pg.setVisibility(View.GONE);
 
-                    LinearLayout calculator_ll = findViewById(R.id.calculator_ll);
-                    LinearLayout daily_login_ll = findViewById(R.id.daily_login_ll);
-                    LinearLayout map_ll = findViewById(R.id.map_ll);
-
-                    calculator_ll.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-
-                        }
-                    });
-                    daily_login_ll.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
-                            View view = View.inflate(context, R.layout.fragment_web, null);
-                            dialog.setContentView(view);
-                            dialog.setCanceledOnTouchOutside(true);
-
-                            WebView webview = view.findViewById(R.id.webView);
-                            ImageView back_btn = view.findViewById(R.id.back_btn);
-
-                            WebSettings webSettings = webview.getSettings();
-                            webSettings.setJavaScriptEnabled(true);
-                            webview.setWebViewClient(new WebViewClient());
-                            webview.loadUrl("https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481");
-
-                            back_btn.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    dialog.dismiss();
-                                }
-                            });
-
-                            Window dialogWindow = dialog.getWindow();
-                            WindowManager.LayoutParams lp = dialogWindow.getAttributes();
-                            lp.width = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth());
-                            lp.height = WindowManager.LayoutParams.MATCH_PARENT;
-                            lp.gravity = Gravity.CENTER;
-                            dialogWindow.setAttributes(lp);
-                            dialog.show();
-                        }
-                    });
-                    map_ll.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-
-                        }
-                    });
+                    home();
 
                     getDOW();
                     char_reload();
                     weapon_reload();
 
+                    return true;
                 }else if (item.getItemId() == R.id.navigation_weapons){
                     weapon_pg.setVisibility(View.VISIBLE);
                     char_pg.setVisibility(View.GONE);
                     home_pg.setVisibility(View.GONE);
                     art_pg.setVisibility(View.GONE);
                     setting_pg.setVisibility(View.GONE);
+                    return true;
                 }else if (item.getItemId() == R.id.navigation_settings){
                     setting_pg.setVisibility(View.VISIBLE);
                     char_pg.setVisibility(View.GONE);
                     home_pg.setVisibility(View.GONE);
                     weapon_pg.setVisibility(View.GONE);
                     art_pg.setVisibility(View.GONE);
-                }
-                return false;
+                    return true;
+                }else {
+                    return false;}
             }
         });
     }
 
+    public void home (){
+        LinearLayout calculator_ll = findViewById(R.id.calculator_ll);
+        LinearLayout daily_login_ll = findViewById(R.id.daily_login_ll);
+        LinearLayout map_ll = findViewById(R.id.map_ll);
+        LinearLayout alarm_ll = findViewById(R.id.alarm_ll);
+
+        calculator_ll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        daily_login_ll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+                View view = View.inflate(context, R.layout.fragment_web, null);
+                dialog.setContentView(view);
+                dialog.setCanceledOnTouchOutside(true);
+
+                WebView webview = view.findViewById(R.id.webView);
+                ImageView back_btn = view.findViewById(R.id.back_btn);
+
+                WebSettings webSettings = webview.getSettings();
+                webSettings.setJavaScriptEnabled(true);
+                webview.setWebViewClient(new WebViewClient() {
+                    @Override
+                    public void onPageFinished(WebView view, String url)
+                    {
+                        // https://stackoverflow.com/questions/51822019/how-to-hide-a-websites-element-in-webview
+                        // hide element by id
+                        //webview.loadUrl("javascript:(function() { " +
+                        //        "document.getElementsById('your_class_name')[0].style.display='none'; })()");
+                        // hide element by class name
+                        webview.loadUrl("javascript:(function() { " +
+                                "document.getElementsByClassName('mhy-hoyolab-app-header')[0].style.display='none'; })()");
+                        webview.loadUrl("javascript:(function() { " +
+                                "document.getElementsByClassName('components-m-assets-__navbar_---back---1xSANa')[0].style.display='none'; })()");
+                        webview.loadUrl("javascript:(function() { " +
+                                "document.getElementsByClassName('components-m-assets-__navbar_---share---13xyQq')[0].style.display='none'; })()");
+
+                    };
+                });
+                webview.loadUrl("https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481");
+
+                back_btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+
+                Window dialogWindow = dialog.getWindow();
+                WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+                lp.width = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth());
+                lp.height = WindowManager.LayoutParams.MATCH_PARENT;
+                lp.gravity = Gravity.CENTER;
+                dialogWindow.setAttributes(lp);
+                dialog.show();
+            }
+        });
+        map_ll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+                View view = View.inflate(context, R.layout.fragment_web, null);
+                dialog.setContentView(view);
+                dialog.setCanceledOnTouchOutside(true);
+
+                WebView webview = view.findViewById(R.id.webView);
+                ImageView back_btn = view.findViewById(R.id.back_btn);
+
+                WebSettings webSettings = webview.getSettings();
+                webSettings.setJavaScriptEnabled(true);
+                webview.setWebViewClient(new WebViewClient() {
+                    @Override
+                    public void onPageFinished(WebView view, String url)
+                    {
+                        // https://stackoverflow.com/questions/51822019/how-to-hide-a-websites-element-in-webview
+                        // hide element by id
+                        //webview.loadUrl("javascript:(function() { " +
+                        //        "document.getElementsById('your_class_name')[0].style.display='none'; })()");
+                        // hide element by class name
+                        webview.loadUrl("javascript:(function() { " +
+                                "document.getElementsByClassName('mhy-hoyolab-app-header')[0].style.display='none'; })()");
+                        webview.loadUrl("javascript:(function() { " +
+                                "document.getElementsByClassName('announcement')[0].value='announcement--hidden'; })()");
+
+                    };
+                });
+                webview.loadUrl("https://webstatic-sea.mihoyo.com/app/ys-map-sea/index.html?utm_source=hoyolab&lang=zh-tw#/map/2");
+
+                back_btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+
+                Window dialogWindow = dialog.getWindow();
+                WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+                lp.width = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth());
+                lp.height = WindowManager.LayoutParams.MATCH_PARENT;
+                lp.gravity = Gravity.CENTER;
+                dialogWindow.setAttributes(lp);
+                dialog.show();
+            }
+        });
+
+        alarm_ll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context,AlarmUI.class);
+                startActivity(i);
+            }
+        });
+
+    };
+
     private void char_list_reload() {
+        Log.wtf("DAAM","YEE");
         String name ,element,weapon,nation,sex;
         int rare,isComing;
         charactersList.clear();

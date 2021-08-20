@@ -20,7 +20,6 @@
 {"name":"Xingqiu","element":"Hydro","rare":4,"weapon":"Sword","isComing":0,"nation":"Liyue","sex":"Male"},
 {"name":"Xiangling","element":"Pyro","rare":4,"weapon":"Polearm","isComing":0,"nation":"Liyue","sex":"Female"},
 {"name":"Venti","element":"Anemo","rare":5,"weapon":"Bow","isComing":0,"nation":"Mondstadt","sex":"Male"},
-{"//name":"Traveler","//element":"Adaptive","//rare":5,"//weapon":"Sword","//isComing":0,"//nation":"null","//sex":"N/A"},
 {"name":"Sucrose","element":"Anemo","rare":4,"weapon":"Catalyst","isComing":0,"nation":"Mondstadt","sex":"Female"},
 {"name":"Razor","element":"Electro","rare":4,"weapon":"Claymore","isComing":0,"nation":"Mondstadt","sex":"Male"},
 {"name":"Qiqi","element":"Cryo","rare":5,"weapon":"Sword","isComing":0,"nation":"Liyue","sex":"Female"},

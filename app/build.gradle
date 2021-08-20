@@ -7,7 +7,7 @@ android {
     def ver
     defaultConfig {
         applicationId "com.voc.genshin_helper"
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
         versionName "2.0"

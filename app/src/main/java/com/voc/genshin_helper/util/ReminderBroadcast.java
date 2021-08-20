@@ -1,0 +1,40 @@
+package com.voc.genshin_helper.util;
+
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
+
+import com.voc.genshin_helper.R;
+
+/**
+ * Package com.voc.genshin_helper.util was
+ * Created by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2020 Xectorda 版權所有
+ */
+public class ReminderBroadcast extends BroadcastReceiver {
+
+    String title = "Genshin Helper";
+    String info = "Genshin Helper info";
+
+    @Override
+    public void onReceive(Context context, Intent intent) {
+
+        Bundle bundle = intent.getExtras();
+
+        if( bundle.getString("title") != null){title =  bundle.getString("title");}
+        if( bundle.getString("info") != null){info =  bundle.getString("info");}
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "GenshinHelper")
+                .setSmallIcon(R.drawable.app_ico)
+                .setContentTitle(title)
+                .setContentText(info)
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT);
+
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
+        notificationManager.notify(2048,builder.build());
+    }
+}

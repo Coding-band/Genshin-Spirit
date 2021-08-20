@@ -39,6 +39,7 @@
     <string name="grain_of_aerosiderite">漆黑隕鐵的一粒</string>
     <string name="fetters_of_the_dandelion_gladiator">獅牙鬥士的枷鎖</string>
     <string name="mask_of_the_wicked_lieutenant">今昔劇畫之惡尉</string>
+
     <string name="aloy">埃洛伊</string>
     <string name="kujou_sara">九條娑羅</string>
     <string name="sangonomiya_kokomi">珊瑚宮心海</string>
@@ -61,7 +62,9 @@
     <string name="xingqiu">行秋</string>
     <string name="xiangling">香菱</string>
     <string name="venti">溫迪</string>
-    <string name="traveler">旅行者</string>
+    <string name="traveler_anemo">旅行者(風)</string>
+    <string name="traveler_geo">旅行者(岩)</string>
+    <string name="traveler_electro">旅行者(雷)</string>
     <string name="sucrose">砂糖</string>
     <string name="razor">雷澤</string>
     <string name="qiqi">七七</string>
@@ -80,6 +83,7 @@
     <string name="beidou">北斗</string>
     <string name="barbara">芭芭拉</string>
     <string name="amber">安柏</string>
+
     <string name="search">搜尋...</string>
     <string name="elements">元素</string>
     <string name="rarity">稀有度</string>
@@ -92,6 +96,20 @@
     <string name="utility">輔助</string>
     <string name="female">女</string>
     <string name="male">男</string>
+
+    <string name="alarm_t1">周本</string>
+    <string name="alarm_t2">樹脂</string>
+    <string name="alarm_t3">洞天寶錢</string>
+    <string name="alarm_t4">派遣</string>
+    <string name="alarm_t5">自定義</string>
+
+    <string name="alarm_time1">4小時</string>
+    <string name="alarm_time2">8小時</string>
+    <string name="alarm_time3">12小時</string>
+    <string name="alarm_time4">20小時</string>
+
+
+
 
 
 </resources>

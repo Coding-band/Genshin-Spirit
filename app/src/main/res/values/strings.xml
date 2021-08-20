@@ -61,7 +61,9 @@
     <string name="xingqiu">Xingqiu</string>
     <string name="xiangling">Xiangling</string>
     <string name="venti">Venti</string>
-    <string name="traveler">Traveler</string>
+    <string name="traveler_anemo">Traveler(Anemo)</string>
+    <string name="traveler_geo">Traveler(Geo)</string>
+    <string name="traveler_electro">Traveler(Electro)</string>
     <string name="sucrose">Sucrose</string>
     <string name="razor">Razor</string>
     <string name="qiqi">Qiqi</string>
@@ -92,6 +94,15 @@
     <string name="utility">Utility</string>
     <string name="female">Female</string>
     <string name="male">Male</string>
+    <string name="alarm_t1">Boss</string>
+    <string name="alarm_t2">Resin</string>
+    <string name="alarm_t3">Realm Currency</string>
+    <string name="alarm_t4">Expedition</string>
+    <string name="alarm_t5">Custom</string>
 
+    <string name="alarm_time1">4hrs</string>
+    <string name="alarm_time2">8hrs</string>
+    <string name="alarm_time3">12hrs</string>
+    <string name="alarm_time4">20hrs</string>
 
 </resources>

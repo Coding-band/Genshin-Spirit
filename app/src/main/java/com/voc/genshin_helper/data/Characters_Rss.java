@@ -18,7 +18,7 @@ import java.util.List;
  */
 public class Characters_Rss {
 
-    public int[] char_names = {R.string.aloy,R.string.kujou_sara,R.string.sangonomiya_kokomi,R.string.raudeb_shougun,R.string.sayu,R.string.yoimiya,R.string.kamisato_ayaka,R.string.kaedehara_kazuha,R.string.yanfei,R.string.eula,R.string.rosaria,R.string.xiao,R.string.hu_tao,R.string.ganyu,R.string.albedo,R.string.zhongli,R.string.xinyan,R.string.tartaglia,R.string.diona,R.string.xingqiu,R.string.xiangling,R.string.venti,R.string.traveler,R.string.sucrose,R.string.razor,R.string.qiqi,R.string.noelle,R.string.ningguang,R.string.mona,R.string.lisa,R.string.klee,R.string.keqing,R.string.kaeya,R.string.jean,R.string.fischl,R.string.diluc,R.string.chongyun,R.string.bennett,R.string.beidou,R.string.barbara, R.string.amber};
+    public int[] char_names = {R.string.aloy,R.string.kujou_sara,R.string.sangonomiya_kokomi,R.string.raudeb_shougun,R.string.sayu,R.string.yoimiya,R.string.kamisato_ayaka,R.string.kaedehara_kazuha,R.string.yanfei,R.string.eula,R.string.rosaria,R.string.xiao,R.string.hu_tao,R.string.ganyu,R.string.albedo,R.string.zhongli,R.string.xinyan,R.string.tartaglia,R.string.diona,R.string.xingqiu,R.string.xiangling,R.string.venti,R.string.sucrose,R.string.razor,R.string.qiqi,R.string.noelle,R.string.ningguang,R.string.mona,R.string.lisa,R.string.klee,R.string.keqing,R.string.kaeya,R.string.jean,R.string.fischl,R.string.diluc,R.string.chongyun,R.string.bennett,R.string.beidou,R.string.barbara, R.string.amber,R.string.traveler_anemo,R.string.traveler_geo,R.string.traveler_electro};
 
     public String LocaleStr(int x,Context context){
         return context.getString(char_names[x]);
@@ -76,7 +76,6 @@ public class Characters_Rss {
         else if(name.equals("Xingqiu")){return new int[] {R.drawable.xingqiu,R.string.xingqiu,R.drawable.xingqiu_full};}
         else if(name.equals("Xiangling")){return new int[] {R.drawable.xiangling,R.string.xiangling,R.drawable.xiangling_full};}
         else if(name.equals("Venti")){return new int[] {R.drawable.venti,R.string.venti,R.drawable.venti_full};}
-        else if(name.equals("Traveler")){return new int[] {R.drawable.traveler_female,R.string.traveler,R.drawable.traveler_full};}
         else if(name.equals("Sucrose")){return new int[] {R.drawable.sucrose,R.string.sucrose,R.drawable.sucrose_full};}
         else if(name.equals("Razor")){return new int[] {R.drawable.razor,R.string.razor,R.drawable.razor_full};}
         else if(name.equals("Qiqi")){return new int[] {R.drawable.qiqi,R.string.qiqi,R.drawable.qiqi_full};}
@@ -95,6 +94,10 @@ public class Characters_Rss {
         else if(name.equals("Beidou")){return new int[] {R.drawable.beidou,R.string.beidou,R.drawable.beidou_full};}
         else if(name.equals("Barbara")){return new int[] {R.drawable.barbara,R.string.barbara,R.drawable.barbara_full};}
         else if(name.equals("Amber")){return new int[] {R.drawable.amber,R.string.amber,R.drawable.amber_full};}
+
+        else if(name.equals("Traveler-Anemo")){return new int[] {R.drawable.traveler_female,R.string.traveler_anemo,R.drawable.traveler_full};}
+        else if(name.equals("Traveler-Geo")){return new int[] {R.drawable.traveler_female,R.string.traveler_geo,R.drawable.traveler_full};}
+        else if(name.equals("Traveler-Electro")){return new int[] {R.drawable.traveler_female,R.string.traveler_electro,R.drawable.traveler_full};}
 
 
         return new int[] {R.drawable.paimon_full,R.string.unknown};
