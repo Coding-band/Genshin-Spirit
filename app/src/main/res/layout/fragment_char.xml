@@ -32,6 +32,7 @@
             android:layout_margin="8dp"
             android:layout_weight="1"
             android:background="@drawable/bg_item_edgeless"
+            android:backgroundTint="#54B1B1B1"
             android:gravity="center"
             android:orientation="horizontal">
 

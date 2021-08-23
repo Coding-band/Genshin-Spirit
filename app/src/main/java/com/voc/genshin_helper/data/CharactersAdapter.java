@@ -81,7 +81,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),characters_rss.getCharByName(Characters.getName())[0]);
         holder.char_icon.getLayoutParams().width = width;
         holder.char_icon.getLayoutParams().height = height;
-        Bitmap outBitmap =getRoundBitmapByShader(bitmap, width/3,height/3,20, 0);
+        Bitmap outBitmap =getRoundBitmapByShader(bitmap, (int) Math.round(width/1.5),(int)Math.round(height/1.5),20, 0);
         holder.char_icon.setImageBitmap(outBitmap);
         holder.char_icon.setScaleType(ImageView.ScaleType.CENTER_CROP);
         holder.char_name.setText(characters_rss.getCharByName(Characters.getName())[1]);

@@ -107,9 +107,22 @@
     <string name="alarm_time2">8小時</string>
     <string name="alarm_time3">12小時</string>
     <string name="alarm_time4">20小時</string>
+    <string name="jb_title">[原神小幫手] Hi ~ 該打周本了!</string>
+    <string name="common_info">唉~我可是記得很清楚哦~你可別忘了!</string>
+    <string name="daily_mission_title">[原神小幫手] Hi ~ 完成了每日任務了嗎?</string>
+    <string name="dtbc_title">[原神小幫手] Hi ~ 你的洞天寶錢滿了,請盡快收取</string>
+    <string name="ph_title">[原神小幫手] Hi ~ 派遣已完成</string>
+    <string name="ph_info">來看看他/她找到了什麼~</string>
+    <string name="dtbc_info">嗯...如果你不需要它們，那我就把它們拿走囉~</string>
+    <string name="resin_title">[原神小幫手] Hi ~ 你的樹脂滿了,請盡快使用</string>
+    <string name="america_ser">美服</string>
+    <string name="europe_ser">歐服</string>
+    <string name="asia_ser">亞服</string>
+    <string name="hk_tw_mo_ser">港、台、澳服</string>
+    <string name="sky_land_ser">天空島服</string>
+    <string name="world_tree">世界樹服</string>
 
-
-
-
+    <string name="genshindb_link"><a href="https://github.com/Wolfteam/GenshinDb">GenshinDb Github</a></string>
+    <string name="genshinhelper_link"><a href="https://github.com/Wolfteam/GenshinDb">原神小幫手 Github</a></string>
 
 </resources>

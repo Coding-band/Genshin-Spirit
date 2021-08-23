@@ -7,79 +7,100 @@
     android:background="@color/page_bg"
     android:clickable="true"
     android:focusable="true"
-    android:foreground="?attr/selectableItemBackground">
+    android:foreground="?attr/selectableItemBackground"
+    android:orientation="vertical">
 
-
-    <ImageView
-        android:id="@+id/ui_ico"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        app:srcCompat="@drawable/fragile_resin" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="8dp"
-        android:orientation="vertical">
+        android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/ui_time"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:text="169:00:00"
-                android:textColor="@color/tv_color"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/ui_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:text="我是標題"
-                android:textColor="@color/tv_color"
-                android:textSize="16sp" />
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/ui_progress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="2400 / 2400"
-            android:textColor="@color/tv_color"
-            android:textSize="14sp"
-            android:visibility="gone" />
+        <ImageView
+            android:id="@+id/ui_ico"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:padding="8dp"
+            app:srcCompat="@drawable/fragile_resin" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:layout_margin="8dp"
+            android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_gravity="center"
-                app:srcCompat="@drawable/ic_baseline_notifications_active_24" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/ui_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:text="169:00:00"
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/ui_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2"
+                    android:singleLine="true"
+                    android:text="我是標題"
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
 
             <TextView
-                android:id="@+id/ui_finish_time"
+                android:id="@+id/ui_progress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="2400 / 2400"
+                android:textColor="@color/tv_color"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:gravity="center|left"
-                android:padding="4dp"
-                android:singleLine="true"
-                android:text="2021/08/20 21:59"
-                android:textColor="@color/tv_color" />
-        </LinearLayout>
+                android:orientation="horizontal">
 
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_baseline_notifications_active_24" />
+
+                <TextView
+                    android:id="@+id/ui_finish_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:gravity="center|left"
+                    android:padding="4dp"
+                    android:singleLine="true"
+                    android:text="2021/08/20 21:59"
+                    android:textColor="@color/tv_color" />
+
+            </LinearLayout>
+
+        </LinearLayout>
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/ui_int"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="9"
+        android:textAlignment="center"
+        android:textColor="@color/tv_color"
+        android:textSize="20sp"
+        android:visibility="gone" />
 
 </LinearLayout>

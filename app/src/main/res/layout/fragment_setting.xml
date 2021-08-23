@@ -1,6 +1,668 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/page_bg"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/theme_card"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                app:cardBackgroundColor="@color/page_bg"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/theme_ico"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_weight="0"
+                            app:srcCompat="@drawable/ic_baseline_color_lens_24" />
+
+                        <TextView
+                            android:id="@+id/theme_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:layout_weight="0"
+                            android:gravity="center|left"
+                            android:paddingLeft="8dp"
+                            android:text="背景主題"
+                            android:textColor="@color/tv_color"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <RadioButton
+                        android:id="@+id/theme_light"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:buttonTint="@color/theme_color"
+                        android:checked="false"
+                        android:text="明亮主題"
+                        android:textColor="@color/tv_color" />
+
+                    <RadioButton
+                        android:id="@+id/theme_dark"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:buttonTint="@color/theme_color"
+                        android:checked="false"
+                        android:text="黑暗主題"
+                        android:textColor="@color/tv_color" />
+
+                    <RadioButton
+                        android:id="@+id/theme_default"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:buttonTint="@color/theme_color"
+                        android:checked="false"
+                        android:text="系統默認主題"
+                        android:textColor="@color/tv_color" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/color_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:visibility="visible"
+                app:cardBackgroundColor="@color/page_bg"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/color_ico"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_weight="0"
+                            app:srcCompat="@drawable/ic_baseline_colorize_24" />
+
+                        <TextView
+                            android:id="@+id/color_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:layout_weight="0"
+                            android:gravity="center|left"
+                            android:paddingLeft="8dp"
+                            android:text="文字主題"
+                            android:textColor="@color/tv_color"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="4dp">
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="8dp">
+
+                            <ImageView
+                                android:id="@+id/color_block1"
+                                android:layout_width="32dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@color/color_theme_1" />
+
+                            <ImageView
+                                android:id="@+id/color_block2"
+                                android:layout_width="32dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@color/color_theme_2" />
+
+                            <ImageView
+                                android:id="@+id/color_block3"
+                                android:layout_width="32dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@color/color_theme_3" />
+
+                            <ImageView
+                                android:id="@+id/color_block4"
+                                android:layout_width="32dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@color/color_theme_4" />
+
+                            <ImageView
+                                android:id="@+id/color_block5"
+                                android:layout_width="32dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@color/color_theme_5" />
+
+                            <ImageView
+                                android:id="@+id/color_block6"
+                                android:layout_width="32dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@color/color_theme_6" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="8dp">
+
+                            <ImageView
+                                android:id="@+id/color_block7"
+                                android:layout_width="32dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@color/color_theme_7" />
+
+                            <ImageView
+                                android:id="@+id/color_block8"
+                                android:layout_width="32dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@color/color_theme_8" />
+
+                            <ImageView
+                                android:id="@+id/color_block9"
+                                android:layout_width="32dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@color/color_theme_9" />
+
+                            <ImageView
+                                android:id="@+id/color_block10"
+                                android:layout_width="32dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@color/color_theme_10" />
+
+                            <ImageView
+                                android:id="@+id/color_block11"
+                                android:layout_width="32dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@color/color_theme_11" />
+
+                            <ImageView
+                                android:id="@+id/color_block12"
+                                android:layout_width="32dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@color/color_theme_12" />
+                        </TableRow>
+
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="8dp">
+
+                            <ImageView
+                                android:id="@+id/color_block13"
+                                android:layout_width="32dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@color/color_theme_13" />
+
+                            <ImageView
+                                android:id="@+id/color_block14"
+                                android:layout_width="32dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@color/color_theme_14" />
+
+                            <ImageView
+                                android:id="@+id/color_block15"
+                                android:layout_width="32dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@color/color_theme_15" />
+
+                            <ImageView
+                                android:id="@+id/color_block16"
+                                android:layout_width="32dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@color/color_theme_16" />
+
+                            <ImageView
+                                android:id="@+id/color_block17"
+                                android:layout_width="32dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@color/color_theme_17" />
+
+                            <ImageView
+                                android:id="@+id/color_block18"
+                                android:layout_width="32dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@color/color_theme_18" />
+                        </TableRow>
+
+                    </TableLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/lang_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:visibility="gone"
+                app:cardBackgroundColor="@color/page_bg"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/lang_ico"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_weight="0"
+                            app:srcCompat="@drawable/ic_baseline_language_24" />
+
+                        <TextView
+                            android:id="@+id/lang_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:layout_weight="0"
+                            android:gravity="center|left"
+                            android:paddingLeft="8dp"
+                            android:text="語言"
+                            android:textColor="@color/tv_color"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <Spinner
+                        android:id="@+id/lang_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_margin="8dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/other_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardBackgroundColor="@color/page_bg"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/other_ico"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_weight="0"
+                            app:srcCompat="@drawable/ic_baseline_settings_24" />
+
+                        <TextView
+                            android:id="@+id/other_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:layout_weight="0"
+                            android:gravity="center|left"
+                            android:paddingLeft="8dp"
+                            android:text="其他"
+                            android:textColor="@color/tv_color"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="帳號所在伺服器" />
+
+                    <Spinner
+                        android:id="@+id/server_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/info_card"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                app:cardBackgroundColor="@color/page_bg"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/info_ico"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_weight="0"
+                            app:srcCompat="@drawable/ic_baseline_info_24" />
+
+                        <TextView
+                            android:id="@+id/info_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:layout_weight="0"
+                            android:gravity="center|left"
+                            android:paddingLeft="8dp"
+                            android:text="關於"
+                            android:textColor="@color/tv_color"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="96dp"
+                        android:layout_height="96dp"
+                        android:layout_gravity="center"
+                        app:srcCompat="@drawable/app_ico" />
+
+                    <TextView
+                        android:id="@+id/info_app_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/app_name"
+                        android:textAlignment="center"
+                        android:textColor="@color/tv_color"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/info_app_version"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Version 1.0.0 (200)"
+                        android:textAlignment="center"
+                        android:textColor="@color/tv_color"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="8dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/info_mjsm_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="免責聲明"
+                            android:textColor="@color/tv_color"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/info_mjsm_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="本應用程式並不屬於 miHoYo Co., Ltd. 且並未獲得其認可。原神小幫手(Genshin Helper)僅為一款由粉絲自行開發之數據提供App，本應用程式所提供的資料只作參考用途。 不會對其所載任何資料的準確性及完整作任何程度保証。"
+                            android:textColor="@color/tv_color" />
+
+                        <TextView
+                            android:id="@+id/info_sy_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="私隱收集聲明"
+                            android:textColor="@color/tv_color"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/info_sy_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="本應用程式並不會收集任何有關個人私隱的數據及可能用於識別，跟蹤使用者等信息。 若有需要，本應用程式僅會收集已告知之數據，如程式崩潰堆棧。上述數據僅用作與修復應用程式漏洞及提升使用者體驗。"
+                            android:textColor="@color/tv_color" />
+
+                        <TextView
+                            android:id="@+id/info_jl_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="資源使用聲明"
+                            android:textColor="@color/tv_color"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/info_jl_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="本應用程式基於GenshinDb而開發，旨在向GenshinDb及其協作者致敬，惟目前仍未獲其協作者認可。本應用程式部分圖片，資料取自開源專案，將於下文附上連結。\n故此，本應用程式的一部分介面，排版或於GenshinDb極為相似，惟本應用程式是以Java而非Dart作編程語言，亦只會於Android或／及任何支援.apk，.aab檔案格式之裝置中安裝及運行。"
+                            android:textColor="@color/tv_color" />
+
+                        <TextView
+                            android:id="@+id/info_hy_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:text="專案開源聲明"
+                            android:textColor="@color/tv_color"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/info_hy_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="本應用程式因旨在向GenshinDb及其協作者致敬，故將於Github上開源，任何人均可以查閱，提供意見，甚至協作，本人亦十分歡迎閣下對本應用程式的任何建議，協作申請。本應用程式亦會上架至Google Play。若你希望為此專案提出意見，漏洞，新功能等等，亦歡迎以E-mail或Discord (中國大陸則可使用QQ)方式聯繫。最後，謝謝你的諒解及支持。"
+                            android:textColor="@color/tv_color" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/contact_card"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:visibility="visible"
+                app:cardBackgroundColor="@color/page_bg"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="8dp">
+
+                        <ImageView
+                            android:id="@+id/contact_ico"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_weight="0"
+                            app:srcCompat="@drawable/ic_baseline_language_24" />
+
+                        <TextView
+                            android:id="@+id/contact_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="24dp"
+                            android:layout_weight="0"
+                            android:gravity="center|left"
+                            android:paddingLeft="8dp"
+                            android:text="連結"
+                            android:textColor="@color/tv_color"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/contact_link1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:autoLink="web"
+                        android:text="@string/genshindb_link"
+                        android:textColor="@color/pyro"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/contact_link2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:autoLink="web"
+                        android:text="@string/genshinhelper_link"
+                        android:textColor="@color/pyro"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/contact_link3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:autoLink="web"
+                        android:text="Discord : Voc-夜芷冰#2512"
+                        android:textColor="@color/pyro"
+                        android:textSize="20sp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

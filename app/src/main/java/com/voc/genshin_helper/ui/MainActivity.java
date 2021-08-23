@@ -2,12 +2,17 @@ package com.voc.genshin_helper.ui;
 
 //https://stackoverflow.com/questions/27128425/add-multiple-custom-views-to-layout-programmatically
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -21,19 +26,27 @@ import android.view.WindowManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.RatingBar;
+import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.voc.genshin_helper.BuildConfig;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.Characters;
 import com.voc.genshin_helper.data.CharactersAdapter;
@@ -51,6 +64,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
+import java.util.TimeZone;
 
 
 /**
@@ -98,9 +113,31 @@ public class MainActivity extends AppCompatActivity {
     public List<Characters> charactersList = new ArrayList<>();
     boolean first = true;
 
+    String lang = "en-US";
+
+    RadioButton theme_light;
+    RadioButton theme_night;
+    RadioButton theme_default;
+
+    String[] langList ;
+    String[] serverList ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        if (sharedPreferences.getBoolean("theme_light",true) == true){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }
+        if (sharedPreferences.getBoolean("theme_night",false) == true){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }
+        if (sharedPreferences.getBoolean("theme_default",false) == true){
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+        }
+
         setContentView(R.layout.activity_main);
         //init
         tm = new Today_Material();
@@ -111,10 +148,10 @@ public class MainActivity extends AppCompatActivity {
         home_pg = findViewById(R.id.home_pg);
         weapon_pg = findViewById(R.id.weapon_pg);
         setting_pg = findViewById(R.id.setting_pg);
-        context = this;
 
-        sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
-        editor = sharedPreferences.edit();
+        context = this;
+        serverList = new String[]{getString(R.string.america_ser),getString(R.string.europe_ser),getString(R.string.asia_ser),getString(R.string.hk_tw_mo_ser),getString(R.string.sky_land_ser),getString(R.string.world_tree)};
+
 
         mList = findViewById(R.id.main_list);
         mAdapter = new CharactersAdapter(this, charactersList);
@@ -126,9 +163,37 @@ public class MainActivity extends AppCompatActivity {
         getDOW();
         char_reload();
         weapon_reload();
+        cbg();
 
 
-        nav_view = findViewById(R.id.nav_view);
+        String versionName = BuildConfig.VERSION_NAME + " ("+String.valueOf(BuildConfig.VERSION_CODE)+")";
+
+        TextView info_app_version = findViewById(R.id.info_app_version);
+        info_app_version.setText(versionName);
+
+        theme_light = findViewById(R.id.theme_light);
+        theme_night = findViewById(R.id.theme_dark);
+        theme_default = findViewById(R.id.theme_default);
+
+
+        if (sharedPreferences.getBoolean("theme_light",true) == true){
+            theme_light.setChecked(true);
+            theme_night.setChecked(false);
+            theme_default.setChecked(false);
+        }
+        if (sharedPreferences.getBoolean("theme_night",false) == true){
+            theme_night.setChecked(true);
+            theme_light.setChecked(false);
+            theme_default.setChecked(false);
+        }
+        if (sharedPreferences.getBoolean("theme_default",false) == true){
+            theme_default.setChecked(true);
+            theme_night.setChecked(false);
+            theme_light.setChecked(false);
+        }
+
+
+            nav_view = findViewById(R.id.nav_view);
         nav_view.setSelectedItemId(R.id.navigation_home);
         nav_view.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -356,6 +421,16 @@ public class MainActivity extends AppCompatActivity {
                     char_reload();
                     weapon_reload();
 
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable(){
+
+                        @Override
+                        public void run() {
+                            getDOW();
+                            char_reload();
+                            weapon_reload();
+                        }}, 60000);
+
                     return true;
                 }else if (item.getItemId() == R.id.navigation_weapons){
                     weapon_pg.setVisibility(View.VISIBLE);
@@ -370,11 +445,241 @@ public class MainActivity extends AppCompatActivity {
                     home_pg.setVisibility(View.GONE);
                     weapon_pg.setVisibility(View.GONE);
                     art_pg.setVisibility(View.GONE);
+
+                    // THEME
+
+                    theme_light = findViewById(R.id.theme_light);
+                    theme_night = findViewById(R.id.theme_dark);
+                    theme_default = findViewById(R.id.theme_default);
+
+                    theme_light.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            theme_light.setChecked(true);
+                            theme_night.setChecked(false);
+                            theme_default.setChecked(false);
+
+                            editor.putBoolean("theme_light",true);
+                            editor.putBoolean("theme_night",false);
+                            editor.putBoolean("theme_default",false);
+                            editor.apply();
+
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                        }
+                    });
+                    theme_night.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            theme_light.setChecked(false);
+                            theme_night.setChecked(true);
+                            theme_default.setChecked(false);
+
+                            editor.putBoolean("theme_light",false);
+                            editor.putBoolean("theme_night",true);
+                            editor.putBoolean("theme_default",false);
+                            editor.apply();
+
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                        }
+                    });
+                    theme_default.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            theme_light.setChecked(false);
+                            theme_night.setChecked(false);
+                            theme_default.setChecked(true);
+
+                            editor.putBoolean("theme_light",false);
+                            editor.putBoolean("theme_night",false);
+                            editor.putBoolean("theme_default",true);
+                            editor.apply();
+
+                            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+                        }
+                    });
+                    // Color
+                    ImageView color_bk1,	color_bk2,	color_bk3,	color_bk4,	color_bk5,	color_bk6,	color_bk7,	color_bk8,	color_bk9,	color_bk10,	color_bk11,	color_bk12,	color_bk13,	color_bk14,	color_bk15,	color_bk16,	color_bk17,	color_bk18;
+                    color_bk1	 = findViewById ( R.id.	color_block1);
+                    color_bk2	 = findViewById ( R.id.	color_block2);
+                    color_bk3	 = findViewById ( R.id.	color_block3);
+                    color_bk4	 = findViewById ( R.id.	color_block4);
+                    color_bk5	 = findViewById ( R.id.	color_block5);
+                    color_bk6	 = findViewById ( R.id.	color_block6);
+                    color_bk7	 = findViewById ( R.id.	color_block7);
+                    color_bk8	 = findViewById ( R.id.	color_block8);
+                    color_bk9	 = findViewById ( R.id.	color_block9);
+                    color_bk10	 = findViewById ( R.id.	color_block10);
+                    color_bk11	 = findViewById ( R.id.	color_block11);
+                    color_bk12	 = findViewById ( R.id.	color_block12);
+                    color_bk13	 = findViewById ( R.id.	color_block13);
+                    color_bk14	 = findViewById ( R.id.	color_block14);
+                    color_bk15	 = findViewById ( R.id.	color_block15);
+                    color_bk16	 = findViewById ( R.id.	color_block16);
+                    color_bk17	 = findViewById ( R.id.	color_block17);
+                    color_bk18	 = findViewById ( R.id.	color_block18);
+
+                    color_bk1.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk1,0); }});
+                    color_bk2.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk2,1); }});
+                    color_bk3.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk3,2); }});
+                    color_bk4.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk4,3); }});
+                    color_bk5.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk5,4); }});
+                    color_bk6.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk6,5); }});
+                    color_bk7.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk7,6); }});
+                    color_bk8.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk8,7); }});
+                    color_bk9.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk9,8); }});
+                    color_bk10.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk10,9); }});
+                    color_bk11.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk11,10); }});
+                    color_bk12.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk12,11); }});
+                    color_bk13.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk13,12); }});
+                    color_bk14.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk14,13); }});
+                    color_bk15.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk15,14); }});
+                    color_bk16.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk16,15); }});
+                    color_bk17.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk17,16); }});
+                    color_bk18.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk18,17); }});
+
+
+
+                    // Translate
+                    langList = new String[]{getString(R.string.zh_tw),getString(R.string.en_us)};
+                    ArrayAdapter lang_aa = new ArrayAdapter(context,R.layout.spinner_item,langList);
+                    lang_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
+
+                    Spinner lang_sp = findViewById(R.id.lang_spinner);
+                    lang_sp.setAdapter(lang_aa);
+
+                    lang_sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            // ZH-TW
+                            if(position == 0){
+                                setLocale(MainActivity.this,"zh");
+                                editor.putString("curr_lang","zh-HK");
+                                editor.putInt("curr_lang_pos",0);
+                                editor.apply();
+                                Log.wtf("LANG_EDIT","zh-HK");
+                            }else if(position == 1){
+                                setLocale(MainActivity.this,"en");
+                                editor.putString("curr_lang","en-US");
+                                editor.putInt("curr_lang_pos",1);
+                                editor.apply();
+                                Log.wtf("LANG_EDIT","en-US");
+                            }
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
+
+                    // Other -> Server Location
+
+                    ArrayAdapter server_aa = new ArrayAdapter(context,R.layout.spinner_item,serverList);
+                    server_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
+
+                    Spinner server_spinner = findViewById(R.id.server_spinner);
+                    server_spinner.setAdapter(server_aa);
+                    server_spinner.setSelection(sharedPreferences.getInt("serverPos",0));
+
+                    server_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            if(position == 0){
+                                editor.putString("serverLocation","America");
+                                editor.apply();
+                            }else if (position == 1){
+                                editor.putString("serverLocation","Europe");
+                                editor.apply();
+                            }else if (position == 2){
+                                editor.putString("serverLocation","Asia");
+                                editor.apply();
+                            }else if (position == 3){
+                                editor.putString("serverLocation","HK_TW_MO");
+                                editor.apply();
+                            }else if (position == 4){
+                                editor.putString("serverLocation","天空島");
+                                editor.apply();
+                            }else if (position == 5){
+                                editor.putString("serverLocation","世界樹");
+                                editor.apply();
+                            }
+
+                            editor.putInt("serverPos",position);
+                            editor.apply();
+                            getDOW();
+                            char_reload();
+                            weapon_reload();
+                            cbg();
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
+
                     return true;
                 }else {
                     return false;}
             }
         });
+    }
+
+    private void giveTickById(ImageView color_bk,int pos) {
+        ImageView color_bk1,	color_bk2,	color_bk3,	color_bk4,	color_bk5,	color_bk6,	color_bk7,	color_bk8,	color_bk9,	color_bk10,	color_bk11,	color_bk12,	color_bk13,	color_bk14,	color_bk15,	color_bk16,	color_bk17,	color_bk18;
+        color_bk1	 = findViewById ( R.id.	color_block1);
+        color_bk2	 = findViewById ( R.id.	color_block2);
+        color_bk3	 = findViewById ( R.id.	color_block3);
+        color_bk4	 = findViewById ( R.id.	color_block4);
+        color_bk5	 = findViewById ( R.id.	color_block5);
+        color_bk6	 = findViewById ( R.id.	color_block6);
+        color_bk7	 = findViewById ( R.id.	color_block7);
+        color_bk8	 = findViewById ( R.id.	color_block8);
+        color_bk9	 = findViewById ( R.id.	color_block9);
+        color_bk10	 = findViewById ( R.id.	color_block10);
+        color_bk11	 = findViewById ( R.id.	color_block11);
+        color_bk12	 = findViewById ( R.id.	color_block12);
+        color_bk13	 = findViewById ( R.id.	color_block13);
+        color_bk14	 = findViewById ( R.id.	color_block14);
+        color_bk15	 = findViewById ( R.id.	color_block15);
+        color_bk16	 = findViewById ( R.id.	color_block16);
+        color_bk17	 = findViewById ( R.id.	color_block17);
+        color_bk18	 = findViewById ( R.id.	color_block18);
+
+        color_bk1.setForeground(getResources().getDrawable(android.R.color.transparent));
+        color_bk2.setForeground(getResources().getDrawable(android.R.color.transparent));
+        color_bk3.setForeground(getResources().getDrawable(android.R.color.transparent));
+        color_bk4.setForeground(getResources().getDrawable(android.R.color.transparent));
+        color_bk5.setForeground(getResources().getDrawable(android.R.color.transparent));
+        color_bk6.setForeground(getResources().getDrawable(android.R.color.transparent));
+        color_bk7.setForeground(getResources().getDrawable(android.R.color.transparent));
+        color_bk8.setForeground(getResources().getDrawable(android.R.color.transparent));
+        color_bk9.setForeground(getResources().getDrawable(android.R.color.transparent));
+        color_bk10.setForeground(getResources().getDrawable(android.R.color.transparent));
+        color_bk11.setForeground(getResources().getDrawable(android.R.color.transparent));
+        color_bk12.setForeground(getResources().getDrawable(android.R.color.transparent));
+        color_bk13.setForeground(getResources().getDrawable(android.R.color.transparent));
+        color_bk14.setForeground(getResources().getDrawable(android.R.color.transparent));
+        color_bk15.setForeground(getResources().getDrawable(android.R.color.transparent));
+        color_bk16.setForeground(getResources().getDrawable(android.R.color.transparent));
+        color_bk17.setForeground(getResources().getDrawable(android.R.color.transparent));
+        color_bk18.setForeground(getResources().getDrawable(android.R.color.transparent));
+        color_bk.setForeground(getResources().getDrawable(R.drawable.ic_tick_img));
+
+        int[] colorList = new int[]{R.color.color_theme_1,	R.color.color_theme_2,	R.color.color_theme_3,	R.color.color_theme_4,	R.color.color_theme_5,	R.color.color_theme_6,	R.color.color_theme_7,	R.color.color_theme_8,	R.color.color_theme_9,	R.color.color_theme_10,	R.color.color_theme_11,	R.color.color_theme_12,	R.color.color_theme_13,	R.color.color_theme_14,	R.color.color_theme_15,	R.color.color_theme_16,	R.color.color_theme_17,	R.color.color_theme_18};
+        editor.putString("theme_color_hex",getResources().getString(colorList[pos]));
+        editor.apply();
+        cbg();
+    }
+
+    //https://stackoverflow.com/questions/2900023/change-app-language-programmatically-in-android
+    public static void setLocale(Activity activity, String languageCode) {
+        Locale locale = new Locale(languageCode);
+        Locale.setDefault(locale);
+        Resources resources = activity.getResources();
+        Configuration config = resources.getConfiguration();
+        config.setLocale(locale);
+        resources.updateConfiguration(config, resources.getDisplayMetrics());
     }
 
     public void home (){
@@ -557,6 +862,27 @@ public class MainActivity extends AppCompatActivity {
 
     public void getDOW (){
         Calendar c = Calendar.getInstance();
+        int position = 0;
+        String location = sharedPreferences.getString("serverLocation","HK_TW_MO");
+        if(location.equals("America")){
+            c.setTimeZone(TimeZone.getTimeZone("GMT-5"));
+            position = 0;
+        }else if(location.equals("Europe")){
+            c.setTimeZone(TimeZone.getTimeZone("GMT+1"));
+            position = 1;
+        }else if(location.equals("Asia")){
+            c.setTimeZone(TimeZone.getTimeZone("GMT+8"));
+            position = 2;
+        }else if(location.equals("HK_TW_MO")){
+            c.setTimeZone(TimeZone.getTimeZone("GMT+8"));
+            position = 3;
+        }else if(location.equals("天空島")){
+            c.setTimeZone(TimeZone.getTimeZone("GMT+8"));
+            position = 4;
+        }else if(location.equals("世界樹")){
+            c.setTimeZone(TimeZone.getTimeZone("GMT+8"));
+            position = 5;
+        }
         dow = c.get(Calendar.DAY_OF_WEEK);
 
         TextView home_date_tv = findViewById(R.id.home_date_tv);
@@ -567,6 +893,10 @@ public class MainActivity extends AppCompatActivity {
         if(dow == 5){home_date_tv.setText("【"+getString(R.string.thursday)+"】");}
         if(dow == 6){home_date_tv.setText("【"+getString(R.string.friday)+"】");}
         if(dow == 7){home_date_tv.setText("【"+getString(R.string.saturday)+"】");}
+
+
+        TextView home_f_date_tv = findViewById(R.id.home_f_date_tv);
+        home_f_date_tv.setText(serverList[position]);
 
     }
 
@@ -609,5 +939,87 @@ public class MainActivity extends AppCompatActivity {
         Log.wtf("YES","IT's two");
         cif.setup(String.valueOf(name),context);
     }
+
+    public void cbg() {
+        SharedPreferences sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
+        String color_hex = sharedPreferences.getString("theme_color_hex","#FF5A5A"); // Must include #
+
+        ColorStateList myList = new ColorStateList(
+                new int[][]{
+                        new int[]{android.R.attr.state_pressed},
+                        new int[]{-android.R.attr.state_checked},
+                        new int[]{android.R.attr.state_checked},
+                },
+                new int[] {
+                        context.getResources().getColor(R.color.tv_color),
+                        context.getResources().getColor(R.color.tv_color),
+                        Color.parseColor(color_hex)
+                }
+        );
+
+        //Color.parseColor(color_hex)
+        //getResources().getColor(R.color.idname);
+
+
+        // R.layout.fragment_char
+        EditText char_et = findViewById(R.id.char_et);
+        char_et.setTextColor(Color.parseColor(color_hex));
+
+        // R.layout.fragment_art
+
+        // R.layout.fragment_home
+        TextView home_f_date_tv = findViewById(R.id.home_f_date_tv);
+        TextView home_title_tv = findViewById(R.id.home_title_tv);
+        TextView home_date_tv = findViewById(R.id.home_date_tv);
+        TextView char_tv = findViewById(R.id.char_tv);
+        TextView weapon_tv = findViewById(R.id.weapon_tv);
+        TextView tool_tv = findViewById(R.id.tool_tv);
+        TextView calculator_tv = findViewById(R.id.calculator_tv);
+        TextView daily_login_tv = findViewById(R.id.daily_login_tv);
+        TextView map_tv = findViewById(R.id.map_tv);
+        TextView alarm_tv = findViewById(R.id.alarm_tv);
+        TextView x_tv = findViewById(R.id.x_tv);
+        TextView y_tv = findViewById(R.id.y_tv);
+        BottomNavigationView nav_view = findViewById(R.id.nav_view);
+
+        home_f_date_tv.setTextColor(Color.parseColor(color_hex));
+        home_title_tv.setTextColor(Color.parseColor(color_hex));
+        home_date_tv.setTextColor(Color.parseColor(color_hex));
+        char_tv.setTextColor(Color.parseColor(color_hex));
+        weapon_tv.setTextColor(Color.parseColor(color_hex));
+        tool_tv.setTextColor(Color.parseColor(color_hex));
+        calculator_tv.setTextColor(Color.parseColor(color_hex));
+        daily_login_tv.setTextColor(Color.parseColor(color_hex));
+        map_tv.setTextColor(Color.parseColor(color_hex));
+        alarm_tv.setTextColor(Color.parseColor(color_hex));
+        x_tv.setTextColor(Color.parseColor(color_hex));
+        y_tv.setTextColor(Color.parseColor(color_hex));
+        nav_view.setItemIconTintList(myList);
+        nav_view.setItemTextColor(myList);
+
+        // R.layout.fragment_weapon
+
+        // R.layout.fragment_setting
+        RadioButton theme_light = findViewById(R.id.theme_light);
+        RadioButton theme_dark = findViewById(R.id.theme_dark);
+        RadioButton theme_default = findViewById(R.id.theme_default);
+
+        theme_light.setButtonTintList(myList);
+        theme_dark.setButtonTintList(myList);
+        theme_default.setButtonTintList(myList);
+
+    }
+
+    @Override
+    public void recreate() {
+            finish();
+        overridePendingTransition(R.anim.fade_in,
+                R.anim.fade_in);
+        startActivity(getIntent());
+        overridePendingTransition(R.anim.fade_out,
+                R.anim.fade_out);
+
+    }
+
 
 }

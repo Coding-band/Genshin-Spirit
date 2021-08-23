@@ -22,6 +22,7 @@ import com.voc.genshin_helper.ui.AlarmUI;
 import com.voc.genshin_helper.ui.MainActivity;
 
 import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 import static com.voc.genshin_helper.data.RoundRectImageView.getRoundBitmapByShader;
@@ -60,17 +61,22 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmAdapter.ViewHolder> 
         Log.wtf("CHAR", String.valueOf(alarmList.size()));
         SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy/MM/dd HH:mm");
 
-        sharedPreferences = context.getSharedPreferences("user_info",Context.MODE_PRIVATE);
-        long alarm_cnt = sharedPreferences.getLong("alarm_cnt",0);
-        for(long x = 0 ; x < alarm_cnt ; x ++){
-            Alarm alarms = new Alarm();
-            alarms.setTitle(sharedPreferences.getString("alarm"+String.valueOf(x)+"_title","GenshinHpeler"));
-            // CONTINUE TMR ...
+        holder.ui_title.setText(alarm.getTitle());
+
+        long FinishTEMP = (long) (alarm.getFinish_time()/1000);
+        Date FinishDATE = new java.util.Date(FinishTEMP*1000L);
+        String FinishSTR = new SimpleDateFormat("yyyy/MM/dd HH:mm").format(FinishDATE);
+        holder.ui_finish_time.setText(FinishSTR);
+
+        if(alarm.getFinish_time() - System.currentTimeMillis() >0){
+            holder.ui_time.setText(FormatTime((alarm.getFinish_time() - System.currentTimeMillis())/1000));
+        }else {
+            holder.ui_time.setText("Finished !");
         }
 
-        holder.ui_title.setText(alarm.getTitle());
-        holder.ui_finish_time.setText(simpleDateFormat.format(alarm.getFinish_time()));
-        holder.ui_time.setText(simpleDateFormat.format(alarm.getRemain_time()));
+
+        holder.ui_int.setText(String.valueOf(alarm.getId()));
+        Log.w("UI_INT"+String.valueOf(position),String.valueOf(alarm.getId()));
 
         if(alarm.getType() == R.string.alarm_t1){
             holder.ui_progress.setVisibility(View.GONE);
@@ -93,28 +99,28 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmAdapter.ViewHolder> 
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView ui_title,ui_time,ui_progress,ui_finish_time;
+        public TextView ui_title,ui_time,ui_progress,ui_finish_time,ui_int;
         public ImageView ui_ico;
         public LinearLayout ui_ll;
 
 
         public ViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
-
             ui_ll = itemView.findViewById(R.id.ui_ll);
             ui_title = itemView.findViewById(R.id.ui_title);
             ui_time = itemView.findViewById(R.id.ui_time);
             ui_progress = itemView.findViewById(R.id.ui_progress);
             ui_finish_time = itemView.findViewById(R.id.ui_finish_time);
             ui_ico = itemView.findViewById(R.id.ui_ico);
-
+            ui_int = itemView.findViewById(R.id.ui_int);
             ui_ll.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Log.wtf("is context instanceof AlarmUI ?",context.getPackageName());
-                    if (context instanceof AlarmUI){Log.wtf("YES","IT's");
-                      //  (((AlarmUI) context)).startInfo(String.valueOf(char_base_name.getText()));
+                    if (context instanceof AlarmUI){
+                        Log.wtf("YES","IT's");
 
+                        (((AlarmUI) context)).type_edit(Integer.parseInt(String.valueOf(ui_int.getText())),getLayoutPosition());
                     }
                 }
             });
@@ -124,5 +130,21 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmAdapter.ViewHolder> 
     public void filterList(List<Alarm> filteredList) {
         alarmList = filteredList;
         notifyDataSetChanged();
+    }
+    public String FormatTime (Long time){
+        String Time_String = "";
+        if (time >0){
+            long days = time / 86400;
+            long hours = time / 3600;
+            long minutes = (time % 3600) / 60;
+            long seconds = time % 60;
+
+            if(days<1){Time_String = String.format("%02d:%02d:%02d", hours, minutes, seconds);
+            }else {
+                Time_String = String.format("%02dd , %02d:%02d:%02d", days , hours, minutes, seconds);
+            }
+            return Time_String;
+        }
+        return "Finished !";
     }
 }

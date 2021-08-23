@@ -19,6 +19,7 @@ public class ReminderBroadcast extends BroadcastReceiver {
 
     String title = "Genshin Helper";
     String info = "Genshin Helper info";
+    long alarm_count = -1;
 
     @Override
     public void onReceive(Context context, Intent intent) {
@@ -27,6 +28,7 @@ public class ReminderBroadcast extends BroadcastReceiver {
 
         if( bundle.getString("title") != null){title =  bundle.getString("title");}
         if( bundle.getString("info") != null){info =  bundle.getString("info");}
+        if( bundle.getLong("alarm_count") != -1){alarm_count =  bundle.getLong("alarm_count");}
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(context, "GenshinHelper")
                 .setSmallIcon(R.drawable.app_ico)
@@ -35,6 +37,6 @@ public class ReminderBroadcast extends BroadcastReceiver {
                 .setPriority(NotificationCompat.PRIORITY_DEFAULT);
 
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(context);
-        notificationManager.notify(2048,builder.build());
+        notificationManager.notify((int) alarm_count,builder.build());
     }
 }

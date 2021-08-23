@@ -20,7 +20,7 @@
         android:layout_height="wrap_content"
         android:text="「詩文」的教導"
         android:textAlignment="center"
-        android:textColor="@color/tv_color"
+        android:textColor="@color/white"
         android:textSize="16sp" />
 
     <TextView
@@ -30,7 +30,7 @@
         android:layout_marginBottom="8dp"
         android:text="逢星期三,六,日刷新"
         android:textAlignment="center"
-        android:textColor="@color/tv_color"
+        android:textColor="@color/white"
         android:textSize="12sp" />
 
 </LinearLayout>

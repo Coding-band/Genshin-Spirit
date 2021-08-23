@@ -35,14 +35,14 @@
             android:id="@+id/char_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:singleLine="true"
-            android:text="可莉"
             android:shadowColor="@color/black"
             android:shadowDx="2"
-            android:shadowRadius="2"
             android:shadowDy="2"
+            android:shadowRadius="2"
+            android:singleLine="true"
+            android:text="可莉"
             android:textAlignment="center"
-            android:textColor="@color/tv_color"
+            android:textColor="@color/white"
             android:textSize="16sp" />
 
         <RatingBar

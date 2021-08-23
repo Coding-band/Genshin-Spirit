@@ -33,10 +33,12 @@
             android:id="@+id/alarm_title"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="2"
             android:gravity="center|left"
             android:text="編輯提醒"
             android:textColor="@color/tv_color"
             android:textSize="20sp" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -61,24 +63,160 @@
             android:layout_marginBottom="8dp"
             android:orientation="horizontal">
 
-            <TextView
+            <Spinner
                 android:id="@+id/alarm_type_tv"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="48dp"
                 android:layout_weight="1"
                 android:background="@color/page_bg"
-                android:popupBackground="@drawable/bg_less_edge" />
+                android:popupBackground="@drawable/bg_less_edge"
+                android:spinnerMode="dropdown" />
 
             <EditText
                 android:id="@+id/alarm_count_et"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_weight="2"
                 android:ems="3"
                 android:hint="請輸入目前數目"
                 android:inputType="number"
                 android:singleLine="true"
-                android:textColor="@color/tv_color" />
+                android:textColor="@color/tv_color"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/alarm_custom_ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/alarm_time_picker_ask"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|left"
+                android:text="提醒時間"
+                android:textColor="@color/tv_color"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/alarm_time_picker"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="2021/08/20 14:17:00"
+                android:textColor="@color/tv_color"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/alarm_jb_ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/alarm_jb_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|left"
+                android:text="提醒時間"
+                android:textColor="@color/tv_color"
+                android:textSize="14sp" />
+
+            <Spinner
+                android:id="@+id/alarm_jb_time_tv"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_weight="0"
+                android:background="@color/page_bg"
+                android:popupBackground="@drawable/bg_less_edge"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/alarm_ph_ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/alarm_ph_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center|left"
+                android:text="派遣時間"
+                android:textColor="@color/tv_color"
+                android:textSize="14sp" />
+
+            <Spinner
+                android:id="@+id/alarm_ph_time_tv"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_weight="0"
+                android:background="@color/page_bg"
+                android:popupBackground="@drawable/bg_less_edge"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/alarm_dtbc_ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/alarm_time_coin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center|left"
+                    android:text="洞天仙力"
+                    android:textColor="@color/tv_color"
+                    android:textSize="14sp" />
+
+                <Spinner
+                    android:id="@+id/alarm_coin_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/page_bg"
+                    android:popupBackground="@drawable/bg_less_edge"
+                    android:spinnerMode="dropdown" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/alarm_time_coin2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center|left"
+                    android:text="信任等階"
+                    android:textColor="@color/tv_color"
+                    android:textSize="14sp" />
+
+                <Spinner
+                    android:id="@+id/alarm_coin_tv2"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@color/page_bg"
+                    android:popupBackground="@drawable/bg_less_edge"
+                    android:spinnerMode="dropdown" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -102,6 +240,7 @@
                 android:layout_height="48dp"
                 android:hint="請輸入標題"
                 android:singleLine="true"
+                android:textColor="@color/tv_color"
                 android:textSize="16sp" />
         </LinearLayout>
 
@@ -126,17 +265,39 @@
                 android:layout_height="48dp"
                 android:hint="請輸入標題"
                 android:singleLine="true"
+                android:textColor="@color/tv_color"
                 android:textSize="16sp" />
         </LinearLayout>
 
-        <Switch
-            android:id="@+id/alarm_use_switch"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:checked="true"
-            android:text="使用此通知"
-            android:textColor="@color/tv_color" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Switch
+                android:id="@+id/alarm_25_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="時間減少25%"
+                android:textColor="@color/tv_color" />
+
+            <Switch
+                android:id="@+id/alarm_use_switch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="使用此通知"
+                android:textColor="@color/tv_color" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -152,7 +313,17 @@
                 android:layout_weight="1"
                 android:background="@drawable/bg_square_border"
                 android:text="@android:string/cancel"
-                android:textColor="@color/teal_200" />
+                android:textColor="@color/theme_color" />
+
+            <Button
+                android:id="@+id/alarm_delete"
+                android:layout_width="72dp"
+                android:layout_height="36dp"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_square_cancel_colorful"
+                android:text="刪除"
+                android:textColor="@color/tv_color" />
 
             <Button
                 android:id="@+id/alarm_ok"

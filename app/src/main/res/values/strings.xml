@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">原神小幫手</string>
+    <string name="app_name">Genshin Helper</string>
     <string name="title_char">Characters</string>
     <string name="title_artifacts">Artifacts</string>
     <string name="title_home">Home</string>
@@ -104,5 +104,23 @@
     <string name="alarm_time2">8hrs</string>
     <string name="alarm_time3">12hrs</string>
     <string name="alarm_time4">20hrs</string>
+    <string name="jb_title">[Genshin Helper] Hi ~ It\'s time to do boss mission!</string>
+    <string name="common_info">Don\'t forget to do it before reset</string>
+    <string name="daily_mission_title">[Genshin Helper] Hi ~ Have u finished the daily mission yet?</string>
+    <string name="dtbc_title">[Genshin Helper] Hi ~ Your realm currency has already fulled, remember to claim them ~</string>
+    <string name="ph_title">[Genshin Helper] Hi ~ the expedition has already finished</string>
+    <string name="ph_info">Let\'s see what he/she found ~</string>
+    <string name="dtbc_info">Ehm... If you don\'t need them, then I will take them away ~</string>
+    <string name="resin_title">[Genshin Helper] Hi ~ Your resin has already fulled, remember to use them~</string>
+    <string name="america_ser" translatable="false">America</string>
+    <string name="europe_ser" translatable="false">Europe</string>
+    <string name="asia_ser" translatable="false">Asia</string>
+    <string name="hk_tw_mo_ser" translatable="false">HK、TW、MO</string>
+    <string name="sky_land_ser" translatable="false">天空岛服</string>
+    <string name="world_tree" translatable="false">世界树服</string>
+    <string name="zh_tw" translatable="false">繁體中文 (港、澳、台)</string>
+    <string name="en_us" translatable="false">English (US)</string>
+    <string name="genshindb_link"><a href="https://github.com/Wolfteam/GenshinDb">GenshinDb Github</a></string>
+    <string name="genshinhelper_link"><a href="https://github.com/Wolfteam/GenshinDb">Genshin Helper Github</a></string>
 
 </resources>

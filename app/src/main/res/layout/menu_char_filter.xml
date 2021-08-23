@@ -133,6 +133,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_weight="1"
+            app:tint="@color/tv_color"
             app:srcCompat="@drawable/ico_sword" />
 
         <ImageView
@@ -140,6 +141,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_weight="1"
+            app:tint="@color/tv_color"
             app:srcCompat="@drawable/ico_claymore" />
 
         <ImageView
@@ -147,6 +149,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_weight="1"
+            app:tint="@color/tv_color"
             app:srcCompat="@drawable/ico_polearm" />
 
         <ImageView
@@ -154,6 +157,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_weight="1"
+            app:tint="@color/tv_color"
             app:srcCompat="@drawable/ico_bow" />
 
         <ImageView
@@ -161,6 +165,7 @@
             android:layout_width="32dp"
             android:layout_height="32dp"
             android:layout_weight="1"
+            app:tint="@color/tv_color"
             app:srcCompat="@drawable/ico_catalyst" />
     </LinearLayout>
 
@@ -198,7 +203,7 @@
             android:layout_weight="0"
             android:background="@drawable/bg_square_border"
             android:text="@android:string/cancel"
-            android:textColor="@color/teal_200" />
+            android:textColor="@color/theme_color" />
 
         <Button
             android:id="@+id/menu_reset"
@@ -208,7 +213,7 @@
             android:layout_weight="0"
             android:background="@drawable/bg_square_border"
             android:text="重設"
-            android:textColor="@color/teal_200" />
+            android:textColor="@color/theme_color" />
 
         <Button
             android:id="@+id/menu_ok"

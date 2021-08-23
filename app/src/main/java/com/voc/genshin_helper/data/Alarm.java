@@ -16,12 +16,13 @@ public class Alarm {
     public int lvl; //信任等階
     public int grade; //洞天仙力
     public int count; //洞天仙力
+    public long id;
 
     public Alarm() {
 
     }
 
-    public Alarm(String title, String info, int type, long finish_time , int jb_time, int ph_time, int lvl, int grade ,long remain_time, int count) {
+    public Alarm(String title, String info, int type, long finish_time , int jb_time, int ph_time, int lvl, int grade ,long remain_time, int count, long id) {
         this.title = title;
         this.info = info;
         this.type = type;
@@ -32,6 +33,7 @@ public class Alarm {
         this.grade = grade;
         this.remain_time = remain_time;
         this.count = count;
+        this.id = id;
     }
 
     public String getTitle() {
@@ -111,6 +113,13 @@ public class Alarm {
 
     public void setCount(int count) {
         this.count = count;
+    }
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
 
