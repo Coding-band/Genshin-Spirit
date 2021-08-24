@@ -61,7 +61,6 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
     public void onBindViewHolder(ViewHolder holder, int position) {
         Characters Characters = charactersList.get(position);
         Characters_Rss characters_rss = new Characters_Rss();
-        Log.wtf("CHAR", String.valueOf(charactersList.size()));
         int width , height;
         int count = 3;
 
@@ -76,13 +75,13 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
         if(Characters.getRare() >3 && Characters.getRare() < 6){holder.char_star.setNumStars(Characters.getRare());holder.char_star.setRating(Characters.getRare());}
 
-        if(Characters.getElement().equals("Anemo")){holder.char_element.setImageResource(R.drawable.anemo);holder.char_icon.setBackgroundResource(R.drawable.bg_anemo_char);holder.char_nl.setBackgroundResource(R.drawable.bg_anemo_char);}
-        if(Characters.getElement().equals("Cryo")){holder.char_element.setImageResource(R.drawable.cryo);holder.char_icon.setBackgroundResource(R.drawable.bg_cryo_char);holder.char_nl.setBackgroundResource(R.drawable.bg_cryo_char);}
-        if(Characters.getElement().equals("Electro")){holder.char_element.setImageResource(R.drawable.electro);holder.char_icon.setBackgroundResource(R.drawable.bg_electro_char);holder.char_nl.setBackgroundResource(R.drawable.bg_electro_char);}
-        if(Characters.getElement().equals("Geo")){holder.char_element.setImageResource(R.drawable.geo);holder.char_icon.setBackgroundResource(R.drawable.bg_geo_char);holder.char_nl.setBackgroundResource(R.drawable.bg_geo_char);}
-        if(Characters.getElement().equals("Hydro")){holder.char_element.setImageResource(R.drawable.hydro);holder.char_icon.setBackgroundResource(R.drawable.bg_hydro_char);holder.char_nl.setBackgroundResource(R.drawable.bg_hydro_char);}
-        if(Characters.getElement().equals("Pyro")){holder.char_element.setImageResource(R.drawable.pyro);holder.char_icon.setBackgroundResource(R.drawable.bg_pyro_char);holder.char_nl.setBackgroundResource(R.drawable.bg_pyro_char);}
-        if(Characters.getElement().equals("Dendro")){holder.char_element.setImageResource(R.drawable.dendro);holder.char_icon.setBackgroundResource(R.drawable.bg_dendro_char);holder.char_nl.setBackgroundResource(R.drawable.bg_dendro_char);}
+        if(Characters.getElement().equals("Anemo")){holder.char_element.setImageResource(R.drawable.anemo);holder.char_icon.setBackgroundResource(R.drawable.bg_anemo_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_anemo_char);}
+        if(Characters.getElement().equals("Cryo")){holder.char_element.setImageResource(R.drawable.cryo);holder.char_icon.setBackgroundResource(R.drawable.bg_cryo_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_cryo_char);}
+        if(Characters.getElement().equals("Electro")){holder.char_element.setImageResource(R.drawable.electro);holder.char_icon.setBackgroundResource(R.drawable.bg_electro_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_electro_char);}
+        if(Characters.getElement().equals("Geo")){holder.char_element.setImageResource(R.drawable.geo);holder.char_icon.setBackgroundResource(R.drawable.bg_geo_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_geo_char);}
+        if(Characters.getElement().equals("Hydro")){holder.char_element.setImageResource(R.drawable.hydro);holder.char_icon.setBackgroundResource(R.drawable.bg_hydro_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_hydro_char);}
+        if(Characters.getElement().equals("Pyro")){holder.char_element.setImageResource(R.drawable.pyro);holder.char_icon.setBackgroundResource(R.drawable.bg_pyro_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_pyro_char);}
+        if(Characters.getElement().equals("Dendro")){holder.char_element.setImageResource(R.drawable.dendro);holder.char_icon.setBackgroundResource(R.drawable.bg_dendro_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_dendro_char);}
 
         Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),characters_rss.getCharByName(Characters.getName())[0]);
         holder.char_icon.getLayoutParams().width = width;

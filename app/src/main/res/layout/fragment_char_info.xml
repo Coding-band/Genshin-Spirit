@@ -338,7 +338,8 @@
                 <include
                     layout="@layout/item_char_battle_talent"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:visibility="visible" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -373,7 +374,8 @@
                 <include
                     layout="@layout/item_char_basic_talent"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:visibility="visible" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -408,7 +410,44 @@
                 <include
                     layout="@layout/item_char_sof"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    android:visibility="visible" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0"
+                        android:adjustViewBounds="true"
+                        app:srcCompat="@drawable/primogem" />
+
+                    <TextView
+                        android:id="@+id/info_advice"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="8dp"
+                        android:text="推薦"
+                        android:textColor="@color/tv_color"
+                        android:textSize="24sp" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/barrier5"
+                    android:layout_width="match_parent"
+                    android:layout_height="5dp"
+                    android:layout_margin="2dp"
+                    android:background="@color/tv_color" />
+
+                <include
+                    layout="@layout/fragment_advice"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="visible" />
 
             </LinearLayout>
 

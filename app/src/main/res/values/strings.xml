@@ -112,15 +112,22 @@
     <string name="ph_info">Let\'s see what he/she found ~</string>
     <string name="dtbc_info">Ehm... If you don\'t need them, then I will take them away ~</string>
     <string name="resin_title">[Genshin Helper] Hi ~ Your resin has already fulled, remember to use them~</string>
-    <string name="america_ser" translatable="false">America</string>
-    <string name="europe_ser" translatable="false">Europe</string>
-    <string name="asia_ser" translatable="false">Asia</string>
-    <string name="hk_tw_mo_ser" translatable="false">HK、TW、MO</string>
-    <string name="sky_land_ser" translatable="false">天空岛服</string>
-    <string name="world_tree" translatable="false">世界树服</string>
+    <string name="america_ser">America</string>
+    <string name="europe_ser">Europe</string>
+    <string name="asia_ser">Asia</string>
+    <string name="hk_tw_mo_ser">HK、TW、MO</string>
+    <string name="sky_land_ser">天空岛服</string>
+    <string name="world_tree">世界树服</string>
     <string name="zh_tw" translatable="false">繁體中文 (港、澳、台)</string>
     <string name="en_us" translatable="false">English (US)</string>
     <string name="genshindb_link"><a href="https://github.com/Wolfteam/GenshinDb">GenshinDb Github</a></string>
     <string name="genshinhelper_link"><a href="https://github.com/Vocaloid2048/GenshinHelper">Genshin Helper Github</a></string>
+    <string name="press_exit">Press again to exit app</string>
+    <string name="vote_title">Please help for rate this app~</string>
+    <string name="vote_info">If you like Genshin Helper, please take a moment to help comment~ Your little help will be of great help to me, and it will not take you a lot of time.</string>
+    <string name="vote_help">Help for rate</string>
+    <string name="vote_no">No</string>
+    <string name="vote_later">Later</string>
+    <string name="copied">Copied</string>
 
 </resources>

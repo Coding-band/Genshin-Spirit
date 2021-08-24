@@ -4,16 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/page_bg"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:overScrollMode="never"
+    android:scrollbars="none">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:overScrollMode="never"
+        android:scrollbars="none">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical"
+            android:overScrollMode="never"
+            android:scrollbars="none">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/theme_card"
@@ -427,6 +434,16 @@
                             android:textSize="16sp" />
                     </LinearLayout>
 
+                    <Switch
+                        android:id="@+id/switch1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:checked="true"
+                        android:text="@string/press_exit"
+                        android:textColor="@color/tv_color" />
+
                     <TextView
                         android:id="@+id/textView4"
                         android:layout_width="match_parent"
@@ -635,6 +652,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
                         android:text="@string/genshindb_link"
+                        android:textAlignment="center"
                         android:textColor="@color/pyro"
                         android:textSize="20sp" />
 
@@ -644,6 +662,7 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
                         android:text="@string/genshinhelper_link"
+                        android:textAlignment="center"
                         android:textColor="@color/pyro"
                         android:textSize="20sp" />
 
@@ -652,8 +671,27 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:autoLink="web"
                         android:text="Discord : Voc-夜芷冰#2512"
+                        android:textAlignment="center"
+                        android:textColor="@color/tv_color"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/contact_link4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="Email : voc.app.programmer@gmail.com"
+                        android:textAlignment="center"
+                        android:textColor="@color/tv_color"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/contact_link5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="QQ : 822001886"
                         android:textAlignment="center"
                         android:textColor="@color/tv_color"
                         android:textSize="20sp" />

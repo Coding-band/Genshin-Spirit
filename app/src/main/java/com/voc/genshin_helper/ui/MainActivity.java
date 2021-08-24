@@ -4,13 +4,17 @@ package com.voc.genshin_helper.ui;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.ClipData;
+import android.content.ClipboardManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
@@ -19,6 +23,7 @@ import android.text.method.LinkMovementMethod;
 import android.text.util.Linkify;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -41,6 +46,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.core.content.ContextCompat;
@@ -90,6 +96,8 @@ public class MainActivity extends AppCompatActivity {
     View char_pg,art_pg,home_pg,weapon_pg,setting_pg;
 
     int dow = 0;
+    int exit = 0;
+    int app_started = 0;
 
     Context context;
 
@@ -167,6 +175,14 @@ public class MainActivity extends AppCompatActivity {
         weapon_reload();
         cbg();
         setColorBk();
+
+        app_started = sharedPreferences.getInt("app_started",1);
+        boolean voted = sharedPreferences.getBoolean("voted",false);
+        if(voted == false && app_started >= 5){
+            showVoteDialog();
+        }
+        editor.putInt("app_started",app_started+1);
+        editor.apply();
 
         String versionName = BuildConfig.VERSION_NAME;
 
@@ -579,14 +595,40 @@ public class MainActivity extends AppCompatActivity {
 
                     TextView contact_link1 = findViewById(R.id.contact_link1);
                     TextView contact_link2 = findViewById(R.id.contact_link2);
+                    TextView contact_link3 = findViewById(R.id.contact_link3);
+                    TextView contact_link4 = findViewById(R.id.contact_link4);
+                    TextView contact_link5 = findViewById(R.id.contact_link5);
 
                     contact_link1.setMovementMethod(LinkMovementMethod.getInstance());
                     contact_link2.setMovementMethod(LinkMovementMethod.getInstance());
-
-                    contact_link1.setOnClickListener(new View.OnClickListener() {
+                    contact_link3.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-
+                            //Voc-夜芷冰#2512
+                            ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                            ClipData clip = ClipData.newPlainText("Discord ID", "Voc-夜芷冰#2512");
+                            clipboard.setPrimaryClip(clip);
+                            Toast.makeText(context, getString(R.string.copied), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                    contact_link4.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                                    "mailto","voc.app.programmer@gmail.com", null));
+                            emailIntent.putExtra(Intent.EXTRA_TITLE, "Advice of Genshin Helper");
+                            emailIntent.putExtra(Intent.EXTRA_TEXT, "Hi, ");
+                            startActivity(Intent.createChooser(emailIntent, "Advice of Genshin Helper"));
+                            //voc.app.programmer@gmail.com
+                        }
+                    });
+                    contact_link5.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                            ClipData clip = ClipData.newPlainText("QQ UID", "822001886");
+                            clipboard.setPrimaryClip(clip);
+                            Toast.makeText(context, getString(R.string.copied), Toast.LENGTH_SHORT).show();
                         }
                     });
 
@@ -643,6 +685,45 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void showVoteDialog() {
+        final AlertDialog.Builder normalDialog =
+                new AlertDialog.Builder(MainActivity.this);
+        normalDialog.setIcon(R.drawable.app_ico);
+        normalDialog.setTitle(getString(R.string.vote_title));
+        normalDialog.setMessage(getString(R.string.vote_info));
+        normalDialog.setPositiveButton("幫忙評分",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        editor.putBoolean("voted",true);
+                        editor.apply();
+                        final String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
+                        try {
+                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+                        } catch (android.content.ActivityNotFoundException anfe) {
+                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+                        }
+                    }
+                });
+        normalDialog.setNegativeButton("不用了",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        editor.putBoolean("voted",true);
+                        editor.apply();
+                    }
+                });
+        normalDialog.setNeutralButton("以後再說",
+                new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Log.w("OK","NVM");
+                    }
+                });
+        // 显示
+        normalDialog.show();
     }
 
     private void setColorBk() {
@@ -1079,6 +1160,64 @@ public class MainActivity extends AppCompatActivity {
                 R.anim.fade_out);
 
 
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event)
+    {
+        if(keyCode==KeyEvent.KEYCODE_BACK) {
+            if(exit == 0){
+                LayoutInflater inflater = getLayoutInflater();
+                View layout = inflater.inflate(R.layout.item_toast,findViewById(R.id.toast_frame));
+                SharedPreferences sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
+
+                String color_hex = sharedPreferences.getString("theme_color_hex","#FF5A5A"); // Must include #
+                ColorStateList myList = new ColorStateList(
+                        new int[][]{
+                                new int[]{android.R.attr.state_pressed},
+                                new int[]{-android.R.attr.state_checked},
+                                new int[]{android.R.attr.state_checked},
+                        },
+                        new int[] {
+                                Color.parseColor(color_hex),
+                                Color.parseColor(color_hex),
+                                Color.parseColor(color_hex)
+                        }
+                );
+                ColorStateList myListD = new ColorStateList(
+                        new int[][]{
+                                new int[]{android.R.attr.state_pressed},
+                                new int[]{-android.R.attr.state_checked},
+                                new int[]{android.R.attr.state_checked},
+                        },
+                        new int[] {
+                                getResources().getColor(R.color.tv_anti_color),
+                                getResources().getColor(R.color.tv_anti_color),
+                                getResources().getColor(R.color.tv_anti_color)
+                        }
+                );
+
+                if(color_hex.toUpperCase().equals("#FFFFFFFF")){
+                    color_hex = "#000000";
+                }
+
+                TextView text = (TextView) layout.findViewById(R.id.toast_tv);
+                text.setText(getString(R.string.press_exit));
+                text.setText(getString(R.string.press_exit));
+                text.setTextColor(getResources().getColor(R.color.tv_anti_color));
+                text.setBackgroundTintList(myList);
+                Toast toast = new Toast(getApplicationContext());
+                toast.setGravity(Gravity.BOTTOM, 0, 150);
+                toast.setDuration(Toast.LENGTH_LONG);
+                toast.setView(layout);
+                toast.show();
+            exit = exit +1;
+            }else {
+                exit = 0;
+                finish();
+            }
+        }
+        return true;
     }
 
 

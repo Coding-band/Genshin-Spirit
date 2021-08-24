@@ -6,7 +6,7 @@
   "weapon": "Sword",
   "sex": "Male",
   "birth": "02/29",
-  "role": "Support_DPS",
+  "role": "Utility",
   "isComingSoon": false,
   "nick":"命運試金石",
   "desc": "蒙德的冒險家少年，擁有與他的善良毫不相稱的黴運。",
@@ -54,25 +54,21 @@
     "sof6_img": "fire_ventures_with_me",
     "sof6_desc": "處在美妙旅程領域內的單手劍、雙手劍、長柄武器角色獲得15％火元素傷害加成，並將普通攻擊與重擊傷害轉為火元素。"
   },
-  "dps_weapons": [
-    "the_widsith"
-   ],
-  "sup_dps_weapons": [
-    "mappa_mare",
-    "solar_pearl"
-  ],
   "util_weapons": [
-    "prototype_malice",
-    "thrilling_tales_of_dragon_slayers"
+    "festering_fang",
+    "favonius_sword"
   ],
   "util_art1": [
-    "the_exile",
-    "the_exile",
-    "defenders_will",
-    "defenders_will",
-    "defenders_will"
+    "brave_heart",
+    "brave_heart",
+    "resolution_of_sojourner",
+    "resolution_of_sojourner",
+    "resolution_of_sojourner"
   ],
   "team1":[
-	"Bennett","Barbara","Fischl","Diluc"
+	"Diluc","Bennett","chongyun","Barbara"
+  ],
+  "team2":[
+	"Razor","Bennett","Venti","Barbara"
   ]
 }

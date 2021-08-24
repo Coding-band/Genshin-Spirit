@@ -51,56 +51,56 @@ public class Characters_Rss {
 
     /**
      * @param name is Char's Identify Name -> JSON
-     * @return IMG_ID , NAME_LOCAL , FULL_IMG_ID
+     * @return IMG_ID , NAME_LOCAL , FULL_IMG_ID , ICO_IMG_ID
      */
     public int[] getCharByName(String name) {
-        if(name.equals("Aloy")){return new int[] {R.drawable.aloy,R.string.aloy,R.drawable.aloy};}
-        else if(name.equals("Kujou Sara")){return new int[] {R.drawable.kujou_sara,R.string.kujou_sara,R.drawable.kujou_sara};}
-        else if(name.equals("Sangonomiya Kokomi")){return new int[] {R.drawable.sangonomiya_kokomi,R.string.sangonomiya_kokomi,R.drawable.sangonomiya_kokomi};}
-        else if(name.equals("Raudeb Shougun")){return new int[] {R.drawable.raudeb_shougun,R.string.raudeb_shougun,R.drawable.raudeb_shougun};}
-        else if(name.equals("Sayu")){return new int[] {R.drawable.sayu,R.string.sayu,R.drawable.sayu_full};}
-        else if(name.equals("Yoimiya")){return new int[] {R.drawable.yoimiya,R.string.yoimiya,R.drawable.yoimiya_full};}
-        else if(name.equals("Kamisato Ayaka")){return new int[] {R.drawable.ayaka,R.string.kamisato_ayaka,R.drawable.ayaka_full};}
-        else if(name.equals("Kaedehara Kazuha")){return new int[] {R.drawable.kazuha,R.string.kaedehara_kazuha,R.drawable.kazuha_full};}
-        else if(name.equals("Yanfei")){return new int[] {R.drawable.yanfei,R.string.yanfei,R.drawable.yanfei_full};}
-        else if(name.equals("Eula")){return new int[] {R.drawable.eula,R.string.eula,R.drawable.eula_full};}
-        else if(name.equals("Rosaria")){return new int[] {R.drawable.rosaria,R.string.rosaria,R.drawable.rosaria_full};}
-        else if(name.equals("Xiao")){return new int[] {R.drawable.xiao,R.string.xiao,R.drawable.xiao_full};}
-        else if(name.equals("Hu Tao")){return new int[] {R.drawable.hutao,R.string.hu_tao,R.drawable.hutao_full};}
-        else if(name.equals("Ganyu")){return new int[] {R.drawable.ganyu,R.string.ganyu,R.drawable.ganyu_full};}
-        else if(name.equals("Albedo")){return new int[] {R.drawable.albedo,R.string.albedo,R.drawable.albedo_full};}
-        else if(name.equals("Zhongli")){return new int[] {R.drawable.zhongli,R.string.zhongli,R.drawable.zhongli_full};}
-        else if(name.equals("Xinyan")){return new int[] {R.drawable.xinyan,R.string.xinyan,R.drawable.xinyan_full};}
-        else if(name.equals("Tartaglia")){return new int[] {R.drawable.tartaglia,R.string.tartaglia,R.drawable.tartaglia_full};}
-        else if(name.equals("Diona")){return new int[] {R.drawable.diona,R.string.diona,R.drawable.diona_full};}
-        else if(name.equals("Xingqiu")){return new int[] {R.drawable.xingqiu,R.string.xingqiu,R.drawable.xingqiu_full};}
-        else if(name.equals("Xiangling")){return new int[] {R.drawable.xiangling,R.string.xiangling,R.drawable.xiangling_full};}
-        else if(name.equals("Venti")){return new int[] {R.drawable.venti,R.string.venti,R.drawable.venti_full};}
-        else if(name.equals("Sucrose")){return new int[] {R.drawable.sucrose,R.string.sucrose,R.drawable.sucrose_full};}
-        else if(name.equals("Razor")){return new int[] {R.drawable.razor,R.string.razor,R.drawable.razor_full};}
-        else if(name.equals("Qiqi")){return new int[] {R.drawable.qiqi,R.string.qiqi,R.drawable.qiqi_full};}
-        else if(name.equals("Noelle")){return new int[] {R.drawable.noelle,R.string.noelle,R.drawable.noelle_full};}
-        else if(name.equals("Ningguang")){return new int[] {R.drawable.ningguang,R.string.ningguang,R.drawable.ningguang_full};}
-        else if(name.equals("Mona")){return new int[] {R.drawable.mona,R.string.mona,R.drawable.mona_full};}
-        else if(name.equals("Lisa")){return new int[] {R.drawable.lisa,R.string.lisa,R.drawable.lisa_full};}
-        else if(name.equals("Klee")){return new int[] {R.drawable.klee,R.string.klee,R.drawable.klee_full};}
-        else if(name.equals("Keqing")){return new int[] {R.drawable.keqing,R.string.keqing,R.drawable.keqing_full};}
-        else if(name.equals("Kaeya")){return new int[] {R.drawable.kaeya,R.string.kaeya,R.drawable.kaeya_full};}
-        else if(name.equals("Jean")){return new int[] {R.drawable.jean,R.string.jean,R.drawable.jean_full};}
-        else if(name.equals("Fischl")){return new int[] {R.drawable.fischl,R.string.fischl,R.drawable.fischl_full};}
-        else if(name.equals("Diluc")){return new int[] {R.drawable.diluc,R.string.diluc,R.drawable.diluc_full};}
-        else if(name.equals("Chongyun")){return new int[] {R.drawable.chongyun,R.string.chongyun,R.drawable.chongyun_full};}
-        else if(name.equals("Bennett")){return new int[] {R.drawable.bennett,R.string.bennett,R.drawable.bennett_full};}
-        else if(name.equals("Beidou")){return new int[] {R.drawable.beidou,R.string.beidou,R.drawable.beidou_full};}
-        else if(name.equals("Barbara")){return new int[] {R.drawable.barbara,R.string.barbara,R.drawable.barbara_full};}
-        else if(name.equals("Amber")){return new int[] {R.drawable.amber,R.string.amber,R.drawable.amber_full};}
+        if(name.equals("Aloy")){return new int[] {R.drawable.aloy,R.string.aloy,R.drawable.aloy,R.drawable.aloy_ico};}
+        else if(name.equals("Kujou Sara")){return new int[] {R.drawable.kujou_sara,R.string.kujou_sara,R.drawable.kujou_sara,R.drawable.kujou_sara_ico};}
+        else if(name.equals("Sangonomiya Kokomi")){return new int[] {R.drawable.sangonomiya_kokomi,R.string.sangonomiya_kokomi,R.drawable.sangonomiya_kokomi,R.drawable.sangonomiya_kokomi_ico};}
+        else if(name.equals("Raudeb Shougun")){return new int[] {R.drawable.raudeb_shougun,R.string.raudeb_shougun,R.drawable.raudeb_shougun,R.drawable.raiden_shogun_ico};}
+        else if(name.equals("Sayu")){return new int[] {R.drawable.sayu,R.string.sayu,R.drawable.sayu_full,R.drawable.sayu_ico};}
+        else if(name.equals("Yoimiya")){return new int[] {R.drawable.yoimiya,R.string.yoimiya,R.drawable.yoimiya_full,R.drawable.yoimiya_ico};}
+        else if(name.equals("Kamisato Ayaka")){return new int[] {R.drawable.ayaka,R.string.kamisato_ayaka,R.drawable.ayaka_full,R.drawable.kamisato_ayaka_ico};}
+        else if(name.equals("Kaedehara Kazuha")){return new int[] {R.drawable.kazuha,R.string.kaedehara_kazuha,R.drawable.kazuha_full,R.drawable.kaedehara_kazuha_ico};}
+        else if(name.equals("Yanfei")){return new int[] {R.drawable.yanfei,R.string.yanfei,R.drawable.yanfei_full,R.drawable.yanfei_ico};}
+        else if(name.equals("Eula")){return new int[] {R.drawable.eula,R.string.eula,R.drawable.eula_full,R.drawable.eula_ico};}
+        else if(name.equals("Rosaria")){return new int[] {R.drawable.rosaria,R.string.rosaria,R.drawable.rosaria_full,R.drawable.rosaria_ico};}
+        else if(name.equals("Xiao")){return new int[] {R.drawable.xiao,R.string.xiao,R.drawable.xiao_full,R.drawable.xiao_ico};}
+        else if(name.equals("Hu Tao")){return new int[] {R.drawable.hutao,R.string.hu_tao,R.drawable.hutao_full,R.drawable.hutao_ico};}
+        else if(name.equals("Ganyu")){return new int[] {R.drawable.ganyu,R.string.ganyu,R.drawable.ganyu_full,R.drawable.ganyu_ico};}
+        else if(name.equals("Albedo")){return new int[] {R.drawable.albedo,R.string.albedo,R.drawable.albedo_full,R.drawable.albedo_ico};}
+        else if(name.equals("Zhongli")){return new int[] {R.drawable.zhongli,R.string.zhongli,R.drawable.zhongli_full,R.drawable.zhongli_ico};}
+        else if(name.equals("Xinyan")){return new int[] {R.drawable.xinyan,R.string.xinyan,R.drawable.xinyan_full,R.drawable.xinyan_ico};}
+        else if(name.equals("Tartaglia")){return new int[] {R.drawable.tartaglia,R.string.tartaglia,R.drawable.tartaglia_full,R.drawable.tartaglia_ico};}
+        else if(name.equals("Diona")){return new int[] {R.drawable.diona,R.string.diona,R.drawable.diona_full,R.drawable.diona_ico};}
+        else if(name.equals("Xingqiu")){return new int[] {R.drawable.xingqiu,R.string.xingqiu,R.drawable.xingqiu_full,R.drawable.xingqiu_ico};}
+        else if(name.equals("Xiangling")){return new int[] {R.drawable.xiangling,R.string.xiangling,R.drawable.xiangling_full,R.drawable.xiangling_ico};}
+        else if(name.equals("Venti")){return new int[] {R.drawable.venti,R.string.venti,R.drawable.venti_full,R.drawable.venti_ico};}
+        else if(name.equals("Sucrose")){return new int[] {R.drawable.sucrose,R.string.sucrose,R.drawable.sucrose_full,R.drawable.sucrose_ico};}
+        else if(name.equals("Razor")){return new int[] {R.drawable.razor,R.string.razor,R.drawable.razor_full,R.drawable.razor_ico};}
+        else if(name.equals("Qiqi")){return new int[] {R.drawable.qiqi,R.string.qiqi,R.drawable.qiqi_full,R.drawable.qiqi_ico};}
+        else if(name.equals("Noelle")){return new int[] {R.drawable.noelle,R.string.noelle,R.drawable.noelle_full,R.drawable.noelle_ico};}
+        else if(name.equals("Ningguang")){return new int[] {R.drawable.ningguang,R.string.ningguang,R.drawable.ningguang_full,R.drawable.ningguang_ico};}
+        else if(name.equals("Mona")){return new int[] {R.drawable.mona,R.string.mona,R.drawable.mona_full,R.drawable.mona_ico};}
+        else if(name.equals("Lisa")){return new int[] {R.drawable.lisa,R.string.lisa,R.drawable.lisa_full,R.drawable.lisa_ico};}
+        else if(name.equals("Klee")){return new int[] {R.drawable.klee,R.string.klee,R.drawable.klee_full,R.drawable.klee_ico};}
+        else if(name.equals("Keqing")){return new int[] {R.drawable.keqing,R.string.keqing,R.drawable.keqing_full,R.drawable.keqing_ico};}
+        else if(name.equals("Kaeya")){return new int[] {R.drawable.kaeya,R.string.kaeya,R.drawable.kaeya_full,R.drawable.kaeya_ico};}
+        else if(name.equals("Jean")){return new int[] {R.drawable.jean,R.string.jean,R.drawable.jean_full,R.drawable.jean_ico};}
+        else if(name.equals("Fischl")){return new int[] {R.drawable.fischl,R.string.fischl,R.drawable.fischl_full,R.drawable.fischl_ico};}
+        else if(name.equals("Diluc")){return new int[] {R.drawable.diluc,R.string.diluc,R.drawable.diluc_full,R.drawable.diluc_ico};}
+        else if(name.equals("Chongyun")){return new int[] {R.drawable.chongyun,R.string.chongyun,R.drawable.chongyun_full,R.drawable.chongyun_ico};}
+        else if(name.equals("Bennett")){return new int[] {R.drawable.bennett,R.string.bennett,R.drawable.bennett_full,R.drawable.bennett_ico};}
+        else if(name.equals("Beidou")){return new int[] {R.drawable.beidou,R.string.beidou,R.drawable.beidou_full,R.drawable.beidou_ico};}
+        else if(name.equals("Barbara")){return new int[] {R.drawable.barbara,R.string.barbara,R.drawable.barbara_full,R.drawable.barbara_ico};}
+        else if(name.equals("Amber")){return new int[] {R.drawable.amber,R.string.amber,R.drawable.amber_full,R.drawable.amber_ico};}
+        //Add at 20210820
+        else if(name.equals("Traveler-Anemo")){return new int[] {R.drawable.traveler_female,R.string.traveler_anemo,R.drawable.traveler_full,R.drawable.traveler_ico};}
+        else if(name.equals("Traveler-Geo")){return new int[] {R.drawable.traveler_female,R.string.traveler_geo,R.drawable.traveler_full,R.drawable.traveler_ico};}
+        else if(name.equals("Traveler-Electro")){return new int[] {R.drawable.traveler_female,R.string.traveler_electro,R.drawable.traveler_full,R.drawable.traveler_ico};}
 
-        else if(name.equals("Traveler-Anemo")){return new int[] {R.drawable.traveler_female,R.string.traveler_anemo,R.drawable.traveler_full};}
-        else if(name.equals("Traveler-Geo")){return new int[] {R.drawable.traveler_female,R.string.traveler_geo,R.drawable.traveler_full};}
-        else if(name.equals("Traveler-Electro")){return new int[] {R.drawable.traveler_female,R.string.traveler_electro,R.drawable.traveler_full};}
 
-
-        return new int[] {R.drawable.paimon_full,R.string.unknown};
+        return new int[] {R.drawable.paimon_full,R.string.unknown,R.drawable.paimon_full,R.drawable.klee_ico};
     }
 
     /**

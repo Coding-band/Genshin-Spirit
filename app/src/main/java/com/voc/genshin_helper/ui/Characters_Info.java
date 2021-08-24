@@ -5,17 +5,24 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.content.res.ColorStateList;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.text.Html;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import com.voc.genshin_helper.R;
@@ -32,6 +39,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 
 import static android.content.Context.MODE_PRIVATE;
+import static com.voc.genshin_helper.data.RoundRectImageView.getRoundBitmapByShader;
 
 /**
  * Package com.voc.genshin_helper.data was
@@ -62,6 +70,7 @@ public class Characters_Info {
     boolean isComing = false ;
     String desc = "XPR" ;
     String nick = "XPR" ;
+    JSONObject jsonObject;
 
     // Battle Talent
     String normal_name = "XPR";
@@ -116,19 +125,32 @@ public class Characters_Info {
     String sof6_img = "XPR";
     String sof6_desc = "XPR";
 
-    String[] weapon_advice = {};
-    int[] weapon_stars = {};
+    // Advice
+    String[] main_weapon_advice = {};
+    String[] support_weapon_advice = {};
+    String[] util_weapon_advice = {};
 
-    String[] artifacts1_array = {};
-    String[] artifacts2_array = {};
-    String[] artifacts3_array = {};
-    String[] artifacts4_array = {};
-    String[] artifacts5_array = {};
+    String[] main_artifacts1 = {};
+    String[] main_artifacts2 = {};
+    String[] main_artifacts3 = {};
+
+    String[] support_artifacts1 = {};
+    String[] support_artifacts2 = {};
+    String[] support_artifacts3 = {};
+
+    String[] util_artifacts1 = {};
+    String[] util_artifacts2 = {};
+    String[] util_artifacts3 = {};
+
+    String[] team1 = {};
+    String[] team2 = {};
+    String[] team3 = {};
+    String[] team4 = {};
 
     /** https://stackoverflow.com/questions/45247927/how-to-parse-json-object-inside-json-object-in-java */
     public void JsonToStr (String str){
         try {
-            JSONObject jsonObject = new JSONObject(str);
+            jsonObject = new JSONObject(str);
             name = jsonObject.getString("name");
             star = jsonObject.getInt("rare");
             area = jsonObject.getString("area");
@@ -197,8 +219,15 @@ public class Characters_Info {
 
             if(jsonObject.has("dps_weapons")){
                 JSONArray weapons_temp = jsonObject.getJSONArray("dps_weapons");
-                weapon_advice = weapons_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
-                Log.wtf("EEE", Arrays.toString(weapon_advice));
+                main_weapon_advice = weapons_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
+            }
+            if(jsonObject.has("sup_dps_weapons")){
+                JSONArray weapons_temp = jsonObject.getJSONArray("sup_dps_weapons");
+                support_weapon_advice = weapons_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
+            }
+            if(jsonObject.has("util_weapons")){
+                JSONArray weapons_temp = jsonObject.getJSONArray("util_weapons");
+                util_weapon_advice = weapons_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
             }
             /*
 
@@ -215,17 +244,61 @@ public class Characters_Info {
 
             if(jsonObject.has("dps_art1")) {
                 JSONArray art1_temp = jsonObject.getJSONArray("dps_art1");
-                artifacts1_array = art1_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
+                main_artifacts1 = art1_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
             }
 
             if(jsonObject.has("dps_art2")) {
                 JSONArray art2_temp = jsonObject.getJSONArray("dps_art2");
-                artifacts2_array = art2_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
+                main_artifacts2 = art2_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
             }
 
             if(jsonObject.has("dps_art3")) {
                 JSONArray art3_temp = jsonObject.getJSONArray("dps_art3");
-                artifacts3_array = art3_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
+                main_artifacts3 = art3_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
+            }
+
+            if(jsonObject.has("sup_dps_art1")) {
+                JSONArray art1_temp = jsonObject.getJSONArray("sup_dps_art1");
+                support_artifacts1 = art1_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
+            }
+            if(jsonObject.has("sup_dps_art2")) {
+                JSONArray art2_temp = jsonObject.getJSONArray("sup_dps_art2");
+                support_artifacts2 = art2_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
+            }
+            if(jsonObject.has("sup_dps_art3")) {
+                JSONArray art3_temp = jsonObject.getJSONArray("sup_dps_art3");
+                support_artifacts3 = art3_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
+            }
+
+            if(jsonObject.has("util_art1")) {
+                JSONArray art1_temp = jsonObject.getJSONArray("util_art1");
+                util_artifacts1 = art1_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
+            }
+            if(jsonObject.has("util_art2")) {
+                JSONArray art2_temp = jsonObject.getJSONArray("util_art2");
+                util_artifacts2 = art2_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
+            }
+            if(jsonObject.has("util_art3")) {
+                JSONArray art3_temp = jsonObject.getJSONArray("util_art3");
+                util_artifacts3 = art3_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
+            }
+
+            if(jsonObject.has("team1")) {
+                JSONArray art1_temp = jsonObject.getJSONArray("team1");
+                team1 = art1_temp.toString().replace("[", "").replace("]", "").replace("\"","").replace(" ", "XPR").replace(",", " ").split(" ");
+            }
+            if(jsonObject.has("team2")) {
+                JSONArray art2_temp = jsonObject.getJSONArray("team2");
+                team2 = art2_temp.toString().replace("[", "").replace("]", "").replace("\"","").replace(" ", "XPR").replace(",", " ").split(" ");
+            }
+            if(jsonObject.has("team3")) {
+                JSONArray art3_temp = jsonObject.getJSONArray("team3");
+                team3 = art3_temp.toString().replace("[", "").replace("]", "").replace("\"","").replace(" ", "XPR").replace(",", " ").split(" ");
+            }
+
+            if(jsonObject.has("team4")) {
+                JSONArray art3_temp = jsonObject.getJSONArray("team4");
+                team4 = art3_temp.toString().replace("[", "").replace("]", "").replace("\"","").replace(" ", "XPR").replace(",", " ").split(" ");
             }
 
             show();
@@ -248,7 +321,7 @@ public class Characters_Info {
             is = mg.open("db/"+lang+"/"+this.CharName_BASE+".json");
             if (is != null) {
                 String result = IOUtils.toString(is, StandardCharsets.UTF_8);
-                JsonToStr(result );
+                JsonToStr(result);
                 is.close();
             }
         } catch (IOException ex) {
@@ -348,6 +421,32 @@ public class Characters_Info {
         TextView char_sof6_name = view.findViewById(R.id.info_sof6_name);
         TextView char_sof6_normal = view.findViewById(R.id.info_sof6_normal);
 
+        /** Method of advice */
+        LinearLayout advice_main_weapon_ll = view.findViewById(R.id.advice_main_weapon_ll);
+        LinearLayout advice_main_art_ll1 = view.findViewById(R.id.advice_main_art_ll1);
+        LinearLayout advice_main_art_ll2 = view.findViewById(R.id.advice_main_art_ll2);
+        LinearLayout advice_main_art_ll3 = view.findViewById(R.id.advice_main_art_ll3);
+
+        LinearLayout advice_support_weapon_ll = view.findViewById(R.id.advice_support_weapon_ll);
+        LinearLayout advice_support_art_ll1 = view.findViewById(R.id.advice_support_art_ll1);
+        LinearLayout advice_support_art_ll2 = view.findViewById(R.id.advice_support_art_ll2);
+        LinearLayout advice_support_art_ll3 = view.findViewById(R.id.advice_support_art_ll3);
+
+        LinearLayout advice_util_weapon_ll = view.findViewById(R.id.advice_util_weapon_ll);
+        LinearLayout advice_util_art_ll1 = view.findViewById(R.id.advice_util_art_ll1);
+        LinearLayout advice_util_art_ll2 = view.findViewById(R.id.advice_util_art_ll2);
+        LinearLayout advice_util_art_ll3 = view.findViewById(R.id.advice_util_art_ll3);
+
+        CardView info_advice_main_card = view.findViewById(R.id.info_advice_main_card);
+        CardView info_advice_support_card = view.findViewById(R.id.info_advice_support_card);
+        CardView info_advice_util_card = view.findViewById(R.id.info_advice_util_card);
+        CardView info_advice_team_card = view.findViewById(R.id.info_advice_team_card);
+
+        LinearLayout advice_team_ll1 = view.findViewById(R.id.advice_team1);
+        LinearLayout advice_team_ll2 = view.findViewById(R.id.advice_team2);
+        LinearLayout advice_team_ll3 = view.findViewById(R.id.advice_team3);
+        LinearLayout advice_team_ll4 = view.findViewById(R.id.advice_team4);
+
         /** THEME COLOR SET*/
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
         String color_hex = sharedPreferences.getString("theme_color_hex","#FF5A5A"); // Must include #
@@ -369,10 +468,12 @@ public class Characters_Info {
         TextView barrier2 = view.findViewById(R.id.barrier2);
         TextView barrier3 = view.findViewById(R.id.barrier3);
         TextView barrier4 = view.findViewById(R.id.barrier4);
+        TextView barrier5 = view.findViewById(R.id.barrier5);
         TextView info_intro_title = view.findViewById(R.id.info_intro_title);
         TextView info_talent = view.findViewById(R.id.info_talent);
         TextView info_btalent = view.findViewById(R.id.info_btalent);
         TextView info_sof = view.findViewById(R.id.info_sof);
+        TextView info_advice = view.findViewById(R.id.info_advice);
 
         TextView info_talent1_name = view.findViewById(R.id.info_talent1_name);
         TextView info_talent1_normal_title = view.findViewById(R.id.info_talent1_normal_title);
@@ -393,16 +494,16 @@ public class Characters_Info {
         TextView info_sof5_name = view.findViewById(R.id.info_sof5_name);
         TextView info_sof6_name = view.findViewById(R.id.info_sof6_name);
 
-
-
         barrier1.setBackgroundColor(Color.parseColor(color_hex));
         barrier2.setBackgroundColor(Color.parseColor(color_hex));
         barrier3.setBackgroundColor(Color.parseColor(color_hex));
         barrier4.setBackgroundColor(Color.parseColor(color_hex));
+        barrier5.setBackgroundColor(Color.parseColor(color_hex));
         info_intro_title.setTextColor(Color.parseColor(color_hex));
         info_talent.setTextColor(Color.parseColor(color_hex));
         info_btalent.setTextColor(Color.parseColor(color_hex));
         info_sof.setTextColor(Color.parseColor(color_hex));
+        info_advice.setTextColor(Color.parseColor(color_hex));
 
         info_talent1_name.setTextColor(Color.parseColor(color_hex));
         info_talent1_normal_title.setTextColor(Color.parseColor(color_hex));
@@ -503,8 +604,193 @@ public class Characters_Info {
         char_sof6_name.setText(sof6_name);
         char_sof6_normal.setText(sof6_desc);
 
+        info_advice_main_card.setVisibility(View.GONE);
+        info_advice_support_card.setVisibility(View.GONE);
+        info_advice_util_card.setVisibility(View.GONE);
 
+        /** ADVICE */
+        if(jsonObject.has("dps_weapons")){
+            Log.wtf("OK","AK");
+            advice_main_weapon_ll.removeAllViews();
+            for (int x = 0 ; x < main_weapon_advice.length; x++) {
+                View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_main_weapon_ll, false);
+                ImageView item_img = char_view.findViewById(R.id.advice_item_img);
+                item_img.setImageBitmap(findWeaponByName(context,"weapons/"+weapon.toLowerCase()+"s/"+main_weapon_advice[x]+".png"));
+                advice_main_weapon_ll.addView(char_view);
+            }
+            info_advice_main_card.setVisibility(View.VISIBLE);
+            advice_main_weapon_ll.setVisibility(View.VISIBLE);
+        }
+        if(jsonObject.has("sup_dps_weapons")){
+            advice_support_weapon_ll.removeAllViews();
+            for (int x = 0 ; x < support_weapon_advice.length; x++) {
+                View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_support_weapon_ll, false);
+                ImageView item_img = char_view.findViewById(R.id.advice_item_img);
+                item_img.setImageBitmap(findWeaponByName(context,"weapons/"+weapon.toLowerCase()+"s/"+support_weapon_advice[x]+".png"));
+                advice_support_weapon_ll.addView(char_view);
+            }
+            info_advice_support_card.setVisibility(View.VISIBLE);
+            advice_support_weapon_ll.setVisibility(View.VISIBLE);
+        }
+        if(jsonObject.has("util_weapons")){
+            advice_util_weapon_ll.removeAllViews();
+            for (int x = 0 ; x < util_weapon_advice.length; x++) {
+                View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_util_weapon_ll, false);
+                ImageView item_img = char_view.findViewById(R.id.advice_item_img);
+                item_img.setImageBitmap(findWeaponByName(context,"weapons/"+weapon.toLowerCase()+"s/"+util_weapon_advice[x]+".png"));
+                advice_util_weapon_ll.addView(char_view);
+            }
+            info_advice_util_card.setVisibility(View.VISIBLE);
+            advice_util_weapon_ll.setVisibility(View.VISIBLE);
+        }
 
+        if(jsonObject.has("dps_art1")){
+            advice_main_art_ll1.removeAllViews();
+            for (int x = 0 ; x < main_artifacts1.length; x++) {
+                View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_main_art_ll1, false);
+                ImageView item_img = char_view.findViewById(R.id.advice_item_img);
+                item_img.setImageBitmap(findWeaponByName(context,"artifacts/"+main_artifacts1[x]+"_"+String.valueOf(x+1)+".png"));
+                advice_main_art_ll1.addView(char_view);
+            }
+            advice_main_art_ll1.setVisibility(View.VISIBLE);
+        }
+
+        if(jsonObject.has("dps_art2")){
+            advice_main_art_ll2.removeAllViews();
+            for (int x = 0 ; x < main_artifacts2.length; x++) {
+                View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_main_art_ll2, false);
+                ImageView item_img = char_view.findViewById(R.id.advice_item_img);
+                item_img.setImageBitmap(findWeaponByName(context,"artifacts/"+main_artifacts2[x]+"_"+String.valueOf(x+1)+".png"));
+                advice_main_art_ll2.addView(char_view);
+            }
+            advice_main_art_ll2.setVisibility(View.VISIBLE);
+        }
+
+        if(jsonObject.has("dps_art3")){
+            advice_main_art_ll3.removeAllViews();
+            for (int x = 0 ; x < main_artifacts3.length; x++) {
+                View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_main_art_ll3, false);
+                ImageView item_img = char_view.findViewById(R.id.advice_item_img);
+                item_img.setImageBitmap(findWeaponByName(context,"artifacts/"+main_artifacts3[x]+"_"+String.valueOf(x+1)+".png"));
+                advice_main_art_ll3.addView(char_view);
+            }
+            advice_main_art_ll3.setVisibility(View.VISIBLE);
+        }
+
+        if(jsonObject.has("sup_dps_art1")){
+            advice_support_art_ll1.removeAllViews();
+            for (int x = 0 ; x < support_artifacts1.length; x++) {
+                View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_support_art_ll1, false);
+                ImageView item_img = char_view.findViewById(R.id.advice_item_img);
+                item_img.setImageBitmap(findWeaponByName(context,"artifacts/"+support_artifacts1[x]+"_"+String.valueOf(x+1)+".png"));
+                advice_support_art_ll1.addView(char_view);
+            }
+            advice_support_art_ll1.setVisibility(View.VISIBLE);
+        }
+
+        if(jsonObject.has("sup_dps_art2")){
+            advice_support_art_ll2.removeAllViews();
+            for (int x = 0 ; x < support_artifacts2.length; x++) {
+                View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_support_art_ll2, false);
+                ImageView item_img = char_view.findViewById(R.id.advice_item_img);
+                item_img.setImageBitmap(findWeaponByName(context,"artifacts/"+support_artifacts2[x]+"_"+String.valueOf(x+1)+".png"));
+                advice_support_art_ll2.addView(char_view);
+            }
+            advice_support_art_ll2.setVisibility(View.VISIBLE);
+        }
+
+        if(jsonObject.has("sup_dps_art3")){
+            advice_support_art_ll3.removeAllViews();
+            for (int x = 0 ; x < support_artifacts3.length; x++) {
+                View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_support_art_ll3, false);
+                ImageView item_img = char_view.findViewById(R.id.advice_item_img);
+                item_img.setImageBitmap(findWeaponByName(context,"artifacts/"+support_artifacts3[x]+"_"+String.valueOf(x+1)+".png"));
+                advice_support_art_ll3.addView(char_view);
+            }
+            advice_support_art_ll3.setVisibility(View.VISIBLE);
+        }
+
+        if(jsonObject.has("util_art1")){
+            advice_util_art_ll1.removeAllViews();
+            for (int x = 0 ; x < util_artifacts1.length; x++) {
+                View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_util_art_ll1, false);
+                ImageView item_img = char_view.findViewById(R.id.advice_item_img);
+                item_img.setImageBitmap(findWeaponByName(context,"artifacts/"+util_artifacts1[x]+"_"+String.valueOf(x+1)+".png"));
+                advice_util_art_ll1.addView(char_view);
+            }
+            advice_util_art_ll1.setVisibility(View.VISIBLE);
+        }
+
+        if(jsonObject.has("util_art2")){
+            advice_util_art_ll2.removeAllViews();
+            for (int x = 0 ; x < util_artifacts2.length; x++) {
+                View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_util_art_ll2, false);
+                ImageView item_img = char_view.findViewById(R.id.advice_item_img);
+                item_img.setImageBitmap(findWeaponByName(context,"artifacts/"+util_artifacts2[x]+"_"+String.valueOf(x+1)+".png"));
+                advice_util_art_ll2.addView(char_view);
+            }
+            advice_util_art_ll2.setVisibility(View.VISIBLE);
+        }
+
+        if(jsonObject.has("util_art3")){
+            advice_util_art_ll3.removeAllViews();
+            for (int x = 0 ; x < util_artifacts3.length; x++) {
+                View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_util_art_ll3, false);
+                ImageView item_img = char_view.findViewById(R.id.advice_item_img);
+                item_img.setImageBitmap(findWeaponByName(context,"artifacts/"+util_artifacts3[x]+"_"+String.valueOf(x+1)+".png"));
+                advice_util_art_ll3.addView(char_view);
+            }
+            advice_util_art_ll3.setVisibility(View.VISIBLE);
+        }
+
+        if(jsonObject.has("team1")){
+            advice_team_ll1.removeAllViews();
+            for (int x = 0 ; x < team1.length; x++) {
+                View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team, advice_team_ll1, false);
+                ImageView item_img = char_view.findViewById(R.id.advice_item_img);
+                Bitmap icon = BitmapFactory.decodeResource(context.getResources(),characters_rss.getCharByName(team1[x].replace("XPR"," "))[3]);
+                item_img.setImageBitmap(getRoundBitmapByShader(icon, (int) Math.round(128),(int)Math.round(128),20, 0));
+                Log.wtf("team1[x])[2]",team1[x]);
+                advice_team_ll1.addView(char_view);
+            }
+            advice_team_ll1.setVisibility(View.VISIBLE);
+        }
+
+        if(jsonObject.has("team2")){
+            advice_team_ll2.removeAllViews();
+            for (int x = 0 ; x < team2.length; x++) {
+                View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team, advice_team_ll2, false);
+                ImageView item_img = char_view.findViewById(R.id.advice_item_img);
+                Bitmap icon = BitmapFactory.decodeResource(context.getResources(),characters_rss.getCharByName(team2[x].replace("XPR"," "))[3]);
+                item_img.setImageBitmap(getRoundBitmapByShader(icon, (int) Math.round(128),(int)Math.round(128),20, 0));
+                advice_team_ll2.addView(char_view);
+            }
+            advice_team_ll2.setVisibility(View.VISIBLE);
+        }
+
+        if(jsonObject.has("team3")){
+            advice_team_ll3.removeAllViews();
+            for (int x = 0 ; x < team3.length; x++) {
+                View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team, advice_team_ll3, false);
+                ImageView item_img = char_view.findViewById(R.id.advice_item_img);
+                Bitmap icon = BitmapFactory.decodeResource(context.getResources(),characters_rss.getCharByName(team3[x].replace("XPR"," "))[3]);
+                item_img.setImageBitmap(getRoundBitmapByShader(icon, (int) Math.round(128),(int)Math.round(128),20, 0));
+                advice_team_ll3.addView(char_view);
+            }
+            advice_team_ll3.setVisibility(View.VISIBLE);
+        }
+
+        if(jsonObject.has("team4")){
+            advice_team_ll4.removeAllViews();
+            for (int x = 0 ; x < team4.length; x++) {
+                View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team, advice_team_ll4, false);
+                ImageView item_img = char_view.findViewById(R.id.advice_item_img);
+                Bitmap icon = BitmapFactory.decodeResource(context.getResources(),characters_rss.getCharByName(team4[x].replace("XPR"," "))[3]);
+                item_img.setImageBitmap(getRoundBitmapByShader(icon, (int) Math.round(128),(int)Math.round(128),20, 0));
+                advice_team_ll4.addView(char_view);
+            }
+            advice_team_ll4.setVisibility(View.VISIBLE);
+        }
 
         /** Method of dialog */
         dialog.setContentView(view);
@@ -516,5 +802,35 @@ public class Characters_Info {
         lp.height = WindowManager.LayoutParams.MATCH_PARENT;
         dialogWindow.setAttributes(lp);
         dialog.show();
+    }
+
+    public Bitmap findWeaponByName(Context context, String filePath) {
+        AssetManager assetManager = context.getAssets();
+        filePath = filePath.replace("\"","");
+        InputStream istr;
+        Bitmap bitmap = null;
+        try {
+            istr = assetManager.open(filePath);
+            bitmap = BitmapFactory.decodeStream(istr);
+        } catch (IOException e) {
+            if(e != null){Log.wtf("MISSED_IMG","暫時沒有 >>"+filePath+"<< 的相片");};
+        }
+
+        return bitmap;
+    }
+
+    public Bitmap findArtByName(Context context, String filePath) {
+        AssetManager assetManager = context.getAssets();
+        filePath = filePath.replace("\"","");
+        InputStream istr;
+        Bitmap bitmap = null;
+        try {
+            istr = assetManager.open(filePath);
+            bitmap = BitmapFactory.decodeStream(istr);
+        } catch (IOException e) {
+            if(e != null){Log.wtf("MISSED_IMG","暫時沒有 >>"+filePath+"<< 的相片");};
+        }
+
+        return bitmap;
     }
 }

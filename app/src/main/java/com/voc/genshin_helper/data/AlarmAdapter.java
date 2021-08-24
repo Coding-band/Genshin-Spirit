@@ -2,8 +2,10 @@ package com.voc.genshin_helper.data;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +27,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import static android.content.Context.MODE_PRIVATE;
 import static com.voc.genshin_helper.data.RoundRectImageView.getRoundBitmapByShader;
 
 /**
@@ -90,6 +93,25 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmAdapter.ViewHolder> 
         }else if(alarm.getType() == R.string.alarm_t5){
             holder.ui_ico.setImageResource(R.drawable.primogem);
         }
+
+        SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
+        String color_hex = sharedPreferences.getString("theme_color_hex","#FF5A5A"); // Must include #
+
+        ColorStateList myList = new ColorStateList(
+                new int[][]{
+                        new int[]{android.R.attr.state_pressed},
+                        new int[]{-android.R.attr.state_checked},
+                        new int[]{android.R.attr.state_checked},
+                },
+                new int[] {
+                        context.getResources().getColor(R.color.tv_color),
+                        context.getResources().getColor(R.color.tv_color),
+                        Color.parseColor(color_hex)
+                }
+        );
+        holder.ui_title.setTextColor(Color.parseColor(color_hex));
+        holder.ui_time.setTextColor(Color.parseColor(color_hex));
+        holder.ui_finish_time.setTextColor(Color.parseColor(color_hex));
 
     }
 

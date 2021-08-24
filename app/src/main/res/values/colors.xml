@@ -10,6 +10,7 @@
 
     <color name="page_bg">#E0E0E0</color>
     <color name="tv_color">#4B4B4B</color>
+    <color name="tv_anti_color">#FFFFFF</color>
     <color name="card_bg_less">#CCE0E0E0</color>
     <color name="item_bg_square">#D0D0D0</color>
 
