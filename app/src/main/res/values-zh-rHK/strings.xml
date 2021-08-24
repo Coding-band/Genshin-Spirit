@@ -123,6 +123,6 @@
     <string name="world_tree">世界樹服</string>
 
     <string name="genshindb_link"><a href="https://github.com/Wolfteam/GenshinDb">GenshinDb Github</a></string>
-    <string name="genshinhelper_link"><a href="https://github.com/Wolfteam/GenshinDb">原神小幫手 Github</a></string>
+    <string name="genshinhelper_link"><a href="https://github.com/Vocaloid2048/GenshinHelper">原神小幫手 Github</a></string>
 
 </resources>

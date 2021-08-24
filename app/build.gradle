@@ -33,7 +33,7 @@ android {
         productFlavors {
             dev {
                 versionCode = code
-                versionNameSuffix "-dev"
+                versionNameSuffix "-dev" + " ("+code+")"
                 applicationId "com.voc.genshin_helper"
             }
             gp{

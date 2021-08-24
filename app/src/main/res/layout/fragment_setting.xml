@@ -634,7 +634,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:autoLink="web"
                         android:text="@string/genshindb_link"
                         android:textColor="@color/pyro"
                         android:textSize="20sp" />
@@ -644,7 +643,6 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:autoLink="web"
                         android:text="@string/genshinhelper_link"
                         android:textColor="@color/pyro"
                         android:textSize="20sp" />
@@ -656,7 +654,8 @@
                         android:layout_margin="8dp"
                         android:autoLink="web"
                         android:text="Discord : Voc-夜芷冰#2512"
-                        android:textColor="@color/pyro"
+                        android:textAlignment="center"
+                        android:textColor="@color/tv_color"
                         android:textSize="20sp" />
 
                 </LinearLayout>

@@ -1,12 +1,17 @@
 package com.voc.genshin_helper.data;
 
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -22,6 +27,7 @@ import com.voc.genshin_helper.ui.MainActivity;
 
 import java.util.List;
 
+import static android.content.Context.MODE_PRIVATE;
 import static com.voc.genshin_helper.data.RoundRectImageView.getRoundBitmapByShader;
 
 /**
@@ -85,7 +91,23 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         holder.char_icon.setImageBitmap(outBitmap);
         holder.char_icon.setScaleType(ImageView.ScaleType.CENTER_CROP);
         holder.char_name.setText(characters_rss.getCharByName(Characters.getName())[1]);
-        Log.wtf("YYY",Characters.getName());
+
+        SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
+        String color_hex = sharedPreferences.getString("theme_color_hex","#FF5A5A"); // Must include #
+
+        ColorStateList myList = new ColorStateList(
+                new int[][]{
+                        new int[]{android.R.attr.state_pressed},
+                        new int[]{-android.R.attr.state_checked},
+                        new int[]{android.R.attr.state_checked},
+                },
+                new int[] {
+                        context.getResources().getColor(R.color.tv_color),
+                        context.getResources().getColor(R.color.tv_color),
+                        Color.parseColor(color_hex)
+                }
+        );
+
     }
 
     @Override

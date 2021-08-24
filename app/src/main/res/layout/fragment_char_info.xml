@@ -284,6 +284,7 @@
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/barrier1"
                     android:layout_width="match_parent"
                     android:layout_height="5dp"
                     android:layout_margin="2dp"
@@ -325,6 +326,7 @@
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/barrier2"
                     android:layout_width="match_parent"
                     android:layout_height="5dp"
                     android:layout_margin="2dp"
@@ -362,6 +364,7 @@
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/barrier3"
                     android:layout_width="match_parent"
                     android:layout_height="5dp"
                     android:layout_margin="2dp"
@@ -396,6 +399,7 @@
                 </LinearLayout>
 
                 <TextView
+                    android:id="@+id/barrier4"
                     android:layout_width="match_parent"
                     android:layout_height="5dp"
                     android:layout_margin="2dp"

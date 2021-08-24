@@ -15,6 +15,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.method.LinkMovementMethod;
+import android.text.util.Linkify;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -124,7 +126,6 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
 
         sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
         editor = sharedPreferences.edit();
@@ -138,6 +139,7 @@ public class MainActivity extends AppCompatActivity {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
         }
 
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         //init
         tm = new Today_Material();
@@ -164,9 +166,9 @@ public class MainActivity extends AppCompatActivity {
         char_reload();
         weapon_reload();
         cbg();
+        setColorBk();
 
-
-        String versionName = BuildConfig.VERSION_NAME + " ("+String.valueOf(BuildConfig.VERSION_CODE)+")";
+        String versionName = BuildConfig.VERSION_NAME;
 
         TextView info_app_version = findViewById(R.id.info_app_version);
         info_app_version.setText(versionName);
@@ -408,7 +410,8 @@ public class MainActivity extends AppCompatActivity {
                     setting_pg.setVisibility(View.GONE);
 
                     return true;
-                }else if (item.getItemId() == R.id.navigation_home){
+                }
+                else if (item.getItemId() == R.id.navigation_home){
                     home_pg.setVisibility(View.VISIBLE);
                     char_pg.setVisibility(View.GONE);
                     art_pg.setVisibility(View.GONE);
@@ -432,14 +435,16 @@ public class MainActivity extends AppCompatActivity {
                         }}, 60000);
 
                     return true;
-                }else if (item.getItemId() == R.id.navigation_weapons){
+                }
+                else if (item.getItemId() == R.id.navigation_weapons){
                     weapon_pg.setVisibility(View.VISIBLE);
                     char_pg.setVisibility(View.GONE);
                     home_pg.setVisibility(View.GONE);
                     art_pg.setVisibility(View.GONE);
                     setting_pg.setVisibility(View.GONE);
                     return true;
-                }else if (item.getItemId() == R.id.navigation_settings){
+                }
+                else if (item.getItemId() == R.id.navigation_settings){
                     setting_pg.setVisibility(View.VISIBLE);
                     char_pg.setVisibility(View.GONE);
                     home_pg.setVisibility(View.GONE);
@@ -572,6 +577,19 @@ public class MainActivity extends AppCompatActivity {
                         }
                     });
 
+                    TextView contact_link1 = findViewById(R.id.contact_link1);
+                    TextView contact_link2 = findViewById(R.id.contact_link2);
+
+                    contact_link1.setMovementMethod(LinkMovementMethod.getInstance());
+                    contact_link2.setMovementMethod(LinkMovementMethod.getInstance());
+
+                    contact_link1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                        }
+                    });
+
                     // Other -> Server Location
 
                     ArrayAdapter server_aa = new ArrayAdapter(context,R.layout.spinner_item,serverList);
@@ -619,10 +637,41 @@ public class MainActivity extends AppCompatActivity {
                     });
 
                     return true;
-                }else {
-                    return false;}
+                }
+                else {
+                    return false;
+                }
             }
         });
+    }
+
+    private void setColorBk() {
+        // Method of Setting Color Blocks
+
+        SharedPreferences sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
+        int pos = sharedPreferences.getInt("theme_color_pos",0)+1;
+        ImageView color_bk = findViewById(R.id.color_block1); // TEMP
+
+        if(pos == 1){color_bk = findViewById(R.id.color_block1);}
+        else if(pos == 2){color_bk =	 findViewById(R.id.color_block2);}
+        else if(pos == 3){color_bk =	 findViewById(R.id.color_block3);}
+        else if(pos == 4){color_bk =	 findViewById(R.id.color_block4);}
+        else if(pos == 5){color_bk =	 findViewById(R.id.color_block5);}
+        else if(pos == 6){color_bk =	 findViewById(R.id.color_block6);}
+        else if(pos == 7){color_bk =	 findViewById(R.id.color_block7);}
+        else if(pos == 8){color_bk =	 findViewById(R.id.color_block8);}
+        else if(pos == 9){color_bk =	 findViewById(R.id.color_block9);}
+        else if(pos == 10){color_bk =	 findViewById(R.id.color_block10);}
+        else if(pos == 11){color_bk =	 findViewById(R.id.color_block11);}
+        else if(pos == 12){color_bk =	 findViewById(R.id.color_block12);}
+        else if(pos == 13){color_bk =	 findViewById(R.id.color_block13);}
+        else if(pos == 14){color_bk =	 findViewById(R.id.color_block14);}
+        else if(pos == 15){color_bk =	 findViewById(R.id.color_block15);}
+        else if(pos == 16){color_bk =	 findViewById(R.id.color_block16);}
+        else if(pos == 17){color_bk =	 findViewById(R.id.color_block17);}
+        else if(pos == 18){color_bk =	 findViewById(R.id.color_block18);}
+
+        giveTickById(color_bk,pos-1);
     }
 
     private void giveTickById(ImageView color_bk,int pos) {
@@ -668,6 +717,7 @@ public class MainActivity extends AppCompatActivity {
 
         int[] colorList = new int[]{R.color.color_theme_1,	R.color.color_theme_2,	R.color.color_theme_3,	R.color.color_theme_4,	R.color.color_theme_5,	R.color.color_theme_6,	R.color.color_theme_7,	R.color.color_theme_8,	R.color.color_theme_9,	R.color.color_theme_10,	R.color.color_theme_11,	R.color.color_theme_12,	R.color.color_theme_13,	R.color.color_theme_14,	R.color.color_theme_15,	R.color.color_theme_16,	R.color.color_theme_17,	R.color.color_theme_18};
         editor.putString("theme_color_hex",getResources().getString(colorList[pos]));
+        editor.putInt("theme_color_pos",pos);
         editor.apply();
         cbg();
     }
@@ -957,6 +1007,15 @@ public class MainActivity extends AppCompatActivity {
                 }
         );
 
+        Window window = getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        if(color_hex.toUpperCase().equals("#FFFFFFFF")){
+            window.setStatusBarColor(Color.parseColor("#000000"));}
+        else {
+            window.setStatusBarColor(Color.parseColor(color_hex));
+            Log.w("WRF",color_hex);
+        }
+
         //Color.parseColor(color_hex)
         //getResources().getColor(R.color.idname);
 
@@ -982,12 +1041,12 @@ public class MainActivity extends AppCompatActivity {
         TextView y_tv = findViewById(R.id.y_tv);
         BottomNavigationView nav_view = findViewById(R.id.nav_view);
 
-        home_f_date_tv.setTextColor(Color.parseColor(color_hex));
-        home_title_tv.setTextColor(Color.parseColor(color_hex));
-        home_date_tv.setTextColor(Color.parseColor(color_hex));
-        char_tv.setTextColor(Color.parseColor(color_hex));
-        weapon_tv.setTextColor(Color.parseColor(color_hex));
-        tool_tv.setTextColor(Color.parseColor(color_hex));
+        //home_f_date_tv.setTextColor(Color.parseColor(color_hex));
+        //home_title_tv.setTextColor(Color.parseColor(color_hex));
+        //home_date_tv.setTextColor(Color.parseColor(color_hex));
+        //char_tv.setTextColor(Color.parseColor(color_hex));
+        //weapon_tv.setTextColor(Color.parseColor(color_hex));
+        //tool_tv.setTextColor(Color.parseColor(color_hex));
         calculator_tv.setTextColor(Color.parseColor(color_hex));
         daily_login_tv.setTextColor(Color.parseColor(color_hex));
         map_tv.setTextColor(Color.parseColor(color_hex));
@@ -1018,6 +1077,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(getIntent());
         overridePendingTransition(R.anim.fade_out,
                 R.anim.fade_out);
+
 
     }
 

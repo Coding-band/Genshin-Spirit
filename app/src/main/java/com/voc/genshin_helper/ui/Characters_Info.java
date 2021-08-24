@@ -4,6 +4,8 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.text.Html;
 import android.util.Log;
 import android.view.View;
@@ -28,6 +30,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
+
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * Package com.voc.genshin_helper.data was
@@ -259,6 +263,7 @@ public class Characters_Info {
         final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
         View view = View.inflate(context, R.layout.fragment_char_info, null);
 
+
         /** Method of info_detail */
         ImageView char_img = view.findViewById(R.id.info_char_img);
         TextView char_name = view.findViewById(R.id.info_char_name);
@@ -342,6 +347,83 @@ public class Characters_Info {
         ImageView char_sof6_ico = view.findViewById(R.id.info_sof6_ico);
         TextView char_sof6_name = view.findViewById(R.id.info_sof6_name);
         TextView char_sof6_normal = view.findViewById(R.id.info_sof6_normal);
+
+        /** THEME COLOR SET*/
+        SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
+        String color_hex = sharedPreferences.getString("theme_color_hex","#FF5A5A"); // Must include #
+
+        ColorStateList myList = new ColorStateList(
+                new int[][]{
+                        new int[]{android.R.attr.state_pressed},
+                        new int[]{-android.R.attr.state_checked},
+                        new int[]{android.R.attr.state_checked},
+                },
+                new int[] {
+                        context.getResources().getColor(R.color.tv_color),
+                        context.getResources().getColor(R.color.tv_color),
+                        Color.parseColor(color_hex)
+                }
+        );
+
+        TextView barrier1 = view.findViewById(R.id.barrier1);
+        TextView barrier2 = view.findViewById(R.id.barrier2);
+        TextView barrier3 = view.findViewById(R.id.barrier3);
+        TextView barrier4 = view.findViewById(R.id.barrier4);
+        TextView info_intro_title = view.findViewById(R.id.info_intro_title);
+        TextView info_talent = view.findViewById(R.id.info_talent);
+        TextView info_btalent = view.findViewById(R.id.info_btalent);
+        TextView info_sof = view.findViewById(R.id.info_sof);
+
+        TextView info_talent1_name = view.findViewById(R.id.info_talent1_name);
+        TextView info_talent1_normal_title = view.findViewById(R.id.info_talent1_normal_title);
+        TextView info_talent1_hard_title = view.findViewById(R.id.info_talent1_hard_title);
+        TextView info_talent1_drop_title = view.findViewById(R.id.info_talent1_drop_title);
+        TextView info_talent2_name = view.findViewById(R.id.info_talent2_name);
+        TextView info_talent3_name = view.findViewById(R.id.info_talent3_name);
+        TextView info_talent4_name = view.findViewById(R.id.info_talent4_name);
+
+        TextView info_btalent1_name = view.findViewById(R.id.info_btalent1_name);
+        TextView info_btalent2_name = view.findViewById(R.id.info_btalent2_name);
+        TextView info_btalent3_name = view.findViewById(R.id.info_btalent3_name);
+
+        TextView info_sof1_name = view.findViewById(R.id.info_sof1_name);
+        TextView info_sof2_name = view.findViewById(R.id.info_sof2_name);
+        TextView info_sof3_name = view.findViewById(R.id.info_sof3_name);
+        TextView info_sof4_name = view.findViewById(R.id.info_sof4_name);
+        TextView info_sof5_name = view.findViewById(R.id.info_sof5_name);
+        TextView info_sof6_name = view.findViewById(R.id.info_sof6_name);
+
+
+
+        barrier1.setBackgroundColor(Color.parseColor(color_hex));
+        barrier2.setBackgroundColor(Color.parseColor(color_hex));
+        barrier3.setBackgroundColor(Color.parseColor(color_hex));
+        barrier4.setBackgroundColor(Color.parseColor(color_hex));
+        info_intro_title.setTextColor(Color.parseColor(color_hex));
+        info_talent.setTextColor(Color.parseColor(color_hex));
+        info_btalent.setTextColor(Color.parseColor(color_hex));
+        info_sof.setTextColor(Color.parseColor(color_hex));
+
+        info_talent1_name.setTextColor(Color.parseColor(color_hex));
+        info_talent1_normal_title.setTextColor(Color.parseColor(color_hex));
+        info_talent1_hard_title.setTextColor(Color.parseColor(color_hex));
+        info_talent1_normal_title.setTextColor(Color.parseColor(color_hex));
+        info_talent1_drop_title.setTextColor(Color.parseColor(color_hex));
+        info_talent2_name.setTextColor(Color.parseColor(color_hex));
+        info_talent3_name.setTextColor(Color.parseColor(color_hex));
+        info_talent4_name.setTextColor(Color.parseColor(color_hex));
+
+        info_btalent1_name.setTextColor(Color.parseColor(color_hex));
+        info_btalent2_name.setTextColor(Color.parseColor(color_hex));
+        info_btalent3_name.setTextColor(Color.parseColor(color_hex));
+
+        info_sof1_name.setTextColor(Color.parseColor(color_hex));
+        info_sof2_name.setTextColor(Color.parseColor(color_hex));
+        info_sof3_name.setTextColor(Color.parseColor(color_hex));
+        info_sof4_name.setTextColor(Color.parseColor(color_hex));
+        info_sof5_name.setTextColor(Color.parseColor(color_hex));
+        info_sof6_name.setTextColor(Color.parseColor(color_hex));
+
 
         /**
          * PLS REMEMBER ADD BACK SUGGESTED WEAPON,ART IN XML

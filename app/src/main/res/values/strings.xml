@@ -121,6 +121,6 @@
     <string name="zh_tw" translatable="false">繁體中文 (港、澳、台)</string>
     <string name="en_us" translatable="false">English (US)</string>
     <string name="genshindb_link"><a href="https://github.com/Wolfteam/GenshinDb">GenshinDb Github</a></string>
-    <string name="genshinhelper_link"><a href="https://github.com/Wolfteam/GenshinDb">Genshin Helper Github</a></string>
+    <string name="genshinhelper_link"><a href="https://github.com/Vocaloid2048/GenshinHelper">Genshin Helper Github</a></string>
 
 </resources>

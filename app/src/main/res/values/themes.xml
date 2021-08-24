@@ -1,13 +1,14 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="NoTheme" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/theme_color</item>
-        <item name="colorPrimaryDark">@color/theme_dark_color</item>
+        <item name="colorPrimaryDark">@color/theme_color</item>
         <item name="colorAccent">#05BBA9</item>
         <item name="android:windowNoTitle">true</item>
-        <item name="android:windowFullscreen">true</item>
+        <item name="android:textColor">@color/tv_color</item>
+        <item name="android:windowFullscreen">false</item>
         <item name="android:windowAnimationStyle">@style/WindowAnimationTransition</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor" tools:targetApi="l">@color/theme_dark_color</item>
     </style>
 
