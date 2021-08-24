@@ -1,6 +1,5 @@
 # 原神小幫手 (Genshin Helper)
 這是一個基於GenshinDb而建立的Java專案，以補上GenshinDb的不足而設，部分內容(相片)由GenshinDb開源繼承。
-### 請注意，此專案只是向GenshinDb及其協作者致敬，並非旨在抄襲。
 
 ## 免責聲明
 本應用程式並不屬於 miHoYo Co., Ltd. 且並未獲得其認可。原神小幫手(Genshin Helper)僅為一款由粉絲自行開發之數據提供App，本應用程式所提供的資料只作參考用途。 不會對其所載任何資料的準確性及完整作任何程度保証。
