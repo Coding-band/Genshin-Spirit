@@ -3,24 +3,25 @@
     package="com.voc.genshin_helper">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WAKE_LOCK"/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
-    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY"/>
-
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.ACCESS_NOTIFICATION_POLICY" />
 
     <application
         android:allowBackup="true"
-        android:label="@string/app_name"
         android:icon="@drawable/app_ico"
+        android:label="@string/app_name"
         android:roundIcon="@drawable/app_ico"
         android:supportsRtl="true"
-        android:windowSoftInputMode="stateHidden"
-        android:theme="@style/NoTheme">
+        android:largeHeap="true"
+        android:hardwareAccelerated="true"
+        android:theme="@style/NoTheme"
+        android:windowSoftInputMode="stateHidden">
         <activity
             android:name=".ui.MainActivity"
             android:label="@string/app_name"
-            android:windowSoftInputMode="stateHidden"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,16 +30,22 @@
         </activity>
         <activity
             android:name=".ui.AlarmUI"
-            android:windowSoftInputMode="stateHidden"
             android:label="@string/app_name"
-            android:screenOrientation="portrait">
-        </activity>
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"></activity>
 
-        <receiver android:name=".util.ReminderBroadcast"/>
-        <receiver android:name=".util.SampleBootReceiver"
+        <activity
+            android:name=".ui.CalculatorUI"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden"></activity>
+
+        <receiver android:name=".util.ReminderBroadcast" />
+        <receiver
+            android:name=".util.SampleBootReceiver"
             android:enabled="false">
             <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"></action>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
     </application>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_char"
+        android:icon="@drawable/klee_ico"
+        android:title="@string/title_char" />
+    <item
+        android:id="@+id/nav_artifacts"
+        android:icon="@drawable/art2"
+        android:title="@string/title_artifacts"
+        android:visible="false" />
+    <item
+        android:id="@+id/nav_weapons"
+        android:icon="@drawable/weapons2"
+        android:title="@string/title_weapons"
+        android:visible="false" />
+    <item
+        android:id="@+id/nav_result"
+        android:icon="@drawable/wanderers_advice"
+        android:title="@string/result" />
+
+</menu>

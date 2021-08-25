@@ -11,6 +11,7 @@
         android:background="@color/page_bg"
         android:overScrollMode="never"
         android:scrollbars="none"
+        android:layout_centerHorizontal="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

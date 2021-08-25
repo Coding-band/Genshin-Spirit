@@ -4,14 +4,11 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -21,14 +18,16 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.R;
-import com.voc.genshin_helper.ui.Characters_Info;
+import com.voc.genshin_helper.ui.CalculatorUI;
 import com.voc.genshin_helper.ui.MainActivity;
+import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
 import java.util.List;
 
 import static android.content.Context.MODE_PRIVATE;
-import static com.voc.genshin_helper.data.RoundRectImageView.getRoundBitmapByShader;
 
 /**
  * Created by ankit on 27/10/17.
@@ -61,11 +60,19 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
     public void onBindViewHolder(ViewHolder holder, int position) {
         Characters Characters = charactersList.get(position);
         Characters_Rss characters_rss = new Characters_Rss();
-        int width , height;
+        int width = 0, height = 0;
         int count = 3;
+        final int radius = 25;
+        final int margin = 0;
+        final Transformation transformation = new RoundedCornersTransformation(radius, margin);
 
-        width = (int) ((ScreenSizeUtils.getInstance(context).getScreenWidth() - 32*2*2)/2);
-        height = (int) (width*1.7);
+        if(context instanceof MainActivity){
+            width = (int) ((ScreenSizeUtils.getInstance(context).getScreenWidth() - 32*2*2)/2);
+            height = (int) (width*58/32);
+        }else if(context instanceof CalculatorUI){
+            width = (int) ((ScreenSizeUtils.getInstance(context).getScreenWidth() - 32*2*2)/3);
+            height = (int) ((ScreenSizeUtils.getInstance(context).getScreenWidth() - 32*2*2)/3);
+        }
 
         holder.char_name.setText(Characters.getName());
         holder.char_base_name.setText(Characters.getName());
@@ -75,6 +82,13 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
         if(Characters.getRare() >3 && Characters.getRare() < 6){holder.char_star.setNumStars(Characters.getRare());holder.char_star.setRating(Characters.getRare());}
 
+        if(context instanceof MainActivity){
+            width = (int) ((ScreenSizeUtils.getInstance(context).getScreenWidth() - 32*2*2)/2);
+            height = (int) (width*58/32);
+        }else if(context instanceof CalculatorUI){
+            width = (int) ((ScreenSizeUtils.getInstance(context).getScreenWidth() - 32*2*2)/3);
+            height = (int) ((ScreenSizeUtils.getInstance(context).getScreenWidth() - 32*2*2)/3);
+        }
         if(Characters.getElement().equals("Anemo")){holder.char_element.setImageResource(R.drawable.anemo);holder.char_icon.setBackgroundResource(R.drawable.bg_anemo_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_anemo_char);}
         if(Characters.getElement().equals("Cryo")){holder.char_element.setImageResource(R.drawable.cryo);holder.char_icon.setBackgroundResource(R.drawable.bg_cryo_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_cryo_char);}
         if(Characters.getElement().equals("Electro")){holder.char_element.setImageResource(R.drawable.electro);holder.char_icon.setBackgroundResource(R.drawable.bg_electro_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_electro_char);}
@@ -83,12 +97,34 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         if(Characters.getElement().equals("Pyro")){holder.char_element.setImageResource(R.drawable.pyro);holder.char_icon.setBackgroundResource(R.drawable.bg_pyro_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_pyro_char);}
         if(Characters.getElement().equals("Dendro")){holder.char_element.setImageResource(R.drawable.dendro);holder.char_icon.setBackgroundResource(R.drawable.bg_dendro_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_dendro_char);}
 
-        Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(),characters_rss.getCharByName(Characters.getName())[0]);
         holder.char_icon.getLayoutParams().width = width;
         holder.char_icon.getLayoutParams().height = height;
-        Bitmap outBitmap =getRoundBitmapByShader(bitmap, (int) Math.round(width/1.5),(int)Math.round(height/1.5),20, 0);
-        holder.char_icon.setImageBitmap(outBitmap);
-        holder.char_icon.setScaleType(ImageView.ScaleType.CENTER_CROP);
+
+        Bitmap bitmap ;
+        Bitmap outBitmap ;
+        // Already knew that IMG size is not the main reason of main_list lag
+        //bitmap = BitmapFactory.decodeResource(context.getResources(),characters_rss.getCharByName(Characters.getName())[0]);
+        //outBitmap =getRoundBitmapByShader(bitmap, (int) Math.round(width/2),(int)Math.round(height/2),20, 0);
+        if(context instanceof MainActivity){
+            Picasso.get()
+                    .load (characters_rss.getCharByName(Characters.getName())[0]).fit().centerCrop().transform(transformation)
+                    .error (R.drawable.paimon_full)
+                    .into (holder.char_icon);
+
+            //bitmap = BitmapFactory.decodeResource(context.getResources(),characters_rss.getCharByName(Characters.getName())[0]);
+            //outBitmap =getRoundBitmapByShader(bitmap, (int) Math.round(width/2),(int)Math.round(height/2),20, 0);
+        }else if(context instanceof CalculatorUI){
+            Picasso.get()
+                    .load (characters_rss.getCharByName(Characters.getName())[3]).fit().centerCrop().transform(transformation)
+                    .error (R.drawable.paimon_full)
+                    .into (holder.char_icon);
+
+            //bitmap = BitmapFactory.decodeResource(context.getResources(),characters_rss.getCharByName(Characters.getName())[3]);
+            //outBitmap =getRoundBitmapByShader(bitmap, (int) Math.round(width/2),(int)Math.round(height/2),20, 0);
+        }
+
+       // holder.char_icon.setImageBitmap(outBitmap);
+       // holder.char_icon.setScaleType(ImageView.ScaleType.CENTER_CROP);
         holder.char_name.setText(characters_rss.getCharByName(Characters.getName())[1]);
 
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
@@ -136,15 +172,22 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                 @Override
                 public void onClick(View v) {
                     Log.wtf("is context instanceof MainActivity ?",context.getPackageName());
-                   if (context instanceof MainActivity){Log.wtf("YES","IT's");
-                       (((MainActivity) context)).startInfo(String.valueOf(char_base_name.getText()));
+                    if (context instanceof MainActivity){Log.wtf("YES","IT's");
+                        (((MainActivity) context)).startInfo(String.valueOf(char_base_name.getText()));
 
-                   }
+                    }
+                    else if (context instanceof CalculatorUI){Log.wtf("YES","IT's");
+                        (((CalculatorUI) context)).charQuestion(String.valueOf(char_base_name.getText()));
+
+                    }
+
                 }
             });
 
         }
     }
+
+
     public void filterList(List<Characters> filteredList) {
         charactersList = filteredList;
         notifyDataSetChanged();

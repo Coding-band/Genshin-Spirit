@@ -11,12 +11,13 @@
         android:id="@+id/char_img"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/klee" />
+        app:srcCompat="@drawable/klee_flag" />
 
     <LinearLayout
         android:id="@+id/char_nl"
@@ -33,8 +34,9 @@
 
         <TextView
             android:id="@+id/char_name"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
             android:shadowColor="@color/black"
             android:shadowDx="2"
             android:shadowDy="2"

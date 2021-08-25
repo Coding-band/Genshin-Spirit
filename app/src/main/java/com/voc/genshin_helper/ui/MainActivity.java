@@ -2,6 +2,7 @@ package com.voc.genshin_helper.ui;
 
 //https://stackoverflow.com/questions/27128425/add-multiple-custom-views-to-layout-programmatically
 
+import android.animation.ObjectAnimator;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.ClipData;
@@ -164,9 +165,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         mList = findViewById(R.id.main_list);
-        mAdapter = new CharactersAdapter(this, charactersList);
+        mAdapter = new CharactersAdapter(this,charactersList);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 2);
+        LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
+        paramsMsg.gravity = Gravity.CENTER;
         mList.setLayoutManager(mLayoutManager);
+        mList.setLayoutParams(paramsMsg);
         mList.setAdapter(mAdapter);
         mList.removeAllViewsInLayout();
         home();
@@ -211,7 +215,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-            nav_view = findViewById(R.id.nav_view);
+        nav_view = findViewById(R.id.nav_view);
         nav_view.setSelectedItemId(R.id.navigation_home);
         nav_view.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -822,7 +826,8 @@ public class MainActivity extends AppCompatActivity {
         calculator_ll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i = new Intent(MainActivity.this,CalculatorUI.class);
+                startActivity(i);
             }
         });
         daily_login_ll.setOnClickListener(new View.OnClickListener() {
@@ -1038,14 +1043,14 @@ public class MainActivity extends AppCompatActivity {
         int[] today_IMG = tm.today_char_IMG(dow);
         int[] today_TV = tm.today_char_TV(dow);
         for (int x = 0 ; x < today_IMG.length; x++){
-        View char_view = LayoutInflater.from(this).inflate(R.layout.item_today_material, char_ll, false);
-        ImageView item_img = char_view.findViewById(R.id.item_img);
-        TextView item_name = char_view.findViewById(R.id.item_name);
-        TextView item_dow = char_view.findViewById(R.id.item_dow);
-        item_name.setText(getString(today_TV[x]));
-        item_dow.setText(getString(tm.today_is(today_IMG[x])));
-        item_img.setImageResource(today_IMG[x]);
-        char_ll.addView(char_view);
+            View char_view = LayoutInflater.from(this).inflate(R.layout.item_today_material, char_ll, false);
+            ImageView item_img = char_view.findViewById(R.id.item_img);
+            TextView item_name = char_view.findViewById(R.id.item_name);
+            TextView item_dow = char_view.findViewById(R.id.item_dow);
+            item_name.setText(getString(today_TV[x]));
+            item_dow.setText(getString(tm.today_is(today_IMG[x])));
+            item_img.setImageResource(today_IMG[x]);
+            char_ll.addView(char_view);
         }
     }
     public void weapon_reload(){
@@ -1055,14 +1060,14 @@ public class MainActivity extends AppCompatActivity {
         int[] today_IMG = tm.today_weapon_IMG(dow);
         int[] today_TV = tm.today_weapon_TV(dow);
         for (int x = 0 ; x < today_IMG.length; x++){
-        View char_view = LayoutInflater.from(this).inflate(R.layout.item_today_material, weapon_ll, false);
-        ImageView item_img = char_view.findViewById(R.id.item_img);
-        TextView item_name = char_view.findViewById(R.id.item_name);
-        TextView item_dow = char_view.findViewById(R.id.item_dow);
-        item_name.setText(getString(today_TV[x]));
-        item_dow.setText(getString(tm.today_is(today_IMG[x])));
-        item_img.setImageResource(today_IMG[x]);
-        weapon_ll.addView(char_view);
+            View char_view = LayoutInflater.from(this).inflate(R.layout.item_today_material, weapon_ll, false);
+            ImageView item_img = char_view.findViewById(R.id.item_img);
+            TextView item_name = char_view.findViewById(R.id.item_name);
+            TextView item_dow = char_view.findViewById(R.id.item_dow);
+            item_name.setText(getString(today_TV[x]));
+            item_dow.setText(getString(tm.today_is(today_IMG[x])));
+            item_img.setImageResource(today_IMG[x]);
+            weapon_ll.addView(char_view);
         }
     }
     public void startInfo (String name){
@@ -1152,7 +1157,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void recreate() {
-            finish();
+        finish();
         overridePendingTransition(R.anim.fade_in,
                 R.anim.fade_in);
         startActivity(getIntent());
@@ -1211,7 +1216,7 @@ public class MainActivity extends AppCompatActivity {
                 toast.setDuration(Toast.LENGTH_LONG);
                 toast.setView(layout);
                 toast.show();
-            exit = exit +1;
+                exit = exit +1;
             }else {
                 exit = 0;
                 finish();

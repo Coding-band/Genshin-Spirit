@@ -43,7 +43,7 @@
     <string name="aloy">埃洛伊</string>
     <string name="kujou_sara">九條娑羅</string>
     <string name="sangonomiya_kokomi">珊瑚宮心海</string>
-    <string name="raideb_shougun">雷電將軍</string>
+    <string name="raiden_shogun">雷電將軍</string>
     <string name="sayu">早柚</string>
     <string name="yoimiya">宵宮</string>
     <string name="kamisato_ayaka">神里綾華</string>
@@ -131,5 +131,6 @@
     <string name="vote_no">不用了</string>
     <string name="vote_later">以後再說</string>
     <string name="copied">已複製</string>
+    <string name="result">結算</string>
 
 </resources>

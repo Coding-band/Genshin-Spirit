@@ -15,7 +15,7 @@ import java.io.InputStream;
  */
 public class Characters_Rss {
 
-    public int[] char_names = {R.string.aloy,R.string.kujou_sara,R.string.sangonomiya_kokomi,R.string.raideb_shougun,R.string.sayu,R.string.yoimiya,R.string.kamisato_ayaka,R.string.kaedehara_kazuha,R.string.yanfei,R.string.eula,R.string.rosaria,R.string.xiao,R.string.hu_tao,R.string.ganyu,R.string.albedo,R.string.zhongli,R.string.xinyan,R.string.tartaglia,R.string.diona,R.string.xingqiu,R.string.xiangling,R.string.venti,R.string.sucrose,R.string.razor,R.string.qiqi,R.string.noelle,R.string.ningguang,R.string.mona,R.string.lisa,R.string.klee,R.string.keqing,R.string.kaeya,R.string.jean,R.string.fischl,R.string.diluc,R.string.chongyun,R.string.bennett,R.string.beidou,R.string.barbara, R.string.amber,R.string.traveler_anemo,R.string.traveler_geo,R.string.traveler_electro};
+    public int[] char_names = {R.string.aloy,R.string.kujou_sara,R.string.sangonomiya_kokomi,R.string.raiden_shogun,R.string.sayu,R.string.yoimiya,R.string.kamisato_ayaka,R.string.kaedehara_kazuha,R.string.yanfei,R.string.eula,R.string.rosaria,R.string.xiao,R.string.hu_tao,R.string.ganyu,R.string.albedo,R.string.zhongli,R.string.xinyan,R.string.tartaglia,R.string.diona,R.string.xingqiu,R.string.xiangling,R.string.venti,R.string.sucrose,R.string.razor,R.string.qiqi,R.string.noelle,R.string.ningguang,R.string.mona,R.string.lisa,R.string.klee,R.string.keqing,R.string.kaeya,R.string.jean,R.string.fischl,R.string.diluc,R.string.chongyun,R.string.bennett,R.string.beidou,R.string.barbara, R.string.amber,R.string.traveler_anemo,R.string.traveler_geo,R.string.traveler_electro};
 
     public String LocaleStr(int x,Context context){
         return context.getString(char_names[x]);
@@ -54,7 +54,7 @@ public class Characters_Rss {
         if(name.equals("Aloy")){return new int[] {R.drawable.aloy,R.string.aloy,R.drawable.aloy,R.drawable.aloy_ico};}
         else if(name.equals("Kujou Sara")){return new int[] {R.drawable.kujou_sara_flag,R.string.kujou_sara,R.drawable.kujou_sara_full,R.drawable.kujou_sara_ico};}
         else if(name.equals("Sangonomiya Kokomi")){return new int[] {R.drawable.sangonomiya_kokomi_flag,R.string.sangonomiya_kokomi,R.drawable.sangonomiya_kokomi_full,R.drawable.sangonomiya_kokomi_ico};}
-        else if(name.equals("Raiden Shougun")){return new int[] {R.drawable.raiden_shogun_flag,R.string.raideb_shougun,R.drawable.raiden_shogun_full,R.drawable.raiden_shogun_ico};}
+        else if(name.equals("Raiden Shogun")){return new int[] {R.drawable.raiden_shogun_flag,R.string.raiden_shogun,R.drawable.raiden_shogun_full,R.drawable.raiden_shogun_ico};}
         else if(name.equals("Sayu")){return new int[] {R.drawable.sayu_flag,R.string.sayu,R.drawable.sayu_full,R.drawable.sayu_ico};}
         else if(name.equals("Yoimiya")){return new int[] {R.drawable.yoimiya_flag,R.string.yoimiya,R.drawable.yoimiya_full,R.drawable.yoimiya_ico};}
         else if(name.equals("Kamisato Ayaka")){return new int[] {R.drawable.ayaka_flag,R.string.kamisato_ayaka,R.drawable.ayaka_full,R.drawable.ayaka_ico};}
