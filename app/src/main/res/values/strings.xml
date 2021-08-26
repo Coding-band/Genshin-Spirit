@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Genshin Helper</string>
+    <string name="app_name">Genshin Paimon</string>
     <string name="title_char">Characters</string>
     <string name="title_artifacts">Artifacts</string>
     <string name="title_home">Home</string>
@@ -42,7 +42,7 @@
     <string name="aloy">Aloy</string>
     <string name="kujou_sara">Kujou Sara</string>
     <string name="sangonomiya_kokomi">Sangonomiya Kokomi</string>
-    <string name="raiden_shogun">Raideb Shougun</string>
+    <string name="raiden_shogun">Raiden Shogun</string>
     <string name="sayu">Sayu</string>
     <string name="yoimiya">Yoimiya</string>
     <string name="kamisato_ayaka">Kamisato Ayaka</string>
@@ -130,9 +130,12 @@
     <string name="vote_later">Later</string>
     <string name="copied">Copied</string>
     <string name="result">Result</string>
-    <string name="not_use">Not calculate</string>
     <string name="curr_lvl">"Curr Lvl : "</string>
     <string name="aim_lvl">"Aim Lvl : "</string>
     <string name="choose_lvl">Choose level</string>
+    <string name="already_dak_po">Already ascension</string>
+    <string name="cal_also">Calculate</string>
+    <string name="delete">Delete</string>
+    <string name="choosed">"Choosed : "</string>
 
 </resources>

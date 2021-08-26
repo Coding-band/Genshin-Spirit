@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -25,6 +26,7 @@ import com.voc.genshin_helper.ui.CalculatorUI;
 import com.voc.genshin_helper.ui.MainActivity;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static android.content.Context.MODE_PRIVATE;
@@ -177,7 +179,19 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
                     }
                     else if (context instanceof CalculatorUI){Log.wtf("YES","IT's");
+                        ArrayList<String> nameList = (((CalculatorUI) context)).checkNameList();
+                        boolean have = false;
+                        String name = String.valueOf(char_base_name.getText());
+
+                        if(nameList.contains(name.replace("_"," "))){
+                            have = true;
+                        }
+
+                        if(have == false){
                         (((CalculatorUI) context)).charQuestion(String.valueOf(char_base_name.getText()));
+                        }else {
+                            Toast.makeText(((CalculatorUI) context), "You have already set this character !", Toast.LENGTH_SHORT).show();
+                        }
 
                     }
 
@@ -186,6 +200,8 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
         }
     }
+
+
 
 
     public void filterList(List<Characters> filteredList) {

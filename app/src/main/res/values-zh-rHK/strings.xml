@@ -132,9 +132,12 @@
     <string name="vote_later">以後再說</string>
     <string name="copied">已複製</string>
     <string name="result">結算</string>
-    <string name="not_use">不計算</string>
     <string name="curr_lvl">"目前等級 : "</string>
     <string name="aim_lvl">"目標等級 : "</string>
     <string name="choose_lvl">選擇等級</string>
+    <string name="choosed">"已選擇 : "</string>
+    <string name="already_dak_po">已突破</string>
+    <string name="cal_also">計算</string>
+    <string name="delete">刪除</string>
 
 </resources>

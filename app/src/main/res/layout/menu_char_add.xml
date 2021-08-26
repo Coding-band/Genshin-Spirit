@@ -73,13 +73,36 @@
             android:text="目前等級 : 1"
             android:textColor="@color/tv_color" />
 
+        <Switch
+            android:id="@+id/menu_break_lvl_before_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/already_dak_po"
+            android:textColor="@color/tv_color" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
         <Button
             android:id="@+id/menu_char_lvl_after"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="32dp"
+            android:layout_marginRight="32dp"
             android:background="@drawable/bg_square_border_num"
             android:text="目標等級 : 90"
+            android:textColor="@color/tv_color" />
+
+        <Switch
+            android:id="@+id/menu_break_lvl_after_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/already_dak_po"
             android:textColor="@color/tv_color" />
     </LinearLayout>
 
@@ -91,7 +114,8 @@
         android:text="目前突破等級"
         android:textAlignment="center"
         android:textSize="16sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:visibility="gone" />
 
     <RatingBar
         android:id="@+id/menu_break_lvl_before_rating"
@@ -100,11 +124,12 @@
         android:layout_gravity="center"
         android:numStars="6"
         android:progressTint="@color/color_theme_2"
-        android:rating="1"
+        android:rating="0"
         android:scaleX="0.75"
         android:scaleY="0.75"
         android:secondaryProgressTint="@color/color_theme_2"
-        android:stepSize="1" />
+        android:stepSize="1"
+        android:visibility="gone" />
 
     <TextView
         android:id="@+id/menu_break_lvl_after_title"
@@ -114,7 +139,8 @@
         android:text="目標突破等級"
         android:textAlignment="center"
         android:textSize="16sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:visibility="gone" />
 
     <RatingBar
         android:id="@+id/menu_break_lvl_after_rating"
@@ -123,11 +149,12 @@
         android:layout_gravity="center"
         android:numStars="6"
         android:progressTint="@color/color_theme_2"
-        android:rating="2"
+        android:rating="6"
         android:scaleX="0.75"
         android:scaleY="0.75"
         android:secondaryProgressTint="@color/color_theme_2"
-        android:stepSize="1" />
+        android:stepSize="1"
+        android:visibility="gone" />
 
     <View
         android:id="@+id/divider"
@@ -163,18 +190,19 @@
             android:orientation="horizontal">
 
             <SeekBar
-                android:id="@+id/menu_skill1_pb"
+                android:id="@+id/menu_skill1_before_pb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="8dp"
                 android:layout_weight="1"
+                android:max="10"
                 android:progress="1"
-                android:progressTint="#03A9F4"
+                android:progressTint="@color/hydro"
                 android:thumb="@drawable/app_seek_round" />
 
             <TextView
-                android:id="@+id/menu_skill1_tv"
+                android:id="@+id/menu_skill1_before_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -184,6 +212,39 @@
                 android:textAlignment="center"
                 android:textColor="@color/tv_color"
                 android:textSize="24sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:orientation="horizontal">
+
+            <SeekBar
+                android:id="@+id/menu_skill1_after_pb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:max="10"
+                android:progress="1"
+                android:progressTint="@color/pyro"
+                android:thumb="@drawable/app_seek_round" />
+
+            <TextView
+                android:id="@+id/menu_skill1_after_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="8dp"
+                android:layout_weight="8"
+                android:text="1"
+                android:textAlignment="center"
+                android:textColor="@color/tv_color"
+                android:textSize="24sp" />
+
         </LinearLayout>
 
     </LinearLayout>
@@ -214,18 +275,19 @@
             android:orientation="horizontal">
 
             <SeekBar
-                android:id="@+id/menu_skill2_pb"
+                android:id="@+id/menu_skill2_before_pb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="8dp"
                 android:layout_weight="1"
                 android:max="10"
-                android:progressTint="#FF7100"
+                android:progress="1"
+                android:progressTint="@color/hydro"
                 android:thumb="@drawable/app_seek_round" />
 
             <TextView
-                android:id="@+id/menu_skill2_tv"
+                android:id="@+id/menu_skill2_before_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -235,6 +297,39 @@
                 android:textAlignment="center"
                 android:textColor="@color/tv_color"
                 android:textSize="24sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:orientation="horizontal">
+
+            <SeekBar
+                android:id="@+id/menu_skill2_after_pb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:max="10"
+                android:progress="1"
+                android:progressTint="@color/pyro"
+                android:thumb="@drawable/app_seek_round" />
+
+            <TextView
+                android:id="@+id/menu_skill2_after_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="8dp"
+                android:layout_weight="8"
+                android:text="1"
+                android:textAlignment="center"
+                android:textColor="@color/tv_color"
+                android:textSize="24sp" />
+
         </LinearLayout>
 
     </LinearLayout>
@@ -265,25 +360,56 @@
             android:orientation="horizontal">
 
             <SeekBar
-                android:id="@+id/menu_skill3_pb"
+                android:id="@+id/menu_skill3_before_pb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginLeft="8dp"
                 android:layout_weight="1"
-                android:max="50"
-                android:progress="0"
-                android:progressTint="#FF0062"
+                android:max="10"
+                android:progress="1"
+                android:progressTint="@color/hydro"
                 android:thumb="@drawable/app_seek_round" />
 
             <TextView
-                android:id="@+id/menu_skill3_tv"
+                android:id="@+id/menu_skill3_before_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginRight="8dp"
                 android:layout_weight="8"
-                android:maxLength="5"
+                android:text="1"
+                android:textAlignment="center"
+                android:textColor="@color/tv_color"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:orientation="horizontal">
+
+            <SeekBar
+                android:id="@+id/menu_skill3_after_pb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:max="10"
+                android:progress="1"
+                android:progressTint="@color/pyro"
+                android:thumb="@drawable/app_seek_round" />
+
+            <TextView
+                android:id="@+id/menu_skill3_after_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="8dp"
+                android:layout_weight="8"
                 android:text="1"
                 android:textAlignment="center"
                 android:textColor="@color/tv_color"
@@ -294,13 +420,15 @@
     </LinearLayout>
 
     <Switch
-        android:id="@+id/menu_not_cal"
+        android:id="@+id/menu_cal"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:layout_marginBottom="16dp"
+        android:checked="true"
         android:gravity="center"
-        android:text="@string/not_use" />
+        android:text="@string/cal_also"
+        android:textColor="@color/tv_color" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -333,8 +461,9 @@
                 android:layout_gravity="center"
                 android:layout_margin="4dp"
                 android:background="@drawable/bg_square_cancel_colorful"
-                android:text="@android:string/cancel"
-                android:textColor="@color/tv_color" />
+                android:text="@string/delete"
+                android:textColor="@color/tv_color"
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/menu_ok"
