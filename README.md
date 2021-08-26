@@ -1,4 +1,4 @@
-# 原神小幫手 (Genshin Helper)
+# 原神小幫手 (Genshin Paimon)
 這是一個基於GenshinDb而建立的Java專案，以補上GenshinDb的不足而設，部分內容(相片)由GenshinDb開源繼承。
 
 ## 免責聲明
