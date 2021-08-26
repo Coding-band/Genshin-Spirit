@@ -8,8 +8,10 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.app.Dialog;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.AssetManager;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -29,6 +31,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.NumberPicker;
 import android.widget.RatingBar;
+import android.widget.SeekBar;
+import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -37,7 +42,9 @@ import com.voc.genshin_helper.data.Characters;
 import com.voc.genshin_helper.data.CharactersAdapter;
 import com.voc.genshin_helper.data.Characters_Rss;
 import com.voc.genshin_helper.data.ScreenSizeUtils;
+import com.voc.genshin_helper.util.NumberPickerDialog;
 
+import org.apache.commons.io.IOUtils;
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -45,19 +52,25 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnValueChangeListener {
 
 
+    /** Method of requirements */
+    Characters_Rss characters_rss ;
+    Characters_Rss css ;
     private ViewPager viewPager;
     private ArrayList<View> viewPager_List;
     BottomNavigationView nav_view;
     Context context;
     SharedPreferences sharedPreferences;
+    SharedPreferences calShared; // Only record CalculatorUI's vars, user can get last time data when restart this page (ALSO CAN USE RESET BTN)
     SharedPreferences.Editor editor;
-    Characters_Rss css;
+    NumberPickerDialog npd;
 
     // Char Page
     RecyclerView mList_char;
@@ -81,6 +94,36 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
     public int show_stars = 0;
 
+
+    /** Method of Char's details' container */
+    /** Since String can't be null, so there will have "XPR" for identify is result correct */
+
+
+    // Main
+    String name = "XPR" ;
+    String nick = "XPR" ;
+    int star = 4;
+    String element = "XPR" ;
+    int isComing = 0 ;
+    JSONObject jsonObject;
+
+    // Battle Talent
+    String normal_name = "XPR";
+    String element_name = "XPR";
+    String final_name = "XPR";
+
+    /** Calculator vars -> Might change to int[] which sort by char update time*/
+    int before_lvl = 1;
+    int after_lvl = 2;
+
+    String normal_zh ;
+    String element_zh ;
+    String final_zh ;
+
+    String normal_en ;
+    String element_en ;
+    String final_en ;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -90,6 +133,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         nav_view = findViewById(R.id.nav_view_cal);
 
         css = new Characters_Rss();
+        npd = new NumberPickerDialog(this);
         context = this;
 
         final LayoutInflater mInflater = getLayoutInflater().from(this);
@@ -107,6 +151,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         viewPager.setAdapter(new MyViewPagerAdapter(viewPager_List));
         nav_view.setSelectedItemId(R.id.nav_char);
         sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
+        calShared = getSharedPreferences("cal_ui",MODE_PRIVATE);
         editor = sharedPreferences.edit();
         String color_hex = sharedPreferences.getString("theme_color_hex","#FF5A5A"); // Must include #
 
@@ -197,6 +242,169 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
             }
         });
+
+    }
+
+
+    public void charQuestion (String CharName_BASE){
+
+        sharedPreferences = context.getSharedPreferences("user_info",Context.MODE_PRIVATE);
+        CharName_BASE = CharName_BASE.replace(" ","_");
+        characters_rss = new Characters_Rss();
+
+        /**
+         * OLD WAY -> Only read added translation char json
+         *
+         * String lang = sharedPreferences.getString("lang","zh-HK");
+         *         AssetManager mg = context.getResources().getAssets();
+         *         InputStream is = null;
+         *         try {
+         *             Log.wtf("ALPHA","db/"+lang+"/"+CharName_BASE+".json");
+         *             is = mg.open("db/"+lang+"/"+CharName_BASE+".json");
+         *             if (is != null) {
+         *                 String result = IOUtils.toString(is, StandardCharsets.UTF_8);
+         *                 try {
+         *                     jsonObject = new JSONObject(result);
+         *                     name = jsonObject.getString("name");
+         *                     star = jsonObject.getInt("rare");
+         *                     element = jsonObject.getString("element");
+         *                     isComing = jsonObject.getBoolean("isComingSoon");
+         *                     nick = jsonObject.getString("nick");
+         *
+         *                     JSONObject battle_talent = jsonObject.getJSONObject("battle_talent");
+         *                     normal_name = battle_talent.getString("normal_name");
+         *                     element_name = battle_talent.getString("element_name");
+         *                     final_name = battle_talent.getString("final_name");
+         *                 } catch (JSONException e) {
+         *                     e.printStackTrace();
+         *                 }
+         *                 is.close();
+         *             }
+         *         } catch (IOException ex) {
+         *             if(ex != null) {
+         *                 Toast.makeText(context, "暫時沒有他/她的相關資料", Toast.LENGTH_SHORT).show();
+         *             }
+         *
+         *         }
+         */
+
+
+
+        String json_base = LoadData("db/char_list.json");
+        //Get data from JSON
+        try {
+            JSONArray array = new JSONArray(json_base);
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject object = array.getJSONObject(i);
+                name = object.getString("name");
+                element = object.getString("element");
+                star = object.getInt("rare");
+                isComing = object.getInt("isComing");
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        String char_atk_name = LoadData("db/char_atk_name.json");
+        //Get data from JSON
+        try {
+            JSONArray array = new JSONArray(char_atk_name);
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject object = array.getJSONObject(i);
+                name = object.getString("name");
+
+                normal_zh = object.getString("normal_zh");
+                element_zh = object.getString("element_zh");
+                final_zh = object.getString("final_zh");
+
+                normal_en = object.getString("normal_en");
+                element_en = object.getString("element_en");
+                final_en = object.getString("final_en");
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+        View view = View.inflate(context, R.layout.menu_char_add, null);
+
+        // Function method
+        Button cancel = view.findViewById(R.id.menu_cancel);
+        Button ok = view.findViewById(R.id.menu_ok);
+        TextView menu_title = view.findViewById(R.id.menu_title);
+        Button menu_char_lvl_before = view.findViewById(R.id.menu_char_lvl_before);
+        Button menu_char_lvl_after = view.findViewById(R.id.menu_char_lvl_after);
+        RatingBar menu_break_lvl_before_rating = view.findViewById(R.id.menu_break_lvl_before_rating);
+        RatingBar menu_break_lvl_after_rating = view.findViewById(R.id.menu_break_lvl_after_rating);
+        TextView menu_skill1_title = view.findViewById(R.id.menu_skill1_title);
+        SeekBar menu_skill1_pb = view.findViewById(R.id.menu_skill1_pb);
+        TextView menu_skill1_tv = view.findViewById(R.id.menu_skill1_tv);
+        TextView menu_skill2_title = view.findViewById(R.id.menu_skill2_title);
+        SeekBar menu_skill2_pb = view.findViewById(R.id.menu_skill2_pb);
+        TextView menu_skill2_tv = view.findViewById(R.id.menu_skill2_tv);
+        TextView menu_skill3_title = view.findViewById(R.id.menu_skill3_title);
+        SeekBar menu_skill3_pb = view.findViewById(R.id.menu_skill3_pb);
+        TextView menu_skill3_tv = view.findViewById(R.id.menu_skill3_tv);
+        Switch menu_not_cal = view.findViewById(R.id.menu_not_cal);
+
+        menu_title.setText("【"+nick+"】 "+getString(characters_rss.getCharByName(name)[1]));
+
+        // Will set to check zh / en later
+        menu_skill1_tv.setText(normal_zh);
+        menu_skill2_tv.setText(element_zh);
+        menu_skill3_tv.setText(final_zh);
+
+        menu_char_lvl_before.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                npd.setLastValue(before_lvl);
+                npd.setMaxValue(90);
+                npd.setMinValue(1);
+                npd.showDialog("LVL_BEFORE");
+            }
+        });
+
+        menu_char_lvl_after.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                npd.setLastValue(after_lvl);
+                npd.setMaxValue(90);
+                npd.setMinValue(before_lvl);
+                npd.showDialog("LVL_AFTER");
+            }
+        });
+        /**這邊取得自己所設置之模組回調*/
+        npd.onDialogRespond = new NumberPickerDialog.OnDialogRespond() {
+            @Override
+            public void onRespond(int value , String XPR) {
+                if(XPR.equals("LVL_BEFORE")){
+                    before_lvl = value;
+                    menu_char_lvl_before.setText(getString(R.string.curr_lvl)+String.valueOf(before_lvl));
+                }else if(XPR.equals("LVL_AFTER")){
+                    after_lvl = value;
+                    menu_char_lvl_after.setText(getString(R.string.curr_lvl)+String.valueOf(after_lvl));
+                }
+            }
+        };
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.setContentView(view);
+        dialog.setCanceledOnTouchOutside(true);
+        //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
+        Window dialogWindow = dialog.getWindow();
+        WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+        lp.width = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth());
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        lp.gravity = Gravity.BOTTOM;
+        dialogWindow.setAttributes(lp);
+        dialog.show();
+
 
     }
 
@@ -404,6 +612,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         });
     }
 
+
     private void char_list_reload() {
         Log.wtf("DAAM","YEE");
         String name ,element,weapon,nation,sex;
@@ -459,28 +668,6 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
     }
 
-    public void charQuestion (String name){
-
-        final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
-        View view = View.inflate(context, R.layout.menu_char_add, null);
-
-        // Function Buttons
-        Button cancel = view.findViewById(R.id.menu_cancel);
-        Button ok = view.findViewById(R.id.menu_ok);
-
-        dialog.setContentView(view);
-        dialog.setCanceledOnTouchOutside(true);
-        //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
-        Window dialogWindow = dialog.getWindow();
-        WindowManager.LayoutParams lp = dialogWindow.getAttributes();
-        lp.width = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth());
-        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
-        lp.gravity = Gravity.BOTTOM;
-        dialogWindow.setAttributes(lp);
-        dialog.show();
-
-
-    }
 
     @Override
     public void onValueChange(NumberPicker picker, int oldVal, int newVal) {

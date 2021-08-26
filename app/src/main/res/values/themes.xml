@@ -17,6 +17,19 @@
         <item name="android:windowExitAnimation">@android:anim/fade_out</item>
     </style>
 
+    <style name="MyDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:background">@color/page_bg</item>
+    </style>
+
+    <style name="customRatingBar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/star_full</item>
+        <item name="android:indeterminateDrawable">@drawable/star_empty</item>
+    </style>
+
+    <style name="AppTheme.Picker" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="android:textColorPrimary">@color/tv_color</item>
+    </style>
+
     <style name="NormalDialogStyle_N">
         <!--对话框背景 -->
         <item name="android:windowBackground">@color/colorWhiteAlpha</item>

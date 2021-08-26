@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:hedgehog="http://schemas.android.com/tools"
     android:background="@drawable/bg_less_edge"
     android:focusableInTouchMode="true"
     android:orientation="vertical">
@@ -38,19 +39,268 @@
             android:textColor="@color/tv_color"
             android:textSize="20sp" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/menu_lvl_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="角色等級"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/menu_char_lvl_before"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="32dp"
+            android:background="@drawable/bg_square_border_num"
+            android:text="目前等級 : 1"
+            android:textColor="@color/tv_color" />
+
+        <Button
+            android:id="@+id/menu_char_lvl_after"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="32dp"
+            android:background="@drawable/bg_square_border_num"
+            android:text="目標等級 : 90"
+            android:textColor="@color/tv_color" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/menu_break_lvl_before_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="目前突破等級"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <RatingBar
+        android:id="@+id/menu_break_lvl_before_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:numStars="6"
+        android:progressTint="@color/color_theme_2"
+        android:rating="1"
+        android:scaleX="0.75"
+        android:scaleY="0.75"
+        android:secondaryProgressTint="@color/color_theme_2"
+        android:stepSize="1" />
+
+    <TextView
+        android:id="@+id/menu_break_lvl_after_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="目標突破等級"
+        android:textAlignment="center"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <RatingBar
+        android:id="@+id/menu_break_lvl_after_rating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:numStars="6"
+        android:progressTint="@color/color_theme_2"
+        android:rating="2"
+        android:scaleX="0.75"
+        android:scaleY="0.75"
+        android:secondaryProgressTint="@color/color_theme_2"
+        android:stepSize="1" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:background="?android:attr/listDivider" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/menu_skill1_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="0"
+            android:text="砰砰"
+            android:textAlignment="center"
+            android:textColor="@color/tv_color"
+            android:textSize="18sp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_weight="0"
             android:orientation="horizontal">
 
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="wrap_content"
+            <SeekBar
+                android:id="@+id/menu_skill1_pb"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
                 android:layout_weight="1"
-                android:text="TextView" />
+                android:progress="1"
+                android:progressTint="#03A9F4"
+                android:thumb="@drawable/app_seek_round" />
+
+            <TextView
+                android:id="@+id/menu_skill1_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="8dp"
+                android:layout_weight="8"
+                android:text="1"
+                android:textAlignment="center"
+                android:textColor="@color/tv_color"
+                android:textSize="24sp" />
         </LinearLayout>
+
     </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/menu_skill2_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="0"
+            android:text="蹦蹦炸彈"
+            android:textAlignment="center"
+            android:textColor="@color/tv_color"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:orientation="horizontal">
+
+            <SeekBar
+                android:id="@+id/menu_skill2_pb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:max="10"
+                android:progressTint="#FF7100"
+                android:thumb="@drawable/app_seek_round" />
+
+            <TextView
+                android:id="@+id/menu_skill2_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="8dp"
+                android:layout_weight="8"
+                android:text="1"
+                android:textAlignment="center"
+                android:textColor="@color/tv_color"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/menu_skill3_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_weight="0"
+            android:text="轟轟火花"
+            android:textAlignment="center"
+            android:textColor="@color/tv_color"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:orientation="horizontal">
+
+            <SeekBar
+                android:id="@+id/menu_skill3_pb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:max="50"
+                android:progress="0"
+                android:progressTint="#FF0062"
+                android:thumb="@drawable/app_seek_round" />
+
+            <TextView
+                android:id="@+id/menu_skill3_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginRight="8dp"
+                android:layout_weight="8"
+                android:maxLength="5"
+                android:text="1"
+                android:textAlignment="center"
+                android:textColor="@color/tv_color"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Switch
+        android:id="@+id/menu_not_cal"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:text="@string/not_use" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -63,24 +313,35 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginBottom="8dp"
+            android:gravity="right"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/menu_cancel"
                 android:layout_width="72dp"
                 android:layout_height="36dp"
+                android:layout_gravity="center"
                 android:layout_margin="4dp"
-                android:layout_weight="1"
                 android:background="@drawable/bg_square_border"
                 android:text="@android:string/cancel"
                 android:textColor="@color/theme_color" />
 
             <Button
+                android:id="@+id/menu_delete"
+                android:layout_width="72dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_square_cancel_colorful"
+                android:text="@android:string/cancel"
+                android:textColor="@color/tv_color" />
+
+            <Button
                 android:id="@+id/menu_ok"
                 android:layout_width="72dp"
                 android:layout_height="36dp"
+                android:layout_gravity="center"
                 android:layout_margin="4dp"
-                android:layout_weight="1"
                 android:background="@drawable/bg_square_border_colorful"
                 android:text="確定"
                 android:textColor="@color/tv_color" />

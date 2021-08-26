@@ -14,7 +14,8 @@
     <color name="card_bg_less">#CCE0E0E0</color>
     <color name="item_bg_square">#D0D0D0</color>
 
-    <color name="page_bg_night">#313131</color>
+    <color name="page_bg_negative">#313131</color>
+    <color name="page_bg_kwang">#9E808080</color>
     <color name="tv_color_night">#FFFFFF</color>
 
     <color name="colorWhiteAlpha">#00000000</color>

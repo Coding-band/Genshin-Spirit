@@ -15,6 +15,8 @@
     <color name="item_bg_square">#444444</color>
     <color name="colorWhiteAlpha">#00000000</color>
 
+    <color name="page_bg_negative">#FFFFFF</color>
+
     <color name="anemo">#40805F</color>
     <color name="cryo">#407D80</color>
     <color name="dendor">#498040</color>

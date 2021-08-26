@@ -18,7 +18,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_margin="4dp" />
+        android:layout_margin="4dp"
+        android:theme="@style/AppTheme.Picker"
+        android:solidColor="@color/page_bg" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,7 +29,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/menu_cancel2"
+            android:id="@+id/np_cancel"
             android:layout_width="72dp"
             android:layout_height="36dp"
             android:layout_margin="4dp"
@@ -36,7 +38,7 @@
             android:textColor="@color/theme_color" />
 
         <Button
-            android:id="@+id/menu_ok2"
+            android:id="@+id/np_ok"
             android:layout_width="72dp"
             android:layout_height="36dp"
             android:layout_margin="4dp"

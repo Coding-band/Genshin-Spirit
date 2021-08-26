@@ -693,7 +693,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void showVoteDialog() {
         final AlertDialog.Builder normalDialog =
-                new AlertDialog.Builder(MainActivity.this);
+                new AlertDialog.Builder(MainActivity.this,R.style.MyDialogTheme);
         normalDialog.setIcon(R.drawable.app_ico);
         normalDialog.setTitle(getString(R.string.vote_title));
         normalDialog.setMessage(getString(R.string.vote_info));

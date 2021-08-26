@@ -130,5 +130,9 @@
     <string name="vote_later">Later</string>
     <string name="copied">Copied</string>
     <string name="result">Result</string>
+    <string name="not_use">Not calculate</string>
+    <string name="curr_lvl">"Curr Lvl : "</string>
+    <string name="aim_lvl">"Aim Lvl : "</string>
+    <string name="choose_lvl">Choose level</string>
 
 </resources>
