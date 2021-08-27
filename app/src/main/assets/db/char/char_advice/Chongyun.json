@@ -1,0 +1,20 @@
+{
+  "name" : "Chongyun",
+  "sup_dps_weapons": [
+    "prototype_aminus",
+    "debate_club"
+  ],
+  "sup_dps_art1": [
+    "the_exile",
+    "the_exile",
+    "defenders_will",
+    "defenders_will",
+    "defenders_will"
+  ],
+  "team1":[
+	"Chongyun","Xingqui","Barbara","Diluc"
+  ],
+  "team2":[
+	"Chongyun","Xingqui","Razor","Bennett"
+  ]
+}

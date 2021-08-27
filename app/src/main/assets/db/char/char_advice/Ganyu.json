@@ -1,0 +1,26 @@
+{
+  "name" : "Ganyu",
+  "dps_weapons": [
+    "amos_bow",
+	"prototype_crescent",
+	"blackcliff_warbow",
+	"favonius_warbow"
+   ],
+  "dps_art1": [
+    "blizzard_walker",
+    "blizzard_walker",
+    "blizzard_walker",
+    "blizzard_walker",
+    "blizzard_walker"
+  ],
+  "dps_art2": [
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "wanderers_troupe"
+  ],
+  "team1":[
+	"Ganyu","Mona","Venti","Diona"
+  ]
+}

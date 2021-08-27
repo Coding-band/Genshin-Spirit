@@ -1,0 +1,37 @@
+{
+  "name" : "Klee",
+  "dps_weapons": [
+    "lost_prayer_to_the_sacred_winds",
+    "skyward_atlas",
+    "dodoco_tales",
+    "the_widsith",
+    "solar_pearl"
+  ],
+  "dps_art1": [
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames"
+  ],
+  "dps_art2": [
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames",
+    "gladiators_finale",
+    "gladiators_finale",
+    "gladiators_finale"
+  ],
+  "dps_art3": [
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "wanderers_troupe"
+  ],
+  "team1":[
+	"Klee","Lisa","Barbara","Noelle"
+  ],
+  "team2":[
+	"Klee","Bennett","Venti","Fischl"
+  ]
+}

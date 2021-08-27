@@ -1,0 +1,48 @@
+{
+  "name" : "Kaeya",
+  "dps_weapons": [
+    "aquila_favonia",
+	"summit_shaper",
+	"blackcliff_longsword"
+   ],
+  "sup_dps_weapons": [
+    "skyward_blade",
+    "sacrificial_sword",
+    "favonius_sword",
+    "iron_sting"
+  ],
+  "util_weapons": [
+    "favonius_sword",
+    "skyrider_sword"
+  ],
+  "dps_art1": [
+    "blizzard_walker",
+    "blizzard_walker",
+    "blizzard_walker",
+    "blizzard_walker",
+    "blizzard_walker"
+  ],
+  "sup_dps_art1": [
+    "blizzard_walker",
+    "blizzard_walker",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "util_art1": [
+    "the_exile",
+    "the_exile",
+    "the_exile",
+    "the_exile",
+    "the_exile"
+  ],
+  "team1":[
+	"Razor","Kaeya","Diona","Bennett"
+  ],
+  "team2":[
+	"Hu Tao","Kaeya","Diona","Bennett"
+  ],
+  "team3":[
+	"Kaeya","Xingqui","Xiangling","Diona"
+  ]
+}

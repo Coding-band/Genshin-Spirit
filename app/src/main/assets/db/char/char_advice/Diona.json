@@ -1,0 +1,38 @@
+{
+  "name" : "Diona",
+  "util_weapons": [
+    "amos_bow",
+    "sacrificial_bow",
+    "prototype_crescent"
+  ],
+  "util_art1": [
+    "maiden_beloved",
+    "maiden_beloved",
+    "maiden_beloved",
+    "maiden_beloved",
+    "maiden_beloved"
+  ],
+  "util_art2": [
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "util_art3": [
+    "maiden_beloved",
+    "maiden_beloved",
+    "tenacity_of_the_millelith",
+    "tenacity_of_the_millelith",
+    "tenacity_of_the_millelith"
+  ],
+  "team1":[
+	"Ganyu","Venti","Mona","Diona"
+  ],
+  "team2":[
+	"Eula","Rosaria","Fischl","Diona"
+  ],
+  "team3":[
+	"Diluc","Xingqui","Bennett","Diona"
+  ]
+}
