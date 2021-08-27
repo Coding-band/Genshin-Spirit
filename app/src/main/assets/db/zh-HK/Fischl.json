@@ -53,27 +53,5 @@
     "sof6_name": "永夜之禽",
     "sof6_img": "evernight_raven",
     "sof6_desc": "奧茲的存在時間延長2秒。此外，奧茲會協同當前場上自己的角色一起攻擊，造成菲謝爾30％攻擊力的雷元素傷害。"
-  },
-  "sup_dps_weapons": [
-    "skyward_harp",
-    "rust",
-    "mitternachts_waltz"
-  ],
-  "sup_dps_art1": [
-    "bloodstained_chivalry",
-    "bloodstained_chivalry",
-    "gladiators_finale",
-    "gladiators_finale",
-    "gladiators_finale"
-  ],
-  "sup_dps_art2": [
-    "pale_flame",
-    "pale_flame",
-    "pale_flame",
-    "pale_flame",
-    "pale_flame"
-  ],
-  "team1":[
-	"Xiangling","Fischl","Qiqi","Diona"
-  ]
+  }
 }

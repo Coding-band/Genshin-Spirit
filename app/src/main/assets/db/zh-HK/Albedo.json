@@ -53,34 +53,5 @@
     "sof6_name": "無垢之土",
     "sof6_img": "domain_of_purification",
     "sof6_desc": "處在陽華的領域中的隊伍中當前場上角色，若處於結晶反應產生的護盾庇護下，造成的傷害提高17%"
-  },
-  "util_weapons": [
-    "summit_shaper",
-    "festering_fang",
-	"harbinger_of_dawn"
-  ],
-  "util_art1": [
-    "noblesse_oblige",
-    "noblesse_oblige",
-    "gladiators_finale",
-    "gladiators_finale",
-    "gladiators_finale"
-  ],
-  "util_art2": [
-    "noblesse_oblige",
-    "noblesse_oblige",
-    "archaic_petra",
-    "archaic_petra",
-    "archaic_petra"
-  ],
-  "sup_dps_art1": [
-    "tenacity_of_the_millelith",
-    "tenacity_of_the_millelith",
-    "tenacity_of_the_millelith",
-    "tenacity_of_the_millelith",
-    "tenacity_of_the_millelith"
-  ],
-  "team1":[
-	"Diluc","Qiqi","Albedo","Razor"
-  ]
-}
+  }
+}  

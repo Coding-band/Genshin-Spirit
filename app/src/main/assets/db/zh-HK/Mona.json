@@ -56,40 +56,5 @@
     "sof6_name": "厄運的修辭",
     "sof6_img": "rhetirucs_of_calamitas",
     "sof6_desc": "進入虛實流動狀態後，每移動1秒，莫娜的下—次重擊傷害就增加60%，\n通過這種方式至多可以獲得180%重擊傷害加成，該效果至多持續8秒。"
-  },
-  "dps_weapons": [
-    "the_widsith"
-   ],
-  "sup_dps_weapons": [
-    "mappa_mare",
-    "solar_pearl"
-  ],
-  "util_weapons": [
-    "prototype_malice",
-    "thrilling_tales_of_dragon_slayers"
-  ],
-  "dps_art1": [
-    "depth_of_heart",
-    "depth_of_heart",
-    "depth_of_heart",
-    "depth_of_heart",
-    "depth_of_heart"
-  ],
-  "sup_dps_art1": [
-    "depth_of_heart",
-    "depth_of_heart",
-    "noblesse_oblige",
-    "noblesse_oblige",
-    "noblesse_oblige"
-  ],
-  "util_art1": [
-    "noblesse_oblige",
-    "noblesse_oblige",
-    "noblesse_oblige",
-    "noblesse_oblige",
-    "noblesse_oblige"
-  ],
-  "team1":[
-	"Diluc","Barbara","Bennett","Chongyun"
-  ]
+  }
 }

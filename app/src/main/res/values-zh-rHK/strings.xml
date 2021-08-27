@@ -139,5 +139,6 @@
     <string name="already_dak_po">已突破</string>
     <string name="cal_also">計算</string>
     <string name="delete">刪除</string>
+    <string name="pls_restart_app">请重启应用</string>
 
 </resources>

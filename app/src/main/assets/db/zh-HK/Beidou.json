@@ -53,44 +53,5 @@
     "sof6_name": "北斗祓幽孽",
     "sof6_img": "bane_of_evil",
     "sof6_desc": "斫雷持續期間，周圍敵人的雷元素抗性降低15%。"
-  },
-  "dps_weapons": [
-    "wolfs_gravestone",
-	"skyward_pride",
-	"the_unforged",
-	"lithic_blade",
-	"serpent_spine",
-	"blackcliff_slasher",
-	"prototype_aminus"
-   ],
-  "sup_dps_weapons": [
-    "sacrificial_greatsword"
-  ],
-  "dps_art1": [
-    "gambler",
-    "gambler",
-    "gambler",
-    "gambler",
-    "gambler"
-  ],
-  "dps_art2": [
-    "thundering_fury",
-    "thundering_fury",
-    "thundering_fury",
-    "thundering_fury",
-    "thundering_fury"
-  ],
-  "sup_dps_art1": [
-    "thundersoother",
-    "thundersoother",
-    "thundersoother",
-    "thundersoother",
-    "thundersoother"
-  ],
-  "team1":[
-	"Beidou","Xiangling","Fischl","Barbara"
-  ],
-  "team2":[
-	"Tartaglia","Xingqui","Beidou","Fischl"
-  ]
+  }
 }

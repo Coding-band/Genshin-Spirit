@@ -53,19 +53,5 @@
     "sof6_name": "脈衝的魔女",
     "sof6_img": "pulsating_witch",
     "sof6_desc": "麗莎登場時，對附近的敵人施加3層蒼雷的引雷效果。該效果每5秒只能觸發一次。"
-  },
-  "sup_dps_weapons": [
-    "sacrificial_fragments",
-    "mappa_mare"
-  ],
-  "sup_dps_art1": [
-    "thundering_fury",
-    "thundering_fury",
-    "thundering_fury",
-    "thundering_fury",
-    "thundering_fury"
-  ],
-  "team1":[
-	"Lisa","Traveler-Anemo","Kaeya","Barbara"
-  ]
+  }
 }

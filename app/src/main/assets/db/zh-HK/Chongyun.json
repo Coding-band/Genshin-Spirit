@@ -53,22 +53,5 @@
     "sof6_name": "四靈捧聖",
     "sof6_img": "rally_of_four_blades",
     "sof6_desc": "靈刃·雲開星落對生命值百分比低於重雲的敵人造成傷害時，傷害提升15%;\n此外，施放時，會召喚一柄額外的靈刃。"
-  },
-  "sup_dps_weapons": [
-    "prototype_aminus",
-    "debate_club"
-  ],
-  "sup_dps_art1": [
-    "the_exile",
-    "the_exile",
-    "defenders_will",
-    "defenders_will",
-    "defenders_will"
-  ],
-  "team1":[
-	"Chongyun","Xingqui","Barbara","Diluc"
-  ],
-  "team2":[
-	"Chongyun","Xingqui","Razor","Bennett"
-  ]
+  }
 }

@@ -53,43 +53,5 @@
     "sof6_name": "疾如野火",
     "sof6_img": "wildfire",
     "sof6_desc": "使用箭雨後的10秒內，隊伍中所有角色的移動速度提升15%,攻擊力提升15%。"
-  },
-  "dps_weapons": [
-    "skyward_harp",
-    "compound_bow",
-	"amos_bow",
-	"recurve_bow"
-  ],
-  "sup_dps_weapons": [
-    "the_stringless",
-    "sharpshooters_oath"
-  ],
-  "util_weapons": [
-    "the_stringless",
-    "raven_bow"
-  ],
-  "dps_art1": [
-    "wanderers_troupe",
-    "wanderers_troupe",
-    "wanderers_troupe",
-    "wanderers_troupe",
-    "wanderers_troupe"
-  ],
-  "sup_dps_art1": [
-    "crimson_witch_of_flames",
-    "crimson_witch_of_flames",
-    "crimson_witch_of_flames",
-    "crimson_witch_of_flames",
-    "crimson_witch_of_flames"
-  ],
-  "util_art1": [
-    "noblesse_oblige",
-    "noblesse_oblige",
-    "noblesse_oblige",
-    "noblesse_oblige",
-    "noblesse_oblige"
-  ],
-  "team1":[
-	"Diluc","Xianling","Amber","Bennett"
-  ]
+  }
 }

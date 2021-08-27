@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/item_img"
     android:layout_width="64dp"
-    android:layout_height="64dp">
-
-    <ImageView
-        android:id="@+id/item_img"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_weight="0"
-        android:adjustViewBounds="true"
-        android:background="@color/colorWhiteAlpha"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/sangonomiya_kokomi_ico" />
+    android:layout_height="64dp"
+    android:adjustViewBounds="true"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:srcCompat="@drawable/sangonomiya_kokomi_ico">
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ImageView>

@@ -53,39 +53,5 @@
     "sof6_name": "火力全開",
     "sof6_img": "blazing_delight",
     "sof6_desc": "在轟轟火花的狀態下，會持續為隊伍中其他角色恢復元素能量（跳3次，共回復約9點）；施放轟轟火花後的25秒內，隊伍中所有角色獲得10％火元素傷害加成。"
-  },
-  "dps_weapons": [
-    "lost_prayer_to_the_sacred_winds",
-    "skyward_atlas",
-    "dodoco_tales",
-    "the_widsith",
-    "solar_pearl"
-  ],
-  "dps_art1": [
-    "crimson_witch_of_flames",
-    "crimson_witch_of_flames",
-    "crimson_witch_of_flames",
-    "crimson_witch_of_flames",
-    "crimson_witch_of_flames"
-  ],
-  "dps_art2": [
-    "crimson_witch_of_flames",
-    "crimson_witch_of_flames",
-    "gladiators_finale",
-    "gladiators_finale",
-    "gladiators_finale"
-  ],
-  "dps_art3": [
-    "wanderers_troupe",
-    "wanderers_troupe",
-    "wanderers_troupe",
-    "wanderers_troupe",
-    "wanderers_troupe"
-  ],
-  "team1":[
-	"Klee","Lisa","Barbara","Noelle"
-  ],
-  "team2":[
-	"Klee","Bennett","Venti","Fischl"
-  ]
+  }
 }

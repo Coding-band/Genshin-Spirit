@@ -53,28 +53,5 @@
     "sof6_name": "履蟲",
     "sof6_img": "the_clement",
     "sof6_desc": "施放山澤麟跡後30秒內的第一次霜華矢，無需蓄力即可施放。"
-  },
-  "dps_weapons": [
-    "amos_bow",
-	"prototype_crescent",
-	"blackcliff_warbow",
-	"favonius_warbow"
-   ],
-  "dps_art1": [
-    "blizzard_walker",
-    "blizzard_walker",
-    "blizzard_walker",
-    "blizzard_walker",
-    "blizzard_walker"
-  ],
-  "dps_art2": [
-    "wanderers_troupe",
-    "wanderers_troupe",
-    "wanderers_troupe",
-    "wanderers_troupe",
-    "wanderers_troupe"
-  ],
-  "team1":[
-	"Ganyu","Mona","Venti","Diona"
-  ]
+  }
 }

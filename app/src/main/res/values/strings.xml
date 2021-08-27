@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Genshin Paimon</string>
+    <string name="app_name">Genshin Spirit</string>
     <string name="title_char">Characters</string>
     <string name="title_artifacts">Artifacts</string>
     <string name="title_home">Home</string>
@@ -19,15 +19,15 @@
     <string name="saturday">Sat</string>
     <string name="sunday">Sun</string>
 
-    <string name="teaching_of_ballad">「詩文」的教導</string>
-    <string name="teaching_of_diligence">「勤勞」的教導</string>
-    <string name="teaching_of_freedom">「自由」的教導</string>
-    <string name="teaching_of_gold">「黃金」的教導</string>
-    <string name="teaching_of_prosperity">「繁榮」的教導</string>
-    <string name="teaching_of_resistance">「抗爭」的教導</string>
-    <string name="teachings_of_elegance">「優雅」的教導</string>
-    <string name="teachings_of_light">「天光」的教導</string>
-    <string name="teachings_of_transience">「浮世」的教導</string>
+    <string name="teaching_of_ballad">Teachings of Ballad</string>
+    <string name="teaching_of_diligence">Teachings of Diligence</string>
+    <string name="teaching_of_freedom">Teachings of Freedom</string>
+    <string name="teaching_of_gold">Teachings of Gold</string>
+    <string name="teaching_of_prosperity">Teachings of Prosperity</string>
+    <string name="teaching_of_resistance">Teachings of Resistance</string>
+    <string name="teachings_of_elegance">Teachings of Elegance</string>
+    <string name="teachings_of_light">Teachings of Light</string>
+    <string name="teachings_of_transience">Teachings of Transience</string>
 
     <string name="tile_of_decarabians_tower">高塔孤王的破瓦</string>
     <string name="luminous_sands_from_guyun">孤雲寒林的光砂</string>
@@ -118,8 +118,6 @@
     <string name="hk_tw_mo_ser">HK、TW、MO</string>
     <string name="sky_land_ser">天空岛服</string>
     <string name="world_tree">世界树服</string>
-    <string name="zh_tw" translatable="false">繁體中文 (港、澳、台)</string>
-    <string name="en_us" translatable="false">English (US)</string>
     <string name="genshindb_link"><a href="https://github.com/Wolfteam/GenshinDb">GenshinDb Github</a></string>
     <string name="genshinhelper_link"><a href="https://github.com/Vocaloid2048/GenshinHelper">Genshin Helper Github</a></string>
     <string name="press_exit">Press again to exit app</string>
@@ -138,4 +136,9 @@
     <string name="delete">Delete</string>
     <string name="choosed">"Choosed : "</string>
 
+    <string name="zh_hk" translatable="false">繁體中文 (港、澳、台)</string>
+    <string name="en_us" translatable="false">English (US)</string>
+    <string name="ru" translatable="false">русский язык</string>
+    <string name="zh_cn" translatable="false">简体中文</string>
+    <string name="pls_restart_app">Please restart app</string>
 </resources>

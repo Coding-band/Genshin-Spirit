@@ -54,33 +54,5 @@
     "sof6_name": "幽蝶能留一縷芳",
     "sof6_img": "hutao_const_6",
     "sof6_desc": "胡桃的生命值降至25%以下，或承受足以使她倒下的傷害時觸發：\n此次傷害不會使胡桃倒下，並在接下來的10秒內，胡桃的所有元素抗性和物理抗性提高200%，暴擊率提高100%，並極大地提高抗打斷能力。\n這個效果在胡桃生命值為1時會自動觸發。\n該效果每60秒只能觸發一次。"
-  },
-  "dps_weapons": [
-    "staff_of_homa",
-    "primordial_jade_winged_spear",
-    "vortex_vanquisher",
-    "skyward_spine",
-    "deathmatch",
-    "dragons_bane"
-   ],
-  "dps_art1": [
-    "crimson_witch_of_flames",
-    "crimson_witch_of_flames",
-    "crimson_witch_of_flames",
-    "crimson_witch_of_flames",
-    "crimson_witch_of_flames"
-  ],
-  "dps_art2": [
-    "retracing_bolide",
-    "retracing_bolide",
-    "retracing_bolide",
-    "retracing_bolide",
-    "retracing_bolide"
-  ],
-  "team1":[
-	"Hu Tao","Xingqiu","Chongyun","Xiangling"
-  ],
-  "team2":[
-	"Hu Tao","Xingqiu","Zhongli","Xiangling"
-  ]
+  }
 }

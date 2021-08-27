@@ -71,6 +71,7 @@ public class Characters_Info {
     String desc = "XPR" ;
     String nick = "XPR" ;
     JSONObject jsonObject;
+    JSONObject jsonObjectDps;
 
     // Battle Talent
     String normal_name = "XPR";
@@ -148,7 +149,7 @@ public class Characters_Info {
     String[] team4 = {};
 
     /** https://stackoverflow.com/questions/45247927/how-to-parse-json-object-inside-json-object-in-java */
-    public void JsonToStr (String str){
+    public void JsonToStr (String str, String str_dps){
         try {
             jsonObject = new JSONObject(str);
             name = jsonObject.getString("name");
@@ -217,22 +218,24 @@ public class Characters_Info {
             sof6_img = sof.getString("sof6_img");
             sof6_desc = sof.getString("sof6_desc");
 
-            if(jsonObject.has("dps_weapons")){
-                JSONArray weapons_temp = jsonObject.getJSONArray("dps_weapons");
+            jsonObjectDps = new JSONObject(str_dps);
+
+            if(jsonObjectDps.has("dps_weapons")){
+                JSONArray weapons_temp = jsonObjectDps.getJSONArray("dps_weapons");
                 main_weapon_advice = weapons_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
             }
-            if(jsonObject.has("sup_dps_weapons")){
-                JSONArray weapons_temp = jsonObject.getJSONArray("sup_dps_weapons");
+            if(jsonObjectDps.has("sup_dps_weapons")){
+                JSONArray weapons_temp = jsonObjectDps.getJSONArray("sup_dps_weapons");
                 support_weapon_advice = weapons_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
             }
-            if(jsonObject.has("util_weapons")){
-                JSONArray weapons_temp = jsonObject.getJSONArray("util_weapons");
+            if(jsonObjectDps.has("util_weapons")){
+                JSONArray weapons_temp = jsonObjectDps.getJSONArray("util_weapons");
                 util_weapon_advice = weapons_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
             }
             /*
 
-            if(jsonObject.has("weapons_star")) {
-                JSONArray stars_temp = jsonObject.getJSONArray("weapons_star");
+            if(jsonObjectDps.has("weapons_star")) {
+                JSONArray stars_temp = jsonObjectDps.getJSONArray("weapons_star");
                 String[] strx = stars_temp.toString().replace("[", "").replace("]", "").replace(", ", "").split(",");
                 Log.wtf("DDD", Arrays.toString(strx));
                 weapon_stars = new int[strx.length];
@@ -242,62 +245,62 @@ public class Characters_Info {
             }
              */
 
-            if(jsonObject.has("dps_art1")) {
-                JSONArray art1_temp = jsonObject.getJSONArray("dps_art1");
+            if(jsonObjectDps.has("dps_art1")) {
+                JSONArray art1_temp = jsonObjectDps.getJSONArray("dps_art1");
                 main_artifacts1 = art1_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
             }
 
-            if(jsonObject.has("dps_art2")) {
-                JSONArray art2_temp = jsonObject.getJSONArray("dps_art2");
+            if(jsonObjectDps.has("dps_art2")) {
+                JSONArray art2_temp = jsonObjectDps.getJSONArray("dps_art2");
                 main_artifacts2 = art2_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
             }
 
-            if(jsonObject.has("dps_art3")) {
-                JSONArray art3_temp = jsonObject.getJSONArray("dps_art3");
+            if(jsonObjectDps.has("dps_art3")) {
+                JSONArray art3_temp = jsonObjectDps.getJSONArray("dps_art3");
                 main_artifacts3 = art3_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
             }
 
-            if(jsonObject.has("sup_dps_art1")) {
-                JSONArray art1_temp = jsonObject.getJSONArray("sup_dps_art1");
+            if(jsonObjectDps.has("sup_dps_art1")) {
+                JSONArray art1_temp = jsonObjectDps.getJSONArray("sup_dps_art1");
                 support_artifacts1 = art1_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
             }
-            if(jsonObject.has("sup_dps_art2")) {
-                JSONArray art2_temp = jsonObject.getJSONArray("sup_dps_art2");
+            if(jsonObjectDps.has("sup_dps_art2")) {
+                JSONArray art2_temp = jsonObjectDps.getJSONArray("sup_dps_art2");
                 support_artifacts2 = art2_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
             }
-            if(jsonObject.has("sup_dps_art3")) {
-                JSONArray art3_temp = jsonObject.getJSONArray("sup_dps_art3");
+            if(jsonObjectDps.has("sup_dps_art3")) {
+                JSONArray art3_temp = jsonObjectDps.getJSONArray("sup_dps_art3");
                 support_artifacts3 = art3_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
             }
 
-            if(jsonObject.has("util_art1")) {
-                JSONArray art1_temp = jsonObject.getJSONArray("util_art1");
+            if(jsonObjectDps.has("util_art1")) {
+                JSONArray art1_temp = jsonObjectDps.getJSONArray("util_art1");
                 util_artifacts1 = art1_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
             }
-            if(jsonObject.has("util_art2")) {
-                JSONArray art2_temp = jsonObject.getJSONArray("util_art2");
+            if(jsonObjectDps.has("util_art2")) {
+                JSONArray art2_temp = jsonObjectDps.getJSONArray("util_art2");
                 util_artifacts2 = art2_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
             }
-            if(jsonObject.has("util_art3")) {
-                JSONArray art3_temp = jsonObject.getJSONArray("util_art3");
+            if(jsonObjectDps.has("util_art3")) {
+                JSONArray art3_temp = jsonObjectDps.getJSONArray("util_art3");
                 util_artifacts3 = art3_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
             }
 
-            if(jsonObject.has("team1")) {
-                JSONArray art1_temp = jsonObject.getJSONArray("team1");
+            if(jsonObjectDps.has("team1")) {
+                JSONArray art1_temp = jsonObjectDps.getJSONArray("team1");
                 team1 = art1_temp.toString().replace("[", "").replace("]", "").replace("\"","").replace(" ", "XPR").replace(",", " ").split(" ");
             }
-            if(jsonObject.has("team2")) {
-                JSONArray art2_temp = jsonObject.getJSONArray("team2");
+            if(jsonObjectDps.has("team2")) {
+                JSONArray art2_temp = jsonObjectDps.getJSONArray("team2");
                 team2 = art2_temp.toString().replace("[", "").replace("]", "").replace("\"","").replace(" ", "XPR").replace(",", " ").split(" ");
             }
-            if(jsonObject.has("team3")) {
-                JSONArray art3_temp = jsonObject.getJSONArray("team3");
+            if(jsonObjectDps.has("team3")) {
+                JSONArray art3_temp = jsonObjectDps.getJSONArray("team3");
                 team3 = art3_temp.toString().replace("[", "").replace("]", "").replace("\"","").replace(" ", "XPR").replace(",", " ").split(" ");
             }
 
-            if(jsonObject.has("team4")) {
-                JSONArray art3_temp = jsonObject.getJSONArray("team4");
+            if(jsonObjectDps.has("team4")) {
+                JSONArray art3_temp = jsonObjectDps.getJSONArray("team4");
                 team4 = art3_temp.toString().replace("[", "").replace("]", "").replace("\"","").replace(" ", "XPR").replace(",", " ").split(" ");
             }
 
@@ -316,14 +319,20 @@ public class Characters_Info {
         String lang = sharedPreferences.getString("lang","zh-HK");
         AssetManager mg = context.getResources().getAssets();
         InputStream is = null;
+        InputStream is_dps = null;
+        String result1 , result2;
         try {
-            Log.wtf("ALPHA","db/"+lang+"/"+this.CharName_BASE+".json");
             is = mg.open("db/"+lang+"/"+this.CharName_BASE+".json");
-            if (is != null) {
-                String result = IOUtils.toString(is, StandardCharsets.UTF_8);
-                JsonToStr(result);
+            Log.w("LLLLLL","db/char/char_advice/"+this.CharName_BASE+".json");
+            is_dps = mg.open("db/char/char_advice/"+this.CharName_BASE+".json");
+            if (is != null && is_dps != null) {
+                result1 = IOUtils.toString(is, StandardCharsets.UTF_8);
+                result2 = IOUtils.toString(is_dps, StandardCharsets.UTF_8);
+                JsonToStr(result1,result2);
                 is.close();
+                is_dps.close();
             }
+
         } catch (IOException ex) {
             if(ex != null) {
                 Toast.makeText(context, "暫時沒有他/她的相關資料", Toast.LENGTH_SHORT).show();
@@ -609,7 +618,7 @@ public class Characters_Info {
         info_advice_util_card.setVisibility(View.GONE);
 
         /** ADVICE */
-        if(jsonObject.has("dps_weapons")){
+        if(jsonObjectDps.has("dps_weapons")){
             Log.wtf("OK","AK");
             advice_main_weapon_ll.removeAllViews();
             for (int x = 0 ; x < main_weapon_advice.length; x++) {
@@ -621,7 +630,7 @@ public class Characters_Info {
             info_advice_main_card.setVisibility(View.VISIBLE);
             advice_main_weapon_ll.setVisibility(View.VISIBLE);
         }
-        if(jsonObject.has("sup_dps_weapons")){
+        if(jsonObjectDps.has("sup_dps_weapons")){
             advice_support_weapon_ll.removeAllViews();
             for (int x = 0 ; x < support_weapon_advice.length; x++) {
                 View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_support_weapon_ll, false);
@@ -632,7 +641,7 @@ public class Characters_Info {
             info_advice_support_card.setVisibility(View.VISIBLE);
             advice_support_weapon_ll.setVisibility(View.VISIBLE);
         }
-        if(jsonObject.has("util_weapons")){
+        if(jsonObjectDps.has("util_weapons")){
             advice_util_weapon_ll.removeAllViews();
             for (int x = 0 ; x < util_weapon_advice.length; x++) {
                 View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_util_weapon_ll, false);
@@ -644,7 +653,7 @@ public class Characters_Info {
             advice_util_weapon_ll.setVisibility(View.VISIBLE);
         }
 
-        if(jsonObject.has("dps_art1")){
+        if(jsonObjectDps.has("dps_art1")){
             advice_main_art_ll1.removeAllViews();
             for (int x = 0 ; x < main_artifacts1.length; x++) {
                 View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_main_art_ll1, false);
@@ -655,7 +664,7 @@ public class Characters_Info {
             advice_main_art_ll1.setVisibility(View.VISIBLE);
         }
 
-        if(jsonObject.has("dps_art2")){
+        if(jsonObjectDps.has("dps_art2")){
             advice_main_art_ll2.removeAllViews();
             for (int x = 0 ; x < main_artifacts2.length; x++) {
                 View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_main_art_ll2, false);
@@ -666,7 +675,7 @@ public class Characters_Info {
             advice_main_art_ll2.setVisibility(View.VISIBLE);
         }
 
-        if(jsonObject.has("dps_art3")){
+        if(jsonObjectDps.has("dps_art3")){
             advice_main_art_ll3.removeAllViews();
             for (int x = 0 ; x < main_artifacts3.length; x++) {
                 View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_main_art_ll3, false);
@@ -677,7 +686,7 @@ public class Characters_Info {
             advice_main_art_ll3.setVisibility(View.VISIBLE);
         }
 
-        if(jsonObject.has("sup_dps_art1")){
+        if(jsonObjectDps.has("sup_dps_art1")){
             advice_support_art_ll1.removeAllViews();
             for (int x = 0 ; x < support_artifacts1.length; x++) {
                 View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_support_art_ll1, false);
@@ -688,7 +697,7 @@ public class Characters_Info {
             advice_support_art_ll1.setVisibility(View.VISIBLE);
         }
 
-        if(jsonObject.has("sup_dps_art2")){
+        if(jsonObjectDps.has("sup_dps_art2")){
             advice_support_art_ll2.removeAllViews();
             for (int x = 0 ; x < support_artifacts2.length; x++) {
                 View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_support_art_ll2, false);
@@ -699,7 +708,7 @@ public class Characters_Info {
             advice_support_art_ll2.setVisibility(View.VISIBLE);
         }
 
-        if(jsonObject.has("sup_dps_art3")){
+        if(jsonObjectDps.has("sup_dps_art3")){
             advice_support_art_ll3.removeAllViews();
             for (int x = 0 ; x < support_artifacts3.length; x++) {
                 View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_support_art_ll3, false);
@@ -710,7 +719,7 @@ public class Characters_Info {
             advice_support_art_ll3.setVisibility(View.VISIBLE);
         }
 
-        if(jsonObject.has("util_art1")){
+        if(jsonObjectDps.has("util_art1")){
             advice_util_art_ll1.removeAllViews();
             for (int x = 0 ; x < util_artifacts1.length; x++) {
                 View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_util_art_ll1, false);
@@ -721,7 +730,7 @@ public class Characters_Info {
             advice_util_art_ll1.setVisibility(View.VISIBLE);
         }
 
-        if(jsonObject.has("util_art2")){
+        if(jsonObjectDps.has("util_art2")){
             advice_util_art_ll2.removeAllViews();
             for (int x = 0 ; x < util_artifacts2.length; x++) {
                 View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_util_art_ll2, false);
@@ -732,7 +741,7 @@ public class Characters_Info {
             advice_util_art_ll2.setVisibility(View.VISIBLE);
         }
 
-        if(jsonObject.has("util_art3")){
+        if(jsonObjectDps.has("util_art3")){
             advice_util_art_ll3.removeAllViews();
             for (int x = 0 ; x < util_artifacts3.length; x++) {
                 View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_util_art_ll3, false);
@@ -743,7 +752,7 @@ public class Characters_Info {
             advice_util_art_ll3.setVisibility(View.VISIBLE);
         }
 
-        if(jsonObject.has("team1")){
+        if(jsonObjectDps.has("team1")){
             advice_team_ll1.removeAllViews();
             for (int x = 0 ; x < team1.length; x++) {
                 View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team, advice_team_ll1, false);
@@ -756,7 +765,7 @@ public class Characters_Info {
             advice_team_ll1.setVisibility(View.VISIBLE);
         }
 
-        if(jsonObject.has("team2")){
+        if(jsonObjectDps.has("team2")){
             advice_team_ll2.removeAllViews();
             for (int x = 0 ; x < team2.length; x++) {
                 View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team, advice_team_ll2, false);
@@ -768,7 +777,7 @@ public class Characters_Info {
             advice_team_ll2.setVisibility(View.VISIBLE);
         }
 
-        if(jsonObject.has("team3")){
+        if(jsonObjectDps.has("team3")){
             advice_team_ll3.removeAllViews();
             for (int x = 0 ; x < team3.length; x++) {
                 View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team, advice_team_ll3, false);
@@ -780,7 +789,7 @@ public class Characters_Info {
             advice_team_ll3.setVisibility(View.VISIBLE);
         }
 
-        if(jsonObject.has("team4")){
+        if(jsonObjectDps.has("team4")){
             advice_team_ll4.removeAllViews();
             for (int x = 0 ; x < team4.length; x++) {
                 View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team, advice_team_ll4, false);

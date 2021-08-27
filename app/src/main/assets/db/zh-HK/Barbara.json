@@ -53,40 +53,5 @@
     "sof6_name": "將一切美好獻給你",
     "sof6_img": "dedicating_everything_to_you",
     "sof6_desc": "芭芭拉處於隊伍後臺時，隊伍中自己的角色倒下時，則立即復蘇該角色將該角色生命值恢復至100％。該效果每15分鐘只能觸發一次。"
-  },
-  "dps_weapons": [
-    "the_widsith"
-   ],
-  "sup_dps_weapons": [
-    "mappa_mare",
-    "solar_pearl"
-  ],
-  "util_weapons": [
-    "prototype_malice",
-    "thrilling_tales_of_dragon_slayers"
-  ],
-  "dps_art1": [
-    "wanderers_troupe",
-    "wanderers_troupe",
-    "wanderers_troupe",
-    "wanderers_troupe",
-    "wanderers_troupe"
-  ],
-  "dps_art2": [
-    "noblesse_oblige",
-    "noblesse_oblige",
-    "noblesse_oblige",
-    "noblesse_oblige",
-    "noblesse_oblige"
-  ],
-  "util_art1": [
-    "thundersoother",
-    "thundersoother",
-    "thundersoother",
-    "thundersoother",
-    "thundersoother"
-  ],
-  "team1":[
-	"Diluc","Barbara","Bennett","Chongyun"
-  ]
+  }
 }

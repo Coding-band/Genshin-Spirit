@@ -53,23 +53,5 @@
     "sof6_name": "清算黑暗的炎之劍",
     "sof6_img": "flaming_sword_nemesis_of_dark",
     "sof6_desc": "釋放逆焰之刃會使接下來6秒內的2次普通攻擊的攻擊速度提升30％，造成傷害提高30％。此外，逆焰之刃不再會中斷前兩段普通攻擊的連擊段數。"
-  },
-  "dps_weapons": [
-    "wolfs_gravestone",
-	"skyward_pride",
-	"the_unforged",
-	"blackcliff_slasher",
-	"lithic_blade",
-	"rainslasher"
-   ],
-  "dps_art1": [
-    "crimson_witch_of_flames",
-    "crimson_witch_of_flames",
-    "crimson_witch_of_flames",
-    "wanderers_troupe",
-    "wanderers_troupe"
-  ],
-  "team1":[
-	"Diluc","Xingqui","Sucrose","Bennett"
-  ]
+  }
 }

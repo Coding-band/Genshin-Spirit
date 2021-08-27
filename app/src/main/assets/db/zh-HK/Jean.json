@@ -9,7 +9,7 @@
   "role": "Utility",
   "isComingSoon": false,
   "nick":"蒲公英騎士",
-  "desc": "蒙德城的大家都喜歡芭芭拉。「偶像」這個詞是她從一本雜誌裡看到的。",
+  "desc": "正直嚴謹的蒲公英騎士，蒙德西風騎士團的代理團長。",
   "battle_talent": {
     "normal_name": "西風劍術",
     "normal_img": "normal_atack_favonius_bladework",
@@ -53,34 +53,5 @@
     "sof6_name": "恩眷萬民的獅牙",
     "sof6_img": "lions_fang_fair_protector",
     "sof6_desc": "蒲公英領域內的角色受到的傷害降低35％。離開蒲公英領域後，這個效果會在承受3次攻擊或10秒後消失"
-  },
-  "util_weapons": [
-    "skyward_blade",
-    "primordial_jade_cutter",
-    "aquila_favonia",
-    "the_flute",
-    "prototype_rancour",
-    "festering_fang",
-	"favonius_sword"
-  ],
-  "util_art1": [
-    "viridescent_venerer",
-    "viridescent_venerer",
-    "gladiators_finale",
-    "gladiators_finale",
-    "gladiators_finale"
-  ],
-  "util_art2": [
-    "viridescent_venerer",
-    "viridescent_venerer",
-    "noblesse_oblige",
-    "noblesse_oblige",
-    "noblesse_oblige"
-  ],
-  "team1":[
-	"Jean","Lisa","Kaeya","Rosaria"
-  ],
-  "team2":[
-	"Klee","Jean","Fischl","Venti"
-  ]
+  }
 }

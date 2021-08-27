@@ -53,37 +53,5 @@
     "sof6_name": "高貴者的義務",
     "sof6_img": "eula_c6",
     "sof6_desc": "凝浪之光劍創造的光降之劍立即獲得5層能量。普通攻擊、元素戰技或元素爆發造成傷害使其積蓄能量層數時，有50%的概率額外獲得一層。"
-  },
-  "dps_weapons": [
-    "uprising_satire",
-    "the_unforged",
-    "wolfs_gravestone",
-    "skyward_pride",
-    "serpent_spine",
-    "snow_tombed_starsilver",
-    "prototype_aminus"
-   ],
-  "dps_art1": [
-    "pale_flame",
-    "pale_flame",
-    "bloodstained_chivalry",
-    "bloodstained_chivalry",
-    "bloodstained_chivalry"
-  ],
-  "dps_art2": [
-    "pale_flame",
-    "pale_flame",
-    "pale_flame",
-    "pale_flame",
-    "pale_flame"
-  ],
-  "team1":[
-	"Eula","Qiqi","Xingqui","Beidou"
-  ],
-  "team2":[
-	"Eula","Rosaria","Xingqui","Bennett"
-  ],
-  "team3":[
-	"Eula","Sucrose","Xingqui","Beidou"
-  ]
+  }
 }

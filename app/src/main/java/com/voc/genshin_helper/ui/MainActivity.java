@@ -62,6 +62,8 @@ import com.voc.genshin_helper.data.CharactersAdapter;
 import com.voc.genshin_helper.data.Characters_Rss;
 import com.voc.genshin_helper.data.ScreenSizeUtils;
 import com.voc.genshin_helper.data.Today_Material;
+import com.voc.genshin_helper.util.LangUtils;
+import com.voc.genshin_helper.util.LocaleHelper;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
@@ -93,14 +95,19 @@ public class MainActivity extends AppCompatActivity {
     //Char Page
     RecyclerView mList;
     CharactersAdapter mAdapter;
+    LocaleHelper localeHelper;
 
     View char_pg,art_pg,home_pg,weapon_pg,setting_pg;
 
     int dow = 0;
     int exit = 0;
     int app_started = 0;
+    int check_spinner = 0;
 
     Context context;
+    Resources resources;
+    Configuration configuration ;
+    LangUtils langUtils;
 
     public boolean show_pyro = true;
     public boolean show_hydro = true;
@@ -153,6 +160,8 @@ public class MainActivity extends AppCompatActivity {
         //init
         tm = new Today_Material();
         css = new Characters_Rss();
+        localeHelper = new LocaleHelper();
+        langUtils = new LangUtils();
 
         char_pg = findViewById(R.id.char_pg);
         art_pg = findViewById(R.id.art_pg);
@@ -221,6 +230,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull @NotNull MenuItem item) {
                 if (item.getItemId() == R.id.navigation_char){
+                    check_spinner = 0;
                     char_pg.setVisibility(View.VISIBLE);
                     art_pg.setVisibility(View.GONE);
                     home_pg.setVisibility(View.GONE);
@@ -423,6 +433,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
                 else if (item.getItemId() == R.id.navigation_artifacts){
+                    check_spinner = 0;
                     art_pg.setVisibility(View.VISIBLE);
                     char_pg.setVisibility(View.GONE);
                     home_pg.setVisibility(View.GONE);
@@ -432,6 +443,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
                 else if (item.getItemId() == R.id.navigation_home){
+                    check_spinner = 0;
                     home_pg.setVisibility(View.VISIBLE);
                     char_pg.setVisibility(View.GONE);
                     art_pg.setVisibility(View.GONE);
@@ -457,6 +469,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
                 else if (item.getItemId() == R.id.navigation_weapons){
+                    check_spinner = 0;
                     weapon_pg.setVisibility(View.VISIBLE);
                     char_pg.setVisibility(View.GONE);
                     home_pg.setVisibility(View.GONE);
@@ -465,6 +478,7 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
                 else if (item.getItemId() == R.id.navigation_settings){
+                    check_spinner = 0;
                     setting_pg.setVisibility(View.VISIBLE);
                     char_pg.setVisibility(View.GONE);
                     home_pg.setVisibility(View.GONE);
@@ -565,30 +579,46 @@ public class MainActivity extends AppCompatActivity {
 
 
                     // Translate
-                    langList = new String[]{getString(R.string.zh_tw),getString(R.string.en_us)};
+                    langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru)};
                     ArrayAdapter lang_aa = new ArrayAdapter(context,R.layout.spinner_item,langList);
                     lang_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
                     Spinner lang_sp = findViewById(R.id.lang_spinner);
                     lang_sp.setAdapter(lang_aa);
-
+                    lang_sp.setSelection(sharedPreferences.getInt("curr_lang_pos",2));
                     lang_sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
                         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                            // ZH-TW
-                            if(position == 0){
-                                setLocale(MainActivity.this,"zh");
-                                editor.putString("curr_lang","zh-HK");
-                                editor.putInt("curr_lang_pos",0);
-                                editor.apply();
-                                Log.wtf("LANG_EDIT","zh-HK");
-                            }else if(position == 1){
-                                setLocale(MainActivity.this,"en");
-                                editor.putString("curr_lang","en-US");
-                                editor.putInt("curr_lang_pos",1);
-                                editor.apply();
-                                Log.wtf("LANG_EDIT","en-US");
+                           // https://blog.csdn.net/pigdreams/article/details/81277110
+                           // https://stackoverflow.com/questions/13397933/android-spinner-avoid-onitemselected-calls-during-initialization
+                            if(check_spinner >0){
+                                if(position == 0){
+                                    editor.putString("curr_lang","zh-HK");
+                                    editor.putInt("curr_lang_pos",0);
+                                    editor.apply();
+                                    LangUtils.getAttachBaseContext(context,0);
+                                    Toast.makeText(context, context.getString(R.string.pls_restart_app), Toast.LENGTH_SHORT).show();
+                                }else if(position == 1){
+                                    editor.putString("curr_lang","zh-cn");
+                                    editor.putInt("curr_lang_pos",1);
+                                    editor.apply();
+                                    LangUtils.getAttachBaseContext(context,1);
+                                    Toast.makeText(context, context.getString(R.string.pls_restart_app), Toast.LENGTH_SHORT).show();
+                                }else if(position == 2){
+                                    editor.putString("curr_lang","en-us");
+                                    editor.putInt("curr_lang_pos",2);
+                                    editor.apply();
+                                    LangUtils.getAttachBaseContext(context,2);
+                                    Toast.makeText(context, context.getString(R.string.pls_restart_app), Toast.LENGTH_SHORT).show();
+                                }else if(position == 3){
+                                    editor.putString("curr_lang","ru-ru");
+                                    editor.putInt("curr_lang_pos",3);
+                                    editor.apply();
+                                    LangUtils.getAttachBaseContext(context,3);
+                                    Toast.makeText(context, context.getString(R.string.pls_restart_app), Toast.LENGTH_SHORT).show();
+                                }
                             }
+                            check_spinner = check_spinner +1;
                         }
 
                         @Override
@@ -807,14 +837,15 @@ public class MainActivity extends AppCompatActivity {
         cbg();
     }
 
-    //https://stackoverflow.com/questions/2900023/change-app-language-programmatically-in-android
-    public static void setLocale(Activity activity, String languageCode) {
-        Locale locale = new Locale(languageCode);
-        Locale.setDefault(locale);
-        Resources resources = activity.getResources();
-        Configuration config = resources.getConfiguration();
-        config.setLocale(locale);
-        resources.updateConfiguration(config, resources.getDisplayMetrics());
+    public void setLocale(Locale locale) {
+        resources = context.getResources();
+        configuration = resources.getConfiguration();
+        configuration.setLocale(locale);
+        resources.updateConfiguration(configuration,resources.getDisplayMetrics());
+
+        Intent i = new Intent(context,MainActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(i);
     }
 
     public void home (){
@@ -943,7 +974,7 @@ public class MainActivity extends AppCompatActivity {
         int rare,isComing;
         charactersList.clear();
 
-        String json_base = LoadData("db/char_list.json");
+        String json_base = LoadData("db/char/char_list.json");
         //Get data from JSON
         try {
             JSONArray array = new JSONArray(json_base);
@@ -1225,5 +1256,12 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        SharedPreferences sharedPreferences = newBase.getSharedPreferences("user_info",MODE_PRIVATE);
+        sharedPreferences.getInt("curr_lang_pos",2);
+        super.attachBaseContext(LangUtils.getAttachBaseContext(newBase, sharedPreferences.getInt("curr_lang_pos",2)));
+    }
 
 }

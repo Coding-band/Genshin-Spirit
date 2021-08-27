@@ -4,15 +4,15 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.voc.genshin_helper_gp",
+  "applicationId": "com.voc.genshin_spirit_gp",
   "variantName": "gpRelease",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
-      "versionCode": 495,
-      "versionName": "2.0-prod (495)",
-      "outputFile": "genshin_helper_2.0-prod (495).apk"
+      "versionCode": 610,
+      "versionName": "2.0-prod (610)",
+      "outputFile": "genshin_helper_2.0-prod (610).apk"
     }
   ]
 }

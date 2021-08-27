@@ -53,27 +53,5 @@
     "sof6_name": "血赤葉紅",
     "sof6_img": "kazuha_c6",
     "sof6_desc": "楓原萬葉施放千早振或萬葉之一刀後的5秒內，獲得風元素附魔，並且楓原萬葉的每點元素精通，都會使他的普通攻擊、重擊、下落攻擊造成的傷害提高0.2%。"
-  },
-  "sup_dps_weapons": [
-    "freedom_sworn",
-    "iron_sting",
-    "sacrificial_sword"
-  ],
-  "sup_dps_art1": [
-    "viridescent_venerer",
-    "viridescent_venerer",
-    "viridescent_venerer",
-    "viridescent_venerer",
-    "viridescent_venerer"
-  ],
-  "sup_dps_art2": [
-    "instructor",
-    "instructor",
-    "wanderers_troupe",
-    "wanderers_troupe",
-    "wanderers_troupe"
-  ],
-  "team1":[
-	"Hu Tao","Xingqui","Kaedehara Kazuha","Beidou"
-  ]
+  }
 }

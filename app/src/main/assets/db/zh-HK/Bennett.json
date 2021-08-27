@@ -53,22 +53,5 @@
     "sof6_name": "烈火與勇氣",
     "sof6_img": "fire_ventures_with_me",
     "sof6_desc": "處在美妙旅程領域內的單手劍、雙手劍、長柄武器角色獲得15％火元素傷害加成，並將普通攻擊與重擊傷害轉為火元素。"
-  },
-  "util_weapons": [
-    "festering_fang",
-    "favonius_sword"
-  ],
-  "util_art1": [
-    "brave_heart",
-    "brave_heart",
-    "resolution_of_sojourner",
-    "resolution_of_sojourner",
-    "resolution_of_sojourner"
-  ],
-  "team1":[
-	"Diluc","Bennett","chongyun","Barbara"
-  ],
-  "team2":[
-	"Razor","Bennett","Venti","Barbara"
-  ]
+  }
 }

@@ -34,17 +34,17 @@ android {
             dev {
                 versionCode = code
                 versionNameSuffix "-dev" + " ("+code+")"
-                applicationId "com.voc.genshin_helper"
+                applicationId "com.voc.genshin_spirit"
             }
             gp{
                 versionCode = code
                 versionNameSuffix "-prod" + " ("+code+")"
-                applicationId "com.voc.genshin_helper_gp"
+                applicationId "com.voc.genshin_spirit_gp"
             }
             discord {
                 versionCode = code
                 versionNameSuffix "-dc" + " ("+code+")"
-                applicationId "com.voc.genshin_helper_dc"
+                applicationId "com.voc.genshin_spirit_dc"
             }
         }
     }

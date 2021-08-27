@@ -53,50 +53,5 @@
     "sof6_name": "輪旋的冰淩",
     "sof6_img": "glacial_whirlwind",
     "sof6_desc": "凜冽輪舞會產生一個額外的寒冰之棱，並在施放時返還15點元素能量。"
-  },
-  "dps_weapons": [
-    "aquila_favonia",
-	"summit_shaper",
-	"blackcliff_longsword"
-   ],
-  "sup_dps_weapons": [
-    "skyward_blade",
-    "sacrificial_sword",
-    "favonius_sword",
-    "iron_sting"
-  ],
-  "util_weapons": [
-    "favonius_sword",
-    "skyrider_sword"
-  ],
-  "dps_art1": [
-    "blizzard_walker",
-    "blizzard_walker",
-    "blizzard_walker",
-    "blizzard_walker",
-    "blizzard_walker"
-  ],
-  "sup_dps_art1": [
-    "blizzard_walker",
-    "blizzard_walker",
-    "noblesse_oblige",
-    "noblesse_oblige",
-    "noblesse_oblige"
-  ],
-  "util_art1": [
-    "the_exile",
-    "the_exile",
-    "the_exile",
-    "the_exile",
-    "the_exile"
-  ],
-  "team1":[
-	"Razor","Kaeya","Diona","Bennett"
-  ],
-  "team2":[
-	"Hu Tao","Kaeya","Diona","Bennett"
-  ],
-  "team3":[
-	"Kaeya","Xingqui","Xiangling","Diona"
-  ]
+  }
 }

@@ -21,6 +21,8 @@
 
     <style name="MyDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="android:background">@color/page_bg</item>
+        <item name="android:textColor">@color/tv_color</item>
+        <item name="android:textColorPrimary">@color/tv_color</item>
     </style>
 
     <style name="AppTheme.Picker" parent="Theme.AppCompat.Light.NoActionBar" >

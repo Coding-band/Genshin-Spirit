@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">原神小帮手</string>
+    <string name="unknown">未知</string>
+
+    <string name="title_char">角色</string>
+    <string name="title_artifacts">圣遗物</string>
+    <string name="title_home">焦点</string>
+    <string name="title_weapons">武器</string>
+    <string name="title_settings">设定</string>
+
+    <string name="dow_set1">逢星期一，四，日</string>
+    <string name="dow_set2">逢星期二，五，日</string>
+    <string name="dow_set3">逢星期三，六，日</string>
+
+    <string name="monday">星期一</string>
+    <string name="tuesday">星期二</string>
+    <string name="wednesday">星期三</string>
+    <string name="thursday">星期四</string>
+    <string name="friday">星期五</string>
+    <string name="saturday">星期六</string>
+    <string name="sunday">星期日</string>
+
+    <string name="teaching_of_ballad">「诗文」的教导</string>
+    <string name="teaching_of_diligence">「勤劳」的教导</string>
+    <string name="teaching_of_freedom">「自由」的教导</string>
+    <string name="teaching_of_gold">「黄金」的教导</string>
+    <string name="teaching_of_prosperity">「繁荣」的教导</string>
+    <string name="teaching_of_resistance">「抗争」的教导</string>
+    <string name="teachings_of_elegance">「优雅」的教导</string>
+    <string name="teachings_of_light">「天光」的教导</string>
+    <string name="teachings_of_transience">「浮世」的教导</string>
+    <string name="tile_of_decarabians_tower">高塔孤王的破瓦</string>
+    <string name="luminous_sands_from_guyun">孤云寒林的光砂</string>
+    <string name="coral_branch_of_a_distant_sea">远海夷地的瑚枝</string>
+    <string name="mist_veiled_lead_elixir">雾海云间的铅丹</string>
+    <string name="boreal_wolfs_milk_tooth">凛风奔狼的始龀</string>
+    <string name="narukamis_wisdom">鸣神御灵的明惠</string>
+    <string name="grain_of_aerosiderite">漆黑陨铁的一粒</string>
+    <string name="fetters_of_the_dandelion_gladiator">狮牙斗士的枷锁</string>
+    <string name="mask_of_the_wicked_lieutenant">今昔剧画之恶尉</string>
+
+    <string name="aloy">埃洛伊</string>
+    <string name="kujou_sara">九条娑罗</string>
+    <string name="sangonomiya_kokomi">珊瑚宫心海</string>
+    <string name="raiden_shogun">雷电将军</string>
+    <string name="sayu">早柚</string>
+    <string name="yoimiya">宵宫</string>
+    <string name="kamisato_ayaka">神里绫华</string>
+    <string name="kaedehara_kazuha">枫原万叶</string>
+    <string name="yanfei">烟绯</string>
+    <string name="eula">优菈</string>
+    <string name="rosaria">罗莎莉亚</string>
+    <string name="xiao">魈</string>
+    <string name="hu_tao">胡桃</string>
+    <string name="ganyu">甘雨</string>
+    <string name="albedo">阿贝多</string>
+    <string name="zhongli">钟离</string>
+    <string name="xinyan">辛焱</string>
+    <string name="tartaglia">达达利亚</string>
+    <string name="diona">迪奥娜</string>
+    <string name="xingqiu">行秋</string>
+    <string name="xiangling">香菱</string>
+    <string name="venti">温迪</string>
+    <string name="traveler_anemo">旅行者(风)</string>
+    <string name="traveler_geo">旅行者(岩)</string>
+    <string name="traveler_electro">旅行者(雷)</string>
+    <string name="sucrose">砂糖</string>
+    <string name="razor">雷泽</string>
+    <string name="qiqi">七七</string>
+    <string name="noelle">诺艾尔</string>
+    <string name="ningguang">凝光</string>
+    <string name="mona">莫娜</string>
+    <string name="lisa">莉萨</string>
+    <string name="klee">可莉</string>
+    <string name="keqing">刻晴</string>
+    <string name="kaeya">凯亚</string>
+    <string name="jean">琴</string>
+    <string name="fischl">菲谢尔</string>
+    <string name="diluc">迪卢克</string>
+    <string name="chongyun">重云</string>
+    <string name="bennett">班尼特</string>
+    <string name="beidou">北斗</string>
+    <string name="barbara">芭芭拉</string>
+    <string name="amber">安柏</string>
+
+    <string name="search">搜寻...</string>
+    <string name="elements">元素</string>
+    <string name="rarity">稀有度</string>
+    <string name="filters">筛选</string>
+    <string name="mondstadt">蒙德</string>
+    <string name="liyue">璃月</string>
+    <string name="inazuma">稻妻</string>
+    <string name="main_dps">主C</string>
+    <string name="support_dps">副C</string>
+    <string name="utility">辅助</string>
+    <string name="female">女</string>
+    <string name="male">男</string>
+
+    <string name="alarm_t1">周本</string>
+    <string name="alarm_t2">树脂</string>
+    <string name="alarm_t3">洞天宝钱</string>
+    <string name="alarm_t4">派遣</string>
+    <string name="alarm_t5">自定义</string>
+
+    <string name="alarm_time1">4小时</string>
+    <string name="alarm_time2">8小时</string>
+    <string name="alarm_time3">12小时</string>
+    <string name="alarm_time4">20小时</string>
+    <string name="jb_title">[原神小帮手] Hi ~ 该打周本了!</string>
+    <string name="common_info">唉~我可是记得很清楚哦~你可别忘了!</string>
+    <string name="daily_mission_title">[原神小帮手] Hi ~ 完成了每日任务了吗?</string>
+    <string name="dtbc_title">[原神小帮手] Hi ~ 你的洞天宝钱满了,请尽快收取</string>
+    <string name="ph_title">[原神小帮手] Hi ~ 派遣已完成</string>
+    <string name="ph_info">来看看他/她找到了什么~</string>
+    <string name="dtbc_info">嗯...如果你不需要它们，那我就把它们拿走啰~</string>
+    <string name="resin_title">[原神小帮手] Hi ~ 你的树脂满了,请尽快使用</string>
+    <string name="america_ser">美服</string>
+    <string name="europe_ser">欧服</string>
+    <string name="asia_ser">亚服</string>
+    <string name="hk_tw_mo_ser">港、台、澳服</string>
+    <string name="sky_land_ser">天空岛服</string>
+    <string name="world_tree">世界树服</string>
+
+    <string name="genshindb_link"><a href="https://github.com/Wolfteam/GenshinDb">GenshinDb Github</a></string>
+    <string name="genshinhelper_link"><a href="https://github.com/Vocaloid2048/GenshinHelper">原神小帮手 Github</a></string>
+    <string name="press_exit">再按一次退出应用程序</string>
+    <string name="vote_title">请给这个应用程序评分吧～</string>
+    <string name="vote_info">若你喜欢原神小帮手，请花一点时间帮忙提出评价～你的小小帮忙，将对我造成莫大帮助，而且这并不会花你很多时间。</string>
+    <string name="vote_help">帮忙评分</string>
+    <string name="vote_no">不用了</string>
+    <string name="vote_later">以后再说</string>
+    <string name="copied">已复制</string>
+    <string name="result">结算</string>
+    <string name="curr_lvl">"目前等级 : "</string>
+    <string name="aim_lvl">"目标等级 : "</string>
+    <string name="choose_lvl">选择等级</string>
+    <string name="choosed">"已选择 : "</string>
+    <string name="already_dak_po">已突破</string>
+    <string name="cal_also">计算</string>
+    <string name="delete">删除</string>
+    <string name="pls_restart_app">請重啟應用</string>
+
+</resources>
+

@@ -53,41 +53,5 @@
     "sof6_name": "廉貞",
     "sof6_img": "tenacious_star",
     "sof6_desc": "進行普通攻擊、重擊、施放元素戰技或元素爆發時，刻晴獲得6%雷元素傷害加成，持續8秒。由普通攻擊、重擊、元素戰技或元素爆發引起的效果分別獨立存在。"
-  },
-  "dps_weapons": [
-    "favonius_sword",
-    "mistsplitter_reforged",
-    "primordial_jade_cutter",
-    "summit_shaper",
-	"lions_roar",
-	"the_black_sword",
-	"iron_sting"
-   ],
-  "dps_art1": [
-    "bloodstained_chivalry",
-    "bloodstained_chivalry",
-    "bloodstained_chivalry",
-    "bloodstained_chivalry",
-    "bloodstained_chivalry"
-  ],
-  "dps_art2": [
-    "thundersoother",
-    "thundersoother",
-    "thundersoother",
-    "thundersoother",
-    "thundersoother"
-  ],
-  "dps_art3": [
-    "thundering_fury",
-    "thundering_fury",
-    "gladiators_finale",
-    "gladiators_finale",
-    "gladiators_finale"
-  ],
-  "team1":[
-	"Keqing","Venti","Barbara","Xiangling"
-  ],
-  "team2":[
-	"Keqing","Bennett","Xiangling","Zhongli"
-  ]
+  }
 }

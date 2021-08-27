@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -43,6 +44,7 @@ import com.voc.genshin_helper.data.Characters;
 import com.voc.genshin_helper.data.CharactersAdapter;
 import com.voc.genshin_helper.data.Characters_Rss;
 import com.voc.genshin_helper.data.ScreenSizeUtils;
+import com.voc.genshin_helper.util.CalculatorProcess;
 import com.voc.genshin_helper.util.NumberPickerDialog;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
@@ -98,13 +100,16 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
     public ArrayList<Integer> choosedBeforeLvlList= new ArrayList<Integer>();
     public ArrayList<Integer> choosedAfterLvlList= new ArrayList<Integer>();
     public ArrayList<Integer> choosedBeforeBreakLvlList= new ArrayList<Integer>();
+    public ArrayList<Boolean> choosedBeforeBreakUPLvlList= new ArrayList<Boolean>();
     public ArrayList<Integer> choosedAfterBreakLvlList= new ArrayList<Integer>();
+    public ArrayList<Boolean> choosedAfterBreakUPLvlList= new ArrayList<Boolean>();
     public ArrayList<Integer> choosedBeforeSkill1LvlList= new ArrayList<Integer>();
     public ArrayList<Integer> choosedAfterSkill1LvlList= new ArrayList<Integer>();
     public ArrayList<Integer> choosedBeforeSkill2LvlList= new ArrayList<Integer>();
     public ArrayList<Integer> choosedAfterSkill2LvlList= new ArrayList<Integer>();
     public ArrayList<Integer> choosedBeforeSkill3LvlList= new ArrayList<Integer>();
     public ArrayList<Integer> choosedAfterSkill3LvlList= new ArrayList<Integer>();
+    public ArrayList<Boolean> choosedIsCal= new ArrayList<Boolean>();
 
     /** Method of Char's details' container */
     /** Since String can't be null, so there will have "XPR" for identify is result correct */
@@ -197,6 +202,172 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         mList_char.removeAllViewsInLayout();
         char_list_reload();
 
+        ImageView char_filter = viewPager0.findViewById(R.id.char_filter);
+        char_filter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+                View view = View.inflate(context, R.layout.menu_char_filter, null);
+                // Elements
+                ImageView pyro = view.findViewById(R.id.pyro_ico);
+                ImageView hydro = view.findViewById(R.id.hydro_ico);
+                ImageView anemo = view.findViewById(R.id.anemo_ico);
+                ImageView electro = view.findViewById(R.id.electro_ico);
+                ImageView dendor = view.findViewById(R.id.dendor_ico);
+                ImageView cryo = view.findViewById(R.id.cryo_ico);
+                ImageView geo = view.findViewById(R.id.geo_ico);
+                // Weapons
+                ImageView ico_sword = view.findViewById(R.id.ico_sword);
+                ImageView ico_claymore = view.findViewById(R.id.ico_claymore);
+                ImageView ico_polearm = view.findViewById(R.id.ico_polearm);
+                ImageView ico_bow = view.findViewById(R.id.ico_bow);
+                ImageView ico_catalyst = view.findViewById(R.id.ico_catalyst);
+                // Rating
+                RatingBar ratingBar = view.findViewById(R.id.menu_rating);
+                // Function Buttons
+                Button cancel = view.findViewById(R.id.menu_cancel);
+                Button reset = view.findViewById(R.id.menu_reset);
+                Button ok = view.findViewById(R.id.menu_ok);
+
+                show_pyro = sharedPreferences.getBoolean("show_pyro",true);
+                show_hydro = sharedPreferences.getBoolean("show_hydro",true);
+                show_anemo = sharedPreferences.getBoolean("show_anemo",true);
+                show_electro = sharedPreferences.getBoolean("show_electro",true);
+                show_dendor = sharedPreferences.getBoolean("show_dendor",true);
+                show_cryo = sharedPreferences.getBoolean("show_cryo",true);
+                show_geo = sharedPreferences.getBoolean("show_geo",true);
+                show_sword = sharedPreferences.getBoolean("show_sword",true);
+                show_claymore = sharedPreferences.getBoolean("show_claymore",true);
+                show_polearm = sharedPreferences.getBoolean("show_polearm",true);
+                show_bow = sharedPreferences.getBoolean("show_bow",true);
+                show_catalyst = sharedPreferences.getBoolean("show_catalyst",true);
+                show_catalyst = sharedPreferences.getBoolean("show_catalyst",true);
+                show_stars = sharedPreferences.getInt("char_stars",0);
+
+                if(show_pyro){show_pyro = true;pyro.setColorFilter(Color.parseColor("#00000000"));}else{show_pyro = false;pyro.setColorFilter(Color.parseColor("#66313131"));}
+                if(show_hydro){show_hydro = true;hydro.setColorFilter(Color.parseColor("#00000000"));}else{show_hydro = false;hydro.setColorFilter(Color.parseColor("#66313131"));}
+                if(show_anemo){show_anemo = true;anemo.setColorFilter(Color.parseColor("#00000000"));}else{show_anemo = false;anemo.setColorFilter(Color.parseColor("#66313131"));}
+                if(show_electro){show_electro = true;electro.setColorFilter(Color.parseColor("#00000000"));}else{show_electro = false;electro.setColorFilter(Color.parseColor("#66313131"));}
+                if(show_dendor){show_dendor = true;dendor.setColorFilter(Color.parseColor("#00000000"));}else{show_dendor = false;dendor.setColorFilter(Color.parseColor("#66313131"));}
+                if(show_cryo){show_cryo = true;cryo.setColorFilter(Color.parseColor("#00000000"));}else{show_cryo = false;cryo.setColorFilter(Color.parseColor("#66313131"));}
+                if(show_geo){show_geo = true;geo.setColorFilter(Color.parseColor("#00000000"));}else{show_geo = false;geo.setColorFilter(Color.parseColor("#66313131"));}
+                if(show_sword){show_sword = true;ico_sword.setColorFilter(Color.parseColor("#00000000"));}else{show_sword = false;ico_sword.setColorFilter(Color.parseColor("#66313131"));}
+                if(show_claymore){show_claymore = true;ico_claymore.setColorFilter(Color.parseColor("#00000000"));}else{show_claymore = false;ico_claymore.setColorFilter(Color.parseColor("#66313131"));}
+                if(show_polearm){show_polearm = true;ico_polearm.setColorFilter(Color.parseColor("#00000000"));}else{show_polearm = false;ico_polearm.setColorFilter(Color.parseColor("#66313131"));}
+                if(show_bow){show_bow = true;ico_bow.setColorFilter(Color.parseColor("#00000000"));}else{show_bow = false;ico_bow.setColorFilter(Color.parseColor("#66313131"));}
+                if(show_catalyst){show_catalyst = true;ico_catalyst.setColorFilter(Color.parseColor("#00000000"));}else{show_catalyst = false;ico_catalyst.setColorFilter(Color.parseColor("#66313131"));}
+                ratingBar.setNumStars(5);
+                ratingBar.setRating(show_stars);
+
+                pyro.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_pyro){show_pyro = false;pyro.setColorFilter(Color.parseColor("#66313131"));}else{show_pyro = true;pyro.setColorFilter(Color.parseColor("#00000000"));}}});
+                hydro.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_hydro){show_hydro = false;hydro.setColorFilter(Color.parseColor("#66313131"));}else{show_hydro = true;hydro.setColorFilter(Color.parseColor("#00000000"));}}});
+                anemo.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_anemo){show_anemo = false;anemo.setColorFilter(Color.parseColor("#66313131"));}else{show_anemo = true;anemo.setColorFilter(Color.parseColor("#00000000"));}}});
+                electro.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_electro){show_electro = false;electro.setColorFilter(Color.parseColor("#66313131"));}else{show_electro = true;electro.setColorFilter(Color.parseColor("#00000000"));}}});
+                dendor.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_dendor){show_dendor = false;dendor.setColorFilter(Color.parseColor("#66313131"));}else{show_dendor = true;dendor.setColorFilter(Color.parseColor("#00000000"));}}});
+                cryo.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_cryo){show_cryo = false;cryo.setColorFilter(Color.parseColor("#66313131"));}else{show_cryo = true;cryo.setColorFilter(Color.parseColor("#00000000"));}}});
+                geo.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_geo){show_geo = false;geo.setColorFilter(Color.parseColor("#66313131"));}else{show_geo = true;geo.setColorFilter(Color.parseColor("#00000000"));}}});
+                ico_sword.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_sword){show_sword = false;ico_sword.setColorFilter(Color.parseColor("#66313131"));}else{show_sword = true;ico_sword.setColorFilter(Color.parseColor("#00000000"));}}});
+                ico_claymore.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_claymore){show_claymore = false;ico_claymore.setColorFilter(Color.parseColor("#66313131"));}else{show_claymore = true;ico_claymore.setColorFilter(Color.parseColor("#00000000"));}}});
+                ico_polearm.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_polearm){show_polearm = false;ico_polearm.setColorFilter(Color.parseColor("#66313131"));}else{show_polearm = true;ico_polearm.setColorFilter(Color.parseColor("#00000000"));}}});
+                ico_bow.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_bow){show_bow = false;ico_bow.setColorFilter(Color.parseColor("#66313131"));}else{show_bow = true;ico_bow.setColorFilter(Color.parseColor("#00000000"));}}});
+                ico_catalyst.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_catalyst){show_catalyst = false;ico_catalyst.setColorFilter(Color.parseColor("#66313131"));}else{show_catalyst = true;ico_catalyst.setColorFilter(Color.parseColor("#00000000"));}}});
+
+                cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+
+                reset.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        show_pyro = true;
+                        show_hydro = true;
+                        show_anemo = true;
+                        show_dendor = true;
+                        show_electro = true;
+                        show_cryo = true;
+                        show_geo = true;
+
+                        show_sword = true;
+                        show_claymore = true;
+                        show_polearm = true;
+                        show_bow = true;
+                        show_catalyst = true;
+
+                        ratingBar.setRating(0);
+
+                        editor.putBoolean("show_pyro",show_pyro);
+                        editor.putBoolean("show_hydro",show_hydro);
+                        editor.putBoolean("show_anemo",show_anemo);
+                        editor.putBoolean("show_electro",show_electro);
+                        editor.putBoolean("show_dendor",show_dendor);
+                        editor.putBoolean("show_cryo",show_cryo);
+                        editor.putBoolean("show_geo",show_geo);
+                        editor.putBoolean("show_sword",show_sword);
+                        editor.putBoolean("show_claymore",show_claymore);
+                        editor.putBoolean("show_polearm",show_polearm);
+                        editor.putBoolean("show_bow",show_bow);
+                        editor.putBoolean("show_catalyst",show_catalyst);
+                        editor.putInt("char_stars", (int) ratingBar.getRating());
+                        editor.apply();
+                        dialog.dismiss();
+
+                        mCharAdapter.filterList(charactersList);
+
+                    }
+                });
+
+                ok.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        ArrayList<Characters> filteredList = new ArrayList<>();
+                        for (Characters item : charactersList) {
+                            if (item.getElement().toLowerCase().equals("pyro") && show_pyro||item.getElement().toLowerCase().equals("hydro") && show_hydro||item.getElement().toLowerCase().equals("anemo") && show_anemo||item.getElement().toLowerCase().equals("electro") && show_electro||item.getElement().toLowerCase().equals("dendor") && show_dendor||item.getElement().toLowerCase().equals("cryo") && show_cryo||item.getElement().toLowerCase().equals("geo") && show_geo) {
+                                if(item.getWeapon().toLowerCase().equals("sword") && show_sword||item.getWeapon().toLowerCase().equals("claymore") && show_claymore||item.getWeapon().toLowerCase().equals("polearm") && show_polearm||item.getWeapon().toLowerCase().equals("bow") && show_bow||item.getWeapon().toLowerCase().equals("catalyst") && show_catalyst){
+                                    if(ratingBar.getRating() != 0 && item.getRare() == ratingBar.getRating()){
+                                        filteredList.add(item);
+                                    }else if (ratingBar.getRating() == 0){
+                                        filteredList.add(item);
+                                    }
+                                }
+                            }
+                        }
+
+                        mList_char.removeAllViews();
+                        mCharAdapter.filterList(filteredList);
+                        editor.putBoolean("show_pyro",show_pyro);
+                        editor.putBoolean("show_hydro",show_hydro);
+                        editor.putBoolean("show_anemo",show_anemo);
+                        editor.putBoolean("show_electro",show_electro);
+                        editor.putBoolean("show_dendor",show_dendor);
+                        editor.putBoolean("show_cryo",show_cryo);
+                        editor.putBoolean("show_geo",show_geo);
+                        editor.putBoolean("show_sword",show_sword);
+                        editor.putBoolean("show_claymore",show_claymore);
+                        editor.putBoolean("show_polearm",show_polearm);
+                        editor.putBoolean("show_bow",show_bow);
+                        editor.putBoolean("show_catalyst",show_catalyst);
+                        editor.putInt("char_stars", (int) ratingBar.getRating());
+                        editor.apply();
+                        dialog.dismiss();
+                    }
+                });
+
+                dialog.setContentView(view);
+                dialog.setCanceledOnTouchOutside(true);
+                //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
+                Window dialogWindow = dialog.getWindow();
+                WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+                lp.width = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth());
+                lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                lp.gravity = Gravity.BOTTOM;
+                dialogWindow.setAttributes(lp);
+                dialog.show();
+            }
+        });
+
         nav_view.setItemIconTintList(myList);
         nav_view.setItemTextColor(myList);
         nav_view.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -216,6 +387,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             }
         });
 
+
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -231,6 +403,8 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                         break;
 
                     case 1:
+                        CalculatorProcess calculatorProcess = new CalculatorProcess();
+                        calculatorProcess.setup(context,choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList);
                         break;
 
                     case 2:
@@ -253,7 +427,8 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
     }
 
 
-    public void charQuestion (String CharName_BASE){
+    @SuppressLint("SetTextI18n")
+    public void charQuestion(String CharName_BASE, String XPR, int k){
         normal_name = "XPR";
         element_name = "XPR";
         final_name = "XPR";
@@ -315,26 +490,27 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
          */
 
 
-        String char_atk_name = LoadData("db/char_atk_name.json");
-        //Get data from JSON
-        try {
-            JSONArray array = new JSONArray(char_atk_name);
-            for (int i = 0; i < array.length(); i++) {
-                JSONObject object = array.getJSONObject(i);
-                String temp_name = object.getString("name");
-                if(temp_name.equals(CharName_BASE)){
-                normal_zh = object.getString("normal_zh");
-                element_zh = object.getString("element_zh");
-                final_zh = object.getString("final_zh");
+            String char_atk_name = LoadData("db/char/char_atk_name.json");
+            //Get data from JSON
+            try {
+                JSONArray array = new JSONArray(char_atk_name);
+                for (int i = 0; i < array.length(); i++) {
+                    JSONObject object = array.getJSONObject(i);
+                    String temp_name = object.getString("name");
+                    if(temp_name.equals(CharName_BASE)){
+                        normal_zh = object.getString("normal_zh");
+                        element_zh = object.getString("element_zh");
+                        final_zh = object.getString("final_zh");
 
-                normal_en = object.getString("normal_en");
-                element_en = object.getString("element_en");
-                final_en = object.getString("final_en");
+                        normal_en = object.getString("normal_en");
+                        element_en = object.getString("element_en");
+                        final_en = object.getString("final_en");
+                    }
                 }
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
+
 
         final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
         View view = View.inflate(context, R.layout.menu_char_add, null);
@@ -342,6 +518,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         // Function method
         Button cancel = view.findViewById(R.id.menu_cancel);
         Button ok = view.findViewById(R.id.menu_ok);
+        Button delete = view.findViewById(R.id.menu_delete);
         TextView menu_title = view.findViewById(R.id.menu_title);
         Button menu_char_lvl_before = view.findViewById(R.id.menu_char_lvl_before);
         Button menu_char_lvl_after = view.findViewById(R.id.menu_char_lvl_after);
@@ -374,76 +551,31 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         menu_skill2_title.setText(element_zh);
         menu_skill3_title.setText(final_zh);
 
+        if(XPR.equals("EDIT")){
+            delete.setVisibility(View.VISIBLE);
+            before_lvl = choosedBeforeLvlList.get(k);
+            after_lvl = choosedAfterLvlList.get(k);
+            before_break = choosedBeforeBreakLvlList.get(k);
+            after_break = choosedAfterBreakLvlList.get(k);
+            menu_char_lvl_before.setText(getString(R.string.curr_lvl)+String.valueOf(choosedBeforeLvlList.get(k)));
+            menu_char_lvl_after.setText(getString(R.string.aim_lvl)+String.valueOf(choosedAfterLvlList.get(k)));
+            menu_skill1_before_tv.setText(String.valueOf(choosedBeforeSkill1LvlList.get(k)));
+            menu_skill1_after_tv.setText(String.valueOf(choosedAfterSkill1LvlList.get(k)));
+            menu_skill2_before_tv.setText(String.valueOf(choosedBeforeSkill2LvlList.get(k)));
+            menu_skill2_after_tv.setText(String.valueOf(choosedAfterSkill2LvlList.get(k)));
+            menu_skill3_before_tv.setText(String.valueOf(choosedBeforeSkill3LvlList.get(k)));
+            menu_skill3_after_tv.setText(String.valueOf(choosedAfterSkill3LvlList.get(k)));
+            menu_skill1_before_pb.setProgress(choosedBeforeSkill1LvlList.get(k));
+            menu_skill1_after_pb.setProgress(choosedAfterSkill1LvlList.get(k));
+            menu_skill2_before_pb.setProgress(choosedBeforeSkill2LvlList.get(k));
+            menu_skill2_after_pb.setProgress(choosedAfterSkill2LvlList.get(k));
+            menu_skill3_before_pb.setProgress(choosedBeforeSkill3LvlList.get(k));
+            menu_skill3_after_pb.setProgress(choosedAfterSkill3LvlList.get(k));
+            menu_cal.setChecked(choosedIsCal.get(k));
+            menu_break_lvl_before_switch.setChecked(choosedBeforeBreakUPLvlList.get(k));
+            menu_break_lvl_after_switch.setChecked(choosedAfterBreakUPLvlList.get(k));
+        }
 
-        /*
-        menu_break_lvl_before_rating.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-            @Override
-            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                Toast.makeText(context, String.valueOf(rating), Toast.LENGTH_SHORT).show();
-                if(rating == 0 && before_lvl >20 || rating == 0 && before_lvl <1){before_lvl =1;}
-                else if(rating == 1 && before_lvl >40 || rating == 1 && before_lvl <20){before_lvl =20;}
-                else if(rating == 2 && before_lvl >50 || rating == 2 && before_lvl <40){before_lvl =40;}
-                else if(rating == 3 && before_lvl >60 || rating == 3 && before_lvl <50){before_lvl =50;}
-                else if(rating == 4 && before_lvl >70 || rating == 4 && before_lvl <60){before_lvl =60;}
-                else if(rating == 5 && before_lvl >80 || rating == 5 && before_lvl <70){before_lvl =70;}
-                else if(rating == 6 && before_lvl >90 || rating == 6 && before_lvl <80){before_lvl =80;}
-                menu_char_lvl_before.setText(getString(R.string.curr_lvl)+String.valueOf(before_lvl));
-                before_break = (int) rating;
-                if(rating > after_break){
-                    after_break = (int) rating;
-                    menu_break_lvl_after_rating.setRating(after_break);
-                }
-
-                if(after_break == 0 && after_lvl >20 ){after_lvl =1;}
-                else if(after_break == 1 && after_lvl >40 ){after_lvl =20;}
-                else if(after_break == 2 && after_lvl >50 ){after_lvl =40;}
-                else if(after_break == 3 && after_lvl >60 ){after_lvl =50;}
-                else if(after_break == 4 && after_lvl >70 ){after_lvl =60;}
-                else if(after_break == 5 && after_lvl >80 ){after_lvl =70;}
-                else if(after_break == 6 && after_lvl >90 ){after_lvl =80;}
-                menu_char_lvl_after.setText(getString(R.string.aim_lvl)+String.valueOf(after_lvl));
-
-
-                if(rating > after_break){
-                    after_break = (int) rating;
-                    menu_break_lvl_after_rating.setRating(after_break);
-                }
-            }
-        });
-
-        menu_break_lvl_after_rating.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-            @Override
-            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                if(rating == 0 && after_lvl >20 || rating == 1 && after_lvl <1){after_lvl =1;}
-                else if(rating == 1 && after_lvl >40 || rating == 1 && after_lvl <20){after_lvl =20;}
-                else if(rating == 2 && after_lvl >50 || rating == 2 && after_lvl <40){after_lvl =40;}
-                else if(rating == 3 && after_lvl >60 || rating == 3 && after_lvl <50){after_lvl =50;}
-                else if(rating == 4 && after_lvl >70 || rating == 4 && after_lvl <60){after_lvl =60;}
-                else if(rating == 5 && after_lvl >80 || rating == 5 && after_lvl <70){after_lvl =70;}
-                else if(rating == 6 && after_lvl >90 || rating == 6 && after_lvl <80){after_lvl =80;}
-                menu_char_lvl_after.setText(getString(R.string.aim_lvl)+String.valueOf(after_lvl));
-                after_break = (int) rating;
-                if(rating < before_break){
-                    rating = before_break;
-                    menu_break_lvl_before_rating.setRating(before_break);
-                }
-
-                if(before_break == 0 && before_lvl >20 ){before_lvl =1;}
-                else if(before_break == 1 && before_lvl >40 ){before_lvl =20;}
-                else if(before_break == 2 && before_lvl >50 ){before_lvl =40;}
-                else if(before_break == 3 && before_lvl >60 ){before_lvl =50;}
-                else if(before_break == 4 && before_lvl >70 ){before_lvl =60;}
-                else if(before_break == 5 && before_lvl >80 ){before_lvl =70;}
-                else if(before_break == 6 && before_lvl >90 ){before_lvl =80;}
-                menu_char_lvl_before.setText(getString(R.string.curr_lvl)+String.valueOf(before_lvl));
-
-                if(rating < before_break){
-                    rating = before_break;
-                    menu_break_lvl_before_rating.setRating(before_break);
-                }
-            }
-        });
-         */
         menu_break_lvl_before_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -548,52 +680,74 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                     else if(before_lvl > 20 ){before_break =1;}
                     else if(before_lvl < 20 ){before_break =0;}
                 }
-
-                /*
-                if(XPR.equals("LVL_BEFORE")){
-                    before_lvl = value;
-                    if(before_lvl > 80 && before_break < 6){before_break =6;menu_break_lvl_before_rating.setRating(6);}
-                    else if(before_lvl > 70 && before_break < 5 || before_lvl > 70 && before_break > 5){before_break =5;menu_break_lvl_before_rating.setRating(5);}
-                    else if(before_lvl > 60 && before_break < 4 || before_lvl > 60 && before_break > 4){before_break =4;menu_break_lvl_before_rating.setRating(4);}
-                    else if(before_lvl > 50 && before_break < 3 || before_lvl > 50 && before_break > 3){before_break =3;menu_break_lvl_before_rating.setRating(3);}
-                    else if(before_lvl > 40 && before_break < 2 || before_lvl > 40 && before_break > 2){before_break =2;menu_break_lvl_before_rating.setRating(2);}
-                    else if(before_lvl > 20 && before_break < 1 || before_lvl > 20 && before_break > 1){before_break =1;menu_break_lvl_before_rating.setRating(1);}
-                    else if(before_lvl < 20 ){before_break =0;menu_break_lvl_before_rating.setRating(0);}
-                    menu_char_lvl_before.setText(getString(R.string.curr_lvl)+String.valueOf(before_lvl));
-
-                    if(value > after_lvl){
-                        after_lvl = (int) value;
-                        menu_char_lvl_after.setText(getString(R.string.aim_lvl)+String.valueOf(after_lvl));
-                    }
-                }else if(XPR.equals("LVL_AFTER")){
-                    after_lvl = value;
-                    if(after_lvl > 80 && after_break < 6){after_break =6;menu_break_lvl_after_rating.setRating(6);}
-                    else if(after_lvl > 70 && after_break < 5 || after_lvl > 70 && after_break > 5){after_break =5;menu_break_lvl_after_rating.setRating(5);}
-                    else if(after_lvl > 60 && after_break < 4 || after_lvl > 60 && after_break > 4){after_break =4;menu_break_lvl_after_rating.setRating(4);}
-                    else if(after_lvl > 50 && after_break < 3 || after_lvl > 50 && after_break > 3){after_break =3;menu_break_lvl_after_rating.setRating(3);}
-                    else if(after_lvl > 40 && after_break < 2 || after_lvl > 40 && after_break > 2){after_break =2;menu_break_lvl_after_rating.setRating(2);}
-                    else if(after_lvl > 20 && after_break < 1 || after_lvl > 20 && after_break > 1){after_break =1;menu_break_lvl_after_rating.setRating(1);}
-                    else if(after_lvl < 20 ){after_break =0;menu_break_lvl_after_rating.setRating(0);}
-                    menu_char_lvl_after.setText(getString(R.string.aim_lvl)+String.valueOf(after_lvl));
-
-                    if(value < before_lvl){
-                        before_lvl = (int) value;
-                        menu_char_lvl_before.setText(getString(R.string.curr_lvl)+String.valueOf(before_lvl));
-                    }
-                }
-                 */
             }
         };
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                 String name_del = CharName_BASE;
+                 for (int p = 0 ; p < choosedNameList.size() ; p ++){
+                     if(choosedNameList.get(p).equals(name_del)){
+                         choosedNameList.remove(p);
+                         choosedBeforeLvlList.remove(p);
+                         choosedAfterLvlList.remove(p);
+                         choosedBeforeBreakLvlList.remove(p);
+                         choosedAfterBreakLvlList.remove(p);
+                         choosedBeforeSkill1LvlList.remove(p);
+                         choosedAfterSkill1LvlList.remove(p);
+                         choosedBeforeSkill2LvlList.remove(p);
+                         choosedAfterSkill2LvlList.remove(p);
+                         choosedBeforeSkill3LvlList.remove(p);
+                         choosedAfterSkill3LvlList.remove(p);
+                         choosedIsCal.remove(p);
+                         choosedBeforeBreakUPLvlList.remove(p);
+                         choosedAfterBreakUPLvlList.remove(p);
 
+                         LinearLayout cal_choosed_list = findViewById(R.id.cal_choosed_list);
+                         cal_choosed_list.removeAllViews();
+                         for (int x = 0 ; x < choosedNameList.size(); x++){
+                             Log.w("choosedNameList"+String.valueOf(x),choosedNameList.get(x));
+                             View char_view = LayoutInflater.from(context).inflate(R.layout.item_img, cal_choosed_list, false);
+                             ImageView item_img = char_view.findViewById(R.id.item_img);
+                             String charName = choosedNameList.get(x);
+                             int finalX = x;
+                             item_img.setOnClickListener(new View.OnClickListener() {
+                                 @Override
+                                 public void onClick(View v) {
+                                     charQuestion(charName,"EDIT", finalX);
+                                 }
+                             });
 
+                             final int radius = 180;
+                             final int margin = 4;
+                             final Transformation transformation = new RoundedCornersTransformation(radius, margin);
+                             Picasso.get()
+                                     .load (characters_rss.getCharByName(choosedNameList.get(x))[3])
+                                     .transform(transformation)
+                                     .fit()
+                                     .error (R.drawable.paimon_full)
+                                     .into (item_img);
+                             cal_choosed_list.addView(char_view);
+                         }
+                     }
+                 }
+            }
+        });
 
         ok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Log.wtf("Char Before : ",String.valueOf(before_lvl)+","+String.valueOf(before_break));
-                Log.wtf("Char After : ",String.valueOf(after_lvl)+","+String.valueOf(after_break));
                 dialog.dismiss();
-                addCharIntoListUI(CharName_BASE);
+                int skill1_before = menu_skill1_before_pb.getProgress();
+                int skill1_after = menu_skill1_after_pb.getProgress();
+                int skill2_before = menu_skill2_before_pb.getProgress();
+                int skill2_after = menu_skill2_after_pb.getProgress();
+                int skill3_before = menu_skill3_before_pb.getProgress();
+                int skill3_after = menu_skill3_after_pb.getProgress();
+                boolean isCal = menu_cal.isChecked();
+
+                addCharIntoListUI(CharName_BASE,before_lvl,after_lvl,before_break,after_break,skill1_before,skill1_after,skill2_before,skill2_after,skill3_before,skill3_after,isCal,menu_break_lvl_before_switch.isChecked(),menu_break_lvl_after_switch.isChecked(),XPR,k);
 
             }
         });
@@ -626,29 +780,63 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
     }
 
-    private void addCharIntoListUI(String charName_base) {
+    private void addCharIntoListUI(String charName_base, int before_lvl, int after_lvl, int before_break, int after_break, int skill1_before, int skill1_after, int skill2_before, int skill2_after, int skill3_before, int skill3_after, boolean isCal, boolean beforeUP, boolean afterUP, String XPR, int k) {
         LinearLayout cal_choosed_list = findViewById(R.id.cal_choosed_list);
         cal_choosed_list.removeAllViews();
-        // THERE WILL USE ON ADD ITEMS INTO EVERY ARRAYLIST -> LATER ADD MORE VAR
-        choosedNameList.add(charName_base);
-        for (int x = 0 ; x < choosedNameList.size(); x++){
-            View char_view = LayoutInflater.from(this).inflate(R.layout.item_today_material, cal_choosed_list, false);
-            ImageView item_img = char_view.findViewById(R.id.item_img);
+        // THERE WILL USE ON ADD ITEMS INTO EVERY ARRAYLIST *-> LATER ADD MORE VAR*
 
+        if(XPR.equals("ADD")){
+            choosedNameList.add(charName_base);
+            choosedBeforeLvlList.add(before_lvl);
+            choosedAfterLvlList.add(after_lvl);
+            choosedBeforeBreakLvlList.add(before_break);
+            choosedAfterBreakLvlList.add(after_break);
+            choosedBeforeSkill1LvlList.add(skill1_before);
+            choosedAfterSkill1LvlList.add(skill1_after);
+            choosedBeforeSkill2LvlList.add(skill2_before);
+            choosedAfterSkill2LvlList.add(skill2_after);
+            choosedBeforeSkill3LvlList.add(skill3_before);
+            choosedAfterSkill3LvlList.add(skill3_after);
+            choosedIsCal.add(isCal);
+            choosedBeforeBreakUPLvlList.add(beforeUP);
+            choosedAfterBreakUPLvlList.add(afterUP);
+        }else if (XPR.equals("EDIT")){
+            choosedNameList.set(k,charName_base);
+            choosedBeforeLvlList.set(k,before_lvl);
+            choosedAfterLvlList.set(k,after_lvl);
+            choosedBeforeBreakLvlList.set(k,before_break);
+            choosedAfterBreakLvlList.set(k,after_break);
+            choosedBeforeSkill1LvlList.set(k,skill1_before);
+            choosedAfterSkill1LvlList.set(k,skill1_after);
+            choosedBeforeSkill2LvlList.set(k,skill2_before);
+            choosedAfterSkill2LvlList.set(k,skill2_after);
+            choosedBeforeSkill3LvlList.set(k,skill3_before);
+            choosedAfterSkill3LvlList.set(k,skill3_after);
+            choosedIsCal.set(k,isCal);
+            choosedBeforeBreakUPLvlList.set(k,beforeUP);
+            choosedAfterBreakUPLvlList.set(k,afterUP);
+        }
+
+        for (int x = 0 ; x < choosedNameList.size(); x++){
+            Log.w("choosedNameList"+String.valueOf(x),choosedNameList.get(x));
+            View char_view = LayoutInflater.from(this).inflate(R.layout.item_img, cal_choosed_list, false);
+            ImageView item_img = char_view.findViewById(R.id.item_img);
+            String charName = choosedNameList.get(x);
+            int finalX = x;
             item_img.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, "HIIII", Toast.LENGTH_SHORT).show();
+                    charQuestion(charName,"EDIT", finalX);
                 }
             });
 
-            final int radius = 50;
-            final int margin = 0;
+            final int radius = 180;
+            final int margin = 4;
             final Transformation transformation = new RoundedCornersTransformation(radius, margin);
             Picasso.get()
-                    .load (characters_rss.getCharByName(charName_base)[3])
-                    //.transform(transformation)
-                    .resize(64, 64)
+                    .load (characters_rss.getCharByName(choosedNameList.get(x))[3])
+                    .transform(transformation)
+                    .fit()
                     .error (R.drawable.paimon_full)
                     .into (item_img);
             cal_choosed_list.addView(char_view);
@@ -870,7 +1058,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         int rare,isComing;
         charactersList.clear();
 
-        String json_base = LoadData("db/char_list.json");
+        String json_base = LoadData("db/char/char_list.json");
         //Get data from JSON
         try {
             JSONArray array = new JSONArray(json_base);
