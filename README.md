@@ -16,9 +16,14 @@
 
 ## 連結
 GenshinDb : https://github.com/Wolfteam/GenshinDb
+
 GenshinDb Discord Server : https://discord.gg/rztDRXnnDj
 
 Genshin Spirit : https://github.com/Vocaloid2048/Genshin-Spirit
+
 Email : voc.app.programmer@gmail.com
+
 Discord : Voc-夜芷冰#2512
+
 QQ : 822001886
+
