@@ -20,6 +20,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -387,7 +388,6 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             }
         });
 
-
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -399,19 +399,19 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                 switch (position)
                 {
                     case 0:
-                        viewPagerCharSetup();
                         break;
 
                     case 1:
-                        CalculatorProcess calculatorProcess = new CalculatorProcess();
-                        calculatorProcess.setup(context,choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList);
-                        break;
+                       break;
 
                     case 2:
 
                         break;
 
                     case 3:
+                        CalculatorProcess calculatorProcess = new CalculatorProcess();
+                        calculatorProcess.setVP(viewPager,viewPager3);
+                        calculatorProcess.setup(context,choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList);
 
                         break;
 
@@ -452,43 +452,6 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
         sharedPreferences = context.getSharedPreferences("user_info",Context.MODE_PRIVATE);
         characters_rss = new Characters_Rss();
-
-        /**
-         * OLD WAY -> Only read added translation char json
-         *
-         * String lang = sharedPreferences.getString("lang","zh-HK");
-         *         AssetManager mg = context.getResources().getAssets();
-         *         InputStream is = null;
-         *         try {
-         *             Log.wtf("ALPHA","db/"+lang+"/"+CharName_BASE+".json");
-         *             is = mg.open("db/"+lang+"/"+CharName_BASE+".json");
-         *             if (is != null) {
-         *                 String result = IOUtils.toString(is, StandardCharsets.UTF_8);
-         *                 try {
-         *                     jsonObject = new JSONObject(result);
-         *                     name = jsonObject.getString("name");
-         *                     star = jsonObject.getInt("rare");
-         *                     element = jsonObject.getString("element");
-         *                     isComing = jsonObject.getBoolean("isComingSoon");
-         *                     nick = jsonObject.getString("nick");
-         *
-         *                     JSONObject battle_talent = jsonObject.getJSONObject("battle_talent");
-         *                     normal_name = battle_talent.getString("normal_name");
-         *                     element_name = battle_talent.getString("element_name");
-         *                     final_name = battle_talent.getString("final_name");
-         *                 } catch (JSONException e) {
-         *                     e.printStackTrace();
-         *                 }
-         *                 is.close();
-         *             }
-         *         } catch (IOException ex) {
-         *             if(ex != null) {
-         *                 Toast.makeText(context, "暫時沒有他/她的相關資料", Toast.LENGTH_SHORT).show();
-         *             }
-         *
-         *         }
-         */
-
 
             String char_atk_name = LoadData("db/char/char_atk_name.json");
             //Get data from JSON

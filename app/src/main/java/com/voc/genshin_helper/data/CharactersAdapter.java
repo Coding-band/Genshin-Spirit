@@ -187,7 +187,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                             have = true;
                         }
 
-                        if(char_icon.getVisibility() == View.GONE) {
+                        if(char_isComing.getVisibility() == View.GONE) {
                             if (have == false) {
                                 (((CalculatorUI) context)).charQuestion(String.valueOf(char_base_name.getText()), "ADD", 0);
                             } else {

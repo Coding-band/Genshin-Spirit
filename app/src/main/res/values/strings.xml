@@ -104,14 +104,14 @@
     <string name="alarm_time2">8hrs</string>
     <string name="alarm_time3">12hrs</string>
     <string name="alarm_time4">20hrs</string>
-    <string name="jb_title">[Genshin Helper] Hi ~ It\'s time to do boss mission!</string>
+    <string name="jb_title">[Genshin Spirit] Hi ~ It\'s time to do boss mission!</string>
     <string name="common_info">Don\'t forget to do it before reset</string>
-    <string name="daily_mission_title">[Genshin Helper] Hi ~ Have u finished the daily mission yet?</string>
-    <string name="dtbc_title">[Genshin Helper] Hi ~ Your realm currency has already fulled, remember to claim them ~</string>
-    <string name="ph_title">[Genshin Helper] Hi ~ the expedition has already finished</string>
+    <string name="daily_mission_title">[Genshin Spirit] Hi ~ Have u finished the daily mission yet?</string>
+    <string name="dtbc_title">[Genshin Spirit] Hi ~ Your realm currency has already fulled, remember to claim them ~</string>
+    <string name="ph_title">[Genshin Spirit] Hi ~ the expedition has already finished</string>
     <string name="ph_info">Let\'s see what he/she found ~</string>
     <string name="dtbc_info">Ehm... If you don\'t need them, then I will take them away ~</string>
-    <string name="resin_title">[Genshin Helper] Hi ~ Your resin has already fulled, remember to use them~</string>
+    <string name="resin_title">[Genshin Spirit] Hi ~ Your resin has already fulled, remember to use them~</string>
     <string name="america_ser">America</string>
     <string name="europe_ser">Europe</string>
     <string name="asia_ser">Asia</string>
@@ -119,10 +119,10 @@
     <string name="sky_land_ser">天空岛服</string>
     <string name="world_tree">世界树服</string>
     <string name="genshindb_link"><a href="https://github.com/Wolfteam/GenshinDb">GenshinDb Github</a></string>
-    <string name="genshinhelper_link"><a href="https://github.com/Vocaloid2048/GenshinHelper">Genshin Helper Github</a></string>
+    <string name="genshinhelper_link"><a href="https://github.com/Vocaloid2048/GenshinHelper">Genshin Spirit Github</a></string>
     <string name="press_exit">Press again to exit app</string>
     <string name="vote_title">Please help for rate this app~</string>
-    <string name="vote_info">If you like Genshin Helper, please take a moment to help comment~ Your little help will be of great help to me, and it will not take you a lot of time.</string>
+    <string name="vote_info">If you like Genshin Spirit, please take a moment to help comment~ Your little help will be of great help to me, and it will not take you a lot of time.</string>
     <string name="vote_help">Help for rate</string>
     <string name="vote_no">No</string>
     <string name="vote_later">Later</string>
