@@ -261,6 +261,8 @@ public class Characters_Rss {
         else if(name.equals("nagadus_emerald_sliver")){return R.drawable.nagadus_emerald_sliver;}
         else if(name.equals("nagadus_emerald_fragment")){return R.drawable.nagadus_emerald_fragment;}
         else if(name.equals("nagadus_emerald_chunk")){return R.drawable.nagadus_emerald_chunk;}
+        else if(name.equals("nagadus_emerald_gemstone")){return R.drawable.nagadus_emerald_gemstone;}
+        else if(name.equals("智識之冕")){return R.drawable.crown_of_sagehood;}
         else if(name.equals("摩拉")){return R.drawable.mora;}
         else if(name.equals("流浪者的經驗")){return R.drawable.wanderers_advice;}
         else if(name.equals("冒險家的經驗")){return R.drawable.adventurers_experience;}

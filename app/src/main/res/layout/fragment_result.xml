@@ -108,7 +108,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="gone">
+                android:visibility="visible">
 
             </androidx.gridlayout.widget.GridLayout>
 
@@ -128,7 +128,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="gone">
+                android:visibility="visible">
 
             </androidx.gridlayout.widget.GridLayout>
 
@@ -145,10 +145,10 @@
 
             <androidx.gridlayout.widget.GridLayout
                 android:id="@+id/result_weekboss_gl"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="gone">
+                android:visibility="visible">
 
             </androidx.gridlayout.widget.GridLayout>
 
@@ -168,7 +168,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="gone">
+                android:visibility="visible">
 
             </androidx.gridlayout.widget.GridLayout>
 
@@ -189,7 +189,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="gone">
+                android:visibility="visible">
 
             </androidx.gridlayout.widget.GridLayout>
 
@@ -209,7 +209,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="gone">
+                android:visibility="visible">
 
             </androidx.gridlayout.widget.GridLayout>
 
@@ -229,7 +229,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="gone">
+                android:visibility="visible">
 
             </androidx.gridlayout.widget.GridLayout>
 
@@ -249,7 +249,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="gone">
+                android:visibility="visible">
 
             </androidx.gridlayout.widget.GridLayout>
 
@@ -269,9 +269,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:visibility="gone">
+                android:visibility="visible">
 
             </androidx.gridlayout.widget.GridLayout>
+
         </LinearLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

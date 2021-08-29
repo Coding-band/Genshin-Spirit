@@ -2,6 +2,7 @@ package com.voc.genshin_helper.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.media.Image;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -195,6 +196,7 @@ public class CalculatorProcess {
     int exp_small = 0;
     int exp_mid = 0;
     int exp_big = 0;
+    int morax = 0;
 
     ArrayList<String> asc_temp_item = new ArrayList<String>();
     ArrayList<Integer> asc_temp_count = new ArrayList<Integer>();
@@ -214,7 +216,7 @@ public class CalculatorProcess {
     public void setup(Context context ,ArrayList<String> NameList, ArrayList<Integer> BeforeLvlList, ArrayList<Integer> AfterLvlList, ArrayList<Integer> BeforeBreakLvlList, ArrayList<Integer> AfterBreakLvlList, ArrayList<Integer> BeforeSkill1LvlList, ArrayList<Integer> AfterSkill1LvlList, ArrayList<Integer> BeforeSkill2LvlList, ArrayList<Integer> AfterSkill2LvlList, ArrayList<Integer> BeforeSkill3LvlList, ArrayList<Integer> AfterSkill3LvlList, ArrayList<Boolean> IsCal, ArrayList<Boolean> BeforeBreakUPLvlList, ArrayList<Boolean> AfterBreakUPLvlList) {
         this.context = context;
         this.NameList = NameList;
-        System.out.println(NameList);
+        //System.out.println(NameList);
         this.BeforeLvlList = BeforeLvlList;
         this.AfterLvlList = AfterLvlList;
         this.BeforeBreakLvlList = BeforeBreakLvlList;
@@ -259,10 +261,17 @@ public class CalculatorProcess {
 
         }
 
+        for (int k = 0 ; k < NameList.size() ; k ++){part0_exp.add(0);}
+        for (int k = 0 ; k < NameList.size() ; k ++){part1_exp.add(0);}
+        for (int k = 0 ; k < NameList.size() ; k ++){part2_exp.add(0);}
+        for (int k = 0 ; k < NameList.size() ; k ++){part3_exp.add(0);}
+        for (int k = 0 ; k < NameList.size() ; k ++){part4_exp.add(0);}
+        for (int k = 0 ; k < NameList.size() ; k ++){part5_exp.add(0);}
+        for (int k = 0 ; k < NameList.size() ; k ++){part6_exp.add(0);}
         for (int k = 0 ; k < 9 ; k ++){asc_temp_count.add(0);}
-        for (int k = 0 ; k < 8 ; k ++){skill1_temp_count.add(0);}
-        for (int k = 0 ; k < 8 ; k ++){skill2_temp_count.add(0);}
-        for (int k = 0 ; k < 8 ; k ++){skill3_temp_count.add(0);}
+        for (int k = 0 ; k < 7 ; k ++){skill1_temp_count.add(0);}
+        for (int k = 0 ; k < 7 ; k ++){skill2_temp_count.add(0);}
+        for (int k = 0 ; k < 7 ; k ++){skill3_temp_count.add(0);}
 
         characters_rss = new Characters_Rss();
 
@@ -274,16 +283,31 @@ public class CalculatorProcess {
         for (int x = 0 ; x < NameList.size() ; x ++){
             /** CAL EXP */
             int exp_grade0 = 0,exp_grade1= 0,exp_grade2= 0,exp_grade3= 0,exp_grade4= 0,exp_grade5= 0,exp_grade6 = 0;
+            asc_temp_item.clear();
+            asc_temp_count.clear();
+            skill1_temp_item.clear();
+            skill1_temp_count.clear();
+            skill2_temp_item.clear();
+            skill2_temp_count.clear();
+            skill3_temp_item.clear();
+            skill3_temp_count.clear();
+
+            for (int k = 0 ; k < 9 ; k ++){asc_temp_count.add(0);}
+            for (int k = 0 ; k < 7 ; k ++){skill1_temp_count.add(0);}
+            for (int k = 0 ; k < 7 ; k ++){skill2_temp_count.add(0);}
+            for (int k = 0 ; k < 7 ; k ++){skill3_temp_count.add(0);}
+
             for (int y = BeforeLvlList.get(x) ; y < AfterLvlList.get(x) ; y++){
-                if(y<=20){exp_grade0 = exp_grade0 + lvlEXPList.get(y-1);}
-                else if(y>20 && y <= 40){exp_grade1 = exp_grade1 + lvlEXPList.get(y-1);}
-                else if(y>40 && y <= 50){exp_grade2 = exp_grade2 + lvlEXPList.get(y-1);}
-                else if(y>50 && y <= 60){exp_grade3 = exp_grade3 + lvlEXPList.get(y-1);}
-                else if(y>60 && y <= 70){exp_grade4 = exp_grade4 + lvlEXPList.get(y-1);}
-                else if(y>70 && y <= 80){exp_grade5 = exp_grade5 + lvlEXPList.get(y-1);}
-                else if(y>80 && y <= 90){exp_grade6 = exp_grade6 + lvlEXPList.get(y-1);}
-                mora.add(moraEXPList.get(y-1));
-                // LATER WILL TURN TO EXP_BIG / SMALL / MID ONE BY ONE
+
+                if(y<=20){exp_grade0 = exp_grade0 + expEXPList.get(y);}
+                else if(y>20 && y <= 40){exp_grade1 = exp_grade1 + expEXPList.get(y);}
+                else if(y>40 && y <= 50){exp_grade2 = exp_grade2 + expEXPList.get(y);}
+                else if(y>50 && y <= 60){exp_grade3 = exp_grade3 + expEXPList.get(y);}
+                else if(y>60 && y <= 70){exp_grade4 = exp_grade4 + expEXPList.get(y);}
+                else if(y>70 && y <= 80){exp_grade5 = exp_grade5 + expEXPList.get(y);}
+                else if(y>80 && y <= 90){exp_grade6 = exp_grade6 + expEXPList.get(y);}
+                //mora.add(moraEXPList.get(y));
+                morax = morax + moraEXPList.get(y);
             }
 
             part0_exp.add(exp_grade0);
@@ -293,13 +317,13 @@ public class CalculatorProcess {
             part4_exp.add(exp_grade4);
             part5_exp.add(exp_grade5);
             part6_exp.add(exp_grade6);
-            getEXPItemCount(x,part0_exp);
-            getEXPItemCount(x,part1_exp);
-            getEXPItemCount(x,part2_exp);
-            getEXPItemCount(x,part3_exp);
-            getEXPItemCount(x,part4_exp);
-            getEXPItemCount(x,part5_exp);
-            getEXPItemCount(x,part6_exp);
+            getEXPItemCount(x,exp_grade0);
+            getEXPItemCount(x,exp_grade1);
+            getEXPItemCount(x,exp_grade2);
+            getEXPItemCount(x,exp_grade3);
+            getEXPItemCount(x,exp_grade4);
+            getEXPItemCount(x,exp_grade5);
+            getEXPItemCount(x,exp_grade6);
 
             Log.wtf("HEY","PAIMON");
 
@@ -308,8 +332,8 @@ public class CalculatorProcess {
             if(BeforeBreakUPLvlList.get(x) == true){beforeUP = 1;}
             if(AfterBreakUPLvlList.get(x) == true){afterUP = 1;}
 
-            System.out.println("SS"+BeforeBreakLvlList);
-            System.out.println("RR"+AfterBreakLvlList);
+            //System.out.println("SS"+BeforeBreakLvlList);
+            //System.out.println("RR"+AfterBreakLvlList);
 
             for (int y = BeforeBreakLvlList.get(x)+beforeUP ; y < AfterBreakLvlList.get(x)+afterUP+1 ; y ++){
 
@@ -329,8 +353,8 @@ public class CalculatorProcess {
                 asc_temp_count.set(6,asc_temp_count.get(6) +com2ASCList.get(y));
                 asc_temp_count.set(7,asc_temp_count.get(7) +com3ASCList.get(y));
                 asc_temp_count.set(8,asc_temp_count.get(8) +bossASCList.get(y));
-                mora.add(moraASCList.get(y));
-                System.out.println("KAMI "+asc_temp_count);
+                //mora.add(moraASCList.get(y));
+                morax = morax + moraASCList.get(y);
 
             }
             FindItemByName(asc_temp_item,asc_temp_count);
@@ -354,11 +378,12 @@ public class CalculatorProcess {
                 skill1_temp_count.set(5,skill1_temp_count.get(5) + com3SKILLList.get(y));
                 skill1_temp_count.set(6,skill1_temp_count.get(6) + bossSKILLList.get(y));
 
-                if(y == 10) {智識之冕 = 智識之冕 + 1;}
+                if(y == 9) {智識之冕 = 智識之冕 + 1;}
 
-                mora.add(moraSkillList.get(x));
-                FindItemByName(skill1_temp_item,skill1_temp_count);
+               // mora.add(moraSkillList.get(y));
+                morax = morax + moraSkillList.get(y);
             }
+            FindItemByName(skill1_temp_item,skill1_temp_count);
 
             for (int y = BeforeSkill2LvlList.get(x) ; y < AfterSkill2LvlList.get(x) ; y ++){
 
@@ -376,10 +401,11 @@ public class CalculatorProcess {
                 skill2_temp_count.set(5,skill2_temp_count.get(5) + com3SKILLList.get(y));
                 skill2_temp_count.set(6,skill2_temp_count.get(6) + bossSKILLList.get(y));
 
-                if(y == 10) {智識之冕 = 智識之冕 + 1;}
-                mora.add(moraSkillList.get(x));
-                FindItemByName(skill2_temp_item,skill2_temp_count);
+                if(y == 9) {智識之冕 = 智識之冕 + 1;}
+                //mora.add(moraSkillList.get(y));
+                morax = morax + moraSkillList.get(y);
             }
+            FindItemByName(skill2_temp_item,skill2_temp_count);
 
             for (int y = BeforeSkill3LvlList.get(x) ; y < AfterSkill3LvlList.get(x) ; y ++){
 
@@ -397,12 +423,14 @@ public class CalculatorProcess {
                 skill3_temp_count.set(5,skill3_temp_count.get(5) + com3SKILLList.get(y));
                 skill3_temp_count.set(6,skill3_temp_count.get(6) + bossSKILLList.get(y));
 
-                if(y == 10) {智識之冕 = 智識之冕 + 1;}
-                mora.add(moraSkillList.get(x));
-                FindItemByName(skill3_temp_item,skill3_temp_count);
+                if(y ==9) {智識之冕 = 智識之冕 + 1;}
+                // mora.add(moraSkillList.get(y));
+                morax = morax + moraSkillList.get(y);
             }
-            resultShow();
+            FindItemByName(skill3_temp_item,skill3_temp_count);
+
         }
+        resultShow();
     }
 
     public int getRealPosByName(String s) {
@@ -427,26 +455,28 @@ public class CalculatorProcess {
         //gridLayout.setRowCount(5);
         //        gridLayout.setColumnCount((int)(NameList.size()/5)+1);
         //        int width = (int) ((ScreenSizeUtils.getInstance(context).getScreenWidth()-64)/5);
-        int column = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth()-128)/128;
+        int column = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth()-150)/150;
         final Transformation transformation = new RoundedCornersTransformation(radius, margin);
         for (int x = 0, c = 0, r = 0; NameList != null && x < NameList.size(); x++, c++) {
             if(c == column) { c = 0;r++; }
-            item_img = new ImageView(context);
+            View view = View.inflate(context, R.layout.item_cal_img, null);
+            ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
+            TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
             Picasso.get()
                     .load (characters_rss.getCharByName(NameList.get(x))[3])
                     .transform(transformation)
-                    .resize(128,128)
+                    .resize(150,150)
                     .error (R.drawable.paimon_lost)
-                    .into (item_img);
-            gridLayout.addView(item_img, x);
-            item_img.setAdjustViewBounds(true);
+                    .into (item_cal_img);
+            item_cal_tv.setText(context.getString(characters_rss.getCharByName(NameList.get(x))[1]));
+            gridLayout.addView(view);
             GridLayout.LayoutParams param =new GridLayout.LayoutParams();
             param.height = GridLayout.LayoutParams.WRAP_CONTENT;
             param.width = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.setGravity(Gravity.CENTER_HORIZONTAL);
+            param.setGravity(Gravity.CENTER_VERTICAL);
             param.columnSpec = GridLayout.spec(c);
             param.rowSpec = GridLayout.spec(r);
-            item_img.setLayoutParams (param);
+            view.setLayoutParams (param);
 
 
         }
@@ -458,14 +488,13 @@ public class CalculatorProcess {
         gridLayout.removeAllViews();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
-        for (int x = 0, c = 0, r = 0; crystal_temp != null && x < crystal_temp.length; x++, c++) {
+        for (int x = 0, c = 0, r = 0; crystal_temp != null && x < crystal_temp.length; x++) {
             if(c == column) { c = 0;r++; }
             View view = View.inflate(context, R.layout.item_cal_img, null);
             ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
             TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
             Picasso.get()
                     .load (characters_rss.getItemIcoByName(crystal_temp[x],context))
-                    .transform(transformation)
                     .resize(128,128)
                     .error (R.drawable.paimon_lost)
                     .into (item_cal_img);
@@ -475,12 +504,13 @@ public class CalculatorProcess {
                 gridLayout.setVisibility(View.VISIBLE);
                 TextView result_crystal_title = viewPager.findViewById(R.id.result_crystal_title);
                 result_crystal_title.setVisibility(View.VISIBLE);
-                gridLayout.addView(view, x);
+                gridLayout.addView(view);
+                c++;
             }
             GridLayout.LayoutParams param =new GridLayout.LayoutParams();
             param.height = GridLayout.LayoutParams.WRAP_CONTENT;
             param.width = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.setGravity(Gravity.CENTER_HORIZONTAL);
+            param.setGravity(Gravity.CENTER_VERTICAL);
             param.columnSpec = GridLayout.spec(c);
             param.rowSpec = GridLayout.spec(r);
             view.setLayoutParams (param);
@@ -493,14 +523,13 @@ public class CalculatorProcess {
         gridLayout.removeAllViews();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
-        for (int x = 0, c = 0, r = 0; boss_temp != null && x < boss_temp.length; x++, c++) {
+        for (int x = 0, c = 0, r = 0; boss_temp != null && x < boss_temp.length; x++) {
             if(c == column) { c = 0;r++; }
             View view = View.inflate(context, R.layout.item_cal_img, null);
             ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
             TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
             Picasso.get()
                     .load (characters_rss.getItemIcoByName(boss_temp[x],context))
-                    .transform(transformation)
                     .resize(128,128)
                     .error (R.drawable.paimon_lost)
                     .into (item_cal_img);
@@ -510,12 +539,13 @@ public class CalculatorProcess {
                 gridLayout.setVisibility(View.VISIBLE);
                 TextView result_boss_title = viewPager.findViewById(R.id.result_boss_title);
                 result_boss_title.setVisibility(View.VISIBLE);
-                gridLayout.addView(view, x);
+                gridLayout.addView(view);
+                c++;
             }
             GridLayout.LayoutParams param =new GridLayout.LayoutParams();
             param.height = GridLayout.LayoutParams.WRAP_CONTENT;
             param.width = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.setGravity(Gravity.CENTER_HORIZONTAL);
+            param.setGravity(Gravity.CENTER_VERTICAL);
             param.columnSpec = GridLayout.spec(c);
             param.rowSpec = GridLayout.spec(r);
             view.setLayoutParams (param);
@@ -528,14 +558,13 @@ public class CalculatorProcess {
         gridLayout.removeAllViews();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
-        for (int x = 0, c = 0, r = 0; week_boss_temp != null && x < week_boss_temp.length; x++, c++) {
+        for (int x = 0, c = 0, r = 0; week_boss_temp != null && x < week_boss_temp.length; x++) {
             if(c == column) { c = 0;r++; }
             View view = View.inflate(context, R.layout.item_cal_img, null);
             ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
             TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
             Picasso.get()
                     .load (characters_rss.getItemIcoByName(week_boss_temp[x],context))
-                    .transform(transformation)
                     .resize(128,128)
                     .error (R.drawable.paimon_lost)
                     .into (item_cal_img);
@@ -545,12 +574,13 @@ public class CalculatorProcess {
                 gridLayout.setVisibility(View.VISIBLE);
                 TextView result_weekboss_title = viewPager.findViewById(R.id.result_weekboss_title);
                 result_weekboss_title.setVisibility(View.VISIBLE);
-                gridLayout.addView(view, x);
+                gridLayout.addView(view);
+                c++;
             }
             GridLayout.LayoutParams param =new GridLayout.LayoutParams();
             param.height = GridLayout.LayoutParams.WRAP_CONTENT;
             param.width = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.setGravity(Gravity.CENTER_HORIZONTAL);
+            param.setGravity(Gravity.CENTER_VERTICAL);
             param.columnSpec = GridLayout.spec(c);
             param.rowSpec = GridLayout.spec(r);
             view.setLayoutParams (param);
@@ -563,14 +593,13 @@ public class CalculatorProcess {
         gridLayout.removeAllViews();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
-        for (int x = 0, c = 0, r = 0; local_temp != null && x < local_temp.length; x++, c++) {
+        for (int x = 0, c = 0, r = 0; local_temp != null && x < local_temp.length; x++) {
             if(c == column) { c = 0;r++; }
             View view = View.inflate(context, R.layout.item_cal_img, null);
             ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
             TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
             Picasso.get()
                     .load (characters_rss.getItemIcoByName(local_temp[x],context))
-                    .transform(transformation)
                     .resize(128,128)
                     .error (R.drawable.paimon_lost)
                     .into (item_cal_img);
@@ -580,12 +609,13 @@ public class CalculatorProcess {
                 gridLayout.setVisibility(View.VISIBLE);
                 TextView result_local_title = viewPager.findViewById(R.id.result_local_title);
                 result_local_title.setVisibility(View.VISIBLE);
-                gridLayout.addView(view, x);
+                gridLayout.addView(view);
+                c++;
             }
             GridLayout.LayoutParams param =new GridLayout.LayoutParams();
             param.height = GridLayout.LayoutParams.WRAP_CONTENT;
             param.width = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.setGravity(Gravity.CENTER_HORIZONTAL);
+            param.setGravity(Gravity.CENTER_VERTICAL);
             param.columnSpec = GridLayout.spec(c);
             param.rowSpec = GridLayout.spec(r);
             view.setLayoutParams (param);
@@ -598,14 +628,13 @@ public class CalculatorProcess {
         gridLayout.removeAllViews();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
-        for (int x = 0, c = 0, r = 0; common_temp != null && x < common_temp.length; x++, c++) {
+        for (int x = 0, c = 0, r = 0; common_temp != null && x < common_temp.length; x++) {
             if(c == column) { c = 0;r++; }
             View view = View.inflate(context, R.layout.item_cal_img, null);
             ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
             TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
             Picasso.get()
                     .load (characters_rss.getItemIcoByName(common_temp[x],context))
-                    .transform(transformation)
                     .resize(128,128)
                     .error (R.drawable.paimon_lost)
                     .into (item_cal_img);
@@ -615,12 +644,13 @@ public class CalculatorProcess {
                 gridLayout.setVisibility(View.VISIBLE);
                 TextView result_common_title = viewPager.findViewById(R.id.result_common_title);
                 result_common_title.setVisibility(View.VISIBLE);
-                gridLayout.addView(view, x);
+                gridLayout.addView(view);
+                c++;
             }
             GridLayout.LayoutParams param =new GridLayout.LayoutParams();
             param.height = GridLayout.LayoutParams.WRAP_CONTENT;
             param.width = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.setGravity(Gravity.CENTER_HORIZONTAL);
+            param.setGravity(Gravity.CENTER_VERTICAL);
             param.columnSpec = GridLayout.spec(c);
             param.rowSpec = GridLayout.spec(r);
             view.setLayoutParams (param);
@@ -633,14 +663,13 @@ public class CalculatorProcess {
         gridLayout.removeAllViews();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
-        for (int x = 0, c = 0, r = 0; weeklybk1_temp != null && x < weeklybk1_temp.length; x++, c++) {
+        for (int x = 0, c = 0, r = 0; weeklybk1_temp != null && x < weeklybk1_temp.length; x++) {
             if(c == column) { c = 0;r++; }
             View view = View.inflate(context, R.layout.item_cal_img, null);
             ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
             TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
             Picasso.get()
                     .load (characters_rss.getItemIcoByName(weeklybk1_temp[x],context))
-                    .transform(transformation)
                     .resize(128,128)
                     .error (R.drawable.paimon_lost)
                     .into (item_cal_img);
@@ -650,12 +679,13 @@ public class CalculatorProcess {
                 gridLayout.setVisibility(View.VISIBLE);
                 TextView result_weeklybk1_title = viewPager.findViewById(R.id.result_weeklybk1_title);
                 result_weeklybk1_title.setVisibility(View.VISIBLE);
-                gridLayout.addView(view, x);
+                gridLayout.addView(view);
+                c++;
             }
             GridLayout.LayoutParams param =new GridLayout.LayoutParams();
             param.height = GridLayout.LayoutParams.WRAP_CONTENT;
             param.width = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.setGravity(Gravity.CENTER_HORIZONTAL);
+            param.setGravity(Gravity.CENTER_VERTICAL);
             param.columnSpec = GridLayout.spec(c);
             param.rowSpec = GridLayout.spec(r);
             view.setLayoutParams (param);
@@ -668,14 +698,13 @@ public class CalculatorProcess {
         gridLayout.removeAllViews();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
-        for (int x = 0, c = 0, r = 0; weeklybk2_temp != null && x < weeklybk2_temp.length; x++, c++) {
+        for (int x = 0, c = 0, r = 0; weeklybk2_temp != null && x < weeklybk2_temp.length; x++) {
             if(c == column) { c = 0;r++; }
             View view = View.inflate(context, R.layout.item_cal_img, null);
             ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
             TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
             Picasso.get()
                     .load (characters_rss.getItemIcoByName(weeklybk2_temp[x],context))
-                    .transform(transformation)
                     .resize(128,128)
                     .error (R.drawable.paimon_lost)
                     .into (item_cal_img);
@@ -685,12 +714,13 @@ public class CalculatorProcess {
                 gridLayout.setVisibility(View.VISIBLE);
                 TextView result_weeklybk2_title = viewPager.findViewById(R.id.result_weeklybk2_title);
                 result_weeklybk2_title.setVisibility(View.VISIBLE);
-                gridLayout.addView(view, x);
+                gridLayout.addView(view);
+                c++;
             }
             GridLayout.LayoutParams param =new GridLayout.LayoutParams();
             param.height = GridLayout.LayoutParams.WRAP_CONTENT;
             param.width = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.setGravity(Gravity.CENTER_HORIZONTAL);
+            param.setGravity(Gravity.CENTER_VERTICAL);
             param.columnSpec = GridLayout.spec(c);
             param.rowSpec = GridLayout.spec(r);
             view.setLayoutParams (param);
@@ -703,14 +733,13 @@ public class CalculatorProcess {
         gridLayout.removeAllViews();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
-        for (int x = 0, c = 0, r = 0; weeklybk3_temp != null && x < weeklybk3_temp.length; x++, c++) {
+        for (int x = 0, c = 0, r = 0; weeklybk3_temp != null && x < weeklybk3_temp.length; x++) {
             if(c == column) { c = 0;r++; }
             View view = View.inflate(context, R.layout.item_cal_img, null);
             ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
             TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
             Picasso.get()
                     .load (characters_rss.getItemIcoByName(weeklybk3_temp[x],context))
-                    .transform(transformation)
                     .resize(128,128)
                     .error (R.drawable.paimon_lost)
                     .into (item_cal_img);
@@ -720,37 +749,40 @@ public class CalculatorProcess {
                 gridLayout.setVisibility(View.VISIBLE);
                 TextView result_weeklybk3_title = viewPager.findViewById(R.id.result_weeklybk3_title);
                 result_weeklybk3_title.setVisibility(View.VISIBLE);
-                gridLayout.addView(view, x);
+                gridLayout.addView(view);
+                c++;
             }
             GridLayout.LayoutParams param =new GridLayout.LayoutParams();
             param.height = GridLayout.LayoutParams.WRAP_CONTENT;
             param.width = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.setGravity(Gravity.CENTER_HORIZONTAL);
+            param.setGravity(Gravity.CENTER_VERTICAL);
             param.columnSpec = GridLayout.spec(c);
             param.rowSpec = GridLayout.spec(r);
             view.setLayoutParams (param);
         }
 
-        /** WEEKLY-WED-SAT-SUN */
+        /** OTHERS*/
+        /*
         int mora_final = 0;
         for (int e = 0 ; e < mora.size() ; e ++){
             mora_final = mora_final + mora.get(e);
         }
+         */
 
+        Log.wtf("OTHERS","exp_small : "+String.valueOf(exp_small)+" | exp_mid : "+String.valueOf(exp_mid)+" | exp_big : "+String.valueOf(exp_big)+" | mora : "+String.valueOf(morax)+" | 智識之冕 : "+String.valueOf(智識之冕));
         String[] other_temp = new String[]{"流浪者的經驗","冒險家的經驗","大英雄的經驗","摩拉","智識之冕"};
-        int[] other_temp_cnt = new int[]{exp_small,exp_mid,exp_big,mora_final,智識之冕};
+        int[] other_temp_cnt = new int[]{exp_small,exp_mid,exp_big,morax,智識之冕};
         gridLayout = viewPager.findViewById(R.id.result_other_gl);
         gridLayout.removeAllViews();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
-        for (int x = 0, c = 0, r = 0; other_temp != null && x < other_temp.length; x++, c++) {
+        for (int x = 0, c = 0, r = 0; other_temp != null && x < other_temp.length; x++) {
             if(c == column) { c = 0;r++; }
             View view = View.inflate(context, R.layout.item_cal_img, null);
             ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
             TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
             Picasso.get()
                     .load (characters_rss.getItemIcoByName(other_temp[x],context))
-                    .transform(transformation)
                     .resize(128,128)
                     .error (R.drawable.paimon_lost)
                     .into (item_cal_img);
@@ -760,32 +792,34 @@ public class CalculatorProcess {
                 gridLayout.setVisibility(View.VISIBLE);
                 TextView result_other_title = viewPager.findViewById(R.id.result_other_title);
                 result_other_title.setVisibility(View.VISIBLE);
-                gridLayout.addView(view, x);
+                gridLayout.addView(view);
+                c++;
             }
             GridLayout.LayoutParams param =new GridLayout.LayoutParams();
             param.height = GridLayout.LayoutParams.WRAP_CONTENT;
             param.width = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.setGravity(Gravity.CENTER_HORIZONTAL);
+            param.setGravity(Gravity.CENTER_VERTICAL);
             param.columnSpec = GridLayout.spec(c);
             param.rowSpec = GridLayout.spec(r);
             view.setLayoutParams (param);
         }
     }
 
-    public void getEXPItemCount(int pos, ArrayList<Integer> part_exp){
+    public void getEXPItemCount(int pos, int part_exp){
         int big0 = 0 , mid0 = 0 , small0 = 0;
         float temp1 = 0f , temp2 = 0f , temp3 = 0f;
-        int part0 = part_exp.get(pos);
+        int part0 = part_exp;
 
         if(part0 >= 20000) {
             big0 = (int) part0 / 20000;
-            temp1 = (part0/20000 - big0)*20000;
+            temp1 = ((float) part0/20000 - big0)*20000;
+
             if(temp1 >= 5000){
                 mid0 = (int) temp1/5000;
-                temp2 = (temp1/5000 - mid0)*5000;
+                temp2 = ((float) temp1/5000 - mid0)*5000;
                 if(temp2 >= 1000){
                     small0 = (int) temp2/1000;
-                    temp3 = (temp2/1000 - small0)*1000;
+                    temp3 = ((float) temp2/1000 - small0)*1000;
                     if(temp3 >0){
                         small0 = small0 + 1;
                     }
@@ -795,7 +829,7 @@ public class CalculatorProcess {
             }else {
                 if(temp1 >= 1000){
                     small0 = (int) temp1/1000;
-                    temp2 = (temp1/1000 - small0)*1000;
+                    temp2 = ((float) temp1/1000 - small0)*1000;
                     if(temp2 >0){
                         small0 = small0 + 1;
                     }
@@ -805,10 +839,10 @@ public class CalculatorProcess {
             }
         }else if(part0 >= 5000){
             mid0 = (int) part0/5000;
-            temp1 = (part0/5000 - mid0)*5000;
+            temp1 = ((float) part0/5000 - mid0)*5000;
             if(temp1 >= 1000){
                 small0 = (int) temp1/1000;
-                temp2 = (temp1/1000 - small0)*1000;
+                temp2 = ((float) temp1/1000 - small0)*1000;
                 if(temp2 >0){
                     small0 = small0 + 1;
                 }
@@ -818,7 +852,7 @@ public class CalculatorProcess {
         }else {
             if(part0 >= 1000){
                 small0 = (int) part0/1000;
-                temp1 = (part0/1000 - small0)*1000;
+                temp1 = ((float) part0/1000 - small0)*1000;
                 if(temp1 >0){
                     small0 = small0 + 1;
                 }
@@ -837,18 +871,17 @@ public class CalculatorProcess {
      * @param temp_count
      */
     public void FindItemByName(ArrayList<String> temp_item, ArrayList<Integer> temp_count){
-        /** CRYSTAL -> USING temp_count's pos 0-3*/
-        System.out.println("temp_item : "+temp_item);
-        System.out.println("temp_count : "+temp_count);
 
-        if(temp_item.get(1).equals("燃願瑪瑙")){addCountIntoVar(燃願瑪瑙,temp_count,"CRYSTAL");}
-        if(temp_item.get(1).equals("滌淨青金")){addCountIntoVar(滌淨青金,temp_count,"CRYSTAL");}
-        if(temp_item.get(1).equals("最勝紫晶")){addCountIntoVar(最勝紫晶,temp_count,"CRYSTAL");}
-        if(temp_item.get(1).equals("哀敘冰玉")){addCountIntoVar(哀敘冰玉,temp_count,"CRYSTAL");}
-        if(temp_item.get(1).equals("自在松石")){addCountIntoVar(自在松石,temp_count,"CRYSTAL");}
-        if(temp_item.get(1).equals("堅牢黃玉")){addCountIntoVar(堅牢黃玉,temp_count,"CRYSTAL");}
+        if(temp_item.size() >= 5){
+            /** CRYSTAL -> USING temp_count's pos 0-3*/
 
-        if(temp_item.size()>4){
+            if(temp_item.get(1).equals("燃願瑪瑙")){addCountIntoVar(燃願瑪瑙,temp_count,"CRYSTAL");}
+            if(temp_item.get(1).equals("滌淨青金")){addCountIntoVar(滌淨青金,temp_count,"CRYSTAL");}
+            if(temp_item.get(1).equals("最勝紫晶")){addCountIntoVar(最勝紫晶,temp_count,"CRYSTAL");}
+            if(temp_item.get(1).equals("哀敘冰玉")){addCountIntoVar(哀敘冰玉,temp_count,"CRYSTAL");}
+            if(temp_item.get(1).equals("自在松石")){addCountIntoVar(自在松石,temp_count,"CRYSTAL");}
+            if(temp_item.get(1).equals("堅牢黃玉")){addCountIntoVar(堅牢黃玉,temp_count,"CRYSTAL");}
+
             /** COMMON -> USING temp_count's pos 7-9*/
             if(temp_item.get(4).equals("歷戰的箭簇")){addCountIntoVar(歷戰的箭簇,temp_count,"COMMON");}
             if(temp_item.get(4).equals("禁咒繪卷")){addCountIntoVar(禁咒繪卷,temp_count,"COMMON");}
@@ -858,41 +891,81 @@ public class CalculatorProcess {
             if(temp_item.get(4).equals("原素花蜜")){addCountIntoVar(原素花蜜,temp_count,"COMMON");}
             if(temp_item.get(4).equals("史萊姆原漿")){addCountIntoVar(史萊姆原漿,temp_count,"COMMON");}
             if(temp_item.get(4).equals("名刀鐔")){addCountIntoVar(名刀鐔,temp_count,"COMMON");}
+
+            /** BOSS -> USING temp_count's pos 8 */
+            if(temp_item.get(2).equals("常燃火種")){常燃火種 = addCountIntoVar(常燃火種,temp_count,"BOSS");}
+            if(temp_item.get(2).equals("淨水之心")){淨水之心 = addCountIntoVar(淨水之心,temp_count,"BOSS");}
+            if(temp_item.get(2).equals("雷光棱鏡")){雷光棱鏡 = addCountIntoVar(雷光棱鏡,temp_count,"BOSS");}
+            if(temp_item.get(2).equals("極寒之核")){極寒之核 = addCountIntoVar(極寒之核,temp_count,"BOSS");}
+            if(temp_item.get(2).equals("颶風之種")){颶風之種 = addCountIntoVar(颶風之種,temp_count,"BOSS");}
+            if(temp_item.get(2).equals("玄岩之塔")){玄岩之塔 = addCountIntoVar(玄岩之塔,temp_count,"BOSS");}
+            if(temp_item.get(2).equals("未熟之玉")){未熟之玉 = addCountIntoVar(未熟之玉,temp_count,"BOSS");}
+            if(temp_item.get(2).equals("晶凝之華")){晶凝之華 = addCountIntoVar(晶凝之華,temp_count,"BOSS");}
+            if(temp_item.get(2).equals("魔偶機心")){魔偶機心 = addCountIntoVar(魔偶機心,temp_count,"BOSS");}
+            if(temp_item.get(2).equals("恒常機關之心")){恒常機關之心 = addCountIntoVar(恒常機關之心,temp_count,"BOSS");}
+            if(temp_item.get(2).equals("陰燃之珠")){陰燃之珠 = addCountIntoVar(陰燃之珠,temp_count,"BOSS");}
+
+            /** LOCAL */
+            if(temp_item.get(3).equals("小燈草")){小燈草 = addCountIntoVar(小燈草,temp_count,"LOCAL");}
+            else if(temp_item.get(3).equals("慕風蘑菇")){慕風蘑菇 = addCountIntoVar(慕風蘑菇,temp_count,"LOCAL");}
+            else if(temp_item.get(3).equals("夜泊石")){夜泊石 = addCountIntoVar(夜泊石,temp_count,"LOCAL");}
+            else if(temp_item.get(3).equals("風車菊")){風車菊 = addCountIntoVar(風車菊,temp_count,"LOCAL");}
+            else if(temp_item.get(3).equals("石珀")){石珀 = addCountIntoVar(石珀,temp_count,"LOCAL");}
+            else if(temp_item.get(3).equals("蒲公英籽")){蒲公英籽 = addCountIntoVar(蒲公英籽,temp_count,"LOCAL");}
+            else if(temp_item.get(3).equals("嘟嘟蓮")){嘟嘟蓮 = addCountIntoVar(嘟嘟蓮,temp_count,"LOCAL");}
+            else if(temp_item.get(3).equals("落落莓")){落落莓 = addCountIntoVar(落落莓,temp_count,"LOCAL");}
+            else if(temp_item.get(3).equals("琉璃百合")){琉璃百合 = addCountIntoVar(琉璃百合,temp_count,"LOCAL");}
+            else if(temp_item.get(3).equals("琉璃袋")){琉璃袋 = addCountIntoVar(琉璃袋,temp_count,"LOCAL");}
+            else if(temp_item.get(3).equals("鉤鉤果")){鉤鉤果 = addCountIntoVar(鉤鉤果,temp_count,"LOCAL");}
+            else if(temp_item.get(3).equals("塞西莉亞花")){塞西莉亞花 = addCountIntoVar(塞西莉亞花,temp_count,"LOCAL");}
+            else if(temp_item.get(3).equals("絕雲椒椒")){絕雲椒椒 = addCountIntoVar(絕雲椒椒,temp_count,"LOCAL");}
+            else if(temp_item.get(3).equals("霓裳花")){霓裳花 = addCountIntoVar(霓裳花,temp_count,"LOCAL");}
+            else if(temp_item.get(3).equals("星螺")){星螺 = addCountIntoVar(星螺,temp_count,"LOCAL");}
+            else if(temp_item.get(3).equals("清心")){清心 = addCountIntoVar(清心,temp_count,"LOCAL");}
+            else if(temp_item.get(3).equals("海靈芝")){海靈芝 = addCountIntoVar(海靈芝,temp_count,"LOCAL");}
+            else if(temp_item.get(3).equals("緋櫻繡球")){緋櫻繡球 = addCountIntoVar(緋櫻繡球,temp_count,"LOCAL");}
+            else if(temp_item.get(3).equals("鳴草")){鳴草 = addCountIntoVar(鳴草,temp_count,"LOCAL");}
+            else if(temp_item.get(3).equals("晶化骨髓")){晶化骨髓 = addCountIntoVar(晶化骨髓,temp_count,"LOCAL");}
+
+
         }
 
-        /** T-COMMON -> USING temp_count's pos 1-3*/
-        if(temp_item.get(2).equals("歷戰的箭簇")){addCountIntoVar(歷戰的箭簇,temp_count,"T-COMMON");}
-        if(temp_item.get(2).equals("禁咒繪卷")){addCountIntoVar(禁咒繪卷,temp_count,"T-COMMON");}
-        if(temp_item.get(2).equals("攫金鴉印")){addCountIntoVar(攫金鴉印,temp_count,"T-COMMON");}
-        if(temp_item.get(2).equals("不祥的面具")){addCountIntoVar(不祥的面具,temp_count,"T-COMMON");}
-        if(temp_item.get(2).equals("尉官的徽記")){addCountIntoVar(尉官的徽記,temp_count,"T-COMMON");}
-        if(temp_item.get(2).equals("原素花蜜")){addCountIntoVar(原素花蜜,temp_count,"T-COMMON");}
-        if(temp_item.get(2).equals("史萊姆原漿")){addCountIntoVar(史萊姆原漿,temp_count,"T-COMMON");}
-        if(temp_item.get(2).equals("名刀鐔")){addCountIntoVar(名刀鐔,temp_count,"T-COMMON");}
+        if(temp_item.size() > 3){
+            /** T-COMMON -> USING temp_count's pos 1-3*/
+            if(temp_item.get(2).equals("歷戰的箭簇")){addCountIntoVar(歷戰的箭簇,temp_count,"T-COMMON");}
+            if(temp_item.get(2).equals("禁咒繪卷")){addCountIntoVar(禁咒繪卷,temp_count,"T-COMMON");}
+            if(temp_item.get(2).equals("攫金鴉印")){addCountIntoVar(攫金鴉印,temp_count,"T-COMMON");}
+            if(temp_item.get(2).equals("不祥的面具")){addCountIntoVar(不祥的面具,temp_count,"T-COMMON");}
+            if(temp_item.get(2).equals("尉官的徽記")){addCountIntoVar(尉官的徽記,temp_count,"T-COMMON");}
+            if(temp_item.get(2).equals("原素花蜜")){addCountIntoVar(原素花蜜,temp_count,"T-COMMON");}
+            if(temp_item.get(2).equals("史萊姆原漿")){addCountIntoVar(史萊姆原漿,temp_count,"T-COMMON");}
+            if(temp_item.get(2).equals("名刀鐔")){addCountIntoVar(名刀鐔,temp_count,"T-COMMON");}
 
-        /** T-BOOK -> USING temp_count's pos 0-2 */
-        if(temp_item.get(1).equals("「自由」的哲學")){addCountIntoVar(自由_的哲學,temp_count,"T-BOOK");}
-        if(temp_item.get(1).equals("「黃金」的哲學")){addCountIntoVar(黃金_的哲學,temp_count,"T-BOOK");}
-        if(temp_item.get(1).equals("「抗爭」的哲學")){addCountIntoVar(抗爭_的哲學,temp_count,"T-BOOK");}
-        if(temp_item.get(1).equals("「勤勞」的哲學")){addCountIntoVar(勤勞_的哲學,temp_count,"T-BOOK");}
-        if(temp_item.get(1).equals("「詩文」的哲學")){addCountIntoVar(詩文_的哲學,temp_count,"T-BOOK");}
-        if(temp_item.get(1).equals("「繁榮」的哲學")){addCountIntoVar(繁榮_的哲學,temp_count,"T-BOOK");}
-        if(temp_item.get(1).equals("「風雅」的哲學")){addCountIntoVar(風雅_的哲學,temp_count,"T-BOOK");}
-        if(temp_item.get(1).equals("「浮世」的哲學")){addCountIntoVar(浮世_的哲學,temp_count,"T-BOOK");}
-        if(temp_item.get(1).equals("「天光」的哲學")){addCountIntoVar(天光_的哲學,temp_count,"T-BOOK");}
+            /** T-BOOK -> USING temp_count's pos 0-2 */
+            if(temp_item.get(1).equals("「自由」的哲學")){addCountIntoVar(自由_的哲學,temp_count,"T-BOOK");}
+            if(temp_item.get(1).equals("「黃金」的哲學")){addCountIntoVar(黃金_的哲學,temp_count,"T-BOOK");}
+            if(temp_item.get(1).equals("「抗爭」的哲學")){addCountIntoVar(抗爭_的哲學,temp_count,"T-BOOK");}
+            if(temp_item.get(1).equals("「勤勞」的哲學")){addCountIntoVar(勤勞_的哲學,temp_count,"T-BOOK");}
+            if(temp_item.get(1).equals("「詩文」的哲學")){addCountIntoVar(詩文_的哲學,temp_count,"T-BOOK");}
+            if(temp_item.get(1).equals("「繁榮」的哲學")){addCountIntoVar(繁榮_的哲學,temp_count,"T-BOOK");}
+            if(temp_item.get(1).equals("「風雅」的哲學")){addCountIntoVar(風雅_的哲學,temp_count,"T-BOOK");}
+            if(temp_item.get(1).equals("「浮世」的哲學")){addCountIntoVar(浮世_的哲學,temp_count,"T-BOOK");}
+            if(temp_item.get(1).equals("「天光」的哲學")){addCountIntoVar(天光_的哲學,temp_count,"T-BOOK");}
 
-        /** BOSS -> USING temp_count's pos 8 */
-        if(temp_item.get(1).equals("常燃火種")){addCountIntoVar(常燃火種,temp_count,"BOSS");}
-        if(temp_item.get(1).equals("淨水之心")){addCountIntoVar(淨水之心,temp_count,"BOSS");}
-        if(temp_item.get(1).equals("雷光棱鏡")){addCountIntoVar(雷光棱鏡,temp_count,"BOSS");}
-        if(temp_item.get(1).equals("極寒之核")){addCountIntoVar(極寒之核,temp_count,"BOSS");}
-        if(temp_item.get(1).equals("颶風之種")){addCountIntoVar(颶風之種,temp_count,"BOSS");}
-        if(temp_item.get(1).equals("玄岩之塔")){addCountIntoVar(玄岩之塔,temp_count,"BOSS");}
-        if(temp_item.get(1).equals("未熟之玉")){addCountIntoVar(未熟之玉,temp_count,"BOSS");}
-        if(temp_item.get(1).equals("晶凝之華")){addCountIntoVar(晶凝之華,temp_count,"BOSS");}
-        if(temp_item.get(1).equals("魔偶機心")){addCountIntoVar(魔偶機心,temp_count,"BOSS");}
-        if(temp_item.get(1).equals("恒常機關之心")){addCountIntoVar(恒常機關之心,temp_count,"BOSS");}
-        if(temp_item.get(1).equals("陰燃之珠")){addCountIntoVar(陰燃之珠,temp_count,"BOSS");}
+            if(temp_item.get(3).equals("北風之環")){北風之環 = addCountIntoVar(北風之環,temp_count,"T-BOSS");}
+            if(temp_item.get(3).equals("東風的吐息")){東風的吐息 = addCountIntoVar(東風的吐息,temp_count,"T-BOSS");}
+            if(temp_item.get(3).equals("東風之翎")){東風之翎 = addCountIntoVar(東風之翎,temp_count,"T-BOSS");}
+            if(temp_item.get(3).equals("北風的魂匣")){北風的魂匣 = addCountIntoVar(北風的魂匣,temp_count,"T-BOSS");}
+            if(temp_item.get(3).equals("東風之爪")){東風之爪 = addCountIntoVar(東風之爪,temp_count,"T-BOSS");}
+            if(temp_item.get(3).equals("北風之尾")){北風之尾 = addCountIntoVar(北風之尾,temp_count,"T-BOSS");}
+            if(temp_item.get(3).equals("魔王之刃·殘片")){魔王之刃_殘片 = addCountIntoVar(魔王之刃_殘片,temp_count,"T-BOSS");}
+            if(temp_item.get(3).equals("吞天之鯨·只角")){吞天之鯨_只角 = addCountIntoVar(吞天之鯨_只角,temp_count,"T-BOSS");}
+            if(temp_item.get(3).equals("武煉之魂·孤影")){武煉之魂_孤影 = addCountIntoVar(武煉之魂_孤影,temp_count,"T-BOSS");}
+            if(temp_item.get(3).equals("龍王之冕")){龍王之冕 = addCountIntoVar(龍王之冕,temp_count,"T-BOSS");}
+            if(temp_item.get(3).equals("血玉之枝")){血玉之枝 = addCountIntoVar(血玉之枝,temp_count,"T-BOSS");}
+            if(temp_item.get(3).equals("鎏金之鱗")){鎏金之鱗 = addCountIntoVar(鎏金之鱗,temp_count,"T-BOSS");}
+
+        }
 
     }
 
@@ -904,20 +977,20 @@ public class CalculatorProcess {
     public void addCountIntoVar(ArrayList<Integer> ITEM, ArrayList<Integer> temp_count, String XPR){
         if(XPR.equals("CRYSTAL")) {
             for (int x = 0; x < 4; x++) {
-                System.out.println("XPR "+temp_count.get(x));
-                ITEM.set(x, temp_count.get(x));
+                ITEM.set(x, ITEM.get(x)+temp_count.get(x));
             }
         }else if(XPR.equals("COMMON")){
-            for (int x = 0 ; x < 2 ; x++){
-                ITEM.set(x,temp_count.get(x+7));
+            for (int x = 0 ; x < 3 ; x++){
+                ITEM.set(x,ITEM.get(x)+temp_count.get(x+5));
             }
         }else if(XPR.equals("T-BOOK")){
-            for (int x = 0 ; x < 2 ; x++){
-                ITEM.set(x,temp_count.get(x));
+            for (int x = 0 ; x < 3 ; x++){
+                ITEM.set(x,ITEM.get(x)+temp_count.get(x));
             }
         }else if(XPR.equals("T-COMMON")){
-            for (int x = 0 ; x < 2 ; x++){
-                ITEM.set(x,temp_count.get(x+1));
+            for (int x = 0 ; x < 3 ; x++){
+                System.out.println("SYS : "+temp_count);
+                ITEM.set(x,ITEM.get(x)+temp_count.get(x+3));
             }
         }
     }
@@ -928,12 +1001,18 @@ public class CalculatorProcess {
      * @param temp_count -> ArrayList
      * @param XPR -> TYPE -> TELL FUN Total pos have in the ITEM
      */
-    public void addCountIntoVar(int ITEM, ArrayList<Integer> temp_count, String XPR){
+    public int addCountIntoVar(int ITEM, ArrayList<Integer> temp_count, String XPR){
         if(XPR.equals("BOSS")) {
-            for (int x = 0; x < 3; x++) {
-                ITEM = ITEM + temp_count.get(temp_count.get(8));
-            }
+                ITEM = ITEM + temp_count.get(8);
+                return ITEM;
+        }else if(XPR.equals("T-BOSS")) {
+                ITEM = ITEM + temp_count.get(6);
+                return ITEM;
+        }else if(XPR.equals("LOCAL")) {
+                ITEM = ITEM + temp_count.get(4);
+                return ITEM;
         }
+        return ITEM;
     }
 
 
@@ -1091,8 +1170,9 @@ public class CalculatorProcess {
                 }
                 // Muility
             } else {
-                return plus+new DecimalFormat("#,###").format(numValue);
-            }}
+                return plus+new DecimalFormat("###,###,###,###,###").format(numValue);
+            }
+        }
         return plus+new DecimalFormat("###,###,###,###,###").format(numValue);
     }
 

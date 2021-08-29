@@ -1,0 +1,68 @@
+{
+  "name": "Bennett",
+  "rare": 4,
+  "area": "Mondstadt",
+  "element": "Pyro",
+  "weapon": "Sword",
+  "sex": "Male",
+  "birth": "02/29",
+  "role": "Utility",
+  "isComingSoon": false,
+  "nick":"Idk",
+  "desc": "A righteous and good-natured adventurer from Mondstadt who's unfortunately extremely unlucky.",
+  "battle_talent": {
+    "normal_name": "Strike of Fortune",
+    "normal_img": "normal_atack_strike_of_fortune",
+    "normal_desc1": "Performs up to 5 rapid strikes",
+    "normal_desc2": " Consumes a certain amount of Stamina to unleash 2 rapid sword swings.",
+    "normal_desc3": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
+    "element_name": "Passion Overload",
+    "element_img": "passion_overload",
+    "element_desc": "Bennett concentrates the spirit of Adventure and Pyro into his blade. Depending on how long he charges for, different effects occur.
+Press: A single, swift flame strike that deals Pyro DMG.
+Hold (Short): Charges up, resulting in different effects when unleashed based on the Charge Level
+Level 1: Strikes twice, dealing Pyro DMG and launching opponents.
+Level 2: Unleashes 3 consecutive attacks that deal impressive Pyro DMG, but the last attack triggers an explosion that launches both Bennett and the enemy.
+Bennett takes no damage from being launched, but can take fall damage if he falls down a cliff.",
+    "final_name": "Fantastic Voyage",
+    "final_img": "fantastic_voyage",
+    "final_desc": "Bennett performs a jumping slam attack that deals Pyro DMG, creating an Inspiration Field for 12 seconds.
+Inspiration Field:
+
+If the health of a character within the AoE is equal to or falls below 70%, their health will regenerate each second. The amount of HP restores scales off Bennett's Max HP.
+If the health of a character within the AoE is higher than 70%, they gain an ATK Bonus that scales based on Bennett's Base ATK.
+Imbues characters within the AoE with Pyro."
+  },
+  "basic_talent": {
+    "talent1_name": "Rekindle",
+    "talent1_img": "rekindle",
+    "talent1_desc": "Decreases Passion Overload's CD by 20%.",
+    "talent2_name": "Fearnaught",
+    "talent2_img": "fearnaught",
+    "talent2_desc": "When inside Fantastic Voyage's circle, Passion Overload's CD is decreased by 50% and Bennett cannot be launched by this skill's explosion.",
+    "talent3_name": "It Should Be Safe...",
+    "talent3_img": "it_should_be_safe",
+    "talent3_desc": "When dispatched on an expedition in Mondstadt, time consumed is reduced by 25%.
+"
+  },
+  "sof": {
+    "sof1_name": "Grand Expectation",
+    "sof1_img": "grand_expectation",
+    "sof1_desc": "Fantastic Voyage's ATK increase no longer has an HP restriction, and gains an additional 20% of Bennett's Base ATK.",
+    "sof2_name": "Impasse Conqueror",
+    "sof2_img": "impasse_conqueror",
+    "sof2_desc": "When Bennett's HP falls below 70%, his Energy Recharge is increased by 30%.",
+    "sof3_name": "Unstoppable Fervor",
+    "sof3_img": "unstoppable_fervor",
+    "sof3_desc": "Increases the Level of Passion Overload by 3.<br>Maximum upgrade level is 15.",
+    "sof4_name": "Unexpected Odyssey",
+    "sof4_img": "unexpected_odyssey",
+    "sof4_desc": "Using a Normal Attack when executing the second attack of Passion Overload's Charge Level 1 allows an additional attack to be performed.<br>This additional attack does 135% of the second attack's DMG.",
+    "sof5_name": "True Explorer",
+    "sof5_img": "the_explorer",
+    "sof5_desc": "	Increases the Level of Fantastic Voyage by 3.<br>Maximum upgrade level is 15.",
+    "sof6_name": "Fire Ventures with Me",
+    "sof6_img": "fire_ventures_with_me",
+    "sof6_desc": "Sword, Claymore, or Polearm-wielding characters inside Fantastic Voyage's radius gain a 15% Pyro DMG Bonus and their weapons are infused with Pyro."
+  }
+}
