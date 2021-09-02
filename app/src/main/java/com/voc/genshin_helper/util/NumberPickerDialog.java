@@ -1,10 +1,12 @@
 package com.voc.genshin_helper.util;
 
 import android.app.Activity;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.NumberPicker;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 
@@ -49,6 +51,7 @@ public class NumberPickerDialog {
         ok.setOnClickListener((v -> {
             /**這邊將值放進OnDialogRespond中*/
             onDialogRespond.onRespond(np.getValue(),XPR);
+            Toast.makeText(activity, String.valueOf(np.getValue()), Toast.LENGTH_SHORT).show();
             dialog.dismiss();
         }));
         //dialog.getButton(AlertDialog.BUTTON_NEGATIVE)

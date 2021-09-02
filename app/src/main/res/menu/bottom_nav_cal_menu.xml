@@ -8,12 +8,12 @@
         android:id="@+id/nav_artifacts"
         android:icon="@drawable/art2"
         android:title="@string/title_artifacts"
-        android:visible="false" />
+        android:visible="true" />
     <item
         android:id="@+id/nav_weapons"
         android:icon="@drawable/weapons2"
         android:title="@string/title_weapons"
-        android:visible="false" />
+        android:visible="true" />
     <item
         android:id="@+id/nav_result"
         android:icon="@drawable/wanderers_advice"

@@ -124,7 +124,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
     int before_lvl = 1;
     int after_lvl = 90;
     int before_break = 0;
-    int after_break = 1;
+    int after_break = 6;
     int skill1_lvl = 1;
     int skill2_lvl = 1;
     int skill3_lvl = 1;
@@ -560,8 +560,8 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(after_lvl ==20 | after_lvl ==40 | after_lvl ==50 | after_lvl ==60 | after_lvl ==70 | after_lvl ==80){
-                    if(menu_break_lvl_after_switch.isChecked() == true){
-                        if(before_break <= after_break +1){
+                    if(menu_break_lvl_after_switch.isChecked()){
+                        if(before_break <= after_break){
                             menu_break_lvl_after_switch.setChecked(true);
                         }
                         else{menu_break_lvl_after_switch.setChecked(false);}

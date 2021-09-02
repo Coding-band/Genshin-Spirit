@@ -141,4 +141,55 @@
     <string name="ru" translatable="false">русский язык</string>
     <string name="zh_cn" translatable="false">简体中文</string>
     <string name="pls_restart_app">Please restart app</string>
+    <string name="set_by_player">Set by player</string>
+    <string name="another_world">Another World</string>
+
+    <string name="date_jan">Jan</string>
+    <string name="date_feb">Feb</string>
+    <string name="date_mar">Mar</string>
+    <string name="date_apr">Apr</string>
+    <string name="date_may">May</string>
+    <string name="date_jun">Jun</string>
+    <string name="date_jul">Jul</string>
+    <string name="date_aug">Aug</string>
+    <string name="date_sep">Sep</string>
+    <string name="date_oct">Oct</string>
+    <string name="date_nov">Nov</string>
+    <string name="date_dec">Dec</string>
+
+    <string name="date_1st">" 1st"</string>
+    <string name="date_2nd">" 2nd"</string>
+    <string name="date_3rd">" 3rd"</string>
+    <string name="date_4th">" 4th"</string>
+    <string name="date_5th">" 5th"</string>
+    <string name="date_6th">" 6th"</string>
+    <string name="date_7th">" 7th"</string>
+    <string name="date_8th">" 8th"</string>
+    <string name="date_9th">" 9th"</string>
+    <string name="date_10th">" 10th"</string>
+    <string name="date_11th">" 11th"</string>
+    <string name="date_12th">" 12th"</string>
+    <string name="date_13th">" 13th"</string>
+    <string name="date_14th">" 14th"</string>
+    <string name="date_15th">" 15th"</string>
+    <string name="date_16th">" 16th"</string>
+    <string name="date_17th">" 17th"</string>
+    <string name="date_18th">" 18th"</string>
+    <string name="date_19th">" 19th"</string>
+    <string name="date_20th">" 20th"</string>
+    <string name="date_21st">" 21st"</string>
+    <string name="date_22nd">" 22nd"</string>
+    <string name="date_23rd">" 23rd"</string>
+    <string name="date_24th">" 24th"</string>
+    <string name="date_25th">" 25th"</string>
+    <string name="date_26th">" 26th"</string>
+    <string name="date_27th">" 27th"</string>
+    <string name="date_28th">" 28th"</string>
+    <string name="date_29th">" 29th"</string>
+    <string name="date_30th">" 30th"</string>
+    <string name="date_31st">" 31st"</string>
+
+
+
+
 </resources>

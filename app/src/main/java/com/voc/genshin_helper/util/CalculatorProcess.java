@@ -268,7 +268,7 @@ public class CalculatorProcess {
         for (int k = 0 ; k < NameList.size() ; k ++){part4_exp.add(0);}
         for (int k = 0 ; k < NameList.size() ; k ++){part5_exp.add(0);}
         for (int k = 0 ; k < NameList.size() ; k ++){part6_exp.add(0);}
-        for (int k = 0 ; k < 9 ; k ++){asc_temp_count.add(0);}
+        for (int k = 0 ; k < 10 ; k ++){asc_temp_count.add(0);}
         for (int k = 0 ; k < 7 ; k ++){skill1_temp_count.add(0);}
         for (int k = 0 ; k < 7 ; k ++){skill2_temp_count.add(0);}
         for (int k = 0 ; k < 7 ; k ++){skill3_temp_count.add(0);}
@@ -335,6 +335,11 @@ public class CalculatorProcess {
             //System.out.println("SS"+BeforeBreakLvlList);
             //System.out.println("RR"+AfterBreakLvlList);
 
+            Log.wtf("BEFORE_LVL",String.valueOf(BeforeLvlList.get(x)));
+            Log.wtf("AFTER_LVL",String.valueOf(AfterLvlList.get(x)));
+            Log.wtf("BEFORE_UP",String.valueOf(beforeUP));
+            Log.wtf("AFTER_UP",String.valueOf(afterUP));
+
             for (int y = BeforeBreakLvlList.get(x)+beforeUP ; y < AfterBreakLvlList.get(x)+afterUP+1 ; y ++){
 
                 int z = getRealPosByName(NameList.get(x));
@@ -343,6 +348,7 @@ public class CalculatorProcess {
                 asc_temp_item.add(bossREQUIREList.get(z));
                 asc_temp_item.add(localREQUIREList.get(z));
                 asc_temp_item.add(commonREQUIREList.get(z));
+
 
                 asc_temp_count.set(0,asc_temp_count.get(0) + silverASCList.get(y));
                 asc_temp_count.set(1,asc_temp_count.get(1) +fragASCList.get(y));
@@ -446,7 +452,7 @@ public class CalculatorProcess {
         /** CHARACTER ICON*/
         GridLayout gridLayout = new GridLayout(context);
         gridLayout = viewPager.findViewById(R.id.result_char_gl);
-        gridLayout.removeAllViews();
+        gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
         ImageView item_img;
         TextView tv;
@@ -485,7 +491,7 @@ public class CalculatorProcess {
         String[] crystal_temp = new String[]{"燃願瑪瑙碎屑","燃願瑪瑙斷片","燃願瑪瑙塊","燃願瑪瑙","滌淨青金碎屑","滌淨青金斷片","滌淨青金塊","滌淨青金","最勝紫晶碎屑","最勝紫晶斷片","最勝紫晶塊","最勝紫晶","哀敘冰玉碎屑","哀敘冰玉斷片","哀敘冰玉塊","哀敘冰玉","自在松石碎屑","自在松石斷片","自在松石塊","自在松石","堅牢黃玉碎屑","堅牢黃玉斷片","堅牢黃玉塊","堅牢黃玉"};
         int[] crystal_temp_cnt = new int[]{燃願瑪瑙.get(0),燃願瑪瑙.get(1),燃願瑪瑙.get(2),燃願瑪瑙.get(3),滌淨青金.get(0),滌淨青金.get(1),滌淨青金.get(2),滌淨青金.get(3),最勝紫晶.get(0),最勝紫晶.get(1),最勝紫晶.get(2),最勝紫晶.get(3),哀敘冰玉.get(0),哀敘冰玉.get(1),哀敘冰玉.get(2),哀敘冰玉.get(3),自在松石.get(0),自在松石.get(1),自在松石.get(2),自在松石.get(3),堅牢黃玉.get(0),堅牢黃玉.get(1),堅牢黃玉.get(2),堅牢黃玉.get(3)};
         gridLayout = viewPager.findViewById(R.id.result_crystal_gl);
-        gridLayout.removeAllViews();
+        gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
         for (int x = 0, c = 0, r = 0; crystal_temp != null && x < crystal_temp.length; x++) {
@@ -520,7 +526,7 @@ public class CalculatorProcess {
         String[] boss_temp = new String[]{"常燃火種","淨水之心","雷光棱鏡","極寒之核","颶風之種","玄岩之塔","未熟之玉","晶凝之華","魔偶機心","恒常機關之心","陰燃之珠"};
         int[] boss_temp_cnt = new int[]{常燃火種,淨水之心,雷光棱鏡,極寒之核,颶風之種,玄岩之塔,未熟之玉,晶凝之華,魔偶機心,恒常機關之心,陰燃之珠};
         gridLayout = viewPager.findViewById(R.id.result_boss_gl);
-        gridLayout.removeAllViews();
+        gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
         for (int x = 0, c = 0, r = 0; boss_temp != null && x < boss_temp.length; x++) {
@@ -555,7 +561,7 @@ public class CalculatorProcess {
         String[] week_boss_temp = new String[]{"北風之環","東風的吐息","東風之翎","北風的魂匣","東風之爪","北風之尾","魔王之刃·殘片","吞天之鯨·只角","武煉之魂·孤影","龍王之冕","血玉之枝","鎏金之鱗"};
         int[] week_boss_temp_cnt = new int[]{北風之環,東風的吐息,東風之翎,北風的魂匣,東風之爪,北風之尾,魔王之刃_殘片,吞天之鯨_只角,武煉之魂_孤影,龍王之冕,血玉之枝,鎏金之鱗};
         gridLayout = viewPager.findViewById(R.id.result_weekboss_gl);
-        gridLayout.removeAllViews();
+        gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
         for (int x = 0, c = 0, r = 0; week_boss_temp != null && x < week_boss_temp.length; x++) {
@@ -590,7 +596,7 @@ public class CalculatorProcess {
         String[] local_temp = new String[]{"小燈草","慕風蘑菇","夜泊石","風車菊","石珀","蒲公英籽","嘟嘟蓮","落落莓","琉璃百合","琉璃袋","鉤鉤果","塞西莉亞花","絕雲椒椒","霓裳花","星螺","清心","海靈芝","緋櫻繡球","鳴草","晶化骨髓"};
         int[] local_temp_cnt = new int[]{小燈草,慕風蘑菇,夜泊石,風車菊,石珀,蒲公英籽,嘟嘟蓮,落落莓,琉璃百合,琉璃袋,鉤鉤果,塞西莉亞花,絕雲椒椒,霓裳花,星螺,清心,海靈芝,緋櫻繡球,鳴草,晶化骨髓};
         gridLayout = viewPager.findViewById(R.id.result_local_gl);
-        gridLayout.removeAllViews();
+        gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
         for (int x = 0, c = 0, r = 0; local_temp != null && x < local_temp.length; x++) {
@@ -625,7 +631,7 @@ public class CalculatorProcess {
         String[] common_temp = new String[]{"牢固的箭簇","銳利的箭簇","歷戰的箭簇","導能繪卷","封魔繪卷","禁咒繪卷","尋寶鴉印","藏銀鴉印","攫金鴉印","破損的面具","污穢的面具","不祥的面具","新兵的徽記","士官的徽記","尉官的徽記","騙騙花蜜","微光花蜜","原素花蜜","史萊姆凝液","史萊姆清","史萊姆原漿","破舊的刀鐔","影打刀鐔","名刀鐔"};
         int[] common_temp_cnt = new int[]{歷戰的箭簇.get(0),歷戰的箭簇.get(1),歷戰的箭簇.get(2),禁咒繪卷.get(0),禁咒繪卷.get(1),禁咒繪卷.get(2),攫金鴉印.get(0),攫金鴉印.get(1),攫金鴉印.get(2),不祥的面具.get(0),不祥的面具.get(1),不祥的面具.get(2),尉官的徽記.get(0),尉官的徽記.get(1),尉官的徽記.get(2),原素花蜜.get(0),原素花蜜.get(1),原素花蜜.get(2),史萊姆原漿.get(0),史萊姆原漿.get(1),史萊姆原漿.get(2),名刀鐔.get(0),名刀鐔.get(1),名刀鐔.get(2)};
         gridLayout = viewPager.findViewById(R.id.result_common_gl);
-        gridLayout.removeAllViews();
+        gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
         for (int x = 0, c = 0, r = 0; common_temp != null && x < common_temp.length; x++) {
@@ -660,7 +666,7 @@ public class CalculatorProcess {
         String[] weeklybk1_temp = new String[]{"「自由」的教導","「自由」的指引","「自由」的哲學","「繁榮」的教導","「繁榮」的指引","「繁榮」的哲學","「浮世」的教導","「浮世」的指引","「浮世」的哲學"};
         int[] weeklybk1_temp_cnt = new int[]{自由_的哲學.get(0),自由_的哲學.get(1),自由_的哲學.get(2),繁榮_的哲學.get(0),繁榮_的哲學.get(1),繁榮_的哲學.get(2),浮世_的哲學.get(0),浮世_的哲學.get(1),浮世_的哲學.get(2)};
         gridLayout = viewPager.findViewById(R.id.result_weeklybk1_gl);
-        gridLayout.removeAllViews();
+        gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
         for (int x = 0, c = 0, r = 0; weeklybk1_temp != null && x < weeklybk1_temp.length; x++) {
@@ -695,7 +701,7 @@ public class CalculatorProcess {
         String[] weeklybk2_temp = new String[]{"「抗爭」的教導","「抗爭」的指引","「抗爭」的哲學","「勤勞」的教導","「勤勞」的指引","「勤勞」的哲學","「風雅」的教導","「風雅」的指引","「風雅」的哲學"};
         int[] weeklybk2_temp_cnt = new int[]{抗爭_的哲學.get(0),抗爭_的哲學.get(1),抗爭_的哲學.get(2),勤勞_的哲學.get(0),勤勞_的哲學.get(1),勤勞_的哲學.get(2),風雅_的哲學.get(0),風雅_的哲學.get(1),風雅_的哲學.get(2)};
         gridLayout = viewPager.findViewById(R.id.result_weeklybk2_gl);
-        gridLayout.removeAllViews();
+        gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
         for (int x = 0, c = 0, r = 0; weeklybk2_temp != null && x < weeklybk2_temp.length; x++) {
@@ -730,7 +736,7 @@ public class CalculatorProcess {
         String[] weeklybk3_temp = new String[]{"「黃金」的教導","「黃金」的指引","「黃金」的哲學","「詩文」的教導","「詩文」的指引","「詩文」的哲學","「天光」的教導","「天光」的指引","「天光」的哲學"};
         int[] weeklybk3_temp_cnt = new int[]{黃金_的哲學.get(0),黃金_的哲學.get(1),黃金_的哲學.get(2),詩文_的哲學.get(0),詩文_的哲學.get(1),詩文_的哲學.get(2),天光_的哲學.get(0),天光_的哲學.get(1),天光_的哲學.get(2)};
         gridLayout = viewPager.findViewById(R.id.result_weeklybk3_gl);
-        gridLayout.removeAllViews();
+        gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
         for (int x = 0, c = 0, r = 0; weeklybk3_temp != null && x < weeklybk3_temp.length; x++) {
@@ -773,7 +779,7 @@ public class CalculatorProcess {
         String[] other_temp = new String[]{"流浪者的經驗","冒險家的經驗","大英雄的經驗","摩拉","智識之冕"};
         int[] other_temp_cnt = new int[]{exp_small,exp_mid,exp_big,morax,智識之冕};
         gridLayout = viewPager.findViewById(R.id.result_other_gl);
-        gridLayout.removeAllViews();
+        gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
         for (int x = 0, c = 0, r = 0; other_temp != null && x < other_temp.length; x++) {

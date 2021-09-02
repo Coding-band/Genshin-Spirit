@@ -26,6 +26,7 @@ public class Characters_Rss {
         if (str.equals("Mondstadt")){return context.getString(R.string.mondstadt);}
         else if (str.equals("Liyue")){return context.getString(R.string.liyue);}
         else if (str.equals("Inazuma")){return context.getString(R.string.inazuma);}
+        else if (str.equals("Another World")){return context.getString(R.string.inazuma);}
         /** Char's Role Name*/
         else if (str.equals("Main_DPS")){return context.getString(R.string.main_dps);}
         else if (str.equals("Support_DPS")){return context.getString(R.string.support_dps);}
@@ -33,6 +34,7 @@ public class Characters_Rss {
         /** Sex Name */
         else if (str.equals("Female")){return context.getString(R.string.female);}
         else if (str.equals("Male")){return context.getString(R.string.male);}
+        else if (str.equals("SET_BY_PLAYER")){return context.getString(R.string.set_by_player);}
 
         else {return "null";}
     }
@@ -269,5 +271,60 @@ public class Characters_Rss {
         else if(name.equals("大英雄的經驗")){return R.drawable.heros_wit;}
 
         else {return R.drawable.paimon_lost;}
+    }
+
+    public String getLocaleBirth (String str,Context context) {
+        String[] date = str.split("/");
+        int month = Integer.parseInt(date[0]);
+        int day = Integer.parseInt(date[1]);
+
+        String returns = "Jan 1st";
+        if(month == 1){returns = context.getString(R.string.date_jan);}
+        else if(month == 2){returns = context.getString(R.string.date_feb);}
+        else if(month == 3){returns = context.getString(R.string.date_mar);}
+        else if(month == 4){returns = context.getString(R.string.date_apr);}
+        else if(month == 5){returns = context.getString(R.string.date_may);}
+        else if(month == 6){returns = context.getString(R.string.date_jun);}
+        else if(month == 7){returns = context.getString(R.string.date_jul);}
+        else if(month == 8){returns = context.getString(R.string.date_aug);}
+        else if(month == 9){returns = context.getString(R.string.date_sep);}
+        else if(month == 10){returns = context.getString(R.string.date_oct);}
+        else if(month == 11){returns = context.getString(R.string.date_nov);}
+        else if(month == 12){returns = context.getString(R.string.date_dec);}
+
+        if(day == 1){returns = returns + context.getString(R.string.date_1st);}
+        else if(day == 2){returns = returns + context.getString(R.string.date_2nd);}
+        else if(day == 3){returns = returns + context.getString(R.string.date_3rd);}
+        else if(day == 4){returns = returns + context.getString(R.string.date_4th);}
+        else if(day == 5){returns = returns + context.getString(R.string.date_5th);}
+        else if(day == 6){returns = returns + context.getString(R.string.date_6th);}
+        else if(day == 7){returns = returns + context.getString(R.string.date_7th);}
+        else if(day == 8){returns = returns + context.getString(R.string.date_8th);}
+        else if(day == 9){returns = returns + context.getString(R.string.date_9th);}
+        else if(day == 10){returns = returns + context.getString(R.string.date_10th);}
+        else if(day == 11){returns = returns + context.getString(R.string.date_11th);}
+        else if(day == 12){returns = returns + context.getString(R.string.date_12th);}
+        else if(day == 13){returns = returns + context.getString(R.string.date_13th);}
+        else if(day == 14){returns = returns + context.getString(R.string.date_14th);}
+        else if(day == 15){returns = returns + context.getString(R.string.date_15th);}
+        else if(day == 16){returns = returns + context.getString(R.string.date_16th);}
+        else if(day == 17){returns = returns + context.getString(R.string.date_17th);}
+        else if(day == 18){returns = returns + context.getString(R.string.date_18th);}
+        else if(day == 19){returns = returns + context.getString(R.string.date_19th);}
+        else if(day == 20){returns = returns + context.getString(R.string.date_20th);}
+        else if(day == 21){returns = returns + context.getString(R.string.date_21st);}
+        else if(day == 22){returns = returns + context.getString(R.string.date_22nd);}
+        else if(day == 23){returns = returns + context.getString(R.string.date_23rd);}
+        else if(day == 24){returns = returns + context.getString(R.string.date_24th);}
+        else if(day == 25){returns = returns + context.getString(R.string.date_25th);}
+        else if(day == 26){returns = returns + context.getString(R.string.date_26th);}
+        else if(day == 27){returns = returns + context.getString(R.string.date_27th);}
+        else if(day == 28){returns = returns + context.getString(R.string.date_28th);}
+        else if(day == 29){returns = returns + context.getString(R.string.date_29th);}
+        else if(day == 30){returns = returns + context.getString(R.string.date_30th);}
+        else if(day == 31){returns = returns + context.getString(R.string.date_31st);}
+
+
+        return returns;
     }
 }

@@ -189,13 +189,10 @@ public class Characters_Info {
             talent2_name = basic_talent.getString("talent2_name");
             talent2_img = basic_talent.getString("talent2_img");
             talent2_desc = basic_talent.getString("talent2_desc");
-            talent3_name = basic_talent.getString("talent3_name");
-            talent3_img = basic_talent.getString("talent3_img");
-            talent3_desc = basic_talent.getString("talent3_desc");
-            if(basic_talent.has("talent4_name")){
-                talent4_name = basic_talent.getString("talent4_name");
-                talent4_img = basic_talent.getString("talent4_img");
-                talent4_desc = basic_talent.getString("talent4_desc");
+            if(basic_talent.has("talent3_name")){
+                talent3_name = basic_talent.getString("talent3_name");
+                talent3_img = basic_talent.getString("talent3_img");
+                talent3_desc = basic_talent.getString("talent3_desc");
             }
 
             JSONObject sof = jsonObject.getJSONObject("sof");
@@ -550,7 +547,7 @@ public class Characters_Info {
         char_weapon.setImageResource(characters_rss.getWeaponTypeIMG(weapon));
         char_role.setText(characters_rss.getLocaleName(role,context));
         char_sex.setText(characters_rss.getLocaleName(sex,context));
-        char_birth.setText(birth); // -> If necessary will change to Month | Day -> E.g. July 24th
+        char_birth.setText(characters_rss.getLocaleBirth(birth,context)); // -> If necessary will change to Month | Day -> E.g. July 24th
         info_intro.setText(desc);
 
         /** BATTLE_TALENT */
@@ -568,7 +565,7 @@ public class Characters_Info {
         char_talent3_name.setText(final_name);
         char_talent3_normal.setText(Html.fromHtml(final_desc));
 
-        if(!talent4_name.equals("XPR")){
+        if(other_name != "XPR"){
             char_talent4_card.setVisibility(View.VISIBLE);
             char_talent4_ico.setImageDrawable(characters_rss.getTalentIcoByName(other_img,context));
             char_talent4_name.setText(other_name);
@@ -584,9 +581,12 @@ public class Characters_Info {
         char_basic_talent2_name.setText(talent2_name);
         char_basic_talent2_normal.setText(talent2_desc);
 
-        char_basic_talent3_ico.setImageDrawable(characters_rss.getTalentIcoByName(talent3_img,context));
-        char_basic_talent3_name.setText(talent3_name);
-        char_basic_talent3_normal.setText(talent3_desc);
+        if(!talent3_name.isEmpty()){
+            char_basic_talent3_card.setVisibility(View.VISIBLE);
+            char_basic_talent3_ico.setImageDrawable(characters_rss.getTalentIcoByName(talent3_img,context));
+            char_basic_talent3_name.setText(talent3_name);
+            char_basic_talent3_normal.setText(talent3_desc);
+        }
 
         /** Soul of Life*/
         char_sof1_ico.setImageDrawable(characters_rss.getTalentIcoByName(sof1_img,context));

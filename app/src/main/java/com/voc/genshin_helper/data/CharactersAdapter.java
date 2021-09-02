@@ -17,6 +17,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
@@ -30,6 +31,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static android.content.Context.MODE_PRIVATE;
+import static com.voc.genshin_helper.util.RoundedCornersTransformation.CornerType.TOP;
 
 /**
  * Created by ankit on 27/10/17.
@@ -53,8 +55,16 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico, parent, false);
-        ViewHolder evh = new ViewHolder(v, (OnItemClickListener) mListener);
+        View v;
+        ViewHolder evh = null;
+        if(context instanceof MainActivity){
+            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico, parent, false);
+            evh = new ViewHolder(v, (OnItemClickListener) mListener);
+        }else if(context instanceof CalculatorUI){
+            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square, parent, false);
+            evh = new ViewHolder(v, (OnItemClickListener) mListener);
+        }
+
         return evh;
     }
 
@@ -66,15 +76,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         int count = 3;
         final int radius = 25;
         final int margin = 0;
-        final Transformation transformation = new RoundedCornersTransformation(radius, margin);
-
-        if(context instanceof MainActivity){
-            width = (int) ((ScreenSizeUtils.getInstance(context).getScreenWidth() - 32*2*2)/2);
-            height = (int) (width*58/32);
-        }else if(context instanceof CalculatorUI){
-            width = (int) ((ScreenSizeUtils.getInstance(context).getScreenWidth() - 32*2*2)/3);
-            height = (int) ((ScreenSizeUtils.getInstance(context).getScreenWidth() - 32*2*2)/3);
-        }
+        final Transformation transformation = new RoundedCornersTransformation(radius, margin,TOP);
 
         holder.char_name.setText(Characters.getName());
         holder.char_base_name.setText(Characters.getName());
@@ -91,13 +93,13 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
             width = (int) ((ScreenSizeUtils.getInstance(context).getScreenWidth() - 32*2*2)/3);
             height = (int) ((ScreenSizeUtils.getInstance(context).getScreenWidth() - 32*2*2)/3);
         }
-        if(Characters.getElement().equals("Anemo")){holder.char_element.setImageResource(R.drawable.anemo);holder.char_icon.setBackgroundResource(R.drawable.bg_anemo_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_anemo_char);}
-        if(Characters.getElement().equals("Cryo")){holder.char_element.setImageResource(R.drawable.cryo);holder.char_icon.setBackgroundResource(R.drawable.bg_cryo_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_cryo_char);}
-        if(Characters.getElement().equals("Electro")){holder.char_element.setImageResource(R.drawable.electro);holder.char_icon.setBackgroundResource(R.drawable.bg_electro_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_electro_char);}
-        if(Characters.getElement().equals("Geo")){holder.char_element.setImageResource(R.drawable.geo);holder.char_icon.setBackgroundResource(R.drawable.bg_geo_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_geo_char);}
-        if(Characters.getElement().equals("Hydro")){holder.char_element.setImageResource(R.drawable.hydro);holder.char_icon.setBackgroundResource(R.drawable.bg_hydro_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_hydro_char);}
-        if(Characters.getElement().equals("Pyro")){holder.char_element.setImageResource(R.drawable.pyro);holder.char_icon.setBackgroundResource(R.drawable.bg_pyro_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_pyro_char);}
-        if(Characters.getElement().equals("Dendro")){holder.char_element.setImageResource(R.drawable.dendro);holder.char_icon.setBackgroundResource(R.drawable.bg_dendro_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_dendro_char);}
+        if(Characters.getElement().equals("Anemo")){holder.char_element.setImageResource(R.drawable.anemo);holder.char_bg.setBackgroundResource(R.drawable.bg_anemo_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_anemo_char);}
+        if(Characters.getElement().equals("Cryo")){holder.char_element.setImageResource(R.drawable.cryo);holder.char_bg.setBackgroundResource(R.drawable.bg_cryo_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_cryo_char);}
+        if(Characters.getElement().equals("Electro")){holder.char_element.setImageResource(R.drawable.electro);holder.char_bg.setBackgroundResource(R.drawable.bg_electro_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_electro_char);}
+        if(Characters.getElement().equals("Geo")){holder.char_element.setImageResource(R.drawable.geo);holder.char_bg.setBackgroundResource(R.drawable.bg_geo_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_geo_char);}
+        if(Characters.getElement().equals("Hydro")){holder.char_element.setImageResource(R.drawable.hydro);holder.char_bg.setBackgroundResource(R.drawable.bg_hydro_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_hydro_char);}
+        if(Characters.getElement().equals("Pyro")){holder.char_element.setImageResource(R.drawable.pyro);holder.char_bg.setBackgroundResource(R.drawable.bg_pyro_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_pyro_char);}
+        if(Characters.getElement().equals("Dendro")){holder.char_element.setImageResource(R.drawable.dendro);holder.char_bg.setBackgroundResource(R.drawable.bg_dendro_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_dendro_char);}
 
         holder.char_icon.getLayoutParams().width = width;
         holder.char_icon.getLayoutParams().height = height;
@@ -117,7 +119,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
             //outBitmap =getRoundBitmapByShader(bitmap, (int) Math.round(width/2),(int)Math.round(height/2),20, 0);
         }else if(context instanceof CalculatorUI){
             Picasso.get()
-                    .load (characters_rss.getCharByName(Characters.getName())[3]).fit().centerCrop().transform(transformation)
+                    .load (characters_rss.getCharByName(Characters.getName())[3]).fit().centerInside().transform(transformation)
                     .error (R.drawable.paimon_full)
                     .into (holder.char_icon);
 
@@ -157,7 +159,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         public ImageView char_icon,char_isComing,char_element;
         public LinearLayout char_nl;
         public RatingBar char_star;
-
+        public ConstraintLayout char_bg ;
 
         public ViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
@@ -169,6 +171,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
             char_isComing = itemView.findViewById(R.id.char_is_coming);
             char_base_name = itemView.findViewById(R.id.char_base_name);
             char_nl = itemView.findViewById(R.id.char_nl);
+            char_bg = itemView.findViewById(R.id.char_bg);
 
             char_icon.setOnClickListener(new View.OnClickListener() {
                 @Override
