@@ -1,0 +1,57 @@
+{
+  "name": "Diona",
+  "rare": 4,
+  "area": "Mondstadt",
+  "element": "Cryo",
+  "weapon": "Bow",
+  "sex": "Female",
+  "birth": "01/18",
+  "role": "Utility",
+  "isComingSoon": false,
+  "nick":"Idk",
+  "desc": "A young lady who has inherited trace amounts of non-human blood. She is the incredible popular bartender of the Cat's Tail tavern.",
+  "battle_talent": {
+    "normal_name": "Kätzlein Style",
+    "normal_img": "normal_attack_katzlein_style",
+    "normal_desc1": "Perform up to 5 consecutive shots with a bow.",
+    "normal_desc2": "Perform a more precise Aimed Shot with increased DMG. While aiming, biting frost will accumulate on the arrowhead. A fully charged frost arrow will deal Cryo Damage.",
+    "normal_desc3": " Fires off a shower of arrows in mid-air before falling and striking the ground, dealing AoE DMG on impact.",
+    "element_name": "Icy Paws",
+    "element_img": "icy_paws",
+    "element_desc": "Fires an Icy Paw that deals Cryo DMG to opponents and forms a shield on hit. The shield's DMG Absorption scales based on Diona's Max HP, and its duration scales off the number of Icy Paws that hit their target.Press: Rapidly fires off 2 Icy Paws.<br>Hold: Dashes back quickly before firing 5 Icy Paws. The shield created by a Hold attack will gain a 75% DMG Absorption Bonus.<br>The shield has a 250% Cryo DMG Absorption Bonus, and will infuse Diona with Cryo at the point of formation for a short duration.",
+    "final_name": "Signature Mix",
+    "final_img": "signature_mix",
+    "final_desc": "Tosses out a special cold brew that deals AoE Cryo DMG and creates a Drunken Mist in an AoE.<br>Every 2 seconds, for 12 seconds, Drunken Mist:<br>Deals Cryo DMG to opponents within the field.<br>Regenerates the HP of characters within the field."
+  },
+  "basic_talent": {
+    "talent1_name": "Cat's Tail Secret Menu",
+    "talent1_img": "cats_tail_secret_menu",
+    "talent1_desc": "Characters shielded by Icy Paws have their Movement SPD increased by 10% and their Stamina Consumption decreased by 10%.",
+    "talent2_name": "Drunkards' Farce,
+    "talent2_img": "drunkards_farce",
+    "talent2_desc": "Opponents who enter the AoE of Signature Mix have 10% decreased ATK for 15s.",
+    "talent3_name": "Complimentary Bar Food",
+    "talent3_img": "complimentary_bar_food",
+    "talent3_desc": "When a Perfect Cooking is achieved on a dish with restorative effects, Diona has a 12% chance to obtain double the product."
+  },
+  "sof": {
+    "sof1_name": "	A Lingering Flavor",
+    "sof1_img": "a_lingering_flavor",
+    "sof1_desc": "Regenerates 15 Energy for Diona after the effects of Signature Mix end.",
+    "sof2_name": "Shaken, Not Purred,
+    "sof2_img": "shaken_not_purred",
+    "sof2_desc": "Increases Icy Paws' DMG by 15%, and increases its shield's DMG Absorption by 15%.<br>Additionally, when paws hit their targets, creates a shield for other nearby characters on the field with 50% of the Icy Paws shield's DMG Absorption for 5s.",
+    "sof3_name": "A-Another Round?",
+    "sof3_img": "a_another_round",
+    "sof3_desc": "Increases the Level of Signature Mix by 3.<br>Maximum upgrade level is 15.",
+    "sof4_name": "Wine Industry Slayer
+    "sof4_img": "wine_industry_slayer",
+    "sof4_desc": "Within the radius of Signature Mix, Diona's charge time for aimed shots is reduced by 60%",
+    "sof5_name": "	Double Shot, On The Rocks",
+    "sof5_img": "double_shot_on_the_rocks",
+    "sof5_desc": "Increases the Level of Icy Paws by 3.<br>Maximum upgrade level is 15.",
+    "sof6_name": "Cat's Tail Closing Time",
+    "sof6_img": "cats_tail_closing_time",
+    "sof6_desc": "Characters within Signature Mix's radius will gain the following effects based on their HP amounts:<br>Increases Incoming Healing Bonus by 30% when HP falls below or is equal to 50%.<br>Elemental Mastery increased by 200 when HP is above 50%."
+  }
+}

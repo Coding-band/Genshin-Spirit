@@ -1,0 +1,47 @@
+{
+  "name" : "Noelle",
+  "dps_weapons": [
+    "lost_prayer_to_the_sacred_winds",
+    "skyward_atlas",
+    "memory_of_dust",
+	"solar_pearl",
+	"the_widsith",
+	"prototype_malice"
+   ],
+  "sup_dps_weapons": [
+    "skyward_atlas",
+    "lost_prayer_to_the_sacred_winds",
+    "memory_of_dust",
+    "favonius_codex",
+    "the_widsith",
+    "wine_and_song"
+  ],
+  "util_weapons": [
+    "prototype_malice",
+    "thrilling_tales_of_dragon_slayers"
+  ],
+  "dps_art1": [
+    "depth_of_heart",
+    "depth_of_heart",
+    "depth_of_heart",
+    "depth_of_heart",
+    "depth_of_heart"
+  ],
+  "sup_dps_art1": [
+    "depth_of_heart",
+    "depth_of_heart",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "util_art1": [
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "team1":[
+	"Diluc","Barbara","Bennett","Chongyun"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.voc.genshin_spirit_dc",
+  "variantName": "discordRelease",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "versionCode": 885,
+      "versionName": "2.0-dc (885)",
+      "outputFile": "genshin_helper_2.0-dc (885).apk"
+    }
+  ]
+}

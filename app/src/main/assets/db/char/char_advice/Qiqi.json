@@ -1,0 +1,38 @@
+{
+  "name" : "Mona",
+  "dps_weapons": [
+    "the_widsith"
+   ],
+  "sup_dps_weapons": [
+    "mappa_mare",
+    "solar_pearl"
+  ],
+  "util_weapons": [
+    "prototype_malice",
+    "thrilling_tales_of_dragon_slayers"
+  ],
+  "dps_art1": [
+    "depth_of_heart",
+    "depth_of_heart",
+    "depth_of_heart",
+    "depth_of_heart",
+    "depth_of_heart"
+  ],
+  "sup_dps_art1": [
+    "depth_of_heart",
+    "depth_of_heart",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "util_art1": [
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "team1":[
+	"Diluc","Barbara","Bennett","Chongyun"
+  ]
+}
