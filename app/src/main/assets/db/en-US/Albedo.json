@@ -8,7 +8,7 @@
   "birth": "09/28",
   "role": "Utility",
   "isComingSoon": false,
-  "nick":"Kreideprinz",
+  "nick": "Kreideprinz",
   "desc": "A genius known as the Kreideprinz, he is the Chief Alchemist and Captain of the Investigation Team of the Knights of Favonius.",
   "battle_talent": {
     "normal_name": "Favonius Bladework - Weiss",
@@ -30,7 +30,7 @@
     "talent2_name": "Homuncular Nature",
     "talent2_img": "albedo_p4_talent",
     "talent2_desc": "Using Rite of Progeniture: Tectonic Tide increases the Elemental Mastery of nearby party members by 125 for 10s.",
-    "talent3_name": "Flash of Genius (Albedo)	",
+    "talent3_name": "Flash of Genius (Albedo)",
     "talent3_img": "genius_unearthed",
     "talent3_desc": "When Albedo crafts Weapon Ascension Materials, he has a 10% chance to receive double the product."
   },
@@ -49,9 +49,9 @@
     "sof4_desc": "Active party members within the Solar Isotoma field have their Plunging Attack DMG increased by 30%.",
     "sof5_name": "Tide of Hadean",
     "sof5_img": "tide_of_hadean",
-    "sof5_desc": "	Increases the Level of Rite of Progeniture: Tectonic Tide by 3. Maximum upgrade level is 15.",
+    "sof5_desc": "Increases the Level of Rite of Progeniture: Tectonic Tide by 3. Maximum upgrade level is 15.",
     "sof6_name": "Dust of Purification",
     "sof6_img": "domain_of_purification",
     "sof6_desc": "Active party members within the Solar Isotoma field who are protected by a shield created by Crystallize have their DMG increased by 17%."
   }
-}  
+}

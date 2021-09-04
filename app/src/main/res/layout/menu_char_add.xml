@@ -51,7 +51,7 @@
             android:id="@+id/menu_lvl_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="角色等級"
+            android:text="@string/char_lvls"
             android:textAlignment="center"
             android:textSize="16sp"
             android:textStyle="bold" />

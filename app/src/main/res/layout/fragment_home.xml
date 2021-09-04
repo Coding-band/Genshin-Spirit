@@ -27,7 +27,7 @@
                     android:text="@string/hk_tw_mo_ser"
                     android:textAlignment="center"
                     android:textColor="@color/tv_color"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="1.0"
@@ -39,10 +39,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="8dp"
-                    android:text="素材焦點"
+                    android:text="@string/material_force"
                     android:textAlignment="center"
                     android:textColor="@color/tv_color"
-                    android:textSize="24sp"
+                    android:textSize="22sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -56,7 +56,7 @@
                     android:text="【星期六】"
                     android:textAlignment="center"
                     android:textColor="@color/tv_color"
-                    android:textSize="20sp"
+                    android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -77,7 +77,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="12dp"
-                    android:text="角色突破素材"
+                    android:text="@string/char_asc_mater"
                     android:textColor="@color/tv_color"
                     android:textSize="18sp" />
 
@@ -109,7 +109,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="12dp"
-                    android:text="武器突破素材"
+                    android:text="@string/weapon_asc_mater"
                     android:textColor="@color/tv_color"
                     android:textSize="18sp" />
 
@@ -134,7 +134,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="12dp"
-                android:text="遊戲小工具"
+                android:text="@string/gaming_tools"
                 android:textColor="@color/tv_color"
                 android:textSize="18sp" />
 
@@ -164,7 +164,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="計算機"
+                        android:text="@string/calculator"
                         android:textColor="@color/tv_color"
                         android:textSize="16sp" />
 
@@ -191,7 +191,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="每日簽到"
+                        android:text="@string/daily_login"
                         android:textColor="@color/tv_color"
                         android:textSize="16sp" />
 
@@ -218,7 +218,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="互動地圖"
+                        android:text="@string/map"
                         android:textColor="@color/tv_color"
                         android:textSize="16sp" />
 
@@ -252,7 +252,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:text="提醒"
+                        android:text="@string/alarm"
                         android:textColor="@color/tv_color"
                         android:textSize="16sp" />
 

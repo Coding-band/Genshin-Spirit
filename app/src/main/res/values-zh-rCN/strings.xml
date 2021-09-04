@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">原神小帮手</string>
-    <string name="unknown">未知</string>
 
+    <!-- page_title_menu -->
     <string name="title_char">角色</string>
     <string name="title_artifacts">圣遗物</string>
     <string name="title_home">焦点</string>
     <string name="title_weapons">武器</string>
     <string name="title_settings">设定</string>
 
+    <!-- material_moment -->
     <string name="dow_set1">逢星期一，四，日</string>
     <string name="dow_set2">逢星期二，五，日</string>
     <string name="dow_set3">逢星期三，六，日</string>
 
+    <!-- dow -->
     <string name="monday">星期一</string>
     <string name="tuesday">星期二</string>
     <string name="wednesday">星期三</string>
@@ -21,6 +23,7 @@
     <string name="saturday">星期六</string>
     <string name="sunday">星期日</string>
 
+    <!-- material_name -->
     <string name="teaching_of_ballad">「诗文」的教导</string>
     <string name="teaching_of_diligence">「勤劳」的教导</string>
     <string name="teaching_of_freedom">「自由」的教导</string>
@@ -40,7 +43,8 @@
     <string name="fetters_of_the_dandelion_gladiator">狮牙斗士的枷锁</string>
     <string name="mask_of_the_wicked_lieutenant">今昔剧画之恶尉</string>
 
-    <string name="aloy">埃洛伊</string>
+    <!-- char_name -->
+    <string name="aloy">亚萝伊</string>
     <string name="kujou_sara">九条娑罗</string>
     <string name="sangonomiya_kokomi">珊瑚宫心海</string>
     <string name="raiden_shogun">雷电将军</string>
@@ -83,7 +87,9 @@
     <string name="beidou">北斗</string>
     <string name="barbara">芭芭拉</string>
     <string name="amber">安柏</string>
+    <string name="unknown">未知</string>
 
+    <!-- char_info-->
     <string name="search">搜寻...</string>
     <string name="elements">元素</string>
     <string name="rarity">稀有度</string>
@@ -91,18 +97,57 @@
     <string name="mondstadt">蒙德</string>
     <string name="liyue">璃月</string>
     <string name="inazuma">稻妻</string>
+    <string name="set_by_player">由玩家设定</string>
+    <string name="another_world">另一个世界</string>
     <string name="main_dps">主C</string>
     <string name="support_dps">副C</string>
     <string name="utility">辅助</string>
     <string name="female">女</string>
     <string name="male">男</string>
+    <string name="district">地区</string>
+    <string name="weapon">武器</string>
+    <string name="char_role">定位</string>
+    <string name="sex">性别</string>
+    <string name="birth">生日</string>
+    <string name="intro">简介</string>
+    <string name="battle_talent">战斗天赋</string>
+    <string name="noraml_atk">【普通攻击】</string>
+    <string name="charged_atk">【重击】</string>
+    <string name="plunging_atk">【俯冲攻击】</string>
+    <string name="element_atk">【元素战技】</string>
+    <string name="final_atk">【元素爆发】</string>
+    <string name="basic_talent">固有天赋</string>
+    <string name="asc0_unlock">【自动解锁】</string>
+    <string name="asc1_unlock">【突破等级1解锁】</string>
+    <string name="asc4_unlock">【突破等级4解锁】</string>
+    <string name="sof">命之座</string>
+    <string name="sof1">【命之座 1】</string>
+    <string name="sof2">【命之座 2】</string>
+    <string name="sof3">【命之座 3】</string>
+    <string name="sof4">【命之座 4】</string>
+    <string name="sof5">【命之座 5】</string>
+    <string name="sof6">【命之座 6】</string>
+    <string name="advice">推荐</string>
+    <string name="team_advice">组队建议</string>
+    <string name="weapon_advice">推荐武器</string>
+    <string name="art_advice">推荐圣遗物</string>
 
+    <!-- main_page -->
+    <string name="material_force">素材焦点</string>
+    <string name="char_asc_mater">角色突破素材</string>
+    <string name="weapon_asc_mater">武器突破素材</string>
+    <string name="gaming_tools">游戏小工具</string>
+    <string name="calculator">计算器</string>
+    <string name="daily_login">每日签到</string>
+    <string name="map">互动地图</string>
+    <string name="alarm">提醒</string>
+
+    <!-- alarm -->
     <string name="alarm_t1">周本</string>
     <string name="alarm_t2">树脂</string>
     <string name="alarm_t3">洞天宝钱</string>
     <string name="alarm_t4">派遣</string>
     <string name="alarm_t5">自定义</string>
-
     <string name="alarm_time1">4小时</string>
     <string name="alarm_time2">8小时</string>
     <string name="alarm_time3">12小时</string>
@@ -115,6 +160,18 @@
     <string name="ph_info">来看看他/她找到了什么~</string>
     <string name="dtbc_info">嗯...如果你不需要它们，那我就把它们拿走啰~</string>
     <string name="resin_title">[原神小帮手] Hi ~ 你的树脂满了,请尽快使用</string>
+    <string name="edit_title">编辑提醒</string>
+    <string name="edit_type">提醒的类别</string>
+    <string name="edit_time">提醒时间</string>
+    <string name="edit_ph_time">派遣时间</string>
+    <string name="edit_adeptal_energy">洞天仙力</string>
+    <string name="edit_trust_rank">信任等阶</string>
+    <string name="edit_title_notif">提醒的标题</string>
+    <string name="edit_info_notif">提醒的内容</string>
+    <string name="edit_cd_25off">时间减少25%</string>
+    <string name="edit_use_notif">使用此通知</string>
+
+    <!-- server_name -->
     <string name="america_ser">美服</string>
     <string name="europe_ser">欧服</string>
     <string name="asia_ser">亚服</string>
@@ -122,6 +179,7 @@
     <string name="sky_land_ser">天空岛服</string>
     <string name="world_tree">世界树服</string>
 
+    <!-- inside_ui -->
     <string name="genshindb_link"><a href="https://github.com/Wolfteam/GenshinDb">GenshinDb Github</a></string>
     <string name="genshinhelper_link"><a href="https://github.com/Vocaloid2048/GenshinHelper">原神小帮手 Github</a></string>
     <string name="press_exit">再按一次退出应用程序</string>
@@ -130,7 +188,10 @@
     <string name="vote_help">帮忙评分</string>
     <string name="vote_no">不用了</string>
     <string name="vote_later">以后再说</string>
+    <string name="pls_restart_app">请重启应用</string>
     <string name="copied">已复制</string>
+
+    <!-- cal_item_name -->
     <string name="result">结算</string>
     <string name="curr_lvl">"目前等级 : "</string>
     <string name="aim_lvl">"目标等级 : "</string>
@@ -139,9 +200,30 @@
     <string name="already_dak_po">已突破</string>
     <string name="cal_also">计算</string>
     <string name="delete">删除</string>
-    <string name="pls_restart_app">請重啟應用</string>
-    <string name="set_by_player">由玩家设定</string>
-    <string name="another_world">另一個世界</string>
+    <string name="caled_char_weapon_art">已计算角色/武器/圣遗物</string>
+    <string name="char_lvls">角色等级</string>
+
+    <!-- setting -->
+    <string name="bg_title">背景主题</string>
+    <string name="light_theme">明亮主题</string>
+    <string name="dark_theme">黑暗主题</string>
+    <string name="sys_theme">系统默认主题</string>
+    <string name="tv_title">文字主题</string>
+    <string name="lang_title">语言</string>
+    <string name="other_title">其他</string>
+    <string name="acc_in_server">账号所在服务器</string>
+    <string name="about">关于</string>
+    <string name="link">连结</string>
+    <string name="about_title1">免责声明</string>
+    <string name="about_info1">本应用程序并不属于 miHoYo Co., Ltd. 且并未获得其认可。原神小帮手(Genshin Spirit)仅为一款由粉丝自行开发之数据提供App，本应用程序所提供的数据只作参考用途。 不会对其所载任何数据的准确性及完整作任何程度保证。</string>
+    <string name="about_title2">私隐收集声明</string>
+    <string name="about_info2">本应用程序并不会收集任何有关个人私隐的数据及可能用于识别，跟踪使用者等信息。 若有需要，本应用程序仅会收集已告知之数据，如程序崩溃堆栈。上述数据仅用作与修复应用程序漏洞及提升用户体验。</string>
+    <string name="about_title3">资源使用声明</string>
+    <string name="about_info3">本应用程序基于而开发，旨在向Shiori for Genshin及其协作者致敬，惟目前仍未获其协作者认可。本应用程序部分图片，数据取自开源项目，将于下文附上连结。 故此，本应用程序的一部分接口，排版或于GenshinDb极为相似，惟本应用程序是以Java而非Dart作编程语言，亦只会于Android或／及任何支援.apk，.aab文件格式之装置中安装及运行。</string>
+    <string name="about_title4">项目开源声明</string>
+    <string name="about_info4">本应用程序因旨在向Shiori for Genshin及其协作者致敬，故将于Github上开源，任何人均可以查阅，提供意见，甚至协作，本人亦十分欢迎阁下对本应用程序的任何建议，协作申请。本应用程序亦会上架至Google Play。若你希望为此项目提出意见，漏洞，新功能等等，亦欢迎以E-mail或Discord (中国大陆则可使用QQ)方式联系。最后，谢谢你的谅解及支持。</string>
+
+    <!-- dom -->
     <string name="date_1st">一日</string>
     <string name="date_2nd">二日</string>
     <string name="date_3rd">三日</string>
@@ -173,6 +255,8 @@
     <string name="date_29th">二十九日</string>
     <string name="date_30th">三十日</string>
     <string name="date_31st">三十一日</string>
+
+    <!-- moy -->
     <string name="date_jan">一月</string>
     <string name="date_feb">二月</string>
     <string name="date_mar">三月</string>

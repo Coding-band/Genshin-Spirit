@@ -26,7 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="【主C】"
+                android:text="@string/main_dps"
                 android:textColor="@color/tv_color"
                 android:textSize="28sp" />
 
@@ -35,7 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="24dp"
-                android:text="推薦武器"
+                android:text="@string/weapon_advice"
                 android:textColor="@color/tv_color"
                 android:textSize="18sp" />
 
@@ -55,7 +55,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="24dp"
-                android:text="推薦聖遺物"
+                android:text="@string/art_advice"
                 android:textColor="@color/tv_color"
                 android:textSize="18sp" />
 
@@ -116,7 +116,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="【副C】"
+                android:text="@string/support_dps"
                 android:textColor="@color/tv_color"
                 android:textSize="28sp" />
 
@@ -125,7 +125,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="24dp"
-                android:text="推薦武器"
+                android:text="@string/weapon_advice"
                 android:textColor="@color/tv_color"
                 android:textSize="18sp" />
 
@@ -145,7 +145,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="24dp"
-                android:text="推薦聖遺物"
+                android:text="@string/art_advice"
                 android:textColor="@color/tv_color"
                 android:textSize="18sp" />
 
@@ -206,7 +206,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="【輔助】"
+                android:text="@string/utility"
                 android:textColor="@color/tv_color"
                 android:textSize="28sp" />
 
@@ -215,7 +215,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="24dp"
-                android:text="推薦武器"
+                android:text="@string/weapon_advice"
                 android:textColor="@color/tv_color"
                 android:textSize="18sp" />
 
@@ -235,7 +235,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingLeft="24dp"
-                android:text="推薦聖遺物"
+                android:text="@string/art_advice"
                 android:textColor="@color/tv_color"
                 android:textSize="18sp" />
 
@@ -296,7 +296,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="【組隊】"
+                android:text="@string/team_advice"
                 android:textColor="@color/tv_color"
                 android:textSize="28sp" />
 

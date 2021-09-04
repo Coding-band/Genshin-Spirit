@@ -36,7 +36,7 @@ public class Characters_Rss {
         else if (str.equals("Male")){return context.getString(R.string.male);}
         else if (str.equals("SET_BY_PLAYER")){return context.getString(R.string.set_by_player);}
 
-        else {return "null";}
+        else {return str;}
     }
 
     public int getWeaponTypeIMG (String str){
@@ -134,7 +134,8 @@ public class Characters_Rss {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return null;
+        Drawable myIcon = context.getResources().getDrawable( R.drawable.paimon_lost );
+        return myIcon;
     }
     public int getItemIcoByName (String name ,Context context){
         if(name.equals("常燃火種")){return R.drawable.everflame_seed;}

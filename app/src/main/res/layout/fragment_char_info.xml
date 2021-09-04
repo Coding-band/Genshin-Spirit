@@ -57,7 +57,8 @@
                         android:layout_height="wrap_content"
                         android:isIndicator="true"
                         android:progressTint="#FFEB3B"
-                        android:rating="5" />
+                        android:rating="5"
+                        android:secondaryProgressTint="#00000000" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -96,7 +97,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="地區"
+                            android:text="@string/district"
                             android:textColor="@color/tv_color"
                             android:textSize="18sp" />
 
@@ -129,7 +130,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="0"
-                            android:text="武器"
+                            android:text="@string/weapon"
                             android:textColor="@color/tv_color"
                             android:textSize="18sp" />
 
@@ -148,6 +149,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:layout_weight="0"
+                            android:tint="@color/tv_color"
                             app:srcCompat="@drawable/ico_sword" />
                     </LinearLayout>
 
@@ -159,9 +161,9 @@
                         <TextView
                             android:id="@+id/textView2"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="0"
-                            android:text="角色"
+                            android:text="@string/char_role"
                             android:textColor="@color/tv_color"
                             android:textSize="18sp" />
 
@@ -193,9 +195,9 @@
                         <TextView
                             android:id="@+id/textView5"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_weight="0"
-                            android:text="性別"
+                            android:text="@string/sex"
                             android:textColor="@color/tv_color"
                             android:textSize="18sp" />
 
@@ -228,7 +230,7 @@
                             android:id="@+id/textView7"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="生日"
+                            android:text="@string/birth"
                             android:textColor="@color/tv_color"
                             android:textSize="18sp" />
 
@@ -246,7 +248,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="07/24"
+                            android:text="July 24th"
                             android:textColor="@color/tv_color"
                             android:textSize="18sp" />
                     </LinearLayout>
@@ -277,7 +279,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
-                        android:text="簡介"
+                        android:text="@string/intro"
                         android:textColor="@color/tv_color"
                         android:textSize="24sp" />
 
@@ -319,7 +321,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
-                        android:text="戰鬥天賦"
+                        android:text="@string/battle_talent"
                         android:textColor="@color/tv_color"
                         android:textSize="24sp" />
 
@@ -358,7 +360,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
-                        android:text="固有天賦"
+                        android:text="@string/basic_talent"
                         android:textColor="@color/tv_color"
                         android:textSize="24sp" />
 
@@ -394,7 +396,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
-                        android:text="命之座"
+                        android:text="@string/sof"
                         android:textColor="@color/tv_color"
                         android:textSize="24sp" />
 
@@ -414,6 +416,7 @@
                     android:visibility="visible" />
 
                 <LinearLayout
+                    android:id="@+id/info_advice_ll"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal">
@@ -430,7 +433,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="8dp"
-                        android:text="推薦"
+                        android:text="@string/advice"
                         android:textColor="@color/tv_color"
                         android:textSize="24sp" />
 

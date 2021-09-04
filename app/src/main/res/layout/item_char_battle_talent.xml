@@ -56,7 +56,7 @@
                         android:layout_gravity="center"
                         android:layout_margin="4dp"
                         android:gravity="center"
-                        android:text="【普通攻擊】"
+                        android:text="@string/noraml_atk"
                         android:textAlignment="center"
                         android:textColor="@color/tv_color" />
                 </LinearLayout>
@@ -70,7 +70,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="4dp"
                 android:gravity="center"
-                android:text="【普通攻擊】"
+                android:text="@string/noraml_atk"
                 android:textAlignment="center"
                 android:textColor="@color/tv_color" />
 
@@ -92,7 +92,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="4dp"
                 android:gravity="center"
-                android:text="【重擊】"
+                android:text="@string/charged_atk"
                 android:textAlignment="center"
                 android:textColor="@color/tv_color" />
 
@@ -114,7 +114,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="4dp"
                 android:gravity="center"
-                android:text="【俯衝攻擊】"
+                android:text="@string/plunging_atk"
                 android:textAlignment="center"
                 android:textColor="@color/tv_color" />
 
@@ -183,7 +183,7 @@
                         android:layout_gravity="center"
                         android:layout_margin="4dp"
                         android:gravity="center"
-                        android:text="【元素戰技】"
+                        android:text="@string/element_atk"
                         android:textAlignment="center"
                         android:textColor="@color/tv_color" />
                 </LinearLayout>
@@ -255,7 +255,7 @@
                         android:layout_gravity="center"
                         android:layout_margin="4dp"
                         android:gravity="center"
-                        android:text="【元素爆發】"
+                        android:text="@string/final_atk"
                         android:textAlignment="center"
                         android:textColor="@color/tv_color" />
                 </LinearLayout>

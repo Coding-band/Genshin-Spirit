@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">原神小幫手</string>
-    <string name="unknown">未知</string>
 
+    <!-- page_title_menu -->
     <string name="title_char">角色</string>
     <string name="title_artifacts">聖遺物</string>
     <string name="title_home">焦點</string>
     <string name="title_weapons">武器</string>
     <string name="title_settings">設定</string>
 
+    <!-- material_moment -->
     <string name="dow_set1">逢星期一，四，日</string>
     <string name="dow_set2">逢星期二，五，日</string>
     <string name="dow_set3">逢星期三，六，日</string>
 
+    <!-- dow -->
     <string name="monday">星期一</string>
     <string name="tuesday">星期二</string>
     <string name="wednesday">星期三</string>
@@ -21,6 +23,7 @@
     <string name="saturday">星期六</string>
     <string name="sunday">星期日</string>
 
+    <!-- material_name -->
     <string name="teaching_of_ballad">「詩文」的教導</string>
     <string name="teaching_of_diligence">「勤勞」的教導</string>
     <string name="teaching_of_freedom">「自由」的教導</string>
@@ -30,6 +33,7 @@
     <string name="teachings_of_elegance">「優雅」的教導</string>
     <string name="teachings_of_light">「天光」的教導</string>
     <string name="teachings_of_transience">「浮世」的教導</string>
+
     <string name="tile_of_decarabians_tower">高塔孤王的破瓦</string>
     <string name="luminous_sands_from_guyun">孤雲寒林的光砂</string>
     <string name="coral_branch_of_a_distant_sea">遠海夷地的瑚枝</string>
@@ -40,7 +44,8 @@
     <string name="fetters_of_the_dandelion_gladiator">獅牙鬥士的枷鎖</string>
     <string name="mask_of_the_wicked_lieutenant">今昔劇畫之惡尉</string>
 
-    <string name="aloy">埃洛伊</string>
+    <!-- char_name -->
+    <string name="aloy">亞蘿伊</string>
     <string name="kujou_sara">九條娑羅</string>
     <string name="sangonomiya_kokomi">珊瑚宮心海</string>
     <string name="raiden_shogun">雷電將軍</string>
@@ -83,7 +88,9 @@
     <string name="beidou">北斗</string>
     <string name="barbara">芭芭拉</string>
     <string name="amber">安柏</string>
+    <string name="unknown">未知</string>
 
+    <!-- char_info-->
     <string name="search">搜尋...</string>
     <string name="elements">元素</string>
     <string name="rarity">稀有度</string>
@@ -91,18 +98,57 @@
     <string name="mondstadt">蒙德</string>
     <string name="liyue">璃月</string>
     <string name="inazuma">稻妻</string>
+    <string name="set_by_player">由玩家設定</string>
+    <string name="another_world">另一个世界</string>
     <string name="main_dps">主C</string>
     <string name="support_dps">副C</string>
     <string name="utility">輔助</string>
     <string name="female">女</string>
     <string name="male">男</string>
+    <string name="district">地區</string>
+    <string name="weapon">武器</string>
+    <string name="char_role">定位</string>
+    <string name="sex">性別</string>
+    <string name="birth">生日</string>
+    <string name="intro">簡介</string>
+    <string name="battle_talent">戰鬥天賦</string>
+    <string name="noraml_atk">【普通攻擊】</string>
+    <string name="charged_atk">【重擊】</string>
+    <string name="plunging_atk">【俯衝攻擊】</string>
+    <string name="element_atk">【元素戰技】</string>
+    <string name="final_atk">【元素爆發】</string>
+    <string name="basic_talent">固有天賦</string>
+    <string name="asc0_unlock">【自動解鎖】</string>
+    <string name="asc1_unlock">【突破等級1解鎖】</string>
+    <string name="asc4_unlock">【突破等級4解鎖】</string>
+    <string name="sof">命之座</string>
+    <string name="sof1">【命之座 1】</string>
+    <string name="sof2">【命之座 2】</string>
+    <string name="sof3">【命之座 3】</string>
+    <string name="sof4">【命之座 4】</string>
+    <string name="sof5">【命之座 5】</string>
+    <string name="sof6">【命之座 6】</string>
+    <string name="advice">推薦</string>
+    <string name="team_advice">組隊建議</string>
+    <string name="weapon_advice">推薦武器</string>
+    <string name="art_advice">推薦聖遺物</string>
 
+    <!-- main_page -->
+    <string name="material_force">素材焦點</string>
+    <string name="char_asc_mater">角色突破素材</string>
+    <string name="weapon_asc_mater">武器突破素材</string>
+    <string name="gaming_tools">遊戲小工具</string>
+    <string name="calculator">計算機</string>
+    <string name="daily_login">每日簽到</string>
+    <string name="map">互動地圖</string>
+    <string name="alarm">提醒</string>
+
+    <!-- alarm -->
     <string name="alarm_t1">周本</string>
     <string name="alarm_t2">樹脂</string>
     <string name="alarm_t3">洞天寶錢</string>
     <string name="alarm_t4">派遣</string>
     <string name="alarm_t5">自定義</string>
-
     <string name="alarm_time1">4小時</string>
     <string name="alarm_time2">8小時</string>
     <string name="alarm_time3">12小時</string>
@@ -115,6 +161,18 @@
     <string name="ph_info">來看看他/她找到了什麼~</string>
     <string name="dtbc_info">嗯...如果你不需要它們，那我就把它們拿走囉~</string>
     <string name="resin_title">[原神小幫手] Hi ~ 你的樹脂滿了,請盡快使用</string>
+    <string name="edit_title">編輯提醒</string>
+    <string name="edit_type">提醒的類別</string>
+    <string name="edit_time">提醒時間</string>
+    <string name="edit_ph_time">派遣時間</string>
+    <string name="edit_adeptal_energy">洞天仙力</string>
+    <string name="edit_trust_rank">信任等階</string>
+    <string name="edit_title_notif">提醒的標題</string>
+    <string name="edit_info_notif">提醒的內容</string>
+    <string name="edit_cd_25off">時間減少25%</string>
+    <string name="edit_use_notif">使用此通知</string>
+
+    <!-- server_name -->
     <string name="america_ser">美服</string>
     <string name="europe_ser">歐服</string>
     <string name="asia_ser">亞服</string>
@@ -122,7 +180,8 @@
     <string name="sky_land_ser">天空島服</string>
     <string name="world_tree">世界樹服</string>
 
-    <string name="genshindb_link"><a href="https://github.com/Wolfteam/GenshinDb">GenshinDb Github</a></string>
+    <!-- inside_ui -->
+    <string name="genshindb_link"><a href="https://github.com/Wolfteam/GenshinDb">Shiori for Genshin Github</a></string>
     <string name="genshinhelper_link"><a href="https://github.com/Vocaloid2048/GenshinHelper">原神小幫手 Github</a></string>
     <string name="press_exit">再按一次退出應用程式</string>
     <string name="vote_title">請給這個應用程式評分吧～</string>
@@ -130,7 +189,10 @@
     <string name="vote_help">幫忙評分</string>
     <string name="vote_no">不用了</string>
     <string name="vote_later">以後再說</string>
+    <string name="pls_restart_app">請重啟應用</string>
     <string name="copied">已複製</string>
+
+    <!-- cal_item_name -->
     <string name="result">結算</string>
     <string name="curr_lvl">"目前等級 : "</string>
     <string name="aim_lvl">"目標等級 : "</string>
@@ -139,9 +201,30 @@
     <string name="already_dak_po">已突破</string>
     <string name="cal_also">計算</string>
     <string name="delete">刪除</string>
-    <string name="pls_restart_app">请重启应用</string>
-    <string name="set_by_player">由玩家設定</string>
-    <string name="another_world">另一个世界</string>
+    <string name="caled_char_weapon_art">已計算角色/武器/聖遺物</string>
+    <string name="char_lvls">角色等級</string>
+
+    <!-- setting -->
+    <string name="bg_title">背景主題</string>
+    <string name="light_theme">明亮主題</string>
+    <string name="dark_theme">黑暗主題</string>
+    <string name="sys_theme">系統默認主題</string>
+    <string name="tv_title">文字主題</string>
+    <string name="lang_title">語言</string>
+    <string name="other_title">其他</string>
+    <string name="acc_in_server">帳號所在伺服器</string>
+    <string name="about">關於</string>
+    <string name="link">連結</string>
+    <string name="about_title1">免責聲明</string>
+    <string name="about_info1">本應用程式並不屬於 miHoYo Co., Ltd. 且並未獲得其認可。原神小幫手(Genshin Spirit)僅為一款由粉絲自行開發之數據提供App，本應用程式所提供的資料只作參考用途。 不會對其所載任何資料的準確性及完整作任何程度保証。</string>
+    <string name="about_title2">私隱收集聲明</string>
+    <string name="about_info2">本應用程式並不會收集任何有關個人私隱的數據及可能用於識別，跟蹤使用者等信息。 若有需要，本應用程式僅會收集已告知之數據，如程式崩潰堆棧。上述數據僅用作與修復應用程式漏洞及提升使用者體驗。</string>
+    <string name="about_title3">資源使用聲明</string>
+    <string name="about_info3">本應用程式基於而開發，旨在向Shiori for Genshin及其協作者致敬，惟目前仍未獲其協作者認可。本應用程式部分圖片，資料取自開源專案，將於下文附上連結。 故此，本應用程式的一部分介面，排版或於GenshinDb極為相似，惟本應用程式是以Java而非Dart作編程語言，亦只會於Android或／及任何支援.apk，.aab檔案格式之裝置中安裝及運行。</string>
+    <string name="about_title4">專案開源聲明</string>
+    <string name="about_info4">本應用程式因旨在向Shiori for Genshin及其協作者致敬，故將於Github上開源，任何人均可以查閱，提供意見，甚至協作，本人亦十分歡迎閣下對本應用程式的任何建議，協作申請。本應用程式亦會上架至Google Play。若你希望為此專案提出意見，漏洞，新功能等等，亦歡迎以E-mail或Discord (中國大陸則可使用QQ)方式聯繫。最後，謝謝你的諒解及支持。</string>
+
+    <!-- dom -->
     <string name="date_1st">一日</string>
     <string name="date_2nd">二日</string>
     <string name="date_3rd">三日</string>
@@ -173,6 +256,8 @@
     <string name="date_29th">二十九日</string>
     <string name="date_30th">三十日</string>
     <string name="date_31st">三十一日</string>
+
+    <!-- moy -->
     <string name="date_jan">一月</string>
     <string name="date_feb">二月</string>
     <string name="date_mar">三月</string>

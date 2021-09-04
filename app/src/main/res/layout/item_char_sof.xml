@@ -60,7 +60,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="4dp"
                 android:gravity="center"
-                android:text="【命之座 1】"
+                android:text="@string/sof1"
                 android:textAlignment="center"
                 android:textColor="@color/tv_color" />
 
@@ -134,7 +134,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="4dp"
                 android:gravity="center"
-                android:text="【命之座 2】"
+                android:text="@string/sof2"
                 android:textAlignment="center"
                 android:textColor="@color/tv_color" />
 
@@ -203,7 +203,7 @@
                         android:layout_gravity="center"
                         android:layout_margin="4dp"
                         android:gravity="center"
-                        android:text="【命之座 3】"
+                        android:text="@string/sof3"
                         android:textAlignment="center"
                         android:textColor="@color/tv_color" />
 
@@ -280,7 +280,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="4dp"
                 android:gravity="center"
-                android:text="【命之座 4】"
+                android:text="@string/sof4"
                 android:textAlignment="center"
                 android:textColor="@color/tv_color" />
 
@@ -354,7 +354,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="4dp"
                 android:gravity="center"
-                android:text="【命之座 5】"
+                android:text="@string/sof5"
                 android:textAlignment="center"
                 android:textColor="@color/tv_color" />
 
@@ -423,7 +423,7 @@
                         android:layout_gravity="center"
                         android:layout_margin="4dp"
                         android:gravity="center"
-                        android:text="【命之座 6】"
+                        android:text="@string/sof6"
                         android:textAlignment="center"
                         android:textColor="@color/tv_color" />
 

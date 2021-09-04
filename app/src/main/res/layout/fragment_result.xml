@@ -40,7 +40,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="8dp"
-                    android:text="已計算角色/武器/聖遺物"
+                    android:text="@string/caled_char_weapon_art"
                     android:textColor="@color/tv_color"
                     android:textSize="24sp" />
 
@@ -79,7 +79,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingLeft="8dp"
-                    android:text="結算"
+                    android:text="@string/result"
                     android:textColor="@color/tv_color"
                     android:textSize="24sp" />
 

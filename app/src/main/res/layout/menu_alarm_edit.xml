@@ -35,7 +35,7 @@
             android:layout_height="match_parent"
             android:layout_weight="2"
             android:gravity="center|left"
-            android:text="編輯提醒"
+            android:text="@string/edit_title"
             android:textColor="@color/tv_color"
             android:textSize="20sp" />
 
@@ -53,7 +53,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center|left"
-            android:text="提醒的類別"
+            android:text="@string/edit_type"
             android:textColor="@color/tv_color"
             android:textSize="14sp" />
 
@@ -97,7 +97,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center|left"
-                android:text="提醒時間"
+                android:text="@string/edit_time"
                 android:textColor="@color/tv_color"
                 android:textSize="14sp" />
 
@@ -123,7 +123,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center|left"
-                android:text="提醒時間"
+                android:text="@string/edit_time"
                 android:textColor="@color/tv_color"
                 android:textSize="14sp" />
 
@@ -148,7 +148,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center|left"
-                android:text="派遣時間"
+                android:text="@string/edit_ph_time"
                 android:textColor="@color/tv_color"
                 android:textSize="14sp" />
 
@@ -181,7 +181,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="center|left"
-                    android:text="洞天仙力"
+                    android:text="@string/edit_adeptal_energy"
                     android:textColor="@color/tv_color"
                     android:textSize="14sp" />
 
@@ -205,7 +205,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center|left"
-                    android:text="信任等階"
+                    android:text="@string/edit_trust_rank"
                     android:textColor="@color/tv_color"
                     android:textSize="14sp" />
 
@@ -230,7 +230,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center|left"
-                android:text="提醒的標題"
+                android:text="@string/edit_title_notif"
                 android:textColor="@color/tv_color"
                 android:textSize="14sp" />
 
@@ -255,7 +255,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center|left"
-                android:text="提醒的內容"
+                android:text="@string/edit_info_notif"
                 android:textColor="@color/tv_color"
                 android:textSize="14sp" />
 
@@ -283,7 +283,7 @@
                 android:layout_marginBottom="16dp"
                 android:layout_weight="1"
                 android:checked="true"
-                android:text="時間減少25%"
+                android:text="@string/edit_cd_25off"
                 android:textColor="@color/tv_color" />
 
             <Switch
@@ -295,7 +295,7 @@
                 android:layout_marginBottom="16dp"
                 android:layout_weight="1"
                 android:checked="true"
-                android:text="使用此通知"
+                android:text="@string/edit_use_notif"
                 android:textColor="@color/tv_color" />
         </LinearLayout>
 
@@ -322,7 +322,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:background="@drawable/bg_square_cancel_colorful"
-                android:text="刪除"
+                android:text="@string/delete"
                 android:textColor="@color/tv_color" />
 
             <Button
@@ -332,7 +332,7 @@
                 android:layout_margin="4dp"
                 android:layout_weight="1"
                 android:background="@drawable/bg_square_border_colorful"
-                android:text="確定"
+                android:text="@android:string/ok"
                 android:textColor="@color/tv_color" />
         </LinearLayout>
 

@@ -1,7 +1,8 @@
-[{"name":"Aloy","element":"Cryo","rare":5,"weapon":"Bow","isComing":1,"nation":"N/A","sex":"Female"},
-{"name":"Kujou Sara","element":"Electro","rare":4,"weapon":"Bow","isComing":1,"nation":"Inazuma","sex":"Female"},
+[
 {"name":"Sangonomiya Kokomi","element":"Hydro","rare":5,"weapon":"Catalyst","isComing":1,"nation":"Inazuma","sex":"Female"},
-{"name":"Raiden Shogun","element":"Electro","rare":5,"weapon":"Polearm","isComing":1,"nation":"Inazuma","sex":"Female"},
+{"name":"Aloy","element":"Cryo","rare":5,"weapon":"Bow","isComing":0,"nation":"N/A","sex":"Female"},
+{"name":"Kujou Sara","element":"Electro","rare":4,"weapon":"Bow","isComing":0,"nation":"Inazuma","sex":"Female"},
+{"name":"Raiden Shogun","element":"Electro","rare":5,"weapon":"Polearm","isComing":0,"nation":"Inazuma","sex":"Female"},
 {"name":"Sayu","element":"Anemo","rare":4,"weapon":"Claymore","isComing":0,"nation":"Inazuma","sex":"Female"},
 {"name":"Yoimiya","element":"Pyro","rare":5,"weapon":"Bow","isComing":0,"nation":"Inazuma","sex":"Female"},
 {"name":"Kamisato Ayaka","element":"Cryo","rare":5,"weapon":"Sword","isComing":0,"nation":"Inazuma","sex":"Female"},

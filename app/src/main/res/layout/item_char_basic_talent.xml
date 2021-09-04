@@ -60,7 +60,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="4dp"
                 android:gravity="center"
-                android:text="【突破等級1解鎖】"
+                android:text="@string/asc1_unlock"
                 android:textAlignment="center"
                 android:textColor="@color/tv_color" />
 
@@ -134,7 +134,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="4dp"
                 android:gravity="center"
-                android:text="【突破等級4解鎖】"
+                android:text="@string/asc4_unlock"
                 android:textAlignment="center"
                 android:textColor="@color/tv_color" />
 
@@ -204,7 +204,7 @@
                         android:layout_gravity="center"
                         android:layout_margin="4dp"
                         android:gravity="center"
-                        android:text="【自動解鎖】"
+                        android:text="@string/asc0_unlock"
                         android:textAlignment="center"
                         android:textColor="@color/tv_color" />
 

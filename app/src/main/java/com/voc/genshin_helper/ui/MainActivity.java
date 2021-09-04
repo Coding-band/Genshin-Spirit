@@ -617,19 +617,19 @@ public class MainActivity extends AppCompatActivity {
                                         LangUtils.getAttachBaseContext(context,0);
                                         Toast.makeText(context, context.getString(R.string.pls_restart_app), Toast.LENGTH_SHORT).show();
                                     }else if(position == 1){
-                                        editor.putString("curr_lang","zh-cn");
+                                        editor.putString("curr_lang","zh-CN");
                                         editor.putInt("curr_lang_pos",1);
                                         editor.apply();
                                         LangUtils.getAttachBaseContext(context,1);
                                         Toast.makeText(context, context.getString(R.string.pls_restart_app), Toast.LENGTH_SHORT).show();
                                     }else if(position == 2){
-                                        editor.putString("curr_lang","en-us");
+                                        editor.putString("curr_lang","en-US");
                                         editor.putInt("curr_lang_pos",2);
                                         editor.apply();
                                         LangUtils.getAttachBaseContext(context,2);
                                         Toast.makeText(context, context.getString(R.string.pls_restart_app), Toast.LENGTH_SHORT).show();
                                     }else if(position == 3){
-                                        editor.putString("curr_lang","ru-ru");
+                                        editor.putString("curr_lang","ru-RU");
                                         editor.putInt("curr_lang_pos",3);
                                         editor.apply();
                                         LangUtils.getAttachBaseContext(context,3);

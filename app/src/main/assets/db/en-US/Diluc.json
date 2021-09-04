@@ -18,10 +18,10 @@
     "normal_desc3": "Plunges from mid-air to strike the ground, damaging opponents along the path and dealing AoE DMG upon impact.",
     "element_name": "Searing Onslaught",
     "element_img": "searing_onslaught",
-    "element_desc": "Performs a forward slash that deals Pyro DMG.<br><br>This skill can be used 3 times consecutively. Enters CD if not cast again within a short period (5s).<br><br><i>分別象徵迪盧克所秉持的正義、勇氣與責任。",
+    "element_desc": "Performs a forward slash that deals Pyro DMG.<br><br>This skill can be used 3 times consecutively. Enters CD if not cast again within a short period (5s)",
     "final_name": "Dawn",
     "final_img": "dawn",
-    "final_desc": "Releases intense flames to knock nearby opponents back, dealing Pyro DMG. The flames then converge into the weapon, summoning a Phoenix that flies forward and deals massive Pyro DMG to all opponents in its path. The Phoenix explodes upon reaching its destination, causing a large amount of AoE Pyro DMG.<br>The searing flames that run down his blade cause it to be infused with Pyro.<br><br><i>在黑暗中行走，是為了帶來光明。看遠方那在靜夜中亮起的火光，是破曉的先兆。"
+    "final_desc": "Releases intense flames to knock nearby opponents back, dealing Pyro DMG. The flames then converge into the weapon, summoning a Phoenix that flies forward and deals massive Pyro DMG to all opponents in its path. The Phoenix explodes upon reaching its destination, causing a large amount of AoE Pyro DMG.<br>The searing flames that run down his blade cause it to be infused with Pyro."
   },
   "basic_talent": {
     "talent1_name": "Relentless",
@@ -43,7 +43,7 @@
     "sof2_desc": "When Diluc takes DMG, his ATK increases by 10% and his ATK SPD increases by 5%. Lasts for 10s. This effect can stack up to 3 times and can only occur once every 1.5s.",
     "sof3_name": "Fire and Steel",
     "sof3_img": "steel_and_fire",
-    "sof3_desc": "	Increases the Level of Searing Onslaught by 3. Maximum upgrade level is 15.",
+    "sof3_desc": "Increases the Level of Searing Onslaught by 3. Maximum upgrade level is 15.",
     "sof4_name": "Flowing Flame",
     "sof4_img": "flowing_flame",
     "sof4_desc": "Casting Searing Onslaught in rhythm greatly increases damage dealt. 2s after casting Searing Onslaught, casting the next Searing Onslaught in the combo deals 40% additional DMG. This effect lasts for 2s.",
