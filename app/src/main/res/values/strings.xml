@@ -33,7 +33,27 @@
     <string name="teachings_of_elegance">Teachings of Elegance</string>
     <string name="teachings_of_light">Teachings of Light</string>
     <string name="teachings_of_transience">Teachings of Transience</string>
+    <!-- add in 20210910 -->
+    <string name="guide_of_freedom">Guide of Freedom</string>
+    <string name="guide_of_gold">Guide of Gold</string>
+    <string name="guide_of_resistance">Guide of Resistance</string>
+    <string name="guide_of_prosperity">Guide of Prosperity</string>
+    <string name="guide_of_ballad">Guide of Ballad</string>
+    <string name="guide_of_diligence">Guide of Diligence</string>
+    <string name="guides_of_elegance">Guides of Elegance</string>
+    <string name="guides_of_transience">Guides of Transience</string>
+    <string name="guides_of_light">Guides of Light</string>
+    <string name="philosophies_of_freedom">Philosophies of Freedom</string>
+    <string name="philosophies_of_gold">Philosophies of Gold</string>
+    <string name="philosophies_of_resistance">Philosophies of Resistance</string>
+    <string name="philosophies_of_prosperity">Philosophies of Prosperity</string>
+    <string name="philosophies_of_ballad">Philosophies of Ballad</string>
+    <string name="philosophies_of_diligence">Philosophies of Diligence</string>
+    <string name="philosophiess_of_elegance">Philosophiess of Elegance</string>
+    <string name="philosophiess_of_transience">Philosophiess of Transience</string>
+    <string name="philosophiess_of_light">Philosophiess of Light</string>
 
+    <!-- base -->
     <string name="tile_of_decarabians_tower">Tile of Decarabians Tower</string>
     <string name="luminous_sands_from_guyun">Luminous Sands from guyun</string>
     <string name="coral_branch_of_a_distant_sea">Coral branch of a distant sea</string>
@@ -89,6 +109,9 @@
     <string name="barbara">Barbara</string>
     <string name="amber">Amber</string>
     <string name="unknown">unknown</string>
+
+    <!-- New Character in here-->
+    <string name="thoma">托馬</string>
 
     <!-- char_info -->
     <string name="search">Search...</string>
@@ -227,7 +250,7 @@
     <string name="about_info2">This application will not collect any personal privacy data, may be used to identify and track users and other information. If necessary, the application will only collect the data notified, such as the program crash stack. The above data is only used to repair application vulnerabilities and improve user experience.</string>
     <string name="about_title3">Resource usage statement</string>
     <string name="about_info3">This application is developed based on Shiori for Genshin and aims to pay tribute to Shiori for Genshin and its collaborators, but it has not yet been recognized by its collaborators. Some pictures of this application, data are taken from open source projects, and links will be attached below. Therefore, part of the interface and layout of this application is very similar to Shiori for Genshin. However, this application uses Java instead of Dart as the programming language, and it will only work on Android or/and any supporting .apk and .aab file formats. Installation and operation in the device.</string>
-    <string name="about_title4">This application is developed based on Shiori for Genshin and aims to pay tribute to Shiori for Genshin and its collaborators, but it has not yet been recognized by its collaborators. Some pictures of this application, data are taken from open source projects, and links will be attached below. Therefore, part of the interface and layout of this application is very similar to Shiori for Genshin. However, this application uses Java instead of Dart as the programming language, and it will only work on Android or/and any supporting .apk and .aab file formats. Installation and operation in the device.</string>
+    <string name="about_title4">Project open source statement</string>
     <string name="about_info4">Since this application is intended to pay tribute to Shiori for Genshin and its collaborators, it will be open sourced on Github. Anyone can view, provide comments, and even collaborate. I also welcome any suggestions and applications for this application. This application will also be available on Google Play. If you want to comment on this project, bugs, new features, etc., you are also welcome to contact by E-mail or Discord (QQ is available for mainland China). Finally, thank you for your understanding and support.</string>
 
     <!-- moy -->

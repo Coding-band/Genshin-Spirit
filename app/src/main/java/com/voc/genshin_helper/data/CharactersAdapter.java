@@ -190,6 +190,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                             have = true;
                         }
 
+                        /*
                         if(char_isComing.getVisibility() == View.GONE) {
                             if (have == false) {
                                 (((CalculatorUI) context)).charQuestion(String.valueOf(char_base_name.getText()), "ADD", 0);
@@ -198,6 +199,14 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                             }
                         }else {
                             Toast.makeText(((CalculatorUI) context), "暫時沒有他/她的相關資料,無法計算", Toast.LENGTH_SHORT).show();
+                        }
+
+                         */
+
+                        if (have == false) {
+                            (((CalculatorUI) context)).charQuestion(String.valueOf(char_base_name.getText()), "ADD", 0);
+                        } else {
+                            Toast.makeText(((CalculatorUI) context), "You have already set this character !", Toast.LENGTH_SHORT).show();
                         }
                     }
 

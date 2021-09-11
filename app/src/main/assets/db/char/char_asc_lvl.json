@@ -1,5 +1,4 @@
 [
-  {"lvl" : 0, "silver" : 0, "fragment" : 0, "chunk" : 0, "gemstone" : 0, "boss" : 0, "local" : 0, "common1" :0, "common2" :0, "common3" :0, "mora" : 0},
   {"lvl" : 1, "silver" : 1, "fragment" : 0, "chunk" : 0, "gemstone" : 0, "boss" : 0, "local" : 3, "common1" :3, "common2" :0, "common3" :0, "mora" : 20000},
   {"lvl" : 2, "silver" : 0, "fragment" : 3, "chunk" : 0, "gemstone" : 0, "boss" : 2, "local" : 10, "common1" :15, "common2" :0, "common3" :0, "mora" : 40000},
   {"lvl" : 3, "silver" : 0, "fragment" : 6, "chunk" : 0, "gemstone" : 0, "boss" : 4, "local" : 20, "common1" :0, "common2" :12, "common3" :0, "mora" : 60000},

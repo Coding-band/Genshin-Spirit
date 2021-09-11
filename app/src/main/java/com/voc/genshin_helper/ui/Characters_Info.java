@@ -354,7 +354,12 @@ public class Characters_Info {
                     is.close();
                 }
             }
-            JsonToStr(result1,result2);
+
+            if(result1 != null){
+                JsonToStr(result1,result2);
+            }else {
+                Toast.makeText(context, "暫時沒有他/她的相關資料", Toast.LENGTH_SHORT).show();
+            }
 
         } catch (IOException ex) {
             if(ex != null) {

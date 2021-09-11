@@ -15,7 +15,8 @@ import java.io.InputStream;
  */
 public class Characters_Rss {
 
-    public int[] char_names = {R.string.aloy,R.string.kujou_sara,R.string.sangonomiya_kokomi,R.string.raiden_shogun,R.string.sayu,R.string.yoimiya,R.string.kamisato_ayaka,R.string.kaedehara_kazuha,R.string.yanfei,R.string.eula,R.string.rosaria,R.string.xiao,R.string.hu_tao,R.string.ganyu,R.string.albedo,R.string.zhongli,R.string.xinyan,R.string.tartaglia,R.string.diona,R.string.xingqiu,R.string.xiangling,R.string.venti,R.string.sucrose,R.string.razor,R.string.qiqi,R.string.noelle,R.string.ningguang,R.string.mona,R.string.lisa,R.string.klee,R.string.keqing,R.string.kaeya,R.string.jean,R.string.fischl,R.string.diluc,R.string.chongyun,R.string.bennett,R.string.beidou,R.string.barbara, R.string.amber,R.string.traveler_anemo,R.string.traveler_geo,R.string.traveler_electro};
+    /**EDIT WHEN ADD NEW ITEMS*/
+    public int[] char_names = {R.string.thoma,R.string.sangonomiya_kokomi,R.string.aloy,R.string.kujou_sara,R.string.raiden_shogun,R.string.sayu,R.string.yoimiya,R.string.kamisato_ayaka,R.string.kaedehara_kazuha,R.string.yanfei,R.string.eula,R.string.rosaria,R.string.xiao,R.string.hu_tao,R.string.ganyu,R.string.albedo,R.string.zhongli,R.string.xinyan,R.string.tartaglia,R.string.diona,R.string.xingqiu,R.string.xiangling,R.string.venti,R.string.sucrose,R.string.razor,R.string.qiqi,R.string.noelle,R.string.ningguang,R.string.mona,R.string.lisa,R.string.klee,R.string.keqing,R.string.kaeya,R.string.jean,R.string.fischl,R.string.diluc,R.string.chongyun,R.string.bennett,R.string.beidou,R.string.barbara, R.string.amber,R.string.traveler_anemo,R.string.traveler_geo,R.string.traveler_electro};
 
     public String LocaleStr(int x,Context context){
         return context.getString(char_names[x]);
@@ -52,10 +53,13 @@ public class Characters_Rss {
      * @param name is Char's Identify Name -> JSON
      * @return IMG_ID , NAME_LOCAL , FULL_IMG_ID , ICO_IMG_ID
      */
+
+    /**EDIT WHEN ADD NEW ITEMS*/
     public int[] getCharByName(String name){
-        if(name.equals("Aloy")){return new int[] {R.drawable.aloy,R.string.aloy,R.drawable.aloy,R.drawable.aloy_ico};}
-        else if(name.equals("Kujou Sara")){return new int[] {R.drawable.kujou_sara_flag,R.string.kujou_sara,R.drawable.kujou_sara_full,R.drawable.kujou_sara_ico};}
+        if(name.equals("Thoma")){return new int[] {R.drawable.thoma_flag,R.string.thoma,R.drawable.thoma_full,R.drawable.thoma_ico};}
         else if(name.equals("Sangonomiya Kokomi")){return new int[] {R.drawable.sangonomiya_kokomi_flag,R.string.sangonomiya_kokomi,R.drawable.sangonomiya_kokomi_full,R.drawable.sangonomiya_kokomi_ico};}
+        else if(name.equals("Aloy")){return new int[] {R.drawable.aloy,R.string.aloy,R.drawable.aloy,R.drawable.aloy_ico};}
+        else if(name.equals("Kujou Sara")){return new int[] {R.drawable.kujou_sara_flag,R.string.kujou_sara,R.drawable.kujou_sara_full,R.drawable.kujou_sara_ico};}
         else if(name.equals("Raiden Shogun")){return new int[] {R.drawable.raiden_shogun_flag,R.string.raiden_shogun,R.drawable.raiden_shogun_full,R.drawable.raiden_shogun_ico};}
         else if(name.equals("Sayu")){return new int[] {R.drawable.sayu_flag,R.string.sayu,R.drawable.sayu_full,R.drawable.sayu_ico};}
         else if(name.equals("Yoimiya")){return new int[] {R.drawable.yoimiya_flag,R.string.yoimiya,R.drawable.yoimiya_full,R.drawable.yoimiya_ico};}
@@ -116,13 +120,6 @@ public class Characters_Rss {
         else return new int[] {R.drawable.paimon_lost,R.drawable.paimon_lost,R.color.anemo};
     }
 
-    /*
-
-    public int getTalentByName (String name) {
-        return new int[] {0};
-    }
-     */
-
     public Drawable getTalentIcoByName (String name, Context context){
         InputStream ims = null;
         try {
@@ -137,7 +134,10 @@ public class Characters_Rss {
         Drawable myIcon = context.getResources().getDrawable( R.drawable.paimon_lost );
         return myIcon;
     }
+
+    /**EDIT WHEN ADD NEW ITEMS*/
     public int getItemIcoByName (String name ,Context context){
+        /** Boss*/
         if(name.equals("常燃火種")){return R.drawable.everflame_seed;}
         else if(name.equals("淨水之心")){return R.drawable.cleansing_heart;}
         else if(name.equals("雷光棱鏡")){return R.drawable.lightning_prism;}
@@ -149,6 +149,11 @@ public class Characters_Rss {
         else if(name.equals("魔偶機心")){return R.drawable.maguu_kishin;}
         else if(name.equals("恒常機關之心")){return R.drawable.perpetual_heart;}
         else if(name.equals("陰燃之珠")){return R.drawable.smoldering_pearl;}
+        //add in 20210910
+        else if(name.equals("雷霆數珠")){return R.drawable.storm_beads;}
+        else if(name.equals("排異之露")){return R.drawable.dew_of_repudiation;}
+
+        /** Local*/
         else if(name.equals("小燈草")){return R.drawable.small_lamp_grass;}
         else if(name.equals("慕風蘑菇")){return R.drawable.philanemo_mushroom;}
         else if(name.equals("夜泊石")){return R.drawable.noctilous_jade;}
@@ -169,6 +174,14 @@ public class Characters_Rss {
         else if(name.equals("緋櫻繡球")){return R.drawable.sakura_bloom;}
         else if(name.equals("鳴草")){return R.drawable.naku_weed;}
         else if(name.equals("晶化骨髓")){return R.drawable.crystal_marrow;}
+        //add in 20210910
+        else if(name.equals("天雲草實")){return R.drawable.amakumo_fruit;}
+        else if(name.equals("血斛")){return R.drawable.dendrobium;}
+        else if(name.equals("幽燈蕈")){return R.drawable.fluorescent_fungus;}
+        else if(name.equals("珊瑚真珠")){return R.drawable.sango_pearl;}
+
+
+        /** T-Boss*/
         else if(name.equals("北風之環")){return R.drawable.ring_of_boreas;}
         else if(name.equals("東風的吐息")){return R.drawable.dvalins_sigh;}
         else if(name.equals("東風之翎")){return R.drawable.dvalins_plume;}
@@ -181,7 +194,12 @@ public class Characters_Rss {
         else if(name.equals("龍王之冕")){return R.drawable.dragon_lords_crown;}
         else if(name.equals("血玉之枝")){return R.drawable.bloodjade_branch;}
         else if(name.equals("鎏金之鱗")){return R.drawable.gilded_scale;}
+        //add in 20210910
+        else if(name.equals("熔毀之刻")){return R.drawable.molten_moment;}
+        else if(name.equals("灰燼之心")){return R.drawable.ashen_heart;}
+        else if(name.equals("獄火之蝶")){return R.drawable.hellfire_butterfly;}
 
+        /** Common*/
         else if(name.equals("牢固的箭簇")){return R.drawable.firm_arrowhead;}
         else if(name.equals("銳利的箭簇")){return R.drawable.sharp_arrowhead;}
         else if(name.equals("歷戰的箭簇")){return R.drawable.weathered_arrowhead;}
@@ -206,6 +224,12 @@ public class Characters_Rss {
         else if(name.equals("破舊的刀鐔")){return R.drawable.old_handguard;}
         else if(name.equals("影打刀鐔")){return R.drawable.kageuchi_handguard;}
         else if(name.equals("名刀鐔")){return R.drawable.famed_handguard;}
+        //add in 20210910
+        else if(name.equals("浮游乾核")){return R.drawable.spectral_husk;}
+        else if(name.equals("浮游幽核")){return R.drawable.spectral_heart;}
+        else if(name.equals("浮游晶化核")){return R.drawable.spectral_nucleus;}
+
+        /** T-Book*/
         else if(name.equals("「自由」的教導")){return R.drawable.teaching_of_freedom;}
         else if(name.equals("「黃金」的教導")){return R.drawable.teaching_of_gold;}
         else if(name.equals("「抗爭」的教導")){return R.drawable.teaching_of_resistance;}
@@ -233,6 +257,8 @@ public class Characters_Rss {
         else if(name.equals("「風雅」的哲學")){return R.drawable.philosophies_of_elegance;}
         else if(name.equals("「浮世」的哲學")){return R.drawable.philosophies_of_transience;}
         else if(name.equals("「天光」的哲學")){return R.drawable.philosophies_of_light;}
+
+        /** Crystal*/
         else if(name.equals("燃願瑪瑙碎屑")){return R.drawable.agnidus_agate_sliver;}
         else if(name.equals("燃願瑪瑙斷片")){return R.drawable.agnidus_agate_fragment;}
         else if(name.equals("燃願瑪瑙塊")){return R.drawable.agnidus_agate_chunk;}
@@ -265,6 +291,8 @@ public class Characters_Rss {
         else if(name.equals("nagadus_emerald_fragment")){return R.drawable.nagadus_emerald_fragment;}
         else if(name.equals("nagadus_emerald_chunk")){return R.drawable.nagadus_emerald_chunk;}
         else if(name.equals("nagadus_emerald_gemstone")){return R.drawable.nagadus_emerald_gemstone;}
+
+        /** Others*/
         else if(name.equals("智識之冕")){return R.drawable.crown_of_sagehood;}
         else if(name.equals("摩拉")){return R.drawable.mora;}
         else if(name.equals("流浪者的經驗")){return R.drawable.wanderers_advice;}
@@ -272,6 +300,39 @@ public class Characters_Rss {
         else if(name.equals("大英雄的經驗")){return R.drawable.heros_wit;}
 
         else {return R.drawable.paimon_lost;}
+    }
+
+    public String getLocaleTeaches (String name, Context context){
+        if(name.equals("「自由」的教導")){return context.getString(R.string.teaching_of_freedom);}
+        else if(name.equals("「黃金」的教導")){return context.getString(R.string.teaching_of_gold);}
+        else if(name.equals("「抗爭」的教導")){return context.getString(R.string.teaching_of_resistance);}
+        else if(name.equals("「勤勞」的教導")){return context.getString(R.string.teaching_of_prosperity);}
+        else if(name.equals("「詩文」的教導")){return context.getString(R.string.teaching_of_ballad);}
+        else if(name.equals("「繁榮」的教導")){return context.getString(R.string.teaching_of_diligence);}
+        else if(name.equals("「風雅」的教導")){return context.getString(R.string.teachings_of_elegance);}
+        else if(name.equals("「浮世」的教導")){return context.getString(R.string.teachings_of_transience);}
+        else if(name.equals("「天光」的教導")){return context.getString(R.string.teachings_of_light);}
+        else if(name.equals("「自由」的指引")){return context.getString(R.string.guide_of_freedom);}
+        else if(name.equals("「黃金」的指引")){return context.getString(R.string.guide_of_gold);}
+        else if(name.equals("「抗爭」的指引")){return context.getString(R.string.guide_of_resistance);}
+        else if(name.equals("「勤勞」的指引")){return context.getString(R.string.guide_of_prosperity);}
+        else if(name.equals("「詩文」的指引")){return context.getString(R.string.guide_of_ballad);}
+        else if(name.equals("「繁榮」的指引")){return context.getString(R.string.guide_of_diligence);}
+        else if(name.equals("「風雅」的指引")){return context.getString(R.string.guides_of_elegance);}
+        else if(name.equals("「浮世」的指引")){return context.getString(R.string.guides_of_transience);}
+        else if(name.equals("「天光」的指引")){return context.getString(R.string.guides_of_light);}
+        else if(name.equals("「自由」的哲學")){return context.getString(R.string.philosophies_of_freedom);}
+        else if(name.equals("「黃金」的哲學")){return context.getString(R.string.philosophies_of_gold);}
+        else if(name.equals("「抗爭」的哲學")){return context.getString(R.string.philosophies_of_resistance);}
+        else if(name.equals("「勤勞」的哲學")){return context.getString(R.string.philosophies_of_prosperity);}
+        else if(name.equals("「詩文」的哲學")){return context.getString(R.string.philosophies_of_ballad);}
+        else if(name.equals("「繁榮」的哲學")){return context.getString(R.string.philosophies_of_diligence);}
+        else if(name.equals("「風雅」的哲學")){return context.getString(R.string.philosophiess_of_elegance);}
+        else if(name.equals("「浮世」的哲學")){return context.getString(R.string.philosophiess_of_transience);}
+        else if(name.equals("「天光」的哲學")){return context.getString(R.string.philosophiess_of_light);}
+
+        else {return context.getString(R.string.unknown);}
+
     }
 
     public String getLocaleBirth (String str,Context context) {

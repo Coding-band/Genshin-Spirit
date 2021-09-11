@@ -11,6 +11,7 @@ import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.AssetManager;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -49,6 +50,7 @@ import com.voc.genshin_helper.util.CalculatorProcess;
 import com.voc.genshin_helper.util.NumberPickerDialog;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
+import org.apache.commons.io.IOUtils;
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -57,6 +59,7 @@ import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -129,13 +132,9 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
     int skill2_lvl = 1;
     int skill3_lvl = 1;
 
-    String normal_zh = "Unknown";
-    String element_zh = "Unknown";
-    String final_zh = "Unknown";
-
-    String normal_en = "Unknown";
-    String element_en = "Unknown";
-    String final_en = "Unknown";
+    String normal_skill_name = "Unknown";
+    String element_skill_name = "Unknown";
+    String final_skill_name = "Unknown";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -442,38 +441,61 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         skill2_lvl = 1;
         skill3_lvl = 1;
 
-        normal_zh = "XPR";
-        element_zh = "XPR";
-        final_zh = "XPR";
-
-        normal_en = "XPR";
-        element_en = "XPR";
-        final_en = "XPR";
+        normal_skill_name = getString(R.string.unknown);
+        element_skill_name = getString(R.string.unknown);
+        final_skill_name = getString(R.string.unknown);
 
         sharedPreferences = context.getSharedPreferences("user_info",Context.MODE_PRIVATE);
         characters_rss = new Characters_Rss();
 
-            String char_atk_name = LoadData("db/char/char_atk_name.json");
-            //Get data from JSON
-            try {
-                JSONArray array = new JSONArray(char_atk_name);
-                for (int i = 0; i < array.length(); i++) {
-                    JSONObject object = array.getJSONObject(i);
-                    String temp_name = object.getString("name");
-                    if(temp_name.equals(CharName_BASE)){
-                        normal_zh = object.getString("normal_zh");
-                        element_zh = object.getString("element_zh");
-                        final_zh = object.getString("final_zh");
+        String CharName_BASE_UNDERSCORE = CharName_BASE.replace(" ","_");
 
-                        normal_en = object.getString("normal_en");
-                        element_en = object.getString("element_en");
-                        final_en = object.getString("final_en");
-                    }
+        String lang = sharedPreferences.getString("curr_lang","zh-HK");
+        AssetManager mg = context.getResources().getAssets();
+        InputStream is = null;
+        InputStream is_default = null;
+        String result1 = null;
+        try {
+            String[] strs_local = mg.list("db/"+lang+"/");
+            String[] strs_default = mg.list("db/en-US/");
+
+            for (String ast : strs_default){
+                if(ast.equals(CharName_BASE_UNDERSCORE+".json")){
+                    is_default = mg.open("db/en-US/"+CharName_BASE_UNDERSCORE+".json");
+                    result1 = IOUtils.toString(is_default, StandardCharsets.UTF_8);
+                    is_default.close();
                 }
-            } catch (JSONException e) {
-                e.printStackTrace();
             }
 
+            for (String ast : strs_local){
+                if(ast.equals(CharName_BASE_UNDERSCORE+".json")){
+                    is = mg.open("db/"+lang+"/"+CharName_BASE_UNDERSCORE+".json");
+                    result1 = IOUtils.toString(is, StandardCharsets.UTF_8);
+                    is.close();
+                }
+            }
+
+
+            if(result1 != null){
+                try {
+                    JSONObject jsonObject = new JSONObject(result1);
+                    JSONObject battle_talent = jsonObject.getJSONObject("battle_talent");
+                    normal_skill_name = battle_talent.getString("normal_name");
+                    element_skill_name = battle_talent.getString("element_name");
+                    final_skill_name = battle_talent.getString("final_name");
+                }catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }else {
+                normal_skill_name = getString(R.string.unknown);
+                element_skill_name = getString(R.string.unknown);
+                final_skill_name = getString(R.string.unknown);
+                //Toast.makeText(context, "暫時沒有他/她的相關資料X1", Toast.LENGTH_SHORT).show();
+            }
+
+        } catch (IOException ex) {
+            Log.wtf("EX",ex);
+        }
 
         final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
         View view = View.inflate(context, R.layout.menu_char_add, null);
@@ -510,9 +532,9 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         menu_title.setText(getString(characters_rss.getCharByName(CharName_BASE)[1]));
 
         // Will set to check zh / en later
-        menu_skill1_title.setText(normal_zh);
-        menu_skill2_title.setText(element_zh);
-        menu_skill3_title.setText(final_zh);
+        menu_skill1_title.setText(normal_skill_name);
+        menu_skill2_title.setText(element_skill_name);
+        menu_skill3_title.setText(final_skill_name);
 
         if(XPR.equals("EDIT")){
             delete.setVisibility(View.VISIBLE);
@@ -592,18 +614,19 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             }
         });
         /**這邊取得自己所設置之模組回調*/
+
         npd.onDialogRespond = new NumberPickerDialog.OnDialogRespond() {
             @Override
             public void onRespond(int value , String XPR) {
                 if(XPR.equals("LVL_BEFORE")){
                     before_lvl = value;
                     if(before_lvl > 80 ){before_break =6;}
-                    else if(before_lvl > 70 ){before_break =5;}
-                    else if(before_lvl > 60 ){before_break =4;}
-                    else if(before_lvl > 50 ){before_break =3;}
-                    else if(before_lvl > 40 ){before_break =2;}
-                    else if(before_lvl > 20 ){before_break =1;}
-                    else if(before_lvl < 20 ){before_break =0;}
+                    else if(before_lvl > 70 && before_lvl <= 80){before_break =5;}
+                    else if(before_lvl > 60 && before_lvl <= 70){before_break =4;}
+                    else if(before_lvl > 50 && before_lvl <= 60){before_break =3;}
+                    else if(before_lvl > 40 && before_lvl <= 50){before_break =2;}
+                    else if(before_lvl > 20 && before_lvl <= 40){before_break =1;}
+                    else if(before_lvl <= 20 ){before_break =0;}
                     menu_char_lvl_before.setText(getString(R.string.curr_lvl)+String.valueOf(before_lvl));
 
                     if(value > after_lvl){
@@ -619,15 +642,27 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                     else if(after_lvl > 20 ){after_break =1;}
                     else if(after_lvl < 20 ){after_break =0;}
 
+                    if(menu_break_lvl_before_switch.isChecked()){
+                        if(before_lvl !=20 | before_lvl !=40 | before_lvl !=50 | before_lvl !=60 | before_lvl !=70 | before_lvl !=80){
+                            menu_break_lvl_before_switch.setChecked(false);
+                        }
+                    }
+
+                    if(menu_break_lvl_after_switch.isChecked()){
+                        if(after_lvl !=20 | after_lvl !=40 | after_lvl !=50 | after_lvl !=60 | after_lvl !=70 | after_lvl !=80){
+                            menu_break_lvl_after_switch.setChecked(false);
+                        }
+                    }
+
                 }else if(XPR.equals("LVL_AFTER")){
                     after_lvl = value;
                     if(after_lvl > 80 ){after_break =6;}
-                    else if(after_lvl > 70 ){after_break =5;}
-                    else if(after_lvl > 60 ){after_break =4;}
-                    else if(after_lvl > 50 ){after_break =3;}
-                    else if(after_lvl > 40 ){after_break =2;}
-                    else if(after_lvl > 20 ){after_break =1;}
-                    else if(after_lvl < 20 ){after_break =0;}
+                    else if(after_lvl > 70 && after_lvl <=80){after_break =5;}
+                    else if(after_lvl > 60 && after_lvl <=70){after_break =4;}
+                    else if(after_lvl > 50 && after_lvl <=60){after_break =3;}
+                    else if(after_lvl > 40 && after_lvl <=50){after_break =2;}
+                    else if(after_lvl > 20 && after_lvl <=40){after_break =1;}
+                    else if(after_lvl <= 20 ){after_break =0;}
                     menu_char_lvl_after.setText(getString(R.string.aim_lvl)+String.valueOf(after_lvl));
 
                     if(value < before_lvl){
@@ -642,6 +677,18 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                     else if(before_lvl > 40 ){before_break =2;}
                     else if(before_lvl > 20 ){before_break =1;}
                     else if(before_lvl < 20 ){before_break =0;}
+
+                    if(menu_break_lvl_before_switch.isChecked()){
+                        if(before_lvl !=20 | before_lvl !=40 | before_lvl !=50 | before_lvl !=60 | before_lvl !=70 | before_lvl !=80){
+                            menu_break_lvl_before_switch.setChecked(false);
+                        }
+                    }
+
+                    if(menu_break_lvl_after_switch.isChecked()){
+                        if(after_lvl !=20 | after_lvl !=40 | after_lvl !=50 | after_lvl !=60 | after_lvl !=70 | after_lvl !=80){
+                            menu_break_lvl_after_switch.setChecked(false);
+                        }
+                    }
                 }
             }
         };
@@ -753,6 +800,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             choosedBeforeLvlList.add(before_lvl);
             choosedAfterLvlList.add(after_lvl);
             choosedBeforeBreakLvlList.add(before_break);
+            Log.wtf("WTF",String.valueOf(after_break));
             choosedAfterBreakLvlList.add(after_break);
             choosedBeforeSkill1LvlList.add(skill1_before);
             choosedAfterSkill1LvlList.add(skill1_after);

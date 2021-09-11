@@ -61,6 +61,9 @@ public class CalculatorProcess {
     int  魔偶機心  = 0 ;
     int  恒常機關之心  = 0 ;
     int  陰燃之珠  = 0 ;
+    //add in 20210910
+    int  雷霆數珠 = 0;
+    int  排異之露 = 0;
 
     /** LOCAL */
     int  小燈草  = 0 ;
@@ -83,6 +86,32 @@ public class CalculatorProcess {
     int  緋櫻繡球  = 0 ;
     int  鳴草  = 0 ;
     int  晶化骨髓  = 0 ;
+    //add in 20210910
+    int  天雲草實  = 0 ;
+    int  血斛  = 0 ;
+    int  幽燈蕈  = 0 ;
+    int  珊瑚真珠  = 0 ;
+
+    /** T-BOSS ASC*/
+
+    int 智識之冕 = 0;
+    int  東風的吐息  = 0 ;
+    int  北風之環  = 0 ;
+    int  東風之翎  = 0 ;
+    int  北風的魂匣  = 0 ;
+    int  東風之爪  = 0 ;
+    int  北風之尾  = 0 ;
+    int  魔王之刃_殘片  = 0 ;
+    int  吞天之鯨_只角  = 0 ;
+    int  武煉之魂_孤影  = 0 ;
+    int  龍王之冕  = 0 ;
+    int  血玉之枝  = 0 ;
+    int  鎏金之鱗  = 0 ;
+    //add in 20210910
+    int  熔毀之刻  = 0 ;
+    int  灰燼之心  = 0 ;
+    int  獄火之蝶  = 0 ;
+
 
     /** COMMON */ /**[牢固的箭簇,銳利的箭簇,歷戰的箭簇]*/
     ArrayList<Integer> 歷戰的箭簇 = new ArrayList<Integer>();
@@ -93,6 +122,8 @@ public class CalculatorProcess {
     ArrayList<Integer> 原素花蜜 = new ArrayList<Integer>();
     ArrayList<Integer> 史萊姆原漿 = new ArrayList<Integer>();
     ArrayList<Integer> 名刀鐔 = new ArrayList<Integer>();
+    //add in 20210910
+    ArrayList<Integer> 浮游晶化核 = new ArrayList<Integer>();
 
     /** T-COMMON*/
 
@@ -106,22 +137,6 @@ public class CalculatorProcess {
     ArrayList<Integer> 浮世_的哲學 = new ArrayList<Integer>();
     ArrayList<Integer> 天光_的哲學 = new ArrayList<Integer>();
 
-    /** T-BOSS ASC*/
-
-    int  東風的吐息  = 0 ;
-    int  北風之環  = 0 ;
-    int  東風之翎  = 0 ;
-    int  北風的魂匣  = 0 ;
-    int  東風之爪  = 0 ;
-    int  北風之尾  = 0 ;
-    int  魔王之刃_殘片  = 0 ;
-    int  吞天之鯨_只角  = 0 ;
-    int  武煉之魂_孤影  = 0 ;
-    int  龍王之冕  = 0 ;
-    int  血玉之枝  = 0 ;
-    int  鎏金之鱗  = 0 ;
-
-    int 智識之冕 = 0;
 
      /** [TRANSFER] CHARACTER VAR FROM CalculatorUI*/
     public ArrayList<String> NameList = new ArrayList<String>();
@@ -249,6 +264,8 @@ public class CalculatorProcess {
             原素花蜜.add(0);
             史萊姆原漿.add(0);
             名刀鐔.add(0);
+            浮游晶化核.add(0);
+
             自由_的哲學.add(0);
             黃金_的哲學.add(0);
             抗爭_的哲學.add(0);
@@ -340,7 +357,7 @@ public class CalculatorProcess {
             Log.wtf("BEFORE_UP",String.valueOf(beforeUP));
             Log.wtf("AFTER_UP",String.valueOf(afterUP));
 
-            for (int y = BeforeBreakLvlList.get(x)+beforeUP ; y < AfterBreakLvlList.get(x)+afterUP+1 ; y ++){
+            for (int y = BeforeBreakLvlList.get(x)+beforeUP ; y < AfterBreakLvlList.get(x)+afterUP ; y ++){
 
                 int z = getRealPosByName(NameList.get(x));
                 asc_temp_item.add(nameREQUIREList.get(z));
@@ -349,7 +366,8 @@ public class CalculatorProcess {
                 asc_temp_item.add(localREQUIREList.get(z));
                 asc_temp_item.add(commonREQUIREList.get(z));
 
-
+                Log.wtf("Y is",String.valueOf(y));
+                Log.wtf("AfterBreakLvlList.get(x) is",String.valueOf(AfterBreakLvlList.get(x)));
                 asc_temp_count.set(0,asc_temp_count.get(0) + silverASCList.get(y));
                 asc_temp_count.set(1,asc_temp_count.get(1) +fragASCList.get(y));
                 asc_temp_count.set(2,asc_temp_count.get(2) +chunkASCList.get(y));
@@ -448,7 +466,29 @@ public class CalculatorProcess {
         return 0;
     }
 
+    /**EDIT WHEN ADD NEW ITEMS*/
     public void resultShow () {
+        /** INIT of UI GONE*/
+        TextView result_crystal_title = viewPager.findViewById(R.id.result_crystal_title);
+        TextView result_boss_title = viewPager.findViewById(R.id.result_boss_title);
+        TextView result_weekboss_title = viewPager.findViewById(R.id.result_weekboss_title);
+        TextView result_local_title = viewPager.findViewById(R.id.result_local_title);
+        TextView result_weeklybk1_title = viewPager.findViewById(R.id.result_weeklybk1_title);
+        TextView result_weeklybk2_title = viewPager.findViewById(R.id.result_weeklybk2_title);
+        TextView result_weeklybk3_title = viewPager.findViewById(R.id.result_weeklybk3_title);
+        TextView result_other_title = viewPager.findViewById(R.id.result_other_title);
+        TextView result_common_title = viewPager.findViewById(R.id.result_common_title);
+
+        result_crystal_title.setVisibility(View.GONE);
+        result_boss_title.setVisibility(View.GONE);
+        result_weekboss_title.setVisibility(View.GONE);
+        result_local_title.setVisibility(View.GONE);
+        result_weeklybk1_title.setVisibility(View.GONE);
+        result_weeklybk2_title.setVisibility(View.GONE);
+        result_weeklybk3_title.setVisibility(View.GONE);
+        result_other_title.setVisibility(View.GONE);
+        result_common_title.setVisibility(View.GONE);
+
         /** CHARACTER ICON*/
         GridLayout gridLayout = new GridLayout(context);
         gridLayout = viewPager.findViewById(R.id.result_char_gl);
@@ -508,7 +548,6 @@ public class CalculatorProcess {
             item_cal_img.setAdjustViewBounds(true);
             if(crystal_temp_cnt[x] > 0){
                 gridLayout.setVisibility(View.VISIBLE);
-                TextView result_crystal_title = viewPager.findViewById(R.id.result_crystal_title);
                 result_crystal_title.setVisibility(View.VISIBLE);
                 gridLayout.addView(view);
                 c++;
@@ -523,8 +562,8 @@ public class CalculatorProcess {
         }
 
         /** BOSS */
-        String[] boss_temp = new String[]{"常燃火種","淨水之心","雷光棱鏡","極寒之核","颶風之種","玄岩之塔","未熟之玉","晶凝之華","魔偶機心","恒常機關之心","陰燃之珠"};
-        int[] boss_temp_cnt = new int[]{常燃火種,淨水之心,雷光棱鏡,極寒之核,颶風之種,玄岩之塔,未熟之玉,晶凝之華,魔偶機心,恒常機關之心,陰燃之珠};
+        String[] boss_temp = new String[]{"常燃火種","淨水之心","雷光棱鏡","極寒之核","颶風之種","玄岩之塔","未熟之玉","晶凝之華","魔偶機心","恒常機關之心","陰燃之珠","雷霆數珠","排異之露"};
+        int[] boss_temp_cnt = new int[]{常燃火種,淨水之心,雷光棱鏡,極寒之核,颶風之種,玄岩之塔,未熟之玉,晶凝之華,魔偶機心,恒常機關之心,陰燃之珠,雷霆數珠,排異之露};
         gridLayout = viewPager.findViewById(R.id.result_boss_gl);
         gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
@@ -543,7 +582,6 @@ public class CalculatorProcess {
             item_cal_img.setAdjustViewBounds(true);
             if(boss_temp_cnt[x] > 0){
                 gridLayout.setVisibility(View.VISIBLE);
-                TextView result_boss_title = viewPager.findViewById(R.id.result_boss_title);
                 result_boss_title.setVisibility(View.VISIBLE);
                 gridLayout.addView(view);
                 c++;
@@ -558,8 +596,8 @@ public class CalculatorProcess {
         }
 
         /** WEEK-BOSS */
-        String[] week_boss_temp = new String[]{"北風之環","東風的吐息","東風之翎","北風的魂匣","東風之爪","北風之尾","魔王之刃·殘片","吞天之鯨·只角","武煉之魂·孤影","龍王之冕","血玉之枝","鎏金之鱗"};
-        int[] week_boss_temp_cnt = new int[]{北風之環,東風的吐息,東風之翎,北風的魂匣,東風之爪,北風之尾,魔王之刃_殘片,吞天之鯨_只角,武煉之魂_孤影,龍王之冕,血玉之枝,鎏金之鱗};
+        String[] week_boss_temp = new String[]{"北風之環","東風的吐息","東風之翎","北風的魂匣","東風之爪","北風之尾","魔王之刃·殘片","吞天之鯨·只角","武煉之魂·孤影","龍王之冕","血玉之枝","鎏金之鱗","熔毀之刻","灰燼之心","獄火之蝶"};
+        int[] week_boss_temp_cnt = new int[]{北風之環,東風的吐息,東風之翎,北風的魂匣,東風之爪,北風之尾,魔王之刃_殘片,吞天之鯨_只角,武煉之魂_孤影,龍王之冕,血玉之枝,鎏金之鱗,熔毀之刻,灰燼之心,獄火之蝶};
         gridLayout = viewPager.findViewById(R.id.result_weekboss_gl);
         gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
@@ -578,7 +616,6 @@ public class CalculatorProcess {
             item_cal_img.setAdjustViewBounds(true);
             if(week_boss_temp_cnt[x] > 0){
                 gridLayout.setVisibility(View.VISIBLE);
-                TextView result_weekboss_title = viewPager.findViewById(R.id.result_weekboss_title);
                 result_weekboss_title.setVisibility(View.VISIBLE);
                 gridLayout.addView(view);
                 c++;
@@ -593,8 +630,8 @@ public class CalculatorProcess {
         }
 
         /** LOCAL */
-        String[] local_temp = new String[]{"小燈草","慕風蘑菇","夜泊石","風車菊","石珀","蒲公英籽","嘟嘟蓮","落落莓","琉璃百合","琉璃袋","鉤鉤果","塞西莉亞花","絕雲椒椒","霓裳花","星螺","清心","海靈芝","緋櫻繡球","鳴草","晶化骨髓"};
-        int[] local_temp_cnt = new int[]{小燈草,慕風蘑菇,夜泊石,風車菊,石珀,蒲公英籽,嘟嘟蓮,落落莓,琉璃百合,琉璃袋,鉤鉤果,塞西莉亞花,絕雲椒椒,霓裳花,星螺,清心,海靈芝,緋櫻繡球,鳴草,晶化骨髓};
+        String[] local_temp = new String[]{"小燈草","慕風蘑菇","夜泊石","風車菊","石珀","蒲公英籽","嘟嘟蓮","落落莓","琉璃百合","琉璃袋","鉤鉤果","塞西莉亞花","絕雲椒椒","霓裳花","星螺","清心","海靈芝","緋櫻繡球","鳴草","晶化骨髓","天雲草實","血斛","幽燈蕈","珊瑚真珠"};
+        int[] local_temp_cnt = new int[]{小燈草,慕風蘑菇,夜泊石,風車菊,石珀,蒲公英籽,嘟嘟蓮,落落莓,琉璃百合,琉璃袋,鉤鉤果,塞西莉亞花,絕雲椒椒,霓裳花,星螺,清心,海靈芝,緋櫻繡球,鳴草,晶化骨髓,天雲草實,血斛,幽燈蕈,珊瑚真珠};
         gridLayout = viewPager.findViewById(R.id.result_local_gl);
         gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
@@ -613,7 +650,6 @@ public class CalculatorProcess {
             item_cal_img.setAdjustViewBounds(true);
             if(local_temp_cnt[x] > 0){
                 gridLayout.setVisibility(View.VISIBLE);
-                TextView result_local_title = viewPager.findViewById(R.id.result_local_title);
                 result_local_title.setVisibility(View.VISIBLE);
                 gridLayout.addView(view);
                 c++;
@@ -628,8 +664,8 @@ public class CalculatorProcess {
         }
 
         /** COMMON */
-        String[] common_temp = new String[]{"牢固的箭簇","銳利的箭簇","歷戰的箭簇","導能繪卷","封魔繪卷","禁咒繪卷","尋寶鴉印","藏銀鴉印","攫金鴉印","破損的面具","污穢的面具","不祥的面具","新兵的徽記","士官的徽記","尉官的徽記","騙騙花蜜","微光花蜜","原素花蜜","史萊姆凝液","史萊姆清","史萊姆原漿","破舊的刀鐔","影打刀鐔","名刀鐔"};
-        int[] common_temp_cnt = new int[]{歷戰的箭簇.get(0),歷戰的箭簇.get(1),歷戰的箭簇.get(2),禁咒繪卷.get(0),禁咒繪卷.get(1),禁咒繪卷.get(2),攫金鴉印.get(0),攫金鴉印.get(1),攫金鴉印.get(2),不祥的面具.get(0),不祥的面具.get(1),不祥的面具.get(2),尉官的徽記.get(0),尉官的徽記.get(1),尉官的徽記.get(2),原素花蜜.get(0),原素花蜜.get(1),原素花蜜.get(2),史萊姆原漿.get(0),史萊姆原漿.get(1),史萊姆原漿.get(2),名刀鐔.get(0),名刀鐔.get(1),名刀鐔.get(2)};
+        String[] common_temp = new String[]{"牢固的箭簇","銳利的箭簇","歷戰的箭簇","導能繪卷","封魔繪卷","禁咒繪卷","尋寶鴉印","藏銀鴉印","攫金鴉印","破損的面具","污穢的面具","不祥的面具","新兵的徽記","士官的徽記","尉官的徽記","騙騙花蜜","微光花蜜","原素花蜜","史萊姆凝液","史萊姆清","史萊姆原漿","破舊的刀鐔","影打刀鐔","名刀鐔","浮游乾核","浮游幽核","浮游晶化核"};
+        int[] common_temp_cnt = new int[]{歷戰的箭簇.get(0),歷戰的箭簇.get(1),歷戰的箭簇.get(2),禁咒繪卷.get(0),禁咒繪卷.get(1),禁咒繪卷.get(2),攫金鴉印.get(0),攫金鴉印.get(1),攫金鴉印.get(2),不祥的面具.get(0),不祥的面具.get(1),不祥的面具.get(2),尉官的徽記.get(0),尉官的徽記.get(1),尉官的徽記.get(2),原素花蜜.get(0),原素花蜜.get(1),原素花蜜.get(2),史萊姆原漿.get(0),史萊姆原漿.get(1),史萊姆原漿.get(2),名刀鐔.get(0),名刀鐔.get(1),名刀鐔.get(2),浮游晶化核.get(0),浮游晶化核.get(1),浮游晶化核.get(2)};
         gridLayout = viewPager.findViewById(R.id.result_common_gl);
         gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
@@ -648,7 +684,6 @@ public class CalculatorProcess {
             item_cal_img.setAdjustViewBounds(true);
             if(common_temp_cnt[x] > 0){
                 gridLayout.setVisibility(View.VISIBLE);
-                TextView result_common_title = viewPager.findViewById(R.id.result_common_title);
                 result_common_title.setVisibility(View.VISIBLE);
                 gridLayout.addView(view);
                 c++;
@@ -674,16 +709,17 @@ public class CalculatorProcess {
             View view = View.inflate(context, R.layout.item_cal_img, null);
             ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
             TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
+            TextView item_weekly_tv = view.findViewById(R.id.item_weekly_tv);
             Picasso.get()
                     .load (characters_rss.getItemIcoByName(weeklybk1_temp[x],context))
                     .resize(128,128)
                     .error (R.drawable.paimon_lost)
                     .into (item_cal_img);
             item_cal_tv.setText(prettyCount(weeklybk1_temp_cnt[x]));
+            item_weekly_tv.setText(characters_rss.getLocaleTeaches(weeklybk1_temp[x],context));
             item_cal_img.setAdjustViewBounds(true);
             if(weeklybk1_temp_cnt[x] > 0){
                 gridLayout.setVisibility(View.VISIBLE);
-                TextView result_weeklybk1_title = viewPager.findViewById(R.id.result_weeklybk1_title);
                 result_weeklybk1_title.setVisibility(View.VISIBLE);
                 gridLayout.addView(view);
                 c++;
@@ -709,16 +745,17 @@ public class CalculatorProcess {
             View view = View.inflate(context, R.layout.item_cal_img, null);
             ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
             TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
+            TextView item_weekly_tv = view.findViewById(R.id.item_weekly_tv);
             Picasso.get()
                     .load (characters_rss.getItemIcoByName(weeklybk2_temp[x],context))
                     .resize(128,128)
                     .error (R.drawable.paimon_lost)
                     .into (item_cal_img);
             item_cal_tv.setText(prettyCount(weeklybk2_temp_cnt[x]));
+            item_weekly_tv.setText(characters_rss.getLocaleTeaches(weeklybk2_temp[x],context));
             item_cal_img.setAdjustViewBounds(true);
             if(weeklybk2_temp_cnt[x] > 0){
                 gridLayout.setVisibility(View.VISIBLE);
-                TextView result_weeklybk2_title = viewPager.findViewById(R.id.result_weeklybk2_title);
                 result_weeklybk2_title.setVisibility(View.VISIBLE);
                 gridLayout.addView(view);
                 c++;
@@ -744,16 +781,17 @@ public class CalculatorProcess {
             View view = View.inflate(context, R.layout.item_cal_img, null);
             ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
             TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
+            TextView item_weekly_tv = view.findViewById(R.id.item_weekly_tv);
             Picasso.get()
                     .load (characters_rss.getItemIcoByName(weeklybk3_temp[x],context))
                     .resize(128,128)
                     .error (R.drawable.paimon_lost)
                     .into (item_cal_img);
             item_cal_tv.setText(prettyCount(weeklybk3_temp_cnt[x]));
+            item_weekly_tv.setText(characters_rss.getLocaleTeaches(weeklybk3_temp[x],context));
             item_cal_img.setAdjustViewBounds(true);
             if(weeklybk3_temp_cnt[x] > 0){
                 gridLayout.setVisibility(View.VISIBLE);
-                TextView result_weeklybk3_title = viewPager.findViewById(R.id.result_weeklybk3_title);
                 result_weeklybk3_title.setVisibility(View.VISIBLE);
                 gridLayout.addView(view);
                 c++;
@@ -796,7 +834,6 @@ public class CalculatorProcess {
             item_cal_img.setAdjustViewBounds(true);
             if(other_temp_cnt[x] > 0){
                 gridLayout.setVisibility(View.VISIBLE);
-                TextView result_other_title = viewPager.findViewById(R.id.result_other_title);
                 result_other_title.setVisibility(View.VISIBLE);
                 gridLayout.addView(view);
                 c++;
@@ -871,11 +908,7 @@ public class CalculatorProcess {
         exp_small = exp_small + small0;
     }
 
-
-    /**
-     * @param temp_item
-     * @param temp_count
-     */
+    /**EDIT WHEN ADD NEW ITEMS*/
     public void FindItemByName(ArrayList<String> temp_item, ArrayList<Integer> temp_count){
 
         if(temp_item.size() >= 5){
@@ -897,6 +930,8 @@ public class CalculatorProcess {
             if(temp_item.get(4).equals("原素花蜜")){addCountIntoVar(原素花蜜,temp_count,"COMMON");}
             if(temp_item.get(4).equals("史萊姆原漿")){addCountIntoVar(史萊姆原漿,temp_count,"COMMON");}
             if(temp_item.get(4).equals("名刀鐔")){addCountIntoVar(名刀鐔,temp_count,"COMMON");}
+            //add in 20210910
+            if(temp_item.get(4).equals("浮游晶化核")){addCountIntoVar(浮游晶化核,temp_count,"COMMON");}
 
             /** BOSS -> USING temp_count's pos 8 */
             if(temp_item.get(2).equals("常燃火種")){常燃火種 = addCountIntoVar(常燃火種,temp_count,"BOSS");}
@@ -910,6 +945,9 @@ public class CalculatorProcess {
             if(temp_item.get(2).equals("魔偶機心")){魔偶機心 = addCountIntoVar(魔偶機心,temp_count,"BOSS");}
             if(temp_item.get(2).equals("恒常機關之心")){恒常機關之心 = addCountIntoVar(恒常機關之心,temp_count,"BOSS");}
             if(temp_item.get(2).equals("陰燃之珠")){陰燃之珠 = addCountIntoVar(陰燃之珠,temp_count,"BOSS");}
+            //add in 20210910
+            if(temp_item.get(2).equals("雷霆數珠")){雷霆數珠 = addCountIntoVar(雷霆數珠,temp_count,"BOSS");}
+            if(temp_item.get(2).equals("排異之露")){排異之露 = addCountIntoVar(排異之露,temp_count,"BOSS");}
 
             /** LOCAL */
             if(temp_item.get(3).equals("小燈草")){小燈草 = addCountIntoVar(小燈草,temp_count,"LOCAL");}
@@ -932,6 +970,11 @@ public class CalculatorProcess {
             else if(temp_item.get(3).equals("緋櫻繡球")){緋櫻繡球 = addCountIntoVar(緋櫻繡球,temp_count,"LOCAL");}
             else if(temp_item.get(3).equals("鳴草")){鳴草 = addCountIntoVar(鳴草,temp_count,"LOCAL");}
             else if(temp_item.get(3).equals("晶化骨髓")){晶化骨髓 = addCountIntoVar(晶化骨髓,temp_count,"LOCAL");}
+            //add in 20210910
+            else if(temp_item.get(3).equals("天雲草實")){天雲草實 = addCountIntoVar(天雲草實,temp_count,"LOCAL");}
+            else if(temp_item.get(3).equals("血斛")){血斛 = addCountIntoVar(血斛,temp_count,"LOCAL");}
+            else if(temp_item.get(3).equals("幽燈蕈")){幽燈蕈 = addCountIntoVar(幽燈蕈,temp_count,"LOCAL");}
+            else if(temp_item.get(3).equals("珊瑚真珠")){珊瑚真珠 = addCountIntoVar(珊瑚真珠,temp_count,"LOCAL");}
 
 
         }
@@ -946,6 +989,8 @@ public class CalculatorProcess {
             if(temp_item.get(2).equals("原素花蜜")){addCountIntoVar(原素花蜜,temp_count,"T-COMMON");}
             if(temp_item.get(2).equals("史萊姆原漿")){addCountIntoVar(史萊姆原漿,temp_count,"T-COMMON");}
             if(temp_item.get(2).equals("名刀鐔")){addCountIntoVar(名刀鐔,temp_count,"T-COMMON");}
+            //add in 20210910
+            if(temp_item.get(2).equals("浮游晶化核")){addCountIntoVar(浮游晶化核,temp_count,"T-COMMON");}
 
             /** T-BOOK -> USING temp_count's pos 0-2 */
             if(temp_item.get(1).equals("「自由」的哲學")){addCountIntoVar(自由_的哲學,temp_count,"T-BOOK");}
@@ -970,6 +1015,10 @@ public class CalculatorProcess {
             if(temp_item.get(3).equals("龍王之冕")){龍王之冕 = addCountIntoVar(龍王之冕,temp_count,"T-BOSS");}
             if(temp_item.get(3).equals("血玉之枝")){血玉之枝 = addCountIntoVar(血玉之枝,temp_count,"T-BOSS");}
             if(temp_item.get(3).equals("鎏金之鱗")){鎏金之鱗 = addCountIntoVar(鎏金之鱗,temp_count,"T-BOSS");}
+            //add in 20210910
+            if(temp_item.get(3).equals("熔毀之刻")){熔毀之刻 = addCountIntoVar(熔毀之刻,temp_count,"T-BOSS");}
+            if(temp_item.get(3).equals("灰燼之心")){灰燼之心 = addCountIntoVar(灰燼之心,temp_count,"T-BOSS");}
+            if(temp_item.get(3).equals("獄火之蝶")){獄火之蝶 = addCountIntoVar(獄火之蝶,temp_count,"T-BOSS");}
 
         }
 

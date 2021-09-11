@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Genshin Spirit</string>
+
+    <!-- page_title_menu -->
+    <string name="title_char">Персонажи</string>
+    <string name="title_artifacts">Артефакты</string>
+    <string name="title_home">Главная</string>
+    <string name="title_weapons">Оружие</string>
+    <string name="title_settings">Настройки</string>
+
+    <!-- material_moment -->
+    <string name="dow_set1">Пн,Чт,Вс</string>
+    <string name="dow_set2">Вт,Пт,Вс</string>
+    <string name="dow_set3">Ср,Сб,Вс</string>
+
+    <!-- dow -->
+    <string name="monday">Пн</string>
+    <string name="tuesday">Вт</string>
+    <string name="wednesday">Ср</string>
+    <string name="thursday">Чт</string>
+    <string name="friday">Пт</string>
+    <string name="saturday">Сб</string>
+    <string name="sunday">Вс</string>
+
+    <!-- material_name -->
+    <string name="teaching_of_ballad">Учения о «Поэзии»</string>
+    <string name="teaching_of_diligence">Учения об «Усердии»</string>
+    <string name="teaching_of_freedom">Учения о «Свободе»</string>
+    <string name="teaching_of_gold">Учения о «Золоте»</string>
+    <string name="teaching_of_prosperity">Учения о «Процветании»</string>
+    <string name="teaching_of_resistance">Учения о «Борьбе»</string>
+    <string name="teachings_of_elegance">Учения об «Изяществе»</string>
+    <string name="teachings_of_light">Учения о «Свете»</string>
+    <string name="teachings_of_transience">Учения о «Бренности»</string>
+    <!-- add in 20210910 -->
+    <string name="guide_of_freedom">Guide of Freedom</string>
+    <string name="guide_of_gold">Guide of Gold</string>
+    <string name="guide_of_resistance">Guide of Resistance</string>
+    <string name="guide_of_prosperity">Guide of Prosperity</string>
+    <string name="guide_of_ballad">Guide of Ballad</string>
+    <string name="guide_of_diligence">Guide of Diligence</string>
+    <string name="guides_of_elegance">Guides of Elegance</string>
+    <string name="guides_of_transience">Guides of Transience</string>
+    <string name="guides_of_light">Guides of Light</string>
+    <string name="philosophies_of_freedom">Philosophies of Freedom</string>
+    <string name="philosophies_of_gold">Philosophies of Gold</string>
+    <string name="philosophies_of_resistance">Philosophies of Resistance</string>
+    <string name="philosophies_of_prosperity">Philosophies of Prosperity</string>
+    <string name="philosophies_of_ballad">Philosophies of Ballad</string>
+    <string name="philosophies_of_diligence">Philosophies of Diligence</string>
+    <string name="philosophiess_of_elegance">Philosophiess of Elegance</string>
+    <string name="philosophiess_of_transience">Philosophiess of Transience</string>
+    <string name="philosophiess_of_light">Philosophiess of Light</string>
+
+    <!-- base -->
+    <string name="tile_of_decarabians_tower">Плитка башни Декарабиана</string>
+    <string name="luminous_sands_from_guyun">Светящийся песок Гуюнь</string>
+    <string name="coral_branch_of_a_distant_sea">Коралловая ветвь внешних морей</string>
+    <string name="mist_veiled_lead_elixir">Свинцовая пилюля Заоблачного моря</string>
+    <string name="boreal_wolfs_milk_tooth">Молочный зуб арктического волка</string>
+    <string name="narukamis_wisdom">Мудрость Наруками</string>
+    <string name="grain_of_aerosiderite">Зерно чёрного сидерита</string>
+    <string name="fetters_of_the_dandelion_gladiator">Кандалы львиного клыка</string>
+    <string name="mask_of_the_wicked_lieutenant">Маска злого военачальника</string>
+
+    <!-- char_name -->
+    <string name="aloy">Элой</string>
+    <string name="kujou_sara">Кудзё Сара</string>
+    <string name="sangonomiya_kokomi">Сангономия Кокомиi</string>
+    <string name="raiden_shogun">Сёгун Райдэн</string>
+    <string name="sayu">Саю</string>
+    <string name="yoimiya">Ёимия</string>
+    <string name="kamisato_ayaka">Камисато Аяка</string>
+    <string name="kaedehara_kazuha">Каэдэхара Кадзуха</string>
+    <string name="yanfei">Янь Фэй</string>
+    <string name="eula">Эола</string>
+    <string name="rosaria">Розария</string>
+    <string name="xiao">Сяо</string>
+    <string name="hu_tao">Ху Тао</string>
+    <string name="ganyu">Гань Юй</string>
+    <string name="albedo">Альбедо</string>
+    <string name="zhongli">Чжун Ли</string>
+    <string name="xinyan">Синь Янь</string>
+    <string name="tartaglia">Тарталья</string>
+    <string name="diona">Диона</string>
+    <string name="xingqiu">Син Цю</string>
+    <string name="xiangling">Сян Лин</string>
+    <string name="venti">Венти</string>
+    <string name="traveler_anemo">Путешественник(Анемо)</string>
+    <string name="traveler_geo">Путешественник(Гео)</string>
+    <string name="traveler_electro">Путешественник(Электро)</string>
+    <string name="sucrose">Сахароза</string>
+    <string name="razor">Рэйзор</string>
+    <string name="qiqi">Ци Ци</string>
+    <string name="noelle">Ноэль</string>
+    <string name="ningguang">Нин Гуан</string>
+    <string name="mona">Мона</string>
+    <string name="lisa">Лиза</string>
+    <string name="klee">Кли</string>
+    <string name="keqing">Кэ Цин</string>
+    <string name="kaeya">Кэйа</string>
+    <string name="jean">Джинн</string>
+    <string name="fischl">Фишль</string>
+    <string name="diluc">Дилюк</string>
+    <string name="chongyun">Чун Юнь</string>
+    <string name="bennett">Беннет</string>
+    <string name="beidou">Бэй Доу</string>
+    <string name="barbara">Барбара</string>
+    <string name="amber">Эмбер</string>
+    <string name="unknown">неизвестный</string>
+
+    <!-- New Character in here-->
+    <string name="thoma">Тома</string>
+
+    <!-- char_info -->
+    <string name="search">Найти</string>
+    <string name="elements">Элементы</string>
+    <string name="rarity">Редкость</string>
+    <string name="filters">Фильтры</string>
+    <string name="mondstadt">Мондштадт</string>
+    <string name="liyue">Ли Юэ</string>
+    <string name="inazuma">Инадзума</string>
+    <string name="main_dps">Основной ДД</string>
+    <string name="support_dps">Саппорт ДД</string>
+    <string name="utility">Поддержка</string>
+    <string name="female">Женский</string>
+    <string name="male">Мужской</string>
+    <string name="set_by_player">Устанавливается игроком</string>
+    <string name="another_world">Другой мир</string>
+    <string name="district">Регион</string>
+    <string name="weapon">Оружие</string>
+    <string name="char_role">Роль</string>
+    <string name="sex">Пол</string>
+    <string name="birth">День рождения</string>
+    <string name="intro">Вступление</string>
+    <string name="battle_talent">Боевой талант</string>
+    <string name="noraml_atk">【Обычная атака】</string>
+    <string name="charged_atk">【Заряженая атака】</string>
+    <string name="plunging_atk">【Атака в падении】</string>
+    <string name="element_atk">【Элементальный навык】</string>
+    <string name="final_atk">【Взрыв стихии】</string>
+    <string name="basic_talent">Пассивный талант</string>
+    <string name="asc0_unlock">Полезная пассивка</string>
+    <string name="asc1_unlock">Разблокируется на 1 уровне возвышения</string>
+    <string name="asc4_unlock">Разблокируется на 4 уровне возвышения</string>
+    <string name="sof">Созвездие</string>
+    <string name="sof1">【Уровень 1】</string>
+    <string name="sof2">【Уровень 2】</string>
+    <string name="sof3">【Уровень 3】</string>
+    <string name="sof4">【Уровень 4】</string>
+    <string name="sof5">【Уровень 5】</string>
+    <string name="sof6">【Уровень 6】</string>
+    <string name="advice">Совет</string>
+    <string name="team_advice">Совет по отрядам</string>
+    <string name="weapon_advice">Совет по оружию</string>
+    <string name="art_advice">Совет по артефакта </string>
+
+    <!-- alarm -->
+    <string name="alarm_t1">Босс</string>
+    <string name="alarm_t2">Смола</string>
+    <string name="alarm_t3">Сокровища обители</string>
+    <string name="alarm_t4">Экспедиция</string>
+    <string name="alarm_t5">Свой</string>
+    <string name="alarm_time1">4 часа</string>
+    <string name="alarm_time2">8 часов</string>
+    <string name="alarm_time3">12 часов</string>
+    <string name="alarm_time4">20 часов</string>
+    <string name="jb_title">[Genshin Spirit] Привет ~ Пришло время выполнить миссию с боссом!</string>
+    <string name="common_info">Не забудьте сделать это перед сбросом</string>
+    <string name="daily_mission_title">[Genshin Spirit] Привет ~ Вы уже выполнили ежедневную миссию?</string>
+    <string name="dtbc_title">[Genshin Spirit] Привет ~ Сокровища обители уже заполнилась, напоминаю забрать их~</string>
+    <string name="ph_title">[Genshin Spirit] Привет! ~ Экспедиция уже завершена</string>
+    <string name="ph_info">Давай посмотри что он/она нашёл/нашла ~</string>
+    <string name="dtbc_info">Эм... Если они тебе не нужны, то я их заберу ~</string>
+    <string name="resin_title">[Genshin Spirit] Привет ~ Смола уже пополнилась, напоминаю использовать её~</string>
+    <string name="edit_title">Ред. напом.</string>
+    <string name="edit_type">Тип</string>
+    <string name="edit_time">Время</string>
+    <string name="edit_ph_time">Продолжительность экспедиции</string>
+    <string name="edit_adeptal_energy">Уровень силы Адептов</string>
+    <string name="edit_trust_rank">Уровень доверия</string>
+    <string name="edit_title_notif">Заголовок</string>
+    <string name="edit_info_notif">Информация</string>
+    <string name="edit_cd_25off">Сократить на 25%</string>
+    <string name="edit_use_notif">Использовать этот будильник</string>
+
+    <!-- server NOT NEED TO TRANSLATE-->
+    <string name="america_ser">America</string>
+    <string name="europe_ser">Europe</string>
+    <string name="asia_ser">Asia</string>
+    <string name="hk_tw_mo_ser">HK、TW、MO</string>
+    <string name="sky_land_ser">天空岛服</string>
+    <string name="world_tree">世界树服</string>
+    <string name="genshindb_link"><a href="https://github.com/Wolfteam/GenshinDb">GenshinDb Github</a></string>
+    <string name="genshinhelper_link"><a href="https://github.com/Vocaloid2048/GenshinHelper">Genshin Spirit Github</a></string>
+
+    <!-- inside ui -->
+    <string name="press_exit">Нажмите ещё раз чтобы выйти</string>
+    <string name="vote_title">Пожалуйста, оцените моё приложение~</string>
+    <string name="vote_info">Если вам нравится Genshin Spirit, Пожалуйста, найдите время, чтобы помочь комментарием ~ Твоя небольшая помощь здорово мне поможет, это не займёт много времени</string>
+    <string name="vote_help">Помочь</string>
+    <string name="vote_no">Нет</string>
+    <string name="vote_later">Позже</string>
+    <string name="copied">Скопировано</string>
+    <string name="pls_restart_app">Пожалуйста, перезапустите приложение</string>
+
+    <!-- cal_item_name -->
+    <string name="result">Результат</string>
+    <string name="curr_lvl">"Текущий лвл: "</string>
+    <string name="aim_lvl">"Необходимый лвл: "</string>
+    <string name="choose_lvl">Выберите уровнь</string>
+    <string name="already_dak_po">Уже возвышенно</string>
+    <string name="cal_also">Посчитать</string>
+    <string name="delete">Удалить</string>
+    <string name="choosed">"Выбрать : "</string>
+    <string name="caled_char_weapon_art">Расчетаные персонажи, оружие, артефакты</string>
+    <string name="char_lvls">Уровень персонажа</string>
+
+    <!-- Language (Don't translate)-->
+    <string name="zh_hk" translatable="false">繁體中文 (港、澳、台)</string>
+    <string name="en_us" translatable="false">English (US)</string>
+    <string name="ru" translatable="false">русский язык</string>
+    <string name="zh_cn" translatable="false">简体中文</string>
+
+    <!-- main_page -->
+    <string name="material_force">Материалы доступные сегодня</string>
+    <string name="char_asc_mater">Материалы возвышения персонажа</string>
+    <string name="weapon_asc_mater">Материалы возвышения оружия</string>
+    <string name="gaming_tools">Игровые инструменты</string>
+    <string name="calculator">Калькулятор</string>
+    <string name="daily_login">Ежедневные отметки</string>
+    <string name="map">Карта</string>
+    <string name="alarm">Будильник</string>
+
+    <!-- setting -->
+    <string name="bg_title">Тема фона</string>
+    <string name="light_theme">Светлая</string>
+    <string name="dark_theme">Тёмная</string>
+    <string name="sys_theme">Системная</string>
+    <string name="tv_title">Тема текста</string>
+    <string name="lang_title">Язык</string>
+    <string name="other_title">Другое</string>
+    <string name="acc_in_server">Расположение сервера</string>
+    <string name="about">Общая информация</string>
+    <string name="link">Ссылка</string>
+    <string name="about_title1">Отказ от ответственности</string>
+    <string name="about_info1">Это приложение не принадлежит miHoYo Co., Ltd. и не было одобрено ею. 原神小幫手 (Genshin Spirit) - это всего лишь приложение, которое предоставляет данные, разработанные фанатами.  Информация, представленная в этом приложении, предназначена только для справки. Genshin Spirit не гарантирует точность и полноту любой содержащейся в нем информации в какой-либо степени.</string>
+    <string name="about_title2">Заявление о конфиденциальности</string>
+    <string name="about_info2">Это приложение не будет собирать какие-либо личные данные о конфиденциальности, оно не может использоваться для идентификации и отслеживания пользователей и другой информации. При необходимости приложение будет собирать только уведомленные данные, такие как стек сбоя программы. Приведенные выше данные используются только для устранения уязвимостей приложений и улучшения взаимодействия с пользователем.</string>
+    <string name="about_title3">Заявление об использовании ресурсов</string>
+    <string name="about_info3">Это приложение разработано на основе Shiori for Genshin и направлено на то, чтобы отдать дань уважения Shiori for Genshin и его сотрудников, но оно еще не было признано его сотрудниками. Некоторые изображения этого приложения, данные взяты из проектов с открытым исходным кодом, ссылки будут прикреплены ниже. Поэтому часть интерфейса и верстка этого приложения очень похожи на Shiori for Genshin. Однако это приложение использует Java вместо Dart в качестве языка программирования, и оно будет работать только на Android и (или) любых поддерживающих форматах файлов .apk и .aab., или других платформ поддержуешие эти форма.</string>
+    <string name="about_title4">Заявление об открытом исходном коде проекта</string>
+    <string name="about_info4">Поскольку это приложение предназначено для того, чтобы отдать дань уважения Shiori for Genshin и его сотрудников, его исходный код будет открыт на Github. Кто угодно может просматривать, комментировать и даже сотрудничать. Я также приветствую любые предложения и приложения для этого приложения. Это приложение также будет доступно в Google Play. Если вы хотите прокомментировать этот проект, ошибки, новые функции и т. д., Вы также можете связаться по электронной почте или в Discord (QQ доступен для материкового Китая). И наконец, спасибо за понимание и поддержку.</string>
+
+
+    <!-- moy -->
+    <string name="date_jan">Янв</string>
+    <string name="date_feb">Фев</string>
+    <string name="date_mar">Мар</string>
+    <string name="date_apr">Апр</string>
+    <string name="date_may">Май</string>
+    <string name="date_jun">Июн</string>
+    <string name="date_jul">Июл</string>
+    <string name="date_aug">Авг</string>
+    <string name="date_sep">Сен</string>
+    <string name="date_oct">Окт</string>
+    <string name="date_nov">Ноя</string>
+    <string name="date_dec">Дек</string>
+
+    <!-- dom -->
+    <string name="date_1st">" 1-е"</string>
+    <string name="date_2nd">" 2-е"</string>
+    <string name="date_3rd">" 3-е"</string>
+    <string name="date_4th">" 4-е"</string>
+    <string name="date_5th">" 5-е"</string>
+    <string name="date_6th">" 6-е"</string>
+    <string name="date_7th">" 7-е"</string>
+    <string name="date_8th">" 8-е"</string>
+    <string name="date_9th">" 9-е"</string>
+    <string name="date_10th">" 10-е"</string>
+    <string name="date_11th">" 11-е"</string>
+    <string name="date_12th">" 12-е"</string>
+    <string name="date_13th">" 13-е"</string>
+    <string name="date_14th">" 14-е"</string>
+    <string name="date_15th">" 15-е"</string>
+    <string name="date_16th">" 16-е"</string>
+    <string name="date_17th">" 17-е"</string>
+    <string name="date_18th">" 18-е"</string>
+    <string name="date_19th">" 19-е"</string>
+    <string name="date_20th">" 20-е"</string>
+    <string name="date_21st">" 21-е"</string>
+    <string name="date_22nd">" 22-е"</string>
+    <string name="date_23rd">" 23-е"</string>
+    <string name="date_24th">" 24-е"</string>
+    <string name="date_25th">" 25-е"</string>
+    <string name="date_26th">" 26-е"</string>
+    <string name="date_27th">" 27-е"</string>
+    <string name="date_28th">" 28-е"</string>
+    <string name="date_29th">" 29-е"</string>
+    <string name="date_30th">" 30-е"</string>
+    <string name="date_31st">" 31-е"</string>
+
+
+</resources>
+

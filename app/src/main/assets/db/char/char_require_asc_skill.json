@@ -34,5 +34,10 @@
   {"name" : "Kaedehara Kazuha","crystal" : "自在松石","boss" : "魔偶機心","local" : "海靈芝","common" :  "攫金鴉印","book" : "「勤勞」的哲學","t_boss" : "鎏金之鱗"},
   {"name" : "Kamisato Ayaka","crystal" : "哀敘冰玉","boss" : "恒常機關之心","local" : "緋櫻繡球","common" :  "名刀鐔","book" : "「風雅」的哲學","t_boss" : "血玉之枝"},
   {"name" : "Yoimiya","crystal" : "燃願瑪瑙","boss" : "陰燃之珠","local" : "鳴草","common" :  "禁咒繪卷","book" : "「浮世」的哲學","t_boss" : "龍王之冕"},
-  {"name" : "Sayu","crystal" : "自在松石","boss" : "魔偶機心","local" : "晶化骨髓","common" :  "原素花蜜","book" : "「天光」的哲學","t_boss" : "鎏金之鱗"}
+  {"name" : "Sayu","crystal" : "自在松石","boss" : "魔偶機心","local" : "晶化骨髓","common" :  "原素花蜜","book" : "「天光」的哲學","t_boss" : "鎏金之鱗"},
+  {"name" : "Raiden Shogun","crystal" : "最勝紫晶","boss" : "雷霆數珠","local" : "天雲草實","common" :  "名刀鐔","book" : "「天光」的哲學","t_boss" : "熔毀之刻"},
+  {"name" : "Kujou Sara","crystal" : "最勝紫晶","boss" : "雷霆數珠","local" : "血斛","common" :  "不祥的面具","book" : "「風雅」的哲學","t_boss" : "灰燼之心"},
+  {"name" : "Aloy","crystal" : "哀敘冰玉","boss" : "晶凝之華","local" : "晶化骨髓","common" :  "浮游晶化核","book" : "「自由」的哲學","t_boss" : "熔毀之刻"},
+  {"name" : "Thoma","crystal" : "燃願瑪瑙","boss" : "陰燃之珠","local" : "幽燈蕈","common" :  "攫金鴉印","book" : "「浮世」的哲學","t_boss" : "獄火之蝶"},
+  {"name" : "Sangonomiya Kokomi","crystal" : "滌淨青金","boss" : "排異之露","local" : "珊瑚真珠","common" :  "浮游晶化核","book" : "「浮世」的哲學","t_boss" : "獄火之蝶"}
 ]

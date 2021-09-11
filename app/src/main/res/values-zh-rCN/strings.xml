@@ -33,6 +33,27 @@
     <string name="teachings_of_elegance">「优雅」的教导</string>
     <string name="teachings_of_light">「天光」的教导</string>
     <string name="teachings_of_transience">「浮世」的教导</string>
+    <!-- add in 20210910 -->
+    <string name="guide_of_freedom">「自由」的指引</string>
+    <string name="guide_of_gold">「黄金」的指引</string>
+    <string name="guide_of_resistance">「抗争」的指引</string>
+    <string name="guide_of_prosperity">「勤劳」的指引</string>
+    <string name="guide_of_ballad">「诗文」的指引</string>
+    <string name="guide_of_diligence">「繁荣」的指引</string>
+    <string name="guides_of_elegance">「风雅」的指引</string>
+    <string name="guides_of_transience">「浮世」的指引</string>
+    <string name="guides_of_light">「天光」的指引</string>
+    <string name="philosophies_of_freedom">「自由」的哲学</string>
+    <string name="philosophies_of_gold">「黄金」的哲学</string>
+    <string name="philosophies_of_resistance">「抗争」的哲学</string>
+    <string name="philosophies_of_prosperity">「勤劳」的哲学</string>
+    <string name="philosophies_of_ballad">「诗文」的哲学</string>
+    <string name="philosophies_of_diligence">「繁荣」的哲学</string>
+    <string name="philosophiess_of_elegance">「风雅」的哲学</string>
+    <string name="philosophiess_of_transience">「浮世」的哲学</string>
+    <string name="philosophiess_of_light">「天光」的哲学</string>
+
+    <!-- base -->
     <string name="tile_of_decarabians_tower">高塔孤王的破瓦</string>
     <string name="luminous_sands_from_guyun">孤云寒林的光砂</string>
     <string name="coral_branch_of_a_distant_sea">远海夷地的瑚枝</string>
@@ -88,6 +109,9 @@
     <string name="barbara">芭芭拉</string>
     <string name="amber">安柏</string>
     <string name="unknown">未知</string>
+
+    <!-- New Character in here-->
+    <string name="thoma">托马</string>
 
     <!-- char_info-->
     <string name="search">搜寻...</string>

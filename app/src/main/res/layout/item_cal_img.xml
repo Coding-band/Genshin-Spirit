@@ -23,4 +23,14 @@
         android:textAlignment="center"
         android:textColor="@color/tv_color"
         android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/item_weekly_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:singleLine="true"
+        android:textAlignment="center"
+        android:textColor="@color/tv_color"
+        android:textSize="12sp" />
 </LinearLayout>
