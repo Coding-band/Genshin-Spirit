@@ -43,6 +43,7 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RatingBar;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -65,6 +66,7 @@ import com.voc.genshin_helper.data.Characters_Rss;
 import com.voc.genshin_helper.data.ScreenSizeUtils;
 import com.voc.genshin_helper.data.Today_Material;
 import com.voc.genshin_helper.util.CalculatorProcess;
+import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.LangUtils;
 import com.voc.genshin_helper.util.LocaleHelper;
 import com.voc.genshin_helper.util.NumberPickerDialog;
@@ -143,6 +145,8 @@ public class MainActivity extends AppCompatActivity {
     RadioButton theme_night;
     RadioButton theme_default;
 
+    Switch other_exit_confirm ;
+
     String[] langList ;
     String[] serverList ;
 
@@ -150,7 +154,6 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<View> viewPager_List;
 
     View viewPager0, viewPager1, viewPager2, viewPager3, viewPager4;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -253,9 +256,17 @@ public class MainActivity extends AppCompatActivity {
             theme_light.setChecked(false);
         }
 
-        nav_view.setSelectedItemId(R.id.navigation_home);
-        viewPager.setCurrentItem(2);
+        if (sharedPreferences.getBoolean("PASS_JUST_CHANGED_THEME",false) == true) {
+            editor.putBoolean("PASS_JUST_CHANGED_THEME", false);
+            editor.apply();
+            nav_view.setSelectedItemId(R.id.navigation_settings);
+            viewPager.setCurrentItem(4);
 
+            setup_setting();
+        }else{
+            nav_view.setSelectedItemId(R.id.navigation_home);
+            viewPager.setCurrentItem(2);
+        }
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
@@ -501,235 +512,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case 4:
-                        check_spinner = 0;
-
-                        // THEME
-
-                        theme_light = viewPager4.findViewById(R.id.theme_light);
-                        theme_night = viewPager4.findViewById(R.id.theme_dark);
-                        theme_default = viewPager4.findViewById(R.id.theme_default);
-
-                        theme_light.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                theme_light.setChecked(true);
-                                theme_night.setChecked(false);
-                                theme_default.setChecked(false);
-
-                                editor.putBoolean("theme_light",true);
-                                editor.putBoolean("theme_night",false);
-                                editor.putBoolean("theme_default",false);
-                                editor.apply();
-
-                                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-                            }
-                        });
-                        theme_night.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                theme_light.setChecked(false);
-                                theme_night.setChecked(true);
-                                theme_default.setChecked(false);
-
-                                editor.putBoolean("theme_light",false);
-                                editor.putBoolean("theme_night",true);
-                                editor.putBoolean("theme_default",false);
-                                editor.apply();
-
-                                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-                            }
-                        });
-                        theme_default.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                theme_light.setChecked(false);
-                                theme_night.setChecked(false);
-                                theme_default.setChecked(true);
-
-                                editor.putBoolean("theme_light",false);
-                                editor.putBoolean("theme_night",false);
-                                editor.putBoolean("theme_default",true);
-                                editor.apply();
-
-                                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
-                            }
-                        });
-                        // Color
-                        ImageView color_bk1,	color_bk2,	color_bk3,	color_bk4,	color_bk5,	color_bk6,	color_bk7,	color_bk8,	color_bk9,	color_bk10,	color_bk11,	color_bk12,	color_bk13,	color_bk14,	color_bk15,	color_bk16,	color_bk17,	color_bk18;
-                        color_bk1	 = viewPager4.findViewById ( R.id.	color_block1);
-                        color_bk2	 = viewPager4.findViewById ( R.id.	color_block2);
-                        color_bk3	 = viewPager4.findViewById ( R.id.	color_block3);
-                        color_bk4	 = viewPager4.findViewById ( R.id.	color_block4);
-                        color_bk5	 = viewPager4.findViewById ( R.id.	color_block5);
-                        color_bk6	 = viewPager4.findViewById ( R.id.	color_block6);
-                        color_bk7	 = viewPager4.findViewById ( R.id.	color_block7);
-                        color_bk8	 = viewPager4.findViewById ( R.id.	color_block8);
-                        color_bk9	 = viewPager4.findViewById ( R.id.	color_block9);
-                        color_bk10	 = viewPager4.findViewById ( R.id.	color_block10);
-                        color_bk11	 = viewPager4.findViewById ( R.id.	color_block11);
-                        color_bk12	 = viewPager4.findViewById ( R.id.	color_block12);
-                        color_bk13	 = viewPager4.findViewById ( R.id.	color_block13);
-                        color_bk14	 = viewPager4.findViewById ( R.id.	color_block14);
-                        color_bk15	 = viewPager4.findViewById ( R.id.	color_block15);
-                        color_bk16	 = viewPager4.findViewById ( R.id.	color_block16);
-                        color_bk17	 = viewPager4.findViewById ( R.id.	color_block17);
-                        color_bk18	 = viewPager4.findViewById ( R.id.	color_block18);
-
-                        color_bk1.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk1,0); }});
-                        color_bk2.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk2,1); }});
-                        color_bk3.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk3,2); }});
-                        color_bk4.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk4,3); }});
-                        color_bk5.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk5,4); }});
-                        color_bk6.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk6,5); }});
-                        color_bk7.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk7,6); }});
-                        color_bk8.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk8,7); }});
-                        color_bk9.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk9,8); }});
-                        color_bk10.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk10,9); }});
-                        color_bk11.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk11,10); }});
-                        color_bk12.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk12,11); }});
-                        color_bk13.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk13,12); }});
-                        color_bk14.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk14,13); }});
-                        color_bk15.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk15,14); }});
-                        color_bk16.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk16,15); }});
-                        color_bk17.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk17,16); }});
-                        color_bk18.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk18,17); }});
-
-
-
-                        // Translate
-                        langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru)};
-                        ArrayAdapter lang_aa = new ArrayAdapter(context,R.layout.spinner_item,langList);
-                        lang_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
-
-                        Spinner lang_sp = viewPager4.findViewById(R.id.lang_spinner);
-                        lang_sp.setAdapter(lang_aa);
-                        lang_sp.setSelection(sharedPreferences.getInt("curr_lang_pos",2));
-                        lang_sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                            @Override
-                            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                                // https://blog.csdn.net/pigdreams/article/details/81277110
-                                // https://stackoverflow.com/questions/13397933/android-spinner-avoid-onitemselected-calls-during-initialization
-                                if(check_spinner >0){
-                                    if(position == 0){
-                                        editor.putString("curr_lang","zh-HK");
-                                        editor.putInt("curr_lang_pos",0);
-                                        editor.apply();
-                                        LangUtils.getAttachBaseContext(context,0);
-                                        Toast.makeText(context, context.getString(R.string.pls_restart_app), Toast.LENGTH_SHORT).show();
-                                    }else if(position == 1){
-                                        editor.putString("curr_lang","zh-CN");
-                                        editor.putInt("curr_lang_pos",1);
-                                        editor.apply();
-                                        LangUtils.getAttachBaseContext(context,1);
-                                        Toast.makeText(context, context.getString(R.string.pls_restart_app), Toast.LENGTH_SHORT).show();
-                                    }else if(position == 2){
-                                        editor.putString("curr_lang","en-US");
-                                        editor.putInt("curr_lang_pos",2);
-                                        editor.apply();
-                                        LangUtils.getAttachBaseContext(context,2);
-                                        Toast.makeText(context, context.getString(R.string.pls_restart_app), Toast.LENGTH_SHORT).show();
-                                    }else if(position == 3){
-                                        editor.putString("curr_lang","ru-RU");
-                                        editor.putInt("curr_lang_pos",3);
-                                        editor.apply();
-                                        LangUtils.getAttachBaseContext(context,3);
-                                        Toast.makeText(context, context.getString(R.string.pls_restart_app), Toast.LENGTH_SHORT).show();
-                                    }
-                                }
-                                check_spinner = check_spinner +1;
-                            }
-
-                            @Override
-                            public void onNothingSelected(AdapterView<?> parent) {
-
-                            }
-                        });
-
-                        TextView contact_link1 = viewPager4.findViewById(R.id.contact_link1);
-                        TextView contact_link2 = viewPager4.findViewById(R.id.contact_link2);
-                        TextView contact_link3 = viewPager4.findViewById(R.id.contact_link3);
-                        TextView contact_link4 = viewPager4.findViewById(R.id.contact_link4);
-                        TextView contact_link5 = viewPager4.findViewById(R.id.contact_link5);
-
-                        contact_link1.setMovementMethod(LinkMovementMethod.getInstance());
-                        contact_link2.setMovementMethod(LinkMovementMethod.getInstance());
-                        contact_link3.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                //Voc-夜芷冰#2512
-                                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                                ClipData clip = ClipData.newPlainText("Discord ID", "Voc-夜芷冰#2512");
-                                clipboard.setPrimaryClip(clip);
-                                Toast.makeText(context, getString(R.string.copied), Toast.LENGTH_SHORT).show();
-                            }
-                        });
-                        contact_link4.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                                        "mailto","voc.app.programmer@gmail.com", null));
-                                emailIntent.putExtra(Intent.EXTRA_TITLE, "Advice of Genshin Helper");
-                                emailIntent.putExtra(Intent.EXTRA_TEXT, "Hi, ");
-                                startActivity(Intent.createChooser(emailIntent, "Advice of Genshin Helper"));
-                                //voc.app.programmer@gmail.com
-                            }
-                        });
-                        contact_link5.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-                                ClipData clip = ClipData.newPlainText("QQ UID", "822001886");
-                                clipboard.setPrimaryClip(clip);
-                                Toast.makeText(context, getString(R.string.copied), Toast.LENGTH_SHORT).show();
-                            }
-                        });
-
-                        // Other -> Server Location
-
-                        ArrayAdapter server_aa = new ArrayAdapter(context,R.layout.spinner_item,serverList);
-                        server_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
-
-                        Spinner server_spinner = viewPager4.findViewById(R.id.server_spinner);
-                        server_spinner.setAdapter(server_aa);
-                        server_spinner.setSelection(sharedPreferences.getInt("serverPos",0));
-
-                        server_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                            @Override
-                            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                                if(position == 0){
-                                    editor.putString("serverLocation","America");
-                                    editor.apply();
-                                }else if (position == 1){
-                                    editor.putString("serverLocation","Europe");
-                                    editor.apply();
-                                }else if (position == 2){
-                                    editor.putString("serverLocation","Asia");
-                                    editor.apply();
-                                }else if (position == 3){
-                                    editor.putString("serverLocation","HK_TW_MO");
-                                    editor.apply();
-                                }else if (position == 4){
-                                    editor.putString("serverLocation","天空島");
-                                    editor.apply();
-                                }else if (position == 5){
-                                    editor.putString("serverLocation","世界樹");
-                                    editor.apply();
-                                }
-
-                                editor.putInt("serverPos",position);
-                                editor.apply();
-                                getDOW();
-                                char_reload();
-                                weapon_reload();
-                                cbg();
-                            }
-
-                            @Override
-                            public void onNothingSelected(AdapterView<?> parent) {
-
-                            }
-                        });
-
+                        setup_setting();
                         break;
 
                 }
@@ -764,6 +547,265 @@ public class MainActivity extends AppCompatActivity {
                     return true;
                 }
                 return false;
+            }
+        });
+    }
+
+    private void setup_setting() {
+        check_spinner = 0;
+
+        // THEME
+
+        theme_light = viewPager4.findViewById(R.id.theme_light);
+        theme_night = viewPager4.findViewById(R.id.theme_dark);
+        theme_default = viewPager4.findViewById(R.id.theme_default);
+
+        theme_light.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                theme_light.setChecked(true);
+                theme_night.setChecked(false);
+                theme_default.setChecked(false);
+
+                editor.putBoolean("theme_light",true);
+                editor.putBoolean("theme_night",false);
+                editor.putBoolean("theme_default",false);
+                editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
+                editor.apply();
+
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            }
+        });
+        theme_night.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                theme_light.setChecked(false);
+                theme_night.setChecked(true);
+                theme_default.setChecked(false);
+
+                editor.putBoolean("theme_light",false);
+                editor.putBoolean("theme_night",true);
+                editor.putBoolean("theme_default",false);
+                editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
+                editor.apply();
+
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            }
+        });
+        theme_default.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                theme_light.setChecked(false);
+                theme_night.setChecked(false);
+                theme_default.setChecked(true);
+
+                editor.putBoolean("theme_light",false);
+                editor.putBoolean("theme_night",false);
+                editor.putBoolean("theme_default",true);
+                editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
+                editor.apply();
+
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+            }
+        });
+        // Color
+        ImageView color_bk1,	color_bk2,	color_bk3,	color_bk4,	color_bk5,	color_bk6,	color_bk7,	color_bk8,	color_bk9,	color_bk10,	color_bk11,	color_bk12,	color_bk13,	color_bk14,	color_bk15,	color_bk16,	color_bk17,	color_bk18;
+        color_bk1	 = viewPager4.findViewById ( R.id.	color_block1);
+        color_bk2	 = viewPager4.findViewById ( R.id.	color_block2);
+        color_bk3	 = viewPager4.findViewById ( R.id.	color_block3);
+        color_bk4	 = viewPager4.findViewById ( R.id.	color_block4);
+        color_bk5	 = viewPager4.findViewById ( R.id.	color_block5);
+        color_bk6	 = viewPager4.findViewById ( R.id.	color_block6);
+        color_bk7	 = viewPager4.findViewById ( R.id.	color_block7);
+        color_bk8	 = viewPager4.findViewById ( R.id.	color_block8);
+        color_bk9	 = viewPager4.findViewById ( R.id.	color_block9);
+        color_bk10	 = viewPager4.findViewById ( R.id.	color_block10);
+        color_bk11	 = viewPager4.findViewById ( R.id.	color_block11);
+        color_bk12	 = viewPager4.findViewById ( R.id.	color_block12);
+        color_bk13	 = viewPager4.findViewById ( R.id.	color_block13);
+        color_bk14	 = viewPager4.findViewById ( R.id.	color_block14);
+        color_bk15	 = viewPager4.findViewById ( R.id.	color_block15);
+        color_bk16	 = viewPager4.findViewById ( R.id.	color_block16);
+        color_bk17	 = viewPager4.findViewById ( R.id.	color_block17);
+        color_bk18	 = viewPager4.findViewById ( R.id.	color_block18);
+
+        color_bk1.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk1,0); }});
+        color_bk2.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk2,1); }});
+        color_bk3.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk3,2); }});
+        color_bk4.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk4,3); }});
+        color_bk5.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk5,4); }});
+        color_bk6.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk6,5); }});
+        color_bk7.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk7,6); }});
+        color_bk8.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk8,7); }});
+        color_bk9.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk9,8); }});
+        color_bk10.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk10,9); }});
+        color_bk11.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk11,10); }});
+        color_bk12.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk12,11); }});
+        color_bk13.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk13,12); }});
+        color_bk14.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk14,13); }});
+        color_bk15.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk15,14); }});
+        color_bk16.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk16,15); }});
+        color_bk17.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk17,16); }});
+        color_bk18.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk18,17); }});
+
+
+
+        // Translate
+        langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp)};
+        ArrayAdapter lang_aa = new ArrayAdapter(context,R.layout.spinner_item,langList);
+        lang_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
+
+        Spinner lang_sp = viewPager4.findViewById(R.id.lang_spinner);
+        lang_sp.setAdapter(lang_aa);
+        lang_sp.setSelection(sharedPreferences.getInt("curr_lang_pos",2));
+        lang_sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // https://blog.csdn.net/pigdreams/article/details/81277110
+                // https://stackoverflow.com/questions/13397933/android-spinner-avoid-onitemselected-calls-during-initialization
+                if(check_spinner >0){
+                    if(position == 0){
+                        editor.putString("curr_lang","zh-HK");
+                        editor.putInt("curr_lang_pos",position);
+                        editor.apply();
+                        LangUtils.getAttachBaseContext(context,position);
+                        Toast.makeText(context, context.getString(R.string.pls_restart_app), Toast.LENGTH_SHORT).show();
+                    }else if(position == 1){
+                        editor.putString("curr_lang","zh-CN");
+                        editor.putInt("curr_lang_pos",position);
+                        editor.apply();
+                        LangUtils.getAttachBaseContext(context,position);
+                        Toast.makeText(context, context.getString(R.string.pls_restart_app), Toast.LENGTH_SHORT).show();
+                    }else if(position == 2){
+                        editor.putString("curr_lang","en-US");
+                        editor.putInt("curr_lang_pos",position);
+                        editor.apply();
+                        LangUtils.getAttachBaseContext(context,position);
+                        Toast.makeText(context, context.getString(R.string.pls_restart_app), Toast.LENGTH_SHORT).show();
+                    }else if(position == 3){
+                        editor.putString("curr_lang","ru-RU");
+                        editor.putInt("curr_lang_pos",position);
+                        editor.apply();
+                        LangUtils.getAttachBaseContext(context,position);
+                        Toast.makeText(context, context.getString(R.string.pls_restart_app), Toast.LENGTH_SHORT).show();
+                    }else if(position == 4){
+                        editor.putString("curr_lang","ja-JP");
+                        editor.putInt("curr_lang_pos",position);
+                        editor.apply();
+                        LangUtils.getAttachBaseContext(context,position);
+                        Toast.makeText(context, context.getString(R.string.pls_restart_app), Toast.LENGTH_SHORT).show();
+                    }
+                }
+                check_spinner = check_spinner +1;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        // About
+        TextView contact_link1 = viewPager4.findViewById(R.id.contact_link1);
+        TextView contact_link2 = viewPager4.findViewById(R.id.contact_link2);
+        TextView contact_link3 = viewPager4.findViewById(R.id.contact_link3);
+        TextView contact_link4 = viewPager4.findViewById(R.id.contact_link4);
+        TextView contact_link5 = viewPager4.findViewById(R.id.contact_link5);
+
+        contact_link1.setMovementMethod(LinkMovementMethod.getInstance());
+        contact_link2.setMovementMethod(LinkMovementMethod.getInstance());
+        contact_link3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Voc-夜芷冰#2512
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("Discord ID", "Voc-夜芷冰#2512");
+                clipboard.setPrimaryClip(clip);
+                Toast.makeText(context, getString(R.string.copied), Toast.LENGTH_SHORT).show();
+            }
+        });
+        contact_link4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                        "mailto","voc.app.programmer@gmail.com", null));
+                emailIntent.putExtra(Intent.EXTRA_TITLE, "Advice of Genshin Helper");
+                emailIntent.putExtra(Intent.EXTRA_TEXT, "Hi, ");
+                startActivity(Intent.createChooser(emailIntent, "Advice of Genshin Helper"));
+                //voc.app.programmer@gmail.com
+            }
+        });
+        contact_link5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("QQ UID", "822001886");
+                clipboard.setPrimaryClip(clip);
+                Toast.makeText(context, getString(R.string.copied), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Other -> Server Location
+
+        ArrayAdapter server_aa = new ArrayAdapter(context,R.layout.spinner_item,serverList);
+        server_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
+
+        Spinner server_spinner = viewPager4.findViewById(R.id.server_spinner);
+        server_spinner.setAdapter(server_aa);
+        server_spinner.setSelection(sharedPreferences.getInt("serverPos",0));
+
+        server_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if(position == 0){
+                    editor.putString("serverLocation","America");
+                    editor.apply();
+                }else if (position == 1){
+                    editor.putString("serverLocation","Europe");
+                    editor.apply();
+                }else if (position == 2){
+                    editor.putString("serverLocation","Asia");
+                    editor.apply();
+                }else if (position == 3){
+                    editor.putString("serverLocation","HK_TW_MO");
+                    editor.apply();
+                }else if (position == 4){
+                    editor.putString("serverLocation","天空島");
+                    editor.apply();
+                }else if (position == 5){
+                    editor.putString("serverLocation","世界樹");
+                    editor.apply();
+                }
+
+                editor.putInt("serverPos",position);
+                editor.apply();
+                getDOW();
+                char_reload();
+                weapon_reload();
+                cbg();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        //Other -> Switchs
+        other_exit_confirm = viewPager4.findViewById(R.id.other_exit_confirm);
+        SharedPreferences sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
+        boolean isExitConfirmEnable = sharedPreferences.getBoolean("isExitConfirmEnable",true);
+        other_exit_confirm.setChecked(isExitConfirmEnable);
+        other_exit_confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(other_exit_confirm.isChecked() == false){
+                    editor.putBoolean("isExitConfirmEnable",false);
+                    editor.apply();
+                }else if(other_exit_confirm.isChecked() == true){
+                    editor.putBoolean("isExitConfirmEnable",true);
+                    editor.apply();
+                }
             }
         });
     }
@@ -970,6 +1012,7 @@ public class MainActivity extends AppCompatActivity {
 
                 WebSettings webSettings = webview.getSettings();
                 webSettings.setJavaScriptEnabled(true);
+                webSettings.setDomStorageEnabled(true);
                 webview.setWebViewClient(new WebViewClient() {
                     @Override
                     public void onPageFinished(WebView view, String url)
@@ -986,7 +1029,7 @@ public class MainActivity extends AppCompatActivity {
 
                     };
                 });
-                webview.loadUrl("https://webstatic-sea.mihoyo.com/app/ys-map-sea/index.html?utm_source=hoyolab&lang=zh-tw#/map/2");
+                webview.loadUrl("https://webstatic-sea.mihoyo.com/app/ys-map-sea/index.html?utm_source=hoyolab&lang=en-us#/map/2");
 
                 back_btn.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -1243,51 +1286,11 @@ public class MainActivity extends AppCompatActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
         if(keyCode==KeyEvent.KEYCODE_BACK) {
-            if(exit == 0){
-                LayoutInflater inflater = getLayoutInflater();
-                View layout = inflater.inflate(R.layout.item_toast,findViewById(R.id.toast_frame));
-                SharedPreferences sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
-
-                String color_hex = sharedPreferences.getString("theme_color_hex","#FF5A5A"); // Must include #
-                ColorStateList myList = new ColorStateList(
-                        new int[][]{
-                                new int[]{android.R.attr.state_pressed},
-                                new int[]{-android.R.attr.state_checked},
-                                new int[]{android.R.attr.state_checked},
-                        },
-                        new int[] {
-                                Color.parseColor(color_hex),
-                                Color.parseColor(color_hex),
-                                Color.parseColor(color_hex)
-                        }
-                );
-                ColorStateList myListD = new ColorStateList(
-                        new int[][]{
-                                new int[]{android.R.attr.state_pressed},
-                                new int[]{-android.R.attr.state_checked},
-                                new int[]{android.R.attr.state_checked},
-                        },
-                        new int[] {
-                                getResources().getColor(R.color.tv_anti_color),
-                                getResources().getColor(R.color.tv_anti_color),
-                                getResources().getColor(R.color.tv_anti_color)
-                        }
-                );
-
-                if(color_hex.toUpperCase().equals("#FFFFFFFF")){
-                    color_hex = "#000000";
-                }
-
-                TextView text = (TextView) layout.findViewById(R.id.toast_tv);
-                text.setText(getString(R.string.press_exit));
-                text.setText(getString(R.string.press_exit));
-                text.setTextColor(getResources().getColor(R.color.tv_anti_color));
-                text.setBackgroundTintList(myList);
-                Toast toast = new Toast(getApplicationContext());
-                toast.setGravity(Gravity.BOTTOM, 0, 150);
-                toast.setDuration(Toast.LENGTH_LONG);
-                toast.setView(layout);
-                toast.show();
+            SharedPreferences sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
+            boolean isExitConfirmEnable = sharedPreferences.getBoolean("isExitConfirmEnable",true);
+            if(exit == 0 && isExitConfirmEnable == true){
+                CustomToast customToast = new CustomToast();
+                customToast.toast(context,this,getString(R.string.press_exit));
                 exit = exit +1;
             }else {
                 exit = 0;

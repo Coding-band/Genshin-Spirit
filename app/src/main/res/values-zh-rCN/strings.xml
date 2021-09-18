@@ -293,6 +293,10 @@
     <string name="date_oct">十月</string>
     <string name="date_nov">十一月</string>
     <string name="date_dec">十二月</string>
+    <string name="thanks_title">鸣谢</string>
+    <string name="translator_title">翻译员</string>
+    <string name="beta_tester_title">测试人员</string>
+    <string name="thanks_intro">因为有你们的帮忙，原神小帮手才得以更完善</string>
 
 </resources>
 

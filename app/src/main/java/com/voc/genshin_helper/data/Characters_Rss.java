@@ -27,7 +27,7 @@ public class Characters_Rss {
         if (str.equals("Mondstadt")){return context.getString(R.string.mondstadt);}
         else if (str.equals("Liyue")){return context.getString(R.string.liyue);}
         else if (str.equals("Inazuma")){return context.getString(R.string.inazuma);}
-        else if (str.equals("Another World")){return context.getString(R.string.inazuma);}
+        else if (str.equals("Another World")){return context.getString(R.string.another_world);}
         /** Char's Role Name*/
         else if (str.equals("Main_DPS")){return context.getString(R.string.main_dps);}
         else if (str.equals("Support_DPS")){return context.getString(R.string.support_dps);}
@@ -336,6 +336,7 @@ public class Characters_Rss {
     }
 
     public String getLocaleBirth (String str,Context context) {
+        if(!str.equals("SET_BY_PLAYER")){
         String[] date = str.split("/");
         int month = Integer.parseInt(date[0]);
         int day = Integer.parseInt(date[1]);
@@ -388,5 +389,6 @@ public class Characters_Rss {
 
 
         return returns;
+        }else return context.getString(R.string.set_by_player);
     }
 }

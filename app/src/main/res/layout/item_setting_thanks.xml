@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/helper_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="@color/page_bg"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/helper_ico"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/ic_baseline_g_translate_24" />
+
+                <TextView
+                    android:id="@+id/helper_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_weight="0"
+                    android:gravity="center|left"
+                    android:paddingLeft="8dp"
+                    android:text="@string/thanks_title"
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/helper_thanks_intro"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/thanks_intro"
+                android:textAlignment="center"
+                android:textColor="@color/tv_color"
+                android:textSize="14sp"
+                android:textStyle="italic" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/helper_translator_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/translator_title"
+                    android:textColor="@color/tv_color"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/helper_en_us_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:text="@string/en_us"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="12dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/jf_openhuninn"
+                            android:text="★ Knowledgegod#2046" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/jf_openhuninn"
+                            android:text="★ Luke Tin#0619" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/helper_ru_ru_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:text="@string/ru_ru"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="12dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/jf_openhuninn"
+                            android:text="★ SipTik#0004" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/jf_openhuninn"
+                            android:text="★ KillGor#1421" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/helper_ja_jp_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:text="@string/ja_jp"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="12dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="★ 𝕽𝖚𝖗𝖎#3080"
+                            android:fontFamily="@font/jf_openhuninn" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:text="★ KillGor#1421"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/helper_beta_tester_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/beta_tester_title"
+                    android:textColor="@color/tv_color"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    android:text="★ 賴。普拿疼。潘志遠 醫生#6436" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

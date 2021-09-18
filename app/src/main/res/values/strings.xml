@@ -220,8 +220,9 @@
     <!-- Language (Don't translate)-->
     <string name="zh_hk" translatable="false">繁體中文 (港、澳、台)</string>
     <string name="en_us" translatable="false">English (US)</string>
-    <string name="ru" translatable="false">русский язык</string>
+    <string name="ru_ru" translatable="false">русский</string>
     <string name="zh_cn" translatable="false">简体中文</string>
+    <string name="ja_jp" translatable="false">日本語</string>
 
     <!-- main_page -->
     <string name="material_force">Material Force</string>
@@ -252,6 +253,11 @@
     <string name="about_info3">This application is developed based on Shiori for Genshin and aims to pay tribute to Shiori for Genshin and its collaborators, but it has not yet been recognized by its collaborators. Some pictures of this application, data are taken from open source projects, and links will be attached below. Therefore, part of the interface and layout of this application is very similar to Shiori for Genshin. However, this application uses Java instead of Dart as the programming language, and it will only work on Android or/and any supporting .apk and .aab file formats. Installation and operation in the device.</string>
     <string name="about_title4">Project open source statement</string>
     <string name="about_info4">Since this application is intended to pay tribute to Shiori for Genshin and its collaborators, it will be open sourced on Github. Anyone can view, provide comments, and even collaborate. I also welcome any suggestions and applications for this application. This application will also be available on Google Play. If you want to comment on this project, bugs, new features, etc., you are also welcome to contact by E-mail or Discord (QQ is available for mainland China). Finally, thank you for your understanding and support.</string>
+    <!-- add in 20210918-->
+    <string name="thanks_title">Special Thanks</string>
+    <string name="translator_title">Translator</string>
+    <string name="beta_tester_title">Beta Testers</string>
+    <string name="thanks_intro">Because of your help, Genshin Spirit can be more perfect</string>
 
     <!-- moy -->
     <string name="date_jan">Jan</string>

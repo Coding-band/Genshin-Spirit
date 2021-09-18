@@ -220,7 +220,6 @@
     <!-- Language (Don't translate)-->
     <string name="zh_hk" translatable="false">繁體中文 (港、澳、台)</string>
     <string name="en_us" translatable="false">English (US)</string>
-    <string name="ru" translatable="false">русский язык</string>
     <string name="zh_cn" translatable="false">简体中文</string>
 
     <!-- main_page -->
@@ -300,6 +299,10 @@
     <string name="date_29th">" 29-е"</string>
     <string name="date_30th">" 30-е"</string>
     <string name="date_31st">" 31-е"</string>
+    <string name="thanks_title">Спасибо</string>
+    <string name="translator_title">Переводчики</string>
+    <string name="beta_tester_title">тестеры</string>
+    <string name="thanks_intro">Благодаря вашей помощи Genshin Spirit может стать более совершенным.</string>
 
 
 </resources>

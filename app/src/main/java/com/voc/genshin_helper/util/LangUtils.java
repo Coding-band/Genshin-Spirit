@@ -32,24 +32,27 @@ import java.util.Locale;
  * 根据语言的整数值来匹配对应的Locale对象，却省值为简体中文Locale.SIMPLIFIED_CHINESE
  */
 public class LangUtils {
-    private static final int TRADITION_CHINESE = 0;
-    private static final int SIMPLE_CHINESE = 1;
-    private static final int ENGLISH = 2;
-    private static final int RUSSIAN = 3;
+    private static final int zh_HK = 0;
+    private static final int zh_CH = 1;
+    private static final int en_US = 2;
+    private static final int ru_RU = 3;
+    private static final int ja_JP = 4;
     private static final int FOLLOW_SYSTEM = -1;
 
     public static Locale getCurrentLang(int userLang) {
         switch (userLang) {
             case FOLLOW_SYSTEM:
                 return Locale.getDefault();
-            case TRADITION_CHINESE:
+            case zh_HK:
                 return Locale.TRADITIONAL_CHINESE;
-            case SIMPLE_CHINESE:
+            case zh_CH:
                 return Locale.SIMPLIFIED_CHINESE;
-            case ENGLISH:
+            case en_US:
                 return Locale.US;
-            case RUSSIAN:
+            case ru_RU:
                 return new Locale("ru","RU");
+            case ja_JP:
+                return Locale.JAPAN;
             default:
                 return Locale.US;
 

@@ -291,5 +291,9 @@
     <string name="date_nov">十一月</string>
     <string name="date_dec">十二月</string>
     <string name="thoma">托馬</string>
+    <string name="thanks_title">鳴謝</string>
+    <string name="translator_title">翻譯員</string>
+    <string name="beta_tester_title">測試人員</string>
+    <string name="thanks_intro">因為有你們的幫忙，原神小幫手才得以更完善</string>
 
 </resources>
