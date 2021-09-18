@@ -162,6 +162,8 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
         viewPager.setAdapter(new MyViewPagerAdapter(viewPager_List));
         nav_view.setSelectedItemId(R.id.nav_char);
+        viewPager.setCurrentItem(0);
+
         sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
         calShared = getSharedPreferences("cal_ui",MODE_PRIVATE);
         editor = sharedPreferences.edit();
@@ -373,15 +375,19 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         nav_view.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull @NotNull MenuItem item) {
-                viewPager.setCurrentItem(0);
+                // REMEMBER TO return true; thx !!!
                 if (item.getItemId() == R.id.nav_char){
                     viewPager.setCurrentItem(0);
+                    return true;
                 }else if (item.getItemId() == R.id.nav_artifacts){
                     viewPager.setCurrentItem(1);
+                    return true;
                 }else if (item.getItemId() == R.id.nav_weapons){
                     viewPager.setCurrentItem(2);
+                    return true;
                 }else if (item.getItemId() == R.id.nav_result){
                     viewPager.setCurrentItem(3);
+                    return true;
                 }
                 return false;
             }
@@ -404,10 +410,10 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                        break;
 
                     case 2:
-
                         break;
 
                     case 3:
+                        nav_view.setSelectedItemId(R.id.nav_result);
                         CalculatorProcess calculatorProcess = new CalculatorProcess();
                         calculatorProcess.setVP(viewPager,viewPager3);
                         calculatorProcess.setup(context,choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList);

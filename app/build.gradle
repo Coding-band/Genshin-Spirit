@@ -41,10 +41,11 @@ android {
                 versionNameSuffix "-prod" + " ("+code+")"
                 applicationId "com.voc.genshin_spirit_gp"
             }
-            discord {
+            // For Translator and Beta Tester
+            beta {
                 versionCode = code
-                versionNameSuffix "-dc" + " ("+code+")"
-                applicationId "com.voc.genshin_spirit_dc"
+                versionNameSuffix "-beta" + " ("+code+")"
+                applicationId "com.voc.genshin_spirit_beta"
             }
         }
     }
