@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Package C:/Users/Vocaloid2048/Desktop/File/App/GenshinHelper/app/src/main/res/values-ja-rJP/strings.xml was
+  ~ Created by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2021 Xectorda 版權所有
+  -->
+
 <resources>
     <string name="app_name">Genshin Spirit</string>
 
     <!-- page_title_menu -->
     <string name="title_char">キャラクター</string>
-    <string name="title_artifacts">アーティファクト</string>
-    <string name="title_home">家</string>
-    <string name="title_weapons">兵器</string>
+    <string name="title_artifacts">聖遺物</string>
+    <string name="title_home">ホーム</string>
+    <string name="title_weapons">武器</string>
     <string name="title_settings">設定</string>
 
     <!-- material_moment -->
-    <string name="dow_set1">毎週月曜日，木曜日，日曜日</string>
-    <string name="dow_set2">毎週火曜日、金曜日、日曜日</string>
-    <string name="dow_set3">毎週水曜日、土曜日、日曜日</string>
+    <string name="dow_set1">月,木,日</string>
+    <string name="dow_set2">火,金,日</string>
+    <string name="dow_set3">水,土,日</string>
 
     <!-- dow -->
     <string name="monday">月曜日</string>
@@ -24,228 +30,234 @@
     <string name="sunday">日曜日</string>
 
     <!-- material_name -->
-    <string name="teaching_of_ballad">Teachings of Ballad</string>
-    <string name="teaching_of_diligence">Teachings of Diligence</string>
-    <string name="teaching_of_freedom">Teachings of Freedom</string>
-    <string name="teaching_of_gold">Teachings of Gold</string>
-    <string name="teaching_of_prosperity">Teachings of Prosperity</string>
-    <string name="teaching_of_resistance">Teachings of Resistance</string>
-    <string name="teachings_of_elegance">Teachings of Elegance</string>
-    <string name="teachings_of_light">Teachings of Light</string>
-    <string name="teachings_of_transience">Teachings of Transience</string>
+    <string name="teaching_of_ballad">「詩文」の教え</string>
+    <string name="teaching_of_diligence">「勤労」の教え</string>
+    <string name="teaching_of_freedom">「自由」</string>
+    <string name="teaching_of_gold">「黄金」の教え</string>
+    <string name="teaching_of_prosperity">「繁栄」の教え</string>
+    <string name="teaching_of_resistance">「抗争」の教え</string>
+    <string name="teachings_of_elegance">「風雅」の教え</string>
+    <string name="teachings_of_light">「天光」の教え</string>
+    <string name="teachings_of_transience">「浮世」の教え</string>`
     <!-- add in 20210910 -->
-    <string name="guide_of_freedom">Guide of Freedom</string>
-    <string name="guide_of_gold">Guide of Gold</string>
-    <string name="guide_of_resistance">Guide of Resistance</string>
-    <string name="guide_of_prosperity">Guide of Prosperity</string>
-    <string name="guide_of_ballad">Guide of Ballad</string>
-    <string name="guide_of_diligence">Guide of Diligence</string>
-    <string name="guides_of_elegance">Guides of Elegance</string>
-    <string name="guides_of_transience">Guides of Transience</string>
-    <string name="guides_of_light">Guides of Light</string>
-    <string name="philosophies_of_freedom">Philosophies of Freedom</string>
-    <string name="philosophies_of_gold">Philosophies of Gold</string>
-    <string name="philosophies_of_resistance">Philosophies of Resistance</string>
-    <string name="philosophies_of_prosperity">Philosophies of Prosperity</string>
-    <string name="philosophies_of_ballad">Philosophies of Ballad</string>
-    <string name="philosophies_of_diligence">Philosophies of Diligence</string>
-    <string name="philosophiess_of_elegance">Philosophiess of Elegance</string>
-    <string name="philosophiess_of_transience">Philosophiess of Transience</string>
-    <string name="philosophiess_of_light">Philosophiess of Light</string>
+    <string name="guide_of_freedom">「自由」の導き</string>
+    <string name="guide_of_gold">「黄金」の導き</string>
+    <string name="guide_of_resistance">「抗争」の導き</string>
+    <string name="guide_of_prosperity">「繁栄」の導き</string>
+    <string name="guide_of_ballad">「詩文」の導き</string>
+    <string name="guide_of_diligence">「勤労」の導き</string>
+    <string name="guides_of_elegance">「風雅」の導き</string>
+    <string name="guides_of_transience">「浮世」の導き</string>
+    <string name="guides_of_light">「天光」の導き</string>
+    <string name="philosophies_of_freedom">「自由」の哲学</string>
+    <string name="philosophies_of_gold">「黄金」の哲学</string>
+    <string name="philosophies_of_resistance">「抗争」の哲学</string>
+    <string name="philosophies_of_prosperity">「繁栄」の哲学</string>
+    <string name="philosophies_of_ballad">「詩文」の哲学</string>
+    <string name="philosophies_of_diligence">「勤労」の哲学</string>
+    <string name="philosophiess_of_elegance">「風雅」の哲学</string>
+    <string name="philosophiess_of_transience">「浮世」の哲学</string>
+    <string name="philosophiess_of_light">「天光」の哲学</string>
 
     <!-- base -->
-    <string name="tile_of_decarabians_tower">Tile of Decarabians Tower</string>
-    <string name="luminous_sands_from_guyun">Luminous Sands from guyun</string>
-    <string name="coral_branch_of_a_distant_sea">Coral branch of a distant sea</string>
-    <string name="mist_veiled_lead_elixir">Mist veiled lead elixir</string>
-    <string name="boreal_wolfs_milk_tooth">Boreal wolfs milk tooth</string>
-    <string name="narukamis_wisdom">Narukamis wisdom</string>
-    <string name="grain_of_aerosiderite">Grain of aerosiderite</string>
-    <string name="fetters_of_the_dandelion_gladiator">Fetters of the dandelion gladiator</string>
-    <string name="mask_of_the_wicked_lieutenant">Mask of the wicked lieutenant</string>
+    <string name="tile_of_decarabians_tower">高塔の王の瓦</string>
+    <string name="luminous_sands_from_guyun">孤雲寒林の光砂</string>
+    <string name="coral_branch_of_a_distant_sea">遠海夷地の瑚枝</string>
+    <string name="mist_veiled_lead_elixir">霧海雲間の鉛丹</string>
+    <string name="boreal_wolfs_milk_tooth">凛風奔狼の乳歯</string>
+    <string name="narukamis_wisdom">鳴神御霊の恩恵</string>
+    <string name="grain_of_aerosiderite">漆黒の隕鉄の一粒</string>
+    <string name="fetters_of_the_dandelion_gladiator">獅牙戦士の枷</string>
+    <string name="mask_of_the_wicked_lieutenant">今昔劇画の悪尉</string>
 
     <!-- char_name -->
-    <string name="aloy">Aloy</string>
-    <string name="kujou_sara">Kujou Sara</string>
-    <string name="sangonomiya_kokomi">Sangonomiya Kokomi</string>
-    <string name="raiden_shogun">Raiden Shogun</string>
-    <string name="sayu">Sayu</string>
-    <string name="yoimiya">Yoimiya</string>
-    <string name="kamisato_ayaka">Kamisato Ayaka</string>
-    <string name="kaedehara_kazuha">Kaedehara Kazuha</string>
-    <string name="yanfei">Yanfei</string>
-    <string name="eula">Eula</string>
-    <string name="rosaria">Rosaria</string>
-    <string name="xiao">Xiao</string>
-    <string name="hu_tao">Hu Tao</string>
-    <string name="ganyu">Ganyu</string>
-    <string name="albedo">Albedo</string>
-    <string name="zhongli">Zhongli</string>
-    <string name="xinyan">Xinyan</string>
-    <string name="tartaglia">Tartaglia</string>
-    <string name="diona">Diona</string>
-    <string name="xingqiu">Xingqiu</string>
-    <string name="xiangling">Xiangling</string>
-    <string name="venti">Venti</string>
-    <string name="traveler_anemo">Traveler(Anemo)</string>
-    <string name="traveler_geo">Traveler(Geo)</string>
-    <string name="traveler_electro">Traveler(Electro)</string>
-    <string name="sucrose">Sucrose</string>
-    <string name="razor">Razor</string>
-    <string name="qiqi">Qiqi</string>
-    <string name="noelle">Noelle</string>
-    <string name="ningguang">Ningguang</string>
-    <string name="mona">Mona</string>
-    <string name="lisa">Lisa</string>
-    <string name="klee">Klee</string>
-    <string name="keqing">Keqing</string>
-    <string name="kaeya">Kaeya</string>
-    <string name="jean">Jean</string>
-    <string name="fischl">Fischl</string>
-    <string name="diluc">Diluc</string>
-    <string name="chongyun">Chongyun</string>
-    <string name="bennett">Bennett</string>
-    <string name="beidou">Beidou</string>
-    <string name="barbara">Barbara</string>
-    <string name="amber">Amber</string>
-    <string name="unknown">unknown</string>
+    <string name="aloy">アーロイ</string>
+    <string name="kujou_sara">九条裟羅</string>
+    <string name="sangonomiya_kokomi">珊瑚宮心海</string>
+    <string name="raiden_shogun">雷電将軍</string>
+    <string name="sayu">早柚</string>
+    <string name="yoimiya">宵宮</string>
+    <string name="kamisato_ayaka">神里綾華</string>
+    <string name="kaedehara_kazuha">楓原万葉</string>
+    <string name="yanfei">煙緋</string>
+    <string name="eula">エウルア</string>
+    <string name="rosaria">ロサリア</string>
+    <string name="xiao">魈</string>
+    <string name="hu_tao">胡桃</string>
+    <string name="ganyu">甘雨</string>
+    <string name="albedo">アルベド</string>
+    <string name="zhongli">鍾離</string>
+    <string name="xinyan">辛炎</string>
+    <string name="tartaglia">タルタリヤ</string>
+    <string name="diona">ディオナ</string>
+    <string name="xingqiu">行秋</string>
+    <string name="xiangling">香菱</string>
+    <string name="venti">ウェンティ</string>
+    <string name="traveler_anemo">旅人 (風)</string>
+    <string name="traveler_geo">旅人 (岩)</string>
+    <string name="traveler_electro">旅人 (雷)</string>
+    <string name="sucrose">スクロース</string>
+    <string name="razor">レザー</string>
+    <string name="qiqi">七七</string>
+    <string name="noelle">ノエル</string>
+    <string name="ningguang">凝光</string>
+    <string name="mona">モナ</string>
+    <string name="lisa">リサ</string>
+    <string name="klee">クレー</string>
+    <string name="keqing">刻晴</string>
+    <string name="kaeya">ガイア</string>
+    <string name="jean">ジン</string>
+    <string name="fischl">フィッシュル</string>
+    <string name="diluc">ディルック</string>
+    <string name="chongyun">重雲</string>
+    <string name="bennett">ベネット</string>
+    <string name="beidou">北斗</string>
+    <string name="barbara">バーバラ</string>
+    <string name="amber">アンバー</string>
+    <string name="unknown">不明</string>
 
     <!-- New Character in here-->
-    <string name="thoma">Thoma</string>
+    <string name="thoma">トーマ</string>
 
     <!-- char_info -->
     <string name="search">検索...</string>
-    <string name="elements">要素</string>
-    <string name="rarity">希少性</string>
-    <string name="filters">フィルタ</string>
-    <string name="mondstadt">モンドシュタット</string>
-    <string name="liyue">リユエ</string>
-    <string name="inazuma">イナズマ</string>
-    <string name="main_dps">メインDPS</string>
-    <string name="support_dps">DPSをサポートする</string>
-    <string name="utility">効用</string>
+    <string name="elements">元素</string>
+    <string name="rarity">レア度</string>
+    <string name="filters">フィルター</string>
+    <string name="mondstadt">モンド</string>
+    <string name="liyue">璃月</string>
+    <string name="inazuma">稲妻</string>
+    <string name="main_dps">メインアタッカー</string>
+    <string name="support_dps">サブアタッカー</string>
+    <string name="utility">サポーター</string>
     <string name="female">女性</string>
-    <string name="male">男</string>
-    <string name="set_by_player">プレイヤーが設定</string>
+    <string name="male">男性</string>
+    <string name="set_by_player">プレイヤーによる設定</string>
     <string name="another_world">別世界</string>
-    <string name="district">区域</string>
+    <string name="district">出身</string>
     <string name="weapon">武器</string>
     <string name="char_role">役割</string>
-    <string name="sex">セックス</string>
-    <string name="birth">誕生</string>
-    <string name="intro">イントロ</string>
-    <string name="battle_talent">バトルタレント</string>
-    <string name="noraml_atk">【通常ATK】</string>
-    <string name="charged_atk">【有料ATK】</string>
-    <string name="plunging_atk">【急落ATK】</string>
-    <string name="element_atk">【エレメンタルスキル】</string>
-    <string name="final_atk">【エレメンタルバースト】</string>
-    <string name="basic_talent">パッシブタレント</string>
-    <string name="asc0_unlock">ユーティリティパッシブ</string>
-    <string name="asc1_unlock">ファーストアセンションパッシブ</string>
-    <string name="asc4_unlock">4番目のアセンションパッシブ</string>
-    <string name="sof">星座</string>
-    <string name="sof1">【レベル1】</string>
-    <string name="sof2">【レベル2】</string>
-    <string name="sof3">【レベル3】</string>
-    <string name="sof4">【レベル4】</string>
-    <string name="sof5">【レベル5】</string>
-    <string name="sof6">【レベル6】</string>
-    <string name="advice">助言</string>
-    <string name="team_advice">チームアドバイス</string>
-    <string name="weapon_advice">武器のアドバイス</string>
-    <string name="art_advice">アーティファクトのアドバイス</string>
+    <string name="sex">性別</string>
+    <string name="birth">誕生日</string>
+    <string name="intro">概要</string>
+    <string name="battle_talent">スキル</string>
+    <string name="noraml_atk">【通常攻撃】</string>
+    <string name="charged_atk">【重撃】</string>
+    <string name="plunging_atk">【落下攻撃】</string>
+    <string name="element_atk">【元素スキル】</string>
+    <string name="final_atk">【元素爆発】</string>
+    <string name="basic_talent">固有天賦</string>
+    <string name="asc0_unlock">初期解放</string>
+    <string name="asc1_unlock">突破Lv1で解放</string>
+    <string name="asc4_unlock">突破Lv4で解放</string>
+    <string name="sof">命ノ星座</string>
+    <string name="sof1">【Level 1】</string>
+    <string name="sof2">【Level 2】</string>
+    <string name="sof3">【Level 3】</string>
+    <string name="sof4">【Level 4】</string>
+    <string name="sof5">【Level 5】</string>
+    <string name="sof6">【Level 6】</string>
+    <string name="advice">おすすめ</string>
+    <string name="team_advice">おすすめパーティー</string>
+    <string name="weapon_advice">おすすめ武器</string>
+    <string name="art_advice">おすすめ聖遺物</string>
 
     <!-- alarm -->
     <string name="alarm_t1">ボス</string>
     <string name="alarm_t2">樹脂</string>
-    <string name="alarm_t3">レルム通貨</string>
+    <string name="alarm_t3">洞天宝銭</string>
     <string name="alarm_t4">遠征</string>
     <string name="alarm_t5">カスタム</string>
     <string name="alarm_time1">4時間</string>
     <string name="alarm_time2">8時間</string>
     <string name="alarm_time3">12時間</string>
     <string name="alarm_time4">20時間</string>
-    <string name="jb_title">【原神スピリット】こんにちは〜ボスミッションをやる時が来ました！</string>
-    <string name="common_info">リセットする前にそれを行うことを忘れないでください</string>
-    <string name="daily_mission_title">【原神スピリット】こんにちは〜デイリーミッションはもう終わりましたか？</string>
-    <string name="dtbc_title">[原神スピリット]こんにちは〜あなたのレルム通貨はすでにいっぱいです、それらを主張することを忘れないでください〜</string>
-    <string name="ph_title">【原神スピリット】こんにちは〜遠征はもう終わりました</string>
-    <string name="ph_info">彼/彼女が見つけたものを見てみましょう〜</string>
-    <string name="dtbc_info">えーと…もしあなたがそれらを必要としないなら、私はそれらを奪います〜</string>
-    <string name="resin_title">【原神スピリット】こんにちは〜レジンはもういっぱいです、忘れずに使ってください〜</string>
-    <string name="edit_title">アラームの編集</string>
+    <string name="jb_title">[Genshin Spirit] ボスミッションの時間です。</string>
+    <string name="common_info">終了前に忘れずに行ってください</string>
+    <string name="daily_mission_title">[Genshin Spirit] デイリーミッションは終わりましたか？</string>
+    <string name="dtbc_title">[Genshin Spirit] 洞天宝銭が満杯です忘れずに獲得してくださいね</string>
+    <string name="ph_title">[Genshin Spirit] 遠征から帰還しました</string>
+    <string name="ph_info">彼らが見つけたものを見てみましょう。</string>
+    <string name="dtbc_info">えーと…もしあなたが必要ないのであれば、私はそれらを奪います</string>
+    <string name="resin_title">[Genshin Spirit] 樹脂がいっぱいです忘れずに使ってくださいね</string>
+    <string name="edit_title">アラーム作成</string>
     <string name="edit_type">タイプ</string>
     <string name="edit_time">時間</string>
-    <string name="edit_ph_time">遠征期間</string>
-    <string name="edit_adeptal_energy">アデプタルエネルギー</string>
+    <string name="edit_ph_time">遠征時間</string>
+    <string name="edit_adeptal_energy">洞天仙力</string>
     <string name="edit_trust_rank">信頼ランク</string>
-    <string name="edit_title_notif">題名</string>
+    <string name="edit_title_notif">タイトル</string>
     <string name="edit_info_notif">情報</string>
-    <string name="edit_cd_25off">CDが25％オフ</string>
+    <string name="edit_cd_25off">25％時間短縮</string>
     <string name="edit_use_notif">このアラームを使用する</string>
 
     <!-- server -->
-    <string name="america_ser">America</string>
-    <string name="europe_ser">Europe</string>
-    <string name="asia_ser">Asia</string>
+    <string name="america_ser">America (アメリカ)</string>
+    <string name="europe_ser">Europe (ヨーロッパ)</string>
+    <string name="asia_ser">Asia (アジア)</string>
     <string name="hk_tw_mo_ser">HK、TW、MO</string>
-    <string name="sky_land_ser">天空岛服</string>
-    <string name="world_tree">世界树服</string>
+    <string name="sky_land_ser">天空島</string>
+    <string name="world_tree">世界樹</string>
 
     <!-- inside ui -->
     <string name="genshindb_link"><a href="https://github.com/Wolfteam/GenshinDb">GenshinDb Github</a></string>
     <string name="genshinhelper_link"><a href="https://github.com/Vocaloid2048/GenshinHelper">Genshin Spirit Github</a></string>
-    <string name="press_exit">もう一度押すとアプリが終了します</string>
-    <string name="vote_title">このアプリの評価にご協力ください〜</string>
-    <string name="vote_info">ゲンシンスピリットがお好きな方は、ぜひコメントをお願いします〜ちょっとしたお世話になりますので、時間もかかりません。</string>
-    <string name="vote_help">料金のヘルプ</string>
-    <string name="vote_no">番号</string>
+    <string name="press_exit">もう一度押して終了</string>
+    <string name="vote_title">このアプリの評価にご協力ください。</string>
+    <string name="vote_info">Genshin Spiritがお好きな方は、ぜひコメントにご協力ください。あなたの小さな協力が私の大きな助けになりますし、時間もかかりません。</string>
+    <string name="vote_help">ヘルプ</string>
+    <string name="vote_no">いいえ</string>
     <string name="vote_later">後で</string>
-    <string name="copied">コピー</string>
+    <string name="copied">コピーしました</string>
     <string name="pls_restart_app">アプリを再起動してください</string>
 
     <!-- cal_item_name -->
     <string name="result">結果</string>
-    <string name="curr_lvl">現在のレベル：</string>
-    <string name="aim_lvl">目標レベル：</string>
-    <string name="choose_lvl">レベルを選択</string>
-    <string name="already_dak_po">すでに昇天</string>
+    <string name="curr_lvl">"キャラLv. : "</string>
+    <string name="aim_lvl">"目標Lv. : "</string>
+    <string name="choose_lvl">レベル選択</string>
+    <string name="already_dak_po">限界突破済み</string>
     <string name="cal_also">計算する</string>
-    <string name="delete">消去</string>
-    <string name="choosed">選択：</string>
-    <string name="caled_char_weapon_art">計算されたキャラクター/武器/アーティファクト</string>
+    <string name="delete">削除</string>
+    <string name="choosed">"選択 : "</string>
+    <string name="caled_char_weapon_art">計算されたキャラクター/武器/聖遺物</string>
     <string name="char_lvls">キャラクターレベル</string>
 
+    <!-- Language (Don't translate)-->
+    <string name="zh_hk" translatable="false">繁體中文 (港、澳、台)</string>
+    <string name="en_us" translatable="false">English (US)</string>
+    <string name="ru_ru" translatable="false">русский</string>
+    <string name="zh_cn" translatable="false">简体中文</string>
+
     <!-- main_page -->
-    <string name="material_force">マテリアルフォーカス</string>
-    <string name="char_asc_mater">キャラクター画期的な素材</string>
-    <string name="weapon_asc_mater">武器の画期的な素材</string>
-    <string name="gaming_tools">ゲームガジェット</string>
-    <string name="calculator">コンピューター</string>
-    <string name="daily_login">毎日のチェックイン</string>
-    <string name="map">インタラクティブマップ</string>
-    <string name="alarm">思い出させる</string>
+    <string name="material_force">限界突破素材</string>
+    <string name="char_asc_mater">限界突破素材:キャラクター</string>
+    <string name="weapon_asc_mater">限界突破素材:武器</string>
+    <string name="gaming_tools">ツール</string>
+    <string name="calculator">計算機</string>
+    <string name="daily_login">デイリーログインボーナス</string>
+    <string name="map">マップ</string>
+    <string name="alarm">アラーム</string>
 
     <!-- setting -->
-    <string name="bg_title">背景テーマ</string>
-    <string name="light_theme">ライトテーマ</string>
-    <string name="dark_theme">暗いテーマ</string>
-    <string name="sys_theme">システムのデフォルト</string>
-    <string name="tv_title">テキストテーマ</string>
+    <string name="bg_title">テーマ</string>
+    <string name="light_theme">ライト</string>
+    <string name="dark_theme">ダーク</string>
+    <string name="sys_theme">システム設定</string>
+    <string name="tv_title">アクセントカラー</string>
     <string name="lang_title">言語</string>
-    <string name="other_title">他の</string>
-    <string name="acc_in_server">配置されたサーバー</string>
-    <string name="about">だいたい</string>
-    <string name="link">リンク</string>
+    <string name="other_title">その他</string>
+    <string name="acc_in_server">サーバー</string>
+    <string name="about">About</string>
+    <string name="link">Link</string>
     <string name="about_title1">免責事項</string>
-    <string name="about_info1">このアプリはmiHoYoCo。、Ltd。のものではなく、承認されていません。原神小帮手（Genshin Spirit）は、ファンが開発したデータを提供するアプリです。このアプリで提供される情報は参照用です。ゲンシンスピリットは、そこに含まれる情報の正確性と完全性をある程度保証するものではありません。</string>
+    <string name="about_info1">このアプリはmiHoYoと提携しておらず、miHoYoによって承認されていません。原神小幫手(Genshin Spirit)は、ファンが開発したデータを提供するアプリです。本アプリで提供される情報は、あくまでも参考情報です。Genshin Spiritは、そこに含まれる情報の正確性および完全性を保証するものではありません。</string>
     <string name="about_title2">プライバシー収集声明</string>
-    <string name="about_info2">このアプリケーションは、個人のプライバシーデータを収集せず、ユーザーやその他の情報を識別および追跡するために使用される場合があります。必要に応じて、アプリケーションは、プログラムのクラッシュスタックなど、通知されたデータのみを収集します。上記のデータは、アプリケーションの修復にのみ使用されます。脆弱性とユーザーエクスペリエンスの向上。</string>
-    <string name="about_title3">リソース使用量ステートメント</string>
-    <string name="about_info3">このアプリケーションは、源信の詩織に基づいて開発され、源信の詩織とその協力者に敬意を表することを目的としていますが、まだ協力者に認識されていません。このアプリケーションの一部の写真、データはオープンソースプロジェクトから取得され、リンクはしたがって、このアプリケーションのインターフェースとレイアウトの一部は、GenshinのShioriと非常に似ていますが、このアプリケーションはプログラミング言語としてDartではなくJavaを使用しており、Androidまたはその他のサポートでのみ動作します。 apkおよび.aabファイル形式。デバイスへのインストールと操作。</string>
-    <string name="about_title4">プロジェクトのオープンソースステートメント</string>
-    <string name="about_info4">このアプリケーションは、源信とその協力者のために詩織に敬意を表することを目的としているため、Githubでオープンソースになります。誰でも表示、コメント、コラボレーションを行うことができます。このアプリケーションの提案やアプリケーションも歓迎します。このアプリケーションもこのプロジェクト、バグ、新機能などについてコメントしたい場合は、EメールまたはDiscordで連絡することもできます（QQは中国本土で利用できます）。最後に、ありがとうございます。理解とサポート。</string>
+    <string name="about_info2">このアプリケーションは、個人のプライバシーデータを収集することはありませんが、ユーザーやその他の情報を識別・追跡するために使用されることがあります。必要に応じて、本アプリケーションは、プログラムのクラッシュスタックなど、通知されたデータのみを収集します。上記のデータは、アプリケーションの脆弱性を修復し、ユーザーエクスペリエンスを向上させるためにのみ使用されます。</string>
+    <string name="about_title3">リソースの使用状況</string>
+    <string name="about_info3">このアプリケーションは、「Shiori for Genshin」をベースに開発され、「Shiori for Genshin」とその協力者に敬意を表することを目的としていますが、協力者からはまだ認められていません。このアプリケーションの画像やデータは、オープンソースプロジェクトから引用したもので、以下にリンクを貼っておきます。そのため、このアプリケーションのインターフェイスやレイアウトの一部は、「Shiori for Genshin」と非常によく似ています。ただし、本アプリケーションは、プログラミング言語としてDartではなくJavaを使用しており、Androidでサポートされている.apkと.aabのファイル形式でのみ動作します。デバイスへのインストールと操作。</string>
+    <string name="about_title4">オープンソース声明</string>
+    <string name="about_info4">このアプリケーションは、「Shiori for Genshin」とその協力者に敬意を表することを目的としているため、Githubでオープンソースで開発しており、誰でも閲覧、コメントの提供、さらには共同作業を行うことができます。 また、このアプリケーションに関する提案やアプリケーションを歓迎します。 Google Playでも公開される予定です。 このプロジェクト、バグ、新機能などについて連絡したい場合は、EメールまたはDiscordで連絡することもできます(QQは中国本土で利用できます)。 最後に、皆様のご理解とご支援をお願いいたします。</string>
 
     <!-- moy -->
     <string name="date_jan">1月</string>
@@ -262,41 +274,39 @@
     <string name="date_dec">12月</string>
 
     <!-- dom -->
-    <string name="date_1st">1日</string>
-    <string name="date_2nd">2日</string>
-    <string name="date_3rd">3日</string>
-    <string name="date_4th">4日</string>
-    <string name="date_5th">5日</string>
-    <string name="date_6th">6日</string>
-    <string name="date_7th">7日</string>
-    <string name="date_8th">8日</string>
-    <string name="date_9th">9日</string>
-    <string name="date_10th">10日</string>
-    <string name="date_11th">11日</string>
-    <string name="date_12th">12日</string>
-    <string name="date_13th">13日</string>
-    <string name="date_14th">14日</string>
-    <string name="date_15th">15日</string>
-    <string name="date_16th">16日</string>
-    <string name="date_17th">17日</string>
-    <string name="date_18th">18日</string>
-    <string name="date_19th">19日</string>
-    <string name="date_20th">20日</string>
-    <string name="date_21st">21日</string>
-    <string name="date_22nd">22日</string>
-    <string name="date_23rd">23日</string>
-    <string name="date_24th">24日</string>
-    <string name="date_25th">25日</string>
-    <string name="date_26th">26日</string>
-    <string name="date_27th">27日</string>
-    <string name="date_28th">28日</string>
-    <string name="date_29th">29日</string>
-    <string name="date_30th">30日</string>
-    <string name="date_31st">31日</string>
-    <string name="thanks_title">ありがとう</string>
-    <string name="beta_tester_title">テスター</string>
-    <string name="translator_title">翻訳者</string>
-    <string name="thanks_intro">あなたの助けのおかげで、Genshin Spirit を改善することができます</string>
+    <string name="date_1st">" 1日"</string>
+    <string name="date_2nd">" 2日"</string>
+    <string name="date_3rd">" 3日"</string>
+    <string name="date_4th">" 4日"</string>
+    <string name="date_5th">" 5日"</string>
+    <string name="date_6th">" 6日"</string>
+    <string name="date_7th">" 7日"</string>
+    <string name="date_8th">" 8日"</string>
+    <string name="date_9th">" 9日"</string>
+    <string name="date_10th">" 10日"</string>
+    <string name="date_11th">" 11日"</string>
+    <string name="date_12th">" 12日"</string>
+    <string name="date_13th">" 13日"</string>
+    <string name="date_14th">" 14日"</string>
+    <string name="date_15th">" 15日"</string>
+    <string name="date_16th">" 16日"</string>
+    <string name="date_17th">" 17日"</string>
+    <string name="date_18th">" 18日"</string>
+    <string name="date_19th">" 19日"</string>
+    <string name="date_20th">" 20日"</string>
+    <string name="date_21st">" 21日"</string>
+    <string name="date_22nd">" 22日"</string>
+    <string name="date_23rd">" 23日"</string>
+    <string name="date_24th">" 24日"</string>
+    <string name="date_25th">" 25日"</string>
+    <string name="date_26th">" 26日"</string>
+    <string name="date_27th">" 27日"</string>
+    <string name="date_28th">" 28日"</string>
+    <string name="date_29th">" 29日"</string>
+    <string name="date_30th">" 30日"</string>
+    <string name="date_31st">" 31日"</string>
 
 
 </resources>
+
+

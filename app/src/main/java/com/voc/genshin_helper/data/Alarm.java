@@ -1,18 +1,18 @@
 package com.voc.genshin_helper.data;
 
-/**
- * Package com.voc.genshin_helper.data was
+/*
+ * Package com.voc.genshin_helper.data.Alarm was
  * Created by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2020 Xectorda 版權所有
+ * Copyright © 2021 Xectorda 版權所有
  */
 public class Alarm {
-    public String title;
-    public String info;
-    public int type;
-    public long remain_time;
-    public long finish_time;
-    public int jb_time; // 周本Choice
-    public int ph_time; // 派遣Choice
+    public String title; //標題
+    public String info; //內容
+    public int type; //種類
+    public long remain_time; //尚餘時間
+    public long finish_time; //完成時間
+    public int jb_time; //周本提醒時間選擇
+    public int ph_time; //派遣時長選擇
     public int lvl; //信任等階
     public int grade; //洞天仙力
     public int count; //洞天仙力

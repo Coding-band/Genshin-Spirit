@@ -30,6 +30,12 @@ import java.util.List;
 import static android.content.Context.MODE_PRIVATE;
 import static com.voc.genshin_helper.data.RoundRectImageView.getRoundBitmapByShader;
 
+/*
+ * Package com.voc.genshin_helper.data.AlarmAdapter was
+ * Created by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2021 Xectorda 版權所有
+ */
+
 /**
  * Created by ankit on 27/10/17.
  */
@@ -61,16 +67,19 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Alarm alarm = alarmList.get(position);
-        Log.wtf("CHAR", String.valueOf(alarmList.size()));
+        //Log.wtf("CHAR", String.valueOf(alarmList.size()));
         SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy/MM/dd HH:mm");
 
+        // Title
         holder.ui_title.setText(alarm.getTitle());
 
+        // Finish Time
         long FinishTEMP = (long) (alarm.getFinish_time()/1000);
         Date FinishDATE = new java.util.Date(FinishTEMP*1000L);
         String FinishSTR = new SimpleDateFormat("yyyy/MM/dd HH:mm").format(FinishDATE);
         holder.ui_finish_time.setText(FinishSTR);
 
+        // Remain Time
         if(alarm.getFinish_time() - System.currentTimeMillis() >0){
             holder.ui_time.setText(FormatTime((alarm.getFinish_time() - System.currentTimeMillis())/1000));
         }else {
@@ -78,9 +87,11 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmAdapter.ViewHolder> 
         }
 
 
+        // Ids for each alarm (NOT TO SHOW)
         holder.ui_int.setText(String.valueOf(alarm.getId()));
-        Log.w("UI_INT"+String.valueOf(position),String.valueOf(alarm.getId()));
+        //Log.w("UI_INT"+String.valueOf(position),String.valueOf(alarm.getId()));
 
+        // Type
         if(alarm.getType() == R.string.alarm_t1){
             holder.ui_progress.setVisibility(View.GONE);
             holder.ui_ico.setImageResource(R.drawable.dream_solvent);
@@ -94,6 +105,7 @@ public class AlarmAdapter extends RecyclerView.Adapter<AlarmAdapter.ViewHolder> 
             holder.ui_ico.setImageResource(R.drawable.primogem);
         }
 
+        // Color setting
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
         String color_hex = sharedPreferences.getString("theme_color_hex","#FF5A5A"); // Must include #
 

@@ -8,10 +8,10 @@ import java.util.Arrays;
 import java.util.List;
 import org.apache.commons.lang3.ArrayUtils;
 
-/**
- * Package com.voc.genshin_helper.data was
+/*
+ * Package com.voc.genshin_helper.data.Today_Material was
  * Created by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2020 Xectorda 版權所有
+ * Copyright © 2021 Xectorda 版權所有
  */
 public class Today_Material {
 

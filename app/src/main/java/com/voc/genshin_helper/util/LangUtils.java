@@ -1,10 +1,5 @@
 package com.voc.genshin_helper.util;
 
-/**
- * Package com.voc.genshin_helper.util was
- * Created by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2020 Xectorda 版權所有
- */
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
@@ -19,6 +14,12 @@ import com.voc.genshin_helper.ui.MainActivity;
 
 import java.util.Locale;
 // https://github.com/hapzhu/BlogDemo/blob/master/app/src/main/java/cn/pigdreams/blogdemo/LangUtils.java
+/*
+ * Package com.voc.genshin_helper.util.LangUtils was
+ * Created by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2021 Xectorda 版權所有
+ */
+
 /**
  * Create by pigdreams on 2018-07-26
  * website:pigdreams.cn

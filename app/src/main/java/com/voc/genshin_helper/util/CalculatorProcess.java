@@ -35,10 +35,10 @@ import java.io.InputStream;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-/**
- * Package com.voc.genshin_helper.data was
+/*
+ * Package com.voc.genshin_helper.util.CalculatorProcess was
  * Created by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2020 Xectorda 版權所有
+ * Copyright © 2021 Xectorda 版權所有
  */
 public class CalculatorProcess {
     /** Crystal*/ /**[碎屑,斷片,塊,原顆]*/

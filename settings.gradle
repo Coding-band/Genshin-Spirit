@@ -1,2 +1,8 @@
+/*
+ * Package settings was
+ * Created by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2021 Xectorda 版權所有
+ */
+
 rootProject.name = "原神小幫手"
 include ':app'

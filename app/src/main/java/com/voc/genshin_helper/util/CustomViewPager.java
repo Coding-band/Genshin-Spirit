@@ -6,10 +6,10 @@ import android.view.MotionEvent;
 
 import androidx.viewpager.widget.ViewPager;
 
-/**
- * Package com.voc.genshin_helper.util was
+/*
+ * Package com.voc.genshin_helper.util.CustomViewPager was
  * Created by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2020 Xectorda 版權所有
+ * Copyright © 2021 Xectorda 版權所有
  */
 
 //https://stackoverflow.com/questions/7814017/is-it-possible-to-disable-scrolling-on-a-viewpager

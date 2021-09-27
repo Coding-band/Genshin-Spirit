@@ -15,10 +15,10 @@ import com.voc.genshin_helper.R;
 
 import static android.content.Context.MODE_PRIVATE;
 
-/**
- * Package com.voc.genshin_helper.util was
+/*
+ * Package com.voc.genshin_helper.util.CustomToast was
  * Created by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2020 Xectorda 版權所有
+ * Copyright © 2021 Xectorda 版權所有
  */
 public class CustomToast {
 

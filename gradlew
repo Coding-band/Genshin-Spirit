@@ -1,5 +1,13 @@
 #!/usr/bin/env sh
 
+#
+# /**
+# *  Package C:/Users/Vocaloid2048/Desktop/File/App/GenshinHelper/gradlew was
+# *  Created by Voc-夜芷冰 , Programmer of Xectorda
+# *  Copyright © 2021 Xectorda 版權所有
+# */
+#
+
 ##############################################################################
 ##
 ##  Gradle start up script for UN*X

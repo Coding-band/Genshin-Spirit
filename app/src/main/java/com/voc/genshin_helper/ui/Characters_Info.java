@@ -42,12 +42,13 @@ import java.util.Arrays;
 import static android.content.Context.MODE_PRIVATE;
 import static com.voc.genshin_helper.data.RoundRectImageView.getRoundBitmapByShader;
 
-/**
- * Package com.voc.genshin_helper.data was
- * Created by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2020 Xectorda 版權所有
- */
 //https://stackoverflow.com/questions/3592836/check-for-file-existence-in-androids-assets-folder/7337516
+
+/*
+ * Package com.voc.genshin_helper.ui.Characters_Info was
+ * Created by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2021 Xectorda 版權所有
+ */
 
 public class Characters_Info {
     /** Method of requirements */
@@ -327,8 +328,8 @@ public class Characters_Info {
         InputStream is_default = null;
         String result1 = null, result2 = null;
         try {
-            String[] strs_local = mg.list("db/"+lang+"/");
-            String[] strs_default = mg.list("db/en-US/");
+            String[] strs_local = mg.list("db/char/"+lang+"/");
+            String[] strs_default = mg.list("db/char/en-US/");
             String[] strs = mg.list("db/char/char_advice/");
 
             for (String ast : strs){
@@ -341,7 +342,7 @@ public class Characters_Info {
 
             for (String ast : strs_default){
                 if(ast.equals(this.CharName_BASE+".json")){
-                    is_default = mg.open("db/en-US/"+this.CharName_BASE+".json");
+                    is_default = mg.open("db/char/en-US/"+this.CharName_BASE+".json");
                     result1 = IOUtils.toString(is_default, StandardCharsets.UTF_8);
                     is_default.close();
                 }
@@ -349,7 +350,7 @@ public class Characters_Info {
 
             for (String ast : strs_local){
                 if(ast.equals(this.CharName_BASE+".json")){
-                    is = mg.open("db/"+lang+"/"+this.CharName_BASE+".json");
+                    is = mg.open("db/char/"+lang+"/"+this.CharName_BASE+".json");
                     result1 = IOUtils.toString(is, StandardCharsets.UTF_8);
                     is.close();
                 }

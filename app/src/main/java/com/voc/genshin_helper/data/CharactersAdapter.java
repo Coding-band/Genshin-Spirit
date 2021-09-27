@@ -33,6 +33,12 @@ import java.util.List;
 import static android.content.Context.MODE_PRIVATE;
 import static com.voc.genshin_helper.util.RoundedCornersTransformation.CornerType.TOP;
 
+/*
+ * Package com.voc.genshin_helper.data.CharactersAdapter was
+ * Created by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2021 Xectorda 版權所有
+ */
+
 /**
  * Created by ankit on 27/10/17.
  */
@@ -57,6 +63,8 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View v;
         ViewHolder evh = null;
+        // 1) MainActivity's char_list
+        // 2) CalculatorUI's char_list
         if(context instanceof MainActivity){
             v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico, parent, false);
             evh = new ViewHolder(v, (OnItemClickListener) mListener);

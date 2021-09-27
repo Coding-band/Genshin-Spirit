@@ -9,13 +9,13 @@ import android.os.Build;
 
 import java.util.Locale;
 
-/**
- * Package com.voc.genshin_helper.util was
- * Created by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2020 Xectorda 版權所有
- */
-
 //https://medium.com/工程師求生指南-sofware-engineer-survival-guide/android多語系在地化-i18n-支援7-0-繁中-3ac0fc6ffdbb
+
+/*
+ * Package com.voc.genshin_helper.util.LocaleHelper was
+ * Created by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2021 Xectorda 版權所有
+ */
 
 public class LocaleHelper {
     public SharedPreferences sharedPreferences;

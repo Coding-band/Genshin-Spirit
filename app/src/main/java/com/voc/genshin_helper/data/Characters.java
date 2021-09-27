@@ -1,18 +1,18 @@
 package com.voc.genshin_helper.data;
 
-/**
- * Package com.voc.genshin_helper.data was
+/*
+ * Package com.voc.genshin_helper.data.Characters was
  * Created by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2020 Xectorda 版權所有
+ * Copyright © 2021 Xectorda 版權所有
  */
 public class Characters {
-    public String name;
-    public String element;
-    public int rare;
-    public String weapon;
-    public int isComing;
-    public String nation;
-    public String sex;
+    public String name; //名稱
+    public String element; //元素
+    public int rare; //稀有度
+    public String weapon; //武器類型
+    public int isComing; //是否即將推出
+    public String nation; //地區
+    public String sex; //性別
 
     public Characters() {
 

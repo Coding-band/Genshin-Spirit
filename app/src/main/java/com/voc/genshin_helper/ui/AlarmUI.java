@@ -57,6 +57,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+/*
+ * Package com.voc.genshin_helper.ui.AlarmUI was
+ * Created by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2021 Xectorda 版權所有
+ */
+
 public class AlarmUI extends AppCompatActivity {
 
     ImageView alarm_add ;

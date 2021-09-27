@@ -15,12 +15,10 @@ import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.widget.ImageView;
 
-/**
- * Package com.voc.genshin_helper.data was
+/*
+ * Package com.voc.genshin_helper.data.RoundRectImageView was
  * Created by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2020 Xectorda 版權所有
- *
- * https://blog.csdn.net/ezconn/article/details/90298487
+ * Copyright © 2021 Xectorda 版權所有
  */
 public class RoundRectImageView extends androidx.appcompat.widget.AppCompatImageView {
 

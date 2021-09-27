@@ -14,7 +14,12 @@ import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Paint;
+import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -58,6 +63,8 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.BuildConfig;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.Characters;
@@ -70,6 +77,7 @@ import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.LangUtils;
 import com.voc.genshin_helper.util.LocaleHelper;
 import com.voc.genshin_helper.util.NumberPickerDialog;
+import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
@@ -84,13 +92,14 @@ import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
 
+import static com.voc.genshin_helper.util.RoundedCornersTransformation.CornerType.ALL;
+import static com.voc.genshin_helper.util.RoundedCornersTransformation.CornerType.TOP;
 
-/**
- * Package com.voc.genshin_helper.ui was
+
+/*
+ * Package com.voc.genshin_helper.ui.MainActivity was
  * Created by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2020 Xectorda 版權所有
- *
- * SINCE 20210731 09:52:28 UTC+8
+ * Copyright © 2021 Xectorda 版權所有
  */
 
 public class MainActivity extends AppCompatActivity {
@@ -544,6 +553,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 else if (item.getItemId() == R.id.navigation_settings){
                     viewPager.setCurrentItem(4);
+                    //shortcutAdd("Klee",1);
                     return true;
                 }
                 return false;
@@ -1343,6 +1353,44 @@ public class MainActivity extends AppCompatActivity {
             return arg0 == arg1;
         }
 
+    }
+
+    //https://stackoverflow.com/questions/1103027/how-to-change-an-application-icon-programmatically-in-android
+    private void shortcutAdd(String name, int number) {
+        // Intent to be send, when shortcut is pressed by user ("launched")
+        Intent shortcutIntent = new Intent(getApplicationContext(), MainActivity.class);
+
+        final int radius = 25;
+        final int margin = 0;
+        final Transformation transformation = new RoundedCornersTransformation(radius, margin,ALL);
+
+        Bitmap b = BitmapFactory.decodeResource(context.getResources(),R.drawable.sayu_ico);
+        Bitmap bitmap = Bitmap.createScaledBitmap(b, 128, 128, false);
+
+        // Decorate the shortcut
+        Intent addIntent = new Intent();
+        addIntent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, shortcutIntent);
+        addIntent.putExtra(Intent.EXTRA_SHORTCUT_NAME, name);
+        addIntent.putExtra(Intent.EXTRA_SHORTCUT_ICON, bitmap);
+
+        // Inform launcher to create shortcut
+        addIntent.setAction("com.android.launcher.action.INSTALL_SHORTCUT");
+        getApplicationContext().sendBroadcast(addIntent);
+    }
+
+    private void shortcutDel(String name) {
+        // Intent to be send, when shortcut is pressed by user ("launched")
+        Intent shortcutIntent = new Intent(getApplicationContext(), MainActivity.class);
+       // shortcutIntent.setAction(Constants.ACTION_PLAY);
+
+        // Decorate the shortcut
+        Intent delIntent = new Intent();
+        delIntent.putExtra(Intent.EXTRA_SHORTCUT_INTENT, shortcutIntent);
+        delIntent.putExtra(Intent.EXTRA_SHORTCUT_NAME, name);
+
+        // Inform launcher to remove shortcut
+        delIntent.setAction("com.android.launcher.action.UNINSTALL_SHORTCUT");
+        getApplicationContext().sendBroadcast(delIntent);
     }
 
 }

@@ -12,10 +12,10 @@ import androidx.appcompat.app.AlertDialog;
 
 import com.voc.genshin_helper.R;
 
-/**
- * Package com.voc.genshin_helper.util was
+/*
+ * Package com.voc.genshin_helper.util.NumberPickerDialog was
  * Created by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2020 Xectorda 版權所有
+ * Copyright © 2021 Xectorda 版權所有
  */
 
 //https://thumbb13555.pixnet.net/blog/post/326868843-interface%26numberpicker
