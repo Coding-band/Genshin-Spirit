@@ -1,0 +1,59 @@
+{
+  "name": "Fischl",
+  "rare": 4,
+  "area": "Mondstadt",
+  "element": "Electro",
+  "weapon": "Bow",
+  "sex": "Female",
+  "birth": "05/27",
+  "role": "Support_DPS",
+  "isComingSoon": false,
+  "nick": "断罪の皇女！！",
+  "desc": "自称「断罪の皇女」、オズという漆黒の鴉とともに行動する謎の少女。",
+  "battle_talent": {
+    "normal_name": "罪滅ぼしの矢",
+    "normal_img": "normal_atack_bolts_of_downfall",
+    "normal_desc1": "最大5段の連続射撃を行う。",
+    "normal_desc2": "ダメージがより高く、より精確な狙い撃ちを発動する。\n照準時、皇女の命令に従い、幽夜浄土の雷精霊が矢に憑依する。断罪の雷に満ちた矢は敵に高い雷元素ダメージを与える。",
+    "normal_desc3": "空中から矢の雨を放ち、凄まじいスピードで落下し地面に衝撃を与え、落下時に範囲ダメージを与える。",
+    "element_name": "夜巡りの翼",
+    "element_img": "nightrider",
+    "element_desc": "オズを召喚する。暗影と雷電によって構成された鴉が降臨する時、狭範囲に雷元素ダメージを与える。<br>オズが存在する時、雷の魔弾を発射し、付近の敵を自動で攻撃する。<br>長押しでスキルの発動位置を調整可能。<br>オズが存在する間に再び一回押すとオズを自身の傍に呼び寄せる。",
+    "final_name": "夜の幻現",
+    "final_img": "midnight_phantasmagoria",
+    "final_desc": "オズを召喚し、純粋なる夜色の翼を広げてフィッシュルを守る。\n継続期間中、下記の効果が発動する。:<br>フィッシュルはオズ形態で高速移動する。<br>付近の敵に落雷で攻撃し、雷元素ダメージを与える。落雷によるダメージは同じ敵に1回のみ有効。<br>効果終了時、オズは戦場に留まり、皇女の敵を攻撃する。発動前にオズがすでに戦場に存在してる場合は、オズの継続時間がリセットされる。"
+  },
+  "basic_talent": {
+    "talent1_name": "星喰いの鴉",
+    "talent1_img": "stellar_predator",
+    "talent1_desc": "フィッシュルのチャージした狙い撃ち射撃がオズに命中すると、オズは周囲の敵に聖裁の雷を放ち、射撃ダメージ152.7%分の雷元素範囲ダメージを与える。",
+    "talent2_name": "断罪の雷影",
+    "talent2_img": "lighting_smite",
+    "talent2_desc": "オズがフィールドにいる時、出場している自身のキャラクターの敵への攻撃が雷元素の関連反応を起こすと、敵に聖裁の雷を下し、フィッシュルの攻撃力80%分の雷元素ダメージを与える。",
+    "talent3_name": "吾の裏庭",
+    "talent3_img": "mein_hausgarten",
+    "talent3_desc": "モンドの探索任務の所要時間-25%。"
+  },
+  "sof": {
+    "sof1_name": "幽邃な鴉の目",
+    "sof1_img": "gaze_of_the_deep",
+    "sof1_desc": "オズが戦場にいない時も、鴉の目を通してフィッシュルを守る。フィッシュルが敵に通常攻撃する時、オズは鴉の目を通して攻撃し、攻撃力22%分のダメージを与える。",
+    "sof2_name": "聖裁の羽根",
+    "sof2_img": "devpirer_of_all_sins",
+    "sof2_desc": "夜巡りの翼発動時、攻撃力200%分の追加ダメージを与える、さらに影響範囲+50%。",
+    "sof3_name": "黒き翼",
+    "sof3_img": "wings_of_nightmare",
+    "sof3_desc": "夜巡りの翼のスキルLv.+3。\n最大Lv.15まで。",
+    "sof4_name": "皇女綺譚集",
+    "sof4_img": "her_pilgrimage_of_bleak",
+    "sof4_desc": "夜の幻現発動時、周囲の敵に攻撃力222%分の雷元素ダメージを与える。\nスキル終了時、フィッシュルのHPを20%回復する。",
+    "sof5_name": "夜の黙示録",
+    "sof5_img": "agaomst_the_fleeing_light",
+    "sof5_desc": "夜の幻現のスキルLv.+3。\n最大Lv.15まで。",
+    "sof6_name": "永夜の禽",
+    "sof6_img": "evernight_raven",
+    "sof6_desc": "オズの存在時間+2秒。オズは出場している自身のキャラクターと共に攻撃し、攻撃力30%分の雷元素ダメージを与える。"
+  }
+}
+
+

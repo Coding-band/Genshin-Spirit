@@ -1,0 +1,59 @@
+{
+  "name": "Venti",
+  "rare": 5,
+  "area": "Mondstadt",
+  "element": "Anemo",
+  "weapon": "Bow",
+  "sex": "Male",
+  "birth": "06/16",
+  "role": "Support_DPS",
+  "isComingSoon": false,
+  "nick": "風色の詩人",
+  "desc": "モンドの街にいる数多くの自由な吟遊詩人の一人。",
+  "battle_talent": {
+    "normal_name": "神代の射術",
+    "normal_img": "normal_attack_divine_marksmanship",
+    "normal_desc1": "最大6段の連続射撃を行う。",
+    "normal_desc2": "ダメージがより高く、より精確な狙い撃ちを発動する。\n照準時、天地の風を矢先に凝集させ、風の力に満ちた矢で敵に風元素ダメージを与える。",
+    "normal_desc3": "空中から矢の雨を放ち、凄まじいスピードで落下し地面に衝撃を与え、落下時に範囲ダメージを与える。",
+    "element_name": "高天の歌",
+    "element_img": "skyward_sonnet",
+    "element_desc": "詩を奏でる風を呼び、塵泥の中を歩くものを高空まで届ける。\n一回押し:\n目標の足もとに風域を召喚し、風元素範囲ダメージを与え、敵をノックバックする。\n長押し:\n自身を中心に更に大きい風域を召喚し、風元素範囲ダメージを与え、敵をノックバックする。\n長押しで発動した後、ウェンティは風に乗り空中へ飛ぶ。\n高天の歌にノックバックされた敵はゆっくりと落下する。",
+    "final_name": "風神の詩",
+    "final_img": "winds_grand_ode",
+    "final_desc": "千の風を集めた矢を放ち、前方に巨大な暴風の目を作る。爆風は敵を巻き込み、風元素ダメージを持続的に与える。\n元素変化:\n暴風の目がスキル継続中に水元素/炎元素/氷元素/雷元素に接触すると、接触した元素の属性を獲得し、該当元素の付加ダメージを追加で与える。\n元素変化はスキル継続中に1回のみ発生する。"
+  },
+  "basic_talent": {
+    "talent1_name": "余風の抱擁",
+    "talent1_img": "embrace_of_winds",
+    "talent1_desc": "高天の歌を長押しした後、上昇気流が発生する、継続時間20秒。",
+    "talent2_name": "暴風の目",
+    "talent2_img": "stormeye",
+    "talent2_desc": "風神の詩效果終了後、ウェンティの元素エネルギーを15回復する。\n元素変化があった場合、該当元素のチームメンバーの元素エネルギーを15回復する。",
+    "talent3_name": "恒風と共に",
+    "talent3_img": "windrider",
+    "talent3_desc": "チーム内の自身のキャラクター全員が滑翔に消費するスタミナ-20%。\n同じ効果を持つ固有天赋との重ね掛け不可。"
+  },
+  "sof": {
+    "sof1_name": "矢先の蒼風",
+    "sof1_img": "splitting_gales",
+    "sof1_desc": "狙い撃ちする時、分裂した矢を追加で2本放つ。それぞれ元の矢の33%のダメージを与える。",
+    "sof2_name": "恋い焦がれるそよ風",
+    "sof2_img": "breeze_of_reminiscence",
+    "sof2_desc": "高天の歌発動後、敵の風元素耐性と物理耐性-12%、継続時間10秒。\n高天の歌によってノックバックされた敵が着地するまで、風元素耐性と物理耐性が更に-12%。",
+    "sof3_name": "千の風の詩",
+    "sof3_img": "ode_to_thousand_winds",
+    "sof3_desc": "風神の詩のスキルLv.+3。\n最大Lv.15まで。",
+    "sof4_name": "自由の凛風",
+    "sof4_img": "hurricane_of_freedom",
+    "sof4_desc": "ウェンティが元素オーブまたは元素粒子を獲得した時、風元素ダメージ+25%、継続時間10秒。",
+    "sof5_name": "高天の協奏",
+    "sof5_img": "concerto_dal_cielo",
+    "sof5_desc": "高天の歌のスキルLv.+3。\n最大Lv.15まで。",
+    "sof6_name": "抗争の暴風",
+    "sof6_img": "storm_of_defiance",
+    "sof6_desc": "風神の詩のダメージを受けた敵の風元素耐性-20%。\n元素変化があった場合、変化した元素の耐性も-20%。"
+  }
+}
+
+
