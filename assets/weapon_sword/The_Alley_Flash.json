@@ -1,0 +1,12 @@
+{
+  "name": "The Alley Flash",
+  "rare": 4,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "EleMas",
+  "second_status": "ATK",
+  "desc": "有着黑夜颜色的笔直长剑，曾属于穿行于暗巷的盗贼。",
+  "skill_name": "街巷游侠",
+  "skill_desc": "造成的伤害提升12%/15%/18%/21%/24%，受到伤害后的5秒内失效。",
+  "obtain_way": "限定祈愿"
+}

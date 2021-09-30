@@ -1,0 +1,12 @@
+{
+  "name": "Skyrider Greatsword",
+  "rare": 3,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "可靠的大剑。传说著名的「御剑公子」曾试图借助它二度飞天。",
+  "first_status": "PhyDMG%",
+  "second_status": "ATK",
+  "skill_name": "勇气",
+  "skill_desc": "普通攻击和重击命中时，攻击力提高6%/7%/8%/9%/10%，持续6秒，最多叠加4层，该效果每0.5秒只能触发一次。",
+  "obtain_way": "孤云阁附近拔出、宝箱"
+}

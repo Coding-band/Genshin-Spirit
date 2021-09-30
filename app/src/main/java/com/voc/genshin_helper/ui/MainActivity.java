@@ -2,8 +2,6 @@ package com.voc.genshin_helper.ui;
 
 //https://stackoverflow.com/questions/27128425/add-multiple-custom-views-to-layout-programmatically
 
-import android.animation.ObjectAnimator;
-import android.app.Activity;
 import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -16,17 +14,13 @@ import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.method.LinkMovementMethod;
-import android.text.util.Linkify;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -56,14 +50,12 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.BuildConfig;
 import com.voc.genshin_helper.R;
@@ -72,7 +64,7 @@ import com.voc.genshin_helper.data.CharactersAdapter;
 import com.voc.genshin_helper.data.Characters_Rss;
 import com.voc.genshin_helper.data.ScreenSizeUtils;
 import com.voc.genshin_helper.data.Today_Material;
-import com.voc.genshin_helper.util.CalculatorProcess;
+import com.voc.genshin_helper.kidding.GoSleep;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.LangUtils;
 import com.voc.genshin_helper.util.LocaleHelper;
@@ -93,7 +85,6 @@ import java.util.Locale;
 import java.util.TimeZone;
 
 import static com.voc.genshin_helper.util.RoundedCornersTransformation.CornerType.ALL;
-import static com.voc.genshin_helper.util.RoundedCornersTransformation.CornerType.TOP;
 
 
 /*
@@ -161,10 +152,14 @@ public class MainActivity extends AppCompatActivity {
 
     private ViewPager viewPager;
     private ArrayList<View> viewPager_List;
+    GoSleep gs;
 
     View viewPager0, viewPager1, viewPager2, viewPager3, viewPager4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //忘憂喵
+        gs = new GoSleep();
+        gs.sleep();
 
         sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
         editor = sharedPreferences.edit();

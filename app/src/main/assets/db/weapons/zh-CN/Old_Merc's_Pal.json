@@ -1,0 +1,12 @@
+{
+  "name": "Old Merc's Pal",
+  "rare": 2,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "沉重坚实的古旧大剑，饱经战火与岁月的洗练。",
+  "first_status": "N/A",
+  "second_status": "ATK",
+  "skill_name": "无",
+  "skill_desc": "无",
+  "obtain_way": "宝箱、商店购买"
+}

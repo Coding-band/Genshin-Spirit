@@ -1,0 +1,12 @@
+{
+  "name": "Royal Spear",
+  "rare": 4,
+  "weapon": "Polearm",
+  "isComingSoon": false,
+  "desc": "某位曾支配蒙德的旧日贵族，曾经珍爱的长枪。过去不曾见过天日，但如今依然尖锐无比。",
+  "first_status": "ATK",
+  "second_status": "ATK",
+  "skill_name": "专注",
+  "skill_desc": "攻击造成伤害时，暴击率提升8%/10%/12%/14%/16%,最多堆叠5次。攻击造成暴击后，移除已有的专注效果。",
+  "obtain_way": "商城兑换"
+}

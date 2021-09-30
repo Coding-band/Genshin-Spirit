@@ -468,12 +468,12 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         InputStream is_default = null;
         String result1 = null;
         try {
-            String[] strs_local = mg.list("db/"+lang+"/");
-            String[] strs_default = mg.list("db/en-US/");
+            String[] strs_local = mg.list("db/char/"+lang+"/");
+            String[] strs_default = mg.list("db/char/en-US/");
 
             for (String ast : strs_default){
                 if(ast.equals(CharName_BASE_UNDERSCORE+".json")){
-                    is_default = mg.open("db/en-US/"+CharName_BASE_UNDERSCORE+".json");
+                    is_default = mg.open("db/char/en-US/"+CharName_BASE_UNDERSCORE+".json");
                     result1 = IOUtils.toString(is_default, StandardCharsets.UTF_8);
                     is_default.close();
                 }
@@ -481,7 +481,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
             for (String ast : strs_local){
                 if(ast.equals(CharName_BASE_UNDERSCORE+".json")){
-                    is = mg.open("db/"+lang+"/"+CharName_BASE_UNDERSCORE+".json");
+                    is = mg.open("db/char/"+lang+"/"+CharName_BASE_UNDERSCORE+".json");
                     result1 = IOUtils.toString(is, StandardCharsets.UTF_8);
                     is.close();
                 }

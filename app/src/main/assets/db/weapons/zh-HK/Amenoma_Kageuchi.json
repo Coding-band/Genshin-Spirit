@@ -1,0 +1,12 @@
+{
+  "name": "Amenoma Kageuchi",
+  "rare": 4,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "desc": "傳說中連以神速見長的天狗都能斬落的名士訂制的刀。",
+  "obtain_way": "鍛造、完成農民的寶藏的任務可獲得鍛造圖紙",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "岩藏之胤",
+  "skill_desc":"施放元素戰技後，獲得1個胤種，該效果每5秒至多觸發一次。胤種持續30秒，至多同時存在3個。施放元素爆發後，會清除持有的所有胤種，並在2秒之後，基於消耗的胤種數量，每個為該角色恢復6/7.5/9/10.5/12點元素能量。"
+}

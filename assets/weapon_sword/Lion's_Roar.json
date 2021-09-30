@@ -1,0 +1,12 @@
+{
+  "name": "Lion's Roar",
+  "rare": 4,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "desc": "雕饰浮华的利刃，却丝毫不损它的柔韧与锋锐。破空之声有如龙吟。",
+  "skill_name": "踏火息雷",
+  "skill_desc": "对处于火元素或雷元素影响下的敌人，造成的伤害提高20%/24%/28%/32%/36%。",
+  "obtain_way": "祈愿"
+}

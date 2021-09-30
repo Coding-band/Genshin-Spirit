@@ -1,0 +1,12 @@
+{
+  "name": "Iron Sting",
+  "rare": 4,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "EleMas%",
+  "second_status": "ATK",
+  "desc": "外形流利的细长刺剑，是从异国经由商路流落到璃月的奇异兵器。轻快无比，剑芒极其锐利。",
+  "skill_name": "注能之刺",
+  "skill_desc": "造成元素伤害后的6秒内，角色造成的伤害提高6%/7.5%/9%/10.5%/12%，该效果最多叠加2层。该效果每1秒可以触发一次。",
+  "obtain_way": "锻造"
+}

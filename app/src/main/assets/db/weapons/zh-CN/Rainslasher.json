@@ -1,0 +1,12 @@
+{
+  "name": "Rainslasher",
+  "rare": 4,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "散发着黯淡荧光的无锋大剑，纯粹以气势和力量碾碎敌人",
+  "first_status": "EleMas",
+  "second_status": "ATK",
+  "skill_name": "止水息雷",
+  "skill_desc": "对处于水元素或雷元素影响下的敌人，造成的伤害提高20％/24%/28%/32%/36%。",
+  "obtain_way": "锻造"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Dark Iron Sword",
+  "rare": 3,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "EleMas",
+  "second_status": "ATK",
+  "desc": "其实就是稍微有些黑的铁剑。",
+  "skill_name": "过载",
+  "skill_desc": "对触发超载、超导、感电或雷元素扩散反应后的12秒内，攻击力提高20%/25%/30%/35%/40%。",
+  "obtain_way": "对话、与璃月港小吃摊摊主快刀陈对话'鱼卖得怎样'"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Silver Sword",
+  "rare": 2,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "N/A",
+  "second_status": "ATK",
+  "desc": "能退魔的银剑。大家都知道，其实用料是银合金而不是纯银。",
+  "skill_name": "无",
+  "skill_desc": "无",
+  "obtain_way": "宝箱、商店购买"
+}
