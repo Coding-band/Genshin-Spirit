@@ -1,0 +1,12 @@
+{
+  "name": "Blackcliff Agate",
+  "rare": 4,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "由黑岩制成的神秘法器，无常的赤色闪光仿佛大地深处的悸动同调。",
+  "first_status": "CritDMG%",
+  "second_status": "ATK",
+  "skill_name": "乘胜追击",
+  "skill_desc": "击败敌人后，攻击力提升12%/15%/18%/21%/24%，持续30秒。该效果至多叠加3层，每层持续时间独立。",
+  "obtain_way": "SHOP"
+}

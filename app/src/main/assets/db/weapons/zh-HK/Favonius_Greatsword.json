@@ -1,0 +1,12 @@
+{
+  "name": "Favonius Greatsword",
+  "rare": 4,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "西風騎士團的重型儀式劍。能輕易匯出元素力量，具有卓越的破壞力。",
+  "first_status": "EnRech%",
+  "second_status": "ATK",
+  "skill_name": "順風而行",
+  "skill_desc": "攻擊造成暴擊時，有60%/70%/80%/90%/100%的幾率產生少量元素微粒，能為角色恢復6點元素能量。該效果每12/10.5/9/7.5/6秒只能觸發一次。",
+  "obtain_way": "WISH"
+}

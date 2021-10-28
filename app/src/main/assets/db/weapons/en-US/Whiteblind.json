@@ -1,0 +1,12 @@
+{
+  "name": "Whiteblind",
+  "rare": 4,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "An exotic sword with one section of the blade left blunt. It made its way into Liyue via the hands of foreign traders. Incredibly powerful in the hands of someone who knows how to use it.",
+  "first_status": "DEF%",
+  "second_status": "ATK",
+  "skill_name": "Infusion Blade",
+  "skill_desc": "On hit, Normal or Charged Attacks increase ATK and DEF by 6%/7.5%/9%/10.5%/12%. Max 4 stacks (24% total). Can only occur once every 0.5s.",
+  "obtain_way": "FORGE"
+}

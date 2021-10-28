@@ -59,11 +59,15 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.BuildConfig;
 import com.voc.genshin_helper.R;
+import com.voc.genshin_helper.data.Artifacts;
+import com.voc.genshin_helper.data.ArtifactsAdapter;
 import com.voc.genshin_helper.data.Characters;
 import com.voc.genshin_helper.data.CharactersAdapter;
-import com.voc.genshin_helper.data.Characters_Rss;
+import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.data.ScreenSizeUtils;
 import com.voc.genshin_helper.data.Today_Material;
+import com.voc.genshin_helper.data.Weapons;
+import com.voc.genshin_helper.data.WeaponsAdapter;
 import com.voc.genshin_helper.kidding.GoSleep;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.LangUtils;
@@ -99,10 +103,15 @@ public class MainActivity extends AppCompatActivity {
     ViewGroup weapon_ll;
     BottomNavigationView nav_view;
     Today_Material tm;
-    Characters_Rss css;
+    ItemRss css;
     //Char Page
-    RecyclerView mList;
     CharactersAdapter mAdapter;
+    ArtifactsAdapter mArtifactAdapter;
+    RecyclerView mArtifactList;
+    RecyclerView mList;
+    WeaponsAdapter mWeaponAdapter;
+    RecyclerView mWeaponList;
+
     LocaleHelper localeHelper;
     NumberPickerDialog npd;
 
@@ -137,6 +146,9 @@ public class MainActivity extends AppCompatActivity {
     public SharedPreferences.Editor editor;
 
     public List<Characters> charactersList = new ArrayList<>();
+    public List<Weapons> weaponsList = new ArrayList();
+    public List<Artifacts> artifactsList = new ArrayList();
+
     boolean first = true;
 
     String lang = "en-US";
@@ -149,10 +161,13 @@ public class MainActivity extends AppCompatActivity {
 
     String[] langList ;
     String[] serverList ;
+    String[] gridList ;
 
     private ViewPager viewPager;
     private ArrayList<View> viewPager_List;
     GoSleep gs;
+
+
 
     View viewPager0, viewPager1, viewPager2, viewPager3, viewPager4;
     @Override
@@ -177,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         //init
         tm = new Today_Material();
-        css = new Characters_Rss();
+        css = new ItemRss();
         localeHelper = new LocaleHelper();
         langUtils = new LangUtils();
 
@@ -186,8 +201,6 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager = (ViewPager) findViewById(R.id.vp);
         nav_view = findViewById(R.id.nav_view);
-
-        css = new Characters_Rss();
         npd = new NumberPickerDialog(this);
         context = this;
 
@@ -286,6 +299,11 @@ public class MainActivity extends AppCompatActivity {
                         mList = viewPager0.findViewById(R.id.main_list);
                         mAdapter = new CharactersAdapter(context,charactersList);
                         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 2);
+                        if (sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
+                            mLayoutManager = new GridLayoutManager(context, 2);
+                        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
+                            mLayoutManager = new GridLayoutManager(context, 3);
+                        }
                         LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
                         paramsMsg.gravity = Gravity.CENTER;
                         mList.setLayoutManager(mLayoutManager);
@@ -311,7 +329,7 @@ public class MainActivity extends AppCompatActivity {
                                 int x = 0;
                                 for (Characters item : charactersList) {
                                     String str = String.valueOf(s).toLowerCase();
-                                    if (item.getName().toLowerCase().contains(String.valueOf(str))||css.LocaleStr(x,context).contains(String.valueOf(s))||css.LocaleStr(x,context).toLowerCase().contains(String.valueOf(s).toLowerCase())) {
+                                    if (item.getName().toLowerCase().contains(String.valueOf(str))||css.LocaleCharStr(x,context).contains(String.valueOf(s))||css.LocaleCharStr(x,context).toLowerCase().contains(String.valueOf(s).toLowerCase())) {
                                         filteredList.add(item);
                                     }
                                     x = x +1;
@@ -488,7 +506,143 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case 1:
-                        check_spinner = 0;
+                        mArtifactList = viewPager1.findViewById(R.id.artifact_list);
+                        mArtifactAdapter = new ArtifactsAdapter(context,artifactsList);
+                        mLayoutManager = new GridLayoutManager(context, 2);
+                        if (sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
+                            mLayoutManager = new GridLayoutManager(context, 2);
+                        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
+                            mLayoutManager = new GridLayoutManager(context, 3);
+                        }
+                        paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
+                        paramsMsg.gravity = Gravity.CENTER;
+                        mArtifactList.setLayoutManager(mLayoutManager);
+                        mArtifactList.setLayoutParams(paramsMsg);
+                        mArtifactList.setAdapter(mArtifactAdapter);
+                        mArtifactList.removeAllViewsInLayout();
+                        artifact_list_reload();
+
+
+                        EditText artifacts_et = viewPager1.findViewById(R.id.char_et);
+                        artifacts_et.addTextChangedListener(new TextWatcher() {
+                            @Override
+                            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                            }
+
+                            @Override
+                            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                            }
+
+                            @Override
+                            public void afterTextChanged(Editable s) {
+                                ArrayList<Artifacts> filteredList = new ArrayList<>();
+                                int x = 0;
+                                for (Artifacts item : artifactsList) {
+                                    String str = String.valueOf(s).toLowerCase();
+                                    if (item.getName().toLowerCase().contains(String.valueOf(str))||css.LocaleArtifactStr(x,context).contains(String.valueOf(s))||css.LocaleArtifactStr(x,context).toLowerCase().contains(String.valueOf(s).toLowerCase())) {
+                                        filteredList.add(item);
+                                    }
+                                    x = x +1;
+                                }
+                                mArtifactAdapter.filterList(filteredList);
+                            }
+                        });
+
+                        ImageView artifact_filter = viewPager1.findViewById(R.id.char_filter);
+                        artifact_filter.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+                                View view = View.inflate(context, R.layout.menu_artifact_filter, null);
+                                // Rating
+                                RatingBar ratingBar = view.findViewById(R.id.menu_rating);
+                                // Function Buttons
+                                Button cancel = view.findViewById(R.id.menu_cancel);
+                                Button reset = view.findViewById(R.id.menu_reset);
+                                Button ok = view.findViewById(R.id.menu_ok);
+
+                                ratingBar.setNumStars(5);
+                                ratingBar.setRating(show_stars);
+
+                                cancel.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        dialog.dismiss();
+                                    }
+                                });
+
+                                reset.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        show_pyro = true;
+                                        show_hydro = true;
+                                        show_anemo = true;
+                                        show_dendor = true;
+                                        show_electro = true;
+                                        show_cryo = true;
+                                        show_geo = true;
+
+                                        show_sword = true;
+                                        show_claymore = true;
+                                        show_polearm = true;
+                                        show_bow = true;
+                                        show_catalyst = true;
+
+                                        ratingBar.setRating(0);
+
+                                        editor.putBoolean("show_pyro",show_pyro);
+                                        editor.putBoolean("show_hydro",show_hydro);
+                                        editor.putBoolean("show_anemo",show_anemo);
+                                        editor.putBoolean("show_electro",show_electro);
+                                        editor.putBoolean("show_dendor",show_dendor);
+                                        editor.putBoolean("show_cryo",show_cryo);
+                                        editor.putBoolean("show_geo",show_geo);
+                                        editor.putBoolean("show_sword",show_sword);
+                                        editor.putBoolean("show_claymore",show_claymore);
+                                        editor.putBoolean("show_polearm",show_polearm);
+                                        editor.putBoolean("show_bow",show_bow);
+                                        editor.putBoolean("show_catalyst",show_catalyst);
+                                        editor.putInt("char_stars", (int) ratingBar.getRating());
+                                        editor.apply();
+                                        dialog.dismiss();
+
+                                        mArtifactAdapter.filterList(artifactsList);
+
+                                    }
+                                });
+
+                                ok.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        ArrayList<Artifacts> filteredList = new ArrayList<>();
+                                        for (Artifacts item : artifactsList) {
+                                            if(ratingBar.getRating() != 0 && item.getRare() == ratingBar.getRating()){
+                                                filteredList.add(item);
+                                            }else if (ratingBar.getRating() == 0){
+                                                filteredList.add(item);
+                                            }
+                                        }
+
+                                        mArtifactList.removeAllViews();
+                                        mArtifactAdapter.filterList(filteredList);
+                                        editor.putInt("char_stars", (int) ratingBar.getRating());
+                                        editor.apply();
+                                        dialog.dismiss();
+                                    }
+                                });
+
+                                dialog.setContentView(view);
+                                dialog.setCanceledOnTouchOutside(true);
+                                //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
+                                Window dialogWindow = dialog.getWindow();
+                                WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+                                lp.width = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth());
+                                lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                                lp.gravity = Gravity.BOTTOM;
+                                dialogWindow.setAttributes(lp);
+                                dialog.show();
+                            }
+                        });
                         break;
 
                     case 2:
@@ -513,7 +667,191 @@ public class MainActivity extends AppCompatActivity {
 
                     case 3:
                         check_spinner = 0;
+                        mWeaponList = viewPager3.findViewById(R.id.weapon_list);
+                        mWeaponAdapter = new WeaponsAdapter(context,weaponsList);
+                        mLayoutManager = new GridLayoutManager(context, 2);
+                        if (sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
+                            mLayoutManager = new GridLayoutManager(context, 2);
+                        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
+                            mLayoutManager = new GridLayoutManager(context, 3);
+                        }
+                        paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
+                        paramsMsg.gravity = Gravity.CENTER;
+                        mWeaponList.setLayoutManager(mLayoutManager);
+                        mWeaponList.setLayoutParams(paramsMsg);
+                        mWeaponList.setAdapter(mWeaponAdapter);
+                        mWeaponList.removeAllViewsInLayout();
+                        weapon_list_reload();
+
+
+                        EditText weapon_et = viewPager3.findViewById(R.id.char_et);
+                        weapon_et.addTextChangedListener(new TextWatcher() {
+                            @Override
+                            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                            }
+
+                            @Override
+                            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                            }
+
+                            @Override
+                            public void afterTextChanged(Editable s) {
+                                ArrayList<Weapons> filteredList = new ArrayList<>();
+                                int x = 0;
+                                for (Weapons item : weaponsList) {
+                                    String str = String.valueOf(s).toLowerCase();
+                                    if (item.getName().toLowerCase().contains(String.valueOf(str))||css.LocaleWeaponStr(x,context).contains(String.valueOf(s))||css.LocaleWeaponStr(x,context).toLowerCase().contains(String.valueOf(s).toLowerCase())) {
+                                        filteredList.add(item);
+                                    }
+                                    x = x +1;
+                                }
+                                mWeaponAdapter.filterList(filteredList);
+                            }
+                        });
+
+                        ImageView weapon_filter = viewPager3.findViewById(R.id.char_filter);
+                        weapon_filter.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+                                View view = View.inflate(context, R.layout.menu_weapon_filter, null);
+                                // Weapons
+                                ImageView ico_sword = view.findViewById(R.id.ico_sword);
+                                ImageView ico_claymore = view.findViewById(R.id.ico_claymore);
+                                ImageView ico_polearm = view.findViewById(R.id.ico_polearm);
+                                ImageView ico_bow = view.findViewById(R.id.ico_bow);
+                                ImageView ico_catalyst = view.findViewById(R.id.ico_catalyst);
+                                // Rating
+                                RatingBar ratingBar = view.findViewById(R.id.menu_rating);
+                                // Function Buttons
+                                Button cancel = view.findViewById(R.id.menu_cancel);
+                                Button reset = view.findViewById(R.id.menu_reset);
+                                Button ok = view.findViewById(R.id.menu_ok);
+
+                                show_pyro = sharedPreferences.getBoolean("show_pyro",true);
+                                show_hydro = sharedPreferences.getBoolean("show_hydro",true);
+                                show_anemo = sharedPreferences.getBoolean("show_anemo",true);
+                                show_electro = sharedPreferences.getBoolean("show_electro",true);
+                                show_dendor = sharedPreferences.getBoolean("show_dendor",true);
+                                show_cryo = sharedPreferences.getBoolean("show_cryo",true);
+                                show_geo = sharedPreferences.getBoolean("show_geo",true);
+                                show_sword = sharedPreferences.getBoolean("show_sword",true);
+                                show_claymore = sharedPreferences.getBoolean("show_claymore",true);
+                                show_polearm = sharedPreferences.getBoolean("show_polearm",true);
+                                show_bow = sharedPreferences.getBoolean("show_bow",true);
+                                show_catalyst = sharedPreferences.getBoolean("show_catalyst",true);
+                                show_catalyst = sharedPreferences.getBoolean("show_catalyst",true);
+                                show_stars = sharedPreferences.getInt("weapon_stars",0);
+
+                                if(show_sword){show_sword = true;ico_sword.setColorFilter(Color.parseColor("#00000000"));}else{show_sword = false;ico_sword.setColorFilter(Color.parseColor("#66313131"));}
+                                if(show_claymore){show_claymore = true;ico_claymore.setColorFilter(Color.parseColor("#00000000"));}else{show_claymore = false;ico_claymore.setColorFilter(Color.parseColor("#66313131"));}
+                                if(show_polearm){show_polearm = true;ico_polearm.setColorFilter(Color.parseColor("#00000000"));}else{show_polearm = false;ico_polearm.setColorFilter(Color.parseColor("#66313131"));}
+                                if(show_bow){show_bow = true;ico_bow.setColorFilter(Color.parseColor("#00000000"));}else{show_bow = false;ico_bow.setColorFilter(Color.parseColor("#66313131"));}
+                                if(show_catalyst){show_catalyst = true;ico_catalyst.setColorFilter(Color.parseColor("#00000000"));}else{show_catalyst = false;ico_catalyst.setColorFilter(Color.parseColor("#66313131"));}
+                                ratingBar.setNumStars(5);
+                                ratingBar.setRating(show_stars);
+
+                                ico_sword.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_sword){show_sword = false;ico_sword.setColorFilter(Color.parseColor("#66313131"));}else{show_sword = true;ico_sword.setColorFilter(Color.parseColor("#00000000"));}}});
+                                ico_claymore.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_claymore){show_claymore = false;ico_claymore.setColorFilter(Color.parseColor("#66313131"));}else{show_claymore = true;ico_claymore.setColorFilter(Color.parseColor("#00000000"));}}});
+                                ico_polearm.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_polearm){show_polearm = false;ico_polearm.setColorFilter(Color.parseColor("#66313131"));}else{show_polearm = true;ico_polearm.setColorFilter(Color.parseColor("#00000000"));}}});
+                                ico_bow.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_bow){show_bow = false;ico_bow.setColorFilter(Color.parseColor("#66313131"));}else{show_bow = true;ico_bow.setColorFilter(Color.parseColor("#00000000"));}}});
+                                ico_catalyst.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_catalyst){show_catalyst = false;ico_catalyst.setColorFilter(Color.parseColor("#66313131"));}else{show_catalyst = true;ico_catalyst.setColorFilter(Color.parseColor("#00000000"));}}});
+
+                                cancel.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        dialog.dismiss();
+                                    }
+                                });
+
+                                reset.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        show_pyro = true;
+                                        show_hydro = true;
+                                        show_anemo = true;
+                                        show_dendor = true;
+                                        show_electro = true;
+                                        show_cryo = true;
+                                        show_geo = true;
+
+                                        show_sword = true;
+                                        show_claymore = true;
+                                        show_polearm = true;
+                                        show_bow = true;
+                                        show_catalyst = true;
+
+                                        ratingBar.setRating(0);
+
+                                        editor.putBoolean("show_pyro",show_pyro);
+                                        editor.putBoolean("show_hydro",show_hydro);
+                                        editor.putBoolean("show_anemo",show_anemo);
+                                        editor.putBoolean("show_electro",show_electro);
+                                        editor.putBoolean("show_dendor",show_dendor);
+                                        editor.putBoolean("show_cryo",show_cryo);
+                                        editor.putBoolean("show_geo",show_geo);
+                                        editor.putBoolean("show_sword",show_sword);
+                                        editor.putBoolean("show_claymore",show_claymore);
+                                        editor.putBoolean("show_polearm",show_polearm);
+                                        editor.putBoolean("show_bow",show_bow);
+                                        editor.putBoolean("show_catalyst",show_catalyst);
+                                        editor.putInt("weapon_stars", (int) ratingBar.getRating());
+                                        editor.apply();
+                                        dialog.dismiss();
+
+                                        mWeaponAdapter.filterList(weaponsList);
+
+                                    }
+                                });
+
+                                ok.setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        ArrayList<Weapons> filteredList = new ArrayList<>();
+                                        for (Weapons item : weaponsList) {
+                                            if(item.getWeapon().toLowerCase().equals("sword") && show_sword||item.getWeapon().toLowerCase().equals("claymore") && show_claymore||item.getWeapon().toLowerCase().equals("polearm") && show_polearm||item.getWeapon().toLowerCase().equals("bow") && show_bow||item.getWeapon().toLowerCase().equals("catalyst") && show_catalyst){
+                                                if(ratingBar.getRating() != 0 && item.getRare() == ratingBar.getRating()){
+                                                    filteredList.add(item);
+                                                }else if (ratingBar.getRating() == 0){
+                                                    filteredList.add(item);
+                                                }
+                                            }
+                                        }
+
+                                        mList.removeAllViews();
+                                        mWeaponAdapter.filterList(filteredList);
+                                        editor.putBoolean("show_pyro",show_pyro);
+                                        editor.putBoolean("show_hydro",show_hydro);
+                                        editor.putBoolean("show_anemo",show_anemo);
+                                        editor.putBoolean("show_electro",show_electro);
+                                        editor.putBoolean("show_dendor",show_dendor);
+                                        editor.putBoolean("show_cryo",show_cryo);
+                                        editor.putBoolean("show_geo",show_geo);
+                                        editor.putBoolean("show_sword",show_sword);
+                                        editor.putBoolean("show_claymore",show_claymore);
+                                        editor.putBoolean("show_polearm",show_polearm);
+                                        editor.putBoolean("show_bow",show_bow);
+                                        editor.putBoolean("show_catalyst",show_catalyst);
+                                        editor.putInt("weapon_stars", (int) ratingBar.getRating());
+                                        editor.apply();
+                                        dialog.dismiss();
+                                    }
+                                });
+
+                                dialog.setContentView(view);
+                                dialog.setCanceledOnTouchOutside(true);
+                                //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
+                                Window dialogWindow = dialog.getWindow();
+                                WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+                                lp.width = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth());
+                                lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                                lp.gravity = Gravity.BOTTOM;
+                                dialogWindow.setAttributes(lp);
+                                dialog.show();
+                            }
+                        });
                         break;
+
 
                     case 4:
                         setup_setting();
@@ -656,7 +994,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Translate
-        langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp)};
+        langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp),getString(R.string.fr_fr)};
         ArrayAdapter lang_aa = new ArrayAdapter(context,R.layout.spinner_item,langList);
         lang_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
@@ -672,33 +1010,78 @@ public class MainActivity extends AppCompatActivity {
                     if(position == 0){
                         editor.putString("curr_lang","zh-HK");
                         editor.putInt("curr_lang_pos",position);
+                        editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
                         editor.apply();
                         LangUtils.getAttachBaseContext(context,position);
-                        Toast.makeText(context, context.getString(R.string.pls_restart_app), Toast.LENGTH_SHORT).show();
+                        recreate();
                     }else if(position == 1){
                         editor.putString("curr_lang","zh-CN");
                         editor.putInt("curr_lang_pos",position);
+                        editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
                         editor.apply();
                         LangUtils.getAttachBaseContext(context,position);
-                        Toast.makeText(context, context.getString(R.string.pls_restart_app), Toast.LENGTH_SHORT).show();
+                        recreate();
                     }else if(position == 2){
                         editor.putString("curr_lang","en-US");
                         editor.putInt("curr_lang_pos",position);
+                        editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
                         editor.apply();
                         LangUtils.getAttachBaseContext(context,position);
-                        Toast.makeText(context, context.getString(R.string.pls_restart_app), Toast.LENGTH_SHORT).show();
+                        recreate();
                     }else if(position == 3){
                         editor.putString("curr_lang","ru-RU");
                         editor.putInt("curr_lang_pos",position);
+                        editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
                         editor.apply();
                         LangUtils.getAttachBaseContext(context,position);
-                        Toast.makeText(context, context.getString(R.string.pls_restart_app), Toast.LENGTH_SHORT).show();
+                        recreate();
                     }else if(position == 4){
                         editor.putString("curr_lang","ja-JP");
                         editor.putInt("curr_lang_pos",position);
+                        editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
                         editor.apply();
                         LangUtils.getAttachBaseContext(context,position);
-                        Toast.makeText(context, context.getString(R.string.pls_restart_app), Toast.LENGTH_SHORT).show();
+                        recreate();
+                    }else if(position == 5){
+                        editor.putString("curr_lang","fr-FR");
+                        editor.putInt("curr_lang_pos",position);
+                        editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
+                        editor.apply();
+                        LangUtils.getAttachBaseContext(context,position);
+                        recreate();
+                    }
+                }
+                check_spinner = check_spinner +1;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        // List_Grid
+        gridList = new String[]{"2","3"};
+        ArrayAdapter grid_aa = new ArrayAdapter(context,R.layout.spinner_item,gridList);
+        grid_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
+
+        Spinner grid_sp = viewPager4.findViewById(R.id.ui_box_spinner);
+        grid_sp.setAdapter(grid_aa);
+        grid_sp.setSelection(sharedPreferences.getInt("curr_ui_grid_pos",0));
+        grid_sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // https://blog.csdn.net/pigdreams/article/details/81277110
+                // https://stackoverflow.com/questions/13397933/android-spinner-avoid-onitemselected-calls-during-initialization
+                if(check_spinner >0){
+                    if(position == 0){
+                        editor.putString("curr_ui_grid","2");
+                        editor.putInt("curr_ui_grid_pos",position);
+                        editor.apply();
+                    }else if(position == 1){
+                        editor.putString("curr_ui_grid","3");
+                        editor.putInt("curr_ui_grid_pos",position);
+                        editor.apply();
                     }
                 }
                 check_spinner = check_spinner +1;
@@ -716,9 +1099,13 @@ public class MainActivity extends AppCompatActivity {
         TextView contact_link3 = viewPager4.findViewById(R.id.contact_link3);
         TextView contact_link4 = viewPager4.findViewById(R.id.contact_link4);
         TextView contact_link5 = viewPager4.findViewById(R.id.contact_link5);
+        TextView contact_link6 = viewPager4.findViewById(R.id.contact_link6);
+        TextView contact_link7 = viewPager4.findViewById(R.id.contact_link7);
 
         contact_link1.setMovementMethod(LinkMovementMethod.getInstance());
         contact_link2.setMovementMethod(LinkMovementMethod.getInstance());
+        contact_link6.setMovementMethod(LinkMovementMethod.getInstance());
+        contact_link7.setMovementMethod(LinkMovementMethod.getInstance());
         contact_link3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -821,7 +1208,7 @@ public class MainActivity extends AppCompatActivity {
         normalDialog.setIcon(R.drawable.app_ico);
         normalDialog.setTitle(getString(R.string.vote_title));
         normalDialog.setMessage(getString(R.string.vote_info));
-        normalDialog.setPositiveButton("幫忙評分",
+        normalDialog.setPositiveButton(getString(R.string.vote_help),
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -829,13 +1216,13 @@ public class MainActivity extends AppCompatActivity {
                         editor.apply();
                         final String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
                         try {
-                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.voc.genshin_spirit_gp")));
                         } catch (android.content.ActivityNotFoundException anfe) {
-                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.voc.genshin_spirit_gp")));
                         }
                     }
                 });
-        normalDialog.setNegativeButton("不用了",
+        normalDialog.setNegativeButton(getString(R.string.vote_no),
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -843,7 +1230,7 @@ public class MainActivity extends AppCompatActivity {
                         editor.apply();
                     }
                 });
-        normalDialog.setNeutralButton("以後再說",
+        normalDialog.setNeutralButton(getString(R.string.vote_later),
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -1099,6 +1486,69 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void weapon_list_reload() {
+        Log.wtf("DAAM", "YEE");
+        weaponsList.clear();
+        String name,weapon,stat_1;
+        int rare,isComing;
+
+        String json_base = LoadData("db/weapons/weapon_list.json");
+        //Get data from JSON
+        try {
+            JSONArray array = new JSONArray(json_base);
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject object = array.getJSONObject(i);
+                name = object.getString("name");
+                weapon = object.getString("weapon");
+                stat_1 = object.getString("stat_1");
+                rare = object.getInt("rare");
+                isComing = object.getInt("isComing");
+
+                Weapons weapons = new Weapons();
+                weapons.setName(name);
+                weapons.setWeapon(weapon);
+                weapons.setRare(rare);
+                weapons.setStat_1(stat_1);
+                weapons.setIsComing(isComing);
+                weaponsList.add(weapons);
+            }
+            mWeaponAdapter.filterList(weaponsList);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void artifact_list_reload() {
+        Log.wtf("DAAM", "YEE");
+        artifactsList.clear();
+        String name ,img;
+        int rare,isComing;
+
+        String json_base = LoadData("db/artifacts/artifact_list.json");
+        //Get data from JSON
+        try {
+            JSONArray array = new JSONArray(json_base);
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject object = array.getJSONObject(i);
+                name = object.getString("name");
+                img = object.getString("img");
+                rare = object.getInt("rare");
+                isComing = object.getInt("isComing");
+
+                Artifacts artifacts = new Artifacts();
+                artifacts.setName(name);
+                artifacts.setBaseName(img);
+                artifacts.setRare(rare);
+                artifacts.setIsComing(isComing);
+                artifactsList.add(artifacts);
+            }
+            mArtifactAdapter.filterList(artifactsList);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+
     public void showCharDetail (String name){
 
     }
@@ -1249,16 +1699,12 @@ public class MainActivity extends AppCompatActivity {
         TextView daily_login_tv = viewPager2.findViewById(R.id.daily_login_tv);
         TextView map_tv = viewPager2.findViewById(R.id.map_tv);
         TextView alarm_tv = viewPager2.findViewById(R.id.alarm_tv);
-        TextView x_tv = viewPager2.findViewById(R.id.x_tv);
-        TextView y_tv = viewPager2.findViewById(R.id.y_tv);
         BottomNavigationView nav_view = findViewById(R.id.nav_view);
 
         calculator_tv.setTextColor(Color.parseColor(color_hex));
         daily_login_tv.setTextColor(Color.parseColor(color_hex));
         map_tv.setTextColor(Color.parseColor(color_hex));
         alarm_tv.setTextColor(Color.parseColor(color_hex));
-        x_tv.setTextColor(Color.parseColor(color_hex));
-        y_tv.setTextColor(Color.parseColor(color_hex));
         nav_view.setItemIconTintList(myList);
         nav_view.setItemTextColor(myList);
 

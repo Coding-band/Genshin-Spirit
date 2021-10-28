@@ -1,0 +1,12 @@
+{
+  "name": "Eye of Perception",
+  "rare": 4,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "幽暗的琉璃寶珠，傳說中擁有洞察人心清白的力量。",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "迴響",
+  "skill_desc": "普通攻擊與重擊命中時，有50%幾率發射一枚昭心法球，造成240%/270%/300%/330%/360%攻擊力傷害，至多在敵人之間彈射4次。該效果每12/11/10/9/8秒至多觸發一次。",
+  "obtain_way": "WISH"
+}

@@ -118,6 +118,9 @@
 
     <!-- New Character in here-->
     <string name="thoma">Thoma</string>
+    <string name="gorou">Gorou</string>
+    <string name="arataki_itto">Arataki Itto</string>
+    <string name="yae_miko">Yae Miko</string>
 
     <!-- char_info -->
     <string name="search">Search...</string>
@@ -161,6 +164,23 @@
     <string name="team_advice">Team Advice</string>
     <string name="weapon_advice">Weapon Advice</string>
     <string name="art_advice">Artifacts Advice</string>
+    <!-- added in 20211001 -->
+    <string name="none_info">There is no relevant information about him/her/it at the moment</string>
+    <string name="weapon_stat">"Sec. attr : "</string>
+    <string name="weapon_stat_atk">"ATK"</string>
+    <string name="weapon_stat_atkP">"ATK %"</string>
+    <string name="weapon_stat_CritDMGP">"CRIT DMG %"</string>
+    <string name="weapon_stat_CritRateP">"CRIT Rate %"</string>
+    <string name="weapon_stat_PhyDMGP">"Physical DMG %"</string>
+    <string name="weapon_stat_EnRechP">"Energy Recharge %"</string>
+    <string name="weapon_stat_EleMas">"Elemental Mastery"</string>
+    <string name="weapon_stat_DEFP">"DEF %"</string>
+    <string name="weapon_stat_HPP">"HP %"</string>
+    <string name="weapon_stat_no">"N/A"</string>
+    <!-- add in 20211018-->
+    <string name="artifact_stat1">1 Piece</string>
+    <string name="artifact_stat2">2 Piece(s)</string>
+    <string name="artifact_stat4">4 Piece(s)</string>
 
     <!-- alarm -->
     <string name="alarm_t1">Boss</string>
@@ -200,8 +220,10 @@
     <string name="world_tree">世界树服</string>
 
     <!-- inside ui -->
-    <string name="genshindb_link"><a href="https://github.com/Wolfteam/GenshinDb">GenshinDb Github</a></string>
-    <string name="genshinhelper_link"><a href="https://github.com/Vocaloid2048/GenshinHelper">Genshin Spirit Github</a></string>
+    <string name="genshindb_link" translatable="false"><a href="https://github.com/Wolfteam/GenshinDb">Shiroi Github</a></string>
+    <string name="genshinhelper_link" translatable="false"><a href="https://github.com/Vocaloid2048/GenshinHelper">Genshin Spirit Github</a></string>
+    <string name="genshinhelper_dclink" translatable="false"><a href="https://discord.gg/uXatcbWKv2">Genshin Spirit Discord Server</a></string>
+    <string name="genshindb_dclink" translatable="false"><a href="https://discord.com/invite/rztDRXnnDj">Shiroi Discord Server</a></string>
     <string name="press_exit">Press again to exit app</string>
     <string name="vote_title">Please help for rate this app~</string>
     <string name="vote_info">If you like Genshin Spirit, please take a moment to help comment~ Your little help will be of great help to me, and it will not take you a lot of time.</string>
@@ -222,13 +244,28 @@
     <string name="choosed">"Choosed : "</string>
     <string name="caled_char_weapon_art">Calculated Characters/Weapons/Artifacts</string>
     <string name="char_lvls">Character level</string>
+    <!-- added in 20211001 -->
+    <string name="cal_choosed_already">You have already choosed him/her/it !</string>
+    <!-- add in 20211003 -->
+    <string name="cal_crystal">Crystal</string>
+    <string name="cal_boss">Drop from General Boss</string>
+    <string name="cal_week_boss">Drop from Weekly Boss</string>
+    <string name="cal_local">Local Specialty</string>
+    <string name="cal_monster">Drop from Monster</string>
+    <string name="cal_weeklybk1">Drop from Mon,Thur,Sun Domain</string>
+    <string name="cal_weeklybk2">Drop from Tue,Fri,Sun Domain</string>
+    <string name="cal_weeklybk3">Drop from Wed,Sat,Sun Domain</string>
+    <string name="cal_other">Other</string>
+    <!-- add in 20211025 -->
+    <string name="cal_reset">Reset</string>
 
     <!-- Language (Don't translate)-->
-    <string name="zh_hk" translatable="false">繁體中文 (港、澳、台)</string>
-    <string name="en_us" translatable="false">English (US)</string>
-    <string name="ru_ru" translatable="false">русский</string>
+    <string name="zh_hk" translatable="false">繁體中文</string>
+    <string name="en_us" translatable="false">English</string>
+    <string name="ru_ru" translatable="false">Русский</string>
     <string name="zh_cn" translatable="false">简体中文</string>
     <string name="ja_jp" translatable="false">日本語</string>
+    <string name="fr_fr" translatable="false">français</string>
 
     <!-- main_page -->
     <string name="material_force">Material Force</string>
@@ -264,6 +301,8 @@
     <string name="translator_title">Translator</string>
     <string name="beta_tester_title">Beta Testers</string>
     <string name="thanks_intro">Because of your help, Genshin Spirit can be more perfect</string>
+    <!-- add in 20211016-->
+    <string name="list_grid">List grid</string>
 
     <!-- moy -->
     <string name="date_jan">Jan</string>
@@ -312,5 +351,183 @@
     <string name="date_30th">" 30th"</string>
     <string name="date_31st">" 31st"</string>
 
+    <!-- Weapon-Sword -->
+    <string name="amenoma_kageuchi">"Amenoma Kageuchi"</string>
+    <string name="aquila_favonia">"Aquila Favonia"</string>
+    <string name="blackcliff_longsword">"Blackcliff Longsword"</string>
+    <string name="cool_steel">"Cool Steel"</string>
+    <string name="dark_iron_sword">"Dark Iron Sword"</string>
+    <string name="dull_blade">"Dull Blade"</string>
+    <string name="favonius_sword">"Favonius Sword"</string>
+    <string name="festering_desire">"Festering Desire"</string>
+    <string name="fillet_blade">"Fillet Blade"</string>
+    <string name="freedom_sworn">"Freedom-Sworn"</string>
+    <string name="harbinger_of_dawn">"Harbinger of Dawn"</string>
+    <string name="iron_sting">"Iron Sting"</string>
+    <string name="lions_roar">"Lion's Roar"</string>
+    <string name="mistsplitter_reforged">"Mistsplitter Reforged"</string>
+    <string name="primordial_jade_cutter">"Primordial Jade Cutter"</string>
+    <string name="prototype_rancour">"Prototype Rancour"</string>
+    <string name="royal_longsword">"Royal Longsword"</string>
+    <string name="sacrificial_sword">"Sacrificial Sword"</string>
+    <string name="silver_sword">"Silver Sword"</string>
+    <string name="skyrider_sword">"Skyrider Sword"</string>
+    <string name="skyward_blade">"Skyward Blade"</string>
+    <string name="summit_shaper">"Summit Shaper"</string>
+    <string name="sword_of_descension">"Sword of Descension"</string>
+    <string name="the_alley_flash">"The Alley Flash"</string>
+    <string name="the_black_sword">"The Black Sword"</string>
+    <string name="the_flute">"The Flute"</string>
+    <string name="travelers_handy_sword">"Traveler's Handy Sword"</string>
+
+    <!-- Weapon-Claymore -->
+    <string name="waster_greatsword">"Waster Greatsword"</string>
+    <string name="old_mercs_pal">"Old Merc's Pal"</string>
+    <string name="bloodtainted_greatsword">"Bloodtainted Greatsword"</string>
+    <string name="debate_club">"Debate Club"</string>
+    <string name="quartz">"Quartz"</string>
+    <string name="ferrous_shadow">"Ferrous Shadow"</string>
+    <string name="skyrider_greatsword">"Skyrider Greatsword"</string>
+    <string name="white_iron_greatsword">"White Iron Greatsword"</string>
+    <string name="blackcliff_slasher">"Blackcliff Slasher"</string>
+    <string name="favonius_greatsword">"Favonius Greatsword"</string>
+    <string name="katsuragikiri_nagamasa">"Katsuragikiri Nagamasa"</string>
+    <string name="lithic_blade">"Lithic Blade"</string>
+    <string name="luxurious_sea_lord">"Luxurious Sea-Lord"</string>
+    <string name="prototype_archaic">"Prototype Archaic"</string>
+    <string name="rainslasher">"Rainslasher"</string>
+    <string name="royal_greatsword">"Royal Greatsword"</string>
+    <string name="sacrificial_greatsword">"Sacrificial Greatsword"</string>
+    <string name="serpent_spine">"Serpent Spine"</string>
+    <string name="snow_tombed_starsilver">"Snow-Tombed Starsilver"</string>
+    <string name="the_bell">"The Bell"</string>
+    <string name="whiteblind">"Whiteblind"</string>
+    <string name="skyward_pride">"Skyward Pride"</string>
+    <string name="song_of_broken_pines">"Song of Broken Pines"</string>
+    <string name="the_unforged">"The Unforged"</string>
+    <string name="wolfs_gravestone">"Wolf's Gravestone"</string>
+
+    <!-- Weapon-Plearm -->
+    <string name="beginners_protector">"Beginner's Protector"</string>
+    <string name="iron_point">"Iron Point"</string>
+    <string name="black_tassel">"Black Tassel"</string>
+    <string name="halberd">"Halberd"</string>
+    <string name="white_tassel">"White Tassel"</string>
+    <string name="blackcliff_pole">"Blackcliff Pole"</string>
+    <string name="crescent_pike">"Crescent Pike"</string>
+    <string name="deathmatch">"Deathmatch"</string>
+    <string name="dragons_bane">"Dragon's Bane"</string>
+    <string name="dragonspine_spear">"Dragonspine Spear"</string>
+    <string name="favonius_lance">"Favonius Lance"</string>
+    <string name="kitain_cross_spear">"Kitain Cross Spear"</string>
+    <string name="lithic_spear">"Lithic Spear"</string>
+    <string name="prototype_starglitter">"Prototype Starglitter"</string>
+    <string name="royal_spear">"Royal Spear"</string>
+    <string name="the_catch">"The Catch"</string>
+    <string name="engulfing_lightning">"Engulfing Lightning"</string>
+    <string name="primordial_jade_winged_spear">"Primordial Jade Winged-Spear"</string>
+    <string name="skyward_spine">"Skyward Spine"</string>
+    <string name="staff_of_homa">"Staff of Homa"</string>
+    <string name="vortex_vanquisher">"Vortex Vanquisher"</string>
+
+    <!-- Weapon-Catalyst -->
+    <string name="apprentices_notes">"Apprentice's Notes"</string>
+    <string name="pocket_grimoire">"Pocket Grimoire"</string>
+    <string name="amber_catalyst">"Amber Catalyst"</string>
+    <string name="emerald_orb">"Emerald Orb"</string>
+    <string name="magic_guide">"Magic Guide"</string>
+    <string name="otherworldly_story">"Otherworldly Story"</string>
+    <string name="thrilling_tales_of_dragon_slayers">"Thrilling Tales of Dragon Slayers"</string>
+    <string name="twin_nephrite">"Twin Nephrite"</string>
+    <string name="blackcliff_agate">"Blackcliff Agate"</string>
+    <string name="dodoco_tales">"Dodoco Tales"</string>
+    <string name="eye_of_perception">"Eye of Perception"</string>
+    <string name="favonius_codex">"Favonius Codex"</string>
+    <string name="frostbearer">"Frostbearer"</string>
+    <string name="hakushin_ring">"Hakushin Ring"</string>
+    <string name="mappa_mare">"Mappa Mare"</string>
+    <string name="prototype_amber">"Prototype Amber"</string>
+    <string name="royal_grimoire">"Royal Grimoire"</string>
+    <string name="sacrificial_fragments">"Sacrificial Fragments"</string>
+    <string name="solar_pearl">"Solar Pearl"</string>
+    <string name="the_widsith">"The Widsith"</string>
+    <string name="wine_and_song">"Wine and Song"</string>
+    <string name="everlasting_moonglow">"Everlasting Moonglow"</string>
+    <string name="lost_prayer_to_the_sacred_winds">"Lost Prayer to the Sacred Winds"</string>
+    <string name="memory_of_dust">"Memory of Dust"</string>
+    <string name="skyward_atlas">"Skyward Atlas"</string>
+
+    <!-- Weapon-Bow -->
+    <string name="hunters_bow">"Hunter's Bow"</string>
+    <string name="seasoned_hunters_bow">"Seasoned Hunter's Bow"</string>
+    <string name="ebony_bow">"Ebony Bow"</string>
+    <string name="messenger">"Messenger"</string>
+    <string name="raven_bow">"Raven Bow"</string>
+    <string name="recurve_bow">"Recurve Bow"</string>
+    <string name="sharpshooters_oath">"Sharpshooter's Oath"</string>
+    <string name="slingshot">"Slingshot"</string>
+    <string name="alley_hunter">"Alley Hunter"</string>
+    <string name="blackcliff_warbow">"Blackcliff Warbow"</string>
+    <string name="compound_bow">"Compound Bow"</string>
+    <string name="favonius_warbow">"Favonius Warbow"</string>
+    <string name="hamayumi">"Hamayumi"</string>
+    <string name="mitternachts_waltz">"Mitternachts Waltz"</string>
+    <string name="predator">"Predator"</string>
+    <string name="prototype_crescent">"Prototype Crescent"</string>
+    <string name="royal_bow">"Royal Bow"</string>
+    <string name="rust">"Rust"</string>
+    <string name="sacrificial_bow">"Sacrificial Bow"</string>
+    <string name="the_stringless">"The Stringless"</string>
+    <string name="the_viridescent_hunt">"The Viridescent Hunt"</string>
+    <string name="windblume_ode">"Windblume Ode"</string>
+    <string name="amos_bow">"Amos' Bow"</string>
+    <string name="elegy_for_the_end">"Elegy for the End"</string>
+    <string name="skyward_harp">"Skyward Harp"</string>
+    <string name="thundering_pulse">"Thundering Pulse"</string>
+
+    <!-- artifacts -->
+    <string name="adventurer">"Adventurer"</string>
+    <string name="archaic_petra">"Archaic Petra"</string>
+    <string name="berserker">"Berserker"</string>
+    <string name="blizzard_strayer">"Blizzard Strayer"</string>
+    <string name="bloodstained_chivalry">"Bloodstained Chivalry"</string>
+    <string name="brave_heart">"Brave Heart"</string>
+    <string name="crimson_witch_of_flames">"Crimson Witch of Flames"</string>
+    <string name="defenders_will">"Defender's Will"</string>
+    <string name="emblem_of_severed_fate">"Emblem of Severed Fate"</string>
+    <string name="gambler">"Gambler"</string>
+    <string name="gladiators_finale">"Gladiator's Finale"</string>
+    <string name="heart_of_depth">"Heart of Depth"</string>
+    <string name="instructor">"Instructor"</string>
+    <string name="lavawalker">"Lavawalker"</string>
+    <string name="lucky_dog">"Lucky Dog"</string>
+    <string name="maiden_beloved">"Maiden Beloved"</string>
+    <string name="martial_artist">"Martial Artist"</string>
+    <string name="noblesse_oblige">"Noblesse Oblige"</string>
+    <string name="pale_flame">"Pale Flame"</string>
+    <string name="prayers_of_destiny">"Prayers of Destiny"</string>
+    <string name="prayers_of_illumination">"Prayers of Illumination"</string>
+    <string name="prayers_of_wisdom">"Prayers of Wisdom"</string>
+    <string name="prayers_of_springtime">"Prayers of Springtime"</string>
+    <string name="resolution_of_sojourner">"Resolution of Sojourner"</string>
+    <string name="retracing_bolide">"Retracing Bolide"</string>
+    <string name="scholar">"Scholar"</string>
+    <string name="shimenawas_reminiscence">"Shimenawa's Reminiscence"</string>
+    <string name="tenacity_of_the_millelith">"Tenacity of the Millelith"</string>
+    <string name="the_exile">"The Exile"</string>
+    <string name="thundering_fury">"Thundering Fury"</string>
+    <string name="thundersoother">"ThunderSoother"</string>
+    <string name="tiny_miracle">"Tiny Miracle"</string>
+    <string name="traveling_doctor">"Traveling Doctor"</string>
+    <string name="viridescent_venerer">"Viridescent Venerer"</string>
+    <string name="wanderers_troupe">"Wanderer's Troupe"</string>
+
+    <!-- add in 20211025 -->
+    <string name="buff">BUFF</string>
+    <!-- add in 20211027 -->
+    <string name="nora_fortis">Nora Fortis</string>
+    <string name="snezhnaya">Snezhnaya</string>
+
 
 </resources>
+

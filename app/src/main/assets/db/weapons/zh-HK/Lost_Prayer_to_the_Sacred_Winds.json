@@ -1,0 +1,12 @@
+{
+  "name": "Lost Prayer to the Sacred Winds",
+  "rare": 5,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "崇信風的無名先民所寫的教典珍本。數千年流傳的信仰之力得到了風的青睞，飽含祝福與力量。",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "無邊際的眷顧",
+  "skill_desc": "移動速度提高10%；在場上每4秒獲得8%/10%/12%/14%/16%元素傷害加成。該效果最多疊加4層，角色倒下或離場後清空。",
+  "obtain_way": "WISH"
+}

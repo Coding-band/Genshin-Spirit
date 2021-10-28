@@ -8,5 +8,5 @@
   "second_status": "ATK",
   "skill_name": "收割",
   "skill_desc": "击败敌人时，恢复8%/10%/12%/14%/16%生命值。",
-  "obtain_way": "蒙德宝箱"
+  "obtain_way": "CHESR_MD"
 }

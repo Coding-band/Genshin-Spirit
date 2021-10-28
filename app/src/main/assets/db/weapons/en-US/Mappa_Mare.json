@@ -1,0 +1,12 @@
+{
+  "name": "Mappa Mare",
+  "rare": 4,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "A nautical chart featuring nearby currents and climates that somehow found its way into Liyue via foreign traders.",
+  "first_status": "EleMas",
+  "second_status": "ATK",
+  "skill_name": "Infusion Scroll",
+  "skill_desc": "Triggering an Elemental reaction grants a 8%/10%/12%/14%/16% Elemental DMG Bonus for 10s. Max 2 stacks.",
+  "obtain_way": "FORGE"
+}

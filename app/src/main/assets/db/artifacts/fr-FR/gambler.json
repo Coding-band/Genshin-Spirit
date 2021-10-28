@@ -1,0 +1,34 @@
+{
+	"name": "Parieur",
+	"rarity": [
+		"3",
+		"4"
+	],
+	"2pc": "Augmente les DGT infligés par la compétence élémentaire de 20 %.",
+	"4pc": "Après la défaite d'un ennemi, le TdR de compétence élémentaire a 100 % de chances d'être réinitialisé. Cet effet peut être déclenché une fois toutes les 15 s.",
+	"flower": {
+		"name": "Broche du Parieur",
+		"relictype": "Fleur de la vie",
+		"description": "Une grande fleur luxueuse qui peut cacher un dé préparé à l'avance."
+	},
+	"plume": {
+		"name": "Plume du Parieur",
+		"relictype": "Plume de la mort",
+		"description": "Une plume de la queue d'un grand oiseau, pratique pour dissimuler un as dans sa manche."
+	},
+	"sands": {
+		"name": "Montre de poche du Parieur",
+		"relictype": "Sables du temps",
+		"description": "Une montre de poche brisée qui a protégé son ancien propriétaire d'une attaque mortelle."
+	},
+	"goblet": {
+		"name": "Coupe à dés du Parieur",
+		"relictype": "Coupe d'Eonothem",
+		"description": "Cette coupe a été spécialement conçue pour une seule utilisation. On vous assure qu'il n'y a pas de compartiment caché..."
+	},
+	"circlet": {
+		"name": "Boucles d'oreilles du Parieur",
+		"relictype": "Diadème de Logos",
+		"description": "Des boucles d'oreilles turquoise qui calment l'esprit et permettent d'évaluer la situation de façon rationnelle et d'éviter de prendre des risques inconsidérés."
+	}
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Twin Nephrite",
+  "rare": 3,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "两块玉石拼成的精致玉佩。",
+  "first_status": "CritRate%",
+  "second_status": "ATK",
+  "skill_name": "奔袭战术",
+  "skill_desc": "击败敌人后的15秒内，移动速度和攻击力提升12%/14%/16%/18%/20%。",
+  "obtain_way": "CHESR_LY"
+}

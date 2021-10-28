@@ -1,0 +1,12 @@
+{
+  "name": "Serpent Spine",
+  "rare": 4,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "A rare weapon whose origin is the ancient ocean. One can hear the sound of the ageless waves as one swings it.",
+  "first_status": "CritRate%",
+  "second_status": "ATK",
+  "skill_name": "Wavesplitter",
+  "skill_desc": "Every 4s a character is on the field, they will deal  6%/7%/8%/9%/10% more DMG and take 3%/2.7%/2.4%/2.2%/2% DMG. This effect has a maximum of 5 stacks and will not be reset if the character leaves the field, but will be reduced by 1 stack when the character takes DMG.",
+  "obtain_way": "BATTLEPASS"
+}

@@ -8,5 +8,5 @@
   "second_status": "ATK",
   "skill_name": "沉重",
   "skill_desc": "对普通攻击命中的敌人造成160%/200%/240%/280%/320%攻击力的额外伤害。该效果每10秒只能触发一次。",
-  "obtain_way": "宝箱"
+  "obtain_way": "CHEST"
 }

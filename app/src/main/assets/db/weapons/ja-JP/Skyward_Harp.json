@@ -1,0 +1,12 @@
+{
+  "name": "Skyward Harp",
+  "rare": 5,
+  "weapon": "Bow",
+  "isComingSoon": true,
+  "desc": "風龍が風の神の眷属であることを象徴する大弓。矢を放つの音は風の神の偏愛であり、蒼空と長風の力が秘められている。",
+  "first_status": "CritRate%",
+  "second_status": "ATK",
+  "skill_name": "天に響く詩",
+  "skill_desc": "会心ダメージ+20%/25%/30%/35%/40%。攻撃が命中した時、60%/70%/80%/90%/100%の確率で狭範囲内の敵に攻撃力の125%の物理ダメージを与える。4/3.5/3/2.5/2秒毎に1回のみ発動可能。",
+  "obtain_way": "WISH"
+}

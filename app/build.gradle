@@ -11,17 +11,19 @@ plugins {
 android {
     compileSdkVersion 30
     def ver
+    def verN
     defaultConfig {
         applicationId "com.voc.genshin_helper"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
-        versionName "2.0"
+        versionName "2.2"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
         ver =  versionCode
+        verN =  versionName
         ndk{
             abiFilters 'armeabi-v7a', 'arm64-v8a', 'x86_64', 'x86'
         }
@@ -46,6 +48,11 @@ android {
                 versionCode = code
                 versionNameSuffix "-prod" + " ("+code+")"
                 applicationId "com.voc.genshin_spirit_gp"
+                bundle{
+                    language {
+                        enableSplit = false;
+                    }
+                }
             }
             // For Translator and Beta Tester
             beta {
@@ -74,7 +81,7 @@ android {
 
         android.applicationVariants.all { variant ->
             variant.outputs.all {
-                outputFileName = "genshin_helper_${variant.versionName}.apk"
+                outputFileName = "genshin_spirit_${variant.versionName}.apk"
             }
         }
         tasks.whenTaskAdded { task ->
@@ -86,7 +93,7 @@ android {
                     from(path)
                     include "app.aab"
                     destinationDir file("${buildDir}/outputs/renamedBundle/")
-                    rename "app.aab", "${flavor}.aab"
+                    rename "app.aab", "genshin_spirit_${verN}_${flavor}_${ver}.aab"
                 }
 
                 task.finalizedBy(renameTaskName)
@@ -101,6 +108,12 @@ android {
     buildFeatures {
         viewBinding true
     }
+
+    bundle{
+        language {
+            enableSplit = false;
+        }
+    }
 }
 
 dependencies {
@@ -114,6 +127,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui:2.3.5'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
+    implementation 'com.google.android.play:core:1.10.2'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'

@@ -8,5 +8,5 @@
   "second_status": "ATK",
   "skill_name": "船歌",
   "skill_desc": "元素爆发造成的伤害提升16%/20%/24%/28%/32%，元素爆发的暴击率提升6%/7.5%/9%/10.5%/12%。",
-  "obtain_way": "NPC商店、稻妻钓鱼协会兑换"
+  "obtain_way": "NPC_DCDYHW"
 }

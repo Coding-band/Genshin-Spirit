@@ -16,15 +16,15 @@
     "skyrider_sword"
   ],
   "dps_art1": [
-    "blizzard_walker",
-    "blizzard_walker",
-    "blizzard_walker",
-    "blizzard_walker",
-    "blizzard_walker"
+    "blizzard_strayer",
+    "blizzard_strayer",
+    "blizzard_strayer",
+    "blizzard_strayer",
+    "blizzard_strayer"
   ],
   "sup_dps_art1": [
-    "blizzard_walker",
-    "blizzard_walker",
+    "blizzard_strayer",
+    "blizzard_strayer",
     "noblesse_oblige",
     "noblesse_oblige",
     "noblesse_oblige"
@@ -43,6 +43,6 @@
 	"Hu Tao","Kaeya","Diona","Bennett"
   ],
   "team3":[
-	"Kaeya","Xingqui","Xiangling","Diona"
+	"Kaeya","Xingqiu","Xiangling","Diona"
   ]
 }

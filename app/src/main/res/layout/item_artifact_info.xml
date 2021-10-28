@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:background="@color/page_bg" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout android:layout_gravity="center" android:orientation="vertical" android:id="@+id/item_bg" android:layout_width="96dp" android:layout_height="96dp" android:layout_margin="8dp">
+
+            <ImageView
+                android:id="@+id/item_img"
+                android:layout_width="96dp"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:background="@color/rare5"
+                android:scaleType="fitCenter"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/klee_ico" />
+            <LinearLayout android:orientation="vertical" android:id="@+id/item_nl" android:background="@drawable/bg_rare5_char" android:layout_width="0dp" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="1" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="1">
+                <RatingBar android:layout_gravity="center_horizontal" android:id="@+id/item_star" android:layout_width="wrap_content" android:layout_height="wrap_content" android:numStars="5" android:rating="5" android:stepSize="0.1" android:isIndicator="true" android:progressTint="#ffff00" style="?android:attr/ratingBarStyleSmall"/>
+                <TextView android:id="@+id/item_base_name" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/item_is_coming"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_is_coming"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0"
+                app:srcCompat="@drawable/ic_baseline_av_timer_24" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="8dp">
+            <TextView android:textSize="24dp" android:id="@+id/item_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8dp" android:text="@string/crimson_witch_of_flames"/>
+            <TextView android:id="@+id/item_2pcs" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/artifact_stat2" android:layout_weight="1"/>
+            <TextView android:id="@+id/item_4pcs" android:layout_width="match_parent" android:layout_height="match_parent" android:text="@string/artifact_stat4" android:layout_weight="1"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@+id/item_talent" android:visibility="visible" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_margin="8dp">
+        <ImageView android:id="@+id/info_item1" android:layout_width="match_parent" android:layout_height="72dp" android:layout_marginLeft="8dp" android:layout_weight="1" app:srcCompat="@drawable/crimson_witch_of_flames_1"/>
+
+        <ImageView
+            android:id="@+id/info_item2"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
+            android:visibility="gone"
+            app:srcCompat="@drawable/crimson_witch_of_flames_2" />
+
+        <ImageView
+            android:id="@+id/info_item3"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
+            android:visibility="gone"
+            app:srcCompat="@drawable/crimson_witch_of_flames_3" />
+
+        <ImageView
+            android:id="@+id/info_item4"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
+            android:visibility="gone"
+            app:srcCompat="@drawable/crimson_witch_of_flames_4" />
+
+        <ImageView
+            android:id="@+id/info_item5"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_marginLeft="8dp"
+            android:layout_weight="1"
+            android:visibility="gone"
+            app:srcCompat="@drawable/crimson_witch_of_flames_5" />
+    </LinearLayout>
+</LinearLayout>

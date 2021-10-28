@@ -1,0 +1,12 @@
+{
+  "name": "The Catch",
+  "rare": 4,
+  "weapon": "Polearm",
+  "isComingSoon": false,
+  "desc": "In the distant past, this was the beloved spear of a famed Inazuman bandit.",
+  "first_status": "EnRech%",
+  "second_status": "ATK",
+  "skill_name": "Shanty",
+  "skill_desc": "Increases Elemental Burst DMG by 16%/20%/24%/28%/32% and Elemental Burst CRIT Rate by 6%/7.5%/9%/10.5%/12%.",
+  "obtain_way": "NPC_DCDYHW"
+}

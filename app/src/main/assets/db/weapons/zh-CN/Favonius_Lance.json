@@ -3,10 +3,10 @@
   "rare": 4,
   "weapon": "Polearm",
   "isComingSoon": false,
-  "desc": "取孤云阁的岩片精工打造的长枪，枪尖坚固无比。",
-  "first_status": "ATK%",
+  "desc": "西风骑士团的制式长枪。枪杆直挺，枪尖轻风流溢。",
+  "first_status": "EnRech%",
   "second_status": "ATK",
-  "skill_name": "千岩诀·同心",
-  "skill_desc": "队伍中每有一位璃月角色，装备该武器的角色便获得7%/8%/9%/10%/11%攻击力提升与3%/4%/5%/6%/7%暴击率提升。至多获得4层提升效果。",
-  "obtain_way": "限定祈愿"
+  "skill_name": "顺风而行",
+  "skill_desc": "攻击造成暴击时，有60%/70%/80%/90%/100%的几率产生少量元素微粒，能为角色恢复6点元素能量。该效果每12/10.5/9/7.5/6秒只能触发一次。",
+  "obtain_way": "WISH"
 }

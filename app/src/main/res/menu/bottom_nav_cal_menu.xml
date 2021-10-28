@@ -1,28 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Package C:/Users/Vocaloid2048/Desktop/File/App/GenshinHelper/app/src/main/res/menu/bottom_nav_cal_menu.xml was
-  ~ Created by Voc-夜芷冰 , Programmer of Xectorda
-  ~ Copyright © 2021 Xectorda 版權所有
-  -->
-
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/nav_char"
-        android:icon="@drawable/klee_ico"
-        android:title="@string/title_char" />
-    <item
-        android:id="@+id/nav_artifacts"
-        android:icon="@drawable/art2"
-        android:title="@string/title_artifacts"
-        android:visible="true" />
-    <item
-        android:id="@+id/nav_weapons"
-        android:icon="@drawable/weapons2"
-        android:title="@string/title_weapons"
-        android:visible="true" />
-    <item
-        android:id="@+id/nav_result"
-        android:icon="@drawable/wanderers_advice"
-        android:title="@string/result" />
-
+    <item android:icon="@drawable/klee_ico" android:id="@+id/nav_char" android:title="@string/title_char"/>
+    <item android:icon="@drawable/art2" android:id="@+id/nav_artifacts" android:visible="false" android:title="@string/title_artifacts"/>
+    <item android:icon="@drawable/weapons2" android:id="@+id/nav_weapons" android:visible="true" android:title="@string/title_weapons"/>
+    <item android:icon="@drawable/wanderers_advice" android:id="@+id/nav_result" android:title="@string/result"/>
+    <item android:icon="@drawable/paimon_lost" android:id="@+id/nav_buff" android:visible="false" android:title="@string/buff"/>
 </menu>

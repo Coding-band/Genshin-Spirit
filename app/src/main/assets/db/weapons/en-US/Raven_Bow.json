@@ -1,0 +1,12 @@
+{
+  "name": "Raven Bow",
+  "rare": 3,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "Ravens are known to be the ferrymen of the dead. This bow's limb is decorated with raven feathers, which forebode the imminent death of its target.",
+  "first_status": "EleMas%",
+  "second_status": "ATK",
+  "skill_name": "Bane of Flame and Water",
+  "skill_desc": "Increases DMG against opponents affected by Hydro or Pyro by 12%/15%/18%/21%/24%。",
+  "obtain_way": "WISH"
+}

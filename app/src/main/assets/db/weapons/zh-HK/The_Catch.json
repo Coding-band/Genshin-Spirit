@@ -1,0 +1,12 @@
+{
+  "name": "The Catch",
+  "rare": 4,
+  "weapon": "Polearm",
+  "isComingSoon": false,
+  "desc": "在久遠的過去，曾經聞名稻妻的大盜愛用的槍。",
+  "first_status": "EnRech%",
+  "second_status": "ATK",
+  "skill_name": "船歌",
+  "skill_desc": "元素爆發造成的傷害提升16%/20%/24%/28%/32%，元素爆發的暴擊率提升6%/7.5%/9%/10.5%/12%。",
+  "obtain_way": "NPC_DCDYHW"
+}

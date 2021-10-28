@@ -218,7 +218,7 @@
             android:layout_margin="4dp"
             android:layout_weight="0"
             android:background="@drawable/bg_square_border"
-            android:text="重設"
+            android:text="@string/cal_reset"
             android:textColor="@color/theme_color" />
 
         <Button
@@ -228,7 +228,7 @@
             android:layout_margin="4dp"
             android:layout_weight="0"
             android:background="@drawable/bg_square_border_colorful"
-            android:text="確定"
+            android:text="@android:string/ok"
             android:textColor="@color/tv_color" />
     </LinearLayout>
 

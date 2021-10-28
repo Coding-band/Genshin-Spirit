@@ -1,10 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Package C:/Users/Vocaloid2048/Desktop/File/App/GenshinHelper/app/src/main/res/values-ja-rJP/strings.xml was
-  ~ Created by Voc-夜芷冰 , Programmer of Xectorda
-  ~ Copyright © 2021 Xectorda 版權所有
-  -->
-
 <resources>
     <string name="app_name">Genshin Spirit</string>
 
@@ -32,13 +26,13 @@
     <!-- material_name -->
     <string name="teaching_of_ballad">「詩文」の教え</string>
     <string name="teaching_of_diligence">「勤労」の教え</string>
-    <string name="teaching_of_freedom">「自由」</string>
+    <string name="teaching_of_freedom">「自由」の教え</string>
     <string name="teaching_of_gold">「黄金」の教え</string>
     <string name="teaching_of_prosperity">「繁栄」の教え</string>
     <string name="teaching_of_resistance">「抗争」の教え</string>
     <string name="teachings_of_elegance">「風雅」の教え</string>
     <string name="teachings_of_light">「天光」の教え</string>
-    <string name="teachings_of_transience">「浮世」の教え</string>`
+    <string name="teachings_of_transience">「浮世」の教え</string>
     <!-- add in 20210910 -->
     <string name="guide_of_freedom">「自由」の導き</string>
     <string name="guide_of_gold">「黄金」の導き</string>
@@ -132,7 +126,7 @@
     <string name="utility">サポーター</string>
     <string name="female">女性</string>
     <string name="male">男性</string>
-    <string name="set_by_player">プレイヤーによる設定</string>
+    <string name="set_by_player">プレイヤー別</string>
     <string name="another_world">別世界</string>
     <string name="district">出身</string>
     <string name="weapon">武器</string>
@@ -226,7 +220,6 @@
     <!-- Language (Don't translate)-->
     <string name="zh_hk" translatable="false">繁體中文 (港、澳、台)</string>
     <string name="en_us" translatable="false">English (US)</string>
-    <string name="ru_ru" translatable="false">русский</string>
     <string name="zh_cn" translatable="false">简体中文</string>
 
     <!-- main_page -->
@@ -257,7 +250,7 @@
     <string name="about_title3">リソースの使用状況</string>
     <string name="about_info3">このアプリケーションは、「Shiori for Genshin」をベースに開発され、「Shiori for Genshin」とその協力者に敬意を表することを目的としていますが、協力者からはまだ認められていません。このアプリケーションの画像やデータは、オープンソースプロジェクトから引用したもので、以下にリンクを貼っておきます。そのため、このアプリケーションのインターフェイスやレイアウトの一部は、「Shiori for Genshin」と非常によく似ています。ただし、本アプリケーションは、プログラミング言語としてDartではなくJavaを使用しており、Androidでサポートされている.apkと.aabのファイル形式でのみ動作します。デバイスへのインストールと操作。</string>
     <string name="about_title4">オープンソース声明</string>
-    <string name="about_info4">このアプリケーションは、「Shiori for Genshin」とその協力者に敬意を表することを目的としているため、Githubでオープンソースで開発しており、誰でも閲覧、コメントの提供、さらには共同作業を行うことができます。 また、このアプリケーションに関する提案やアプリケーションを歓迎します。 Google Playでも公開される予定です。 このプロジェクト、バグ、新機能などについて連絡したい場合は、EメールまたはDiscordで連絡することもできます(QQは中国本土で利用できます)。 最後に、皆様のご理解とご支援をお願いいたします。</string>
+    <string name="about_info4">このアプリケーションは、「Shiori for Genshin」とその協力者に敬意を表することを目的としているため、Githubでオープンソースで開発しており、誰でも閲覧、コメントの提供、さらには共同作業を行うことができます。 また、このアプリケーションに関する提案やアプリケーションを歓迎します。 Google Playでも公開される予定です。 このプロジェクト、バグ、新機能などについて連絡したい場合は、EメールまたはDiscordで連絡することもできます(中国本土ではQQが利用できます)。 最後に、皆様のご理解とご支援をお願いいたします。</string>
 
     <!-- moy -->
     <string name="date_jan">1月</string>
@@ -306,6 +299,235 @@
     <string name="date_30th">" 30日"</string>
     <string name="date_31st">" 31日"</string>
 
+    <!-- add in 20211001 -->
+    <!-- Weapon-Sword -->
+    <string name="amenoma_kageuchi">"天目影打"</string>
+    <string name="aquila_favonia">"風鷹剣"</string>
+    <string name="blackcliff_longsword">"黒岩の長剣"</string>
+    <string name="cool_steel">"冷刃"</string>
+    <string name="dark_iron_sword">"暗鉄剣"</string>
+    <string name="dull_blade">"無鋒の剣"</string>
+    <string name="favonius_sword">"西風剣"</string>
+    <string name="festering_desire">"腐植の剣"</string>
+    <string name="fillet_blade">"チ虎魚の刀"</string>
+    <string name="freedom_sworn">"蒼古なる自由への誓い"</string>
+    <string name="harbinger_of_dawn">"黎明の神剣"</string>
+    <string name="iron_sting">"鉄蜂の刺し"</string>
+    <string name="lions_roar">"匣中龍吟"</string>
+    <string name="mistsplitter_reforged">"霧切の廻光"</string>
+    <string name="primordial_jade_cutter">"磐岩結緑"</string>
+    <string name="prototype_rancour">"斬岩·試作"</string>
+    <string name="royal_longsword">"旧貴族長剣"</string>
+    <string name="sacrificial_sword">"祭礼の剣"</string>
+    <string name="silver_sword">"銀の剣"</string>
+    <string name="skyrider_sword">"飛天御剣"</string>
+    <string name="skyward_blade">"天空の刃"</string>
+    <string name="summit_shaper">"斬山の刃"</string>
+    <string name="sword_of_descension">"降臨の剣"</string>
+    <string name="the_alley_flash">"ダークアレイの閃光"</string>
+    <string name="the_black_sword">"黒剣"</string>
+    <string name="the_flute">"笛の剣"</string>
+    <string name="travelers_handy_sword">"旅道の剣"</string>
+
+    <!-- Weapon-Claymore -->
+    <string name="waster_greatsword">"訓練用大剣"</string>
+    <string name="old_mercs_pal">"傭兵の重剣"</string>
+    <string name="bloodtainted_greatsword">"龍血を浴びた剣"</string>
+    <string name="debate_club">"理屈責め"</string>
+    <string name="quartz">"石英大剣"</string>
+    <string name="ferrous_shadow">"鉄影段平"</string>
+    <string name="skyrider_greatsword">"飛天大御剣"</string>
+    <string name="white_iron_greatsword">"白鉄の大剣"</string>
+    <string name="blackcliff_slasher">"黒岩の斬刀"</string>
+    <string name="favonius_greatsword">"西風大剣"</string>
+    <string name="katsuragikiri_nagamasa">"桂木斬長正"</string>
+    <string name="lithic_blade">"千岩古剣"</string>
+    <string name="luxurious_sea_lord">"銜玉の海皇"</string>
+    <string name="prototype_archaic">"古華·試作"</string>
+    <string name="rainslasher">"雨裁"</string>
+    <string name="royal_greatsword">"旧貴族大剣"</string>
+    <string name="sacrificial_greatsword">"祭礼の大剣"</string>
+    <string name="serpent_spine">"螭龍の剣"</string>
+    <string name="snow_tombed_starsilver">"雪葬の星銀"</string>
+    <string name="the_bell">"鐘の剣"</string>
+    <string name="whiteblind">"白影の剣"</string>
+    <string name="skyward_pride">"天空の傲"</string>
+    <string name="song_of_broken_pines">"松韻の響く頃"</string>
+    <string name="the_unforged">"無工の剣"</string>
+    <string name="wolfs_gravestone">"狼の末路"</string>
+
+    <!-- Weapon-Plearm -->
+    <string name="beginners_protector">"新米の長槍"</string>
+    <string name="iron_point">"鉄尖槍"</string>
+    <string name="black_tassel">"黒纓槍"</string>
+    <string name="halberd">"鉾槍"</string>
+    <string name="white_tassel">"白纓槍"</string>
+    <string name="blackcliff_pole">"黒岩の突槍"</string>
+    <string name="crescent_pike">"流月の針"</string>
+    <string name="deathmatch">"死闘の槍"</string>
+    <string name="dragons_bane">"匣中滅龍"</string>
+    <string name="dragonspine_spear">"ドラゴンスピア"</string>
+    <string name="favonius_lance">"西風長槍"</string>
+    <string name="kitain_cross_spear">"喜多院十文字槍"</string>
+    <string name="lithic_spear">"千岩長槍"</string>
+    <string name="prototype_starglitter">"星鎌·試作"</string>
+    <string name="royal_spear">"旧貴族猟槍"</string>
+    <string name="the_catch">"「漁獲」"</string>
+    <string name="engulfing_lightning">"草薙の稲光"</string>
+    <string name="primordial_jade_winged_spear">"和璞鳶"</string>
+    <string name="skyward_spine">"天空の脊"</string>
+    <string name="staff_of_homa">"護摩の杖"</string>
+    <string name="vortex_vanquisher">"破天の槍"</string>
+
+    <!-- Weapon-Catalyst -->
+    <string name="apprentices_notes">"生徒ノート"</string>
+    <string name="pocket_grimoire">"ポケット魔導書"</string>
+    <string name="amber_catalyst">"琥珀の玥"</string>
+    <string name="emerald_orb">"翡玉法珠"</string>
+    <string name="magic_guide">"魔導緒論"</string>
+    <string name="otherworldly_story">"異世界旅行記"</string>
+    <string name="thrilling_tales_of_dragon_slayers">"龍殺しの英傑譚"</string>
+    <string name="twin_nephrite">"特級の宝玉"</string>
+    <string name="blackcliff_agate">"黒岩の緋玉"</string>
+    <string name="dodoco_tales">"ドドコの物語"</string>
+    <string name="eye_of_perception">"昭心"</string>
+    <string name="favonius_codex">"西風秘典"</string>
+    <string name="frostbearer">"冬忍びの実"</string>
+    <string name="hakushin_ring">"白辰の輪"</string>
+    <string name="mappa_mare">"万国諸海の図譜"</string>
+    <string name="prototype_amber">"金珀·試作"</string>
+    <string name="royal_grimoire">"旧貴族秘法録"</string>
+    <string name="sacrificial_fragments">"祭礼の断片"</string>
+    <string name="solar_pearl">"匣中日月"</string>
+    <string name="the_widsith">"流浪楽章"</string>
+    <string name="wine_and_song">"ダークアレイの酒と詩"</string>
+    <string name="everlasting_moonglow">"不滅の月華"</string>
+    <string name="lost_prayer_to_the_sacred_winds">"四風原典"</string>
+    <string name="memory_of_dust">"浮世の錠"</string>
+    <string name="skyward_atlas">"天空の巻"</string>
+
+    <!-- Weapon-Bow -->
+    <string name="hunters_bow">"狩猟弓"</string>
+    <string name="seasoned_hunters_bow">"歴戦の狩猟弓"</string>
+    <string name="ebony_bow">"黒檀の弓"</string>
+    <string name="messenger">"文使い"</string>
+    <string name="raven_bow">"鴉羽の弓"</string>
+    <string name="recurve_bow">"リカーブボウ"</string>
+    <string name="sharpshooters_oath">"シャープシューターの誓い"</string>
+    <string name="slingshot">"弾弓"</string>
+    <string name="alley_hunter">"ダークアレイの狩人"</string>
+    <string name="blackcliff_warbow">"黒岩の戦弓"</string>
+    <string name="compound_bow">"リングボウ"</string>
+    <string name="favonius_warbow">"西風猟弓"</string>
+    <string name="hamayumi">"破魔の弓"</string>
+    <string name="mitternachts_waltz">"幽夜のワルツ"</string>
+    <string name="predator">"プレデター"</string>
+    <string name="prototype_crescent">"澹月·試作"</string>
+    <string name="royal_bow">"旧貴族長弓"</string>
+    <string name="rust">"弓蔵"</string>
+    <string name="sacrificial_bow">"祭礼の弓"</string>
+    <string name="the_stringless">"絶弦"</string>
+    <string name="the_viridescent_hunt">"蒼翠の狩猟弓"</string>
+    <string name="windblume_ode">"風花の頌歌"</string>
+    <string name="amos_bow">"アモスの弓"</string>
+    <string name="elegy_for_the_end">"終焉を嘆く詩"</string>
+    <string name="skyward_harp">"天空の翼"</string>
+    <string name="thundering_pulse">"飛雷の鳴弦"</string>
+
+    <!-- char_info -->
+    <string name="none_info">現時点では彼/彼女に関する関連情報はありません。</string>>
+    <string name="weapon_stat">"二次属性 : "</string>
+    <string name="weapon_stat_atk">"攻撃力"</string>
+    <string name="weapon_stat_atkP">"攻撃力 %"</string>
+    <string name="weapon_stat_CritDMGP">"会心 %"</string>
+    <string name="weapon_stat_CritRateP">"会心率 %"</string>
+    <string name="weapon_stat_PhyDMGP">"物理ダメージ %"</string>
+    <string name="weapon_stat_EnRechP">"元素チャージ %"</string>
+    <string name="weapon_stat_EleMas">"元素熟知"</string>
+    <string name="weapon_stat_DEFP">"防御力 %"</string>
+    <string name="weapon_stat_HPP">"HP %"</string>
+    <string name="weapon_stat_no">"N/A"</string>
+
+    <!-- cal_item_name -->
+    <string name="cal_choosed_already">あなたはすでに彼/彼女を選択しています。</string>
+
+    <!-- setting -->
+    <string name="thanks_title">スペシャルサンクス</string>
+    <string name="translator_title">翻訳者</string>
+    <string name="beta_tester_title">ベータテスター</string>
+    <string name="thanks_intro">あなたの助けのおかげで、Genshin Spiritはより完璧なものになりました。</string>
+
+    <!-- add in 20211003 -->
+    <!-- cal_item_name -->
+    <string name="cal_crystal">水晶</string>
+    <string name="cal_boss">ボスドロップ</string>
+    <string name="cal_week_boss">週ボスドロップ</string>
+    <string name="cal_local">特産品</string>
+    <string name="cal_monster">モンスタードロップ</string>
+    <string name="cal_weeklybk1">月,木,日,秘境でドロップ</string>
+    <string name="cal_weeklybk2">火,金,日,秘境でドロップ</string>
+    <string name="cal_weeklybk3">水,土,日,秘境でドロップ</string>
+    <string name="cal_other">その他</string>
+
+    <!-- add in 20211018 -->
+    <!-- char_info -->
+    <string name="artifact_stat1">1 ピース</string>
+    <string name="artifact_stat2">2 ピース</string>
+    <string name="artifact_stat4">4 ピース</string>
+
+
+    <!-- setting -->
+    <string name="list_grid">リストグリッド</string>
+
+    <!-- artifacts -->
+    <string name="adventurer">"冒険者"</string>
+    <string name="archaic_petra">"悠久の磐岩"</string>
+    <string name="berserker">"狂戦士"</string>
+    <string name="blizzard_strayer">"氷風を彷徨う勇士"</string>
+    <string name="bloodstained_chivalry">"血染めの騎士道"</string>
+    <string name="brave_heart">"勇者の心"</string>
+    <string name="crimson_witch_of_flames">"燃え盛る炎の魔女"</string>
+    <string name="defenders_will">"守護の心"</string>
+    <string name="emblem_of_severed_fate">"絶縁の旗印"</string>
+    <string name="gambler">"博徒"</string>
+    <string name="gladiators_finale">"剣闘士のフィナーレ"</string>
+    <string name="heart_of_depth">"沈淪の心"</string>
+    <string name="instructor">"教官"</string>
+    <string name="lavawalker">"烈火を渡る尊者"</string>
+    <string name="lucky_dog">"幸運"</string>
+    <string name="maiden_beloved">"愛される少女"</string>
+    <string name="martial_artist">"武人"</string>
+    <string name="noblesse_oblige">"旧貴族のしつけ"</string>
+    <string name="pale_flame">"蒼白の炎"</string>
+    <string name="prayers_of_destiny">"水祭りの人"</string>
+    <string name="prayers_of_illumination">"火祭りの人"</string>
+    <string name="prayers_of_wisdom">"雷祭りの人"</string>
+    <string name="prayers_of_springtime">"氷祭りの人"</string>
+    <string name="resolution_of_sojourner">"旅人の心"</string>
+    <string name="retracing_bolide">"逆飛びの流星"</string>
+    <string name="scholar">"学者"</string>
+    <string name="shimenawas_reminiscence">"追憶の注連縄"</string>
+    <string name="tenacity_of_the_millelith">"千岩牢固"</string>
+    <string name="the_exile">"亡命者"</string>
+    <string name="thundering_fury">"雷のような怒り"</string>
+    <string name="thundersoother">"雷を鎮める尊者"</string>
+    <string name="tiny_miracle">"奇跡"</string>
+    <string name="traveling_doctor">"医者"</string>
+    <string name="viridescent_venerer">"翠緑の影"</string>
+    <string name="wanderers_troupe">"大地を流浪する楽団"</string>
+
+    <!-- add in 20211023 -->
+    <!-- New Character in here-->
+    <string name="gorou">ゴロー</string>
+    <string name="arataki_itto">荒瀧一斗</string>
+    <string name="yae_miko">八重神子</string>
+    <string name="buff">バフ</string>
+
+    <!-- add in 20211025 -->
+    <string name="cal_reset">リセット</string>
+    <!-- add in 20211027 -->
+    <string name="nora_fortis">Nora Fortis</string>
+    <string name="snezhnaya">Snezhnaya</string>
 
 </resources>
 

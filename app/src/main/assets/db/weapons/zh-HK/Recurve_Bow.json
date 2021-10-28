@@ -1,0 +1,12 @@
+{
+  "name": "Recurve Bow",
+  "rare": 3,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "據說能射下蒼鷹的獵弓，但能不能做到主要還得看弓手的技術。",
+  "first_status": "HP%",
+  "second_status": "ATK",
+  "skill_name": "收割",
+  "skill_desc": "擊敗敵人時，恢復8%/10%/12%/14%/16%生命值。",
+  "obtain_way": "WISH"
+}

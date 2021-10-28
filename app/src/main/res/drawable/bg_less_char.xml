@@ -1,11 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-  ~ Package C:/Users/Vocaloid2048/Desktop/File/App/GenshinHelper/app/src/main/res/drawable/bg_less_char.xml was
-  ~ Created by Voc-夜芷冰 , Programmer of Xectorda
-  ~ Copyright © 2021 Xectorda 版權所有
-  -->
-
+<?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <solid android:color="#CC212121" />
-    <corners android:radius="360dp" />
+    <solid android:color="#cc212121"/>
+    <corners android:radius="360dp"/>
 </shape>

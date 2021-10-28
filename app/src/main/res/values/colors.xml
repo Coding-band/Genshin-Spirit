@@ -53,4 +53,11 @@
     <color name="color_theme_17">#013157</color>
     <color name="color_theme_18">#000000</color>
 
+
+    <color name="rare1">#838f99</color>
+    <color name="rare2">#5a8d6b</color>
+    <color name="rare3">#5d9cb1</color>
+    <color name="rare4">#ae81c1</color>
+    <color name="rare5">#dea44f</color>
+
 </resources>

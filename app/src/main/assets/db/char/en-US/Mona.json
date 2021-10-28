@@ -19,10 +19,10 @@
     "element_name": "Mirror Reflection of Doom",
     "element_img": "mirror_reflection_of_doom",
     "element_desc": "Creates an illusory Phantom of fate from coalesced waterspouts.<br>The Phantom has the following special properties:<br>Continuously taunts nearby opponents, attracting their fire.<br>Each second, 4 times, deals AoE Hydro DMG.<br>When its duration expires, the Phantom explodes, dealing AoE Hydro DMG.<br>Hold: Utilizes water currents to move backwards swiftly before conjuring a Phantom<br>Only one Phantom created by Mirror Reflection of Doom can exist at any time.",
-    "other_name": "Stellaris Phantasm",
-    "other_img": "kamisato_art_senho",
+    "other_name": "Illusory Torrent",
+    "other_img": "illusory_torrent",
     "other_desc": "Mona summons the sparkling waves and creates a reflection of the starry sky, applying the Illusory Bubble status to the opponents in a large AoE<br>Illusory Bubble: Traps opponents inside a pocket of destiny and also makes them Wet. Renders weaker opponents immobile. When an opponent affected by Illusory Bubble sustains DMG, it has the following effects:<br>Applies an Omen to the opponent, which gives a DMG Bonus, also increasing the DMG of the attack that causes it.<br>Removes the Illusory Bubble, dealing Hydro DMG in the process.<br>Omen: During its duration, increases DMG taken by opponents.",
-    "final_name": "Illusory Torrent",
+    "final_name": "Stellaris Phantasm",
     "final_img": "stellaris_phantasm",
     "final_desc": "Alternate Sprint: Mona cloaks herself within the water's flow, consuming stamina to move rapidly.<br>When under the effect of Illusory Torrent, Mona can move at high speed on water.<br>Applies the Wet status to nearby opponents when she reappears."
   },

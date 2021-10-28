@@ -1,10 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Package C:/Users/Vocaloid2048/Desktop/File/App/GenshinHelper/app/src/main/res/values-ru-rRU/strings.xml was
-  ~ Created by Voc-夜芷冰 , Programmer of Xectorda
-  ~ Copyright © 2021 Xectorda 版權所有
-  -->
-
 <resources>
     <string name="app_name">Genshin Spirit</string>
 
@@ -16,9 +10,9 @@
     <string name="title_settings">Настройки</string>
 
     <!-- material_moment -->
-    <string name="dow_set1">Пн,Чт,Вс</string>
-    <string name="dow_set2">Вт,Пт,Вс</string>
-    <string name="dow_set3">Ср,Сб,Вс</string>
+    <string name="dow_set1">Пн, Чт,тВс</string>
+    <string name="dow_set2">Вт, Пт, Вс</string>
+    <string name="dow_set3">Ср, Сб, Вс</string>
 
     <!-- dow -->
     <string name="monday">Пн</string>
@@ -39,27 +33,7 @@
     <string name="teachings_of_elegance">Учения об «Изяществе»</string>
     <string name="teachings_of_light">Учения о «Свете»</string>
     <string name="teachings_of_transience">Учения о «Бренности»</string>
-    <!-- add in 20210910 -->
-    <string name="guide_of_freedom">Guide of Freedom</string>
-    <string name="guide_of_gold">Guide of Gold</string>
-    <string name="guide_of_resistance">Guide of Resistance</string>
-    <string name="guide_of_prosperity">Guide of Prosperity</string>
-    <string name="guide_of_ballad">Guide of Ballad</string>
-    <string name="guide_of_diligence">Guide of Diligence</string>
-    <string name="guides_of_elegance">Guides of Elegance</string>
-    <string name="guides_of_transience">Guides of Transience</string>
-    <string name="guides_of_light">Guides of Light</string>
-    <string name="philosophies_of_freedom">Philosophies of Freedom</string>
-    <string name="philosophies_of_gold">Philosophies of Gold</string>
-    <string name="philosophies_of_resistance">Philosophies of Resistance</string>
-    <string name="philosophies_of_prosperity">Philosophies of Prosperity</string>
-    <string name="philosophies_of_ballad">Philosophies of Ballad</string>
-    <string name="philosophies_of_diligence">Philosophies of Diligence</string>
-    <string name="philosophiess_of_elegance">Philosophiess of Elegance</string>
-    <string name="philosophiess_of_transience">Philosophiess of Transience</string>
-    <string name="philosophiess_of_light">Philosophiess of Light</string>
 
-    <!-- base -->
     <string name="tile_of_decarabians_tower">Плитка башни Декарабиана</string>
     <string name="luminous_sands_from_guyun">Светящийся песок Гуюнь</string>
     <string name="coral_branch_of_a_distant_sea">Коралловая ветвь внешних морей</string>
@@ -115,9 +89,6 @@
     <string name="barbara">Барбара</string>
     <string name="amber">Эмбер</string>
     <string name="unknown">неизвестный</string>
-
-    <!-- New Character in here-->
-    <string name="thoma">Тома</string>
 
     <!-- char_info -->
     <string name="search">Найти</string>
@@ -180,7 +151,7 @@
     <string name="ph_info">Давай посмотри что он/она нашёл/нашла ~</string>
     <string name="dtbc_info">Эм... Если они тебе не нужны, то я их заберу ~</string>
     <string name="resin_title">[Genshin Spirit] Привет ~ Смола уже пополнилась, напоминаю использовать её~</string>
-    <string name="edit_title">Ред. напом.</string>
+    <string name="edit_title">Редактировать напоминание</string>
     <string name="edit_type">Тип</string>
     <string name="edit_time">Время</string>
     <string name="edit_ph_time">Продолжительность экспедиции</string>
@@ -191,14 +162,15 @@
     <string name="edit_cd_25off">Сократить на 25%</string>
     <string name="edit_use_notif">Использовать этот будильник</string>
 
-    <!-- server NOT NEED TO TRANSLATE-->
+    <!-- server -->
+    <!-- NOT NEED TO TRANSLATE-->
     <string name="america_ser">America</string>
     <string name="europe_ser">Europe</string>
     <string name="asia_ser">Asia</string>
     <string name="hk_tw_mo_ser">HK、TW、MO</string>
     <string name="sky_land_ser">天空岛服</string>
     <string name="world_tree">世界树服</string>
-    <string name="genshindb_link"><a href="https://github.com/Wolfteam/GenshinDb">GenshinDb Github</a></string>
+    <string name="genshindb_link"><a href="https://github.com/Wolfteam/GenshinDb">Shiroi for Genshin Github</a></string>
     <string name="genshinhelper_link"><a href="https://github.com/Vocaloid2048/GenshinHelper">Genshin Spirit Github</a></string>
 
     <!-- inside ui -->
@@ -220,7 +192,7 @@
     <string name="cal_also">Посчитать</string>
     <string name="delete">Удалить</string>
     <string name="choosed">"Выбрать : "</string>
-    <string name="caled_char_weapon_art">Расчетаные персонажи, оружие, артефакты</string>
+    <string name="caled_char_weapon_art">Расчёт персонажей, оружия, артефактов</string>
     <string name="char_lvls">Уровень персонажа</string>
 
     <!-- Language (Don't translate)-->
@@ -252,7 +224,7 @@
     <string name="about_title1">Отказ от ответственности</string>
     <string name="about_info1">Это приложение не принадлежит miHoYo Co., Ltd. и не было одобрено ею. 原神小幫手 (Genshin Spirit) - это всего лишь приложение, которое предоставляет данные, разработанные фанатами.  Информация, представленная в этом приложении, предназначена только для справки. Genshin Spirit не гарантирует точность и полноту любой содержащейся в нем информации в какой-либо степени.</string>
     <string name="about_title2">Заявление о конфиденциальности</string>
-    <string name="about_info2">Это приложение не будет собирать какие-либо личные данные о конфиденциальности, оно не может использоваться для идентификации и отслеживания пользователей и другой информации. При необходимости приложение будет собирать только уведомленные данные, такие как стек сбоя программы. Приведенные выше данные используются только для устранения уязвимостей приложений и улучшения взаимодействия с пользователем.</string>
+    <string name="about_info2">Это приложение не будет собирать какие-либо личные данные о конфиденциальности, оно не может использоваться для идентификации и отслеживания пользователей и другой информации. При необходимости приложение будет собирать только уведомленные данные, такие как стек сбоя программы. Приведенные выше данные используются только для устранения уязвимостей приложений и улучшения взаимодействия с пользователем.the</string>
     <string name="about_title3">Заявление об использовании ресурсов</string>
     <string name="about_info3">Это приложение разработано на основе Shiori for Genshin и направлено на то, чтобы отдать дань уважения Shiori for Genshin и его сотрудников, но оно еще не было признано его сотрудниками. Некоторые изображения этого приложения, данные взяты из проектов с открытым исходным кодом, ссылки будут прикреплены ниже. Поэтому часть интерфейса и верстка этого приложения очень похожи на Shiori for Genshin. Однако это приложение использует Java вместо Dart в качестве языка программирования, и оно будет работать только на Android и (или) любых поддерживающих форматах файлов .apk и .aab., или других платформ поддержуешие эти форма.</string>
     <string name="about_title4">Заявление об открытом исходном коде проекта</string>
@@ -260,18 +232,18 @@
 
 
     <!-- moy -->
-    <string name="date_jan">Янв</string>
-    <string name="date_feb">Фев</string>
-    <string name="date_mar">Мар</string>
-    <string name="date_apr">Апр</string>
-    <string name="date_may">Май</string>
-    <string name="date_jun">Июн</string>
-    <string name="date_jul">Июл</string>
-    <string name="date_aug">Авг</string>
-    <string name="date_sep">Сен</string>
-    <string name="date_oct">Окт</string>
-    <string name="date_nov">Ноя</string>
-    <string name="date_dec">Дек</string>
+    <string name="date_jan">Января</string>
+    <string name="date_feb">Февраля</string>
+    <string name="date_mar">Марта</string>
+    <string name="date_apr">Апреля</string>
+    <string name="date_may">Мая</string>
+    <string name="date_jun">Июнь</string>
+    <string name="date_jul">Июля</string>
+    <string name="date_aug">Августа</string>
+    <string name="date_sep">Сентября</string>
+    <string name="date_oct">Октября</string>
+    <string name="date_nov">Ноября</string>
+    <string name="date_dec">Декабря</string>
 
     <!-- dom -->
     <string name="date_1st">" 1-е"</string>
@@ -305,10 +277,225 @@
     <string name="date_29th">" 29-е"</string>
     <string name="date_30th">" 30-е"</string>
     <string name="date_31st">" 31-е"</string>
-    <string name="thanks_title">Спасибо</string>
-    <string name="translator_title">Переводчики</string>
-    <string name="beta_tester_title">тестеры</string>
-    <string name="thanks_intro">Благодаря вашей помощи Genshin Spirit может стать более совершенным.</string>
+
+    <!-- add in 20211001 -->
+    <!-- Weapon-Sword -->
+    <string name="amenoma_kageuchi">"Амэнома Кагэути"</string>
+    <string name="aquila_favonia">"Меч Сокола"</string>
+    <string name="blackcliff_longsword">"Черногорский длинный меч"</string>
+    <string name="cool_steel">"Холодное лезвие"</string>
+    <string name="dark_iron_sword">"Тёмный железный меч"</string>
+    <string name="dull_blade">"Тупой меч"</string>
+    <string name="favonius_sword">"Меч Фавония"</string>
+    <string name="festering_desire">"Осквернённое желание"</string>
+    <string name="fillet_blade">"Филейный нож"</string>
+    <string name="freedom_sworn">"Клятва свободы"</string>
+    <string name="harbinger_of_dawn">"Предвестник зари"</string>
+    <string name="iron_sting">"Стальное жало"</string>
+    <string name="lions_roar">"Драконий рык"</string>
+    <string name="mistsplitter_reforged">"Рассекающий туман"</string>
+    <string name="primordial_jade_cutter">"Драгоценный омут"</string>
+    <string name="prototype_rancour">"Прототип: Злоба"</string>
+    <string name="royal_longsword">"Меч аристократов"</string>
+    <string name="sacrificial_sword">"Церемониальный меч"</string>
+    <string name="silver_sword">"Серебряный меч"</string>
+    <string name="skyrider_sword">"Меч небесного всадника"</string>
+    <string name="skyward_blade">"Небесный меч"</string>
+    <string name="summit_shaper">"Кромсатель пиков"</string>
+    <string name="sword_of_descension">"Меч нисхождения"</string>
+    <string name="the_alley_flash">"Вспышка во тьме"</string>
+    <string name="the_black_sword">"Чёрный меч"</string>
+    <string name="the_flute">"Меч-флейта"</string>
+    <string name="travelers_handy_sword">"Меч путешественника"</string>
+
+    <!-- Weapon-Claymore -->
+    <string name="waster_greatsword">"Двуручный меч богатыря"</string>
+    <string name="old_mercs_pal">"Лучший друг наёмника"</string>
+    <string name="bloodtainted_greatsword">"Меч драконьей крови"</string>
+    <string name="debate_club">"Дубина переговоров"</string>
+    <string name="quartz">"Кварц"</string>
+    <string name="ferrous_shadow">"Металлическая тень"</string>
+    <string name="skyrider_greatsword">"Двуручный меч Небесного всадника"</string>
+    <string name="white_iron_greatsword">"Меч из белого железа"</string>
+    <string name="blackcliff_slasher">"Черногорская бритва"</string>
+    <string name="favonius_greatsword">"Двуручный меч Фавония"</string>
+    <string name="katsuragikiri_nagamasa">"Кацурагикири Нагамаса"</string>
+    <string name="lithic_blade">"Каменный меч"</string>
+    <string name="luxurious_sea_lord">"Благодатный владыка вод"</string>
+    <string name="prototype_archaic">"Прототип: Архаичный"</string>
+    <string name="rainslasher">"Дождерез"</string>
+    <string name="royal_greatsword">"Королевский двуручный меч"</string>
+    <string name="sacrificial_greatsword">"Церемониальный двуручный меч"</string>
+    <string name="serpent_spine">"Меч драконьей кости"</string>
+    <string name="snow_tombed_starsilver">"Заснеженное звёздное серебро"</string>
+    <string name="the_bell">"Меч-колокол"</string>
+    <string name="whiteblind">"Белая тень"</string>
+    <string name="skyward_pride">"Небесное величие"</string>
+    <string name="song_of_broken_pines">"Песнь разбитых сосен"</string>
+    <string name="the_unforged">"Некованный"</string>
+    <string name="wolfs_gravestone">"Волчья погибель"</string>
+
+    <!-- Weapon-Plearm -->
+    <string name="beginners_protector">"Копьё новичка"</string>
+    <string name="iron_point">"Железный наконечник"</string>
+    <string name="black_tassel">"Чёрная кисть"</string>
+    <string name="halberd">"Алебарда Миллелита"</string>
+    <string name="white_tassel">"Белая кисть"</string>
+    <string name="blackcliff_pole">"Черногорская пика"</string>
+    <string name="crescent_pike">"Пика полумесяца"</string>
+    <string name="deathmatch">"Смертельный бой"</string>
+    <string name="dragons_bane">"Гроза драконов"</string>
+    <string name="dragonspine_spear">"Копьё Драконьего хребта"</string>
+    <string name="favonius_lance">"Копьё Фавония"</string>
+    <string name="kitain_cross_spear">"Крест-копьё Китаин"</string>
+    <string name="lithic_spear">"Каменное копьё"</string>
+    <string name="prototype_starglitter">"Прототип: Звёздный блеск"</string>
+    <string name="royal_spear">"Королевское копьё"</string>
+    <string name="the_catch">"Улов"</string>
+    <string name="engulfing_lightning">"Сияющая жатва"</string>
+    <string name="primordial_jade_winged_spear">"Нефритовый коршун"</string>
+    <string name="skyward_spine">"Небесная ось"</string>
+    <string name="staff_of_homa">"Посох Хомы"</string>
+    <string name="vortex_vanquisher">"Покоритель вихря"</string>
+
+    <!-- Weapon-Catalyst -->
+    <string name="apprentices_notes">"Записи ученика"</string>
+    <string name="pocket_grimoire">"Карманный гримуар"</string>
+    <string name="amber_catalyst">"Янтарная жемчужина"</string>
+    <string name="emerald_orb">"Изумрудный шар"</string>
+    <string name="magic_guide">"Руководство по магии"</string>
+    <string name="otherworldly_story">"Потусторонняя история"</string>
+    <string name="thrilling_tales_of_dragon_slayers">"Эпос о драконоборцах"</string>
+    <string name="twin_nephrite">"Парный нефрит"</string>
+    <string name="blackcliff_agate">"Черногорский агат"</string>
+    <string name="dodoco_tales">"Истории Додоко"</string>
+    <string name="eye_of_perception">"Око сознания"</string>
+    <string name="favonius_codex">"Кодекс Фавония"</string>
+    <string name="frostbearer">"Плод вечной мерзлоты"</string>
+    <string name="hakushin_ring">"Кольцо Хакусин"</string>
+    <string name="mappa_mare">"Морской атлас"</string>
+    <string name="prototype_amber">"Прототип: Янтарь"</string>
+    <string name="royal_grimoire">"Королевский гримуар"</string>
+    <string name="sacrificial_fragments">"Церемониальные мемуары"</string>
+    <string name="solar_pearl">"Солнечная жемчужина"</string>
+    <string name="the_widsith">"Песнь странника"</string>
+    <string name="wine_and_song">"Вино и стихи"</string>
+    <string name="everlasting_moonglow">"Вечное лунное сияние"</string>
+    <string name="lost_prayer_to_the_sacred_winds">"Молитва святым ветрам"</string>
+    <string name="memory_of_dust">"Память о пыли"</string>
+    <string name="skyward_atlas">"Небесный атлас"</string>
+
+    <!-- Weapon-Bow -->
+    <string name="hunters_bow">"Лук охотника"</string>
+    <string name="seasoned_hunters_bow">"Лук опытного охотника"</string>
+    <string name="ebony_bow">"Эбеновый лук"</string>
+    <string name="messenger">"Посыльный"</string>
+    <string name="raven_bow">"Лук ворона"</string>
+    <string name="recurve_bow">"Изогнутый лук"</string>
+    <string name="sharpshooters_oath">"Клятва стрелка"</string>
+    <string name="slingshot">"Рогатка"</string>
+    <string name="alley_hunter">"Охотник во тьме"</string>
+    <string name="blackcliff_warbow">"Черногорский боевой лук"</string>
+    <string name="compound_bow">"Составной лук"</string>
+    <string name="favonius_warbow">"Боевой лук Фавония"</string>
+    <string name="hamayumi">"Хамаюми"</string>
+    <string name="mitternachts_waltz">"Вальс Нирваны Ночи"</string>
+    <string name="predator">"Хищник"</string>
+    <string name="prototype_crescent">"Прототип: Полумесяц"</string>
+    <string name="royal_bow">"Королевский лук"</string>
+    <string name="rust">"Ржавый лук"</string>
+    <string name="sacrificial_bow">"Церемониальный лук"</string>
+    <string name="the_stringless">"Бесструнный"</string>
+    <string name="the_viridescent_hunt">"Зелёный лук"</string>
+    <string name="windblume_ode">"Ода анемонии"</string>
+    <string name="amos_bow">"Лук Амоса"</string>
+    <string name="elegy_for_the_end">"Элегия погибели"</string>
+    <string name="skyward_harp">"Небесное крыло"</string>
+    <string name="thundering_pulse">"Громовой пульс"</string>
+
+    <!-- char_info -->
+    <string name="none_info">Актуальной информации о нём/ей</string>>
+    <string name="weapon_stat">"2-й артибут: "</string>
+    <string name="weapon_stat_atk">"АТК"</string>
+    <string name="weapon_stat_atkP">"АТК %"</string>
+    <string name="weapon_stat_CritDMGP">"Крит. урон %"</string>
+    <string name="weapon_stat_CritRateP">"Шанс. кита %"</string>
+    <string name="weapon_stat_PhyDMGP">"Физ. урон %"</string>
+    <string name="weapon_stat_EnRechP">"Вост. энергии %"</string>
+    <string name="weapon_stat_EleMas">"Мастертво стихии"</string>
+    <string name="weapon_stat_DEFP">"ЗАЩ %"</string>
+    <string name="weapon_stat_HPP">"HP %"</string>
+    <string name="weapon_stat_no">"N/A"</string>
+
+    <!-- cal_item_name -->
+    <string name="cal_choosed_already">Вы уже выбрили его/её</string>
+
+    <!-- setting -->
+    <string name="thanks_title">Отдельное спасибо</string>
+    <string name="translator_title">Переводчикам</string>
+    <string name="beta_tester_title">Бета тестерам</string>
+    <string name="thanks_intro">Благодаря вашей помощи Genshin Spirit может стать более совершенным</string>
+
+    <!-- add in 20211018 -->
+
+    <!-- char_info -->
+    <string name="artifact_stat1">1 часть</string>
+    <string name="artifact_stat2">2 часть(ти)</string>
+    <string name="artifact_stat4">часть(ти)</string>
+
+
+    <!-- setting -->
+    <string name="list_grid">Сетка списка</string>
+
+    <!-- artifacts -->
+    <string name="adventurer">"Искатель приключений"</string>
+    <string name="archaic_petra">"Архаичный камень"</string>
+    <string name="berserker">"Берсерк"</string>
+    <string name="blizzard_strayer">"Заблудший в метели"</string>
+    <string name="bloodstained_chivalry">"Рыцарь крови"</string>
+    <string name="brave_heart">"Душа храбреца"</string>
+    <string name="crimson_witch_of_flames">"Горящая алая ведьма"</string>
+    <string name="defenders_will">"Воля защитника"</string>
+    <string name="emblem_of_severed_fate">"Эмблема рассечённой судьбы"</string>
+    <string name="gambler">"Азартный игрок"</string>
+    <string name="gladiators_finale">"Конец гладиатора"</string>
+    <string name="heart_of_depth">"Сердце глубин"</string>
+    <string name="instructor">"Инструктор"</string>
+    <string name="lavawalker">"Ступающий по лаве"</string>
+    <string name="lucky_dog">"Везунчик"</string>
+    <string name="maiden_beloved">"Возлюбленная юная дева"</string>
+    <string name="martial_artist">"Воин"</string>
+    <string name="noblesse_oblige">"Церемония древней знати"</string>
+    <string name="pale_flame">"Бледный огонь"</string>
+    <string name="prayers_of_destiny">"Шаман воды"</string>
+    <string name="prayers_of_illumination">"Шаман огня"</string>
+    <string name="prayers_of_wisdom">"Шаман молнии"</string>
+    <string name="prayers_of_springtime">"Шаман льда"</string>
+    <string name="resolution_of_sojourner">"Решимость временщика"</string>
+    <string name="retracing_bolide">"Встречная комета"</string>
+    <string name="scholar">"Учёный"</string>
+    <string name="shimenawas_reminiscence">"Воспоминания Симэнавы"</string>
+    <string name="tenacity_of_the_millelith">"Стойкость Миллелита"</string>
+    <string name="the_exile">"Изгнанник"</string>
+    <string name="thundering_fury">"Громогласный рёв ярости"</string>
+    <string name="thundersoother">"Усмиряющий гром"</string>
+    <string name="tiny_miracle">"Маленькое чудо"</string>
+    <string name="traveling_doctor">"Целитель"</string>
+    <string name="viridescent_venerer">"Изумрудная тень"</string>
+    <string name="wanderers_troupe">"Странствующий ансамбль"</string>
+
+    <!-- add in 20211023 -->
+    <!-- New Character in here-->
+    <string name="gorou">Горо</string>
+    <string name="arataki_itto">Аратаки Итто</string>
+    <string name="yae_miko">Яэ Мику</string>
+    <string name="buff">Бафф</string>
+
+    <!-- add in 20211025 -->
+    <string name="cal_reset">сброс настроек</string>
+    <!-- add in 20211027 -->
+    <string name="nora_fortis">Nora Fortis</string>
+    <string name="snezhnaya">Снежная</string>
 
 
 </resources>

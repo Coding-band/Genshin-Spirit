@@ -1,0 +1,12 @@
+{
+  "name": "White Tassel",
+  "rare": 3,
+  "weapon": "Polearm",
+  "isComingSoon": false,
+  "desc": "Стандартное вооружение Миллелитов. Имеет крепкое древко и острый наконечник.",
+  "first_status": "CritDMG%",
+  "second_status": "ATK",
+  "skill_name": "Зоркий",
+  "skill_desc": "Увеличивает урон обычной атаки на 24%/30%/36%/42%/48%。",
+  "obtain_way": "CHEST_LY"
+}

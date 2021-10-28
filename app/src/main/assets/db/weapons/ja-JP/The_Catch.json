@@ -1,0 +1,12 @@
+{
+  "name": "The Catch",
+  "rare": 4,
+  "weapon": "Polearm",
+  "isComingSoon": false,
+  "desc": "遠い昔、稲妻に名を轟かせた大泥棒が愛用していた槍。",
+  "first_status": "EnRech%",
+  "second_status": "ATK",
+  "skill_name": "舟歌",
+  "skill_desc": "元素爆発ダメージ+16%/20%/24%/28%/32%、元素爆発の会心率+6%/7.5%/9%/10.5%/12%。",
+  "obtain_way": "NPC_DCDYHW"
+}

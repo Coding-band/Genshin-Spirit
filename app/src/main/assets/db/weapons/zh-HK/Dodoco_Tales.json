@@ -1,0 +1,12 @@
+{
+  "name": "Dodoco Tales",
+  "rare": 4,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "一本封面華麗的童書，內容皆是童言無忌的短小故事，讀之令人忍俊不住。即使業已成年的讀者,讀到書中天真無邪的冒險故事，也會忍不住神往吧。",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "嘟嘟！大冒險",
+  "skill_desc": "普通攻擊命中敵人後的6秒內，重擊造成的傷害提升16/20/24/28/32%\n重擊命中敵人後的6秒內，攻擊力提升8/10/12/14/16%。",
+  "obtain_way": "EVENT"
+}

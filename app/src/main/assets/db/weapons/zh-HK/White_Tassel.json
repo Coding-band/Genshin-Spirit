@@ -1,0 +1,12 @@
+{
+  "name": "White Tassel",
+  "rare": 3,
+  "weapon": "Polearm",
+  "isComingSoon": false,
+  "desc": "千岩軍士兵的制式武器，槍身牢靠，槍尖鋒銳，是無比可靠的武器。",
+  "first_status": "CritDMG%",
+  "second_status": "ATK",
+  "skill_name": "銳利",
+  "skill_desc": "普通攻擊造成的傷害提升24%/30%/36%/42%/48%。",
+  "obtain_way": "CHEST_LY"
+}

@@ -462,20 +462,32 @@
                         android:text="@string/press_exit"
                         android:textColor="@color/tv_color" />
 
-                    <TextView
-                        android:id="@+id/textView4"
+                    <TextView android:id="@+id/textView16"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="@string/acc_in_server" />
+                        android:text="@string/acc_in_server"/>
 
-                    <Spinner
-                        android:id="@+id/server_spinner"
+                    <Spinner android:id="@+id/server_spinner"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
-                        android:layout_marginBottom="8dp" />
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView android:id="@+id/textView4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="@string/list_grid"/>
+
+                    <Spinner android:id="@+id/ui_box_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"/>
+
 
                 </LinearLayout>
 
@@ -685,7 +697,27 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
+                        android:text="@string/genshindb_dclink"
+                        android:textAlignment="center"
+                        android:textColor="@color/pyro"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/contact_link6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
                         android:text="@string/genshinhelper_link"
+                        android:textAlignment="center"
+                        android:textColor="@color/pyro"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/contact_link7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="@string/genshinhelper_dclink"
                         android:textAlignment="center"
                         android:textColor="@color/pyro"
                         android:textSize="20sp" />

@@ -1,0 +1,12 @@
+{
+  "name": "Primordial Jade Winged-Spear",
+  "rare": 5,
+  "weapon": "Polearm",
+  "isComingSoon": false,
+  "desc": "A jade polearm made by the archons, capable of slaying ancient beasts.",
+  "first_status": "CritRate%",
+  "second_status": "ATK",
+  "skill_name": "Eagle Spear of Justice",
+  "skill_desc": "On hit, increases ATK by 3.2%/3.9%/4.6%/5.3%/6% for 6s. Max 7 stacks. This effect can only occur once every 0.3s. While in possession of the maximum possible stacks, DMG dealt is increased by12%/15%/18%/21%/24%.",
+  "obtain_way": "WISH"
+}

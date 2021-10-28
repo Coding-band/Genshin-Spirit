@@ -1,0 +1,12 @@
+{
+  "name": "Memory of Dust",
+  "rare": 5,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "蘊含著某種悠遠記憶的石鎖，隨著無窮的變換透露出其中的力量。",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "金璋皇極",
+  "skill_desc": "護盾強效提升20%/25%/30%/35%/40%。攻擊命中後的8秒內，攻擊力提升4%/5%/6%/7%/8%。該效果至多可疊加5層，每0.3秒只能觸發一次。此外，處於護盾庇護下時，該效果的攻擊力提升效果提高100%。",
+  "obtain_way": "LIMITED_WISH"
+}

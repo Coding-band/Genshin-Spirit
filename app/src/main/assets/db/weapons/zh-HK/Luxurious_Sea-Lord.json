@@ -1,0 +1,12 @@
+{
+  "name": "Luxurious Sea-Lord",
+  "rare": 4,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "海中的大王。經過風乾，是趁手的兵器以及應急食品。",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "海洋的勝利",
+  "skill_desc": "元素爆發造成的傷害提升12%/15%/18%/21%/24%。元素爆發命中敵人時，有100%概率召喚大鮪衝擊，造成100%/125%/150%/175%/200%攻擊力的範圍傷害。該效果每15秒至多觸發一次。",
+  "obtain_way": "EVENT"
+}

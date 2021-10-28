@@ -1,0 +1,12 @@
+{
+  "name": "Cool Steel",
+  "rare": 3,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "desc": "多層鍛造の精密な鋼で作った頼もしい兵器、持ち主の冒険を目撃してきた。",
+  "skill_name": "水と氷の破滅",
+  "skill_desc": "水元素又は氷元素の影響を受けた敵に対するダメージ+12%/15%/18%/21%/24%。",
+  "obtain_way": "WISH"
+}

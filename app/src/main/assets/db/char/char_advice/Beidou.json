@@ -7,7 +7,7 @@
 	"lithic_blade",
 	"serpent_spine",
 	"blackcliff_slasher",
-	"prototype_aminus"
+	"prototype_rancour"
    ],
   "sup_dps_weapons": [
     "sacrificial_greatsword"
@@ -37,6 +37,6 @@
 	"Beidou","Xiangling","Fischl","Barbara"
   ],
   "team2":[
-	"Tartaglia","Xingqui","Beidou","Fischl"
+	"Tartaglia","Xingqiu","Beidou","Fischl"
   ]
 }

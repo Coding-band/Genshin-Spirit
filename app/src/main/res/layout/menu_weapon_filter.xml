@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@color/page_bg" android:padding="8dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:layout_marginBottom="4dp">
+        <ImageView android:id="@+id/menu_filter_ico" android:layout_width="48dp" android:layout_height="48dp" android:layout_weight="0" app:srcCompat="@drawable/ic_baseline_filter_alt_24"/>
+        <TextView android:textSize="20sp" android:textColor="@color/tv_color" android:gravity="left|center_vertical|center_horizontal|center" android:id="@+id/menu_title_tv" android:layout_width="match_parent" android:layout_height="48dp" android:text="@string/filters" android:layout_weight="0"/>
+    </LinearLayout>
+    <TextView android:textSize="16sp" android:textColor="@color/tv_color" android:gravity="left|center_vertical|center_horizontal|center" android:id="@+id/menu_weapons_title_tv" android:paddingLeft="16dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/title_weapons"/>
+    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:layout_marginBottom="4dp">
+        <ImageView android:id="@+id/ico_sword" android:layout_width="32dp" android:layout_height="32dp" android:layout_weight="1" app:srcCompat="@drawable/ico_sword" app:tint="@color/tv_color"/>
+        <ImageView android:id="@+id/ico_claymore" android:layout_width="32dp" android:layout_height="32dp" android:layout_weight="1" app:srcCompat="@drawable/ico_claymore" app:tint="@color/tv_color"/>
+        <ImageView android:id="@+id/ico_polearm" android:layout_width="32dp" android:layout_height="32dp" android:layout_weight="1" app:srcCompat="@drawable/ico_polearm" app:tint="@color/tv_color"/>
+        <ImageView android:id="@+id/ico_bow" android:layout_width="32dp" android:layout_height="32dp" android:layout_weight="1" app:srcCompat="@drawable/ico_bow" app:tint="@color/tv_color"/>
+        <ImageView android:id="@+id/ico_catalyst" android:layout_width="32dp" android:layout_height="32dp" android:layout_weight="1" app:srcCompat="@drawable/ico_catalyst" app:tint="@color/tv_color"/>
+    </LinearLayout>
+    <TextView android:textSize="16sp" android:textColor="@color/tv_color" android:gravity="left|center_vertical|center_horizontal|center" android:id="@+id/menu_rarity_title_tv" android:paddingLeft="16dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/rarity"/>
+    <RatingBar android:layout_gravity="center" android:id="@+id/menu_rating" android:layout_width="wrap_content" android:layout_height="wrap_content" android:numStars="5" android:rating="0" android:stepSize="1" android:progressTint="#ffeb3b"/>
+    <LinearLayout android:gravity="right" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+        <Button android:textColor="@color/theme_color" android:id="@+id/menu_cancel" android:background="@drawable/bg_square_border" android:layout_width="72dp" android:layout_height="36dp" android:layout_margin="4dp" android:text="@android:string/cancel" android:layout_weight="0"/>
+
+        <Button
+            android:id="@+id/menu_reset"
+            android:layout_width="72dp"
+            android:layout_height="36dp"
+            android:layout_margin="4dp"
+            android:layout_weight="0"
+            android:background="@drawable/bg_square_border"
+            android:text="@string/cal_reset"
+            android:textColor="@color/theme_color" />
+
+        <Button
+            android:id="@+id/menu_ok"
+            android:layout_width="72dp"
+            android:layout_height="36dp"
+            android:layout_margin="4dp"
+            android:layout_weight="0"
+            android:background="@drawable/bg_square_border_colorful"
+            android:text="@android:string/ok"
+            android:textColor="@color/tv_color" />
+    </LinearLayout>
+</LinearLayout>

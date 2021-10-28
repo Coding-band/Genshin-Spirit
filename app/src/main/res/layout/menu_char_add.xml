@@ -478,7 +478,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="4dp"
                 android:background="@drawable/bg_square_border_colorful"
-                android:text="確定"
+                android:text="@android:string/ok"
                 android:textColor="@color/tv_color" />
         </LinearLayout>
 

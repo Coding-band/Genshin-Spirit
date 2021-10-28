@@ -1,0 +1,12 @@
+{
+  "name": "Lithic Blade",
+  "rare": 4,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "璃月の基盤岩を原材料として作った重厚な大剣。",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "千岩訣·同心",
+  "skill_desc": "チームに璃月出身のキャラクターが1人いる毎に、この武器を装備したキャラクターの攻撃力+7%/8%/9%/10%/11%、会心率+3%/4%/5%/6%/7%。最大4重まで。",
+  "obtain_way": "LIMITED_WISH"
+}

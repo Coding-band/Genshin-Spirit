@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.support.media.ExifInterface;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -79,7 +80,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Characters Characters = charactersList.get(position);
-        Characters_Rss characters_rss = new Characters_Rss();
+        ItemRss item_rss = new ItemRss();
         int width = 0, height = 0;
         int count = 3;
         final int radius = 25;
@@ -95,8 +96,16 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         if(Characters.getRare() >3 && Characters.getRare() < 6){holder.char_star.setNumStars(Characters.getRare());holder.char_star.setRating(Characters.getRare());}
 
         if(context instanceof MainActivity){
-            width = (int) ((ScreenSizeUtils.getInstance(context).getScreenWidth() - 32*2*2)/2);
-            height = (int) (width*58/32);
+
+            if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
+                width = (ScreenSizeUtils.getInstance(this.context).getScreenWidth() - 128) / 2;
+                height = (width * 58) / 32;
+            } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
+                width = (ScreenSizeUtils.getInstance(this.context).getScreenWidth() - 128) / 3;
+                height = (ScreenSizeUtils.getInstance(this.context).getScreenWidth() - 128) / 3;
+            }
+
+
         }else if(context instanceof CalculatorUI){
             width = (int) ((ScreenSizeUtils.getInstance(context).getScreenWidth() - 32*2*2)/3);
             height = (int) ((ScreenSizeUtils.getInstance(context).getScreenWidth() - 32*2*2)/3);
@@ -115,29 +124,30 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         Bitmap bitmap ;
         Bitmap outBitmap ;
         // Already knew that IMG size is not the main reason of main_list lag
-        //bitmap = BitmapFactory.decodeResource(context.getResources(),characters_rss.getCharByName(Characters.getName())[0]);
+        //bitmap = BitmapFactory.decodeResource(context.getResources(),item_rss.getCharByName(Characters.getName())[0]);
         //outBitmap =getRoundBitmapByShader(bitmap, (int) Math.round(width/2),(int)Math.round(height/2),20, 0);
         if(context instanceof MainActivity){
-            Picasso.get()
-                    .load (characters_rss.getCharByName(Characters.getName())[0]).fit().centerCrop().transform(transformation)
-                    .error (R.drawable.paimon_full)
-                    .into (holder.char_icon);
 
-            //bitmap = BitmapFactory.decodeResource(context.getResources(),characters_rss.getCharByName(Characters.getName())[0]);
-            //outBitmap =getRoundBitmapByShader(bitmap, (int) Math.round(width/2),(int)Math.round(height/2),20, 0);
+            if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
+                Picasso.get()
+                        .load (item_rss.getCharByName(Characters.getName())[0]).fit().centerCrop().transform(transformation)
+                        .error (R.drawable.paimon_full)
+                        .into (holder.char_icon);
+            } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
+                Picasso.get()
+                        .load (item_rss.getCharByName(Characters.getName())[3]).fit().centerCrop().transform(transformation)
+                        .error (R.drawable.paimon_full)
+                        .into (holder.char_icon);
+            }
         }else if(context instanceof CalculatorUI){
             Picasso.get()
-                    .load (characters_rss.getCharByName(Characters.getName())[3]).fit().centerInside().transform(transformation)
+                    .load (item_rss.getCharByName(Characters.getName())[3]).fit().centerInside().transform(transformation)
                     .error (R.drawable.paimon_full)
                     .into (holder.char_icon);
 
-            //bitmap = BitmapFactory.decodeResource(context.getResources(),characters_rss.getCharByName(Characters.getName())[3]);
-            //outBitmap =getRoundBitmapByShader(bitmap, (int) Math.round(width/2),(int)Math.round(height/2),20, 0);
         }
 
-       // holder.char_icon.setImageBitmap(outBitmap);
-       // holder.char_icon.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        holder.char_name.setText(characters_rss.getCharByName(Characters.getName())[1]);
+        holder.char_name.setText(item_rss.getCharByName(Characters.getName())[1]);
 
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
         String color_hex = sharedPreferences.getString("theme_color_hex","#FF5A5A"); // Must include #
@@ -214,7 +224,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                         if (have == false) {
                             (((CalculatorUI) context)).charQuestion(String.valueOf(char_base_name.getText()), "ADD", 0);
                         } else {
-                            Toast.makeText(((CalculatorUI) context), "You have already set this character !", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(((CalculatorUI) context), context.getString(R.string.cal_choosed_already), Toast.LENGTH_SHORT).show();
                         }
                     }
 

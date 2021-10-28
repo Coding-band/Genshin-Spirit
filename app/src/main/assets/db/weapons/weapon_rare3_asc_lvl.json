@@ -1,0 +1,8 @@
+[
+  {"lvl" : 1, "copy1" : 2, "copy2" :2, "common" : 1, "mora" : 5000},
+  {"lvl" : 2, "copy1" : 2, "copy2" :8, "common" : 5, "mora" : 10000},
+  {"lvl" : 3, "copy1" : 4, "copy2" :4, "common" : 4, "mora" : 15000},
+  {"lvl" : 4, "copy1" : 2, "copy2" :8, "common" : 6, "mora" : 20000},
+  {"lvl" : 5, "copy1" : 4, "copy2" :6, "common" : 4, "mora" : 25000},
+  {"lvl" : 6, "copy1" : 3, "copy2" :12, "common" : 8, "mora" : 30000}
+]

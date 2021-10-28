@@ -1,0 +1,12 @@
+{
+  "name": "Black Tassel",
+  "rare": 3,
+  "weapon": "Polearm",
+  "isComingSoon": false,
+  "desc": "解決了白纓容易弄髒問題的絕世好槍。",
+  "first_status": "HP%",
+  "second_status": "ATK",
+  "skill_name": "克柔",
+  "skill_desc": "對史萊姆類敵人造成的傷害增加40%/50%/60%/70%/80%。",
+  "obtain_way": "WISH"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Staff of Homa",
+  "rare": 5,
+  "weapon": "Polearm",
+  "isComingSoon": false,
+  "desc": "在早已失落的古老祭儀中，使用的朱赤「柴火杖」。",
+  "first_status": "CritDMG%",
+  "second_status": "ATK",
+  "skill_name": "無羈的朱赤之蝶",
+  "skill_desc": "生命值提升20%/25%/30%/35%/40%。此外，提供基於裝備該武器的角色生命值上限的0.8%/1%/1.2%/1.4%/1.6%，獲得攻擊力加成。當裝備該武器的角色生命值低於50%時，進一步獲得1%/1.2%/1.4%/1.6%/1.8%最大生命值上限的攻擊力提升。",
+  "obtain_way": "LIMITED_WISH"
+}

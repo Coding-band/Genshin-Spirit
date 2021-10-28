@@ -8,25 +8,24 @@ import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.graphics.drawable.BitmapDrawable;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.widget.HorizontalScrollView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
+import com.squareup.picasso.Picasso;
 import com.voc.genshin_helper.R;
-import com.voc.genshin_helper.data.Characters_Rss;
+import com.voc.genshin_helper.data.ItemRss;
+import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
 import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
@@ -36,8 +35,6 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
-import java.util.Arrays;
 
 import static android.content.Context.MODE_PRIVATE;
 import static com.voc.genshin_helper.data.RoundRectImageView.getRoundBitmapByShader;
@@ -54,7 +51,7 @@ public class Characters_Info {
     /** Method of requirements */
     Context context;
     SharedPreferences sharedPreferences ;
-    Characters_Rss characters_rss ;
+    ItemRss item_rss;
 
     /** Method of Char's details' container */
     /** Since String can't be null, so there will have "XPR" for identify is result correct */
@@ -223,15 +220,15 @@ public class Characters_Info {
 
                     if(jsonObjectDps.has("dps_weapons")){
                         JSONArray weapons_temp = jsonObjectDps.getJSONArray("dps_weapons");
-                        main_weapon_advice = weapons_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
+                        main_weapon_advice = weapons_temp.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
                     }
                     if(jsonObjectDps.has("sup_dps_weapons")){
                         JSONArray weapons_temp = jsonObjectDps.getJSONArray("sup_dps_weapons");
-                        support_weapon_advice = weapons_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
+                        support_weapon_advice = weapons_temp.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
                     }
                     if(jsonObjectDps.has("util_weapons")){
                         JSONArray weapons_temp = jsonObjectDps.getJSONArray("util_weapons");
-                        util_weapon_advice = weapons_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
+                        util_weapon_advice = weapons_temp.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
                     }
             /*
 
@@ -248,43 +245,43 @@ public class Characters_Info {
 
                     if(jsonObjectDps.has("dps_art1")) {
                         JSONArray art1_temp = jsonObjectDps.getJSONArray("dps_art1");
-                        main_artifacts1 = art1_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
+                        main_artifacts1 = art1_temp.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
                     }
 
                     if(jsonObjectDps.has("dps_art2")) {
                         JSONArray art2_temp = jsonObjectDps.getJSONArray("dps_art2");
-                        main_artifacts2 = art2_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
+                        main_artifacts2 = art2_temp.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
                     }
 
                     if(jsonObjectDps.has("dps_art3")) {
                         JSONArray art3_temp = jsonObjectDps.getJSONArray("dps_art3");
-                        main_artifacts3 = art3_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
+                        main_artifacts3 = art3_temp.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
                     }
 
                     if(jsonObjectDps.has("sup_dps_art1")) {
                         JSONArray art1_temp = jsonObjectDps.getJSONArray("sup_dps_art1");
-                        support_artifacts1 = art1_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
+                        support_artifacts1 = art1_temp.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
                     }
                     if(jsonObjectDps.has("sup_dps_art2")) {
                         JSONArray art2_temp = jsonObjectDps.getJSONArray("sup_dps_art2");
-                        support_artifacts2 = art2_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
+                        support_artifacts2 = art2_temp.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
                     }
                     if(jsonObjectDps.has("sup_dps_art3")) {
                         JSONArray art3_temp = jsonObjectDps.getJSONArray("sup_dps_art3");
-                        support_artifacts3 = art3_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
+                        support_artifacts3 = art3_temp.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
                     }
 
                     if(jsonObjectDps.has("util_art1")) {
                         JSONArray art1_temp = jsonObjectDps.getJSONArray("util_art1");
-                        util_artifacts1 = art1_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
+                        util_artifacts1 = art1_temp.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
                     }
                     if(jsonObjectDps.has("util_art2")) {
                         JSONArray art2_temp = jsonObjectDps.getJSONArray("util_art2");
-                        util_artifacts2 = art2_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
+                        util_artifacts2 = art2_temp.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
                     }
                     if(jsonObjectDps.has("util_art3")) {
                         JSONArray art3_temp = jsonObjectDps.getJSONArray("util_art3");
-                        util_artifacts3 = art3_temp.toString().replace("[", "").replace("]", "").replace(",", " ").split(" ");
+                        util_artifacts3 = art3_temp.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
                     }
 
                     if(jsonObjectDps.has("team1")) {
@@ -319,7 +316,7 @@ public class Characters_Info {
         sharedPreferences = context.getSharedPreferences("user_info",Context.MODE_PRIVATE);
         this.CharName_BASE = CharName_BASE.replace(" ","_");
         this.context = context;
-        characters_rss = new Characters_Rss();
+        item_rss = new ItemRss();
 
         String lang = sharedPreferences.getString("curr_lang","zh-HK");
         AssetManager mg = context.getResources().getAssets();
@@ -575,79 +572,79 @@ public class Characters_Info {
          */
 
         /** MAIN */
-        char_name.setText("【"+nick+"】 "+context.getString(characters_rss.getCharByName(name)[1]));
-        char_img.setImageResource(characters_rss.getCharByName(name)[2]);
-        char_img.setBackgroundResource(characters_rss.getElementByName(element)[2]);
+        char_name.setText("【"+nick+"】 "+context.getString(item_rss.getCharByName(name)[1]));
+        char_img.setImageResource(item_rss.getCharByName(name)[2]);
+        char_img.setBackgroundResource(item_rss.getElementByName(element)[2]);
         char_stars.setNumStars(star);
         char_stars.setRating(star);
-        char_element.setImageResource(characters_rss.getElementByName(element)[0]);
-        char_area.setText(characters_rss.getLocaleName(area,context));
-        char_weapon.setImageResource(characters_rss.getWeaponTypeIMG(weapon));
-        char_role.setText(characters_rss.getLocaleName(role,context));
-        char_sex.setText(characters_rss.getLocaleName(sex,context));
-        char_birth.setText(characters_rss.getLocaleBirth(birth,context)); // -> If necessary will change to Month | Day -> E.g. July 24th
+        char_element.setImageResource(item_rss.getElementByName(element)[0]);
+        char_area.setText(item_rss.getLocaleName(area,context));
+        char_weapon.setImageResource(item_rss.getWeaponTypeIMG(weapon));
+        char_role.setText(item_rss.getLocaleName(role,context));
+        char_sex.setText(item_rss.getLocaleName(sex,context));
+        char_birth.setText(item_rss.getLocaleBirth(birth,context)); // -> If necessary will change to Month | Day -> E.g. July 24th
         info_intro.setText(desc);
 
         /** BATTLE_TALENT */
-        char_talent1_ico.setImageDrawable(characters_rss.getTalentIcoByName(normal_img,context));
+        char_talent1_ico.setImageDrawable(item_rss.getTalentIcoByName(normal_img,context));
         char_talent1_name.setText(talent1_name);
         char_talent1_normal.setText(normal_desc1);
         char_talent1_hard.setText(normal_desc2);
         char_talent1_drop.setText(normal_desc3);
 
-        char_talent2_ico.setImageDrawable(characters_rss.getTalentIcoByName(element_img,context));
+        char_talent2_ico.setImageDrawable(item_rss.getTalentIcoByName(element_img,context));
         char_talent2_name.setText(element_name);
         char_talent2_normal.setText(Html.fromHtml(element_desc));
 
-        char_talent3_ico.setImageDrawable(characters_rss.getTalentIcoByName(final_img,context));
+        char_talent3_ico.setImageDrawable(item_rss.getTalentIcoByName(final_img,context));
         char_talent3_name.setText(final_name);
         char_talent3_normal.setText(Html.fromHtml(final_desc));
 
         if(other_name != "XPR"){
             char_talent4_card.setVisibility(View.VISIBLE);
-            char_talent4_ico.setImageDrawable(characters_rss.getTalentIcoByName(other_img,context));
+            char_talent4_ico.setImageDrawable(item_rss.getTalentIcoByName(other_img,context));
             char_talent4_name.setText(other_name);
             char_talent4_normal.setText(Html.fromHtml(other_desc));
         }
 
         /** BASIC_TALENT */
-        char_basic_talent1_ico.setImageDrawable(characters_rss.getTalentIcoByName(talent1_img,context));
+        char_basic_talent1_ico.setImageDrawable(item_rss.getTalentIcoByName(talent1_img,context));
         char_basic_talent1_name.setText(talent1_name);
         char_basic_talent1_normal.setText(talent1_desc);
 
-        char_basic_talent2_ico.setImageDrawable(characters_rss.getTalentIcoByName(talent2_img,context));
+        char_basic_talent2_ico.setImageDrawable(item_rss.getTalentIcoByName(talent2_img,context));
         char_basic_talent2_name.setText(talent2_name);
         char_basic_talent2_normal.setText(talent2_desc);
 
         if(!talent3_name.isEmpty()){
             char_basic_talent3_card.setVisibility(View.VISIBLE);
-            char_basic_talent3_ico.setImageDrawable(characters_rss.getTalentIcoByName(talent3_img,context));
+            char_basic_talent3_ico.setImageDrawable(item_rss.getTalentIcoByName(talent3_img,context));
             char_basic_talent3_name.setText(talent3_name);
             char_basic_talent3_normal.setText(talent3_desc);
         }
 
         /** Soul of Life*/
-        char_sof1_ico.setImageDrawable(characters_rss.getTalentIcoByName(sof1_img,context));
+        char_sof1_ico.setImageDrawable(item_rss.getTalentIcoByName(sof1_img,context));
         char_sof1_name.setText(sof1_name);
         char_sof1_normal.setText(sof1_desc);
 
-        char_sof2_ico.setImageDrawable(characters_rss.getTalentIcoByName(sof2_img,context));
+        char_sof2_ico.setImageDrawable(item_rss.getTalentIcoByName(sof2_img,context));
         char_sof2_name.setText(sof2_name);
         char_sof2_normal.setText(sof2_desc);
 
-        char_sof3_ico.setImageDrawable(characters_rss.getTalentIcoByName(sof3_img,context));
+        char_sof3_ico.setImageDrawable(item_rss.getTalentIcoByName(sof3_img,context));
         char_sof3_name.setText(sof3_name);
         char_sof3_normal.setText(sof3_desc);
 
-        char_sof4_ico.setImageDrawable(characters_rss.getTalentIcoByName(sof4_img,context));
+        char_sof4_ico.setImageDrawable(item_rss.getTalentIcoByName(sof4_img,context));
         char_sof4_name.setText(sof4_name);
         char_sof4_normal.setText(sof4_desc);
 
-        char_sof5_ico.setImageDrawable(characters_rss.getTalentIcoByName(sof5_img,context));
+        char_sof5_ico.setImageDrawable(item_rss.getTalentIcoByName(sof5_img,context));
         char_sof5_name.setText(sof5_name);
         char_sof5_normal.setText(sof5_desc);
 
-        char_sof6_ico.setImageDrawable(characters_rss.getTalentIcoByName(sof6_img,context));
+        char_sof6_ico.setImageDrawable(item_rss.getTalentIcoByName(sof6_img,context));
         char_sof6_name.setText(sof6_name);
         char_sof6_normal.setText(sof6_desc);
 
@@ -655,6 +652,8 @@ public class Characters_Info {
         info_advice_support_card.setVisibility(View.GONE);
         info_advice_util_card.setVisibility(View.GONE);
         info_advice_team_card.setVisibility(View.GONE);
+
+        RoundedCornersTransformation roundedCornersTransformation = new RoundedCornersTransformation(25, 0, RoundedCornersTransformation.CornerType.ALL);
 
         if(jsonObjectDps != null){
             info_advice_ll.setVisibility(View.VISIBLE);
@@ -666,7 +665,10 @@ public class Characters_Info {
                 for (int x = 0 ; x < main_weapon_advice.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_main_weapon_ll, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
-                    item_img.setImageBitmap(findWeaponByName(context,"weapons/"+weapon.toLowerCase()+"s/"+main_weapon_advice[x]+".png"));
+                    Picasso.get()
+                            .load(item_rss.getWeaponByName(item_rss.getWeaponNameByFileName(main_weapon_advice[x]))[1]).fit().centerInside().transform(roundedCornersTransformation)
+                            .error(R.drawable.paimon_lost)
+                            .into(item_img);
                     advice_main_weapon_ll.addView(char_view);
                 }
                 info_advice_main_card.setVisibility(View.VISIBLE);
@@ -677,7 +679,10 @@ public class Characters_Info {
                 for (int x = 0 ; x < support_weapon_advice.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_support_weapon_ll, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
-                    item_img.setImageBitmap(findWeaponByName(context,"weapons/"+weapon.toLowerCase()+"s/"+support_weapon_advice[x]+".png"));
+                    Picasso.get()
+                            .load(item_rss.getWeaponByName(item_rss.getWeaponNameByFileName(support_weapon_advice[x]))[1]).fit().centerInside().transform(roundedCornersTransformation)
+                            .error(R.drawable.paimon_lost)
+                            .into(item_img);
                     advice_support_weapon_ll.addView(char_view);
                 }
                 info_advice_support_card.setVisibility(View.VISIBLE);
@@ -688,7 +693,10 @@ public class Characters_Info {
                 for (int x = 0 ; x < util_weapon_advice.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_util_weapon_ll, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
-                    item_img.setImageBitmap(findWeaponByName(context,"weapons/"+weapon.toLowerCase()+"s/"+util_weapon_advice[x]+".png"));
+                    Picasso.get()
+                            .load(item_rss.getWeaponByName(item_rss.getWeaponNameByFileName(util_weapon_advice[x]))[1]).fit().centerInside().transform(roundedCornersTransformation)
+                            .error(R.drawable.paimon_lost)
+                            .into(item_img);
                     advice_util_weapon_ll.addView(char_view);
                 }
                 info_advice_util_card.setVisibility(View.VISIBLE);
@@ -700,7 +708,10 @@ public class Characters_Info {
                 for (int x = 0 ; x < main_artifacts1.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_main_art_ll1, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
-                    item_img.setImageBitmap(findWeaponByName(context,"artifacts/"+main_artifacts1[x]+"_"+String.valueOf(x+1)+".png"));
+                    Picasso.get()
+                            .load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(main_artifacts1[x]))[x+1]).fit().centerInside().transform(roundedCornersTransformation)
+                            .error(R.drawable.paimon_lost)
+                            .into(item_img);
                     advice_main_art_ll1.addView(char_view);
                 }
                 advice_main_art_ll1.setVisibility(View.VISIBLE);
@@ -711,7 +722,10 @@ public class Characters_Info {
                 for (int x = 0 ; x < main_artifacts2.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_main_art_ll2, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
-                    item_img.setImageBitmap(findWeaponByName(context,"artifacts/"+main_artifacts2[x]+"_"+String.valueOf(x+1)+".png"));
+                    Picasso.get()
+                            .load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(main_artifacts2[x]))[x+1]).fit().centerInside().transform(roundedCornersTransformation)
+                            .error(R.drawable.paimon_lost)
+                            .into(item_img);
                     advice_main_art_ll2.addView(char_view);
                 }
                 advice_main_art_ll2.setVisibility(View.VISIBLE);
@@ -722,7 +736,10 @@ public class Characters_Info {
                 for (int x = 0 ; x < main_artifacts3.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_main_art_ll3, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
-                    item_img.setImageBitmap(findWeaponByName(context,"artifacts/"+main_artifacts3[x]+"_"+String.valueOf(x+1)+".png"));
+                    Picasso.get()
+                            .load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(main_artifacts3[x]))[x+1]).fit().centerInside().transform(roundedCornersTransformation)
+                            .error(R.drawable.paimon_lost)
+                            .into(item_img);
                     advice_main_art_ll3.addView(char_view);
                 }
                 advice_main_art_ll3.setVisibility(View.VISIBLE);
@@ -733,7 +750,10 @@ public class Characters_Info {
                 for (int x = 0 ; x < support_artifacts1.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_support_art_ll1, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
-                    item_img.setImageBitmap(findWeaponByName(context,"artifacts/"+support_artifacts1[x]+"_"+String.valueOf(x+1)+".png"));
+                    Picasso.get()
+                            .load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(support_artifacts1[x]))[x+1]).fit().centerInside().transform(roundedCornersTransformation)
+                            .error(R.drawable.paimon_lost)
+                            .into(item_img);
                     advice_support_art_ll1.addView(char_view);
                 }
                 advice_support_art_ll1.setVisibility(View.VISIBLE);
@@ -744,7 +764,10 @@ public class Characters_Info {
                 for (int x = 0 ; x < support_artifacts2.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_support_art_ll2, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
-                    item_img.setImageBitmap(findWeaponByName(context,"artifacts/"+support_artifacts2[x]+"_"+String.valueOf(x+1)+".png"));
+                    Picasso.get()
+                            .load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(support_artifacts2[x]))[x+1]).fit().centerInside().transform(roundedCornersTransformation)
+                            .error(R.drawable.paimon_lost)
+                            .into(item_img);
                     advice_support_art_ll2.addView(char_view);
                 }
                 advice_support_art_ll2.setVisibility(View.VISIBLE);
@@ -755,7 +778,10 @@ public class Characters_Info {
                 for (int x = 0 ; x < support_artifacts3.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_support_art_ll3, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
-                    item_img.setImageBitmap(findWeaponByName(context,"artifacts/"+support_artifacts3[x]+"_"+String.valueOf(x+1)+".png"));
+                    Picasso.get()
+                            .load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(support_artifacts3[x]))[x+1]).fit().centerInside().transform(roundedCornersTransformation)
+                            .error(R.drawable.paimon_lost)
+                            .into(item_img);
                     advice_support_art_ll3.addView(char_view);
                 }
                 advice_support_art_ll3.setVisibility(View.VISIBLE);
@@ -766,7 +792,10 @@ public class Characters_Info {
                 for (int x = 0 ; x < util_artifacts1.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_util_art_ll1, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
-                    item_img.setImageBitmap(findWeaponByName(context,"artifacts/"+util_artifacts1[x]+"_"+String.valueOf(x+1)+".png"));
+                    Picasso.get()
+                            .load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(util_artifacts1[x]))[x+1]).fit().centerInside().transform(roundedCornersTransformation)
+                            .error(R.drawable.paimon_lost)
+                            .into(item_img);
                     advice_util_art_ll1.addView(char_view);
                 }
                 advice_util_art_ll1.setVisibility(View.VISIBLE);
@@ -777,7 +806,10 @@ public class Characters_Info {
                 for (int x = 0 ; x < util_artifacts2.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_util_art_ll2, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
-                    item_img.setImageBitmap(findWeaponByName(context,"artifacts/"+util_artifacts2[x]+"_"+String.valueOf(x+1)+".png"));
+                    Picasso.get()
+                            .load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(util_artifacts2[x]))[x+1]).fit().centerInside().transform(roundedCornersTransformation)
+                            .error(R.drawable.paimon_lost)
+                            .into(item_img);
                     advice_util_art_ll2.addView(char_view);
                 }
                 advice_util_art_ll2.setVisibility(View.VISIBLE);
@@ -788,7 +820,10 @@ public class Characters_Info {
                 for (int x = 0 ; x < util_artifacts3.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_util_art_ll3, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
-                    item_img.setImageBitmap(findWeaponByName(context,"artifacts/"+util_artifacts3[x]+"_"+String.valueOf(x+1)+".png"));
+                    Picasso.get()
+                            .load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(util_artifacts3[x]))[x+1]).fit().centerInside().transform(roundedCornersTransformation)
+                            .error(R.drawable.paimon_lost)
+                            .into(item_img);
                     advice_util_art_ll3.addView(char_view);
                 }
                 advice_util_art_ll3.setVisibility(View.VISIBLE);
@@ -799,7 +834,7 @@ public class Characters_Info {
                 for (int x = 0 ; x < team1.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team, advice_team_ll1, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
-                    Bitmap icon = BitmapFactory.decodeResource(context.getResources(),characters_rss.getCharByName(team1[x].replace("XPR"," "))[3]);
+                    Bitmap icon = BitmapFactory.decodeResource(context.getResources(), item_rss.getCharByName(team1[x].replace("XPR"," "))[3]);
                     item_img.setImageBitmap(getRoundBitmapByShader(icon, (int) Math.round(128),(int)Math.round(128),20, 0));
                     Log.wtf("team1[x])[2]",team1[x]);
                     advice_team_ll1.addView(char_view);
@@ -813,7 +848,7 @@ public class Characters_Info {
                 for (int x = 0 ; x < team2.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team, advice_team_ll2, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
-                    Bitmap icon = BitmapFactory.decodeResource(context.getResources(),characters_rss.getCharByName(team2[x].replace("XPR"," "))[3]);
+                    Bitmap icon = BitmapFactory.decodeResource(context.getResources(), item_rss.getCharByName(team2[x].replace("XPR"," "))[3]);
                     item_img.setImageBitmap(getRoundBitmapByShader(icon, (int) Math.round(128),(int)Math.round(128),20, 0));
                     advice_team_ll2.addView(char_view);
                 }
@@ -825,7 +860,7 @@ public class Characters_Info {
                 for (int x = 0 ; x < team3.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team, advice_team_ll3, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
-                    Bitmap icon = BitmapFactory.decodeResource(context.getResources(),characters_rss.getCharByName(team3[x].replace("XPR"," "))[3]);
+                    Bitmap icon = BitmapFactory.decodeResource(context.getResources(), item_rss.getCharByName(team3[x].replace("XPR"," "))[3]);
                     item_img.setImageBitmap(getRoundBitmapByShader(icon, (int) Math.round(128),(int)Math.round(128),20, 0));
                     advice_team_ll3.addView(char_view);
                 }
@@ -837,7 +872,7 @@ public class Characters_Info {
                 for (int x = 0 ; x < team4.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team, advice_team_ll4, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
-                    Bitmap icon = BitmapFactory.decodeResource(context.getResources(),characters_rss.getCharByName(team4[x].replace("XPR"," "))[3]);
+                    Bitmap icon = BitmapFactory.decodeResource(context.getResources(), item_rss.getCharByName(team4[x].replace("XPR"," "))[3]);
                     item_img.setImageBitmap(getRoundBitmapByShader(icon, (int) Math.round(128),(int)Math.round(128),20, 0));
                     advice_team_ll4.addView(char_view);
                 }

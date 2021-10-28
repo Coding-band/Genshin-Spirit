@@ -1,0 +1,12 @@
+{
+  "name": "Otherworldly Story",
+  "rare": 3,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "A cheap fantasy novel with no value whatsoever. Any claim that it possesses the power of catalysis is also pure fantasy.",
+  "first_status": "EnRech%",
+  "second_status": "ATK",
+  "skill_name": "Energy Shower",
+  "skill_desc": "Each Elemental Orb or Particle collected restores 1%/1.25%/1.5%/1.75%/2% HP.",
+  "obtain_way": "CHESR_MD"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Katsuragikiri Nagamasa",
+  "rare": 4,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "過去在踏韝砂打造的刀，沉重而堅韌。",
+  "first_status": "EnRech%",
+  "second_status": "ATK",
+  "skill_name": "名士振舞",
+  "skill_desc": "元素戰技造成的傷害提升6%/7.5%/9%/10.5%/12%。元素戰技命中後，角色流失3點元素能量，並在此後的6秒內，每2秒恢復3/3.5/4/4.5/5點元素能量。該效果每10秒至多觸發一次，角色處於隊伍後臺也能觸發。",
+  "obtain_way": "FORGE_TBMY"
+}

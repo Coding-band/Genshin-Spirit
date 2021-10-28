@@ -1,0 +1,12 @@
+{
+  "name": "Alley Hunter",
+  "rare": 4,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "外形精巧奢華的長弓，曾屬於某位從未被抓獲的義賊。",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "街巷伏擊",
+  "skill_desc": "裝備該武器的角色處於隊伍後臺時，每1秒角色造成的傷害提升2%/2.5%/3%/3.5%/4%,最多通過這種方式獲得20%/25%/30%/35%/40%的傷害提升；在場上超過4秒後，上述傷害提升效果每1秒會流失4%/5%/6%/7%/8%，直到降低至0%。",
+  "obtain_way": "LIMITED_WISH"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Halberd",
+  "rare": 3,
+  "weapon": "Polearm",
+  "isComingSoon": false,
+  "desc": "在矛上增加斧刃的兵器，有不俗的破壞力。是千岩軍軍官青睞的武器。",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "沉重",
+  "skill_desc": "對普通攻擊命中的敵人造成160%/200%/240%/280%/320%攻擊力的額外傷害。該效果每10秒只能觸發一次。",
+  "obtain_way": "CHEST"
+}
