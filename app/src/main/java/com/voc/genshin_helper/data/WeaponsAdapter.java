@@ -12,7 +12,6 @@ import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
-import android.support.media.ExifInterface;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -32,18 +31,22 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 import com.voc.genshin_helper.ui.CalculatorUI;
 import com.voc.genshin_helper.ui.MainActivity;
-import com.voc.genshin_helper.ui.CalculatorUI;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 import com.voc.genshin_helper.R;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.io.IOUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+/*
+ * Package com.voc.genshin_helper.data.WeaponsAdapter was
+ * Created by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2021 Xectorda 版權所有
+ */
 
 /* loaded from: classes.dex */
 public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHolder> {
@@ -199,7 +202,6 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                         AssetManager assets = WeaponsAdapter.this.context.getResources().getAssets();
                         Log.wtf("CharName_BASE", CharName_BASE);
 
-                        String replace2 = CharName_BASE.replace("'", "_");
                         Log.wtf("lang", lang);
                         try {
                             String[] list = assets.list("db/weapons/" + lang + "/");
@@ -207,16 +209,16 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                             String str = null;
 
                             for (String str2 : list2) {
-                                if (str2.equals(replace2 + ".json")) {
-                                    InputStream open = assets.open("db/weapons/en-US/" + replace2 + ".json");
+                                if (str2.equals(CharName_BASE + ".json")) {
+                                    InputStream open = assets.open("db/weapons/en-US/" + CharName_BASE + ".json");
                                     str = IOUtils.toString(open, StandardCharsets.UTF_8);
                                     open.close();
                                 }
                             }
 
                             for (String str2 : list) {
-                                if (str2.equals(replace2 + ".json")) {
-                                    InputStream open = assets.open("db/weapons/" + lang + "/" + replace2 + ".json");
+                                if (str2.equals(CharName_BASE + ".json")) {
+                                    InputStream open = assets.open("db/weapons/" + lang + "/" + CharName_BASE + ".json");
                                     str = IOUtils.toString(open, StandardCharsets.UTF_8);
                                     open.close();
                                 }

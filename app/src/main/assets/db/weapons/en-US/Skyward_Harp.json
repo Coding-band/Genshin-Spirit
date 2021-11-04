@@ -2,7 +2,7 @@
   "name": "Skyward Harp",
   "rare": 5,
   "weapon": "Bow",
-  "isComingSoon": true,
+  "isComingSoon": false,
   "desc": "A greatbow that symbolizes Dvalin's affiliation with the Anemo Archon. The sound of the bow firing is music to the Anemo Archon's ears. It contains the power of the sky and wind within.",
   "first_status": "CritRate%",
   "second_status": "ATK",

@@ -2,7 +2,7 @@
   "name": "Thundering Pulse",
   "rare": 5,
   "weapon": "Bow",
-  "isComingSoon": true,
+  "isComingSoon": false,
   "desc": "A longbow that was a gift from the Shogun. Eternal lightning crackles all around it.",
   "first_status": "CritRate%",
   "second_status": "ATK",

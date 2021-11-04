@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Package C:/Users/Vocaloid2048/Desktop/File/App/GenshinHelper/app/src/main/res/layout/fragment_result.xml was
+  ~ Package E:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_result.xml was
   ~ Created by Voc-夜芷冰 , Programmer of Xectorda
   ~ Copyright © 2021 Xectorda 版權所有
   -->
@@ -103,7 +103,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="寶石"
+                android:text="@string/cal_crystal"
                 android:textAlignment="center"
                 android:textColor="@color/tv_color"
                 android:textSize="16sp"
@@ -123,7 +123,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="一般Boss跌落"
+                android:text="@string/cal_boss"
                 android:textAlignment="center"
                 android:textColor="@color/tv_color"
                 android:textSize="16sp"
@@ -143,7 +143,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="周本Boss跌落"
+                android:text="@string/cal_week_boss"
                 android:textAlignment="center"
                 android:textColor="@color/tv_color"
                 android:textSize="16sp"
@@ -163,7 +163,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="特產"
+                android:text="@string/cal_local"
                 android:textAlignment="center"
                 android:textColor="@color/tv_color"
                 android:textSize="16sp"
@@ -183,7 +183,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="怪物跌落"
+                android:text="@string/cal_local"
                 android:textAlignment="center"
                 android:textColor="@color/tv_color"
                 android:textSize="16sp"
@@ -204,7 +204,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="逢星期一,四,日副本跌落"
+                android:text="@string/cal_weeklybk1"
                 android:textAlignment="center"
                 android:textColor="@color/tv_color"
                 android:textSize="16sp"
@@ -224,7 +224,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="逢星期二,五,日副本跌落"
+                android:text="@string/cal_weeklybk2"
                 android:textAlignment="center"
                 android:textColor="@color/tv_color"
                 android:textSize="16sp"
@@ -244,7 +244,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="逢星期三,六,日副本跌落"
+                android:text="@string/cal_weeklybk3"
                 android:textAlignment="center"
                 android:textColor="@color/tv_color"
                 android:textSize="16sp"
@@ -264,7 +264,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:text="其他"
+                android:text="@string/cal_other"
                 android:textAlignment="center"
                 android:textColor="@color/tv_color"
                 android:textSize="16sp"

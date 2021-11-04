@@ -2,7 +2,7 @@
   "name": "Thundering Pulse",
   "rare": 5,
   "weapon": "Bow",
-  "isComingSoon": true,
+  "isComingSoon": false,
   "desc": "将軍から賜わった長弓。消えぬ雷光が輝いている。",
   "first_status": "CritRate%",
   "second_status": "ATK",

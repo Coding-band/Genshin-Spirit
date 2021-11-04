@@ -1,7 +1,10 @@
 package com.voc.genshin_helper.util;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.Gravity;
@@ -15,8 +18,11 @@ import androidx.gridlayout.widget.GridLayout;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.R;
+import com.voc.genshin_helper.data.CalculatorDB;
 import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.data.ScreenSizeUtils;
+import com.voc.genshin_helper.database.DataBaseContract;
+import com.voc.genshin_helper.database.DataBaseHelper;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -148,6 +154,7 @@ public class CalculatorProcess {
     ArrayList<Integer> 	黑晶號角	 = new ArrayList<Integer>();
     ArrayList<Integer> 	地脈的新芽	 = new ArrayList<Integer>();
     ArrayList<Integer> 	偏光棱鏡	 = new ArrayList<Integer>();
+    ArrayList<Integer> 	隱獸鬼爪	 = new ArrayList<Integer>();
 
 
 
@@ -325,6 +332,7 @@ public class CalculatorProcess {
     // STATUS_CAL_FINISHED
     boolean char_fin = false;
     boolean weapon_fin = false;
+    String dataSheetName = "NaN";
 
 
     public void setVP(ViewPager viewPager, View viewPager3) {
@@ -389,6 +397,7 @@ public class CalculatorProcess {
             黑晶號角.add(0);
             地脈的新芽.add(0);
             偏光棱鏡.add(0);
+            隱獸鬼爪.add(0);
 
             自由_的哲學.add(0);
             黃金_的哲學.add(0);
@@ -430,7 +439,7 @@ public class CalculatorProcess {
 
     }
 
-    public void weapon_setup(ArrayList<String> arrayList, ArrayList<Integer> arrayList2, ArrayList<Integer> arrayList3, ArrayList<Integer> arrayList4, ArrayList<Integer> arrayList5, ArrayList<Boolean> arrayList6, ArrayList<Boolean> arrayList7, ArrayList<Boolean> arrayList8, ArrayList<String> arrayList9, ArrayList<Integer> arrayList10) {
+    public void weapon_setup(ArrayList<String> arrayList, ArrayList<Integer> arrayList2, ArrayList<Integer> arrayList3, ArrayList<Integer> arrayList4, ArrayList<Integer> arrayList5, ArrayList<Boolean> arrayList6, ArrayList<Boolean> arrayList7, ArrayList<Boolean> arrayList8, ArrayList<String> arrayList9, ArrayList<Integer> arrayList10,String arg) {
         this.WeaponNameList = arrayList;
         this.WeaponBeforeLvlList = arrayList2;
         this.WeaponAfterLvlList = arrayList3;
@@ -441,10 +450,12 @@ public class CalculatorProcess {
         this.WeaponAfterBreakUPLvlList = arrayList8;
         this.WeaponFollowList = arrayList9;
         this.WeaponRareList = arrayList10;
-        weapon_readJSON();
+        if(arg.equals("READ")){
+            weapon_readJSON();
+        }
     }
 
-    public void char_setup(ArrayList<String> arrayList, ArrayList<Integer> arrayList2, ArrayList<Integer> arrayList3, ArrayList<Integer> arrayList4, ArrayList<Integer> arrayList5, ArrayList<Integer> arrayList6, ArrayList<Integer> arrayList7, ArrayList<Integer> arrayList8, ArrayList<Integer> arrayList9, ArrayList<Integer> arrayList10, ArrayList<Integer> arrayList11, ArrayList<Boolean> arrayList12, ArrayList<Boolean> arrayList13, ArrayList<Boolean> arrayList14) {
+    public void char_setup(ArrayList<String> arrayList, ArrayList<Integer> arrayList2, ArrayList<Integer> arrayList3, ArrayList<Integer> arrayList4, ArrayList<Integer> arrayList5, ArrayList<Integer> arrayList6, ArrayList<Integer> arrayList7, ArrayList<Integer> arrayList8, ArrayList<Integer> arrayList9, ArrayList<Integer> arrayList10, ArrayList<Integer> arrayList11, ArrayList<Boolean> arrayList12, ArrayList<Boolean> arrayList13, ArrayList<Boolean> arrayList14,String arg) {
         this.NameList = arrayList;
         this.BeforeLvlList = arrayList2;
         this.AfterLvlList = arrayList3;
@@ -459,7 +470,10 @@ public class CalculatorProcess {
         this.IsCal = arrayList12;
         this.BeforeBreakUPLvlList = arrayList13;
         this.AfterBreakUPLvlList = arrayList14;
+
+        if(arg.equals("READ")){
         char_readJSON();
+        }
     }
 
     public void char_calculate () {
@@ -733,62 +747,74 @@ public class CalculatorProcess {
                 Log.wtf("AFTER_LVL",String.valueOf(WeaponAfterLvlList.get(x)));
                 Log.wtf("BEFORE_UP",String.valueOf(beforeUP));
                 Log.wtf("AFTER_UP",String.valueOf(afterUP));
+                Log.wtf("BEFORE_BREAK",String.valueOf(WeaponBeforeBreakLvlList.get(x)));
+                Log.wtf("AFTER_BREAK",String.valueOf(WeaponAfterBreakLvlList.get(x)));
 
                 for (int y = WeaponBeforeBreakLvlList.get(x)+beforeUP ; y < WeaponAfterBreakLvlList.get(x)+afterUP ; y ++){
                     morax = morax + WeaponMoraASCList.get(y);
                 }
 
                 if (WeaponRareList.get(x) == 1 || WeaponRareList.get(x) == 2) {
-                    if (this.WeaponAfterBreakLvlList.get(x) + afterUP >= 1 && WeaponAfterBreakLvlList.get(x)+beforeUP <=1) {
+                    if ((this.WeaponAfterBreakLvlList.get(x) + afterUP) >= 1 && (WeaponBeforeBreakLvlList.get(x)+beforeUP) <=1) {
                         weapon_asc_temp_count.set(0,weapon_asc_temp_count.get(0) + WeaponCopy1List.get(0));
                         weapon_asc_temp_count.set(4,weapon_asc_temp_count.get(4) + WeaponCopy2List.get(0));
                         weapon_asc_temp_count.set(7,weapon_asc_temp_count.get(7) + WeaponCommonList.get(0));
+                        Log.wtf("ABC","X");
                     }
-                    if (this.WeaponAfterBreakLvlList.get(x) + afterUP >= 2 && WeaponAfterBreakLvlList.get(x)+beforeUP <=2) {
+                    if ((this.WeaponAfterBreakLvlList.get(x) + afterUP) >= 2 && (WeaponBeforeBreakLvlList.get(x)+beforeUP) <=2) {
                         weapon_asc_temp_count.set(1,weapon_asc_temp_count.get(1) + WeaponCopy1List.get(1));
                         weapon_asc_temp_count.set(4,weapon_asc_temp_count.get(4) + WeaponCopy2List.get(1));
                         weapon_asc_temp_count.set(7,weapon_asc_temp_count.get(7) + WeaponCommonList.get(1));
+                        Log.wtf("ABC","X");
                     }
-                    if (this.WeaponAfterBreakLvlList.get(x) + afterUP >= 3 && WeaponAfterBreakLvlList.get(x)+beforeUP <=3) {
+                    if ((this.WeaponAfterBreakLvlList.get(x) + afterUP) >= 3 && (WeaponBeforeBreakLvlList.get(x)+beforeUP) <=3) {
                         weapon_asc_temp_count.set(1,weapon_asc_temp_count.get(1) + WeaponCopy1List.get(2));
                         weapon_asc_temp_count.set(5,weapon_asc_temp_count.get(5) + WeaponCopy2List.get(2));
                         weapon_asc_temp_count.set(8,weapon_asc_temp_count.get(8) + WeaponCommonList.get(2));
+                        Log.wtf("ABC","X");
                     }
-                    if (this.WeaponAfterBreakLvlList.get(x) + afterUP >= 4 && WeaponAfterBreakLvlList.get(x)+beforeUP <=4) {
+                    if ((this.WeaponAfterBreakLvlList.get(x) + afterUP) >= 4 && (WeaponBeforeBreakLvlList.get(x)+beforeUP) <=4) {
                         weapon_asc_temp_count.set(2,weapon_asc_temp_count.get(2) + WeaponCopy1List.get(3));
                         weapon_asc_temp_count.set(5,weapon_asc_temp_count.get(5) + WeaponCopy2List.get(3));
                         weapon_asc_temp_count.set(8,weapon_asc_temp_count.get(8) + WeaponCommonList.get(3));
+                        Log.wtf("ABC","X");
                     }
                 }else if (WeaponRareList.get(x) == 3 || WeaponRareList.get(x) == 4 || WeaponRareList.get(x) == 5) {
-                    if (this.WeaponAfterBreakLvlList.get(x) + afterUP >= 1 && WeaponAfterBreakLvlList.get(x)+beforeUP <=1) {
+                    if ((this.WeaponAfterBreakLvlList.get(x) + afterUP) >= 1 && (WeaponBeforeBreakLvlList.get(x)+beforeUP) <=1) {
                         weapon_asc_temp_count.set(0,weapon_asc_temp_count.get(0) + WeaponCopy1List.get(0));
                         weapon_asc_temp_count.set(4,weapon_asc_temp_count.get(4) + WeaponCopy2List.get(0));
                         weapon_asc_temp_count.set(7,weapon_asc_temp_count.get(7) + WeaponCommonList.get(0));
+                        Log.wtf("ABC","X");
                     }
-                    if (this.WeaponAfterBreakLvlList.get(x) + afterUP >= 2 && WeaponAfterBreakLvlList.get(x)+beforeUP <=2) {
+                    if ((this.WeaponAfterBreakLvlList.get(x) + afterUP) >= 2 && (WeaponBeforeBreakLvlList.get(x)+beforeUP) <=2) {
                         weapon_asc_temp_count.set(1,weapon_asc_temp_count.get(1) + WeaponCopy1List.get(1));
                         weapon_asc_temp_count.set(4,weapon_asc_temp_count.get(4) + WeaponCopy2List.get(1));
                         weapon_asc_temp_count.set(7,weapon_asc_temp_count.get(7) + WeaponCommonList.get(1));
+                        Log.wtf("ABC","X");
                     }
-                    if (this.WeaponAfterBreakLvlList.get(x) + afterUP >= 3 && WeaponAfterBreakLvlList.get(x)+beforeUP <=3) {
+                    if ((this.WeaponAfterBreakLvlList.get(x) + afterUP) >= 3 && (WeaponBeforeBreakLvlList.get(x)+beforeUP) <=3) {
                         weapon_asc_temp_count.set(1,weapon_asc_temp_count.get(1) + WeaponCopy1List.get(2));
                         weapon_asc_temp_count.set(5,weapon_asc_temp_count.get(5) + WeaponCopy2List.get(2));
                         weapon_asc_temp_count.set(8,weapon_asc_temp_count.get(8) + WeaponCommonList.get(2));
+                        Log.wtf("ABC","X");
                     }
-                    if (this.WeaponAfterBreakLvlList.get(x) + afterUP >= 4 && WeaponAfterBreakLvlList.get(x)+beforeUP <=4) {
+                    if ((this.WeaponAfterBreakLvlList.get(x) + afterUP) >= 4 && (WeaponBeforeBreakLvlList.get(x)+beforeUP) <=4) {
                         weapon_asc_temp_count.set(2,weapon_asc_temp_count.get(2) + WeaponCopy1List.get(3));
                         weapon_asc_temp_count.set(5,weapon_asc_temp_count.get(5) + WeaponCopy2List.get(3));
                         weapon_asc_temp_count.set(8,weapon_asc_temp_count.get(8) + WeaponCommonList.get(3));
+                        Log.wtf("ABC","X");
                     }
-                    if (this.WeaponAfterBreakLvlList.get(x) + afterUP >= 5 && WeaponAfterBreakLvlList.get(x)+beforeUP <=5) {
+                    if ((this.WeaponAfterBreakLvlList.get(x) + afterUP) >= 5 && (WeaponBeforeBreakLvlList.get(x)+beforeUP) <=5) {
                         weapon_asc_temp_count.set(2,weapon_asc_temp_count.get(2) + WeaponCopy1List.get(4));
                         weapon_asc_temp_count.set(6,weapon_asc_temp_count.get(6) + WeaponCopy2List.get(4));
                         weapon_asc_temp_count.set(9,weapon_asc_temp_count.get(9) + WeaponCommonList.get(4));
+                        Log.wtf("ABC","X");
                     }
-                    if (this.WeaponAfterBreakLvlList.get(x) + afterUP >= 6 && WeaponAfterBreakLvlList.get(x)+beforeUP <=6) {
+                    if ((this.WeaponAfterBreakLvlList.get(x) + afterUP) >= 6 && (WeaponBeforeBreakLvlList.get(x)+beforeUP) <=6) {
                         weapon_asc_temp_count.set(3,weapon_asc_temp_count.get(3) + WeaponCopy1List.get(5));
                         weapon_asc_temp_count.set(6,weapon_asc_temp_count.get(6) + WeaponCopy2List.get(5));
                         weapon_asc_temp_count.set(9,weapon_asc_temp_count.get(9) + WeaponCommonList.get(5));
+                        Log.wtf("ABC","X");
                     }
                 }
                 FindWeaponItemByName(weapon_asc_temp_item,weapon_asc_temp_count);
@@ -802,6 +828,7 @@ public class CalculatorProcess {
     public void check_cal_finished(){
         if(weapon_fin == true && char_fin == true){
             resultShow();
+            saveToDB();
             weapon_fin = false;
             char_fin = false;
         }
@@ -1047,8 +1074,8 @@ public class CalculatorProcess {
         }
 
         /** COMMON */
-        String[] common_temp = new String[]{"牢固的箭簇","銳利的箭簇","歷戰的箭簇","導能繪卷","封魔繪卷","禁咒繪卷","尋寶鴉印","藏銀鴉印","攫金鴉印","破損的面具","污穢的面具","不祥的面具","新兵的徽記","士官的徽記","尉官的徽記","騙騙花蜜","微光花蜜","原素花蜜","史萊姆凝液","史萊姆清","史萊姆原漿","破舊的刀鐔","影打刀鐔","名刀鐔","浮游乾核","浮游幽核","浮游晶化核", "混沌機關", "混沌樞紐", "混沌真眼", "混沌裝置", "混沌迴路", "混沌爐心", "脆弱的骨片", "結實的骨片", "石化的骨片", "霧虛花粉", "霧虛草囊", "霧虛燈芯", "獵兵祭刀", "特工祭刀", "督察長祭刀", "沉重號角", "黑銅號角", "黑晶號角", "地脈的舊枝", "地脈的枯葉", "地脈的新芽", "黯淡棱鏡", "水晶棱鏡", "偏光棱鏡"};
-        int[] common_temp_cnt = new int[]{歷戰的箭簇.get(0),歷戰的箭簇.get(1),歷戰的箭簇.get(2),禁咒繪卷.get(0),禁咒繪卷.get(1),禁咒繪卷.get(2),攫金鴉印.get(0),攫金鴉印.get(1),攫金鴉印.get(2),不祥的面具.get(0),不祥的面具.get(1),不祥的面具.get(2),尉官的徽記.get(0),尉官的徽記.get(1),尉官的徽記.get(2),原素花蜜.get(0),原素花蜜.get(1),原素花蜜.get(2),史萊姆原漿.get(0),史萊姆原漿.get(1),史萊姆原漿.get(2),名刀鐔.get(0),名刀鐔.get(1),名刀鐔.get(2),浮游晶化核.get(0),浮游晶化核.get(1),浮游晶化核.get(2),混沌真眼.get(0),混沌真眼.get(1),混沌真眼.get(2),混沌爐心.get(0),混沌爐心.get(1),混沌爐心.get(2),石化的骨片.get(0),石化的骨片.get(1),石化的骨片.get(2),霧虛燈芯.get(0),霧虛燈芯.get(1),霧虛燈芯.get(2),督察長祭刀.get(0),督察長祭刀.get(1),督察長祭刀.get(2),黑晶號角.get(0),黑晶號角.get(1),黑晶號角.get(2),地脈的新芽.get(0),地脈的新芽.get(1),地脈的新芽.get(2),偏光棱鏡.get(0),偏光棱鏡.get(1),偏光棱鏡.get(2)};
+        String[] common_temp = new String[]{"牢固的箭簇","銳利的箭簇","歷戰的箭簇","導能繪卷","封魔繪卷","禁咒繪卷","尋寶鴉印","藏銀鴉印","攫金鴉印","破損的面具","污穢的面具","不祥的面具","新兵的徽記","士官的徽記","尉官的徽記","騙騙花蜜","微光花蜜","原素花蜜","史萊姆凝液","史萊姆清","史萊姆原漿","破舊的刀鐔","影打刀鐔","名刀鐔","浮游乾核","浮游幽核","浮游晶化核", "混沌機關", "混沌樞紐", "混沌真眼", "混沌裝置", "混沌迴路", "混沌爐心", "脆弱的骨片", "結實的骨片", "石化的骨片", "霧虛花粉", "霧虛草囊", "霧虛燈芯", "獵兵祭刀", "特工祭刀", "督察長祭刀", "沉重號角", "黑銅號角", "黑晶號角", "地脈的舊枝", "地脈的枯葉", "地脈的新芽", "黯淡棱鏡", "水晶棱鏡", "偏光棱鏡","隱獸指爪","隱獸利爪","隱獸鬼爪"};
+        int[] common_temp_cnt = new int[]{歷戰的箭簇.get(0),歷戰的箭簇.get(1),歷戰的箭簇.get(2),禁咒繪卷.get(0),禁咒繪卷.get(1),禁咒繪卷.get(2),攫金鴉印.get(0),攫金鴉印.get(1),攫金鴉印.get(2),不祥的面具.get(0),不祥的面具.get(1),不祥的面具.get(2),尉官的徽記.get(0),尉官的徽記.get(1),尉官的徽記.get(2),原素花蜜.get(0),原素花蜜.get(1),原素花蜜.get(2),史萊姆原漿.get(0),史萊姆原漿.get(1),史萊姆原漿.get(2),名刀鐔.get(0),名刀鐔.get(1),名刀鐔.get(2),浮游晶化核.get(0),浮游晶化核.get(1),浮游晶化核.get(2),混沌真眼.get(0),混沌真眼.get(1),混沌真眼.get(2),混沌爐心.get(0),混沌爐心.get(1),混沌爐心.get(2),石化的骨片.get(0),石化的骨片.get(1),石化的骨片.get(2),霧虛燈芯.get(0),霧虛燈芯.get(1),霧虛燈芯.get(2),督察長祭刀.get(0),督察長祭刀.get(1),督察長祭刀.get(2),黑晶號角.get(0),黑晶號角.get(1),黑晶號角.get(2),地脈的新芽.get(0),地脈的新芽.get(1),地脈的新芽.get(2),偏光棱鏡.get(0),偏光棱鏡.get(1),偏光棱鏡.get(2),隱獸鬼爪.get(0),隱獸鬼爪.get(1),隱獸鬼爪.get(2)};
         gridLayout = viewPager.findViewById(R.id.result_common_gl);
         gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
@@ -1401,7 +1428,8 @@ public class CalculatorProcess {
             if(temp_item.get(4).equals("名刀鐔")){addCountIntoVar(名刀鐔,temp_count,"COMMON");}
             //add in 20210910
             if(temp_item.get(4).equals("浮游晶化核")){addCountIntoVar(浮游晶化核,temp_count,"COMMON");}
-            //add in 20211024 (RE)
+            //add in 20211030
+            if(temp_item.get(4).equals("隱獸鬼爪")){addCountIntoVar(隱獸鬼爪,temp_count,"COPY2");}
 
             /** BOSS -> USING temp_count's pos 8 */
             if(temp_item.get(2).equals("常燃火種")){常燃火種 = addCountIntoVar(常燃火種,temp_count,"BOSS");}
@@ -1462,6 +1490,8 @@ public class CalculatorProcess {
             if(temp_item.get(2).equals("名刀鐔")){addCountIntoVar(名刀鐔,temp_count,"T-COMMON");}
             //add in 20210910
             if(temp_item.get(2).equals("浮游晶化核")){addCountIntoVar(浮游晶化核,temp_count,"T-COMMON");}
+            //add in 20211030
+            if(temp_item.get(2).equals("隱獸鬼爪")){addCountIntoVar(隱獸鬼爪,temp_count,"COPY2");}
 
             /** T-BOOK -> USING temp_count's pos 0-2 */
             if(temp_item.get(1).equals("「自由」的哲學")){addCountIntoVar(自由_的哲學,temp_count,"T-BOOK");}
@@ -1521,6 +1551,8 @@ public class CalculatorProcess {
         if(temp_item.get(2).equals("黑晶號角")){addCountIntoVar(黑晶號角,temp_count,"COPY2");}
         if(temp_item.get(2).equals("地脈的新芽")){addCountIntoVar(地脈的新芽,temp_count,"COPY2");}
         if(temp_item.get(2).equals("偏光棱鏡")){addCountIntoVar(偏光棱鏡,temp_count,"COPY2");}
+        //add in 20211030
+        if(temp_item.get(2).equals("隱獸鬼爪")){addCountIntoVar(隱獸鬼爪,temp_count,"COPY2");}
 
 
         /** COMMON -> */
@@ -1954,4 +1986,137 @@ public class CalculatorProcess {
         return reallyZero;
     }
 
+
+    public void saveToDB() {
+        Log.wtf("DB","saveToDB !");
+        DataBaseHelper dbHelper = new DataBaseHelper(context);
+        SQLiteDatabase db ;
+
+        /**
+         * Database Char Part
+         */
+
+        Log.wtf("DB",String.valueOf(NameList.size()));
+        Log.wtf("DB",String.valueOf(WeaponNameList.size()));
+        for (int x = 0 ; x < NameList.size() ; x ++){
+            db = dbHelper.getReadableDatabase();
+            String[] projection = {"charName"};
+            String selection = "charName" + " = ?";
+            String[] selectionArgs = { NameList.get(x) };
+            Cursor cursor = db.query(
+                    dataSheetName+"_char",   // The table to query
+                    projection,             // The array of columns to return (pass null to get all)
+                    selection,              // The columns for the WHERE clause
+                    selectionArgs,          // The values for the WHERE clause
+                    null,                   // don't group the rows
+                    null,                   // don't filter by row groups
+                    null               // The sort order
+            );
+            // DEMO -> UPDATE demo SET ID = 1,Name = "SPP",Hint = "OK" WHERE Name = "Twitter";
+            if(cursor.getCount()>0){
+                db.execSQL("UPDATE "+dataSheetName+"_char"+" SET "+
+                        "charBeforeLvl = "+String.valueOf(BeforeLvlList.get(x))+","+
+                        "charAfterLvl = "+String.valueOf(AfterLvlList.get(x))+","+
+
+                        "charBeforeBreakLvl = "+String.valueOf(BeforeBreakLvlList.get(x))+","+
+                        "charAfterBreakLvl = "+String.valueOf(AfterBreakLvlList.get(x))+","+
+
+                        "charBeforeBreakUpLvl = "+BeforeBreakUPLvlList.get(x)+","+
+                        "charAfterBreakUpLvl = "+AfterBreakUPLvlList.get(x)+","+
+
+                        "charBeforeSkill1Lvl = "+String.valueOf(BeforeSkill1LvlList.get(x))+","+
+                        "charAfterSkill1Lvl = "+String.valueOf(AfterSkill1LvlList.get(x))+","+
+
+                        "charBeforeSkill2Lvl = "+String.valueOf(BeforeSkill2LvlList.get(x))+","+
+                        "charAfterSkill2Lvl = "+String.valueOf(AfterSkill2LvlList.get(x))+","+
+
+                        "charBeforeSkill3Lvl = "+String.valueOf(BeforeSkill3LvlList.get(x))+","+
+                        "charAfterSkill3Lvl = "+String.valueOf(AfterSkill3LvlList.get(x))+","+
+
+                        "charIsCal = "+IsCal.get(x)+
+
+                        " WHERE charName = \""+NameList.get(x)+"\";");
+            }else {
+                // DEMO -> INSERT INTO demo (ID,Name) VALUES (-3,"SSS");
+                db = dbHelper.getWritableDatabase();
+
+                ContentValues values = new ContentValues();
+                values.put("charName", NameList.get(x));
+                values.put("charBeforeLvl", BeforeLvlList.get(x));
+                values.put("charAfterLvl", AfterLvlList.get(x));
+                values.put("charBeforeBreakLvl", BeforeBreakLvlList.get(x));
+                values.put("charAfterBreakLvl", AfterBreakLvlList.get(x));
+                values.put("charBeforeBreakUpLvl", BeforeBreakUPLvlList.get(x));
+                values.put("charAfterBreakUpLvl", AfterBreakUPLvlList.get(x));
+                values.put("charBeforeSkill1Lvl", BeforeSkill1LvlList.get(x));
+                values.put("charAfterSkill1Lvl", AfterSkill1LvlList.get(x));
+                values.put("charBeforeSkill2Lvl", BeforeSkill2LvlList.get(x));
+                values.put("charAfterSkill2Lvl", AfterSkill2LvlList.get(x));
+                values.put("charBeforeSkill3Lvl", BeforeSkill3LvlList.get(x));
+                values.put("charAfterSkill3Lvl", AfterSkill3LvlList.get(x));
+                values.put("charIsCal", IsCal.get(x));
+
+                db.insert(dataSheetName+"_char", null, values);
+
+            }
+            cursor.close();
+        }
+
+        for (int x = 0 ; x < WeaponNameList.size() ; x ++){
+            db = dbHelper.getReadableDatabase();
+            String[] projection = {"weaponName"};
+            String selection = "weaponName" + " = ?";
+            String[] selectionArgs = { WeaponNameList.get(x) };
+            Cursor cursor = db.query(
+                    dataSheetName+"_weapon",   // The table to query
+                    projection,             // The array of columns to return (pass null to get all)
+                    selection,              // The columns for the WHERE clause
+                    selectionArgs,          // The values for the WHERE clause
+                    null,                   // don't group the rows
+                    null,                   // don't filter by row groups
+                    null               // The sort order
+            );
+            // DEMO -> UPDATE demo SET ID = 1,Name = "SPP",Hint = "OK" WHERE Name = "Twitter";
+            if(cursor.getCount()>0){
+                db.execSQL("UPDATE "+dataSheetName+"_weapon"+" SET "+
+                        "weaponBeforeLvl = "+String.valueOf(WeaponBeforeLvlList.get(x))+","+
+                        "weaponAfterLvl = "+String.valueOf(WeaponAfterLvlList.get(x))+","+
+
+                        "weaponBeforeBreakLvl = "+String.valueOf(WeaponBeforeBreakLvlList.get(x))+","+
+                        "weaponAfterBreakLvl = "+String.valueOf(WeaponAfterBreakLvlList.get(x))+","+
+
+                        "weaponBeforeBreakUpLvl = "+WeaponBeforeBreakUPLvlList.get(x)+","+
+                        "weaponAfterBreakUpLvl = "+WeaponAfterBreakUPLvlList.get(x)+","+
+
+                        "weaponFollow = "+WeaponFollowList.get(x)+","+
+                        "weaponRare = "+String.valueOf(WeaponRareList.get(x))+","+
+                        "weaponIsCal = "+WeaponIsCal.get(x)+
+
+                        " WHERE weaponName = \""+WeaponNameList.get(x)+"\";");
+            }else {
+                // DEMO -> INSERT INTO demo (ID,Name) VALUES (-3,"SSS");
+                db = dbHelper.getWritableDatabase();
+
+                ContentValues values = new ContentValues();
+                values.put("weaponName", WeaponNameList.get(x));
+                values.put("weaponBeforeLvl", WeaponBeforeLvlList.get(x));
+                values.put("weaponAfterLvl", WeaponAfterLvlList.get(x));
+                values.put("weaponBeforeBreakLvl", WeaponBeforeBreakLvlList.get(x));
+                values.put("weaponAfterBreakLvl", WeaponAfterBreakLvlList.get(x));
+                values.put("weaponBeforeBreakUpLvl", WeaponBeforeBreakUPLvlList.get(x));
+                values.put("weaponAfterBreakUpLvl", WeaponAfterBreakUPLvlList.get(x));
+                values.put("weaponRare", WeaponRareList.get(x));
+                values.put("weaponFollow", WeaponFollowList.get(x));
+                values.put("weaponIsCal", WeaponIsCal.get(x));
+
+                db.insert(dataSheetName+"_weapon", null, values);
+
+            }
+            cursor.close();
+        }
+    }
+
+    public void setDBName(String dataSheetName) {
+        this.dataSheetName = dataSheetName;
+    }
 }

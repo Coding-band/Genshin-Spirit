@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Package E:/GenshinSpirit/GenshinSpirit/app/src/main/res/menu/bottom_nav_cal_menu.xml was
+  ~ Created by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2021 Xectorda 版權所有
+  -->
+
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:icon="@drawable/klee_ico" android:id="@+id/nav_char" android:title="@string/title_char"/>
     <item android:icon="@drawable/art2" android:id="@+id/nav_artifacts" android:visible="false" android:title="@string/title_artifacts"/>

@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Package E:/GenshinSpirit/GenshinSpirit/app/src/main/res/values-ru-rRU/strings.xml was
+  ~ Created by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2021 Xectorda 版權所有
+  -->
+
 <resources>
     <string name="app_name">Genshin Spirit</string>
 
@@ -496,6 +502,8 @@
     <!-- add in 20211027 -->
     <string name="nora_fortis">Nora Fortis</string>
     <string name="snezhnaya">Снежная</string>
+    <!-- add in 20211028 -->
+    <string name="happy_birthday">"с днем ​​рождения!"</string>
 
 
 </resources>

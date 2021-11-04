@@ -8,19 +8,19 @@
     "solar_pearl"
   ],
   "util_weapons": [
-    "prototype_malice",
+    "prototype_amber",
     "thrilling_tales_of_dragon_slayers"
   ],
   "dps_art1": [
-    "depth_of_heart",
-    "depth_of_heart",
-    "depth_of_heart",
-    "depth_of_heart",
-    "depth_of_heart"
+    "heart_of_depth",
+    "heart_of_depth",
+    "heart_of_depth",
+    "heart_of_depth",
+    "heart_of_depth"
   ],
   "sup_dps_art1": [
-    "depth_of_heart",
-    "depth_of_heart",
+    "heart_of_depth",
+    "heart_of_depth",
     "noblesse_oblige",
     "noblesse_oblige",
     "noblesse_oblige"
@@ -33,6 +33,6 @@
     "noblesse_oblige"
   ],
   "team1":[
-	"Diluc","Barbara","Bennett","Chongyun"
+	"Diluc","Mona","Bennett","Chongyun"
   ]
 }

@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Package E:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/bg_electro_char.xml was
+  ~ Created by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2021 Xectorda 版權所有
+  -->
+
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
     <solid android:color="@color/electro"/>
     <corners android:topLeftRadius="0dp" android:topRightRadius="0dp" android:bottomLeftRadius="10dp" android:bottomRightRadius="10dp"/>

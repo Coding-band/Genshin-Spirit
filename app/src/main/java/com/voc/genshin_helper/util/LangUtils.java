@@ -7,6 +7,12 @@ import android.os.Build;
 import android.util.Log;
 import java.util.Locale;
 
+/*
+ * Package com.voc.genshin_helper.util.LangUtils was
+ * Created by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2021 Xectorda 版權所有
+ */
+
 public class LangUtils {
     private static final int FOLLOW_SYSTEM = -1;
     private static final int en_US = 2;

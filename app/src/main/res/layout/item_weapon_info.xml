@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Package E:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_weapon_info.xml was
+  ~ Created by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2021 Xectorda 版權所有
+  -->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@color/page_bg" android:layout_width="match_parent" android:layout_height="wrap_content">
     <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
         <androidx.constraintlayout.widget.ConstraintLayout android:layout_gravity="center" android:orientation="vertical" android:id="@+id/item_bg" android:layout_width="96dp" android:layout_height="96dp" android:layout_margin="8dp">

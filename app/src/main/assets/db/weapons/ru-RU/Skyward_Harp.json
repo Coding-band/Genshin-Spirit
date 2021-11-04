@@ -2,7 +2,7 @@
   "name": "Skyward Harp",
   "rare": 5,
   "weapon": "Bow",
-  "isComingSoon": true,
+  "isComingSoon": false,
   "desc": "Длинный лук, символ дружбы между Двалином и Анемо Архонтом. Звук спущенной тетивы исполнен любовью Анемо Архонта, питающей его силой небес и ветров.",
   "first_status": "CritRate%",
   "second_status": "ATK",

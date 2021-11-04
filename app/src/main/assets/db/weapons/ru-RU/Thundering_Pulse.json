@@ -2,7 +2,7 @@
   "name": "Thundering Pulse",
   "rare": 5,
   "weapon": "Bow",
-  "isComingSoon": true,
+  "isComingSoon": false,
   "desc": "Лук, дарованный сёгуном. Его окружают непрестанно потрескивающие молнии.",
   "first_status": "CritRate%",
   "second_status": "ATK",

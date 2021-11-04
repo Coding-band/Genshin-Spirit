@@ -7,6 +7,7 @@ import com.voc.genshin_helper.R;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Calendar;
 
 /*
  * Package com.voc.genshin_helper.data.ItemRss was
@@ -17,7 +18,7 @@ public class ItemRss {
 
     /**EDIT WHEN ADD NEW ITEMS*/
     public int[] char_names = {R.string.gorou, R.string.arataki_itto, R.string.thoma, R.string.sangonomiya_kokomi, R.string.aloy, R.string.kujou_sara, R.string.raiden_shogun, R.string.sayu, R.string.yoimiya, R.string.kamisato_ayaka, R.string.kaedehara_kazuha, R.string.yanfei, R.string.eula, R.string.rosaria, R.string.xiao, R.string.hu_tao, R.string.ganyu, R.string.albedo, R.string.zhongli, R.string.xinyan, R.string.tartaglia, R.string.diona, R.string.xingqiu, R.string.xiangling, R.string.venti, R.string.sucrose, R.string.razor, R.string.qiqi, R.string.noelle, R.string.ningguang, R.string.mona, R.string.lisa, R.string.klee, R.string.keqing, R.string.kaeya, R.string.jean, R.string.fischl, R.string.diluc, R.string.chongyun, R.string.bennett, R.string.beidou, R.string.barbara, R.string.amber, R.string.traveler_anemo, R.string.traveler_geo, R.string.traveler_electro};
-    public int[] weapons_name = {R.string.amenoma_kageuchi, R.string.aquila_favonia, R.string.blackcliff_longsword, R.string.cool_steel, R.string.dark_iron_sword, R.string.dull_blade, R.string.favonius_sword, R.string.festering_desire, R.string.fillet_blade, R.string.freedom_sworn, R.string.harbinger_of_dawn, R.string.iron_sting, R.string.lions_roar, R.string.mistsplitter_reforged, R.string.primordial_jade_cutter, R.string.prototype_rancour, R.string.royal_longsword, R.string.sacrificial_sword, R.string.silver_sword, R.string.skyrider_sword, R.string.skyward_blade, R.string.summit_shaper, R.string.sword_of_descension, R.string.the_alley_flash, R.string.the_black_sword, R.string.the_flute, R.string.travelers_handy_sword, R.string.waster_greatsword, R.string.old_mercs_pal, R.string.bloodtainted_greatsword, R.string.debate_club, R.string.quartz, R.string.ferrous_shadow, R.string.skyrider_greatsword, R.string.white_iron_greatsword, R.string.blackcliff_slasher, R.string.favonius_greatsword, R.string.katsuragikiri_nagamasa, R.string.lithic_blade, R.string.luxurious_sea_lord, R.string.prototype_archaic, R.string.rainslasher, R.string.royal_greatsword, R.string.sacrificial_greatsword, R.string.serpent_spine, R.string.snow_tombed_starsilver, R.string.the_bell, R.string.whiteblind, R.string.skyward_pride, R.string.song_of_broken_pines, R.string.the_unforged, R.string.wolfs_gravestone, R.string.beginners_protector, R.string.iron_point, R.string.black_tassel, R.string.halberd, R.string.white_tassel, R.string.blackcliff_pole, R.string.crescent_pike, R.string.deathmatch, R.string.dragons_bane, R.string.dragonspine_spear, R.string.favonius_lance, R.string.kitain_cross_spear, R.string.lithic_spear, R.string.prototype_starglitter, R.string.royal_spear, R.string.the_catch, R.string.engulfing_lightning, R.string.primordial_jade_winged_spear, R.string.skyward_spine, R.string.staff_of_homa, R.string.vortex_vanquisher, R.string.apprentices_notes, R.string.pocket_grimoire, R.string.amber_catalyst, R.string.emerald_orb, R.string.magic_guide, R.string.otherworldly_story, R.string.thrilling_tales_of_dragon_slayers, R.string.twin_nephrite, R.string.blackcliff_agate, R.string.dodoco_tales, R.string.eye_of_perception, R.string.favonius_codex, R.string.frostbearer, R.string.hakushin_ring, R.string.mappa_mare, R.string.prototype_amber, R.string.royal_grimoire, R.string.sacrificial_fragments, R.string.solar_pearl, R.string.the_widsith, R.string.wine_and_song, R.string.everlasting_moonglow, R.string.lost_prayer_to_the_sacred_winds, R.string.memory_of_dust, R.string.skyward_atlas, R.string.hunters_bow, R.string.seasoned_hunters_bow, R.string.ebony_bow, R.string.messenger, R.string.raven_bow, R.string.recurve_bow, R.string.sharpshooters_oath, R.string.slingshot, R.string.alley_hunter, R.string.blackcliff_warbow, R.string.compound_bow, R.string.favonius_warbow, R.string.hamayumi, R.string.mitternachts_waltz, R.string.predator, R.string.prototype_crescent, R.string.royal_bow, R.string.rust, R.string.sacrificial_bow, R.string.the_stringless, R.string.the_viridescent_hunt, R.string.windblume_ode, R.string.amos_bow, R.string.elegy_for_the_end, R.string.skyward_harp, R.string.thundering_pulse};
+    public int[] weapons_name = {R.string.akuoumaru,R.string.mouuns_moon,R.string.wavebreakers_fin,R.string.amenoma_kageuchi, R.string.aquila_favonia, R.string.blackcliff_longsword, R.string.cool_steel, R.string.dark_iron_sword, R.string.dull_blade, R.string.favonius_sword, R.string.festering_desire, R.string.fillet_blade, R.string.freedom_sworn, R.string.harbinger_of_dawn, R.string.iron_sting, R.string.lions_roar, R.string.mistsplitter_reforged, R.string.primordial_jade_cutter, R.string.prototype_rancour, R.string.royal_longsword, R.string.sacrificial_sword, R.string.silver_sword, R.string.skyrider_sword, R.string.skyward_blade, R.string.summit_shaper, R.string.sword_of_descension, R.string.the_alley_flash, R.string.the_black_sword, R.string.the_flute, R.string.travelers_handy_sword, R.string.waster_greatsword, R.string.old_mercs_pal, R.string.bloodtainted_greatsword, R.string.debate_club, R.string.quartz, R.string.ferrous_shadow, R.string.skyrider_greatsword, R.string.white_iron_greatsword, R.string.blackcliff_slasher, R.string.favonius_greatsword, R.string.katsuragikiri_nagamasa, R.string.lithic_blade, R.string.luxurious_sea_lord, R.string.prototype_archaic, R.string.rainslasher, R.string.royal_greatsword, R.string.sacrificial_greatsword, R.string.serpent_spine, R.string.snow_tombed_starsilver, R.string.the_bell, R.string.whiteblind, R.string.skyward_pride, R.string.song_of_broken_pines, R.string.the_unforged, R.string.wolfs_gravestone, R.string.beginners_protector, R.string.iron_point, R.string.black_tassel, R.string.halberd, R.string.white_tassel, R.string.blackcliff_pole, R.string.crescent_pike, R.string.deathmatch, R.string.dragons_bane, R.string.dragonspine_spear, R.string.favonius_lance, R.string.kitain_cross_spear, R.string.lithic_spear, R.string.prototype_starglitter, R.string.royal_spear, R.string.the_catch, R.string.engulfing_lightning, R.string.primordial_jade_winged_spear, R.string.skyward_spine, R.string.staff_of_homa, R.string.vortex_vanquisher, R.string.apprentices_notes, R.string.pocket_grimoire, R.string.amber_catalyst, R.string.emerald_orb, R.string.magic_guide, R.string.otherworldly_story, R.string.thrilling_tales_of_dragon_slayers, R.string.twin_nephrite, R.string.blackcliff_agate, R.string.dodoco_tales, R.string.eye_of_perception, R.string.favonius_codex, R.string.frostbearer, R.string.hakushin_ring, R.string.mappa_mare, R.string.prototype_amber, R.string.royal_grimoire, R.string.sacrificial_fragments, R.string.solar_pearl, R.string.the_widsith, R.string.wine_and_song, R.string.everlasting_moonglow, R.string.lost_prayer_to_the_sacred_winds, R.string.memory_of_dust, R.string.skyward_atlas, R.string.hunters_bow, R.string.seasoned_hunters_bow, R.string.ebony_bow, R.string.messenger, R.string.raven_bow, R.string.recurve_bow, R.string.sharpshooters_oath, R.string.slingshot, R.string.alley_hunter, R.string.blackcliff_warbow, R.string.compound_bow, R.string.favonius_warbow, R.string.hamayumi, R.string.mitternachts_waltz, R.string.predator, R.string.prototype_crescent, R.string.royal_bow, R.string.rust, R.string.sacrificial_bow, R.string.the_stringless, R.string.the_viridescent_hunt, R.string.windblume_ode, R.string.amos_bow, R.string.elegy_for_the_end, R.string.skyward_harp, R.string.thundering_pulse};
     public int[] artifact_name = {R.string.adventurer, R.string.archaic_petra, R.string.berserker, R.string.blizzard_strayer, R.string.bloodstained_chivalry, R.string.brave_heart, R.string.crimson_witch_of_flames, R.string.defenders_will, R.string.emblem_of_severed_fate, R.string.gambler, R.string.gladiators_finale, R.string.heart_of_depth, R.string.instructor, R.string.lavawalker, R.string.lucky_dog, R.string.maiden_beloved, R.string.martial_artist, R.string.noblesse_oblige, R.string.pale_flame, R.string.prayers_of_destiny, R.string.prayers_of_illumination, R.string.prayers_of_wisdom, R.string.prayers_of_springtime, R.string.resolution_of_sojourner, R.string.retracing_bolide, R.string.scholar, R.string.shimenawas_reminiscence, R.string.tenacity_of_the_millelith, R.string.the_exile, R.string.thundering_fury, R.string.thundersoother, R.string.tiny_miracle, R.string.traveling_doctor, R.string.viridescent_venerer, R.string.wanderers_troupe};
 
     public String getLocaleName (String str,Context context) {
@@ -128,6 +129,7 @@ public class ItemRss {
             case "Song of Broken Pines" : return new int[] {R.string.song_of_broken_pines,R.drawable.song_of_broken_pines};
             case "The Unforged" : return new int[] {R.string.the_unforged,R.drawable.the_unforged};
             case "Wolf's Gravestone" : return new int[] {R.string.wolfs_gravestone,R.drawable.wolfs_gravestone};
+            case "Akuoumaru" : return new int[] {R.string.akuoumaru,R.drawable.akuoumaru};
 
             case "Beginner's Protector" : return new int[] {R.string.beginners_protector,R.drawable.beginners_protector};
             case "Iron Point" : return new int[] {R.string.iron_point,R.drawable.iron_point};
@@ -150,6 +152,7 @@ public class ItemRss {
             case "Skyward Spine" : return new int[] {R.string.skyward_spine,R.drawable.skyward_spine};
             case "Staff of Homa" : return new int[] {R.string.staff_of_homa,R.drawable.staff_of_homa};
             case "Vortex Vanquisher" : return new int[] {R.string.vortex_vanquisher,R.drawable.vortex_vanquisher};
+            case "Wavebreaker's Fin" : return new int[] {R.string.wavebreakers_fin,R.drawable.wavebreakers_fin};
 
             case "Apprentice's Notes" : return new int[] {R.string.apprentices_notes,R.drawable.apprentices_notes};
             case "Pocket Grimoire" : return new int[] {R.string.pocket_grimoire,R.drawable.pocket_grimoire};
@@ -203,6 +206,7 @@ public class ItemRss {
             case "Elegy for the End" : return new int[] {R.string.elegy_for_the_end,R.drawable.elegy_for_the_end};
             case "Skyward Harp" : return new int[] {R.string.skyward_harp,R.drawable.skyward_harp};
             case "Thundering Pulse" : return new int[] {R.string.thundering_pulse,R.drawable.thundering_pulse};
+            case "Mouun's Moon" : return new int[] {R.string.mouuns_moon,R.drawable.mouuns_moon};
 
             default : return new int[] {R.string.unknown,R.drawable.paimon_lost};
         }
@@ -338,6 +342,11 @@ public class ItemRss {
             case "elegy_for_the_end" : return "Elegy for the End";
             case "skyward_harp" : return "Skyward Harp";
             case "thundering_pulse" : return "Thundering Pulse";
+
+            // add in 20211030
+            case "akuoumaru" : return "Akuoumaru";
+            case "wavebreakers_fin" : return "Wavebreaker's Fin";
+            case "mouuns_moon" : return "Mouun's Moon";
 
             default: return  "PAIMON_ATE";
         }
@@ -854,5 +863,114 @@ public class ItemRss {
 
         return returns;
         }else return context.getString(R.string.set_by_player);
+    }
+
+    public String char_birth(int moy, int dom){
+        String char_name = "EMPTY";
+        switch (moy){
+            case Calendar.JANUARY: {
+                switch (dom) {
+                    case 18 : char_name = "Diona"; break;
+                    case 24 : char_name = "Rosaria"; break;
+                }
+                break;
+            }
+            case Calendar.FEBRUARY: {
+                switch (dom) {
+                    case 14 : char_name = "Beidou"; break;
+                    case 22 : char_name = "Sangonomiya Kokomi"; break;
+                    case 29 : char_name = "Bennett"; break;
+                }
+                break;
+            }
+            case Calendar.MARCH: {
+                switch (dom) {
+                    case 3 : char_name = "Qiqi"; break;
+                    case 14 : char_name = "Jean"; break;
+                    case 21 : char_name = "Noelle"; break;
+                }
+                break;
+            }
+            case Calendar.APRIL: {
+                switch (dom) {
+                    case 4 : char_name = "Aloy"; break;
+                    case 17 : char_name = "Xiao"; break;
+                    case 30 : char_name = "Diluc"; break;
+                }
+                break;
+            }
+            case Calendar.MAY: {
+                switch (dom) {
+                    case 27 : char_name = "Fischl"; break;
+                }
+                break;
+            }
+            case Calendar.JUNE: {
+                switch (dom) {
+                    case 1 : char_name = "Diona"; break;
+                    case 9 : char_name = "Lisa"; break;
+                    case 16 : char_name = "Venti"; break;
+                    case 21 : char_name = "Yoimiya"; break;
+                    case 26 : char_name = "Raiden Shogun"; break;
+                }
+                break;
+            }
+            case Calendar.JULY: {
+                switch (dom) {
+                    case 5 : char_name = "Barbara"; break;
+                    case 14 : char_name = "Kujou Sara"; break;
+                    case 15 : char_name = "Hu Tao"; break;
+                    case 20 : char_name = "Tartaglia"; break;
+                    case 27 : char_name = "Klee"; break;
+                    case 28 : char_name = "Yanfei"; break;
+                }
+                break;
+            }
+            case Calendar.AUGUST: {
+                switch (dom) {
+                    case 10 : char_name = "Amber"; break;
+                    case 26 : char_name = "Ningguang"; break;
+                    case 31 : char_name = "Mona"; break;
+                }
+                break;
+            }
+            case Calendar.SEPTEMBER: {
+                switch (dom) {
+                    case 7 : char_name = "Diona"; break;
+                    case 9 : char_name = "Razor"; break;
+                    case 13 : char_name = "Albedo"; break;
+                    case 28 : char_name = "Kamisato Ayaka"; break;
+                }
+                break;
+            }
+            case Calendar.OCTOBER: {
+                switch (dom) {
+                    case 9 : char_name = "Xingqiu"; break;
+                    case 16 : char_name = "Xinyan"; break;
+                    case 19 : char_name = "Sayu"; break;
+                    case 25 : char_name = "Eula"; break;
+                    case 29 : char_name = "Kaedehara Kazuha"; break;
+                }
+                break;
+            }
+            case Calendar.NOVEMBER: {
+                switch (dom) {
+                    case 2 : char_name = "Xiangling"; break;
+                    case 20 : char_name = "Keqing"; break;
+                    case 26 : char_name = "Sucrose"; break;
+                    case 30 : char_name = "Kaeya"; break;
+                }
+                break;
+            }
+            case Calendar.DECEMBER: {
+                switch (dom) {
+                    case 2 : char_name = "Ganyu"; break;
+                    case 31 : char_name = "Zhongli"; break;
+                }
+                break;
+            }
+
+        }
+        return char_name;
     }
 }

@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Package E:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/menu_artifact_filter.xml was
+  ~ Created by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2021 Xectorda 版權所有
+  -->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@color/page_bg" android:padding="8dp" android:layout_width="match_parent" android:layout_height="wrap_content">
     <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="4dp" android:layout_marginBottom="4dp">
         <ImageView android:id="@+id/menu_filter_ico" android:layout_width="48dp" android:layout_height="48dp" android:layout_weight="0" app:srcCompat="@drawable/ic_baseline_filter_alt_24"/>

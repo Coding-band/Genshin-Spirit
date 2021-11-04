@@ -1,0 +1,12 @@
+{
+  "name": "Akuoumaru",
+  "rare": 4,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "The beloved sword of the legendary "Akuou." The blade is huge and majestic, but is surprisingly easy to wield.",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "Watatsumi Wavewalker",
+  "skill_desc": "For every point of the entire party's combined maximum Energy capacity, the Elemental Burst DMG of the character equipping this weapon is increased by 0.12%. A maximum of 40% increased Elemental Burst DMG can be achieved this way.",
+  "obtain_way": "LIMITED_WISH"
+}

@@ -8,7 +8,7 @@
   {"name" : "Favonius Sword","type" : "Sword","rare" : 4,"copy1" : "高塔孤王的碎夢","copy2" : "黑晶號角","common" : "歷戰的箭簇"},
   {"name" : "Festering Desire","type" : "Sword","rare" : 4,"copy1" : "獅牙鬥士的理想","copy2" : "黑晶號角","common" : "尉官的徽記"},
   {"name" : "Fillet Blade","type" : "Sword","rare" : 3,"copy1" : "霧海雲間的轉還","copy2" : "霧虛燈芯","common" : "攫金鴉印"},
-  {"name" : "Freedom Sword","type" : "Sword","rare" : 5,"copy1" : "獅牙鬥士的理想","copy2" : "混沌爐心","common" : "禁咒繪卷"},
+  {"name" : "Freedom Sworn","type" : "Sword","rare" : 5,"copy1" : "獅牙鬥士的理想","copy2" : "混沌爐心","common" : "禁咒繪卷"},
   {"name" : "Harbinger of Dawn","type" : "Sword","rare" : 3,"copy1" : "凜風奔狼的懷鄉","copy2" : "地脈的新芽","common" : "史萊姆原漿"},
   {"name" : "Iron Sting","type" : "Sword","rare" : 4,"copy1" : "漆黑隕鐵的一塊","copy2" : "石化的骨片","common" : "原素花蜜"},
   {"name" : "Lion's Roar","type" : "Sword","rare" : 4,"copy1" : "孤雲寒林的神體","copy2" : "督察長祭刀","common" : "攫金鴉印"},
@@ -122,5 +122,8 @@
   {"name" : "The Stringless","type" : "Bow","rare" : 4,"copy1" : "高塔孤王的碎夢","copy2" : "黑晶號角","common" : "歷戰的箭簇"},
   {"name" : "The Viridescent Hunt","type" : "Bow","rare" : 4,"copy1" : "高塔孤王的碎夢","copy2" : "黑晶號角","common" : "歷戰的箭簇"},
   {"name" : "Thundering Pulse","type" : "Bow","rare" : 5,"copy1" : "鳴神御靈的勇武","copy2" : "偏光棱镜","common" : "歷戰的箭簇"},
-  {"name" : "Windblume Ode","type" : "Bow","rare" : 4,"copy1" : "獅牙鬥士的理想","copy2" : "地脈的新芽","common" : "原素花蜜"}
+  {"name" : "Windblume Ode","type" : "Bow","rare" : 4,"copy1" : "獅牙鬥士的理想","copy2" : "地脈的新芽","common" : "原素花蜜"},
+  {"name" : "Akuoumaru","type" : "Claymore","rare" : 4,"copy1" : "遠海夷地的金枝","copy2" : "隱獸鬼爪","common" : "名刀鐔"},
+  {"name" : "Wavebreaker's Fin","type" : "Polearm","rare" : 4,"copy1" : "鳴神御靈的勇武","copy2" : "偏光棱镜","common" : "浮游晶化核"},
+  {"name" : "Mouun's Moon","type" : "Bow","rare" : 4,"copy1" : "今昔劇畫的鬼人","copy2" : "隱獸鬼爪","common" : "名刀鐔"}
 ]

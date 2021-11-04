@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Package E:/GenshinSpirit/GenshinSpirit/app/src/main/res/values-ja-rJP/strings.xml was
+  ~ Created by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2021 Xectorda 版權所有
+  -->
+
 <resources>
     <string name="app_name">Genshin Spirit</string>
 
@@ -528,6 +534,12 @@
     <!-- add in 20211027 -->
     <string name="nora_fortis">Nora Fortis</string>
     <string name="snezhnaya">Snezhnaya</string>
+    <!-- add in 20211028 -->
+    <string name="happy_birthday">"お誕生日おめでとう！"</string>
+	<!-- add in 20211030 -->
+    <string name="wavebreakers_fin">"斬波のひれ長"</string>
+    <string name="akuoumaru">"惡王丸"</string>
+    <string name="mouuns_moon">"曚雲の月"</string>
 
 </resources>
 

@@ -7,7 +7,7 @@ package com.voc.genshin_helper.kidding;/*
 import android.util.Log;
 
 /*
- * Package com.voc.genshin_helper.kidding.goSleep was
+ * Package com.voc.genshin_helper.kidding.GoSleep was
  * Created by Voc-夜芷冰 , Programmer of Xectorda
  * Copyright © 2021 Xectorda 版權所有
  */

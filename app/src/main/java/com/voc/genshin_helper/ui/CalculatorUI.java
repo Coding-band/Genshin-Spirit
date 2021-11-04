@@ -10,9 +10,11 @@ import androidx.viewpager.widget.ViewPager;
 import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.content.res.ColorStateList;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
@@ -49,6 +51,7 @@ import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.data.ScreenSizeUtils;
 import com.voc.genshin_helper.data.Weapons;
 import com.voc.genshin_helper.data.WeaponsAdapter;
+import com.voc.genshin_helper.database.DataBaseHelper;
 import com.voc.genshin_helper.util.CalculatorProcess;
 import com.voc.genshin_helper.util.NumberPickerDialog;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
@@ -61,6 +64,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Array;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
@@ -156,7 +160,16 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
     public ArrayList<Boolean> weaponChoosedAfterBreakUPLvlList = new ArrayList<>();
     public ArrayList<String> weaponChoosedFollowList = new ArrayList<>();
     public ArrayList<Boolean> weaponChoosedIsCal = new ArrayList<>();
-    public ArrayList<Integer> weaponChoosedRare = new ArrayList<>();
+    public ArrayList<Integer> weaponChoosedRare = new ArrayList<>(); // INNER USE ONLY
+
+    /**  Method of Artifact Choosed List */
+    public ArrayList<String> artifactChoosedNameList = new ArrayList<>();
+    public ArrayList<Integer> artifactChoosedBeforeLvlList = new ArrayList<>();
+    public ArrayList<Integer> artifactChoosedAfterLvlList = new ArrayList<>();
+    public ArrayList<String> artifactChoosedFollowList = new ArrayList<>();
+    public ArrayList<Boolean> artifactChoosedIsCal = new ArrayList<>();
+    public ArrayList<Integer> artifactChoosedRare = new ArrayList<>();
+    public ArrayList<String> artifactChoosedType = new ArrayList<>();
 
     View viewPager0,viewPager1,viewPager2,viewPager3,viewPager4;
 
@@ -164,6 +177,9 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
     String normal_skill_name = "Unknown";
     String element_skill_name = "Unknown";
     String final_skill_name = "Unknown";
+
+    String dataSheetName = "NaN";
+    CalculatorProcess calculatorProcess;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -174,8 +190,54 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         nav_view = findViewById(R.id.nav_view_cal);
 
         css = new ItemRss();
+        calculatorProcess = new CalculatorProcess();
         npd = new NumberPickerDialog(this);
         context = this;
+
+        /**
+         * INIT OF TRANSFER
+         */
+        Bundle extras = getIntent().getExtras();
+
+        dataSheetName = (String) extras.getString("dataSheetName");
+
+        choosedNameList = (ArrayList<String>) extras.getStringArrayList("charChoosedNameList");
+        choosedBeforeLvlList = (ArrayList<Integer>) extras.getIntegerArrayList("charChoosedBeforeLvlList");
+        choosedAfterLvlList = (ArrayList<Integer>) extras.getIntegerArrayList("charChoosedAfterLvlList");
+        choosedBeforeBreakLvlList = (ArrayList<Integer>) extras.getIntegerArrayList("charChoosedBeforeBreakLvlList");
+        choosedBeforeBreakUPLvlList = (ArrayList<Boolean>) extras.get("charChoosedBeforeBreakUPLvlList");
+        choosedAfterBreakLvlList = (ArrayList<Integer>) extras.getIntegerArrayList("charChoosedAfterBreakLvlList");
+        choosedAfterBreakUPLvlList = (ArrayList<Boolean>) extras.get("charChoosedAfterBreakUPLvlList");
+        choosedBeforeSkill1LvlList = (ArrayList<Integer>) extras.getIntegerArrayList("charChoosedBeforeSkill1LvlList");
+        choosedAfterSkill1LvlList = (ArrayList<Integer>) extras.getIntegerArrayList("charChoosedAfterSkill1LvlList");
+        choosedBeforeSkill2LvlList = (ArrayList<Integer>) extras.getIntegerArrayList("charChoosedBeforeSkill2LvlList");
+        choosedAfterSkill2LvlList = (ArrayList<Integer>) extras.getIntegerArrayList("charChoosedAfterSkill2LvlList");
+        choosedBeforeSkill3LvlList = (ArrayList<Integer>) extras.getIntegerArrayList("charChoosedBeforeSkill3LvlList");
+        choosedAfterSkill3LvlList = (ArrayList<Integer>) extras.getIntegerArrayList("charChoosedAfterSkill3LvlList");
+        choosedIsCal = (ArrayList<Boolean>) extras.get("charChoosedIsCal");
+
+        weaponChoosedNameList = (ArrayList<String>) extras.getStringArrayList("weaponChoosedNameList");
+        weaponChoosedBeforeLvlList = (ArrayList<Integer>) extras.getIntegerArrayList("weaponChoosedBeforeLvlList");
+        weaponChoosedAfterLvlList = (ArrayList<Integer>) extras.getIntegerArrayList("weaponChoosedAfterLvlList");
+        weaponChoosedBeforeBreakLvlList = (ArrayList<Integer>) extras.getIntegerArrayList("weaponChoosedBeforeBreakLvlList");
+        weaponChoosedBeforeBreakUPLvlList = (ArrayList<Boolean>) extras.get("weaponChoosedBeforeBreakUPLvlList");
+        weaponChoosedAfterBreakLvlList = (ArrayList<Integer>) extras.getIntegerArrayList("weaponChoosedAfterBreakLvlList");
+        weaponChoosedAfterBreakUPLvlList = (ArrayList<Boolean>) extras.get("weaponChoosedAfterBreakUPLvlList");
+        weaponChoosedFollowList = (ArrayList<String>) extras.getStringArrayList("weaponChoosedFollowList");
+        weaponChoosedRare = (ArrayList<Integer>) extras.getIntegerArrayList("weaponChoosedRare");
+        weaponChoosedIsCal = (ArrayList<Boolean>) extras.get("weaponChoosedIsCal");
+
+        artifactChoosedNameList = (ArrayList<String>) extras.getStringArrayList("artifactChoosedNameList");
+        artifactChoosedBeforeLvlList = (ArrayList<Integer>) extras.getIntegerArrayList("artifactChoosedBeforeLvlList");
+        artifactChoosedAfterLvlList = (ArrayList<Integer>) extras.getIntegerArrayList("artifactChoosedAfterLvlList");
+        artifactChoosedFollowList = (ArrayList<String>) extras.getStringArrayList("artifactChoosedFollowList");
+        artifactChoosedIsCal = (ArrayList<Boolean>) extras.get("artifactChoosedIsCal");
+        artifactChoosedRare = (ArrayList<Integer>) extras.getIntegerArrayList("artifactChoosedRare");
+        artifactChoosedType = (ArrayList<String>) extras.getStringArrayList("artifactChoosedType");
+
+        /**
+         * INIT (UI)
+         */
 
         final LayoutInflater mInflater = getLayoutInflater().from(this);
         viewPager0 = mInflater.inflate(R.layout.fragment_cal_char, null,false);
@@ -190,6 +252,8 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         viewPager_List.add(viewPager2);
         viewPager_List.add(viewPager3);
         viewPager_List.add(viewPager4);
+
+        item_rss = new ItemRss();
 
         viewPager.setAdapter(new MyViewPagerAdapter(viewPager_List));
         nav_view.setSelectedItemId(R.id.nav_char);
@@ -271,9 +335,10 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                         nav_view.setSelectedItemId(R.id.nav_result);
                         CalculatorProcess calculatorProcess = new CalculatorProcess();
                         calculatorProcess.setVP(viewPager,viewPager3);
+                        calculatorProcess.setDBName(dataSheetName);
                         calculatorProcess.setup(context,choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList);
-                        calculatorProcess.char_setup(choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList);
-                        calculatorProcess.weapon_setup(weaponChoosedNameList,weaponChoosedBeforeLvlList,weaponChoosedAfterLvlList,weaponChoosedBeforeBreakLvlList,weaponChoosedAfterBreakLvlList,weaponChoosedIsCal,weaponChoosedBeforeBreakUPLvlList,weaponChoosedAfterBreakUPLvlList,weaponChoosedFollowList,weaponChoosedRare);
+                        calculatorProcess.char_setup(choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList,"READ");
+                        calculatorProcess.weapon_setup(weaponChoosedNameList,weaponChoosedBeforeLvlList,weaponChoosedAfterLvlList,weaponChoosedBeforeBreakLvlList,weaponChoosedAfterBreakLvlList,weaponChoosedIsCal,weaponChoosedBeforeBreakUPLvlList,weaponChoosedAfterBreakUPLvlList,weaponChoosedFollowList,weaponChoosedRare,"READ");
 
                         break;
 
@@ -300,6 +365,34 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         mList_char.setAdapter(mCharAdapter);
         mList_char.removeAllViewsInLayout();
         char_list_reload();
+
+        // SQL DATA DISPLAY
+        LinearLayout cal_choosed_list = viewPager0.findViewById(R.id.cal_choosed_list);
+        cal_choosed_list.removeAllViews();
+        for (int x = 0 ; x < choosedNameList.size(); x++){
+            Log.w("choosedNameList"+String.valueOf(x),choosedNameList.get(x));
+            View char_view = LayoutInflater.from(context).inflate(R.layout.item_img, cal_choosed_list, false);
+            ImageView item_img = char_view.findViewById(R.id.item_img);
+            String charName = choosedNameList.get(x);
+            int finalX = x;
+            item_img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    charQuestion(charName,"EDIT", finalX);
+                }
+            });
+
+            final int radius = 180;
+            final int margin = 4;
+            final Transformation transformation = new RoundedCornersTransformation(radius, margin);
+            Picasso.get()
+                    .load (item_rss.getCharByName(choosedNameList.get(x))[3])
+                    .transform(transformation)
+                    .fit()
+                    .error (R.drawable.paimon_full)
+                    .into (item_img);
+            cal_choosed_list.addView(char_view);
+        }
 
         EditText char_et = viewPager0.findViewById(R.id.char_et);
         char_et.addTextChangedListener(new TextWatcher() {
@@ -504,6 +597,34 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         mList_weapon.setAdapter(mWeaponAdapter);
         mList_weapon.removeAllViewsInLayout();
         weapon_list_reload();
+
+        // SQL DATA DISPLAY
+        LinearLayout cal_choosed_list = viewPager1.findViewById(R.id.cal_weapon_choosed_list);
+        cal_choosed_list.removeAllViews();
+        for (int x = 0 ; x < weaponChoosedNameList.size(); x++){
+            Log.w("weaponChoosedNameList"+String.valueOf(x),weaponChoosedNameList.get(x));
+            View char_view = LayoutInflater.from(this).inflate(R.layout.item_img, cal_choosed_list, false);
+            ImageView item_img = char_view.findViewById(R.id.item_img);
+            String charName = weaponChoosedNameList.get(x);
+            int finalX = x;
+            item_img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    weaponQuestion(charName,"EDIT", finalX,weaponChoosedRare.get(finalX));
+                }
+            });
+
+            final int radius = 180;
+            final int margin = 4;
+            final Transformation transformation = new RoundedCornersTransformation(radius, margin);
+            Picasso.get()
+                    .load (item_rss.getWeaponByName(weaponChoosedNameList.get(x))[1])
+                    .transform(transformation)
+                    .fit()
+                    .error (R.drawable.paimon_full)
+                    .into (item_img);
+            cal_choosed_list.addView(char_view);
+        }
 
         EditText weapon_et = viewPager1.findViewById(R.id.weapon_et);
         weapon_et.addTextChangedListener(new TextWatcher() {
@@ -776,6 +897,40 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         Switch menu_cal = view.findViewById(R.id.menu_cal);
         Switch menu_break_lvl_before_switch = view.findViewById(R.id.menu_break_lvl_before_switch);
         Switch menu_break_lvl_after_switch = view.findViewById(R.id.menu_break_lvl_after_switch);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
+        String color_hex = sharedPreferences.getString("theme_color_hex","#FF5A5A"); // Must include #
+
+        ColorStateList myList = new ColorStateList(
+                new int[][]{
+                        new int[]{android.R.attr.state_pressed},
+                        new int[]{-android.R.attr.state_checked},
+                        new int[]{android.R.attr.state_checked},
+                },
+                new int[] {
+                        context.getResources().getColor(R.color.tv_color),
+                        context.getResources().getColor(R.color.tv_color),
+                        Color.parseColor(color_hex)
+                }
+        );
+
+        Window window = getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+
+        if(color_hex.toUpperCase().equals("#FFFFFFFF")){
+            window.setStatusBarColor(Color.parseColor("#000000"));}
+        else {
+            window.setStatusBarColor(Color.parseColor(color_hex));
+            Log.w("WRF",color_hex);
+        }
+
+        menu_cal.setThumbTintList(myList);
+        menu_cal.setTrackTintList(myList);
+        menu_break_lvl_before_switch.setThumbTintList(myList);
+        menu_break_lvl_before_switch.setTrackTintList(myList);
+        menu_break_lvl_after_switch.setThumbTintList(myList);
+        menu_break_lvl_after_switch.setTrackTintList(myList);
+
         menu_title.setText(getString(item_rss.getCharByName(CharName_BASE)[1]));
         menu_char_lvl_before.setText(getString(R.string.curr_lvl)+String.valueOf(1));
         menu_char_lvl_after.setText(getString(R.string.aim_lvl)+String.valueOf(90));
@@ -949,6 +1104,18 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                 String name_del = CharName_BASE;
                 for (int p = 0 ; p < choosedNameList.size() ; p ++){
                     if(choosedNameList.get(p).equals(name_del)){
+
+                        // SQL !
+
+                        DataBaseHelper dbHelper = new DataBaseHelper(context);
+                        SQLiteDatabase db = dbHelper.getReadableDatabase();
+                        // Define 'where' part of query.
+                        String selection = "charName" + " LIKE ?";
+                        // Specify arguments in placeholder order.
+                        String[] selectionArgs = { name_del };
+                        // Issue SQL statement.
+                        db.delete(dataSheetName+"_char", selection, selectionArgs);
+
                         choosedNameList.remove(p);
                         choosedBeforeLvlList.remove(p);
                         choosedAfterLvlList.remove(p);
@@ -1009,6 +1176,11 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
                 addCharIntoListUI(CharName_BASE,before_lvl,after_lvl,before_break,after_break,skill1_before,skill1_after,skill2_before,skill2_after,skill3_before,skill3_after,isCal,menu_break_lvl_before_switch.isChecked(),menu_break_lvl_after_switch.isChecked(),XPR,k);
 
+                calculatorProcess.setDBName(dataSheetName);
+                calculatorProcess.setup(context,choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList);
+                calculatorProcess.char_setup(choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList,"WRITE");
+                calculatorProcess.weapon_setup(weaponChoosedNameList,weaponChoosedBeforeLvlList,weaponChoosedAfterLvlList,weaponChoosedBeforeBreakLvlList,weaponChoosedAfterBreakLvlList,weaponChoosedIsCal,weaponChoosedBeforeBreakUPLvlList,weaponChoosedAfterBreakUPLvlList,weaponChoosedFollowList,weaponChoosedRare,"WRITE");
+                calculatorProcess.saveToDB();
             }
         });
 
@@ -1105,6 +1277,38 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         Switch menu_break_lvl_after_switch = view.findViewById(R.id.menu_break_lvl_after_switch);
         View divider = view.findViewById(R.id.divider);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
+        String color_hex = sharedPreferences.getString("theme_color_hex","#FF5A5A"); // Must include #
+
+        ColorStateList myList = new ColorStateList(
+                new int[][]{
+                        new int[]{android.R.attr.state_pressed},
+                        new int[]{-android.R.attr.state_checked},
+                        new int[]{android.R.attr.state_checked},
+                },
+                new int[] {
+                        context.getResources().getColor(R.color.tv_color),
+                        context.getResources().getColor(R.color.tv_color),
+                        Color.parseColor(color_hex)
+                }
+        );
+
+        Window window = getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+
+        if(color_hex.toUpperCase().equals("#FFFFFFFF")){
+            window.setStatusBarColor(Color.parseColor("#000000"));}
+        else {
+            window.setStatusBarColor(Color.parseColor(color_hex));
+            Log.w("WRF",color_hex);
+        }
+
+        menu_cal.setThumbTintList(myList);
+        menu_cal.setTrackTintList(myList);
+        menu_break_lvl_before_switch.setThumbTintList(myList);
+        menu_break_lvl_before_switch.setTrackTintList(myList);
+        menu_break_lvl_after_switch.setThumbTintList(myList);
+        menu_break_lvl_after_switch.setTrackTintList(myList);
 
         menu_char_lvl_before.setText(getString(R.string.curr_lvl)+String.valueOf(before_lvl));
         menu_char_lvl_after.setText(getString(R.string.aim_lvl)+String.valueOf(after_lvl));
@@ -1253,6 +1457,18 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                 String name_del = CharName_BASE;
                 for (int p = 0 ; p < weaponChoosedNameList.size() ; p ++){
                     if(weaponChoosedNameList.get(p).equals(name_del)){
+
+                        // SQL !
+
+                        DataBaseHelper dbHelper = new DataBaseHelper(context);
+                        SQLiteDatabase db = dbHelper.getReadableDatabase();
+                        // Define 'where' part of query.
+                        String selection = "weaponName" + " LIKE ?";
+                        // Specify arguments in placeholder order.
+                        String[] selectionArgs = { name_del };
+                        // Issue SQL statement.
+                        db.delete(dataSheetName+"_weapon", selection, selectionArgs);
+
                         weaponChoosedNameList.remove(p);
                         weaponChoosedBeforeLvlList.remove(p);
                         weaponChoosedAfterLvlList.remove(p);
@@ -1262,6 +1478,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                         weaponChoosedAfterBreakUPLvlList.remove(p);
                         weaponChoosedRare.remove(p);
                         weaponChoosedIsCal.remove(p);
+                        weaponChoosedFollowList.remove(p);
 
                         LinearLayout cal_choosed_list = findViewById(R.id.cal_weapon_choosed_list);
                         cal_choosed_list.removeAllViews();
@@ -1300,6 +1517,11 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                 boolean isCal = menu_cal.isChecked();
 
                 addWeaponIntoListUI(CharName_BASE,before_lvl,after_lvl,before_break,after_break,isCal,menu_break_lvl_before_switch.isChecked(),menu_break_lvl_after_switch.isChecked(),XPR,k,rare);
+                calculatorProcess.setDBName(dataSheetName);
+                calculatorProcess.setup(context,choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList);
+                calculatorProcess.char_setup(choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList,"WRITE");
+                calculatorProcess.weapon_setup(weaponChoosedNameList,weaponChoosedBeforeLvlList,weaponChoosedAfterLvlList,weaponChoosedBeforeBreakLvlList,weaponChoosedAfterBreakLvlList,weaponChoosedIsCal,weaponChoosedBeforeBreakUPLvlList,weaponChoosedAfterBreakUPLvlList,weaponChoosedFollowList,weaponChoosedRare,"WRITE");
+                calculatorProcess.saveToDB();
 
             }
         });
@@ -1405,6 +1627,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             weaponChoosedBeforeBreakUPLvlList.add(beforeUP);
             weaponChoosedAfterBreakUPLvlList.add(afterUP);
             weaponChoosedRare.add(rare);
+            weaponChoosedFollowList.add(null);
         }else if (XPR.equals("EDIT")){
             weaponChoosedNameList.set(k,charName_base);
             weaponChoosedBeforeLvlList.set(k,before_lvl);
@@ -1415,6 +1638,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             weaponChoosedBeforeBreakUPLvlList.set(k,beforeUP);
             weaponChoosedAfterBreakUPLvlList.set(k,afterUP);
             weaponChoosedRare.set(k,rare);
+            weaponChoosedFollowList.set(k,null);
         }
 
         for (int x = 0 ; x < weaponChoosedNameList.size(); x++){
@@ -1668,5 +1892,9 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             }
         };
         return sbC;
+    }
+
+    public static void transferData(){
+
     }
 }

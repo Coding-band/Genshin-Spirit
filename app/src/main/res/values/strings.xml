@@ -1,6 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Package C:/Users/Vocaloid2048/Desktop/File/App/GenshinHelper/app/src/main/res/values/strings.xml was
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Package E:/GenshinSpirit/GenshinSpirit/app/src/main/res/values/strings.xml was
   ~ Created by Voc-夜芷冰 , Programmer of Xectorda
   ~ Copyright © 2021 Xectorda 版權所有
   -->
@@ -406,8 +405,10 @@
     <string name="song_of_broken_pines">"Song of Broken Pines"</string>
     <string name="the_unforged">"The Unforged"</string>
     <string name="wolfs_gravestone">"Wolf's Gravestone"</string>
+    <!-- add in 20211030 -->
+    <string name="wavebreakers_fin">"Wavebreaker's Fin"</string>
 
-    <!-- Weapon-Plearm -->
+    <!-- Weapon-Polearm -->
     <string name="beginners_protector">"Beginner's Protector"</string>
     <string name="iron_point">"Iron Point"</string>
     <string name="black_tassel">"Black Tassel"</string>
@@ -429,6 +430,8 @@
     <string name="skyward_spine">"Skyward Spine"</string>
     <string name="staff_of_homa">"Staff of Homa"</string>
     <string name="vortex_vanquisher">"Vortex Vanquisher"</string>
+    <!-- add in 20211030 -->
+    <string name="akuoumaru">"Akuoumaru"</string>
 
     <!-- Weapon-Catalyst -->
     <string name="apprentices_notes">"Apprentice's Notes"</string>
@@ -484,6 +487,8 @@
     <string name="elegy_for_the_end">"Elegy for the End"</string>
     <string name="skyward_harp">"Skyward Harp"</string>
     <string name="thundering_pulse">"Thundering Pulse"</string>
+    <!-- add in 20211030 -->
+    <string name="mouuns_moon">"Mouun's Moon"</string>
 
     <!-- artifacts -->
     <string name="adventurer">"Adventurer"</string>
@@ -527,6 +532,8 @@
     <!-- add in 20211027 -->
     <string name="nora_fortis">Nora Fortis</string>
     <string name="snezhnaya">Snezhnaya</string>
+    <!-- add in 20211028 -->
+    <string name="happy_birthday">"Happy Birthday!"</string>
 
 
 </resources>

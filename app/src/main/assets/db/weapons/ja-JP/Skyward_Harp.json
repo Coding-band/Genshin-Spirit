@@ -2,7 +2,7 @@
   "name": "Skyward Harp",
   "rare": 5,
   "weapon": "Bow",
-  "isComingSoon": true,
+  "isComingSoon": false,
   "desc": "風龍が風の神の眷属であることを象徴する大弓。矢を放つの音は風の神の偏愛であり、蒼空と長風の力が秘められている。",
   "first_status": "CritRate%",
   "second_status": "ATK",

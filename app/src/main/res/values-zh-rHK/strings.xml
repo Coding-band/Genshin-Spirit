@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Package E:/GenshinSpirit/GenshinSpirit/app/src/main/res/values-zh-rHK/strings.xml was
+  ~ Created by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2021 Xectorda 版權所有
+  -->
+
 <resources>
     <string name="about">關於</string>
     <string name="about_info1">本應用程式並不屬於 miHoYo Co., Ltd. 且並未獲得其認可。原神小幫手(Genshin Spirit)僅為一款由粉絲自行開發之數據提供App，本應用程式所提供的資料只作參考用途。 不會對其所載任何資料的準確性及完整作任何程度保証。</string>
@@ -32,7 +38,7 @@
     <string name="amenoma_kageuchi">天目影打刀</string>
     <string name="america_ser">美服</string>
     <string name="amos_bow">阿莫斯之弓</string>
-    <string name="another_world">另一个世界</string>
+    <string name="another_world">另一個世界</string>
     <string name="app_name">原神小幫手</string>
     <string name="apprentices_notes">學徒筆記</string>
     <string name="aquila_favonia">風鷹劍</string>
@@ -457,4 +463,10 @@
     <!-- add in 20211027 -->
     <string name="nora_fortis">Nora Fortis</string>
     <string name="snezhnaya">至冬</string>
+    <!-- add in 20211028 -->
+    <string name="happy_birthday">"生日快樂！"</string>
+    <!-- add in 20211030 -->
+    <string name="wavebreakers_fin">"斷浪長鰭"</string>
+    <string name="akuoumaru">"惡王丸"</string>
+    <string name="mouuns_moon">"曚雲之月"</string>
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Package C:/Users/Vocaloid2048/Desktop/File/App/GenshinHelper/app/src/main/res/values/colors.xml was
+  ~ Package E:/GenshinSpirit/GenshinSpirit/app/src/main/res/values/colors.xml was
   ~ Created by Voc-夜芷冰 , Programmer of Xectorda
   ~ Copyright © 2021 Xectorda 版權所有
   -->
@@ -30,7 +30,7 @@
     <color name="cryo">#81F9FF</color>
     <color name="dendor">#92FF81</color>
     <color name="electro">#F481FF</color>
-    <color name="geo">#FFEA81</color>
+    <color name="geo">#BE9F04</color>
     <color name="hydro">#03A9F4</color>
     <color name="pyro">#FC6363</color>
 

@@ -616,7 +616,7 @@ public class Characters_Info {
         char_basic_talent2_name.setText(talent2_name);
         char_basic_talent2_normal.setText(talent2_desc);
 
-        if(!talent3_name.isEmpty()){
+        if(!talent3_name.isEmpty() && !talent3_name.equals("XPR")){
             char_basic_talent3_card.setVisibility(View.VISIBLE);
             char_basic_talent3_ico.setImageDrawable(item_rss.getTalentIcoByName(talent3_img,context));
             char_basic_talent3_name.setText(talent3_name);

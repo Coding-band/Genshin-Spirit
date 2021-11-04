@@ -2,7 +2,7 @@
   "name": "Thundering Pulse",
   "rare": 5,
   "weapon": "Bow",
-  "isComingSoon": true,
+  "isComingSoon": false,
   "desc": "曾由将军御赐的长弓，闪烁着永不熄灭的雷光。",
   "first_status": "CritRate%",
   "second_status": "ATK",

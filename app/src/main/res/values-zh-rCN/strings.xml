@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Package E:/GenshinSpirit/GenshinSpirit/app/src/main/res/values-zh-rCN/strings.xml was
+  ~ Created by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2021 Xectorda 版權所有
+  -->
+
 <resources>
     <string name="about">关于</string>
     <string name="about_info1">本应用程序并不属于 miHoYo Co., Ltd. 且并未获得其认可。原神小帮手(Genshin Spirit)仅为一款由粉丝自行开发之数据提供App，本应用程序所提供的数据只作参考用途。 不会对其所载任何数据的准确性及完整作任何程度保证。</string>
@@ -457,5 +463,14 @@
     <!-- add in 20211027 -->
     <string name="nora_fortis">Nora Fortis</string>
     <string name="snezhnaya">至冬</string>
+    <!-- add in 20211028 -->
+    <string name="happy_birthday">"生日快乐！"</string>
+    <!-- add in 20211030 -->
+    <string name="wavebreakers_fin">"断浪长鳍"</string>
+    <string name="akuoumaru">"恶王丸"</string>
+    <string name="mouuns_moon">"曚云之月"</string>
+
+
+
 </resources>
 

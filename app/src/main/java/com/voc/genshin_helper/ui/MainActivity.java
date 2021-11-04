@@ -15,6 +15,7 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -50,12 +51,15 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.cardview.widget.CardView;
+import androidx.gridlayout.widget.GridLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.BuildConfig;
 import com.voc.genshin_helper.R;
@@ -116,7 +120,9 @@ public class MainActivity extends AppCompatActivity {
     NumberPickerDialog npd;
 
 
-    int dow = 0;
+    int dow = 0; // Day of Week
+    int dom = 0; // Day of Month
+    int moy = 0; // Month of Yeat
     int exit = 0;
     int app_started = 0;
     int check_spinner = 0;
@@ -221,6 +227,7 @@ public class MainActivity extends AppCompatActivity {
         check_spinner = 0;
         home();
         getDOW();
+        bday_reload();
         char_reload();
         weapon_reload();
         cbg();
@@ -234,6 +241,7 @@ public class MainActivity extends AppCompatActivity {
                 getDOW();
                 char_reload();
                 weapon_reload();
+                bday_reload();
             }}, 60000);
 
         viewPager.setAdapter(new MyViewPagerAdapter(viewPager_List));
@@ -818,7 +826,7 @@ public class MainActivity extends AppCompatActivity {
                                             }
                                         }
 
-                                        mList.removeAllViews();
+                                        mWeaponList.removeAllViews();
                                         mWeaponAdapter.filterList(filteredList);
                                         editor.putBoolean("show_pyro",show_pyro);
                                         editor.putBoolean("show_hydro",show_hydro);
@@ -1338,7 +1346,7 @@ public class MainActivity extends AppCompatActivity {
         calculator_ll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this,CalculatorUI.class);
+                Intent i = new Intent(MainActivity.this,CalculatorDBActivity.class);
                 startActivity(i);
             }
         });
@@ -1596,6 +1604,8 @@ public class MainActivity extends AppCompatActivity {
             position = 5;
         }
         dow = c.get(Calendar.DAY_OF_WEEK);
+        dom = c.get(Calendar.DAY_OF_MONTH);
+        moy = c.get(Calendar.MONTH);
 
         TextView home_date_tv = viewPager2.findViewById(R.id.home_date_tv);
         if(dow == 1){home_date_tv.setText("【"+getString(R.string.sunday)+"】");}
@@ -1612,38 +1622,97 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    public void bday_reload(){
+        String char_name = "EMPTY";
+        char_name = css.char_birth(moy,dom);
+
+        if(!char_name.equals("EMPTY")){
+            // Setting
+            CardView birth_card = viewPager2.findViewById(R.id.birth_card);
+            ImageView birth_char = viewPager2.findViewById(R.id.birth_char);
+            TextView birth_char_tv = viewPager2.findViewById(R.id.birth_char_tv);
+            TextView birth_char_date = viewPager2.findViewById(R.id.birth_char_date);
+
+            birth_card.setVisibility(View.VISIBLE);
+
+            final int radius = 180;
+            final int margin = 4;
+            final Transformation transformation = new RoundedCornersTransformation(radius, margin);
+            Picasso.get()
+                    .load (css.getCharByName(char_name)[3])
+                    .transform(transformation)
+                    .error (R.drawable.paimon_lost)
+                    .into (birth_char);
+            birth_char_tv.setText(context.getString(css.getCharByName(char_name)[1]));
+            birth_char_date.setText(css.getLocaleBirth(String.valueOf(moy+1)+"/"+String.valueOf(dom),context));
+
+        }
+    }
+
     public void char_reload(){
-        char_ll = viewPager2.findViewById(R.id.char_ll);
-        char_ll.removeAllViews();
-        //Setup item_today_material
+        GridLayout gridLayout = new GridLayout(context);
+        gridLayout = viewPager2.findViewById(R.id.char_ll);
+        gridLayout.removeAllViewsInLayout();
+        gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
+
         int[] today_IMG = tm.today_char_IMG(dow);
         int[] today_TV = tm.today_char_TV(dow);
-        for (int x = 0 ; x < today_IMG.length; x++){
-            View char_view = LayoutInflater.from(this).inflate(R.layout.item_today_material, char_ll, false);
-            ImageView item_img = char_view.findViewById(R.id.item_img);
-            TextView item_name = char_view.findViewById(R.id.item_name);
-            TextView item_dow = char_view.findViewById(R.id.item_dow);
+        for (int x = 0, c = 0, r = 0;  x < today_IMG.length ; x++, c++) {
+            if(c == 3) { c = 0;r++; }
+            View view = View.inflate(context, R.layout.item_today_material, null);
+
+            LinearLayout item_bg = view.findViewById(R.id.item_bg);
+            ImageView item_img = view.findViewById(R.id.item_img);
+            TextView item_name = view.findViewById(R.id.item_name);
+            TextView item_dow = view.findViewById(R.id.item_dow);
+            //Set tv and img
             item_name.setText(getString(today_TV[x]));
             item_dow.setText(getString(tm.today_is(today_IMG[x])));
             item_img.setImageResource(today_IMG[x]);
-            char_ll.addView(char_view);
+            gridLayout.setVisibility(View.VISIBLE);
+            gridLayout.addView(view);
+
+            GridLayout.LayoutParams param =new GridLayout.LayoutParams();
+            param.setMargins(8,8,8,8);
+            param.width = ScreenSizeUtils.getInstance(context).getScreenWidth()/3-8*2;
+            param.height = GridLayout.LayoutParams.WRAP_CONTENT;
+            param.setGravity(Gravity.CENTER);
+            param.columnSpec = GridLayout.spec(c);
+            param.rowSpec = GridLayout.spec(r);
+            view.setLayoutParams (param);
         }
     }
     public void weapon_reload(){
-        weapon_ll = viewPager2.findViewById(R.id.weapon_ll);
-        weapon_ll.removeAllViews();
-        //Setup item_today_material
+        GridLayout gridLayout = new GridLayout(context);
+        gridLayout = viewPager2.findViewById(R.id.weapon_ll);
+        gridLayout.removeAllViewsInLayout();
+        gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
+
         int[] today_IMG = tm.today_weapon_IMG(dow);
         int[] today_TV = tm.today_weapon_TV(dow);
-        for (int x = 0 ; x < today_IMG.length; x++){
-            View char_view = LayoutInflater.from(this).inflate(R.layout.item_today_material, weapon_ll, false);
-            ImageView item_img = char_view.findViewById(R.id.item_img);
-            TextView item_name = char_view.findViewById(R.id.item_name);
-            TextView item_dow = char_view.findViewById(R.id.item_dow);
+        for (int x = 0, c = 0, r = 0;  x < today_IMG.length ; x++, c++) {
+            if(c == 3) { c = 0;r++; }
+            View view = View.inflate(context, R.layout.item_today_material, null);
+
+            LinearLayout item_bg = view.findViewById(R.id.item_bg);
+            ImageView item_img = view.findViewById(R.id.item_img);
+            TextView item_name = view.findViewById(R.id.item_name);
+            TextView item_dow = view.findViewById(R.id.item_dow);
+            //Set tv and img
             item_name.setText(getString(today_TV[x]));
             item_dow.setText(getString(tm.today_is(today_IMG[x])));
             item_img.setImageResource(today_IMG[x]);
-            weapon_ll.addView(char_view);
+            gridLayout.setVisibility(View.VISIBLE);
+            gridLayout.addView(view);
+
+            GridLayout.LayoutParams param =new GridLayout.LayoutParams();
+            param.setMargins(8,8,8,8);
+            param.width = ScreenSizeUtils.getInstance(context).getScreenWidth()/3-8*2;
+            param.height = GridLayout.LayoutParams.WRAP_CONTENT;
+            param.setGravity(Gravity.CENTER);
+            param.columnSpec = GridLayout.spec(c);
+            param.rowSpec = GridLayout.spec(r);
+            view.setLayoutParams (param);
         }
     }
     public void startInfo (String name){
@@ -1714,10 +1783,14 @@ public class MainActivity extends AppCompatActivity {
         RadioButton theme_light = viewPager4.findViewById(R.id.theme_light);
         RadioButton theme_dark = viewPager4.findViewById(R.id.theme_dark);
         RadioButton theme_default = viewPager4.findViewById(R.id.theme_default);
+        Switch other_exit_confirm = viewPager4.findViewById(R.id.other_exit_confirm);
 
         theme_light.setButtonTintList(myList);
         theme_dark.setButtonTintList(myList);
         theme_default.setButtonTintList(myList);
+
+        other_exit_confirm.setThumbTintList(myList);
+        other_exit_confirm.setTrackTintList(myList);
 
     }
 

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Package C:/Users/Vocaloid2048/Desktop/File/App/GenshinHelper/app/src/main/res/layout/item_today_material.xml was
+  ~ Package E:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_today_material.xml was
   ~ Created by Voc-夜芷冰 , Programmer of Xectorda
   ~ Copyright © 2021 Xectorda 版權所有
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/item_bg"
     android:layout_width="180dp"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"

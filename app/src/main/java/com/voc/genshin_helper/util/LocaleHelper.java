@@ -7,6 +7,12 @@ import android.content.res.Resources;
 import android.os.Build;
 import java.util.Locale;
 
+/*
+ * Package com.voc.genshin_helper.util.LocaleHelper was
+ * Created by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2021 Xectorda 版權所有
+ */
+
 public class LocaleHelper {
     public String COUNTRY = "country";
     public String LANG = "lang";
