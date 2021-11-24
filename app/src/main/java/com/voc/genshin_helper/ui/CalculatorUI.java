@@ -8,12 +8,14 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.content.res.ColorStateList;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -21,12 +23,15 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
@@ -35,6 +40,7 @@ import android.widget.LinearLayout;
 import android.widget.NumberPicker;
 import android.widget.RatingBar;
 import android.widget.SeekBar;
+import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -52,7 +58,9 @@ import com.voc.genshin_helper.data.ScreenSizeUtils;
 import com.voc.genshin_helper.data.Weapons;
 import com.voc.genshin_helper.data.WeaponsAdapter;
 import com.voc.genshin_helper.database.DataBaseHelper;
+import com.voc.genshin_helper.util.CalculatorBuff;
 import com.voc.genshin_helper.util.CalculatorProcess;
+import com.voc.genshin_helper.util.LangUtils;
 import com.voc.genshin_helper.util.NumberPickerDialog;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
@@ -115,6 +123,12 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
     public boolean show_bow = true;
     public boolean show_catalyst = true;
 
+    public boolean show_flower = true;
+    public boolean show_plume = true;
+    public boolean show_sand = true;
+    public boolean show_goblet = true;
+    public boolean show_circlet = true;
+
     public int show_stars = 0;
 
     /** Method of Char Choosed List*/
@@ -132,6 +146,12 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
     public ArrayList<Integer> choosedBeforeSkill3LvlList= new ArrayList<Integer>();
     public ArrayList<Integer> choosedAfterSkill3LvlList= new ArrayList<Integer>();
     public ArrayList<Boolean> choosedIsCal= new ArrayList<Boolean>();
+    //public ArrayList<Integer> choosedWeaponIdList= new ArrayList<Integer>();
+    //public ArrayList<Integer> choosedFlowerIdList= new ArrayList<Integer>();
+    //public ArrayList<Integer> choosedPlumeIdList= new ArrayList<Integer>();
+    //public ArrayList<Integer> choosedSandIdList= new ArrayList<Integer>();
+    //public ArrayList<Integer> choosedGobletIdList= new ArrayList<Integer>();
+    //public ArrayList<Integer> choosedCircletIdList= new ArrayList<Integer>();
 
     /** Method of Char's details' container */
     /** Since String can't be null, so there will have "XPR" for identify is result correct */
@@ -152,6 +172,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
     /**  Method of Weapon Choosed List */
     public ArrayList<String> weaponChoosedNameList = new ArrayList<>();
+    //public ArrayList<Integer> weaponChoosedIdList = new ArrayList<>();
     public ArrayList<Integer> weaponChoosedBeforeLvlList = new ArrayList<>();
     public ArrayList<Integer> weaponChoosedAfterLvlList = new ArrayList<>();
     public ArrayList<Integer> weaponChoosedBeforeBreakLvlList = new ArrayList<>();
@@ -164,6 +185,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
     /**  Method of Artifact Choosed List */
     public ArrayList<String> artifactChoosedNameList = new ArrayList<>();
+    //public ArrayList<Integer> artifactChoosedIdList = new ArrayList<>();
     public ArrayList<Integer> artifactChoosedBeforeLvlList = new ArrayList<>();
     public ArrayList<Integer> artifactChoosedAfterLvlList = new ArrayList<>();
     public ArrayList<String> artifactChoosedFollowList = new ArrayList<>();
@@ -177,9 +199,12 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
     String normal_skill_name = "Unknown";
     String element_skill_name = "Unknown";
     String final_skill_name = "Unknown";
+    String follow_char_tmp = "Unknown";
+    String tmp_artifact_type = "Flower";
 
     String dataSheetName = "NaN";
     CalculatorProcess calculatorProcess;
+    CalculatorBuff calculatorBuff;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -191,6 +216,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
         css = new ItemRss();
         calculatorProcess = new CalculatorProcess();
+        calculatorBuff = new CalculatorBuff();
         npd = new NumberPickerDialog(this);
         context = this;
 
@@ -215,6 +241,12 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         choosedBeforeSkill3LvlList = (ArrayList<Integer>) extras.getIntegerArrayList("charChoosedBeforeSkill3LvlList");
         choosedAfterSkill3LvlList = (ArrayList<Integer>) extras.getIntegerArrayList("charChoosedAfterSkill3LvlList");
         choosedIsCal = (ArrayList<Boolean>) extras.get("charChoosedIsCal");
+        //choosedWeaponIdList = (ArrayList<Integer>) extras.get("charChoosedWeaponIdList");
+        //choosedFlowerIdList = (ArrayList<Integer>) extras.get("charChoosedFlowerIdList");
+        //choosedPlumeIdList = (ArrayList<Integer>) extras.get("charChoosedPlumeIdList");
+        //choosedSandIdList = (ArrayList<Integer>) extras.get("charChoosedSandIdList");
+        //choosedGobletIdList = (ArrayList<Integer>) extras.get("charChoosedGobletIdList");
+        //choosedCircletIdList = (ArrayList<Integer>) extras.get("charChoosedCircletIdList");
 
         weaponChoosedNameList = (ArrayList<String>) extras.getStringArrayList("weaponChoosedNameList");
         weaponChoosedBeforeLvlList = (ArrayList<Integer>) extras.getIntegerArrayList("weaponChoosedBeforeLvlList");
@@ -288,6 +320,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
         char_setup();
         weapon_setup();
+        artifact_setup();
 
         nav_view.setItemIconTintList(myList);
         nav_view.setItemTextColor(myList);
@@ -306,6 +339,9 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                     return true;
                 }else if (item.getItemId() == R.id.nav_result){
                     viewPager.setCurrentItem(3);
+                    return true;
+                }else if (item.getItemId() == R.id.nav_buff){
+                    viewPager.setCurrentItem(4);
                     return true;
                 }
                 return false;
@@ -326,22 +362,32 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                         break;
 
                     case 1:
-                       break;
+                        break;
 
                     case 2:
                         break;
 
                     case 3:
-                        nav_view.setSelectedItemId(R.id.nav_result);
                         CalculatorProcess calculatorProcess = new CalculatorProcess();
                         calculatorProcess.setVP(viewPager,viewPager3);
                         calculatorProcess.setDBName(dataSheetName);
                         calculatorProcess.setup(context,choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList);
                         calculatorProcess.char_setup(choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList,"READ");
+                        calculatorProcess.artifact_setup(artifactChoosedNameList,artifactChoosedBeforeLvlList,artifactChoosedAfterLvlList,artifactChoosedIsCal,artifactChoosedFollowList,artifactChoosedRare,artifactChoosedType,"READ");
                         calculatorProcess.weapon_setup(weaponChoosedNameList,weaponChoosedBeforeLvlList,weaponChoosedAfterLvlList,weaponChoosedBeforeBreakLvlList,weaponChoosedAfterBreakLvlList,weaponChoosedIsCal,weaponChoosedBeforeBreakUPLvlList,weaponChoosedAfterBreakUPLvlList,weaponChoosedFollowList,weaponChoosedRare,"READ");
+
 
                         break;
 
+                    case 4:
+                        CalculatorBuff calculatorBuff = new CalculatorBuff();
+                        calculatorBuff.char_setup(choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList,"READ");
+                        calculatorBuff.weapon_setup(weaponChoosedNameList,weaponChoosedBeforeLvlList,weaponChoosedAfterLvlList,weaponChoosedBeforeBreakLvlList,weaponChoosedAfterBreakLvlList,weaponChoosedIsCal,weaponChoosedBeforeBreakUPLvlList,weaponChoosedAfterBreakUPLvlList,weaponChoosedFollowList,weaponChoosedRare,"READ");
+                        calculatorBuff.artifact_setup(artifactChoosedNameList,artifactChoosedBeforeLvlList,artifactChoosedAfterLvlList,artifactChoosedIsCal,artifactChoosedFollowList,artifactChoosedRare,artifactChoosedType,"READ");
+                        calculatorBuff.ui_setup(context,viewPager4);
+                        calculatorBuff.setDBName(dataSheetName);
+                        calculatorBuff.view_setup();
+                        break;
                 }
             }
 
@@ -794,6 +840,167 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         });
     }
 
+    private void artifact_setup() {
+        mList_artifact = viewPager2.findViewById(R.id.main_list);
+        mArtifactAdapter = new ArtifactsAdapter(context, artifactsList);
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 3);
+        LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
+        paramsMsg.gravity = Gravity.CENTER;
+        mList_artifact.setLayoutManager(mLayoutManager);
+        mList_artifact.setLayoutParams(paramsMsg);
+        mList_artifact.setAdapter(mArtifactAdapter);
+        mList_artifact.removeAllViewsInLayout();
+        artifact_list_reload();
+
+        // SQL DATA DISPLAY
+        LinearLayout cal_choosed_list = viewPager2.findViewById(R.id.cal_artifact_choosed_list);
+        cal_choosed_list.removeAllViews();
+        for (int x = 0 ; x < artifactChoosedNameList.size(); x++){
+            Log.w("artifactChoosedNameList"+String.valueOf(x),artifactChoosedNameList.get(x));
+            View char_view = LayoutInflater.from(this).inflate(R.layout.item_img, cal_choosed_list, false);
+            ImageView item_img = char_view.findViewById(R.id.item_img);
+            String charName = artifactChoosedNameList.get(x);
+            int finalX = x;
+            item_img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    artifactQuestion(charName,"EDIT", finalX,artifactChoosedRare.get(finalX));
+                }
+            });
+
+            int tmp_artifact_type_id = 1;
+            if(artifactChoosedType.get(x).equals("Flower")){
+                tmp_artifact_type_id = 4;
+            }else if(artifactChoosedType.get(x).equals("Plume")){
+                tmp_artifact_type_id = 2;
+            }else if(artifactChoosedType.get(x).equals("Sand")){
+                tmp_artifact_type_id = 5;
+            }else if(artifactChoosedType.get(x).equals("Goblet")){
+                tmp_artifact_type_id = 1;
+            }else if(artifactChoosedType.get(x).equals("Circlet")){
+                tmp_artifact_type_id = 3;
+            }
+
+            final int radius = 180;
+            final int margin = 4;
+            final Transformation transformation = new RoundedCornersTransformation(radius, margin);
+            Picasso.get()
+                    .load (item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(artifactChoosedNameList.get(x)))[tmp_artifact_type_id])
+                    .transform(transformation)
+                    .fit()
+                    .error (R.drawable.paimon_full)
+                    .into (item_img);
+            cal_choosed_list.addView(char_view);
+        }
+
+        EditText artifact_et = viewPager2.findViewById(R.id.artifact_et);
+        artifact_et.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                ArrayList<Artifacts> filteredList = new ArrayList<>();
+                int x = 0;
+                for (Artifacts item : artifactsList) {
+                    String str = String.valueOf(s).toLowerCase();
+                    if (item.getName().toLowerCase().contains(String.valueOf(str))||css.LocaleArtifactStr(x,context).contains(String.valueOf(s))||css.LocaleArtifactStr(x,context).toLowerCase().contains(String.valueOf(s).toLowerCase())) {
+                        filteredList.add(item);
+                    }
+                    x = x +1;
+                }
+                mArtifactAdapter.filterList(filteredList);
+            }
+        });
+
+        ImageView artifact_filter = viewPager2.findViewById(R.id.artifact_filter);
+        artifact_filter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+                View view = View.inflate(context, R.layout.menu_artifact_filter, null);
+                // Artifacts
+                ImageView ico_flower = view.findViewById(R.id.ico_flower);
+                ImageView ico_plume = view.findViewById(R.id.ico_plume);
+                ImageView ico_sand = view.findViewById(R.id.ico_sand);
+                ImageView ico_goblet = view.findViewById(R.id.ico_goblet);
+                ImageView ico_circlet = view.findViewById(R.id.ico_circlet);
+                // Rating
+                RatingBar ratingBar = view.findViewById(R.id.menu_rating);
+                // Function Buttons
+                Button cancel = view.findViewById(R.id.menu_cancel);
+                Button reset = view.findViewById(R.id.menu_reset);
+                Button ok = view.findViewById(R.id.menu_ok);
+
+                show_stars = sharedPreferences.getInt("artifact_stars",0);
+
+                //if(show_sword){show_sword = true;ico_sword.setColorFilter(Color.parseColor("#00000000"));}else{show_sword = false;ico_sword.setColorFilter(Color.parseColor("#66313131"));}
+                ratingBar.setNumStars(5);
+                ratingBar.setRating(show_stars);
+
+                //ico_sword.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_sword){show_sword = false;ico_sword.setColorFilter(Color.parseColor("#66313131"));}else{show_sword = true;ico_sword.setColorFilter(Color.parseColor("#00000000"));}}});
+
+                cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+
+                reset.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        ratingBar.setRating(0);
+
+                        editor.putInt("artifact_stars", (int) ratingBar.getRating());
+                        editor.apply();
+                        dialog.dismiss();
+
+                        mArtifactAdapter.filterList(artifactsList);
+
+                    }
+                });
+
+                ok.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        ArrayList<Artifacts> filteredList = new ArrayList<>();
+                        for (Artifacts item : artifactsList) {
+                            if(ratingBar.getRating() != 0 && item.getRare() == ratingBar.getRating()){
+                                filteredList.add(item);
+                            }else if (ratingBar.getRating() == 0){
+                                filteredList.add(item);
+                            }
+                        }
+
+                        mList_artifact.removeAllViews();
+                        mArtifactAdapter.filterList(filteredList);
+                        editor.putInt("artifact_stars", (int) ratingBar.getRating());
+                        editor.apply();
+                        dialog.dismiss();
+                    }
+                });
+
+                dialog.setContentView(view);
+                dialog.setCanceledOnTouchOutside(true);
+                //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
+                Window dialogWindow = dialog.getWindow();
+                WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+                lp.width = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth());
+                lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                lp.gravity = Gravity.BOTTOM;
+                dialogWindow.setAttributes(lp);
+                dialog.show();
+            }
+        });
+    }
+
+
     @SuppressLint("SetTextI18n")
     public void charQuestion(String CharName_BASE, String XPR, int k){
         normal_name = "XPR";
@@ -1180,6 +1387,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                 calculatorProcess.setup(context,choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList);
                 calculatorProcess.char_setup(choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList,"WRITE");
                 calculatorProcess.weapon_setup(weaponChoosedNameList,weaponChoosedBeforeLvlList,weaponChoosedAfterLvlList,weaponChoosedBeforeBreakLvlList,weaponChoosedAfterBreakLvlList,weaponChoosedIsCal,weaponChoosedBeforeBreakUPLvlList,weaponChoosedAfterBreakUPLvlList,weaponChoosedFollowList,weaponChoosedRare,"WRITE");
+                calculatorProcess.artifact_setup(artifactChoosedNameList,artifactChoosedBeforeLvlList,artifactChoosedAfterLvlList,artifactChoosedIsCal,artifactChoosedFollowList,artifactChoosedRare,artifactChoosedType,"WRITE");
                 calculatorProcess.saveToDB();
             }
         });
@@ -1331,6 +1539,29 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         menu_skill3_after_pb.setVisibility(View.GONE);
         menu_skill3_after_tv.setVisibility(View.GONE);
 
+        String[] langList = new String[choosedNameList.size()];
+        for (int x = 0 ; x < choosedNameList.size() ; x++){
+            langList[x] = getString(item_rss.getCharByName(choosedNameList.get(x))[1]);
+        }
+
+        ArrayAdapter char_aa = new ArrayAdapter(context,R.layout.spinner_item,langList);
+        char_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
+
+        Spinner char_sp = view.findViewById(R.id.menu_char_follow);
+        char_sp.setVisibility(View.VISIBLE);
+        char_sp.setAdapter(char_aa);
+        char_sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                follow_char_tmp = choosedNameList.get(position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                follow_char_tmp = "NaN";
+            }
+        });
+
         if(XPR.equals("EDIT")){
             delete.setVisibility(View.VISIBLE);
             before_lvl = weaponChoosedBeforeLvlList.get(k);
@@ -1342,6 +1573,19 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             menu_cal.setChecked(weaponChoosedIsCal.get(k));
             menu_break_lvl_before_switch.setChecked(weaponChoosedBeforeBreakUPLvlList.get(k));
             menu_break_lvl_after_switch.setChecked(weaponChoosedAfterBreakUPLvlList.get(k));
+
+            langList = new String[choosedNameList.size()];
+            for (int x = 0 ; x < choosedNameList.size() ; x++){
+                langList[x] = getString(item_rss.getCharByName(choosedNameList.get(x))[1]);
+                if(choosedNameList.get(x).equals(weaponChoosedFollowList.get(k))){
+                    char_aa = new ArrayAdapter(context,R.layout.spinner_item,langList);
+                    char_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
+                    char_sp.setAdapter(char_aa);
+                    char_sp.setSelection(x);
+                }else {
+                    char_sp.setSelection(0);
+                }
+            }
         }
 
         menu_char_lvl_before.setOnClickListener(new View.OnClickListener() {
@@ -1516,12 +1760,14 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                 dialog.dismiss();
                 boolean isCal = menu_cal.isChecked();
 
-                addWeaponIntoListUI(CharName_BASE,before_lvl,after_lvl,before_break,after_break,isCal,menu_break_lvl_before_switch.isChecked(),menu_break_lvl_after_switch.isChecked(),XPR,k,rare);
+                addWeaponIntoListUI(CharName_BASE,before_lvl,after_lvl,before_break,after_break,isCal,menu_break_lvl_before_switch.isChecked(),menu_break_lvl_after_switch.isChecked(),XPR,k,rare,follow_char_tmp);
                 calculatorProcess.setDBName(dataSheetName);
                 calculatorProcess.setup(context,choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList);
                 calculatorProcess.char_setup(choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList,"WRITE");
                 calculatorProcess.weapon_setup(weaponChoosedNameList,weaponChoosedBeforeLvlList,weaponChoosedAfterLvlList,weaponChoosedBeforeBreakLvlList,weaponChoosedAfterBreakLvlList,weaponChoosedIsCal,weaponChoosedBeforeBreakUPLvlList,weaponChoosedAfterBreakUPLvlList,weaponChoosedFollowList,weaponChoosedRare,"WRITE");
+                calculatorProcess.artifact_setup(artifactChoosedNameList,artifactChoosedBeforeLvlList,artifactChoosedAfterLvlList,artifactChoosedIsCal,artifactChoosedFollowList,artifactChoosedRare,artifactChoosedType,"WRITE");
                 calculatorProcess.saveToDB();
+
 
             }
         });
@@ -1543,6 +1789,445 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         lp.gravity = Gravity.BOTTOM;
         dialogWindow.setAttributes(lp);
         dialog.show();
+
+
+    }
+
+
+    public void artifactQuestion (String CharName_BASE, String XPR, int k, int rare){
+
+        /** Calculator vars -> Might change to int[] which sort by char update time*/
+        before_lvl = 1;
+        after_lvl = 20;
+        switch (rare){
+            case 1 : after_lvl = 4; break;
+            case 2 : after_lvl = 4; break;
+            case 3 : after_lvl = 12; break;
+            case 4 : after_lvl = 16; break;
+            case 5 : after_lvl = 20; break;
+        }
+
+        sharedPreferences = context.getSharedPreferences("user_info",Context.MODE_PRIVATE);
+        item_rss = new ItemRss();
+
+        final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+        View view = View.inflate(context, R.layout.menu_char_add, null);
+
+        // Function method
+        Button cancel = view.findViewById(R.id.menu_cancel);
+        Button ok = view.findViewById(R.id.menu_ok);
+        Button delete = view.findViewById(R.id.menu_delete);
+        TextView menu_title = view.findViewById(R.id.menu_title);
+        Button menu_char_lvl_before = view.findViewById(R.id.menu_char_lvl_before);
+        Button menu_char_lvl_after = view.findViewById(R.id.menu_char_lvl_after);
+
+        TextView menu_skill1_title = view.findViewById(R.id.menu_skill1_title);
+        TextView menu_skill2_title = view.findViewById(R.id.menu_skill2_title);
+        TextView menu_skill3_title = view.findViewById(R.id.menu_skill3_title);
+
+        SeekBar menu_skill1_before_pb = view.findViewById(R.id.menu_skill1_before_pb);
+        TextView menu_skill1_before_tv = view.findViewById(R.id.menu_skill1_before_tv);
+        SeekBar menu_skill1_after_pb = view.findViewById(R.id.menu_skill1_after_pb);
+        TextView menu_skill1_after_tv = view.findViewById(R.id.menu_skill1_after_tv);
+        SeekBar menu_skill2_before_pb = view.findViewById(R.id.menu_skill2_before_pb);
+        TextView menu_skill2_before_tv = view.findViewById(R.id.menu_skill2_before_tv);
+        SeekBar menu_skill2_after_pb = view.findViewById(R.id.menu_skill2_after_pb);
+        TextView menu_skill2_after_tv = view.findViewById(R.id.menu_skill2_after_tv);
+        SeekBar menu_skill3_before_pb = view.findViewById(R.id.menu_skill3_before_pb);
+        TextView menu_skill3_before_tv = view.findViewById(R.id.menu_skill3_before_tv);
+        SeekBar menu_skill3_after_pb = view.findViewById(R.id.menu_skill3_after_pb);
+        TextView menu_skill3_after_tv = view.findViewById(R.id.menu_skill3_after_tv);
+
+        Switch menu_cal = view.findViewById(R.id.menu_cal);
+        Switch menu_break_lvl_before_switch = view.findViewById(R.id.menu_break_lvl_before_switch);
+        Switch menu_break_lvl_after_switch = view.findViewById(R.id.menu_break_lvl_after_switch);
+        View divider = view.findViewById(R.id.divider);
+
+        TextView menu_artifact_title_tv = view.findViewById(R.id.menu_artifact_title_tv);
+        LinearLayout menu_artifact_title_ll = view.findViewById(R.id.menu_artifact_title_ll);
+        ImageView ico_flower = view.findViewById(R.id.ico_flower);
+        ImageView ico_plume = view.findViewById(R.id.ico_plume);
+        ImageView ico_sand = view.findViewById(R.id.ico_sand);
+        ImageView ico_goblet = view.findViewById(R.id.ico_goblet);
+        ImageView ico_circlet = view.findViewById(R.id.ico_circlet);
+
+        divider.setVisibility(View.GONE);
+        menu_skill1_title.setVisibility(View.GONE);
+        menu_skill2_title.setVisibility(View.GONE);
+        menu_skill3_title.setVisibility(View.GONE);
+        menu_skill1_before_pb.setVisibility(View.GONE);
+        menu_skill1_before_tv.setVisibility(View.GONE);
+        menu_skill1_after_pb.setVisibility(View.GONE);
+        menu_skill1_after_tv.setVisibility(View.GONE);
+        menu_skill2_before_pb.setVisibility(View.GONE);
+        menu_skill2_before_tv.setVisibility(View.GONE);
+        menu_skill2_after_pb.setVisibility(View.GONE);
+        menu_skill2_after_tv.setVisibility(View.GONE);
+        menu_skill3_before_pb.setVisibility(View.GONE);
+        menu_skill3_before_tv.setVisibility(View.GONE);
+        menu_skill3_after_pb.setVisibility(View.GONE);
+        menu_skill3_after_tv.setVisibility(View.GONE);
+        menu_skill3_after_tv.setVisibility(View.GONE);
+
+        menu_artifact_title_tv.setVisibility(View.VISIBLE);
+        menu_artifact_title_ll.setVisibility(View.VISIBLE);
+
+        ico_flower.setColorFilter(Color.parseColor("#66313131"));
+        ico_plume.setColorFilter(Color.parseColor("#66313131"));
+        ico_sand.setColorFilter(Color.parseColor("#66313131"));
+        ico_goblet.setColorFilter(Color.parseColor("#66313131"));
+        ico_circlet.setColorFilter(Color.parseColor("#66313131"));
+
+        View v = view;
+
+        ico_flower.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ico_flower.setColorFilter(Color.parseColor("#00000000"));
+                ico_plume.setColorFilter(Color.parseColor("#66313131"));
+                ico_sand.setColorFilter(Color.parseColor("#66313131"));
+                ico_goblet.setColorFilter(Color.parseColor("#66313131"));
+                ico_circlet.setColorFilter(Color.parseColor("#66313131"));
+                tmp_artifact_type = "Flower";
+
+                chooseFollow(v);
+            }
+        });
+
+        ico_plume.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ico_plume.setColorFilter(Color.parseColor("#00000000"));
+                ico_flower.setColorFilter(Color.parseColor("#66313131"));
+                ico_sand.setColorFilter(Color.parseColor("#66313131"));
+                ico_goblet.setColorFilter(Color.parseColor("#66313131"));
+                ico_circlet.setColorFilter(Color.parseColor("#66313131"));
+                tmp_artifact_type = "Plume";
+
+                chooseFollow(v);
+            }
+        });
+
+        ico_sand.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ico_sand.setColorFilter(Color.parseColor("#00000000"));
+                ico_flower.setColorFilter(Color.parseColor("#66313131"));
+                ico_plume.setColorFilter(Color.parseColor("#66313131"));
+                ico_goblet.setColorFilter(Color.parseColor("#66313131"));
+                ico_circlet.setColorFilter(Color.parseColor("#66313131"));
+                tmp_artifact_type = "Sand";
+
+                chooseFollow(v);
+            }
+        });
+
+        ico_goblet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ico_goblet.setColorFilter(Color.parseColor("#00000000"));
+                ico_flower.setColorFilter(Color.parseColor("#66313131"));
+                ico_sand.setColorFilter(Color.parseColor("#66313131"));
+                ico_plume.setColorFilter(Color.parseColor("#66313131"));
+                ico_circlet.setColorFilter(Color.parseColor("#66313131"));
+                tmp_artifact_type = "Goblet";
+
+                chooseFollow(v);
+            }
+        });
+
+        ico_circlet.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ico_circlet.setColorFilter(Color.parseColor("#00000000"));
+                ico_flower.setColorFilter(Color.parseColor("#66313131"));
+                ico_sand.setColorFilter(Color.parseColor("#66313131"));
+                ico_goblet.setColorFilter(Color.parseColor("#66313131"));
+                ico_plume.setColorFilter(Color.parseColor("#66313131"));
+                tmp_artifact_type = "Circlet";
+
+                chooseFollow(v);
+            }
+        });
+
+        SharedPreferences sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
+        String color_hex = sharedPreferences.getString("theme_color_hex","#FF5A5A"); // Must include #
+
+        ColorStateList myList = new ColorStateList(
+                new int[][]{
+                        new int[]{android.R.attr.state_pressed},
+                        new int[]{-android.R.attr.state_checked},
+                        new int[]{android.R.attr.state_checked},
+                },
+                new int[] {
+                        context.getResources().getColor(R.color.tv_color),
+                        context.getResources().getColor(R.color.tv_color),
+                        Color.parseColor(color_hex)
+                }
+        );
+
+        Window window = getWindow();
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+
+        if(color_hex.toUpperCase().equals("#FFFFFFFF")){
+            window.setStatusBarColor(Color.parseColor("#000000"));}
+        else {
+            window.setStatusBarColor(Color.parseColor(color_hex));
+            Log.w("WRF",color_hex);
+        }
+
+
+        menu_char_lvl_before.setText(getString(R.string.curr_lvl)+String.valueOf(before_lvl));
+        menu_char_lvl_after.setText(getString(R.string.aim_lvl)+String.valueOf(after_lvl));
+        menu_title.setText(getString(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(CharName_BASE))[0]));
+
+
+        ArrayList<String> cList = new ArrayList<String>();
+
+        for (int x = 0 ; x < choosedNameList.size() ; x++){
+            Log.wtf("TMP1","TMP");
+            if(choosedIsCal.get(x) == true ){
+                Log.wtf("TMP2","TMP");
+                if(artifactChoosedFollowList.size() == 0 && artifactChoosedType.size() == 0){
+                    cList.add(getString(item_rss.getCharByName(choosedNameList.get(x))[1]));
+                }else {
+                    for (int y = 0 ; y < artifactChoosedFollowList.size() ; y ++){
+                        Log.wtf("TMP3","TMP");
+                        if (artifactChoosedType.get(y).equals(tmp_artifact_type) && artifactChoosedFollowList.get(y).equals(choosedNameList.get(x))){
+                            Log.wtf("TMP4","TMP");
+                        }else if(!cList.contains(choosedNameList.get(x)) && !artifactChoosedType.get(y).equals(tmp_artifact_type) && !artifactChoosedFollowList.get(y).equals(choosedNameList.get(x))){
+                            cList.add(getString(item_rss.getCharByName(choosedNameList.get(x))[1]));
+                        }
+                    }
+                }
+            }
+        }
+
+
+        if(XPR.equals("EDIT")){
+            ArrayAdapter char_aa = new ArrayAdapter(context,R.layout.spinner_item,cList);
+            char_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
+
+            Spinner char_sp = view.findViewById(R.id.menu_char_follow);
+            char_sp.setVisibility(View.VISIBLE);
+            char_sp.setAdapter(char_aa);
+            char_sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                @Override
+                public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                    follow_char_tmp = choosedNameList.get(position);
+                }
+
+                @Override
+                public void onNothingSelected(AdapterView<?> parent) {
+                }
+            });
+            delete.setVisibility(View.VISIBLE);
+            before_lvl = artifactChoosedBeforeLvlList.get(k);
+            after_lvl = artifactChoosedAfterLvlList.get(k);
+            menu_char_lvl_before.setText(getString(R.string.curr_lvl)+String.valueOf(artifactChoosedBeforeLvlList.get(k)));
+            menu_char_lvl_after.setText(getString(R.string.aim_lvl)+String.valueOf(artifactChoosedAfterLvlList.get(k)));
+            menu_cal.setChecked(artifactChoosedIsCal.get(k));
+
+
+            for (int x = 0 ; x < choosedNameList.size() ; x++){
+                cList.add(getString(item_rss.getCharByName(choosedNameList.get(x))[1]));
+                if(choosedNameList.get(x).equals(artifactChoosedFollowList.get(k))){
+                    char_aa = new ArrayAdapter(context,R.layout.spinner_item,cList);
+                    char_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
+                    char_sp.setAdapter(char_aa);
+                    char_sp.setSelection(x);
+                }else {
+                    char_sp.setSelection(0);
+                }
+            }
+        }
+
+        menu_char_lvl_before.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                npd.setLastValue(before_lvl);
+                switch (rare){
+                    case 1 : npd.setMaxValue(4); break;
+                    case 2 : npd.setMaxValue(4); break;
+                    case 3 : npd.setMaxValue(12); break;
+                    case 4 : npd.setMaxValue(16); break;
+                    case 5 : npd.setMaxValue(20); break;
+                }
+                npd.setMinValue(1);
+                npd.showDialog("LVL_BEFORE");
+            }
+        });
+
+        menu_char_lvl_after.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                npd.setLastValue(after_lvl);
+                switch (rare){
+                    case 1 : npd.setMaxValue(4); break;
+                    case 2 : npd.setMaxValue(4); break;
+                    case 3 : npd.setMaxValue(12); break;
+                    case 4 : npd.setMaxValue(16); break;
+                    case 5 : npd.setMaxValue(20); break;
+                }
+                npd.setMinValue(before_lvl);
+                npd.showDialog("LVL_AFTER");
+            }
+        });
+        /**這邊取得自己所設置之模組回調*/
+
+        npd.onDialogRespond = new NumberPickerDialog.OnDialogRespond() {
+            @Override
+            public void onRespond(int value , String XPR) {
+                if(XPR.equals("LVL_BEFORE")){
+                    before_lvl = value;
+                }else if(XPR.equals("LVL_AFTER")) {
+                    after_lvl = value;
+                }
+            }
+        };
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                String name_del = CharName_BASE;
+                String follow_del = artifactChoosedFollowList.get(k);
+                String type_del = artifactChoosedType.get(k);
+                int p = k;
+                artifactChoosedNameList.remove(p);
+                artifactChoosedBeforeLvlList.remove(p);
+                artifactChoosedAfterLvlList.remove(p);
+                artifactChoosedRare.remove(p);
+                artifactChoosedIsCal.remove(p);
+                artifactChoosedFollowList.remove(p);
+                artifactChoosedType.remove(p);
+
+                DataBaseHelper dbHelper = new DataBaseHelper(context);
+                SQLiteDatabase db = dbHelper.getReadableDatabase();
+                db.execSQL("DELETE FROM "+dataSheetName+"_artifact"+" WHERE artifactName = \""+name_del+"\" AND artifactType = \""+type_del+"\" AND artifactFollow = \""+follow_del+"\"");
+
+                        LinearLayout cal_choosed_list = findViewById(R.id.cal_artifact_choosed_list);
+                        cal_choosed_list.removeAllViews();
+                        for (int x = 0 ; x < artifactChoosedNameList.size(); x++){
+                            View char_view = LayoutInflater.from(context).inflate(R.layout.item_img, cal_choosed_list, false);
+                            ImageView item_img = char_view.findViewById(R.id.item_img);
+                            String charName = artifactChoosedNameList.get(x);
+                            int finalX = x;
+                            item_img.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    artifactQuestion(charName,"EDIT", finalX,rare);
+                                }
+                            });
+
+                            final int radius = 180;
+                            final int margin = 4;
+                            final Transformation transformation = new RoundedCornersTransformation(radius, margin);
+                            int tmp_artifact_type_id = 1;
+
+                            if(artifactChoosedType.get(x).equals("Flower")){
+                                tmp_artifact_type_id = 4;
+                            }else if(artifactChoosedType.get(x).equals("Plume")){
+                                tmp_artifact_type_id = 2;
+                            }else if(artifactChoosedType.get(x).equals("Sand")){
+                                tmp_artifact_type_id = 5;
+                            }else if(artifactChoosedType.get(x).equals("Goblet")){
+                                tmp_artifact_type_id = 1;
+                            }else if(artifactChoosedType.get(x).equals("Circlet")){
+                                tmp_artifact_type_id = 3;
+                            }
+
+                            Picasso.get()
+                                    .load (item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(artifactChoosedNameList.get(x)))[tmp_artifact_type_id])
+                                    .transform(transformation)
+                                    .fit()
+                                    .error (R.drawable.paimon_full)
+                                    .into (item_img);
+                            cal_choosed_list.addView(char_view);
+                        }
+            }
+        });
+
+        ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+                boolean isCal = menu_cal.isChecked();
+
+                addArtifactIntoListUI(CharName_BASE,before_lvl,after_lvl,isCal,XPR,k,rare,follow_char_tmp,tmp_artifact_type);
+                calculatorProcess.setDBName(dataSheetName);
+                calculatorProcess.setup(context,choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList);
+                calculatorProcess.char_setup(choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList,"WRITE");
+                calculatorProcess.weapon_setup(weaponChoosedNameList,weaponChoosedBeforeLvlList,weaponChoosedAfterLvlList,weaponChoosedBeforeBreakLvlList,weaponChoosedAfterBreakLvlList,weaponChoosedIsCal,weaponChoosedBeforeBreakUPLvlList,weaponChoosedAfterBreakUPLvlList,weaponChoosedFollowList,weaponChoosedRare,"WRITE");
+                calculatorProcess.artifact_setup(artifactChoosedNameList,artifactChoosedBeforeLvlList,artifactChoosedAfterLvlList,artifactChoosedIsCal,artifactChoosedFollowList,artifactChoosedRare,artifactChoosedType,"WRITE");
+                calculatorProcess.saveToDB();
+
+
+            }
+        });
+
+        cancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.dismiss();
+            }
+        });
+
+        dialog.setContentView(view);
+        dialog.setCanceledOnTouchOutside(true);
+        //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
+        Window dialogWindow = dialog.getWindow();
+        WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+        lp.width = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth());
+        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        lp.gravity = Gravity.BOTTOM;
+        dialogWindow.setAttributes(lp);
+        dialog.show();
+
+
+    }
+
+    private void chooseFollow(View view) {
+        Log.wtf("TMP0","TMP");
+
+        ArrayList<String> cList = new ArrayList<String>();
+
+        for (int x = 0 ; x < choosedNameList.size() ; x++){
+            Log.wtf("TMP1","TMP");
+            if(choosedIsCal.get(x) == true ){
+                Log.wtf("TMP2","TMP");
+                if(artifactChoosedFollowList.size() == 0 && artifactChoosedType.size() == 0){
+                    cList.add(getString(item_rss.getCharByName(choosedNameList.get(x))[1]));
+                }else {
+                    for (int y = 0 ; y < artifactChoosedFollowList.size() ; y ++){
+                        Log.wtf("TMP3","TMP");
+                        if (artifactChoosedType.get(y).equals(tmp_artifact_type) && artifactChoosedFollowList.get(y).equals(choosedNameList.get(x))){
+                            Log.wtf("TMP4","TMP");
+                        }else if(!cList.contains(choosedNameList.get(x))){
+                            cList.add(getString(item_rss.getCharByName(choosedNameList.get(x))[1]));
+                        }
+                    }
+                }
+
+            }
+        }
+
+        ArrayAdapter char_aa = new ArrayAdapter(context,R.layout.spinner_item,cList);
+        char_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
+
+        Spinner char_sp = view.findViewById(R.id.menu_char_follow);
+        char_sp.setVisibility(View.VISIBLE);
+        char_sp.setAdapter(char_aa);
+        char_sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                follow_char_tmp = choosedNameList.get(position);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                follow_char_tmp = "NaN";
+            }
+        });
 
 
     }
@@ -1611,7 +2296,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         }
     }
 
-    private void addWeaponIntoListUI(String charName_base, int before_lvl, int after_lvl, int before_break, int after_break, boolean isCal, boolean beforeUP, boolean afterUP, String XPR, int k, int rare) {
+    private void addWeaponIntoListUI(String charName_base, int before_lvl, int after_lvl, int before_break, int after_break, boolean isCal, boolean beforeUP, boolean afterUP, String XPR, int k, int rare,String follow_char) {
         LinearLayout cal_choosed_list = findViewById(R.id.cal_weapon_choosed_list);
         cal_choosed_list.removeAllViews();
         // THERE WILL USE ON ADD ITEMS INTO EVERY ARRAYLIST *-> LATER ADD MORE VAR*
@@ -1627,7 +2312,9 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             weaponChoosedBeforeBreakUPLvlList.add(beforeUP);
             weaponChoosedAfterBreakUPLvlList.add(afterUP);
             weaponChoosedRare.add(rare);
-            weaponChoosedFollowList.add(null);
+            weaponChoosedFollowList.add(follow_char);
+
+
         }else if (XPR.equals("EDIT")){
             weaponChoosedNameList.set(k,charName_base);
             weaponChoosedBeforeLvlList.set(k,before_lvl);
@@ -1638,7 +2325,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             weaponChoosedBeforeBreakUPLvlList.set(k,beforeUP);
             weaponChoosedAfterBreakUPLvlList.set(k,afterUP);
             weaponChoosedRare.set(k,rare);
-            weaponChoosedFollowList.set(k,null);
+            weaponChoosedFollowList.set(k,follow_char);
         }
 
         for (int x = 0 ; x < weaponChoosedNameList.size(); x++){
@@ -1666,6 +2353,70 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             cal_choosed_list.addView(char_view);
         }
     }
+
+    private void addArtifactIntoListUI(String charName_base, int before_lvl, int after_lvl, boolean isCal, String XPR, int k, int rare,String follow_char, String artifact_type) {
+        LinearLayout cal_choosed_list = findViewById(R.id.cal_artifact_choosed_list);
+        cal_choosed_list.removeAllViews();
+        // THERE WILL USE ON ADD ITEMS INTO EVERY ARRAYLIST *-> LATER ADD MORE VAR*
+
+        if(XPR.equals("ADD")){
+            artifactChoosedNameList.add(charName_base);
+            artifactChoosedBeforeLvlList.add(before_lvl);
+            artifactChoosedAfterLvlList.add(after_lvl);
+            artifactChoosedIsCal.add(isCal);
+            artifactChoosedRare.add(rare);
+            artifactChoosedFollowList.add(follow_char);
+            artifactChoosedType.add(artifact_type);
+        }else if (XPR.equals("EDIT")){
+            artifactChoosedNameList.set(k,charName_base);
+            artifactChoosedBeforeLvlList.set(k,before_lvl);
+            artifactChoosedAfterLvlList.set(k,after_lvl);
+            artifactChoosedIsCal.set(k,isCal);
+            artifactChoosedRare.set(k,rare);
+            artifactChoosedFollowList.set(k,follow_char);
+            artifactChoosedType.set(k,artifact_type);
+        }
+
+        for (int x = 0 ; x < artifactChoosedNameList.size(); x++){
+            Log.w("artifactChoosedNameList"+String.valueOf(x),artifactChoosedNameList.get(x));
+            View char_view = LayoutInflater.from(this).inflate(R.layout.item_img, cal_choosed_list, false);
+            ImageView item_img = char_view.findViewById(R.id.item_img);
+            String charName = artifactChoosedNameList.get(x);
+            int finalX = x;
+            item_img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    artifactQuestion(charName,"EDIT", finalX,rare);
+                }
+            });
+
+            final int radius = 180;
+            final int margin = 4;
+            final Transformation transformation = new RoundedCornersTransformation(radius, margin);
+            int tmp_artifact_type_id = 1;
+
+            if(artifactChoosedType.get(x).equals("Flower")){
+                tmp_artifact_type_id = 4;
+            }else if(artifactChoosedType.get(x).equals("Plume")){
+                tmp_artifact_type_id = 2;
+            }else if(artifactChoosedType.get(x).equals("Sand")){
+                tmp_artifact_type_id = 5;
+            }else if(artifactChoosedType.get(x).equals("Goblet")){
+                tmp_artifact_type_id = 1;
+            }else if(artifactChoosedType.get(x).equals("Circlet")){
+                tmp_artifact_type_id = 3;
+            }
+
+            Picasso.get()
+                    .load (item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(artifactChoosedNameList.get(x)))[tmp_artifact_type_id])
+                    .transform(transformation)
+                    .fit()
+                    .error (R.drawable.paimon_full)
+                    .into (item_img);
+            cal_choosed_list.addView(char_view);
+        }
+    }
+
 
     public ArrayList<String> checkNameList () {
         return choosedNameList;

@@ -305,12 +305,8 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                     } else {
                         if (WeaponsAdapter.this.context instanceof CalculatorUI) {
                             Log.wtf("YES", "IT's");
-                            if (!((CalculatorUI) WeaponsAdapter.this.context).checkNameList().contains(String.valueOf(ViewHolder.this.weapon_base_name.getText()).replace("_", StringUtils.SPACE))) {
-                                Log.w("WEAPON_BASE", (String) ViewHolder.this.weapon_base_name.getText());
-                                ((CalculatorUI) WeaponsAdapter.this.context).weaponQuestion(String.valueOf(weapon_base_name.getText()), "ADD", 0, (int) weapon_star.getRating());
-                                return;
-                            }
-                            Toast.makeText((CalculatorUI) WeaponsAdapter.this.context, WeaponsAdapter.this.context.getString(R.string.cal_choosed_already), Toast.LENGTH_SHORT).show();
+                            Log.w("WEAPON_BASE", (String) ViewHolder.this.weapon_base_name.getText());
+                            ((CalculatorUI) WeaponsAdapter.this.context).weaponQuestion(String.valueOf(weapon_base_name.getText()), "ADD", 0, (int) weapon_star.getRating());
                             return;
                         }
                         return;

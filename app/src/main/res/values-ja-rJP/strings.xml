@@ -224,9 +224,6 @@
     <string name="char_lvls">キャラクターレベル</string>
 
     <!-- Language (Don't translate)-->
-    <string name="zh_hk" translatable="false">繁體中文 (港、澳、台)</string>
-    <string name="en_us" translatable="false">English (US)</string>
-    <string name="zh_cn" translatable="false">简体中文</string>
 
     <!-- main_page -->
     <string name="material_force">限界突破素材</string>
@@ -444,6 +441,8 @@
     <string name="none_info">現時点では彼/彼女に関する関連情報はありません。</string>>
     <string name="weapon_stat">"二次属性 : "</string>
     <string name="weapon_stat_atk">"攻撃力"</string>
+    <string name="weapon_stat_DEF">"防御力"</string>
+    <string name="weapon_stat_HP">"HP"</string>
     <string name="weapon_stat_atkP">"攻撃力 %"</string>
     <string name="weapon_stat_CritDMGP">"会心 %"</string>
     <string name="weapon_stat_CritRateP">"会心率 %"</string>
@@ -504,7 +503,7 @@
     <string name="maiden_beloved">"愛される少女"</string>
     <string name="martial_artist">"武人"</string>
     <string name="noblesse_oblige">"旧貴族のしつけ"</string>
-    <string name="pale_flame">"蒼白の炎"</string>
+    <string name="pale_flame">\"</string>
     <string name="prayers_of_destiny">"水祭りの人"</string>
     <string name="prayers_of_illumination">"火祭りの人"</string>
     <string name="prayers_of_wisdom">"雷祭りの人"</string>

@@ -202,9 +202,6 @@
     <string name="char_lvls">Уровень персонажа</string>
 
     <!-- Language (Don't translate)-->
-    <string name="zh_hk" translatable="false">繁體中文 (港、澳、台)</string>
-    <string name="en_us" translatable="false">English (US)</string>
-    <string name="zh_cn" translatable="false">简体中文</string>
 
     <!-- main_page -->
     <string name="material_force">Материалы доступные сегодня</string>
@@ -423,6 +420,8 @@
     <string name="none_info">Актуальной информации о нём/ей</string>>
     <string name="weapon_stat">"2-й артибут: "</string>
     <string name="weapon_stat_atk">"АТК"</string>
+    <string name="weapon_stat_DEF">"ЗАЩ"</string>
+    <string name="weapon_stat_HP">"HP"</string>
     <string name="weapon_stat_atkP">"АТК %"</string>
     <string name="weapon_stat_CritDMGP">"Крит. урон %"</string>
     <string name="weapon_stat_CritRateP">"Шанс. кита %"</string>

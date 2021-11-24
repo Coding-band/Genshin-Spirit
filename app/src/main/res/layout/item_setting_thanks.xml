@@ -286,7 +286,18 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="4dp"
                     android:layout_weight="1"
-                    android:text="★ 没把那可露露练起来就不改名字#4382" />
+                    android:text="★ 哇係小秋嘎嘎#4382" />
+
+                <TextView
+                    android:id="@+id/textView15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    android:text="★ UK#5815" />
 
             </LinearLayout>
 

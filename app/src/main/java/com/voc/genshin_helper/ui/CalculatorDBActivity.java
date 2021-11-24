@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.ContentValues;
 import android.content.Context;
@@ -41,6 +42,7 @@ import com.voc.genshin_helper.database.DataBaseHelper;
 import com.voc.genshin_helper.util.IndexDBHelper;
 
 import java.io.File;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -72,15 +74,18 @@ public class CalculatorDBActivity extends AppCompatActivity {
     DataBaseHelper dbHelper = null;
     FloatingActionButton db_add_btn;
 
+    Activity activity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_cal_db);
         context = this;
         dbHelper = new DataBaseHelper(this);
+        activity = this;
 
         mList = findViewById(R.id.main_list);
-        mAdapter = new CalculatorDBAdapter(this, calculatorDBList);
+        mAdapter = new CalculatorDBAdapter(this, calculatorDBList,activity);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 1);
         mList.setLayoutManager(mLayoutManager);
         mList.setAdapter(mAdapter);
@@ -134,10 +139,17 @@ public class CalculatorDBActivity extends AppCompatActivity {
                 db_ok.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        if(!db_name_et.getText().toString().equals("") && !db_name_et.getText().toString().equals(" ") && db_name_et.getText() != null) {
-                            insertNewIndexRecord(db_name_et.getText().toString(), 0, 0, 0, String.valueOf(System.currentTimeMillis()));
-                            dialog.dismiss();
-                            Toast.makeText(context, String.valueOf(mAdapter.getItemCount()), Toast.LENGTH_SHORT).show();
+                        String newName = db_name_et.getText().toString();
+                        if(!newName.equals("") && !newName.equals(" ") && db_name_et.getText() != null) {
+                            if(newName.startsWith("1")||newName.startsWith("2")||newName.startsWith("3")||newName.startsWith("4")||newName.startsWith("5")||newName.startsWith("6")||newName.startsWith("7")||newName.startsWith("8")||newName.startsWith("9")||newName.startsWith("10")){
+                                Toast.makeText(context, "Number is not allow to use a first character.", Toast.LENGTH_SHORT).show();
+                            }else {
+                                if(newName.contains(" ")){
+                                    newName = newName.replace(" ","_");
+                                }
+                                insertNewIndexRecord(newName, 0, 0, 0, String.valueOf(System.currentTimeMillis()));
+                                dialog.dismiss();
+                            }
                         }
                     }
                 });
@@ -149,7 +161,7 @@ public class CalculatorDBActivity extends AppCompatActivity {
                 WindowManager.LayoutParams lp = dialogWindow.getAttributes();
                 lp.width = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth());
                 lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
-                lp.gravity = Gravity.BOTTOM;
+                lp.gravity = Gravity.CENTER;
                 dialogWindow.setAttributes(lp);
                 dialog.show();
 
@@ -158,7 +170,7 @@ public class CalculatorDBActivity extends AppCompatActivity {
 
     }
 
-    private void readIndexRecord (){
+    public void readIndexRecord (){
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
         // Define a projection that specifies which columns from the database
@@ -263,6 +275,7 @@ public class CalculatorDBActivity extends AppCompatActivity {
                 "artifactBeforeLvl" + " INTEGER," +
                 "artifactAfterLvl" + " INTEGER," +
                 "artifactFollow" + " TEXT," +
+                "artifactRare" + " INTEGER," +
                 "artifactIsCal" + " BOOLEAN" + ");");
 
         // Insert the new row, returning the primary key value of the new row
@@ -287,8 +300,15 @@ public class CalculatorDBActivity extends AppCompatActivity {
         ArrayList<Integer> charChoosedBeforeSkill3LvlList= new ArrayList<Integer>();
         ArrayList<Integer> charChoosedAfterSkill3LvlList= new ArrayList<Integer>();
         ArrayList<Boolean> charChoosedIsCal= new ArrayList<Boolean>();
+        ArrayList<Integer> charChoosedWeaponIdList = new ArrayList<Integer>();
+        ArrayList<Integer> charChoosedFlowerIdList = new ArrayList<Integer>();
+        ArrayList<Integer> charChoosedPlumeIdList = new ArrayList<Integer>();
+        ArrayList<Integer> charChoosedSandIdList = new ArrayList<Integer>();
+        ArrayList<Integer> charChoosedGobletIdList = new ArrayList<Integer>();
+        ArrayList<Integer> charChoosedCircletIdList = new ArrayList<Integer>();
 
         ArrayList<String> weaponChoosedNameList = new ArrayList<>();
+        ArrayList<Integer> weaponChoosedIdList = new ArrayList<>();
         ArrayList<Integer> weaponChoosedBeforeLvlList = new ArrayList<>();
         ArrayList<Integer> weaponChoosedAfterLvlList = new ArrayList<>();
         ArrayList<Integer> weaponChoosedBeforeBreakLvlList = new ArrayList<>();
@@ -298,9 +318,9 @@ public class CalculatorDBActivity extends AppCompatActivity {
         ArrayList<String> weaponChoosedFollowList = new ArrayList<>();
         ArrayList<Integer> weaponChoosedRare = new ArrayList<>();
         ArrayList<Boolean> weaponChoosedIsCal = new ArrayList<>();
-        //ArrayList<Integer> weaponChoosedRare = new ArrayList<>();
 
         ArrayList<String> artifactChoosedNameList = new ArrayList<>();
+        ArrayList<Integer> artifactChoosedIdList = new ArrayList<>();
         ArrayList<Integer> artifactChoosedBeforeLvlList = new ArrayList<>();
         ArrayList<Integer> artifactChoosedAfterLvlList = new ArrayList<>();
         ArrayList<String> artifactChoosedFollowList = new ArrayList<>();
@@ -343,6 +363,13 @@ public class CalculatorDBActivity extends AppCompatActivity {
             charChoosedAfterSkill3LvlList.add(cursor.getInt(cursor.getColumnIndexOrThrow("charAfterSkill3Lvl")));
 
             charChoosedIsCal.add(getBooleanByInt(cursor.getInt(cursor.getColumnIndexOrThrow("charIsCal"))));
+
+            //charChoosedWeaponIdList.add(cursor.getInt(cursor.getColumnIndexOrThrow("charChoosedWeaponIdList")));
+            //charChoosedFlowerIdList.add(cursor.getInt(cursor.getColumnIndexOrThrow("charChoosedFlowerIdList")));
+            //charChoosedPlumeIdList.add(cursor.getInt(cursor.getColumnIndexOrThrow("charChoosedPlumeIdList")));
+            //charChoosedSandIdList.add(cursor.getInt(cursor.getColumnIndexOrThrow("charChoosedSandIdList")));
+            //charChoosedGobletIdList.add(cursor.getInt(cursor.getColumnIndexOrThrow("charChoosedGobletIdList")));
+            //charChoosedCircletIdList.add(cursor.getInt(cursor.getColumnIndexOrThrow("charChoosedCircletIdList")));
         }
         cursor.close();
 
@@ -361,6 +388,7 @@ public class CalculatorDBActivity extends AppCompatActivity {
         );
 
         while(cursor.moveToNext()) {
+            //weaponChoosedIdList.add(cursor.getInt(cursor.getColumnIndexOrThrow("weaponId")));
             weaponChoosedNameList.add(cursor.getString(cursor.getColumnIndexOrThrow("weaponName")));
 
             weaponChoosedBeforeLvlList.add(cursor.getInt(cursor.getColumnIndexOrThrow("weaponBeforeLvl")));
@@ -393,17 +421,16 @@ public class CalculatorDBActivity extends AppCompatActivity {
         );
 
         while(cursor.moveToNext()) {
+            //artifactChoosedIdList.add(cursor.getInt(cursor.getColumnIndexOrThrow("artifactId")));
             artifactChoosedNameList.add(cursor.getString(cursor.getColumnIndexOrThrow("artifactName")));
 
             artifactChoosedBeforeLvlList.add(cursor.getInt(cursor.getColumnIndexOrThrow("artifactBeforeLvl")));
             artifactChoosedAfterLvlList.add(cursor.getInt(cursor.getColumnIndexOrThrow("artifactAfterLvl")));
 
-            charChoosedBeforeBreakUPLvlList.add(getBooleanByInt(cursor.getInt(cursor.getColumnIndexOrThrow("artifactBeforeBreakUpLvl"))));
-            charChoosedAfterBreakUPLvlList.add(getBooleanByInt(cursor.getInt(cursor.getColumnIndexOrThrow("artifactAfterBreakUpLvl"))));
-
             artifactChoosedFollowList.add(cursor.getString(cursor.getColumnIndexOrThrow("artifactFollow")));
-            artifactChoosedRare.add(cursor.getInt(cursor.getColumnIndexOrThrow("artifactChoosedRare")));
+            artifactChoosedRare.add(cursor.getInt(cursor.getColumnIndexOrThrow("artifactRare")));
             artifactChoosedIsCal.add(getBooleanByInt(cursor.getInt(cursor.getColumnIndexOrThrow("artifactIsCal"))));
+            artifactChoosedType.add(cursor.getString(cursor.getColumnIndexOrThrow("artifactType")));
         }
         cursor.close();
 
@@ -427,8 +454,15 @@ public class CalculatorDBActivity extends AppCompatActivity {
         intent.putExtra("charChoosedBeforeSkill3LvlList",charChoosedBeforeSkill3LvlList);
         intent.putExtra("charChoosedAfterSkill3LvlList",charChoosedAfterSkill3LvlList);
         intent.putExtra("charChoosedIsCal",charChoosedIsCal);
+        //intent.putExtra("charChoosedWeaponIdList",charChoosedWeaponIdList);
+        //intent.putExtra("charChoosedFlowerIdList",charChoosedFlowerIdList);
+        //intent.putExtra("charChoosedPlumeIdList",charChoosedPlumeIdList);
+        //intent.putExtra("charChoosedSandIdList",charChoosedSandIdList);
+        //intent.putExtra("charChoosedGobletIdList",charChoosedGobletIdList);
+        //intent.putExtra("charChoosedCircletIdList",charChoosedCircletIdList);
 
         intent.putExtra("weaponChoosedNameList",weaponChoosedNameList);
+        //intent.putExtra("weaponChoosedIdList",weaponChoosedIdList);
         intent.putExtra("weaponChoosedBeforeLvlList",weaponChoosedBeforeLvlList);
         intent.putExtra("weaponChoosedAfterLvlList",weaponChoosedAfterLvlList);
         intent.putExtra("weaponChoosedBeforeBreakLvlList",weaponChoosedBeforeBreakLvlList);
@@ -441,6 +475,7 @@ public class CalculatorDBActivity extends AppCompatActivity {
 
 
         intent.putExtra("artifactChoosedNameList",artifactChoosedNameList);
+        //intent.putExtra("artifactChoosedIdList",artifactChoosedIdList);
         intent.putExtra("artifactChoosedBeforeLvlList",artifactChoosedBeforeLvlList);
         intent.putExtra("artifactChoosedAfterLvlList",artifactChoosedAfterLvlList);
         intent.putExtra("artifactChoosedFollowList",artifactChoosedFollowList);
@@ -449,6 +484,7 @@ public class CalculatorDBActivity extends AppCompatActivity {
         intent.putExtra("artifactChoosedType",artifactChoosedType);
 
         startActivity(intent);
+        finish();
     }
 
 

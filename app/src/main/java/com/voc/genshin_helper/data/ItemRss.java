@@ -771,6 +771,8 @@ public class ItemRss {
         else if(name.equals("精鍛用雜礦")){return R.drawable.enchancement_ore;}
         else if(name.equals("精鍛用良礦")){return R.drawable.fine_enchancement_ore;}
         else if(name.equals("精鍛用魔礦")){return R.drawable.mystic_enchancement_ore;}
+        else if(name.equals("祝聖油膏")){return R.drawable.sanctifying_unction;}
+        else if(name.equals("祝聖精華")){return R.drawable.sanctifying_essence;}
 
         else {return R.drawable.paimon_lost;}
     }

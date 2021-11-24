@@ -1,47 +1,54 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Package E:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/menu_db_add.xml was
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Package E:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/menu_edit_delete.xml was
   ~ Created by Voc-夜芷冰 , Programmer of Xectorda
   ~ Copyright © 2021 Xectorda 版權所有
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:hedgehog="http://schemas.android.com/tools"
-    android:background="@drawable/bg_less_edge"
-    android:focusableInTouchMode="true"
+    android:layout_margin="16dp"
+    android:background="@color/page_bg"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/db_title_tv"
+        android:id="@+id/textView13"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="Create a new Calculate Set"
+        android:layout_margin="8dp"
+        android:text="Edit The Set's name : "
         android:textColor="@color/tv_color"
-        android:textSize="24sp" />
+        android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/db_name_et"
+        android:id="@+id/menu_edit_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="16dp"
-        android:hint="Please enter a name"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
         android:inputType="textPersonName"
         android:maxLength="64"
-        android:textColor="@color/tv_color"
-        android:textSize="20sp" />
+        android:text="Name"
+        android:textColor="@color/tv_color" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:orientation="vertical">
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/menu_delete"
+            android:layout_width="72dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:background="@drawable/bg_square_cancel_colorful"
+            android:text="@string/delete"
+            android:textColor="@color/tv_color"
+            android:visibility="visible" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -51,7 +58,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/db_cancel"
+                android:id="@+id/menu_cancel"
                 android:layout_width="72dp"
                 android:layout_height="36dp"
                 android:layout_gravity="center"
@@ -61,7 +68,7 @@
                 android:textColor="@color/theme_color" />
 
             <Button
-                android:id="@+id/db_ok"
+                android:id="@+id/menu_ok"
                 android:layout_width="72dp"
                 android:layout_height="36dp"
                 android:layout_gravity="center"
@@ -72,5 +79,4 @@
         </LinearLayout>
 
     </LinearLayout>
-
 </LinearLayout>

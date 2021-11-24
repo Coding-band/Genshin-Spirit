@@ -35,6 +35,7 @@ import com.voc.genshin_helper.R;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.io.IOUtils;
@@ -191,13 +192,14 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                     SharedPreferences sharedPreferences = ArtifactsAdapter.this.context.getSharedPreferences("user_info", 0);
                     new ItemRss();
                     String string = sharedPreferences.getString("curr_lang", "zh-HK");
-                    AssetManager assets = ArtifactsAdapter.this.context.getResources().getAssets();
+                    AssetManager assets = ArtifactsAdapter.this.context.getAssets();
                     Log.wtf("CharName_BASE", valueOf);
                     String replace = valueOf.replace("'", "_");
                     Log.wtf("lang", string);
                     try {
                         String[] list = assets.list("db/artifacts/" + string + "/");
                         String[] list2 = assets.list("db/artifacts/en-US/");
+                        System.out.println(Arrays.toString(assets.list("/assets")));
                         String str = null;
                         for (String str2 : list) {
                             if (str2.equals(replace + ".json")) {
@@ -206,7 +208,6 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                                 open.close();
                             }
                         }
-                        Log.w("result1", String.valueOf(str.isEmpty()));
                         if (str == null) {
                             for (String str3 : list2) {
                                 if (str3.equals(replace + ".json")) {
@@ -304,6 +305,8 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                     Log.wtf("YES", "IT's");
                     if (!((CalculatorUI) ArtifactsAdapter.this.context).checkNameList().contains(String.valueOf(ViewHolder.this.artifact_base_name.getText()).replace("_", StringUtils.SPACE))) {
                         Log.w("WEAPON_BASE", (String) ViewHolder.this.artifact_base_name.getText());
+                        ((CalculatorUI) context).artifactQuestion(String.valueOf(artifact_base_name.getText()), "ADD", 0, (int) artifact_star.getRating());
+                        return;
                     } else {
                         Toast.makeText((CalculatorUI) ArtifactsAdapter.this.context, ArtifactsAdapter.this.context.getString(R.string.cal_choosed_already), Toast.LENGTH_SHORT).show();
                     }

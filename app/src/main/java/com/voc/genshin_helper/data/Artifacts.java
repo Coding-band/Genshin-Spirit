@@ -17,17 +17,19 @@ public class Artifacts {
     public int rare;
     public String stat_1;
     public String stat_2;
+    public String type;
 
     public Artifacts() {
     }
 
-    public Artifacts(String str, int i, String str2, int i2, String str3, String str4, String str5) {
+    public Artifacts(String str, int i, String str2, int i2, String str3, String str4, String str5,String type) {
         this.name = str;
         this.rare = i;
         this.isComing = i2;
         this.stat_1 = str3;
         this.stat_2 = str4;
         this.base_name = str5;
+        this.type = type;
     }
 
     public String getName() {
@@ -76,5 +78,13 @@ public class Artifacts {
 
     public void setBaseName(String str) {
         this.base_name = str;
+    }
+
+    public String getType() {
+        return this.type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 }

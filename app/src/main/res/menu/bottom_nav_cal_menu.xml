@@ -7,8 +7,16 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:icon="@drawable/klee_ico" android:id="@+id/nav_char" android:title="@string/title_char"/>
-    <item android:icon="@drawable/art2" android:id="@+id/nav_artifacts" android:visible="false" android:title="@string/title_artifacts"/>
     <item android:icon="@drawable/weapons2" android:id="@+id/nav_weapons" android:visible="true" android:title="@string/title_weapons"/>
+    <item
+        android:id="@+id/nav_artifacts"
+        android:icon="@drawable/art2"
+        android:title="@string/title_artifacts"
+        android:visible="true" />
     <item android:icon="@drawable/wanderers_advice" android:id="@+id/nav_result" android:title="@string/result"/>
-    <item android:icon="@drawable/paimon_lost" android:id="@+id/nav_buff" android:visible="false" android:title="@string/buff"/>
+    <item
+        android:id="@+id/nav_buff"
+        android:icon="@drawable/paimon_lost"
+        android:title="@string/buff"
+        android:visible="true" />
 </menu>

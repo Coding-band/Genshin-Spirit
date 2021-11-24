@@ -425,6 +425,78 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/menu_artifact_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:gravity="left|center_vertical|center_horizontal|center"
+        android:paddingLeft="16dp"
+        android:text="@string/title_artifacts"
+        android:textColor="@color/tv_color"
+        android:textSize="16sp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/menu_artifact_title_ll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/ico_flower"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ico_flower"
+            app:tint="@color/tv_color" />
+
+        <ImageView
+            android:id="@+id/ico_plume"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ico_plume"
+            app:tint="@color/tv_color" />
+
+        <ImageView
+            android:id="@+id/ico_sand"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ico_sand"
+            app:tint="@color/tv_color" />
+
+        <ImageView
+            android:id="@+id/ico_goblet"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ico_goblet"
+            app:tint="@color/tv_color" />
+
+        <ImageView
+            android:id="@+id/ico_circlet"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/ico_circlet"
+            app:tint="@color/tv_color" />
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/menu_char_follow"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:visibility="gone" />
+
     <Switch
         android:id="@+id/menu_cal"
         android:layout_width="wrap_content"
@@ -437,6 +509,7 @@
         android:textColor="@color/tv_color"
         android:thumbTint="@color/tv_color"
         android:trackTint="@color/tv_color" />
+
 
     <LinearLayout
         android:layout_width="match_parent"

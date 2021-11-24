@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,6 +24,7 @@ import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.data.ScreenSizeUtils;
 import com.voc.genshin_helper.database.DataBaseContract;
 import com.voc.genshin_helper.database.DataBaseHelper;
+import com.voc.genshin_helper.ui.CalculatorDBActivity;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -332,7 +334,41 @@ public class CalculatorProcess {
     // STATUS_CAL_FINISHED
     boolean char_fin = false;
     boolean weapon_fin = false;
+    boolean artifact_fin = false;
     String dataSheetName = "NaN";
+
+    /** Artifacts from CalculatorUI */
+    public ArrayList<String> ArtifactNameList = new ArrayList<>();
+    public ArrayList<Integer> ArtifactAfterLvlList = new ArrayList<>();
+    public ArrayList<Integer> ArtifactBeforeLvlList = new ArrayList<>();
+    public ArrayList<String> ArtifactFollowList = new ArrayList<>();
+    public ArrayList<Integer> ArtifactRareList = new ArrayList<>();
+    public ArrayList<Boolean> ArtifactIsCal = new ArrayList<>();
+    public ArrayList<String> artifactType = new ArrayList<>();
+
+
+    public ArrayList<Integer> ArtifactRare1LvlList = new ArrayList<>();
+    public ArrayList<Integer> ArtifactRare1ExpList = new ArrayList<>();
+    public ArrayList<Integer> ArtifactRare1MoraList = new ArrayList<>();
+    public ArrayList<Integer> ArtifactRare2LvlList = new ArrayList<>();
+    public ArrayList<Integer> ArtifactRare2ExpList = new ArrayList<>();
+    public ArrayList<Integer> ArtifactRare2MoraList = new ArrayList<>();
+    public ArrayList<Integer> ArtifactRare3LvlList = new ArrayList<>();
+    public ArrayList<Integer> ArtifactRare3ExpList = new ArrayList<>();
+    public ArrayList<Integer> ArtifactRare3MoraList = new ArrayList<>();
+    public ArrayList<Integer> ArtifactRare4LvlList = new ArrayList<>();
+    public ArrayList<Integer> ArtifactRare4ExpList = new ArrayList<>();
+    public ArrayList<Integer> ArtifactRare4MoraList = new ArrayList<>();
+    public ArrayList<Integer> ArtifactRare5LvlList = new ArrayList<>();
+    public ArrayList<Integer> ArtifactRare5ExpList = new ArrayList<>();
+    public ArrayList<Integer> ArtifactRare5MoraList = new ArrayList<>();
+
+    /** TEMP */
+    public ArrayList<Integer> ArtifactExpList = new ArrayList<>();
+    public ArrayList<Integer> ArtifactLvlList = new ArrayList<>();
+    public ArrayList<Integer> ArtifactMoraList = new ArrayList<>();
+    int artifact_mid = 0;
+    int artifact_big = 0;
 
 
     public void setVP(ViewPager viewPager, View viewPager3) {
@@ -452,6 +488,23 @@ public class CalculatorProcess {
         this.WeaponRareList = arrayList10;
         if(arg.equals("READ")){
             weapon_readJSON();
+        }
+    }
+
+
+    public void artifact_setup(ArrayList<String> artifactChoosedNameList, ArrayList<Integer> artifactChoosedBeforeLvlList, ArrayList<Integer> artifactChoosedAfterLvlList, ArrayList<Boolean> artifactChoosedIsCal, ArrayList<String> artifactChoosedFollowList, ArrayList<Integer> artifactChoosedRare, ArrayList<String> artifactChoosedType, String arg) {
+        this.ArtifactNameList = artifactChoosedNameList;
+        this.ArtifactBeforeLvlList = artifactChoosedBeforeLvlList;
+        this.ArtifactAfterLvlList = artifactChoosedAfterLvlList;
+        this.ArtifactIsCal = artifactChoosedIsCal;
+        this.ArtifactFollowList = artifactChoosedFollowList;
+        this.ArtifactRareList = artifactChoosedRare;
+        this.artifactType = artifactChoosedType;
+
+        Log.wtf("artifactChoosedNameList",String.valueOf(artifactChoosedNameList.size()));
+        Log.wtf("ArtifactBeforeLvlList",String.valueOf(ArtifactBeforeLvlList.size()));
+        if(arg.equals("READ")){
+            artifact_readJSON();
         }
     }
 
@@ -822,6 +875,52 @@ public class CalculatorProcess {
             }
         }
         weapon_fin = true;
+        check_cal_finished();
+    }
+
+    public void artifact_calculate () {
+        Log.wtf("HEY","TOMMYS");
+        for (int x = 0 ; x < ArtifactNameList.size() ; x ++) {
+            if (ArtifactIsCal.get(x) == true) {
+                /** CAL EXP */
+                int exp_tmp = 0;
+                
+                int rare_tmp = ArtifactRareList.get(x);
+                Log.wtf("rare_tmp", String.valueOf(rare_tmp));
+
+                if (rare_tmp == 1) {
+                    ArtifactLvlList = ArtifactRare1LvlList;
+                    ArtifactExpList = ArtifactRare1ExpList;
+                    ArtifactMoraList = ArtifactRare1MoraList;
+                } else if (rare_tmp == 2) {
+                    ArtifactLvlList = ArtifactRare2LvlList;
+                    ArtifactExpList = ArtifactRare2ExpList;
+                    ArtifactMoraList = ArtifactRare2MoraList;
+                } else if (rare_tmp == 3) {
+                    ArtifactLvlList = ArtifactRare3LvlList;
+                    ArtifactExpList = ArtifactRare3ExpList;
+                    ArtifactMoraList = ArtifactRare3MoraList;
+                } else if (rare_tmp == 4) {
+                    ArtifactLvlList = ArtifactRare4LvlList;
+                    ArtifactExpList = ArtifactRare4ExpList;
+                    ArtifactMoraList = ArtifactRare4MoraList;
+                } else if (rare_tmp == 5) {
+                    ArtifactLvlList = ArtifactRare5LvlList;
+                    ArtifactExpList = ArtifactRare5ExpList;
+                    ArtifactMoraList = ArtifactRare5MoraList;
+                }
+
+                for (int y = ArtifactBeforeLvlList.get(x); y < ArtifactAfterLvlList.get(x); y++) {
+                    exp_tmp = exp_tmp + ArtifactExpList.get(y);
+                    Log.wtf("exp_tmp", String.valueOf(exp_tmp)+" EE");
+                    morax = morax + ArtifactMoraList.get(y);
+                }
+
+                getArtifactEXPItemCount(x, exp_tmp);
+
+            }
+        }
+        artifact_fin = true;
         check_cal_finished();
     }
 
@@ -1233,8 +1332,8 @@ public class CalculatorProcess {
          */
 
         Log.wtf("OTHERS","exp_small : "+String.valueOf(exp_small)+" | exp_mid : "+String.valueOf(exp_mid)+" | exp_big : "+String.valueOf(exp_big)+" | mora : "+String.valueOf(morax)+" | 智識之冕 : "+String.valueOf(智識之冕));
-        String[] other_temp = new String[]{"流浪者的經驗", "冒險家的經驗", "大英雄的經驗", "精鍛用雜礦", "精鍛用良礦", "精鍛用魔礦", "摩拉", "智識之冕"};
-        int[] other_temp_cnt = new int[]{exp_small,exp_mid,exp_big,weapon_small,weapon_mid,weapon_big,morax,智識之冕};
+        String[] other_temp = new String[]{"流浪者的經驗", "冒險家的經驗", "大英雄的經驗", "精鍛用雜礦", "精鍛用良礦", "精鍛用魔礦","祝聖油膏","祝聖精華","摩拉", "智識之冕"};
+        int[] other_temp_cnt = new int[]{exp_small,exp_mid,exp_big,weapon_small,weapon_mid,weapon_big,artifact_mid,artifact_big,morax,智識之冕};
         gridLayout = viewPager.findViewById(R.id.result_other_gl);
         gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
@@ -1401,6 +1500,36 @@ public class CalculatorProcess {
         weapon_big = weapon_big + big0;
         weapon_mid = weapon_mid + mid0;
         weapon_small = weapon_small + small0;
+    }
+
+    public void getArtifactEXPItemCount(int pos, int part_exp){
+        int big0 = 0 , mid0 = 0 ;
+        float temp1 = 0f , temp2 = 0f , temp3 = 0f;
+        int part0 = part_exp;
+
+        /**
+         * Constant
+         */
+
+        int big_const = 10000;
+        int mid_const = 2500;
+
+        if(part0 >= big_const) {
+            big0 = (int) part0 / big_const;
+            temp1 = ((float) part0/big_const - big0)*big_const;
+
+            if(temp1 >= mid_const){
+                mid0 = (int) temp1/mid_const;
+            }else {
+                mid0 = mid0 + 1;
+            }
+        }else if(part0 >= mid_const){
+            mid0 = (int) part0/mid_const;
+        }else {
+            mid0 = mid0 + 1;
+        }
+        artifact_big = artifact_big + big0;
+        artifact_mid = artifact_mid + mid0;
     }
 
 
@@ -1915,11 +2044,82 @@ public class CalculatorProcess {
 
         weapon_calculate();
         /**
-        if(!WeaponRareList.isEmpty()){
-            weapon_calculate();
-        }
+         if(!WeaponRareList.isEmpty()){
+         weapon_calculate();
+         }
          */
     }
+
+    public void artifact_readJSON() {
+        String artifact_rare1_exp = LoadData("db/artifacts/artifact_rare1_exp.json");
+        String artifact_rare2_exp = LoadData("db/artifacts/artifact_rare2_exp.json");
+        String artifact_rare3_exp = LoadData("db/artifacts/artifact_rare3_exp.json");
+        String artifact_rare4_exp = LoadData("db/artifacts/artifact_rare4_exp.json");
+        String artifact_rare5_exp = LoadData("db/artifacts/artifact_rare5_exp.json");
+
+        /** EXP */
+        try {
+            JSONArray array = new JSONArray(artifact_rare1_exp);
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject object = array.getJSONObject(i);
+                int lvl = object.getInt("lvl");
+                int exp = object.getInt("exp");
+                int mora = object.getInt("mora");
+                ArtifactRare1LvlList.add(lvl);
+                ArtifactRare1ExpList.add(exp);
+                ArtifactRare1MoraList.add(mora);
+            }
+
+            array = new JSONArray(artifact_rare2_exp);
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject object = array.getJSONObject(i);
+                int lvl = object.getInt("lvl");
+                int exp = object.getInt("exp");
+                int mora = object.getInt("mora");
+                ArtifactRare2LvlList.add(lvl);
+                ArtifactRare2ExpList.add(exp);
+                ArtifactRare2MoraList.add(mora);
+            }
+
+            array = new JSONArray(artifact_rare3_exp);
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject object = array.getJSONObject(i);
+                int lvl = object.getInt("lvl");
+                int exp = object.getInt("exp");
+                int mora = object.getInt("mora");
+                ArtifactRare3LvlList.add(lvl);
+                ArtifactRare3ExpList.add(exp);
+                ArtifactRare3MoraList.add(mora);
+            }
+
+            array = new JSONArray(artifact_rare4_exp);
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject object = array.getJSONObject(i);
+                int lvl = object.getInt("lvl");
+                int exp = object.getInt("exp");
+                int mora = object.getInt("mora");
+                ArtifactRare4LvlList.add(lvl);
+                ArtifactRare4ExpList.add(exp);
+                ArtifactRare4MoraList.add(mora);
+            }
+
+            array = new JSONArray(artifact_rare5_exp);
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject object = array.getJSONObject(i);
+                int lvl = object.getInt("lvl");
+                int exp = object.getInt("exp");
+                int mora = object.getInt("mora");
+                ArtifactRare5LvlList.add(lvl);
+                ArtifactRare5ExpList.add(exp);
+                ArtifactRare5MoraList.add(mora);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        artifact_calculate();
+
+    }
+
     public String LoadData(String inFile) {
         String tContents = "";
 
@@ -1987,6 +2187,7 @@ public class CalculatorProcess {
     }
 
 
+
     public void saveToDB() {
         Log.wtf("DB","saveToDB !");
         DataBaseHelper dbHelper = new DataBaseHelper(context);
@@ -2021,8 +2222,8 @@ public class CalculatorProcess {
                         "charBeforeBreakLvl = "+String.valueOf(BeforeBreakLvlList.get(x))+","+
                         "charAfterBreakLvl = "+String.valueOf(AfterBreakLvlList.get(x))+","+
 
-                        "charBeforeBreakUpLvl = "+BeforeBreakUPLvlList.get(x)+","+
-                        "charAfterBreakUpLvl = "+AfterBreakUPLvlList.get(x)+","+
+                        "charBeforeBreakUpLvl = "+String.valueOf((BeforeBreakUPLvlList.get(x)) ? 1 : 0 )+","+
+                        "charAfterBreakUpLvl = "+String.valueOf((AfterBreakUPLvlList.get(x)) ? 1 : 0 )+","+
 
                         "charBeforeSkill1Lvl = "+String.valueOf(BeforeSkill1LvlList.get(x))+","+
                         "charAfterSkill1Lvl = "+String.valueOf(AfterSkill1LvlList.get(x))+","+
@@ -2033,7 +2234,7 @@ public class CalculatorProcess {
                         "charBeforeSkill3Lvl = "+String.valueOf(BeforeSkill3LvlList.get(x))+","+
                         "charAfterSkill3Lvl = "+String.valueOf(AfterSkill3LvlList.get(x))+","+
 
-                        "charIsCal = "+IsCal.get(x)+
+                        "charIsCal = "+String.valueOf((IsCal.get(x)) ? 1 : 0 )+
 
                         " WHERE charName = \""+NameList.get(x)+"\";");
             }else {
@@ -2046,15 +2247,15 @@ public class CalculatorProcess {
                 values.put("charAfterLvl", AfterLvlList.get(x));
                 values.put("charBeforeBreakLvl", BeforeBreakLvlList.get(x));
                 values.put("charAfterBreakLvl", AfterBreakLvlList.get(x));
-                values.put("charBeforeBreakUpLvl", BeforeBreakUPLvlList.get(x));
-                values.put("charAfterBreakUpLvl", AfterBreakUPLvlList.get(x));
+                values.put("charBeforeBreakUpLvl", String.valueOf((BeforeBreakUPLvlList.get(x)) ? 1 : 0 ));
+                values.put("charAfterBreakUpLvl", String.valueOf((AfterBreakUPLvlList.get(x)) ? 1 : 0 ));
                 values.put("charBeforeSkill1Lvl", BeforeSkill1LvlList.get(x));
                 values.put("charAfterSkill1Lvl", AfterSkill1LvlList.get(x));
                 values.put("charBeforeSkill2Lvl", BeforeSkill2LvlList.get(x));
                 values.put("charAfterSkill2Lvl", AfterSkill2LvlList.get(x));
                 values.put("charBeforeSkill3Lvl", BeforeSkill3LvlList.get(x));
                 values.put("charAfterSkill3Lvl", AfterSkill3LvlList.get(x));
-                values.put("charIsCal", IsCal.get(x));
+                values.put("charIsCal", String.valueOf((IsCal.get(x)) ? 1 : 0 ));
 
                 db.insert(dataSheetName+"_char", null, values);
 
@@ -2085,12 +2286,12 @@ public class CalculatorProcess {
                         "weaponBeforeBreakLvl = "+String.valueOf(WeaponBeforeBreakLvlList.get(x))+","+
                         "weaponAfterBreakLvl = "+String.valueOf(WeaponAfterBreakLvlList.get(x))+","+
 
-                        "weaponBeforeBreakUpLvl = "+WeaponBeforeBreakUPLvlList.get(x)+","+
-                        "weaponAfterBreakUpLvl = "+WeaponAfterBreakUPLvlList.get(x)+","+
+                        "weaponBeforeBreakUpLvl = "+String.valueOf((WeaponBeforeBreakUPLvlList.get(x)) ? 1 : 0 )+","+
+                        "weaponAfterBreakUpLvl = "+String.valueOf((WeaponAfterBreakUPLvlList.get(x)) ? 1 : 0 )+","+
 
-                        "weaponFollow = "+WeaponFollowList.get(x)+","+
+                        "weaponFollow = \""+WeaponFollowList.get(x)+"\","+
                         "weaponRare = "+String.valueOf(WeaponRareList.get(x))+","+
-                        "weaponIsCal = "+WeaponIsCal.get(x)+
+                        "weaponIsCal = "+String.valueOf((WeaponIsCal.get(x)) ? 1 : 0 )+
 
                         " WHERE weaponName = \""+WeaponNameList.get(x)+"\";");
             }else {
@@ -2103,20 +2304,94 @@ public class CalculatorProcess {
                 values.put("weaponAfterLvl", WeaponAfterLvlList.get(x));
                 values.put("weaponBeforeBreakLvl", WeaponBeforeBreakLvlList.get(x));
                 values.put("weaponAfterBreakLvl", WeaponAfterBreakLvlList.get(x));
-                values.put("weaponBeforeBreakUpLvl", WeaponBeforeBreakUPLvlList.get(x));
-                values.put("weaponAfterBreakUpLvl", WeaponAfterBreakUPLvlList.get(x));
+                values.put("weaponBeforeBreakUpLvl", String.valueOf((WeaponBeforeBreakUPLvlList.get(x)) ? 1 : 0 ));
+                values.put("weaponAfterBreakUpLvl", String.valueOf((WeaponAfterBreakUPLvlList.get(x)) ? 1 : 0 ));
                 values.put("weaponRare", WeaponRareList.get(x));
                 values.put("weaponFollow", WeaponFollowList.get(x));
-                values.put("weaponIsCal", WeaponIsCal.get(x));
+                values.put("weaponIsCal", String.valueOf((WeaponIsCal.get(x)) ? 1 : 0 ));
 
                 db.insert(dataSheetName+"_weapon", null, values);
 
             }
             cursor.close();
         }
+
+        for (int x = 0 ; x < ArtifactNameList.size() ; x ++){
+            db = dbHelper.getReadableDatabase();
+            String[] projection = {"artifactName","artifactType","artifactFollow"};
+            String selection = "artifactName" + " = ?";
+            String[] selectionArgs = { ArtifactNameList.get(x) };
+            Cursor cursor = db.query(
+                    dataSheetName+"_artifact",   // The table to query
+                    projection,             // The array of columns to return (pass null to get all)
+                    selection,              // The columns for the WHERE clause
+                    selectionArgs,          // The values for the WHERE clause
+                    null,                   // don't group the rows
+                    null,                   // don't filter by row groups
+                    null               // The sort order
+            );
+            // DEMO -> UPDATE demo SET ID = 1,Name = "SPP",Hint = "OK" WHERE Name = "Twitter";
+
+            ArrayList<String> tmp_art_name = new ArrayList<String>();
+            ArrayList<String> tmp_art_type = new ArrayList<String>();
+            ArrayList<String> tmp_art_follow = new ArrayList<String>();
+            while(cursor.moveToNext()) {
+                tmp_art_name.add(cursor.getString(cursor.getColumnIndexOrThrow("artifactName")));
+                tmp_art_type.add(cursor.getString(cursor.getColumnIndexOrThrow("artifactType")));
+                tmp_art_follow.add(cursor.getString(cursor.getColumnIndexOrThrow("artifactFollow")));
+            }
+
+            if(cursor.getCount()>0 && tmp_art_name.contains(ArtifactNameList.get(x)) && tmp_art_type.contains(artifactType.get(x)) && tmp_art_follow.contains(ArtifactFollowList.get(x))){
+                db.execSQL("UPDATE "+dataSheetName+"_artifact"+" SET "+
+                        "artifactBeforeLvl = "+String.valueOf(ArtifactBeforeLvlList.get(x))+","+
+                        "artifactAfterLvl = "+String.valueOf(ArtifactAfterLvlList.get(x))+","+
+
+                        "artifactFollow = \""+ArtifactFollowList.get(x)+"\","+
+                        "artifactRare = "+String.valueOf(ArtifactRareList.get(x))+","+
+                        "artifactIsCal = "+String.valueOf((ArtifactIsCal.get(x)) ? 1 : 0 )+
+
+                        " WHERE artifactName = \""+ArtifactNameList.get(x)+"\";");
+            }else {
+                // DEMO -> INSERT INTO demo (ID,Name) VALUES (-3,"SSS");
+                db = dbHelper.getWritableDatabase();
+
+                ContentValues values = new ContentValues();
+                values.put("artifactName", ArtifactNameList.get(x));
+                values.put("artifactBeforeLvl", ArtifactBeforeLvlList.get(x));
+                values.put("artifactAfterLvl", ArtifactAfterLvlList.get(x));
+                values.put("artifactRare", ArtifactRareList.get(x));
+                values.put("artifactFollow", ArtifactFollowList.get(x));
+                values.put("artifactType", artifactType.get(x));
+                values.put("artifactIsCal", String.valueOf((ArtifactIsCal.get(x)) ? 1 : 0 ));
+
+                db.insert(dataSheetName+"_artifact", null, values);
+
+                /*
+                db.execSQL("INSERT INTO "+dataSheetName+"_artifact"+
+                        " (artifactName,artifactBeforeLvl,artifactAfterLvl,artifactRare,artifactFollow,artifactIsCal)"+
+
+                        " VALUES (\""+ArtifactNameList.get(x)+"\","+ArtifactBeforeLvlList.get(x)+","+ArtifactAfterLvlList.get(x)+","+ArtifactRareList.get(x)+",\""+ArtifactFollowList.get(x)+"\","+ArtifactIsCal.get(x)+");");
+
+                 */
+            }
+            cursor.close();
+        }
+
+
+        /**
+         * IndexDB part
+         */
+
+        db = dbHelper.getWritableDatabase();
+        db.execSQL("UPDATE IndexDB SET "+
+                "char_cnt = "+String.valueOf(NameList.size())+","+
+                "weapon_cnt = "+String.valueOf(WeaponNameList.size())+","+
+                "artifact_cnt = "+String.valueOf(ArtifactNameList.size())+
+                " WHERE name = "+"\""+dataSheetName+"\";");
     }
 
     public void setDBName(String dataSheetName) {
         this.dataSheetName = dataSheetName;
     }
+
 }
