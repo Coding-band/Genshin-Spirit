@@ -520,6 +520,13 @@
     <string name="viridescent_venerer">翠绿之影</string>
     <string name="wanderers_troupe">流浪大地的乐团</string>
 
+    <!-- add in 20211127 -->
+    <string name="cinnabar_spindle">辰砂之纺锤</string>
+    <string name="shenhe">申鹤</string>
+    <string name="yun_jin">云堇</string>
+    <string name="husk_of_opulent_dreams">华馆梦醒形骸记</string>
+    <string name="ocean_hued_clam">海染砗磲</string>
+
 
 
 </resources>

@@ -1,0 +1,12 @@
+{
+  "name": "Cinnabar Spindle",
+  "rare": 4,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "desc": "由不似这个世界的物质制成的剑，其中的力量就连侵蚀龙的腐殖之毒也能抵御住吧。",
+  "first_status": "DEF",
+  "second_status": "ATK",
+  "skill_name": "无垢之心",
+  "skill_desc": "元素战技造成的伤害值提高，提高数值相当于防御力的40%。该效果每1.5秒最多触发一次，并将在元素战技造成伤害后的0.1秒后清除效果。",
+  "obtain_way": "EVENT"
+}

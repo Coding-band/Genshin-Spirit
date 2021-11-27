@@ -231,6 +231,7 @@ public class CalculatorDBActivity extends AppCompatActivity {
         values.put(DataBaseContract.DataBase.COLUMN_NAME_CREATE_UNIX, create_unix);
 
         db.execSQL("CREATE TABLE IF NOT EXISTS " + name + "_char" + " ( " +
+                "charId" + " INTEGER primary key AUTOINCREMENT,"+ // Add in 20211127
                 "charName" + " TEXT," +
 
                 "charBeforeLvl" + " INTEGER," +
@@ -254,6 +255,7 @@ public class CalculatorDBActivity extends AppCompatActivity {
                 "charIsCal" + " BOOLEAN" + ");");
 
         db.execSQL("CREATE TABLE IF NOT EXISTS " + name + "_weapon" + " ( " +
+                "weaponId" + " INTEGER primary key AUTOINCREMENT,"+ // Add in 20211127
                 "weaponName" + " TEXT," +
 
                 "weaponBeforeLvl" + " INTEGER," +
@@ -270,6 +272,7 @@ public class CalculatorDBActivity extends AppCompatActivity {
                 "weaponIsCal" + " BOOLEAN" + ");");
 
         db.execSQL("CREATE TABLE IF NOT EXISTS " + name + "_artifact" + " ( " +
+                "artifactId" + " INTEGER primary key AUTOINCREMENT,"+ // Add in 20211127
                 "artifactName" + " TEXT," +
                 "artifactType" + " TEXT," +
                 "artifactBeforeLvl" + " INTEGER," +
@@ -388,7 +391,7 @@ public class CalculatorDBActivity extends AppCompatActivity {
         );
 
         while(cursor.moveToNext()) {
-            //weaponChoosedIdList.add(cursor.getInt(cursor.getColumnIndexOrThrow("weaponId")));
+            weaponChoosedIdList.add(cursor.getInt(cursor.getColumnIndexOrThrow("weaponId")));
             weaponChoosedNameList.add(cursor.getString(cursor.getColumnIndexOrThrow("weaponName")));
 
             weaponChoosedBeforeLvlList.add(cursor.getInt(cursor.getColumnIndexOrThrow("weaponBeforeLvl")));
@@ -421,7 +424,7 @@ public class CalculatorDBActivity extends AppCompatActivity {
         );
 
         while(cursor.moveToNext()) {
-            //artifactChoosedIdList.add(cursor.getInt(cursor.getColumnIndexOrThrow("artifactId")));
+            artifactChoosedIdList.add(cursor.getInt(cursor.getColumnIndexOrThrow("artifactId")));
             artifactChoosedNameList.add(cursor.getString(cursor.getColumnIndexOrThrow("artifactName")));
 
             artifactChoosedBeforeLvlList.add(cursor.getInt(cursor.getColumnIndexOrThrow("artifactBeforeLvl")));
@@ -462,7 +465,7 @@ public class CalculatorDBActivity extends AppCompatActivity {
         //intent.putExtra("charChoosedCircletIdList",charChoosedCircletIdList);
 
         intent.putExtra("weaponChoosedNameList",weaponChoosedNameList);
-        //intent.putExtra("weaponChoosedIdList",weaponChoosedIdList);
+        intent.putExtra("weaponChoosedIdList",weaponChoosedIdList);
         intent.putExtra("weaponChoosedBeforeLvlList",weaponChoosedBeforeLvlList);
         intent.putExtra("weaponChoosedAfterLvlList",weaponChoosedAfterLvlList);
         intent.putExtra("weaponChoosedBeforeBreakLvlList",weaponChoosedBeforeBreakLvlList);
@@ -475,7 +478,7 @@ public class CalculatorDBActivity extends AppCompatActivity {
 
 
         intent.putExtra("artifactChoosedNameList",artifactChoosedNameList);
-        //intent.putExtra("artifactChoosedIdList",artifactChoosedIdList);
+        intent.putExtra("artifactChoosedIdList",artifactChoosedIdList);
         intent.putExtra("artifactChoosedBeforeLvlList",artifactChoosedBeforeLvlList);
         intent.putExtra("artifactChoosedAfterLvlList",artifactChoosedAfterLvlList);
         intent.putExtra("artifactChoosedFollowList",artifactChoosedFollowList);

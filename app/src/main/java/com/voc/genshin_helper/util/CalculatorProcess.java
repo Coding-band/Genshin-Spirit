@@ -247,6 +247,7 @@ public class CalculatorProcess {
     /** WEAPONS */
     /** FROM CalculatorUI*/
     public ArrayList<String> WeaponNameList = new ArrayList<>();
+    public ArrayList<Integer> WeaponIdList = new ArrayList<>();
     public ArrayList<Integer> WeaponAfterBreakLvlList = new ArrayList<>();
     public ArrayList<Boolean> WeaponAfterBreakUPLvlList = new ArrayList<>();
     public ArrayList<Integer> WeaponAfterLvlList = new ArrayList<>();
@@ -345,6 +346,7 @@ public class CalculatorProcess {
     public ArrayList<Integer> ArtifactRareList = new ArrayList<>();
     public ArrayList<Boolean> ArtifactIsCal = new ArrayList<>();
     public ArrayList<String> artifactType = new ArrayList<>();
+    public ArrayList<Integer> artifactId = new ArrayList<>();
 
 
     public ArrayList<Integer> ArtifactRare1LvlList = new ArrayList<>();
@@ -475,7 +477,7 @@ public class CalculatorProcess {
 
     }
 
-    public void weapon_setup(ArrayList<String> arrayList, ArrayList<Integer> arrayList2, ArrayList<Integer> arrayList3, ArrayList<Integer> arrayList4, ArrayList<Integer> arrayList5, ArrayList<Boolean> arrayList6, ArrayList<Boolean> arrayList7, ArrayList<Boolean> arrayList8, ArrayList<String> arrayList9, ArrayList<Integer> arrayList10,String arg) {
+    public void weapon_setup(ArrayList<String> arrayList, ArrayList<Integer> arrayList2, ArrayList<Integer> arrayList3, ArrayList<Integer> arrayList4, ArrayList<Integer> arrayList5, ArrayList<Boolean> arrayList6, ArrayList<Boolean> arrayList7, ArrayList<Boolean> arrayList8, ArrayList<String> arrayList9, ArrayList<Integer> arrayList10,ArrayList<Integer> arrayList11,String arg) {
         this.WeaponNameList = arrayList;
         this.WeaponBeforeLvlList = arrayList2;
         this.WeaponAfterLvlList = arrayList3;
@@ -486,13 +488,14 @@ public class CalculatorProcess {
         this.WeaponAfterBreakUPLvlList = arrayList8;
         this.WeaponFollowList = arrayList9;
         this.WeaponRareList = arrayList10;
+        this.WeaponIdList = arrayList11;
         if(arg.equals("READ")){
             weapon_readJSON();
         }
     }
 
 
-    public void artifact_setup(ArrayList<String> artifactChoosedNameList, ArrayList<Integer> artifactChoosedBeforeLvlList, ArrayList<Integer> artifactChoosedAfterLvlList, ArrayList<Boolean> artifactChoosedIsCal, ArrayList<String> artifactChoosedFollowList, ArrayList<Integer> artifactChoosedRare, ArrayList<String> artifactChoosedType, String arg) {
+    public void artifact_setup(ArrayList<String> artifactChoosedNameList, ArrayList<Integer> artifactChoosedBeforeLvlList, ArrayList<Integer> artifactChoosedAfterLvlList, ArrayList<Boolean> artifactChoosedIsCal, ArrayList<String> artifactChoosedFollowList, ArrayList<Integer> artifactChoosedRare, ArrayList<String> artifactChoosedType, ArrayList<Integer> artifactChoosedIdList ,String arg) {
         this.ArtifactNameList = artifactChoosedNameList;
         this.ArtifactBeforeLvlList = artifactChoosedBeforeLvlList;
         this.ArtifactAfterLvlList = artifactChoosedAfterLvlList;
@@ -500,9 +503,8 @@ public class CalculatorProcess {
         this.ArtifactFollowList = artifactChoosedFollowList;
         this.ArtifactRareList = artifactChoosedRare;
         this.artifactType = artifactChoosedType;
+        this.artifactId = artifactChoosedIdList;
 
-        Log.wtf("artifactChoosedNameList",String.valueOf(artifactChoosedNameList.size()));
-        Log.wtf("ArtifactBeforeLvlList",String.valueOf(ArtifactBeforeLvlList.size()));
         if(arg.equals("READ")){
             artifact_readJSON();
         }

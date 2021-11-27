@@ -17,6 +17,11 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class DataBaseHelper extends SQLiteOpenHelper {
     // If you change the database schema, you must increment the database version.
     public static final int DATABASE_VERSION = 1;
+
+    /**
+     * VERSION　2 : Changed at 20211127 0653 +8
+     */
+
     public static final String DATABASE_NAME = "GenshinSpirit.db";
     private static final String SQL_CREATE_ENTRIES = "CREATE TABLE IF NOT EXISTS " + DataBaseContract.DataBase.TABLE_NAME + " ( " +
             "_id" + " INTEGER PRIMARY KEY AUTOINCREMENT," +

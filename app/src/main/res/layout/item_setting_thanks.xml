@@ -242,6 +242,7 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="4dp"
                     android:layout_weight="1"
+                    android:fontFamily="@font/jf_openhuninn"
                     android:text="★ 賴。普拿疼。潘志遠 醫生#6436" />
 
                 <TextView
@@ -253,6 +254,7 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="4dp"
                     android:layout_weight="1"
+                    android:fontFamily="@font/jf_openhuninn"
                     android:text="★ jack lai#3582" />
 
                 <TextView
@@ -264,6 +266,7 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="4dp"
                     android:layout_weight="1"
+                    android:fontFamily="@font/jf_openhuninn"
                     android:text="★ A~~~#6163" />
 
                 <TextView
@@ -275,6 +278,7 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="4dp"
                     android:layout_weight="1"
+                    android:fontFamily="@font/jf_openhuninn"
                     android:text="★ 2O48#9733" />
 
                 <TextView
@@ -286,6 +290,7 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="4dp"
                     android:layout_weight="1"
+                    android:fontFamily="@font/jf_openhuninn"
                     android:text="★ 哇係小秋嘎嘎#4382" />
 
                 <TextView
@@ -297,6 +302,7 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="4dp"
                     android:layout_weight="1"
+                    android:fontFamily="@font/jf_openhuninn"
                     android:text="★ UK#5815" />
 
             </LinearLayout>

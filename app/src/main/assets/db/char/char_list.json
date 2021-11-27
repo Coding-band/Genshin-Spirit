@@ -1,7 +1,9 @@
 [
+{"name":"Shenhe","element":"Cryo","rare":5,"weapon":"Polearm","isComing":1,"nation":"Liyue","sex":"Female"},
+{"name":"Yun Jin","element":"Geo","rare":4,"weapon":"Polearm","isComing":1,"nation":"Liyue","sex":"Female"},
 {"name":"Gorou","element":"Geo","rare":4,"weapon":"Bow","isComing":1,"nation":"Inazuma","sex":"Male"},
 {"name":"Arataki Itto","element":"Geo","rare":5,"weapon":"Claymore","isComing":1,"nation":"Inazuma","sex":"Male"},
-{"name":"Thoma","element":"Pyro","rare":4,"weapon":"Polearm","isComing":0,"nation":"Mondstadt","sex":"Male"},
+{"name":"Thoma","element":"Pyro","rare":4,"weapon":"Polearm","isComing":0,"nation":"Inazuma","sex":"Male"},
 {"name":"Aloy","element":"Cryo","rare":5,"weapon":"Bow","isComing":0,"nation":"Another World","sex":"Female"},
 {"name":"Kujou Sara","element":"Electro","rare":4,"weapon":"Bow","isComing":0,"nation":"Inazuma","sex":"Female"},
 {"name":"Sangonomiya Kokomi","element":"Hydro","rare":5,"weapon":"Catalyst","isComing":0,"nation":"Inazuma","sex":"Female"},

@@ -503,6 +503,13 @@
     <string name="snezhnaya">Снежная</string>
     <!-- add in 20211028 -->
     <string name="happy_birthday">"с днем ​​рождения!"</string>
+    <!-- add in 20211127 -->
+    <string name="cinnabar_spindle">Киноварное веретено</string>
+    <string name="shenhe">Шэнь Хэ</string>
+    <string name="yun_jin">Юнь Цзинь</string>
+    <string name="husk_of_opulent_dreams">Кокон сладких грёз</string>
+    <string name="ocean_hued_clam">Моллюск морских красок</string>
+
 
 
 </resources>

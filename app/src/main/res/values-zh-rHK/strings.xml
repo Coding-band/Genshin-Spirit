@@ -521,5 +521,12 @@
     <string name="wanderers_troupe">流浪大地的樂團</string>
 
 
+    <!-- add in 20211127 -->
+    <string name="cinnabar_spindle">辰砂之紡錘</string>
+    <string name="shenhe">申鶴</string>
+    <string name="yun_jin">雲菫</string>
+    <string name="husk_of_opulent_dreams">華館夢醒形骸記</string>
+    <string name="ocean_hued_clam">海染硨磲</string>
+
 
 </resources>

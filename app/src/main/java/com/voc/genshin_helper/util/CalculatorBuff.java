@@ -81,6 +81,7 @@ public class CalculatorBuff {
     ArrayList<String> weaponChoosedFollowList = new ArrayList<>();
     ArrayList<Integer> weaponChoosedRare = new ArrayList<>();
     ArrayList<Boolean> weaponChoosedIsCal = new ArrayList<>();
+    ArrayList<Integer> weaponChoosedId = new ArrayList<>();
 
     /**
      * Artifact Transfer
@@ -93,6 +94,7 @@ public class CalculatorBuff {
     ArrayList<Boolean> artifactChoosedIsCal = new ArrayList<>();
     ArrayList<Integer> artifactChoosedRare = new ArrayList<>();
     ArrayList<String> artifactChoosedType = new ArrayList<>();
+    ArrayList<Integer> artifactChoosedId = new ArrayList<>();
 
     /**
      * Important Method
@@ -120,7 +122,7 @@ public class CalculatorBuff {
         item_rss = new ItemRss();
     }
 
-    public void weapon_setup(ArrayList<String> arrayList, ArrayList<Integer> arrayList2, ArrayList<Integer> arrayList3, ArrayList<Integer> arrayList4, ArrayList<Integer> arrayList5, ArrayList<Boolean> arrayList6, ArrayList<Boolean> arrayList7, ArrayList<Boolean> arrayList8, ArrayList<String> arrayList9, ArrayList<Integer> arrayList10, String arg) {
+    public void weapon_setup(ArrayList<String> arrayList, ArrayList<Integer> arrayList2, ArrayList<Integer> arrayList3, ArrayList<Integer> arrayList4, ArrayList<Integer> arrayList5, ArrayList<Boolean> arrayList6, ArrayList<Boolean> arrayList7, ArrayList<Boolean> arrayList8, ArrayList<String> arrayList9, ArrayList<Integer> arrayList10, ArrayList<Integer> arrayList11, String arg) {
         this.weaponChoosedNameList = arrayList;
         this.weaponChoosedBeforeLvlList = arrayList2;
         this.weaponChoosedAfterLvlList = arrayList3;
@@ -131,6 +133,7 @@ public class CalculatorBuff {
         this.weaponChoosedAfterBreakUPLvlList = arrayList8;
         this.weaponChoosedFollowList = arrayList9;
         this.weaponChoosedRare = arrayList10;
+        this.weaponChoosedId = arrayList11;
     }
 
     public void char_setup(ArrayList<String> arrayList, ArrayList<Integer> arrayList2, ArrayList<Integer> arrayList3, ArrayList<Integer> arrayList4, ArrayList<Integer> arrayList5, ArrayList<Integer> arrayList6, ArrayList<Integer> arrayList7, ArrayList<Integer> arrayList8, ArrayList<Integer> arrayList9, ArrayList<Integer> arrayList10, ArrayList<Integer> arrayList11, ArrayList<Boolean> arrayList12, ArrayList<Boolean> arrayList13, ArrayList<Boolean> arrayList14,String arg) {
@@ -150,7 +153,7 @@ public class CalculatorBuff {
         this.charChoosedAfterBreakUPLvlList = arrayList14;
     }
 
-    public void artifact_setup(ArrayList<String> artifactChoosedNameList, ArrayList<Integer> artifactChoosedBeforeLvlList, ArrayList<Integer> artifactChoosedAfterLvlList, ArrayList<Boolean> artifactChoosedIsCal, ArrayList<String> artifactChoosedFollowList, ArrayList<Integer> artifactChoosedRare,ArrayList<String> artifactChoosedType, String arg) {
+    public void artifact_setup(ArrayList<String> artifactChoosedNameList, ArrayList<Integer> artifactChoosedBeforeLvlList, ArrayList<Integer> artifactChoosedAfterLvlList, ArrayList<Boolean> artifactChoosedIsCal, ArrayList<String> artifactChoosedFollowList, ArrayList<Integer> artifactChoosedRare,ArrayList<String> artifactChoosedType,ArrayList<Integer> artifactChoosedId, String arg) {
         this.artifactChoosedNameList = artifactChoosedNameList;
         this.artifactChoosedBeforeLvlList = artifactChoosedBeforeLvlList;
         this.artifactChoosedAfterLvlList = artifactChoosedAfterLvlList;
@@ -158,6 +161,7 @@ public class CalculatorBuff {
         this.artifactChoosedFollowList = artifactChoosedFollowList;
         this.artifactChoosedRare = artifactChoosedRare;
         this.artifactChoosedType = artifactChoosedType;
+        this.artifactChoosedId = artifactChoosedId;
     }
 
     public void view_setup(){
@@ -212,7 +216,7 @@ public class CalculatorBuff {
                 int[] tmp_artifact_id = new int[]{R.id.buff_ui_artifact_icon1,R.id.buff_ui_artifact_icon2,R.id.buff_ui_artifact_icon3,R.id.buff_ui_artifact_icon4,R.id.buff_ui_artifact_icon5};
 
                 for (int y = 0 ; y < artifactChoosedNameList.size() ; y ++){
-                    if(artifactChoosedFollowList.get(y).equals(charChoosedNameList.get(x))){
+                    if(artifactChoosedFollowList.get(y).equals(charChoosedNameList.get(x)) && !tmp_artifact_type.contains(artifactChoosedType.get(y))){
                         tmp_artifact_name.add(artifactChoosedNameList.get(y));
                         tmp_artifact_type.add(artifactChoosedType.get(y));
                     }
@@ -383,16 +387,20 @@ public class CalculatorBuff {
 
         /** WEAPON_INFO_SET_DATA*/
 
-        Picasso.get()
-                .load (item_rss.getWeaponByName(weapon_name)[1])
-                .transform(transformation)
-                .fit()
-                .error (R.drawable.paimon_full)
-                .into (buff_weapon_icon);
+        Log.wtf("HE::","XXX"+weapon_name);
 
-        buff_weapon_name.setText(context.getString(item_rss.getWeaponByName(weapon_name)[0]));
-        buff_weapon_lvl.setText(context.getString(R.string.aim_lvl)+" "+weaponChoosedAfterLvlList.get(k));
+        if(!weapon_name.equals("unknown")) {
 
+            Picasso.get()
+                    .load(item_rss.getWeaponByName(weapon_name)[1])
+                    .transform(transformation)
+                    .fit()
+                    .error(R.drawable.paimon_full)
+                    .into(buff_weapon_icon);
+
+            buff_weapon_name.setText(context.getString(item_rss.getWeaponByName(weapon_name)[0]));
+            buff_weapon_lvl.setText(context.getString(R.string.aim_lvl) + " " + weaponChoosedAfterLvlList.get(k));
+        }
 
         /** ARTIFACT_ICON_SET_DATA*/
 
@@ -401,7 +409,7 @@ public class CalculatorBuff {
         String[] tmp_artifact_sort = new String[5];
         int[] tmp_artifact_order = new int[] {4,2,5,1,3};
 
-        for (int x =0 ; x < 5 ; x ++){
+        for (int x =0 ; x < artifact_type.size() ; x ++){
             switch (artifact_type.get(x)) {
                 case "Flower" : tmp_artifact_sort[0] = artifact_name.get(x); break;
                 case "Plume" : tmp_artifact_sort[1] = artifact_name.get(x); break;
@@ -409,10 +417,13 @@ public class CalculatorBuff {
                 case "Goblet" : tmp_artifact_sort[3] = artifact_name.get(x); break;
                 case "Circlet" : tmp_artifact_sort[4] = artifact_name.get(x); break;
             }
+
         }
 
-        for (int x = 0 ; x < 5 ; x++){
-            buff_artifact_tablayout.getTabAt(x).setIcon(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(tmp_artifact_sort[x]))[tmp_artifact_order[x]]);
+        for (int x = 0 ; x < 5 ; x ++) {
+            if (tmp_artifact_sort[x] != null) {
+                buff_artifact_tablayout.getTabAt(x).setIcon(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(tmp_artifact_sort[x]))[tmp_artifact_order[x]]);
+            }
         }
 
         dialog.setContentView(view);
@@ -421,7 +432,7 @@ public class CalculatorBuff {
         Window dialogWindow = dialog.getWindow();
         WindowManager.LayoutParams lp = dialogWindow.getAttributes();
         lp.width = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth());
-        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+        lp.height = WindowManager.LayoutParams.MATCH_PARENT;
         lp.gravity = Gravity.BOTTOM;
         dialogWindow.setAttributes(lp);
         dialog.show();
@@ -486,6 +497,10 @@ public class CalculatorBuff {
         }
 
         return tContents;
+
+    }
+
+    public void ArtifactBuffView(){
 
     }
 }

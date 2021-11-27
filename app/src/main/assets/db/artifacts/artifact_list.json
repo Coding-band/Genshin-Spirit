@@ -33,5 +33,7 @@
   {"name":"Tiny Miracle","rare":4,"img":"tiny_miracle","isComing":0},
   {"name":"Traveling Doctor","rare":3,"img":"traveling_doctor","isComing":0},
   {"name":"Viridescent Venerer","rare":5,"img":"viridescent_venerer","isComing":0},
-  {"name":"Wanderer's Troupe","rare":5,"img":"wanderers_troupe","isComing":0}
+  {"name":"Wanderer's Troupe","rare":5,"img":"wanderers_troupe","isComing":0},
+  {"name":"Husk of Opulent Dreams","rare":5,"img":"husk_of_opulent_dreams","isComing":0},
+  {"name":"Ocean-Hued Clam","rare":5,"img":"ocean_hued_clam","isComing":0}
 ]

@@ -78,6 +78,7 @@ import com.voc.genshin_helper.util.LangUtils;
 import com.voc.genshin_helper.util.LocaleHelper;
 import com.voc.genshin_helper.util.NumberPickerDialog;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
+import com.voc.genshin_helper.util.UpdateLog;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
@@ -107,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
     ViewGroup weapon_ll;
     BottomNavigationView nav_view;
     Today_Material tm;
+    UpdateLog updateLog;
     ItemRss css;
     //Char Page
     CharactersAdapter mAdapter;
@@ -196,6 +198,8 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         //init
         tm = new Today_Material();
         css = new ItemRss();
@@ -209,6 +213,11 @@ public class MainActivity extends AppCompatActivity {
         nav_view = findViewById(R.id.nav_view);
         npd = new NumberPickerDialog(this);
         context = this;
+
+        // Check Is First Time Open
+        updateLog = new UpdateLog();
+
+
 
         final LayoutInflater mInflater = getLayoutInflater().from(this);
         viewPager0 = mInflater.inflate(R.layout.fragment_char, null,false);
@@ -251,8 +260,10 @@ public class MainActivity extends AppCompatActivity {
         if(voted == false && app_started >= 5){
             showVoteDialog();
         }
-        editor.putInt("app_started",app_started+1);
-        editor.apply();
+        if(sharedPreferences.getBoolean("PASS_JUST_CHANGED_THEME",false) == false){
+            editor.putInt("app_started",app_started+1);
+            editor.apply();
+        }
 
         String versionName = BuildConfig.VERSION_NAME;
 
@@ -556,6 +567,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         });
 
+
                         ImageView artifact_filter = viewPager1.findViewById(R.id.char_filter);
                         artifact_filter.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -716,6 +728,7 @@ public class MainActivity extends AppCompatActivity {
                                 mWeaponAdapter.filterList(filteredList);
                             }
                         });
+
 
                         ImageView weapon_filter = viewPager3.findViewById(R.id.char_filter);
                         weapon_filter.setOnClickListener(new View.OnClickListener() {
@@ -1363,6 +1376,12 @@ public class MainActivity extends AppCompatActivity {
 
                 WebSettings webSettings = webview.getSettings();
                 webSettings.setJavaScriptEnabled(true);
+                webview.requestFocus();
+                webview.getSettings().setLightTouchEnabled(true);
+                webview.getSettings().setJavaScriptEnabled(true);
+                webview.getSettings().setGeolocationEnabled(true);
+                webview.setSoundEffectsEnabled(true);
+                webview.getSettings().setAppCacheEnabled(true);
                 webview.setWebViewClient(new WebViewClient() {
                     @Override
                     public void onPageFinished(WebView view, String url)

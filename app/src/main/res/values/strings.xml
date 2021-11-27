@@ -536,6 +536,12 @@
     <string name="snezhnaya">Snezhnaya</string>
     <!-- add in 20211028 -->
     <string name="happy_birthday">"Happy Birthday!"</string>
+    <!-- add in 20211127 -->
+    <string name="cinnabar_spindle">"Cinnabar Spindle"</string>
+    <string name="shenhe">"Shenhe"</string>
+    <string name="yun_jin">"Yun Jin"</string>
+    <string name="husk_of_opulent_dreams">"Husk of Opulent Dreams"</string>
+    <string name="ocean_hued_clam">"Ocean-Hued Clam"</string>
 
 
 </resources>

@@ -60,7 +60,7 @@
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_char_ico.xml" value="0.2069525666016894" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_char_ico_square.xml" value="0.2069525666016894" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_img.xml" value="0.11118421052631579" />
-        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_setting_thanks.xml" value="0.25" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_setting_thanks.xml" value="0.5" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_some_info.xml" value="0.22" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_toast.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_today_material.xml" value="0.2069525666016894" />
@@ -72,6 +72,7 @@
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/menu_alarm_edit.xml" value="0.20953947368421053" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/menu_artifact_add.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/menu_artifact_filter.xml" value="0.25" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/menu_buff_artifact.xml" value="0.5" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/menu_char_add.xml" value="0.25" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/menu_char_filter.xml" value="0.20953947368421053" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/menu_db_add.xml" value="0.25" />

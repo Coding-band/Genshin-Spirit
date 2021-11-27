@@ -8,5 +8,5 @@
   "second_status": "ATK",
   "skill_name": "Spotless Heart",
   "skill_desc": "Elemental Skill DMG is increased by 40%/50%/60%/70%/80% of DEF. The effect will be triggered no more than once every 1.5s and will be cleared 0.1s after the Elemental Skill deals DMG.",
-  "obtain_way": "FORGE"
+  "obtain_way": "EVENT"
 }

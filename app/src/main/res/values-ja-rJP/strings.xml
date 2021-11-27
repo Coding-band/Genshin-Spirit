@@ -539,6 +539,13 @@
     <string name="wavebreakers_fin">"斬波のひれ長"</string>
     <string name="akuoumaru">"惡王丸"</string>
     <string name="mouuns_moon">"曚雲の月"</string>
+    <!-- add in 20211127 -->
+    <string name="cinnabar_spindle">シナバースピンドル</string>
+    <string name="shenhe">申鶴</string>
+    <string name="yun_jin">雲菫</string>
+    <string name="husk_of_opulent_dreams">華館夢醒形骸記</string>
+    <string name="ocean_hued_clam">海染硨磲</string>
+
 
 </resources>
 

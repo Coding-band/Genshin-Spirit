@@ -26,6 +26,7 @@
   {"name":"The Black Sword","rare":4,"weapon":"Sword","isComing":0,"stat_1":"CritRate%"},
   {"name":"The Flute","rare":4,"weapon":"Sword","isComing":0,"stat_1":"ATK%"},
   {"name":"Traveler's Handy Sword","rare":3,"weapon":"Sword","isComing":0,"stat_1":"DEF%"},
+  {"name":"Cinnabar Spindle","rare":4,"weapon":"Sword","isComing":0,"stat_1":"DEF%"},
 
   {"name":"Waster Greatsword","rare":1,"weapon":"Claymore","isComing":0,"stat_1":"N/A"},
   {"name":"Old Merc's Pal","rare":2,"weapon":"Claymore","isComing":0,"stat_1":"N/A"},
