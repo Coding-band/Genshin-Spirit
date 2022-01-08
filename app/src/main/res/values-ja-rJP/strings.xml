@@ -545,6 +545,26 @@
     <string name="yun_jin">雲菫</string>
     <string name="husk_of_opulent_dreams">華館夢醒形骸記</string>
     <string name="ocean_hued_clam">海染硨磲</string>
+    <string name="redhorn_stonethresher">赤角石塵滅砕</string>
+
+    <!-- add in 20211226 && 20220103 -->
+    <string name="weapon_stat_EleDMGP_Electro">雷元素ダメージボーナス</string>
+    <string name="weapon_stat_EleDMGP_Pyro">炎元素ダメージボーナス</string>
+    <string name="weapon_stat_EleDMGP_Hydro">水元素ダメージボーナス</string>
+    <string name="weapon_stat_EleDMGP_Dendor">草元素ダメージボーナス</string>
+    <string name="weapon_stat_EleDMGP_Cryo">氷元素ダメージボーナス</string>
+    <string name="weapon_stat_EleDMGP_Anemo">風元素ダメージボーナス</string>
+    <string name="weapon_stat_EleDMGP_Geo">岩元素ダメージボーナス</string>
+    <string name="weapon_stat_HealingP">治療ボーナス</string>
+    <string name="calamity_queller">息災</string>
+
+    <!-- add in 20220108 -->
+    <string name="background_setting">背景設定</string>
+    <string name="background_accept_list">JPG、JPEG、PNG、GIFのみが受け入れられます</string>
+    <string name="background_press_set">設定</string>
+    <string name="background_source">ソース</string>
+    <string name="background_display">画面</string>
+    <string name="voc">Voc-夜芷冰</string>
 
 
 </resources>

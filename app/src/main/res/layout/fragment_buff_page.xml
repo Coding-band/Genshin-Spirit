@@ -102,13 +102,46 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:overScrollMode="never"
+                android:layout_margin="8dp"
                 android:scrollbars="none">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_margin="8dp"
                     android:orientation="horizontal">
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/buff_char_hp_view"
+                        android:layout_width="96dp"
+                        android:layout_height="64dp"
+                        android:layout_margin="4dp"
+                        android:background="@drawable/bg_kwang_light">
+
+                        <TextView
+                            android:id="@+id/textView24"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jf_openhuninn"
+                            android:text="@string/weapon_stat_HP"
+                            android:textAlignment="center"
+                            android:textSize="10sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.25" />
+
+                        <TextView
+                            android:id="@+id/buff_char_hp_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jf_openhuninn"
+                            android:text="12,858"
+                            android:textAlignment="center"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/textView24" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/buff_char_atk_view"
@@ -142,40 +175,6 @@
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/textView23" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/buff_char_hp_view"
-                        android:layout_width="96dp"
-                        android:layout_height="64dp"
-                        android:layout_margin="4dp"
-                        android:background="@drawable/bg_kwang_light">
-
-                        <TextView
-                            android:id="@+id/textView24"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/jf_openhuninn"
-                            android:text="@string/weapon_stat_HP"
-                            android:textAlignment="center"
-                            android:textSize="10sp"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:layout_constraintVertical_bias="0.25" />
-
-                        <TextView
-                            android:id="@+id/buff_char_hp_value"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/jf_openhuninn"
-                            android:text="12,858"
-                            android:textAlignment="center"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/textView24" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -281,14 +280,14 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/buff_char_other_view"
+                        android:id="@+id/buff_char_enrech_view"
                         android:layout_width="96dp"
                         android:layout_height="64dp"
                         android:layout_margin="4dp"
                         android:background="@drawable/bg_kwang_light">
 
                         <TextView
-                            android:id="@+id/buff_char_other_name"
+                            android:id="@+id/buff_char_enrech_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/jf_openhuninn"
@@ -302,11 +301,46 @@
                             app:layout_constraintVertical_bias="0.25" />
 
                         <TextView
-                            android:id="@+id/buff_char_other_value"
+                            android:id="@+id/buff_char_enrech_value"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/jf_openhuninn"
                             android:text="100.0%"
+                            android:textAlignment="center"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/buff_char_enrech_name" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/buff_char_other_view"
+                        android:layout_width="96dp"
+                        android:layout_height="64dp"
+                        android:layout_margin="4dp"
+                        android:visibility="gone"
+                        android:background="@drawable/bg_kwang_light">
+
+                        <TextView
+                            android:id="@+id/buff_char_other_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jf_openhuninn"
+                            android:text="@string/weapon_stat_PhyDMGP"
+                            android:textAlignment="center"
+                            android:textSize="10sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.25" />
+
+                        <TextView
+                            android:id="@+id/buff_char_other_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jf_openhuninn"
+                            android:text="12.0%"
                             android:textAlignment="center"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -392,34 +426,35 @@
                     android:id="@+id/buff_artifact_tab_flower"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:icon="@drawable/crimson_witch_of_flames_4" />
+                    android:icon="@drawable/paimon_lost" />
 
                 <com.google.android.material.tabs.TabItem
                     android:id="@+id/buff_artifact_tab_plume"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:icon="@drawable/crimson_witch_of_flames_2" />
+                    android:icon="@drawable/paimon_lost" />
 
                 <com.google.android.material.tabs.TabItem
                     android:id="@+id/buff_artifact_tab_sand"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:icon="@drawable/crimson_witch_of_flames_5" />
+                    android:icon="@drawable/paimon_lost" />
 
                 <com.google.android.material.tabs.TabItem
                     android:id="@+id/buff_artifact_tab_goblet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:icon="@drawable/crimson_witch_of_flames_1" />
+                    android:icon="@drawable/paimon_lost" />
 
                 <com.google.android.material.tabs.TabItem
                     android:id="@+id/buff_artifact_tab_circlet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:icon="@drawable/crimson_witch_of_flames_3" />
+                    android:icon="@drawable/paimon_lost" />
             </com.google.android.material.tabs.TabLayout>
 
             <include
+                android:id="@+id/buff_artifact_layout"
                 layout="@layout/item_buff_artifact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -444,7 +479,7 @@
                 app:tabIndicatorColor="@color/pyro"
                 app:tabIndicatorFullWidth="false"
                 app:tabIndicatorHeight="5dp"
-                app:tabMode="fixed">
+                app:tabMode="scrollable">
 
                 <com.google.android.material.tabs.TabItem
                     android:id="@+id/buff_tab_normal"
@@ -452,6 +487,20 @@
                     android:layout_height="wrap_content"
                     app:tabTextColor="@color/tv_color"
                     android:text="@string/noraml_atk" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/buff_tab_charged_atk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/charged_atk"
+                    app:tabTextColor="@color/tv_color" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:id="@+id/buff_tab_plunging_atk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/plunging_atk"
+                    app:tabTextColor="@color/tv_color" />
 
                 <com.google.android.material.tabs.TabItem
                     android:id="@+id/buff_tab_element"
@@ -468,6 +517,13 @@
                     android:text="@string/final_atk" />
 
                 <com.google.android.material.tabs.TabItem
+                    android:id="@+id/buff_tab_element_reaction"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="【元素反應】"
+                    app:tabTextColor="@color/tv_color" />
+
+                <com.google.android.material.tabs.TabItem
                     android:id="@+id/buff_tab_other"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -477,11 +533,18 @@
 
             </com.google.android.material.tabs.TabLayout>
 
-            <View
-                android:id="@+id/buff_tab_view"
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp" />
+                android:layout_margin="16dp"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/buff_tab_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" />
+            </ScrollView>
+
 
         </LinearLayout>
     </ScrollView>

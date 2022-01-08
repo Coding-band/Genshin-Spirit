@@ -15,6 +15,8 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
 import android.os.Bundle;
 import android.provider.BaseColumns;
 import android.service.controls.actions.FloatAction;
@@ -39,6 +41,7 @@ import com.voc.genshin_helper.data.CharactersAdapter;
 import com.voc.genshin_helper.data.ScreenSizeUtils;
 import com.voc.genshin_helper.database.DataBaseContract;
 import com.voc.genshin_helper.database.DataBaseHelper;
+import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.IndexDBHelper;
 
 import java.io.File;
@@ -84,6 +87,8 @@ public class CalculatorDBActivity extends AppCompatActivity {
         dbHelper = new DataBaseHelper(this);
         activity = this;
 
+        BackgroundReload.BackgroundReload(context,activity);
+
         mList = findViewById(R.id.main_list);
         mAdapter = new CalculatorDBAdapter(this, calculatorDBList,activity);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 1);
@@ -94,31 +99,59 @@ public class CalculatorDBActivity extends AppCompatActivity {
         //UI
         SharedPreferences sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
         String color_hex = sharedPreferences.getString("theme_color_hex","#FF5A5A"); // Must include #
+        boolean isColorGradient = sharedPreferences.getBoolean("theme_color_gradient",false); // Must include #
+        String start_color = sharedPreferences.getString("start_color","#AEFEFF"); // Must include #
+        String end_color = sharedPreferences.getString("end_color","#35858B"); // Must include #
         readIndexRecord();
-        ColorStateList myList = new ColorStateList(
-                new int[][]{
-                        new int[]{android.R.attr.state_pressed},
-                        new int[]{-android.R.attr.state_checked},
-                        new int[]{android.R.attr.state_checked},
-                },
-                new int[] {
-                        context.getResources().getColor(R.color.tv_color),
-                        context.getResources().getColor(R.color.tv_color),
-                        Color.parseColor(color_hex)
-                }
-        );
+
+        ColorStateList myList ;
+
+        if (isColorGradient){
+            myList= new ColorStateList(
+                    new int[][]{
+                            new int[]{android.R.attr.state_pressed},
+                            new int[]{-android.R.attr.state_checked},
+                            new int[]{android.R.attr.state_checked},
+                    },
+                    new int[] {
+                            Color.parseColor(start_color),
+                            Color.parseColor(start_color),
+                            Color.parseColor(end_color)
+                    }
+            );
+        }else{
+            myList = new ColorStateList(
+                    new int[][]{
+                            new int[]{android.R.attr.state_pressed},
+                            new int[]{-android.R.attr.state_checked},
+                            new int[]{android.R.attr.state_checked},
+                    },
+                    new int[] {
+                            context.getResources().getColor(R.color.tv_color),
+                            context.getResources().getColor(R.color.tv_color),
+                            Color.parseColor(color_hex)
+                    }
+            );
+        }
 
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        if(color_hex.toUpperCase().equals("#FFFFFFFF")){
-            window.setStatusBarColor(Color.parseColor("#000000"));}
-        else {
+        if(color_hex.toUpperCase().equals("#FFFFFFFF")&&isColorGradient == false){
+            window.setStatusBarColor(Color.parseColor("#000000"));
+        }
+        else if(isColorGradient){
+            window.setStatusBarColor(Color.parseColor(end_color));
+        }
+        else{
             window.setStatusBarColor(Color.parseColor(color_hex));
-            Log.w("WRF",color_hex);
         }
 
         db_add_btn = findViewById(R.id.db_add_btn);
-        db_add_btn.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(color_hex)));
+        if(isColorGradient){
+            db_add_btn.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(start_color)));
+        }else{
+            db_add_btn.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor(color_hex)));
+        }
         db_add_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

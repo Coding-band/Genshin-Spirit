@@ -38,8 +38,10 @@ import com.hjq.permissions.Permission;
 import com.hjq.permissions.XXPermissions;
 import com.voc.genshin_helper.BuildConfig;
 import com.voc.genshin_helper.R;
+import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.CustomToast;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -62,6 +64,7 @@ public class SplashActivity extends AppCompatActivity {
 
         context = this;
         activity = this;
+        BackgroundReload.BackgroundReload(context,activity);
 
         SharedPreferences sharedPreferences = getSharedPreferences("user_info", 0);
         if (sharedPreferences.getBoolean("theme_light", true) == true) {
@@ -75,7 +78,14 @@ public class SplashActivity extends AppCompatActivity {
         }
         ((TextView) findViewById(R.id.version_tv)).setText(BuildConfig.VERSION_NAME);
 
-        goMain();
+        String[] checkList = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE};
+        List<String> needRequestList = checkPermission(activity, checkList);
+        if (!needRequestList.isEmpty()) {
+            requestPermission(activity, needRequestList.toArray(new String[needRequestList.size()]));
+        }else{
+            goMain();
+        }
+
     }
     private void goMain() {
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
@@ -87,4 +97,41 @@ public class SplashActivity extends AppCompatActivity {
         }, 2000);
 
     }
+
+    //https://blog.csdn.net/fitaotao/article/details/119700579
+
+    private List<String> checkPermission(Context context, String[] checkList) {
+        List<String> list = new ArrayList<>();
+        for (int i = 0; i < checkList.length; i++) {
+            if (PackageManager.PERMISSION_GRANTED != ActivityCompat.checkSelfPermission(context, checkList[i])) {
+                list.add(checkList[i]);
+            }
+        }
+        return list;
+    }
+
+    //申請許可權
+    private void requestPermission(Activity activity, String requestPermissionList[]) {
+        ActivityCompat.requestPermissions(activity, requestPermissionList, 100);
+    }
+
+    //用戶作出選擇後，返回申請的結果
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == 100) {
+            for (int i = 0; i < permissions.length; i++) {
+                if (permissions[i].equals(READ_EXTERNAL_STORAGE)) {
+                    if (grantResults[i] == PackageManager.PERMISSION_GRANTED) {
+                        Log.w("存儲許可權","申請成功");
+                        goMain();
+                    } else {
+                        Log.w("存儲許可權","申請失敗");
+                        finish();
+                    }
+                }
+            }
+        }
+    }
 }
+

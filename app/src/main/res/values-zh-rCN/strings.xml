@@ -251,6 +251,7 @@
     <string name="about_info3">本应用程序基于而开发，旨在向Shiori for Genshin及其协作者致敬，惟目前仍未获其协作者认可。本应用程序部分图片，数据取自开源项目，将于下文附上连结。 故此，本应用程序的一部分接口，排版或于GenshinDb极为相似，惟本应用程序是以Java而非Dart作编程语言，亦只会于Android或／及任何支援.apk，.aab文件格式之装置中安装及运行。</string>
     <string name="about_title4">项目开源声明</string>
     <string name="about_info4">本应用程序因旨在向Shiori for Genshin及其协作者致敬，故将于Github上开源，任何人均可以查阅，提供意见，甚至协作，本人亦十分欢迎阁下对本应用程序的任何建议，协作申请。本应用程序亦会上架至Google Play。若你希望为此项目提出意见，漏洞，新功能等等，亦欢迎以E-mail或Discord (中国大陆则可使用QQ)方式联系。最后，谢谢你的谅解及支持。</string>
+    <string name="list_grid">列表网格</string>
 
     <!-- dom -->
     <string name="date_1st">一日</string>
@@ -527,6 +528,28 @@
     <string name="husk_of_opulent_dreams">华馆梦醒形骸记</string>
     <string name="ocean_hued_clam">海染砗磲</string>
 
+
+    <!-- add in 20211226 -->
+    <string name="weapon_stat_EleDMGP_Electro">雷元素伤害加成</string>
+    <string name="weapon_stat_EleDMGP_Pyro">火元素伤害加成</string>
+    <string name="weapon_stat_EleDMGP_Hydro">水元素伤害加成</string>
+    <string name="weapon_stat_EleDMGP_Dendor">草元素伤害加成</string>
+    <string name="weapon_stat_EleDMGP_Cryo">冰元素伤害加成</string>
+    <string name="weapon_stat_EleDMGP_Anemo">风元素伤害加成</string>
+    <string name="weapon_stat_EleDMGP_Geo">岩元素伤害加成</string>
+    <string name="weapon_stat_HealingP">治疗加成</string>
+    <string name="calamity_queller">息灾</string>
+    <string name="redhorn_stonethresher">赤角石溃杵</string>
+    <string name="yae_miko">八重神子</string>
+
+
+    <!-- add in 20220108 -->
+    <string name="background_setting">背景设定</string>
+    <string name="background_accept_list">仅接受JPG,JPEG,PNG,GIF</string>
+    <string name="background_press_set">设定</string>
+    <string name="background_source">来源</string>
+    <string name="background_display">显示</string>
+    <string name="voc">Voc-夜芷冰</string>
 
 
 </resources>

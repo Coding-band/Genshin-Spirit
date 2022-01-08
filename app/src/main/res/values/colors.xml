@@ -13,8 +13,11 @@
     <color name="theme_dark_color">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="shaderBG">#CC313131</color>
+    <color name="invisible">#00FFFFFF</color>
 
-    <color name="page_bg">#E0E0E0</color>
+    <color name="page_bg">#CCB3B3B3</color>
+    <color name="base_page_bg">#E0E0E0</color>
     <color name="tv_color">#4B4B4B</color>
     <color name="tv_anti_color">#FFFFFF</color>
     <color name="card_bg_less">#CCE0E0E0</color>
@@ -59,5 +62,10 @@
     <color name="rare3">#5d9cb1</color>
     <color name="rare4">#ae81c1</color>
     <color name="rare5">#dea44f</color>
+
+    <color name="uncrit">#FFC71D</color>
+    <color name="crit">#5AD529</color>
+
+
 
 </resources>

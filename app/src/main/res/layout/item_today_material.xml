@@ -11,7 +11,6 @@
     android:layout_width="180dp"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    android:background="@drawable/bg_item_edgeless_square"
     android:orientation="vertical">
 
     <ImageView

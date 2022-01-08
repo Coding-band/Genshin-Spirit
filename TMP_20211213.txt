@@ -1,0 +1,72 @@
+public double BaseDamage(){
+        if(statBuff.equals("DEF")){
+            double Defense = DefenseCharacter()*(1+DefenseBonus())+FlatDefense();
+            return Talent()*Defense+FlatDamage();
+        }else if(statBuff.equals("ATK")){
+            double Attack = (AttackCharacter()+AttackWeapon())*(1+AttackBonus())+FlatAttack();
+            return Talent()*Attack+FlatDamage();
+        }else{
+            return 0; // Currently Lack of data on HP
+        }
+    }
+
+    public double Crit(){
+        return (1 + CritRate()/100*CritDamage()/100);
+    }
+
+    //The damage percentage specified by the talent (ex: a value of 324% should be inputted as 3.24).
+    public double Talent(){
+        return 3.24;
+    }
+    //Character's base attack.
+    public double AttackCharacter(){
+        return baseATK;
+    }
+    //Weapon's base attack
+    public double AttackWeapon(){
+        return 454;
+    }
+    //Sum of all percentage-based attack bonuses from artifacts and other sources.
+    public double AttackBonus(){
+        return ATK/100;
+    }
+    //Sum of all non-percentage-based attack bonuses from the feather and other sources.
+    public double FlatAttack(){
+        return 0;
+    }
+    //Charcter's base defense.
+    public double DefenseCharacter(){
+        return baseDEF;
+    }
+    //Sum of all percentage-based defense bonuses from artifacts and other sources.
+    public double DefenseBonus(){
+        return DEF/100;
+    }
+    public double DefenseWeapon(){
+        return 0;
+    }
+    public double FlatDefense(){
+        return 0;
+    }
+    //Extra damage from sources such as Zhongli's A4 passive or Kokomi's Elemental Burst.
+    public double FlatDamage(){
+        return 0;
+    }
+    //Sum of all damage increases from elemental goblets, Gladiator's Finale 4-piece bonus, etc, excluding Xingqiu's constellation 4 effect Evilsoother.
+    public double DamageBonus(){
+        return 0;
+    }
+    //The total crit rate, including the 5% base crit rate and bonuses from artifacts, etc.
+    public double CritRate(){
+        if(CritRate >100){
+            CritRate = 100;
+        }
+        return CritRate;
+    }
+    //The total crit damage, including the 50% base crit damage and bonuses from artifacts, etc.
+    public double CritDamage(){
+        return CritDMG;
+    }
+    //Enemy Defense
+    //Enemy Resistance
+    //AmplifyingReaction

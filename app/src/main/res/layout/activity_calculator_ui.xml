@@ -13,11 +13,20 @@
     android:layout_height="match_parent"
     android:background="@color/page_bg">
 
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/global_bg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <com.voc.genshin_helper.util.CustomViewPager
         android:id="@+id/viewpager"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@color/page_bg"
         android:fadingEdge="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/nav_view_cal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -30,7 +39,7 @@
         android:id="@+id/nav_view_cal"
         android:layout_width="0dp"
         android:layout_height="60dp"
-        android:background="@color/page_bg"
+        android:background="@drawable/invisible_background"
         app:itemIconSize="24dp"
         app:itemIconTint="@color/bottom_nav_color"
         app:itemTextColor="@color/bottom_nav_color"

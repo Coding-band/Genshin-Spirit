@@ -16,7 +16,7 @@
     <string name="title_settings">Настройки</string>
 
     <!-- material_moment -->
-    <string name="dow_set1">Пн, Чт,тВс</string>
+    <string name="dow_set1">Пн, Чт, Вс</string>
     <string name="dow_set2">Вт, Пт, Вс</string>
     <string name="dow_set3">Ср, Сб, Вс</string>
 
@@ -229,7 +229,7 @@
     <string name="about_title2">Заявление о конфиденциальности</string>
     <string name="about_info2">Это приложение не будет собирать какие-либо личные данные о конфиденциальности, оно не может использоваться для идентификации и отслеживания пользователей и другой информации. При необходимости приложение будет собирать только уведомленные данные, такие как стек сбоя программы. Приведенные выше данные используются только для устранения уязвимостей приложений и улучшения взаимодействия с пользователем.the</string>
     <string name="about_title3">Заявление об использовании ресурсов</string>
-    <string name="about_info3">Это приложение разработано на основе Shiori for Genshin и направлено на то, чтобы отдать дань уважения Shiori for Genshin и его сотрудников, но оно еще не было признано его сотрудниками. Некоторые изображения этого приложения, данные взяты из проектов с открытым исходным кодом, ссылки будут прикреплены ниже. Поэтому часть интерфейса и верстка этого приложения очень похожи на Shiori for Genshin. Однако это приложение использует Java вместо Dart в качестве языка программирования, и оно будет работать только на Android и (или) любых поддерживающих форматах файлов .apk и .aab., или других платформ поддержуешие эти форма.</string>
+    <string name="about_info3">Это приложение разработано на основе Shiori for Genshin и направлено на то, чтобы отдать дань уважения Shiori for Genshin и его сотрудников, но оно еще не было признано его сотрудниками. Некоторые изображения этого приложения, данные взяты из проектов с открытым исходным кодом, ссылки будут прикреплены ниже. Поэтому часть интерфейса и верстка этого приложения очень похожи на Shiori for Genshin. Однако это приложение использует Java вместо Dart в качестве языка программирования, и оно будет работать только на Android и (или) любых поддерживающих форматах файлов .apk и .aab., или других платформ поддержуешие эти форматы.</string>
     <string name="about_title4">Заявление об открытом исходном коде проекта</string>
     <string name="about_info4">Поскольку это приложение предназначено для того, чтобы отдать дань уважения Shiori for Genshin и его сотрудников, его исходный код будет открыт на Github. Кто угодно может просматривать, комментировать и даже сотрудничать. Я также приветствую любые предложения и приложения для этого приложения. Это приложение также будет доступно в Google Play. Если вы хотите прокомментировать этот проект, ошибки, новые функции и т. д., Вы также можете связаться по электронной почте или в Discord (QQ доступен для материкового Китая). И наконец, спасибо за понимание и поддержку.</string>
 
@@ -498,19 +498,43 @@
 
     <!-- add in 20211025 -->
     <string name="cal_reset">сброс настроек</string>
+
     <!-- add in 20211027 -->
     <string name="nora_fortis">Nora Fortis</string>
     <string name="snezhnaya">Снежная</string>
+
     <!-- add in 20211028 -->
-    <string name="happy_birthday">"с днем ​​рождения!"</string>
+    <string name="happy_birthday">"С днём рождения!"</string>
+
     <!-- add in 20211127 -->
     <string name="cinnabar_spindle">Киноварное веретено</string>
     <string name="shenhe">Шэнь Хэ</string>
     <string name="yun_jin">Юнь Цзинь</string>
     <string name="husk_of_opulent_dreams">Кокон сладких грёз</string>
+
+    <!-- add in 20211226 && 20220103 -->
+    <string name="weapon_stat_EleDMGP_Electro">Бонус физ. урона</string>
+    <string name="weapon_stat_EleDMGP_Pyro">Бонус Пиро урона</string>
+    <string name="weapon_stat_EleDMGP_Hydro">Бонус Гидро урона</string>
+    <string name="weapon_stat_EleDMGP_Dendor">Бонус Дендро урона</string>
+    <string name="weapon_stat_EleDMGP_Cryo">Бонус Крио урона</string>
+    <string name="weapon_stat_EleDMGP_Anemo">Бонус Анемо урона</string>
+    <string name="weapon_stat_EleDMGP_Geo">Бонус Гео урона</string>
+    <string name="weapon_stat_HealingP">Бонус лечения</string>
+    <string name="calamity_queller">Усмиритель бед</string>
+
+    <!-- add in 20220105 -->
     <string name="ocean_hued_clam">Моллюск морских красок</string>
+    <string name="redhorn_stonethresher">Краснорогий камнеруб</string>
+    <string name="thoma">Тома</string>
 
-
+    <!-- add in 20220108 -->
+    <string name="background_setting">Настройка фона</string>
+    <string name="background_accept_list">Принимаются только JPG,JPEG,PNG,GIF</string>
+    <string name="background_press_set">Настройка</string>
+    <string name="background_source">Источник</string>
+    <string name="background_display">Отображать</string>
+    <string name="voc">Voc-夜芷冰</string>
 
 </resources>
 

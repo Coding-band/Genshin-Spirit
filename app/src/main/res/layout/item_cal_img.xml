@@ -9,7 +9,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_centerInParent="true"
+    android:layout_centerInParent="false"
     android:orientation="vertical">
 
     <ImageView
@@ -25,6 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_margin="4dp"
         android:text="999,999,999"
         android:textAlignment="center"
         android:textColor="@color/tv_color"
@@ -35,6 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:layout_margin="4dp"
         android:singleLine="true"
         android:textAlignment="center"
         android:textColor="@color/tv_color"

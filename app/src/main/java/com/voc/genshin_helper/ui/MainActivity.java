@@ -2,6 +2,7 @@ package com.voc.genshin_helper.ui;
 
 //https://stackoverflow.com/questions/27128425/add-multiple-custom-views-to-layout-programmatically
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
@@ -12,13 +13,16 @@ import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.Resources;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
-import android.graphics.drawable.GradientDrawable;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.method.LinkMovementMethod;
@@ -73,6 +77,7 @@ import com.voc.genshin_helper.data.Today_Material;
 import com.voc.genshin_helper.data.Weapons;
 import com.voc.genshin_helper.data.WeaponsAdapter;
 import com.voc.genshin_helper.kidding.GoSleep;
+import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.LangUtils;
 import com.voc.genshin_helper.util.LocaleHelper;
@@ -103,6 +108,7 @@ import static com.voc.genshin_helper.util.RoundedCornersTransformation.CornerTyp
  */
 
 public class MainActivity extends AppCompatActivity {
+    public static int IMAGE = 1;
 
     ViewGroup char_ll;
     ViewGroup weapon_ll;
@@ -175,7 +181,7 @@ public class MainActivity extends AppCompatActivity {
     private ArrayList<View> viewPager_List;
     GoSleep gs;
 
-
+    Activity activity;
 
     View viewPager0, viewPager1, viewPager2, viewPager3, viewPager4;
     @Override
@@ -207,17 +213,16 @@ public class MainActivity extends AppCompatActivity {
         langUtils = new LangUtils();
 
         context = this;
+        activity = this;
         serverList = new String[]{getString(R.string.america_ser),getString(R.string.europe_ser),getString(R.string.asia_ser),getString(R.string.hk_tw_mo_ser),getString(R.string.sky_land_ser),getString(R.string.world_tree)};
 
         viewPager = (ViewPager) findViewById(R.id.vp);
         nav_view = findViewById(R.id.nav_view);
         npd = new NumberPickerDialog(this);
-        context = this;
+
 
         // Check Is First Time Open
         updateLog = new UpdateLog();
-
-
 
         final LayoutInflater mInflater = getLayoutInflater().from(this);
         viewPager0 = mInflater.inflate(R.layout.fragment_char, null,false);
@@ -234,6 +239,9 @@ public class MainActivity extends AppCompatActivity {
         viewPager_List.add(viewPager4);
 
         check_spinner = 0;
+
+
+        lang_setup();
         home();
         getDOW();
         bday_reload();
@@ -241,6 +249,7 @@ public class MainActivity extends AppCompatActivity {
         weapon_reload();
         cbg();
         setColorBk();
+        BackgroundReload.BackgroundReload(context,activity);
 
         Handler handler = new Handler();
         handler.postDelayed(new Runnable(){
@@ -348,7 +357,7 @@ public class MainActivity extends AppCompatActivity {
                                 int x = 0;
                                 for (Characters item : charactersList) {
                                     String str = String.valueOf(s).toLowerCase();
-                                    if (item.getName().toLowerCase().contains(String.valueOf(str))||css.LocaleCharStr(x,context).contains(String.valueOf(s))||css.LocaleCharStr(x,context).toLowerCase().contains(String.valueOf(s).toLowerCase())) {
+                                    if (context.getString(css.getCharByName(item.getName())[0]).contains(str)||context.getString(css.getCharByName(item.getName())[0]).toLowerCase().contains(str)||context.getString(css.getCharByName(item.getName())[0]).toUpperCase().contains(str)){ // EN -> ZH
                                         filteredList.add(item);
                                     }
                                     x = x +1;
@@ -558,7 +567,7 @@ public class MainActivity extends AppCompatActivity {
                                 int x = 0;
                                 for (Artifacts item : artifactsList) {
                                     String str = String.valueOf(s).toLowerCase();
-                                    if (item.getName().toLowerCase().contains(String.valueOf(str))||css.LocaleArtifactStr(x,context).contains(String.valueOf(s))||css.LocaleArtifactStr(x,context).toLowerCase().contains(String.valueOf(s).toLowerCase())) {
+                                    if (context.getString(css.getArtifactByName(item.getName())[0]).contains(str)||context.getString(css.getArtifactByName(item.getName())[0]).toLowerCase().contains(str)||context.getString(css.getArtifactByName(item.getName())[0]).toUpperCase().contains(str)){ // EN -> ZH
                                         filteredList.add(item);
                                     }
                                     x = x +1;
@@ -720,7 +729,8 @@ public class MainActivity extends AppCompatActivity {
                                 int x = 0;
                                 for (Weapons item : weaponsList) {
                                     String str = String.valueOf(s).toLowerCase();
-                                    if (item.getName().toLowerCase().contains(String.valueOf(str))||css.LocaleWeaponStr(x,context).contains(String.valueOf(s))||css.LocaleWeaponStr(x,context).toLowerCase().contains(String.valueOf(s).toLowerCase())) {
+                                    System.out.println("TOF : "+context.getString(css.getWeaponByName(item.getName())[0]));
+                                    if (context.getString(css.getWeaponByName(item.getName())[0]).contains(str)||context.getString(css.getWeaponByName(item.getName())[0]).toLowerCase().contains(str)||context.getString(css.getWeaponByName(item.getName())[0]).toUpperCase().contains(str)){ // EN -> ZH
                                         filteredList.add(item);
                                     }
                                     x = x +1;
@@ -875,6 +885,7 @@ public class MainActivity extends AppCompatActivity {
 
 
                     case 4:
+
                         setup_setting();
                         break;
 
@@ -974,6 +985,8 @@ public class MainActivity extends AppCompatActivity {
         });
         // Color
         ImageView color_bk1,	color_bk2,	color_bk3,	color_bk4,	color_bk5,	color_bk6,	color_bk7,	color_bk8,	color_bk9,	color_bk10,	color_bk11,	color_bk12,	color_bk13,	color_bk14,	color_bk15,	color_bk16,	color_bk17,	color_bk18;
+        ImageView color_bk19,color_bk20,color_bk21,color_bk22,color_bk23;
+
         color_bk1	 = viewPager4.findViewById ( R.id.	color_block1);
         color_bk2	 = viewPager4.findViewById ( R.id.	color_block2);
         color_bk3	 = viewPager4.findViewById ( R.id.	color_block3);
@@ -992,6 +1005,11 @@ public class MainActivity extends AppCompatActivity {
         color_bk16	 = viewPager4.findViewById ( R.id.	color_block16);
         color_bk17	 = viewPager4.findViewById ( R.id.	color_block17);
         color_bk18	 = viewPager4.findViewById ( R.id.	color_block18);
+        color_bk19	 = viewPager4.findViewById ( R.id.	color_block19);
+        color_bk20	 = viewPager4.findViewById ( R.id.	color_block20);
+        color_bk21	 = viewPager4.findViewById ( R.id.	color_block21);
+        color_bk22	 = viewPager4.findViewById ( R.id.	color_block22);
+        color_bk23	 = viewPager4.findViewById ( R.id.	color_block23);
 
         color_bk1.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk1,0); }});
         color_bk2.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk2,1); }});
@@ -1011,6 +1029,11 @@ public class MainActivity extends AppCompatActivity {
         color_bk16.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk16,15); }});
         color_bk17.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk17,16); }});
         color_bk18.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk18,17); }});
+        color_bk19.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk19,18); }});
+        color_bk20.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk20,19); }});
+        color_bk21.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk21,20); }});
+        color_bk22.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk22,21); }});
+        color_bk23.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk23,22); }});
 
 
 
@@ -1111,6 +1134,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
 
+            }
+        });
+
+        // Background
+        Button bg_setting_btn = viewPager4.findViewById(R.id.bg_setting_btn);
+        bg_setting_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_PICK,
+                        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent, IMAGE);
             }
         });
 
@@ -1287,12 +1321,18 @@ public class MainActivity extends AppCompatActivity {
         else if(pos == 16){color_bk =	 viewPager4.findViewById(R.id.color_block16);}
         else if(pos == 17){color_bk =	 viewPager4.findViewById(R.id.color_block17);}
         else if(pos == 18){color_bk =	 viewPager4.findViewById(R.id.color_block18);}
+        else if(pos == 19){color_bk =	 viewPager4.findViewById(R.id.color_block19);}
+        else if(pos == 20){color_bk =	 viewPager4.findViewById(R.id.color_block20);}
+        else if(pos == 21){color_bk =	 viewPager4.findViewById(R.id.color_block21);}
+        else if(pos == 22){color_bk =	 viewPager4.findViewById(R.id.color_block22);}
+        else if(pos == 23){color_bk =	 viewPager4.findViewById(R.id.color_block23);}
 
         giveTickById(color_bk,pos-1);
     }
 
     private void giveTickById(ImageView color_bk,int pos) {
         ImageView color_bk1,	color_bk2,	color_bk3,	color_bk4,	color_bk5,	color_bk6,	color_bk7,	color_bk8,	color_bk9,	color_bk10,	color_bk11,	color_bk12,	color_bk13,	color_bk14,	color_bk15,	color_bk16,	color_bk17,	color_bk18;
+        ImageView color_bk19,color_bk20,color_bk21,color_bk22,color_bk23;
         color_bk1	 = viewPager4.findViewById ( R.id.	color_block1);
         color_bk2	 = viewPager4.findViewById ( R.id.	color_block2);
         color_bk3	 = viewPager4.findViewById ( R.id.	color_block3);
@@ -1311,6 +1351,11 @@ public class MainActivity extends AppCompatActivity {
         color_bk16	 = viewPager4.findViewById ( R.id.	color_block16);
         color_bk17	 = viewPager4.findViewById ( R.id.	color_block17);
         color_bk18	 = viewPager4.findViewById ( R.id.	color_block18);
+        color_bk19	 = viewPager4.findViewById ( R.id.	color_block19);
+        color_bk20	 = viewPager4.findViewById ( R.id.	color_block20);
+        color_bk21	 = viewPager4.findViewById ( R.id.	color_block21);
+        color_bk22	 = viewPager4.findViewById ( R.id.	color_block22);
+        color_bk23	 = viewPager4.findViewById ( R.id.	color_block23);
 
         color_bk1.setForeground(getResources().getDrawable(android.R.color.transparent));
         color_bk2.setForeground(getResources().getDrawable(android.R.color.transparent));
@@ -1330,10 +1375,48 @@ public class MainActivity extends AppCompatActivity {
         color_bk16.setForeground(getResources().getDrawable(android.R.color.transparent));
         color_bk17.setForeground(getResources().getDrawable(android.R.color.transparent));
         color_bk18.setForeground(getResources().getDrawable(android.R.color.transparent));
+        color_bk19.setForeground(getResources().getDrawable(android.R.color.transparent));
+        color_bk20.setForeground(getResources().getDrawable(android.R.color.transparent));
+        color_bk21.setForeground(getResources().getDrawable(android.R.color.transparent));
+        color_bk22.setForeground(getResources().getDrawable(android.R.color.transparent));
+        color_bk23.setForeground(getResources().getDrawable(android.R.color.transparent));
+
         color_bk.setForeground(getResources().getDrawable(R.drawable.ic_tick_img));
 
         int[] colorList = new int[]{R.color.color_theme_1,	R.color.color_theme_2,	R.color.color_theme_3,	R.color.color_theme_4,	R.color.color_theme_5,	R.color.color_theme_6,	R.color.color_theme_7,	R.color.color_theme_8,	R.color.color_theme_9,	R.color.color_theme_10,	R.color.color_theme_11,	R.color.color_theme_12,	R.color.color_theme_13,	R.color.color_theme_14,	R.color.color_theme_15,	R.color.color_theme_16,	R.color.color_theme_17,	R.color.color_theme_18};
-        editor.putString("theme_color_hex",getResources().getString(colorList[pos]));
+
+        switch (pos + 1) {
+            case 19:
+                editor.putString("start_color", "#AEFEFF");
+                editor.putString("end_color", "#35858B");
+                editor.putBoolean("theme_color_gradient", true);
+                break;
+            case 20:
+                editor.putString("start_color", "#FEE3EC");
+                editor.putString("end_color", "#F2789F");
+                editor.putBoolean("theme_color_gradient", true);
+                break;
+            case 21:
+                editor.putString("start_color", "#AEFEFF");
+                editor.putString("end_color", "#F2789F");
+                editor.putBoolean("theme_color_gradient", true);
+                break;
+            case 22:
+                editor.putString("start_color", "#5994ce");
+                editor.putString("end_color", "#b957ce");
+                editor.putBoolean("theme_color_gradient", true);
+                break;
+            case 23:
+                editor.putString("start_color", "#FFE3E3");
+                editor.putString("end_color", "#93B5C6");
+                editor.putBoolean("theme_color_gradient", true);
+                break;
+            default:
+                editor.putString("theme_color_hex", getResources().getString(colorList[pos]));
+                editor.putBoolean("theme_color_gradient", false);
+                break;
+        }
+
         editor.putInt("theme_color_pos",pos);
         editor.apply();
         cbg();
@@ -1743,27 +1826,50 @@ public class MainActivity extends AppCompatActivity {
     public void cbg() {
         SharedPreferences sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
         String color_hex = sharedPreferences.getString("theme_color_hex","#FF5A5A"); // Must include #
+        boolean isColorGradient = sharedPreferences.getBoolean("theme_color_gradient",false); // Must include #
+        String start_color = sharedPreferences.getString("start_color","#AEFEFF"); // Must include #
+        String end_color = sharedPreferences.getString("end_color","#35858B"); // Must include #
 
-        ColorStateList myList = new ColorStateList(
-                new int[][]{
-                        new int[]{android.R.attr.state_pressed},
-                        new int[]{-android.R.attr.state_checked},
-                        new int[]{android.R.attr.state_checked},
-                },
-                new int[] {
-                        context.getResources().getColor(R.color.tv_color),
-                        context.getResources().getColor(R.color.tv_color),
-                        Color.parseColor(color_hex)
-                }
-        );
+        ColorStateList myList ;
+
+        if (isColorGradient){
+            myList= new ColorStateList(
+                    new int[][]{
+                            new int[]{android.R.attr.state_pressed},
+                            new int[]{-android.R.attr.state_checked},
+                            new int[]{android.R.attr.state_checked},
+                    },
+                    new int[] {
+                            Color.parseColor(start_color),
+                            Color.parseColor(start_color),
+                            Color.parseColor(end_color)
+                    }
+            );
+        }else{
+            myList = new ColorStateList(
+                    new int[][]{
+                            new int[]{android.R.attr.state_pressed},
+                            new int[]{-android.R.attr.state_checked},
+                            new int[]{android.R.attr.state_checked},
+                    },
+                    new int[] {
+                            context.getResources().getColor(R.color.tv_color),
+                            context.getResources().getColor(R.color.tv_color),
+                            Color.parseColor(color_hex)
+                    }
+            );
+        }
 
         Window window = getWindow();
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        if(color_hex.toUpperCase().equals("#FFFFFFFF")){
-            window.setStatusBarColor(Color.parseColor("#000000"));}
-        else {
+        if(color_hex.toUpperCase().equals("#FFFFFFFF")&&isColorGradient == false){
+            window.setStatusBarColor(Color.parseColor("#000000"));
+        }
+        else if(isColorGradient){
+            window.setStatusBarColor(Color.parseColor(end_color));
+        }
+        else{
             window.setStatusBarColor(Color.parseColor(color_hex));
-            Log.w("WRF",color_hex);
         }
 
         //Color.parseColor(color_hex)
@@ -1789,10 +1895,10 @@ public class MainActivity extends AppCompatActivity {
         TextView alarm_tv = viewPager2.findViewById(R.id.alarm_tv);
         BottomNavigationView nav_view = findViewById(R.id.nav_view);
 
-        calculator_tv.setTextColor(Color.parseColor(color_hex));
-        daily_login_tv.setTextColor(Color.parseColor(color_hex));
-        map_tv.setTextColor(Color.parseColor(color_hex));
-        alarm_tv.setTextColor(Color.parseColor(color_hex));
+        colorGradient(calculator_tv,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(daily_login_tv,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(map_tv,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(alarm_tv,start_color,end_color,isColorGradient,color_hex);
         nav_view.setItemIconTintList(myList);
         nav_view.setItemTextColor(myList);
 
@@ -1811,6 +1917,16 @@ public class MainActivity extends AppCompatActivity {
         other_exit_confirm.setThumbTintList(myList);
         other_exit_confirm.setTrackTintList(myList);
 
+    }
+
+    public void colorGradient(TextView textView,String start_color, String end_color, boolean isColorGradient , String color){
+        if(isColorGradient){
+            Shader shader = new LinearGradient(0, 0, textView.getLineCount(), textView.getLineHeight(),
+                    Color.parseColor(start_color),  Color.parseColor(end_color), Shader.TileMode.CLAMP);
+            textView.getPaint().setShader(shader);
+        }else{
+            textView.setTextColor(Color.parseColor(color));
+        }
     }
 
     @Override
@@ -1926,4 +2042,72 @@ public class MainActivity extends AppCompatActivity {
         getApplicationContext().sendBroadcast(delIntent);
     }
 
+    public void lang_setup(){
+        sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+        int x = 2;
+        if(sharedPreferences.getString("curr_lang","").isEmpty()){
+            Log.wtf("FFF","TTT");
+            String tag = Locale.getDefault().toLanguageTag();
+            if(tag.contains("zh-")){
+                if(tag.equals("zh-CN")){
+                    editor.putString("curr_lang","zh-CN"); editor.putInt("curr_lang_pos",1);x=1;
+                }else{
+                    editor.putString("curr_lang","zh-HK"); editor.putInt("curr_lang_pos",0);x=0;
+                }
+            }else if(tag.contains("en-")){
+                editor.putString("curr_lang","en-US"); editor.putInt("curr_lang_pos",2);x=2;
+            }else if(tag.contains("ru-")){
+                editor.putString("curr_lang","ru-RU"); editor.putInt("curr_lang_pos",3);x=3;
+            }else if(tag.contains("ja-")){
+                editor.putString("curr_lang","ja-JP"); editor.putInt("curr_lang_pos",4);x=4;
+            }else if(tag.contains("fr-")){
+                editor.putString("curr_lang","ft-FR"); editor.putInt("curr_lang_pos",5);x=5;
+            }else{
+                editor.putString("curr_lang","en-US"); editor.putInt("curr_lang_pos",2);x=2;
+            }
+            editor.apply();
+            LangUtils.getAttachBaseContext(context,x);
+            recreate();
+        }
+
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        //获取图片路径
+        if (requestCode == IMAGE && resultCode == Activity.RESULT_OK && data != null) {
+            Uri selectedImage = data.getData();
+            String[] filePathColumns = {MediaStore.Images.Media.DATA};
+            Cursor c = getContentResolver().query(selectedImage, filePathColumns, null, null, null);
+            c.moveToFirst();
+            int columnIndex = c.getColumnIndex(filePathColumns[0]);
+            String imagePath = c.getString(columnIndex);
+
+            // FROMPATH = imagePath;
+            SharedPreferences sharedPreferences = getSharedPreferences("user_info", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("tmp_pathName",imagePath);
+
+            switch (imagePath.split("\\.")[1].toLowerCase()){
+                case "png" : editor.putString("tmp_gif_png","png");break;
+                case "jpg" : editor.putString("tmp_gif_png","jpg");break;
+                case "jpeg" : editor.putString("tmp_gif_png","jpeg");break;
+                case "gif" : editor.putString("tmp_gif_png","gif");break;
+            }
+            editor.apply();
+            c.close();
+            startActivity(new Intent(MainActivity.this, BackgroundConfirmActivity.class));
+        }
+
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        cbg();
+        BackgroundReload.BackgroundReload(context,activity);
+    }
 }

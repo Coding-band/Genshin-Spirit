@@ -54,6 +54,7 @@
   {"name":"The Unforged","rare":5,"weapon":"Claymore","isComing":0,"stat_1":"ATK%"},
   {"name":"Wolf's Gravestone","rare":5,"weapon":"Claymore","isComing":0,"stat_1":"ATK%"},
   {"name":"Akuoumaru","rare":4,"weapon":"Claymore","isComing":0,"stat_1":"ATK%"},
+  {"name":"Redhorn Stonethresher","rare":5,"weapon":"Claymore","isComing":0,"stat_1":"CritDMG%"},
 
   {"name":"Beginner's Protector","rare":1,"weapon":"Polearm","isComing":0,"stat_1":"N/A"},
   {"name":"Iron Point","rare":2,"weapon":"Polearm","isComing":0,"stat_1":"N/A"},
@@ -77,6 +78,7 @@
   {"name":"Staff of Homa","rare":5,"weapon":"Polearm","isComing":0,"stat_1":"CritDMG%"},
   {"name":"Vortex Vanquisher","rare":5,"weapon":"Polearm","isComing":0,"stat_1":"ATK%"},
   {"name":"Wavebreaker's Fin","rare":4,"weapon":"Polearm","isComing":0,"stat_1":"ATK%"},
+  {"name":"Calamity Queller","rare":5,"weapon":"Polearm","isComing":0,"stat_1":"ATK%"},
 
   {"name":"Apprentice's Notes","rare":1,"weapon":"Catalyst","isComing":0,"stat_1":"N/A"},
   {"name":"Pocket Grimoire","rare":2,"weapon":"Catalyst","isComing":0,"stat_1":"N/A"},

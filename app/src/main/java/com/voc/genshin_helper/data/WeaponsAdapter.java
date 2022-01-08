@@ -203,105 +203,84 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                         Log.wtf("CharName_BASE", CharName_BASE);
 
                         Log.wtf("lang", lang);
-                        try {
-                            String[] list = assets.list("db/weapons/" + lang + "/");
-                            String[] list2 = assets.list("db/weapons/en-US/");
-                            String str = null;
-
-                            for (String str2 : list2) {
-                                if (str2.equals(CharName_BASE + ".json")) {
-                                    InputStream open = assets.open("db/weapons/en-US/" + CharName_BASE + ".json");
-                                    str = IOUtils.toString(open, StandardCharsets.UTF_8);
-                                    open.close();
-                                }
-                            }
-
-                            for (String str2 : list) {
-                                if (str2.equals(CharName_BASE + ".json")) {
-                                    InputStream open = assets.open("db/weapons/" + lang + "/" + CharName_BASE + ".json");
-                                    str = IOUtils.toString(open, StandardCharsets.UTF_8);
-                                    open.close();
-                                }
-                            }
-
-
-
-                            if (str != null) {
-                                try {
-                                    JSONObject jSONObject = new JSONObject(str);
-                                    String name = jSONObject.getString("name");
-                                    int rare = jSONObject.getInt("rare");
-                                    String weapon = jSONObject.getString("weapon");
-                                    Boolean isComingSoon = jSONObject.getBoolean("isComingSoon");
-                                    String desc = jSONObject.getString("desc");
-                                    String first_status = jSONObject.getString("first_status");
-                                    String second_status = jSONObject.getString("second_status");
-                                    String skill_name = jSONObject.getString("skill_name");
-                                    String skill_desc = jSONObject.getString("skill_desc");
-                                    String obtain_way = jSONObject.getString("obtain_way");
-
-                                    ItemRss itemRss = new ItemRss();
-                                    RoundedCornersTransformation roundedCornersTransformation = new RoundedCornersTransformation(25, 0, RoundedCornersTransformation.CornerType.TOP);
-                                    Dialog dialog = new Dialog(WeaponsAdapter.this.context, R.style.NormalDialogStyle_N);
-                                    View inflate = View.inflate(WeaponsAdapter.this.context, R.layout.item_weapon_info, null);
-
-                                    ImageView item_img = (ImageView) inflate.findViewById(R.id.item_img);
-                                    LinearLayout item_nl = (LinearLayout) inflate.findViewById(R.id.item_nl);
-                                    RatingBar item_star = (RatingBar) inflate.findViewById(R.id.item_star);
-                                    ImageView item_is_coming = (ImageView) inflate.findViewById(R.id.item_is_coming);
-                                    ImageView info_item1 = (ImageView) inflate.findViewById(R.id.info_item1);
-                                    ImageView info_item2 = (ImageView) inflate.findViewById(R.id.info_item2);
-                                    ImageView info_item3 = (ImageView) inflate.findViewById(R.id.info_item3);
-                                    ImageView info_item4 = (ImageView) inflate.findViewById(R.id.info_item4);
-                                    ImageView info_item5 = (ImageView) inflate.findViewById(R.id.info_item5);
-                                    LinearLayout item_talent = (LinearLayout) inflate.findViewById(R.id.item_talent);
-                                    LinearLayout item_skill = (LinearLayout) inflate.findViewById(R.id.item_skill);
-                                    TextView info_skill_title = (TextView) inflate.findViewById(R.id.info_skill_title);
-
-                                    Picasso.get()
-                                            .load(itemRss.getWeaponByName(name)[1]).fit().centerInside().transform(roundedCornersTransformation)
-                                            .error(R.drawable.paimon_lost)
-                                            .into(item_img);
-
-                                    ((TextView) inflate.findViewById(R.id.item_name)).setText(itemRss.getWeaponByName(name)[0]);
-                                    ((TextView) inflate.findViewById(R.id.item_info)).setText(desc);
-                                    ((ImageView) inflate.findViewById(R.id.item_element)).setVisibility(View.GONE);
-
-                                    item_star.setNumStars(rare);
-                                    item_star.setRating(rare);
-
-                                    ((ImageView) inflate.findViewById(R.id.item_weapon)).setImageResource(itemRss.getWeaponTypeIMG(weapon));
-                                    item_img.setBackgroundResource(itemRss.getRareColorByName(rare)[0]);
-                                    item_nl.setBackgroundResource(itemRss.getRareColorByName(rare)[1]);
-                                    item_talent.setVisibility(View.GONE);
-                                    item_skill.setVisibility(View.VISIBLE);
-                                    info_skill_title.setText(skill_name);
-                                    ((TextView) inflate.findViewById(R.id.info_skill_desc)).setText(skill_desc);
-                                    if (isComingSoon ) {
-                                        item_is_coming.setVisibility(View.VISIBLE);
-                                    } else {
-                                        item_is_coming.setVisibility(View.GONE);
-                                    }
-                                    dialog.setContentView(inflate);
-                                    dialog.setCanceledOnTouchOutside(true);
-                                    Window window = dialog.getWindow();
-                                    WindowManager.LayoutParams attributes = window.getAttributes();
-                                    attributes.width = ScreenSizeUtils.getInstance(WeaponsAdapter.this.context).getScreenWidth();
-                                    attributes.height = ViewGroup.LayoutParams.WRAP_CONTENT;
-                                    attributes.gravity = Gravity.BOTTOM;
-                                    window.setAttributes(attributes);
-                                    dialog.show();
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-                            } else {
-                                Toast.makeText(context, context.getString(R.string.none_info), Toast.LENGTH_SHORT).show();
-                                return;
-                            }
-
-                        } catch (IOException e) {
-                            e.printStackTrace();
+                        String str = LoadData("db/weapons/" + lang + "/" + CharName_BASE + ".json");
+                        if (str == null){
+                            str = LoadData("db/weapons/en-US/" + CharName_BASE + ".json");
                         }
+
+                        if (str != null) {
+                            try {
+                                JSONObject jSONObject = new JSONObject(str);
+                                String name = jSONObject.getString("name");
+                                int rare = jSONObject.getInt("rare");
+                                String weapon = jSONObject.getString("weapon");
+                                Boolean isComingSoon = jSONObject.getBoolean("isComingSoon");
+                                String desc = jSONObject.getString("desc");
+                                String first_status = jSONObject.getString("first_status");
+                                String second_status = jSONObject.getString("second_status");
+                                String skill_name = jSONObject.getString("skill_name");
+                                String skill_desc = jSONObject.getString("skill_desc");
+                                String obtain_way = jSONObject.getString("obtain_way");
+
+                                ItemRss itemRss = new ItemRss();
+                                RoundedCornersTransformation roundedCornersTransformation = new RoundedCornersTransformation(25, 0, RoundedCornersTransformation.CornerType.TOP);
+                                Dialog dialog = new Dialog(WeaponsAdapter.this.context, R.style.NormalDialogStyle_N);
+                                View inflate = View.inflate(WeaponsAdapter.this.context, R.layout.item_weapon_info, null);
+
+                                ImageView item_img = (ImageView) inflate.findViewById(R.id.item_img);
+                                LinearLayout item_nl = (LinearLayout) inflate.findViewById(R.id.item_nl);
+                                RatingBar item_star = (RatingBar) inflate.findViewById(R.id.item_star);
+                                ImageView item_is_coming = (ImageView) inflate.findViewById(R.id.item_is_coming);
+                                ImageView info_item1 = (ImageView) inflate.findViewById(R.id.info_item1);
+                                ImageView info_item2 = (ImageView) inflate.findViewById(R.id.info_item2);
+                                ImageView info_item3 = (ImageView) inflate.findViewById(R.id.info_item3);
+                                ImageView info_item4 = (ImageView) inflate.findViewById(R.id.info_item4);
+                                ImageView info_item5 = (ImageView) inflate.findViewById(R.id.info_item5);
+                                LinearLayout item_talent = (LinearLayout) inflate.findViewById(R.id.item_talent);
+                                LinearLayout item_skill = (LinearLayout) inflate.findViewById(R.id.item_skill);
+                                TextView info_skill_title = (TextView) inflate.findViewById(R.id.info_skill_title);
+
+                                Picasso.get()
+                                        .load(itemRss.getWeaponByName(name)[1]).fit().centerInside().transform(roundedCornersTransformation)
+                                        .error(R.drawable.paimon_lost)
+                                        .into(item_img);
+
+                                ((TextView) inflate.findViewById(R.id.item_name)).setText(itemRss.getWeaponByName(name)[0]);
+                                ((TextView) inflate.findViewById(R.id.item_info)).setText(desc);
+                                ((ImageView) inflate.findViewById(R.id.item_element)).setVisibility(View.GONE);
+
+                                item_star.setNumStars(rare);
+                                item_star.setRating(rare);
+
+                                ((ImageView) inflate.findViewById(R.id.item_weapon)).setImageResource(itemRss.getWeaponTypeIMG(weapon));
+                                item_img.setBackgroundResource(itemRss.getRareColorByName(rare)[0]);
+                                item_nl.setBackgroundResource(itemRss.getRareColorByName(rare)[1]);
+                                item_talent.setVisibility(View.GONE);
+                                item_skill.setVisibility(View.VISIBLE);
+                                info_skill_title.setText(skill_name);
+                                ((TextView) inflate.findViewById(R.id.info_skill_desc)).setText(skill_desc);
+                                if (isComingSoon ) {
+                                    item_is_coming.setVisibility(View.VISIBLE);
+                                } else {
+                                    item_is_coming.setVisibility(View.GONE);
+                                }
+                                dialog.setContentView(inflate);
+                                dialog.setCanceledOnTouchOutside(true);
+                                Window window = dialog.getWindow();
+                                WindowManager.LayoutParams attributes = window.getAttributes();
+                                attributes.width = ScreenSizeUtils.getInstance(WeaponsAdapter.this.context).getScreenWidth();
+                                attributes.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+                                attributes.gravity = Gravity.BOTTOM;
+                                window.setAttributes(attributes);
+                                dialog.show();
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        } else {
+                            Toast.makeText(context, context.getString(R.string.none_info), Toast.LENGTH_SHORT).show();
+                            return;
+                        }
+
                     } else {
                         if (WeaponsAdapter.this.context instanceof CalculatorUI) {
                             Log.wtf("YES", "IT's");
@@ -320,5 +299,25 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
     public void filterList(List<Weapons> list) {
         this.weaponsList = list;
         notifyDataSetChanged();
+    }
+
+    public String LoadData(String inFile) {
+        String tContents = "";
+
+        try {
+            InputStream stream = context.getAssets().open(inFile);
+
+            int size = stream.available();
+            System.out.println("size"+ size);
+            byte[] buffer = new byte[size];
+            stream.read(buffer);
+            stream.close();
+            tContents = new String(buffer);
+        } catch (IOException e) {
+            // Handle exceptions here
+        }
+
+        return tContents;
+
     }
 }

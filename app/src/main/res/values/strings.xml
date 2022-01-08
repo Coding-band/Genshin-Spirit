@@ -531,11 +531,14 @@
 
     <!-- add in 20211025 -->
     <string name="buff">BUFF</string>
+
     <!-- add in 20211027 -->
     <string name="nora_fortis">Nora Fortis</string>
     <string name="snezhnaya">Snezhnaya</string>
+
     <!-- add in 20211028 -->
     <string name="happy_birthday">"Happy Birthday!"</string>
+
     <!-- add in 20211127 -->
     <string name="cinnabar_spindle">"Cinnabar Spindle"</string>
     <string name="shenhe">"Shenhe"</string>
@@ -543,6 +546,25 @@
     <string name="husk_of_opulent_dreams">"Husk of Opulent Dreams"</string>
     <string name="ocean_hued_clam">"Ocean-Hued Clam"</string>
 
+    <!-- add in 20211226 && 20220103 -->
+    <string name="weapon_stat_EleDMGP_Electro">Electro DMG Bonus</string>
+    <string name="weapon_stat_EleDMGP_Pyro">Pyro DMG Bonus</string>
+    <string name="weapon_stat_EleDMGP_Hydro">Hydro DMG Bonus</string>
+    <string name="weapon_stat_EleDMGP_Dendor">Dendor DMG Bonus</string>
+    <string name="weapon_stat_EleDMGP_Cryo">Cryo DMG Bonus</string>
+    <string name="weapon_stat_EleDMGP_Anemo">Anemo DMG Bonus</string>
+    <string name="weapon_stat_EleDMGP_Geo">Geo DMG Bonus</string>
+    <string name="weapon_stat_HealingP">Healing Bonus</string>
+    <string name="calamity_queller">Calamity Queller</string>
+    <string name="redhorn_stonethresher">Redhorn Stonethresher</string>
+
+    <!-- add in 20220108 -->
+    <string name="background_setting">Background Setting</string>
+    <string name="background_accept_list">Only accept JPG,JPEG,PNG,GIF</string>
+    <string name="background_press_set">Setting</string>
+    <string name="background_source">Source</string>
+    <string name="background_display">Display</string>
+    <string name="voc">Voc-夜芷冰</string>
 
 </resources>
 

@@ -1,5 +1,6 @@
 package com.voc.genshin_helper.ui;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -8,6 +9,8 @@ import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
 import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -25,6 +28,7 @@ import androidx.cardview.widget.CardView;
 import com.squareup.picasso.Picasso;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
+import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
 import org.apache.commons.io.IOUtils;
@@ -52,6 +56,7 @@ public class Characters_Info {
     Context context;
     SharedPreferences sharedPreferences ;
     ItemRss item_rss;
+    BackgroundReload backgroundReload;
 
     /** Method of Char's details' container */
     /** Since String can't be null, so there will have "XPR" for identify is result correct */
@@ -149,7 +154,9 @@ public class Characters_Info {
 
     /** https://stackoverflow.com/questions/45247927/how-to-parse-json-object-inside-json-object-in-java */
     public void JsonToStr (String str , String str_dps){
-        try {
+        System.out.println("SSS"+str+"FFF");
+        if(!str.equals("")){
+            try {
             jsonObject = new JSONObject(str);
             name = jsonObject.getString("name");
             star = jsonObject.getInt("rare");
@@ -309,6 +316,9 @@ public class Characters_Info {
             show();
         } catch (JSONException e) {
             e.printStackTrace();
+            }
+        }else{
+            Toast.makeText(context, context.getString(R.string.none_info), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -318,52 +328,20 @@ public class Characters_Info {
         this.context = context;
         item_rss = new ItemRss();
 
+
         String lang = sharedPreferences.getString("curr_lang","zh-HK");
-        AssetManager mg = context.getResources().getAssets();
-        InputStream is = null;
-        InputStream is_dps = null;
-        InputStream is_default = null;
-        String result1 = null, result2 = null;
-        try {
-            String[] strs_local = mg.list("db/char/"+lang+"/");
-            String[] strs_default = mg.list("db/char/en-US/");
-            String[] strs = mg.list("db/char/char_advice/");
+        String is = null;
+        String is_dps = null;
+        String is_default = null;
 
-            for (String ast : strs){
-                if(ast.equals(this.CharName_BASE+".json")){
-                    is_dps = mg.open("db/char/char_advice/"+this.CharName_BASE+".json");
-                    result2 = IOUtils.toString(is_dps, StandardCharsets.UTF_8);
-                    is_dps.close();
-                }
-            }
+        is_dps = LoadData("db/char/char_advice/"+this.CharName_BASE+".json");
+        is_default = LoadData("db/char/en-US/"+this.CharName_BASE+".json");
+        is = LoadData("db/char/"+lang+"/"+this.CharName_BASE+".json");
 
-            for (String ast : strs_default){
-                if(ast.equals(this.CharName_BASE+".json")){
-                    is_default = mg.open("db/char/en-US/"+this.CharName_BASE+".json");
-                    result1 = IOUtils.toString(is_default, StandardCharsets.UTF_8);
-                    is_default.close();
-                }
-            }
-
-            for (String ast : strs_local){
-                if(ast.equals(this.CharName_BASE+".json")){
-                    is = mg.open("db/char/"+lang+"/"+this.CharName_BASE+".json");
-                    result1 = IOUtils.toString(is, StandardCharsets.UTF_8);
-                    is.close();
-                }
-            }
-
-            if(result1 != null){
-                JsonToStr(result1,result2);
-            }else {
-                Toast.makeText(context, "暫時沒有他/她的相關資料", Toast.LENGTH_SHORT).show();
-            }
-
-        } catch (IOException ex) {
-            if(ex != null) {
-                Toast.makeText(context, "暫時沒有他/她的相關資料", Toast.LENGTH_SHORT).show();
-            }
-            Log.wtf("EX",ex);
+        if(is != null){
+            JsonToStr(is,is_dps);
+        }else if(is_default != null){
+            JsonToStr(is_default,is_dps);
         }
     }
 
@@ -372,6 +350,7 @@ public class Characters_Info {
         final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
         View view = View.inflate(context, R.layout.fragment_char_info, null);
 
+        BackgroundReload.BackgroundReload(context,view);
 
         /** Method of info_detail */
         ImageView char_img = view.findViewById(R.id.info_char_img);
@@ -486,19 +465,45 @@ public class Characters_Info {
         /** THEME COLOR SET*/
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
         String color_hex = sharedPreferences.getString("theme_color_hex","#FF5A5A"); // Must include #
+        boolean isColorGradient = sharedPreferences.getBoolean("theme_color_gradient",false); // Must include #
+        String start_color = sharedPreferences.getString("start_color","#AEFEFF"); // Must include #
+        String end_color = sharedPreferences.getString("end_color","#35858B"); // Must include #
 
-        ColorStateList myList = new ColorStateList(
-                new int[][]{
-                        new int[]{android.R.attr.state_pressed},
-                        new int[]{-android.R.attr.state_checked},
-                        new int[]{android.R.attr.state_checked},
-                },
-                new int[] {
-                        context.getResources().getColor(R.color.tv_color),
-                        context.getResources().getColor(R.color.tv_color),
-                        Color.parseColor(color_hex)
-                }
-        );
+        if(isColorGradient){
+            color_hex = start_color;
+        }
+
+        ColorStateList myList ;
+
+        if (isColorGradient){
+            myList= new ColorStateList(
+                    new int[][]{
+                            new int[]{android.R.attr.state_pressed},
+                            new int[]{-android.R.attr.state_checked},
+                            new int[]{android.R.attr.state_checked},
+                    },
+                    new int[] {
+                            Color.parseColor(start_color),
+                            Color.parseColor(start_color),
+                            Color.parseColor(end_color)
+                    }
+            );
+        }else{
+            myList = new ColorStateList(
+                    new int[][]{
+                            new int[]{android.R.attr.state_pressed},
+                            new int[]{-android.R.attr.state_checked},
+                            new int[]{android.R.attr.state_checked},
+                    },
+                    new int[] {
+                            context.getResources().getColor(R.color.tv_color),
+                            context.getResources().getColor(R.color.tv_color),
+                            Color.parseColor(color_hex)
+                    }
+            );
+        }
+
+
 
         TextView barrier1 = view.findViewById(R.id.barrier1);
         TextView barrier2 = view.findViewById(R.id.barrier2);
@@ -530,42 +535,49 @@ public class Characters_Info {
         TextView info_sof5_name = view.findViewById(R.id.info_sof5_name);
         TextView info_sof6_name = view.findViewById(R.id.info_sof6_name);
 
-        barrier1.setBackgroundColor(Color.parseColor(color_hex));
-        barrier2.setBackgroundColor(Color.parseColor(color_hex));
-        barrier3.setBackgroundColor(Color.parseColor(color_hex));
-        barrier4.setBackgroundColor(Color.parseColor(color_hex));
-        barrier5.setBackgroundColor(Color.parseColor(color_hex));
-
         LinearLayout info_advice_ll = view.findViewById(R.id.info_advice_ll);
         info_advice_ll.setVisibility(View.GONE);
         barrier5.setVisibility(View.GONE);
 
-        info_intro_title.setTextColor(Color.parseColor(color_hex));
-        info_talent.setTextColor(Color.parseColor(color_hex));
-        info_btalent.setTextColor(Color.parseColor(color_hex));
-        info_sof.setTextColor(Color.parseColor(color_hex));
-        info_advice.setTextColor(Color.parseColor(color_hex));
+        if(isColorGradient){
+            barrier1.setBackgroundColor(Color.parseColor(start_color));
+            barrier2.setBackgroundColor(Color.parseColor(start_color));
+            barrier3.setBackgroundColor(Color.parseColor(start_color));
+            barrier4.setBackgroundColor(Color.parseColor(start_color));
+            barrier5.setBackgroundColor(Color.parseColor(start_color));
 
-        info_talent1_name.setTextColor(Color.parseColor(color_hex));
-        info_talent1_normal_title.setTextColor(Color.parseColor(color_hex));
-        info_talent1_hard_title.setTextColor(Color.parseColor(color_hex));
-        info_talent1_normal_title.setTextColor(Color.parseColor(color_hex));
-        info_talent1_drop_title.setTextColor(Color.parseColor(color_hex));
-        info_talent2_name.setTextColor(Color.parseColor(color_hex));
-        info_talent3_name.setTextColor(Color.parseColor(color_hex));
-        info_talent4_name.setTextColor(Color.parseColor(color_hex));
 
-        info_btalent1_name.setTextColor(Color.parseColor(color_hex));
-        info_btalent2_name.setTextColor(Color.parseColor(color_hex));
-        info_btalent3_name.setTextColor(Color.parseColor(color_hex));
+        }else{
+            barrier1.setBackgroundColor(Color.parseColor(color_hex));
+            barrier2.setBackgroundColor(Color.parseColor(color_hex));
+            barrier3.setBackgroundColor(Color.parseColor(color_hex));
+            barrier4.setBackgroundColor(Color.parseColor(color_hex));
+            barrier5.setBackgroundColor(Color.parseColor(color_hex));
 
-        info_sof1_name.setTextColor(Color.parseColor(color_hex));
-        info_sof2_name.setTextColor(Color.parseColor(color_hex));
-        info_sof3_name.setTextColor(Color.parseColor(color_hex));
-        info_sof4_name.setTextColor(Color.parseColor(color_hex));
-        info_sof5_name.setTextColor(Color.parseColor(color_hex));
-        info_sof6_name.setTextColor(Color.parseColor(color_hex));
+        }
 
+        colorGradient(info_intro_title ,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(info_talent ,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(info_btalent ,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(info_sof ,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(info_advice ,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(info_talent1_name ,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(info_talent1_normal_title ,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(info_talent1_hard_title ,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(info_talent1_normal_title ,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(info_talent1_drop_title ,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(info_talent2_name ,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(info_talent3_name ,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(info_talent4_name ,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(info_btalent1_name ,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(info_btalent2_name ,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(info_btalent3_name ,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(info_sof1_name ,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(info_sof2_name ,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(info_sof3_name ,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(info_sof4_name ,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(info_sof5_name ,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(info_sof6_name ,start_color,end_color,isColorGradient,color_hex);
 
         /**
          * PLS REMEMBER ADD BACK SUGGESTED WEAPON,ART IN XML
@@ -920,5 +932,36 @@ public class Characters_Info {
         }
 
         return bitmap;
+    }
+
+    public String LoadData(String inFile) {
+        String tContents = "";
+
+        try {
+            InputStream stream = context.getAssets().open(inFile);
+
+            int size = stream.available();
+            System.out.println("size"+ size);
+            byte[] buffer = new byte[size];
+            stream.read(buffer);
+            stream.close();
+            tContents = new String(buffer);
+        } catch (IOException e) {
+            // Handle exceptions here
+        }
+
+        return tContents;
+
+    }
+
+    public void colorGradient(TextView textView,String start_color, String end_color, boolean isColorGradient , String color){
+        if(isColorGradient){
+            Shader shader = new LinearGradient(0, 0, textView.getLineCount(), textView.getLineHeight(),
+                    Color.parseColor(start_color),  Color.parseColor(end_color), Shader.TileMode.CLAMP);
+            textView.getPaint().setShader(shader);
+            textView.setTextColor(Color.parseColor(start_color));
+        }else{
+            textView.setTextColor(Color.parseColor(color));
+        }
     }
 }

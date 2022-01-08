@@ -5,6 +5,7 @@ import androidx.core.app.NotificationManagerCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -47,6 +48,7 @@ import com.voc.genshin_helper.data.AlarmAdapter;
 import com.voc.genshin_helper.data.Characters;
 import com.voc.genshin_helper.data.CharactersAdapter;
 import com.voc.genshin_helper.data.ScreenSizeUtils;
+import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.ReminderBroadcast;
 import com.voc.genshin_helper.util.SampleBootReceiver;
 
@@ -129,6 +131,8 @@ public class AlarmUI extends AppCompatActivity {
 
     boolean sleep = false ;
 
+    Activity activity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -138,6 +142,10 @@ public class AlarmUI extends AppCompatActivity {
         timePhList = new String[]{getString(R.string.alarm_time1), getString(R.string.alarm_time2), getString(R.string.alarm_time3), getString(R.string.alarm_time4)};
         timeJbList = new String[]{getString(R.string.sunday), getString(R.string.monday), getString(R.string.tuesday), getString(R.string.wednesday), getString(R.string.thursday), getString(R.string.friday), getString(R.string.saturday)};
         context = this;
+        activity = this;
+
+        BackgroundReload.BackgroundReload(context,activity);
+
         sharedPreferences = getSharedPreferences("alarm_records",MODE_PRIVATE);
         mList = findViewById(R.id.alarm_list);
         mAdapter = new AlarmAdapter(this, alarmList);

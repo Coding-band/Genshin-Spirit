@@ -15,9 +15,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:cardBackgroundColor="@color/page_bg"
+        android:background="@drawable/gone_background"
+        app:cardBackgroundColor="@color/colorWhiteAlpha"
         app:cardCornerRadius="20dp"
-        app:cardElevation="10dp">
+        app:cardElevation="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"

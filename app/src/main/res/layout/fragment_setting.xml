@@ -46,9 +46,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="8dp"
-                app:cardBackgroundColor="@color/page_bg"
+                android:background="@drawable/gone_background"
+                android:visibility="visible"
+                app:cardBackgroundColor="@color/colorWhiteAlpha"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
+                app:cardElevation="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -119,10 +121,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:background="@drawable/gone_background"
                 android:visibility="visible"
-                app:cardBackgroundColor="@color/page_bg"
+                app:cardBackgroundColor="@color/colorWhiteAlpha"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
+                app:cardElevation="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -357,6 +360,79 @@
                                 app:srcCompat="@color/color_theme_18" />
                         </TableRow>
 
+                        <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="8dp">
+
+                            <ImageView
+                                android:id="@+id/color_block19"
+                                android:layout_width="32dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/blue_sea" />
+
+                            <ImageView
+                                android:id="@+id/color_block20"
+                                android:layout_width="32dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                android:visibility="visible"
+                                app:srcCompat="@drawable/pinky_day" />
+
+                            <ImageView
+                                android:id="@+id/color_block21"
+                                android:layout_width="32dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                android:visibility="visible"
+                                app:srcCompat="@drawable/dream_color" />
+
+                            <ImageView
+                                android:id="@+id/color_block22"
+                                android:layout_width="32dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                android:visibility="visible"
+                                app:srcCompat="@drawable/cyber_color" />
+
+                            <ImageView
+                                android:id="@+id/color_block23"
+                                android:layout_width="32dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                android:visibility="visible"
+                                app:srcCompat="@drawable/cream_color" />
+
+                            <ImageView
+                                android:id="@+id/color_block24"
+                                android:layout_width="32dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                android:visibility="invisible"
+                                app:srcCompat="@color/color_theme_13" />
+
+
+                        </TableRow>
+
                     </TableLayout>
 
                 </LinearLayout>
@@ -368,10 +444,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
+                android:background="@drawable/gone_background"
                 android:visibility="visible"
-                app:cardBackgroundColor="@color/page_bg"
+                app:cardBackgroundColor="@color/colorWhiteAlpha"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
+                app:cardElevation="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -418,9 +495,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                app:cardBackgroundColor="@color/page_bg"
+                android:background="@drawable/gone_background"
+                app:cardBackgroundColor="@color/colorWhiteAlpha"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
+                app:cardElevation="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -462,31 +540,59 @@
                         android:text="@string/press_exit"
                         android:textColor="@color/tv_color" />
 
-                    <TextView android:id="@+id/textView16"
+                    <TextView
+                        android:id="@+id/textView16"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="@string/acc_in_server"/>
+                        android:text="@string/acc_in_server" />
 
-                    <Spinner android:id="@+id/server_spinner"
+                    <Spinner
+                        android:id="@+id/server_spinner"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
-                        android:layout_marginBottom="8dp"/>
+                        android:layout_marginBottom="8dp" />
 
-                    <TextView android:id="@+id/textView4"
+                    <TextView
+                        android:id="@+id/textView4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:text="@string/list_grid"/>
+                        android:text="@string/list_grid" />
 
-                    <Spinner android:id="@+id/ui_box_spinner"
+                    <Spinner
+                        android:id="@+id/ui_box_spinner"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
-                        android:layout_marginBottom="8dp"/>
+                        android:layout_marginBottom="8dp" />
+
+                    <TextView
+                        android:id="@+id/textView17"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="@string/background_setting" />
+
+                    <TextView
+                        android:id="@+id/textView19"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:text="@string/background_accept_list"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/bg_setting_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="8dp"
+                        android:background="@drawable/bg_kwang_light"
+                        android:text="@string/background_press_set" />
 
 
                 </LinearLayout>
@@ -498,9 +604,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                app:cardBackgroundColor="@color/page_bg"
+                android:background="@drawable/gone_background"
+                app:cardBackgroundColor="@color/colorWhiteAlpha"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
+                app:cardElevation="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -647,10 +754,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="8dp"
+                android:background="@drawable/gone_background"
                 android:visibility="visible"
-                app:cardBackgroundColor="@color/page_bg"
+                app:cardBackgroundColor="@color/colorWhiteAlpha"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="10dp">
+                app:cardElevation="0dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"

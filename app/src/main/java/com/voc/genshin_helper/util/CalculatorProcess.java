@@ -1,10 +1,16 @@
 package com.voc.genshin_helper.util;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
+import android.graphics.LinearGradient;
+import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
 import android.view.Gravity;
@@ -13,6 +19,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.constraintlayout.widget.Barrier;
 import androidx.viewpager.widget.ViewPager;
 import androidx.gridlayout.widget.GridLayout;
 
@@ -111,6 +118,10 @@ public class CalculatorProcess {
     int  熔毀之刻  = 0 ;
     int  灰燼之心  = 0 ;
     int  獄火之蝶  = 0 ;
+    //add in 20220106
+    int  NaN1  = 0 ; // Raiden Shogun Weekly Boss
+    int  NaN2  = 0 ; // Raiden Shogun Weekly Boss
+    int  NaN3  = 0 ; // Raiden Shogun Weekly Boss
 
 
     /** COMMON */ /**[牢固的箭簇,銳利的箭簇,歷戰的箭簇]*/
@@ -124,6 +135,9 @@ public class CalculatorProcess {
     ArrayList<Integer> 名刀鐔 = new ArrayList<Integer>();
     //add in 20210910
     ArrayList<Integer> 浮游晶化核 = new ArrayList<Integer>();
+    //add in 20220105 -> All of them are only have one rare
+    int 獸境王器 = 0;
+    int 龍嗣偽鰭 = 0;
 
     /** T-COMMON*/
 
@@ -378,23 +392,8 @@ public class CalculatorProcess {
         this.cal_view = viewPager3;
     }
 
-    public void setup(Context context ,ArrayList<String> NameList, ArrayList<Integer> BeforeLvlList, ArrayList<Integer> AfterLvlList, ArrayList<Integer> BeforeBreakLvlList, ArrayList<Integer> AfterBreakLvlList, ArrayList<Integer> BeforeSkill1LvlList, ArrayList<Integer> AfterSkill1LvlList, ArrayList<Integer> BeforeSkill2LvlList, ArrayList<Integer> AfterSkill2LvlList, ArrayList<Integer> BeforeSkill3LvlList, ArrayList<Integer> AfterSkill3LvlList, ArrayList<Boolean> IsCal, ArrayList<Boolean> BeforeBreakUPLvlList, ArrayList<Boolean> AfterBreakUPLvlList) {
+    public void setup(Context context) {
         this.context = context;
-        this.NameList = NameList;
-        //System.out.println(NameList);
-        this.BeforeLvlList = BeforeLvlList;
-        this.AfterLvlList = AfterLvlList;
-        this.BeforeBreakLvlList = BeforeBreakLvlList;
-        this.AfterBreakLvlList = AfterBreakLvlList;
-        this.BeforeSkill1LvlList = BeforeSkill1LvlList;
-        this.AfterSkill1LvlList = AfterSkill1LvlList;
-        this.BeforeSkill2LvlList = BeforeSkill2LvlList;
-        this.AfterSkill2LvlList = AfterSkill2LvlList;
-        this.BeforeSkill3LvlList = BeforeSkill3LvlList;
-        this.AfterSkill3LvlList = AfterSkill3LvlList;
-        this.IsCal = IsCal;
-        this.BeforeBreakUPLvlList = BeforeBreakUPLvlList;
-        this.AfterBreakUPLvlList = AfterBreakUPLvlList;
 
         for (int x = 0 ; x < 4 ; x++){
             燃願瑪瑙.add(0);
@@ -449,29 +448,103 @@ public class CalculatorProcess {
 
         }
 
-        for (int k = 0 ; k < NameList.size() ; k ++){part0_exp.add(0);}
-        for (int k = 0 ; k < NameList.size() ; k ++){part1_exp.add(0);}
-        for (int k = 0 ; k < NameList.size() ; k ++){part2_exp.add(0);}
-        for (int k = 0 ; k < NameList.size() ; k ++){part3_exp.add(0);}
-        for (int k = 0 ; k < NameList.size() ; k ++){part4_exp.add(0);}
-        for (int k = 0 ; k < NameList.size() ; k ++){part5_exp.add(0);}
-        for (int k = 0 ; k < NameList.size() ; k ++){part6_exp.add(0);}
-        for (int k = 0 ; k < 10 ; k ++){asc_temp_count.add(0);}
-        for (int k = 0 ; k < 7 ; k ++){skill1_temp_count.add(0);}
-        for (int k = 0 ; k < 7 ; k ++){skill2_temp_count.add(0);}
-        for (int k = 0 ; k < 7 ; k ++){skill3_temp_count.add(0);}
+        for (int k = 0 ; k < NameList.size() ; k ++){
+            part0_exp.add(0);
+            part1_exp.add(0);
+            part2_exp.add(0);
+            part3_exp.add(0);
+            part4_exp.add(0);
+            part5_exp.add(0);
+            part6_exp.add(0);
+
+            weapon_part1_exp.add(0);
+            weapon_part2_exp.add(0);
+            weapon_part3_exp.add(0);
+            weapon_part4_exp.add(0);
+            weapon_part5_exp.add(0);
+            weapon_part6_exp.add(0);
+        }
 
 
-        for (int k = 0 ; k < NameList.size() ; k ++){weapon_part0_exp.add(0);}
-        for (int k = 0 ; k < NameList.size() ; k ++){weapon_part1_exp.add(0);}
-        for (int k = 0 ; k < NameList.size() ; k ++){weapon_part2_exp.add(0);}
-        for (int k = 0 ; k < NameList.size() ; k ++){weapon_part3_exp.add(0);}
-        for (int k = 0 ; k < NameList.size() ; k ++){weapon_part4_exp.add(0);}
-        for (int k = 0 ; k < NameList.size() ; k ++){weapon_part5_exp.add(0);}
-        for (int k = 0 ; k < NameList.size() ; k ++){weapon_part6_exp.add(0);}
+
+        for (int k = 0 ; k < 10 ; k ++){asc_temp_count.add(0);weapon_asc_temp_count.add(0);}
+        for (int k = 0 ; k < 7 ; k ++){skill1_temp_count.add(0);skill2_temp_count.add(0);skill3_temp_count.add(0);}
+
+        Log.wtf("Procedure","Setup");
 
 
-        for (int k = 0 ; k < 10 ; k ++){weapon_asc_temp_count.add(0);}
+        /*
+        燃願瑪瑙 = new ArrayList<>(4);
+        滌淨青金 = new ArrayList<>(4);
+        最勝紫晶 = new ArrayList<>(4);
+        哀敘冰玉 = new ArrayList<>(4);
+        自在松石 = new ArrayList<>(4);
+        堅牢黃玉 = new ArrayList<>(4);
+
+        漆黑隕鐵的一塊 = new ArrayList<>(4);
+        獅牙鬥士的理想 = new ArrayList<>(4);
+        孤雲寒林的神體 = new ArrayList<>(4);
+        霧海雲間的轉還 = new ArrayList<>(4);
+        今昔劇畫的鬼人 = new ArrayList<>(4);
+        鳴神御靈的勇武 = new ArrayList<>(4);
+        高塔孤王的碎夢 = new ArrayList<>(4);
+        遠海夷地的金枝 = new ArrayList<>(4);
+        凜風奔狼的懷鄉 = new ArrayList<>(4);
+
+        歷戰的箭簇 = new ArrayList<>(3);
+        禁咒繪卷 = new ArrayList<>(3);
+        攫金鴉印 = new ArrayList<>(3);
+        不祥的面具 = new ArrayList<>(3);
+        尉官的徽記 = new ArrayList<>(3);
+        原素花蜜 = new ArrayList<>(3);
+        史萊姆原漿 = new ArrayList<>(3);
+        名刀鐔 = new ArrayList<>(3);
+        浮游晶化核 = new ArrayList<>(3);
+
+        混沌真眼 = new ArrayList<>(3);
+        混沌爐心 = new ArrayList<>(3);
+        石化的骨片 = new ArrayList<>(3);
+        霧虛燈芯 = new ArrayList<>(3);
+        督察長祭刀 = new ArrayList<>(3);
+        黑晶號角 = new ArrayList<>(3);
+        地脈的新芽 = new ArrayList<>(3);
+        偏光棱鏡 = new ArrayList<>(3);
+        隱獸鬼爪 = new ArrayList<>(3);
+
+        自由_的哲學 = new ArrayList<>(3);
+        黃金_的哲學 = new ArrayList<>(3);
+        抗爭_的哲學 = new ArrayList<>(3);
+        勤勞_的哲學 = new ArrayList<>(3);
+        詩文_的哲學 = new ArrayList<>(3);
+        繁榮_的哲學 = new ArrayList<>(3);
+        風雅_的哲學 = new ArrayList<>(3);
+        浮世_的哲學 = new ArrayList<>(3);
+        天光_的哲學 = new ArrayList<>(3);
+
+        part0_exp = new ArrayList<>(NameList.size());
+        part1_exp = new ArrayList<>(NameList.size());
+        part2_exp = new ArrayList<>(NameList.size());
+        part3_exp = new ArrayList<>(NameList.size());
+        part4_exp = new ArrayList<>(NameList.size());
+        part5_exp = new ArrayList<>(NameList.size());
+        part6_exp = new ArrayList<>(NameList.size());
+
+        asc_temp_count = new ArrayList<>(10);
+        skill1_temp_count = new ArrayList<>(7);
+        skill2_temp_count = new ArrayList<>(7);
+        skill3_temp_count = new ArrayList<>(7);
+
+        weapon_part0_exp = new ArrayList<>(NameList.size());
+        weapon_part1_exp = new ArrayList<>(NameList.size());
+        weapon_part2_exp = new ArrayList<>(NameList.size());
+        weapon_part3_exp = new ArrayList<>(NameList.size());
+        weapon_part4_exp = new ArrayList<>(NameList.size());
+        weapon_part5_exp = new ArrayList<>(NameList.size());
+        weapon_part6_exp = new ArrayList<>(NameList.size());
+
+        weapon_asc_temp_count = new ArrayList<>(10);
+
+         */
 
         item_rss = new ItemRss();
 
@@ -489,6 +562,10 @@ public class CalculatorProcess {
         this.WeaponFollowList = arrayList9;
         this.WeaponRareList = arrayList10;
         this.WeaponIdList = arrayList11;
+
+
+        Log.wtf("Procedure","weapon_setup");
+
         if(arg.equals("READ")){
             weapon_readJSON();
         }
@@ -505,6 +582,7 @@ public class CalculatorProcess {
         this.artifactType = artifactChoosedType;
         this.artifactId = artifactChoosedIdList;
 
+        Log.wtf("Procedure","artifact_setup");
         if(arg.equals("READ")){
             artifact_readJSON();
         }
@@ -526,8 +604,9 @@ public class CalculatorProcess {
         this.BeforeBreakUPLvlList = arrayList13;
         this.AfterBreakUPLvlList = arrayList14;
 
+        Log.wtf("Procedure","char_setup");
         if(arg.equals("READ")){
-        char_readJSON();
+            char_readJSON();
         }
     }
 
@@ -546,13 +625,16 @@ public class CalculatorProcess {
                 skill3_temp_item.clear();
                 skill3_temp_count.clear();
 
-                for (int k = 0 ; k < 9 ; k ++){asc_temp_count.add(0);}
-                for (int k = 0 ; k < 7 ; k ++){skill1_temp_count.add(0);}
-                for (int k = 0 ; k < 7 ; k ++){skill2_temp_count.add(0);}
-                for (int k = 0 ; k < 7 ; k ++){skill3_temp_count.add(0);}
+                for (int k = 0 ; k < 9 ; k ++){
+                    asc_temp_count.add(0);
+                }
+                for (int k = 0 ; k < 7 ; k ++){
+                    skill1_temp_count.add(0);
+                    skill2_temp_count.add(0);
+                    skill3_temp_count.add(0);
+                }
 
                 for (int y = BeforeLvlList.get(x) ; y < AfterLvlList.get(x) ; y++){
-
                     if(y>80 && y <= 90){exp_grade6 = exp_grade6 + expEXPList.get(y);}
                     else if(y>70 && y <= 80){exp_grade5 = exp_grade5 + expEXPList.get(y);}
                     else if(y>60 && y <= 70){exp_grade4 = exp_grade4 + expEXPList.get(y);}
@@ -570,6 +652,7 @@ public class CalculatorProcess {
                 part4_exp.add(exp_grade4);
                 part5_exp.add(exp_grade5);
                 part6_exp.add(exp_grade6);
+
                 getCharEXPItemCount(x,exp_grade0);
                 getCharEXPItemCount(x,exp_grade1);
                 getCharEXPItemCount(x,exp_grade2);
@@ -696,6 +779,8 @@ public class CalculatorProcess {
     }
 
     public void weapon_calculate () {
+
+        Log.wtf("Procedure","weapon_calculate1");
         Log.wtf("HEY","TOMMY");
         for (int x = 0 ; x < WeaponNameList.size() ; x ++) {
             if(WeaponIsCal.get(x) == true){
@@ -707,7 +792,6 @@ public class CalculatorProcess {
                 for (int k = 0 ; k < 10 ; k ++){weapon_asc_temp_count.add(0);}
 
                 int rare_tmp = WeaponRareList.get(x);
-                Log.wtf("rare_tmp", String.valueOf(rare_tmp));
 
                 if(rare_tmp == 1){
 
@@ -872,16 +956,22 @@ public class CalculatorProcess {
                         Log.wtf("ABC","X");
                     }
                 }
+
+                Log.wtf("Procedure","weapon_calculate2");
                 FindWeaponItemByName(weapon_asc_temp_item,weapon_asc_temp_count);
 
             }
         }
         weapon_fin = true;
+
+        Log.wtf("Procedure","weapon_calculate3");
         check_cal_finished();
     }
 
     public void artifact_calculate () {
         Log.wtf("HEY","TOMMYS");
+
+        Log.wtf("Procedure","artifact_calculate1");
         for (int x = 0 ; x < ArtifactNameList.size() ; x ++) {
             if (ArtifactIsCal.get(x) == true) {
                 /** CAL EXP */
@@ -914,7 +1004,6 @@ public class CalculatorProcess {
 
                 for (int y = ArtifactBeforeLvlList.get(x); y < ArtifactAfterLvlList.get(x); y++) {
                     exp_tmp = exp_tmp + ArtifactExpList.get(y);
-                    Log.wtf("exp_tmp", String.valueOf(exp_tmp)+" EE");
                     morax = morax + ArtifactMoraList.get(y);
                 }
 
@@ -923,11 +1012,15 @@ public class CalculatorProcess {
             }
         }
         artifact_fin = true;
+
+        Log.wtf("Procedure","artifact_calculate2");
         check_cal_finished();
     }
 
     public void check_cal_finished(){
         if(weapon_fin == true && char_fin == true){
+
+            Log.wtf("Procedure","check_cal_finished");
             resultShow();
             saveToDB();
             weapon_fin = false;
@@ -955,6 +1048,8 @@ public class CalculatorProcess {
 
     /**EDIT WHEN ADD NEW ITEMS*/
     public void resultShow () {
+
+        Log.wtf("Procedure","resultShow1");
         /** INIT of UI GONE*/
         TextView result_crystal_title = viewPager.findViewById(R.id.result_crystal_title);
         TextView result_boss_title = viewPager.findViewById(R.id.result_boss_title);
@@ -966,6 +1061,11 @@ public class CalculatorProcess {
         TextView result_other_title = viewPager.findViewById(R.id.result_other_title);
         TextView result_common_title = viewPager.findViewById(R.id.result_common_title);
 
+        TextView result_set_title = viewPager.findViewById(R.id.result_set_title);
+        TextView result_result_title = viewPager.findViewById(R.id.result_result_title);
+        TextView barrier6 = viewPager.findViewById(R.id.barrier6);
+        TextView barrier7 = viewPager.findViewById(R.id.barrier7);
+
         result_crystal_title.setVisibility(View.GONE);
         result_boss_title.setVisibility(View.GONE);
         result_weekboss_title.setVisibility(View.GONE);
@@ -975,6 +1075,64 @@ public class CalculatorProcess {
         result_weeklybk3_title.setVisibility(View.GONE);
         result_other_title.setVisibility(View.GONE);
         result_common_title.setVisibility(View.GONE);
+
+        SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
+        String color_hex = sharedPreferences.getString("theme_color_hex","#FF5A5A"); // Must include #
+        boolean isColorGradient = sharedPreferences.getBoolean("theme_color_gradient",false); // Must include #
+        String start_color = sharedPreferences.getString("start_color","#AEFEFF"); // Must include #
+        String end_color = sharedPreferences.getString("end_color","#35858B"); // Must include #
+
+        ColorStateList myList ;
+
+        if (isColorGradient){
+            myList= new ColorStateList(
+                    new int[][]{
+                            new int[]{android.R.attr.state_pressed},
+                            new int[]{-android.R.attr.state_checked},
+                            new int[]{android.R.attr.state_checked},
+                    },
+                    new int[] {
+                            Color.parseColor(start_color),
+                            Color.parseColor(start_color),
+                            Color.parseColor(end_color)
+                    }
+            );
+        }else{
+            myList = new ColorStateList(
+                    new int[][]{
+                            new int[]{android.R.attr.state_pressed},
+                            new int[]{-android.R.attr.state_checked},
+                            new int[]{android.R.attr.state_checked},
+                    },
+                    new int[] {
+                            context.getResources().getColor(R.color.tv_color),
+                            context.getResources().getColor(R.color.tv_color),
+                            Color.parseColor(color_hex)
+                    }
+            );
+        }
+
+
+
+        colorGradient(result_crystal_title,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(result_boss_title,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(result_weekboss_title,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(result_local_title,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(result_weeklybk1_title,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(result_weeklybk2_title,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(result_weeklybk3_title,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(result_other_title,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(result_common_title,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(result_set_title,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(result_result_title,start_color,end_color,isColorGradient,color_hex);
+
+        if(isColorGradient){
+            color_hex = start_color;
+        }
+
+        barrier6	.setBackgroundColor(Color.parseColor(color_hex));
+        barrier7	.setBackgroundColor(Color.parseColor(color_hex));
+
 
         /** CHARACTER ICON + WEAPON ICON*/
         GridLayout gridLayout = new GridLayout(context);
@@ -988,10 +1146,11 @@ public class CalculatorProcess {
         //gridLayout.setRowCount(5);
         //        gridLayout.setColumnCount((int)(NameList.size()/5)+1);
         //        int width = (int) ((ScreenSizeUtils.getInstance(context).getScreenWidth()-64)/5);
-        int column = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth()-150)/150;
+        int column150 = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth())/150;
+        int column = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth())/128;
         final Transformation transformation = new RoundedCornersTransformation(radius, margin);
         for (int x = 0, c = 0, r = 0; NameList != null && WeaponNameList != null && x < NameList.size() + WeaponNameList.size(); x++, c++) {
-            if(c == column) { c = 0;r++; }
+            if(c == column150) { c = 0;r++; }
             View view = View.inflate(context, R.layout.item_cal_img, null);
             ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
             TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
@@ -1073,8 +1232,8 @@ public class CalculatorProcess {
         }
 
         /** BOSS */
-        String[] boss_temp = new String[]{"常燃火種","淨水之心","雷光棱鏡","極寒之核","颶風之種","玄岩之塔","未熟之玉","晶凝之華","魔偶機心","恒常機關之心","陰燃之珠","雷霆數珠","排異之露"};
-        int[] boss_temp_cnt = new int[]{常燃火種,淨水之心,雷光棱鏡,極寒之核,颶風之種,玄岩之塔,未熟之玉,晶凝之華,魔偶機心,恒常機關之心,陰燃之珠,雷霆數珠,排異之露};
+        String[] boss_temp = new String[]{"常燃火種","淨水之心","雷光棱鏡","極寒之核","颶風之種","玄岩之塔","未熟之玉","晶凝之華","魔偶機心","恒常機關之心","陰燃之珠","雷霆數珠","排異之露","獸境王器","龍嗣偽鰭"};
+        int[] boss_temp_cnt = new int[]{常燃火種,淨水之心,雷光棱鏡,極寒之核,颶風之種,玄岩之塔,未熟之玉,晶凝之華,魔偶機心,恒常機關之心,陰燃之珠,雷霆數珠,排異之露,獸境王器,龍嗣偽鰭};
         gridLayout = viewPager.findViewById(R.id.result_boss_gl);
         gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
@@ -1107,8 +1266,8 @@ public class CalculatorProcess {
         }
 
         /** WEEK-BOSS */
-        String[] week_boss_temp = new String[]{"北風之環","東風的吐息","東風之翎","北風的魂匣","東風之爪","北風之尾","魔王之刃·殘片","吞天之鯨·只角","武煉之魂·孤影","龍王之冕","血玉之枝","鎏金之鱗","熔毀之刻","灰燼之心","獄火之蝶"};
-        int[] week_boss_temp_cnt = new int[]{北風之環,東風的吐息,東風之翎,北風的魂匣,東風之爪,北風之尾,魔王之刃_殘片,吞天之鯨_只角,武煉之魂_孤影,龍王之冕,血玉之枝,鎏金之鱗,熔毀之刻,灰燼之心,獄火之蝶};
+        String[] week_boss_temp = new String[]{"北風之環","東風的吐息","東風之翎","北風的魂匣","東風之爪","北風之尾","魔王之刃·殘片","吞天之鯨·只角","武煉之魂·孤影","龍王之冕","血玉之枝","鎏金之鱗","熔毀之刻","灰燼之心","獄火之蝶","NaN1","NaN2","NaN3"};
+        int[] week_boss_temp_cnt = new int[]{北風之環,東風的吐息,東風之翎,北風的魂匣,東風之爪,北風之尾,魔王之刃_殘片,吞天之鯨_只角,武煉之魂_孤影,龍王之冕,血玉之枝,鎏金之鱗,熔毀之刻,灰燼之心,獄火之蝶,NaN1,NaN2,NaN3};
         gridLayout = viewPager.findViewById(R.id.result_weekboss_gl);
         gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
@@ -1215,8 +1374,9 @@ public class CalculatorProcess {
         gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
+        int column200 = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth())/200;
         for (int x = 0, c = 0, r = 0; isZero(weeklybk1_temp_cnt) == false && x < weeklybk1_temp.length; x++) {
-            if(c == column) { c = 0;r++; }
+            if(c == column200) { c = 0;r++; }
             View view = View.inflate(context, R.layout.item_cal_img, null);
             ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
             TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
@@ -1255,7 +1415,7 @@ public class CalculatorProcess {
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
         for (int x = 0, c = 0, r = 0; isZero(weeklybk2_temp_cnt) == false && x < weeklybk2_temp.length; x++) {
-            if(c == column) { c = 0;r++; }
+            if(c == column200) { c = 0;r++; }
             View view = View.inflate(context, R.layout.item_cal_img, null);
             ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
             TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
@@ -1294,7 +1454,7 @@ public class CalculatorProcess {
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
         for (int x = 0, c = 0, r = 0; isZero(weeklybk3_temp_cnt) == false && x < weeklybk3_temp.length; x++) {
-            if(c == column) { c = 0;r++; }
+            if(c == column200) { c = 0;r++; }
             View view = View.inflate(context, R.layout.item_cal_img, null);
             ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
             TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
@@ -1537,11 +1697,10 @@ public class CalculatorProcess {
 
     /**EDIT WHEN ADD NEW ITEMS*/
     public void FindItemByName(ArrayList<String> temp_item, ArrayList<Integer> temp_count){
-
         if(temp_item.size() >= 5){
             /** CRYSTAL -> USING temp_count's pos 0-3*/
 
-            if(temp_item.get(1).equals("燃願瑪瑙")){addCountIntoVar(燃願瑪瑙,temp_count,"CRYSTAL");}
+            if(temp_item.get(1).equals("燃願瑪瑙")) {addCountIntoVar(燃願瑪瑙, temp_count, "CRYSTAL");}
             if(temp_item.get(1).equals("滌淨青金")){addCountIntoVar(滌淨青金,temp_count,"CRYSTAL");}
             if(temp_item.get(1).equals("最勝紫晶")){addCountIntoVar(最勝紫晶,temp_count,"CRYSTAL");}
             if(temp_item.get(1).equals("哀敘冰玉")){addCountIntoVar(哀敘冰玉,temp_count,"CRYSTAL");}
@@ -1577,6 +1736,9 @@ public class CalculatorProcess {
             //add in 20210910
             if(temp_item.get(2).equals("雷霆數珠")){雷霆數珠 = addCountIntoVar(雷霆數珠,temp_count,"BOSS");}
             if(temp_item.get(2).equals("排異之露")){排異之露 = addCountIntoVar(排異之露,temp_count,"BOSS");}
+            //add in 20220105
+            if(temp_item.get(2).equals("獸境王器")){ 獸境王器 = addCountIntoVar(獸境王器,temp_count,"BOSS");}
+            if(temp_item.get(2).equals("龍嗣偽鰭")){龍嗣偽鰭 = addCountIntoVar(龍嗣偽鰭,temp_count,"BOSS");}
 
             /** LOCAL */
             if(temp_item.get(3).equals("小燈草")){小燈草 = addCountIntoVar(小燈草,temp_count,"LOCAL");}
@@ -1652,6 +1814,10 @@ public class CalculatorProcess {
             if(temp_item.get(3).equals("灰燼之心")){灰燼之心 = addCountIntoVar(灰燼之心,temp_count,"T-BOSS");}
             if(temp_item.get(3).equals("獄火之蝶")){獄火之蝶 = addCountIntoVar(獄火之蝶,temp_count,"T-BOSS");}
 
+            if(temp_item.get(3).equals("NaN1")){NaN1 = addCountIntoVar(NaN1,temp_count,"T-BOSS");}
+            if(temp_item.get(3).equals("NaN2")){NaN2 = addCountIntoVar(NaN2,temp_count,"T-BOSS");}
+            if(temp_item.get(3).equals("NaN3")){NaN3 = addCountIntoVar(NaN3,temp_count,"T-BOSS");}
+
         }
 
     }
@@ -1660,6 +1826,7 @@ public class CalculatorProcess {
     /**EDIT WHEN ADD NEW ITEMS*/
     public void FindWeaponItemByName(ArrayList<String> temp_item, ArrayList<Integer> temp_count){
 
+        Log.wtf("Procedure","FindWeaponItemByName1");
         System.out.println(temp_item);
 
         /** COPY1 -> */
@@ -1698,6 +1865,7 @@ public class CalculatorProcess {
         //add in 20210910
         if(temp_item.get(3).equals("浮游晶化核")){addCountIntoVar(浮游晶化核,temp_count,"W-COMMON");}
 
+        Log.wtf("Procedure","FindWeaponItemByName2");
     }
 
     /**
@@ -1706,6 +1874,8 @@ public class CalculatorProcess {
      * @param XPR -> TYPE -> TELL FUN Total pos have in the ITEM
      */
     public void addCountIntoVar(ArrayList<Integer> ITEM, ArrayList<Integer> temp_count, String XPR){
+
+        Log.wtf("Procedure","addCountIntoVar1");
         if(XPR.equals("CRYSTAL")) {
             for (int x = 0; x < 4; x++) {
                 ITEM.set(x, ITEM.get(x)+temp_count.get(x));
@@ -1720,25 +1890,23 @@ public class CalculatorProcess {
             }
         }else if(XPR.equals("T-COMMON")){
             for (int x = 0 ; x < 3 ; x++){
-                System.out.println("SYS : "+temp_count);
                 ITEM.set(x,ITEM.get(x)+temp_count.get(x+3));
             }
         }else if(XPR.equals("COPY1")){
             for (int x = 0 ; x < 4 ; x++){
-                System.out.println("SYS : "+temp_count);
                 ITEM.set(x,ITEM.get(x)+temp_count.get(x));
             }
         }else if(XPR.equals("COPY2")){
             for (int x = 0 ; x < 3 ; x++){
-                System.out.println("SYS : "+temp_count);
                 ITEM.set(x,ITEM.get(x)+temp_count.get(x+4));
             }
         }else if(XPR.equals("W-COMMON")){
             for (int x = 0 ; x < 3 ; x++){
-                System.out.println("SYS : "+temp_count);
                 ITEM.set(x,ITEM.get(x)+temp_count.get(x+7));
             }
         }
+
+        Log.wtf("Procedure","addCountIntoVar2");
     }
 
     /**
@@ -1748,6 +1916,8 @@ public class CalculatorProcess {
      * @param XPR -> TYPE -> TELL FUN Total pos have in the ITEM
      */
     public int addCountIntoVar(int ITEM, ArrayList<Integer> temp_count, String XPR){
+
+        Log.wtf("Procedure","addCountIntoVarX1");
         if(XPR.equals("BOSS")) {
                 ITEM = ITEM + temp_count.get(8);
                 return ITEM;
@@ -1757,7 +1927,12 @@ public class CalculatorProcess {
         }else if(XPR.equals("LOCAL")) {
                 ITEM = ITEM + temp_count.get(4);
                 return ITEM;
+        }else if(XPR.equals("COMMON")) {
+                ITEM = ITEM + temp_count.get(5);
+                return ITEM;
         }
+
+        Log.wtf("Procedure","addCountIntoVarX2");
         return ITEM;
     }
 
@@ -1768,6 +1943,7 @@ public class CalculatorProcess {
         String char_skill_lvl = LoadData("db/char/char_skill_lvl.json");
         String char_require_asc_skill = LoadData("db/char/char_require_asc_skill.json");
 
+        Log.wtf("Procedure","char_readJSON_1");
         try {
             JSONArray array = new JSONArray(char_lvl_exp);
             for (int i = 0; i < array.length(); i++) {
@@ -1863,6 +2039,8 @@ public class CalculatorProcess {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
+        Log.wtf("Procedure","char_readJSON_2");
         char_calculate();
     }
 
@@ -1881,6 +2059,7 @@ public class CalculatorProcess {
 
         String weapon_require_asc = LoadData("db/weapons/weapon_require_asc.json");
 
+        Log.wtf("Procedure","weapon_readJSON_1");
         /** EXP */
         try {
             JSONArray array = new JSONArray(weapon_rare1_exp);
@@ -2044,6 +2223,7 @@ public class CalculatorProcess {
             e.printStackTrace();
         }
 
+        Log.wtf("Procedure","weapon_readJSON_2");
         weapon_calculate();
         /**
          if(!WeaponRareList.isEmpty()){
@@ -2059,6 +2239,7 @@ public class CalculatorProcess {
         String artifact_rare4_exp = LoadData("db/artifacts/artifact_rare4_exp.json");
         String artifact_rare5_exp = LoadData("db/artifacts/artifact_rare5_exp.json");
 
+        Log.wtf("Procedure","artifact_readJSON_1");
         /** EXP */
         try {
             JSONArray array = new JSONArray(artifact_rare1_exp);
@@ -2118,6 +2299,7 @@ public class CalculatorProcess {
         } catch (JSONException e) {
             e.printStackTrace();
         }
+        Log.wtf("Procedure","artifact_readJSON_2");
         artifact_calculate();
 
     }
@@ -2147,7 +2329,7 @@ public class CalculatorProcess {
         int value = (int) Math.floor(Math.log10(numValue));
         int base = value / 3;
         String plus = "";
-        SharedPreferences sharedPreferences = context.getSharedPreferences("user_info", Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = context.getSharedPreferences("user_info", MODE_PRIVATE);
         int decimal_num = sharedPreferences.getInt("decimal_num", 0);
         boolean decimal  = sharedPreferences.getBoolean("decimal", false);
         if (decimal == true){
@@ -2396,4 +2578,14 @@ public class CalculatorProcess {
         this.dataSheetName = dataSheetName;
     }
 
+    public void colorGradient(TextView textView,String start_color, String end_color, boolean isColorGradient , String color){
+        if(isColorGradient){
+            Shader shader = new LinearGradient(0, 0, textView.getLineCount(), textView.getLineHeight(),
+                    Color.parseColor(start_color),  Color.parseColor(end_color), Shader.TileMode.CLAMP);
+            textView.getPaint().setShader(shader);
+            textView.setTextColor(Color.parseColor(start_color));
+        }else{
+            textView.setTextColor(Color.parseColor(color));
+        }
+    }
 }

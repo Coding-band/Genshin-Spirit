@@ -9,7 +9,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/page_bg"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
@@ -18,8 +17,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:cardBackgroundColor="@color/page_bg"
-        app:cardCornerRadius="8dp">
+        android:background="@drawable/gone_background"
+        app:cardBackgroundColor="@color/colorWhiteAlpha"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -92,8 +93,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:cardBackgroundColor="@color/page_bg"
-        app:cardCornerRadius="8dp">
+        android:background="@drawable/gone_background"
+        app:cardBackgroundColor="@color/colorWhiteAlpha"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -165,8 +168,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:cardBackgroundColor="@color/page_bg"
-        app:cardCornerRadius="8dp">
+        android:background="@drawable/gone_background"
+        app:cardBackgroundColor="@color/colorWhiteAlpha"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -238,8 +243,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:cardBackgroundColor="@color/page_bg"
-        app:cardCornerRadius="8dp">
+        android:background="@drawable/gone_background"
+        app:cardBackgroundColor="@color/colorWhiteAlpha"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -312,8 +319,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:cardBackgroundColor="@color/page_bg"
-        app:cardCornerRadius="8dp">
+        android:background="@drawable/gone_background"
+        app:cardBackgroundColor="@color/colorWhiteAlpha"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -385,8 +394,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        app:cardBackgroundColor="@color/page_bg"
-        app:cardCornerRadius="8dp">
+        android:background="@drawable/gone_background"
+        app:cardBackgroundColor="@color/colorWhiteAlpha"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"

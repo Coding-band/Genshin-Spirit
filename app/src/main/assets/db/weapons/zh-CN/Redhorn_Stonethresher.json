@@ -1,0 +1,12 @@
+{
+  "name": "Redhorn Stonethresher",
+  "rare": 5,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "依据过去的主人的说法，这是何等鬼怪精妖都能打跑的大杵「赤角石见石溃金涂金啮御狮子」。",
+  "first_status": "CritDMG%",
+  "second_status": "ATK",
+  "skill_name": "御伽大王御伽话",
+  "skill_desc": "防御力提高28%；普通攻击与重击造成的伤害值提高，提高数值相当于防御力的40%。",
+  "obtain_way": "WISH"
+}

@@ -197,25 +197,11 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                     String replace = valueOf.replace("'", "_");
                     Log.wtf("lang", string);
                     try {
-                        String[] list = assets.list("db/artifacts/" + string + "/");
-                        String[] list2 = assets.list("db/artifacts/en-US/");
                         System.out.println(Arrays.toString(assets.list("/assets")));
-                        String str = null;
-                        for (String str2 : list) {
-                            if (str2.equals(replace + ".json")) {
-                                InputStream open = assets.open("db/artifacts/" + string + "/" + replace + ".json");
-                                str = IOUtils.toString(open, StandardCharsets.UTF_8);
-                                open.close();
-                            }
-                        }
+                        String str = LoadData("db/artifacts/" + string + "/" + replace + ".json");
+
                         if (str == null) {
-                            for (String str3 : list2) {
-                                if (str3.equals(replace + ".json")) {
-                                    InputStream open2 = assets.open("db/artifacts/en-US/" + replace + ".json");
-                                    str = IOUtils.toString(open2, StandardCharsets.UTF_8);
-                                    open2.close();
-                                }
-                            }
+                            str = LoadData("db/artifacts/en-US/" + replace + ".json");
                         }
                         if (str != null) {
                             try {
@@ -318,5 +304,24 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
     public void filterList(List<Artifacts> list) {
         this.artifactsList = list;
         notifyDataSetChanged();
+    }
+
+    public String LoadData(String inFile) {
+        String tContents = "";
+
+        try {
+            InputStream stream = context.getAssets().open(inFile);
+
+            int size = stream.available();
+            byte[] buffer = new byte[size];
+            stream.read(buffer);
+            stream.close();
+            tContents = new String(buffer);
+        } catch (IOException e) {
+            // Handle exceptions here
+        }
+
+        return tContents;
+
     }
 }
