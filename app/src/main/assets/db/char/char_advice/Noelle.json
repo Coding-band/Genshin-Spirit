@@ -1,47 +1,73 @@
 {
   "name" : "Noelle",
   "dps_weapons": [
-    "lost_prayer_to_the_sacred_winds",
-    "skyward_atlas",
-    "memory_of_dust",
+    "skyward_pride",
+    "redhorn_stonethresher",
+    "wolfs_gravestone",
+    "the_unforged",
+    "whiteblind",
 	"solar_pearl",
-	"the_widsith",
-	"prototype_amber"
+	"serpent_spine"
    ],
-  "sup_dps_weapons": [
-    "skyward_atlas",
-    "lost_prayer_to_the_sacred_winds",
-    "memory_of_dust",
-    "favonius_codex",
-    "the_widsith",
-    "wine_and_song"
-  ],
   "util_weapons": [
-    "prototype_amber",
-    "thrilling_tales_of_dragon_slayers"
+    "whiteblind",
+    "sacrificial_greatsword",
+    "favonius_greatsword",
+    "white_iron_greatsword"
   ],
   "dps_art1": [
-    "heart_of_depth",
-    "heart_of_depth",
-    "heart_of_depth",
-    "heart_of_depth",
-    "heart_of_depth"
+    "husk_of_opulent_dreams",
+    "husk_of_opulent_dreams",
+    "husk_of_opulent_dreams",
+    "husk_of_opulent_dreams",
+    "husk_of_opulent_dreams"
   ],
-  "sup_dps_art1": [
-    "heart_of_depth",
-    "heart_of_depth",
-    "noblesse_oblige",
-    "noblesse_oblige",
-    "noblesse_oblige"
+  "dps_art2": [
+    "gladiators_finale",
+    "gladiators_finale",
+    "gladiators_finale",
+    "gladiators_finale",
+    "gladiators_finale"
+  ],
+  "dps_art3": [
+    "retracing_bolide",
+    "retracing_bolide",
+    "retracing_bolide",
+    "retracing_bolide",
+    "retracing_bolide"
   ],
   "util_art1": [
-    "noblesse_oblige",
-    "noblesse_oblige",
-    "noblesse_oblige",
-    "noblesse_oblige",
-    "noblesse_oblige"
+    "gladiators_finale",
+    "gladiators_finale",
+    "maiden_beloved",
+    "maiden_beloved",
+    "maiden_beloved"
+  ],
+  "util_art2": [
+    "ocean_hued_clam",
+    "ocean_hued_clam",
+    "maiden_beloved",
+    "maiden_beloved",
+    "maiden_beloved"
+  ],
+  "util_art3": [
+    "husk_of_opulent_dreams",
+    "husk_of_opulent_dreams",
+    "maiden_beloved",
+    "maiden_beloved",
+    "maiden_beloved"
+  ],
+  "util_art4": [
+    "emblem_of_severed_fate",
+    "emblem_of_severed_fate",
+    "maiden_beloved",
+    "maiden_beloved",
+    "maiden_beloved"
   ],
   "team1":[
-	"Diluc","Barbara","Bennett","Chongyun"
+	"Ningguang","Noelle","Diluc","Yanfei"
+  ],
+  "team2":[
+	"Ningguang","Noelle","Xiao","Ganyu"
   ]
 }

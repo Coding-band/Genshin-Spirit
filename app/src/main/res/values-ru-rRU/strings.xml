@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Package E:/GenshinSpirit/GenshinSpirit/app/src/main/res/values-ru-rRU/strings.xml was
-  ~ Created by Voc-夜芷冰 , Programmer of Xectorda
-  ~ Copyright © 2021 Xectorda 版權所有
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2022 Xectorda 版權所有
   -->
 
 <resources>
@@ -535,6 +535,15 @@
     <string name="background_source">Источник</string>
     <string name="background_display">Отображать</string>
     <string name="voc">Voc-夜芷冰</string>
+
+    <!-- append in 20220110-->
+    <string name="akuoumaru">"Акуомару"</string>
+
+    <!-- add in 20220110-->
+    <string name="traveler_sex_setting">Какого пола ваш путешественник?</string>
+    <string name="name_start_with_num_err">Число и специальные символы не могут использовать первый символ.</string>
+    <string name="cal_create_set">Создать новый набор вычислений</string>
+    <string name="cal_enter_name">Пожалуйста, введите имя</string>
 
 </resources>
 

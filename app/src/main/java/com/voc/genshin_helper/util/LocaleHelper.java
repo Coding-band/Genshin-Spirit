@@ -8,9 +8,9 @@ import android.os.Build;
 import java.util.Locale;
 
 /*
- * Package com.voc.genshin_helper.util.LocaleHelper was
- * Created by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2021 Xectorda 版權所有
+ * Project Genshin Spirit (原神小幫手) was
+ * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2022 Xectorda 版權所有
  */
 
 public class LocaleHelper {

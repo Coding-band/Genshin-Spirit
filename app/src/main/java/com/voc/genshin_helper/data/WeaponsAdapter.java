@@ -31,6 +31,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 import com.voc.genshin_helper.ui.CalculatorUI;
 import com.voc.genshin_helper.ui.MainActivity;
+import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 import com.voc.genshin_helper.R;
 import java.io.IOException;
@@ -43,9 +44,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /*
- * Package com.voc.genshin_helper.data.WeaponsAdapter was
- * Created by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2021 Xectorda 版權所有
+ * Project Genshin Spirit (原神小幫手) was
+ * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2022 Xectorda 版權所有
  */
 
 /* loaded from: classes.dex */
@@ -277,7 +278,9 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                                 e.printStackTrace();
                             }
                         } else {
-                            Toast.makeText(context, context.getString(R.string.none_info), Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(context, context.getString(R.string.none_info), Toast.LENGTH_SHORT).show();
+
+                            CustomToast.toast(context,v,context.getString(R.string.none_info));
                             return;
                         }
 

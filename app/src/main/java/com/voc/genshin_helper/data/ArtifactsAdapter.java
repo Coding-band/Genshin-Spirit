@@ -30,6 +30,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 import com.voc.genshin_helper.ui.CalculatorUI;
 import com.voc.genshin_helper.ui.MainActivity;
+import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 import com.voc.genshin_helper.R;
 import java.io.IOException;
@@ -44,9 +45,9 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 /*
- * Package com.voc.genshin_helper.data.ArtifactsAdapter was
- * Created by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2021 Xectorda 版權所有
+ * Project Genshin Spirit (原神小幫手) was
+ * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2022 Xectorda 版權所有
  */
 
 /* loaded from: classes.dex */
@@ -279,11 +280,13 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                                 e.printStackTrace();
                             }
                         } else {
-                            Toast.makeText(ArtifactsAdapter.this.context, ArtifactsAdapter.this.context.getString(R.string.none_info), Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(ArtifactsAdapter.this.context, ArtifactsAdapter.this.context.getString(R.string.none_info), Toast.LENGTH_SHORT).show();
+                            CustomToast.toast(context,view,context.getString(R.string.none_info));
                         }
                     } catch (IOException e2) {
                         if (e2 != null) {
-                            Toast.makeText(ArtifactsAdapter.this.context, ArtifactsAdapter.this.context.getString(R.string.none_info), Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(ArtifactsAdapter.this.context, ArtifactsAdapter.this.context.getString(R.string.none_info), Toast.LENGTH_SHORT).show();
+                            CustomToast.toast(context,view,context.getString(R.string.none_info));
                         }
                         Log.wtf("EX", e2);
                     }
@@ -294,7 +297,8 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                         ((CalculatorUI) context).artifactQuestion(String.valueOf(artifact_base_name.getText()), "ADD", 0, (int) artifact_star.getRating());
                         return;
                     } else {
-                        Toast.makeText((CalculatorUI) ArtifactsAdapter.this.context, ArtifactsAdapter.this.context.getString(R.string.cal_choosed_already), Toast.LENGTH_SHORT).show();
+                        //Toast.makeText((CalculatorUI) ArtifactsAdapter.this.context, ArtifactsAdapter.this.context.getString(R.string.cal_choosed_already), Toast.LENGTH_SHORT).show();
+                        CustomToast.toast(context,view,context.getString(R.string.cal_choosed_already));
                     }
                 }
             }

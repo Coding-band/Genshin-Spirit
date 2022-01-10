@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Package E:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_char_battle_talent.xml was
-  ~ Created by Voc-夜芷冰 , Programmer of Xectorda
-  ~ Copyright © 2021 Xectorda 版權所有
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2022 Xectorda 版權所有
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -30,19 +30,20 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <ImageView
                     android:id="@+id/info_talent1_ico"
                     android:layout_width="match_parent"
                     android:layout_height="64dp"
+                    android:layout_gravity="center"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/ico_catalyst" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
@@ -167,12 +168,13 @@
                     android:id="@+id/info_talent2_ico"
                     android:layout_width="match_parent"
                     android:layout_height="64dp"
+                    android:layout_gravity="center"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/ico_catalyst" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
@@ -242,12 +244,13 @@
                     android:id="@+id/info_talent3_ico"
                     android:layout_width="match_parent"
                     android:layout_height="64dp"
+                    android:layout_gravity="center"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/ico_catalyst" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical">
 
@@ -318,12 +321,13 @@
                     android:id="@+id/info_talent4_ico"
                     android:layout_width="match_parent"
                     android:layout_height="64dp"
+                    android:layout_gravity="center"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/ico_catalyst" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:orientation="vertical">
 

@@ -20,6 +20,12 @@ import java.io.InputStream;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
+/*
+ * Project Genshin Spirit (原神小幫手) was
+ * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2022 Xectorda 版權所有
+ */
+
 public class BuffCal {
 
     /**
@@ -45,6 +51,28 @@ public class BuffCal {
     double 武器元素精通 = 0;
     double 武器百分比物理傷害加成 = 0;
 
+    double 聖遺物雷元素傷害加成 = 0;
+    double 聖遺物火元素傷害加成 = 0;
+    double 聖遺物水元素傷害加成 = 0;
+    double 聖遺物草元素傷害加成 = 0;
+    double 聖遺物冰元素傷害加成 = 0;
+    double 聖遺物風元素傷害加成 = 0;
+    double 聖遺物岩元素傷害加成 = 0;
+    double 聖遺物暴擊傷害 = 0;
+    double 聖遺物暴擊率 = 0;
+    double 聖遺物防禦力 = 0;
+    double 聖遺物元素精通 = 0;
+    double 聖遺物元素充能效率 = 0;
+    double 聖遺物生命值 = 0;
+    double 聖遺物物理傷害 = 0;
+    double 聖遺物基礎攻擊力 = 0;
+    double 聖遺物基礎防禦力 = 0;
+    double 聖遺物基礎生命值 = 0;
+    double 聖遺物攻擊力 = 0;
+    double 聖遺物治療加成 = 0;
+
+
+
     // Have to wait for adding diff element's DMG
     double atk_final,hp_final,def_final,critRate_final,critDMG_final,enRech,phyDMG;
 
@@ -64,6 +92,18 @@ public class BuffCal {
     int weapon_tmp_break = 0;
     String otherName;
     double otherVal;
+
+    ArrayList<String> artifactBuffMainItem = new ArrayList<>(5);
+    ArrayList<Double> artifactBuffMainValue = new ArrayList<>(5);
+    ArrayList<String> artifactBuffSec1Item = new ArrayList<>(5);
+    ArrayList<Double> artifactBuffSec1Value = new ArrayList<>(5);
+    ArrayList<String> artifactBuffSec2Item = new ArrayList<>(5);
+    ArrayList<Double> artifactBuffSec2Value = new ArrayList<>(5);
+    ArrayList<String> artifactBuffSec3Item = new ArrayList<>(5);
+    ArrayList<Double> artifactBuffSec3Value = new ArrayList<>(5);
+    ArrayList<String> artifactBuffSec4Item = new ArrayList<>(5);
+    ArrayList<Double> artifactBuffSec4Value = new ArrayList<>(5);
+
     /**
      * General methods of Damage Formula
      * https://library.keqingmains.com/combat-mechanics/damage/damage-formula
@@ -99,9 +139,19 @@ public class BuffCal {
     }
 
     // Need to add their main and sub stat...
-    public void artifact_setup(String[] artifactName, int[] artifactAfterLvl) {
+    public void artifact_setup(String[] artifactName, int[] artifactAfterLvl, ArrayList<Double> artifactBuffMainValue, ArrayList<String> artifactBuffMainItem, ArrayList<Double> artifactBuffSec1Value, ArrayList<String> artifactBuffSec1Item, ArrayList<Double> artifactBuffSec2Value, ArrayList<String> artifactBuffSec2Item, ArrayList<Double> artifactBuffSec3Value, ArrayList<String> artifactBuffSec3Item, ArrayList<Double> artifactBuffSec4Value, ArrayList<String> artifactBuffSec4Item) {
         this.artifactName = artifactName;
         this.artifactAfterLvl = artifactAfterLvl;
+        this.artifactBuffMainItem = artifactBuffMainItem;
+        this.artifactBuffMainValue = artifactBuffMainValue;
+        this.artifactBuffSec1Item = artifactBuffSec1Item;
+        this.artifactBuffSec1Value = artifactBuffSec1Value;
+        this.artifactBuffSec2Item = artifactBuffSec2Item;
+        this.artifactBuffSec2Value = artifactBuffSec2Value;
+        this.artifactBuffSec3Item = artifactBuffSec3Item;
+        this.artifactBuffSec3Value = artifactBuffSec3Value;
+        this.artifactBuffSec4Item = artifactBuffSec4Item;
+        this.artifactBuffSec4Value = artifactBuffSec4Value;
     }
 
     public void startReading (){

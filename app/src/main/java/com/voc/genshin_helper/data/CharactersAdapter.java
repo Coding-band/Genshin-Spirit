@@ -25,6 +25,7 @@ import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.ui.CalculatorUI;
 import com.voc.genshin_helper.ui.MainActivity;
+import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
 import java.util.ArrayList;
@@ -34,9 +35,9 @@ import static android.content.Context.MODE_PRIVATE;
 import static com.voc.genshin_helper.util.RoundedCornersTransformation.CornerType.TOP;
 
 /*
- * Package com.voc.genshin_helper.data.CharactersAdapter was
- * Created by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2021 Xectorda 版權所有
+ * Project Genshin Spirit (原神小幫手) was
+ * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2022 Xectorda 版權所有
  */
 
 /**
@@ -129,24 +130,24 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
             if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
                 Picasso.get()
-                        .load (item_rss.getCharByName(Characters.getName())[0]).fit().centerCrop().transform(transformation)
+                        .load (item_rss.getCharByName(Characters.getName(),context)[0]).fit().centerCrop().transform(transformation)
                         .error (R.drawable.paimon_full)
                         .into (holder.char_icon);
             } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
                 Picasso.get()
-                        .load (item_rss.getCharByName(Characters.getName())[3]).fit().centerCrop().transform(transformation)
+                        .load (item_rss.getCharByName(Characters.getName(),context)[3]).fit().centerCrop().transform(transformation)
                         .error (R.drawable.paimon_full)
                         .into (holder.char_icon);
             }
         }else if(context instanceof CalculatorUI){
             Picasso.get()
-                    .load (item_rss.getCharByName(Characters.getName())[3]).fit().centerInside().transform(transformation)
+                    .load (item_rss.getCharByName(Characters.getName(),context)[3]).fit().centerInside().transform(transformation)
                     .error (R.drawable.paimon_full)
                     .into (holder.char_icon);
 
         }
 
-        holder.char_name.setText(item_rss.getCharByName(Characters.getName())[1]);
+        holder.char_name.setText(item_rss.getCharByName(Characters.getName(),context)[1]);
 
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
         String color_hex = sharedPreferences.getString("theme_color_hex","#FF5A5A"); // Must include #
@@ -192,7 +193,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
             char_icon.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View v) {
+                public void onClick(View view) {
                     Log.wtf("is context instanceof MainActivity ?",context.getPackageName());
                     if (context instanceof MainActivity){Log.wtf("YES","IT's");
                         (((MainActivity) context)).startInfo(String.valueOf(char_base_name.getText()));
@@ -224,6 +225,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                             (((CalculatorUI) context)).charQuestion(String.valueOf(char_base_name.getText()), "ADD", 0);
                         } else {
                             Toast.makeText(((CalculatorUI) context), context.getString(R.string.cal_choosed_already), Toast.LENGTH_SHORT).show();
+                            CustomToast.toast(context,view,context.getString(R.string.cal_choosed_already));
                         }
                     }
 

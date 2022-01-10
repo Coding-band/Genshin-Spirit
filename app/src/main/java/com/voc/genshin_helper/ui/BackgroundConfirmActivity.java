@@ -28,8 +28,8 @@ import pl.droidsonroids.gif.GifDrawable;
 import pl.droidsonroids.gif.GifImageView;
 
 /*
- * Package com.voc.genshin_helper.ui.BackgroundConfirmActivity was
- * Created by Voc-夜芷冰 , Programmer of Xectorda
+ * Project Genshin Spirit (原神小幫手) was
+ * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
  * Copyright © 2022 Xectorda 版權所有
  */
 

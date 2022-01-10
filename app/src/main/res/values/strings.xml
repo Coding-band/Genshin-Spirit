@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?><!--
-  ~ Package E:/GenshinSpirit/GenshinSpirit/app/src/main/res/values/strings.xml was
-  ~ Created by Voc-夜芷冰 , Programmer of Xectorda
-  ~ Copyright © 2021 Xectorda 版權所有
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2022 Xectorda 版權所有
   -->
 
 <resources>
@@ -565,6 +565,12 @@
     <string name="background_source">Source</string>
     <string name="background_display">Display</string>
     <string name="voc">Voc-夜芷冰</string>
+
+    <!-- add in 20220110-->
+    <string name="traveler_sex_setting">"What's your traveler's sex ?"</string>
+    <string name="name_start_with_num_err">"Number and special symbols are not allow to use a first character."</string>
+    <string name="cal_create_set">"Create a new Calculate Set"</string>
+    <string name="cal_enter_name">"Please enter a name"</string>
 
 </resources>
 

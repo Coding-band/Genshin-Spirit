@@ -43,9 +43,9 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /*
- * Package com.voc.genshin_helper.util.CalculatorProcess was
- * Created by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2021 Xectorda 版權所有
+ * Project Genshin Spirit (原神小幫手) was
+ * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2022 Xectorda 版權所有
  */
 public class CalculatorProcess {
     /** Crystal*/ /**[碎屑,斷片,塊,原顆]*/
@@ -1157,12 +1157,12 @@ public class CalculatorProcess {
 
             if(x < NameList.size()){
                 Picasso.get()
-                        .load (item_rss.getCharByName(NameList.get(x))[3])
+                        .load (item_rss.getCharByName(NameList.get(x),context)[3])
                         .transform(transformation)
                         .resize(150,150)
                         .error (R.drawable.paimon_lost)
                         .into (item_cal_img);
-                item_cal_tv.setText(context.getString(item_rss.getCharByName(NameList.get(x))[1]));
+                item_cal_tv.setText(context.getString(item_rss.getCharByName(NameList.get(x),context)[1]));
 
                 if(IsCal.get(x) == false){
                     Drawable drawable = context.getResources().getDrawable(R.drawable.barrier);

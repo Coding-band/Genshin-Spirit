@@ -42,6 +42,7 @@ import com.voc.genshin_helper.data.ScreenSizeUtils;
 import com.voc.genshin_helper.database.DataBaseContract;
 import com.voc.genshin_helper.database.DataBaseHelper;
 import com.voc.genshin_helper.util.BackgroundReload;
+import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.IndexDBHelper;
 
 import java.io.File;
@@ -54,9 +55,9 @@ import java.util.List;
  */
 
 /*
- * Package com.voc.genshin_helper.ui.CalculatorDBActivity was
- * Created by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2021 Xectorda 版權所有
+ * Project Genshin Spirit (原神小幫手) was
+ * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2022 Xectorda 版權所有
  */
 
 public class CalculatorDBActivity extends AppCompatActivity {
@@ -175,7 +176,7 @@ public class CalculatorDBActivity extends AppCompatActivity {
                         String newName = db_name_et.getText().toString();
                         if(!newName.equals("") && !newName.equals(" ") && db_name_et.getText() != null) {
                             if(newName.startsWith("1")||newName.startsWith("2")||newName.startsWith("3")||newName.startsWith("4")||newName.startsWith("5")||newName.startsWith("6")||newName.startsWith("7")||newName.startsWith("8")||newName.startsWith("9")||newName.startsWith("10")){
-                                Toast.makeText(context, "Number is not allow to use a first character.", Toast.LENGTH_SHORT).show();
+                                CustomToast.toast(context,activity,context.getString(R.string.name_start_with_num_err));
                             }else {
                                 if(newName.contains(" ")){
                                     newName = newName.replace(" ","_");
@@ -192,7 +193,7 @@ public class CalculatorDBActivity extends AppCompatActivity {
                 //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
                 Window dialogWindow = dialog.getWindow();
                 WindowManager.LayoutParams lp = dialogWindow.getAttributes();
-                lp.width = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth());
+                lp.width = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth()*0.8);
                 lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
                 lp.gravity = Gravity.CENTER;
                 dialogWindow.setAttributes(lp);

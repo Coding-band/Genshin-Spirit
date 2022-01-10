@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Package E:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_cal_char.xml was
-  ~ Created by Voc-夜芷冰 , Programmer of Xectorda
-  ~ Copyright © 2021 Xectorda 版權所有
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2022 Xectorda 版權所有
   -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -16,10 +16,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_centerHorizontal="true"
-        android:background="@color/page_bg"
         android:overScrollMode="never"
         android:paddingTop="64dp"
-        android:paddingBottom="72dp"
+        android:paddingBottom="96dp"
         android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

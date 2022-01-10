@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Package E:/GenshinSpirit/GenshinSpirit/app/src/main/res/values-ja-rJP/strings.xml was
-  ~ Created by Voc-夜芷冰 , Programmer of Xectorda
-  ~ Copyright © 2021 Xectorda 版權所有
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2022 Xectorda 版權所有
   -->
 
 <resources>
@@ -565,6 +565,12 @@
     <string name="background_source">ソース</string>
     <string name="background_display">画面</string>
     <string name="voc">Voc-夜芷冰</string>
+
+    <!-- add in 20220110-->
+    <string name="traveler_sex_setting">あなたの旅行者の性別は何ですか？</string>
+    <string name="name_start_with_num_err">数字と特殊記号で最初の文字を使用することはできません。</string>
+    <string name="cal_create_set">新しい計算セットを作成する</string>
+    <string name="cal_enter_name">名前を入力してください</string>
 
 
 </resources>

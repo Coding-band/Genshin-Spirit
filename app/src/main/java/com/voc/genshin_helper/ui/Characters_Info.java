@@ -46,9 +46,9 @@ import static com.voc.genshin_helper.data.RoundRectImageView.getRoundBitmapBySha
 //https://stackoverflow.com/questions/3592836/check-for-file-existence-in-androids-assets-folder/7337516
 
 /*
- * Package com.voc.genshin_helper.ui.Characters_Info was
- * Created by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2021 Xectorda 版權所有
+ * Project Genshin Spirit (原神小幫手) was
+ * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2022 Xectorda 版權所有
  */
 
 public class Characters_Info {
@@ -584,8 +584,8 @@ public class Characters_Info {
          */
 
         /** MAIN */
-        char_name.setText("【"+nick+"】 "+context.getString(item_rss.getCharByName(name)[1]));
-        char_img.setImageResource(item_rss.getCharByName(name)[2]);
+        char_name.setText("【"+nick+"】 "+context.getString(item_rss.getCharByName(name,context)[1]));
+        char_img.setImageResource(item_rss.getCharByName(name,context)[2]);
         char_img.setBackgroundResource(item_rss.getElementByName(element)[2]);
         char_stars.setNumStars(star);
         char_stars.setRating(star);
@@ -846,7 +846,7 @@ public class Characters_Info {
                 for (int x = 0 ; x < team1.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team, advice_team_ll1, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
-                    Bitmap icon = BitmapFactory.decodeResource(context.getResources(), item_rss.getCharByName(team1[x].replace("XPR"," "))[3]);
+                    Bitmap icon = BitmapFactory.decodeResource(context.getResources(), item_rss.getCharByName(team1[x].replace("XPR"," "),context)[3]);
                     item_img.setImageBitmap(getRoundBitmapByShader(icon, (int) Math.round(128),(int)Math.round(128),20, 0));
                     Log.wtf("team1[x])[2]",team1[x]);
                     advice_team_ll1.addView(char_view);
@@ -860,7 +860,7 @@ public class Characters_Info {
                 for (int x = 0 ; x < team2.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team, advice_team_ll2, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
-                    Bitmap icon = BitmapFactory.decodeResource(context.getResources(), item_rss.getCharByName(team2[x].replace("XPR"," "))[3]);
+                    Bitmap icon = BitmapFactory.decodeResource(context.getResources(), item_rss.getCharByName(team2[x].replace("XPR"," "),context)[3]);
                     item_img.setImageBitmap(getRoundBitmapByShader(icon, (int) Math.round(128),(int)Math.round(128),20, 0));
                     advice_team_ll2.addView(char_view);
                 }
@@ -872,7 +872,7 @@ public class Characters_Info {
                 for (int x = 0 ; x < team3.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team, advice_team_ll3, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
-                    Bitmap icon = BitmapFactory.decodeResource(context.getResources(), item_rss.getCharByName(team3[x].replace("XPR"," "))[3]);
+                    Bitmap icon = BitmapFactory.decodeResource(context.getResources(), item_rss.getCharByName(team3[x].replace("XPR"," "),context)[3]);
                     item_img.setImageBitmap(getRoundBitmapByShader(icon, (int) Math.round(128),(int)Math.round(128),20, 0));
                     advice_team_ll3.addView(char_view);
                 }
@@ -884,7 +884,7 @@ public class Characters_Info {
                 for (int x = 0 ; x < team4.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team, advice_team_ll4, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
-                    Bitmap icon = BitmapFactory.decodeResource(context.getResources(), item_rss.getCharByName(team4[x].replace("XPR"," "))[3]);
+                    Bitmap icon = BitmapFactory.decodeResource(context.getResources(), item_rss.getCharByName(team4[x].replace("XPR"," "),context)[3]);
                     item_img.setImageBitmap(getRoundBitmapByShader(icon, (int) Math.round(128),(int)Math.round(128),20, 0));
                     advice_team_ll4.addView(char_view);
                 }

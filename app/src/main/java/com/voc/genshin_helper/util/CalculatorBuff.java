@@ -39,6 +39,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
+
+/*
+ * Project Genshin Spirit (原神小幫手) was
+ * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2022 Xectorda 版權所有
+ */
 
 public class CalculatorBuff {
 
@@ -237,12 +244,12 @@ public class CalculatorBuff {
             if(charChoosedIsCal.get(x) == true) {
                 /** Char */
                 Picasso.get()
-                        .load(item_rss.getCharByName(charChoosedNameList.get(x))[3])
+                        .load(item_rss.getCharByName(charChoosedNameList.get(x),context)[3])
                         .transform(transformation)
                         .resize(128, 128)
                         .error(R.drawable.paimon_lost)
                         .into(buff_ui_char_icon);
-                buff_ui_char_name.setText(item_rss.getCharByName(charChoosedNameList.get(x))[1]);
+                buff_ui_char_name.setText(item_rss.getCharByName(charChoosedNameList.get(x),context)[1]);
 
                 /** Weapon */
                 String tmp_weapon_name = "unknown";
@@ -320,9 +327,6 @@ public class CalculatorBuff {
             param.setGravity(Gravity.CENTER_VERTICAL);
             view.setLayoutParams (param);
             buff_ui_view.addView(view);
-
-
-            Log.wtf("TTSS","SWE");
         }
 
     }
@@ -375,6 +379,8 @@ public class CalculatorBuff {
 
         final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
         View view = View.inflate(context, R.layout.fragment_buff_page, null);
+
+        BackgroundReload.BackgroundReload(context,view);
         // Char_Info
         ImageView buff_char_icon = view.findViewById(R.id.buff_char_icon);
         ImageView buff_char_element = view.findViewById(R.id.buff_char_element);
@@ -445,7 +451,7 @@ public class CalculatorBuff {
 
         /** CHAR_INFO_SET_DATA*/
         Picasso.get()
-                .load (item_rss.getCharByName(charName)[3])
+                .load (item_rss.getCharByName(charName,context)[3])
                 .transform(transformation)
                 .fit()
                 .error (R.drawable.paimon_full)
@@ -479,7 +485,7 @@ public class CalculatorBuff {
             case "Dendro": buff_char_element.setImageResource(R.drawable.dendro);buff_char_icon.setBackgroundResource(R.drawable.bg_dendro_bg);break;
         }
 
-        buff_char_name.setText(context.getString(item_rss.getCharByName(charName)[1]));
+        buff_char_name.setText(context.getString(item_rss.getCharByName(charName,context)[1]));
         buff_char_lvl.setText(context.getString(R.string.curr_lvl)+" "+String.valueOf(charChoosedAfterLvlList.get(k)));
 
 
@@ -563,7 +569,7 @@ public class CalculatorBuff {
         buffCal.setup(context);
         buffCal.char_setup(charName,charChoosedAfterLvlList.get(k),charChoosedAfterBreakLvlList.get(k),charChoosedAfterBreakUPLvlList.get(k),charChoosedAfterSkill1LvlList.get(k),charChoosedAfterSkill2LvlList.get(k),charChoosedAfterSkill3LvlList.get(k));
         buffCal.weapon_setup(weaponChoosedNameList.get(k),weaponChoosedAfterLvlList.get(k),weaponChoosedAfterBreakLvlList.get(k),weaponChoosedAfterBreakUPLvlList.get(k));
-        buffCal.artifact_setup(tmp_artifact_sort,tmp_artifact_lvl);
+        buffCal.artifact_setup(tmp_artifact_sort,tmp_artifact_lvl,artifactBuffMainValue,artifactBuffMainItem,artifactBuffSec1Value,artifactBuffSec1Item,artifactBuffSec2Value,artifactBuffSec2Item,artifactBuffSec3Value,artifactBuffSec3Item,artifactBuffSec4Value,artifactBuffSec4Item);
         buffCal.startReading();
 
         /**
@@ -738,16 +744,27 @@ public class CalculatorBuff {
             case "Flower" : {
                 //if(artifactBasicBaseHP.get(0).isNaN()){}
                 // init -- TMP -- Will change after function done
-                artifactBuffMainValue.set(0,artifactBasicBaseHP.get(tmp_artifact_lvl[0]));
-                artifactBuffMainItem.set(0,"baseHP");
-                artifactBuffSec1Value.set(0,0.0*tmp_artifact_rare[0]);
-                artifactBuffSec1Item.set(0,"EnRech");
-                artifactBuffSec2Value.set(0,0.0*tmp_artifact_rare[0]);
-                artifactBuffSec2Item.set(0,"baseATK");
-                artifactBuffSec3Value.set(0,0.0*tmp_artifact_rare[0]);
-                artifactBuffSec3Item.set(0,"HP");
-                artifactBuffSec4Value.set(0,0.0*tmp_artifact_rare[0]);
-                artifactBuffSec4Item.set(0,"baseDEF");
+                artifactBuffMainValue.set(0, artifactBasicBaseHP.get(tmp_artifact_lvl[0]));
+                artifactBuffMainItem.set(0, "baseHP");
+                artifactBuffSec1Value.set(0, 0.0 * tmp_artifact_rare[0]);
+                artifactBuffSec1Item.set(0, "EnRech");
+                artifactBuffSec2Value.set(0, 0.0 * tmp_artifact_rare[0]);
+                artifactBuffSec2Item.set(0, "baseATK");
+                artifactBuffSec3Value.set(0, 0.0 * tmp_artifact_rare[0]);
+                artifactBuffSec3Item.set(0, "HP");
+                artifactBuffSec4Value.set(0, 0.0 * tmp_artifact_rare[0]);
+                artifactBuffSec4Item.set(0, "baseDEF");
+
+                artifactBuffMainValue.set(0, 4780d);
+                artifactBuffMainItem.set(0, "baseHP");
+                artifactBuffSec1Value.set(0, 42d);
+                artifactBuffSec1Item.set(0, "EleMas");
+                artifactBuffSec2Value.set(0, 0.204);
+                artifactBuffSec2Item.set(0, "DEF");
+                artifactBuffSec3Value.set(0, 21d);
+                artifactBuffSec3Item.set(0, "baseDEF");
+                artifactBuffSec4Value.set(0, 0.062d);
+                artifactBuffSec4Item.set(0, "CritRate");
 
                 ArtifactBuffShow(0, tmp_artifact_lvl, tmp_artifact_lvl);
                 break;
@@ -755,17 +772,28 @@ public class CalculatorBuff {
             case "Plume" : {
                 //if(artifactBasicBaseHP.get(0).isNaN()){}
                 // init -- TMP -- Will change after function done
-                artifactBuffMainValue.set(1,artifactBasicBaseATK.get(tmp_artifact_lvl[1]));
-                artifactBuffMainItem.set(1,"baseATK");
-                artifactBuffSec1Value.set(1,0.0*tmp_artifact_rare[1]);
-                artifactBuffSec1Item.set(1,"EnRech");
-                artifactBuffSec2Value.set(1,0.0*tmp_artifact_rare[1]);
-                artifactBuffSec2Item.set(1,"DEF");
-                artifactBuffSec3Value.set(1,0.0*tmp_artifact_rare[1]);
-                artifactBuffSec3Item.set(1,"baseHP");
-                artifactBuffSec4Value.set(1,0.0*tmp_artifact_rare[1]);
-                artifactBuffSec4Item.set(1,"CritRate");
 
+                artifactBuffMainValue.set(1, artifactBasicBaseATK.get(tmp_artifact_lvl[1]));
+                artifactBuffMainItem.set(1, "baseATK");
+                artifactBuffSec1Value.set(1, 0.0 * tmp_artifact_rare[1]);
+                artifactBuffSec1Item.set(1, "EnRech");
+                artifactBuffSec2Value.set(1, 0.0 * tmp_artifact_rare[1]);
+                artifactBuffSec2Item.set(1, "DEF");
+                artifactBuffSec3Value.set(1, 0.0 * tmp_artifact_rare[1]);
+                artifactBuffSec3Item.set(1, "baseHP");
+                artifactBuffSec4Value.set(1, 0.0 * tmp_artifact_rare[1]);
+                artifactBuffSec4Item.set(1, "CritRate");
+
+                artifactBuffMainValue.set(1, 311d);
+                artifactBuffMainItem.set(1, "baseATK");
+                artifactBuffSec1Value.set(1, 58d);
+                artifactBuffSec1Item.set(1, "baseDEF");
+                artifactBuffSec2Value.set(1, 42d);
+                artifactBuffSec2Item.set(1, "EleMas");
+                artifactBuffSec3Value.set(1, 538d);
+                artifactBuffSec3Item.set(1, "baseHP");
+                artifactBuffSec4Value.set(1, 0.052);
+                artifactBuffSec4Item.set(1, "EnRech");
                 tmp_id = 1;
                 break;
             }
@@ -773,33 +801,43 @@ public class CalculatorBuff {
                 //if(artifactBasicBaseHP.get(0).isNaN()){}
                 // init -- TMP -- Will change after function done
                 // P.S. Only Flower and Plume's main are locked ! What u see in next line is temperate
-                artifactBuffMainValue.set(2,artifactBasicHP.get(tmp_artifact_lvl[2]));
-                artifactBuffMainItem.set(2,"HP");
-                artifactBuffSec1Value.set(2,0.0*tmp_artifact_rare[2]);
-                artifactBuffSec1Item.set(2,"DEF");
-                artifactBuffSec2Value.set(2,0.0*tmp_artifact_rare[2]);
-                artifactBuffSec2Item.set(2,"baseATK");
-                artifactBuffSec3Value.set(2,0.0*tmp_artifact_rare[2]);
-                artifactBuffSec3Item.set(2,"ATK");
-                artifactBuffSec4Value.set(2,0.0*tmp_artifact_rare[2]);
-                artifactBuffSec4Item.set(2,"CritDMG");
+                artifactBuffMainValue.set(2, artifactBasicHP.get(tmp_artifact_lvl[2]));
+                artifactBuffMainItem.set(2, "HP");
+                artifactBuffSec1Value.set(2, 0.0 * tmp_artifact_rare[2]);
+                artifactBuffSec1Item.set(2, "DEF");
+                artifactBuffSec2Value.set(2, 0.0 * tmp_artifact_rare[2]);
+                artifactBuffSec2Item.set(2, "baseATK");
+                artifactBuffSec3Value.set(2, 0.0 * tmp_artifact_rare[2]);
+                artifactBuffSec3Item.set(2, "ATK");
+                artifactBuffSec4Value.set(2, 0.0 * tmp_artifact_rare[2]);
+                artifactBuffSec4Item.set(2, "CritDMG");
 
+                artifactBuffMainValue.set(2, 0.583);
+                artifactBuffMainItem.set(2, "HP");
+                artifactBuffSec1Value.set(2, 0.093);
+                artifactBuffSec1Item.set(2, "CritRate");
+                artifactBuffSec2Value.set(2, 35d);
+                artifactBuffSec2Item.set(2, "baseDEF");
+                artifactBuffSec3Value.set(2, 0.124);
+                artifactBuffSec3Item.set(2, "CritDMG");
+                artifactBuffSec4Value.set(2, 35d);
+                artifactBuffSec4Item.set(2, "baseATK");
                 tmp_id = 2;
                 break;
             }
             case "Goblet" : {
                 //if(artifactBasicBaseHP.get(0).isNaN()){}
                 // init -- TMP -- Will change after function done
-                artifactBuffMainValue.set(3,artifactBasicHP.get(tmp_artifact_lvl[3]));
-                artifactBuffMainItem.set(3,"HP");
-                artifactBuffSec1Value.set(3,0.0*tmp_artifact_rare[3]);
-                artifactBuffSec1Item.set(3,"CritRate");
-                artifactBuffSec2Value.set(3,0.0*tmp_artifact_rare[3]);
-                artifactBuffSec2Item.set(3,"baseDEF");
-                artifactBuffSec3Value.set(3,0.0*tmp_artifact_rare[3]);
-                artifactBuffSec3Item.set(3,"CritDMG");
-                artifactBuffSec4Value.set(3,0.0*tmp_artifact_rare[3]);
-                artifactBuffSec4Item.set(3,"EnRech");
+                    artifactBuffMainValue.set(3,0.583);
+                    artifactBuffMainItem.set(3,"DEF");
+                    artifactBuffSec1Value.set(3,32d);
+                    artifactBuffSec1Item.set(3,"baseDEF");
+                    artifactBuffSec2Value.set(3,0.104);
+                    artifactBuffSec2Item.set(3,"EnRech");
+                    artifactBuffSec3Value.set(3,61d);
+                    artifactBuffSec3Item.set(3,"EleMas");
+                    artifactBuffSec4Value.set(3,33d);
+                    artifactBuffSec4Item.set(3,"baseATK");
 
                 tmp_id = 3;
                 break;
@@ -807,17 +845,16 @@ public class CalculatorBuff {
             case "Circlet" : {
                 //if(artifactBasicBaseHP.get(0).isNaN()){}
                 // init -- TMP -- Will change after function done
-                artifactBuffMainValue.set(4,artifactBasicATK.get(tmp_artifact_lvl[4]));
-                artifactBuffMainItem.set(4,"ATK");
-                artifactBuffSec1Value.set(4,0.0*tmp_artifact_rare[4]);
-                artifactBuffSec1Item.set(4,"baseATK");
-                artifactBuffSec2Value.set(4,0.0*tmp_artifact_rare[4]);
-                artifactBuffSec2Item.set(4,"EnRech");
-                artifactBuffSec3Value.set(4,0.0*tmp_artifact_rare[4]);
-                artifactBuffSec3Item.set(4,"DEF");
-                artifactBuffSec4Value.set(4,0.0*tmp_artifact_rare[4]);
-                artifactBuffSec4Item.set(4,"baseHP");
-
+                    artifactBuffMainValue.set(4, 0.583);
+                    artifactBuffMainItem.set(4, "baseDEF");
+                    artifactBuffSec1Value.set(4, 0.093);
+                    artifactBuffSec1Item.set(4, "ATK");
+                    artifactBuffSec2Value.set(4, 16d);
+                    artifactBuffSec2Item.set(4, "baseDEF");
+                    artifactBuffSec3Value.set(4, 56d);
+                    artifactBuffSec3Item.set(4, "EleMas");
+                    artifactBuffSec4Value.set(4, 0.087);
+                    artifactBuffSec4Item.set(4, "HP");
                 tmp_id = 4;
                 break;
             }
@@ -866,10 +903,16 @@ public class CalculatorBuff {
         artifactBufSetting(tmp_id,0, this.tmp_artifact_lvl, this.tmp_artifact_rare);
     }
 
-    public void artifactBufSetting(int tmp_id, int type, int[] tmpArtifactLvl, int[] tmp_artifact_lvl){
+    public void artifactBufSetting(int tmp_id, int type, int[] tmp_artifact_lvl, int[] tmp_artifact_rare){
         if (type == 0){
             // init of tmp_id = 0 & 1
             String[] artifactBuffList = new String[]{context.getString(R.string.weapon_stat_HP),context.getString(R.string.weapon_stat_atk)};
+            /*
+
+                artifactBuffList = new String[]{"ATK","HP","DEF","EleMas","EnRech"};
+                artifactBuffList = new String[]{"ATK","HP","DEF","EleMas","EleDMG_Electro","EleDMG_Pyro","EleDMG_Hydro","EleDMG_Cyro","EleDMG_Anemo","EleDMG_Geo","PhyDMG"};
+                artifactBuffList = new String[]{"ATK","HP","DEF","EleMas","CritRate","CritDMG"};
+             */
 
             if(tmp_id == 2){
                 artifactBuffList = new String[]{context.getString(R.string.weapon_stat_atkP),context.getString(R.string.weapon_stat_HPP),context.getString(R.string.weapon_stat_DEFP),context.getString(R.string.weapon_stat_EleMas),context.getString(R.string.weapon_stat_EnRechP)};
@@ -877,22 +920,27 @@ public class CalculatorBuff {
                 artifactBuffList = new String[]{context.getString(R.string.weapon_stat_atkP),context.getString(R.string.weapon_stat_HPP),context.getString(R.string.weapon_stat_DEFP),context.getString(R.string.weapon_stat_EleMas),context.getString(R.string.weapon_stat_EleDMGP_Electro),context.getString(R.string.weapon_stat_EleDMGP_Pyro),context.getString(R.string.weapon_stat_EleDMGP_Hydro),context.getString(R.string.weapon_stat_EleDMGP_Cryo),context.getString(R.string.weapon_stat_EleDMGP_Anemo),context.getString(R.string.weapon_stat_EleDMGP_Geo),context.getString(R.string.weapon_stat_PhyDMGP)};
             }else if(tmp_id == 4){
                 artifactBuffList = new String[]{context.getString(R.string.weapon_stat_atkP),context.getString(R.string.weapon_stat_HPP),context.getString(R.string.weapon_stat_DEFP),context.getString(R.string.weapon_stat_EleMas),context.getString(R.string.weapon_stat_CritRateP),context.getString(R.string.weapon_stat_CritDMGP)};
-            }else{
+            }
+
+            if(tmp_id != 0 && tmp_id != 1){
                 buff_artifact_main_name.setText(artifactBuffList[tmp_id]);
                 buff_artifact_main_name.setVisibility(View.GONE);
                 buff_artifact_main_name_sp.setVisibility(View.VISIBLE);
+            }else{
+                buff_artifact_main_name.setText(artifactBuffList[tmp_id]);
+                buff_artifact_main_name.setVisibility(View.VISIBLE);
+                buff_artifact_main_name_sp.setVisibility(View.GONE);
             }
 
             ArrayAdapter artifact_aa = new ArrayAdapter(context,R.layout.spinner_item,artifactBuffList);
             artifact_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
             buff_artifact_main_name_sp.setAdapter(artifact_aa);
-            buff_artifact_main_name_sp.setSelection(0);
             String[] finalArtifactBuffList = artifactBuffList;
             buff_artifact_main_name_sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                 @Override
                 public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                    artifactBuffMainTranslate(finalArtifactBuffList,position,buff_artifact_main_value,tmp_id, tmpArtifactLvl,tmp_artifact_lvl);
+                    artifactBuffMainTranslate(finalArtifactBuffList,position,buff_artifact_main_value,tmp_id,tmp_artifact_lvl,tmp_artifact_rare);
                 }
 
                 @Override
@@ -904,9 +952,9 @@ public class CalculatorBuff {
         }
     }
 
-    public void artifactBuffMainTranslate(String[] finalArtifactBuffList, int position, TextView buff_artifact_main_value, int tmp_id, int[] tmpArtifactLvl, int[] tmp_artifact_lvl) {
+    public void artifactBuffMainTranslate(String[] finalArtifactBuffList, int position, TextView buff_artifact_main_value, int tmp_id,int[] tmp_artifact_lvl, int[] tmp_artifact_rare) {
         ArrayList<Double> finalType = new ArrayList<>();
-        String type = "";
+        String type = "SLEEP";
 
         if(finalArtifactBuffList[position].equals(context.getString(R.string.weapon_stat_atkP))){
             type = "ATK";
@@ -953,8 +1001,20 @@ public class CalculatorBuff {
         }else if(finalArtifactBuffList[position].equals(context.getString(R.string.weapon_stat_CritRateP))){
             type = "CritRate";
             finalType = artifactBasicCritRate;
+        }else if(finalArtifactBuffList[position].equals(context.getString(R.string.weapon_stat_atk))){
+            type = "baseATK";
+            finalType = artifactBasicBaseATK;
+        }else if(finalArtifactBuffList[position].equals(context.getString(R.string.weapon_stat_HP))){
+            type = "baseHP";
+            finalType = artifactBasicBaseHP;
         }
 
+        System.out.println(Arrays.toString(tmp_artifact_lvl));
+        System.out.println("tmp_id : "+tmp_id);
+        System.out.println(Arrays.toString(finalArtifactBuffList));
+        System.out.println("finalType : "+finalType);
+        System.out.println("type : "+type);
+        System.out.println("position : "+position);
 
         artifactBuffMainItem.set(tmp_id,type);
         artifactBuffMainValue.set(tmp_id,finalType.get(tmp_artifact_lvl[tmp_id]));

@@ -3,9 +3,9 @@ package com.voc.genshin_helper.util;
 import com.squareup.picasso.Transformation;
 
 /*
- * Package com.voc.genshin_helper.util.RoundedCornersTransformation was
- * Created by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2021 Xectorda 版權所有
+ * Project Genshin Spirit (原神小幫手) was
+ * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2022 Xectorda 版權所有
  */
 import android.graphics.Bitmap;
 import android.graphics.BitmapShader;

@@ -102,9 +102,9 @@ import static com.voc.genshin_helper.util.RoundedCornersTransformation.CornerTyp
 
 
 /*
- * Package com.voc.genshin_helper.ui.MainActivity was
- * Created by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2021 Xectorda 版權所有
+ * Project Genshin Spirit (原神小幫手) was
+ * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2022 Xectorda 版權所有
  */
 
 public class MainActivity extends AppCompatActivity {
@@ -357,7 +357,8 @@ public class MainActivity extends AppCompatActivity {
                                 int x = 0;
                                 for (Characters item : charactersList) {
                                     String str = String.valueOf(s).toLowerCase();
-                                    if (context.getString(css.getCharByName(item.getName())[0]).contains(str)||context.getString(css.getCharByName(item.getName())[0]).toLowerCase().contains(str)||context.getString(css.getCharByName(item.getName())[0]).toUpperCase().contains(str)){ // EN -> ZH
+                                    System.out.println("TOF : "+context.getString(css.getWeaponByName(item.getName())[0]));
+                                    if (context.getString(css.getCharByName(item.getName(),context)[1]).contains(str)||context.getString(css.getCharByName(item.getName(),context)[1]).toLowerCase().contains(str)||context.getString(css.getCharByName(item.getName(),context)[1]).toUpperCase().contains(str)){ // EN -> ZH
                                         filteredList.add(item);
                                     }
                                     x = x +1;
@@ -1137,6 +1138,44 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        // Traveler Sex
+
+        String[] travelerList = new String[]{css.getLocaleName("Female",context),css.getLocaleName("Male",context)};
+        ArrayAdapter traveler_aa = new ArrayAdapter(context,R.layout.spinner_item,travelerList);
+        traveler_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
+
+        Spinner traveler_sp = viewPager4.findViewById(R.id.traveler_spinner);
+        traveler_sp.setAdapter(traveler_aa);
+        switch (sharedPreferences.getString("traveler_sex","F")){
+            case "F" : traveler_sp.setSelection(0);break;
+            case "M" : traveler_sp.setSelection(1);break;
+        }
+
+
+
+        traveler_sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // https://blog.csdn.net/pigdreams/article/details/81277110
+                // https://stackoverflow.com/questions/13397933/android-spinner-avoid-onitemselected-calls-during-initialization
+                if(check_spinner >0){
+                    if(position == 0){
+                        editor.putString("traveler_sex","F");
+                        editor.apply();
+                    }else if(position == 1){
+                        editor.putString("traveler_sex","M");
+                        editor.apply();
+                    }
+                }
+                check_spinner = check_spinner +1;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         // Background
         Button bg_setting_btn = viewPager4.findViewById(R.id.bg_setting_btn);
         bg_setting_btn.setOnClickListener(new View.OnClickListener() {
@@ -1726,6 +1765,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void bday_reload(){
         String char_name = "EMPTY";
+        Log.w("MOY",String.valueOf(moy));
+        Log.w("DOM",String.valueOf(dom));
+
         char_name = css.char_birth(moy,dom);
 
         if(!char_name.equals("EMPTY")){
@@ -1741,11 +1783,11 @@ public class MainActivity extends AppCompatActivity {
             final int margin = 4;
             final Transformation transformation = new RoundedCornersTransformation(radius, margin);
             Picasso.get()
-                    .load (css.getCharByName(char_name)[3])
+                    .load (css.getCharByName(char_name,context)[3])
                     .transform(transformation)
                     .error (R.drawable.paimon_lost)
                     .into (birth_char);
-            birth_char_tv.setText(context.getString(css.getCharByName(char_name)[1]));
+            birth_char_tv.setText(context.getString(css.getCharByName(char_name,context)[1]));
             birth_char_date.setText(css.getLocaleBirth(String.valueOf(moy+1)+"/"+String.valueOf(dom),context));
 
         }

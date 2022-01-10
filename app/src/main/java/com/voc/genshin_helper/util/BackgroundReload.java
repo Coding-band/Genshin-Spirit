@@ -35,6 +35,12 @@ import java.io.OutputStreamWriter;
 import pl.droidsonroids.gif.GifDrawable;
 import pl.droidsonroids.gif.GifImageView;
 
+/*
+ * Project Genshin Spirit (原神小幫手) was
+ * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2022 Xectorda 版權所有
+ */
+
 public class BackgroundReload {
 
     public static void BackgroundReload (Context context, Activity activity){

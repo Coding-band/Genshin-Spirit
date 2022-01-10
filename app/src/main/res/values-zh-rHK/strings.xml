@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Package E:/GenshinSpirit/GenshinSpirit/app/src/main/res/values-zh-rHK/strings.xml was
-  ~ Created by Voc-夜芷冰 , Programmer of Xectorda
-  ~ Copyright © 2021 Xectorda 版權所有
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2022 Xectorda 版權所有
   -->
 
 <resources>
@@ -541,6 +541,7 @@
     <string name="calamity_queller">息災</string>
     <string name="redhorn_stonethresher">赤角石潰杵</string>
     <string name="yae_miko">八重神子</string>
+
     <!-- add in 20220108 -->
     <string name="background_setting">背景設定</string>
     <string name="background_accept_list">僅接受JPG,JPEG,PNG,GIF</string>
@@ -549,5 +550,10 @@
     <string name="background_display">顯示</string>
     <string name="voc">Voc-夜芷冰</string>
 
+    <!-- add in 20220110-->
+    <string name="traveler_sex_setting">你選擇旅行者的性别是？</string>
+    <string name="name_start_with_num_err">數字及特殊符號不能是名稱第一個字元</string>
+    <string name="cal_create_set">"創建一個新的計算組別"</string>
+    <string name="cal_enter_name">"請輸入名稱"</string>
 
 </resources>

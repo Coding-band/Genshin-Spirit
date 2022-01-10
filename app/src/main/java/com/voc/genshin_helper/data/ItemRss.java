@@ -1,6 +1,7 @@
 package com.voc.genshin_helper.data;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 
 import com.voc.genshin_helper.R;
@@ -10,11 +11,13 @@ import java.io.InputStream;
 import java.util.Calendar;
 
 /*
- * Package com.voc.genshin_helper.data.ItemRss was
- * Created by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2021 Xectorda 版權所有
+ * Project Genshin Spirit (原神小幫手) was
+ * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2022 Xectorda 版權所有
  */
 public class ItemRss {
+
+    SharedPreferences sharedPreferences;
 
     /**EDIT WHEN ADD NEW ITEMS*/
     public int[] char_names = {R.string.yae_miko,R.string.shenhe,R.string.yun_jin,R.string.gorou, R.string.arataki_itto, R.string.thoma, R.string.sangonomiya_kokomi, R.string.aloy, R.string.kujou_sara, R.string.raiden_shogun, R.string.sayu, R.string.yoimiya, R.string.kamisato_ayaka, R.string.kaedehara_kazuha, R.string.yanfei, R.string.eula, R.string.rosaria, R.string.xiao, R.string.hu_tao, R.string.ganyu, R.string.albedo, R.string.zhongli, R.string.xinyan, R.string.tartaglia, R.string.diona, R.string.xingqiu, R.string.xiangling, R.string.venti, R.string.sucrose, R.string.razor, R.string.qiqi, R.string.noelle, R.string.ningguang, R.string.mona, R.string.lisa, R.string.klee, R.string.keqing, R.string.kaeya, R.string.jean, R.string.fischl, R.string.diluc, R.string.chongyun, R.string.bennett, R.string.beidou, R.string.barbara, R.string.amber, R.string.traveler_anemo, R.string.traveler_geo, R.string.traveler_electro};
@@ -458,7 +461,7 @@ public class ItemRss {
          */
 
     /**EDIT WHEN ADD NEW ITEMS*/
-    public int[] getCharByName(String name){
+    public int[]  getCharByName(String name, Context context){
         if(name.equals("Yae Miko")){return new int[] {R.drawable.yae_miko_flag,R.string.yae_miko,R.drawable.yae_miko_full,R.drawable.yae_miko_ico};}
         else if(name.equals("Shenhe")){return new int[] {R.drawable.shenhe_flag,R.string.shenhe,R.drawable.shenhe_full,R.drawable.shenhe_ico};}
         else if(name.equals("Yun Jin")){return new int[] {R.drawable.yun_jin_flag,R.string.yun_jin,R.drawable.yun_jin_full,R.drawable.yun_jin_ico};}
@@ -505,10 +508,39 @@ public class ItemRss {
         else if(name.equals("Beidou")){return new int[] {R.drawable.beidou_flag,R.string.beidou,R.drawable.beidou_full,R.drawable.beidou_ico};}
         else if(name.equals("Barbara")){return new int[] {R.drawable.barbara_flag,R.string.barbara,R.drawable.barbara_full,R.drawable.barbara_ico};}
         else if(name.equals("Amber")){return new int[] {R.drawable.amber_flag,R.string.amber,R.drawable.amber_full,R.drawable.amber_ico};}
-        //Add at 20210820
-        else if(name.equals("Traveler-Anemo")){return new int[] {R.drawable.traveler_female,R.string.traveler_anemo,R.drawable.traveler_full,R.drawable.traveler_ico};}
-        else if(name.equals("Traveler-Geo")){return new int[] {R.drawable.traveler_female,R.string.traveler_geo,R.drawable.traveler_full,R.drawable.traveler_ico};}
-        else if(name.equals("Traveler-Electro")){return new int[] {R.drawable.traveler_female,R.string.traveler_electro,R.drawable.traveler_full,R.drawable.traveler_ico};}
+        //Add at 20210820, update at 20220109
+        else if(name.equals("Traveler-Anemo")){
+            sharedPreferences = context.getSharedPreferences("user_info",Context.MODE_PRIVATE);
+            String traveler_sex = sharedPreferences.getString("traveler_sex","F");
+
+            if(traveler_sex.equals("M")){
+                return new int[] {R.drawable.aether_flag,R.string.traveler_anemo,R.drawable.aether_full,R.drawable.aether_ico};
+            }else{
+                return new int[] {R.drawable.lumine_flag,R.string.traveler_anemo,R.drawable.lumine_full,R.drawable.lumine_ico};
+            }
+        }
+        //Add at 20210820, update at 20220109
+        else if(name.equals("Traveler-Geo")){
+            sharedPreferences = context.getSharedPreferences("user_info",Context.MODE_PRIVATE);
+            String traveler_sex = sharedPreferences.getString("traveler_sex","F");
+
+            if(traveler_sex.equals("M")){
+                return new int[] {R.drawable.aether_flag,R.string.traveler_geo,R.drawable.aether_full,R.drawable.aether_ico};
+            }else{
+                return new int[] {R.drawable.lumine_flag,R.string.traveler_geo,R.drawable.lumine_full,R.drawable.lumine_ico};
+            }
+        }
+        //Add at 20210820, update at 20220109
+        else if(name.equals("Traveler-Electro")){
+            sharedPreferences = context.getSharedPreferences("user_info",Context.MODE_PRIVATE);
+            String traveler_sex = sharedPreferences.getString("traveler_sex","F");
+
+            if(traveler_sex.equals("M")){
+                return new int[] {R.drawable.aether_flag,R.string.traveler_electro,R.drawable.aether_full,R.drawable.aether_ico};
+            }else{
+                return new int[] {R.drawable.lumine_flag,R.string.traveler_electro,R.drawable.lumine_full,R.drawable.lumine_ico};
+            }
+        }
         // ???
         else if(name.equals("Voc-夜芷冰")){return new int[] {R.drawable.mascot,R.string.voc,R.drawable.mascot,R.drawable.mascot_head};}
 
@@ -896,6 +928,7 @@ public class ItemRss {
         switch (moy){
             case Calendar.JANUARY: {
                 switch (dom) {
+                    case 9 : char_name = "Thoma"; break;
                     case 18 : char_name = "Diona"; break;
                     case 24 : char_name = "Rosaria"; break;
                 }
