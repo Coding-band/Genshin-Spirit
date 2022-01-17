@@ -7,6 +7,6 @@
   "first_status": "DEF%",
   "second_status": "ATK",
   "skill_name": "Жатва",
-  "skill_desc": "Победа над противником восстанавливает  8%/10%/12%/14%/16% HP.",
+  "skill_desc": "Победа над противником восстанавливает 8%/10%/12%/14%/16% HP.",
   "obtain_way": "CHESR_MD"
 }

@@ -524,7 +524,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                 int x = 0;
                 for (Characters item : charactersList) {
                     String str = String.valueOf(s).toLowerCase();
-                    if (context.getString(css.getCharByName(item.getName(),context)[1]).contains(str)||context.getString(css.getCharByName(item.getName(),context)[1]).toLowerCase().contains(str)||context.getString(css.getCharByName(item.getName(),context)[1]).toUpperCase().contains(str)){ // EN -> ZH
+                    if (context.getString(css.getCharByName(item.getName(),context)[1]).contains(str)||context.getString(css.getCharByName(item.getName(),context)[1]).toLowerCase().contains(str)||context.getString(css.getCharByName(item.getName(),context)[1]).toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
                         filteredList.add(item);
                     }
                     x = x +1;
@@ -756,7 +756,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                 int x = 0;
                 for (Weapons item : weaponsList) {
                     String str = String.valueOf(s).toLowerCase();
-                    if (context.getString(css.getWeaponByName(item.getName())[0]).contains(str)||context.getString(css.getWeaponByName(item.getName())[0]).toLowerCase().contains(str)||context.getString(css.getWeaponByName(item.getName())[0]).toUpperCase().contains(str)){ // EN -> ZH
+                    if (context.getString(css.getWeaponByName(item.getName())[0]).contains(str)||context.getString(css.getWeaponByName(item.getName())[0]).toLowerCase().contains(str)||context.getString(css.getWeaponByName(item.getName())[0]).toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
                         filteredList.add(item);
                     }
                     x = x +1;
@@ -990,7 +990,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                 int x = 0;
                 for (Artifacts item : artifactsList) {
                     String str = String.valueOf(s).toLowerCase();
-                    if (context.getString(css.getArtifactByName(item.getName())[0]).contains(str)||context.getString(css.getArtifactByName(item.getName())[0]).toLowerCase().contains(str)||context.getString(css.getArtifactByName(item.getName())[0]).toUpperCase().contains(str)){ // EN -> ZH
+                    if (context.getString(css.getArtifactByName(item.getName())[0]).contains(str)||context.getString(css.getArtifactByName(item.getName())[0]).toLowerCase().contains(str)||context.getString(css.getArtifactByName(item.getName())[0]).toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
                         filteredList.add(item);
                     }
                     x = x +1;

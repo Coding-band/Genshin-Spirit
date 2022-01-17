@@ -78,12 +78,12 @@ import com.voc.genshin_helper.data.Weapons;
 import com.voc.genshin_helper.data.WeaponsAdapter;
 import com.voc.genshin_helper.kidding.GoSleep;
 import com.voc.genshin_helper.util.BackgroundReload;
+import com.voc.genshin_helper.util.ChangeLog;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.LangUtils;
 import com.voc.genshin_helper.util.LocaleHelper;
 import com.voc.genshin_helper.util.NumberPickerDialog;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
-import com.voc.genshin_helper.util.UpdateLog;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
@@ -114,7 +114,6 @@ public class MainActivity extends AppCompatActivity {
     ViewGroup weapon_ll;
     BottomNavigationView nav_view;
     Today_Material tm;
-    UpdateLog updateLog;
     ItemRss css;
     //Char Page
     CharactersAdapter mAdapter;
@@ -157,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
     public int show_stars = 0;
 
     public SharedPreferences sharedPreferences;
+    public SharedPreferences sharedPreferences_version;
     public SharedPreferences.Editor editor;
 
     public List<Characters> charactersList = new ArrayList<>();
@@ -191,6 +191,7 @@ public class MainActivity extends AppCompatActivity {
         gs.sleep();
 
         sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
+        sharedPreferences_version = getSharedPreferences("changelog_version",MODE_PRIVATE);
         editor = sharedPreferences.edit();
         if (sharedPreferences.getBoolean("theme_light",true) == true){
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
@@ -222,7 +223,9 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Check Is First Time Open
-        updateLog = new UpdateLog();
+        if(sharedPreferences_version.getBoolean(BuildConfig.VERSION_NAME,false) == false){
+            ChangeLog.show(context,activity);
+        }
 
         final LayoutInflater mInflater = getLayoutInflater().from(this);
         viewPager0 = mInflater.inflate(R.layout.fragment_char, null,false);
@@ -357,8 +360,7 @@ public class MainActivity extends AppCompatActivity {
                                 int x = 0;
                                 for (Characters item : charactersList) {
                                     String str = String.valueOf(s).toLowerCase();
-                                    System.out.println("TOF : "+context.getString(css.getWeaponByName(item.getName())[0]));
-                                    if (context.getString(css.getCharByName(item.getName(),context)[1]).contains(str)||context.getString(css.getCharByName(item.getName(),context)[1]).toLowerCase().contains(str)||context.getString(css.getCharByName(item.getName(),context)[1]).toUpperCase().contains(str)){ // EN -> ZH
+                                    if (context.getString(css.getCharByName(item.getName(),context)[1]).contains(str)||context.getString(css.getCharByName(item.getName(),context)[1]).toLowerCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
                                         filteredList.add(item);
                                     }
                                     x = x +1;
@@ -568,7 +570,7 @@ public class MainActivity extends AppCompatActivity {
                                 int x = 0;
                                 for (Artifacts item : artifactsList) {
                                     String str = String.valueOf(s).toLowerCase();
-                                    if (context.getString(css.getArtifactByName(item.getName())[0]).contains(str)||context.getString(css.getArtifactByName(item.getName())[0]).toLowerCase().contains(str)||context.getString(css.getArtifactByName(item.getName())[0]).toUpperCase().contains(str)){ // EN -> ZH
+                                    if (context.getString(css.getArtifactByName(item.getName())[0]).contains(str)||context.getString(css.getArtifactByName(item.getName())[0]).toLowerCase().contains(str)||context.getString(css.getArtifactByName(item.getName())[0]).toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
                                         filteredList.add(item);
                                     }
                                     x = x +1;
@@ -730,8 +732,7 @@ public class MainActivity extends AppCompatActivity {
                                 int x = 0;
                                 for (Weapons item : weaponsList) {
                                     String str = String.valueOf(s).toLowerCase();
-                                    System.out.println("TOF : "+context.getString(css.getWeaponByName(item.getName())[0]));
-                                    if (context.getString(css.getWeaponByName(item.getName())[0]).contains(str)||context.getString(css.getWeaponByName(item.getName())[0]).toLowerCase().contains(str)||context.getString(css.getWeaponByName(item.getName())[0]).toUpperCase().contains(str)){ // EN -> ZH
+                                    if (context.getString(css.getWeaponByName(item.getName())[0]).contains(str)||context.getString(css.getWeaponByName(item.getName())[0]).toLowerCase().contains(str)||context.getString(css.getWeaponByName(item.getName())[0]).toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
                                         filteredList.add(item);
                                     }
                                     x = x +1;
@@ -1950,8 +1951,9 @@ public class MainActivity extends AppCompatActivity {
         RadioButton theme_light = viewPager4.findViewById(R.id.theme_light);
         RadioButton theme_dark = viewPager4.findViewById(R.id.theme_dark);
         RadioButton theme_default = viewPager4.findViewById(R.id.theme_default);
-        Switch other_exit_confirm = viewPager4.findViewById(R.id.other_exit_confirm);
+        Button bg_changelog_btn = viewPager4.findViewById(R.id.bg_changelog_btn);
 
+        Switch other_exit_confirm = viewPager4.findViewById(R.id.other_exit_confirm);
         theme_light.setButtonTintList(myList);
         theme_dark.setButtonTintList(myList);
         theme_default.setButtonTintList(myList);
@@ -1959,6 +1961,12 @@ public class MainActivity extends AppCompatActivity {
         other_exit_confirm.setThumbTintList(myList);
         other_exit_confirm.setTrackTintList(myList);
 
+        bg_changelog_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ChangeLog.show(context,activity);
+            }
+        });
     }
 
     public void colorGradient(TextView textView,String start_color, String end_color, boolean isColorGradient , String color){

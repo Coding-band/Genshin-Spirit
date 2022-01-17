@@ -130,6 +130,7 @@ dependencies {
     implementation 'com.google.android.play:core:1.10.2'
     implementation 'com.github.getActivity:XXPermissions:12.6'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.22'
+    implementation 'org.commonjava.googlecode.markdown4j:markdown4j:2.2-cj-1.1'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'

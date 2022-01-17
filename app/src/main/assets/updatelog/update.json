@@ -1,9 +1,0 @@
-[
-  {
-    "version": "2038",
-    "verName": "2.3.1 (2038)",
-    "releaseDate": "2021-11-28",
-    "desc_en": "Calculator\n1. Used new way of storing data, which ready for next big update\n2. Fixed delete error of same name artifacts\n3. Added artifacts calculator\n\nInformation\n1. Added Shenhe and Yun Jin (Preview).\n2. Added 2.3 Phrase 1 weapons' details.\n3. Fixed display error of Weapon List\n\nUI & Translations\n1. Added new translation.",
-    "desc_zh": "計算機\n1.採用新的數據存儲方式，為下一次大更新作準備\n2.修正同名聖遺物刪除錯誤\n3.新增聖遺物計算機\n\n信息\n1.新增申鶴和雲瑾（預覽）。\n2.新增2.3 第一部分的武器，聖遺物的詳細信息。\n3.修復武器列表顯示錯誤\n\n用戶界面與翻譯\n1.新增翻譯。"
-  }
-]

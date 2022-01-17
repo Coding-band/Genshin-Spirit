@@ -1,5 +1,19 @@
+Changelog - 2021-01-11
+```2.4.0 [Update] (Ver.2548)```
+
+**Characters and weapons**
+1. Fixed Display error of some weapons
+2. Fixed translation problem of ru-RU
+
+**UI**
+1. Fixed search bug of lists
+
+```The release date has been set in 17th Jan```
+
+---
+
 Changelog - 2021-01-10
-```2.4.0 [Update] (Ver.2490)```
+```2.4.0 [Update] (Ver.2538)```
 
 **Characters and weapons**
 1. Fixed Display error of some weapons
@@ -12,12 +26,13 @@ Changelog - 2021-01-10
 2. Added [Traveler Sex Setting] function -> See as Setting page (request by Loliness#0599)
 3. Fixed display error of Lists' background & choosed list background
 4. Fixed wrong choose error when not set the artifact type
+5. Added character icon below calculator's choosed artifacts and weapons.
 
 ```The release date has been set in 10th Jan```
 
 ```P.S. If there have any little bugs fixed, will be release update at Monday```
 
-
+---
 
 Changelog - 2021-01-08
 ```2.4.0 (Ver.2425)```
@@ -45,3 +60,5 @@ Changelog - 2021-01-08
 Will release the source after upload 2.4.0-gp update
 
 ```The release date has been set in 8th Jan```
+
+--- THE END ---

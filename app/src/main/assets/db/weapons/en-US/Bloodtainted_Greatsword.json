@@ -3,10 +3,10 @@
   "rare": 3,
   "weapon": "Claymore",
   "isComingSoon": false,
-  "desc": "據說是北方英雄浸過龍血的鋼鐵大劍，有刀槍不入的神力...這種護佑並不會延伸到揮舞它的人身上。",
+  "desc": "A steel sword that is said to have been coated with dragon blood, rendering it invulnerable to damage. This effect is not extended to its wielder, however.",
   "first_status": "EleMas",
   "second_status": "ATK",
-  "skill_name": "踏火息雷",
-  "skill_desc": "對處於火元素或雷元素影響下的敵人，造成的傷害提高12%/15%/18%/21%/24%。",
+  "skill_name": "Bane of Fire and Thunder",
+  "skill_desc": "Increases DMG against opponents affected by Pyro or Electro by 12%/15%/18%/21%/24%。",
   "obtain_way": "CHEST_SHOP"
 }

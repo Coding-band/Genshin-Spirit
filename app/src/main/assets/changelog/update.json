@@ -1,0 +1,17 @@
+[
+  {
+    "version": "2574",
+    "verName": "2.4.0-gp (2574)",
+    "description": "Changelog - 2021-01-17<br><br><b>Characters and weapons</b><br>1. Fixed Display error of some weapons<br>2. Fixed translation problem of ru-RU<br><br><b>UI</b><br>1. Fixed search bug of lists<br>2. Changelog"
+  },
+  {
+    "version": "2538",
+    "verName": "2.4.0-gp (2538)",
+    "description": "Changelog - 2021-01-10<br><br><b>Characters and weapons</b><br>1. Fixed Display error of some weapons<br>2. Fixed Display error of Character Talent Layout<br>3. Fixed wrong set of some character's advice<br>4. Added Thoma's birthday<br><br><b>UI</b><br>1. Added translations of Calculator & Setting<br>2. Added [Traveler Sex Setting] function -> See as Setting page (request by Loliness#0599)<br>3. Fixed display error of Lists' background & choosed list background<br>4. Fixed wrong choose error when not set the artifact type<br>5. Added character icon below calculator's choosed artifacts and weapons."
+  },
+  {
+    "version": "2425",
+    "verName": "2.4.0-gp (2425)",
+    "description": "Changelog - 2021-01-08<br><br><b>Calculator</b>1. [Progress Report] New function has already done 50%, will be release at 2.5.0 or earlier<br>2. Fixed display error of character skills' name (API <= 27)<br>3. Added Gorou, Itto, Shenhe and Yun Jin's ascension materials.<br>4. Reset the max item count in same row<br>5. Added a part of Yae Miko's calculation data<br><br><b>Characters and weapons</b><br>1. Added Gorou, Itto, Yun Jin, Shenhe Information.<br>2. Added 2.3 & 2.4 new weapons' details.<br>3. Added Yae Miko into the Character List. (Display only)<br>4. Added Gorou, Itto, Yun Jin, Shenhe, Yae Miko and ???'s birthday<br><br><b>UI</b>1. Fixed Android 8.1 or below (API <= 27) unable read character, artifacts, weapons' information problem.<br>2. Fixed search error of weapons, this way will also use in other two later<br>3. Added new types of theme. Code 'Blue Sea','Pinky Day','Dream Color','Cyber Color','Cream Color'<br>4. Added custom background function -> Only accept PNG,JPG,JPEG,GIF<br>5. Changed some UI's background design for new function<br><br><b>Github</b><br>Will release the source after upload 2.4.0-gp update"
+  }
+]
