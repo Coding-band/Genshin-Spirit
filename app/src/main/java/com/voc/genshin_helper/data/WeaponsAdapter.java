@@ -32,8 +32,12 @@ import com.squareup.picasso.Picasso;
 import com.voc.genshin_helper.ui.CalculatorUI;
 import com.voc.genshin_helper.ui.MainActivity;
 import com.voc.genshin_helper.util.CustomToast;
+import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 import com.voc.genshin_helper.R;
+
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -133,14 +137,14 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
         Context context2 = this.context;
         if (context2 instanceof MainActivity) {
             if (((MainActivity) context2).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                Picasso.get().load(itemRss.getWeaponByName(weapons.getName())[1]).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
+                Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
             } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                Picasso.get().load(itemRss.getWeaponByName(weapons.getName())[1]).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
+                Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
             }
         } else if (context2 instanceof CalculatorUI) {
-            Picasso.get().load(itemRss.getWeaponByName(weapons.getName())[1]).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
+            Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
         }
-        viewHolder.weapon_name.setText(this.context.getString(itemRss.getWeaponByName(weapons.getName())[0]));
+        viewHolder.weapon_name.setText(itemRss.getWeaponByName(weapons.getName(),context)[0]);
 
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
         String color_hex = sharedPreferences.getString("theme_color_hex","#FF5A5A"); // Must include #
@@ -242,11 +246,11 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                                 TextView info_skill_title = (TextView) inflate.findViewById(R.id.info_skill_title);
 
                                 Picasso.get()
-                                        .load(itemRss.getWeaponByName(name)[1]).fit().centerInside().transform(roundedCornersTransformation)
+                                        .load(FileLoader.loadIMG(itemRss.getWeaponByName(name,context)[1],context)).fit().centerInside().transform(roundedCornersTransformation)
                                         .error(R.drawable.paimon_lost)
                                         .into(item_img);
 
-                                ((TextView) inflate.findViewById(R.id.item_name)).setText(itemRss.getWeaponByName(name)[0]);
+                                ((TextView) inflate.findViewById(R.id.item_name)).setText(itemRss.getWeaponByName(name,context)[0]);
                                 ((TextView) inflate.findViewById(R.id.item_info)).setText(desc);
                                 ((ImageView) inflate.findViewById(R.id.item_element)).setVisibility(View.GONE);
 
@@ -308,10 +312,10 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
         String tContents = "";
 
         try {
-            InputStream stream = context.getAssets().open(inFile);
+            File file = new File(context.getFilesDir()+inFile);
+            InputStream stream = new FileInputStream(file);
 
             int size = stream.available();
-            System.out.println("size"+ size);
             byte[] buffer = new byte[size];
             stream.read(buffer);
             stream.close();

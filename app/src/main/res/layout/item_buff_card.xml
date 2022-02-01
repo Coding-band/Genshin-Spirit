@@ -35,8 +35,7 @@
                     android:id="@+id/buff_ui_char_icon"
                     android:layout_width="96dp"
                     android:layout_height="96dp"
-                    android:layout_weight="0"
-                    app:srcCompat="@drawable/ayaka_ico" />
+                    android:layout_weight="0" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -82,7 +81,7 @@
                             android:layout_weight="1"
                             android:adjustViewBounds="true"
                             android:padding="8dp"
-                            app:srcCompat="@drawable/paimon_lost" />
+                            app:srcCompat="@drawable/ico_flower" />
 
                         <ImageView
                             android:id="@+id/buff_ui_artifact_icon2"
@@ -91,7 +90,7 @@
                             android:layout_weight="1"
                             android:adjustViewBounds="true"
                             android:padding="8dp"
-                            app:srcCompat="@drawable/paimon_lost" />
+                            app:srcCompat="@drawable/ico_plume" />
 
                         <ImageView
                             android:id="@+id/buff_ui_artifact_icon3"
@@ -100,7 +99,7 @@
                             android:layout_weight="1"
                             android:adjustViewBounds="true"
                             android:padding="8dp"
-                            app:srcCompat="@drawable/paimon_lost" />
+                            app:srcCompat="@drawable/ico_sand" />
 
                         <ImageView
                             android:id="@+id/buff_ui_artifact_icon4"
@@ -109,7 +108,7 @@
                             android:layout_weight="1"
                             android:adjustViewBounds="true"
                             android:padding="8dp"
-                            app:srcCompat="@drawable/paimon_lost" />
+                            app:srcCompat="@drawable/ico_goblet" />
 
                         <ImageView
                             android:id="@+id/buff_ui_artifact_icon5"
@@ -118,7 +117,7 @@
                             android:layout_weight="1"
                             android:adjustViewBounds="true"
                             android:padding="8dp"
-                            app:srcCompat="@drawable/paimon_lost" />
+                            app:srcCompat="@drawable/ico_circlet" />
 
                     </LinearLayout>
                 </LinearLayout>
@@ -448,7 +447,7 @@
                     android:layout_weight="1"
                     android:drawableRight="@drawable/ic_baseline_double_arrow_24"
                     android:gravity="center|right"
-                    android:text="Press to see more detail"
+                    android:text="@string/press_see_details"
                     android:textAlignment="viewEnd" />
             </LinearLayout>
 

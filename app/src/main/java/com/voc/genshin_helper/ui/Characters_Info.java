@@ -29,6 +29,7 @@ import com.squareup.picasso.Picasso;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.util.BackgroundReload;
+import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
 import org.apache.commons.io.IOUtils;
@@ -36,6 +37,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -584,8 +587,8 @@ public class Characters_Info {
          */
 
         /** MAIN */
-        char_name.setText("【"+nick+"】 "+context.getString(item_rss.getCharByName(name,context)[1]));
-        char_img.setImageResource(item_rss.getCharByName(name,context)[2]);
+        char_name.setText("【"+nick+"】 "+item_rss.getCharByName(name,context)[1]);
+        char_img.setImageDrawable(FileLoader.loadIMG2Drawable(item_rss.getCharByName(name,context)[2],context));
         char_img.setBackgroundResource(item_rss.getElementByName(element)[2]);
         char_stars.setNumStars(star);
         char_stars.setRating(star);
@@ -678,7 +681,7 @@ public class Characters_Info {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_main_weapon_ll, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
                     Picasso.get()
-                            .load(item_rss.getWeaponByName(item_rss.getWeaponNameByFileName(main_weapon_advice[x]))[1]).fit().centerInside().transform(roundedCornersTransformation)
+                            .load(FileLoader.loadIMG(item_rss.getWeaponByName(item_rss.getWeaponNameByFileName(main_weapon_advice[x]),context)[1],context)).fit().centerInside().transform(roundedCornersTransformation)
                             .error(R.drawable.paimon_lost)
                             .into(item_img);
                     advice_main_weapon_ll.addView(char_view);
@@ -692,7 +695,7 @@ public class Characters_Info {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_support_weapon_ll, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
                     Picasso.get()
-                            .load(item_rss.getWeaponByName(item_rss.getWeaponNameByFileName(support_weapon_advice[x]))[1]).fit().centerInside().transform(roundedCornersTransformation)
+                            .load(FileLoader.loadIMG(item_rss.getWeaponByName(item_rss.getWeaponNameByFileName(support_weapon_advice[x]),context)[1],context)).fit().centerInside().transform(roundedCornersTransformation)
                             .error(R.drawable.paimon_lost)
                             .into(item_img);
                     advice_support_weapon_ll.addView(char_view);
@@ -706,7 +709,7 @@ public class Characters_Info {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_util_weapon_ll, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
                     Picasso.get()
-                            .load(item_rss.getWeaponByName(item_rss.getWeaponNameByFileName(util_weapon_advice[x]))[1]).fit().centerInside().transform(roundedCornersTransformation)
+                            .load(FileLoader.loadIMG(item_rss.getWeaponByName(item_rss.getWeaponNameByFileName(util_weapon_advice[x]),context)[1],context)).fit().centerInside().transform(roundedCornersTransformation)
                             .error(R.drawable.paimon_lost)
                             .into(item_img);
                     advice_util_weapon_ll.addView(char_view);
@@ -721,7 +724,7 @@ public class Characters_Info {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_main_art_ll1, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
                     Picasso.get()
-                            .load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(main_artifacts1[x]))[x+1]).fit().centerInside().transform(roundedCornersTransformation)
+                            .load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(main_artifacts1[x]),context)[x+1],context)).fit().centerInside().transform(roundedCornersTransformation)
                             .error(R.drawable.paimon_lost)
                             .into(item_img);
                     advice_main_art_ll1.addView(char_view);
@@ -735,7 +738,7 @@ public class Characters_Info {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_main_art_ll2, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
                     Picasso.get()
-                            .load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(main_artifacts2[x]))[x+1]).fit().centerInside().transform(roundedCornersTransformation)
+                            .load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(main_artifacts2[x]),context)[x+1],context)).fit().centerInside().transform(roundedCornersTransformation)
                             .error(R.drawable.paimon_lost)
                             .into(item_img);
                     advice_main_art_ll2.addView(char_view);
@@ -749,7 +752,7 @@ public class Characters_Info {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_main_art_ll3, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
                     Picasso.get()
-                            .load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(main_artifacts3[x]))[x+1]).fit().centerInside().transform(roundedCornersTransformation)
+                            .load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(main_artifacts3[x]),context)[x+1],context)).fit().centerInside().transform(roundedCornersTransformation)
                             .error(R.drawable.paimon_lost)
                             .into(item_img);
                     advice_main_art_ll3.addView(char_view);
@@ -763,7 +766,7 @@ public class Characters_Info {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_support_art_ll1, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
                     Picasso.get()
-                            .load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(support_artifacts1[x]))[x+1]).fit().centerInside().transform(roundedCornersTransformation)
+                            .load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(support_artifacts1[x]),context)[x+1],context)).fit().centerInside().transform(roundedCornersTransformation)
                             .error(R.drawable.paimon_lost)
                             .into(item_img);
                     advice_support_art_ll1.addView(char_view);
@@ -777,7 +780,7 @@ public class Characters_Info {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_support_art_ll2, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
                     Picasso.get()
-                            .load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(support_artifacts2[x]))[x+1]).fit().centerInside().transform(roundedCornersTransformation)
+                            .load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(support_artifacts2[x]),context)[x+1],context)).fit().centerInside().transform(roundedCornersTransformation)
                             .error(R.drawable.paimon_lost)
                             .into(item_img);
                     advice_support_art_ll2.addView(char_view);
@@ -791,7 +794,7 @@ public class Characters_Info {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_support_art_ll3, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
                     Picasso.get()
-                            .load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(support_artifacts3[x]))[x+1]).fit().centerInside().transform(roundedCornersTransformation)
+                            .load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(support_artifacts3[x]),context)[x+1],context)).fit().centerInside().transform(roundedCornersTransformation)
                             .error(R.drawable.paimon_lost)
                             .into(item_img);
                     advice_support_art_ll3.addView(char_view);
@@ -805,7 +808,7 @@ public class Characters_Info {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_util_art_ll1, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
                     Picasso.get()
-                            .load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(util_artifacts1[x]))[x+1]).fit().centerInside().transform(roundedCornersTransformation)
+                            .load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(util_artifacts1[x]),context)[x+1],context)).fit().centerInside().transform(roundedCornersTransformation)
                             .error(R.drawable.paimon_lost)
                             .into(item_img);
                     advice_util_art_ll1.addView(char_view);
@@ -819,7 +822,7 @@ public class Characters_Info {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_util_art_ll2, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
                     Picasso.get()
-                            .load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(util_artifacts2[x]))[x+1]).fit().centerInside().transform(roundedCornersTransformation)
+                            .load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(util_artifacts2[x]),context)[x+1],context)).fit().centerInside().transform(roundedCornersTransformation)
                             .error(R.drawable.paimon_lost)
                             .into(item_img);
                     advice_util_art_ll2.addView(char_view);
@@ -833,7 +836,7 @@ public class Characters_Info {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_util_art_ll3, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
                     Picasso.get()
-                            .load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(util_artifacts3[x]))[x+1]).fit().centerInside().transform(roundedCornersTransformation)
+                            .load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(util_artifacts3[x]),context)[x+1],context)).fit().centerInside().transform(roundedCornersTransformation)
                             .error(R.drawable.paimon_lost)
                             .into(item_img);
                     advice_util_art_ll3.addView(char_view);
@@ -846,7 +849,7 @@ public class Characters_Info {
                 for (int x = 0 ; x < team1.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team, advice_team_ll1, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
-                    Bitmap icon = BitmapFactory.decodeResource(context.getResources(), item_rss.getCharByName(team1[x].replace("XPR"," "),context)[3]);
+                    Bitmap icon = FileLoader.loadIMG2Bitmap(item_rss.getCharByName(team1[x].replace("XPR"," "),context)[3],context);
                     item_img.setImageBitmap(getRoundBitmapByShader(icon, (int) Math.round(128),(int)Math.round(128),20, 0));
                     Log.wtf("team1[x])[2]",team1[x]);
                     advice_team_ll1.addView(char_view);
@@ -860,7 +863,7 @@ public class Characters_Info {
                 for (int x = 0 ; x < team2.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team, advice_team_ll2, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
-                    Bitmap icon = BitmapFactory.decodeResource(context.getResources(), item_rss.getCharByName(team2[x].replace("XPR"," "),context)[3]);
+                    Bitmap icon = FileLoader.loadIMG2Bitmap(item_rss.getCharByName(team2[x].replace("XPR"," "),context)[3],context);
                     item_img.setImageBitmap(getRoundBitmapByShader(icon, (int) Math.round(128),(int)Math.round(128),20, 0));
                     advice_team_ll2.addView(char_view);
                 }
@@ -872,7 +875,7 @@ public class Characters_Info {
                 for (int x = 0 ; x < team3.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team, advice_team_ll3, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
-                    Bitmap icon = BitmapFactory.decodeResource(context.getResources(), item_rss.getCharByName(team3[x].replace("XPR"," "),context)[3]);
+                    Bitmap icon = FileLoader.loadIMG2Bitmap(item_rss.getCharByName(team3[x].replace("XPR"," "),context)[3],context);
                     item_img.setImageBitmap(getRoundBitmapByShader(icon, (int) Math.round(128),(int)Math.round(128),20, 0));
                     advice_team_ll3.addView(char_view);
                 }
@@ -884,7 +887,7 @@ public class Characters_Info {
                 for (int x = 0 ; x < team4.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team, advice_team_ll4, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
-                    Bitmap icon = BitmapFactory.decodeResource(context.getResources(), item_rss.getCharByName(team4[x].replace("XPR"," "),context)[3]);
+                    Bitmap icon = FileLoader.loadIMG2Bitmap(item_rss.getCharByName(team4[x].replace("XPR"," "),context)[3],context);
                     item_img.setImageBitmap(getRoundBitmapByShader(icon, (int) Math.round(128),(int)Math.round(128),20, 0));
                     advice_team_ll4.addView(char_view);
                 }
@@ -936,12 +939,11 @@ public class Characters_Info {
 
     public String LoadData(String inFile) {
         String tContents = "";
-
         try {
-            InputStream stream = context.getAssets().open(inFile);
+            File file = new File(context.getFilesDir()+"/"+inFile);
+            InputStream stream = new FileInputStream(file);
 
             int size = stream.available();
-            System.out.println("size"+ size);
             byte[] buffer = new byte[size];
             stream.read(buffer);
             stream.close();

@@ -7,7 +7,6 @@ package com.voc.genshin_helper.data;/*
 import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.AssetManager;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import androidx.exifinterface.media.ExifInterface;
@@ -31,8 +30,12 @@ import com.squareup.picasso.Picasso;
 import com.voc.genshin_helper.ui.CalculatorUI;
 import com.voc.genshin_helper.ui.MainActivity;
 import com.voc.genshin_helper.util.CustomToast;
+import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 import com.voc.genshin_helper.R;
+
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
@@ -131,14 +134,14 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
         Context context2 = this.context;
         if (context2 instanceof MainActivity) {
             if (((MainActivity) context2).sharedPreferences.getString("curr_ui_grid", ExifInterface.GPS_MEASUREMENT_2D).equals(ExifInterface.GPS_MEASUREMENT_2D)) {
-                Picasso.get().load(itemRss.getArtifactByName(artifacts.getName())[1]).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.artifact_icon);
+                Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(artifacts.getName(),context)[1],context)).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.artifact_icon);
             } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", ExifInterface.GPS_MEASUREMENT_3D).equals(ExifInterface.GPS_MEASUREMENT_3D)) {
-                Picasso.get().load(itemRss.getArtifactByName(artifacts.getName())[1]).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.artifact_icon);
+                Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(artifacts.getName(),context)[1],context)).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.artifact_icon);
             }
         } else if (context2 instanceof CalculatorUI) {
-            Picasso.get().load(itemRss.getArtifactByName(artifacts.getName())[1]).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.artifact_icon);
+            Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(artifacts.getName(),context)[1],context)).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.artifact_icon);
         }
-        viewHolder.artifact_name.setText(this.context.getString(itemRss.getArtifactByName(artifacts.getName())[0]));
+        viewHolder.artifact_name.setText(itemRss.getArtifactByName(artifacts.getName(),context)[0]);
         new ColorStateList(new int[][]{new int[]{16842919}, new int[]{-16842912}, new int[]{16842912}}, new int[]{this.context.getResources().getColor(R.color.tv_color), this.context.getResources().getColor(R.color.tv_color), Color.parseColor(this.context.getSharedPreferences("user_info", 0).getString("theme_color_hex", "#FF5A5A"))});
     }
 
@@ -193,102 +196,93 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                     SharedPreferences sharedPreferences = ArtifactsAdapter.this.context.getSharedPreferences("user_info", 0);
                     new ItemRss();
                     String string = sharedPreferences.getString("curr_lang", "zh-HK");
-                    AssetManager assets = ArtifactsAdapter.this.context.getAssets();
+                    //AssetManager assets = ArtifactsAdapter.this.context.getAssets();
                     Log.wtf("CharName_BASE", valueOf);
                     String replace = valueOf.replace("'", "_");
                     Log.wtf("lang", string);
-                    try {
-                        System.out.println(Arrays.toString(assets.list("/assets")));
-                        String str = LoadData("db/artifacts/" + string + "/" + replace + ".json");
+                    String str = LoadData("db/artifacts/" + string + "/" + replace + ".json");
 
-                        if (str == null) {
-                            str = LoadData("db/artifacts/en-US/" + replace + ".json");
-                        }
-                        if (str != null) {
-                            try {
-                                JSONObject jSONObject = new JSONObject(str);
-                                String str4 = ViewHolder.this.str;
-                                String str5 = (String) ViewHolder.this.artifact_name.getText();
-                                JSONArray jSONArray = jSONObject.getJSONArray("rarity");
-                                int parseInt = Integer.parseInt((String) jSONArray.get(jSONArray.length() - 1));
-                                Dialog dialog = new Dialog(ArtifactsAdapter.this.context, R.style.NormalDialogStyle_N);
-                                View inflate = View.inflate(ArtifactsAdapter.this.context, R.layout.item_artifact_info, null);
-                                ItemRss itemRss = new ItemRss();
-                                RoundedCornersTransformation roundedCornersTransformation = new RoundedCornersTransformation(25, 0, RoundedCornersTransformation.CornerType.TOP);
-                                ImageView imageView2 = (ImageView) inflate.findViewById(R.id.item_img);
-                                LinearLayout linearLayout = (LinearLayout) inflate.findViewById(R.id.item_nl);
-                                RatingBar ratingBar = (RatingBar) inflate.findViewById(R.id.item_star);
-                                ImageView imageView3 = (ImageView) inflate.findViewById(R.id.item_is_coming);
-                                TextView textView = (TextView) inflate.findViewById(R.id.item_2pcs);
-                                TextView textView2 = (TextView) inflate.findViewById(R.id.item_4pcs);
-                                ConstraintLayout constraintLayout = (ConstraintLayout) inflate.findViewById(R.id.item_bg);
-                                ImageView imageView4 = (ImageView) inflate.findViewById(R.id.info_item1);
-                                ImageView imageView5 = (ImageView) inflate.findViewById(R.id.info_item2);
-                                ImageView imageView6 = (ImageView) inflate.findViewById(R.id.info_item3);
-                                ImageView imageView7 = (ImageView) inflate.findViewById(R.id.info_item4);
-                                ImageView imageView8 = (ImageView) inflate.findViewById(R.id.info_item5);
-                                Picasso.get().load(itemRss.getArtifactByName(str4)[1]).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_lost).into(imageView2);
-                                ((TextView) inflate.findViewById(R.id.item_name)).setText(ViewHolder.this.artifact_name.getText());
-                                if (jSONObject.has("1pc")) {
-                                    StringBuilder sb = new StringBuilder();
-                                    imageView = imageView4;
-                                    sb.append(ArtifactsAdapter.this.context.getString(R.string.artifact_stat1));
-                                    sb.append(" : ");
-                                    sb.append(jSONObject.getString("1pc"));
-                                    textView.setText(sb.toString());
-                                    textView2.setVisibility(View.GONE);
-                                } else {
-                                    imageView = imageView4;
-                                    textView.setText(ArtifactsAdapter.this.context.getString(R.string.artifact_stat2) + " : " + jSONObject.getString("2pc"));
-                                    textView2.setText(ArtifactsAdapter.this.context.getString(R.string.artifact_stat4) + " : " + jSONObject.getString("4pc"));
-                                }
-                                ratingBar.setNumStars(parseInt);
-                                ratingBar.setRating((float) parseInt);
-                                imageView2.setBackgroundResource(itemRss.getRareColorByName(parseInt)[0]);
-                                linearLayout.setBackgroundResource(itemRss.getRareColorByName(parseInt)[1]);
-                                Picasso.get().load(itemRss.getArtifactByName(str4)[1]).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_lost).into(imageView);
-                                imageView.setBackgroundResource(itemRss.getRareColorByName(parseInt)[0]);
-                                if (itemRss.getArtifactByName(str4).length > 2) {
-                                    imageView5.setVisibility(View.VISIBLE);
-                                    imageView6.setVisibility(View.VISIBLE);
-                                    imageView7.setVisibility(View.VISIBLE);
-                                    imageView8.setVisibility(View.VISIBLE);
-                                    Picasso.get().load(itemRss.getArtifactByName(str4)[2]).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_lost).into(imageView5);
-                                    imageView5.setBackgroundResource(itemRss.getRareColorByName(parseInt)[0]);
-                                    Picasso.get().load(itemRss.getArtifactByName(str4)[3]).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_lost).into(imageView6);
-                                    imageView6.setBackgroundResource(itemRss.getRareColorByName(parseInt)[0]);
-                                    Picasso.get().load(itemRss.getArtifactByName(str4)[4]).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_lost).into(imageView7);
-                                    imageView7.setBackgroundResource(itemRss.getRareColorByName(parseInt)[0]);
-                                    Picasso.get().load(itemRss.getArtifactByName(str4)[5]).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_lost).into(imageView8);
-                                    imageView8.setBackgroundResource(itemRss.getRareColorByName(parseInt)[0]);
-                                }
-                                if (ViewHolder.this.artifact_isComing.getVisibility() == View.VISIBLE) {
-                                    imageView3.setVisibility(View.VISIBLE);
-                                } else {
-                                    imageView3.setVisibility(View.GONE);
-                                }
-                                dialog.setContentView(inflate);
-                                dialog.setCanceledOnTouchOutside(true);
-                                Window window = dialog.getWindow();
-                                WindowManager.LayoutParams attributes = window.getAttributes();
-                                attributes.width = ScreenSizeUtils.getInstance(ArtifactsAdapter.this.context).getScreenWidth();
-                                attributes.height = ViewGroup.LayoutParams.WRAP_CONTENT;
-                                attributes.gravity = Gravity.BOTTOM;
-                                window.setAttributes(attributes);
-                                dialog.show();
-                            } catch (JSONException e) {
-                                e.printStackTrace();
+                    if (str == null) {
+                        str = LoadData("db/artifacts/en-US/" + replace + ".json");
+                    }
+                    if (str != null) {
+                        try {
+                            JSONObject jSONObject = new JSONObject(str);
+                            String str4 = ViewHolder.this.str;
+                            String str5 = (String) ViewHolder.this.artifact_name.getText();
+                            JSONArray jSONArray = jSONObject.getJSONArray("rarity");
+                            int parseInt = Integer.parseInt((String) jSONArray.get(jSONArray.length() - 1));
+                            Dialog dialog = new Dialog(ArtifactsAdapter.this.context, R.style.NormalDialogStyle_N);
+                            View inflate = View.inflate(ArtifactsAdapter.this.context, R.layout.item_artifact_info, null);
+                            ItemRss itemRss = new ItemRss();
+                            RoundedCornersTransformation roundedCornersTransformation = new RoundedCornersTransformation(25, 0, RoundedCornersTransformation.CornerType.TOP);
+                            ImageView imageView2 = (ImageView) inflate.findViewById(R.id.item_img);
+                            LinearLayout linearLayout = (LinearLayout) inflate.findViewById(R.id.item_nl);
+                            RatingBar ratingBar = (RatingBar) inflate.findViewById(R.id.item_star);
+                            ImageView imageView3 = (ImageView) inflate.findViewById(R.id.item_is_coming);
+                            TextView textView = (TextView) inflate.findViewById(R.id.item_2pcs);
+                            TextView textView2 = (TextView) inflate.findViewById(R.id.item_4pcs);
+                            ConstraintLayout constraintLayout = (ConstraintLayout) inflate.findViewById(R.id.item_bg);
+                            ImageView imageView4 = (ImageView) inflate.findViewById(R.id.info_item1);
+                            ImageView imageView5 = (ImageView) inflate.findViewById(R.id.info_item2);
+                            ImageView imageView6 = (ImageView) inflate.findViewById(R.id.info_item3);
+                            ImageView imageView7 = (ImageView) inflate.findViewById(R.id.info_item4);
+                            ImageView imageView8 = (ImageView) inflate.findViewById(R.id.info_item5);
+                            Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(str4,context)[1],context)).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_lost).into(imageView2);
+                            ((TextView) inflate.findViewById(R.id.item_name)).setText(ViewHolder.this.artifact_name.getText());
+                            if (jSONObject.has("1pc")) {
+                                StringBuilder sb = new StringBuilder();
+                                imageView = imageView4;
+                                sb.append(ArtifactsAdapter.this.context.getString(R.string.artifact_stat1));
+                                sb.append(" : ");
+                                sb.append(jSONObject.getString("1pc"));
+                                textView.setText(sb.toString());
+                                textView2.setVisibility(View.GONE);
+                            } else {
+                                imageView = imageView4;
+                                textView.setText(ArtifactsAdapter.this.context.getString(R.string.artifact_stat2) + " : " + jSONObject.getString("2pc"));
+                                textView2.setText(ArtifactsAdapter.this.context.getString(R.string.artifact_stat4) + " : " + jSONObject.getString("4pc"));
                             }
-                        } else {
-                            //Toast.makeText(ArtifactsAdapter.this.context, ArtifactsAdapter.this.context.getString(R.string.none_info), Toast.LENGTH_SHORT).show();
-                            CustomToast.toast(context,view,context.getString(R.string.none_info));
+                            ratingBar.setNumStars(parseInt);
+                            ratingBar.setRating((float) parseInt);
+                            imageView2.setBackgroundResource(itemRss.getRareColorByName(parseInt)[0]);
+                            linearLayout.setBackgroundResource(itemRss.getRareColorByName(parseInt)[1]);
+                            Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(str4,context)[1],context)).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_lost).into(imageView);
+                            imageView.setBackgroundResource(itemRss.getRareColorByName(parseInt)[0]);
+                            if (itemRss.getArtifactByName(str4,context).length > 2) {
+                                imageView5.setVisibility(View.VISIBLE);
+                                imageView6.setVisibility(View.VISIBLE);
+                                imageView7.setVisibility(View.VISIBLE);
+                                imageView8.setVisibility(View.VISIBLE);
+                                Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(str4,context)[2],context)).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_lost).into(imageView5);
+                                imageView5.setBackgroundResource(itemRss.getRareColorByName(parseInt)[0]);
+                                Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(str4,context)[3],context)).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_lost).into(imageView6);
+                                imageView6.setBackgroundResource(itemRss.getRareColorByName(parseInt)[0]);
+                                Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(str4,context)[4],context)).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_lost).into(imageView7);
+                                imageView7.setBackgroundResource(itemRss.getRareColorByName(parseInt)[0]);
+                                Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(str4,context)[5],context)).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_lost).into(imageView8);
+                                imageView8.setBackgroundResource(itemRss.getRareColorByName(parseInt)[0]);
+                            }
+                            if (ViewHolder.this.artifact_isComing.getVisibility() == View.VISIBLE) {
+                                imageView3.setVisibility(View.VISIBLE);
+                            } else {
+                                imageView3.setVisibility(View.GONE);
+                            }
+                            dialog.setContentView(inflate);
+                            dialog.setCanceledOnTouchOutside(true);
+                            Window window = dialog.getWindow();
+                            WindowManager.LayoutParams attributes = window.getAttributes();
+                            attributes.width = ScreenSizeUtils.getInstance(ArtifactsAdapter.this.context).getScreenWidth();
+                            attributes.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+                            attributes.gravity = Gravity.BOTTOM;
+                            window.setAttributes(attributes);
+                            dialog.show();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
-                    } catch (IOException e2) {
-                        if (e2 != null) {
-                            //Toast.makeText(ArtifactsAdapter.this.context, ArtifactsAdapter.this.context.getString(R.string.none_info), Toast.LENGTH_SHORT).show();
-                            CustomToast.toast(context,view,context.getString(R.string.none_info));
-                        }
-                        Log.wtf("EX", e2);
+                    } else {
+                        //Toast.makeText(ArtifactsAdapter.this.context, ArtifactsAdapter.this.context.getString(R.string.none_info), Toast.LENGTH_SHORT).show();
+                        CustomToast.toast(context,view,context.getString(R.string.none_info));
                     }
                 } else if (ArtifactsAdapter.this.context instanceof CalculatorUI) {
                     Log.wtf("YES", "IT's");
@@ -314,7 +308,8 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
         String tContents = "";
 
         try {
-            InputStream stream = context.getAssets().open(inFile);
+            File file = new File(context.getFilesDir()+inFile);
+            InputStream stream = new FileInputStream(file);
 
             int size = stream.available();
             byte[] buffer = new byte[size];

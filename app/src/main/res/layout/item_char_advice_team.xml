@@ -14,12 +14,11 @@
     android:layout_marginRight="8dp"
     android:layout_weight="1"
     android:adjustViewBounds="true"
-    android:foreground="@drawable/bg_kwang"
     android:bottomLeftRadius="10dp"
     android:bottomRightRadius="10dp"
+    android:foreground="@drawable/bg_kwang"
     android:topLeftRadius="10dp"
-    android:topRightRadius="10dp"
-    app:srcCompat="@drawable/albedo_ico">
+    android:topRightRadius="10dp">
 
     <!--android:background="@drawable/bg_less_edge_tv"-->
 </ImageView>

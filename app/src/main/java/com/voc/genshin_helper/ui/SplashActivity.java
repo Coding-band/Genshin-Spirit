@@ -10,7 +10,11 @@ import static android.os.Build.VERSION.SDK_INT;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.ProgressDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
@@ -20,6 +24,7 @@ import android.content.SharedPreferences;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.StrictMode;
 import android.provider.Settings;
 import android.util.Log;
 import android.widget.TextView;
@@ -40,10 +45,20 @@ import com.voc.genshin_helper.BuildConfig;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.CustomToast;
+import com.voc.genshin_helper.util.DownloadTask;
 
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 /*
  * Project Genshin Spirit (原神小幫手) was
@@ -88,13 +103,41 @@ public class SplashActivity extends AppCompatActivity {
 
     }
     private void goMain() {
-        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                SplashActivity.this.startActivity(new Intent(SplashActivity.this, MainActivity.class));
-                SplashActivity.this.finish();
-            }
-        }, 2000);
+        SharedPreferences sharedPreferences = getSharedPreferences("user_info", 0);
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+        if (sharedPreferences.getBoolean("downloadBase", false) == false) {
+            AlertDialog.Builder dialog = new AlertDialog.Builder(SplashActivity.this,R.style.AlertDialogCustom);
+            dialog.setCancelable(false);
+            dialog.setTitle(context.getString(R.string.update_download_update_base));
+            dialog.setMessage(context.getString(R.string.update_download_advice)+"\n"+context.getString(R.string.update_download_base_file_size)+prettyByteCount(getRemoteFileSize("http://113.254.213.196/genshin_spirit/base.zip")));
+            dialog.setNegativeButton(context.getString(R.string.update_download_later),new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface arg0, int arg1) {
+                    // TODO Auto-generated method stub
+                    finish();
+                }
+
+            });
+            dialog.setPositiveButton(context.getString(R.string.update_download_now),new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface arg0, int arg1) {
+                    // TODO Auto-generated method stub
+                    DownloadTask downloadTask = new DownloadTask();
+                    downloadTask.start("http://113.254.213.196/genshin_spirit/base.zip","base.zip","/base.zip",context,activity);
+                }
+
+            });
+            dialog.show();
+        }else{
+            new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    SplashActivity.this.startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                    SplashActivity.this.finish();
+                }
+            }, 2000);
+        }
 
     }
 
@@ -131,7 +174,43 @@ public class SplashActivity extends AppCompatActivity {
                     }
                 }
             }
+
         }
+    }
+
+    public String prettyByteCount(Number number) {
+        String[] suffix = {"B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"};
+        long numValue = ((long) number.longValue());
+        int base = 0 ;
+        double tmp_val = numValue;
+        while (tmp_val> 1024){
+            tmp_val = tmp_val/1024;
+            base = base +1;
+        }
+
+        SharedPreferences sharedPreferences = getSharedPreferences("user_info", Context.MODE_PRIVATE);
+        int decimal_num = 2;//sharedPreferences.getInt("decimal_num", 0);
+        boolean decimal  = sharedPreferences.getBoolean("decimal", false);
+        if (base < suffix.length) {
+            return new DecimalFormat("##.##").format(numValue / Math.pow(1024, base)) + suffix[base];
+            // Muility
+        } else {
+            return new DecimalFormat("#,###").format(numValue);
+        }
+    }
+    public static long getRemoteFileSize(String urlSTR) {
+        URL url = null;
+        try {
+            url = new URL(urlSTR);
+            URLConnection urlConnection = url.openConnection();
+            urlConnection.connect();
+            return urlConnection.getContentLength();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return 1;
     }
 }
 

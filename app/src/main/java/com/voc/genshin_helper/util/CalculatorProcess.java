@@ -1162,7 +1162,7 @@ public class CalculatorProcess {
                         .resize(150,150)
                         .error (R.drawable.paimon_lost)
                         .into (item_cal_img);
-                item_cal_tv.setText(context.getString(item_rss.getCharByName(NameList.get(x),context)[1]));
+                item_cal_tv.setText(item_rss.getCharByName(NameList.get(x),context)[1]);
 
                 if(IsCal.get(x) == false){
                     Drawable drawable = context.getResources().getDrawable(R.drawable.barrier);
@@ -1171,12 +1171,12 @@ public class CalculatorProcess {
 
             }else if (NameList.size() + WeaponNameList.size() >0){
                 Picasso.get()
-                        .load (item_rss.getWeaponByName(WeaponNameList.get(x-NameList.size()))[1])
+                        .load (FileLoader.loadIMG(item_rss.getWeaponByName(WeaponNameList.get(x-NameList.size()),context)[1],context))
                         .transform(transformation)
                         .resize(150,150)
                         .error (R.drawable.paimon_lost)
                         .into (item_cal_img);
-                item_cal_tv.setText(context.getString(item_rss.getWeaponByName(WeaponNameList.get(x-NameList.size()))[0]));
+                item_cal_tv.setText(item_rss.getWeaponByName(WeaponNameList.get(x-NameList.size()),context)[0]);
 
                 if(WeaponIsCal.get(x-NameList.size()) == false){
                     Drawable drawable = context.getResources().getDrawable(R.drawable.barrier);

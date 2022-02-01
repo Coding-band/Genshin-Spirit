@@ -1,5 +1,15 @@
 [
   {
+    "version": "2808",
+    "verName": "2.4.1-gp (2808)",
+    "description": "Changelog - 2021-02-01<br><br><b>Characters</b><br>1. Fixed Yae Miko's weapons type display<br><br><b>UI</b><br>1.Use dynamic file update intead of solid file update"
+  },
+  {
+    "version": "2623",
+    "verName": "2.4.1-gp (2623)",
+    "description": "Changelog - 2021-01-26<br><br><b>Characters and weapons</b><br>1. Fixed translation problem of ru-RU<br>2. Added Yae Miko and two new weapons' translation. (ru-RU will include at next update)<br>3. Fixed Birthday error of some characters<br><br><b>UI</b><br>1. Changelog bug fixed<br>2. Refresh date & birthday UI after setting changed"
+  },
+  {
     "version": "2574",
     "verName": "2.4.0-gp (2574)",
     "description": "Changelog - 2021-01-17<br><br><b>Characters and weapons</b><br>1. Fixed Display error of some weapons<br>2. Fixed translation problem of ru-RU<br><br><b>UI</b><br>1. Fixed search bug of lists<br>2. Changelog"

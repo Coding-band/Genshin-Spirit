@@ -56,8 +56,7 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/hu_tao_ico" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <ImageView
                         android:id="@+id/buff_char_element"
@@ -385,8 +384,7 @@
                     android:layout_width="52dp"
                     android:layout_height="52dp"
                     android:layout_margin="8dp"
-                    android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/staff_of_homa" />
+                    android:adjustViewBounds="true" />
 
                 <LinearLayout
                     android:layout_width="match_parent"

@@ -22,6 +22,7 @@ import android.graphics.Shader;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.StrictMode;
 import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -80,18 +81,26 @@ import com.voc.genshin_helper.kidding.GoSleep;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.ChangeLog;
 import com.voc.genshin_helper.util.CustomToast;
+import com.voc.genshin_helper.util.DownloadTask;
 import com.voc.genshin_helper.util.LangUtils;
 import com.voc.genshin_helper.util.LocaleHelper;
 import com.voc.genshin_helper.util.NumberPickerDialog;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
+import com.voc.genshin_helper.util.Version;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -99,6 +108,10 @@ import java.util.Locale;
 import java.util.TimeZone;
 
 import static com.voc.genshin_helper.util.RoundedCornersTransformation.CornerType.ALL;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 
 /*
@@ -158,6 +171,7 @@ public class MainActivity extends AppCompatActivity {
     public SharedPreferences sharedPreferences;
     public SharedPreferences sharedPreferences_version;
     public SharedPreferences.Editor editor;
+    public SharedPreferences.Editor editor2;
 
     public List<Characters> charactersList = new ArrayList<>();
     public List<Weapons> weaponsList = new ArrayList();
@@ -225,6 +239,9 @@ public class MainActivity extends AppCompatActivity {
         // Check Is First Time Open
         if(sharedPreferences_version.getBoolean(BuildConfig.VERSION_NAME,false) == false){
             ChangeLog.show(context,activity);
+            editor2 = sharedPreferences_version.edit();
+            editor2.putBoolean(BuildConfig.VERSION_NAME,true);
+            editor2.apply();
         }
 
         final LayoutInflater mInflater = getLayoutInflater().from(this);
@@ -252,6 +269,7 @@ public class MainActivity extends AppCompatActivity {
         weapon_reload();
         cbg();
         setColorBk();
+        check_updates();
         BackgroundReload.BackgroundReload(context,activity);
 
         Handler handler = new Handler();
@@ -360,7 +378,7 @@ public class MainActivity extends AppCompatActivity {
                                 int x = 0;
                                 for (Characters item : charactersList) {
                                     String str = String.valueOf(s).toLowerCase();
-                                    if (context.getString(css.getCharByName(item.getName(),context)[1]).contains(str)||context.getString(css.getCharByName(item.getName(),context)[1]).toLowerCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
+                                    if (css.getCharByName(item.getName(),context)[1].contains(str)||css.getCharByName(item.getName(),context)[1].toLowerCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
                                         filteredList.add(item);
                                     }
                                     x = x +1;
@@ -570,7 +588,7 @@ public class MainActivity extends AppCompatActivity {
                                 int x = 0;
                                 for (Artifacts item : artifactsList) {
                                     String str = String.valueOf(s).toLowerCase();
-                                    if (context.getString(css.getArtifactByName(item.getName())[0]).contains(str)||context.getString(css.getArtifactByName(item.getName())[0]).toLowerCase().contains(str)||context.getString(css.getArtifactByName(item.getName())[0]).toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
+                                    if (css.getArtifactByName(item.getName(),context)[0].contains(str)||css.getArtifactByName(item.getName(),context)[0].toLowerCase().contains(str)||css.getArtifactByName(item.getName(),context)[0].toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
                                         filteredList.add(item);
                                     }
                                     x = x +1;
@@ -732,7 +750,7 @@ public class MainActivity extends AppCompatActivity {
                                 int x = 0;
                                 for (Weapons item : weaponsList) {
                                     String str = String.valueOf(s).toLowerCase();
-                                    if (context.getString(css.getWeaponByName(item.getName())[0]).contains(str)||context.getString(css.getWeaponByName(item.getName())[0]).toLowerCase().contains(str)||context.getString(css.getWeaponByName(item.getName())[0]).toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
+                                    if (css.getWeaponByName(item.getName(),context)[0].contains(str)||css.getWeaponByName(item.getName(),context)[0].toLowerCase().contains(str)||css.getWeaponByName(item.getName(),context)[0].toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
                                         filteredList.add(item);
                                     }
                                     x = x +1;
@@ -1185,6 +1203,47 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(Intent.ACTION_PICK,
                         android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(intent, IMAGE);
+            }
+        });
+
+        // Resource Download
+        Button bg_download_base = viewPager4.findViewById(R.id.bg_download_base);
+        Button bg_download_update = viewPager4.findViewById(R.id.bg_download_update);
+
+        bg_download_update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                check_updates();
+            }
+        });
+
+        bg_download_base.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+                StrictMode.setThreadPolicy(policy);
+                AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this,R.style.AlertDialogCustom);
+                dialog.setCancelable(false);
+                dialog.setTitle(context.getString(R.string.update_download_update_base));
+                dialog.setMessage(context.getString(R.string.update_download_advice)+"\n"+context.getString(R.string.update_download_base_file_size)+" "+prettyByteCount(getRemoteFileSize("http://113.254.213.196/genshin_spirit/base.zip")));
+                dialog.setNegativeButton(context.getString(R.string.update_download_later),new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        // TODO Auto-generated method stub
+                        Log.wtf("NOTHING","NOTHING");
+                    }
+
+                });
+                dialog.setPositiveButton(context.getString(R.string.update_download_now),new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface arg0, int arg1) {
+                        // TODO Auto-generated method stub
+                        DownloadTask downloadTask = new DownloadTask();
+                        downloadTask.start("http://113.254.213.196/genshin_spirit/base.zip","base.zip","/base.zip",context,activity);
+                    }
+
+                });
+                dialog.show();
             }
         });
 
@@ -1705,9 +1764,9 @@ public class MainActivity extends AppCompatActivity {
 
     public String LoadData(String inFile) {
         String tContents = "";
-
         try {
-            InputStream stream = getAssets().open(inFile);
+            File file = new File(context.getFilesDir()+"/"+inFile);
+            InputStream stream = new FileInputStream(file);
 
             int size = stream.available();
             byte[] buffer = new byte[size];
@@ -1788,7 +1847,7 @@ public class MainActivity extends AppCompatActivity {
                     .transform(transformation)
                     .error (R.drawable.paimon_lost)
                     .into (birth_char);
-            birth_char_tv.setText(context.getString(css.getCharByName(char_name,context)[1]));
+            birth_char_tv.setText(css.getCharByName(char_name,context)[1]);
             birth_char_date.setText(css.getLocaleBirth(String.valueOf(moy+1)+"/"+String.valueOf(dom),context));
 
         }
@@ -2063,7 +2122,7 @@ public class MainActivity extends AppCompatActivity {
         final int margin = 0;
         final Transformation transformation = new RoundedCornersTransformation(radius, margin,ALL);
 
-        Bitmap b = BitmapFactory.decodeResource(context.getResources(),R.drawable.sayu_ico);
+        Bitmap b = BitmapFactory.decodeResource(context.getResources(),R.drawable.paimon_lost);
         Bitmap bitmap = Bitmap.createScaledBitmap(b, 128, 128, false);
 
         // Decorate the shortcut
@@ -2159,5 +2218,137 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         cbg();
         BackgroundReload.BackgroundReload(context,activity);
+
+        getDOW();
+        char_reload();
+        weapon_reload();
+        bday_reload();
+    }
+
+    public String prettyByteCount(Number number) {
+        String[] suffix = {"B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"};
+        long numValue = ((long) number.longValue());
+        int base = 0 ;
+        double tmp_val = numValue;
+        while (tmp_val> 1024){
+            tmp_val = tmp_val/1024;
+            base = base +1;
+        }
+
+        SharedPreferences sharedPreferences = getSharedPreferences("user_info", Context.MODE_PRIVATE);
+        int decimal_num = 2;//sharedPreferences.getInt("decimal_num", 0);
+        boolean decimal  = sharedPreferences.getBoolean("decimal", false);
+        if (base < suffix.length) {
+            return new DecimalFormat("##.##").format(numValue / Math.pow(1024, base)) + suffix[base];
+            // Muility
+        } else {
+            return new DecimalFormat("#,###").format(numValue);
+        }
+    }
+    public static long getRemoteFileSize(String urlSTR) {
+        URL url = null;
+        try {
+            url = new URL(urlSTR);
+            URLConnection urlConnection = url.openConnection();
+            urlConnection.connect();
+            return urlConnection.getContentLength();
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return 1;
+    }
+
+
+    public static long getRemoteFileSizeA (ArrayList<String> urlSTR) {
+        URL url = null;
+        long size = 0;
+        for (int x = 0 ;x< urlSTR.size() ; x++){
+            System.out.println(urlSTR.get(x));
+            try {
+                url = new URL(urlSTR.get(x));
+                URLConnection urlConnection = url.openConnection();
+                urlConnection.connect();
+                size = size+urlConnection.getContentLength();
+                System.out.println("getR : "+size);
+                System.out.println("getRX : "+urlConnection.getContentLength());
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+        return size;
+    }
+
+    public void check_updates(){
+        {
+            OkHttpClient client = new OkHttpClient();
+            String url = "http://113.254.213.196/genshin_spirit/update.json";
+            Request request = new Request.Builder().url(url).build();
+
+            long lastUnix = System.currentTimeMillis();
+
+            try {
+                Response sponse = client.newCall(request).execute();
+                String str = sponse.body().string();
+                JSONArray array = new JSONArray(str);
+                ArrayList<String> array_download = new ArrayList<String>();
+                ArrayList<String> array_fileName = new ArrayList<String>();
+                ArrayList<String> array_SfileName = new ArrayList<String>();
+                for (int i = 0; i < array.length(); i++) {
+                    JSONObject object = array.getJSONObject(i);
+                    long release_unix = object.getLong("release_unix");
+                    String fileName = object.getString("fileName");
+
+                    if (i == 0) {
+                        lastUnix = release_unix;
+                    }
+
+                    if (release_unix >= sharedPreferences.getLong("lastUpdateUnix", 1)) {
+                        array_download.add("http://113.254.213.196/genshin_spirit/" + fileName);
+                        array_fileName.add(fileName);
+                        array_SfileName.add("/" + fileName);
+                    }
+                }
+                    if(array_download.size()>0){
+                        AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this,R.style.AlertDialogCustom);
+                        dialog.setCancelable(false);
+                        dialog.setTitle(context.getString(R.string.update_download_update_curr));
+                        dialog.setMessage(context.getString(R.string.update_download_found_update)+context.getString(R.string.update_download_advice)+"\n"+context.getString(R.string.update_download_base_file_size)+" "+prettyByteCount(getRemoteFileSizeA(array_download)));
+                        dialog.setNegativeButton(context.getString(R.string.update_download_later),new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface arg0, int arg1) {
+                                // TODO Auto-generated method stub
+                                Log.wtf("NOTHING","NOTHING");
+                            }
+
+                        });
+                        long finalLastUnix = lastUnix;
+                        dialog.setPositiveButton(context.getString(R.string.update_download_now),new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface arg0, int arg1) {
+                                // TODO Auto-generated method stub
+                                DownloadTask downloadTask = new DownloadTask();
+                                downloadTask.startA(array_download,array_fileName,array_SfileName,context,activity);
+                                editor.putLong("lastUpdateUnix", finalLastUnix);
+                                editor.apply();
+                            }
+
+                        });
+                        dialog.show();
+                    }else{
+                        CustomToast.toast(context,this,context.getString(R.string.update_download_not_found_update));
+                    }
+
+                } catch (JSONException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 }

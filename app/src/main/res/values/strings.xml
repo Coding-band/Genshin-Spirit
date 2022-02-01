@@ -571,6 +571,26 @@
     <string name="name_start_with_num_err">"Number and special symbols are not allow to use a first character."</string>
     <string name="cal_create_set">"Create a new Calculate Set"</string>
     <string name="cal_enter_name">"Please enter a name"</string>
+    <string name="kaguras_verity">Kagura\'s Verity</string>
+    <string name="oathsworn_eye">Oathsworn Eye</string>
+
+    <!-- add in 20220130-->
+    <string name="press_see_details">Press to see more detail</string>
+
+    <!-- add in 20220201-->
+    <string name="update_download_update_curr">Download the update resource files</string>
+    <string name="update_download_update_base">Download all resource files</string>
+    <string name="update_download_advice">It is recommended to download after connecting to Wi-Fi</string>
+    <string name="update_download_base_file_size">All resource files size : </string>
+    <string name="update_download_update_file_size">Update resource files size : </string>
+    <string name="update_download_later">Download Later</string>
+    <string name="update_download_now">Download Now</string>
+    <string name="update_download_check">Check updates</string>
+    <string name="update_download_found_update">Found new update resource files !</string>
+    <string name="update_download_downloading">Downloading...Please wait...</string>
+    <string name="update_download_unzipping">Unzipping...Please wait...</string>
+    <string name="update_download_not_found_update">None of new updates of resource files currently ~</string>
+    <string name="update_download_done">All downloads/ updates were done</string>
 
 </resources>
 

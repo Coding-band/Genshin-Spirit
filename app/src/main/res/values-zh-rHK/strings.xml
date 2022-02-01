@@ -555,5 +555,26 @@
     <string name="name_start_with_num_err">數字及特殊符號不能是名稱第一個字元</string>
     <string name="cal_create_set">"創建一個新的計算組別"</string>
     <string name="cal_enter_name">"請輸入名稱"</string>
+    <string name="kaguras_verity">神樂之真意</string>
+    <string name="oathsworn_eye">證誓之明瞳</string>
+
+    <!-- add in 20220130-->
+    <string name="press_see_details">按下以查看更多詳情</string>
+
+    <!-- add in 20220201-->
+    <string name="update_download_update_curr">下載更新檔</string>
+    <string name="update_download_update_base">下載所有檔案</string>
+    <string name="update_download_advice">建議於連接Wi-Fi後下載</string>
+    <string name="update_download_base_file_size">更新檔大小 : </string>
+    <string name="update_download_update_file_size">更新檔大小 : </string>
+    <string name="update_download_later">稍後下載</string>
+    <string name="update_download_now">立即下載</string>
+    <string name="update_download_check">檢查更新</string>
+    <string name="update_download_found_update">發現更新檔！</string>
+    <string name="update_download_not_found_update">目前沒有任何資源更新~</string>
+    <string name="update_download_downloading">下載中...請稍等...</string>
+    <string name="update_download_unzipping">解壓縮中...請稍等...</string>
+    <string name="update_download_done">所有下載／更新已完成</string>
+
 
 </resources>

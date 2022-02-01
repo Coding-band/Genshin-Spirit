@@ -45,6 +45,7 @@
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_cal_char.xml" value="0.2069525666016894" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_cal_db.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_cal_weapon.xml" value="0.2069525666016894" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_changelog.xml" value="0.33177083333333335" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_char.xml" value="0.2069525666016894" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_char_info.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_home.xml" value="0.33" />
@@ -101,6 +102,70 @@
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/menu/bottom_nav_bg_menu.xml" value="0.33177083333333335" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/menu/bottom_nav_cal_menu.xml" value="0.25" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/menu/bottom_nav_menu.xml" value="0.33177083333333335" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/activity_alarm_ui.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/activity_background_confirm.xml" value="0.33" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/activity_calculator_dbactivity.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/activity_calculator_ui.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/activity_demo.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/activity_organize.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/activity_splash.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/custom_dialog.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/fragment_advice.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/fragment_buff_page.xml" value="0.25" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/fragment_cal_buff.xml" value="0.1" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/fragment_cal_char.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/fragment_cal_db.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/fragment_cal_weapon.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/fragment_changelog.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/fragment_char.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/fragment_char_info.xml" value="0.2" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/fragment_home.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/fragment_main_list.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/fragment_number_picker.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/fragment_result.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/fragment_setting.xml" value="0.33" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/fragment_weapon.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/fragment_web.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/item_alarm_list.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/item_artifact_ico.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/item_artifact_ico_square.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/item_artifact_info.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/item_buff_artifact.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/item_buff_card.xml" value="0.33177083333333335" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/item_buff_display.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/item_cal_header.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/item_cal_img.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/item_calculator_db.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/item_char_advice.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/item_char_advice_team.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/item_char_basic_talent.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/item_char_battle_talent.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/item_char_ico.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/item_char_ico_square.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/item_char_sof.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/item_img.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/item_setting_thanks.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/item_toast.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/item_today_material.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/item_version_item.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/item_weapon_ico.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/item_weapon_ico_square.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/item_weapon_info.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/menu_alarm_choose.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/menu_alarm_edit.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/menu_alarm_setup.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/menu_artifact_filter.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/menu_buff_artifact.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/menu_char_add.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/menu_char_filter.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/menu_db_add.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/menu_edit_delete.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/menu_weapon_filter.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/spinner_dropdown_item.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/layout/spinner_item.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/menu/bottom_nav_bg_menu.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/menu/bottom_nav_cal_menu.xml" value="0.1609375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit_Dynamic/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1609375" />
         <entry key="..\:/GenshinSpirit/app/src/main/res/layout/fragment_art.xml" value="0.20953947368421053" />
         <entry key="..\:/GenshinSpirit/app/src/main/res/layout/fragment_setting.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/app/src/main/res/layout/fragment_weapon.xml" value="0.20953947368421053" />

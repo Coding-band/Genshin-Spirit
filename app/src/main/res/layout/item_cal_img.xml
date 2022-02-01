@@ -17,8 +17,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:adjustViewBounds="true"
-        app:srcCompat="@drawable/agnidus_agate_gemstone" />
+        android:adjustViewBounds="true" />
 
     <TextView
         android:id="@+id/item_cal_tv"

@@ -46,8 +46,7 @@
                     android:id="@+id/info_char_img"
                     android:layout_width="match_parent"
                     android:layout_height="400dp"
-                    android:background="@color/pyro"
-                    app:srcCompat="@drawable/klee_full" />
+                    android:background="@color/pyro" />
 
                 <LinearLayout
                     android:id="@+id/info_detail"
@@ -166,8 +165,8 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:layout_weight="0"
-                            android:tint="@color/tv_color"
-                            app:srcCompat="@drawable/ico_sword" />
+                            app:srcCompat="@drawable/ico_sword"
+                            app:tint="@color/tv_color" />
                     </LinearLayout>
 
                     <LinearLayout

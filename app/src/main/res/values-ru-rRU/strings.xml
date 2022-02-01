@@ -53,7 +53,7 @@
     <!-- char_name -->
     <string name="aloy">Элой</string>
     <string name="kujou_sara">Кудзё Сара</string>
-    <string name="sangonomiya_kokomi">Сангономия Кокомиi</string>
+    <string name="sangonomiya_kokomi">Сангономия Кокоми</string>
     <string name="raiden_shogun">Сёгун Райдэн</string>
     <string name="sayu">Саю</string>
     <string name="yoimiya">Ёимия</string>
@@ -446,7 +446,7 @@
     <!-- char_info -->
     <string name="artifact_stat1">1 часть</string>
     <string name="artifact_stat2">2 часть(ти)</string>
-    <string name="artifact_stat4">часть(ти)</string>
+    <string name="artifact_stat4">4 часть(ти)</string>
 
 
     <!-- setting -->
@@ -493,7 +493,7 @@
     <!-- New Character in here-->
     <string name="gorou">Горо</string>
     <string name="arataki_itto">Аратаки Итто</string>
-    <string name="yae_miko">Яэ Мику</string>
+    <string name="yae_miko">Яэ Мико</string>
     <string name="buff">Бафф</string>
 
     <!-- add in 20211025 -->
@@ -544,6 +544,24 @@
     <string name="name_start_with_num_err">Число и специальные символы не могут использовать первый символ.</string>
     <string name="cal_create_set">Создать новый набор вычислений</string>
     <string name="cal_enter_name">Пожалуйста, введите имя</string>
+    <string name="kaguras_verity">Истина кагура</string>
+    <string name="oathsworn_eye">Око клятвы</string>
+
+    <!-- add in 20220130-->
+    <string name="press_see_details">Нажмите, чтобы увидеть подробнее</string>
+    <string name="update_download_update_curr">Скачать обновление</string>
+    <string name="update_download_update_base">Скачать все файлы</string>
+    <string name="update_download_advice">Рекомендуется скачивать после подключения к Wi-Fi</string>
+    <string name="update_download_base_file_size">Обновить размер файла:</string>
+    <string name="update_download_update_file_size">Обновить размер файла:</string>
+    <string name="update_download_later">скачать позже</string>
+    <string name="update_download_now">скачать сейчас</string>
+    <string name="update_download_check">Проверить наличие обновлений</string>
+    <string name="update_download_found_update">Обновления найдены!</string>
+    <string name="update_download_downloading">Загрузка... Пожалуйста, подождите...</string>
+    <string name="update_download_unzipping">Распаковка... подождите...</string>
+    <string name="update_download_not_found_update">В настоящее время нет обновлений ресурсов ~</string>
+    <string name="update_download_done">Все загрузки/обновления завершены</string>
 
 </resources>
 

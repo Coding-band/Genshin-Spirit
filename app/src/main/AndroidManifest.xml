@@ -30,6 +30,7 @@
         android:roundIcon="@drawable/app_ico"
         android:supportsRtl="true"
         android:theme="@style/NoTheme"
+        android:usesCleartextTraffic="true"
         android:windowSoftInputMode="stateHidden">
         <activity
             android:name=".ui.BackgroundConfirmActivity"

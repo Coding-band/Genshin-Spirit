@@ -571,7 +571,24 @@
     <string name="name_start_with_num_err">数字と特殊記号で最初の文字を使用することはできません。</string>
     <string name="cal_create_set">新しい計算セットを作成する</string>
     <string name="cal_enter_name">名前を入力してください</string>
+    <string name="kaguras_verity">神楽の真意</string>
+    <string name="oathsworn_eye">誓いの明瞳</string>
 
+    <!-- add in 20220130-->
+    <string name="press_see_details">を押して詳細を表示します</string>
+    <string name="update_download_update_curr">アップデートをダウンロードする</string>
+    <string name="update_download_update_base">すべてのファイルをダウンロード</string>
+    <string name="update_download_advice">Wi-Fiに接続してからダウンロードすることをお勧めします</string>
+    <string name="update_download_base_file_size">ファイルサイズの更新：</string>
+    <string name="update_download_update_file_size">ファイルサイズの更新：</string>
+    <string name="update_download_later">後でダウンロード</string>
+    <string name="update_download_now">ダウンロード中</string>
+    <string name="update_download_check">アップデートを確認する</string>
+    <string name="update_download_found_update">更新が見つかりました！</string>
+    <string name="update_download_downloading">ダウンロード中...お待ちください...</string>
+    <string name="update_download_unzipping">解凍...お待ちください...</string>
+    <string name="update_download_not_found_update">現在、リソースの更新はありません〜</string>
+    <string name="update_download_done">すべてのダウンロード/更新が完了しました</string>
 
 </resources>
 

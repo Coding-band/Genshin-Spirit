@@ -26,6 +26,7 @@ import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.ui.CalculatorUI;
 import com.voc.genshin_helper.ui.MainActivity;
 import com.voc.genshin_helper.util.CustomToast;
+import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
 import java.util.ArrayList;
@@ -130,18 +131,18 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
             if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
                 Picasso.get()
-                        .load (item_rss.getCharByName(Characters.getName(),context)[0]).fit().centerCrop().transform(transformation)
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[0],context)).fit().centerCrop().transform(transformation)
                         .error (R.drawable.paimon_full)
                         .into (holder.char_icon);
             } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
                 Picasso.get()
-                        .load (item_rss.getCharByName(Characters.getName(),context)[3]).fit().centerCrop().transform(transformation)
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).fit().centerCrop().transform(transformation)
                         .error (R.drawable.paimon_full)
                         .into (holder.char_icon);
             }
         }else if(context instanceof CalculatorUI){
             Picasso.get()
-                    .load (item_rss.getCharByName(Characters.getName(),context)[3]).fit().centerInside().transform(transformation)
+                    .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).fit().centerInside().transform(transformation)
                     .error (R.drawable.paimon_full)
                     .into (holder.char_icon);
 
