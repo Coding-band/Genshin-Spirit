@@ -8,12 +8,15 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
+import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.DecimalFormat;
@@ -135,6 +138,10 @@ public class BuffCal2 {
         enemyName = "Hilichurl";
     }
 
+    public void enemy_setup(String name){
+        enemyName = name;
+    }
+
     public void char_setup(String charName, int charAfterLvl,  int charAfterBreakLvl, boolean charAfterBreakUP, int charSkill1AfterLvl, int charSkill2AfterLvl, int charSkill3AfterLvl) {
         this.charName = charName;
         this.charAfterLvl = charAfterLvl;
@@ -169,6 +176,55 @@ public class BuffCal2 {
         this.artifactBuffSec3Value = artifactBuffSec3Value;
         this.artifactBuffSec4Item = artifactBuffSec4Item;
         this.artifactBuffSec4Value = artifactBuffSec4Value;
+
+        聖遺物雷元素傷害加成 = 0;
+        聖遺物火元素傷害加成 = 0;
+        聖遺物水元素傷害加成 = 0;
+        聖遺物草元素傷害加成 = 0;
+        聖遺物冰元素傷害加成 = 0;
+        聖遺物風元素傷害加成 = 0;
+        聖遺物岩元素傷害加成 = 0;
+        聖遺物暴擊傷害 = 0;
+        聖遺物暴擊率 = 0;
+        聖遺物防禦力 = 0;
+        聖遺物元素精通 = 0;
+        聖遺物元素充能效率 = 0;
+        聖遺物生命值 = 0;
+        聖遺物物理傷害 = 0;
+        聖遺物基礎攻擊力 = 0;
+        聖遺物基礎防禦力 = 0;
+        聖遺物基礎生命值 = 0;
+        聖遺物攻擊力 = 0;
+        聖遺物治療加成 = 0;
+
+        for (int x = 0 ; x < 5 ; x++){
+            ArtifactBuff(artifactBuffMainItem.get(x),artifactBuffMainValue.get(x));
+            ArtifactBuff(artifactBuffSec1Item.get(x),artifactBuffSec1Value.get(x));
+            ArtifactBuff(artifactBuffSec2Item.get(x),artifactBuffSec2Value.get(x));
+            ArtifactBuff(artifactBuffSec3Item.get(x),artifactBuffSec3Value.get(x));
+            ArtifactBuff(artifactBuffSec4Item.get(x),artifactBuffSec4Value.get(x));
+        }
+
+        System.out.println("聖遺物雷元素傷害加成" + prettyCount(聖遺物雷元素傷害加成,1));
+        System.out.println("聖遺物火元素傷害加成" + prettyCount(聖遺物火元素傷害加成,1));
+        System.out.println("聖遺物水元素傷害加成" + prettyCount(聖遺物水元素傷害加成,1));
+        System.out.println("聖遺物草元素傷害加成" + prettyCount(聖遺物草元素傷害加成,1));
+        System.out.println("聖遺物冰元素傷害加成" + prettyCount(聖遺物冰元素傷害加成,1));
+        System.out.println("聖遺物風元素傷害加成" + prettyCount(聖遺物風元素傷害加成,1));
+        System.out.println("聖遺物岩元素傷害加成" + prettyCount(聖遺物岩元素傷害加成,1));
+        System.out.println("聖遺物暴擊傷害" + prettyCount(聖遺物暴擊傷害,1));
+        System.out.println("聖遺物暴擊率" + prettyCount(聖遺物暴擊率,1));
+        System.out.println("聖遺物防禦力" + prettyCount(聖遺物防禦力,1));
+        System.out.println("聖遺物元素精通" + prettyCount(聖遺物元素精通,0));
+        System.out.println("聖遺物元素充能效率" + prettyCount(聖遺物元素充能效率,1));
+        System.out.println("聖遺物生命值" + prettyCount(聖遺物生命值,1));
+        System.out.println("聖遺物物理傷害" + prettyCount(聖遺物物理傷害,1));
+        System.out.println("聖遺物基礎攻擊力" + prettyCount(聖遺物基礎攻擊力,0));
+        System.out.println("聖遺物基礎防禦力" + prettyCount(聖遺物基礎防禦力,0));
+        System.out.println("聖遺物基礎生命值" + prettyCount(聖遺物基礎生命值,0));
+        System.out.println("聖遺物攻擊力" + prettyCount(聖遺物攻擊力,1));
+        System.out.println("聖遺物治療加成" + prettyCount(聖遺物治療加成,1));
+
     }
 
     public void startReading (){
@@ -861,6 +917,51 @@ public class BuffCal2 {
         }
     }
 
+    public void ArtifactBuff(String name, double value){
+
+        // Mixed main & sec 1-4
+
+        if(name.equals(context.getString(R.string.weapon_stat_atkP))){
+            聖遺物攻擊力 = 聖遺物攻擊力 + value;
+        }else if(name.equals(context.getString(R.string.weapon_stat_HPP))){
+            聖遺物生命值 = 聖遺物生命值 + value;
+        }else if(name.equals(context.getString(R.string.weapon_stat_DEFP))){
+            聖遺物防禦力 = 聖遺物防禦力 + value;
+        }else if(name.equals(context.getString(R.string.weapon_stat_EleMas))){
+            聖遺物元素精通 = 聖遺物元素精通 + value;
+        }else if(name.equals(context.getString(R.string.weapon_stat_EnRechP))){
+            聖遺物元素充能效率 = 聖遺物元素充能效率 + value;
+        }else if(name.equals(context.getString(R.string.weapon_stat_EleDMGP_Electro))){
+            聖遺物雷元素傷害加成 = 聖遺物雷元素傷害加成 + value;
+        }else if(name.equals(context.getString(R.string.weapon_stat_EleDMGP_Pyro))){
+            聖遺物火元素傷害加成 = 聖遺物火元素傷害加成 + value;
+        }else if(name.equals(context.getString(R.string.weapon_stat_EleDMGP_Hydro))){
+            聖遺物水元素傷害加成 = 聖遺物水元素傷害加成 + value;
+        }else if(name.equals(context.getString(R.string.weapon_stat_EleDMGP_Cryo))){
+            聖遺物冰元素傷害加成 = 聖遺物冰元素傷害加成 + value;
+        }else if(name.equals(context.getString(R.string.weapon_stat_EleDMGP_Anemo))){
+            聖遺物風元素傷害加成 = 聖遺物風元素傷害加成 + value;
+        }else if(name.equals(context.getString(R.string.weapon_stat_EleDMGP_Geo))){
+            聖遺物岩元素傷害加成 = 聖遺物岩元素傷害加成 + value;
+        }else if(name.equals(context.getString(R.string.weapon_stat_EleDMGP_Dendor))){
+            聖遺物草元素傷害加成 = 聖遺物草元素傷害加成 + value;
+        }else if(name.equals(context.getString(R.string.weapon_stat_PhyDMGP))){
+            聖遺物物理傷害 = 聖遺物物理傷害 + value;
+        }else if(name.equals(context.getString(R.string.weapon_stat_CritDMGP))){
+            聖遺物暴擊傷害 = 聖遺物暴擊傷害 + value;
+        }else if(name.equals(context.getString(R.string.weapon_stat_CritRateP))){
+            聖遺物暴擊率 = 聖遺物暴擊率 + value;
+        }else if(name.equals(context.getString(R.string.weapon_stat_atk))){
+            聖遺物基礎攻擊力 = 聖遺物基礎攻擊力 + value;
+        }else if(name.equals(context.getString(R.string.weapon_stat_HP))){
+            聖遺物基礎生命值 = 聖遺物基礎生命值 + value;
+        }else if(name.equals(context.getString(R.string.weapon_stat_DEF))){
+            聖遺物基礎防禦力 = 聖遺物基礎防禦力 + value;
+        }else if(name.equals(context.getString(R.string.weapon_stat_HealingP))){
+            聖遺物治療加成 = 聖遺物治療加成 + value;
+        }
+    }
+
 
     //TalentP
     public double TalentP(String type){
@@ -900,7 +1001,8 @@ public class BuffCal2 {
         String tContents = "";
 
         try {
-            InputStream stream = context.getAssets().open(inFile);
+            File file = new File(context.getFilesDir()+"/"+inFile);
+            InputStream stream = new FileInputStream(file);
 
             int size = stream.available();
             byte[] buffer = new byte[size];
@@ -915,40 +1017,26 @@ public class BuffCal2 {
 
     }
 
-    public String prettyCount(Number number) {
+    /** UI -> PrettyCount */
+    /**
+     * @param type : Type of number's display
+     *             0 : Int display
+     *             1 : Percentage display
+     * @return
+     */
+    public String prettyCount(Number number,int type) {
         char[] suffix = {' ', 'K', 'M', 'G', 'T', 'P', 'E', 'Z', 'Y'};
-        long numValue = Math.round(number.longValue());
-        int value = (int) Math.floor(Math.log10(numValue));
-        int base = value / 3;
+        double numDouble = number.doubleValue();
         String plus = "";
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_info", Context.MODE_PRIVATE);
-        int decimal_num = sharedPreferences.getInt("decimal_num", 0);
+        int decimal_num =  sharedPreferences.getInt("decimal_num", 0);
         boolean decimal  = sharedPreferences.getBoolean("decimal", false);
-        if (decimal == true){
-            if (value >= 3 && base < suffix.length) {
-                if (decimal_num == 0){
-                    return plus+new DecimalFormat("##").format(numValue / Math.pow(10, base * 3)) + suffix[base];
-                }
-                if (decimal_num == 1){
-                    return plus+new DecimalFormat("##.#").format(numValue / Math.pow(10, base * 3)) + suffix[base];
-                }
-                if (decimal_num == 2){
-                    return plus+new DecimalFormat("##.##").format(numValue / Math.pow(10, base * 3)) + suffix[base];
-                }
-                if (decimal_num == 3){
-                    return plus+new DecimalFormat("##.###").format(numValue / Math.pow(10, base * 3)) + suffix[base];
-                }
-                if (decimal_num == 4){
-                    return plus+new DecimalFormat("##.####").format(numValue / Math.pow(10, base * 3)) + suffix[base];
-                }
-                if (decimal_num == 5){
-                    return plus+new DecimalFormat("##.#####").format(numValue / Math.pow(10, base * 3)) + suffix[base];
-                }
-                // Muility
-            } else {
-                return plus+new DecimalFormat("###,###,###,###,###").format(numValue);
-            }
+
+        switch (type){
+            case 0 : return plus+new DecimalFormat("###,###,###,###,###").format(number);
+            case 1 : return plus+(new DecimalFormat("###,###,###,###,###.#").format(numDouble*100))+"%";
+            default: return plus+new DecimalFormat("###,###,###,###,###.#").format(number);
         }
-        return plus+new DecimalFormat("###,###,###,###,###").format(numValue);
     }
+
 }

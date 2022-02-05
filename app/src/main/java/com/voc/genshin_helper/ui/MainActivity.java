@@ -82,6 +82,7 @@ import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.ChangeLog;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.DownloadTask;
+import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.LangUtils;
 import com.voc.genshin_helper.util.LocaleHelper;
 import com.voc.genshin_helper.util.NumberPickerDialog;
@@ -1548,6 +1549,11 @@ public class MainActivity extends AppCompatActivity {
         daily_login_ll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481"));
+                startActivity(browserIntent);
+
+                /*
                 final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
                 View view = View.inflate(context, R.layout.fragment_web, null);
                 dialog.setContentView(view);
@@ -1598,11 +1604,15 @@ public class MainActivity extends AppCompatActivity {
                 lp.gravity = Gravity.CENTER;
                 dialogWindow.setAttributes(lp);
                 dialog.show();
+                 */
             }
         });
         map_ll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481"));
+                startActivity(browserIntent);
+                /*
                 final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
                 View view = View.inflate(context, R.layout.fragment_web, null);
                 dialog.setContentView(view);
@@ -1646,6 +1656,8 @@ public class MainActivity extends AppCompatActivity {
                 lp.gravity = Gravity.CENTER;
                 dialogWindow.setAttributes(lp);
                 dialog.show();
+
+                 */
             }
         });
 
@@ -1843,7 +1855,7 @@ public class MainActivity extends AppCompatActivity {
             final int margin = 4;
             final Transformation transformation = new RoundedCornersTransformation(radius, margin);
             Picasso.get()
-                    .load (css.getCharByName(char_name,context)[3])
+                    .load (FileLoader.loadIMG(css.getCharByName(char_name,context)[3],context))
                     .transform(transformation)
                     .error (R.drawable.paimon_lost)
                     .into (birth_char);
@@ -2308,7 +2320,7 @@ public class MainActivity extends AppCompatActivity {
                         lastUnix = release_unix;
                     }
 
-                    if (release_unix >= sharedPreferences.getLong("lastUpdateUnix", 1)) {
+                    if (release_unix > sharedPreferences.getLong("lastUpdateUnix", 1)) {
                         array_download.add("http://113.254.213.196/genshin_spirit/" + fileName);
                         array_fileName.add(fileName);
                         array_SfileName.add("/" + fileName);

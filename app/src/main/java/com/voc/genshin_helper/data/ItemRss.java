@@ -557,6 +557,61 @@ public class ItemRss {
         return new String[] {"/drawable/paimon_lost.png",context.getString(R.string.unknown),"/drawable/paimon_lost.png","/drawable/paimon_lost.png"};
     }
 
+    public String getCharNameByTranslatedName(String name, Context context){
+        if(name.equals(context.getString(R.string.albedo))){ return "Albedo";}
+        else if(name.equals(context.getString(R.string.aloy))){ return "Aloy";}
+        else if(name.equals(context.getString(R.string.amber))){ return "Amber";}
+        else if(name.equals(context.getString(R.string.barbara))){ return "Barbara";}
+        else if(name.equals(context.getString(R.string.beidou))){ return "Beidou";}
+        else if(name.equals(context.getString(R.string.bennett))){ return "Bennett";}
+        else if(name.equals(context.getString(R.string.chongyun))){ return "Chongyun";}
+        else if(name.equals(context.getString(R.string.diluc))){ return "Diluc";}
+        else if(name.equals(context.getString(R.string.diona))){ return "Diona";}
+        else if(name.equals(context.getString(R.string.eula))){ return "Eula";}
+        else if(name.equals(context.getString(R.string.fischl))){ return "Fischl";}
+        else if(name.equals(context.getString(R.string.ganyu))){ return "Ganyu";}
+        else if(name.equals(context.getString(R.string.hu_tao))){ return "Hu Tao";}
+        else if(name.equals(context.getString(R.string.jean))){ return "Jean";}
+        else if(name.equals(context.getString(R.string.kaedehara_kazuha))){ return "Kaedehara Kazuha";}
+        else if(name.equals(context.getString(R.string.kaeya))){ return "Kaeya";}
+        else if(name.equals(context.getString(R.string.kamisato_ayaka))){ return "Kamisato Ayaka";}
+        else if(name.equals(context.getString(R.string.keqing))){ return "Keqing";}
+        else if(name.equals(context.getString(R.string.klee))){ return "Klee";}
+        else if(name.equals(context.getString(R.string.kujou_sara))){ return "Kujou Sara";}
+        else if(name.equals(context.getString(R.string.lisa))){ return "Lisa";}
+        else if(name.equals(context.getString(R.string.mona))){ return "Mona";}
+        else if(name.equals(context.getString(R.string.ningguang))){ return "Ningguang";}
+        else if(name.equals(context.getString(R.string.noelle))){ return "Noelle";}
+        else if(name.equals(context.getString(R.string.qiqi))){ return "Qiqi";}
+        else if(name.equals(context.getString(R.string.raiden_shogun))){ return "Raiden Shogun";}
+        else if(name.equals(context.getString(R.string.razor))){ return "Razor";}
+        else if(name.equals(context.getString(R.string.rosaria))){ return "Rosaria";}
+        else if(name.equals(context.getString(R.string.sangonomiya_kokomi))){ return "Sangonomiya Kokomi";}
+        else if(name.equals(context.getString(R.string.sayu))){ return "Sayu";}
+        else if(name.equals(context.getString(R.string.sucrose))){ return "Sucrose";}
+        else if(name.equals(context.getString(R.string.tartaglia))){ return "Tartaglia";}
+        else if(name.equals(context.getString(R.string.venti))){ return "Venti";}
+        else if(name.equals(context.getString(R.string.xiangling))){ return "Xiangling";}
+        else if(name.equals(context.getString(R.string.xiao))){ return "Xiao";}
+        else if(name.equals(context.getString(R.string.xingqiu))){ return "Xingqiu";}
+        else if(name.equals(context.getString(R.string.xinyan))){ return "Xinyan";}
+        else if(name.equals(context.getString(R.string.yanfei))){ return "Yanfei";}
+        else if(name.equals(context.getString(R.string.yoimiya))){ return "Yoimiya";}
+        else if(name.equals(context.getString(R.string.zhongli))){ return "Zhongli";}
+        else if(name.equals(context.getString(R.string.thoma))){ return "Thoma";}
+        else if(name.equals(context.getString(R.string.arataki_itto))){ return "Arataki Itto";}
+        else if(name.equals(context.getString(R.string.gorou))){ return "Gorou";}
+        else if(name.equals(context.getString(R.string.yun_jin))){ return "Yun Jin";}
+        else if(name.equals(context.getString(R.string.shenhe))){ return "Shenhe";}
+        else if(name.equals(context.getString(R.string.yae_miko))){ return "Yae Miko";}
+
+        else if(name.equals(context.getString(R.string.traveler_anemo))){ return "Traveler-Anemo";}
+        else if(name.equals(context.getString(R.string.traveler_electro))){ return "Traveler-Electro";}
+        else if(name.equals(context.getString(R.string.traveler_geo))){ return "Traveler-Geo";}
+
+        else return context.getString(R.string.unknown);
+    }
+
     /**
      * @param element Element Name
      * @return ICON_ID , RAD_BG_ID , BG_COLOR_ID

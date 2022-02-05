@@ -175,7 +175,7 @@ public class CalculatorDBActivity extends AppCompatActivity {
                     public void onClick(View view) {
                         String newName = db_name_et.getText().toString();
                         if(!newName.equals("") && !newName.equals(" ") && db_name_et.getText() != null) {
-                            if(newName.startsWith("1")||newName.startsWith("2")||newName.startsWith("3")||newName.startsWith("4")||newName.startsWith("5")||newName.startsWith("6")||newName.startsWith("7")||newName.startsWith("8")||newName.startsWith("9")||newName.startsWith("10")){
+                            if(newName.startsWith("1")||newName.startsWith("2")||newName.startsWith("3")||newName.startsWith("4")||newName.startsWith("5")||newName.startsWith("6")||newName.startsWith("7")||newName.startsWith("8")||newName.startsWith("9")||newName.startsWith("0")){
                                 CustomToast.toast(context,activity,context.getString(R.string.name_start_with_num_err));
                             }else {
                                 if(newName.contains(" ")){

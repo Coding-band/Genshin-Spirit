@@ -14,7 +14,7 @@
         android:id="@+id/buff_artifact_main"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_margin="4dp"
+        android:layout_margin="2dp"
         android:background="@drawable/bg_kwang_light"
         android:orientation="horizontal">
 
@@ -31,10 +31,12 @@
             android:id="@+id/buff_artifact_main_name"
             android:layout_width="72dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
             android:layout_weight="5"
             android:fontFamily="@font/jf_openhuninn"
             android:gravity="center|left"
-            android:text="@string/weapon_stat_HP" />
+            android:text="@string/weapon_stat_HP"
+            android:textSize="14sp" />
 
         <Spinner
             android:id="@+id/buff_artifact_main_name_sp"
@@ -43,15 +45,15 @@
             android:layout_weight="5"
             android:fontFamily="@font/jf_openhuninn"
             android:gravity="center|left"
-            android:visibility="gone"
-            android:text="@string/weapon_stat_HP" />
+            android:text="@string/weapon_stat_HP"
+            android:visibility="gone" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/buff_artifact_sec1"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_margin="4dp"
+        android:layout_margin="2dp"
         android:background="@drawable/bg_kwang_light"
         android:orientation="horizontal">
 
@@ -68,17 +70,18 @@
             android:id="@+id/buff_artifact_sec1_name"
             android:layout_width="72dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
             android:layout_weight="5"
             android:fontFamily="@font/jf_openhuninn"
             android:gravity="center|left"
-            android:text="@string/weapon_stat_CritRateP" />
+            android:textSize="14sp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/buff_artifact_sec2"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_margin="4dp"
+        android:layout_margin="2dp"
         android:background="@drawable/bg_kwang_light"
         android:orientation="horizontal">
 
@@ -95,17 +98,18 @@
             android:id="@+id/buff_artifact_sec2_name"
             android:layout_width="72dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
             android:layout_weight="5"
             android:fontFamily="@font/jf_openhuninn"
             android:gravity="center|left"
-            android:text="@string/weapon_stat_CritDMGP" />
+            android:textSize="14sp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/buff_artifact_sec3"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_margin="4dp"
+        android:layout_margin="2dp"
         android:background="@drawable/bg_kwang_light"
         android:orientation="horizontal">
 
@@ -122,17 +126,18 @@
             android:id="@+id/buff_artifact_sec3_name"
             android:layout_width="72dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
             android:layout_weight="5"
             android:fontFamily="@font/jf_openhuninn"
             android:gravity="center|left"
-            android:text="@string/weapon_stat_atkP" />
+            android:textSize="14sp" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/buff_artifact_sec4"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:layout_margin="4dp"
+        android:layout_margin="2dp"
         android:background="@drawable/bg_kwang_light"
         android:orientation="horizontal">
 
@@ -149,9 +154,10 @@
             android:id="@+id/buff_artifact_sec4_name"
             android:layout_width="72dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="8dp"
             android:layout_weight="5"
             android:fontFamily="@font/jf_openhuninn"
             android:gravity="center|left"
-            android:text="@string/weapon_stat_atk" />
+            android:textSize="14sp" />
     </LinearLayout>
 </LinearLayout>

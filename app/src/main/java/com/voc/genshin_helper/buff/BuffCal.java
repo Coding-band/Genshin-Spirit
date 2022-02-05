@@ -14,6 +14,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.DecimalFormat;
@@ -619,7 +621,8 @@ public class BuffCal {
         String tContents = "";
 
         try {
-            InputStream stream = context.getAssets().open(inFile);
+            File file = new File(context.getFilesDir()+"/"+inFile);
+            InputStream stream = new FileInputStream(file);
 
             int size = stream.available();
             byte[] buffer = new byte[size];

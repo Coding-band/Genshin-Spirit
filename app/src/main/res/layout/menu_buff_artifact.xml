@@ -14,10 +14,10 @@
         android:id="@+id/buff_artifact_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        android:background="@color/card_bg_less"
         app:cardBackgroundColor="@color/page_bg"
         app:cardCornerRadius="20dp"
-        app:cardElevation="10dp">
+        app:cardElevation="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -95,22 +95,16 @@
                 android:gravity="right"
                 android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="64dp"
+                <Spinner
+                    android:id="@+id/buff_sec_name"
+                    android:layout_width="72dp"
+                    android:layout_height="48dp"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/jf_openhuninn"
                     android:gravity="center|left"
-                    android:paddingLeft="8dp"
-                    android:text="@string/weapon_stat_CritRateP"
-                    android:textColor="@color/tv_color" />
-
-                <ImageView
-                    android:id="@+id/imageView7"
-                    android:layout_width="32dp"
-                    android:layout_height="match_parent"
-                    app:srcCompat="@drawable/ic_baseline_arrow_drop_down_24" />
+                    android:text="@string/weapon_stat_HP"
+                    android:visibility="visible" />
 
             </LinearLayout>
 
@@ -123,9 +117,9 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/textView18"
+                    android:id="@+id/buff_sec_num"
                     android:layout_width="match_parent"
-                    android:layout_height="64dp"
+                    android:layout_height="48dp"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
                     android:fontFamily="@font/jf_openhuninn"
@@ -144,7 +138,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/jf_openhuninn"
-                android:text="Upgrade times : "
+                android:text="檔數 : (Grade)"
                 android:visibility="visible" />
 
             <RadioGroup
@@ -161,41 +155,173 @@
                     android:layout_width="match_parent"
                     android:layout_height="36dp"
                     android:layout_weight="1"
+                    android:checked="true"
+                    android:clickable="true"
                     android:fontFamily="@font/jf_openhuninn"
                     android:text="1"
                     android:textAlignment="center"
-                    android:textColor="@color/tv_color" />
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp" />
 
                 <RadioButton
                     android:id="@+id/buff_artifact_2t"
                     android:layout_width="match_parent"
                     android:layout_height="36dp"
                     android:layout_weight="1"
+                    android:clickable="true"
                     android:fontFamily="@font/jf_openhuninn"
                     android:text="2"
                     android:textAlignment="center"
-                    android:textColor="@color/tv_color" />
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp" />
 
                 <RadioButton
                     android:id="@+id/buff_artifact_3t"
                     android:layout_width="match_parent"
                     android:layout_height="36dp"
                     android:layout_weight="1"
+                    android:clickable="true"
                     android:fontFamily="@font/jf_openhuninn"
                     android:text="3"
                     android:textAlignment="center"
-                    android:textColor="@color/tv_color" />
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp" />
 
                 <RadioButton
                     android:id="@+id/buff_artifact_4t"
                     android:layout_width="match_parent"
                     android:layout_height="36dp"
                     android:layout_weight="1"
+                    android:clickable="true"
                     android:fontFamily="@font/jf_openhuninn"
                     android:text="4"
                     android:textAlignment="center"
-                    android:textColor="@color/tv_color" />
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/buff_artifact_ct"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:fontFamily="@font/jf_openhuninn"
+                    android:text="∞"
+                    android:textAlignment="center"
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
             </RadioGroup>
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/jf_openhuninn"
+                android:text="成長次數 : (Upgrade Times)"
+                android:visibility="visible" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:checkedButton="@id/buff_artifact_4up5"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <RadioButton
+                    android:id="@+id/buff_artifact_1u"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:clickable="true"
+                    android:fontFamily="@font/jf_openhuninn"
+                    android:text="1"
+                    android:textAlignment="center"
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/buff_artifact_2u"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:fontFamily="@font/jf_openhuninn"
+                    android:text="2"
+                    android:textAlignment="center"
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/buff_artifact_3u"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:fontFamily="@font/jf_openhuninn"
+                    android:text="3"
+                    android:textAlignment="center"
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/buff_artifact_4u"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:fontFamily="@font/jf_openhuninn"
+                    android:text="4"
+                    android:textAlignment="center"
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp" />
+
+                <RadioButton
+                    android:id="@+id/buff_artifact_5u"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:fontFamily="@font/jf_openhuninn"
+                    android:text="5"
+                    android:textAlignment="center"
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/buff_cancel"
+                    android:layout_width="72dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_square_border"
+                    android:text="@android:string/cancel"
+                    android:textColor="@color/theme_color" />
+
+                <Button
+                    android:id="@+id/buff_ok"
+                    android:layout_width="72dp"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_square_border_colorful"
+                    android:text="@android:string/ok"
+                    android:textColor="@color/tv_color" />
+            </LinearLayout>
 
         </LinearLayout>
 

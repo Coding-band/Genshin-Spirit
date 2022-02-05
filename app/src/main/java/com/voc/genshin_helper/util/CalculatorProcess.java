@@ -37,6 +37,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.DecimalFormat;
@@ -1157,7 +1159,7 @@ public class CalculatorProcess {
 
             if(x < NameList.size()){
                 Picasso.get()
-                        .load (item_rss.getCharByName(NameList.get(x),context)[3])
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(NameList.get(x),context)[3],context))
                         .transform(transformation)
                         .resize(150,150)
                         .error (R.drawable.paimon_lost)
@@ -1211,7 +1213,7 @@ public class CalculatorProcess {
             TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
             if(crystal_temp_cnt[x] > 0){
                 Picasso.get()
-                        .load (item_rss.getItemIcoByName(crystal_temp[x],context))
+                        .load (FileLoader.loadIMG(item_rss.getItemIcoByName(crystal_temp[x],context),context))
                         .resize(128,128)
                         .error (R.drawable.paimon_lost)
                         .into (item_cal_img);
@@ -1245,7 +1247,7 @@ public class CalculatorProcess {
             TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
             if(boss_temp_cnt[x] > 0){
                 Picasso.get()
-                        .load (item_rss.getItemIcoByName(boss_temp[x],context))
+                        .load (FileLoader.loadIMG(item_rss.getItemIcoByName(boss_temp[x],context),context))
                         .resize(128,128)
                         .error (R.drawable.paimon_lost)
                         .into (item_cal_img);
@@ -1279,7 +1281,7 @@ public class CalculatorProcess {
             TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
             if(week_boss_temp_cnt[x] > 0){
                 Picasso.get()
-                        .load (item_rss.getItemIcoByName(week_boss_temp[x],context))
+                        .load (FileLoader.loadIMG(item_rss.getItemIcoByName(week_boss_temp[x],context),context))
                         .resize(128,128)
                         .error (R.drawable.paimon_lost)
                         .into (item_cal_img);
@@ -1313,7 +1315,7 @@ public class CalculatorProcess {
             TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
             if(local_temp_cnt[x] > 0){
                 Picasso.get()
-                        .load (item_rss.getItemIcoByName(local_temp[x],context))
+                        .load (FileLoader.loadIMG(item_rss.getItemIcoByName(local_temp[x],context),context))
                         .resize(128,128)
                         .error (R.drawable.paimon_lost)
                         .into (item_cal_img);
@@ -1347,7 +1349,7 @@ public class CalculatorProcess {
             TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
             if(common_temp_cnt[x] > 0){
                 Picasso.get()
-                        .load (item_rss.getItemIcoByName(common_temp[x],context))
+                        .load (FileLoader.loadIMG(item_rss.getItemIcoByName(common_temp[x],context),context))
                         .resize(128,128)
                         .error (R.drawable.paimon_lost)
                         .into (item_cal_img);
@@ -1383,7 +1385,7 @@ public class CalculatorProcess {
             TextView item_weekly_tv = view.findViewById(R.id.item_weekly_tv);
             if(weeklybk1_temp_cnt[x] > 0){
                 Picasso.get()
-                        .load (item_rss.getItemIcoByName(weeklybk1_temp[x],context))
+                        .load (FileLoader.loadIMG(item_rss.getItemIcoByName(weeklybk1_temp[x],context),context))
                         .resize(128,128)
                         .error (R.drawable.paimon_lost)
                         .into (item_cal_img);
@@ -1422,7 +1424,7 @@ public class CalculatorProcess {
             TextView item_weekly_tv = view.findViewById(R.id.item_weekly_tv);
             if(weeklybk2_temp_cnt[x] > 0){
                 Picasso.get()
-                        .load (item_rss.getItemIcoByName(weeklybk2_temp[x],context))
+                        .load (FileLoader.loadIMG(item_rss.getItemIcoByName(weeklybk2_temp[x],context),context))
                         .resize(128,128)
                         .error (R.drawable.paimon_lost)
                         .into (item_cal_img);
@@ -1461,7 +1463,7 @@ public class CalculatorProcess {
             TextView item_weekly_tv = view.findViewById(R.id.item_weekly_tv);
             if(weeklybk3_temp_cnt[x] > 0){
                 Picasso.get()
-                        .load (item_rss.getItemIcoByName(weeklybk3_temp[x],context))
+                        .load (FileLoader.loadIMG(item_rss.getItemIcoByName(weeklybk3_temp[x],context),context))
                         .resize(128,128)
                         .error (R.drawable.paimon_lost)
                         .into (item_cal_img);
@@ -1507,7 +1509,7 @@ public class CalculatorProcess {
             TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
             if(other_temp_cnt[x] > 0){
                 Picasso.get()
-                        .load (item_rss.getItemIcoByName(other_temp[x],context))
+                        .load (FileLoader.loadIMG(item_rss.getItemIcoByName(other_temp[x],context),context))
                         .resize(128,128)
                         .error (R.drawable.paimon_lost)
                         .into (item_cal_img);
@@ -2308,7 +2310,8 @@ public class CalculatorProcess {
         String tContents = "";
 
         try {
-            InputStream stream = context.getAssets().open(inFile);
+            File file = new File(context.getFilesDir()+"/"+inFile);
+            InputStream stream = new FileInputStream(file);
 
             int size = stream.available();
             byte[] buffer = new byte[size];

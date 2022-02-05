@@ -501,7 +501,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             final int margin = 4;
             final Transformation transformation = new RoundedCornersTransformation(radius, margin);
             Picasso.get()
-                    .load (item_rss.getCharByName(choosedNameList.get(x),context)[3])
+                    .load (FileLoader.loadIMG(item_rss.getCharByName(choosedNameList.get(x),context)[3],context))
                     .transform(transformation)
                     .fit()
                     .error (R.drawable.paimon_full)
@@ -965,7 +965,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             if(!artifactChoosedFollowList.get(x).isEmpty() && !artifactChoosedFollowList.get(x).equals("N/A")) {
                 item_user_img.setVisibility(View.VISIBLE);
                 Picasso.get()
-                        .load(item_rss.getCharByName(artifactChoosedFollowList.get(x), context)[3])
+                        .load(FileLoader.loadIMG(item_rss.getCharByName(item_rss.getCharNameByTranslatedName(artifactChoosedFollowList.get(x), context),context)[3],context))
                         .transform(transformation)
                         .resize(36, 36)
                         .error(R.drawable.paimon_full)
@@ -1440,7 +1440,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                             final int margin = 4;
                             final Transformation transformation = new RoundedCornersTransformation(radius, margin);
                             Picasso.get()
-                                    .load (item_rss.getCharByName(choosedNameList.get(x),context)[3])
+                                    .load (FileLoader.loadIMG(item_rss.getCharByName(choosedNameList.get(x),context)[3],context))
                                     .transform(transformation)
                                     .fit()
                                     .error (R.drawable.paimon_full)
@@ -1873,7 +1873,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                             if(!weaponChoosedFollowList.get(x).isEmpty() && !weaponChoosedFollowList.get(x).equals("N/A")) {
                                 item_user_img.setVisibility(View.VISIBLE);
                                 Picasso.get()
-                                        .load(item_rss.getCharByName(weaponChoosedFollowList.get(x), context)[3])
+                                        .load(FileLoader.loadIMG(item_rss.getCharByName(weaponChoosedFollowList.get(x), context)[3],context))
                                         .transform(transformation)
                                         .resize(36, 36)
                                         .error(R.drawable.paimon_full)
@@ -2396,10 +2396,10 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                             .into (item_img);
 
                     ImageView item_user_img = char_view.findViewById(R.id.item_user_img);
-                    if(!weaponChoosedFollowList.get(x).equals("N/A") && !weaponChoosedFollowList.get(x).isEmpty()){
+                    if(!artifactChoosedFollowList.get(x).equals("N/A") && !artifactChoosedFollowList.get(x).isEmpty()){
                         item_user_img.setVisibility(View.VISIBLE);
                         Picasso.get()
-                                .load (item_rss.getCharByName(weaponChoosedFollowList.get(x),context)[3])
+                                .load (FileLoader.loadIMG(item_rss.getCharByName(item_rss.getCharNameByTranslatedName(artifactChoosedFollowList.get(x),context),context)[3],context))
                                 .transform(transformation)
                                 .resize(36,36)
                                 .error (R.drawable.paimon_full)
@@ -2606,7 +2606,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             final int margin = 4;
             final Transformation transformation = new RoundedCornersTransformation(radius, margin);
             Picasso.get()
-                    .load (item_rss.getCharByName(choosedNameList.get(x),context)[3])
+                    .load (FileLoader.loadIMG(item_rss.getCharByName(choosedNameList.get(x),context)[3],context))
                     .transform(transformation)
                     .fit()
                     .error (R.drawable.paimon_full)
@@ -2692,7 +2692,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                 item_user_img.setVisibility(View.VISIBLE);
 
                 Picasso.get()
-                        .load (item_rss.getCharByName(weaponChoosedFollowList.get(x),context)[3])
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(weaponChoosedFollowList.get(x),context)[3],context))
                         .transform(transformation)
                         .resize(36,36)
                         .error (R.drawable.paimon_full)
@@ -2793,7 +2793,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             if(!artifactChoosedFollowList.get(x).isEmpty() && !artifactChoosedFollowList.get(x).equals("N/A")) {
                 item_user_img.setVisibility(View.VISIBLE);
                 Picasso.get()
-                        .load(item_rss.getCharByName(artifactChoosedFollowList.get(x), context)[3])
+                        .load(FileLoader.loadIMG(item_rss.getCharByName(item_rss.getCharNameByTranslatedName(artifactChoosedFollowList.get(x), context),context)[3],context))
                         .transform(transformation)
                         .resize(36, 36)
                         .error(R.drawable.paimon_full)

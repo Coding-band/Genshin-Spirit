@@ -312,7 +312,7 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
         String tContents = "";
 
         try {
-            File file = new File(context.getFilesDir()+inFile);
+            File file = new File(context.getFilesDir()+"/"+inFile);
             InputStream stream = new FileInputStream(file);
 
             int size = stream.available();

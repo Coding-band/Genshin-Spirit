@@ -92,5 +92,6 @@
     <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="android:windowBackground">@color/page_bg</item>
         <item name="android:textColorPrimary">@color/tv_color</item>
+        <item name="android:textColor">@color/tv_color</item>
     </style>
 </resources>
