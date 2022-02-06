@@ -135,11 +135,12 @@ public class BuffCal2 {
     public void setup (Context context){
         this.context = context;
         itemRss = new ItemRss();
-        enemyName = "Hilichurl";
     }
 
-    public void enemy_setup(String name){
+    public void enemy_setup(String name, int lvl){
+        // Will use Locale
         enemyName = name;
+        LvlEnemy = lvl;
     }
 
     public void char_setup(String charName, int charAfterLvl,  int charAfterBreakLvl, boolean charAfterBreakUP, int charSkill1AfterLvl, int charSkill2AfterLvl, int charSkill3AfterLvl) {
@@ -151,9 +152,7 @@ public class BuffCal2 {
         this.charSkill2AfterLvl = charSkill2AfterLvl;
         this.charSkill3AfterLvl = charSkill3AfterLvl;
 
-
         LvlCharacter = charAfterLvl;
-        LvlEnemy = 84;
     }
     public void weapon_setup(String weaponName, int weaponAfterLvl,  int weaponAfterBreakLvl, boolean weaponAfterBreakUP) {
         this.weaponName = weaponName;
@@ -205,6 +204,7 @@ public class BuffCal2 {
             ArtifactBuff(artifactBuffSec4Item.get(x),artifactBuffSec4Value.get(x));
         }
 
+        /*
         System.out.println("聖遺物雷元素傷害加成" + prettyCount(聖遺物雷元素傷害加成,1));
         System.out.println("聖遺物火元素傷害加成" + prettyCount(聖遺物火元素傷害加成,1));
         System.out.println("聖遺物水元素傷害加成" + prettyCount(聖遺物水元素傷害加成,1));
@@ -224,6 +224,7 @@ public class BuffCal2 {
         System.out.println("聖遺物基礎生命值" + prettyCount(聖遺物基礎生命值,0));
         System.out.println("聖遺物攻擊力" + prettyCount(聖遺物攻擊力,1));
         System.out.println("聖遺物治療加成" + prettyCount(聖遺物治療加成,1));
+         */
 
     }
 
@@ -362,46 +363,46 @@ public class BuffCal2 {
             JSONObject 普通攻擊 = jsonObject.getJSONObject("普通攻擊");
 
             JSONArray 一段傷害 = 普通攻擊.getJSONArray("一段傷害");
-            普通攻擊_一段傷害 = 一段傷害.getDouble(charSkill1AfterLvl)/100;
+            普通攻擊_一段傷害 = 一段傷害.getDouble(charSkill1AfterLvl-1)/100;
 
             JSONArray 二段傷害 = 普通攻擊.getJSONArray("二段傷害");
-            普通攻擊_二段傷害 = 二段傷害.getDouble(charSkill1AfterLvl)/100;
+            普通攻擊_二段傷害 = 二段傷害.getDouble(charSkill1AfterLvl-1)/100;
 
             JSONArray 三段傷害 = 普通攻擊.getJSONArray("三段傷害");
-            普通攻擊_三段傷害 = 三段傷害.getDouble(charSkill1AfterLvl)/100;
+            普通攻擊_三段傷害 = 三段傷害.getDouble(charSkill1AfterLvl-1)/100;
 
             JSONArray 四段傷害 = 普通攻擊.getJSONArray("四段傷害");
-            普通攻擊_四段傷害 = 四段傷害.getDouble(charSkill1AfterLvl)/100;
+            普通攻擊_四段傷害 = 四段傷害.getDouble(charSkill1AfterLvl-1)/100;
 
             JSONArray 五段傷害 = 普通攻擊.getJSONArray("五段傷害");
-            普通攻擊_五段傷害 = 五段傷害.getDouble(charSkill1AfterLvl)/100;
+            普通攻擊_五段傷害 = 五段傷害.getDouble(charSkill1AfterLvl-1)/100;
 
             JSONArray 六段傷害 = 普通攻擊.getJSONArray("六段傷害");
-            普通攻擊_六段傷害 = 六段傷害.getDouble(charSkill1AfterLvl)/100;
+            普通攻擊_六段傷害 = 六段傷害.getDouble(charSkill1AfterLvl-1)/100;
 
             JSONArray 下墜期間傷害 = 普通攻擊.getJSONArray("下墜期間傷害");
-            普通攻擊_下墜期間傷害 = 下墜期間傷害.getDouble(charSkill1AfterLvl)/100;
+            普通攻擊_下墜期間傷害 = 下墜期間傷害.getDouble(charSkill1AfterLvl-1)/100;
 
             JSONArray 低空墜地衝擊傷害 = 普通攻擊.getJSONArray("低空墜地衝擊傷害");
-            普通攻擊_低空墜地衝擊傷害 = 低空墜地衝擊傷害.getDouble(charSkill1AfterLvl)/100;
+            普通攻擊_低空墜地衝擊傷害 = 低空墜地衝擊傷害.getDouble(charSkill1AfterLvl-1)/100;
 
             JSONArray 高空墜地衝擊傷害 = 普通攻擊.getJSONArray("高空墜地衝擊傷害");
-            普通攻擊_高空墜地衝擊傷害 = 高空墜地衝擊傷害.getDouble(charSkill1AfterLvl)/100;
+            普通攻擊_高空墜地衝擊傷害 = 高空墜地衝擊傷害.getDouble(charSkill1AfterLvl-1)/100;
 
             JSONArray 瞄準射擊 = 普通攻擊.getJSONArray("瞄準射擊");
-            普通攻擊_瞄準射擊 = 瞄準射擊.getDouble(charSkill1AfterLvl)/100;
+            普通攻擊_瞄準射擊 = 瞄準射擊.getDouble(charSkill1AfterLvl-1)/100;
 
             JSONArray 滿蓄力瞄準射擊 = 普通攻擊.getJSONArray("滿蓄力瞄準射擊");
-            普通攻擊_滿蓄力瞄準射擊 = 滿蓄力瞄準射擊.getDouble(charSkill1AfterLvl)/100;
+            普通攻擊_滿蓄力瞄準射擊 = 滿蓄力瞄準射擊.getDouble(charSkill1AfterLvl-1)/100;
 
             JSONArray 重擊傷害 = 普通攻擊.getJSONArray("重擊傷害");
-            普通攻擊_重擊傷害 = 重擊傷害.getDouble(charSkill1AfterLvl)/100;
+            普通攻擊_重擊傷害 = 重擊傷害.getDouble(charSkill1AfterLvl-1)/100;
 
             JSONArray 重擊循環傷害 = 普通攻擊.getJSONArray("重擊循環傷害");
-            普通攻擊_重擊循環傷害 = 重擊循環傷害.getDouble(charSkill1AfterLvl)/100;
+            普通攻擊_重擊循環傷害 = 重擊循環傷害.getDouble(charSkill1AfterLvl-1)/100;
 
             JSONArray 重擊終結傷害 = 普通攻擊.getJSONArray("重擊終結傷害");
-            普通攻擊_重擊終結傷害 = 重擊終結傷害.getDouble(charSkill1AfterLvl)/100;
+            普通攻擊_重擊終結傷害 = 重擊終結傷害.getDouble(charSkill1AfterLvl-1)/100;
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -448,6 +449,7 @@ public class BuffCal2 {
             e.printStackTrace();
         }
 
+
     }
 
     //====================================================//
@@ -474,10 +476,16 @@ public class BuffCal2 {
 
     //====================================================//
     public double 生命值面板(){
-        return (角色基礎生命值) * (1 + 武器百分比生命值+角色生命值加成+0+0+0+0+0) + (0+0);
+        return (角色基礎生命值+聖遺物基礎生命值) * (1 + 武器百分比生命值+角色生命值加成+聖遺物攻擊力) + (0+0);
     }
     public double 防禦力面板(){
-        return (角色基礎防禦力) * (1 + 武器百分比防禦力+角色防禦力加成+0+0+0+0+0) + (0+0);
+        System.out.println("XPR : ");
+        System.out.println(角色基礎防禦力);
+        System.out.println(聖遺物基礎防禦力);
+        System.out.println(武器百分比防禦力);
+        System.out.println(角色防禦力加成);
+        System.out.println(聖遺物防禦力);
+        return (角色基礎防禦力+聖遺物基礎防禦力) * (1 + 武器百分比防禦力+角色防禦力加成+聖遺物防禦力) + (0+0);
     }
     //攻擊力面板=基礎攻擊力(白字)+攻擊力加成(黃字)
     public double 攻擊力面板(){
@@ -570,7 +578,8 @@ public class BuffCal2 {
      */
 
     public double Damage (String type, boolean isCritDMG, String element_used){
-        Log.wtf("1", String.valueOf(TalentP(type)*((AtkCharacter()+AtkWeapon())*(1+AttackP())+FlatAttack())));
+        Log.wtf("1.1", String.valueOf(TalentP(type)));
+        Log.wtf("1.2", String.valueOf(((AtkCharacter()+AtkWeapon())*(1+AttackP())+FlatAttack())));
         Log.wtf("2", String.valueOf(SpecialMultiplier(0)));
         Log.wtf("3", String.valueOf(FlatDamage(type)));
         Log.wtf("4", String.valueOf((1+DamageBounsP())));
@@ -748,8 +757,12 @@ public class BuffCal2 {
             case "Hydro": tmp = 3; break;
             case "Anemo": tmp = 4; break;
             case "Geo": tmp = 5; break;
-            case "PHY": tmp = 6; break;
-            default:tmp = -1;break;
+            case "Dendro": tmp = 6; break;
+            case "Physical": tmp = 7; break;
+            // TMP 8 is for TYPE SORT
+            // TMP 9 is for ENEMY ELEMENT (Base)
+
+            default: tmp = -1;break;
         }
         if(readRESData(enemyName).get(tmp) == -10){
             return 1;
@@ -761,31 +774,6 @@ public class BuffCal2 {
 
     public double EM (){ // 元素精通
         return 角色元素精通+武器元素精通+聖遺物元素精通;
-    }
-
-    /*
-    增幅類反應
-
-    元素反應：蒸發
-        水屬性（角色）與火屬性（敵人）-> x2
-        火屬性（角色）與冰屬性（敵人）-> x2
-
-    元素反應：融化
-        火屬性（角色）與水屬性（敵人）-> x1.5
-        冰屬性（角色）與水屬性（敵人）-> x1.5
-
-     */
-    public double VaporizeMelt (String charEle, String enemyEle){ //
-
-        double Const = (1+0.00189266831*EM()*Math.exp(-0.000505*EM()));
-
-        if(charEle.equals(Hydro) && enemyEle.equals(Pyro) || charEle.equals(Pyro) && enemyEle.equals(Cryo)){
-            return 2*Const;
-        }else if(charEle.equals(Pyro) && enemyEle.equals(Hydro) || charEle.equals(Cryo) && enemyEle.equals(Hydro)){
-            return 1.5*Const;
-        }else{
-            return 1;
-        }
     }
 
     public double ReactionBonusP(){ //來自 Crimson Witch 4 件獎勵（用於蒸發和融化）和 Mona 的 C1（用於蒸發）的反應傷害獎勵
@@ -837,59 +825,6 @@ public class BuffCal2 {
         return 1;
     }
 
-    /*
-    劇變類反應
-
-    元素反應：超載 -> 火屬性（角色）與雷屬性（敵人）
-    元素反應：超導 -> 冰屬性（角色）與雷屬性（敵人）
-    元素反應：感電 -> 雷屬性（角色）與水屬性（敵人）
-    元素反應：擴散 -> 風屬性（角色）與雷屬性（敵人）/ 風屬性（角色）與火屬性（敵人）/ 風屬性（角色）與水屬性（敵人）
-
-
-     */
-    public double ElementReaction(String charEle, String enemyEle){
-
-        double Const = 1+(60*EM())/(12609+9*EM());
-
-
-        if(charEle.equals(Electro) && enemyEle.equals(Hydro)){ //感電
-            return Const
-                    *((-0.0000014798*Math.pow(LvlCharacter,5))
-                    +(0.0002746679*Math.pow(LvlCharacter,4))
-                    +(0.0162160738*Math.pow(LvlCharacter,3))
-                    +(0.4742385201*Math.pow(LvlCharacter,2))
-                    -(1.6987232790*Math.pow(LvlCharacter,1))
-                    +(20.8340255487))
-                    *ElectroChargedTriggers();
-        }else if(charEle.equals(Pyro) && enemyEle.equals(Electro)){ //超載
-            return Const
-                    *((-0.0000027646*Math.pow(LvlCharacter,5))
-                    +(0.0005189440*Math.pow(LvlCharacter,4))
-                    +(0.0314790536*Math.pow(LvlCharacter,3))
-                    +(0.9268181504*Math.pow(LvlCharacter,2))
-                    -(4.3991155718*Math.pow(LvlCharacter,1))
-                    +(37.4371542286));
-        }else if(charEle.equals(Cryo) && enemyEle.equals(Electro)){ //超導
-            return Const
-                    *((-0.0000006038*Math.pow(LvlCharacter,5))
-                    +(0.0001110078*Math.pow(LvlCharacter,4))
-                    +(0.0064237710*Math.pow(LvlCharacter,3))
-                    +(0.1836799174*Math.pow(LvlCharacter,2))
-                    -(0.4750909512*Math.pow(LvlCharacter,1))
-                    +(7.4972486411));
-        }else if(charEle.equals(Anemo) && enemyEle.equals(Electro) || charEle.equals(Anemo) && enemyEle.equals(Pyro) || charEle.equals(Anemo) && enemyEle.equals(Hydro)){ //擴散
-            return Const
-                    *((-0.0000008854*Math.pow(LvlCharacter,5))
-                    +(0.0001679502*Math.pow(LvlCharacter,4))
-                    +(0.0103922088*Math.pow(LvlCharacter,3))
-                    +(0.3097567417*Math.pow(LvlCharacter,2))
-                    -(1.7733381829*Math.pow(LvlCharacter,1))
-                    +(13.5157684329));
-        }else {
-            return 0;
-        }
-    }
-
     public double MonaC1 (String charEle, String enemyEle, boolean isMonaC1Active){
         if(isMonaC1Active){
             if(charEle.equals(Electro) && enemyEle.equals(Hydro)) { //感電
@@ -901,20 +836,6 @@ public class BuffCal2 {
             }
         }
         return 1;
-    }
-
-    //元素反應 : 敵人元素抗性
-    //https://zhuanlan.zhihu.com/p/374290704
-    public double ReactionRES(double res){
-        if(res < 0){
-            return 1 - res/2;
-        }else if (res >= 0 && res < 0.75){
-            return 1 - res;
-        }else if (res >= 0.75){
-            return 1/(4*res+1);
-        }else {
-            return 1;
-        }
     }
 
     public void ArtifactBuff(String name, double value){

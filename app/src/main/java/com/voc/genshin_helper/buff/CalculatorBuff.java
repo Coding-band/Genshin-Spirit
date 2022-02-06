@@ -185,6 +185,11 @@ public class CalculatorBuff {
     TextView buff_artifact_sec4_value ;
     TextView buff_artifact_sec4_name ;
 
+    ImageView buff_enemy_ico;
+    TextView buff_enemy_lvl;
+    TextView buff_enemy_name;
+    LinearLayout buff_enemy_ll;
+
     LinearLayout buff_artifact_main ;
     LinearLayout buff_artifact_sec1 ;
     LinearLayout buff_artifact_sec2 ;
@@ -192,6 +197,32 @@ public class CalculatorBuff {
     LinearLayout buff_artifact_sec4 ;
 
     BuffCal2 buffCal;
+
+    // --------- BUFF PAGE --------//
+    // Char_Info
+    ImageView buff_char_icon;
+    ImageView buff_char_element;
+    TextView buff_char_name;
+    TextView buff_char_lvl;
+
+    // Char_BUFF_Part
+    TextView buff_char_atk_value;
+    TextView buff_char_hp_value;
+    TextView buff_char_def_value;
+    TextView buff_char_crit_rate_value;
+    TextView buff_char_crit_dmg_value;
+    TextView buff_char_enrech_value;
+
+    ConstraintLayout buff_char_other_view;
+    TextView buff_char_other_value;
+    TextView buff_char_other_name;
+
+    // Weapon_Info
+    ImageView buff_weapon_icon;
+    TextView buff_weapon_name;
+    TextView buff_weapon_lvl;
+
+    LinearLayout buff_tab_view;
 
 
     public void ui_setup (Context context, View viewPager){
@@ -251,6 +282,7 @@ public class CalculatorBuff {
         buff_ui_view.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
         buff_ui_view.setColumnCount(1);
         buff_ui_view.removeAllViewsInLayout();
+        String tmp_weapon_name = "unknown";
         for (int x = 0 ; x < charChoosedNameList.size() ; x++) {
 
             View view = View.inflate(context, R.layout.item_buff_card, null);
@@ -276,19 +308,20 @@ public class CalculatorBuff {
                 buff_ui_char_name.setText(item_rss.getCharByName(charChoosedNameList.get(x),context)[1]);
 
                 /** Weapon */
-                String tmp_weapon_name = "unknown";
                 for (int y = 0 ; y < weaponChoosedNameList.size() ; y ++){
                     if(weaponChoosedFollowList.get(y).equals(charChoosedNameList.get(x))){
                         tmp_weapon_name = weaponChoosedNameList.get(y);
                     }
                 }
 
-                Picasso.get()
-                        .load(FileLoader.loadIMG(item_rss.getWeaponByName(tmp_weapon_name,context)[1],context))
-                        .transform(transformation)
-                        .resize(96, 96)
-                        .error(R.drawable.paimon_lost)
-                        .into(buff_ui_weapon_icon);
+                if(!tmp_weapon_name.equals("unknown") && tmp_weapon_name != null){
+                    Picasso.get()
+                            .load(FileLoader.loadIMG(item_rss.getWeaponByName(tmp_weapon_name,context)[1],context))
+                            .transform(transformation)
+                            .resize(96, 96)
+                            .error(R.drawable.paimon_lost)
+                            .into(buff_ui_weapon_icon);
+                }
 
                 /** Artifact */
 
@@ -308,16 +341,15 @@ public class CalculatorBuff {
                 }
 
                 for (int y = 0 ; y < tmp_artifact_name.size() && y < 5 ; y ++){
-                    ImageView img = view.findViewById(tmp_artifact_id[y]);
-                    int tmp_artifact_type_id = 1;
+                    int tmp_artifact_type_id = 0;
                     if(tmp_artifact_type.get(y).equals("Flower")){
-                        tmp_artifact_type_id = 4;
+                        tmp_artifact_type_id = 1;
                     }else if(tmp_artifact_type.get(y).equals("Plume")){
                         tmp_artifact_type_id = 2;
                     }else if(tmp_artifact_type.get(y).equals("Sand")){
                         tmp_artifact_type_id = 5;
                     }else if(tmp_artifact_type.get(y).equals("Goblet")){
-                        tmp_artifact_type_id = 1;
+                        tmp_artifact_type_id = 4;
                     }else if(tmp_artifact_type.get(y).equals("Circlet")){
                         tmp_artifact_type_id = 3;
                     }
@@ -325,12 +357,15 @@ public class CalculatorBuff {
                     Log.wtf("tmp_artifact_name",tmp_artifact_name.get(y));
                     Log.wtf("tmp_artifact_type_id", String.valueOf(tmp_artifact_type_id));
 
-                    Picasso.get()
-                            .load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(tmp_artifact_name.get(y)),context)[tmp_artifact_type_id],context))
-                            .transform(transformation)
-                            .resize(64, 64)
-                            .error(R.drawable.paimon_lost)
-                            .into(img);
+                    if(tmp_artifact_type_id > 0){
+                        ImageView img = view.findViewById(tmp_artifact_id[tmp_artifact_type_id-1]);
+                        Picasso.get()
+                                .load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(tmp_artifact_name.get(y)),context)[tmp_artifact_type_id],context))
+                                .transform(transformation)
+                                .resize(64, 64)
+                                .error(R.drawable.paimon_lost)
+                                .into(img);
+                    }
                 }
 
                 int finalX = x;
@@ -350,7 +385,11 @@ public class CalculatorBuff {
             param.width = GridLayout.LayoutParams.MATCH_PARENT;
             param.setGravity(Gravity.CENTER_VERTICAL);
             view.setLayoutParams (param);
-            buff_ui_view.addView(view);
+
+            if(!tmp_weapon_name.equals("unknown") && tmp_weapon_name != null){
+                buff_ui_view.addView(view);
+            }
+
         }
 
     }
@@ -425,27 +464,27 @@ public class CalculatorBuff {
 
         BackgroundReload.BackgroundReload(context,view);
         // Char_Info
-        ImageView buff_char_icon = view.findViewById(R.id.buff_char_icon);
-        ImageView buff_char_element = view.findViewById(R.id.buff_char_element);
-        TextView buff_char_name = view.findViewById(R.id.buff_char_name);
-        TextView buff_char_lvl = view.findViewById(R.id.buff_char_lvl);
+        buff_char_icon = view.findViewById(R.id.buff_char_icon);
+        buff_char_element = view.findViewById(R.id.buff_char_element);
+        buff_char_name = view.findViewById(R.id.buff_char_name);
+        buff_char_lvl = view.findViewById(R.id.buff_char_lvl);
 
         // Char_BUFF_Part
-        TextView buff_char_atk_value = view.findViewById(R.id.buff_char_atk_value);
-        TextView buff_char_hp_value = view.findViewById(R.id.buff_char_hp_value);
-        TextView buff_char_def_value = view.findViewById(R.id.buff_char_def_value);
-        TextView buff_char_crit_rate_value = view.findViewById(R.id.buff_char_crit_rate_value);
-        TextView buff_char_crit_dmg_value = view.findViewById(R.id.buff_char_crit_dmg_value);
-        TextView buff_char_enrech_value = view.findViewById(R.id.buff_char_enrech_value);
+        buff_char_atk_value = view.findViewById(R.id.buff_char_atk_value);
+        buff_char_hp_value = view.findViewById(R.id.buff_char_hp_value);
+        buff_char_def_value = view.findViewById(R.id.buff_char_def_value);
+        buff_char_crit_rate_value = view.findViewById(R.id.buff_char_crit_rate_value);
+        buff_char_crit_dmg_value = view.findViewById(R.id.buff_char_crit_dmg_value);
+        buff_char_enrech_value = view.findViewById(R.id.buff_char_enrech_value);
 
-        ConstraintLayout buff_char_other_view = view.findViewById(R.id.buff_char_other_view);
-        TextView buff_char_other_value = view.findViewById(R.id.buff_char_other_value);
-        TextView buff_char_other_name = view.findViewById(R.id.buff_char_other_name);
+        buff_char_other_view = view.findViewById(R.id.buff_char_other_view);
+        buff_char_other_value = view.findViewById(R.id.buff_char_other_value);
+        buff_char_other_name = view.findViewById(R.id.buff_char_other_name);
 
         // Weapon_Info
-        ImageView buff_weapon_icon = view.findViewById(R.id.buff_weapon_icon);
-        TextView buff_weapon_name = view.findViewById(R.id.buff_weapon_name);
-        TextView buff_weapon_lvl = view.findViewById(R.id.buff_weapon_lvl);
+        buff_weapon_icon = view.findViewById(R.id.buff_weapon_icon);
+        buff_weapon_name = view.findViewById(R.id.buff_weapon_name);
+        buff_weapon_lvl = view.findViewById(R.id.buff_weapon_lvl);
 
         // Artifact_Icon
         TabLayout buff_artifact_tablayout = view.findViewById(R.id.buff_artifact_tablayout);
@@ -489,8 +528,89 @@ public class CalculatorBuff {
         TabItem buff_tab_element = view.findViewById(R.id.buff_tab_element);
         TabItem buff_tab_final = view.findViewById(R.id.buff_tab_final);
         TabItem buff_tab_other = view.findViewById(R.id.buff_tab_other);
-        LinearLayout buff_tab_view = view.findViewById(R.id.buff_tab_view);
+        buff_tab_view = view.findViewById(R.id.buff_tab_view);
 
+        // Enemy
+        buff_enemy_ll = view.findViewById(R.id.buff_enemy_ll);
+        buff_enemy_ico = view.findViewById(R.id.buff_enemy_icon);
+        buff_enemy_lvl = view.findViewById(R.id.buff_enemy_lvl);
+        buff_enemy_name = view.findViewById(R.id.buff_enemy_name);
+
+        buff_enemy_lvl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+                View view = View.inflate(context, R.layout.fragment_buff_page, null);
+
+                EditText buff_enemy_lvl_et = view.findViewById(R.id.buff_enemy_lvl_et);
+                Button buff_ok = view.findViewById(R.id.buff_ok);
+
+                buff_enemy_lvl_et.setText(String.valueOf(buffCal.LvlEnemy));
+                buff_ok.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if(Integer.parseInt(buff_enemy_lvl_et.getText().toString()) <= 120 && Integer.parseInt(buff_enemy_lvl_et.getText().toString()) > 0){
+                            buffCal.enemy_setup(buffCal.enemyName, Integer.parseInt(buff_enemy_lvl_et.getText().toString()));
+                        }else if(Integer.parseInt(buff_enemy_lvl_et.getText().toString()) > 120){
+                            buffCal.enemy_setup(buffCal.enemyName,120);
+                        }else if(Integer.parseInt(buff_enemy_lvl_et.getText().toString()) <1){
+                            buffCal.enemy_setup(buffCal.enemyName,1);
+                        }
+                        dialog.dismiss();
+                    }
+                });
+
+                dialog.setContentView(view);
+                dialog.setCanceledOnTouchOutside(true);
+                //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
+                Window dialogWindow = dialog.getWindow();
+                WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+                lp.width = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth()*0.9);
+                lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                lp.gravity = Gravity.BOTTOM;
+                dialogWindow.setAttributes(lp);
+                dialog.show();
+            }
+        });
+
+        buff_enemy_ll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+                View view = View.inflate(context, R.layout.fragment_enemy_choose, null);
+
+                EditText buff_enemy_lvl_et = view.findViewById(R.id.buff_enemy_lvl_et);
+                Button buff_ok = view.findViewById(R.id.buff_ok);
+
+                buff_enemy_lvl_et.setText(String.valueOf(buffCal.LvlEnemy));
+                buff_ok.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if(Integer.parseInt(buff_enemy_lvl_et.getText().toString()) <= 120 && Integer.parseInt(buff_enemy_lvl_et.getText().toString()) > 0){
+                            buffCal.enemy_setup(buffCal.enemyName, Integer.parseInt(buff_enemy_lvl_et.getText().toString()));
+                        }else if(Integer.parseInt(buff_enemy_lvl_et.getText().toString()) > 120){
+                            buffCal.enemy_setup(buffCal.enemyName,120);
+                        }else if(Integer.parseInt(buff_enemy_lvl_et.getText().toString()) <1){
+                            buffCal.enemy_setup(buffCal.enemyName,1);
+                        }
+                        dialog.dismiss();
+                    }
+                });
+
+                dialog.setContentView(view);
+                dialog.setCanceledOnTouchOutside(true);
+                //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
+                Window dialogWindow = dialog.getWindow();
+                WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+                lp.width = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth()*0.9);
+                lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                lp.gravity = Gravity.BOTTOM;
+                dialogWindow.setAttributes(lp);
+                dialog.show();
+            }
+        });
+
+        //buff_enemy_lvl_et
 
 
 
@@ -577,9 +697,7 @@ public class CalculatorBuff {
             }
         }
 
-        for (int x = 0 ; x < 5 ; x++){
-            Log.wtf("HOLY"+String.valueOf(x), String.valueOf(buff_artifact_tablayout.getTabAt(x).getId()));
-        }
+        ArtifactBuffView("Flower");
 
         buff_artifact_tablayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -614,36 +732,26 @@ public class CalculatorBuff {
         buffCal.char_setup(charName,charChoosedAfterLvlList.get(k),charChoosedAfterBreakLvlList.get(k),charChoosedAfterBreakUPLvlList.get(k),charChoosedAfterSkill1LvlList.get(k),charChoosedAfterSkill2LvlList.get(k),charChoosedAfterSkill3LvlList.get(k));
         buffCal.weapon_setup(weaponChoosedNameList.get(k),weaponChoosedAfterLvlList.get(k),weaponChoosedAfterBreakLvlList.get(k),weaponChoosedAfterBreakUPLvlList.get(k));
         buffCal.artifact_setup(tmp_artifact_sort,tmp_artifact_lvl,artifactBuffMainValue,artifactBuffMainItem,artifactBuffSec1Value,artifactBuffSec1Item,artifactBuffSec2Value,artifactBuffSec2Item,artifactBuffSec3Value,artifactBuffSec3Item,artifactBuffSec4Value,artifactBuffSec4Item);
+        buffCal.enemy_setup("Hilichurl",(int) Math.round(charChoosedAfterLvlList.get(k)*0.9));
         buffCal.startReading();
 
         /**
          * Feedback -> UI Setting
          */
 
-        buff_char_atk_value.setText(prettyCount(buffCal.atkReturn(),0));
-        buff_char_hp_value.setText(prettyCount(buffCal.hpReturn(),0));
-        buff_char_def_value.setText(prettyCount(buffCal.defReturn(),0));
 
-        System.out.println("CritTXT : "+prettyCount(buffCal.critRateReturn(),1));
-        System.out.println("CritNum : "+buffCal.critRateReturn());
 
-        buff_char_crit_rate_value.setText(prettyCount(buffCal.critRateReturn(),1));
-        buff_char_crit_dmg_value.setText(prettyCount(buffCal.critDMGReturn(),1));
-        buff_char_enrech_value.setText(prettyCount(buffCal.enRechReturn(),1));
+        buff_base();
 
-        if(Double.parseDouble(buffCal.otherReturn()[1])>0){
-            buff_char_other_view.setVisibility(View.VISIBLE);
-            buff_char_other_name.setText(buffCal.otherReturn()[0]);
-            buff_char_other_value.setText(prettyCount(Double.parseDouble(buffCal.otherReturn()[1]),1));
-        }
+        buff_normal();
 
         buff_buff_tablayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 switch (tab.getPosition()){
-                    case 0 : buff_tab_view.removeAllViews(); buff_normal(buff_tab_view,buffCal); break;
-                    case 1 : buff_tab_view.removeAllViews(); buff_charged(buff_tab_view,buffCal); break;
-                    case 2 : buff_tab_view.removeAllViews(); buff_pluging(buff_tab_view,buffCal); break;
+                    case 0 : buff_tab_view.removeAllViews(); buff_normal(); break;
+                    case 1 : buff_tab_view.removeAllViews(); buff_charged(); break;
+                    case 2 : buff_tab_view.removeAllViews(); buff_pluging(); break;
                     case 3 : buff_tab_view.removeAllViews(); break;
                     case 4 : buff_tab_view.removeAllViews(); break;
                     case 5 : buff_tab_view.removeAllViews(); break;
@@ -659,9 +767,9 @@ public class CalculatorBuff {
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
                 switch (tab.getPosition()){
-                    case 0 : buff_tab_view.removeAllViews(); buff_normal(buff_tab_view,buffCal); break;
-                    case 1 : buff_tab_view.removeAllViews(); buff_charged(buff_tab_view,buffCal); break;
-                    case 2 : buff_tab_view.removeAllViews(); buff_pluging(buff_tab_view,buffCal); break;
+                    case 0 : buff_tab_view.removeAllViews(); buff_normal(); break;
+                    case 1 : buff_tab_view.removeAllViews(); buff_charged(); break;
+                    case 2 : buff_tab_view.removeAllViews(); buff_pluging(); break;
                     case 3 : buff_tab_view.removeAllViews(); break;
                     case 4 : buff_tab_view.removeAllViews(); break;
                     case 5 : buff_tab_view.removeAllViews(); break;
@@ -686,7 +794,26 @@ public class CalculatorBuff {
     Sub UI
      */
 
-    public void buff_normal(LinearLayout buff_tab_view, BuffCal2 buffCal){
+    public void buff_base(){
+        buff_char_atk_value.setText(prettyCount(buffCal.atkReturn(),0));
+        buff_char_hp_value.setText(prettyCount(buffCal.hpReturn(),0));
+        buff_char_def_value.setText(prettyCount(buffCal.defReturn(),0));
+
+        System.out.println("CritTXT : "+prettyCount(buffCal.critRateReturn(),1));
+        System.out.println("CritNum : "+buffCal.critRateReturn());
+
+        buff_char_crit_rate_value.setText(prettyCount(buffCal.critRateReturn(),1));
+        buff_char_crit_dmg_value.setText(prettyCount(buffCal.critDMGReturn()-1,1));
+        buff_char_enrech_value.setText(prettyCount(buffCal.enRechReturn(),1));
+
+        if(Double.parseDouble(buffCal.otherReturn()[1])>0){
+            buff_char_other_view.setVisibility(View.VISIBLE);
+            buff_char_other_name.setText(buffCal.otherReturn()[0]);
+            buff_char_other_value.setText(prettyCount(Double.parseDouble(buffCal.otherReturn()[1]),1));
+        }
+    }
+
+    public void buff_normal(){
         buff_tab_view.removeAllViews();
 
         String[] item_name_recongize = new String[]{"一段傷害","二段傷害","三段傷害","四段傷害","五段傷害","六段傷害","瞄準射擊"};
@@ -728,7 +855,7 @@ public class CalculatorBuff {
          */
     }
 
-    public void buff_charged(LinearLayout buff_tab_view, BuffCal2 buffCal){
+    public void buff_charged(){
         buff_tab_view.removeAllViews();
 
         String[] item_name_recongize = new String[]{"滿蓄力瞄準射擊","重擊傷害","重擊循環傷害","重擊終結傷害"};
@@ -756,7 +883,7 @@ public class CalculatorBuff {
         }
     }
 
-    public void buff_pluging(LinearLayout buff_tab_view, BuffCal2 buffCal){
+    public void buff_pluging(){
         buff_tab_view.removeAllViews();
 
         String[] item_name_recongize = new String[]{"下墜期間傷害","低空墜地衝擊傷害","高空墜地衝擊傷害"};
@@ -785,7 +912,7 @@ public class CalculatorBuff {
     }
 
 
-    public void secSetShow(int sec_id, int i,int pos_id,TextView valueTV, RadioButton buff_artifact_1t, RadioButton buff_artifact_2t, RadioButton buff_artifact_3t, RadioButton buff_artifact_4t, RadioButton buff_artifact_1u, RadioButton buff_artifact_2u, RadioButton buff_artifact_3u, RadioButton buff_artifact_4u, RadioButton buff_artifact_5u){
+    public void secSetShow(int sec_id, int i,int pos_id,TextView valueTV, RadioButton buff_artifact_0t, RadioButton buff_artifact_1t, RadioButton buff_artifact_2t, RadioButton buff_artifact_3t, RadioButton buff_artifact_4t, RadioButton buff_artifact_1u, RadioButton buff_artifact_2u, RadioButton buff_artifact_3u, RadioButton buff_artifact_4u, RadioButton buff_artifact_5u){
 
         double[][] rare5SecBuffData = new double[][]{
                 {0.041,0.041,0.051,14,209,16,16,0.045,0.027,0.054},
@@ -800,13 +927,17 @@ public class CalculatorBuff {
         int finalTmp_grade = 0;
         int finalTmp_upgrade = 0;
 
-        if(buff_artifact_1t.isChecked()){
+        if(buff_artifact_0t.isChecked()){
+            finalTmp_grade = -1;
+        }else if(buff_artifact_1t.isChecked()){
             finalTmp_grade = 0;
         }else if(buff_artifact_2t.isChecked()){
             finalTmp_grade = 1;
         }else if(buff_artifact_3t.isChecked()){
             finalTmp_grade = 2;
         }else if(buff_artifact_4t.isChecked()){
+            finalTmp_grade = 3;
+        }else if(buff_artifact_0t.isChecked()){
             finalTmp_grade = 3;
         }
 
@@ -824,53 +955,59 @@ public class CalculatorBuff {
 
         pos_id = pos_id -1;
 
+        if(finalTmp_grade != -1){
+            if(i !=3 && i != 4 && i != 5 && i != 6){
+                valueTV.setText(prettyCount(rare5SecBuffData[finalTmp_grade][i]*finalTmp_upgrade,1));
+            }else{
+                valueTV.setText(prettyCount(rare5SecBuffData[finalTmp_grade][i]*finalTmp_upgrade,0));
+            }
+        }else{
+            if(i !=3 && i != 4 && i != 5 && i != 6){
+                valueTV.setText(prettyCount(0,1));
+            }else{
+                valueTV.setText(prettyCount(0,0));
+            }
+        }
+
         switch (sec_id){
             case 1 : {
                 buff_artifact_sec1_name.setText(artifactSecBuffList[i]);
-                if(i !=3 && i != 4 && i != 5 && i != 6){
-                    valueTV.setText(prettyCount(rare5SecBuffData[finalTmp_grade][i]*finalTmp_upgrade,1));
+                artifactBuffSec1ItemTMP.set(pos_id, artifactSecBuffList[i]);
+                if(finalTmp_grade != -1) {
+                    artifactBuffSec1ValueTMP.set(pos_id, rare5SecBuffData[finalTmp_grade][i] * finalTmp_upgrade);
                 }else{
-                    valueTV.setText(prettyCount(rare5SecBuffData[finalTmp_grade][i]*finalTmp_upgrade,0));
+                    artifactBuffSec1ValueTMP.set(pos_id,0.0);
                 }
-
-                artifactBuffSec1ItemTMP.set(pos_id,artifactSecBuffList[i]);
-                artifactBuffSec1ValueTMP.set(pos_id,rare5SecBuffData[finalTmp_grade][i]*finalTmp_upgrade);
                 break;
             }
             case 2 : {
                 buff_artifact_sec2_name.setText(artifactSecBuffList[i]);
-                if(i !=3 && i != 4 && i != 5 && i != 6){
-                    valueTV.setText(prettyCount(rare5SecBuffData[finalTmp_grade][i]*finalTmp_upgrade,1));
+                artifactBuffSec2ItemTMP.set(pos_id, artifactSecBuffList[i]);
+                if(finalTmp_grade != -1) {
+                    artifactBuffSec2ValueTMP.set(pos_id, rare5SecBuffData[finalTmp_grade][i] * finalTmp_upgrade);
                 }else{
-                    valueTV.setText(prettyCount(rare5SecBuffData[finalTmp_grade][i]*finalTmp_upgrade,0));
+                    artifactBuffSec2ValueTMP.set(pos_id,0.0);
                 }
-
-                artifactBuffSec2ItemTMP.set(pos_id,artifactSecBuffList[i]);
-                artifactBuffSec2ValueTMP.set(pos_id,rare5SecBuffData[finalTmp_grade][i]*finalTmp_upgrade);
                 break;
             }
             case 3 : {
                 buff_artifact_sec3_name.setText(artifactSecBuffList[i]);
-                if(i !=3 && i != 4 && i != 5 && i != 6){
-                    valueTV.setText(prettyCount(rare5SecBuffData[finalTmp_grade][i]*finalTmp_upgrade,1));
+                artifactBuffSec3ItemTMP.set(pos_id, artifactSecBuffList[i]);
+                if(finalTmp_grade != -1) {
+                    artifactBuffSec3ValueTMP.set(pos_id, rare5SecBuffData[finalTmp_grade][i] * finalTmp_upgrade);
                 }else{
-                    valueTV.setText(prettyCount(rare5SecBuffData[finalTmp_grade][i]*finalTmp_upgrade,0));
+                    artifactBuffSec3ValueTMP.set(pos_id,0.0);
                 }
-
-                artifactBuffSec3ItemTMP.set(pos_id,artifactSecBuffList[i]);
-                artifactBuffSec3ValueTMP.set(pos_id,rare5SecBuffData[finalTmp_grade][i]*finalTmp_upgrade);
                 break;
             }
             case 4 : {
                 buff_artifact_sec4_name.setText(artifactSecBuffList[i]);
-                if(i !=3 && i != 4 && i != 5 && i != 6){
-                    valueTV.setText(prettyCount(rare5SecBuffData[finalTmp_grade][i]*finalTmp_upgrade,1));
+                artifactBuffSec4ItemTMP.set(pos_id, artifactSecBuffList[i]);
+                if(finalTmp_grade != -1) {
+                    artifactBuffSec4ValueTMP.set(pos_id, rare5SecBuffData[finalTmp_grade][i] * finalTmp_upgrade);
                 }else{
-                    valueTV.setText(prettyCount(rare5SecBuffData[finalTmp_grade][i]*finalTmp_upgrade,0));
+                    artifactBuffSec4ValueTMP.set(pos_id,0.0);
                 }
-
-                artifactBuffSec4ItemTMP.set(pos_id,artifactSecBuffList[i]);
-                artifactBuffSec4ValueTMP.set(pos_id,rare5SecBuffData[finalTmp_grade][i]*finalTmp_upgrade);
                 break;
             }
         }
@@ -917,6 +1054,7 @@ public class CalculatorBuff {
         Spinner sec_sp = view.findViewById(R.id.buff_sec_name);
         TextView valueTV = view.findViewById(R.id.buff_sec_num);
 
+        RadioButton buff_artifact_0t = view.findViewById(R.id.buff_artifact_0t);
         RadioButton buff_artifact_1t = view.findViewById(R.id.buff_artifact_1t);
         RadioButton buff_artifact_2t = view.findViewById(R.id.buff_artifact_2t);
         RadioButton buff_artifact_3t = view.findViewById(R.id.buff_artifact_3t);
@@ -943,6 +1081,17 @@ public class CalculatorBuff {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
 
+                buff_artifact_0t.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        buff_artifact_0t.setChecked(true);
+                        buff_artifact_1t.setChecked(false);
+                        buff_artifact_2t.setChecked(false);
+                        buff_artifact_3t.setChecked(false);
+                        buff_artifact_4t.setChecked(false);
+                        secSetShow(sec_id,i,pos_id,valueTV,buff_artifact_0t,buff_artifact_1t,buff_artifact_2t,buff_artifact_3t,buff_artifact_4t,buff_artifact_1u,buff_artifact_2u,buff_artifact_3u,buff_artifact_4u,buff_artifact_5u);
+                    }
+                });
                 buff_artifact_1t.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -950,7 +1099,8 @@ public class CalculatorBuff {
                         buff_artifact_2t.setChecked(false);
                         buff_artifact_3t.setChecked(false);
                         buff_artifact_4t.setChecked(false);
-                        secSetShow(sec_id,i,pos_id,valueTV,buff_artifact_1t,buff_artifact_2t,buff_artifact_3t,buff_artifact_4t,buff_artifact_1u,buff_artifact_2u,buff_artifact_3u,buff_artifact_4u,buff_artifact_5u);
+                        buff_artifact_0t.setChecked(false);
+                        secSetShow(sec_id,i,pos_id,valueTV,buff_artifact_0t,buff_artifact_1t,buff_artifact_2t,buff_artifact_3t,buff_artifact_4t,buff_artifact_1u,buff_artifact_2u,buff_artifact_3u,buff_artifact_4u,buff_artifact_5u);
                     }
                 });
                 buff_artifact_2t.setOnClickListener(new View.OnClickListener() {
@@ -960,7 +1110,8 @@ public class CalculatorBuff {
                         buff_artifact_1t.setChecked(false);
                         buff_artifact_3t.setChecked(false);
                         buff_artifact_4t.setChecked(false);
-                        secSetShow(sec_id,i,pos_id,valueTV,buff_artifact_1t,buff_artifact_2t,buff_artifact_3t,buff_artifact_4t,buff_artifact_1u,buff_artifact_2u,buff_artifact_3u,buff_artifact_4u,buff_artifact_5u);
+                        buff_artifact_0t.setChecked(false);
+                        secSetShow(sec_id,i,pos_id,valueTV,buff_artifact_0t,buff_artifact_1t,buff_artifact_2t,buff_artifact_3t,buff_artifact_4t,buff_artifact_1u,buff_artifact_2u,buff_artifact_3u,buff_artifact_4u,buff_artifact_5u);
                     }
                 });
                 buff_artifact_3t.setOnClickListener(new View.OnClickListener() {
@@ -970,7 +1121,8 @@ public class CalculatorBuff {
                         buff_artifact_2t.setChecked(false);
                         buff_artifact_1t.setChecked(false);
                         buff_artifact_4t.setChecked(false);
-                        secSetShow(sec_id,i,pos_id,valueTV,buff_artifact_1t,buff_artifact_2t,buff_artifact_3t,buff_artifact_4t,buff_artifact_1u,buff_artifact_2u,buff_artifact_3u,buff_artifact_4u,buff_artifact_5u);
+                        buff_artifact_0t.setChecked(false);
+                        secSetShow(sec_id,i,pos_id,valueTV,buff_artifact_0t,buff_artifact_1t,buff_artifact_2t,buff_artifact_3t,buff_artifact_4t,buff_artifact_1u,buff_artifact_2u,buff_artifact_3u,buff_artifact_4u,buff_artifact_5u);
                     }
                 });
                 buff_artifact_4t.setOnClickListener(new View.OnClickListener() {
@@ -980,7 +1132,8 @@ public class CalculatorBuff {
                         buff_artifact_2t.setChecked(false);
                         buff_artifact_3t.setChecked(false);
                         buff_artifact_1t.setChecked(false);
-                        secSetShow(sec_id,i,pos_id,valueTV,buff_artifact_1t,buff_artifact_2t,buff_artifact_3t,buff_artifact_4t,buff_artifact_1u,buff_artifact_2u,buff_artifact_3u,buff_artifact_4u,buff_artifact_5u);
+                        buff_artifact_0t.setChecked(false);
+                        secSetShow(sec_id,i,pos_id,valueTV,buff_artifact_0t,buff_artifact_1t,buff_artifact_2t,buff_artifact_3t,buff_artifact_4t,buff_artifact_1u,buff_artifact_2u,buff_artifact_3u,buff_artifact_4u,buff_artifact_5u);
                     }
                 });
 
@@ -993,7 +1146,7 @@ public class CalculatorBuff {
                         buff_artifact_3u.setChecked(false);
                         buff_artifact_4u.setChecked(false);
                         buff_artifact_5u.setChecked(false);
-                        secSetShow(sec_id,i,pos_id,valueTV,buff_artifact_1t,buff_artifact_2t,buff_artifact_3t,buff_artifact_4t,buff_artifact_1u,buff_artifact_2u,buff_artifact_3u,buff_artifact_4u,buff_artifact_5u);
+                        secSetShow(sec_id,i,pos_id,valueTV,buff_artifact_0t,buff_artifact_1t,buff_artifact_2t,buff_artifact_3t,buff_artifact_4t,buff_artifact_1u,buff_artifact_2u,buff_artifact_3u,buff_artifact_4u,buff_artifact_5u);
                     }
                 });
                 buff_artifact_2u.setOnClickListener(new View.OnClickListener() {
@@ -1004,7 +1157,7 @@ public class CalculatorBuff {
                         buff_artifact_3u.setChecked(false);
                         buff_artifact_4u.setChecked(false);
                         buff_artifact_5u.setChecked(false);
-                        secSetShow(sec_id,i,pos_id,valueTV,buff_artifact_1t,buff_artifact_2t,buff_artifact_3t,buff_artifact_4t,buff_artifact_1u,buff_artifact_2u,buff_artifact_3u,buff_artifact_4u,buff_artifact_5u);
+                        secSetShow(sec_id,i,pos_id,valueTV,buff_artifact_0t,buff_artifact_1t,buff_artifact_2t,buff_artifact_3t,buff_artifact_4t,buff_artifact_1u,buff_artifact_2u,buff_artifact_3u,buff_artifact_4u,buff_artifact_5u);
                     }
                 });
                 buff_artifact_3u.setOnClickListener(new View.OnClickListener() {
@@ -1015,7 +1168,7 @@ public class CalculatorBuff {
                         buff_artifact_1u.setChecked(false);
                         buff_artifact_4u.setChecked(false);
                         buff_artifact_5u.setChecked(false);
-                        secSetShow(sec_id,i,pos_id,valueTV,buff_artifact_1t,buff_artifact_2t,buff_artifact_3t,buff_artifact_4t,buff_artifact_1u,buff_artifact_2u,buff_artifact_3u,buff_artifact_4u,buff_artifact_5u);
+                        secSetShow(sec_id,i,pos_id,valueTV,buff_artifact_0t,buff_artifact_1t,buff_artifact_2t,buff_artifact_3t,buff_artifact_4t,buff_artifact_1u,buff_artifact_2u,buff_artifact_3u,buff_artifact_4u,buff_artifact_5u);
                     }
                 });
                 buff_artifact_4u.setOnClickListener(new View.OnClickListener() {
@@ -1026,7 +1179,7 @@ public class CalculatorBuff {
                         buff_artifact_3u.setChecked(false);
                         buff_artifact_1u.setChecked(false);
                         buff_artifact_5u.setChecked(false);
-                        secSetShow(sec_id,i,pos_id,valueTV,buff_artifact_1t,buff_artifact_2t,buff_artifact_3t,buff_artifact_4t,buff_artifact_1u,buff_artifact_2u,buff_artifact_3u,buff_artifact_4u,buff_artifact_5u);
+                        secSetShow(sec_id,i,pos_id,valueTV,buff_artifact_0t,buff_artifact_1t,buff_artifact_2t,buff_artifact_3t,buff_artifact_4t,buff_artifact_1u,buff_artifact_2u,buff_artifact_3u,buff_artifact_4u,buff_artifact_5u);
                     }
                 });
                 buff_artifact_5u.setOnClickListener(new View.OnClickListener() {
@@ -1037,11 +1190,11 @@ public class CalculatorBuff {
                         buff_artifact_3u.setChecked(false);
                         buff_artifact_1u.setChecked(false);
                         buff_artifact_4u.setChecked(false);
-                        secSetShow(sec_id,i,pos_id,valueTV,buff_artifact_1t,buff_artifact_2t,buff_artifact_3t,buff_artifact_4t,buff_artifact_1u,buff_artifact_2u,buff_artifact_3u,buff_artifact_4u,buff_artifact_5u);
+                        secSetShow(sec_id,i,pos_id,valueTV,buff_artifact_0t,buff_artifact_1t,buff_artifact_2t,buff_artifact_3t,buff_artifact_4t,buff_artifact_1u,buff_artifact_2u,buff_artifact_3u,buff_artifact_4u,buff_artifact_5u);
                     }
                 });
 
-                secSetShow(sec_id,i,pos_id,valueTV,buff_artifact_1t,buff_artifact_2t,buff_artifact_3t,buff_artifact_4t,buff_artifact_1u,buff_artifact_2u,buff_artifact_3u,buff_artifact_4u,buff_artifact_5u);
+                secSetShow(sec_id,i,pos_id,valueTV,buff_artifact_0t,buff_artifact_1t,buff_artifact_2t,buff_artifact_3t,buff_artifact_4t,buff_artifact_1u,buff_artifact_2u,buff_artifact_3u,buff_artifact_4u,buff_artifact_5u);
             }
 
             @Override
@@ -1062,10 +1215,17 @@ public class CalculatorBuff {
                 artifactBuffSec4Item = artifactBuffSec4ItemTMP;
                 artifactBuffSec4Value = artifactBuffSec4ValueTMP;
 
+                // Show results of Artifacts UI
                 showResult(tmp_id);
 
                 // Send current result to buffCal
                 buffCal.artifact_setup(tmp_artifact_sort,tmp_artifact_lvl,artifactBuffMainValue,artifactBuffMainItem,artifactBuffSec1Value,artifactBuffSec1Item,artifactBuffSec2Value,artifactBuffSec2Item,artifactBuffSec3Value,artifactBuffSec3Item,artifactBuffSec4Value,artifactBuffSec4Item);
+
+                // Show results of Buff
+                buff_base();
+                buff_normal();
+                buff_charged();
+                buff_pluging();
 
                 dialog.dismiss();
             }
@@ -1251,10 +1411,15 @@ public class CalculatorBuff {
     public void artifactBufSetting(int tmp_id, int[] tmp_artifact_lvl, int[] tmp_artifact_rare){
         String[] artifactBuffList = new String[]{context.getString(R.string.weapon_stat_HP),context.getString(R.string.weapon_stat_atk)};
 
-        artifactBuffMainItem.set(0,artifactBuffList[0]);
-        artifactBuffMainItem.set(1,artifactBuffList[1]);
-        artifactBuffMainValue.set(0,artifactBasicBaseHP.get(tmp_artifact_lvl[0]));
-        artifactBuffMainValue.set(1,artifactBasicBaseATK.get(tmp_artifact_lvl[1]));
+        if(tmp_artifact_rare[0] != 0){
+            artifactBuffMainItem.set(0,artifactBuffList[0]);
+            artifactBuffMainValue.set(0,artifactBasicBaseHP.get(tmp_artifact_lvl[0]));
+        }
+
+        if(tmp_artifact_rare[1] != 0){
+            artifactBuffMainItem.set(1,artifactBuffList[1]);
+            artifactBuffMainValue.set(1,artifactBasicBaseATK.get(tmp_artifact_lvl[1]));
+        }
 
         if(tmp_id == 2){
             artifactBuffList = new String[]{context.getString(R.string.weapon_stat_atkP),context.getString(R.string.weapon_stat_HPP),context.getString(R.string.weapon_stat_DEFP),context.getString(R.string.weapon_stat_EleMas),context.getString(R.string.weapon_stat_EnRechP)};

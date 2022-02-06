@@ -151,6 +151,19 @@
                 android:visibility="visible">
 
                 <RadioButton
+                    android:id="@+id/buff_artifact_0t"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:fontFamily="@font/jf_openhuninn"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp"
+                    android:visibility="visible" />
+
+                <RadioButton
                     android:id="@+id/buff_artifact_1t"
                     android:layout_width="match_parent"
                     android:layout_height="36dp"
@@ -199,18 +212,6 @@
                     android:textColor="@color/tv_color"
                     android:textSize="16sp" />
 
-                <RadioButton
-                    android:id="@+id/buff_artifact_ct"
-                    android:layout_width="match_parent"
-                    android:layout_height="36dp"
-                    android:layout_weight="1"
-                    android:clickable="true"
-                    android:fontFamily="@font/jf_openhuninn"
-                    android:text="∞"
-                    android:textAlignment="center"
-                    android:textColor="@color/tv_color"
-                    android:textSize="16sp"
-                    android:visibility="gone" />
             </RadioGroup>
 
             <TextView

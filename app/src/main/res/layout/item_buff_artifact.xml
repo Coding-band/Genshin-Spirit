@@ -25,7 +25,7 @@
             android:layout_weight="1"
             android:fontFamily="@font/jf_openhuninn"
             android:gravity="center"
-            android:text="4,780" />
+            android:text="0" />
 
         <TextView
             android:id="@+id/buff_artifact_main_name"
@@ -35,7 +35,6 @@
             android:layout_weight="5"
             android:fontFamily="@font/jf_openhuninn"
             android:gravity="center|left"
-            android:text="@string/weapon_stat_HP"
             android:textSize="14sp" />
 
         <Spinner
