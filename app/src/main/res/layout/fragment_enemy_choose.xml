@@ -5,27 +5,13 @@
   ~ Copyright © 2022 Xectorda 版權所有
   -->
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/main_list"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_centerHorizontal="true"
-        android:overScrollMode="never"
-        android:paddingTop="64dp"
-        android:paddingBottom="96dp"
-        android:scrollbars="none"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </androidx.recyclerview.widget.RecyclerView>
+    android:layout_height="match_parent"
+    android:background="@color/page_bg"
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -36,7 +22,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" >
+        app:layout_constraintVertical_bias="0.0">
 
         <LinearLayout
             android:id="@+id/linearLayout2"
@@ -84,4 +70,26 @@
         </LinearLayout>
     </LinearLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.gridlayout.widget.GridLayout
+                android:id="@+id/enemy_gl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginBottom="64dp">
+
+            </androidx.gridlayout.widget.GridLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

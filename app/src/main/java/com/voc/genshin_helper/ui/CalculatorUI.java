@@ -47,6 +47,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.R;
+import com.voc.genshin_helper.buff.BuffCal2;
 import com.voc.genshin_helper.data.Artifacts;
 import com.voc.genshin_helper.data.ArtifactsAdapter;
 import com.voc.genshin_helper.data.Characters;
@@ -2456,6 +2457,11 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         dialogWindow.setAttributes(lp);
         dialog.show();
 
+
+    }
+
+
+    public void enemyQuestion(String CharName_BASE){
 
     }
 

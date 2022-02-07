@@ -39,220 +39,184 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/menu_rarity_title_tv2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:gravity="left|center_vertical|center_horizontal|center"
+        android:paddingLeft="16dp"
+        android:text="請選擇敵人種類"
+        android:textColor="@color/tv_color"
+        android:textSize="16sp" />
+
     <TableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp">
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <CheckBox
                 android:id="@+id/enemy_cb1"
+                style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="史萊姆" />
+                android:text="史萊姆"
+                android:textColor="@color/tv_color" />
 
             <CheckBox
                 android:id="@+id/enemy_cb2"
+                style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="無相Boss" />
+                android:text="無相Boss"
+                android:textColor="@color/tv_color" />
 
             <CheckBox
                 android:id="@+id/enemy_cb3"
+                style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="飄浮靈" />
+                android:text="飄浮靈"
+                android:textColor="@color/tv_color" />
 
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <CheckBox
                 android:id="@+id/enemy_cb4"
+                style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="丘丘人" />
+                android:text="丘丘人"
+                android:textColor="@color/tv_color" />
 
             <CheckBox
                 android:id="@+id/enemy_cb5"
+                style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="深淵" />
+                android:text="深淵"
+                android:textColor="@color/tv_color" />
 
             <CheckBox
                 android:id="@+id/enemy_cb6"
+                style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="獸境" />
+                android:text="獸境"
+                android:textColor="@color/tv_color" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <CheckBox
                 android:id="@+id/enemy_cb7"
+                style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="黯色空殼" />
+                android:text="愚人眾"
+                android:textColor="@color/tv_color" />
 
             <CheckBox
                 android:id="@+id/enemy_cb8"
+                style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="愚人眾" />
+                android:text="遺蹟"
+                android:textColor="@color/tv_color" />
 
             <CheckBox
                 android:id="@+id/enemy_cb9"
+                style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="遺蹟" />
+                android:text="盜寶團"
+                android:textColor="@color/tv_color" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <CheckBox
                 android:id="@+id/enemy_cb10"
+                style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="盜寶團" />
+                android:text="其他人類派系"
+                android:textColor="@color/tv_color" />
 
             <CheckBox
                 android:id="@+id/enemy_cb11"
+                style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="千岩軍" />
+                android:text="騙騙花"
+                android:textColor="@color/tv_color" />
 
             <CheckBox
                 android:id="@+id/enemy_cb12"
+                style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="野伏眾" />
+                android:text="龍蜥"
+                android:textColor="@color/tv_color" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <CheckBox
                 android:id="@+id/enemy_cb13"
+                style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="騙騙花" />
+                android:text="螢,幻形"
+                android:textColor="@color/tv_color" />
 
             <CheckBox
                 android:id="@+id/enemy_cb14"
+                style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="岩龍蜥" />
+                android:text="世界Boss"
+                android:textColor="@color/tv_color" />
 
             <CheckBox
                 android:id="@+id/enemy_cb15"
+                style="@style/Widget.AppCompat.CompoundButton.CheckBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="深海龍蜥" />
+                android:text="周本Boss"
+                android:textColor="@color/tv_color" />
         </TableRow>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <CheckBox
-                android:id="@+id/enemy_cb16"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="螢" />
-
-            <CheckBox
-                android:id="@+id/enemy_cb17"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="幻形" />
-
-            <CheckBox
-                android:id="@+id/enemy_cb18"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="幕府" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <CheckBox
-                android:id="@+id/enemy_cb19"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="落武者" />
-
-            <CheckBox
-                android:id="@+id/enemy_cb20"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="世界Boss" />
-
-            <CheckBox
-                android:id="@+id/enemy_cb21"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="周本Boss" />
-
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone">
-
-            <CheckBox
-                android:id="@+id/enemy_cb22"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="CheckBox" />
-
-            <CheckBox
-                android:id="@+id/enemy_cb23"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="CheckBox" />
-
-            <CheckBox
-                android:id="@+id/enemy_cb24"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="CheckBox" />
-        </TableRow>
     </TableLayout>
 
     <LinearLayout

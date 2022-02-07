@@ -102,9 +102,9 @@ public class BuffCal2 {
     String[] artifactName;
     int[] artifactAfterLvl ;
 
-    String enemyName ;
+    String enemyName = "Hilichurl" ;
     int LvlCharacter ;
-    int LvlEnemy ;
+    int LvlEnemy = 60;
 
     int tmp_break = 0;
     int weapon_tmp_break = 0;
@@ -764,10 +764,12 @@ public class BuffCal2 {
 
             default: tmp = -1;break;
         }
-        if(readRESData(enemyName).get(tmp) == -10){
+        if(tmp != -1 && readRESData(enemyName).get(tmp) == -10){
             return 1;
-        }else{
+        }else if(tmp != -1){
             return readRESData(enemyName).get(tmp);
+        }else{
+            return 1;
         }
     }
 

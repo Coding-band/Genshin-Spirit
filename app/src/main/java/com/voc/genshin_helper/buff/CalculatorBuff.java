@@ -4,10 +4,13 @@ package com.voc.genshin_helper.buff;/*
  * Copyright © 2021 Xectorda 版權所有
  */
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -16,6 +19,7 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -31,6 +35,7 @@ import com.google.android.material.tabs.TabLayout;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.R;
+import com.voc.genshin_helper.data.Enemys;
 import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.data.ScreenSizeUtils;
 import com.voc.genshin_helper.util.BackgroundReload;
@@ -107,7 +112,7 @@ public class CalculatorBuff {
     /**
      * Important Method
      */
-    Context context;
+    public Context context;
     View viewPager;
     ItemRss item_rss;
     String dataSheetName;
@@ -196,7 +201,7 @@ public class CalculatorBuff {
     LinearLayout buff_artifact_sec3 ;
     LinearLayout buff_artifact_sec4 ;
 
-    BuffCal2 buffCal;
+    public BuffCal2 buffCal;
 
     // --------- BUFF PAGE --------//
     // Char_Info
@@ -224,6 +229,26 @@ public class CalculatorBuff {
 
     LinearLayout buff_tab_view;
 
+    // Enemy List
+    public ArrayList<Enemys> enemysList = new ArrayList<>();
+
+    boolean show_enemy_t1;
+    boolean show_enemy_t2;
+    boolean show_enemy_t3;
+    boolean show_enemy_t4;
+    boolean show_enemy_t5;
+    boolean show_enemy_t6;
+    boolean show_enemy_t7;
+    boolean show_enemy_t8;
+    boolean show_enemy_t9;
+    boolean show_enemy_t10;
+    boolean show_enemy_t11;
+    boolean show_enemy_t12;
+    boolean show_enemy_t13;
+    boolean show_enemy_t14;
+    boolean show_enemy_t15;
+
+    GridLayout gridLayout;
 
     public void ui_setup (Context context, View viewPager){
         this.context = context;
@@ -394,6 +419,7 @@ public class CalculatorBuff {
 
     }
 
+    @SuppressLint("SetTextI18n")
     public void buffPage(int k, String weapon_name, ArrayList<String> artifact_name, ArrayList<String> artifact_type, ArrayList<Integer> artifact_lvl, ArrayList<Integer> artifact_rare){
         /** init */
 
@@ -540,7 +566,7 @@ public class CalculatorBuff {
             @Override
             public void onClick(View v) {
                 final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
-                View view = View.inflate(context, R.layout.fragment_buff_page, null);
+                View view = View.inflate(context, R.layout.item_enter_lvl, null);
 
                 EditText buff_enemy_lvl_et = view.findViewById(R.id.buff_enemy_lvl_et);
                 Button buff_ok = view.findViewById(R.id.buff_ok);
@@ -556,6 +582,17 @@ public class CalculatorBuff {
                         }else if(Integer.parseInt(buff_enemy_lvl_et.getText().toString()) <1){
                             buffCal.enemy_setup(buffCal.enemyName,1);
                         }
+
+                        Picasso.get()
+                                .load(FileLoader.loadIMG(item_rss.getEnemyByName(buffCal.enemyName,context)[1],context))
+                                .transform(transformation)
+                                .resize(72, 72)
+                                .error(R.drawable.paimon_full)
+                                .into(buff_enemy_ico);
+
+                        buff_enemy_lvl.setText(context.getString(R.string.curr_lvl) + prettyCount(buffCal.LvlEnemy,0));
+                        buff_enemy_name.setText(item_rss.getEnemyByName(buffCal.enemyName,context)[0]);
+
                         dialog.dismiss();
                     }
                 });
@@ -577,42 +614,246 @@ public class CalculatorBuff {
             @Override
             public void onClick(View v) {
                 final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
-                View view = View.inflate(context, R.layout.fragment_enemy_choose, null);
+                View view1 = View.inflate(context, R.layout.fragment_enemy_choose, null);
 
-                EditText buff_enemy_lvl_et = view.findViewById(R.id.buff_enemy_lvl_et);
-                Button buff_ok = view.findViewById(R.id.buff_ok);
+                ArrayList<Enemys> filteredList = new ArrayList<Enemys>();
 
-                buff_enemy_lvl_et.setText(String.valueOf(buffCal.LvlEnemy));
-                buff_ok.setOnClickListener(new View.OnClickListener() {
+                enemy_list_reload();
+
+                enemy_list_setup(view1,enemysList,dialog);
+
+                EditText enemy_et = view1.findViewById(R.id.enemy_et);
+                enemy_et.addTextChangedListener(new TextWatcher() {
                     @Override
-                    public void onClick(View view) {
-                        if(Integer.parseInt(buff_enemy_lvl_et.getText().toString()) <= 120 && Integer.parseInt(buff_enemy_lvl_et.getText().toString()) > 0){
-                            buffCal.enemy_setup(buffCal.enemyName, Integer.parseInt(buff_enemy_lvl_et.getText().toString()));
-                        }else if(Integer.parseInt(buff_enemy_lvl_et.getText().toString()) > 120){
-                            buffCal.enemy_setup(buffCal.enemyName,120);
-                        }else if(Integer.parseInt(buff_enemy_lvl_et.getText().toString()) <1){
-                            buffCal.enemy_setup(buffCal.enemyName,1);
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
+                        filteredList.clear();
+                        int x = 0;
+                        for (Enemys item : enemysList) {
+                            String str = String.valueOf(s).toLowerCase();
+                            if (item_rss.getEnemyByName(item.getName(),context)[0].contains(str)||item_rss.getCharByName(item.getName(),context)[0].toLowerCase().contains(str)||item_rss.getCharByName(item.getName(),context)[0].toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
+                                filteredList.add(item);
+                            }
+                            x = x +1;
                         }
-                        dialog.dismiss();
+                        enemy_list_setup(view1,filteredList,dialog);
                     }
                 });
 
-                dialog.setContentView(view);
+                ImageView enemy_filter = view1.findViewById(R.id.enemy_filter);
+                enemy_filter.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+                        View view = View.inflate(context, R.layout.menu_enemy_filter, null);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        // Tpes
+                        CheckBox type1 	= view.findViewById(R.id.enemy_cb1);
+                        CheckBox type2	= view.findViewById(R.id.enemy_cb2);
+                        CheckBox type3	= view.findViewById(R.id.enemy_cb3);
+                        CheckBox type4	= view.findViewById(R.id.enemy_cb4);
+                        CheckBox type5	= view.findViewById(R.id.enemy_cb5);
+                        CheckBox type6	= view.findViewById(R.id.enemy_cb6);
+                        CheckBox type7	= view.findViewById(R.id.enemy_cb7);
+                        CheckBox type8	= view.findViewById(R.id.enemy_cb8);
+                        CheckBox type9	= view.findViewById(R.id.enemy_cb9);
+                        CheckBox type10	= view.findViewById(R.id.enemy_cb10);
+                        CheckBox type11	= view.findViewById(R.id.enemy_cb11);
+                        CheckBox type12	= view.findViewById(R.id.enemy_cb12);
+                        CheckBox type13	= view.findViewById(R.id.enemy_cb13);
+                        CheckBox type14	= view.findViewById(R.id.enemy_cb14);
+                        CheckBox type15	= view.findViewById(R.id.enemy_cb15);
+
+
+                        // Function Buttons
+                        Button cancel = view.findViewById(R.id.menu_cancel);
+                        Button reset = view.findViewById(R.id.menu_reset);
+                        Button ok = view.findViewById(R.id.menu_ok);
+
+                        show_enemy_t1 	= sharedPreferences.getBoolean("show_enemy_t1",true);
+                        show_enemy_t2	= sharedPreferences.getBoolean("show_enemy_t2",true);
+                        show_enemy_t3	= sharedPreferences.getBoolean("show_enemy_t3",true);
+                        show_enemy_t4	= sharedPreferences.getBoolean("show_enemy_t4",true);
+                        show_enemy_t5	= sharedPreferences.getBoolean("show_enemy_t5",true);
+                        show_enemy_t6	= sharedPreferences.getBoolean("show_enemy_t6",true);
+                        show_enemy_t7	= sharedPreferences.getBoolean("show_enemy_t7",true);
+                        show_enemy_t8	= sharedPreferences.getBoolean("show_enemy_t8",true);
+                        show_enemy_t9	= sharedPreferences.getBoolean("show_enemy_t9",true);
+                        show_enemy_t10	= sharedPreferences.getBoolean("show_enemy_t10",true);
+                        show_enemy_t11	= sharedPreferences.getBoolean("show_enemy_t11",true);
+                        show_enemy_t12	= sharedPreferences.getBoolean("show_enemy_t12",true);
+                        show_enemy_t13	= sharedPreferences.getBoolean("show_enemy_t13",true);
+                        show_enemy_t14	= sharedPreferences.getBoolean("show_enemy_t14",true);
+                        show_enemy_t15	= sharedPreferences.getBoolean("show_enemy_t15",true);
+
+                        if(show_enemy_t1)	{type1.setChecked(true);}
+                        if(show_enemy_t2)	{type2.setChecked(true);}
+                        if(show_enemy_t3)	{type3.setChecked(true);}
+                        if(show_enemy_t4)	{type4.setChecked(true);}
+                        if(show_enemy_t5)	{type5.setChecked(true);}
+                        if(show_enemy_t6)	{type6.setChecked(true);}
+                        if(show_enemy_t7)	{type7.setChecked(true);}
+                        if(show_enemy_t8)	{type8.setChecked(true);}
+                        if(show_enemy_t9)	{type9.setChecked(true);}
+                        if(show_enemy_t10)	{type10.setChecked(true);}
+                        if(show_enemy_t11)	{type11.setChecked(true);}
+                        if(show_enemy_t12)	{type12.setChecked(true);}
+                        if(show_enemy_t13)	{type13.setChecked(true);}
+                        if(show_enemy_t14)	{type14.setChecked(true);}
+                        if(show_enemy_t15)	{type15.setChecked(true);}
+
+                        type1.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View view) {	if (type1.isChecked()){	show_enemy_t1 = true;}	else{show_enemy_t1 = false;}}});
+                        type2.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View view) {	if (type2.isChecked()){	show_enemy_t2 = true;}	else{show_enemy_t2 = false;}}});
+                        type3.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View view) {	if (type3.isChecked()){	show_enemy_t3 = true;}	else{show_enemy_t3 = false;}}});
+                        type4.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View view) {	if (type4.isChecked()){	show_enemy_t4 = true;}	else{show_enemy_t4 = false;}}});
+                        type5.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View view) {	if (type5.isChecked()){	show_enemy_t5 = true;}	else{show_enemy_t5 = false;}}});
+                        type6.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View view) {	if (type6.isChecked()){	show_enemy_t6 = true;}	else{show_enemy_t6 = false;}}});
+                        type7.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View view) {	if (type7.isChecked()){	show_enemy_t7 = true;}	else{show_enemy_t7 = false;}}});
+                        type8.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View view) {	if (type8.isChecked()){	show_enemy_t8 = true;}	else{show_enemy_t8 = false;}}});
+                        type9.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View view) {	if (type9.isChecked()){	show_enemy_t9 = true;}	else{show_enemy_t9 = false;}}});
+                        type10.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View view) {	if (type10.isChecked()){	show_enemy_t10 = true;}	else{show_enemy_t10 = false;}}});
+                        type11.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View view) {	if (type11.isChecked()){	show_enemy_t11 = true;}	else{show_enemy_t11 = false;}}});
+                        type12.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View view) {	if (type12.isChecked()){	show_enemy_t12 = true;}	else{show_enemy_t12 = false;}}});
+                        type13.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View view) {	if (type13.isChecked()){	show_enemy_t13 = true;}	else{show_enemy_t13 = false;}}});
+                        type14.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View view) {	if (type14.isChecked()){	show_enemy_t14 = true;}	else{show_enemy_t14 = false;}}});
+                        type15.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View view) {	if (type15.isChecked()){	show_enemy_t15 = true;}	else{show_enemy_t15 = false;}}});
+
+                        cancel.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                dialog.dismiss();
+                            }
+                        });
+
+                        reset.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                show_enemy_t1 = true;
+                                show_enemy_t2 = true;
+                                show_enemy_t3 = true;
+                                show_enemy_t4 = true;
+                                show_enemy_t5 = true;
+                                show_enemy_t6 = true;
+                                show_enemy_t7 = true;
+                                show_enemy_t8 = true;
+                                show_enemy_t9 = true;
+                                show_enemy_t10 = true;
+                                show_enemy_t11 = true;
+                                show_enemy_t12 = true;
+                                show_enemy_t13 = true;
+                                show_enemy_t14 = true;
+                                show_enemy_t15 = true;
+
+                                gridLayout.removeAllViews();
+                                editor.putBoolean("show_enemy_t1"	,show_enemy_t1);
+                                editor.putBoolean("show_enemy_t2"	,show_enemy_t2);
+                                editor.putBoolean("show_enemy_t3"	,show_enemy_t3);
+                                editor.putBoolean("show_enemy_t4"	,show_enemy_t4);
+                                editor.putBoolean("show_enemy_t5"	,show_enemy_t5);
+                                editor.putBoolean("show_enemy_t6"	,show_enemy_t6);
+                                editor.putBoolean("show_enemy_t7"	,show_enemy_t7);
+                                editor.putBoolean("show_enemy_t8"	,show_enemy_t8);
+                                editor.putBoolean("show_enemy_t9"	,show_enemy_t9);
+                                editor.putBoolean("show_enemy_t10"	,show_enemy_t10);
+                                editor.putBoolean("show_enemy_t11"	,show_enemy_t11);
+                                editor.putBoolean("show_enemy_t12"	,show_enemy_t12);
+                                editor.putBoolean("show_enemy_t13"	,show_enemy_t13);
+                                editor.putBoolean("show_enemy_t14"	,show_enemy_t14);
+                                editor.putBoolean("show_enemy_t15"	,show_enemy_t15);
+                                editor.apply();
+
+                                type1.setChecked(true);
+                                type2.setChecked(true);
+                                type3.setChecked(true);
+                                type4.setChecked(true);
+                                type5.setChecked(true);
+                                type6.setChecked(true);
+                                type7.setChecked(true);
+                                type8.setChecked(true);
+                                type9.setChecked(true);
+                                type10.setChecked(true);
+                                type11.setChecked(true);
+                                type12.setChecked(true);
+                                type13.setChecked(true);
+                                type14.setChecked(true);
+                                type15.setChecked(true);
+
+
+                                enemy_list_setup(view1,filteredList,dialog);
+                                dialog.dismiss();
+
+
+                            }
+                        });
+
+                        ok.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                ArrayList<Enemys> filteredList = new ArrayList<>();
+                                for (Enemys item : enemysList) {
+                                    if(show_enemy_t1 && item.getTypeId() == 0 ||show_enemy_t2&& item.getTypeId() == 1 ||show_enemy_t3&& item.getTypeId() == 2 ||show_enemy_t4&& item.getTypeId() == 3 ||show_enemy_t5&& item.getTypeId() == 4 ||show_enemy_t6&& item.getTypeId() == 5 ||show_enemy_t7&& item.getTypeId() == 6 ||show_enemy_t8&& item.getTypeId() == 7 ||show_enemy_t9&& item.getTypeId() == 8 ||show_enemy_t10&& item.getTypeId() == 9 ||show_enemy_t11&& item.getTypeId() == 10 ||show_enemy_t12&& item.getTypeId() == 11 ||show_enemy_t13&& item.getTypeId() == 12 ||show_enemy_t14&& item.getTypeId() == 100 ||show_enemy_t15&& item.getTypeId() == 200 ){
+                                        filteredList.add(item);
+                                    }
+                                }
+
+                                gridLayout.removeAllViews();
+                                editor.putBoolean("show_enemy_t1"	,show_enemy_t1);
+                                editor.putBoolean("show_enemy_t2"	,show_enemy_t2);
+                                editor.putBoolean("show_enemy_t3"	,show_enemy_t3);
+                                editor.putBoolean("show_enemy_t4"	,show_enemy_t4);
+                                editor.putBoolean("show_enemy_t5"	,show_enemy_t5);
+                                editor.putBoolean("show_enemy_t6"	,show_enemy_t6);
+                                editor.putBoolean("show_enemy_t7"	,show_enemy_t7);
+                                editor.putBoolean("show_enemy_t8"	,show_enemy_t8);
+                                editor.putBoolean("show_enemy_t9"	,show_enemy_t9);
+                                editor.putBoolean("show_enemy_t10"	,show_enemy_t10);
+                                editor.putBoolean("show_enemy_t11"	,show_enemy_t11);
+                                editor.putBoolean("show_enemy_t12"	,show_enemy_t12);
+                                editor.putBoolean("show_enemy_t13"	,show_enemy_t13);
+                                editor.putBoolean("show_enemy_t14"	,show_enemy_t14);
+                                editor.putBoolean("show_enemy_t15"	,show_enemy_t15);
+                                editor.apply();
+
+                                enemy_list_setup(view1,filteredList,dialog);
+
+                                dialog.dismiss();
+                            }
+                        });
+
+                        dialog.setContentView(view);
+                        dialog.setCanceledOnTouchOutside(true);
+                        //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
+                        Window dialogWindow = dialog.getWindow();
+                        WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+                        lp.width = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth());
+                        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                        lp.gravity = Gravity.BOTTOM;
+                        dialogWindow.setAttributes(lp);
+                        dialog.show();
+                    }
+                });
+
+
+                dialog.setContentView(view1);
                 dialog.setCanceledOnTouchOutside(true);
                 //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
                 Window dialogWindow = dialog.getWindow();
                 WindowManager.LayoutParams lp = dialogWindow.getAttributes();
-                lp.width = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth()*0.9);
-                lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                lp.width = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth());
+                lp.height = (int) (ScreenSizeUtils.getInstance(context).getScreenHeight());
                 lp.gravity = Gravity.BOTTOM;
                 dialogWindow.setAttributes(lp);
                 dialog.show();
             }
+
         });
-
-        //buff_enemy_lvl_et
-
-
 
         /** CHAR_INFO_SET_DATA*/
         Picasso.get()
@@ -739,6 +980,15 @@ public class CalculatorBuff {
          * Feedback -> UI Setting
          */
 
+        Picasso.get()
+                .load(FileLoader.loadIMG(item_rss.getEnemyByName(buffCal.enemyName,context)[1],context))
+                .transform(transformation)
+                .resize(72, 72)
+                .error(R.drawable.paimon_full)
+                .into(buff_enemy_ico);
+
+        buff_enemy_lvl.setText(context.getString(R.string.curr_lvl) + prettyCount(buffCal.LvlEnemy,0));
+        buff_enemy_name.setText(item_rss.getEnemyByName(buffCal.enemyName,context)[0]);
 
 
         buff_base();
@@ -790,6 +1040,127 @@ public class CalculatorBuff {
         dialog.show();
     }
 
+
+    public void enemy_list_setup(View view, ArrayList<Enemys> arrayList, Dialog dialog) {
+        /** CHARACTER ICON + WEAPON ICON*/
+        gridLayout = new GridLayout(context);
+        gridLayout = view.findViewById(R.id.enemy_gl);
+        gridLayout.removeAllViewsInLayout();
+        gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
+        ImageView item_img;
+        TextView tv;
+        final int radius = 180;
+        final int margin = 4;
+
+        int column = 2;
+        final Transformation transformation = new RoundedCornersTransformation(radius, margin);
+
+        for (int x = 0, c = 0, r = 0; x < arrayList.size(); x++, c++) {
+            if(c == column) { c = 0;r++; }
+            View view1 = View.inflate(context, R.layout.item_enemy_icon, null);
+            ImageView enemy_img = view1.findViewById(R.id.enemy_img);
+            TextView enemy_name = view1.findViewById(R.id.enemy_name);
+            TextView enemy_base_name = view1.findViewById(R.id.enemy_base_name);
+            LinearLayout enemy_bg = view1.findViewById(R.id.enemy_bg);
+
+            enemy_name.setText(item_rss.getEnemyByName(arrayList.get(x).getBaseName(),context)[0]);
+
+            enemy_base_name.setText(arrayList.get(x).getBaseName());
+
+            Picasso.get()
+                    .load (FileLoader.loadIMG(item_rss.getEnemyByName(arrayList.get(x).getBaseName(),context)[1],context))
+                    .transform(transformation)
+                    .resize(96,96)
+                    .error (R.drawable.paimon_lost)
+                    .into (enemy_img);
+
+            enemy_bg.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view2) {
+                    buffCal.enemy_setup(enemy_base_name.getText().toString(),buffCal.LvlEnemy);
+
+                    final int radius = 25;
+                    final int margin = 4;
+                    final Transformation transformation = new RoundedCornersTransformation(radius, margin);
+
+                    Picasso.get()
+                            .load(FileLoader.loadIMG(item_rss.getEnemyByName(buffCal.enemyName,context)[1],context))
+                            .transform(transformation)
+                            .resize(72, 72)
+                            .error(R.drawable.paimon_full)
+                            .into(buff_enemy_ico);
+
+                    buff_enemy_lvl.setText(context.getString(R.string.curr_lvl) + prettyCount(buffCal.LvlEnemy,0));
+                    buff_enemy_name.setText(item_rss.getEnemyByName(buffCal.enemyName,context)[0]);
+
+                    buffCal.enemy_setup(buffCal.enemyName,buffCal.LvlEnemy);
+                    buff_base();
+                    dialog.dismiss();
+                }
+            });
+
+            enemy_name.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view2) {
+                    buffCal.enemy_setup(enemy_base_name.getText().toString(),buffCal.LvlEnemy);
+
+                    final int radius = 25;
+                    final int margin = 4;
+                    final Transformation transformation = new RoundedCornersTransformation(radius, margin);
+
+                    Picasso.get()
+                            .load(FileLoader.loadIMG(item_rss.getEnemyByName(buffCal.enemyName,context)[1],context))
+                            .transform(transformation)
+                            .resize(72, 72)
+                            .error(R.drawable.paimon_full)
+                            .into(buff_enemy_ico);
+
+                    buff_enemy_lvl.setText(context.getString(R.string.curr_lvl) + prettyCount(buffCal.LvlEnemy,0));
+                    buff_enemy_name.setText(item_rss.getEnemyByName(buffCal.enemyName,context)[0]);
+                    buffCal.enemy_setup(buffCal.enemyName,buffCal.LvlEnemy);
+                    buff_base();
+                    dialog.dismiss();
+                }
+            });
+
+            enemy_img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view2) {
+                    buffCal.enemy_setup(enemy_base_name.getText().toString(),buffCal.LvlEnemy);
+
+                    final int radius = 25;
+                    final int margin = 4;
+                    final Transformation transformation = new RoundedCornersTransformation(radius, margin);
+
+                    Picasso.get()
+                            .load(FileLoader.loadIMG(item_rss.getEnemyByName(buffCal.enemyName,context)[1],context))
+                            .transform(transformation)
+                            .resize(72, 72)
+                            .error(R.drawable.paimon_full)
+                            .into(buff_enemy_ico);
+
+                    buff_enemy_lvl.setText(context.getString(R.string.curr_lvl) + prettyCount(buffCal.LvlEnemy,0));
+                    buff_enemy_name.setText(item_rss.getEnemyByName(buffCal.enemyName,context)[0]);
+
+                    buffCal.enemy_setup(buffCal.enemyName,buffCal.LvlEnemy);
+                    buff_base();
+                    dialog.dismiss();
+                }
+            });
+
+
+            gridLayout.addView(view1);
+            GridLayout.LayoutParams param =new GridLayout.LayoutParams();
+            param.height = GridLayout.LayoutParams.WRAP_CONTENT;
+            param.width = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth()/2);;
+            param.setGravity(Gravity.CENTER_VERTICAL);
+            param.columnSpec = GridLayout.spec(c);
+            param.rowSpec = GridLayout.spec(r);
+            view1.setLayoutParams (param);
+
+        }
+    }
+
     /*
     Sub UI
      */
@@ -832,10 +1203,10 @@ public class CalculatorBuff {
                 buff_item_value.setText(prettyCount(buffCal.skillPReturn(item_name_recongize[i]),1));
                 buff_item_value.setTextColor(Color.parseColor(color_hex));
                 //buff_uncrit_value.setText(prettyCount(buffCal.atkReturn()*buffCal.skillPReturn(item_name_recongize[i])));
-                buff_uncrit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],false,"PHY"),0));
+                buff_uncrit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],false,"Physical"),0));
                 buff_uncrit_value.setTextColor(context.getColor(R.color.uncrit));
                 //buff_crit_value.setText(prettyCount(buffCal.atkReturn()*buffCal.skillPReturn(item_name_recongize[i])*buffCal.critDMGReturn()));
-                buff_crit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],true,"PHY"),0));
+                buff_crit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],true,"Physical"),0));
                 buff_crit_value.setTextColor(context.getColor(R.color.crit));
 
                 buff_tab_view.addView(view);
@@ -873,9 +1244,9 @@ public class CalculatorBuff {
                 buff_item_name.setText(item_name[i]);
                 buff_item_value.setText(prettyCount(buffCal.skillPReturn(item_name_recongize[i]),1));
                 buff_item_value.setTextColor(Color.parseColor(color_hex));
-                buff_uncrit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],false,"PHY"),0));
+                buff_uncrit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],false,"Physical"),0));
                 buff_uncrit_value.setTextColor(context.getColor(R.color.uncrit));
-                buff_crit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],true,"PHY"),0));
+                buff_crit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],true,"Physical"),0));
                 buff_crit_value.setTextColor(context.getColor(R.color.crit));
 
                 buff_tab_view.addView(view);
@@ -901,9 +1272,9 @@ public class CalculatorBuff {
                 buff_item_name.setText(item_name[i]);
                 buff_item_value.setText(prettyCount(buffCal.skillPReturn(item_name_recongize[i]),1));
                 buff_item_value.setTextColor(Color.parseColor(color_hex));
-                buff_uncrit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],false,"PHY"),0));
+                buff_uncrit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],false,"Physical"),0));
                 buff_uncrit_value.setTextColor(context.getColor(R.color.uncrit));
-                buff_crit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],true,"PHY"),0));
+                buff_crit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],true,"Physical"),0));
                 buff_crit_value.setTextColor(context.getColor(R.color.crit));
 
                 buff_tab_view.addView(view);
@@ -1653,4 +2024,38 @@ public class CalculatorBuff {
         return tContents;
 
     }
+
+
+    private void enemy_list_reload() {
+        Log.wtf("DAAM","YEE");
+        String name ;
+        int type_id,element_id;
+        enemysList.clear();
+
+        String json_base = LoadData("db/buff/enemy_list.json");
+        //Get data from JSON
+        try {
+            JSONArray array = new JSONArray(json_base);
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject object = array.getJSONObject(i);
+                name = object.getString("name");
+                type_id = object.getInt("type_id");
+                element_id = object.getInt("element_id");
+
+                Enemys enemys = new Enemys();
+                enemys.setName(name);
+                enemys.setBaseName(name);
+                enemys.setTypeId(type_id);
+                enemys.setElementId(element_id);
+
+                enemysList.add(enemys);
+            }
+            //mEnemyAdapter.filterList(enemysList);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
 }
