@@ -1471,29 +1471,32 @@ public class ItemRss {
         return char_name;
     }
 
-    public int getArtifactBuffName (String nickname){
+    public String getArtifactBuffName (String nickname,Context context){
         switch (nickname){
-            case "baseHP" : return R.string.weapon_stat_HP;
-            case "baseATK" : return R.string.weapon_stat_atk;
-            case "baseDEF" : return R.string.weapon_stat_DEF;
-            case "HP" : return R.string.weapon_stat_HPP;
-            case "ATK" : return R.string.weapon_stat_atkP;
-            case "DEF" : return R.string.weapon_stat_DEFP;
-            case "EleMas" : return R.string.weapon_stat_EleMas;
-            case "EnRech" : return R.string.weapon_stat_EnRechP;
-            case "PhyDMG" : return R.string.weapon_stat_PhyDMGP;
-            case "EleDMG_Electro" : return R.string.weapon_stat_EleDMGP_Electro;
-            case "EleDMG_Pyro" : return R.string.weapon_stat_EleDMGP_Pyro;
-            case "EleDMG_Hydro" : return R.string.weapon_stat_EleDMGP_Hydro;
-            case "EleDMG_Dendor" : return R.string.weapon_stat_EleDMGP_Dendor;
-            case "EleDMG_Cryo" : return R.string.weapon_stat_EleDMGP_Cryo;
-            case "EleDMG_Anemo" : return R.string.weapon_stat_EleDMGP_Anemo;
-            case "EleDMG_Geo" : return R.string.weapon_stat_EleDMGP_Geo;
-            case "CritRate" : return R.string.weapon_stat_CritRateP;
-            case "CritDMG" : return R.string.weapon_stat_CritDMGP;
-            case "Healing" : return R.string.weapon_stat_HealingP;
+            case "baseHP" : return context.getString(R.string.weapon_stat_HP);
+            case "baseATK" : return context.getString(R.string.weapon_stat_atk);
+            case "baseDEF" : return context.getString(R.string.weapon_stat_DEF);
+            case "HP" : return context.getString(R.string.weapon_stat_HPP);
+            case "ATK" : return context.getString(R.string.weapon_stat_atkP);
+            case "DEF" : return context.getString(R.string.weapon_stat_DEFP);
+            case "EleMas" : return context.getString(R.string.weapon_stat_EleMas);
+            case "EnRech" : return context.getString(R.string.weapon_stat_EnRechP);
+            case "PhyDMG" : return context.getString(R.string.weapon_stat_PhyDMGP);
+            case "EleDMG_Electro" : return context.getString(R.string.weapon_stat_EleDMGP_Electro);
+            case "EleDMG_Pyro" : return context.getString(R.string.weapon_stat_EleDMGP_Pyro);
+            case "EleDMG_Hydro" : return context.getString(R.string.weapon_stat_EleDMGP_Hydro);
+            case "EleDMG_Dendor" : return context.getString(R.string.weapon_stat_EleDMGP_Dendor);
+            case "EleDMG_Cryo" : return context.getString(R.string.weapon_stat_EleDMGP_Cryo);
+            case "EleDMG_Anemo" : return context.getString(R.string.weapon_stat_EleDMGP_Anemo);
+            case "EleDMG_Geo" : return context.getString(R.string.weapon_stat_EleDMGP_Geo);
+            case "CritRate" : return context.getString(R.string.weapon_stat_CritRateP);
+            case "CritDMG" : return context.getString(R.string.weapon_stat_CritDMGP);
+            case "Healing" : return context.getString(R.string.weapon_stat_HealingP);
 
-            default: return R.string.unknown;
+            default: return context.getString(R.string.unknown);
         }
     }
+
+
+
 }

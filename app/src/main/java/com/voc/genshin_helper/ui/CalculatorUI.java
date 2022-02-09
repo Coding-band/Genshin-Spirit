@@ -966,7 +966,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             if(!artifactChoosedFollowList.get(x).isEmpty() && !artifactChoosedFollowList.get(x).equals("N/A")) {
                 item_user_img.setVisibility(View.VISIBLE);
                 Picasso.get()
-                        .load(FileLoader.loadIMG(item_rss.getCharByName(item_rss.getCharNameByTranslatedName(artifactChoosedFollowList.get(x), context),context)[3],context))
+                        .load(FileLoader.loadIMG(item_rss.getCharByName(artifactChoosedFollowList.get(x),context)[3],context))
                         .transform(transformation)
                         .resize(36, 36)
                         .error(R.drawable.paimon_full)
@@ -2460,15 +2460,11 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
     }
 
-
-    public void enemyQuestion(String CharName_BASE){
-
-    }
-
     private void chooseFollow(View view) {
         Log.wtf("TMP0","TMP");
 
         ArrayList<String> cList = new ArrayList<String>();
+        ArrayList<String> cTMPList = new ArrayList<String>();
 
         ArrayList<String> charFlowerList = new ArrayList<String>();
         ArrayList<String> charPlumeList = new ArrayList<String>();
@@ -2476,29 +2472,40 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         ArrayList<String> charGobletList = new ArrayList<String>();
         ArrayList<String> charCircletList = new ArrayList<String>();
 
+        ArrayList<String> charFlowerTMPList = new ArrayList<String>();
+        ArrayList<String> charPlumeTMPList = new ArrayList<String>();
+        ArrayList<String> charSandTMPList = new ArrayList<String>();
+        ArrayList<String> charGobletTMPList = new ArrayList<String>();
+        ArrayList<String> charCircletTMPList = new ArrayList<String>();
+
         for(int x = 0 ; x< choosedNameList.size() ; x++){
             if(charHasFlower.get(x) == false){
                 charFlowerList.add(item_rss.getCharByName(choosedNameList.get(x),context)[1]);
+                charFlowerTMPList.add(choosedNameList.get(x));
             }
             if(charHasPlume.get(x) == false){
                 charPlumeList.add(item_rss.getCharByName(choosedNameList.get(x),context)[1]);
+                charPlumeTMPList.add(choosedNameList.get(x));
             }
             if(charHasSand.get(x) == false){
                 charSandList.add(item_rss.getCharByName(choosedNameList.get(x),context)[1]);
+                charSandTMPList.add(choosedNameList.get(x));
             }
             if(charHasGoblet.get(x) == false){
                 charGobletList.add(item_rss.getCharByName(choosedNameList.get(x),context)[1]);
+                charGobletTMPList.add(choosedNameList.get(x));
             }
             if(charHasCirclet.get(x) == false){
                 charCircletList.add(item_rss.getCharByName(choosedNameList.get(x),context)[1]);
+                charCircletTMPList.add(choosedNameList.get(x));
             }
         }
         switch (tmp_artifact_type){
-            case "Flower" : cList = charFlowerList;break;
-            case "Plume" : cList = charPlumeList;break;
-            case "Sand" : cList = charSandList;break;
-            case "Goblet" : cList = charGobletList;break;
-            case "Circlet" : cList = charCircletList;break;
+            case "Flower" : cList = charFlowerList;cTMPList = charFlowerTMPList;break;
+            case "Plume" : cList = charPlumeList;cTMPList = charPlumeTMPList;break;
+            case "Sand" : cList = charSandList; cTMPList = charSandTMPList;break;
+            case "Goblet" : cList = charGobletList;cTMPList = charGobletTMPList;break;
+            case "Circlet" : cList = charCircletList;cTMPList = charCircletTMPList;break;
         }
 
         /*
@@ -2531,11 +2538,11 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         Spinner char_sp = view.findViewById(R.id.menu_char_follow);
         char_sp.setVisibility(View.VISIBLE);
         char_sp.setAdapter(char_aa);
-        ArrayList<String> finalCList = cList;
+        ArrayList<String> finalCTMPList = cTMPList;
         char_sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                follow_char_tmp = finalCList.get(position);
+                follow_char_tmp = finalCTMPList.get(position);
                 position_tmp = position;
 
             }
@@ -2799,7 +2806,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             if(!artifactChoosedFollowList.get(x).isEmpty() && !artifactChoosedFollowList.get(x).equals("N/A")) {
                 item_user_img.setVisibility(View.VISIBLE);
                 Picasso.get()
-                        .load(FileLoader.loadIMG(item_rss.getCharByName(item_rss.getCharNameByTranslatedName(artifactChoosedFollowList.get(x), context),context)[3],context))
+                        .load(FileLoader.loadIMG(item_rss.getCharByName(artifactChoosedFollowList.get(x),context)[3],context))
                         .transform(transformation)
                         .resize(36, 36)
                         .error(R.drawable.paimon_full)

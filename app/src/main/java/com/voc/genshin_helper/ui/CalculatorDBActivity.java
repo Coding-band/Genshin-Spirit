@@ -365,6 +365,15 @@ public class CalculatorDBActivity extends AppCompatActivity {
         ArrayList<Integer> artifactChoosedRare = new ArrayList<>();
         ArrayList<String> artifactChoosedType = new ArrayList<>();
 
+        ArrayList<String> buffChoosedMainItem = new ArrayList<>();
+        ArrayList<Integer> buffChoosedMainValue = new ArrayList<>();
+        ArrayList<String> buffChoosedSec1Item = new ArrayList<>();
+        ArrayList<Integer> buffChoosedSec1Value = new ArrayList<>();
+        ArrayList<String> buffChoosedSec2Item = new ArrayList<>();
+        ArrayList<Integer> buffChoosedSec2Value = new ArrayList<>();
+        ArrayList<String> buffChoosedSec3Item = new ArrayList<>();
+        ArrayList<Integer> buffChoosedSec3Value = new ArrayList<>();
+
         /**
          * READ DATA -> Char
          */
@@ -456,6 +465,20 @@ public class CalculatorDBActivity extends AppCompatActivity {
                 null,                   // don't filter by row groups
                 null               // The sort order
         );
+
+        while(cursor.moveToNext()) {
+            artifactChoosedIdList.add(cursor.getInt(cursor.getColumnIndexOrThrow("artifactId")));
+            artifactChoosedNameList.add(cursor.getString(cursor.getColumnIndexOrThrow("artifactName")));
+
+            artifactChoosedBeforeLvlList.add(cursor.getInt(cursor.getColumnIndexOrThrow("artifactBeforeLvl")));
+            artifactChoosedAfterLvlList.add(cursor.getInt(cursor.getColumnIndexOrThrow("artifactAfterLvl")));
+
+            artifactChoosedFollowList.add(cursor.getString(cursor.getColumnIndexOrThrow("artifactFollow")));
+            artifactChoosedRare.add(cursor.getInt(cursor.getColumnIndexOrThrow("artifactRare")));
+            artifactChoosedIsCal.add(getBooleanByInt(cursor.getInt(cursor.getColumnIndexOrThrow("artifactIsCal"))));
+            artifactChoosedType.add(cursor.getString(cursor.getColumnIndexOrThrow("artifactType")));
+        }
+        cursor.close();
 
         while(cursor.moveToNext()) {
             artifactChoosedIdList.add(cursor.getInt(cursor.getColumnIndexOrThrow("artifactId")));

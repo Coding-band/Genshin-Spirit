@@ -771,6 +771,29 @@
     <string name="maguu_kenki_mask_of_terror">Maguu Kenki: Mask of Terror</string>
     <string name="the_great_snowboar_king">The Great Snowboar King</string>
 
+    <!-- add in 20220209-->
+    <string name="element_reaction">【Element Reaction】</string>
+    <string name="buff_normal_1_hit">1-Hit DMG</string>
+    <string name="buff_normal_2_hit">2-Hit DMG</string>
+    <string name="buff_normal_3_hit">3-Hit DMG</string>
+    <string name="buff_normal_4_hit">4-Hit DMG</string>
+    <string name="buff_normal_5_hit">5-Hit DMG</string>
+    <string name="buff_normal_6_hit">6-Hit DMG</string>
+    <string name="buff_normal_shoot">Aimed Shot</string>
+
+    <string name="buff_charged_shoot">Fully-Charged Aimed Shot</string>
+    <string name="buff_charged_dmg">Charged Attack DMG</string>
+    <string name="buff_charged_spinning_dmg">Charged Attack Spinning DMG</string>
+    <string name="buff_charged_final_dmg">Charged Attack Final DMG</string>
+
+    <string name="buff_plunge_dmg">Plunge DMG</string>
+    <string name="buff_low_plunge_dmg">Low Plunge DMG</string>
+    <string name="buff_high_plunge_dmg">High Plunge DMG</string>
+
+    <string name="buff_uncrit_dmg">UNCRIT DMG</string>
+    <string name="buff_crited_dmg">CRITED DMG</string>
+    <string name="buff_grade">Grade : </string>
+    <string name="buff_upgrade_times">Upgrade Times : </string>
 
 
 </resources>

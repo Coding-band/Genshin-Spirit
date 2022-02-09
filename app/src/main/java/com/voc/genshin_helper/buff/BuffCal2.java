@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.util.Log;
 
 import com.voc.genshin_helper.R;
+import com.voc.genshin_helper.data.ArtifactsBuff;
 import com.voc.genshin_helper.data.ItemRss;
 
 import org.json.JSONArray;
@@ -21,6 +22,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /*
  * Project Genshin Spirit (原神小幫手) was
@@ -35,6 +37,7 @@ public class BuffCal2 {
      */
     private Context context;
     ItemRss itemRss;
+    ArtifactsBuff art;
 
     /**
      * FINAL METHOD
@@ -42,6 +45,12 @@ public class BuffCal2 {
 
     double 角色基礎生命值,角色基礎攻擊力,角色基礎防禦力,角色生命值加成,角色攻擊力加成,角色防禦力加成,角色暴擊率,角色暴擊傷害,角色元素充能,角色元素精通,角色治療加成,角色火元素傷害加成,角色水元素傷害加成,角色風元素傷害加成,角色雷元素傷害加成,角色草元素傷害加成,角色冰元素傷害加成,角色岩元素傷害加成,角色物理傷害加成;
     double 普通攻擊_一段傷害,普通攻擊_二段傷害,普通攻擊_三段傷害,普通攻擊_四段傷害,普通攻擊_五段傷害,普通攻擊_六段傷害,普通攻擊_下墜期間傷害,普通攻擊_低空墜地衝擊傷害,普通攻擊_高空墜地衝擊傷害,普通攻擊_瞄準射擊,普通攻擊_滿蓄力瞄準射擊,普通攻擊_重擊傷害,普通攻擊_重擊循環傷害,普通攻擊_重擊終結傷害;
+
+    String[] 元素戰技_baseName ;
+    double[][] 元素戰技_value;
+
+    String[] 元素爆發_baseName ;
+    double[][] 元素爆發_value;
 
     double 武器基礎攻擊力 = 0;
     double 武器百分比攻擊力 = 0;
@@ -129,18 +138,34 @@ public class BuffCal2 {
      *
      */
 
+    /**
+     * String[] artifactList will used in whole BuffCal2 !
+     * Format : ["artifactP2Name1","artifactP4Name1","artifactP2Name2","weaponType"]
+     * "weaponType" must use These words : "Sword","Claymore","Polearm","Catalyst","Bow"
+     */
 
     //============================================================================//
 
     public void setup (Context context){
         this.context = context;
         itemRss = new ItemRss();
+        art = new ArtifactsBuff();
+        art.setup(context);
+
+        SharedPreferences sharedPreferencesB = context.getSharedPreferences("buff_list",Context.MODE_PRIVATE);
+        enemyName = sharedPreferencesB.getString("enemyName","Hilichurl");
+        LvlEnemy = sharedPreferencesB.getInt("enemyLvl",1);
     }
 
     public void enemy_setup(String name, int lvl){
         // Will use Locale
         enemyName = name;
         LvlEnemy = lvl;
+        SharedPreferences sharedPreferencesB = context.getSharedPreferences("buff_list",Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferencesB.edit();
+        editor.putString("enemyName",name);
+        editor.putInt("enemyLvl",lvl);
+        editor.apply();
     }
 
     public void char_setup(String charName, int charAfterLvl,  int charAfterBreakLvl, boolean charAfterBreakUP, int charSkill1AfterLvl, int charSkill2AfterLvl, int charSkill3AfterLvl) {
@@ -293,6 +318,7 @@ public class BuffCal2 {
 
 
         String char_json_stat = LoadData("db/buff/char/"+charName.replace(" ","_")+".json");
+
         try {
             JSONObject jsonObject = new JSONObject(char_json_stat);
             JSONObject 角色突破 = jsonObject.getJSONObject("角色突破");
@@ -409,6 +435,72 @@ public class BuffCal2 {
         }
 
 
+        try {
+            JSONObject jsonObject = new JSONObject(char_json_stat);
+
+            // getting inner array Ingredients
+            JSONArray 元素戰技STR = jsonObject.getJSONArray("元素戰技STR");
+            JSONObject 元素戰技 = jsonObject.getJSONObject("元素戰技");
+
+            /*
+            "T1" [0.111,...,...]
+            "T2" [0.653,...,...]
+            ...
+             */
+
+            元素戰技_baseName = new String[元素戰技STR.length()];
+            元素戰技_value = new double[元素戰技STR.length()][15];
+
+            for (int x = 0 ; x<元素戰技STR.length() ; x++ ){
+                元素戰技_baseName[x] = String.valueOf(元素戰技STR.get(x));
+                for (int y = 0 ; y< 15 ; y++){
+                    元素戰技_value[x][y] = (double) 元素戰技.getJSONArray(String.valueOf(元素戰技STR.get(x))).getDouble(y);
+                }
+            }
+
+            /*
+            System.out.println("元素戰技_value : ");
+
+            for (int x = 0 ; x <元素戰技STR.length() ; x++ ){
+                System.out.println(Arrays.toString(元素戰技_value[x]));
+            }
+             */
+
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            JSONObject jsonObject = new JSONObject(char_json_stat);
+
+            // getting inner array Ingredients
+            JSONArray 元素爆發STR = jsonObject.getJSONArray("元素爆發STR");
+            JSONObject 元素爆發 = jsonObject.getJSONObject("元素爆發");
+
+            /*
+            "T1" [0.111,...,...]
+            "T2" [0.653,...,...]
+            ...
+             */
+
+            元素爆發_baseName = new String[元素爆發STR.length()];
+            元素爆發_value = new double[元素爆發STR.length()][15];
+
+            for (int x = 0 ; x<元素爆發STR.length() ; x++ ){
+                元素戰技_baseName[x] = String.valueOf(元素爆發STR.get(x));
+                for (int y = 0 ; y< 15 ; y++){
+                    元素戰技_value[x][y] = (double) 元素爆發.getJSONArray(String.valueOf(元素爆發STR.get(x))).getDouble(y);
+                }
+            }
+
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
         /**
          * Weapon Part
          */
@@ -452,6 +544,34 @@ public class BuffCal2 {
 
     }
 
+    //元素戰技.length()
+    public int returnElementATKArraySize(){
+        String char_json_stat = LoadData("db/buff/char/"+charName.replace(" ","_")+".json");
+        try {
+            JSONObject jsonObject = new JSONObject(char_json_stat);
+            JSONArray 元素戰技STR = jsonObject.getJSONArray("元素戰技STR");
+            return 元素戰技STR.length();
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
+    //元素爆發.length()
+    public int returnFinalATKArraySize(){
+        String char_json_stat = LoadData("db/buff/char/"+charName.replace(" ","_")+".json");
+        try {
+            JSONObject jsonObject = new JSONObject(char_json_stat);
+            JSONArray 元素爆發STR = jsonObject.getJSONArray("元素爆發STR");
+            return 元素爆發STR.length();
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+
     //====================================================//
 
     public ArrayList<Double> readRESData(String enemyTag){
@@ -475,109 +595,104 @@ public class BuffCal2 {
     }
 
     //====================================================//
-    public double 生命值面板(){
-        return (角色基礎生命值+聖遺物基礎生命值) * (1 + 武器百分比生命值+角色生命值加成+聖遺物攻擊力) + (0+0);
+    public double 生命值面板(String[] artifactList){
+        return (角色基礎生命值+ art.冒險家P2(artifactList)) * (1 + 武器百分比生命值+角色生命值加成+聖遺物生命值+art.千岩牢固P2(artifactList)) +聖遺物基礎生命值;
     }
-    public double 防禦力面板(){
-        System.out.println("XPR : ");
-        System.out.println(角色基礎防禦力);
-        System.out.println(聖遺物基礎防禦力);
-        System.out.println(武器百分比防禦力);
-        System.out.println(角色防禦力加成);
-        System.out.println(聖遺物防禦力);
-        return (角色基礎防禦力+聖遺物基礎防禦力) * (1 + 武器百分比防禦力+角色防禦力加成+聖遺物防禦力) + (0+0);
+    public double 防禦力面板(String[] artifactList){
+        return (角色基礎防禦力+ art.幸運兒P2(artifactList)) * (1 + 武器百分比防禦力+角色防禦力加成+聖遺物防禦力+art.守護之心P2(artifactList)+art.華館夢醒形骸記P2(artifactList)) +聖遺物基礎防禦力;
     }
     //攻擊力面板=基礎攻擊力(白字)+攻擊力加成(黃字)
-    public double 攻擊力面板(){
-        return (角色基礎攻擊力+武器基礎攻擊力)*(1+AttackP());
+    public double 攻擊力面板(String[] artifactList){
+        return (角色基礎攻擊力+武器基礎攻擊力)*(1+AttackP(artifactList)) + 聖遺物基礎攻擊力;
     }
 
     // 1 -> Base EnRech 100%
-    public double 元素充能(){
-        return 1+角色元素充能+武器百分比元素充能;
+    public double 元素充能(String[] artifactList){
+        return 1+角色元素充能+武器百分比元素充能
+                +art.學士P2(artifactList)
+                +art.流放者P2(artifactList)
+                +art.絕緣之旗印P2(artifactList);
+
     }
-    public double 元素精通附加值(){
-        return 角色元素精通+0;
+    public double 元素精通附加值(String[] artifactList){
+        return 角色元素精通+武器元素精通+聖遺物元素精通
+                +art.流浪大地的樂團P2(artifactList)
+                +art.教官P2(artifactList)
+                +art.教官P4(artifactList);
+
     }
-    public double 治療加成(){
-        return 角色治療加成+0;
+    public double 治療加成(String[] artifactList){
+        return 角色治療加成
+                +art.遊醫P2(artifactList)
+                +art.被憐愛的少女P2(artifactList)
+                +art.海染硨磲P2(artifactList);
+
     }
-    public double 火元素傷害加成(){
-        return 角色火元素傷害加成+0;
+    public double 火元素傷害加成(String[] artifactList){
+        return 角色火元素傷害加成+art.熾烈的炎之魔女P2(artifactList);
     }
-    public double 水元素傷害加成(){
-        return 角色水元素傷害加成+0;
+    public double 水元素傷害加成(String[] artifactList){
+        return 角色水元素傷害加成+art.沉淪之心P2(artifactList);
     }
-    public double 風元素傷害加成(){
-        return 角色風元素傷害加成+0;
+    public double 風元素傷害加成(String[] artifactList){
+        return 角色風元素傷害加成+art.翠綠之影P2(artifactList);
     }
-    public double 雷元素傷害加成(){
-        return 角色雷元素傷害加成+0;
+    public double 雷元素傷害加成(String[] artifactList){
+        return 角色雷元素傷害加成+art.如雷的盛怒P2(artifactList);
     }
-    public double 草元素傷害加成(){
+    public double 草元素傷害加成(String[] artifactList){
         return 角色草元素傷害加成+0;
     }
-    public double 冰元素傷害加成(){
-        return 角色冰元素傷害加成+0;
+    public double 冰元素傷害加成(String[] artifactList){
+        return 角色冰元素傷害加成+art.冰風迷途的勇士P2(artifactList);
     }
-    public double 岩元素傷害加成(){
-        return 角色岩元素傷害加成+0;
+    public double 岩元素傷害加成(String[] artifactList){
+        return 角色岩元素傷害加成+art.悠古的磐岩P2(artifactList);
     }
-    public double 物理傷害加成(){
-        return 角色物理傷害加成+武器百分比物理傷害加成;
+    public double 物理傷害加成(String[] artifactList){
+        return 角色物理傷害加成+武器百分比物理傷害加成
+                +art.染血的騎士道P2(artifactList)
+                +art.蒼白之火P2(artifactList);
+
     }
 
     //====================================================//
 
-    public double hpReturn(){
-        return 生命值面板();
+    public double hpReturn(String[] artifactList){
+        return 生命值面板(artifactList);
     }
-    public double atkReturn(){
-        return 攻擊力面板();
+    public double atkReturn(String[] artifactName){
+        return 攻擊力面板(artifactName);
     }
-    public double defReturn(){
-        return 防禦力面板();
+    public double defReturn(String[] artifactList){
+        return 防禦力面板(artifactList);
     }
     public double critDMGReturn(){
         return CritDamageP(true);
     }
-    public double critRateReturn(){
-        return CritRateP();
+    public double critRateReturn(String[] artifactList){
+        return CritRateP(artifactList);
     }
-    public double enRechReturn(){
-        return 元素充能();
+    public double enRechReturn(String[] artifactList){
+        return 元素充能(artifactList);
     }
-    public double skillPReturn(String str){
-        return TalentP(str);
-    }
-
-    public String[] otherReturn(){
-        if(角色元素精通>0){return new String[]{"角色元素精通", String.valueOf(元素精通附加值())};}
-        else if(角色治療加成>0){return new String[]{"角色治療加成", String.valueOf(治療加成())};}
-        else if(角色火元素傷害加成>0){return new String[]{"角色火元素傷害加成", String.valueOf(火元素傷害加成())};}
-        else if(角色水元素傷害加成>0){return new String[]{"角色水元素傷害加成", String.valueOf(水元素傷害加成())};}
-        else if(角色風元素傷害加成>0){return new String[]{"角色風元素傷害加成", String.valueOf(風元素傷害加成())};}
-        else if(角色雷元素傷害加成>0){return new String[]{"角色雷元素傷害加成", String.valueOf(雷元素傷害加成())};}
-        else if(角色草元素傷害加成>0){return new String[]{"角色草元素傷害加成", String.valueOf(草元素傷害加成())};}
-        else if(角色冰元素傷害加成>0){return new String[]{"角色冰元素傷害加成", String.valueOf(冰元素傷害加成())};}
-        else if(角色岩元素傷害加成>0){return new String[]{"角色岩元素傷害加成", String.valueOf(岩元素傷害加成())};}
-        else if(角色物理傷害加成>0){return new String[]{"角色物理傷害加成", String.valueOf(物理傷害加成())};}
-        else {return new String[]{"NaN", String.valueOf(0)};}
-    }
-
-    public void setLvlEnemy(int lvlEnemy){
-        this.LvlEnemy = lvlEnemy;
+    public double skillPReturn(String str,String[] artifactList){
+        return TalentP(str,artifactList);
     }
 
     //====================================================//
 
     /*
+    Will do it later
     ATK=(AttackCharacter+AttackWeapon)×(1+AttackBonus)+FlatAttack
-    DEF=DefenseCharacter×(1+DefenseBonus)+FlatDefense
-    Max HP=HealthCharacter×(1+HealthBonus)+FlatHealth
+    -> DEF=DefenseCharacter×(1+DefenseBonus)+FlatDefense
+    -> Max HP=HealthCharacter×(1+HealthBonus)+FlatHealth
      */
 
+    /* (BASE)
     public double Damage (String type, boolean isCritDMG, String element_used){
+        // Artifact Set Buff will edit in here directly.
+
         Log.wtf("1.1", String.valueOf(TalentP(type)));
         Log.wtf("1.2", String.valueOf(((AtkCharacter()+AtkWeapon())*(1+AttackP())+FlatAttack())));
         Log.wtf("2", String.valueOf(SpecialMultiplier(0)));
@@ -600,7 +715,7 @@ public class BuffCal2 {
                 *AmplifyingReaction(Geo,"N/A",element_used)
                 +TransformativeReaction(Geo,"N/A",element_used)
                 +Proc();
-
+         }
         /* Old version (non-suitable for Raiden)
         return TalentP(type)
                 *((AtkCharacter()+AtkWeapon())*(1+AttackP())+FlatAttack())
@@ -614,7 +729,26 @@ public class BuffCal2 {
                 *MonaC1("Geo","Pyro",false)
                 *ReactionRES(0);
          */
+
+    /**
+    @param artifactList : ["artifactP2Name1","artifactP4Name1","artifactP2Name2", "weaponType"]
+     */
+    public double Damage (String type, boolean isCritDMG, String element_used, String[] artifactList){
+        // Artifact Set Buff will edit in here directly.
+
+        return (TalentP(type,artifactList)*((AtkCharacter()+AtkWeapon())*(1+AttackP(artifactList))+FlatAttack()) // BaseDamage
+                *SpecialMultiplier(0) // SpecialMultiplier -> https://library.keqingmains.com/combat-mechanics/damage/damage-formula#special-multiplier
+                +FlatDamage(type)) // Flat Damage -> https://library.keqingmains.com/combat-mechanics/damage/damage-formula#flat-damage-sources
+                *(1+DamageBounsP()) // Damage Bonus
+                *CritDamageP(isCritDMG) // Crit
+                *EnemyDefMult(type)
+                *EnemyResMult(element_used,artifactList)
+                *AmplifyingReaction(Geo,"N/A",element_used,artifactList)
+                +TransformativeReaction(Geo,"N/A",element_used,artifactList)
+                +Proc();
+
     }
+
     /*
     https://library.keqingmains.com/combat-mechanics/damage/damage-formula#proc
      */
@@ -628,26 +762,27 @@ public class BuffCal2 {
     public double EnemyDefMult(String type) {
         return ((LvlCharacter+100)/((100+LvlCharacter)+(LvlEnemy + 100)*(1-DefReductionP(type))*(1-DefIgnore())));
     }
-    public double AmplifyingReaction (String charEle, String enemyEle,String element_used){
+    public double AmplifyingReaction (String charEle, String enemyEle,String element_used,String[] artifactList){
         if(charEle.equals(Hydro) && enemyEle.equals(Pyro)){
-            return 2*(1+(2.78*EM())/1400+EM() + ReactionBonusP());
+            return 2*(1+(2.78*EM(artifactList))/1400+EM(artifactList) + ReactionBonusP(artifactList)  + art.熾烈的炎之魔女P4_2(artifactList));
         }else if(charEle.equals(Pyro) && enemyEle.equals(Cryo)){
-            return 1.5*(1+(2.78*EM())/1400+EM() + ReactionBonusP());
+            return 1.5*(1+(2.78*EM(artifactList))/1400+EM(artifactList) + ReactionBonusP(artifactList)  + art.熾烈的炎之魔女P4_2(artifactList));
         }else {
             return 1;
         }
     }
-    public double TransformativeReaction (String charEle, String enemyEle,String element_used){
+    public double TransformativeReaction (String charEle, String enemyEle,String element_used,String[] artifactList){
 
         Log.wtf("9.1",String.valueOf(BaseMultipler(charEle,enemyEle)));
-        Log.wtf("9.2",String.valueOf((1+(16*EM())/(2000+EM()) + ReactionBonusP())));
+        Log.wtf("9.2",String.valueOf((1+(16*EM(artifactList))/(2000+EM(artifactList)) + ReactionBonusP(artifactList))));
         Log.wtf("9.3",String.valueOf(LevelMultiplier()));
-        Log.wtf("9.4",String.valueOf(EnemyResMult(element_used)));
+        Log.wtf("9.4",String.valueOf(EnemyResMult(element_used,artifactList)));
 
         return BaseMultipler(charEle,enemyEle)
-                *(1+(16*EM())/(2000+EM()) + ReactionBonusP())
+                *(1+(16*EM(artifactList))/(2000+EM(artifactList)) + ReactionBonusP(artifactList))
                 *LevelMultiplier()
-                *EnemyResMult(element_used);
+                *EnemyResMult(element_used,artifactList)
+                *ArtifactMultipler(charEle,enemyEle,artifactList);
     }
     public double BaseMultipler(String charEle, String enemyEle){
         if(charEle.equals(Electro) && enemyEle.equals(Hydro)){ //感電
@@ -664,6 +799,24 @@ public class BuffCal2 {
             return 3;
         }else {
             return 0;
+        }
+    }
+
+    public double ArtifactMultipler(String charEle, String enemyEle,String[] artifactList){
+        if(charEle.equals(Electro) && enemyEle.equals(Hydro)){ //感電
+            return 1+art.如雷的盛怒P4(artifactList);
+        }else if(charEle.equals(Pyro) && enemyEle.equals(Electro)){ //超載
+            return 1+art.如雷的盛怒P4(artifactList)+art.熾烈的炎之魔女P4(artifactList);
+        }else if(charEle.equals(Cryo) && enemyEle.equals(Electro)){ //超導
+            return 1+art.如雷的盛怒P4(artifactList);
+        }else if(charEle.equals(Anemo) && enemyEle.equals(Electro) || charEle.equals(Anemo) && enemyEle.equals(Pyro) || charEle.equals(Anemo) && enemyEle.equals(Hydro)){ //擴散
+            return 1+art.翠綠之影P4(artifactList);
+        }else if(charEle.equals(Cryo) && enemyEle.equals(Hydro)){ //冰凍
+            return 1;
+        }else if(charEle.equals(PHY)){ //物理
+            return 1;
+        }else {
+            return 1;
         }
     }
     public double LevelMultiplier(){
@@ -684,8 +837,18 @@ public class BuffCal2 {
     public double AtkWeapon(){
         return (武器基礎攻擊力);
     }
-    public double AttackP (){
-        return 武器百分比攻擊力+聖遺物攻擊力;
+    public double AttackP (String[] artifactList){
+        return 武器百分比攻擊力+聖遺物攻擊力
+                +art.行者之心P2(artifactList)
+                +art.勇士之心P2(artifactList)
+                +art.勇士之心P4(artifactList)
+                +art.染血的騎士道P4(artifactList)
+                +art.角鬥士的終幕禮P2(artifactList)
+                +art.蒼白之火P4(artifactList)
+                +art.昔日宗室之儀P4(artifactList)
+                +art.追憶之注連P2(artifactList)
+                +art.千岩牢固P4(artifactList);
+
     }
     public double FlatAttack (){
         return 聖遺物基礎攻擊力;
@@ -696,8 +859,11 @@ public class BuffCal2 {
         }
         else return 1;
     }
-    public double CritRateP (){
-        return 角色暴擊率+武器百分比暴擊率+聖遺物暴擊率;
+    public double CritRateP (String[] artifactList){
+        return 角色暴擊率+武器百分比暴擊率+聖遺物暴擊率
+                +art.行者之心P4(artifactList)
+                +art.戰狂P2(artifactList)
+                +art.戰狂P4(artifactList);
     }
 
     /*
@@ -726,8 +892,8 @@ public class BuffCal2 {
         }else return 0;
     }
 
-    public double EnemyResMult (String element_used){ // 敵人對元素攻擊的元素抗性
-        double res = BaseResistance(enemyName,element_used)-ResistanceReduction();
+    public double EnemyResMult (String element_used, String[] artifactList){ // 敵人對元素攻擊的元素抗性
+        double res = BaseResistance(enemyName,element_used)-ResistanceReduction(artifactList);
         // Aim is -> Hilichurl
         //Resistance=BaseResistance−ResistanceReduction
         if(res < 0){
@@ -741,9 +907,8 @@ public class BuffCal2 {
         }
     }
 
-    public double ResistanceReduction() {
-        // NOT END
-        return 0;
+    public double ResistanceReduction(String[] artifactList) {
+        return art.翠綠之影P4(artifactList);
     }
     public double BaseResistance(String enemyName, String element_used) {
         // READ JSON
@@ -774,11 +939,15 @@ public class BuffCal2 {
     }
 
 
-    public double EM (){ // 元素精通
-        return 角色元素精通+武器元素精通+聖遺物元素精通;
+    public double EM (String[] artifactList){ // 元素精通
+        return 角色元素精通+武器元素精通+聖遺物元素精通
+                +art.流浪大地的樂團P2(artifactList)
+                +art.教官P2(artifactList)
+                +art.教官P4(artifactList);
+
     }
 
-    public double ReactionBonusP(){ //來自 Crimson Witch 4 件獎勵（用於蒸發和融化）和 Mona 的 C1（用於蒸發）的反應傷害獎勵
+    public double ReactionBonusP(String[] artifactList){ //來自 Crimson Witch 4 件獎勵（用於蒸發和融化）和 Mona 的 C1（用於蒸發）的反應傷害獎勵
         return 0;
     }
 
@@ -844,75 +1013,116 @@ public class BuffCal2 {
 
         // Mixed main & sec 1-4
 
-        if(name.equals(context.getString(R.string.weapon_stat_atkP))){
+        if(name.equals("ATK")){
             聖遺物攻擊力 = 聖遺物攻擊力 + value;
-        }else if(name.equals(context.getString(R.string.weapon_stat_HPP))){
+        }else if(name.equals("HP")){
             聖遺物生命值 = 聖遺物生命值 + value;
-        }else if(name.equals(context.getString(R.string.weapon_stat_DEFP))){
+        }else if(name.equals("DEF")){
             聖遺物防禦力 = 聖遺物防禦力 + value;
-        }else if(name.equals(context.getString(R.string.weapon_stat_EleMas))){
+        }else if(name.equals("EleMas")){
             聖遺物元素精通 = 聖遺物元素精通 + value;
-        }else if(name.equals(context.getString(R.string.weapon_stat_EnRechP))){
+        }else if(name.equals("EnRech")){
             聖遺物元素充能效率 = 聖遺物元素充能效率 + value;
-        }else if(name.equals(context.getString(R.string.weapon_stat_EleDMGP_Electro))){
+        }else if(name.equals("EleDMG_Electro")){
             聖遺物雷元素傷害加成 = 聖遺物雷元素傷害加成 + value;
-        }else if(name.equals(context.getString(R.string.weapon_stat_EleDMGP_Pyro))){
+        }else if(name.equals("EleDMG_Pyro")){
             聖遺物火元素傷害加成 = 聖遺物火元素傷害加成 + value;
-        }else if(name.equals(context.getString(R.string.weapon_stat_EleDMGP_Hydro))){
+        }else if(name.equals("EleDMG_Hydro")){
             聖遺物水元素傷害加成 = 聖遺物水元素傷害加成 + value;
-        }else if(name.equals(context.getString(R.string.weapon_stat_EleDMGP_Cryo))){
+        }else if(name.equals("EleDMG_Cryo")){
             聖遺物冰元素傷害加成 = 聖遺物冰元素傷害加成 + value;
-        }else if(name.equals(context.getString(R.string.weapon_stat_EleDMGP_Anemo))){
+        }else if(name.equals("EleDMG_Anemo")){
             聖遺物風元素傷害加成 = 聖遺物風元素傷害加成 + value;
-        }else if(name.equals(context.getString(R.string.weapon_stat_EleDMGP_Geo))){
+        }else if(name.equals("EleDMG_Geo")){
             聖遺物岩元素傷害加成 = 聖遺物岩元素傷害加成 + value;
-        }else if(name.equals(context.getString(R.string.weapon_stat_EleDMGP_Dendor))){
+        }else if(name.equals("EleDMG_Dendor")){
             聖遺物草元素傷害加成 = 聖遺物草元素傷害加成 + value;
-        }else if(name.equals(context.getString(R.string.weapon_stat_PhyDMGP))){
+        }else if(name.equals("PhyDMG")){
             聖遺物物理傷害 = 聖遺物物理傷害 + value;
-        }else if(name.equals(context.getString(R.string.weapon_stat_CritDMGP))){
+        }else if(name.equals("CritDMG")){
             聖遺物暴擊傷害 = 聖遺物暴擊傷害 + value;
-        }else if(name.equals(context.getString(R.string.weapon_stat_CritRateP))){
+        }else if(name.equals("CritRate")){
             聖遺物暴擊率 = 聖遺物暴擊率 + value;
-        }else if(name.equals(context.getString(R.string.weapon_stat_atk))){
+        }else if(name.equals("baseATK")){
             聖遺物基礎攻擊力 = 聖遺物基礎攻擊力 + value;
-        }else if(name.equals(context.getString(R.string.weapon_stat_HP))){
+        }else if(name.equals("baseHP")){
             聖遺物基礎生命值 = 聖遺物基礎生命值 + value;
-        }else if(name.equals(context.getString(R.string.weapon_stat_DEF))){
+        }else if(name.equals("baseDEF")){
             聖遺物基礎防禦力 = 聖遺物基礎防禦力 + value;
-        }else if(name.equals(context.getString(R.string.weapon_stat_HealingP))){
+        }else if(name.equals("Healing")){
             聖遺物治療加成 = 聖遺物治療加成 + value;
         }
     }
 
 
     //TalentP
-    public double TalentP(String type){
+    public double TalentP(String type,String[] artifactList){
+
+        double normalATKArtifactSetBuff =
+                art.武人P2(artifactList)
+                        +art.武人P4(artifactList)
+                        +art.角鬥士的終幕禮P4(artifactList)
+                        +art.沉淪之心P4(artifactList)
+                        +art.追憶之注連P2(artifactList)
+                        +art.逆飛的流星P4(artifactList);
+
+
+        double chargedATKArtifactSetBuff =
+                art.武人P2(artifactList)
+                        +art.武人P4(artifactList)
+                        +art.流浪大地的樂團P4(artifactList)
+                        +art.沉淪之心P4(artifactList)
+                        +art.逆飛的流星P4(artifactList)
+                        +art.行者之心P4(artifactList);
+
         switch (type){
             //普通攻擊
-            case "一段傷害" :  return 普通攻擊_一段傷害;
-            case "二段傷害" :  return 普通攻擊_二段傷害;
-            case "三段傷害" :  return 普通攻擊_三段傷害;
-            case "四段傷害" :  return 普通攻擊_四段傷害;
-            case "五段傷害" :  return 普通攻擊_五段傷害;
-            case "六段傷害" :  return 普通攻擊_六段傷害;
-            case "瞄準射擊" :  return 普通攻擊_瞄準射擊;
+            case "一段傷害" :  return 普通攻擊_一段傷害+normalATKArtifactSetBuff;
+            case "二段傷害" :  return 普通攻擊_二段傷害+normalATKArtifactSetBuff;
+            case "三段傷害" :  return 普通攻擊_三段傷害+normalATKArtifactSetBuff;
+            case "四段傷害" :  return 普通攻擊_四段傷害+normalATKArtifactSetBuff;
+            case "五段傷害" :  return 普通攻擊_五段傷害+normalATKArtifactSetBuff;
+            case "六段傷害" :  return 普通攻擊_六段傷害+normalATKArtifactSetBuff;
+            case "瞄準射擊" :  return 普通攻擊_瞄準射擊+normalATKArtifactSetBuff;
 
             //重擊
-            case "滿蓄力瞄準射擊" :  return 普通攻擊_滿蓄力瞄準射擊;
-            case "重擊傷害" :  return 普通攻擊_重擊傷害;
-            case "重擊循環傷害" :  return 普通攻擊_重擊循環傷害;
-            case "重擊終結傷害" :  return 普通攻擊_重擊終結傷害;
+            case "滿蓄力瞄準射擊" :  return 普通攻擊_滿蓄力瞄準射擊+chargedATKArtifactSetBuff;
+            case "重擊傷害" :  return 普通攻擊_重擊傷害+chargedATKArtifactSetBuff;
+            case "重擊循環傷害" :  return 普通攻擊_重擊循環傷害+chargedATKArtifactSetBuff;
+            case "重擊終結傷害" :  return 普通攻擊_重擊終結傷害+chargedATKArtifactSetBuff;
 
             //俯衝攻擊
             case "下墜期間傷害" :  return 普通攻擊_下墜期間傷害;
             case "低空墜地衝擊傷害" :  return 普通攻擊_低空墜地衝擊傷害;
             case "高空墜地衝擊傷害" :  return 普通攻擊_高空墜地衝擊傷害;
 
+            //元素戰技 -> Max 12 , RealMax is 7 -> Aloy
+            case "元素戰技0" : return (元素戰技_value[0][charSkill1AfterLvl-1]/100);
+            case "元素戰技1" : return (元素戰技_value[1][charSkill1AfterLvl-1]/100);
+            case "元素戰技2" : return (元素戰技_value[2][charSkill1AfterLvl-1]/100);
+            case "元素戰技3" : return (元素戰技_value[3][charSkill1AfterLvl-1]/100);
+            case "元素戰技4" : return (元素戰技_value[4][charSkill1AfterLvl-1]/100);
+            case "元素戰技5" : return (元素戰技_value[5][charSkill1AfterLvl-1]/100);
+            case "元素戰技6" : return (元素戰技_value[6][charSkill1AfterLvl-1]/100);
+            case "元素戰技7" : return (元素戰技_value[7][charSkill1AfterLvl-1]/100);
+            case "元素戰技8" : return (元素戰技_value[8][charSkill1AfterLvl-1]/100);
+            case "元素戰技9" : return (元素戰技_value[9][charSkill1AfterLvl-1]/100);
+            case "元素戰技10" : return (元素戰技_value[10][charSkill1AfterLvl-1]/100);
+            case "元素戰技11" : return (元素戰技_value[11][charSkill1AfterLvl-1]/100);
 
-            //元素戰技
-
-            //元素爆發
+            //元素爆發 -> Max 12 , RealMax is 7 -> Aloy
+            case "元素爆發0" : return (元素爆發_value[0][charSkill1AfterLvl-1]/100);
+            case "元素爆發1" : return (元素爆發_value[1][charSkill1AfterLvl-1]/100);
+            case "元素爆發2" : return (元素爆發_value[2][charSkill1AfterLvl-1]/100);
+            case "元素爆發3" : return (元素爆發_value[3][charSkill1AfterLvl-1]/100);
+            case "元素爆發4" : return (元素爆發_value[4][charSkill1AfterLvl-1]/100);
+            case "元素爆發5" : return (元素爆發_value[5][charSkill1AfterLvl-1]/100);
+            case "元素爆發6" : return (元素爆發_value[6][charSkill1AfterLvl-1]/100);
+            case "元素爆發7" : return (元素爆發_value[7][charSkill1AfterLvl-1]/100);
+            case "元素爆發8" : return (元素爆發_value[8][charSkill1AfterLvl-1]/100);
+            case "元素爆發9" : return (元素爆發_value[9][charSkill1AfterLvl-1]/100);
+            case "元素爆發10" : return (元素爆發_value[10][charSkill1AfterLvl-1]/100);
+            case "元素爆發11" : return (元素爆發_value[11][charSkill1AfterLvl-1]/100);
 
             default: return 0;
         }

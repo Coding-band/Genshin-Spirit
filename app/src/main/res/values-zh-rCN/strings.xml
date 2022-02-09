@@ -756,6 +756,31 @@
     <string name="maguu_kenki_mask_of_terror">魔偶剑鬼·凶面</string>
     <string name="the_great_snowboar_king">大雪猪王</string>
 
+    <!-- add in 20220209-->
+    <string name="element_reaction">【元素反应】</string>
+    <string name="buff_normal_1_hit">一段伤害</string>
+    <string name="buff_normal_2_hit">二段伤害</string>
+    <string name="buff_normal_3_hit">三段伤害</string>
+    <string name="buff_normal_4_hit">四段伤害</string>
+    <string name="buff_normal_5_hit">五段伤害</string>
+    <string name="buff_normal_6_hit">六段伤害</string>
+    <string name="buff_normal_shoot">瞄准射击</string>
+
+    <string name="buff_charged_shoot">满蓄力瞄准射击</string>
+    <string name="buff_charged_dmg">重击伤害</string>
+    <string name="buff_charged_spinning_dmg">重击循环伤害</string>
+    <string name="buff_charged_final_dmg">重击终结伤害</string>
+
+    <string name="buff_plunge_dmg">下坠期间伤害</string>
+    <string name="buff_low_plunge_dmg">低空坠地冲击伤害</string>
+    <string name="buff_high_plunge_dmg">高空坠地冲击伤害</string>
+
+    <string name="buff_uncrit_dmg">未暴击伤害</string>
+    <string name="buff_crited_dmg">暴击后伤害</string>
+    <string name="buff_grade">档数 : </string>
+    <string name="buff_upgrade_times">成长次数 : </string>
+
+
 
 
 </resources>

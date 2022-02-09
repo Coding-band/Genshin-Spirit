@@ -769,7 +769,29 @@
     <string name="maguu_kenki_mask_of_terror">魔偶剣鬼·凶面</string>
     <string name="the_great_snowboar_king">雪のイノシシ王</string>
 
+    <!-- add in 20220209-->
+    <string name="element_reaction">【元素反応】</string>
+    <string name="buff_normal_1_hit">1段ダメージ</string>
+    <string name="buff_normal_2_hit">2段ダメージ</string>
+    <string name="buff_normal_3_hit">3段ダメージ</string>
+    <string name="buff_normal_4_hit">4段ダメージ</string>
+    <string name="buff_normal_5_hit">5段ダメージ</string>
+    <string name="buff_normal_6_hit">6段ダメージ</string>
+    <string name="buff_normal_shoot">狙い撃ち</string>
 
+    <string name="buff_charged_shoot">フルチャージ狙い撃ち</string>
+    <string name="buff_charged_dmg">重撃ダメージ</string>
+    <string name="buff_charged_spinning_dmg">連続重撃ダメージ</string>
+    <string name="buff_charged_final_dmg">重撃終了ダメージ</string>
+
+    <string name="buff_plunge_dmg">落下期間のダメージ</string>
+    <string name="buff_low_plunge_dmg">低空落下攻撃ダメージ</string>
+    <string name="buff_high_plunge_dmg">高空落下攻撃ダメージ</string>
+
+    <string name="buff_uncrit_dmg">クリティカルダメージではない</string>
+    <string name="buff_crited_dmg">クリティカルダメージ</string>
+    <string name="buff_grade">階級 : </string>
+    <string name="buff_upgrade_times">アップグレードの数 : </string>
 
 </resources>
 

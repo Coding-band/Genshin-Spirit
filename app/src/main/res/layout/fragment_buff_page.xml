@@ -324,15 +324,331 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/buff_char_other_view"
+                        android:id="@+id/buff_char_elemas_view"
                         android:layout_width="96dp"
                         android:layout_height="64dp"
                         android:layout_margin="4dp"
-                        android:visibility="gone"
+                        android:visibility="visible"
                         android:background="@drawable/bg_kwang_light">
 
                         <TextView
-                            android:id="@+id/buff_char_other_name"
+                            android:id="@+id/buff_char_elemas_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jf_openhuninn"
+                            android:text="@string/weapon_stat_EleMas"
+                            android:textAlignment="center"
+                            android:textSize="10sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.25" />
+
+                        <TextView
+                            android:id="@+id/buff_char_elemas_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jf_openhuninn"
+                            android:text="0"
+                            android:textAlignment="center"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/buff_char_elemas_name" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/buff_char_healing_view"
+                        android:layout_width="96dp"
+                        android:layout_height="64dp"
+                        android:layout_margin="4dp"
+                        android:visibility="visible"
+                        android:background="@drawable/bg_kwang_light">
+
+                        <TextView
+                            android:id="@+id/buff_char_healing_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jf_openhuninn"
+                            android:text="@string/weapon_stat_HealingP"
+                            android:textAlignment="center"
+                            android:textSize="10sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.25" />
+
+                        <TextView
+                            android:id="@+id/buff_char_healing_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jf_openhuninn"
+                            android:text="0%"
+                            android:textAlignment="center"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/buff_char_healing_name" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/buff_char_eledmg_pyro_view"
+                        android:layout_width="96dp"
+                        android:layout_height="64dp"
+                        android:layout_margin="4dp"
+                        android:visibility="visible"
+                        android:background="@drawable/bg_kwang_light">
+
+                        <TextView
+                            android:id="@+id/buff_char_eledmg_pyro_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jf_openhuninn"
+                            android:text="@string/weapon_stat_EleDMGP_Pyro"
+                            android:textAlignment="center"
+                            android:textSize="10sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.25" />
+
+                        <TextView
+                            android:id="@+id/buff_char_eledmg_pyro_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jf_openhuninn"
+                            android:text="0%"
+                            android:textAlignment="center"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/buff_char_eledmg_pyro_name" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/buff_char_eledmg_hydro_view"
+                        android:layout_width="96dp"
+                        android:layout_height="64dp"
+                        android:layout_margin="4dp"
+                        android:visibility="visible"
+                        android:background="@drawable/bg_kwang_light">
+
+                        <TextView
+                            android:id="@+id/buff_char_eledmg_hydro_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jf_openhuninn"
+                            android:text="@string/weapon_stat_EleDMGP_Hydro"
+                            android:textAlignment="center"
+                            android:textSize="10sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.25" />
+
+                        <TextView
+                            android:id="@+id/buff_char_eledmg_hydro_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jf_openhuninn"
+                            android:text="0%"
+                            android:textAlignment="center"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/buff_char_eledmg_hydro_name" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/buff_char_eledmg_anemo_view"
+                        android:layout_width="96dp"
+                        android:layout_height="64dp"
+                        android:layout_margin="4dp"
+                        android:visibility="visible"
+                        android:background="@drawable/bg_kwang_light">
+
+                        <TextView
+                            android:id="@+id/buff_char_eledmg_anemo_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jf_openhuninn"
+                            android:text="@string/weapon_stat_EleDMGP_Anemo"
+                            android:textAlignment="center"
+                            android:textSize="10sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.25" />
+
+                        <TextView
+                            android:id="@+id/buff_char_eledmg_anemo_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jf_openhuninn"
+                            android:text="0%"
+                            android:textAlignment="center"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/buff_char_eledmg_anemo_name" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/buff_char_eledmg_electro_view"
+                        android:layout_width="96dp"
+                        android:layout_height="64dp"
+                        android:layout_margin="4dp"
+                        android:visibility="visible"
+                        android:background="@drawable/bg_kwang_light">
+
+                        <TextView
+                            android:id="@+id/buff_char_eledmg_electro_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jf_openhuninn"
+                            android:text="@string/weapon_stat_EleDMGP_Electro"
+                            android:textAlignment="center"
+                            android:textSize="10sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.25" />
+
+                        <TextView
+                            android:id="@+id/buff_char_eledmg_electro_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jf_openhuninn"
+                            android:text="0%"
+                            android:textAlignment="center"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/buff_char_eledmg_electro_name" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/buff_char_eledmg_dendor_view"
+                        android:layout_width="96dp"
+                        android:layout_height="64dp"
+                        android:layout_margin="4dp"
+                        android:visibility="visible"
+                        android:background="@drawable/bg_kwang_light">
+
+                        <TextView
+                            android:id="@+id/buff_char_eledmg_dendor_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jf_openhuninn"
+                            android:text="@string/weapon_stat_EleDMGP_Dendor"
+                            android:textAlignment="center"
+                            android:textSize="10sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.25" />
+
+                        <TextView
+                            android:id="@+id/buff_char_eledmg_dendor_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jf_openhuninn"
+                            android:text="0%"
+                            android:textAlignment="center"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/buff_char_eledmg_dendor_name" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/buff_char_eledmg_cryo_view"
+                        android:layout_width="96dp"
+                        android:layout_height="64dp"
+                        android:layout_margin="4dp"
+                        android:visibility="visible"
+                        android:background="@drawable/bg_kwang_light">
+
+                        <TextView
+                            android:id="@+id/buff_char_eledmg_cryo_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jf_openhuninn"
+                            android:text="@string/weapon_stat_EleDMGP_Cryo"
+                            android:textAlignment="center"
+                            android:textSize="10sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.25" />
+
+                        <TextView
+                            android:id="@+id/buff_char_eledmg_cryo_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jf_openhuninn"
+                            android:text="0%"
+                            android:textAlignment="center"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/buff_char_eledmg_cryo_name" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/buff_char_eledmg_geo_view"
+                        android:layout_width="96dp"
+                        android:layout_height="64dp"
+                        android:layout_margin="4dp"
+                        android:visibility="visible"
+                        android:background="@drawable/bg_kwang_light">
+
+                        <TextView
+                            android:id="@+id/buff_char_eledmg_geo_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jf_openhuninn"
+                            android:text="@string/weapon_stat_EleDMGP_Geo"
+                            android:textAlignment="center"
+                            android:textSize="10sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:layout_constraintVertical_bias="0.25" />
+
+                        <TextView
+                            android:id="@+id/buff_char_eledmg_geo_value"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/jf_openhuninn"
+                            android:text="0%"
+                            android:textAlignment="center"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/buff_char_eledmg_geo_name" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/buff_char_phy_view"
+                        android:layout_width="96dp"
+                        android:layout_height="64dp"
+                        android:layout_margin="4dp"
+                        android:visibility="visible"
+                        android:background="@drawable/bg_kwang_light">
+
+                        <TextView
+                            android:id="@+id/buff_char_phy_name"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/jf_openhuninn"
@@ -346,16 +662,16 @@
                             app:layout_constraintVertical_bias="0.25" />
 
                         <TextView
-                            android:id="@+id/buff_char_other_value"
+                            android:id="@+id/buff_char_phy_value"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/jf_openhuninn"
-                            android:text="12.0%"
+                            android:text="0%"
                             android:textAlignment="center"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/buff_char_other_name" />
+                            app:layout_constraintTop_toBottomOf="@+id/buff_char_phy_name" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
                 </LinearLayout>
@@ -582,7 +898,7 @@
                     android:id="@+id/buff_tab_element_reaction"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="【元素反應】"
+                    android:text="@string/element_reaction"
                     app:tabTextColor="@color/tv_color" />
 
                 <com.google.android.material.tabs.TabItem

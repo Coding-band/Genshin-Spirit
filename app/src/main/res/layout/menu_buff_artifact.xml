@@ -121,13 +121,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_margin="8dp"
-                    android:layout_weight="1"
                     android:fontFamily="@font/jf_openhuninn"
                     android:gravity="center|left"
                     android:paddingLeft="8dp"
-                    android:text="0.0%"
+                    android:text="0%"
+                    android:textAlignment="textStart"
                     android:textColor="@color/tv_color"
-                    android:textSize="24sp" />
+                    android:textSize="24sp"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/buff_sec_num_et"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:digits="0123456789."
+                    android:editable="false"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="15"
+                    android:textColor="@color/tv_color"
+                    android:visibility="gone" />
 
             </LinearLayout>
 
@@ -138,7 +152,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/jf_openhuninn"
-                android:text="檔數 : (Grade)"
+                android:text="@string/buff_grade"
                 android:visibility="visible" />
 
             <RadioGroup
@@ -155,6 +169,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="36dp"
                     android:layout_weight="1"
+                    android:checked="true"
                     android:clickable="true"
                     android:fontFamily="@font/jf_openhuninn"
                     android:text="0"
@@ -168,7 +183,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="36dp"
                     android:layout_weight="1"
-                    android:checked="true"
                     android:clickable="true"
                     android:fontFamily="@font/jf_openhuninn"
                     android:text="1"
@@ -212,6 +226,18 @@
                     android:textColor="@color/tv_color"
                     android:textSize="16sp" />
 
+                <RadioButton
+                    android:id="@+id/buff_artifact_ct"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    android:clickable="true"
+                    android:fontFamily="@font/jf_openhuninn"
+                    android:text="∞"
+                    android:textAlignment="center"
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp" />
+
             </RadioGroup>
 
             <TextView
@@ -221,7 +247,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/jf_openhuninn"
-                android:text="成長次數 : (Upgrade Times)"
+                android:text="@string/buff_upgrade_times"
                 android:visibility="visible" />
 
             <RadioGroup

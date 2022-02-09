@@ -61,7 +61,7 @@
             android:layout_weight="5"
             android:fontFamily="@font/jf_openhuninn"
             android:gravity="center|left"
-            android:text="未暴擊傷害" />
+            android:text="@string/buff_uncrit_dmg" />
 
     </LinearLayout>
 
@@ -87,7 +87,7 @@
             android:layout_weight="5"
             android:fontFamily="@font/jf_openhuninn"
             android:gravity="center|left"
-            android:text="暴擊後傷害" />
+            android:text="@string/buff_crited_dmg" />
 
     </LinearLayout>
 

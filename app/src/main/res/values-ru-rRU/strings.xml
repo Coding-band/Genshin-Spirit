@@ -634,9 +634,9 @@
     <string name="thundercraven_rifthound_whelp">Щенок Разрыва: Громоед</string>
     <string name="rockfond_rifthound">Гончая Разрыва: Камнегрыз</string>
     <string name="thundercraven_rifthound">Гончая Разрыва: Громоед</string>
-    <string name="beginning_golden_wolflord">Начало : Золотой волчий вожак</string>
+    <string name="beginning_golden_wolflord">Начало: Золотой волчий вожак</string>
     <string name="golden_wolflord">Золотой волчий вожак</string>
-    <string name="headbroken_golden_wolflord">сломанная голова : Золотой волчий вожак</string>
+    <string name="headbroken_golden_wolflord">сломанная голова: Золотой волчий вожак</string>
     <string name="shadowy_husk_standard_bearer">Чёрный доспех: Знаменосец</string>
     <string name="shadowy_husk_line_breaker">Чёрный доспех: Штурмовик</string>
     <string name="shadowy_husk_defender">Чёрный доспех: Гвардеец</string>
@@ -658,8 +658,8 @@
     <string name="ruin_defender">Руинный защитник</string>
     <string name="ruin_scout">Руинный шпион</string>
     <string name="perpetual_mechanical_array">Бесконечный механический массив</string>
-    <string name="stunned_perpetual_mechanical_array">слабый : Бесконечный механический массив</string>
-    <string name="treasure_hoarders_liuliu">Похитители сокровищ: Лю Лю</string>
+    <string name="stunned_perpetual_mechanical_array">Слабый: Бесконечный механический массив</string>
+    <string name="treasure_hoarders_liuliu">Похитители сокровищ: Ли Лэ</string>
     <string name="treasure_hoarders_scout">Похитители сокровищ: Разведчик</string>
     <string name="treasure_hoarders_pyro_potioneer">Похитители сокровищ: Пиро химик</string>
     <string name="treasure_hoarders_hydro_potioneer">Похитители сокровищ: Гидро химик</string>
@@ -685,13 +685,13 @@
     <string name="cryo_whopperflower">Крио попрыгунья</string>
     <string name="pyro_whopperflower">Пиро попрыгунья</string>
     <string name="electro_whopperflower">Электро попрыгунья</string>
-    <string name="stunned_pyro_whopperflower">головокружение : Пиро попрыгунья</string>
-    <string name="stunned_electro_whopperflower">головокружение : Электро попрыгунья</string>
-    <string name="stunned_cryo_whopperflower">головокружение : Крио попрыгунья</string>
+    <string name="stunned_pyro_whopperflower">Головокружение: Пиро попрыгунья</string>
+    <string name="stunned_electro_whopperflower">Головокружение: Электро попрыгунья</string>
+    <string name="stunned_cryo_whopperflower">Головокружение: Крио попрыгунья</string>
     <string name="cryo_regisvine">Крио папоротник</string>
     <string name="pyro_regisvine">Пиро орхидея</string>
-    <string name="stunned_cryo_regisvine">головокружение : Крио папоротник</string>
-    <string name="stunned_pyro_regisvine">головокружение : Пиро орхидея</string>
+    <string name="stunned_cryo_regisvine">головокружение: Крио папоротник</string>
+    <string name="stunned_pyro_regisvine">головокружение: Пиро орхидея</string>
     <string name="geovishap_hatchling">Детёныш геовишапа</string>
     <string name="geovishap">Геовишап</string>
     <string name="pyroinfused_geovishap">Пиро Геовишап</string>
@@ -702,27 +702,27 @@
     <string name="primordial_bathysmal_vishap">Вишап глубин: Исток</string>
     <string name="rimebiter_bathysmal_vishap">Вишап глубин: Ледогрыз</string>
     <string name="bolteater_bathysmal_vishap">Вишап глубин: Громоглот</string>
-    <string name="electro_bathysmal_vishap">Группа ящериц глубоководных драконов : Громоглот</string>
-    <string name="cyro_bathysmal_vishap">Группа ящериц глубоководных драконов : Ледогрыз</string>
+    <string name="electro_bathysmal_vishap">Группа ящериц глубоководных драконов: Громоглот</string>
+    <string name="cyro_bathysmal_vishap">Группа ящериц глубоководных драконов: Ледогрыз</string>
     <string name="electro_cicin">Электро цицин</string>
     <string name="hydro_cicin">Гидро цицин</string>
     <string name="cryo_cicin">Крио цицин</string>
     <string name="stormterror">Двалин</string>
     <string name="lupus_boreas">Лупус Бореалис</string>
-    <string name="phase_1_childe">Чайльд : Первый этап</string>
-    <string name="stunned_phase_1_childe_">слабый Чайльд : Первый этап</string>
-    <string name="phase_2_childe">Чайльд : вторая стадия</string>
-    <string name="stunned_phase_2_childe">слабый Чайльд : вторая стадия</string>
-    <string name="phase_3_childe">Чайльд : Третий этап</string>
-    <string name="azhdaha">Начинать : Аждаха</string>
-    <string name="pyro_azhdaha">Пиро : Аждаха</string>
-    <string name="hydro_azhdaha">Гидро : Аждаха</string>
-    <string name="firecryo_azhdaha">Пиро-Крио : Аждаха</string>
-    <string name="fireelectro_azhdaha">Пиро-физ. : Аждаха</string>
-    <string name="hydrocryo_azhdaha">Гидро-Крио : Аждаха</string>
-    <string name="hydroelectro_azhdaha">Гидро-физ. : Аждаха</string>
-    <string name="phase_1_la_signora">Синьора : Первый этап</string>
-    <string name="phase_2_la_signora">Синьора : вторая стадия</string>
+    <string name="phase_1_childe">Чайльд: Первый этап</string>
+    <string name="stunned_phase_1_childe_"> Первый этап: Слабый Чайльд </string>
+    <string name="phase_2_childe">Чайльд: Второй этап</string>
+    <string name="stunned_phase_2_childe">Слабый Чайльд: Второй этап</string>
+    <string name="phase_3_childe">Чайльд: Третий этап</string>
+    <string name="azhdaha">Аждаха</string>
+    <string name="pyro_azhdaha">Пиро: Аждаха</string>
+    <string name="hydro_azhdaha">Гидро: Аждаха</string>
+    <string name="firecryo_azhdaha">Пиро-Крио: Аждаха</string>
+    <string name="fireelectro_azhdaha">Пиро-Электро: Аждаха</string>
+    <string name="hydrocryo_azhdaha">Гидро-Крио: Аждаха</string>
+    <string name="hydroelectro_azhdaha">Гидро-Электро: Аждаха</string>
+    <string name="phase_1_la_signora">Синьора: Первый этап</string>
+    <string name="phase_2_la_signora">Синьора: Вторая этап</string>
     <string name="magatsu_mitake_narukami_no_mikoto">Магацу митакэ Наруками но микото</string>
     <string name="hydro_mimic_boar">Гидро мимик: Кабан</string>
     <string name="hydro_mimic_crane">Гидро мимик: Журавль</string>
@@ -743,6 +743,28 @@
     <string name="maguu_kenki_mask_of_terror">Магу кэнки: Маска ужаса</string>
     <string name="the_great_snowboar_king">Король большой снежной свиньи</string>
 
+    <!-- add in 20220209-->
+    <string name="element_reaction">【Элемент Реакция】</string>
+    <string name="buff_normal_1_hit">Урон атаки 1</string>
+    <string name="buff_normal_2_hit">Урон атаки 2</string>
+    <string name="buff_normal_3_hit">Урон атаки 3</string>
+    <string name="buff_normal_4_hit">Урон атаки 4</string>
+    <string name="buff_normal_5_hit">Урон атаки 5</string>
+    <string name="buff_normal_6_hit">Урон атаки 6</string>
+    <string name="buff_normal_shoot">Прицельный выстрел</string>
 
+    <string name="buff_charged_shoot">Заряженный выстрел</string>
+    <string name="buff_charged_dmg">Урон при падении</string>
+    <string name="buff_charged_spinning_dmg">Урон вращающейся атаки</string>
+    <string name="buff_charged_final_dmg">Урон последней заряженной атаки</string>
+
+    <string name="buff_plunge_dmg">Урон в падении</string>
+    <string name="buff_low_plunge_dmg">Урон низкого удара</string>
+    <string name="buff_high_plunge_dmg">высокого удара</string>
+
+    <string name="buff_uncrit_dmg">некритический урон</string>
+    <string name="buff_crited_dmg">критический урон</string>
+    <string name="buff_grade">оценка : </string>
+    <string name="buff_upgrade_times">Время обновления : </string>
 </resources>
 
