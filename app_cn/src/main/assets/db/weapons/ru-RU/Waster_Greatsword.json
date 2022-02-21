@@ -1,0 +1,12 @@
+{
+  "name": "Waster Greatsword",
+  "rare": 1,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "Человек, обладающий достаточной силой воли, сможет расколоть горы этим куском металла, отдалённо напоминающим меч.",
+  "first_status": "N/A",
+  "second_status": "ATK",
+  "skill_name": "N/A",
+  "skill_desc": "N/A",
+  "obtain_way": "FIRST_GIFT"
+}

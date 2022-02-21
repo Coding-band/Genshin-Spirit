@@ -1,0 +1,12 @@
+{
+  "name": "Sword of Descension",
+  "rare": 4,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "desc": "造型獨特的劍。看起來並不屬於這個世界。",
+  "skill_name": "降世",
+  "skill_desc": "僅在'PlayStation Network'遊玩時生效。\n普通攻擊與重擊命中敵人後有50%概率在小範圍內造成200%攻擊力的傷害。該效果每10秒只能觸發一次;此外，旅行者裝備降臨之劍時，攻擊力提升66點。 該武器技能效果初始即滿級，無法精煉。",
+  "obtain_way": "PLAYSTATION_SP_GIFT"
+}

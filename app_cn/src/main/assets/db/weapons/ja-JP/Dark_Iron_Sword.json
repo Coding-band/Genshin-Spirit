@@ -1,0 +1,12 @@
+{
+  "name": "Dark Iron Sword",
+  "rare": 3,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "EleMas",
+  "second_status": "ATK",
+  "desc": "少し暗い鋼剣。",
+  "skill_name": "オーバーロード",
+  "skill_desc": "過負荷、超電導、感電、または雷元素拡散反応が発生した12秒間、攻撃力+20%/25%/30%/35%/40%。",
+  "obtain_way": "CHAT_YMDJY"
+}

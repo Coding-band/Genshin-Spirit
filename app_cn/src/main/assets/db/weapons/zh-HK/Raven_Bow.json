@@ -1,0 +1,12 @@
+{
+  "name": "Raven Bow",
+  "rare": 3,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "相傳渡鴉是死的使者。將鴉羽裝飾在弓臂上，射出的每一箭都宣告著獵物的終末。",
+  "first_status": "EleMas%",
+  "second_status": "ATK",
+  "skill_name": "踏火止水",
+  "skill_desc": "對處於火元素或水元素影響下的敵人，造成的傷害提高12%/15%/18%/21%/24%。",
+  "obtain_way": "WISH"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Windblume Ode",
+  "rare": 4,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "名も無き花で飾られた弓、名も無き者の強き希望を宿している。",
+  "first_status": "EleMas",
+  "second_status": "ATK",
+  "skill_name": "風花の願い",
+  "skill_desc": "元素スキルを発動した後、風の花の悠久なる願いの加護を獲得し、攻撃力+16%/20%/24%/28%/32%、持続時間6秒。",
+  "obtain_way": "EVENT"
+}

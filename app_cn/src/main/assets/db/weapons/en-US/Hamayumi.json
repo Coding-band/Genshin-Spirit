@@ -1,0 +1,12 @@
+{
+  "name": "Hamayumi",
+  "rare": 4,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "A certain shrine maiden once owned this warbow. It was made with surpassing skill, and is both intricate and sturdy.",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "Full Draw",
+  "skill_desc": "Increases Normal Attack DMG by 16%/20%/24%/28%/32% and Charged Attack DMG by 12%/15%/18%/21%/24%. When the equipping character's Energy reaches 100%, this effect is increased by 100%.",
+  "obtain_way": "FORGE_HLDW"
+}

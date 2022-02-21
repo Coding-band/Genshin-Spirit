@@ -1,0 +1,62 @@
+{
+    "name": "Qiqi",
+    "rare": 5,
+    "area": "Liyue",
+    "element": "Cryo",
+    "weapon": "Sword",
+    "sex": "Female",
+    "birth": "03/03",
+    "role": "Utility",
+    "isComingSoon": false,
+    "nick":"冷たき黄泉帰り",
+    "desc": "薬舗「不卜廬」の薬採り兼弟子、紙のように白い顔色で不死身。口数が少なく、あまり表情がない。",
+    "battle_talent": {
+      "normal_name": "雲来古剣法",
+      "normal_img": "normal_atack_ancient_sword_art",
+      "normal_desc1": "剣による最大5段の連続攻撃を行う。",
+      "normal_desc2": "一定のスタミナを消費し、前方に斬撃を2回放つ。",
+      "normal_desc3": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
+      "element_name": "仙法·寒病鬼差",
+      "element_img": "adeptus_art_herald_of_the_frost",
+      "element_desc": "氷血がお札となり、寒病鬼差を召喚し、周囲の敵に氷元素ダメージを与える。\n寒病鬼差:\n・七七の通常攻撃と重撃が命中した時、チーム内の自身のキャラクター全員または付近の味方のHPを回復する。回復量は七七の攻撃力によって決まる。\n・一定時間の間隔で、出場している自身のキャラクターのHPを回復する。\n・キャラクターと共に行動し、経路上の敵に氷元素ダメージを与える。",
+      "final_name": "仙法·救苦度厄",
+      "final_img": "adeptus_art_preserver_of_fortune",
+      "final_desc": "体内に封印された仙力を解放し、度厄のお札で付近の敵にマークをつけ、氷元素ダメージを与える。<br>度厄のお札:<br>度厄のお札に影響された敵にダメージを与えた時、そのキャラクター自身のHPを回復する。"
+    },
+    "basic_talent": {
+      "talent1_name": "延命妙法",
+      "talent1_img": "life_prolonging_methods",
+      "talent1_desc": "仙法 ・寒病鬼差状態時のキャラクターが元素反応を起こした時、受ける治療効果+20%、継続時間8秒。",
+      "talent2_name": "玉籤偶開",
+      "talent2_img": "a_glimse_into_arcanum",
+      "talent2_desc": "七七の通常攻撃と重撃が敵に命中した時、50%の確率で敵に度厄のお札を1枚付与する、継続時間6秒、30秒毎に1回のみ発動可能。",
+      "talent3_name": "往事記憶",
+      "talent3_img": "former_life_memories",
+      "talent3_desc": "ミニマップで周囲の璃月地域の特産の位置を表示する。"
+    },
+    "sof": {
+      "sof1_name": "寒苦回向",
+      "sof1_img": "ascetics_of_frost",
+      "sof1_desc": "度厄のお札マークがついている敵に寒病鬼差が命中した時、七七の元素エネルギーを2回復する。",
+      "sof2_name": "氷寒蝕骨",
+      "sof2_img": "frozen_to_the_bone",
+      "sof2_desc": "氷元素の影響を受けた敵に、七七の通常攻撃と重撃の与えるダメージ+15%。",
+      "sof3_name": "昇天宝誥",
+      "sof3_img": "ascendant_praise",
+      "sof3_desc": "仙法 ・救苦度厄のスキルLv.+3。\n最大Lv.15まで。",
+      "sof4_name": "天威圧衆",
+      "sof4_img": "divine_suppression",
+      "sof4_desc": "度厄のお札マークがついている敵の攻撃力-20%。",
+      "sof5_name": "紅蓮開花",
+      "sof5_img": "crimson_lotus_bloom",
+      "sof5_desc": "仙法 ・寒病鬼差のスキルLv.+3。\n最大Lv.15まで。",
+      "sof6_name": "起死回骸",
+      "sof6_img": "rite_of_resurrection",
+      "sof6_desc": "仙法 ・救苦度厄を発動する時、近くにいるチーム内全ての戦闘不能状態のキャラクターを復活し、HPを50%まで回復させる。\nこの効果は15分毎に1回のみ発動可能。"
+    }
+  }
+  
+  
+  
+
+

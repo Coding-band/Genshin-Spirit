@@ -839,8 +839,9 @@ public class ItemRss {
          */
 
     /**EDIT WHEN ADD NEW ITEMS*/
-    public String[]  getCharByName(String name, Context context){
-        if(name.equals("Yae Miko")){return new String[] {"/drawable/yae_miko_flag.png",context.getString(R.string.yae_miko),"/drawable/yae_miko_full.png","/drawable/yae_miko_ico.png"};}
+    public String[] getCharByName(String name, Context context){
+        if(name.equals("Kamisato Ayato")){return new String[] {"/drawable/kamisato_ayato_flag.png",context.getString(R.string.kamisato_ayato),"/drawable/kamisato_ayato_full.png","/drawable/kamisato_ayato_ico.png"};}
+        else if(name.equals("Yae Miko")){return new String[] {"/drawable/yae_miko_flag.png",context.getString(R.string.yae_miko),"/drawable/yae_miko_full.png","/drawable/yae_miko_ico.png"};}
         else if(name.equals("Shenhe")){return new String[] {"/drawable/shenhe_flag.png",context.getString(R.string.shenhe),"/drawable/shenhe_full.png","/drawable/shenhe_ico.png"};}
         else if(name.equals("Yun Jin")){return new String[] {"/drawable/yun_jin_flag.png",context.getString(R.string.yun_jin),"/drawable/yun_jin_full.png","/drawable/yun_jin_ico.png"};}
         else if(name.equals("Gorou")){return new String[] {"/drawable/gorou_flag.png",context.getString(R.string.gorou),"/drawable/gorou_full.png","/drawable/gorou_ico.png"};}
@@ -926,56 +927,57 @@ public class ItemRss {
     }
 
     public String getCharNameByTranslatedName(String name, Context context){
-        if(name.equals(context.getString(R.string.albedo))){ return "Albedo";}
-        else if(name.equals(context.getString(R.string.aloy))){ return "Aloy";}
-        else if(name.equals(context.getString(R.string.amber))){ return "Amber";}
-        else if(name.equals(context.getString(R.string.barbara))){ return "Barbara";}
-        else if(name.equals(context.getString(R.string.beidou))){ return "Beidou";}
-        else if(name.equals(context.getString(R.string.bennett))){ return "Bennett";}
-        else if(name.equals(context.getString(R.string.chongyun))){ return "Chongyun";}
-        else if(name.equals(context.getString(R.string.diluc))){ return "Diluc";}
-        else if(name.equals(context.getString(R.string.diona))){ return "Diona";}
-        else if(name.equals(context.getString(R.string.eula))){ return "Eula";}
-        else if(name.equals(context.getString(R.string.fischl))){ return "Fischl";}
-        else if(name.equals(context.getString(R.string.ganyu))){ return "Ganyu";}
-        else if(name.equals(context.getString(R.string.hu_tao))){ return "Hu Tao";}
-        else if(name.equals(context.getString(R.string.jean))){ return "Jean";}
-        else if(name.equals(context.getString(R.string.kaedehara_kazuha))){ return "Kaedehara Kazuha";}
-        else if(name.equals(context.getString(R.string.kaeya))){ return "Kaeya";}
-        else if(name.equals(context.getString(R.string.kamisato_ayaka))){ return "Kamisato Ayaka";}
-        else if(name.equals(context.getString(R.string.keqing))){ return "Keqing";}
-        else if(name.equals(context.getString(R.string.klee))){ return "Klee";}
-        else if(name.equals(context.getString(R.string.kujou_sara))){ return "Kujou Sara";}
-        else if(name.equals(context.getString(R.string.lisa))){ return "Lisa";}
-        else if(name.equals(context.getString(R.string.mona))){ return "Mona";}
-        else if(name.equals(context.getString(R.string.ningguang))){ return "Ningguang";}
-        else if(name.equals(context.getString(R.string.noelle))){ return "Noelle";}
-        else if(name.equals(context.getString(R.string.qiqi))){ return "Qiqi";}
-        else if(name.equals(context.getString(R.string.raiden_shogun))){ return "Raiden Shogun";}
-        else if(name.equals(context.getString(R.string.razor))){ return "Razor";}
-        else if(name.equals(context.getString(R.string.rosaria))){ return "Rosaria";}
-        else if(name.equals(context.getString(R.string.sangonomiya_kokomi))){ return "Sangonomiya Kokomi";}
-        else if(name.equals(context.getString(R.string.sayu))){ return "Sayu";}
-        else if(name.equals(context.getString(R.string.sucrose))){ return "Sucrose";}
-        else if(name.equals(context.getString(R.string.tartaglia))){ return "Tartaglia";}
-        else if(name.equals(context.getString(R.string.venti))){ return "Venti";}
-        else if(name.equals(context.getString(R.string.xiangling))){ return "Xiangling";}
-        else if(name.equals(context.getString(R.string.xiao))){ return "Xiao";}
-        else if(name.equals(context.getString(R.string.xingqiu))){ return "Xingqiu";}
-        else if(name.equals(context.getString(R.string.xinyan))){ return "Xinyan";}
-        else if(name.equals(context.getString(R.string.yanfei))){ return "Yanfei";}
-        else if(name.equals(context.getString(R.string.yoimiya))){ return "Yoimiya";}
-        else if(name.equals(context.getString(R.string.zhongli))){ return "Zhongli";}
-        else if(name.equals(context.getString(R.string.thoma))){ return "Thoma";}
-        else if(name.equals(context.getString(R.string.arataki_itto))){ return "Arataki Itto";}
-        else if(name.equals(context.getString(R.string.gorou))){ return "Gorou";}
-        else if(name.equals(context.getString(R.string.yun_jin))){ return "Yun Jin";}
-        else if(name.equals(context.getString(R.string.shenhe))){ return "Shenhe";}
-        else if(name.equals(context.getString(R.string.yae_miko))){ return "Yae Miko";}
+        if(name.equals("Albedo") || name.equals("阿貝多") || name.equals("阿贝多") || name.equals("アルベド") || name.equals("Альбедо")){ return "Albedo";}
+        else if(name.equals("Aloy") || name.equals("亞蘿伊") || name.equals("亚萝伊") || name.equals("アーロイ") || name.equals("Элой")){ return "Aloy";}
+        else if(name.equals("Amber") || name.equals("安柏") || name.equals("安柏") || name.equals("アンバー") || name.equals("Эмбер")){ return "Amber";}
+        else if(name.equals("Barbara") || name.equals("芭芭拉") || name.equals("芭芭拉") || name.equals("バーバラ") || name.equals("Барбара")){ return "Barbara";}
+        else if(name.equals("Beidou") || name.equals("北斗") || name.equals("北斗") || name.equals("北斗") || name.equals("Бэй Доу")){ return "Beidou";}
+        else if(name.equals("Bennett") || name.equals("班尼特") || name.equals("班尼特") || name.equals("ベネット") || name.equals("Беннет")){ return "Bennett";}
+        else if(name.equals("Chongyun") || name.equals("重雲") || name.equals("重云") || name.equals("重雲") || name.equals("Чун Юнь")){ return "Chongyun";}
+        else if(name.equals("Diluc") || name.equals("迪盧克") || name.equals("迪卢克") || name.equals("ディルック") || name.equals("Дилюк")){ return "Diluc";}
+        else if(name.equals("Diona") || name.equals("迪奧娜") || name.equals("迪奥娜") || name.equals("ディオナ") || name.equals("Диона")){ return "Diona";}
+        else if(name.equals("Eula") || name.equals("優菈") || name.equals("优菈") || name.equals("エウルア") || name.equals("Эола")){ return "Eula";}
+        else if(name.equals("Fischl") || name.equals("菲謝爾") || name.equals("菲谢尔") || name.equals("フィッシュル") || name.equals("Фишль")){ return "Fischl";}
+        else if(name.equals("Ganyu") || name.equals("甘雨") || name.equals("甘雨") || name.equals("甘雨") || name.equals("Гань Юй")){ return "Ganyu";}
+        else if(name.equals("Hu Tao") || name.equals("胡桃") || name.equals("胡桃") || name.equals("胡桃") || name.equals("Ху Тао")){ return "Hu Tao";}
+        else if(name.equals("Jean") || name.equals("琴") || name.equals("琴") || name.equals("ジン") || name.equals("Джинн")){ return "Jean";}
+        else if(name.equals("Kaedehara Kazuha") || name.equals("楓原萬葉") || name.equals("枫原万叶") || name.equals("楓原万葉") || name.equals("Каэдэхара Кадзуха")){ return "Kaedehara Kazuha";}
+        else if(name.equals("Kaeya") || name.equals("凱亞") || name.equals("凯亚") || name.equals("ガイア") || name.equals("Кэйа")){ return "Kaeya";}
+        else if(name.equals("Kamisato Ayaka") || name.equals("神里綾華") || name.equals("神里绫华") || name.equals("神里綾華") || name.equals("Камисато Аяка")){ return "Kamisato Ayaka";}
+        else if(name.equals("Keqing") || name.equals("刻晴") || name.equals("刻晴") || name.equals("刻晴") || name.equals("Кэ Цин")){ return "Keqing";}
+        else if(name.equals("Klee") || name.equals("可莉") || name.equals("可莉") || name.equals("クレー") || name.equals("Кли")){ return "Klee";}
+        else if(name.equals("Kujou Sara") || name.equals("九條娑羅") || name.equals("九条娑罗") || name.equals("九条裟羅") || name.equals("Кудзё Сара")){ return "Kujou Sara";}
+        else if(name.equals("Lisa") || name.equals("麗莎") || name.equals("莉萨") || name.equals("リサ") || name.equals("Лиза")){ return "Lisa";}
+        else if(name.equals("Mona") || name.equals("莫娜") || name.equals("莫娜") || name.equals("モナ") || name.equals("Мона")){ return "Mona";}
+        else if(name.equals("Ningguang") || name.equals("凝光") || name.equals("凝光") || name.equals("凝光") || name.equals("Нин Гуан")){ return "Ningguang";}
+        else if(name.equals("Noelle") || name.equals("諾艾爾") || name.equals("诺艾尔") || name.equals("ノエル") || name.equals("Ноэль")){ return "Noelle";}
+        else if(name.equals("Qiqi") || name.equals("七七") || name.equals("七七") || name.equals("七七") || name.equals("Ци Ци")){ return "Qiqi";}
+        else if(name.equals("Raudeb Shougun") || name.equals("雷電將軍") || name.equals("雷电将军") || name.equals("雷電将軍") || name.equals("Сёгун Райдэн")){ return "Raiden Shogun";}
+        else if(name.equals("Razor") || name.equals("雷澤") || name.equals("雷泽") || name.equals("レザー") || name.equals("Рэйзор")){ return "Razor";}
+        else if(name.equals("Rosaria") || name.equals("羅莎莉亞") || name.equals("罗莎莉亚") || name.equals("ロサリア") || name.equals("Розария")){ return "Rosaria";}
+        else if(name.equals("Sangonomiya Kokomi") || name.equals("珊瑚宮心海") || name.equals("珊瑚宫心海") || name.equals("珊瑚宮心海") || name.equals("Сангономия Кокоми")){ return "Sangonomiya Kokomi";}
+        else if(name.equals("Sayu") || name.equals("早柚") || name.equals("早柚") || name.equals("早柚") || name.equals("Саю")){ return "Sayu";}
+        else if(name.equals("Sucrose") || name.equals("砂糖") || name.equals("砂糖") || name.equals("スクロース") || name.equals("Сахароза")){ return "Sucrose";}
+        else if(name.equals("Tartaglia") || name.equals("達達利亞") || name.equals("达达利亚") || name.equals("タルタリヤ") || name.equals("Тарталья")){ return "Tartaglia";}
+        else if(name.equals("Venti") || name.equals("溫迪") || name.equals("温迪") || name.equals("ウェンティ") || name.equals("Венти")){ return "Venti";}
+        else if(name.equals("Xiangling") || name.equals("香菱") || name.equals("香菱") || name.equals("香菱") || name.equals("Сян Лин")){ return "Xiangling";}
+        else if(name.equals("Xiao") || name.equals("魈") || name.equals("魈") || name.equals("魈") || name.equals("Сяо")){ return "Xiao";}
+        else if(name.equals("Xingqiu") || name.equals("行秋") || name.equals("行秋") || name.equals("行秋") || name.equals("Син Цю")){ return "Xingqiu";}
+        else if(name.equals("Xinyan") || name.equals("辛焱") || name.equals("辛焱") || name.equals("辛炎") || name.equals("Синь Янь")){ return "Xinyan";}
+        else if(name.equals("Yanfei") || name.equals("煙緋") || name.equals("烟绯") || name.equals("煙緋") || name.equals("Янь Фэй")){ return "Yanfei";}
+        else if(name.equals("Yoimiya") || name.equals("宵宮") || name.equals("宵宫") || name.equals("宵宮") || name.equals("Ёимия")){ return "Yoimiya";}
+        else if(name.equals("Zhongli") || name.equals("鍾離") || name.equals("钟离") || name.equals("鍾離") || name.equals("Чжун Ли")){ return "Zhongli";}
+        else if(name.equals("Arataki Itto") || name.equals("荒瀧一斗") || name.equals("荒泷一斗") || name.equals("荒瀧一斗") || name.equals("Аратаки Итто")){ return "Arataki Itto";}
+        else if(name.equals("Gorou") || name.equals("五郎") || name.equals("五郎") || name.equals("ゴロー") || name.equals("Горо")){ return "Gorou";}
+        else if(name.equals("Yun Jin") || name.equals("雲菫") || name.equals("云菫") || name.equals("雲菫") || name.equals("Юнь Цзинь")){ return "Yun Jin";}
+        else if(name.equals("Shenhe") || name.equals("申鶴") || name.equals("申鹤") || name.equals("申鶴") || name.equals("Шэнь Хэ")){ return "Shenhe";}
+        else if(name.equals("Yae Miko") || name.equals("八重神子") || name.equals("八重神子") || name.equals("八重神子") || name.equals("Яэ Мико")){ return "Yae Miko";}
+        else if(name.equals("Kamisato Ayato") || name.equals("神里綾人") || name.equals("神里绫人") || name.equals("神里綾人") || name.equals("Камисато Аято")){ return "Kamisato Ayato";}
+        else if(name.equals("Traveler-Anemo") || name.equals("旅行者(風)") || name.equals("旅行者(风)") || name.equals("旅人 (風)") || name.equals("Путешественник(Анемо)")){ return "Traveler-Anemo";}
+        else if(name.equals("Traveler-Electro") || name.equals("旅行者(岩)") || name.equals("旅行者(岩)") || name.equals("旅人 (岩)") || name.equals("Путешественник(Гео)")){ return "Traveler-Electro";}
+        else if(name.equals("Traveler-Geo") || name.equals("旅行者(雷)") || name.equals("旅行者(雷)") || name.equals("旅人 (雷)") || name.equals("Путешественник(Электро)")){ return "Traveler-Geo";}
+        else if(name.equals("Thoma") || name.equals("托馬") || name.equals("托马") || name.equals("トーマ") || name.equals("Тома")){ return "Thoma";}
 
-        else if(name.equals(context.getString(R.string.traveler_anemo))){ return "Traveler-Anemo";}
-        else if(name.equals(context.getString(R.string.traveler_electro))){ return "Traveler-Electro";}
-        else if(name.equals(context.getString(R.string.traveler_geo))){ return "Traveler-Geo";}
 
         else return context.getString(R.string.unknown);
     }
@@ -1088,6 +1090,10 @@ public class ItemRss {
         else if(name.equals("熔毀之刻")){return "/drawable/molten_moment.png";}
         else if(name.equals("灰燼之心")){return "/drawable/ashen_heart.png";}
         else if(name.equals("獄火之蝶")){return "/drawable/hellfire_butterfly.png";}
+        //add in 20220216
+        else if(name.equals("萬劫之真意")){return "/drawable/the_meaning_of_aeons.png";}
+        else if(name.equals("凶將之手眼")){return "/drawable/mudra_of_the_malefic_general.png";}
+        else if(name.equals("禍神之禊淚")){return "/drawable/tears_of_the_calamitous_god.png";}
 
         /** Common*/
         else if(name.equals("牢固的箭簇")){return "/drawable/firm_arrowhead.png";}
@@ -1497,6 +1503,151 @@ public class ItemRss {
         }
     }
 
+    public String getSkillNameByCustomName(String str, Context context){
+        switch (str){
+            case "技能傷害" : return context.getString(R.string.skill_dmg);
+            case "剎那之花傷害" : return context.getString(R.string.transient_blossom_dmg);
+            case "急凍炸彈傷害" : return context.getString(R.string.freeze_bomb_dmg);
+            case "冷凍炸彈傷害" : return context.getString(R.string.chillwater_bomblets);
+            case "爆炸傷害" : return context.getString(R.string.explosion_dmg);
+            case "水珠傷害" : return context.getString(R.string.droplet_dmg);
+            case "命中治療量" : return context.getString(R.string.hp_regeneration_per_hit);
+            case "持續治療量" : return context.getString(R.string.continuous_regeneration);
+            case "命中治療量_BASE" : return context.getString(R.string.hp_regeneration_per_hit_base);
+            case "持續治療量_BASE" : return context.getString(R.string.continuous_regeneration_base);
+            case "基礎傷害" : return context.getString(R.string.base_dmg);
+            case "受擊時傷害提升" : return context.getString(R.string.dmg_bonus_on_hit_taken);
+            case "護盾吸收量_BASE" : return context.getString(R.string.base_dmg_base);
+            case "點按傷害" : return context.getString(R.string.press_dmg);
+            case "一段蓄力傷害" : return context.getString(R.string.charge_level_1_dmg);
+            case "二段蓄力傷害" : return context.getString(R.string.charge_level_2_dmg);
+            case "一段傷害" : return context.getString(R.string.dmg_1_hit);
+            case "二段傷害" : return context.getString(R.string.dmg_2_hit);
+            case "三段傷害" : return context.getString(R.string.dmg_3_hit);
+            case "貓爪傷害(@1)" : return context.getString(R.string.icy_paw_dmg_per1);
+            case "護盾基礎吸收量" : return context.getString(R.string.base_shield_dmg_absorption);
+            case "護盾基礎吸收量_BASE" : return context.getString(R.string.base_shield_dmg_absorption_base);
+            case "長按傷害" : return context.getString(R.string.hold_dmg);
+            case "冰渦之劍傷害" : return context.getString(R.string.icewhirl_brand_dmg);
+            case "奧茲攻擊傷害" : return context.getString(R.string.ozs_atk_dmg);
+            case "召喚傷害" : return context.getString(R.string.summoning_dmg);
+            case "血梅香傷害" : return context.getString(R.string.blood_blossom_dmg);
+            case "點按技能傷害" : return context.getString(R.string.press_skill_dmg);
+            case "長按技能傷害" : return context.getString(R.string.hold_skill_dmg);
+            case "雷楔傷害" : return context.getString(R.string.lightning_stiletto_dmg);
+            case "斬擊傷害" : return context.getString(R.string.slashing_dmg);
+            case "雷爆連斬傷害" : return context.getString(R.string.thunderclap_slash_dmg);
+            case "蹦蹦炸彈傷害" : return context.getString(R.string.jumpy_dumpty_dmg);
+            case "詭雷傷害" : return context.getString(R.string.mine_dmg);
+            case "天狗咒雷·伏 傷害" : return context.getString(R.string.tengu_juurai_ambush_dmg);
+            case "無引雷長按傷害" : return context.getString(R.string.non_conductive_hold_dmg);
+            case "一層引雷長按傷害" : return context.getString(R.string.stack_1_conductive_hold_dmg);
+            case "二層引雷長按傷害" : return context.getString(R.string.stack_2_conductive_hold_dmg);
+            case "三層引雷長按傷害" : return context.getString(R.string.stack_3_conductive_hold_dmg);
+            case "持續傷害" : return context.getString(R.string.dot);
+            case "吸收量" : return context.getString(R.string.dmg_absorption);
+            case "治療量" : return context.getString(R.string.healing);
+            case "吸收量_BASE" : return context.getString(R.string.dmg_absorption_base);
+            case "治療量_BASE" : return context.getString(R.string.healing_base);
+            case "寒病鬼差傷害" : return context.getString(R.string.herald_of_frost_dmg);
+            case "協同攻擊傷害" : return context.getString(R.string.coordinated_atk_dmg);
+            case "波紋傷害" : return context.getString(R.string.ripple_dmg);
+            case "風風輪傷害" : return context.getString(R.string.fuufuu_windwheel_dmg);
+            case "風風輪舞踢點按傷害" : return context.getString(R.string.pressfuufuu_whirlwind_kick_dmg);
+            case "風風輪舞踢長按傷害" : return context.getString(R.string.fuufuu_whirlwind_kick_hold_dmg);
+            case "風風輪附帶元素傷害" : return context.getString(R.string.fuufuu_windwheel_elemental_dmg);
+            case "風風輪舞踢長按附帶元素傷害" : return context.getString(R.string.fuufuu_whirlwind_kick_elemental_dmg);
+            case "狀態激發傷害" : return context.getString(R.string.stance_change_dmg);
+            case "四段傷害" : return context.getString(R.string.dmg_4_hit);
+            case "五段傷害" : return context.getString(R.string.dmg_5_hit);
+            case "六段傷害" : return context.getString(R.string.dmg_6_hit);
+            case "重擊傷害" : return context.getString(R.string.charged_attack_dmg);
+            case "斷流·斬 傷害" : return context.getString(R.string.riptide_slash);
+            case "護盾吸收量上限" : return context.getString(R.string.max_shield_dmg_absorption);
+            case "護盾吸收量上限_BASE" : return context.getString(R.string.max_shield_dmg_absorption_base);
+            case "初始切割傷害" : return context.getString(R.string.initial_cutting_dmg);
+            case "最大切割傷害" : return context.getString(R.string.max_cutting_dmg);
+            case "初始爆風傷害" : return context.getString(R.string.initial_storm_dmg);
+            case "最大爆風傷害" : return context.getString(R.string.max_storm_dmg);
+            case "噴火傷害" : return context.getString(R.string.flame_dmg);
+            case "揮舞傷害" : return context.getString(R.string.swing_dmg);
+            case "一級護盾吸收量" : return context.getString(R.string.shield_level_1_dmg_absorption);
+            case "二級護盾吸收量" : return context.getString(R.string.shield_level_2_dmg_absorption);
+            case "三級護盾吸收量" : return context.getString(R.string.shield_level_3_dmg_absorption);
+            case "一級護盾吸收量_BASE" : return context.getString(R.string.shield_level_1_dmg_absorption_base);
+            case "二級護盾吸收量_BASE" : return context.getString(R.string.shield_level_2_dmg_absorption_base);
+            case "三級護盾吸收量_BASE" : return context.getString(R.string.shield_level_3_dmg_absorption_base);
+            case "熾焰箭傷害" : return context.getString(R.string.blazing_arrow_dmg);
+            case "岩脊傷害" : return context.getString(R.string.stone_stele_dmg);
+            case "共鳴傷害" : return context.getString(R.string.stone_resonance_dmg);
+            case "護盾附加吸收量" : return context.getString(R.string.additional_shield_absorption);
+            case "爆發傷害" : return context.getString(R.string.elemental_burst_dmg);
+            case "生滅之花傷害(@1)" : return context.getString(R.string.fatal_blossom_dmg);
+            case "箭雨單次傷害" : return context.getString(R.string.fiery_rain_dmg_per_wave);
+            case "箭雨總傷害" : return context.getString(R.string.total_fiery_rain_dmg);
+            case "攻擊力提高" : return context.getString(R.string.atk_bonus);
+            case "閃雷傷害" : return context.getString(R.string.lightning_dmg);
+            case "持續治療" : return context.getString(R.string.continuous_regeneration_per_sec);
+            case "持續治療_BASE" : return context.getString(R.string.continuous_regeneration_per_sec_base);
+            case "領域持續傷害" : return context.getString(R.string.continuous_field_dmg);
+            case "光降之劍基礎傷害" : return context.getString(R.string.lightfall_sword_base_dmg);
+            case "落雷傷害" : return context.getString(R.string.falling_thunder_dmg);
+            case "冰凌傷害" : return context.getString(R.string.ice_shard_dmg);
+            case "岩晶崩破傷害" : return context.getString(R.string.crystal_collapse_dmg);
+            case "低血量時技能傷害" : return context.getString(R.string.low_hp_skill_dmg);
+            case "技能治療量" : return context.getString(R.string.skill_hp_regeneration);
+            case "低血量時技能治療量" : return context.getString(R.string.low_hp_skill_regeneration);
+            case "出入領域傷害" : return context.getString(R.string.field_entering_exiting_dmg);
+            case "領域發動治療量" : return context.getString(R.string.field_activation_healing);
+            case "領域發動治療量_BASE" : return context.getString(R.string.field_activation_healing_base);
+            case "附加元素傷害" : return context.getString(R.string.additional_elemental_dmg);
+            case "切割傷害" : return context.getString(R.string.cutting_dmg);
+            case "綻放傷害" : return context.getString(R.string.bloom_dmg);
+            case "連斬傷害" : return context.getString(R.string.consecutive_slash_dmg);
+            case "最後一擊傷害" : return context.getString(R.string.last_attack_dmg);
+            case "轟轟火花傷害" : return context.getString(R.string.sparks_n_splash_dmg);
+            case "天狗咒雷·金剛壞 傷害" : return context.getString(R.string.tengu_juurai_titanbreaker_dmg);
+            case "天狗咒雷·雷礫 傷害" : return context.getString(R.string.tengu_juurai_stormcluster_dmg);
+            case "放電傷害" : return context.getString(R.string.discharge_dmg);
+            case "泡影破裂傷害" : return context.getString(R.string.illusory_bubble_explosion_dmg);
+            case "夢想一刀基礎傷害" : return context.getString(R.string.musou_no_hitotachi_base_dmg);
+            case "下墜期間傷害" : return context.getString(R.string.plunge_dmg);
+            case "低空墜地衝擊傷害" : return context.getString(R.string.low_plunge_dmg);
+            case "高空墜地衝擊傷害" : return context.getString(R.string.high_plunge_dmg);
+            case "狼魂傷害" : return context.getString(R.string.soul_companion_dmg);
+            case "普通攻擊速度提升" : return context.getString(R.string.normal_atk_spd_bonus);
+            case "冰槍持續傷害" : return context.getString(R.string.ice_lance_dot);
+            case "普通攻擊傷害提升" : return context.getString(R.string.normal_attack_dmg_bonus);
+            case "重擊傷害提升" : return context.getString(R.string.charged_attack_dmg_bonus);
+            case "化海月傷害提升" : return context.getString(R.string.bake_kurage_dmg_bonus);
+            case "技能發動傷害" : return context.getString(R.string.skill_activation_dmg);
+            case "技能發動治療量" : return context.getString(R.string.skill_activation_healing);
+            case "不倒貉貉傷害" : return context.getString(R.string.muji_muji_daruma_dmg);
+            case "不倒貉貉治療量" : return context.getString(R.string.muji_muji_daruma_healing);
+            case "不倒貉貉治療量_BASE" : return context.getString(R.string.muji_muji_daruma_healing_base);
+            case "技能傷害·近戰" : return context.getString(R.string.skill_dmg_melee);
+            case "技能傷害·遠程" : return context.getString(R.string.skill_dmg_ranged);
+            case "斷流·爆 傷害" : return context.getString(R.string.riptide_blast_dmg);
+            case "熾火崩破傷害" : return context.getString(R.string.fiery_collapse_dmg);
+            case "護盾吸收量" : return context.getString(R.string.shield_dmg_absorption);
+            case "龍捲風傷害" : return context.getString(R.string.tornado_dmg);
+            case "地震波單次傷害" : return context.getString(R.string.dmg_per_shockwave);
+            case "一段揮舞傷害" : return context.getString(R.string.dmg_1_hit_swing);
+            case "二段揮舞傷害" : return context.getString(R.string.dmg_2_hit_swing);
+            case "三段揮舞傷害" : return context.getString(R.string.dmg_3_hit_swing);
+            case "旋火輪傷害" : return context.getString(R.string.pyronado_dmg);
+            case "箭雨傷害" : return context.getString(R.string.sword_rain_dmg);
+            case "琉金火光爆炸傷害" : return context.getString(R.string.aurous_blaze_explosion_dmg);
+            // add in 20220219
+            case "殺生櫻傷害·壹階" : return context.getString(R.string.sesshou_sakura_dmg_level_1);
+            case "殺生櫻傷害·貳階" : return context.getString(R.string.sesshou_sakura_dmg_level_2);
+            case "殺生櫻傷害·參階" : return context.getString(R.string.sesshou_sakura_dmg_level_3);
+            case "殺生櫻傷害·肆階" : return context.getString(R.string.sesshou_sakura_dmg_level_4);
+            case "天狐霆雷傷害" : return context.getString(R.string.tenko_thunderbolt_dmg);
+
+            default: return context.getString(R.string.unknown);
+        }
+    }
 
 
 }

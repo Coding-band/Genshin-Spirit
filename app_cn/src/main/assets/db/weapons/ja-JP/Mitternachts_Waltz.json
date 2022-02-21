@@ -1,0 +1,12 @@
+{
+  "name": "Mitternachts Waltz",
+  "rare": 4,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "罪と幻想の夜を想像させる色をした弓。",
+  "first_status": "PhyDMG%",
+  "second_status": "ATK",
+  "skill_name": "極夜のデュエット",
+  "skill_desc": "通常攻撃が敵に命中した後の5秒間、元素スキルのダメージ+20%/25%/30%/35%/40%。元素スキルが敵に命中した後の5秒間、通常攻撃のダメージ+20%/25%/30%/35%/40%。",
+  "obtain_way": "LIMITED_WISH"
+}

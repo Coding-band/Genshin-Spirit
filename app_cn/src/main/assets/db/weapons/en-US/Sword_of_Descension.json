@@ -1,0 +1,12 @@
+{
+  "name": "Sword of Descension",
+  "rare": 4,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "desc": "A sword of unique craftsmanship. It does not appear to belong to this world.",
+  "skill_name": "Descension",
+  "skill_desc": "Effective only on the following platform:\n'PlayStation Network'\nHitting enemies with Normal or Charged Attacks grants a 50% chance to deal 200% ATK as DMG in a small AoE. This effect can only occur once every 10s. Additionally, if the Traveler equips the Sword of Descension, their ATK is increased by 66.",
+  "obtain_way": "PLAYSTATION_SP_GIFT"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Deathmatch",
+  "rare": 4,
+  "weapon": "Polearm",
+  "isComingSoon": false,
+  "desc": "血紅色的鋒利長槍，過去曾是某位角鬥士無比珍視的寶物。槍芒上曾沾染了無數野獸與人的鮮血。",
+  "first_status": "CritDMG%",
+  "second_status": "ATK",
+  "skill_name": "角鬥士",
+  "skill_desc": "身邊至少有2個敵人時，獲得16%/20%/24%/28%/32%攻擊力提升與16%/20%/24%/28%/32%防禦力提升；身邊的敵人少於2個時，獲得24%/30%/36%/42%/48%攻擊力提升。",
+  "obtain_way": "BATTLEPASS"
+}

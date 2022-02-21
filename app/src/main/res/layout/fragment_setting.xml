@@ -495,6 +495,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:background="@drawable/gone_background"
+                android:visibility="visible"
                 app:cardBackgroundColor="@color/colorWhiteAlpha"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="0dp">
@@ -664,6 +665,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:background="@drawable/gone_background"
+                android:visibility="visible"
                 app:cardBackgroundColor="@color/colorWhiteAlpha"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="0dp">
@@ -817,7 +819,14 @@
             <include
                 layout="@layout/item_setting_thanks"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:visibility="visible" />
+
+            <include
+                layout="@layout/item_setting_data_link"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/contact_card"
@@ -838,6 +847,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
                         android:orientation="horizontal"
                         android:padding="8dp">
 
@@ -846,7 +856,7 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:layout_weight="0"
-                            app:srcCompat="@drawable/ic_baseline_language_24" />
+                            app:srcCompat="@drawable/ic_baseline_person_pin_24" />
 
                         <TextView
                             android:id="@+id/contact_title"
@@ -855,67 +865,19 @@
                             android:layout_weight="0"
                             android:gravity="center|left"
                             android:paddingLeft="8dp"
-                            android:text="@string/link"
+                            android:text="@string/developer"
                             android:textColor="@color/tv_color"
                             android:textSize="16sp" />
                     </LinearLayout>
 
                     <TextView
-                        android:id="@+id/contact_link1"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:text="@string/genshindb_link"
-                        android:textAlignment="center"
-                        android:textColor="@color/pyro"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:id="@+id/contact_link2"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:text="@string/genshindb_dclink"
-                        android:textAlignment="center"
-                        android:textColor="@color/pyro"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:id="@+id/contact_link6"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:text="@string/genshinhelper_link"
-                        android:textAlignment="center"
-                        android:textColor="@color/pyro"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:id="@+id/contact_link7"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:text="@string/genshinhelper_dclink"
-                        android:textAlignment="center"
-                        android:textColor="@color/pyro"
-                        android:textSize="20sp" />
-
-                    <TextView
                         android:id="@+id/contact_link3"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
                         android:text="Discord : Voc-夜芷冰#2512"
-                        android:textAlignment="center"
-                        android:textColor="@color/tv_color"
-                        android:textSize="20sp" />
-
-                    <TextView
-                        android:id="@+id/contact_link4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:text="Email : voc.app.programmer@gmail.com"
                         android:textAlignment="center"
                         android:textColor="@color/tv_color"
                         android:textSize="20sp" />
@@ -924,8 +886,22 @@
                         android:id="@+id/contact_link5"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
                         android:text="QQ : 822001886"
+                        android:textAlignment="center"
+                        android:textColor="@color/tv_color"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/contact_link4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:text="Email : voc.app.programmer@gmail.com"
                         android:textAlignment="center"
                         android:textColor="@color/tv_color"
                         android:textSize="20sp" />

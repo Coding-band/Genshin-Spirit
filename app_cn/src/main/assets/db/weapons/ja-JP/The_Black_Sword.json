@@ -1,0 +1,12 @@
+{
+  "name": "The Black Sword",
+  "rare": 4,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "CritRate%",
+  "second_status": "ATK",
+  "desc": "紛争と殺戮を渇望する漆黒の剣。手にした人は殺戮の悦びに溺れてしまうらしい。",
+  "skill_name": "「正義」",
+  "skill_desc": "通常攻撃と重撃ダメージ+20%/25%/30%/35%/40%さらに通常攻撃と重撃が会心時、攻撃力の60%/70%/80%/90%/100%分のHPを回復する。5秒に1回のみ発動可能。",
+  "obtain_way": "BATTLEPASS"
+}

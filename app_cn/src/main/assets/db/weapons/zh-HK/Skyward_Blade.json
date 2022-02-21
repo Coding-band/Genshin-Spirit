@@ -1,0 +1,12 @@
+{
+  "name": "Skyward Blade",
+  "rare": 5,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "EnRech%",
+  "second_status": "ATK",
+  "desc": "象徵風龍的榮譽的騎士劍，如今失而復得。劍脊上吹息著風之神的賜福，蘊含著蒼空與長風的力量",
+  "skill_name": "穿刺高天的利齒",
+  "skill_desc": "暴擊率提升4%/5%/6%/7%/8%；施放元素爆發時，獲得破空之勢：移動速度提升10%，攻擊速度提升10%，普通攻擊與重擊命中時，額外造成20%/25%/30%/35%/40%攻擊力的傷害，持續12秒。",
+  "obtain_way": "WISH"
+}

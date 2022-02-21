@@ -1,0 +1,12 @@
+{
+  "name": "Deathmatch",
+  "rare": 4,
+  "weapon": "Polearm",
+  "isComingSoon": false,
+  "desc": "A sharp crimson polearm that was once a gladiator's priceless treasure. Its awl has been stained by the blood of countless beasts and men.",
+  "first_status": "CritDMG%",
+  "second_status": "ATK",
+  "skill_name": "Gladiator",
+  "skill_desc": "If there are at least 2 opponents nearby, ATK is increased by 16%/20%/24%/28%/32% and DEF is increased by 16%/20%/24%/28%/32%. If there are fewer than 2 opponents nearby, ATK is increased by 24%/30%/36%/42%/48%.",
+  "obtain_way": "BATTLEPASS"
+}

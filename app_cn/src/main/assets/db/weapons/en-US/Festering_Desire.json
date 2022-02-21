@@ -1,0 +1,12 @@
+{
+  "name": "Festering Desire",
+  "rare": 4,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "EnRech%",
+  "second_status": "ATK",
+  "desc": "A creepy straight sword that almost seems to yearn for life. It drips with a shriveling venom that could even corrupt a mighty dragon.",
+  "skill_name": "Undying Admiration",
+  "skill_desc": "Increases Elemental Skill DMG by 16/20/24/28/32% and Elemental Skill CRIT Rate by 6/7.5/9/10.5/12%.",
+  "obtain_way": "EVENT"
+}

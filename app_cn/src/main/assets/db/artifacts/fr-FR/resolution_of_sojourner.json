@@ -1,0 +1,34 @@
+{
+	"name": "Cœur du Voyageur",
+	"rarity": [
+		"3",
+		"4"
+	],
+	"2pc": "Augmente l'ATQ de 18 %.",
+	"4pc": "Augmente le taux CRIT des attaques chargées de 30 %.",
+	"flower": {
+		"name": "Fleur du Voyageur",
+		"relictype": "Fleur de la vie",
+		"description": "Une petite fleur bleue avec un ruban attaché à sa tige."
+	},
+	"plume": {
+		"name": "Plume du Voyageur",
+		"relictype": "Plume de la mort",
+		"description": "Une plume de flèche bleue qui symbolise la nostalgie d'un voyageur."
+	},
+	"sands": {
+		"name": "Montre du Voyageur",
+		"relictype": "Sables du temps",
+		"description": "Un cadran solaire qui a connu des temps instables, tout en enregistrant silencieusement les cycles dictés par le soleil et de la lune."
+	},
+	"goblet": {
+		"name": "Calice du Voyageur",
+		"relictype": "Coupe d'Eonothem",
+		"description": "Un verre en porcelaine blanche qui a contenu de nombreuses boissons alcoolisées."
+	},
+	"circlet": {
+		"name": "Couronne du Voyageur",
+		"relictype": "Diadème de Logos",
+		"description": "Une couronne en bois de saule qui émet une petite brise printanière."
+	}
+}

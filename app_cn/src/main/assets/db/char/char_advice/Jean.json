@@ -1,0 +1,32 @@
+{
+  "name" : "Jean",
+  "util_weapons": [
+    "skyward_blade",
+    "primordial_jade_cutter",
+    "aquila_favonia",
+    "the_flute",
+    "prototype_rancour",
+    "festering_desire",
+	"favonius_sword"
+  ],
+  "util_art1": [
+    "viridescent_venerer",
+    "viridescent_venerer",
+    "gladiators_finale",
+    "gladiators_finale",
+    "gladiators_finale"
+  ],
+  "util_art2": [
+    "viridescent_venerer",
+    "viridescent_venerer",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "team1":[
+	"Jean","Lisa","Kaeya","Rosaria"
+  ],
+  "team2":[
+	"Klee","Jean","Fischl","Venti"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Blackcliff Agate",
+  "rare": 4,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "A mysterious catalyst made of blackstone. It has an ominous crimson glow that seems to pulse in synchronization with the tremors from deep within the earth.",
+  "first_status": "CritDMG%",
+  "second_status": "ATK",
+  "skill_name": "Press the Advantage",
+  "skill_desc": "After defeating an opponent, ATK is increased by 12%/15%/18%/21%/24% for 30s. This effect has a maximum of 3 stacks, and the duration of each stack is independent of the others.",
+  "obtain_way": "SHOP"
+}

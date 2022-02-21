@@ -1,0 +1,12 @@
+{
+  "name": "Kagura's Verity",
+  "rare": 5,
+  "weapon": "Catalyst",
+  "isComingSoon": true,
+  "desc": "N/A",
+  "first_status": CritDMGATK%",
+  "second_status": "ATK",
+  "skill_name": "Kagura Dance of the Sacred Sakura",
+  "skill_desc": "Gains the Kagura Dance effect when using an Elemental Skill, causing the Elemental Skill DMG of the character wielding this weapon to increase by 12% for 12s. Max 3 stacks. This character will gain 12% All Elemental DMG Bonus when they possess 3 stacks.",
+  "obtain_way": "WISH"
+}

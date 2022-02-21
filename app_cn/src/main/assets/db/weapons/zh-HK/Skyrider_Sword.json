@@ -1,0 +1,12 @@
+{
+  "name": "Skyrider Sword",
+  "rare": 3,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "EnRech%",
+  "second_status": "ATK",
+  "desc": "可靠的鋼劍，傳說著名的「禦劍公子」曾試圖借助它飛天。",
+  "skill_name": "決心",
+  "skill_desc": "施放元素爆發後，提高12%/15%/18%/21%/24%攻擊力和移動速度，持續15秒。",
+  "obtain_way": "WISH"
+}

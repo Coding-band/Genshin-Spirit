@@ -1,0 +1,59 @@
+{
+  "name": "Bennett",
+  "rare": 4,
+  "area": "Mondstadt",
+  "element": "Pyro",
+  "weapon": "Sword",
+  "sex": "Male",
+  "birth": "02/29",
+  "role": "Utility",
+  "isComingSoon": false,
+  "nick": "運命の試金石",
+  "desc": "モンドの冒険者少年、その優しさとそぐわない不運を持っている。",
+  "battle_talent": {
+    "normal_name": "好運の剣",
+    "normal_img": "normal_atack_strike_of_fortune",
+    "normal_desc1": "剣による最大5段の連続攻撃を行う。",
+    "normal_desc2": "一定のスタミナを消費し、前方に斬撃を2回放つ。",
+    "normal_desc3": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
+    "element_name": "溢れる情熱",
+    "element_img": "passion_overload",
+    "element_desc": "炎元素と冒険への情熱を剣に込める。込めた情熱の強さによって、違う効果が現れることがある<br>一回押し:前方に素早く炎の一撃を仕掛け、炎元素ダメージを与える。<br>長押し: 長押しでチャージし、チャージ段数により効果が変わる。<br>1段チャージ：二段攻撃を仕掛け、炎元素ダメージを与え、敵をノックバックする。<br>2段チャージ：三段攻撃を発動し、大量の炎元素ダメージを与え、最後の一撃に爆発が発生し、自身と敵を同時にノックバックする。<br><br><i>ベネットがノックバックされた時に、ダメージを受けることはない。",
+    "final_name": "素晴らしい旅",
+    "final_img": "fantastic_voyage",
+    "final_desc": "ジャンプして地面を叩き、炎元素ダメージを与え、鼓舞エリアを生成する。<br>鼓舞エリア:<br><br>エリア内のキャラクターのHPが70%以下の場合、HPが持続的に回復する。回復量はベネットのHP上限によって決まる。<br>エリア内のキャラクターのHPが70%を超えている場合、ベネットの基礎攻撃力を基準に、一定割合の攻撃力がアップする。<br>エリア内のキャラクターに炎元素付着効果を付与する。"
+  },
+  "basic_talent": {
+    "talent1_name": "情熱復活",
+    "talent1_img": "rekindle",
+    "talent1_desc": "溢れる情熱のクールタイム-20%。",
+    "talent2_name": "恐れなき熱血",
+    "talent2_img": "fearnaught",
+    "talent2_desc": "素晴らしい旅エリア内にいると、溢れる情熱が以下の効果を持つ。\nクールタイム-50%。\n2段チャージによるベネット自身のノックバックが発生しない。",
+    "talent3_name": "多分安全",
+    "talent3_img": "it_should_be_safe",
+    "talent3_desc": "モンドの探索任務の所要時間-25%。"
+  },
+  "sof": {
+    "sof1_name": "冒険の憧れ",
+    "sof1_img": "grand_expectation",
+    "sof1_desc": "素晴らしい旅の攻撃力アップ効果のHPによる制限がなくなり、更にベネットの基礎攻撃力の20%に当たる数値を追加する。",
+    "sof2_name": "絶境踏破",
+    "sof2_img": "impasse_conqueror",
+    "sof2_desc": "ベネットのHPが70%以下になると、元素チャージ効率+30%。",
+    "sof3_name": "炎のような情熱",
+    "sof3_img": "unstoppable_fervor",
+    "sof3_desc": "溢れる情熱のスキルLv.+3。<br>最大Lv.15まで。",
+    "sof4_name": "消えない情熱",
+    "sof4_img": "unexpected_odyssey",
+    "sof4_desc": "1段チャージ溢れる情熱を発動する時、二段目攻撃中に通常攻撃をすると追加攻撃を発動できる。<br>二段目攻撃の135%の追加ダメージを与える。",
+    "sof5_name": "開拓の心意気",
+    "sof5_img": "the_explorer",
+    "sof5_desc": "素晴らしい旅のスキルLv.+3。<br>最大Lv.15まで。",
+    "sof6_name": "烈火と勇気",
+    "sof6_img": "fire_ventures_with_me",
+    "sof6_desc": "素晴らしい旅エリア内にいる片手剣、両手剣、長柄武器キャラクターの炎元素ダメージ+15%、さらに炎元素付与状態を獲得する。"
+  }
+}
+
+

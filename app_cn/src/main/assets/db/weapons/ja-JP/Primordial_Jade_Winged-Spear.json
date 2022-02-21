@@ -1,0 +1,12 @@
+{
+  "name": "Primordial Jade Winged-Spear",
+  "rare": 5,
+  "weapon": "Polearm",
+  "isComingSoon": false,
+  "desc": "魔神の美玉で作った長槍、遠昔の海獣を倒せる重さと鋭さがある。",
+  "first_status": "CritRate%",
+  "second_status": "ATK",
+  "skill_name": "正義を貫く鳶の槍",
+  "skill_desc": "敵に命中した時、自身の攻撃力+3.2%/3.9%/4.6%/5.3%/6.0%、継続時間6秒、最大7重まで。0.3秒に最大1回発動でき、7重まで発動するとスキルダメージ+12%/15%/18%/21%/24%。",
+  "obtain_way": "WISH"
+}

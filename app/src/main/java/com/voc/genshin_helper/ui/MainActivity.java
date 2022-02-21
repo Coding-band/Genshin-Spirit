@@ -1249,18 +1249,29 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // About
-        TextView contact_link1 = viewPager4.findViewById(R.id.contact_link1);
-        TextView contact_link2 = viewPager4.findViewById(R.id.contact_link2);
         TextView contact_link3 = viewPager4.findViewById(R.id.contact_link3);
         TextView contact_link4 = viewPager4.findViewById(R.id.contact_link4);
         TextView contact_link5 = viewPager4.findViewById(R.id.contact_link5);
-        TextView contact_link6 = viewPager4.findViewById(R.id.contact_link6);
-        TextView contact_link7 = viewPager4.findViewById(R.id.contact_link7);
+        TextView link1 = viewPager4.findViewById(R.id.textView12);
+        TextView link2 = viewPager4.findViewById(R.id.textView13);
+        TextView link3 = viewPager4.findViewById(R.id.textView10);
+        TextView link4 = viewPager4.findViewById(R.id.textView11);
+        TextView link5 = viewPager4.findViewById(R.id.textView39);
+        TextView link6 = viewPager4.findViewById(R.id.textView43);
+        TextView link7 = viewPager4.findViewById(R.id.textView40);
+        TextView link8 = viewPager4.findViewById(R.id.textView41);
+        TextView link9 = viewPager4.findViewById(R.id.textView44);
 
-        contact_link1.setMovementMethod(LinkMovementMethod.getInstance());
-        contact_link2.setMovementMethod(LinkMovementMethod.getInstance());
-        contact_link6.setMovementMethod(LinkMovementMethod.getInstance());
-        contact_link7.setMovementMethod(LinkMovementMethod.getInstance());
+        link1.setMovementMethod(LinkMovementMethod.getInstance());
+        link2.setMovementMethod(LinkMovementMethod.getInstance());
+        link3.setMovementMethod(LinkMovementMethod.getInstance());
+        link4.setMovementMethod(LinkMovementMethod.getInstance());
+        link5.setMovementMethod(LinkMovementMethod.getInstance());
+        link6.setMovementMethod(LinkMovementMethod.getInstance());
+        link7.setMovementMethod(LinkMovementMethod.getInstance());
+        link8.setMovementMethod(LinkMovementMethod.getInstance());
+        link9.setMovementMethod(LinkMovementMethod.getInstance());
+
         contact_link3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -1,0 +1,12 @@
+{
+  "name": "The Alley Flash",
+  "rare": 4,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "EleMas",
+  "second_status": "ATK",
+  "desc": "Чёрный как ночь клинок. Его хозяином был грабитель, который орудовал в тёмных переулках.",
+  "skill_name": "Странствующий рыцарь",
+  "skill_desc": "Увеличивает урон персонажа на 12%/15%/18%/21%/24%. После получения урона эффект пропадает на 5 сек.",
+  "obtain_way": "LIMITED_WISH"
+}

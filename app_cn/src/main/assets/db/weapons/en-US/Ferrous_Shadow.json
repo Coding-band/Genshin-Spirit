@@ -1,0 +1,12 @@
+{
+  "name": "Ferrous Shadow",
+  "rare": 3,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "A replica of the famed sword of Arundolyn, the Lion of Light. Feel the power of a legendary hero as you hold this sword in your hand! Imagine yourself as the great warrior himself! Note: Daydreaming not recommended in live combat.",
+  "first_status": "HP%",
+  "second_status": "ATK",
+  "skill_name": "Unbending",
+  "skill_desc": "When HP falls below 70%/75%/80%/85%/90%, increases Charged Attack DMG by 30%/35%/40%/45%/50%, and Charged Attacks become much harder to interrupt.",
+  "obtain_way": "WISH"
+}

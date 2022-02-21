@@ -1,0 +1,12 @@
+{
+  "name": "Mappa Mare",
+  "rare": 4,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "大陸周辺の海流気候を詳しく記載した海図、貿易ルートを経て異国から璃月に渡った。",
+  "first_status": "EleMas",
+  "second_status": "ATK",
+  "skill_name": "注入の巻",
+  "skill_desc": "元素反応を起こした後、元素ダメージ+8%/10%/12%/14%/16%、継続時間10秒、最大2重まで。",
+  "obtain_way": "FORGE"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Skyward Pride",
+  "rare": 5,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "象徵風龍的驕傲廣布長空的雙手劍。揮舞時的低吟是風龍的氣勢，蘊含蒼空與長風的力量。",
+  "first_status": "EnRech%",
+  "second_status": "ATK",
+  "skill_name": "斬裂晴空的龍脊",
+  "skill_desc": "造成的傷害提高8%/10%/12%/14%/16%;施放元素爆發後:普通攻擊和重擊命中時會發出真空刃，對路徑上的敵人造成80%/100%/120%/140%/160%攻擊力的傷害，持續20秒或直至發出8次真空刃。",
+  "obtain_way": "WISH"
+}

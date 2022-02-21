@@ -1,0 +1,12 @@
+{
+  "name": "Blackcliff Warbow",
+  "rare": 4,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "黒岩でできた弓。かなり硬いため、腕に自信のある射手だけが思うままに使いこなせられる。",
+  "first_status": "CritDMG%",
+  "second_status": "ATK",
+  "skill_name": "勝ちに乗じる",
+  "skill_desc": "敵を倒した後、攻撃力+12%、継続時間30秒。最大3重まで、継続時間は加算されず、重ごとに別カウントされる。",
+  "obtain_way": "SHOP"
+}

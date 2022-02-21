@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2022 Xectorda 版權所有
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_less_edge"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/alarm_t1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="16dp"
+        android:text="@string/alarm_t1"
+        android:textColor="@color/tv_color"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/alarm_t2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="16dp"
+        android:text="@string/alarm_t2"
+        android:textColor="@color/tv_color"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/alarm_t3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="16dp"
+        android:text="@string/alarm_t3"
+        android:textColor="@color/tv_color"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/alarm_t4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="16dp"
+        android:text="@string/alarm_t4"
+        android:textColor="@color/tv_color"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/alarm_t5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/page_bg"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="16dp"
+        android:text="@string/alarm_t5"
+        android:textColor="@color/tv_color"
+        android:textSize="20sp" />
+</LinearLayout>

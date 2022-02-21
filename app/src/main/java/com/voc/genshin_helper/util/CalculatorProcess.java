@@ -121,9 +121,9 @@ public class CalculatorProcess {
     int  灰燼之心  = 0 ;
     int  獄火之蝶  = 0 ;
     //add in 20220106
-    int  NaN1  = 0 ; // Raiden Shogun Weekly Boss
-    int  NaN2  = 0 ; // Raiden Shogun Weekly Boss
-    int  NaN3  = 0 ; // Raiden Shogun Weekly Boss
+    int  萬劫之真意  = 0 ; // Raiden Shogun Weekly Boss
+    int  凶將之手眼  = 0 ; // Raiden Shogun Weekly Boss
+    int  禍神之禊淚  = 0 ; // Raiden Shogun Weekly Boss
 
 
     /** COMMON */ /**[牢固的箭簇,銳利的箭簇,歷戰的箭簇]*/
@@ -978,7 +978,7 @@ public class CalculatorProcess {
             if (ArtifactIsCal.get(x) == true) {
                 /** CAL EXP */
                 int exp_tmp = 0;
-                
+
                 int rare_tmp = ArtifactRareList.get(x);
                 Log.wtf("rare_tmp", String.valueOf(rare_tmp));
 
@@ -1268,8 +1268,8 @@ public class CalculatorProcess {
         }
 
         /** WEEK-BOSS */
-        String[] week_boss_temp = new String[]{"北風之環","東風的吐息","東風之翎","北風的魂匣","東風之爪","北風之尾","魔王之刃·殘片","吞天之鯨·只角","武煉之魂·孤影","龍王之冕","血玉之枝","鎏金之鱗","熔毀之刻","灰燼之心","獄火之蝶","NaN1","NaN2","NaN3"};
-        int[] week_boss_temp_cnt = new int[]{北風之環,東風的吐息,東風之翎,北風的魂匣,東風之爪,北風之尾,魔王之刃_殘片,吞天之鯨_只角,武煉之魂_孤影,龍王之冕,血玉之枝,鎏金之鱗,熔毀之刻,灰燼之心,獄火之蝶,NaN1,NaN2,NaN3};
+        String[] week_boss_temp = new String[]{"北風之環","東風的吐息","東風之翎","北風的魂匣","東風之爪","北風之尾","魔王之刃·殘片","吞天之鯨·只角","武煉之魂·孤影","龍王之冕","血玉之枝","鎏金之鱗","熔毀之刻","灰燼之心","獄火之蝶","萬劫之真意","凶將之手眼","禍神之禊淚"};
+        int[] week_boss_temp_cnt = new int[]{北風之環,東風的吐息,東風之翎,北風的魂匣,東風之爪,北風之尾,魔王之刃_殘片,吞天之鯨_只角,武煉之魂_孤影,龍王之冕,血玉之枝,鎏金之鱗,熔毀之刻,灰燼之心,獄火之蝶,萬劫之真意,凶將之手眼,禍神之禊淚};
         gridLayout = viewPager.findViewById(R.id.result_weekboss_gl);
         gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
@@ -1816,9 +1816,9 @@ public class CalculatorProcess {
             if(temp_item.get(3).equals("灰燼之心")){灰燼之心 = addCountIntoVar(灰燼之心,temp_count,"T-BOSS");}
             if(temp_item.get(3).equals("獄火之蝶")){獄火之蝶 = addCountIntoVar(獄火之蝶,temp_count,"T-BOSS");}
 
-            if(temp_item.get(3).equals("NaN1")){NaN1 = addCountIntoVar(NaN1,temp_count,"T-BOSS");}
-            if(temp_item.get(3).equals("NaN2")){NaN2 = addCountIntoVar(NaN2,temp_count,"T-BOSS");}
-            if(temp_item.get(3).equals("NaN3")){NaN3 = addCountIntoVar(NaN3,temp_count,"T-BOSS");}
+            if(temp_item.get(3).equals("萬劫之真意")){萬劫之真意 = addCountIntoVar(萬劫之真意,temp_count,"T-BOSS");}
+            if(temp_item.get(3).equals("凶將之手眼")){凶將之手眼 = addCountIntoVar(凶將之手眼,temp_count,"T-BOSS");}
+            if(temp_item.get(3).equals("禍神之禊淚")){禍神之禊淚 = addCountIntoVar(禍神之禊淚,temp_count,"T-BOSS");}
 
         }
 
@@ -1921,17 +1921,17 @@ public class CalculatorProcess {
 
         Log.wtf("Procedure","addCountIntoVarX1");
         if(XPR.equals("BOSS")) {
-                ITEM = ITEM + temp_count.get(8);
-                return ITEM;
+            ITEM = ITEM + temp_count.get(8);
+            return ITEM;
         }else if(XPR.equals("T-BOSS")) {
-                ITEM = ITEM + temp_count.get(6);
-                return ITEM;
+            ITEM = ITEM + temp_count.get(6);
+            return ITEM;
         }else if(XPR.equals("LOCAL")) {
-                ITEM = ITEM + temp_count.get(4);
-                return ITEM;
+            ITEM = ITEM + temp_count.get(4);
+            return ITEM;
         }else if(XPR.equals("COMMON")) {
-                ITEM = ITEM + temp_count.get(5);
-                return ITEM;
+            ITEM = ITEM + temp_count.get(5);
+            return ITEM;
         }
 
         Log.wtf("Procedure","addCountIntoVarX2");

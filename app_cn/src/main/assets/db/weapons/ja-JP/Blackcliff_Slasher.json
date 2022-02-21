@@ -1,0 +1,12 @@
+{
+  "name": "Blackcliff Slasher",
+  "rare": 4,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "とても丈夫な黒岩大刀、刀身は暗赤色。",
+  "first_status": "CritDMG%",
+  "second_status": "ATK",
+  "skill_name": "勝ちに乗じる",
+  "skill_desc": "敵を倒した後、攻撃力+12%、継続時間30秒。最大3重まで、継続時間は加算されず、重ごとに別カウントされる。",
+  "obtain_way": "SHOP"
+}

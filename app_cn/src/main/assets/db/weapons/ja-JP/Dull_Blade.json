@@ -1,0 +1,12 @@
+{
+  "name": "Dull Blade",
+  "rare": 1,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "ATK",
+  "second_status": "N/A",
+  "desc": "少年の夢、旅に出る興奮——この2つでも物足りないなら、勇気も入れてみよう。",
+  "skill_name": "N/A",
+  "skill_desc": "N/A",
+  "obtain_way": "FIRST_GIFT"
+}

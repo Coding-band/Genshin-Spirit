@@ -1,0 +1,12 @@
+{
+  "name": "Slingshot",
+  "rare": 3,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "A bow, despite the name. After countless experiments and improvements to the design, the creator of the ultimate slingshot found himself to have made what was actually a bow.",
+  "first_status": "CritRate%",
+  "second_status": "ATK",
+  "skill_name": "Slingshot",
+  "skill_desc": "If a Normal or Charged Attack hits a target within 0.3s of being fired, increases DMG by 36%/42%/48%/54%/60%. Otherwise, decreases DMG by 10%.",
+  "obtain_way": "WISH_CHEST"
+}

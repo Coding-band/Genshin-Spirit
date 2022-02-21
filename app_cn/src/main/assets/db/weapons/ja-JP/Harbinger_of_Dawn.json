@@ -1,0 +1,12 @@
+{
+  "name": "Harbinger of Dawn",
+  "rare": 3,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "CritDMG%",
+  "second_status": "ATK",
+  "desc": "かつて朝日のように輝いていた宝剣、手にした人は「独りよがり」の力を手に入れる。剣身にあった発光素材はもうなくなっている。",
+  "skill_name": "奮い立てる",
+  "skill_desc": "HPが90%以上の場合、会心率+14%/17.5%/21%/24.5%/28%。",
+  "obtain_way": "WISH_EVENT_HDBBHJYJJ"
+}

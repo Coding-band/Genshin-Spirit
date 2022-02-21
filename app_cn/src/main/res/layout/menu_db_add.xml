@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2022 Xectorda 版權所有
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:hedgehog="http://schemas.android.com/tools"
+    android:background="@drawable/bg_less_edge"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/db_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="@string/cal_create_set"
+        android:textColor="@color/tv_color"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/db_name_et"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:hint="@string/cal_enter_name"
+        android:inputType="textPersonName"
+        android:maxLength="64"
+        android:textColor="@color/tv_color"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/db_cancel"
+                android:layout_width="72dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_square_border"
+                android:text="@android:string/cancel"
+                android:textColor="@color/theme_color" />
+
+            <Button
+                android:id="@+id/db_ok"
+                android:layout_width="72dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_square_border_colorful"
+                android:text="@android:string/ok"
+                android:textColor="@color/tv_color" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

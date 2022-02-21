@@ -1,0 +1,12 @@
+{
+  "name": "The Alley Flash",
+  "rare": 4,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "EleMas",
+  "second_status": "ATK",
+  "desc": "A straight sword as black as the night. It once belonged to a thief who roamed the benighted streets.",
+  "skill_name": "Itinerant Hero",
+  "skill_desc": "Increases DMG dealt by the character equipping this weapon by 12%/15%/18%/21%/24%. Taking DMG disables this effect for 5s.",
+  "obtain_way": "LIMITED_WISH"
+}

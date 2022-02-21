@@ -1,0 +1,12 @@
+{
+  "name": "Dodoco Tales",
+  "rare": 4,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "A children's book in a resplendent cover, filled with silly short stories at which one cannot help but laugh.",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "Dodoventure!",
+  "skill_desc": "Normal Attack hits on opponents increase Charged Attack DMG by 16/20/24/28/32% for 6s.\nCharged Attack hits on opponents increase ATK by 8/10/12/14/16% for 6s.",
+  "obtain_way": "EVENT"
+}

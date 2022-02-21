@@ -1,0 +1,12 @@
+{
+  "name": "Prototype Amber",
+  "rare": 4,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "黒岩場の中に隠されていた金珀法器。微かに太陽と月と星の光を放っている。",
+  "first_status": "HP%",
+  "second_status": "ATK",
+  "skill_name": "炊金",
+  "skill_desc": "元素爆発を発動した後6秒間、2秒毎に元素エネルギーを4/4.5/5/5.5/6回復。さらに2秒毎にチーム全員のHPの4%/4.5%/5%/5.5%/6%を回復。",
+  "obtain_way": "FORGE"
+}

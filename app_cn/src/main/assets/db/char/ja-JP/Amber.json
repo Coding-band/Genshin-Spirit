@@ -1,0 +1,59 @@
+{
+  "name": "Amber",
+  "rare": 4,
+  "area": "Mondstadt",
+  "element": "Pyro",
+  "weapon": "Bow",
+  "sex": "Female",
+  "birth": "08/10",
+  "role": "Support_DPS",
+  "isComingSoon": false,
+  "nick": "飛行チャンピオン",
+  "desc": "元気満々な女の子、騎士団で最も優秀で、最後の偵察騎士である。",
+  "battle_talent": {
+    "normal_name": "一流射手",
+    "normal_img": "normal_atack_sharpshooter",
+    "normal_desc1": "最大5段の連続射撃を行う。",
+    "normal_desc2": "ダメージがより高く、より精確な狙い撃ちを発動する。\n照準時、烈炎を矢先に凝集させ、烈炎に満ちた矢で敵に炎元素ダメージを与える。",
+    "normal_desc3": "空中から矢の雨を放ち、凄まじいスピードで落下し地面に衝撃を与え、落下時に範囲ダメージを与える。",
+    "element_name": "爆弾人形",
+    "element_img": "explosive_puppet",
+    "element_desc": "頼もしいウサギ伯爵の出番。<br>ウサギ伯爵:<br><br>周囲の敵を挑発し、攻撃を引き付ける。<br>耐久度はアンバーのHP上限によって決まる。<br>破壊された時または継続時間が終了した時に爆発し、炎元素範囲ダメージを与える。<br>長押し: 投擲方向を調整できる。\n投擲距離は長押しする時間によって増加する。",
+    "final_name": "矢の雨",
+    "final_img": "fiery_rain",
+    "final_desc": "前方に炎の矢の雨を放ち、炎元素範囲ダメージを持続的に与える。"
+  },
+  "basic_talent": {
+    "talent1_name": "百発百中！",
+    "talent1_img": "every_arrow_finds_its_target",
+    "talent1_desc": "矢の雨の会心率+10%、影響範囲+30%。",
+    "talent2_name": "制圧射撃",
+    "talent2_img": "precise_shot",
+    "talent2_desc": "狙い撃ちが弱点に命中すると、攻撃力+15%、継続時間10秒。",
+    "talent3_name": "飛行チャンピオン",
+    "talent3_img": "gliding_champion",
+    "talent3_desc": "チーム内の自身のキャラクター全員が滑翔に消費するスタミナ-20%。<br>同じ効果を持つ固有天赋との重ね掛け不可。"
+  },
+  "sof": {
+    "sof1_name": "一挙双擒！",
+    "sof1_img": "one_arrow_to_rule_them_all",
+    "sof1_desc": "狙い撃ちする時、矢を連続で2本放つ。2本目の矢は元の矢の20%のダメージを与える。",
+    "sof2_name": "一触即発",
+    "sof2_img": "bunny_triggered",
+    "sof2_desc": "ウサギ伯爵が改良された！フルチャージの狙い撃ちがウサギ伯爵の足に命中するとウサギ伯爵を直接起爆させることができる。<br>この方法で自らウサギ伯爵を起爆した場合、追加で200%のダメージを与える。",
+    "sof3_name": "燃やせ！",
+    "sof3_img": "it_burns",
+    "sof3_desc": "矢の雨のスキルLv.+3。<br>最大Lv.15まで。",
+    "sof4_name": "ただの人形じゃない",
+    "sof4_img": "not_just_any_doll",
+    "sof4_desc": "爆弾人形のクールタイム-20%、使用可能回数+1。",
+    "sof5_name": "ウサギ伯爵だよ！",
+    "sof5_img": "its_baron_bunny",
+    "sof5_desc": "爆弾人形のスキルLv.+3。<br>最大Lv.15まで。",
+    "sof6_name": "野火の如く",
+    "sof6_img": "wildfire",
+    "sof6_desc": "矢の雨を発動した10秒間、チーム全員の移動速度+15%、攻撃力+15%。"
+  }
+}
+
+

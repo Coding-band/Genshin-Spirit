@@ -1,0 +1,12 @@
+{
+  "name": "Engulfing Lightning",
+  "rare": 5,
+  "weapon": "Polearm",
+  "isComingSoon": false,
+  "desc": "用于「斩草」的薙tì刀。对向此物之军势，也会如苇草般倒下吧…",
+  "first_status": "EnRech%",
+  "second_status": "ATK",
+  "skill_name": "非时之梦·常世灶食",
+  "skill_desc": "攻击力获得提升，提升程度相当于元素充能效率超出100%部分的28%/35%/42%/49%/56%，至多通过这种方式提升80%/90%/100%/110%/120%。施放元素爆发后的12秒内，元素充能效率提升30%/35%/40%/45%/50%。",
+  "obtain_way": "LIMITED_WISH"
+}

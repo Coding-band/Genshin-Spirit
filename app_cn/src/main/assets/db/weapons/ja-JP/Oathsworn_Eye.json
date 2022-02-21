@@ -1,0 +1,12 @@
+{
+  "name": "Oathsworn Eye",
+  "rare": 4,
+  "weapon": "Catalyst",
+  "isComingSoon": true,
+  "desc": "N/A",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "淡く光りし海淵の民",
+  "skill_desc": "元素スキルを発動すると、元素チャージ効率+24%/30%/36%/42%/48%、継続時間10秒。",
+  "obtain_way": "WISH"
+}

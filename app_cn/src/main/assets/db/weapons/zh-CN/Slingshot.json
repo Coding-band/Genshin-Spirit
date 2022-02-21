@@ -1,0 +1,12 @@
+{
+  "name": "Slingshot",
+  "rare": 3,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "其实就是一把弓。在无数的改进和实验中，发明出究极弹弓的人发现自己做了一把弓。",
+  "first_status": "CritRate%",
+  "second_status": "ATK",
+  "skill_name": "弹弓",
+  "skill_desc": "普通攻击和瞄准射击时，箭矢若在发射后的0.3秒内击中敌人，则造成的伤害增加36%/42%/48%/54%/60%；否则，造成的伤害下降10%。",
+  "obtain_way": "WISH_CHEST"
+}

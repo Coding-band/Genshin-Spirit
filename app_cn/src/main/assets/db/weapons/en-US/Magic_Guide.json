@@ -1,0 +1,12 @@
+{
+  "name": "Magic Guide",
+  "rare": 3,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "Version 12. A reprint featuring corrections to Version 11 and brand-new additions based on recent developments.",
+  "first_status": "EleMas",
+  "second_status": "ATK",
+  "skill_name": "Bane of Storm and Tide",
+  "skill_desc": "Increases DMG against opponents affected by Hydro or Electro by 12%/15%/18%/21%/24%.",
+  "obtain_way": "WISH"
+}

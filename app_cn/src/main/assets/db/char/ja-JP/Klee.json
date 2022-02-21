@@ -1,0 +1,59 @@
+{
+  "name": "Klee",
+  "rare": 5,
+  "area": "Mondstadt",
+  "element": "Pyro",
+  "weapon": "Catalyst",
+  "sex": "Female",
+  "birth": "07/27",
+  "role": "Main_DPS",
+  "isComingSoon": false,
+  "nick": "逃げ回る太陽",
+  "desc": "西風騎士団反省室の常連、モンドの爆破スペシャリスト。人呼んで「逃げ回る太陽」。",
+  "battle_talent": {
+    "normal_name": "バンバン!",
+    "normal_img": "normal_attack_wind_spirit_creation",
+    "normal_desc1": "ぶつかると爆発するものを投げ出す！最大3段の爆弾攻撃を行い、炎元素範囲ダメージを与える。",
+    "normal_desc2": "一定のスタミナを消費し、短い詠唱をした後、敵に炎元素範囲ダメージを与える。",
+    "normal_desc3": "空中から烈焔の力を凝集しながら落下し、地面に衝撃を与える。経路上の敵を攻撃し、落下時に炎元素範囲ダメージを与える。",
+    "element_name": "ボンボン爆弾",
+    "element_img": "jumpy_dumpy",
+    "element_desc": "巨大な威力を持つボンボン爆弾を投げ出す！\nボンボン爆弾は連続で3回跳ね、1回毎に爆発を起こし、炎元素範囲ダメージを与える。\n3回跳ねた後、爆弾は複数のブービートラップに分裂する。\nブービートラップは敵に触れる、または一定時間後に爆発し、炎元素範囲ダメージを与える。\n初期使用可能回数2回。",
+    "final_name": "ドッカン花火",
+    "final_img": "nova_burst",
+    "final_desc": "クレー火力全開！スキル継続中、ドッカン花火を立て続けに召喚して周囲の敵を攻撃し、炎元素範囲ダメージを与える。"
+  },
+  "basic_talent": {
+    "talent1_name": "こんこんプレゼント",
+    "talent1_img": "pounding_surprise",
+    "talent1_desc": "ボンボン爆弾と通常攻撃が敵にダメージを与えた時、50%の確率でクレーは爆裂花火を獲得する。\n重撃を発動する時、スタミナの代わりに爆裂花火を優先的に消費し、与えるダメージ+50%。",
+    "talent2_name": "無限花火",
+    "talent2_img": "sparkling_burst",
+    "talent2_desc": "クレーの重撃が会心を発生すると、チーム全員の元素エネルギーが2回復する。",
+    "talent3_name": "宝物揃い",
+    "talent3_img": "all_of_my_treasures",
+    "talent3_desc": "ミニマップで周囲のモンド地域の特産の位置を表示する。"
+  },
+  "sof": {
+    "sof1_name": "ゴロゴロコンボ",
+    "sof1_img": "chained_reactions",
+    "sof1_desc": "攻撃やスキル発動時、一定の確率で花火を召喚して敵を攻撃し、ドッカン花火の攻撃力120%分のダメージを与える。",
+    "sof2_name": "弾丸の破片",
+    "sof2_img": "explosive_frags",
+    "sof2_desc": "ボンボン爆弾のブービートラップのダメージを受けた敵の防御力-23%、継続時間10秒。",
+    "sof3_name": "クレー特製",
+    "sof3_img": "exquisitive_compound",
+    "sof3_desc": "ボンボン爆弾のスキルLv.+3。\n最大Lv.15まで。",
+    "sof4_name": "一触即発",
+    "sof4_img": "sparkly_explosion",
+    "sof4_desc": "ドッカン花火継続中にキャラクターを切り替えると、爆発が発生し、攻撃力555%分の炎元素範囲ダメージを与える。",
+    "sof5_name": "轟撃の星",
+    "sof5_img": "nova_burst",
+    "sof5_desc": "ドッカン花火のスキルLv.+3。\n最大Lv.15まで。",
+    "sof6_name": "火力全開",
+    "sof6_img": "blazing_delight",
+    "sof6_desc": "ドッカン花火状態中、クレーは3秒毎にチーム全員（クレー自身を除く）の元素エネルギーを3回復する。\nドッカン花火発動後25秒間、チーム全員の炎元素ダメージ+10%。"
+  }
+}
+
+

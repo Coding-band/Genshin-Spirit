@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Bitmap;
@@ -41,9 +42,11 @@ import com.voc.genshin_helper.ui.CalculatorDBActivity;
 import com.voc.genshin_helper.ui.CalculatorUI;
 import com.voc.genshin_helper.ui.MainActivity;
 import com.voc.genshin_helper.util.CustomToast;
+import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /*
@@ -56,6 +59,7 @@ import java.util.List;
  * Created by ankit on 27/10/17.
  */
 
+
 public class CalculatorDBAdapter extends RecyclerView.Adapter<CalculatorDBAdapter.ViewHolder> {
 
     private Context context;
@@ -63,6 +67,10 @@ public class CalculatorDBAdapter extends RecyclerView.Adapter<CalculatorDBAdapte
     private List<CalculatorDB> dbList;
     private AdapterView.OnItemClickListener mListener;
     private WebView webView ;
+
+    String[] rules = new String[]{
+            "0","1","2","3","4","5","6","7","8","9",
+            "&","*","@","\"","{","}","^",":",",","#","$","\"","!","/","<",">","-","%",".","+","?",";","'"," ","~","_","|","="};
 
     public CalculatorDBAdapter(Context context, List<CalculatorDB> dbList, Activity activity) {
         this.context = context;
@@ -110,17 +118,15 @@ public class CalculatorDBAdapter extends RecyclerView.Adapter<CalculatorDBAdapte
         public TextView db_sheet_tv,db_sheet_info;
         public ImageView db_sheet_ico;
         public LinearLayout db_sheet_bg ;
-        public String name ;
+        public String name = "";
 
         public ViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
 
             db_sheet_ico = itemView.findViewById(R.id.db_sheet_ico);
             db_sheet_tv = itemView.findViewById(R.id.db_sheet_tv);
-            db_sheet_tv = itemView.findViewById(R.id.db_sheet_tv);
             db_sheet_bg = itemView.findViewById(R.id.db_sheet_bg);
             db_sheet_info = itemView.findViewById(R.id.db_sheet_info);
-
 
             db_sheet_bg.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -157,15 +163,37 @@ public class CalculatorDBAdapter extends RecyclerView.Adapter<CalculatorDBAdapte
                         @Override
                         public void onClick(View view) {
                             String newName = menu_edit_tv.getText().toString();
+                            DataBaseHelper dbHelperS = new DataBaseHelper(context);
+                            SQLiteDatabase db_check = dbHelperS.getWritableDatabase();
 
                             if(!newName.equals("") && !newName.equals(" ") && menu_edit_tv.getText() != null) {
-                                if(newName.startsWith("1")||newName.startsWith("2")||newName.startsWith("3")||newName.startsWith("4")||newName.startsWith("5")||newName.startsWith("6")||newName.startsWith("7")||newName.startsWith("8")||newName.startsWith("9")||newName.startsWith("10")){
-                                    CustomToast.toast(context,activity,"Number is not allow to use a first character.");
+                                if(Arrays.asList(rules).contains(newName.substring(0,1))){
+                                    CustomToast.toast(context,activity,context.getString(R.string.name_start_with_num_err));
+                                }else if(tableExists(db_check, newName)){
+                                    CustomToast.toast(context,activity,context.getString(R.string.name_used));
                                 }else {
                                     if(newName.contains(" ")){
                                         newName = newName.replace(" ","_");
                                     }
+
                                     if(!oldName.toLowerCase().equals(newName.toLowerCase())){
+                                        /*
+                                        Icon setting (Easter Egg) -> Maybe make a real for choosing ?
+
+                                        ItemRss item_rss =  new ItemRss();
+                                        final int radius = 25;
+                                        final int margin = 4;
+                                        final Transformation transformation = new RoundedCornersTransformation(radius, margin);
+
+                                        Picasso.get()
+                                                .load(FileLoader.loadIMG(item_rss.getCharByName(item_rss.getCharNameByTranslatedName(newName.replace("_"," "), context),context)[3], context))
+                                                .transform(transformation)
+                                                .resize(72, 72)
+                                                .error(R.drawable.ic_baseline_calculate_24)
+                                                .into(db_sheet_ico);
+
+                                         */
+
                                     DataBaseHelper dbHelper = new DataBaseHelper(context);
                                     SQLiteDatabase db = dbHelper.getWritableDatabase();
                                     db.execSQL("ALTER TABLE "+oldName+"_char"+ " RENAME TO "+newName+"_char");
@@ -173,6 +201,40 @@ public class CalculatorDBAdapter extends RecyclerView.Adapter<CalculatorDBAdapte
                                     db.execSQL("ALTER TABLE "+oldName+ "_artifact"+" RENAME TO "+newName+ "_artifact");
 
                                     db.execSQL("UPDATE IndexDB SET name = \""+newName+"\" WHERE name = \""+oldName+"\";");
+
+                                    SharedPreferences sharedPreferencesB = context.getSharedPreferences("buff_list",MODE_PRIVATE);
+                                        SharedPreferences.Editor editor = sharedPreferencesB.edit();
+                                    for (int x = 0 ; x < 5 ; x++){
+
+                                        // Copy the old buff data to brand new part
+                                        editor.putString(newName+"_"+"artifactBuffMainItem"+String.valueOf(x),sharedPreferencesB.getString(oldName+"_"+"artifactBuffMainItem"+String.valueOf(x),""));
+                                        editor.putString(newName+"_"+"artifactBuffSec1Item"+String.valueOf(x),sharedPreferencesB.getString(oldName+"_"+"artifactBuffSec1Item"+String.valueOf(x),""));
+                                        editor.putString(newName+"_"+"artifactBuffSec2Item"+String.valueOf(x),sharedPreferencesB.getString(oldName+"_"+"artifactBuffSec2Item"+String.valueOf(x),""));
+                                        editor.putString(newName+"_"+"artifactBuffSec3Item"+String.valueOf(x),sharedPreferencesB.getString(oldName+"_"+"artifactBuffSec3Item"+String.valueOf(x),""));
+                                        editor.putString(newName+"_"+"artifactBuffSec4Item"+String.valueOf(x),sharedPreferencesB.getString(oldName+"_"+"artifactBuffSec4Item"+String.valueOf(x),""));
+
+                                        editor.putString(newName+"_"+"artifactBuffMainValue"+String.valueOf(x),sharedPreferencesB.getString(oldName+"_"+"artifactBuffMainValue"+String.valueOf(x),""));
+                                        editor.putString(newName+"_"+"artifactBuffSec1Value"+String.valueOf(x),sharedPreferencesB.getString(oldName+"_"+"artifactBuffSec1Value"+String.valueOf(x),""));
+                                        editor.putString(newName+"_"+"artifactBuffSec2Value"+String.valueOf(x),sharedPreferencesB.getString(oldName+"_"+"artifactBuffSec2Value"+String.valueOf(x),""));
+                                        editor.putString(newName+"_"+"artifactBuffSec3Value"+String.valueOf(x),sharedPreferencesB.getString(oldName+"_"+"artifactBuffSec3Value"+String.valueOf(x),""));
+                                        editor.putString(newName+"_"+"artifactBuffSec4Value"+String.valueOf(x),sharedPreferencesB.getString(oldName+"_"+"artifactBuffSec4Value"+String.valueOf(x),""));
+
+                                        // Delete tge old buff data
+                                        editor.remove(oldName+"_"+"artifactBuffMainItem"+String.valueOf(x));
+                                        editor.remove(oldName+"_"+"artifactBuffSec1Item"+String.valueOf(x));
+                                        editor.remove(oldName+"_"+"artifactBuffSec2Item"+String.valueOf(x));
+                                        editor.remove(oldName+"_"+"artifactBuffSec3Item"+String.valueOf(x));
+                                        editor.remove(oldName+"_"+"artifactBuffSec4Item"+String.valueOf(x));
+
+                                        editor.remove(oldName+"_"+"artifactBuffMainValue"+String.valueOf(x));
+                                        editor.remove(oldName+"_"+"artifactBuffSec1Value"+String.valueOf(x));
+                                        editor.remove(oldName+"_"+"artifactBuffSec2Value"+String.valueOf(x));
+                                        editor.remove(oldName+"_"+"artifactBuffSec3Value"+String.valueOf(x));
+                                        editor.remove(oldName+"_"+"artifactBuffSec4Value"+String.valueOf(x));
+
+                                        editor.apply();
+                                    }
+
                                     dialog.dismiss();
                                     if (context instanceof CalculatorDBActivity){Log.wtf("YES","IT's");
                                         (((CalculatorDBActivity) context)).readIndexRecord();
@@ -225,5 +287,25 @@ public class CalculatorDBAdapter extends RecyclerView.Adapter<CalculatorDBAdapte
     public void filterList(List<CalculatorDB> filteredList) {
         dbList = filteredList;
         notifyDataSetChanged();
+    }
+
+    public boolean tableExists(SQLiteDatabase db, String tableName)
+    {
+        if (tableName == null || db == null || !db.isOpen())
+        {
+            return false;
+        }
+        Cursor cursor = db.rawQuery(
+                "SELECT COUNT(*) FROM IndexDB WHERE name = ?",
+                new String[] {tableName}
+        );
+        if (!cursor.moveToFirst())
+        {
+            cursor.close();
+            return false;
+        }
+        int count = cursor.getInt(0);
+        cursor.close();
+        return count > 0;
     }
 }

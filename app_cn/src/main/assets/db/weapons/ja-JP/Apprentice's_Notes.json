@@ -1,0 +1,12 @@
+{
+  "name": "Apprentice's Notes",
+  "rare": 1,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "ある優等生が残したノート。字がとても綺麗。実用性のあるまじないがたくさん記されている。",
+  "first_status": "N/A",
+  "second_status": "ATK",
+  "skill_name": "N/A",
+  "skill_desc": "N/A",
+  "obtain_way": "FIRST_GIFT"
+}

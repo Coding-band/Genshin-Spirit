@@ -6,3 +6,4 @@
 
 rootProject.name = "原神小幫手"
 include ':app'
+include ':app_cn'

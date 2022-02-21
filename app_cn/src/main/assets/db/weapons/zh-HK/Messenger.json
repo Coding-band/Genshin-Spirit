@@ -1,0 +1,12 @@
+{
+  "name": "Messenger",
+  "rare": 3,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "造型簡單的木制弓。傳說它曾被人用作遠端通訊的道具。",
+  "first_status": "CritDMG%",
+  "second_status": "ATK",
+  "skill_name": "彈弓",
+  "skill_desc": "瞄準射擊時，若命中要害，則額外造成100%/125%/150%/175%/200%攻擊力的傷害，該傷害必定暴擊。此效果每10秒只能觸發一次。",
+  "obtain_way": "CHESR_MD"
+}

@@ -46,6 +46,17 @@ public class BuffCal2 {
     double 角色基礎生命值,角色基礎攻擊力,角色基礎防禦力,角色生命值加成,角色攻擊力加成,角色防禦力加成,角色暴擊率,角色暴擊傷害,角色元素充能,角色元素精通,角色治療加成,角色火元素傷害加成,角色水元素傷害加成,角色風元素傷害加成,角色雷元素傷害加成,角色草元素傷害加成,角色冰元素傷害加成,角色岩元素傷害加成,角色物理傷害加成;
     double 普通攻擊_一段傷害,普通攻擊_二段傷害,普通攻擊_三段傷害,普通攻擊_四段傷害,普通攻擊_五段傷害,普通攻擊_六段傷害,普通攻擊_下墜期間傷害,普通攻擊_低空墜地衝擊傷害,普通攻擊_高空墜地衝擊傷害,普通攻擊_瞄準射擊,普通攻擊_滿蓄力瞄準射擊,普通攻擊_重擊傷害,普通攻擊_重擊循環傷害,普通攻擊_重擊終結傷害;
 
+    double 普通攻擊_一段蓄力瞄準射擊;
+    double 普通攻擊_霜華矢命中傷害;
+    double 普通攻擊_霜華矢_霜華綻發傷害;
+    double 普通攻擊_焰硝矢傷害;
+    double 普通攻擊_荒瀧逆袈裟連斬傷害;
+    double 普通攻擊_荒瀧逆袈裟終結傷害;
+    double 普通攻擊_左一文字斬傷害;
+    double 普通攻擊_斷流_閃_傷害;
+    double 普通攻擊_斷流_破_傷害;
+
+
     String[] 元素戰技_baseName ;
     double[][] 元素戰技_value;
 
@@ -93,7 +104,7 @@ public class BuffCal2 {
     String Dendro = "Dendro";
     String Anemo = "Anemo";
     String Electro = "Electro";
-    String PHY = "PHY";
+    String PHY = "Physical";
 
 
     // Have to wait for adding diff element's DMG
@@ -333,52 +344,52 @@ public class BuffCal2 {
             角色基礎防禦力 = 基礎防禦力.getDouble(tmp_break);
 
             JSONArray 生命值加成 = 角色突破.getJSONArray("生命值加成");
-            角色生命值加成 = 生命值加成.getDouble(tmp_break)/100;
+            角色生命值加成 = 生命值加成.getDouble(tmp_break);
 
             JSONArray 攻擊力加成 = 角色突破.getJSONArray("攻擊力加成");
-            角色攻擊力加成 = 攻擊力加成.getDouble(tmp_break)/100;
+            角色攻擊力加成 = 攻擊力加成.getDouble(tmp_break);
 
             JSONArray 防禦力加成 = 角色突破.getJSONArray("防禦力加成");
-            角色防禦力加成 = 防禦力加成.getDouble(tmp_break)/100;
+            角色防禦力加成 = 防禦力加成.getDouble(tmp_break);
 
             JSONArray 暴擊率 = 角色突破.getJSONArray("暴擊率");
-            角色暴擊率 = 暴擊率.getDouble(tmp_break)/100;
+            角色暴擊率 = 暴擊率.getDouble(tmp_break);
 
             JSONArray 暴擊傷害 = 角色突破.getJSONArray("暴擊傷害");
-            角色暴擊傷害 = 暴擊傷害.getDouble(tmp_break)/100;
+            角色暴擊傷害 = 暴擊傷害.getDouble(tmp_break);
 
             JSONArray 元素充能 = 角色突破.getJSONArray("元素充能");
-            角色元素充能 = 元素充能.getDouble(tmp_break)/100;
+            角色元素充能 = 元素充能.getDouble(tmp_break);
 
             JSONArray 元素精通 = 角色突破.getJSONArray("元素精通");
             角色元素精通 = 元素精通.getDouble(tmp_break);
 
             JSONArray 治療加成 = 角色突破.getJSONArray("治療加成");
-            角色治療加成 = 治療加成.getDouble(tmp_break)/100;
+            角色治療加成 = 治療加成.getDouble(tmp_break);
 
             JSONArray 火元素傷害加成 = 角色突破.getJSONArray("火元素傷害加成");
-            角色火元素傷害加成 = 火元素傷害加成.getDouble(tmp_break)/100;
+            角色火元素傷害加成 = 火元素傷害加成.getDouble(tmp_break);
 
             JSONArray 水元素傷害加成 = 角色突破.getJSONArray("水元素傷害加成");
-            角色水元素傷害加成 = 水元素傷害加成.getDouble(tmp_break)/100;
+            角色水元素傷害加成 = 水元素傷害加成.getDouble(tmp_break);
 
             JSONArray 風元素傷害加成 = 角色突破.getJSONArray("風元素傷害加成");
-            角色風元素傷害加成 = 風元素傷害加成.getDouble(tmp_break)/100;
+            角色風元素傷害加成 = 風元素傷害加成.getDouble(tmp_break);
 
             JSONArray 雷元素傷害加成 = 角色突破.getJSONArray("雷元素傷害加成");
-            角色雷元素傷害加成 = 雷元素傷害加成.getDouble(tmp_break)/100;
+            角色雷元素傷害加成 = 雷元素傷害加成.getDouble(tmp_break);
 
             JSONArray 草元素傷害加成 = 角色突破.getJSONArray("草元素傷害加成");
-            角色草元素傷害加成 = 草元素傷害加成.getDouble(tmp_break)/100;
+            角色草元素傷害加成 = 草元素傷害加成.getDouble(tmp_break);
 
             JSONArray 冰元素傷害加成 = 角色突破.getJSONArray("冰元素傷害加成");
-            角色冰元素傷害加成 = 冰元素傷害加成.getDouble(tmp_break)/100;
+            角色冰元素傷害加成 = 冰元素傷害加成.getDouble(tmp_break);
 
             JSONArray 岩元素傷害加成 = 角色突破.getJSONArray("岩元素傷害加成");
-            角色岩元素傷害加成 = 岩元素傷害加成.getDouble(tmp_break)/100;
+            角色岩元素傷害加成 = 岩元素傷害加成.getDouble(tmp_break);
 
             JSONArray 物理傷害加成 = 角色突破.getJSONArray("物理傷害加成");
-            角色物理傷害加成 = 物理傷害加成.getDouble(tmp_break)/100;
+            角色物理傷害加成 = 物理傷害加成.getDouble(tmp_break);
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -389,46 +400,89 @@ public class BuffCal2 {
             JSONObject 普通攻擊 = jsonObject.getJSONObject("普通攻擊");
 
             JSONArray 一段傷害 = 普通攻擊.getJSONArray("一段傷害");
-            普通攻擊_一段傷害 = 一段傷害.getDouble(charSkill1AfterLvl-1)/100;
+            普通攻擊_一段傷害 = 一段傷害.getDouble(charSkill1AfterLvl-1);
 
             JSONArray 二段傷害 = 普通攻擊.getJSONArray("二段傷害");
-            普通攻擊_二段傷害 = 二段傷害.getDouble(charSkill1AfterLvl-1)/100;
+            普通攻擊_二段傷害 = 二段傷害.getDouble(charSkill1AfterLvl-1);
 
             JSONArray 三段傷害 = 普通攻擊.getJSONArray("三段傷害");
-            普通攻擊_三段傷害 = 三段傷害.getDouble(charSkill1AfterLvl-1)/100;
+            普通攻擊_三段傷害 = 三段傷害.getDouble(charSkill1AfterLvl-1);
 
             JSONArray 四段傷害 = 普通攻擊.getJSONArray("四段傷害");
-            普通攻擊_四段傷害 = 四段傷害.getDouble(charSkill1AfterLvl-1)/100;
+            普通攻擊_四段傷害 = 四段傷害.getDouble(charSkill1AfterLvl-1);
 
             JSONArray 五段傷害 = 普通攻擊.getJSONArray("五段傷害");
-            普通攻擊_五段傷害 = 五段傷害.getDouble(charSkill1AfterLvl-1)/100;
+            普通攻擊_五段傷害 = 五段傷害.getDouble(charSkill1AfterLvl-1);
 
             JSONArray 六段傷害 = 普通攻擊.getJSONArray("六段傷害");
-            普通攻擊_六段傷害 = 六段傷害.getDouble(charSkill1AfterLvl-1)/100;
+            普通攻擊_六段傷害 = 六段傷害.getDouble(charSkill1AfterLvl-1);
 
             JSONArray 下墜期間傷害 = 普通攻擊.getJSONArray("下墜期間傷害");
-            普通攻擊_下墜期間傷害 = 下墜期間傷害.getDouble(charSkill1AfterLvl-1)/100;
+            普通攻擊_下墜期間傷害 = 下墜期間傷害.getDouble(charSkill1AfterLvl-1);
 
             JSONArray 低空墜地衝擊傷害 = 普通攻擊.getJSONArray("低空墜地衝擊傷害");
-            普通攻擊_低空墜地衝擊傷害 = 低空墜地衝擊傷害.getDouble(charSkill1AfterLvl-1)/100;
+            普通攻擊_低空墜地衝擊傷害 = 低空墜地衝擊傷害.getDouble(charSkill1AfterLvl-1);
 
             JSONArray 高空墜地衝擊傷害 = 普通攻擊.getJSONArray("高空墜地衝擊傷害");
-            普通攻擊_高空墜地衝擊傷害 = 高空墜地衝擊傷害.getDouble(charSkill1AfterLvl-1)/100;
+            普通攻擊_高空墜地衝擊傷害 = 高空墜地衝擊傷害.getDouble(charSkill1AfterLvl-1);
 
             JSONArray 瞄準射擊 = 普通攻擊.getJSONArray("瞄準射擊");
-            普通攻擊_瞄準射擊 = 瞄準射擊.getDouble(charSkill1AfterLvl-1)/100;
+            普通攻擊_瞄準射擊 = 瞄準射擊.getDouble(charSkill1AfterLvl-1);
 
             JSONArray 滿蓄力瞄準射擊 = 普通攻擊.getJSONArray("滿蓄力瞄準射擊");
-            普通攻擊_滿蓄力瞄準射擊 = 滿蓄力瞄準射擊.getDouble(charSkill1AfterLvl-1)/100;
+            普通攻擊_滿蓄力瞄準射擊 = 滿蓄力瞄準射擊.getDouble(charSkill1AfterLvl-1);
 
             JSONArray 重擊傷害 = 普通攻擊.getJSONArray("重擊傷害");
-            普通攻擊_重擊傷害 = 重擊傷害.getDouble(charSkill1AfterLvl-1)/100;
+            普通攻擊_重擊傷害 = 重擊傷害.getDouble(charSkill1AfterLvl-1);
 
             JSONArray 重擊循環傷害 = 普通攻擊.getJSONArray("重擊循環傷害");
-            普通攻擊_重擊循環傷害 = 重擊循環傷害.getDouble(charSkill1AfterLvl-1)/100;
+            普通攻擊_重擊循環傷害 = 重擊循環傷害.getDouble(charSkill1AfterLvl-1);
 
             JSONArray 重擊終結傷害 = 普通攻擊.getJSONArray("重擊終結傷害");
-            普通攻擊_重擊終結傷害 = 重擊終結傷害.getDouble(charSkill1AfterLvl-1)/100;
+            普通攻擊_重擊終結傷害 = 重擊終結傷害.getDouble(charSkill1AfterLvl-1);
+
+            //----- Special For Some Char (Ganyu, Yoimiya, Itto)
+
+            // Ganyu
+            if(普通攻擊.has("一段蓄力瞄準射擊") && 普通攻擊.has("霜華矢命中傷害") && 普通攻擊.has("霜華矢·霜華綻發傷害")){
+                JSONArray 一段蓄力瞄準射擊 = 普通攻擊.getJSONArray("一段蓄力瞄準射擊");
+                普通攻擊_一段蓄力瞄準射擊 = 一段蓄力瞄準射擊.getDouble(charSkill1AfterLvl-1);
+
+                JSONArray 霜華矢命中傷害 = 普通攻擊.getJSONArray("霜華矢命中傷害");
+                普通攻擊_霜華矢命中傷害 = 霜華矢命中傷害.getDouble(charSkill1AfterLvl-1);
+
+                JSONArray 霜華矢_霜華綻發傷害 = 普通攻擊.getJSONArray("霜華矢·霜華綻發傷害");
+                普通攻擊_霜華矢_霜華綻發傷害 = 霜華矢_霜華綻發傷害.getDouble(charSkill1AfterLvl-1);
+            }
+
+            // Yoimiya
+            if(普通攻擊.has("焰硝矢傷害") ) {
+                JSONArray 焰硝矢傷害 = 普通攻擊.getJSONArray("焰硝矢傷害");
+                普通攻擊_焰硝矢傷害 = 焰硝矢傷害.getDouble(charSkill1AfterLvl - 1) ;
+            }
+
+            // Itto
+            if(普通攻擊.has("荒瀧逆袈裟連斬傷害") && 普通攻擊.has("荒瀧逆袈裟終結傷害") && 普通攻擊.has("左一文字斬傷害")){
+                JSONArray 荒瀧逆袈裟連斬傷害 = 普通攻擊.getJSONArray("荒瀧逆袈裟連斬傷害");
+                普通攻擊_荒瀧逆袈裟連斬傷害 = 荒瀧逆袈裟連斬傷害.getDouble(charSkill1AfterLvl-1);
+
+                JSONArray 荒瀧逆袈裟終結傷害 = 普通攻擊.getJSONArray("荒瀧逆袈裟終結傷害");
+                普通攻擊_荒瀧逆袈裟終結傷害 = 荒瀧逆袈裟終結傷害.getDouble(charSkill1AfterLvl-1);
+
+                JSONArray 左一文字斬傷害 = 普通攻擊.getJSONArray("左一文字斬傷害");
+                普通攻擊_左一文字斬傷害 = 左一文字斬傷害.getDouble(charSkill1AfterLvl-1);
+            }
+
+            // Tartaglia
+            if(普通攻擊.has("斷流·閃 傷害") && 普通攻擊.has("斷流·破 傷害")){
+                JSONArray 斷流_閃_傷害 = 普通攻擊.getJSONArray("斷流·閃 傷害");
+                普通攻擊_斷流_閃_傷害 = 斷流_閃_傷害.getDouble(charSkill1AfterLvl-1);
+
+                JSONArray 斷流_破_傷害 = 普通攻擊.getJSONArray("斷流·破 傷害");
+                普通攻擊_斷流_破_傷害 = 斷流_破_傷害.getDouble(charSkill1AfterLvl-1);
+            }
+
+
 
         } catch (JSONException e) {
             e.printStackTrace();
@@ -489,9 +543,9 @@ public class BuffCal2 {
             元素爆發_value = new double[元素爆發STR.length()][15];
 
             for (int x = 0 ; x<元素爆發STR.length() ; x++ ){
-                元素戰技_baseName[x] = String.valueOf(元素爆發STR.get(x));
+                元素爆發_baseName[x] = String.valueOf(元素爆發STR.get(x));
                 for (int y = 0 ; y< 15 ; y++){
-                    元素戰技_value[x][y] = (double) 元素爆發.getJSONArray(String.valueOf(元素爆發STR.get(x))).getDouble(y);
+                    元素爆發_value[x][y] = (double) 元素爆發.getJSONArray(String.valueOf(元素爆發STR.get(x))).getDouble(y);
                 }
             }
 
@@ -505,7 +559,7 @@ public class BuffCal2 {
          * Weapon Part
          */
 
-        String weapon_json = LoadData("db/buff/weapons/"+weaponName.replace(" ","_")+".json");
+        String weapon_json = LoadData("db/buff/weapons/"+weaponName.replace(" ","_").replace("'","").replace("-","_")+".json");
         try {
             JSONObject jsonObject = new JSONObject(weapon_json);
 
@@ -513,28 +567,28 @@ public class BuffCal2 {
             武器基礎攻擊力 = 基礎攻擊力.getDouble(weapon_tmp_break);
 
             JSONArray 生命值加成 = jsonObject.getJSONArray("生命值加成");
-            武器百分比生命值 = 生命值加成.getDouble(weapon_tmp_break)/100;
+            武器百分比生命值 = 生命值加成.getDouble(weapon_tmp_break);
 
             JSONArray 攻擊力加成 = jsonObject.getJSONArray("攻擊力加成");
-            武器百分比攻擊力 = 攻擊力加成.getDouble(weapon_tmp_break)/100;
+            武器百分比攻擊力 = 攻擊力加成.getDouble(weapon_tmp_break);
 
             JSONArray 防禦力加成 = jsonObject.getJSONArray("防禦力加成");
-            武器百分比防禦力 = 防禦力加成.getDouble(weapon_tmp_break)/100;
+            武器百分比防禦力 = 防禦力加成.getDouble(weapon_tmp_break);
 
             JSONArray 暴擊率 = jsonObject.getJSONArray("暴擊率");
-            武器百分比暴擊率 = 暴擊率.getDouble(weapon_tmp_break)/100;
+            武器百分比暴擊率 = 暴擊率.getDouble(weapon_tmp_break);
 
             JSONArray 暴擊傷害 = jsonObject.getJSONArray("暴擊傷害");
-            武器百分比暴擊傷害 = 暴擊傷害.getDouble(weapon_tmp_break)/100;
+            武器百分比暴擊傷害 = 暴擊傷害.getDouble(weapon_tmp_break);
 
             JSONArray 元素充能 = jsonObject.getJSONArray("元素充能");
-            武器百分比元素充能 = 元素充能.getDouble(weapon_tmp_break)/100;
+            武器百分比元素充能 = 元素充能.getDouble(weapon_tmp_break);
 
             JSONArray 元素精通 = jsonObject.getJSONArray("元素精通");
             武器元素精通 = 元素精通.getDouble(weapon_tmp_break);
 
             JSONArray 物理傷害加成 = jsonObject.getJSONArray("物理傷害加成");
-            武器百分比物理傷害加成 = 物理傷害加成.getDouble(weapon_tmp_break)/100;
+            武器百分比物理傷害加成 = 物理傷害加成.getDouble(weapon_tmp_break);
 
 
         } catch (JSONException e) {
@@ -556,6 +610,15 @@ public class BuffCal2 {
             e.printStackTrace();
         }
         return 0;
+    }
+
+    //元素戰技.length()
+    public String[] returnElementATKArray(){
+        return 元素戰技_baseName;
+    }
+    //元素爆發.length()
+    public String[] returnFinalATKArray(){
+        return 元素爆發_baseName;
     }
 
     //元素爆發.length()
@@ -682,12 +745,6 @@ public class BuffCal2 {
 
     //====================================================//
 
-    /*
-    Will do it later
-    ATK=(AttackCharacter+AttackWeapon)×(1+AttackBonus)+FlatAttack
-    -> DEF=DefenseCharacter×(1+DefenseBonus)+FlatDefense
-    -> Max HP=HealthCharacter×(1+HealthBonus)+FlatHealth
-     */
 
     /* (BASE)
     public double Damage (String type, boolean isCritDMG, String element_used){
@@ -743,10 +800,36 @@ public class BuffCal2 {
                 *CritDamageP(isCritDMG) // Crit
                 *EnemyDefMult(type)
                 *EnemyResMult(element_used,artifactList)
-                *AmplifyingReaction(Geo,"N/A",element_used,artifactList)
-                +TransformativeReaction(Geo,"N/A",element_used,artifactList)
+                *AmplifyingReaction(element_used,"N/A",element_used,artifactList)
+                +TransformativeReaction(element_used,"N/A",element_used,artifactList)
                 +Proc();
 
+    }
+    /*
+    Will do it later
+    ATK=(AttackCharacter+AttackWeapon)×(1+AttackBonus)+FlatAttack
+    -> DEF=DefenseCharacter×(1+DefenseBonus)+FlatDefense
+    -> Max HP=HealthCharacter×(1+HealthBonus)+FlatHealth
+     */
+
+    // https://genshin-impact.fandom.com/wiki/Heal
+    public double HealHP (String type, String type_base , String[] artifactList){
+
+        return TalentP(type,artifactList) * 生命值面板(artifactList) *(1+art.海染硨磲P2(artifactList)+art.被憐愛的少女P2(artifactList)+art.遊醫P2(artifactList))
+                +  TalentP(type_base,artifactList);
+    }
+
+
+
+    public double HealATK (String type, String type_base , String[] artifactList){
+
+        return TalentP(type,artifactList) * 攻擊力面板(artifactList) *(1+art.海染硨磲P2(artifactList)+art.被憐愛的少女P2(artifactList)+art.遊醫P2(artifactList))
+                +  TalentP(type_base,artifactList);
+    }
+
+    // https://genshin-impact.fandom.com/wiki/Shields -> https://wikimedia.org/api/rest_v1/media/math/render/png/7871f5c053f843b25a1d9490e292d179579fd0ea
+    public double Shield (String type, String type_base ,  String[] artifactList){
+        return 防禦力面板(artifactList) * (1+TalentP(type,artifactList)) + TalentP(type_base,artifactList)   ;
     }
 
     /*
@@ -1097,32 +1180,32 @@ public class BuffCal2 {
             case "高空墜地衝擊傷害" :  return 普通攻擊_高空墜地衝擊傷害;
 
             //元素戰技 -> Max 12 , RealMax is 7 -> Aloy
-            case "元素戰技0" : return (元素戰技_value[0][charSkill1AfterLvl-1]/100);
-            case "元素戰技1" : return (元素戰技_value[1][charSkill1AfterLvl-1]/100);
-            case "元素戰技2" : return (元素戰技_value[2][charSkill1AfterLvl-1]/100);
-            case "元素戰技3" : return (元素戰技_value[3][charSkill1AfterLvl-1]/100);
-            case "元素戰技4" : return (元素戰技_value[4][charSkill1AfterLvl-1]/100);
-            case "元素戰技5" : return (元素戰技_value[5][charSkill1AfterLvl-1]/100);
-            case "元素戰技6" : return (元素戰技_value[6][charSkill1AfterLvl-1]/100);
-            case "元素戰技7" : return (元素戰技_value[7][charSkill1AfterLvl-1]/100);
-            case "元素戰技8" : return (元素戰技_value[8][charSkill1AfterLvl-1]/100);
-            case "元素戰技9" : return (元素戰技_value[9][charSkill1AfterLvl-1]/100);
-            case "元素戰技10" : return (元素戰技_value[10][charSkill1AfterLvl-1]/100);
-            case "元素戰技11" : return (元素戰技_value[11][charSkill1AfterLvl-1]/100);
+            case "元素戰技0" : return (元素戰技_value[0][charSkill1AfterLvl-1]);
+            case "元素戰技1" : return (元素戰技_value[1][charSkill1AfterLvl-1]);
+            case "元素戰技2" : return (元素戰技_value[2][charSkill1AfterLvl-1]);
+            case "元素戰技3" : return (元素戰技_value[3][charSkill1AfterLvl-1]);
+            case "元素戰技4" : return (元素戰技_value[4][charSkill1AfterLvl-1]);
+            case "元素戰技5" : return (元素戰技_value[5][charSkill1AfterLvl-1]);
+            case "元素戰技6" : return (元素戰技_value[6][charSkill1AfterLvl-1]);
+            case "元素戰技7" : return (元素戰技_value[7][charSkill1AfterLvl-1]);
+            case "元素戰技8" : return (元素戰技_value[8][charSkill1AfterLvl-1]);
+            case "元素戰技9" : return (元素戰技_value[9][charSkill1AfterLvl-1]);
+            case "元素戰技10" : return (元素戰技_value[10][charSkill1AfterLvl-1]);
+            case "元素戰技11" : return (元素戰技_value[11][charSkill1AfterLvl-1]);
 
             //元素爆發 -> Max 12 , RealMax is 7 -> Aloy
-            case "元素爆發0" : return (元素爆發_value[0][charSkill1AfterLvl-1]/100);
-            case "元素爆發1" : return (元素爆發_value[1][charSkill1AfterLvl-1]/100);
-            case "元素爆發2" : return (元素爆發_value[2][charSkill1AfterLvl-1]/100);
-            case "元素爆發3" : return (元素爆發_value[3][charSkill1AfterLvl-1]/100);
-            case "元素爆發4" : return (元素爆發_value[4][charSkill1AfterLvl-1]/100);
-            case "元素爆發5" : return (元素爆發_value[5][charSkill1AfterLvl-1]/100);
-            case "元素爆發6" : return (元素爆發_value[6][charSkill1AfterLvl-1]/100);
-            case "元素爆發7" : return (元素爆發_value[7][charSkill1AfterLvl-1]/100);
-            case "元素爆發8" : return (元素爆發_value[8][charSkill1AfterLvl-1]/100);
-            case "元素爆發9" : return (元素爆發_value[9][charSkill1AfterLvl-1]/100);
-            case "元素爆發10" : return (元素爆發_value[10][charSkill1AfterLvl-1]/100);
-            case "元素爆發11" : return (元素爆發_value[11][charSkill1AfterLvl-1]/100);
+            case "元素爆發0" : return (元素爆發_value[0][charSkill1AfterLvl-1]);
+            case "元素爆發1" : return (元素爆發_value[1][charSkill1AfterLvl-1]);
+            case "元素爆發2" : return (元素爆發_value[2][charSkill1AfterLvl-1]);
+            case "元素爆發3" : return (元素爆發_value[3][charSkill1AfterLvl-1]);
+            case "元素爆發4" : return (元素爆發_value[4][charSkill1AfterLvl-1]);
+            case "元素爆發5" : return (元素爆發_value[5][charSkill1AfterLvl-1]);
+            case "元素爆發6" : return (元素爆發_value[6][charSkill1AfterLvl-1]);
+            case "元素爆發7" : return (元素爆發_value[7][charSkill1AfterLvl-1]);
+            case "元素爆發8" : return (元素爆發_value[8][charSkill1AfterLvl-1]);
+            case "元素爆發9" : return (元素爆發_value[9][charSkill1AfterLvl-1]);
+            case "元素爆發10" : return (元素爆發_value[10][charSkill1AfterLvl-1]);
+            case "元素爆發11" : return (元素爆發_value[11][charSkill1AfterLvl-1]);
 
             default: return 0;
         }

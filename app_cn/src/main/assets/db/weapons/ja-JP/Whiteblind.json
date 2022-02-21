@@ -1,0 +1,12 @@
+{
+  "name": "Whiteblind",
+  "rare": 4,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "剣身に鈍い刃がある異国の大剣。貿易ルートを経て璃月に渡った。剣を理解する者が使うと、その破壊力は凄まじい。",
+  "first_status": "DEF%",
+  "second_status": "ATK",
+  "skill_name": "注入の刃",
+  "skill_desc": "通常攻撃と重撃が命中すると、攻撃力と防御力+6%/7.5%/9%/10.5%/12%。継続時間6秒、最大4重まで。0.5秒毎に1回のみ発動可能。",
+  "obtain_way": "FORGE"
+}

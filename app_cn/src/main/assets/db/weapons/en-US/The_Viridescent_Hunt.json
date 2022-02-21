@@ -1,0 +1,12 @@
+{
+  "name": "The Viridescent Hunt",
+  "rare": 4,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "A pure green hunting bow. This once belonged to a certain hunter whose home was the forest.",
+  "first_status": "CritRate%",
+  "second_status": "ATK",
+  "skill_name": "Verdant Wind",
+  "skill_desc": "Upon hit, Normal and Aimed Shot Attacks have a 50% chance to generate a Cyclone, which will continuously attract surrounding opponents, dealing 40%/50%/60%/70%/80% of ATK as DMG to these opponents every 0.5s for 4s. This effect can only occur once every 14/13/12/11/10.",
+  "obtain_way": "BATTLEPASS"
+}

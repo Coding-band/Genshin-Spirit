@@ -1,0 +1,11 @@
+{
+  "name": "Mouun's Moon",
+  "rare": 4,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "出自螺钿与珊瑚的精美战弓，月色的弓臂上流动着凄然的光彩。",
+  "first_status": "ATK%
+  "skill_name": "驭浪的海祇民",
+  "skill_desc": "队伍中所有角色的元素能量上限的总和，每1点能使装备此武器的角色的元素爆发造成的伤害提高0.12%，依此方式，元素爆发造成的伤害至多提高40%。",
+  "obtain_way": "LIMITED_WISH"
+}

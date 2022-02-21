@@ -14,6 +14,7 @@ import android.content.res.ColorStateList;
 import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
@@ -32,22 +33,28 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.AlarmAdapter;
 import com.voc.genshin_helper.data.CalculatorDB;
 import com.voc.genshin_helper.data.CalculatorDBAdapter;
 import com.voc.genshin_helper.data.Characters;
 import com.voc.genshin_helper.data.CharactersAdapter;
+import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.data.ScreenSizeUtils;
 import com.voc.genshin_helper.database.DataBaseContract;
 import com.voc.genshin_helper.database.DataBaseHelper;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.CustomToast;
+import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.IndexDBHelper;
+import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
 import java.io.File;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /*
@@ -79,6 +86,10 @@ public class CalculatorDBActivity extends AppCompatActivity {
     FloatingActionButton db_add_btn;
 
     Activity activity;
+
+    String[] rules = new String[]{
+            "0","1","2","3","4","5","6","7","8","9",
+            "&","*","@","\"","{","}","^",":",",","#","$","\"","!","/","<",">","-","%",".","+","?",";","'"," ","~","_","|","="};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -173,11 +184,15 @@ public class CalculatorDBActivity extends AppCompatActivity {
                 db_ok.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        DataBaseHelper dbHelperS = new DataBaseHelper(context);
+                        SQLiteDatabase db_check = dbHelperS.getWritableDatabase();
                         String newName = db_name_et.getText().toString();
                         if(!newName.equals("") && !newName.equals(" ") && db_name_et.getText() != null) {
-                            if(newName.startsWith("1")||newName.startsWith("2")||newName.startsWith("3")||newName.startsWith("4")||newName.startsWith("5")||newName.startsWith("6")||newName.startsWith("7")||newName.startsWith("8")||newName.startsWith("9")||newName.startsWith("0")){
+                            if(Arrays.asList(rules).contains(newName.substring(0,1))){
                                 CustomToast.toast(context,activity,context.getString(R.string.name_start_with_num_err));
-                            }else {
+                            }else if(tableExists(db_check, newName)){
+                                CustomToast.toast(context,activity,context.getString(R.string.name_used));
+                            }else{
                                 if(newName.contains(" ")){
                                     newName = newName.replace(" ","_");
                                 }
@@ -571,5 +586,26 @@ public class CalculatorDBActivity extends AppCompatActivity {
         if (db != null){
             db.close();
         }
+    }
+
+    // https://stackoverflow.com/questions/1601151/how-do-i-check-in-sqlite-whether-a-table-exists?rq=1
+    public boolean tableExists(SQLiteDatabase db, String tableName)
+    {
+        if (tableName == null || db == null || !db.isOpen())
+        {
+            return false;
+        }
+        Cursor cursor = db.rawQuery(
+                "SELECT COUNT(*) FROM IndexDB WHERE name = ?",
+                new String[] {tableName}
+        );
+        if (!cursor.moveToFirst())
+        {
+            cursor.close();
+            return false;
+        }
+        int count = cursor.getInt(0);
+        cursor.close();
+        return count > 0;
     }
 }

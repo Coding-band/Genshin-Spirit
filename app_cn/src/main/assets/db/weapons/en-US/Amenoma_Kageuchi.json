@@ -1,0 +1,12 @@
+{
+  "name": "Amenoma Kageuchi",
+  "rare": 4,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "desc": "A blade custom made for a famed samurai who could strike down a tengu warrior, known for their incredible agility, in midair.",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "Iwakura Succession",
+  "skill_desc": "After casting an Elemental Skill, gain 1 Succession Seed. This effect can be triggered once every 5s. The Succession Seed lasts for 30s. Up to 3 Succession Seeds may exist simultaneously. After using an Elemental Burst, all Succession Seeds are consumed and after 2s, the character regenerates 6/7.5/9/10.5/12 Energy for each seed consumed.",
+  "obtain_way": "FORGE_MISSION_NMDBJ"
+}

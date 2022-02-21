@@ -1,0 +1,12 @@
+{
+  "name": "Royal Grimoire",
+  "rare": 4,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "かつてモンドを支配した貴族の配下であった魔導師が、記録した史話。",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "集中",
+  "skill_desc": "攻撃が敵にダメージを与えた時、会心率+8%/10%/12%/14%/16%、最大5重まで。攻撃会心発生時、効果をクリアにする。",
+  "obtain_way": "FORGE"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Skyrider Greatsword",
+  "rare": 3,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "可靠的大劍。傳說著名的「禦劍公子」曾試圖借助它二度飛天。",
+  "first_status": "PhyDMG%",
+  "second_status": "ATK",
+  "skill_name": "勇氣",
+  "skill_desc": "普通攻擊和重擊命中時，攻擊力提高6%/7%/8%/9%/10%，持續6秒，最多疊加4層，該效果每0.5秒只能觸發一次。",
+  "obtain_way": "CHEST_GWK"
+}

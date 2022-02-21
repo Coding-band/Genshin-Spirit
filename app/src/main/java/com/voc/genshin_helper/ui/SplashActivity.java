@@ -125,6 +125,11 @@ public class SplashActivity extends AppCompatActivity {
                     // TODO Auto-generated method stub
                     DownloadTask downloadTask = new DownloadTask();
                     downloadTask.start("http://113.254.213.196/genshin_spirit/base.zip","base.zip","/base.zip",context,activity);
+
+                    SharedPreferences sharedPreferences = getSharedPreferences("user_info", 0);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putLong("lastUpdateUnix", System.currentTimeMillis());
+                    editor.apply();
                 }
 
             });

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2022 Xectorda 版權所有
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    android:background="@color/page_bg"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:text="Edit The Set's name : "
+        android:textColor="@color/tv_color"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/menu_edit_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:inputType="textPersonName"
+        android:maxLength="64"
+        android:text="Name"
+        android:textColor="@color/tv_color" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/menu_delete"
+            android:layout_width="72dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:background="@drawable/bg_square_cancel_colorful"
+            android:text="@string/delete"
+            android:textColor="@color/tv_color"
+            android:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/menu_cancel"
+                android:layout_width="72dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_square_border"
+                android:text="@android:string/cancel"
+                android:textColor="@color/theme_color" />
+
+            <Button
+                android:id="@+id/menu_ok"
+                android:layout_width="72dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_square_border_colorful"
+                android:text="@android:string/ok"
+                android:textColor="@color/tv_color" />
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

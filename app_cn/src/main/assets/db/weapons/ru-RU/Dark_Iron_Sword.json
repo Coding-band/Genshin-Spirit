@@ -1,0 +1,12 @@
+{
+  "name": "Dark Iron Sword",
+  "rare": 3,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "EleMas",
+  "second_status": "ATK",
+  "desc": "На самом деле это просто немного тёмный железный меч.",
+  "skill_name": "Перегружен",
+  "skill_desc": "Увеличивает силу атаки на 20%/25%/30%/35%/40% в течение 12 сек при нанесении статусов Перегрузка, Сверхпроводник, Заряжен или Электро Рассеивание.",
+  "obtain_way": "CHAT_YMDJY"
+}

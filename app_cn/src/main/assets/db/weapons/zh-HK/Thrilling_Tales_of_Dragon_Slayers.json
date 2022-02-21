@@ -1,0 +1,12 @@
+{
+  "name": "Thrilling Tales of Dragon Slayers",
+  "rare": 3,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "五名英雄踏上屠龍征途的虛構故事。文筆很差，結構散亂。失敗的教訓是這本書所擁有的偉大力量。",
+  "first_status": "HP%",
+  "second_status": "ATK",
+  "skill_name": "傳承",
+  "skill_desc": "主動切換角色時，新登場的角色攻擊力提升24%/30%/36%/42%/48%，持續10秒。該效果每20秒只能觸發一次。",
+  "obtain_way": "WISH"
+}

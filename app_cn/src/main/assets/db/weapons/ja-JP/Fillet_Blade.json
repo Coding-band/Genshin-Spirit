@@ -1,0 +1,12 @@
+{
+  "name": "Fillet Blade",
+  "rare": 3,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "desc": "魚を捌く鉄刀、刀身は狭く、非常に鋭い。",
+  "skill_name": "切り捨て",
+  "skill_desc": "攻撃が命中すると、50%の確率で1体の敵に攻撃力の240%/280%/320%/360%/400%のダメージを与える。15/14/13/12/11秒毎に1回のみ発動する。",
+  "obtain_way": "EVENT"
+}

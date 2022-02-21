@@ -1,0 +1,12 @@
+{
+  "name": "Traveler's Handy Sword",
+  "rare": 3,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "DEF%",
+  "second_status": "ATK",
+  "desc": "使いやすい鋼剣、柄にはハサミ、虫眼鏡、点火具などの旅の必須品が隠されている。",
+  "skill_name": "旅路",
+  "skill_desc": "元素オーブまたは元素粒子を獲得した時、HPを1%/1.25%/1.5%/1.75%/2%回復する。",
+  "obtain_way": "CHEST"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Twin Nephrite",
+  "rare": 3,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "Ожерелье с замочком из двух кусочков нефрита.",
+  "first_status": "CritRate%",
+  "second_status": "ATK",
+  "skill_name": "Партизанская тактика",
+  "skill_desc": "Победа над противником увеличивает скорость передвижения и силу атаки на 12%/14%/16%/18%/20% в течение 15 сек.",
+  "obtain_way": "CHEST_LY"
+}

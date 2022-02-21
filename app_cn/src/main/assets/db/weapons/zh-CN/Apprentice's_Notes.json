@@ -1,0 +1,12 @@
+{
+  "name": "Apprentice's Notes",
+  "rare": 1,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "某个优等生留下的学习笔记，娟秀的字迹非常好看。记录了不少实用的咒语。",
+  "first_status": "N/A",
+  "second_status": "ATK",
+  "skill_name": "无",
+  "skill_desc": "无",
+  "obtain_way": "FIRST_GIFT"
+}

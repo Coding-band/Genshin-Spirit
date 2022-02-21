@@ -1,0 +1,12 @@
+{
+  "name": "The Stringless",
+  "rare": 4,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "曾經作為樂器大放異彩的弓。如今已經不再能令人起舞",
+  "first_status": "EnRech%",
+  "second_status": "ATK",
+  "skill_name": "無矢之歌",
+  "skill_desc": "元素戰技與元素爆發的傷害提高24％/30%/36%/42%/48%。",
+  "obtain_way": "WISH"
+}

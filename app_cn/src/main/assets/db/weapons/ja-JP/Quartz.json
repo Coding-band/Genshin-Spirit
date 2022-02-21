@@ -1,0 +1,12 @@
+{
+  "name": "Quartz",
+  "rare": 3,
+  "weapon": "Claymore",
+  "isComingSoon": true,
+  "desc": "素朴で厚重な大剣、黒い石英で作られた。上には金の模様があり、優雅で厳然としている。",
+  "first_status": "EleMas",
+  "second_status": "ATK",
+  "skill_name": "余熱",
+  "skill_desc": "過負荷、溶解、燃焼、蒸発、または炎元素拡散反応を起こした後12秒間、攻撃力+20/25/30/35/40%。",
+  "obtain_way": "N/A"
+}

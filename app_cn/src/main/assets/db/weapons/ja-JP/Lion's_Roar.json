@@ -1,0 +1,12 @@
+{
+  "name": "Lion's Roar",
+  "rare": 4,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "desc": "華やかな模様が、その鋭さを損なうことはない。空を裂く時の音はまるで龍の咆哮のようだ。",
+  "skill_name": "炎と雷の破滅",
+  "skill_desc": "炎元素又は雷元素の影響を受けた敵に対するダメージ+20%/24%/28%/32%/36%/40%。",
+  "obtain_way": "WISH"
+}

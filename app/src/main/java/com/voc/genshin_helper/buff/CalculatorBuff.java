@@ -262,6 +262,16 @@ public class CalculatorBuff {
 
     String[] artifactList = new String[]{"N/A","N/A","N/A","N/A"};
 
+    boolean display_normal = true;
+    boolean display_charging = false;
+    boolean display_pluging = false;
+    boolean display_element_atk = false;
+    boolean display_final_atk = false;
+
+    String charName = "unknown";
+    String charElement = "Physical";
+    String charWeapon = "Sword";
+
     public void ui_setup (Context context, View viewPager){
         this.context = context;
         this.viewPager = viewPager;
@@ -335,8 +345,11 @@ public class CalculatorBuff {
             final int margin = 4;
             final Transformation transformation = new RoundedCornersTransformation(radius, margin);
 
+            Log.wtf("XXX : ",charChoosedNameList.get(x));
+            Log.wtf("YYY : ",Boolean.toString(checkDataIsExist("db/buff/char/"+item_rss.getCharNameByTranslatedName(charChoosedNameList.get(x),context).replace(" ","_")+".json")));
+            Log.wtf("ZZZ : ","db/buff/char/"+item_rss.getCharNameByTranslatedName(charChoosedNameList.get(x),context).replace(" ","_")+".json");
 
-            if(charChoosedIsCal.get(x) == true) {
+            if(charChoosedIsCal.get(x) == true && checkDataIsExist("db/buff/char/"+item_rss.getCharNameByTranslatedName(charChoosedNameList.get(x),context).replace(" ","_")+".json") == true) {
                 /** Char */
                 Picasso.get()
                         .load(FileLoader.loadIMG(item_rss.getCharByName(charChoosedNameList.get(x),context)[3],context))
@@ -444,7 +457,6 @@ public class CalculatorBuff {
         /** init */
 
         buffCal = new BuffCal2();
-
         /**
          *
          */
@@ -455,7 +467,7 @@ public class CalculatorBuff {
 
         /** Method */
 
-        String charName = charChoosedNameList.get(k);
+        charName = charChoosedNameList.get(k);
 
         final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
         View view = View.inflate(context, R.layout.fragment_buff_page, null);
@@ -1087,7 +1099,7 @@ public class CalculatorBuff {
                 .error (R.drawable.paimon_full)
                 .into (buff_char_icon);
 
-        String name ,element = "Anemo";
+        String name ,element = "Anemo", weapon = "Sword";
 
         String json_base = LoadData("db/char/char_list.json");
         //Get data from JSON
@@ -1099,6 +1111,7 @@ public class CalculatorBuff {
                 name = object.getString("name");
                 if(name.equals(charName)){
                     element = object.getString("element");
+                    weapon = object.getString("weapon");
                 }
             }
         } catch (JSONException e) {
@@ -1106,14 +1119,16 @@ public class CalculatorBuff {
         }
 
         switch (element) {
-            case "Anemo": buff_char_element.setImageResource(R.drawable.anemo);buff_char_icon.setBackgroundResource(R.drawable.bg_anemo_bg);break;
-            case "Cryo": buff_char_element.setImageResource(R.drawable.cryo);buff_char_icon.setBackgroundResource(R.drawable.bg_cryo_bg);break;
-            case "Electro": buff_char_element.setImageResource(R.drawable.electro);buff_char_icon.setBackgroundResource(R.drawable.bg_electro_bg);break;
-            case "Geo": buff_char_element.setImageResource(R.drawable.geo);buff_char_icon.setBackgroundResource(R.drawable.bg_geo_bg);break;
-            case "Hydro": buff_char_element.setImageResource(R.drawable.hydro);buff_char_icon.setBackgroundResource(R.drawable.bg_anemo_char);break;
-            case "Pyro": buff_char_element.setImageResource(R.drawable.pyro);buff_char_icon.setBackgroundResource(R.drawable.bg_pyro_bg);break;
-            case "Dendro": buff_char_element.setImageResource(R.drawable.dendro);buff_char_icon.setBackgroundResource(R.drawable.bg_dendro_bg);break;
+            case "Anemo": buff_char_element.setImageResource(R.drawable.anemo);buff_char_icon.setBackgroundResource(R.drawable.bg_anemo_bg);charElement = buffCal.Anemo;break;
+            case "Cryo": buff_char_element.setImageResource(R.drawable.cryo);buff_char_icon.setBackgroundResource(R.drawable.bg_cryo_bg);charElement = buffCal.Cryo;break;
+            case "Electro": buff_char_element.setImageResource(R.drawable.electro);buff_char_icon.setBackgroundResource(R.drawable.bg_electro_bg);charElement = buffCal.Electro;break;
+            case "Geo": buff_char_element.setImageResource(R.drawable.geo);buff_char_icon.setBackgroundResource(R.drawable.bg_geo_bg);charElement = buffCal.Geo;break;
+            case "Hydro": buff_char_element.setImageResource(R.drawable.hydro);buff_char_icon.setBackgroundResource(R.drawable.bg_anemo_char);charElement = buffCal.Hydro;break;
+            case "Pyro": buff_char_element.setImageResource(R.drawable.pyro);buff_char_icon.setBackgroundResource(R.drawable.bg_pyro_bg);charElement = buffCal.Pyro;break;
+            case "Dendro": buff_char_element.setImageResource(R.drawable.dendro);buff_char_icon.setBackgroundResource(R.drawable.bg_dendro_bg);charElement = buffCal.Dendro;break;
         }
+
+        charWeapon = weapon;
 
         buff_char_name.setText(item_rss.getCharByName(charName,context)[1]);
         buff_char_lvl.setText(context.getString(R.string.curr_lvl)+" "+String.valueOf(charChoosedAfterLvlList.get(k)));
@@ -1263,43 +1278,43 @@ public class CalculatorBuff {
 
         for (int  i = 0 ; i < 5 ; i++){
             if(tmp_artifact_sort[i] != null && !tmp_artifact_sort[i].equals("")){
-                artifactBuffMainItem.set(i,sharedPreferencesB.getString("artifactBuffMainItem"+String.valueOf(i),""));
-                artifactBuffSec1Item.set(i,sharedPreferencesB.getString("artifactBuffSec1Item"+String.valueOf(i),""));
-                artifactBuffSec2Item.set(i,sharedPreferencesB.getString("artifactBuffSec2Item"+String.valueOf(i),""));
-                artifactBuffSec3Item.set(i,sharedPreferencesB.getString("artifactBuffSec3Item"+String.valueOf(i),""));
-                artifactBuffSec4Item.set(i,sharedPreferencesB.getString("artifactBuffSec4Item"+String.valueOf(i),""));
+                artifactBuffMainItem.set(i,sharedPreferencesB.getString(dataSheetName+"_"+"artifactBuffMainItem"+String.valueOf(i),""));
+                artifactBuffSec1Item.set(i,sharedPreferencesB.getString(dataSheetName+"_"+"artifactBuffSec1Item"+String.valueOf(i),""));
+                artifactBuffSec2Item.set(i,sharedPreferencesB.getString(dataSheetName+"_"+"artifactBuffSec2Item"+String.valueOf(i),""));
+                artifactBuffSec3Item.set(i,sharedPreferencesB.getString(dataSheetName+"_"+"artifactBuffSec3Item"+String.valueOf(i),""));
+                artifactBuffSec4Item.set(i,sharedPreferencesB.getString(dataSheetName+"_"+"artifactBuffSec4Item"+String.valueOf(i),""));
 
-                artifactBuffMainValue.set(i,Double.parseDouble(sharedPreferencesB.getString("artifactBuffMainValue"+String.valueOf(i),"0.0")));
-                artifactBuffSec1Value.set(i,Double.parseDouble(sharedPreferencesB.getString("artifactBuffSec1Value"+String.valueOf(i),"0.0")));
-                artifactBuffSec2Value.set(i,Double.parseDouble(sharedPreferencesB.getString("artifactBuffSec2Value"+String.valueOf(i),"0.0")));
-                artifactBuffSec3Value.set(i,Double.parseDouble(sharedPreferencesB.getString("artifactBuffSec3Value"+String.valueOf(i),"0.0")));
-                artifactBuffSec4Value.set(i,Double.parseDouble(sharedPreferencesB.getString("artifactBuffSec4Value"+String.valueOf(i),"0.0")));
+                artifactBuffMainValue.set(i,Double.parseDouble(sharedPreferencesB.getString(dataSheetName+"_"+"artifactBuffMainValue"+String.valueOf(i),"0.0")));
+                artifactBuffSec1Value.set(i,Double.parseDouble(sharedPreferencesB.getString(dataSheetName+"_"+"artifactBuffSec1Value"+String.valueOf(i),"0.0")));
+                artifactBuffSec2Value.set(i,Double.parseDouble(sharedPreferencesB.getString(dataSheetName+"_"+"artifactBuffSec2Value"+String.valueOf(i),"0.0")));
+                artifactBuffSec3Value.set(i,Double.parseDouble(sharedPreferencesB.getString(dataSheetName+"_"+"artifactBuffSec3Value"+String.valueOf(i),"0.0")));
+                artifactBuffSec4Value.set(i,Double.parseDouble(sharedPreferencesB.getString(dataSheetName+"_"+"artifactBuffSec4Value"+String.valueOf(i),"0.0")));
 
-                artifactBuffSec1ItemTMP.set(i,sharedPreferencesB.getString("artifactBuffSec1Item"+String.valueOf(i),""));
-                artifactBuffSec2ItemTMP.set(i,sharedPreferencesB.getString("artifactBuffSec2Item"+String.valueOf(i),""));
-                artifactBuffSec3ItemTMP.set(i,sharedPreferencesB.getString("artifactBuffSec3Item"+String.valueOf(i),""));
-                artifactBuffSec4ItemTMP.set(i,sharedPreferencesB.getString("artifactBuffSec4Item"+String.valueOf(i),""));
+                artifactBuffSec1ItemTMP.set(i,sharedPreferencesB.getString(dataSheetName+"_"+"artifactBuffSec1Item"+String.valueOf(i),""));
+                artifactBuffSec2ItemTMP.set(i,sharedPreferencesB.getString(dataSheetName+"_"+"artifactBuffSec2Item"+String.valueOf(i),""));
+                artifactBuffSec3ItemTMP.set(i,sharedPreferencesB.getString(dataSheetName+"_"+"artifactBuffSec3Item"+String.valueOf(i),""));
+                artifactBuffSec4ItemTMP.set(i,sharedPreferencesB.getString(dataSheetName+"_"+"artifactBuffSec4Item"+String.valueOf(i),""));
 
-                artifactBuffSec1ValueTMP.set(i,Double.parseDouble(sharedPreferencesB.getString("artifactBuffSec1Value"+String.valueOf(i),"0.0")));
-                artifactBuffSec2ValueTMP.set(i,Double.parseDouble(sharedPreferencesB.getString("artifactBuffSec2Value"+String.valueOf(i),"0.0")));
-                artifactBuffSec3ValueTMP.set(i,Double.parseDouble(sharedPreferencesB.getString("artifactBuffSec3Value"+String.valueOf(i),"0.0")));
-                artifactBuffSec4ValueTMP.set(i,Double.parseDouble(sharedPreferencesB.getString("artifactBuffSec4Value"+String.valueOf(i),"0.0")));
+                artifactBuffSec1ValueTMP.set(i,Double.parseDouble(sharedPreferencesB.getString(dataSheetName+"_"+"artifactBuffSec1Value"+String.valueOf(i),"0.0")));
+                artifactBuffSec2ValueTMP.set(i,Double.parseDouble(sharedPreferencesB.getString(dataSheetName+"_"+"artifactBuffSec2Value"+String.valueOf(i),"0.0")));
+                artifactBuffSec3ValueTMP.set(i,Double.parseDouble(sharedPreferencesB.getString(dataSheetName+"_"+"artifactBuffSec3Value"+String.valueOf(i),"0.0")));
+                artifactBuffSec4ValueTMP.set(i,Double.parseDouble(sharedPreferencesB.getString(dataSheetName+"_"+"artifactBuffSec4Value"+String.valueOf(i),"0.0")));
             }
 
         }
 
 
-        ArtifactBuffView("Flower",tmp_artifact_sort);
+        ArtifactBuffView("Flower",tmp_artifact_sort,view);
 
         buff_artifact_tablayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 switch (tab.getId()){
-                    case 100 : ArtifactBuffView("Flower",tmp_artifact_sort);break;
-                    case 101 : ArtifactBuffView("Plume",tmp_artifact_sort);break;
-                    case 102 : ArtifactBuffView("Sand",tmp_artifact_sort);break;
-                    case 103 : ArtifactBuffView("Goblet",tmp_artifact_sort);break;
-                    case 104 : ArtifactBuffView("Circlet",tmp_artifact_sort);break;
+                    case 100 : ArtifactBuffView("Flower",tmp_artifact_sort,view);break;
+                    case 101 : ArtifactBuffView("Plume",tmp_artifact_sort,view);break;
+                    case 102 : ArtifactBuffView("Sand",tmp_artifact_sort,view);break;
+                    case 103 : ArtifactBuffView("Goblet",tmp_artifact_sort,view);break;
+                    case 104 : ArtifactBuffView("Circlet",tmp_artifact_sort,view);break;
                 }
             }
 
@@ -1355,8 +1370,8 @@ public class CalculatorBuff {
                     case 0 : buff_tab_view.removeAllViews(); buff_normal(); break;
                     case 1 : buff_tab_view.removeAllViews(); buff_charged(); break;
                     case 2 : buff_tab_view.removeAllViews(); buff_pluging(); break;
-                    case 3 : buff_tab_view.removeAllViews(); break;
-                    case 4 : buff_tab_view.removeAllViews(); break;
+                    case 3 : buff_tab_view.removeAllViews(); buff_element_atk(); break;
+                    case 4 : buff_tab_view.removeAllViews(); buff_final_atk(); break;
                     case 5 : buff_tab_view.removeAllViews(); break;
                     case 6 : buff_tab_view.removeAllViews(); break;
                 }
@@ -1373,8 +1388,8 @@ public class CalculatorBuff {
                     case 0 : buff_tab_view.removeAllViews(); buff_normal(); break;
                     case 1 : buff_tab_view.removeAllViews(); buff_charged(); break;
                     case 2 : buff_tab_view.removeAllViews(); buff_pluging(); break;
-                    case 3 : buff_tab_view.removeAllViews(); break;
-                    case 4 : buff_tab_view.removeAllViews(); break;
+                    case 3 : buff_tab_view.removeAllViews(); buff_element_atk(); break;
+                    case 4 : buff_tab_view.removeAllViews(); buff_final_atk(); break;
                     case 5 : buff_tab_view.removeAllViews(); break;
                     case 6 : buff_tab_view.removeAllViews(); break;
                 }
@@ -1543,6 +1558,11 @@ public class CalculatorBuff {
 
     public void buff_normal(){
         buff_tab_view.removeAllViews();
+        display_normal= true;
+        display_charging = false;
+        display_pluging  =false;
+        display_element_atk  =false;
+        display_final_atk  =false;
 
         String[] item_name_recongize = new String[]{"一段傷害","二段傷害","三段傷害","四段傷害","五段傷害","六段傷害","瞄準射擊"};
 
@@ -1560,11 +1580,19 @@ public class CalculatorBuff {
                 buff_item_value.setText(prettyCount(buffCal.skillPReturn(item_name_recongize[i],artifactList),1));
                 buff_item_value.setTextColor(Color.parseColor(color_hex));
                 //buff_uncrit_value.setText(prettyCount(buffCal.atkReturn()*buffCal.skillPReturn(item_name_recongize[i])));
-                buff_uncrit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],false,"Physical",artifactList),0));
-                buff_uncrit_value.setTextColor(context.getColor(R.color.uncrit));
-                //buff_crit_value.setText(prettyCount(buffCal.atkReturn()*buffCal.skillPReturn(item_name_recongize[i])*buffCal.critDMGReturn()));
-                buff_crit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],true,"Physical",artifactList),0));
-                buff_crit_value.setTextColor(context.getColor(R.color.crit));
+                if(charWeapon.equals("Catalyst")){
+                    buff_uncrit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],false,charElement,artifactList),0));
+                    buff_uncrit_value.setTextColor(context.getColor(R.color.uncrit));
+                    //buff_crit_value.setText(prettyCount(buffCal.atkReturn()*buffCal.skillPReturn(item_name_recongize[i])*buffCal.critDMGReturn()));
+                    buff_crit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],true,charElement,artifactList),0));
+                    buff_crit_value.setTextColor(context.getColor(R.color.crit));
+                }else{
+                    buff_uncrit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],false,"Physical",artifactList),0));
+                    buff_uncrit_value.setTextColor(context.getColor(R.color.uncrit));
+                    //buff_crit_value.setText(prettyCount(buffCal.atkReturn()*buffCal.skillPReturn(item_name_recongize[i])*buffCal.critDMGReturn()));
+                    buff_crit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],true,"Physical",artifactList),0));
+                    buff_crit_value.setTextColor(context.getColor(R.color.crit));
+                }
 
                 buff_tab_view.addView(view);
             }
@@ -1585,6 +1613,11 @@ public class CalculatorBuff {
 
     public void buff_charged(){
         buff_tab_view.removeAllViews();
+        display_charging= true;
+        display_normal = false;
+        display_pluging  =false;
+        display_element_atk  =false;
+        display_final_atk  =false;
 
         String[] item_name_recongize = new String[]{"滿蓄力瞄準射擊","重擊傷害","重擊循環傷害","重擊終結傷害"};
 
@@ -1601,10 +1634,18 @@ public class CalculatorBuff {
                 buff_item_name.setText(item_name[i]);
                 buff_item_value.setText(prettyCount(buffCal.skillPReturn(item_name_recongize[i],artifactList),1));
                 buff_item_value.setTextColor(Color.parseColor(color_hex));
-                buff_uncrit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],false,"Physical",artifactList),0));
-                buff_uncrit_value.setTextColor(context.getColor(R.color.uncrit));
-                buff_crit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],true,"Physical",artifactList),0));
-                buff_crit_value.setTextColor(context.getColor(R.color.crit));
+
+                if(charWeapon.equals("Bow") && i == 0){
+                    buff_uncrit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],false,charElement,artifactList),0));
+                    buff_uncrit_value.setTextColor(context.getColor(R.color.uncrit));
+                    buff_crit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],true,charElement,artifactList),0));
+                    buff_crit_value.setTextColor(context.getColor(R.color.crit));
+                }else{
+                    buff_uncrit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],false,"Physical",artifactList),0));
+                    buff_uncrit_value.setTextColor(context.getColor(R.color.uncrit));
+                    buff_crit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],true,"Physical",artifactList),0));
+                    buff_crit_value.setTextColor(context.getColor(R.color.crit));
+                }
 
                 buff_tab_view.addView(view);
             }
@@ -1613,6 +1654,12 @@ public class CalculatorBuff {
 
     public void buff_pluging(){
         buff_tab_view.removeAllViews();
+
+        display_pluging= true;
+        display_normal = false;
+        display_charging  =false;
+        display_element_atk  =false;
+        display_final_atk  =false;
 
         String[] item_name_recongize = new String[]{"下墜期間傷害","低空墜地衝擊傷害","高空墜地衝擊傷害"};
 
@@ -1629,16 +1676,169 @@ public class CalculatorBuff {
                 buff_item_name.setText(item_name[i]);
                 buff_item_value.setText(prettyCount(buffCal.skillPReturn(item_name_recongize[i],artifactList),1));
                 buff_item_value.setTextColor(Color.parseColor(color_hex));
-                buff_uncrit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],false,"Physical",artifactList),0));
-                buff_uncrit_value.setTextColor(context.getColor(R.color.uncrit));
-                buff_crit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],true,"Physical",artifactList),0));
-                buff_crit_value.setTextColor(context.getColor(R.color.crit));
+
+                if(charWeapon.equals("Catalyst")){
+                    buff_uncrit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],false,charElement,artifactList),0));
+                    buff_uncrit_value.setTextColor(context.getColor(R.color.uncrit));
+                    buff_crit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],true,charElement,artifactList),0));
+                    buff_crit_value.setTextColor(context.getColor(R.color.crit));
+                }else{
+                    buff_uncrit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],false,"Physical",artifactList),0));
+                    buff_uncrit_value.setTextColor(context.getColor(R.color.uncrit));
+                    buff_crit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],true,"Physical",artifactList),0));
+                    buff_crit_value.setTextColor(context.getColor(R.color.crit));
+                }
 
                 buff_tab_view.addView(view);
             }
         }
     }
 
+    /**
+     * Please note that, if u got "xxx_BASE", pls not to recognize it as two things.
+     */
+    public void buff_element_atk(){
+        buff_tab_view.removeAllViews();
+        display_element_atk  =true;
+        display_final_atk  =false;
+        display_charging = false;
+        display_pluging  =false;
+        display_normal= false;
+
+
+        String[] item_name_recongize = new String[]{"元素戰技0",	"元素戰技1",	"元素戰技2",	"元素戰技3",	"元素戰技4",	"元素戰技5",	"元素戰技6",	"元素戰技7",	"元素戰技8",	"元素戰技9",	"元素戰技10",	"元素戰技11"};
+
+        for (int i = 0 ; i < buffCal.returnElementATKArraySize() ; i++){
+            if(buffCal.skillPReturn(item_name_recongize[i],artifactList)*100 != 0 && !buffCal.returnElementATKArray()[i].contains("_BASE")&& !buffCal.returnElementATKArray()[i].contains("治療")&& !buffCal.returnElementATKArray()[i].contains("吸收")&& !buffCal.returnElementATKArray()[i].contains("護盾")){
+                View view = View.inflate(context, R.layout.item_buff_display, null);
+                TextView buff_item_name = view.findViewById(R.id.buff_item_name);
+                TextView buff_item_value = view.findViewById(R.id.buff_item_value);
+                TextView buff_uncrit_value = view.findViewById(R.id.buff_uncrit_value);
+                TextView buff_crit_value = view.findViewById(R.id.buff_crit_value);
+
+                buff_item_name.setText(item_rss.getSkillNameByCustomName(buffCal.returnElementATKArray()[i],context));
+                buff_item_value.setText(prettyCount(buffCal.skillPReturn(item_name_recongize[i],artifactList),1));
+                buff_item_value.setTextColor(Color.parseColor(color_hex));
+                //buff_uncrit_value.setText(prettyCount(buffCal.atkReturn()*buffCal.skillPReturn(item_name_recongize[i])));
+                buff_uncrit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],false,"Physical",artifactList),0));
+                buff_uncrit_value.setTextColor(context.getColor(R.color.uncrit));
+                //buff_crit_value.setText(prettyCount(buffCal.atkReturn()*buffCal.skillPReturn(item_name_recongize[i])*buffCal.critDMGReturn()));
+                buff_crit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],true,"Physical",artifactList),0));
+                buff_crit_value.setTextColor(context.getColor(R.color.crit));
+
+                buff_tab_view.addView(view);
+            }else if (buffCal.returnElementATKArraySize() > (i+1)){
+                if (buffCal.returnElementATKArray()[i+1].contains("_")){
+                    View view = View.inflate(context, R.layout.item_buff_display, null);
+                    TextView buff_item_name = view.findViewById(R.id.buff_item_name);
+                    TextView buff_crit_name = view.findViewById(R.id.buff_crit_name);
+                    TextView buff_uncrit_name = view.findViewById(R.id.buff_uncrit_name);
+                    TextView buff_item_value = view.findViewById(R.id.buff_item_value);
+                    TextView buff_uncrit_value = view.findViewById(R.id.buff_uncrit_value);
+                    TextView buff_crit_value = view.findViewById(R.id.buff_crit_value);
+                    buff_crit_value.setVisibility(View.GONE);
+                    buff_crit_name.setVisibility(View.GONE);
+
+                    buff_item_name.setText(item_rss.getSkillNameByCustomName(buffCal.returnElementATKArray()[i],context));
+                    buff_item_value.setText(prettyCount(buffCal.skillPReturn(item_name_recongize[i+1],artifactList),0)+" + "+prettyCount(buffCal.skillPReturn(item_name_recongize[i],artifactList),1));
+                    buff_item_value.setTextColor(Color.parseColor(color_hex));
+
+                    buff_uncrit_name.setText(item_rss.getSkillNameByCustomName(buffCal.returnElementATKArray()[i],context));
+                    buff_uncrit_value.setTextColor(context.getColor(R.color.uncrit));
+
+                    if(buffCal.returnElementATKArray()[i].contains("治療")){
+                        if(charName.equals("Qiqi") || charName.equals("七七") || charName.equals("七七") || charName.equals("七七") || charName.equals("Ци Ци") || charName.equals("Jean") || charName.equals("琴") || charName.equals("琴") || charName.equals("ジン") || charName.equals("Джинн")){
+                            buff_uncrit_value.setText(prettyCount(buffCal.HealATK(item_name_recongize[i],item_name_recongize[i+1],artifactList),0));
+                        }else {
+                            buff_uncrit_value.setText(prettyCount(buffCal.HealHP(item_name_recongize[i],item_name_recongize[i+1],artifactList),0));
+                        }
+                    }else if(buffCal.returnElementATKArray()[i].contains("護盾")){
+                        buff_uncrit_value.setText(prettyCount(buffCal.Shield(item_name_recongize[i],item_name_recongize[i+1],artifactList),0));
+                    }
+
+
+                    buff_tab_view.addView(view);
+                }
+            }
+        }
+
+        /*
+        switch (element) {
+                    case "Anemo": buff_item_value.setTextColor(context.getColor(R.color.anemo));break;
+                    case "Cryo": buff_item_value.setTextColor(context.getColor(R.color.cryo));break;
+                    case "Electro": buff_item_value.setTextColor(context.getColor(R.color.electro));break;
+                    case "Geo": buff_item_value.setTextColor(context.getColor(R.color.geo));break;
+                    case "Hydro": buff_item_value.setTextColor(context.getColor(R.color.hydro));break;
+                    case "Pyro": buff_item_value.setTextColor(context.getColor(R.color.pyro));break;
+                    case "Dendro": buff_item_value.setTextColor(context.getColor(R.color.dendor));break;
+                }
+         */
+    }
+
+    public void buff_final_atk(){
+        buff_tab_view.removeAllViews();
+        display_element_atk  =false;
+        display_final_atk  =true;
+        display_normal= false;
+        display_charging = false;
+        display_pluging  =false;
+
+        String[] item_name_recongize = new String[]{"元素爆發0",	"元素爆發1",	"元素爆發2",	"元素爆發3",	"元素爆發4",	"元素爆發5",	"元素爆發6",	"元素爆發7",	"元素爆發8",	"元素爆發9",	"元素爆發10",	"元素爆發11",};
+
+        for (int i = 0 ; i < buffCal.returnFinalATKArraySize() ; i++){
+            if(buffCal.skillPReturn(item_name_recongize[i],artifactList)*100 != 0 && !buffCal.returnFinalATKArray()[i].contains("_BASE")&& !buffCal.returnFinalATKArray()[i].contains("治療")&& !buffCal.returnFinalATKArray()[i].contains("吸收")&& !buffCal.returnFinalATKArray()[i].contains("護盾")){
+                View view = View.inflate(context, R.layout.item_buff_display, null);
+                TextView buff_item_name = view.findViewById(R.id.buff_item_name);
+                TextView buff_item_value = view.findViewById(R.id.buff_item_value);
+                TextView buff_uncrit_value = view.findViewById(R.id.buff_uncrit_value);
+                TextView buff_crit_value = view.findViewById(R.id.buff_crit_value);
+
+                // item_rss.getSkillNameByCustomName()
+                buff_item_name.setText(item_rss.getSkillNameByCustomName(buffCal.returnFinalATKArray()[i],context));
+                buff_item_value.setText(prettyCount(buffCal.skillPReturn(item_name_recongize[i],artifactList),1));
+                buff_item_value.setTextColor(Color.parseColor(color_hex));
+                //buff_uncrit_value.setText(prettyCount(buffCal.atkReturn()*buffCal.skillPReturn(item_name_recongize[i])));
+                buff_uncrit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],false,"Physical",artifactList),0));
+                buff_uncrit_value.setTextColor(context.getColor(R.color.uncrit));
+                //buff_crit_value.setText(prettyCount(buffCal.atkReturn()*buffCal.skillPReturn(item_name_recongize[i])*buffCal.critDMGReturn()));
+                buff_crit_value.setText(prettyCount(buffCal.Damage(item_name_recongize[i],true,"Physical",artifactList),0));
+                buff_crit_value.setTextColor(context.getColor(R.color.crit));
+
+                buff_tab_view.addView(view);
+            }else if (buffCal.returnFinalATKArraySize() > (i+1)){
+                if(buffCal.returnFinalATKArray()[i+1].contains("_")) {
+                    View view = View.inflate(context, R.layout.item_buff_display, null);
+                    TextView buff_item_name = view.findViewById(R.id.buff_item_name);
+                    TextView buff_crit_name = view.findViewById(R.id.buff_crit_name);
+                    TextView buff_uncrit_name = view.findViewById(R.id.buff_uncrit_name);
+                    TextView buff_item_value = view.findViewById(R.id.buff_item_value);
+                    TextView buff_uncrit_value = view.findViewById(R.id.buff_uncrit_value);
+                    TextView buff_crit_value = view.findViewById(R.id.buff_crit_value);
+                    buff_crit_value.setVisibility(View.GONE);
+                    buff_crit_name.setVisibility(View.GONE);
+
+                    buff_item_name.setText(item_rss.getSkillNameByCustomName(buffCal.returnFinalATKArray()[i], context));
+                    buff_item_value.setText(prettyCount(buffCal.skillPReturn(item_name_recongize[i + 1], artifactList), 0) + " + " + prettyCount(buffCal.skillPReturn(item_name_recongize[i], artifactList), 1));
+                    buff_item_value.setTextColor(Color.parseColor(color_hex));
+
+                    buff_uncrit_name.setText(item_rss.getSkillNameByCustomName(buffCal.returnFinalATKArray()[i], context));
+                    buff_uncrit_value.setTextColor(context.getColor(R.color.uncrit));
+
+                    if (buffCal.returnFinalATKArray()[i].contains("治療")) {
+                        if(charName.equals("Qiqi") || charName.equals("七七") || charName.equals("七七") || charName.equals("七七") || charName.equals("Ци Ци") || charName.equals("Jean") || charName.equals("琴") || charName.equals("琴") || charName.equals("ジン") || charName.equals("Джинн")){
+                            buff_uncrit_value.setText(prettyCount(buffCal.HealATK(item_name_recongize[i], item_name_recongize[i + 1], artifactList), 0));
+                        } else {
+
+                            buff_uncrit_value.setText(prettyCount(buffCal.HealHP(item_name_recongize[i], item_name_recongize[i + 1], artifactList), 0));
+                        }
+                    } else if (buffCal.returnFinalATKArray()[i].contains("護盾")) {
+                        buff_uncrit_value.setText(prettyCount(buffCal.Shield(item_name_recongize[i], item_name_recongize[i + 1], artifactList), 0));
+                    }
+                    buff_tab_view.addView(view);
+                }
+            }
+        }
+    }
 
     public void secSetShow(int sec_id, int i,int pos_id,EditText valueTV,TextView valueP, RadioButton buff_artifact_0t, RadioButton buff_artifact_1t, RadioButton buff_artifact_2t, RadioButton buff_artifact_3t, RadioButton buff_artifact_4t,RadioButton buff_artifact_ct, RadioButton buff_artifact_1u, RadioButton buff_artifact_2u, RadioButton buff_artifact_3u, RadioButton buff_artifact_4u, RadioButton buff_artifact_5u, String[] tmp_artifact_sort){
 
@@ -2024,9 +2224,13 @@ public class CalculatorBuff {
 
                 // Show results of Buff
                 buff_base();
-                buff_normal();
-                buff_charged();
-                buff_pluging();
+                if(display_normal){
+                    buff_normal();
+                }else if(display_charging){
+                    buff_charged();
+                }else if (display_pluging){
+                    buff_pluging();
+                }
 
                 saveData(tmp_artifact_sort);
 
@@ -2052,159 +2256,174 @@ public class CalculatorBuff {
         dialog.show();
     }
 
-    public void ArtifactBuffView(String type,String[] tmp_artifact_sort){
+    public void ArtifactBuffView(String type,String[] tmp_artifact_sort, View view){
         readBasicTier();
         int tmp_id = 0;
 
         switch (type){
             case "Flower" : {
                 showResult(0);
-                buff_artifact_sec1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        BuffDialogDisplay(1,1,0,tmp_artifact_sort);
-                    }
-                });
-                buff_artifact_sec2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        BuffDialogDisplay(1,2,0,tmp_artifact_sort);
-                    }
-                });
-                buff_artifact_sec3.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        BuffDialogDisplay(1,3,0,tmp_artifact_sort);
-                    }
-                });
-                buff_artifact_sec4.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        BuffDialogDisplay(1,4,0,tmp_artifact_sort);
-                    }
-                });
-                tmp_id = 0;
-                artifactBufSetting(tmp_id, this.tmp_artifact_lvl, this.tmp_artifact_rare);
+                if (tmp_artifact_sort[0] != null) {
+                    buff_artifact_sec1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            BuffDialogDisplay(1, 1, 0, tmp_artifact_sort);
+                        }
+                    });
+                    buff_artifact_sec2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            BuffDialogDisplay(1, 2, 0, tmp_artifact_sort);
+                        }
+                    });
+                    buff_artifact_sec3.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            BuffDialogDisplay(1, 3, 0, tmp_artifact_sort);
+                        }
+                    });
+                    buff_artifact_sec4.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            BuffDialogDisplay(1, 4, 0, tmp_artifact_sort);
+                        }
+                    });
+                    tmp_id = 0;
+                    artifactBufSetting(tmp_id, this.tmp_artifact_lvl, this.tmp_artifact_rare);
+                    break;
+                }
                 break;
             }
             case "Plume" : {
                 showResult(1);
-                buff_artifact_sec1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        BuffDialogDisplay(2,1,1,tmp_artifact_sort);
-                    }
-                });
-                buff_artifact_sec2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        BuffDialogDisplay(2,2,1,tmp_artifact_sort);
-                    }
-                });
-                buff_artifact_sec3.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        BuffDialogDisplay(2,3,1,tmp_artifact_sort);
-                    }
-                });
-                buff_artifact_sec4.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        BuffDialogDisplay(2,4,1,tmp_artifact_sort);
-                    }
-                });
-                tmp_id = 1;
-                artifactBufSetting(tmp_id, this.tmp_artifact_lvl, this.tmp_artifact_rare);
+
+                if (tmp_artifact_sort[1] != null) {
+                    buff_artifact_sec1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            BuffDialogDisplay(2, 1, 1, tmp_artifact_sort);
+                        }
+                    });
+                    buff_artifact_sec2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            BuffDialogDisplay(2, 2, 1, tmp_artifact_sort);
+                        }
+                    });
+                    buff_artifact_sec3.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            BuffDialogDisplay(2, 3, 1, tmp_artifact_sort);
+                        }
+                    });
+                    buff_artifact_sec4.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            BuffDialogDisplay(2, 4, 1, tmp_artifact_sort);
+                        }
+                    });
+                    tmp_id = 1;
+                    artifactBufSetting(tmp_id, this.tmp_artifact_lvl, this.tmp_artifact_rare);
+                    break;
+                }
                 break;
             }
             case "Sand" : {
                 showResult(2);
-                buff_artifact_sec1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        BuffDialogDisplay(3,1,2,tmp_artifact_sort);
-                    }
-                });
-                buff_artifact_sec2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        BuffDialogDisplay(3,2,2,tmp_artifact_sort);
-                    }
-                });
-                buff_artifact_sec3.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        BuffDialogDisplay(3,3,2,tmp_artifact_sort);
-                    }
-                });
-                buff_artifact_sec4.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        BuffDialogDisplay(3,4,2,tmp_artifact_sort);
-                    }
-                });
-                tmp_id = 2;
-                artifactBufSetting(tmp_id, this.tmp_artifact_lvl, this.tmp_artifact_rare);
+                if (tmp_artifact_sort[2] != null) {
+                    buff_artifact_sec1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            BuffDialogDisplay(3, 1, 2, tmp_artifact_sort);
+                        }
+                    });
+                    buff_artifact_sec2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            BuffDialogDisplay(3, 2, 2, tmp_artifact_sort);
+                        }
+                    });
+                    buff_artifact_sec3.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            BuffDialogDisplay(3, 3, 2, tmp_artifact_sort);
+                        }
+                    });
+                    buff_artifact_sec4.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            BuffDialogDisplay(3, 4, 2, tmp_artifact_sort);
+                        }
+                    });
+                    tmp_id = 2;
+                    artifactBufSetting(tmp_id, this.tmp_artifact_lvl, this.tmp_artifact_rare);
+                    break;
+                }
                 break;
             }
             case "Goblet" : {
                 showResult(3);
-                buff_artifact_sec1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        BuffDialogDisplay(4,1,3,tmp_artifact_sort);
-                    }
-                });
-                buff_artifact_sec2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        BuffDialogDisplay(4,2,3,tmp_artifact_sort);
-                    }
-                });
-                buff_artifact_sec3.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        BuffDialogDisplay(4,3,3,tmp_artifact_sort);
-                    }
-                });
-                buff_artifact_sec4.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        BuffDialogDisplay(4,4,3,tmp_artifact_sort);
-                    }
-                });
-                tmp_id = 3;
-                artifactBufSetting(tmp_id, this.tmp_artifact_lvl, this.tmp_artifact_rare);
-                break;
+                if (tmp_artifact_sort[3] != null) {
+                    buff_artifact_sec1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            BuffDialogDisplay(4, 1, 3, tmp_artifact_sort);
+                        }
+                    });
+                    buff_artifact_sec2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            BuffDialogDisplay(4, 2, 3, tmp_artifact_sort);
+                        }
+                    });
+                    buff_artifact_sec3.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            BuffDialogDisplay(4, 3, 3, tmp_artifact_sort);
+                        }
+                    });
+                    buff_artifact_sec4.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            BuffDialogDisplay(4, 4, 3, tmp_artifact_sort);
+                        }
+                    });
+                    tmp_id = 3;
+                    artifactBufSetting(tmp_id, this.tmp_artifact_lvl, this.tmp_artifact_rare);
+                    break;
+                }
             }
             case "Circlet" : {
                 showResult(4);
-                buff_artifact_sec1.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        BuffDialogDisplay(5,1,4,tmp_artifact_sort);
-                    }
-                });
-                buff_artifact_sec2.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        BuffDialogDisplay(5,2,4,tmp_artifact_sort);
-                    }
-                });
-                buff_artifact_sec3.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        BuffDialogDisplay(5,3,4,tmp_artifact_sort);
-                    }
-                });
-                buff_artifact_sec4.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        BuffDialogDisplay(5,4,4,tmp_artifact_sort);
-                    }
-                });
-                tmp_id = 4;
-                artifactBufSetting(tmp_id, this.tmp_artifact_lvl, this.tmp_artifact_rare);
+                if (tmp_artifact_sort[4] != null) {
+                    buff_artifact_sec1.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            BuffDialogDisplay(5, 1, 4, tmp_artifact_sort);
+                        }
+                    });
+                    buff_artifact_sec2.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            BuffDialogDisplay(5, 2, 4, tmp_artifact_sort);
+                        }
+                    });
+                    buff_artifact_sec3.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            BuffDialogDisplay(5, 3, 4, tmp_artifact_sort);
+                        }
+                    });
+                    buff_artifact_sec4.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            BuffDialogDisplay(5, 4, 4, tmp_artifact_sort);
+                        }
+                    });
+                    tmp_id = 4;
+                    artifactBufSetting(tmp_id, this.tmp_artifact_lvl, this.tmp_artifact_rare);
+                    break;
+                }
                 break;
             }
         }
@@ -2376,7 +2595,7 @@ public class CalculatorBuff {
 
         switch (type){
             case 0 : return plus+new DecimalFormat("###,###,###,###,###").format(number);
-            case 1 : return plus+(new DecimalFormat("###,###,###,###,###.#").format(numDouble*100))+"%";
+            case 1 : return plus+(new DecimalFormat("###,###,###,###,###.##").format(numDouble*100))+"%";
             default: return plus+new DecimalFormat("###,###,###,###,###.#").format(number);
         }
     }
@@ -2469,6 +2688,14 @@ public class CalculatorBuff {
 
     }
 
+    public boolean checkDataIsExist(String path){
+        File file = new File(context.getFilesDir()+"/"+path);
+        if(file.isFile()){
+            return file.exists();
+        }
+        return false;
+    }
+
 
     private void enemy_list_reload() {
         Log.wtf("DAAM","YEE");
@@ -2510,16 +2737,16 @@ public class CalculatorBuff {
         for (int x = 0 ; x< 5 ;x ++){
             if(tmp_artifact_sort[x] != null) {
                 if (!tmp_artifact_sort[x].equals("")) {
-                    editor.putString("artifactBuffMainItem" + String.valueOf(x), artifactBuffMainItem.get(x));
-                    editor.putString("artifactBuffMainValue" + String.valueOf(x), String.valueOf(artifactBuffMainValue.get(x)));
-                    editor.putString("artifactBuffSec1Item" + String.valueOf(x), artifactBuffSec1Item.get(x));
-                    editor.putString("artifactBuffSec1Value" + String.valueOf(x), String.valueOf(artifactBuffSec1Value.get(x)));
-                    editor.putString("artifactBuffSec2Item" + String.valueOf(x), artifactBuffSec2Item.get(x));
-                    editor.putString("artifactBuffSec2Value" + String.valueOf(x), String.valueOf(artifactBuffSec2Value.get(x)));
-                    editor.putString("artifactBuffSec3Item" + String.valueOf(x), artifactBuffSec3Item.get(x));
-                    editor.putString("artifactBuffSec3Value" + String.valueOf(x), String.valueOf(artifactBuffSec3Value.get(x)));
-                    editor.putString("artifactBuffSec4Item" + String.valueOf(x), artifactBuffSec4Item.get(x));
-                    editor.putString("artifactBuffSec4Value" + String.valueOf(x), String.valueOf(artifactBuffSec4Value.get(x)));
+                    editor.putString(dataSheetName+"_"+"artifactBuffMainItem" + String.valueOf(x), artifactBuffMainItem.get(x));
+                    editor.putString(dataSheetName+"_"+"artifactBuffMainValue" + String.valueOf(x), String.valueOf(artifactBuffMainValue.get(x)));
+                    editor.putString(dataSheetName+"_"+"artifactBuffSec1Item" + String.valueOf(x), artifactBuffSec1Item.get(x));
+                    editor.putString(dataSheetName+"_"+"artifactBuffSec1Value" + String.valueOf(x), String.valueOf(artifactBuffSec1Value.get(x)));
+                    editor.putString(dataSheetName+"_"+"artifactBuffSec2Item" + String.valueOf(x), artifactBuffSec2Item.get(x));
+                    editor.putString(dataSheetName+"_"+"artifactBuffSec2Value" + String.valueOf(x), String.valueOf(artifactBuffSec2Value.get(x)));
+                    editor.putString(dataSheetName+"_"+"artifactBuffSec3Item" + String.valueOf(x), artifactBuffSec3Item.get(x));
+                    editor.putString(dataSheetName+"_"+"artifactBuffSec3Value" + String.valueOf(x), String.valueOf(artifactBuffSec3Value.get(x)));
+                    editor.putString(dataSheetName+"_"+"artifactBuffSec4Item" + String.valueOf(x), artifactBuffSec4Item.get(x));
+                    editor.putString(dataSheetName+"_"+"artifactBuffSec4Value" + String.valueOf(x), String.valueOf(artifactBuffSec4Value.get(x)));
                 }
             }
         }

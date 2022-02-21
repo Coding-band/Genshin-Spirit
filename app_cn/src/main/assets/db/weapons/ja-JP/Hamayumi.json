@@ -1,0 +1,12 @@
+{
+  "name": "Hamayumi",
+  "rare": 4,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "ある巫女の所有物だった戦弓。優れた技術で作られ、精巧で強靭である。",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "浅瀨の弭",
+  "skill_desc": "通常攻撃のダメージ+16%/20%/24%/28%/32%、重撃のダメージ+12%/15%/18%/21%/24%。この武器を装備したキャラクターの元素エネルギーが満タンの場合、該当効果が2倍になる。",
+  "obtain_way": "FORGE_HLDW"
+}

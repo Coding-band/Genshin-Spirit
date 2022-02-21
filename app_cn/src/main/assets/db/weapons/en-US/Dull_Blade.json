@@ -1,0 +1,12 @@
+{
+  "name": "Dull Blade",
+  "rare": 1,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "ATK",
+  "second_status": "N/A",
+  "desc": "Youthful dreams and the thrill of adventure. If this isn't enough, then make it up with valiance.",
+  "skill_name": "N/A",
+  "skill_desc": "N/A",
+  "obtain_way": "FIRST_GIFT"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Rainslasher",
+  "rare": 4,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "ホタルの光を放つ大剣、その勢いと力で敵を捻りつぶす。",
+  "first_status": "EleMas",
+  "second_status": "ATK",
+  "skill_name": "水と雷の破滅",
+  "skill_desc": "水元素又は雷元素の影響を受けた敵に対するダメージ+20%/24%/28%/32%/36%。",
+  "obtain_way": "FORGE"
+}

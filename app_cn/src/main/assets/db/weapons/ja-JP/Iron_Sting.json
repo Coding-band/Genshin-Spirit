@@ -1,0 +1,12 @@
+{
+  "name": "Iron Sting",
+  "rare": 4,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "EleMas",
+  "second_status": "ATK",
+  "desc": "外形が細長い剣、異国から貿易ルートを経て璃月に渡った変わった兵器。とても軽く、刃先が鋭い。",
+  "skill_name": "注入の棘",
+  "skill_desc": "元素ダメージを与えた6秒間、キャラの与えるダメージ+6%/7.5%/9%/10.5%/12%、最大2重まで、1秒毎に1回のみ発動する。",
+  "obtain_way": "FORGE"
+}

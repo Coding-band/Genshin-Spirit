@@ -1,0 +1,38 @@
+{
+  "name" : "Barbara",
+  "dps_weapons": [
+    "the_widsith"
+   ],
+  "sup_dps_weapons": [
+    "mappa_mare",
+    "solar_pearl"
+  ],
+  "util_weapons": [
+    "prototype_malice",
+    "thrilling_tales_of_dragon_slayers"
+  ],
+  "dps_art1": [
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "wanderers_troupe"
+  ],
+  "dps_art2": [
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "util_art1": [
+    "thundersoother",
+    "thundersoother",
+    "thundersoother",
+    "thundersoother",
+    "thundersoother"
+  ],
+  "team1":[
+	"Diluc","Barbara","Bennett","Chongyun"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Ebony Bow",
+  "rare": 3,
+  "weapon": "Bow",
+  "isComingSoon": true,
+  "desc": "A longbow made of ebony wood with stiffer limbs than ordinary bows. It is also a far more powerful weapon.",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "Decimate",
+  "skill_desc": "Increases DMG against mechanoid Ruin opponents by 40/50/60/70/80%.",
+  "obtain_way": "N/A"
+}

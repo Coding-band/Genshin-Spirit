@@ -1,0 +1,12 @@
+{
+  "name": "Aquila Favonia",
+  "rare": 5,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "PhyDMG%",
+  "second_status": "ATK",
+  "desc": "The soul of the Knights of Favonius. Millennia later, it still calls on the winds of swift justice to vanquish all evil—just like the last heroine who wielded it.",
+  "skill_name": "Falcon's Defiance",
+  "skill_desc": "ATK is increased by 20%/25%/30%/35%/40%. Triggers on taking DMG: the soul of the Falcon of the West awakens, holding the banner of the resistance aloft, regenerating HP equal to 100%/115%/130%/145%/160% of ATK and dealing 200%/230%/260%/290%/320% of ATK as DMG to surrounding opponents. This effect can only occur once every 15s.",
+  "obtain_way": "WISH"
+}
