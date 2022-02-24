@@ -4,11 +4,13 @@ package com.voc.genshin_spirit_cn.data;/*
  * Copyright © 2021 Xectorda 版權所有
  */
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -58,15 +60,17 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
     private Context context;
     private AdapterView.OnItemClickListener mListener;
     private WebView webView;
+    private Activity activity;
 
     /* loaded from: classes.dex */
     public interface OnItemClickListener {
         void onItemClick(int i);
     }
 
-    public ArtifactsAdapter(Context context, List<Artifacts> list) {
+    public ArtifactsAdapter(Context context, List<Artifacts> list,Activity activity) {
         this.context = context;
         this.artifactsList = list;
+        this.activity = activity;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -88,8 +92,7 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
     }
 
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
-        int i2;
-        int i3;
+        int width = 0, height = 0;
         Artifacts artifacts = this.artifactsList.get(i);
         ItemRss itemRss = new ItemRss();
         RoundedCornersTransformation roundedCornersTransformation = new RoundedCornersTransformation(25, 0, RoundedCornersTransformation.CornerType.TOP);
@@ -107,38 +110,45 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
             viewHolder.artifact_star.setRating((float) artifacts.getRare());
         }
         Context context = this.context;
-        if (context instanceof MainActivity) {
-            i3 = (ScreenSizeUtils.getInstance(context).getScreenWidth() - 128) / 2;
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height_curr = displayMetrics.heightPixels;
+        int width_curr = displayMetrics.widthPixels;
+        int curr = width_curr;
+
+
+        if(context instanceof MainActivity){
+
             if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                i3 = (ScreenSizeUtils.getInstance(this.context).getScreenWidth() - 128) / 2;
-                i2 = (i3 * 58) / 32;
-            } else {
-                if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                    i3 = (ScreenSizeUtils.getInstance(this.context).getScreenWidth() - 128) / 3;
-                    i2 = (ScreenSizeUtils.getInstance(this.context).getScreenWidth() - 128) / 3;
-                }
-                i2 = i3;
+                width = (width_curr) / 2;
+                height = (width * 58) / 32;
+            } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
+                width = (curr) / 3;
+                height = (curr) / 3;
             }
-        } else if (context instanceof CalculatorUI) {
-            i3 = (ScreenSizeUtils.getInstance(context).getScreenWidth() - 128) / 3;
-            i2 = (ScreenSizeUtils.getInstance(this.context).getScreenWidth() - 128) / 3;
-        } else {
-            i3 = 0;
-            i2 = i3;
+
+
+        }else if(context instanceof CalculatorUI){
+            width = (curr) / 3;
+            height = (curr) / 3;
+        }
+        int one_curr = height;
+        if(height > width){
+            one_curr = width;
         }
         viewHolder.artifact_bg.setBackgroundResource(itemRss.getRareColorByName(artifacts.getRare())[0]);
         viewHolder.artifact_nl.setBackgroundResource(itemRss.getRareColorByName(artifacts.getRare())[1]);
-        viewHolder.artifact_icon.getLayoutParams().width = i3;
-        viewHolder.artifact_icon.getLayoutParams().height = i2;
+        viewHolder.artifact_icon.getLayoutParams().width = width;
+        viewHolder.artifact_icon.getLayoutParams().height = height;
         Context context2 = this.context;
         if (context2 instanceof MainActivity) {
             if (((MainActivity) context2).sharedPreferences.getString("curr_ui_grid", ExifInterface.GPS_MEASUREMENT_2D).equals(ExifInterface.GPS_MEASUREMENT_2D)) {
                 Picasso.get().load(itemRss.getArtifactByName(artifacts.getName())[1]).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.artifact_icon);
             } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", ExifInterface.GPS_MEASUREMENT_3D).equals(ExifInterface.GPS_MEASUREMENT_3D)) {
-                Picasso.get().load(itemRss.getArtifactByName(artifacts.getName())[1]).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.artifact_icon);
+                Picasso.get().load(itemRss.getArtifactByName(artifacts.getName())[1]).resize(one_curr,one_curr).transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.artifact_icon);
             }
         } else if (context2 instanceof CalculatorUI) {
-            Picasso.get().load(itemRss.getArtifactByName(artifacts.getName())[1]).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.artifact_icon);
+            Picasso.get().load(itemRss.getArtifactByName(artifacts.getName())[1]).resize(one_curr,one_curr).transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.artifact_icon);
         }
         viewHolder.artifact_name.setText(itemRss.getArtifactByName(artifacts.getName())[0]);
         new ColorStateList(new int[][]{new int[]{16842919}, new int[]{-16842912}, new int[]{16842912}}, new int[]{this.context.getResources().getColor(R.color.tv_color), this.context.getResources().getColor(R.color.tv_color), Color.parseColor(this.context.getSharedPreferences("user_info", 0).getString("theme_color_hex", "#FF5A5A"))});

@@ -30,27 +30,24 @@
         android:roundIcon="@drawable/app_ico"
         android:supportsRtl="true"
         android:theme="@style/NoTheme"
+        android:usesCleartextTraffic="true"
         android:windowSoftInputMode="stateHidden">
         <activity
             android:name=".ui.BackgroundConfirmActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".ui.CalculatorDBActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".ui.MainActivity"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".ui.SplashActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"
             android:theme="@style/SplashTheme"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
@@ -62,12 +59,10 @@
         <activity
             android:name=".ui.AlarmUI"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".ui.CalculatorUI"
             android:label="@string/app_name"
-            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden" />
 
         <receiver android:name=".util.ReminderBroadcast" />

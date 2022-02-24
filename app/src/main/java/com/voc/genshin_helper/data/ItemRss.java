@@ -78,6 +78,12 @@ public class ItemRss {
         else if(str.equals("Sword")){return R.drawable.ico_sword;}
         else {return R.drawable.paimon_lost;}
     }
+    public int getDistrictIMG (String str){
+        if(str.equals("Mondstadt")){return R.drawable.mondstadt_ico;}
+        else if(str.equals("Liyue")){return R.drawable.liyue_ico;}
+        else if(str.equals("Inazuma")){return R.drawable.inazuma_ico;}
+        else {return R.drawable.unknown;}
+    }
 
     // add in 20220207
     public String[] getEnemyByName(String str, Context context){

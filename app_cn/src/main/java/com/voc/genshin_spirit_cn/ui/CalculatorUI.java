@@ -472,7 +472,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
     private void char_setup() {
         viewPager.setCurrentItem(0);
         mList_char = viewPager0.findViewById(R.id.main_list);
-        mCharAdapter = new CharactersAdapter(context, charactersList);
+        mCharAdapter = new CharactersAdapter(context, charactersList,activity);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 3);
         LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
         paramsMsg.gravity = Gravity.CENTER;
@@ -704,7 +704,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
     private void weapon_setup() {
         mList_weapon = viewPager1.findViewById(R.id.main_list);
-        mWeaponAdapter = new WeaponsAdapter(context, weaponsList);
+        mWeaponAdapter = new WeaponsAdapter(context, weaponsList,activity);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 3);
         LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
         paramsMsg.gravity = Gravity.CENTER;
@@ -912,7 +912,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
     private void artifact_setup() {
         mList_artifact = viewPager2.findViewById(R.id.main_list);
-        mArtifactAdapter = new ArtifactsAdapter(context, artifactsList);
+        mArtifactAdapter = new ArtifactsAdapter(context, artifactsList,activity);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 3);
         LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
         paramsMsg.gravity = Gravity.CENTER;

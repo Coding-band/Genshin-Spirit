@@ -1,10 +1,12 @@
 package com.voc.genshin_helper.data;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -51,10 +53,12 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
     private List<Characters> charactersList;
     private AdapterView.OnItemClickListener mListener;
     private WebView webView ;
+    private Activity activity ;
 
-    public CharactersAdapter(Context context, List<Characters> charactersList) {
+    public CharactersAdapter(Context context, List<Characters> charactersList,Activity activity) {
         this.context = context;
         this.charactersList = charactersList;
+        this.activity = activity;
     }
 
     public interface OnItemClickListener {
@@ -96,20 +100,31 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
         if(Characters.getRare() >3 && Characters.getRare() < 6){holder.char_star.setNumStars(Characters.getRare());holder.char_star.setRating(Characters.getRare());}
 
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height_curr = displayMetrics.heightPixels;
+        int width_curr = displayMetrics.widthPixels;
+        int curr = width_curr;
+
+
         if(context instanceof MainActivity){
 
             if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                width = (ScreenSizeUtils.getInstance(this.context).getScreenWidth() - 128) / 2;
+                width = (width_curr) / 2;
                 height = (width * 58) / 32;
             } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                width = (ScreenSizeUtils.getInstance(this.context).getScreenWidth() - 128) / 3;
-                height = (ScreenSizeUtils.getInstance(this.context).getScreenWidth() - 128) / 3;
+                width = (curr) / 3;
+                height = (curr) / 3;
             }
 
 
         }else if(context instanceof CalculatorUI){
-            width = (int) ((ScreenSizeUtils.getInstance(context).getScreenWidth() - 32*2*2)/3);
-            height = (int) ((ScreenSizeUtils.getInstance(context).getScreenWidth() - 32*2*2)/3);
+            width = (curr) / 3;
+            height = (curr) / 3;
+        }
+        int one_curr = height;
+        if(height > width){
+            one_curr = width;
         }
         if(Characters.getElement().equals("Anemo")){holder.char_element.setImageResource(R.drawable.anemo);holder.char_bg.setBackgroundResource(R.drawable.bg_anemo_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_anemo_char);}
         if(Characters.getElement().equals("Cryo")){holder.char_element.setImageResource(R.drawable.cryo);holder.char_bg.setBackgroundResource(R.drawable.bg_cryo_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_cryo_char);}
@@ -136,13 +151,13 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                         .into (holder.char_icon);
             } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).fit().centerCrop().transform(transformation)
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(one_curr,one_curr).transform(transformation)
                         .error (R.drawable.paimon_full)
                         .into (holder.char_icon);
             }
         }else if(context instanceof CalculatorUI){
             Picasso.get()
-                    .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).fit().centerInside().transform(transformation)
+                    .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(one_curr,one_curr).transform(transformation)
                     .error (R.drawable.paimon_full)
                     .into (holder.char_icon);
 

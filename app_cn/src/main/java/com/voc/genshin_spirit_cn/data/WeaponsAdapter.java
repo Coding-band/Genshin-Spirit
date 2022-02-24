@@ -6,12 +6,14 @@ package com.voc.genshin_spirit_cn.data;/*
 
 import static android.content.Context.MODE_PRIVATE;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -58,15 +60,17 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
     private AdapterView.OnItemClickListener mListener;
     private List<Weapons> weaponsList;
     private WebView webView;
+    private Activity activity;
 
     /* loaded from: classes.dex */
     public interface OnItemClickListener {
         void onItemClick(int i);
     }
 
-    public WeaponsAdapter(Context context, List<Weapons> list) {
+    public WeaponsAdapter(Context context, List<Weapons> list, Activity activity) {
         this.context = context;
         this.weaponsList = list;
+        this.activity = activity;
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -111,20 +115,31 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
             viewHolder.weapon_star.setRating((float) weapons.getRare());
         }
 
-        if (context instanceof MainActivity) {
-            width = (ScreenSizeUtils.getInstance(context).getScreenWidth() - 128) / 2;
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height_curr = displayMetrics.heightPixels;
+        int width_curr = displayMetrics.widthPixels;
+        int curr = width_curr;
+
+
+        if(context instanceof MainActivity){
+
             if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                width = (ScreenSizeUtils.getInstance(this.context).getScreenWidth() - 128) / 2;
+                width = (width_curr) / 2;
                 height = (width * 58) / 32;
-            } else {
-                if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                    width = (ScreenSizeUtils.getInstance(this.context).getScreenWidth() - 128) / 3;
-                    height = (ScreenSizeUtils.getInstance(this.context).getScreenWidth() - 128) / 3;
-                }
+            } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
+                width = (curr) / 3;
+                height = (curr) / 3;
             }
-        } else if (context instanceof CalculatorUI) {
-            width = (ScreenSizeUtils.getInstance(context).getScreenWidth() - 128) / 3;
-            height = (ScreenSizeUtils.getInstance(this.context).getScreenWidth() - 128) / 3;
+
+
+        }else if(context instanceof CalculatorUI){
+            width = (curr) / 3;
+            height = (curr) / 3;
+        }
+        int one_curr = height;
+        if(height > width){
+            one_curr = width;
         }
 
         viewHolder.weapon_stat.setText(this.context.getString(R.string.weapon_stat) + this.context.getString(itemRss.getSecAttr(weapons.stat_1)));
@@ -138,10 +153,10 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
             if (((MainActivity) context2).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
                 Picasso.get().load(itemRss.getWeaponByName(weapons.getName())[1]).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
             } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                Picasso.get().load(itemRss.getWeaponByName(weapons.getName())[1]).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
+                Picasso.get().load(itemRss.getWeaponByName(weapons.getName())[1]).resize(one_curr,one_curr).transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
             }
         } else if (context2 instanceof CalculatorUI) {
-            Picasso.get().load(itemRss.getWeaponByName(weapons.getName())[1]).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
+            Picasso.get().load(itemRss.getWeaponByName(weapons.getName())[1]).resize(one_curr,one_curr).transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
         }
         viewHolder.weapon_name.setText(context.getString(itemRss.getWeaponByName(weapons.getName())[0]));
 

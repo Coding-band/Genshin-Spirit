@@ -347,7 +347,7 @@ public class MainActivity extends AppCompatActivity {
                     case 0:
                         check_spinner = 0;
                         mList = viewPager0.findViewById(R.id.main_list);
-                        mAdapter = new CharactersAdapter(context,charactersList);
+                        mAdapter = new CharactersAdapter(context,charactersList,activity);
                         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 2);
                         if (sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
                             mLayoutManager = new GridLayoutManager(context, 2);
@@ -557,7 +557,7 @@ public class MainActivity extends AppCompatActivity {
 
                     case 1:
                         mArtifactList = viewPager1.findViewById(R.id.artifact_list);
-                        mArtifactAdapter = new ArtifactsAdapter(context,artifactsList);
+                        mArtifactAdapter = new ArtifactsAdapter(context,artifactsList,activity);
                         mLayoutManager = new GridLayoutManager(context, 2);
                         if (sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
                             mLayoutManager = new GridLayoutManager(context, 2);
@@ -719,7 +719,7 @@ public class MainActivity extends AppCompatActivity {
                     case 3:
                         check_spinner = 0;
                         mWeaponList = viewPager3.findViewById(R.id.weapon_list);
-                        mWeaponAdapter = new WeaponsAdapter(context,weaponsList);
+                        mWeaponAdapter = new WeaponsAdapter(context,weaponsList,activity);
                         mLayoutManager = new GridLayoutManager(context, 2);
                         if (sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
                             mLayoutManager = new GridLayoutManager(context, 2);
@@ -1549,6 +1549,7 @@ public class MainActivity extends AppCompatActivity {
         LinearLayout daily_login_ll = viewPager2.findViewById(R.id.daily_login_ll);
         LinearLayout map_ll = viewPager2.findViewById(R.id.map_ll);
         LinearLayout alarm_ll = viewPager2.findViewById(R.id.alarm_ll);
+        LinearLayout x_ll = viewPager2.findViewById(R.id.x_ll);
 
         calculator_ll.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -1557,6 +1558,26 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        /*
+
+        x_ll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+                View view = View.inflate(context, R.layout.fragment_siptik_buff, null);
+                dialog.setContentView(view);
+                dialog.setCanceledOnTouchOutside(true);
+
+                Window dialogWindow = dialog.getWindow();
+                WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+                lp.width = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth());
+                lp.height = (int) (ScreenSizeUtils.getInstance(context).getScreenHeight());
+                lp.gravity = Gravity.CENTER;
+                dialogWindow.setAttributes(lp);
+                dialog.show();
+            }
+        });
+        */
         daily_login_ll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

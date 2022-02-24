@@ -358,6 +358,7 @@ public class Characters_Info {
         RatingBar char_stars = view.findViewById(R.id.info_stars);
         ImageView char_element = view.findViewById(R.id.info_element_img);
         TextView char_area = view.findViewById(R.id.info_area_tv);
+        ImageView char_area_ico = view.findViewById(R.id.info_area_ico);
         ImageView char_weapon = view.findViewById(R.id.info_weapon);
         TextView char_role = view.findViewById(R.id.info_role);
         TextView char_sex = view.findViewById(R.id.info_sex);
@@ -591,6 +592,7 @@ public class Characters_Info {
         char_stars.setRating(star);
         char_element.setImageResource(item_rss.getElementByName(element)[0]);
         char_area.setText(item_rss.getLocaleName(area,context));
+        char_area_ico.setImageResource(item_rss.getDistrictIMG(area));
         char_weapon.setImageResource(item_rss.getWeaponTypeIMG(weapon));
         char_role.setText(item_rss.getLocaleName(role,context));
         char_sex.setText(item_rss.getLocaleName(sex,context));

@@ -126,10 +126,18 @@
                             android:textColor="@color/tv_color"
                             android:textSize="18sp" />
 
+                        <ImageView
+                            android:id="@+id/info_area_ico"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_weight="0"
+                            app:tint="@color/tv_color" />
+
                         <TextView
                             android:id="@+id/info_area_tv"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
                             android:layout_weight="0"
                             android:text="蒙德"
                             android:textColor="@color/tv_color"
