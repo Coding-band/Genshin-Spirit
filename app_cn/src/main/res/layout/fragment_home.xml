@@ -15,6 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:overScrollMode="never"
+        android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -233,6 +234,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
+                    android:background="@drawable/item_selected_circle_effect"
                     android:orientation="vertical">
 
                     <ImageView
@@ -259,6 +261,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
+                    android:background="@drawable/item_selected_circle_effect"
                     android:orientation="vertical">
 
                     <ImageView
@@ -285,6 +288,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
+                    android:background="@drawable/item_selected_circle_effect"
                     android:orientation="vertical">
 
                     <ImageView
@@ -318,6 +322,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
+                    android:background="@drawable/item_selected_circle_effect"
                     android:orientation="vertical">
 
                     <ImageView
@@ -344,6 +349,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
+                    android:background="@drawable/item_selected_circle_effect"
                     android:orientation="vertical"
                     android:visibility="invisible">
 
@@ -371,7 +377,7 @@
                     android:layout_height="match_parent"
                     android:layout_margin="8dp"
                     android:layout_weight="1"
-                    android:background="@drawable/bg_item_edgeless_square"
+                    android:background="@drawable/item_selected_circle_effect"
                     android:orientation="vertical"
                     android:visibility="invisible">
 

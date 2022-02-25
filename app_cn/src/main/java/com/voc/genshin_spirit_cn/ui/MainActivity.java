@@ -27,6 +27,7 @@ import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.method.LinkMovementMethod;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
@@ -349,10 +350,23 @@ public class MainActivity extends AppCompatActivity {
                         mList = viewPager0.findViewById(R.id.main_list);
                         mAdapter = new CharactersAdapter(context,charactersList,activity);
                         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 2);
+                        DisplayMetrics displayMetrics = new DisplayMetrics();
+                        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+                        int height = displayMetrics.heightPixels;
+                        int width = displayMetrics.widthPixels;
+
                         if (sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                            mLayoutManager = new GridLayoutManager(context, 2);
+                            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                                mLayoutManager = new GridLayoutManager(context,  width/480+1);
+                            }else{
+                                mLayoutManager = new GridLayoutManager(context,  2);
+                            }
                         }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                            mLayoutManager = new GridLayoutManager(context, 3);
+                            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                                mLayoutManager = new GridLayoutManager(context,  width/360+1);
+                            }else{
+                                mLayoutManager = new GridLayoutManager(context,  3);
+                            }
                         }
                         LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
                         paramsMsg.gravity = Gravity.CENTER;
@@ -559,10 +573,23 @@ public class MainActivity extends AppCompatActivity {
                         mArtifactList = viewPager1.findViewById(R.id.artifact_list);
                         mArtifactAdapter = new ArtifactsAdapter(context,artifactsList,activity);
                         mLayoutManager = new GridLayoutManager(context, 2);
+                        DisplayMetrics displayMetrics_a = new DisplayMetrics();
+                        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics_a);
+                        int height_a = displayMetrics_a.heightPixels;
+                        int width_a = displayMetrics_a.widthPixels;
+
                         if (sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                            mLayoutManager = new GridLayoutManager(context, 2);
+                            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                                mLayoutManager = new GridLayoutManager(context,  width_a/480+1);
+                            }else{
+                                mLayoutManager = new GridLayoutManager(context,  2);
+                            }
                         }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                            mLayoutManager = new GridLayoutManager(context, 3);
+                            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                                mLayoutManager = new GridLayoutManager(context,  width_a/360+1);
+                            }else{
+                                mLayoutManager = new GridLayoutManager(context,  3);
+                            }
                         }
                         paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
                         paramsMsg.gravity = Gravity.CENTER;
@@ -721,10 +748,22 @@ public class MainActivity extends AppCompatActivity {
                         mWeaponList = viewPager3.findViewById(R.id.weapon_list);
                         mWeaponAdapter = new WeaponsAdapter(context,weaponsList,activity);
                         mLayoutManager = new GridLayoutManager(context, 2);
+                        DisplayMetrics displayMetrics_w = new DisplayMetrics();
+                        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics_w);
+                        int height_w = displayMetrics_w.heightPixels;
+                        int width_w = displayMetrics_w.widthPixels;
                         if (sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                            mLayoutManager = new GridLayoutManager(context, 2);
+                            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                                mLayoutManager = new GridLayoutManager(context,  width_w/480+1);
+                            }else{
+                                mLayoutManager = new GridLayoutManager(context,  2);
+                            }
                         }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                            mLayoutManager = new GridLayoutManager(context, 3);
+                            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                                mLayoutManager = new GridLayoutManager(context,  width_w/360+1);
+                            }else{
+                                mLayoutManager = new GridLayoutManager(context,  3);
+                            }
                         }
                         paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
                         paramsMsg.gravity = Gravity.CENTER;

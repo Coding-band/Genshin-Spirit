@@ -846,62 +846,62 @@ public class ItemRss {
 
     /**EDIT WHEN ADD NEW ITEMS*/
     public String[] getCharByName(String name, Context context){
-        if(name.equals("Kamisato Ayato")){return new String[] {"/drawable/kamisato_ayato_flag.png",context.getString(R.string.kamisato_ayato),"/drawable/kamisato_ayato_full.png","/drawable/kamisato_ayato_ico.png"};}
-        else if(name.equals("Yae Miko")){return new String[] {"/drawable/yae_miko_flag.png",context.getString(R.string.yae_miko),"/drawable/yae_miko_full.png","/drawable/yae_miko_ico.png"};}
-        else if(name.equals("Shenhe")){return new String[] {"/drawable/shenhe_flag.png",context.getString(R.string.shenhe),"/drawable/shenhe_full.png","/drawable/shenhe_ico.png"};}
-        else if(name.equals("Yun Jin")){return new String[] {"/drawable/yun_jin_flag.png",context.getString(R.string.yun_jin),"/drawable/yun_jin_full.png","/drawable/yun_jin_ico.png"};}
-        else if(name.equals("Gorou")){return new String[] {"/drawable/gorou_flag.png",context.getString(R.string.gorou),"/drawable/gorou_full.png","/drawable/gorou_ico.png"};}
-        else if(name.equals("Arataki Itto")){return new String[] {"/drawable/arataki_itto_flag.png",context.getString(R.string.arataki_itto),"/drawable/arataki_itto_full.png","/drawable/arataki_itto_ico.png"};}
-        else if(name.equals("Thoma")){return new String[] {"/drawable/thoma_flag.png",context.getString(R.string.thoma),"/drawable/thoma_full.png","/drawable/thoma_ico.png"};}
-        else if(name.equals("Sangonomiya Kokomi")){return new String[] {"/drawable/sangonomiya_kokomi_flag.png",context.getString(R.string.sangonomiya_kokomi),"/drawable/sangonomiya_kokomi_full.png","/drawable/sangonomiya_kokomi_ico.png"};}
+        if(name.equals("Kamisato Ayato")){return new String[] {"/drawable/kamisato_ayato_flag.png",context.getString(R.string.kamisato_ayato),"/drawable/kamisato_ayato_gacha_splash.png","/drawable/kamisato_ayato_ico.png"};}
+        else if(name.equals("Yae Miko")){return new String[] {"/drawable/yae_miko_flag.png",context.getString(R.string.yae_miko),"/drawable/yae_miko_gacha_splash.png","/drawable/yae_miko_ico.png"};}
+        else if(name.equals("Shenhe")){return new String[] {"/drawable/shenhe_flag.png",context.getString(R.string.shenhe),"/drawable/shenhe_gacha_splash.png","/drawable/shenhe_ico.png"};}
+        else if(name.equals("Yun Jin")){return new String[] {"/drawable/yun_jin_flag.png",context.getString(R.string.yun_jin),"/drawable/yun_jin_gacha_splash.png","/drawable/yun_jin_ico.png"};}
+        else if(name.equals("Gorou")){return new String[] {"/drawable/gorou_flag.png",context.getString(R.string.gorou),"/drawable/gorou_gacha_splash.png","/drawable/gorou_ico.png"};}
+        else if(name.equals("Arataki Itto")){return new String[] {"/drawable/arataki_itto_flag.png",context.getString(R.string.arataki_itto),"/drawable/arataki_itto_gacha_splash.png","/drawable/arataki_itto_ico.png"};}
+        else if(name.equals("Thoma")){return new String[] {"/drawable/thoma_flag.png",context.getString(R.string.thoma),"/drawable/thoma_gacha_splash.png","/drawable/thoma_ico.png"};}
+        else if(name.equals("Sangonomiya Kokomi")){return new String[] {"/drawable/sangonomiya_kokomi_flag.png",context.getString(R.string.sangonomiya_kokomi),"/drawable/sangonomiya_kokomi_gacha_splash.png","/drawable/sangonomiya_kokomi_ico.png"};}
         else if(name.equals("Aloy")){return new String[] {"/drawable/aloy.png",context.getString(R.string.aloy),"/drawable/aloy.png","/drawable/aloy_ico.png"};}
-        else if(name.equals("Kujou Sara")){return new String[] {"/drawable/kujou_sara_flag.png",context.getString(R.string.kujou_sara),"/drawable/kujou_sara_full.png","/drawable/kujou_sara_ico.png"};}
-        else if(name.equals("Raiden Shogun")){return new String[] {"/drawable/raiden_shogun_flag.png",context.getString(R.string.raiden_shogun),"/drawable/raiden_shogun_full.png","/drawable/raiden_shogun_ico.png"};}
-        else if(name.equals("Sayu")){return new String[] {"/drawable/sayu_flag.png",context.getString(R.string.sayu),"/drawable/sayu_full.png","/drawable/sayu_ico.png"};}
-        else if(name.equals("Yoimiya")){return new String[] {"/drawable/yoimiya_flag.png",context.getString(R.string.yoimiya),"/drawable/yoimiya_full.png","/drawable/yoimiya_ico.png"};}
-        else if(name.equals("Kamisato Ayaka")){return new String[] {"/drawable/ayaka_flag.png",context.getString(R.string.kamisato_ayaka),"/drawable/ayaka_full.png","/drawable/ayaka_ico.png"};}
-        else if(name.equals("Kaedehara Kazuha")){return new String[] {"/drawable/kazuha_flag.png",context.getString(R.string.kaedehara_kazuha),"/drawable/kazuha_full.png","/drawable/kazuha_ico.png"};}
-        else if(name.equals("Yanfei")){return new String[] {"/drawable/yanfei_flag.png",context.getString(R.string.yanfei),"/drawable/yanfei_full.png","/drawable/yanfei_ico.png"};}
-        else if(name.equals("Eula")){return new String[] {"/drawable/eula_flag.png",context.getString(R.string.eula),"/drawable/eula_full.png","/drawable/eula_ico.png"};}
-        else if(name.equals("Rosaria")){return new String[] {"/drawable/rosaria_flag.png",context.getString(R.string.rosaria),"/drawable/rosaria_full.png","/drawable/rosaria_ico.png"};}
-        else if(name.equals("Xiao")){return new String[] {"/drawable/xiao_flag.png",context.getString(R.string.xiao),"/drawable/xiao_full.png","/drawable/xiao_ico.png"};}
-        else if(name.equals("Hu Tao")){return new String[] {"/drawable/hu_tao_flag.png",context.getString(R.string.hu_tao),"/drawable/hu_tao_full.png","/drawable/hu_tao_ico.png"};}
-        else if(name.equals("Ganyu")){return new String[] {"/drawable/ganyu_flag.png",context.getString(R.string.ganyu),"/drawable/ganyu_full.png","/drawable/ganyu_ico.png"};}
-        else if(name.equals("Albedo")){return new String[] {"/drawable/albedo_flag.png",context.getString(R.string.albedo),"/drawable/albedo_full.png","/drawable/albedo_ico.png"};}
-        else if(name.equals("Zhongli")){return new String[] {"/drawable/zhongli_flag.png",context.getString(R.string.zhongli),"/drawable/zhongli_full.png","/drawable/zhongli_ico.png"};}
-        else if(name.equals("Xinyan")){return new String[] {"/drawable/xinyan_flag.png",context.getString(R.string.xinyan),"/drawable/xinyan_full.png","/drawable/xinyan_ico.png"};}
-        else if(name.equals("Tartaglia")){return new String[] {"/drawable/tartaglia_flag.png",context.getString(R.string.tartaglia),"/drawable/tartaglia_full.png","/drawable/tartaglia_ico.png"};}
-        else if(name.equals("Diona")){return new String[] {"/drawable/diona_flag.png",context.getString(R.string.diona),"/drawable/diona_full.png","/drawable/diona_ico.png"};}
-        else if(name.equals("Xingqiu")){return new String[] {"/drawable/xingqiu_flag.png",context.getString(R.string.xingqiu),"/drawable/xingqiu_full.png","/drawable/xingqiu_ico.png"};}
-        else if(name.equals("Xiangling")){return new String[] {"/drawable/xiangling_flag.png",context.getString(R.string.xiangling),"/drawable/xiangling_full.png","/drawable/xiangling_ico.png"};}
-        else if(name.equals("Venti")){return new String[] {"/drawable/venti_flag.png",context.getString(R.string.venti),"/drawable/venti_full.png","/drawable/venti_ico.png"};}
-        else if(name.equals("Sucrose")){return new String[] {"/drawable/sucrose_flag.png",context.getString(R.string.sucrose),"/drawable/sucrose_full.png","/drawable/sucrose_ico.png"};}
-        else if(name.equals("Razor")){return new String[] {"/drawable/razor_flag.png",context.getString(R.string.razor),"/drawable/razor_full.png","/drawable/razor_ico.png"};}
-        else if(name.equals("Qiqi")){return new String[] {"/drawable/qiqi_flag.png",context.getString(R.string.qiqi),"/drawable/qiqi_full.png","/drawable/qiqi_ico.png"};}
-        else if(name.equals("Noelle")){return new String[] {"/drawable/noelle_flag.png",context.getString(R.string.noelle),"/drawable/noelle_full.png","/drawable/noelle_ico.png"};}
-        else if(name.equals("Ningguang")){return new String[] {"/drawable/ningguang_flag.png",context.getString(R.string.ningguang),"/drawable/ningguang_full.png","/drawable/ningguang_ico.png"};}
-        else if(name.equals("Mona")){return new String[] {"/drawable/mona_flag.png",context.getString(R.string.mona),"/drawable/mona_full.png","/drawable/mona_ico.png"};}
-        else if(name.equals("Lisa")){return new String[] {"/drawable/lisa_flag.png",context.getString(R.string.lisa),"/drawable/lisa_full.png","/drawable/lisa_ico.png"};}
-        else if(name.equals("Klee")){return new String[] {"/drawable/klee_flag.png",context.getString(R.string.klee),"/drawable/klee_full.png","/drawable/klee_ico.png"};}
-        else if(name.equals("Keqing")){return new String[] {"/drawable/keqing_flag.png",context.getString(R.string.keqing),"/drawable/keqing_full.png","/drawable/keqing_ico.png"};}
-        else if(name.equals("Kaeya")){return new String[] {"/drawable/kaeya_flag.png",context.getString(R.string.kaeya),"/drawable/kaeya_full.png","/drawable/kaeya_ico.png"};}
-        else if(name.equals("Jean")){return new String[] {"/drawable/jean_flag.png",context.getString(R.string.jean),"/drawable/jean_full.png","/drawable/jean_ico.png"};}
-        else if(name.equals("Fischl")){return new String[] {"/drawable/fischl_flag.png",context.getString(R.string.fischl),"/drawable/fischl_full.png","/drawable/fischl_ico.png"};}
-        else if(name.equals("Diluc")){return new String[] {"/drawable/diluc_flag.png",context.getString(R.string.diluc),"/drawable/diluc_full.png","/drawable/diluc_ico.png"};}
-        else if(name.equals("Chongyun")){return new String[] {"/drawable/chongyun_flag.png",context.getString(R.string.chongyun),"/drawable/chongyun_full.png","/drawable/chongyun_ico.png"};}
-        else if(name.equals("Bennett")){return new String[] {"/drawable/bennett_flag.png",context.getString(R.string.bennett),"/drawable/bennett_full.png","/drawable/bennett_ico.png"};}
-        else if(name.equals("Beidou")){return new String[] {"/drawable/beidou_flag.png",context.getString(R.string.beidou),"/drawable/beidou_full.png","/drawable/beidou_ico.png"};}
-        else if(name.equals("Barbara")){return new String[] {"/drawable/barbara_flag.png",context.getString(R.string.barbara),"/drawable/barbara_full.png","/drawable/barbara_ico.png"};}
-        else if(name.equals("Amber")){return new String[] {"/drawable/amber_flag.png",context.getString(R.string.amber),"/drawable/amber_full.png","/drawable/amber_ico.png"};}
+        else if(name.equals("Kujou Sara")){return new String[] {"/drawable/kujou_sara_flag.png",context.getString(R.string.kujou_sara),"/drawable/kujou_sara_gacha_splash.png","/drawable/kujou_sara_ico.png"};}
+        else if(name.equals("Raiden Shogun")){return new String[] {"/drawable/raiden_shogun_flag.png",context.getString(R.string.raiden_shogun),"/drawable/raiden_shogun_gacha_splash.png","/drawable/raiden_shogun_ico.png"};}
+        else if(name.equals("Sayu")){return new String[] {"/drawable/sayu_flag.png",context.getString(R.string.sayu),"/drawable/sayu_gacha_splash.png","/drawable/sayu_ico.png"};}
+        else if(name.equals("Yoimiya")){return new String[] {"/drawable/yoimiya_flag.png",context.getString(R.string.yoimiya),"/drawable/yoimiya_gacha_splash.png","/drawable/yoimiya_ico.png"};}
+        else if(name.equals("Kamisato Ayaka")){return new String[] {"/drawable/ayaka_flag.png",context.getString(R.string.kamisato_ayaka),"/drawable/kamisato_ayaka_gacha_splash.png","/drawable/ayaka_ico.png"};}
+        else if(name.equals("Kaedehara Kazuha")){return new String[] {"/drawable/kazuha_flag.png",context.getString(R.string.kaedehara_kazuha),"/drawable/kaedehara_kazuha_gacha_splash.png","/drawable/kazuha_ico.png"};}
+        else if(name.equals("Yanfei")){return new String[] {"/drawable/yanfei_flag.png",context.getString(R.string.yanfei),"/drawable/yanfei_gacha_splash.png","/drawable/yanfei_ico.png"};}
+        else if(name.equals("Eula")){return new String[] {"/drawable/eula_flag.png",context.getString(R.string.eula),"/drawable/eula_gacha_splash.png","/drawable/eula_ico.png"};}
+        else if(name.equals("Rosaria")){return new String[] {"/drawable/rosaria_flag.png",context.getString(R.string.rosaria),"/drawable/rosaria_gacha_splash.png","/drawable/rosaria_ico.png"};}
+        else if(name.equals("Xiao")){return new String[] {"/drawable/xiao_flag.png",context.getString(R.string.xiao),"/drawable/xiao_gacha_splash.png","/drawable/xiao_ico.png"};}
+        else if(name.equals("Hu Tao")){return new String[] {"/drawable/hu_tao_flag.png",context.getString(R.string.hu_tao),"/drawable/hu_tao_gacha_splash.png","/drawable/hu_tao_ico.png"};}
+        else if(name.equals("Ganyu")){return new String[] {"/drawable/ganyu_flag.png",context.getString(R.string.ganyu),"/drawable/ganyu_gacha_splash.png","/drawable/ganyu_ico.png"};}
+        else if(name.equals("Albedo")){return new String[] {"/drawable/albedo_flag.png",context.getString(R.string.albedo),"/drawable/albedo_gacha_splash.png","/drawable/albedo_ico.png"};}
+        else if(name.equals("Zhongli")){return new String[] {"/drawable/zhongli_flag.png",context.getString(R.string.zhongli),"/drawable/zhongli_gacha_splash.png","/drawable/zhongli_ico.png"};}
+        else if(name.equals("Xinyan")){return new String[] {"/drawable/xinyan_flag.png",context.getString(R.string.xinyan),"/drawable/xinyan_gacha_splash.png","/drawable/xinyan_ico.png"};}
+        else if(name.equals("Tartaglia")){return new String[] {"/drawable/tartaglia_flag.png",context.getString(R.string.tartaglia),"/drawable/tartaglia_gacha_splash.png","/drawable/tartaglia_ico.png"};}
+        else if(name.equals("Diona")){return new String[] {"/drawable/diona_flag.png",context.getString(R.string.diona),"/drawable/diona_gacha_splash.png","/drawable/diona_ico.png"};}
+        else if(name.equals("Xingqiu")){return new String[] {"/drawable/xingqiu_flag.png",context.getString(R.string.xingqiu),"/drawable/xingqiu_gacha_splash.png","/drawable/xingqiu_ico.png"};}
+        else if(name.equals("Xiangling")){return new String[] {"/drawable/xiangling_flag.png",context.getString(R.string.xiangling),"/drawable/xiangling_gacha_splash.png","/drawable/xiangling_ico.png"};}
+        else if(name.equals("Venti")){return new String[] {"/drawable/venti_flag.png",context.getString(R.string.venti),"/drawable/venti_gacha_splash.png","/drawable/venti_ico.png"};}
+        else if(name.equals("Sucrose")){return new String[] {"/drawable/sucrose_flag.png",context.getString(R.string.sucrose),"/drawable/sucrose_gacha_splash.png","/drawable/sucrose_ico.png"};}
+        else if(name.equals("Razor")){return new String[] {"/drawable/razor_flag.png",context.getString(R.string.razor),"/drawable/razor_gacha_splash.png","/drawable/razor_ico.png"};}
+        else if(name.equals("Qiqi")){return new String[] {"/drawable/qiqi_flag.png",context.getString(R.string.qiqi),"/drawable/qiqi_gacha_splash.png","/drawable/qiqi_ico.png"};}
+        else if(name.equals("Noelle")){return new String[] {"/drawable/noelle_flag.png",context.getString(R.string.noelle),"/drawable/noelle_gacha_splash.png","/drawable/noelle_ico.png"};}
+        else if(name.equals("Ningguang")){return new String[] {"/drawable/ningguang_flag.png",context.getString(R.string.ningguang),"/drawable/ningguang_gacha_splash.png","/drawable/ningguang_ico.png"};}
+        else if(name.equals("Mona")){return new String[] {"/drawable/mona_flag.png",context.getString(R.string.mona),"/drawable/mona_gacha_splash.png","/drawable/mona_ico.png"};}
+        else if(name.equals("Lisa")){return new String[] {"/drawable/lisa_flag.png",context.getString(R.string.lisa),"/drawable/lisa_gacha_splash.png","/drawable/lisa_ico.png"};}
+        else if(name.equals("Klee")){return new String[] {"/drawable/klee_flag.png",context.getString(R.string.klee),"/drawable/klee_gacha_splash.png","/drawable/klee_ico.png"};}
+        else if(name.equals("Keqing")){return new String[] {"/drawable/keqing_flag.png",context.getString(R.string.keqing),"/drawable/keqing_gacha_splash.png","/drawable/keqing_ico.png"};}
+        else if(name.equals("Kaeya")){return new String[] {"/drawable/kaeya_flag.png",context.getString(R.string.kaeya),"/drawable/kaeya_gacha_splash.png","/drawable/kaeya_ico.png"};}
+        else if(name.equals("Jean")){return new String[] {"/drawable/jean_flag.png",context.getString(R.string.jean),"/drawable/jean_gacha_splash.png","/drawable/jean_ico.png"};}
+        else if(name.equals("Fischl")){return new String[] {"/drawable/fischl_flag.png",context.getString(R.string.fischl),"/drawable/fischl_gacha_splash.png","/drawable/fischl_ico.png"};}
+        else if(name.equals("Diluc")){return new String[] {"/drawable/diluc_flag.png",context.getString(R.string.diluc),"/drawable/diluc_gacha_splash.png","/drawable/diluc_ico.png"};}
+        else if(name.equals("Chongyun")){return new String[] {"/drawable/chongyun_flag.png",context.getString(R.string.chongyun),"/drawable/chongyun_gacha_splash.png","/drawable/chongyun_ico.png"};}
+        else if(name.equals("Bennett")){return new String[] {"/drawable/bennett_flag.png",context.getString(R.string.bennett),"/drawable/bennett_gacha_splash.png","/drawable/bennett_ico.png"};}
+        else if(name.equals("Beidou")){return new String[] {"/drawable/beidou_flag.png",context.getString(R.string.beidou),"/drawable/beidou_gacha_splash.png","/drawable/beidou_ico.png"};}
+        else if(name.equals("Barbara")){return new String[] {"/drawable/barbara_flag.png",context.getString(R.string.barbara),"/drawable/barbara_gacha_splash.png","/drawable/barbara_ico.png"};}
+        else if(name.equals("Amber")){return new String[] {"/drawable/amber_flag.png",context.getString(R.string.amber),"/drawable/amber_gacha_splash.png","/drawable/amber_ico.png"};}
         //Add at 20210820, update at 20220109
         else if(name.equals("Traveler-Anemo")){
             sharedPreferences = context.getSharedPreferences("user_info.png",context.MODE_PRIVATE);
             String traveler_sex = sharedPreferences.getString("traveler_sex.png","F");
 
             if(traveler_sex.equals("M")){
-                return new String[] {"/drawable/aether_flag.png",context.getString(R.string.traveler_anemo),"/drawable/aether_full.png","/drawable/aether_ico.png"};
+                return new String[] {"/drawable/aether_flag.png",context.getString(R.string.traveler_anemo),"/drawable/aether_gacha_splash.png","/drawable/aether_ico.png"};
             }else{
-                return new String[] {"/drawable/lumine_flag.png",context.getString(R.string.traveler_anemo),"/drawable/lumine_full.png","/drawable/lumine_ico.png"};
+                return new String[] {"/drawable/lumine_flag.png",context.getString(R.string.traveler_anemo),"/drawable/lumine_gacha_splash.png","/drawable/lumine_ico.png"};
             }
         }
         //Add at 20210820, update at 20220109
@@ -910,9 +910,9 @@ public class ItemRss {
             String traveler_sex = sharedPreferences.getString("traveler_sex.png","F");
 
             if(traveler_sex.equals("M")){
-                return new String[] {"/drawable/aether_flag.png",context.getString(R.string.traveler_geo),"/drawable/aether_full.png","/drawable/aether_ico.png"};
+                return new String[] {"/drawable/aether_flag.png",context.getString(R.string.traveler_geo),"/drawable/aether_gacha_splash.png","/drawable/aether_ico.png"};
             }else{
-                return new String[] {"/drawable/lumine_flag.png",context.getString(R.string.traveler_geo),"/drawable/lumine_full.png","/drawable/lumine_ico.png"};
+                return new String[] {"/drawable/lumine_flag.png",context.getString(R.string.traveler_geo),"/drawable/lumine_gacha_splash.png","/drawable/lumine_ico.png"};
             }
         }
         //Add at 20210820, update at 20220109
@@ -921,9 +921,9 @@ public class ItemRss {
             String traveler_sex = sharedPreferences.getString("traveler_sex.png","F");
 
             if(traveler_sex.equals("M")){
-                return new String[] {"/drawable/aether_flag.png",context.getString(R.string.traveler_electro),"/drawable/aether_full.png","/drawable/aether_ico.png"};
+                return new String[] {"/drawable/aether_flag.png",context.getString(R.string.traveler_electro),"/drawable/aether_gacha_splash.png","/drawable/aether_ico.png"};
             }else{
-                return new String[] {"/drawable/lumine_flag.png",context.getString(R.string.traveler_electro),"/drawable/lumine_full.png","/drawable/lumine_ico.png"};
+                return new String[] {"/drawable/lumine_flag.png",context.getString(R.string.traveler_electro),"/drawable/lumine_gacha_splash.png","/drawable/lumine_ico.png"};
             }
         }
         // ???

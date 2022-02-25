@@ -28,6 +28,7 @@
     <color name="tv_color_night">#FFFFFF</color>
 
     <color name="colorWhiteAlpha">#00000000</color>
+    <color name="colorWhiteAlpha1">#01000000</color>
 
     <color name="anemo">#81FFBE</color>
     <color name="cryo">#81F9FF</color>

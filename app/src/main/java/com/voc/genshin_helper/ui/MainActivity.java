@@ -356,12 +356,16 @@ public class MainActivity extends AppCompatActivity {
                         int width = displayMetrics.widthPixels;
 
                         if (sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                            mLayoutManager = new GridLayoutManager(context,  2);
-                        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                            if(height < width){
-                                mLayoutManager = new GridLayoutManager(context, 3);
+                            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                                mLayoutManager = new GridLayoutManager(context,  width/480+1);
                             }else{
-                                mLayoutManager = new GridLayoutManager(context, 3);
+                                mLayoutManager = new GridLayoutManager(context,  2);
+                            }
+                        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
+                            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                                mLayoutManager = new GridLayoutManager(context,  width/360+1);
+                            }else{
+                                mLayoutManager = new GridLayoutManager(context,  3);
                             }
                         }
                         LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -576,10 +580,14 @@ public class MainActivity extends AppCompatActivity {
                         int width_a = displayMetrics_a.widthPixels;
 
                         if (sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                            mLayoutManager = new GridLayoutManager(context,  2);
+                            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                                mLayoutManager = new GridLayoutManager(context,  width_a/480+1);
+                            }else{
+                                mLayoutManager = new GridLayoutManager(context,  2);
+                            }
                         }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                            if(height_a < width_a){
-                                mLayoutManager = new GridLayoutManager(context,  3);
+                            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                                mLayoutManager = new GridLayoutManager(context,  width_a/360+1);
                             }else{
                                 mLayoutManager = new GridLayoutManager(context,  3);
                             }
@@ -747,10 +755,14 @@ public class MainActivity extends AppCompatActivity {
                         mWeaponAdapter = new WeaponsAdapter(context,weaponsList,activity);
 
                         if (sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                            mLayoutManager = new GridLayoutManager(context, 2);
+                            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                                mLayoutManager = new GridLayoutManager(context,  width_w/480+1);
+                            }else{
+                                mLayoutManager = new GridLayoutManager(context,  2);
+                            }
                         }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                            if(height_w < width_w){
-                                mLayoutManager = new GridLayoutManager(context,  3);
+                            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                                mLayoutManager = new GridLayoutManager(context,  width_w/360+1);
                             }else{
                                 mLayoutManager = new GridLayoutManager(context,  3);
                             }

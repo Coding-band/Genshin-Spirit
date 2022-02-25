@@ -717,6 +717,7 @@ public class Characters_Info {
                 advice_util_weapon_ll.setVisibility(View.VISIBLE);
             }
 
+
             if(jsonObjectDps.has("dps_art1")){
                 advice_main_art_ll1.removeAllViews();
                 for (int x = 0 ; x < main_artifacts1.length; x++) {

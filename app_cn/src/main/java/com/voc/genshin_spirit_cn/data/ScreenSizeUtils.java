@@ -25,8 +25,8 @@ public class ScreenSizeUtils {
     }
 
     private ScreenSizeUtils(Context mContext) {
-        WindowManager manager = (WindowManager) mContext.getSystemService( Context.WINDOW_SERVICE);
-        DisplayMetrics dm = new DisplayMetrics ();
+        WindowManager manager = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
+        DisplayMetrics dm = new DisplayMetrics();
         manager.getDefaultDisplay().getMetrics(dm);
         screenWidth = dm.widthPixels;// 获取屏幕分辨率宽度
         screenHeight = dm.heightPixels;// 获取屏幕分辨率高度

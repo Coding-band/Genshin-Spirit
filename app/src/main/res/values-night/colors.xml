@@ -21,6 +21,7 @@
     <color name="card_bg_less">#CC313131</color>
     <color name="item_bg_square">#444444</color>
     <color name="colorWhiteAlpha">#00000000</color>
+    <color name="colorWhiteAlpha1">#31000000</color>
 
     <color name="page_bg_negative">#FFFFFF</color>
 

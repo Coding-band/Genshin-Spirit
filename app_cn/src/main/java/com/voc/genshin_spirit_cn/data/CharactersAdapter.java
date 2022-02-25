@@ -7,8 +7,10 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -105,22 +107,43 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         int height_curr = displayMetrics.heightPixels;
         int width_curr = displayMetrics.widthPixels;
         int curr = width_curr;
+        int size_per_img = width_curr/2;
+        int size_per_img_sq = width_curr/3;
 
+        if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            size_per_img = 480;
+            size_per_img_sq = 360;
+        }
 
         if(context instanceof MainActivity){
 
             if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                width = (width_curr) / 2;
-                height = (width * 58) / 32;
+                if(width_curr / ((int)width_curr/size_per_img+1) > size_per_img*0.75){
+                    width = (width_curr) / ((int)width_curr/size_per_img+1);
+                    height = (width * 58) / 32;
+                }else{
+                    width = size_per_img;
+                    height = (width * 58) / 32;
+                }
             } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                width = (curr) / 3;
-                height = (curr) / 3;
+                if(width_curr / ((int)width_curr/size_per_img_sq+1) > size_per_img_sq*0.75){
+                    width = (width_curr) / ((int)width_curr/size_per_img_sq+1);
+                    height = (width_curr) / ((int)width_curr/size_per_img_sq+1);
+                }else{
+                    width = size_per_img_sq;
+                    height = size_per_img_sq;
+                }
             }
 
 
         }else if(context instanceof CalculatorUI){
-            width = (curr) / 3;
-            height = (curr) / 3;
+            if(width_curr / ((int)width_curr/size_per_img_sq+1) > size_per_img_sq*0.75){
+                width = (width_curr) / ((int)width_curr/size_per_img_sq+1);
+                height = (width_curr) / ((int)width_curr/size_per_img_sq+1);
+            }else{
+                width = size_per_img_sq;
+                height = size_per_img_sq;
+            }
         }
         int one_curr = height;
         if(height > width){
@@ -164,6 +187,9 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         }
 
         holder.char_name.setText(item_rss.getCharByName(Characters.getName(),context)[1]);
+
+        Drawable drawable = context.getResources().getDrawable(R.drawable.item_selected_circle_effect);
+        holder.char_icon.setForeground(drawable);
 
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
         String color_hex = sharedPreferences.getString("theme_color_hex","#FF5A5A"); // Must include #
