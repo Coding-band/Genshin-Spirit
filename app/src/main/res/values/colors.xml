@@ -67,6 +67,8 @@
     <color name="uncrit">#FFC71D</color>
     <color name="crit">#5AD529</color>
 
+    <color name="shadow_char_ico">#22000000</color>
+
 
 
 </resources>

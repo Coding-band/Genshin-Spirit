@@ -4,6 +4,8 @@ package com.voc.genshin_helper.data;/*
  * Copyright © 2021 Xectorda 版權所有
  */
 
+import static com.voc.genshin_helper.util.RoundedCornersTransformation.CornerType.TOP;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -32,6 +34,7 @@ import android.widget.Toast;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.ui.CalculatorUI;
 import com.voc.genshin_helper.ui.MainActivity;
 import com.voc.genshin_helper.util.CustomToast;
@@ -252,7 +255,11 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                             Dialog dialog = new Dialog(ArtifactsAdapter.this.context, R.style.NormalDialogStyle_N);
                             View inflate = View.inflate(ArtifactsAdapter.this.context, R.layout.item_artifact_info, null);
                             ItemRss itemRss = new ItemRss();
-                            RoundedCornersTransformation roundedCornersTransformation = new RoundedCornersTransformation(25, 0, RoundedCornersTransformation.CornerType.TOP);
+
+                            final int radius = 25;
+                            final int margin = 0;
+                            final Transformation transformation = new RoundedCornersTransformation(radius, margin,TOP);
+
                             ImageView imageView2 = (ImageView) inflate.findViewById(R.id.item_img);
                             LinearLayout linearLayout = (LinearLayout) inflate.findViewById(R.id.item_nl);
                             RatingBar ratingBar = (RatingBar) inflate.findViewById(R.id.item_star);
@@ -265,7 +272,7 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                             ImageView imageView6 = (ImageView) inflate.findViewById(R.id.info_item3);
                             ImageView imageView7 = (ImageView) inflate.findViewById(R.id.info_item4);
                             ImageView imageView8 = (ImageView) inflate.findViewById(R.id.info_item5);
-                            Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(str4,context)[1],context)).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_lost).into(imageView2);
+                            Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(str4,context)[1],context)).fit().centerInside().transform(transformation).error(R.drawable.paimon_lost).into(imageView2);
                             ((TextView) inflate.findViewById(R.id.item_name)).setText(ViewHolder.this.artifact_name.getText());
                             if (jSONObject.has("1pc")) {
                                 StringBuilder sb = new StringBuilder();
@@ -284,20 +291,20 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                             ratingBar.setRating((float) parseInt);
                             imageView2.setBackgroundResource(itemRss.getRareColorByName(parseInt)[0]);
                             linearLayout.setBackgroundResource(itemRss.getRareColorByName(parseInt)[1]);
-                            Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(str4,context)[1],context)).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_lost).into(imageView);
+                            Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(str4,context)[1],context)).fit().centerInside().transform(transformation).error(R.drawable.paimon_lost).into(imageView);
                             imageView.setBackgroundResource(itemRss.getRareColorByName(parseInt)[0]);
                             if (itemRss.getArtifactByName(str4,context).length > 2) {
                                 imageView5.setVisibility(View.VISIBLE);
                                 imageView6.setVisibility(View.VISIBLE);
                                 imageView7.setVisibility(View.VISIBLE);
                                 imageView8.setVisibility(View.VISIBLE);
-                                Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(str4,context)[2],context)).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_lost).into(imageView5);
+                                Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(str4,context)[2],context)).fit().centerInside().transform(transformation).error(R.drawable.paimon_lost).into(imageView5);
                                 imageView5.setBackgroundResource(itemRss.getRareColorByName(parseInt)[0]);
-                                Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(str4,context)[3],context)).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_lost).into(imageView6);
+                                Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(str4,context)[3],context)).fit().centerInside().transform(transformation).error(R.drawable.paimon_lost).into(imageView6);
                                 imageView6.setBackgroundResource(itemRss.getRareColorByName(parseInt)[0]);
-                                Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(str4,context)[4],context)).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_lost).into(imageView7);
+                                Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(str4,context)[4],context)).fit().centerInside().transform(transformation).error(R.drawable.paimon_lost).into(imageView7);
                                 imageView7.setBackgroundResource(itemRss.getRareColorByName(parseInt)[0]);
-                                Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(str4,context)[5],context)).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_lost).into(imageView8);
+                                Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(str4,context)[5],context)).fit().centerInside().transform(transformation).error(R.drawable.paimon_lost).into(imageView8);
                                 imageView8.setBackgroundResource(itemRss.getRareColorByName(parseInt)[0]);
                             }
                             if (ViewHolder.this.artifact_isComing.getVisibility() == View.VISIBLE) {
@@ -309,7 +316,11 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                             dialog.setCanceledOnTouchOutside(true);
                             Window window = dialog.getWindow();
                             WindowManager.LayoutParams attributes = window.getAttributes();
-                            attributes.width = ScreenSizeUtils.getInstance(ArtifactsAdapter.this.context).getScreenWidth();
+                            DisplayMetrics displayMetrics = new DisplayMetrics();
+                            activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+                            int height = displayMetrics.heightPixels;
+                            int width = displayMetrics.widthPixels;
+                            attributes.width = width;
                             attributes.height = ViewGroup.LayoutParams.WRAP_CONTENT;
                             attributes.gravity = Gravity.BOTTOM;
                             window.setAttributes(attributes);

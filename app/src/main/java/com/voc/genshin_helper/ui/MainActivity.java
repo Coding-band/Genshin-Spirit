@@ -1942,7 +1942,11 @@ public class MainActivity extends AppCompatActivity {
 
             GridLayout.LayoutParams param =new GridLayout.LayoutParams();
             param.setMargins(8,8,8,8);
-            param.width = ScreenSizeUtils.getInstance(context).getScreenWidth()/3-8*2;
+            DisplayMetrics displayMetrics = new DisplayMetrics();
+            getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+            int height = displayMetrics.heightPixels;
+            int width = displayMetrics.widthPixels;
+            param.width = (width-8*6)/3;
             param.height = GridLayout.LayoutParams.WRAP_CONTENT;
             param.setGravity(Gravity.CENTER);
             param.columnSpec = GridLayout.spec(c);
@@ -1975,7 +1979,11 @@ public class MainActivity extends AppCompatActivity {
 
             GridLayout.LayoutParams param =new GridLayout.LayoutParams();
             param.setMargins(8,8,8,8);
-            param.width = ScreenSizeUtils.getInstance(context).getScreenWidth()/3-8*2;
+            DisplayMetrics displayMetrics = new DisplayMetrics();
+            getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+            int height = displayMetrics.heightPixels;
+            int width = displayMetrics.widthPixels;
+            param.width = (width-8*6)/3;
             param.height = GridLayout.LayoutParams.WRAP_CONTENT;
             param.setGravity(Gravity.CENTER);
             param.columnSpec = GridLayout.spec(c);

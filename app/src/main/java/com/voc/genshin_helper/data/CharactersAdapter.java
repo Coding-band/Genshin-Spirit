@@ -21,6 +21,7 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -94,13 +95,127 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         final int margin = 0;
         final Transformation transformation = new RoundedCornersTransformation(radius, margin,TOP);
 
+
+        final int radius_circ = 180;
+        final int margin_circ = 0;
+        final Transformation transformation_circ = new RoundedCornersTransformation(radius_circ, margin_circ);
+
         holder.char_name.setText(Characters.getName());
         holder.char_base_name.setText(Characters.getName());
+
+        if(Characters.getRare() == 4){
+            holder.char_small_ico.setBackgroundResource(R.drawable.item_char_list_bg_circ_4s);
+        }else{
+            holder.char_small_ico.setBackgroundResource(R.drawable.item_char_list_bg_circ_5s);
+        }
 
         if(Characters.getIsComing() == 0){holder.char_isComing.setVisibility(View.GONE);}
         if(Characters.getIsComing() == 1){holder.char_isComing.setVisibility(View.VISIBLE);}
 
-        if(Characters.getRare() >3 && Characters.getRare() < 6){holder.char_star.setNumStars(Characters.getRare());holder.char_star.setRating(Characters.getRare());}
+        //if(Characters.getRare() >3 && Characters.getRare() < 6){holder.char_star.setNumStars(Characters.getRare());holder.char_star.setRating(Characters.getRare());}
+
+        // Background of item
+        switch (Characters.getElement()){
+            case "Anemo" : {
+                holder.char_element.setImageResource(R.drawable.anemo_ico);
+                if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+                    holder.char_bg.setBackgroundResource(R.drawable.anemo_800x1600_dark);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.anemo_800x1600_dark_mask);
+                    holder.char_bg.setForeground(drawable);
+                }else{
+                    holder.char_bg.setBackgroundResource(R.drawable.anemo_800x1600_light);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.anemo_800x1600_light_mask);
+                    holder.char_bg.setForeground(drawable);
+                }
+                break;
+            }
+
+            case "Cryo" : {
+                holder.char_element.setImageResource(R.drawable.cryo_ico);
+                if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+                    holder.char_bg.setBackgroundResource(R.drawable.cryo_800x1600_dark);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.cryo_800x1600_dark_mask);
+                    holder.char_bg.setForeground(drawable);
+                }else{
+                    holder.char_bg.setBackgroundResource(R.drawable.cryo_800x1600_light);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.cryo_800x1600_light_mask);
+                    holder.char_bg.setForeground(drawable);
+                }
+                break;
+            }
+
+            case "Dendro" : {
+                holder.char_element.setImageResource(R.drawable.dendro_ico);
+                if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+                    holder.char_bg.setBackgroundResource(R.drawable.dendro_800x1600_dark);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.dendro_800x1600_dark_mask);
+                    holder.char_bg.setForeground(drawable);
+                }else{
+                    holder.char_bg.setBackgroundResource(R.drawable.dendro_800x1600_light);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.dendro_800x1600_light_mask);
+                    holder.char_bg.setForeground(drawable);
+                }
+                break;
+            }
+
+            case "Electro" : {
+                holder.char_element.setImageResource(R.drawable.electro_ico);
+                if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+                    holder.char_bg.setBackgroundResource(R.drawable.electro_800x1600_dark);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.electro_800x1600_dark_mask);
+                    holder.char_bg.setForeground(drawable);
+                }else{
+                    holder.char_bg.setBackgroundResource(R.drawable.electro_800x1600_light);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.electro_800x1600_light_mask);
+                    holder.char_bg.setForeground(drawable);
+                }
+                break;
+            }
+
+            case "Geo" : {
+                holder.char_element.setImageResource(R.drawable.geo_ico);
+                if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+                    holder.char_bg.setBackgroundResource(R.drawable.geo_800x1600_dark);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.geo_800x1600_dark_mask);
+                    holder.char_bg.setForeground(drawable);
+                }else{
+                    holder.char_bg.setBackgroundResource(R.drawable.geo_800x1600_light);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.geo_800x1600_light_mask);
+                    holder.char_bg.setForeground(drawable);
+                }
+                break;
+            }
+
+            case "Hydro" : {
+                holder.char_element.setImageResource(R.drawable.hydro_ico);
+                if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+                    holder.char_bg.setBackgroundResource(R.drawable.hydro_800x1600_dark);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.hydro_800x1600_dark_mask);
+                    holder.char_bg.setForeground(drawable);
+                }else{
+                    holder.char_bg.setBackgroundResource(R.drawable.hydro_800x1600_light);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.hydro_800x1600_light_mask);
+                    holder.char_bg.setForeground(drawable);
+                }
+                break;
+            }
+
+            case "Pyro" : {
+                holder.char_element.setImageResource(R.drawable.pyro_ico);
+                if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+                    holder.char_bg.setBackgroundResource(R.drawable.pyro_800x1600_dark);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.pyro_800x1600_dark_mask);
+                    holder.char_bg.setForeground(drawable);
+                }else{
+                    holder.char_bg.setBackgroundResource(R.drawable.pyro_800x1600_light);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.pyro_800x1600_light_mask);
+                    holder.char_bg.setForeground(drawable);
+                }
+                break;
+            }
+
+
+        }
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
@@ -146,10 +261,9 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                 height = size_per_img_sq;
             }
         }
-        int one_curr = height;
-        if(height > width){
-            one_curr = width;
-        }
+
+
+        /*
         if(Characters.getElement().equals("Anemo")){holder.char_element.setImageResource(R.drawable.anemo);holder.char_bg.setBackgroundResource(R.drawable.bg_anemo_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_anemo_char);}
         if(Characters.getElement().equals("Cryo")){holder.char_element.setImageResource(R.drawable.cryo);holder.char_bg.setBackgroundResource(R.drawable.bg_cryo_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_cryo_char);}
         if(Characters.getElement().equals("Electro")){holder.char_element.setImageResource(R.drawable.electro);holder.char_bg.setBackgroundResource(R.drawable.bg_electro_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_electro_char);}
@@ -157,6 +271,8 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         if(Characters.getElement().equals("Hydro")){holder.char_element.setImageResource(R.drawable.hydro);holder.char_bg.setBackgroundResource(R.drawable.bg_hydro_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_hydro_char);}
         if(Characters.getElement().equals("Pyro")){holder.char_element.setImageResource(R.drawable.pyro);holder.char_bg.setBackgroundResource(R.drawable.bg_pyro_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_pyro_char);}
         if(Characters.getElement().equals("Dendro")){holder.char_element.setImageResource(R.drawable.dendro);holder.char_bg.setBackgroundResource(R.drawable.bg_dendro_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_dendro_char);}
+
+         */
 
         holder.char_icon.getLayoutParams().width = width;
         holder.char_icon.getLayoutParams().height = height;
@@ -169,6 +285,16 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         // Already knew that IMG size is not the main reason of main_list lag
         //bitmap = BitmapFactory.decodeResource(context.getResources(),item_rss.getCharByName(Characters.getName())[0]);
         //outBitmap =getRoundBitmapByShader(bitmap, (int) Math.round(width/2),(int)Math.round(height/2),20, 0);
+
+        holder.char_small_ico.setMaxWidth((int) (width/3.25));
+        holder.char_small_ico.setMaxHeight((int) (width/3.25));
+
+
+        Picasso.get()
+                .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize((int) (width/3.25),(int) (width/3.25)).transform(transformation_circ)
+                .error (R.drawable.paimon_lost)
+                .into (holder.char_small_ico);
+
         if(context instanceof MainActivity){
 
             if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
@@ -178,13 +304,13 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                         .into (holder.char_icon);
             } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(one_curr,one_curr).transform(transformation)
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(width,width).transform(transformation)
                         .error (R.drawable.paimon_full)
                         .into (holder.char_icon);
             }
         }else if(context instanceof CalculatorUI){
             Picasso.get()
-                    .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(one_curr,one_curr).transform(transformation)
+                    .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(width,width).transform(transformation)
                     .error (R.drawable.paimon_full)
                     .into (holder.char_icon);
 
@@ -217,21 +343,22 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView char_name,char_base_name;
-        public ImageView char_icon,char_isComing,char_element;
-        public LinearLayout char_nl;
-        public RatingBar char_star;
-        public ConstraintLayout char_bg ;
+        public ImageView char_icon,char_small_ico,char_isComing,char_element;
+        //public LinearLayout char_nl;
+        //public RatingBar char_star;
+        public ConstraintLayout char_bg;
 
         public ViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
 
             char_icon = itemView.findViewById(R.id.char_img);
+            char_small_ico = itemView.findViewById(R.id.char_small_ico);
             char_name = itemView.findViewById(R.id.char_name);
-            char_star = itemView.findViewById(R.id.char_star);
+            //char_star = itemView.findViewById(R.id.char_star);
             char_element = itemView.findViewById(R.id.char_element);
             char_isComing = itemView.findViewById(R.id.char_is_coming);
             char_base_name = itemView.findViewById(R.id.char_base_name);
-            char_nl = itemView.findViewById(R.id.char_nl);
+            //char_nl = itemView.findViewById(R.id.char_nl);
             char_bg = itemView.findViewById(R.id.char_bg);
 
 

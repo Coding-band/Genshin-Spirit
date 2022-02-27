@@ -6,6 +6,8 @@ package com.voc.genshin_helper.data;/*
 
 import static android.content.Context.MODE_PRIVATE;
 
+import static com.voc.genshin_helper.util.RoundedCornersTransformation.CornerType.TOP;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -33,6 +35,7 @@ import android.widget.Toast;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.ui.CalculatorUI;
 import com.voc.genshin_helper.ui.MainActivity;
 import com.voc.genshin_helper.util.CustomToast;
@@ -98,7 +101,10 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
         Weapons weapons = this.weaponsList.get(i);
         ItemRss itemRss = new ItemRss();
         Context context = this.context;
-        RoundedCornersTransformation roundedCornersTransformation = new RoundedCornersTransformation(25, 0, RoundedCornersTransformation.CornerType.TOP);
+
+        final int radius = 25;
+        final int margin = 0;
+        final Transformation transformation = new RoundedCornersTransformation(radius, margin,TOP);
 
         int width = 0;
         int height = 0;
@@ -179,12 +185,12 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
         Context context2 = this.context;
         if (context2 instanceof MainActivity) {
             if (((MainActivity) context2).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).fit().centerInside().transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
+                Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).fit().centerInside().transform(transformation).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
             } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).resize(one_curr,one_curr).transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
+                Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).resize(one_curr,one_curr).transform(transformation).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
             }
         } else if (context2 instanceof CalculatorUI) {
-            Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).resize(one_curr,one_curr).transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
+            Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).resize(one_curr,one_curr).transform(transformation).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
         }
         viewHolder.weapon_name.setText(itemRss.getWeaponByName(weapons.getName(),context)[0]);
 
@@ -270,7 +276,11 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                                 String obtain_way = jSONObject.getString("obtain_way");
 
                                 ItemRss itemRss = new ItemRss();
-                                RoundedCornersTransformation roundedCornersTransformation = new RoundedCornersTransformation(25, 0, RoundedCornersTransformation.CornerType.TOP);
+
+                                final int radius = 25;
+                                final int margin = 0;
+                                final Transformation transformation = new RoundedCornersTransformation(radius, margin,TOP);
+
                                 Dialog dialog = new Dialog(WeaponsAdapter.this.context, R.style.NormalDialogStyle_N);
                                 View inflate = View.inflate(WeaponsAdapter.this.context, R.layout.item_weapon_info, null);
 
@@ -288,7 +298,7 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                                 TextView info_skill_title = (TextView) inflate.findViewById(R.id.info_skill_title);
 
                                 Picasso.get()
-                                        .load(FileLoader.loadIMG(itemRss.getWeaponByName(name,context)[1],context)).fit().centerInside().transform(roundedCornersTransformation)
+                                        .load(FileLoader.loadIMG(itemRss.getWeaponByName(name,context)[1],context)).fit().centerInside().transform(transformation)
                                         .error(R.drawable.paimon_lost)
                                         .into(item_img);
 
@@ -315,7 +325,11 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                                 dialog.setCanceledOnTouchOutside(true);
                                 Window window = dialog.getWindow();
                                 WindowManager.LayoutParams attributes = window.getAttributes();
-                                attributes.width = ScreenSizeUtils.getInstance(WeaponsAdapter.this.context).getScreenWidth();
+                                DisplayMetrics displayMetrics = new DisplayMetrics();
+                                activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+                                int height = displayMetrics.heightPixels;
+                                int width = displayMetrics.widthPixels;
+                                attributes.width = width;
                                 attributes.height = ViewGroup.LayoutParams.WRAP_CONTENT;
                                 attributes.gravity = Gravity.BOTTOM;
                                 window.setAttributes(attributes);

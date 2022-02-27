@@ -58,4 +58,6 @@
     <color name="rare4">#ae81c1</color>
     <color name="rare5">#dea44f</color>
 
+    <color name="shadow_char_ico">#22000000</color>
+
 </resources>
