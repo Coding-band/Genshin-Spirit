@@ -94,7 +94,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
     private ArrayList<View> viewPager_List;
     BottomNavigationView nav_view;
     Context context;
-    SharedPreferences sharedPreferences;
+    public SharedPreferences sharedPreferences;
     SharedPreferences calShared; // Only record CalculatorUI's vars, user can get last time data when restart this page (ALSO CAN USE RESET BTN)
     SharedPreferences.Editor editor;
     NumberPickerDialog npd;
@@ -109,7 +109,6 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
     public List<Characters> charactersList = new ArrayList<>();
     public List<Weapons> weaponsList = new ArrayList();
     public List<Artifacts> artifactsList = new ArrayList();
-
     public boolean show_pyro = true;
     public boolean show_hydro = true;
     public boolean show_anemo = true;

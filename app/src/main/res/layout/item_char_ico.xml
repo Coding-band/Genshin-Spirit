@@ -32,7 +32,6 @@
             android:layout_width="160dp"
             android:layout_height="260dp"
             android:adjustViewBounds="true"
-            android:padding="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -66,6 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="4dp"
                 android:background="@drawable/item_char_list_bg_circ_5s"
+                android:foreground="?android:attr/selectableItemBackgroundBorderless"
                 android:scaleType="centerCrop"
                 app:layout_constraintBottom_toBottomOf="@+id/char_img"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -149,6 +149,21 @@
             app:layout_constraintTop_toTopOf="@+id/char_img"
             app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/ic_baseline_av_timer_24" />
+
+        <ImageView
+            android:id="@+id/char_press_mask"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:visibility="visible"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/item_selected_circle_effect"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

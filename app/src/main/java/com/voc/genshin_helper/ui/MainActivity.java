@@ -363,7 +363,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
                             if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-                                mLayoutManager = new GridLayoutManager(context,  width/360+1);
+                                mLayoutManager = new GridLayoutManager(context,  width/400+1);
                             }else{
                                 mLayoutManager = new GridLayoutManager(context,  3);
                             }
@@ -587,7 +587,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
                             if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-                                mLayoutManager = new GridLayoutManager(context,  width_a/360+1);
+                                mLayoutManager = new GridLayoutManager(context,  width_a/400+1);
                             }else{
                                 mLayoutManager = new GridLayoutManager(context,  3);
                             }
@@ -762,7 +762,7 @@ public class MainActivity extends AppCompatActivity {
                             }
                         }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
                             if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-                                mLayoutManager = new GridLayoutManager(context,  width_w/360+1);
+                                mLayoutManager = new GridLayoutManager(context,  width_w/400+1);
                             }else{
                                 mLayoutManager = new GridLayoutManager(context,  3);
                             }
