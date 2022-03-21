@@ -277,6 +277,14 @@
                             android:textSize="18sp" />
                     </LinearLayout>
                 </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/info_char_layer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="false"
+                    android:scaleType="centerCrop" />
+
             </FrameLayout>
 
             <LinearLayout

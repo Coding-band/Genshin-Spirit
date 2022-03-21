@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2022 Xectorda 版權所有
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0">
+
+                <ImageView
+                    android:id="@+id/siptik_enemy_icon"
+                    android:layout_width="96dp"
+                    android:layout_height="96dp"
+                    android:layout_margin="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/siptik_enemy_name"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="0"
+                android:fontFamily="@font/genshin_font"
+                android:gravity="center"
+                android:singleLine="false"
+                android:text="@string/hydro_slime"
+                android:textAlignment="center"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/blank"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:background="@color/color_theme_2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingLeft="4dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/siptik_enemy_lvl_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/genshin_font"
+                        android:singleLine="true"
+                        android:text="Enemy Level" />
+
+                    <Button
+                        android:id="@+id/siptik_enemy_lvl_btn"
+                        android:layout_width="64dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="16dp"
+                        android:background="@drawable/bg_square_border_num"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="87"
+                        android:textColor="@color/tv_color" />
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView73"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center"
+                    android:text="Enemy Resistance"
+                    android:textAlignment="center" />
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_weight="1">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/electro" />
+
+                        <ImageView
+                            android:id="@+id/imageView6"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/pyro" />
+
+                        <ImageView
+                            android:id="@+id/imageView7"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/hydro" />
+
+                        <ImageView
+                            android:id="@+id/imageView8"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/cryo" />
+
+                        <ImageView
+                            android:id="@+id/imageView9"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/anemo" />
+
+                        <ImageView
+                            android:id="@+id/imageView10"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/geo" />
+
+                        <ImageView
+                            android:id="@+id/imageView11"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/dendro" />
+
+                        <ImageView
+                            android:id="@+id/imageView12"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/ico_sword" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <TextView
+                            android:id="@+id/siptik_enemy_res1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="10%"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/siptik_enemy_res2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="10%"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/siptik_enemy_res3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="∞"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/siptik_enemy_res4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="10%"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/siptik_enemy_res5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="10%"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/siptik_enemy_res6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="10%"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/siptik_enemy_res7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="10%"
+                            android:textAlignment="center" />
+
+                        <TextView
+                            android:id="@+id/siptik_enemy_res8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="10%"
+                            android:textAlignment="center" />
+
+                    </TableRow>
+
+                </TableLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

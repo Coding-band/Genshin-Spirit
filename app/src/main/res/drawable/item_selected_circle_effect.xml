@@ -10,7 +10,6 @@
     tools:targetApi="lollipop">
     <item android:id="@android:id/mask">
         <shape android:shape="rectangle">
-            <corners android:radius="50px" />
             <solid android:color="@color/page_bg" />
         </shape>
     </item>

@@ -501,7 +501,7 @@
     <string name="maiden_beloved">被怜爱的少女</string>
     <string name="martial_artist">武人</string>
     <string name="noblesse_oblige">昔日宗室之仪</string>
-    <string name="pale_flame">\"苍白之火</string>
+    <string name="pale_flame">苍白之火</string>
     <string name="prayers_of_destiny">祭水之人</string>
     <string name="prayers_of_illumination">祭火之人</string>
     <string name="prayers_of_wisdom">祭雷之人</string>
@@ -931,6 +931,9 @@
     <string name="buff_cal_thx">✧ 特此感谢dfsly\n✧ 允许以内嵌功能方式延续Genshin Calculator</string>
     <string name="buff_calcluator">增益计算机</string>
 
-
+    <!-- add in 20220304 -->
+    <string name="rectangle" >長方形</string>
+    <string name="square" >正方形</string>
+    <string name="char_suit_on" >换上活动衣装</string>
 </resources>
 

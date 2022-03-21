@@ -8,105 +8,148 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/weapon_bg"
+    android:id="@+id/weapon_bg_base"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    android:orientation="vertical">
+    android:elevation="16dp">
 
-    <ImageView
-        android:id="@+id/weapon_img"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toTopOf="@+id/weapon_nl"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/klee_ico" />
 
-    <LinearLayout
-        android:id="@+id/weapon_nl"
-        android:layout_width="0dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/weapon_bg"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/rare1_800x1400_dark"
+        android:elevation="16dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:id="@+id/weapon_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:shadowColor="@color/black"
-            android:shadowDx="2"
-            android:shadowDy="2"
-            android:shadowRadius="2"
-            android:singleLine="true"
-            android:text="可莉"
-            android:textAlignment="center"
-            android:textColor="@color/white"
-            android:textSize="16sp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/weapon_main"
+            android:layout_width="160dp"
+            android:layout_height="200dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <ImageView
+                android:id="@+id/weapon_img"
+                android:layout_width="160dp"
+                android:layout_height="180dp"
+                android:adjustViewBounds="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1.0"
+                app:srcCompat="@drawable/weapons_ico" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <LinearLayout
+            android:id="@+id/weapon_name_ll"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/weapon_main"
+            app:layout_constraintVertical_bias="1.0">
+
+            <TextView
+                android:id="@+id/weapon_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:fontFamily="@font/genshin_font"
+                android:shadowColor="@color/colorWhiteAlpha"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:singleLine="true"
+                android:text="無鋒劍"
+                android:textAlignment="center"
+                android:textColor="@color/tv_color"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/weapon_stat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:fontFamily="@font/genshin_font"
+                android:shadowColor="@color/colorWhiteAlpha"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2"
+                android:singleLine="true"
+                android:text="無"
+                android:textAlignment="center"
+                android:textColor="@color/tv_color"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/weapon_base_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/weapon_is_coming"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/bg_is_coming"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/weapon_main"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/ic_baseline_av_timer_24" />
 
         <RatingBar
             android:id="@+id/weapon_star"
-            style="?android:attr/ratingBarStyleSmall"
+            style="@style/rareStar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:isIndicator="true"
+            android:layout_marginBottom="-12dp"
             android:numStars="5"
-            android:progressTint="#FFFF00"
             android:rating="5"
-            android:secondaryProgressTint="#00000000"
-            android:stepSize="0.1" />
+            android:stepSize="0.1"
+            app:layout_constraintBottom_toBottomOf="@id/weapon_main"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
-        <TextView
-            android:id="@+id/weapon_base_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="gone" />
+        <ImageView
+            android:id="@+id/weapon_press_mask"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="@drawable/item_selected_circle_effect"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
-        <TextView
-            android:id="@+id/weapon_stat"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Stat : ATK%"
-            android:textAlignment="center"
-            android:textColor="@color/white" />
-    </LinearLayout>
-
-    <ImageView
-        android:id="@+id/weapon_is_coming"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_margin="4dp"
-        android:background="@drawable/bg_is_coming"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/weapon_img"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/ic_baseline_av_timer_24" />
-
-    <ImageView
-        android:id="@+id/weapon_cake"
-        android:layout_width="64dp"
-        android:layout_height="64dp"
-        android:layout_margin="8dp"
-        android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/weapon_img"
-        app:layout_constraintVertical_bias="0.943"
-        app:srcCompat="@drawable/cake" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

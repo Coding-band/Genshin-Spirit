@@ -35,7 +35,7 @@
             android:paddingLeft="16dp"
             android:paddingTop="16dp"
             android:paddingRight="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/linearLayout5"
+            app:layout_constraintBottom_toTopOf="@+id/char_name_ll"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -79,7 +79,7 @@
         </cn.enjoytoday.shadow.ShadowLayout>
 
         <LinearLayout
-            android:id="@+id/linearLayout5"
+            android:id="@+id/char_name_ll"
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:gravity="center"
@@ -162,7 +162,7 @@
             android:clickable="true"
             android:focusable="true"
             android:foreground="@drawable/item_selected_circle_effect"
-            app:layout_constraintBottom_toBottomOf="@+id/linearLayout5"
+            app:layout_constraintBottom_toBottomOf="@+id/char_name_ll"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"

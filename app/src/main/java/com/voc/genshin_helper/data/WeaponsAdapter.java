@@ -25,6 +25,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.AlphaAnimation;
 import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ImageView;
@@ -36,6 +37,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
+import com.voc.genshin_helper.buff.SipTikCal;
 import com.voc.genshin_helper.ui.CalculatorUI;
 import com.voc.genshin_helper.ui.MainActivity;
 import com.voc.genshin_helper.util.CustomToast;
@@ -48,6 +50,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.io.IOUtils;
@@ -67,6 +70,8 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
     private List<Weapons> weaponsList;
     private WebView webView;
     private Activity activity;
+    private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
+    private ArrayList<Weapons> weaponA = new ArrayList<Weapons>();
 
     /* loaded from: classes.dex */
     public interface OnItemClickListener {
@@ -92,9 +97,11 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
             return new ViewHolder(inflate, (OnItemClickListener) this.mListener);
         } else if (context instanceof CalculatorUI) {
             return new ViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_weapon_ico_square, viewGroup, false), (OnItemClickListener) this.mListener);
-        } else {
-            return null;
+        } else if (context instanceof SipTikCal) {
+            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_weapon_ico_square, viewGroup, false);
+            return new ViewHolder(inflate, (OnItemClickListener) this.mListener);
         }
+        return null;
     }
 
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
@@ -102,12 +109,21 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
         ItemRss itemRss = new ItemRss();
         Context context = this.context;
 
-        final int radius = 25;
+        final int radius = 50;
         final int margin = 0;
         final Transformation transformation = new RoundedCornersTransformation(radius, margin,TOP);
 
         int width = 0;
         int height = 0;
+
+
+        weaponA.add(weapons);
+
+        boolean isNight = false;
+        // Background of item
+        if (context.getResources().getString(R.string.mode).equals("Night")) {
+            isNight = true;
+        }
 
         viewHolder.weapon_name.setText(weapons.getName());
         viewHolder.weapon_base_name.setText(weapons.getName());
@@ -144,15 +160,15 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
         if(context instanceof MainActivity){
 
             if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                if(width_curr / ((int)width_curr/size_per_img+1) > size_per_img*0.75){
+                if(width_curr / ((int)width_curr/size_per_img+1) > size_per_img){
                     width = (width_curr) / ((int)width_curr/size_per_img+1);
-                    height = (width * 58) / 32;
+                    height = (int) ((width * 9) / 8);
                 }else{
                     width = size_per_img;
-                    height = (width * 58) / 32;
+                    height = (int) ((width * 9) / 8);
                 }
             } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                if(width_curr / ((int)width_curr/size_per_img_sq+1) > size_per_img_sq*0.75){
+                if(width_curr / ((int)width_curr/size_per_img_sq+1) > size_per_img_sq){
                     width = (width_curr) / ((int)width_curr/size_per_img_sq+1);
                     height = (width_curr) / ((int)width_curr/size_per_img_sq+1);
                 }else{
@@ -163,7 +179,15 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
 
 
         }else if(context instanceof CalculatorUI){
-            if(width_curr / ((int)width_curr/size_per_img_sq+1) > size_per_img_sq*0.75){
+            if(width_curr / ((int)width_curr/size_per_img_sq+1) > size_per_img_sq){
+                width = (width_curr) / ((int)width_curr/size_per_img_sq+1);
+                height = (width_curr) / ((int)width_curr/size_per_img_sq+1);
+            }else{
+                width = size_per_img_sq;
+                height = size_per_img_sq;
+            }
+        }else if(context instanceof SipTikCal){
+            if(width_curr / ((int)width_curr/size_per_img_sq+1) > size_per_img_sq){
                 width = (width_curr) / ((int)width_curr/size_per_img_sq+1);
                 height = (width_curr) / ((int)width_curr/size_per_img_sq+1);
             }else{
@@ -176,20 +200,128 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
             one_curr = width;
         }
 
-        viewHolder.weapon_stat.setText(this.context.getString(R.string.weapon_stat) + this.context.getString(itemRss.getSecAttr(weapons.stat_1)));
-        viewHolder.weapon_icon.setBackgroundResource(itemRss.getRareColorByName(weapons.getRare())[0]);
-        viewHolder.weapon_bg.setBackgroundResource(itemRss.getRareColorByName(weapons.getRare())[0]);
-        viewHolder.weapon_nl.setBackgroundResource(itemRss.getRareColorByName(weapons.getRare())[1]);
+        viewHolder.weapon_stat.setText(this.context.getString(itemRss.getSecAttr(weapons.stat_1)));
+        //viewHolder.weapon_icon.setBackgroundResource(itemRss.getRareColorByName(weapons.getRare())[0]);
+        //viewHolder.weapon_bg.setBackgroundResource(itemRss.getRareColorByName(weapons.getRare())[0]);
+        //viewHolder.weapon_nl.setBackgroundResource(itemRss.getRareColorByName(weapons.getRare())[1]);
+
+        if(context.getSharedPreferences("user_info",MODE_PRIVATE).getString("curr_ui_grid", "2").equals("2") ){
+
+            switch (weapons.getRare()){
+                case 1 : {
+                    if(isNight == true){
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare1_800x1400_dark);
+                    }else{
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare1_800x1400_light);
+                    }
+                    break;
+                }
+                case 2 : {
+                    if(isNight == true){
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare2_800x1400_dark);
+                    }else{
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare2_800x1400_light);
+                    }
+                    break;
+                }
+                case 3 : {
+                    if(isNight == true){
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare3_800x1400_dark);
+                    }else{
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare3_800x1400_light);
+                    }
+                    break;
+                }
+                case 4 : {
+                    if(isNight == true){
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare4_800x1400_dark);
+                    }else{
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare4_800x1400_light);
+                    }
+                    break;
+                }
+                case 5 : {
+                    if(isNight == true){
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare5_800x1400_dark);
+                    }else{
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare5_800x1400_light);
+                    }
+                    break;
+                }
+
+            }
+
+
+            viewHolder.weapon_name_ll.getLayoutParams().width = width;
+            viewHolder.weapon_name_ll.getLayoutParams().height = width*4/8;
+            viewHolder.weapon_main.getLayoutParams().width = width;
+            viewHolder.weapon_main.getLayoutParams().height = height*10/9;
+        }else{
+            switch (weapons.getRare()){
+                case 1 : {
+                    if(isNight == true){
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare1_800x1000_dark);
+                    }else{
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare1_800x1000_light);
+                    }
+                    break;
+                }
+                case 2 : {
+                    if(isNight == true){
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare2_800x1000_dark);
+                    }else{
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare2_800x1000_light);
+                    }
+                    break;
+                }
+                case 3 : {
+                    if(isNight == true){
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare3_800x1000_dark);
+                    }else{
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare3_800x1000_light);
+                    }
+                    break;
+                }
+                case 4 : {
+                    if(isNight == true){
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare4_800x1000_dark);
+                    }else{
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare4_800x1000_light);
+                    }
+                    break;
+                }
+                case 5 : {
+                    if(isNight == true){
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare5_800x1000_dark);
+                    }else{
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare5_800x1000_light);
+                    }
+                    break;
+                }
+
+            }
+
+            viewHolder.weapon_name_ll.getLayoutParams().width = width;
+            viewHolder.weapon_name_ll.getLayoutParams().height = width*2/8;
+            viewHolder.weapon_main.getLayoutParams().width = width;
+            viewHolder.weapon_main.getLayoutParams().height = width;
+        }
+
         viewHolder.weapon_icon.getLayoutParams().width = width;
         viewHolder.weapon_icon.getLayoutParams().height = height;
+
+
         Context context2 = this.context;
         if (context2 instanceof MainActivity) {
             if (((MainActivity) context2).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).fit().centerInside().transform(transformation).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
+
+                Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).resize(width,height).transform(transformation).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
             } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
                 Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).resize(one_curr,one_curr).transform(transformation).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
             }
         } else if (context2 instanceof CalculatorUI) {
+            Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).resize(one_curr,one_curr).transform(transformation).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
+        } else if (context2 instanceof SipTikCal) {
             Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).resize(one_curr,one_curr).transform(transformation).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
         }
         viewHolder.weapon_name.setText(itemRss.getWeaponByName(weapons.getName(),context)[0]);
@@ -209,7 +341,6 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                         Color.parseColor(color_hex)
                 }
         );
-
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -226,8 +357,11 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
         public ImageView weapon_isComing;
         public TextView weapon_name;
         public LinearLayout weapon_nl;
+        public ConstraintLayout weapon_main;
+        public LinearLayout weapon_name_ll;
         public RatingBar weapon_star;
         public TextView weapon_stat;
+        public ImageView weapon_press_mask;
 
         public ViewHolder(View view, OnItemClickListener onItemClickListener) {
             super(view);
@@ -237,9 +371,14 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
             this.weapon_isComing = (ImageView) view.findViewById(R.id.weapon_is_coming);
             this.weapon_base_name = (TextView) view.findViewById(R.id.weapon_base_name);
             this.weapon_nl = (LinearLayout) view.findViewById(R.id.weapon_nl);
+            this.weapon_name_ll = (LinearLayout) view.findViewById(R.id.weapon_name_ll);
             this.weapon_bg = (ConstraintLayout) view.findViewById(R.id.weapon_bg);
             this.weapon_stat = (TextView) view.findViewById(R.id.weapon_stat);
-            this.weapon_icon.setOnClickListener(new View.OnClickListener() {
+            this.weapon_press_mask = (ImageView) view.findViewById(R.id.weapon_press_mask);
+            this.weapon_main = (ConstraintLayout) view.findViewById(R.id.weapon_main);
+            weapon_press_mask.startAnimation(buttonClick);
+
+            this.weapon_press_mask.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
@@ -344,14 +483,17 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                             return;
                         }
 
-                    } else {
-                        if (WeaponsAdapter.this.context instanceof CalculatorUI) {
-                            Log.wtf("YES", "IT's");
-                            Log.w("WEAPON_BASE", (String) ViewHolder.this.weapon_base_name.getText());
-                            ((CalculatorUI) WeaponsAdapter.this.context).weaponQuestion(String.valueOf(weapon_base_name.getText()), "ADD", 0, (int) weapon_star.getRating());
-                            return;
+                    }
+                    else if (WeaponsAdapter.this.context instanceof CalculatorUI) {
+                        Log.wtf("YES", "IT's");
+                        Log.w("WEAPON_BASE", (String) ViewHolder.this.weapon_base_name.getText());
+                        ((CalculatorUI) WeaponsAdapter.this.context).weaponQuestion(String.valueOf(weapon_base_name.getText()), "ADD", 0, (int) weapon_star.getRating());
+                    } else if (context instanceof SipTikCal){Log.wtf("YES","IT's");
+                        for (int x = 0 ; x < weaponsList.size() ; x++){
+                            if (weaponsList.get(x).getName().equals(weapon_base_name.getText())){
+                                (((SipTikCal) context)).weaponChoosed(weaponA.get(x));
+                            }
                         }
-                        return;
                     }
                 }
             });
@@ -361,6 +503,7 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
 
     public void filterList(List<Weapons> list) {
         this.weaponsList = list;
+        Log.wtf("HOLY","SHEET");
         notifyDataSetChanged();
     }
 

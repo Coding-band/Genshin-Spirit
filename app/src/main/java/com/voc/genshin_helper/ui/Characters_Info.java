@@ -6,12 +6,16 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.content.res.ColorStateList;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
 import android.text.Html;
+import android.text.PrecomputedText;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -57,6 +61,7 @@ import static com.voc.genshin_helper.data.RoundRectImageView.getRoundBitmapBySha
 public class Characters_Info {
     /** Method of requirements */
     Context context;
+    Activity activity;
     SharedPreferences sharedPreferences ;
     ItemRss item_rss;
     BackgroundReload backgroundReload;
@@ -325,10 +330,11 @@ public class Characters_Info {
         }
     }
 
-    public void setup (String CharName_BASE, Context context){
+    public void setup (String CharName_BASE, Context context,Activity activity){
         sharedPreferences = context.getSharedPreferences("user_info",Context.MODE_PRIVATE);
         this.CharName_BASE = CharName_BASE.replace(" ","_");
         this.context = context;
+        this.activity = activity;
         item_rss = new ItemRss();
 
 
@@ -357,6 +363,7 @@ public class Characters_Info {
 
         /** Method of info_detail */
         ImageView char_img = view.findViewById(R.id.info_char_img);
+        ImageView char_layer = view.findViewById(R.id.info_char_layer);
         TextView char_name = view.findViewById(R.id.info_char_name);
         RatingBar char_stars = view.findViewById(R.id.info_stars);
         ImageView char_element = view.findViewById(R.id.info_element_img);
@@ -590,7 +597,152 @@ public class Characters_Info {
         /** MAIN */
         char_name.setText("【"+nick+"】 "+item_rss.getCharByName(name,context)[1]);
         char_img.setImageDrawable(FileLoader.loadIMG2Drawable(item_rss.getCharByName(name,context)[2],context));
-        char_img.setBackgroundResource(item_rss.getElementByName(element)[2]);
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height_curr = displayMetrics.heightPixels;
+        int width_curr = displayMetrics.widthPixels;
+
+        char_layer.getLayoutParams().height = width_curr/20;
+        char_layer.requestLayout();
+
+        if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            char_layer.getLayoutParams().height = width_curr/40;
+            char_layer.requestLayout();
+        }
+
+        //char_img.setBackgroundResource(item_rss.getElementByName(element)[2]);
+
+        boolean isNight = false;
+        // Background of item
+        if (context.getResources().getString(R.string.mode).equals("Night")) {
+            isNight = true;
+        }
+
+        switch (element){
+            case "Anemo" : {
+                Picasso.get()
+                        .load(R.drawable.anemo_layer).fit().centerCrop()
+                        .error(R.drawable.paimon_lost)
+                        .into(char_layer);
+                if(isNight == true){
+                    char_img.setBackgroundResource(R.drawable.anemo_800x800_dark);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.anemo_800x800_dark_mask);
+                    //char_img.setForeground(drawable);
+                }else{
+                    char_img.setBackgroundResource(R.drawable.anemo_800x800_light);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.anemo_800x800_light_mask);
+                    //char_img.setForeground(drawable);
+                }
+                break;
+            }
+
+            case "Cryo" : {
+                Picasso.get()
+                        .load(R.drawable.cryo_layer).fit().centerCrop()
+                        .error(R.drawable.paimon_lost)
+                        .into(char_layer);
+                if(isNight == true){
+                    char_img.setBackgroundResource(R.drawable.cryo_800x800_dark);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.cryo_800x800_dark_mask);
+                    //char_img.setForeground(drawable);
+                }else{
+                    char_img.setBackgroundResource(R.drawable.cryo_800x800_light);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.cryo_800x800_light_mask);
+                    //char_img.setForeground(drawable);
+                }
+                break;
+            }
+
+            case "Dendro" : {
+
+                Picasso.get()
+                        .load(R.drawable.dendro_layer).fit().centerCrop()
+                        .error(R.drawable.paimon_lost)
+                        .into(char_layer);
+                if(isNight == true){
+                    char_img.setBackgroundResource(R.drawable.dendro_800x800_dark);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.dendro_800x800_dark_mask);
+                    //char_img.setForeground(drawable);
+                }else{
+                    char_img.setBackgroundResource(R.drawable.dendro_800x800_light);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.dendro_800x800_light_mask);
+                    //char_img.setForeground(drawable);
+                }
+                break;
+            }
+
+            case "Electro" : {
+                Picasso.get()
+                        .load(R.drawable.electro_layer).fit().centerCrop()
+                        .error(R.drawable.paimon_lost)
+                        .into(char_layer);
+                if(isNight == true){
+                    char_img.setBackgroundResource(R.drawable.electro_800x800_dark);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.electro_800x800_dark_mask);
+                    //char_img.setForeground(drawable);
+                }else{
+                    char_img.setBackgroundResource(R.drawable.electro_800x800_light);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.electro_800x800_light_mask);
+                    //char_img.setForeground(drawable);
+                }
+                break;
+            }
+
+            case "Geo" : {
+                Picasso.get()
+                        .load(R.drawable.geo_layer).fit().centerCrop()
+                        .error(R.drawable.paimon_lost)
+                        .into(char_layer);
+                if(isNight == true){
+                    char_img.setBackgroundResource(R.drawable.geo_800x800_dark);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.geo_800x800_dark_mask);
+                    //char_img.setForeground(drawable);
+                }else{
+                    char_img.setBackgroundResource(R.drawable.geo_800x800_light);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.geo_800x800_light_mask);
+                    //char_img.setForeground(drawable);
+                }
+                break;
+            }
+
+            case "Hydro" : {
+                Picasso.get()
+                        .load(R.drawable.hydro_layer).fit().centerCrop()
+                        .error(R.drawable.paimon_lost)
+                        .into(char_layer);
+                if(isNight == true){
+                    char_img.setBackgroundResource(R.drawable.hydro_800x800_dark);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.hydro_800x800_dark_mask);
+                    //char_img.setForeground(drawable);
+                }else{
+                    char_img.setBackgroundResource(R.drawable.hydro_800x800_light);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.hydro_800x800_light_mask);
+                    //char_img.setForeground(drawable);
+                }
+                break;
+            }
+
+            case "Pyro" : {
+                Picasso.get()
+                        .load(R.drawable.pyro_layer).fit().centerCrop()
+                        .error(R.drawable.paimon_lost)
+                        .into(char_layer);
+                if(isNight == true){
+                    char_img.setBackgroundResource(R.drawable.pyro_800x800_dark);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.pyro_800x800_dark_mask);
+                    //char_img.setForeground(drawable);
+                }else{
+                    char_img.setBackgroundResource(R.drawable.pyro_800x800_light);
+                    Drawable drawable = context.getResources().getDrawable(R.drawable.pyro_800x800_light_mask);
+                    //char_img.setForeground(drawable);
+                }
+                break;
+            }
+
+
+        }
+
         char_stars.setNumStars(star);
         char_stars.setRating(star);
         char_element.setImageResource(item_rss.getElementByName(element)[0]);
@@ -967,5 +1119,7 @@ public class Characters_Info {
         }else{
             textView.setTextColor(Color.parseColor(color));
         }
+
     }
+
 }

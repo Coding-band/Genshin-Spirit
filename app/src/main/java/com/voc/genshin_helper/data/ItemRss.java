@@ -1,5 +1,7 @@
 package com.voc.genshin_helper.data;
 
+import static android.content.Context.MODE_PRIVATE;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
@@ -60,12 +62,12 @@ public class ItemRss {
 
     public int[] getRareColorByName(int i) {
         switch (i){
-            case 1 : return new int[]{R.drawable.bg_rare1_bg, R.drawable.bg_rare1_char, R.color.rare1};
-            case 2 : return new int[]{R.drawable.bg_rare2_bg, R.drawable.bg_rare2_char, R.color.rare2};
-            case 3 : return new int[]{R.drawable.bg_rare3_bg, R.drawable.bg_rare3_char, R.color.rare3};
-            case 4 : return new int[]{R.drawable.bg_rare4_bg, R.drawable.bg_rare4_char, R.color.rare4};
-            case 5 : return new int[]{R.drawable.bg_rare5_bg, R.drawable.bg_rare5_char, R.color.rare5};
-            default: return new int[]{R.drawable.paimon_lost, R.drawable.paimon_lost, R.color.rare1};
+            case 1 : return new int[]{R.drawable.bg_rare1_bg, R.drawable.bg_rare1_char, R.color.rare1,R.drawable.rare1_800x800};
+            case 2 : return new int[]{R.drawable.bg_rare2_bg, R.drawable.bg_rare2_char, R.color.rare2,R.drawable.rare2_800x800};
+            case 3 : return new int[]{R.drawable.bg_rare3_bg, R.drawable.bg_rare3_char, R.color.rare3,R.drawable.rare3_800x800};
+            case 4 : return new int[]{R.drawable.bg_rare4_bg, R.drawable.bg_rare4_char, R.color.rare4,R.drawable.rare4_800x800};
+            case 5 : return new int[]{R.drawable.bg_rare5_bg, R.drawable.bg_rare5_char, R.color.rare5,R.drawable.rare5_800x800};
+            default: return new int[]{R.drawable.paimon_lost, R.drawable.paimon_lost, R.color.rare1,R.drawable.rare1_800x800};
         }
     }
 
@@ -846,6 +848,19 @@ public class ItemRss {
 
     /**EDIT WHEN ADD NEW ITEMS*/
     public String[] getCharByName(String name, Context context){
+        if(context.getSharedPreferences("user_info",MODE_PRIVATE).getBoolean("isCharChangeEventSuit",false) == true){
+            if (name.equals("Ningguang")){return new String[] {"/drawable/ningguang_suit1_full.png",context.getString(R.string.ningguang),"/drawable/ningguang_suit1_gacha_splash.png","/drawable/ningguang_suit1_ico.png"};}
+            else if (name.equals("Barbara")){return new String[] {"/drawable/barbara_suit1_full.png",context.getString(R.string.barbara),"/drawable/barbara_suit1_gacha_splash.png","/drawable/barbara_suit1_ico.png"};}
+            else if (name.equals("Jean")){return new String[] {"/drawable/jean_suit2_full.png",context.getString(R.string.jean),"/drawable/jean_suit2_gacha_splash.png","/drawable/jean_suit2_ico.png"};}
+            else if (name.equals("Keqing")){return new String[] {"/drawable/keqing_suit1_full.png",context.getString(R.string.keqing),"/drawable/keqing_suit1_gacha_splash.png","/drawable/keqing_suit1_ico.png"};}
+            else {
+                return getCharByName_BASE(name,context);}
+        }else{
+            return getCharByName_BASE(name,context);
+        }
+    }
+
+    public String[] getCharByName_BASE(String name, Context context){
         if(name.equals("Kamisato Ayato")){return new String[] {"/drawable/kamisato_ayato_full.png",context.getString(R.string.kamisato_ayato),"/drawable/kamisato_ayato_gacha_splash.png","/drawable/kamisato_ayato_ico.png"};}
         else if(name.equals("Yae Miko")){return new String[] {"/drawable/yae_miko_full.png",context.getString(R.string.yae_miko),"/drawable/yae_miko_gacha_splash.png","/drawable/yae_miko_ico.png"};}
         else if(name.equals("Shenhe")){return new String[] {"/drawable/shenhe_full.png",context.getString(R.string.shenhe),"/drawable/shenhe_gacha_splash.png","/drawable/shenhe_ico.png"};}
@@ -895,7 +910,7 @@ public class ItemRss {
         else if(name.equals("Amber")){return new String[] {"/drawable/amber_full.png",context.getString(R.string.amber),"/drawable/amber_gacha_splash.png","/drawable/amber_ico.png"};}
         //Add at 20210820, update at 20220109
         else if(name.equals("Traveler-Anemo")){
-            sharedPreferences = context.getSharedPreferences("user_info",context.MODE_PRIVATE);
+            sharedPreferences = context.getSharedPreferences("user_info", MODE_PRIVATE);
             String traveler_sex = sharedPreferences.getString("traveler_sex","F");
 
             if(traveler_sex.equals("M")){
@@ -906,7 +921,7 @@ public class ItemRss {
         }
         //Add at 20210820, update at 20220109
         else if(name.equals("Traveler-Geo")){
-            sharedPreferences = context.getSharedPreferences("user_info",context.MODE_PRIVATE);
+            sharedPreferences = context.getSharedPreferences("user_info", MODE_PRIVATE);
             String traveler_sex = sharedPreferences.getString("traveler_sex","F");
 
             if(traveler_sex.equals("M")){
@@ -917,7 +932,7 @@ public class ItemRss {
         }
         //Add at 20210820, update at 20220109
         else if(name.equals("Traveler-Electro")){
-            sharedPreferences = context.getSharedPreferences("user_info",context.MODE_PRIVATE);
+            sharedPreferences = context.getSharedPreferences("user_info", MODE_PRIVATE);
             String traveler_sex = sharedPreferences.getString("traveler_sex","F");
 
             if(traveler_sex.equals("M")){
@@ -958,7 +973,7 @@ public class ItemRss {
         else if(name.equals("Ningguang") || name.equals("凝光") || name.equals("凝光") || name.equals("凝光") || name.equals("Нин Гуан")){ return "Ningguang";}
         else if(name.equals("Noelle") || name.equals("諾艾爾") || name.equals("诺艾尔") || name.equals("ノエル") || name.equals("Ноэль")){ return "Noelle";}
         else if(name.equals("Qiqi") || name.equals("七七") || name.equals("七七") || name.equals("七七") || name.equals("Ци Ци")){ return "Qiqi";}
-        else if(name.equals("Raudeb Shougun") || name.equals("雷電將軍") || name.equals("雷电将军") || name.equals("雷電将軍") || name.equals("Сёгун Райдэн")){ return "Raiden Shogun";}
+        else if(name.equals("Raiden Shogun") || name.equals("雷電將軍") || name.equals("雷电将军") || name.equals("雷電将軍") || name.equals("Сёгун Райдэн")){ return "Raiden Shogun";}
         else if(name.equals("Razor") || name.equals("雷澤") || name.equals("雷泽") || name.equals("レザー") || name.equals("Рэйзор")){ return "Razor";}
         else if(name.equals("Rosaria") || name.equals("羅莎莉亞") || name.equals("罗莎莉亚") || name.equals("ロサリア") || name.equals("Розария")){ return "Rosaria";}
         else if(name.equals("Sangonomiya Kokomi") || name.equals("珊瑚宮心海") || name.equals("珊瑚宫心海") || name.equals("珊瑚宮心海") || name.equals("Сангономия Кокоми")){ return "Sangonomiya Kokomi";}
@@ -993,13 +1008,13 @@ public class ItemRss {
      * @return ICON_ID , RAD_BG_ID , BG_COLOR_ID
      */
     public int[] getElementByName (String element) {
-        if(element.equals("Anemo")) {return new int[] {R.drawable.anemo,R.drawable.bg_anemo_char,R.color.anemo};}
-        else if(element.equals("Cryo")) {return new int[] {R.drawable.cryo,R.drawable.bg_cryo_char,R.color.cryo};}
-        else if(element.equals("Dendor")) {return new int[] {R.drawable.dendro,R.drawable.bg_dendro_char,R.color.dendor};}
-        else if(element.equals("Electro")) {return new int[] {R.drawable.electro,R.drawable.bg_electro_char,R.color.electro};}
-        else if(element.equals("Geo")) {return new int[] {R.drawable.geo,R.drawable.bg_geo_char,R.color.geo};}
-        else if(element.equals("Hydro")) {return new int[] {R.drawable.hydro,R.drawable.bg_hydro_char,R.color.hydro};}
-        else if(element.equals("Pyro")) {return new int[] {R.drawable.pyro,R.drawable.bg_pyro_char,R.color.pyro};}
+        if(element.equals("Anemo")) {return new int[] {R.drawable.anemo_ico,R.drawable.bg_anemo_char,R.color.anemo};}
+        else if(element.equals("Cryo")) {return new int[] {R.drawable.cryo_ico,R.drawable.bg_cryo_char,R.color.cryo};}
+        else if(element.equals("Dendor")) {return new int[] {R.drawable.dendro_ico,R.drawable.bg_dendro_char,R.color.dendor};}
+        else if(element.equals("Electro")) {return new int[] {R.drawable.electro_ico,R.drawable.bg_electro_char,R.color.electro};}
+        else if(element.equals("Geo")) {return new int[] {R.drawable.geo_ico,R.drawable.bg_geo_char,R.color.geo};}
+        else if(element.equals("Hydro")) {return new int[] {R.drawable.hydro_ico,R.drawable.bg_hydro_char,R.color.hydro};}
+        else if(element.equals("Pyro")) {return new int[] {R.drawable.pyro_ico,R.drawable.bg_pyro_char,R.color.pyro};}
         else return new int[] {R.drawable.paimon_lost,R.drawable.paimon_lost,R.color.anemo};
     }
 
@@ -1036,246 +1051,463 @@ public class ItemRss {
     /**EDIT WHEN ADD NEW ITEMS*/
     public String getItemIcoByName (String name ,Context context){
         /** Boss*/
-        if(name.equals("常燃火種")){return "/drawable/everflame_seed.png";}
-        else if(name.equals("淨水之心")){return "/drawable/cleansing_heart.png";}
-        else if(name.equals("雷光棱鏡")){return "/drawable/lightning_prism.png";}
-        else if(name.equals("極寒之核")){return "/drawable/hoarfrost_core.png";}
-        else if(name.equals("颶風之種")){return "/drawable/hurricane_seed.png";}
-        else if(name.equals("玄岩之塔")){return "/drawable/basalt_pillar.png";}
-        else if(name.equals("未熟之玉")){return "/drawable/juvenile_jade.png";}
-        else if(name.equals("晶凝之華")){return "/drawable/crystalline_bloom.png";}
-        else if(name.equals("魔偶機心")){return "/drawable/maguu_kishin.png";}
-        else if(name.equals("恒常機關之心")){return "/drawable/perpetual_heart.png";}
-        else if(name.equals("陰燃之珠")){return "/drawable/smoldering_pearl.png";}
-        //add in 20210910
-        else if(name.equals("雷霆數珠")){return "/drawable/storm_beads.png";}
-        else if(name.equals("排異之露")){return "/drawable/dew_of_repudiation.png";}
+        switch (name) {
+            case "常燃火種":
+                return "/drawable/everflame_seed.png";
+            case "淨水之心":
+                return "/drawable/cleansing_heart.png";
+            case "雷光棱鏡":
+                return "/drawable/lightning_prism.png";
+            case "極寒之核":
+                return "/drawable/hoarfrost_core.png";
+            case "颶風之種":
+                return "/drawable/hurricane_seed.png";
+            case "玄岩之塔":
+                return "/drawable/basalt_pillar.png";
+            case "未熟之玉":
+                return "/drawable/juvenile_jade.png";
+            case "晶凝之華":
+                return "/drawable/crystalline_bloom.png";
+            case "魔偶機心":
+                return "/drawable/maguu_kishin.png";
+            case "恒常機關之心":
+                return "/drawable/perpetual_heart.png";
+            case "陰燃之珠":
+                return "/drawable/smoldering_pearl.png";
+            //add in 20210910
+            case "雷霆數珠":
+                return "/drawable/storm_beads.png";
+            case "排異之露":
+                return "/drawable/dew_of_repudiation.png";
 
-        /** Local*/
-        else if(name.equals("小燈草")){return "/drawable/small_lamp_grass.png";}
-        else if(name.equals("慕風蘑菇")){return "/drawable/philanemo_mushroom.png";}
-        else if(name.equals("夜泊石")){return "/drawable/noctilous_jade.png";}
-        else if(name.equals("風車菊")){return "/drawable/windwheel_aster.png";}
-        else if(name.equals("石珀")){return "/drawable/cor_lapis.png";}
-        else if(name.equals("蒲公英籽")){return "/drawable/dandelion_seed.png";}
-        else if(name.equals("嘟嘟蓮")){return "/drawable/calla_lily.png";}
-        else if(name.equals("落落莓")){return "/drawable/valberry.png";}
-        else if(name.equals("琉璃百合")){return "/drawable/glaze_lily.png";}
-        else if(name.equals("琉璃袋")){return "/drawable/violetgrass.png";}
-        else if(name.equals("鉤鉤果")){return "/drawable/wolfhook.png";}
-        else if(name.equals("塞西莉亞花")){return "/drawable/cecilia.png";}
-        else if(name.equals("絕雲椒椒")){return "/drawable/jueyun_chili.png";}
-        else if(name.equals("霓裳花")){return "/drawable/silk_flower.png";}
-        else if(name.equals("星螺")){return "/drawable/starconch.png";}
-        else if(name.equals("清心")){return "/drawable/qingxin.png";}
-        else if(name.equals("海靈芝")){return "/drawable/sea_ganoderma.png";}
-        else if(name.equals("緋櫻繡球")){return "/drawable/sakura_bloom.png";}
-        else if(name.equals("鳴草")){return "/drawable/naku_weed.png";}
-        else if(name.equals("晶化骨髓")){return "/drawable/crystal_marrow.png";}
-        //add in 20210910
-        else if(name.equals("天雲草實")){return "/drawable/amakumo_fruit.png";}
-        else if(name.equals("血斛")){return "/drawable/dendrobium.png";}
-        else if(name.equals("幽燈蕈")){return "/drawable/fluorescent_fungus.png";}
-        else if(name.equals("珊瑚真珠")){return "/drawable/sango_pearl.png";}
-
-
-        /** T-Boss*/
-        else if(name.equals("北風之環")){return "/drawable/ring_of_boreas.png";}
-        else if(name.equals("東風的吐息")){return "/drawable/dvalins_sigh.png";}
-        else if(name.equals("東風之翎")){return "/drawable/dvalins_plume.png";}
-        else if(name.equals("北風的魂匣")){return "/drawable/spirit_locket_of_boreas.png";}
-        else if(name.equals("東風之爪")){return "/drawable/dvalins_claw.png";}
-        else if(name.equals("北風之尾")){return "/drawable/tail_of_boreas.png";}
-        else if(name.equals("魔王之刃·殘片")){return "/drawable/shard_of_foul_legacy.png";}
-        else if(name.equals("吞天之鯨·只角")){return "/drawable/tusk_of_monoceros_caeli.png";}
-        else if(name.equals("武煉之魂·孤影")){return "/drawable/shadow_of_the_warrior.png";}
-        else if(name.equals("龍王之冕")){return "/drawable/dragon_lords_crown.png";}
-        else if(name.equals("血玉之枝")){return "/drawable/bloodjade_branch.png";}
-        else if(name.equals("鎏金之鱗")){return "/drawable/gilded_scale.png";}
-        //add in 20210910
-        else if(name.equals("熔毀之刻")){return "/drawable/molten_moment.png";}
-        else if(name.equals("灰燼之心")){return "/drawable/ashen_heart.png";}
-        else if(name.equals("獄火之蝶")){return "/drawable/hellfire_butterfly.png";}
-        //add in 20220216
-        else if(name.equals("萬劫之真意")){return "/drawable/the_meaning_of_aeons.png";}
-        else if(name.equals("凶將之手眼")){return "/drawable/mudra_of_the_malefic_general.png";}
-        else if(name.equals("禍神之禊淚")){return "/drawable/tears_of_the_calamitous_god.png";}
-
-        /** Common*/
-        else if(name.equals("牢固的箭簇")){return "/drawable/firm_arrowhead.png";}
-        else if(name.equals("銳利的箭簇")){return "/drawable/sharp_arrowhead.png";}
-        else if(name.equals("歷戰的箭簇")){return "/drawable/weathered_arrowhead.png";}
-        else if(name.equals("導能繪卷")){return "/drawable/divining_scroll.png";}
-        else if(name.equals("封魔繪卷")){return "/drawable/sealed_scroll.png";}
-        else if(name.equals("禁咒繪卷")){return "/drawable/forbidden_curse_scroll.png";}
-        else if(name.equals("尋寶鴉印")){return "/drawable/treasure_hoarder_insignia.png";}
-        else if(name.equals("藏銀鴉印")){return "/drawable/silver_raven_insignia.png";}
-        else if(name.equals("攫金鴉印")){return "/drawable/golden_raven_insignia.png";}
-        else if(name.equals("破損的面具")){return "/drawable/damaged_mask.png";}
-        else if(name.equals("污穢的面具")){return "/drawable/stained_mask.png";}
-        else if(name.equals("不祥的面具")){return "/drawable/ominous_mask.png";}
-        else if(name.equals("新兵的徽記")){return "/drawable/recruits_insignia.png";}
-        else if(name.equals("士官的徽記")){return "/drawable/sergeants_insignia.png";}
-        else if(name.equals("尉官的徽記")){return "/drawable/lieutenants_insignia.png";}
-        else if(name.equals("騙騙花蜜")){return "/drawable/whopperflower_nectar.png";}
-        else if(name.equals("微光花蜜")){return "/drawable/shimmering_nectar.png";}
-        else if(name.equals("原素花蜜")){return "/drawable/energy_nectar.png";}
-        else if(name.equals("史萊姆凝液")){return "/drawable/slime_condensate.png";}
-        else if(name.equals("史萊姆清")){return "/drawable/slime_secretions.png";}
-        else if(name.equals("史萊姆原漿")){return "/drawable/slime_concentrate.png";}
-        else if(name.equals("破舊的刀鐔")){return "/drawable/old_handguard.png";}
-        else if(name.equals("影打刀鐔")){return "/drawable/kageuchi_handguard.png";}
-        else if(name.equals("名刀鐔")){return "/drawable/famed_handguard.png";}
-        //add in 20210910
-        else if(name.equals("浮游乾核")){return "/drawable/spectral_husk.png";}
-        else if(name.equals("浮游幽核")){return "/drawable/spectral_heart.png";}
-        else if(name.equals("浮游晶化核")){return "/drawable/spectral_nucleus.png";}
-        //add in 20211024 (RE)
-        else if(name.equals("漆黑隕鐵的一粒")){return "/drawable/grain_of_aerosiderite.png";}
-        else if(name.equals("漆黑隕鐵的一片")){return "/drawable/piece_of_aerosiderite.png";}
-        else if(name.equals("漆黑隕鐵的一角")){return "/drawable/bit_of_aerosiderite.png";}
-        else if(name.equals("漆黑隕鐵的一塊")){return "/drawable/chunk_of_aerosiderite.png";}
-        else if(name.equals("鳴神御靈的明惠")){return "/drawable/narukamis_wisdom.png";}
-        else if(name.equals("鳴神御靈的歡喜")){return "/drawable/narukamis_joy.png";}
-        else if(name.equals("鳴神御靈的親愛")){return "/drawable/narukamis_affection.png";}
-        else if(name.equals("鳴神御靈的勇武")){return "/drawable/narukamis_valor.png";}
-        else if(name.equals("遠海夷地的瑚枝")){return "/drawable/coral_branch_of_a_distant_sea.png";}
-        else if(name.equals("遠海夷地的玉枝")){return "/drawable/jeweled_branch_of_a_distant_sea.png";}
-        else if(name.equals("遠海夷地的瓊枝")){return "/drawable/jade_branch_of_a_distant_sea.png";}
-        else if(name.equals("遠海夷地的金枝")){return "/drawable/golden_branch_of_a_distant_sea.png";}
-        else if(name.equals("凜風奔狼的始齔")){return "/drawable/boreal_wolfs_milk_tooth.png";}
-        else if(name.equals("凜風奔狼的裂齒")){return "/drawable/boreal_wolfs_cracked_tooth.png";}
-        else if(name.equals("凜風奔狼的斷牙")){return "/drawable/boreal_wolfs_broken_fang.png";}
-        else if(name.equals("凜風奔狼的懷鄉")){return "/drawable/boreal_wolfs_nostalgia.png";}
-        else if(name.equals("高塔孤王的破瓦")){return "/drawable/tile_of_decarabians_tower.png";}
-        else if(name.equals("高塔孤王的殘垣")){return "/drawable/debris_of_decarabians_city.png";}
-        else if(name.equals("高塔孤王的斷片")){return "/drawable/fragment_of_decarabians_epic.png";}
-        else if(name.equals("高塔孤王的碎夢")){return "/drawable/scattered_piece_of_decarabianss_dream.png";}
-        else if(name.equals("霧海雲間的鉛丹")){return "/drawable/mist_veiled_lead_elixir.png";}
-        else if(name.equals("霧海雲間的汞丹")){return "/drawable/mist_veiled_mercury_elixir.png";}
-        else if(name.equals("霧海雲間的金丹")){return "/drawable/mist_veiled_gold_elixir.png";}
-        else if(name.equals("霧海雲間的轉還")){return "/drawable/mist_veiled_primo_elixir.png";}
-        else if(name.equals("獅牙鬥士的枷鎖")){return "/drawable/fetters_of_the_dandelion_gladiator.png";}
-        else if(name.equals("獅牙鬥士的鐵鍊")){return "/drawable/chains_of_the_dandelion_gladiator.png";}
-        else if(name.equals("獅牙鬥士的鐐銬")){return "/drawable/shackles_of_the_dandelion_gladiator.png";}
-        else if(name.equals("獅牙鬥士的理想")){return "/drawable/dream_of_the_dandelion_gladiator.png";}
-        else if(name.equals("孤雲寒林的光砂")){return "/drawable/luminous_sands_from_guyun.png";}
-        else if(name.equals("孤雲寒林的輝岩")){return "/drawable/lustrous_stone_from_guyun.png";}
-        else if(name.equals("孤雲寒林的聖骸")){return "/drawable/relic_from_guyun.png";}
-        else if(name.equals("孤雲寒林的神體")){return "/drawable/divine_body_from_guyun.png";}
-        else if(name.equals("今昔劇畫的惡尉")){return "/drawable/mask_of_the_wicked_lieutenant.png";}
-        else if(name.equals("今昔劇畫的虎囓")){return "/drawable/mask_of_the_tigers_bite.png";}
-        else if(name.equals("今昔劇畫的一角")){return "/drawable/mask_of_the_one_horned.png";}
-        else if(name.equals("今昔劇畫的鬼人")){return "/drawable/mask_of_the_kijin.png";}
-
-        else if(name.equals("混沌機關")){return "/drawable/chaos_gear.png";}
-        else if(name.equals("混沌樞紐")){return "/drawable/chaos_axis.png";}
-        else if(name.equals("混沌真眼")){return "/drawable/chaos_oculus.png";}
-        else if(name.equals("混沌裝置")){return "/drawable/chaos_device.png";}
-        else if(name.equals("混沌迴路")){return "/drawable/chaos_circuit.png";}
-        else if(name.equals("混沌爐心")){return "/drawable/chaos_core.png";}
-        else if(name.equals("脆弱的骨片")){return "/drawable/sturdy_bone_shard.png";}
-        else if(name.equals("結實的骨片")){return "/drawable/fragile_bone_shard.png";}
-        else if(name.equals("石化的骨片")){return "/drawable/fossilized_bone_shard.png";}
-        else if(name.equals("霧虛花粉")){return "/drawable/mist_grass_pollen.png";}
-        else if(name.equals("霧虛草囊")){return "/drawable/mist_grass_wick.png";}
-        else if(name.equals("霧虛燈芯")){return "/drawable/mist_grass.png";}
-        else if(name.equals("獵兵祭刀")){return "/drawable/hunters_sacrificial_knife.png";}
-        else if(name.equals("特工祭刀")){return "/drawable/inspectors_sacrificial_knife.png";}
-        else if(name.equals("督察長祭刀")){return "/drawable/agents_sacrificial_knife.png";}
-        else if(name.equals("沉重號角")){return "/drawable/heavy_horn.png";}
-        else if(name.equals("黑銅號角")){return "/drawable/black_bronze_horn.png";}
-        else if(name.equals("黑晶號角")){return "/drawable/black_crystal_horn.png";}
-        else if(name.equals("地脈的舊枝")){return "/drawable/dead_ley_line_branch.png";}
-        else if(name.equals("地脈的枯葉")){return "/drawable/dead_ley_line_leaves.png";}
-        else if(name.equals("地脈的新芽")){return "/drawable/ley_line_sprout.png";}
-        else if(name.equals("黯淡棱鏡")){return "/drawable/dismal_prism.png";}
-        else if(name.equals("水晶棱鏡")){return "/drawable/crystal_prism.png";}
-        else if(name.equals("偏光棱鏡")){return "/drawable/polarizing_prism.png";}
-        else if(name.equals("隱獸指爪")){return "/drawable/concealed_claw.png";}
-        else if(name.equals("隱獸利爪")){return "/drawable/concealed_unguis.png";}
-        else if(name.equals("隱獸鬼爪")){return "/drawable/concealed_talon.png";}
-        //add in 20220105
-        else if(name.equals("獸境王器")){return "/drawable/riftborn_regalia.png";}
-        else if(name.equals("龍嗣偽鰭")){return "/drawable/dragonheirs_false_fin.png";}
+            /** Local*/
+            case "小燈草":
+                return "/drawable/small_lamp_grass.png";
+            case "慕風蘑菇":
+                return "/drawable/philanemo_mushroom.png";
+            case "夜泊石":
+                return "/drawable/noctilous_jade.png";
+            case "風車菊":
+                return "/drawable/windwheel_aster.png";
+            case "石珀":
+                return "/drawable/cor_lapis.png";
+            case "蒲公英籽":
+                return "/drawable/dandelion_seed.png";
+            case "嘟嘟蓮":
+                return "/drawable/calla_lily.png";
+            case "落落莓":
+                return "/drawable/valberry.png";
+            case "琉璃百合":
+                return "/drawable/glaze_lily.png";
+            case "琉璃袋":
+                return "/drawable/violetgrass.png";
+            case "鉤鉤果":
+                return "/drawable/wolfhook.png";
+            case "塞西莉亞花":
+                return "/drawable/cecilia.png";
+            case "絕雲椒椒":
+                return "/drawable/jueyun_chili.png";
+            case "霓裳花":
+                return "/drawable/silk_flower.png";
+            case "星螺":
+                return "/drawable/starconch.png";
+            case "清心":
+                return "/drawable/qingxin.png";
+            case "海靈芝":
+                return "/drawable/sea_ganoderma.png";
+            case "緋櫻繡球":
+                return "/drawable/sakura_bloom.png";
+            case "鳴草":
+                return "/drawable/naku_weed.png";
+            case "晶化骨髓":
+                return "/drawable/crystal_marrow.png";
+            //add in 20210910
+            case "天雲草實":
+                return "/drawable/amakumo_fruit.png";
+            case "血斛":
+                return "/drawable/dendrobium.png";
+            case "幽燈蕈":
+                return "/drawable/fluorescent_fungus.png";
+            case "珊瑚真珠":
+                return "/drawable/sango_pearl.png";
 
 
-        /** T-Book*/
-        else if(name.equals("「自由」的教導")){return "/drawable/teaching_of_freedom.png";}
-        else if(name.equals("「黃金」的教導")){return "/drawable/teaching_of_gold.png";}
-        else if(name.equals("「抗爭」的教導")){return "/drawable/teaching_of_resistance.png";}
-        else if(name.equals("「繁榮」的教導")){return "/drawable/teaching_of_prosperity.png";}
-        else if(name.equals("「詩文」的教導")){return "/drawable/teaching_of_ballad.png";}
-        else if(name.equals("「勤勞」的教導")){return "/drawable/teaching_of_diligence.png";}
-        else if(name.equals("「風雅」的教導")){return "/drawable/teachings_of_elegance.png";}
-        else if(name.equals("「浮世」的教導")){return "/drawable/teachings_of_transience.png";}
-        else if(name.equals("「天光」的教導")){return "/drawable/teachings_of_light.png";}
-        else if(name.equals("「自由」的指引")){return "/drawable/guide_to_freedom.png";}
-        else if(name.equals("「黃金」的指引")){return "/drawable/guide_to_gold.png";}
-        else if(name.equals("「抗爭」的指引")){return "/drawable/guide_to_resistance.png";}
-        else if(name.equals("「繁榮」的指引")){return "/drawable/guide_to_prosperity.png";}
-        else if(name.equals("「詩文」的指引")){return "/drawable/guide_to_ballad.png";}
-        else if(name.equals("「勤勞」的指引")){return "/drawable/guide_to_diligence.png";}
-        else if(name.equals("「風雅」的指引")){return "/drawable/guide_of_elegance.png";}
-        else if(name.equals("「浮世」的指引")){return "/drawable/guide_of_transience.png";}
-        else if(name.equals("「天光」的指引")){return "/drawable/guide_of_light.png";}
-        else if(name.equals("「自由」的哲學")){return "/drawable/philosophies_of_freedom.png";}
-        else if(name.equals("「黃金」的哲學")){return "/drawable/philosophies_of_gold.png";}
-        else if(name.equals("「抗爭」的哲學")){return "/drawable/philosophies_of_resistance.png";}
-        else if(name.equals("「繁榮」的哲學")){return "/drawable/philosophies_of_prosperity.png";}
-        else if(name.equals("「詩文」的哲學")){return "/drawable/philosophies_of_ballad.png";}
-        else if(name.equals("「勤勞」的哲學")){return "/drawable/philosophies_of_diligence.png";}
-        else if(name.equals("「風雅」的哲學")){return "/drawable/philosophies_of_elegance.png";}
-        else if(name.equals("「浮世」的哲學")){return "/drawable/philosophies_of_transience.png";}
-        else if(name.equals("「天光」的哲學")){return "/drawable/philosophies_of_light.png";}
+            /** T-Boss*/
+            case "北風之環":
+                return "/drawable/ring_of_boreas.png";
+            case "東風的吐息":
+                return "/drawable/dvalins_sigh.png";
+            case "東風之翎":
+                return "/drawable/dvalins_plume.png";
+            case "北風的魂匣":
+                return "/drawable/spirit_locket_of_boreas.png";
+            case "東風之爪":
+                return "/drawable/dvalins_claw.png";
+            case "北風之尾":
+                return "/drawable/tail_of_boreas.png";
+            case "魔王之刃·殘片":
+                return "/drawable/shard_of_foul_legacy.png";
+            case "吞天之鯨·只角":
+                return "/drawable/tusk_of_monoceros_caeli.png";
+            case "武煉之魂·孤影":
+                return "/drawable/shadow_of_the_warrior.png";
+            case "龍王之冕":
+                return "/drawable/dragon_lords_crown.png";
+            case "血玉之枝":
+                return "/drawable/bloodjade_branch.png";
+            case "鎏金之鱗":
+                return "/drawable/gilded_scale.png";
+            //add in 20210910
+            case "熔毀之刻":
+                return "/drawable/molten_moment.png";
+            case "灰燼之心":
+                return "/drawable/ashen_heart.png";
+            case "獄火之蝶":
+                return "/drawable/hellfire_butterfly.png";
+            //add in 20220216
+            case "萬劫之真意":
+                return "/drawable/the_meaning_of_aeons.png";
+            case "凶將之手眼":
+                return "/drawable/mudra_of_the_malefic_general.png";
+            case "禍神之禊淚":
+                return "/drawable/tears_of_the_calamitous_god.png";
 
-        /** Crystal*/
-        else if(name.equals("燃願瑪瑙碎屑")){return "/drawable/agnidus_agate_sliver.png";}
-        else if(name.equals("燃願瑪瑙斷片")){return "/drawable/agnidus_agate_fragment.png";}
-        else if(name.equals("燃願瑪瑙塊")){return "/drawable/agnidus_agate_chunk.png";}
-        else if(name.equals("燃願瑪瑙")){return "/drawable/agnidus_agate_gemstone.png";}
-        else if(name.equals("滌淨青金碎屑")){return "/drawable/varunada_lazurite_sliver.png";}
-        else if(name.equals("滌淨青金斷片")){return "/drawable/varunada_lazurite_fragment.png";}
-        else if(name.equals("滌淨青金塊")){return "/drawable/varunada_lazurite_chunk.png";}
-        else if(name.equals("滌淨青金")){return "/drawable/varunada_lazurite_gemstone.png";}
-        else if(name.equals("最勝紫晶碎屑")){return "/drawable/vajrada_amethyst_sliver.png";}
-        else if(name.equals("最勝紫晶斷片")){return "/drawable/vajrada_amethyst_fragment.png";}
-        else if(name.equals("最勝紫晶塊")){return "/drawable/vajrada_amethyst_chunk.png";}
-        else if(name.equals("最勝紫晶")){return "/drawable/vajrada_amethyst_gemstone.png";}
-        else if(name.equals("哀敘冰玉碎屑")){return "/drawable/shivada_jade_sliver.png";}
-        else if(name.equals("哀敘冰玉斷片")){return "/drawable/shivada_jade_fragment.png";}
-        else if(name.equals("哀敘冰玉塊")){return "/drawable/shivada_jade_chunk.png";}
-        else if(name.equals("哀敘冰玉")){return "/drawable/shivada_jade_gemstone.png";}
-        else if(name.equals("自在松石碎屑")){return "/drawable/vayuda_turquoise_sliver.png";}
-        else if(name.equals("自在松石斷片")){return "/drawable/vayuda_turquoise_fragment.png";}
-        else if(name.equals("自在松石塊")){return "/drawable/vayuda_turquoise_chunk.png";}
-        else if(name.equals("自在松石")){return "/drawable/vayuda_turquoise_gemstone.png";}
-        else if(name.equals("堅牢黃玉碎屑")){return "/drawable/prithiva_topaz_sliver.png";}
-        else if(name.equals("堅牢黃玉斷片")){return "/drawable/prithiva_topaz_fragment.png";}
-        else if(name.equals("堅牢黃玉塊")){return "/drawable/prithiva_topaz_chunk.png";}
-        else if(name.equals("堅牢黃玉")){return "/drawable/prithiva_topaz_gemstone.png";}
-        else if(name.equals("brilliant_diamond_sliver")){return "/drawable/brilliant_diamond_sliver.png";}
-        else if(name.equals("brilliant_diamond_fragment")){return "/drawable/brilliant_diamond_fragment.png";}
-        else if(name.equals("brilliant_diamond_chunk")){return "/drawable/brilliant_diamond_chunk.png";}
-        else if(name.equals("brilliant_diamond_gemstone")){return "/drawable/brilliant_diamond_gemstone.png";}
-        else if(name.equals("nagadus_emerald_sliver")){return "/drawable/nagadus_emerald_sliver.png";}
-        else if(name.equals("nagadus_emerald_fragment")){return "/drawable/nagadus_emerald_fragment.png";}
-        else if(name.equals("nagadus_emerald_chunk")){return "/drawable/nagadus_emerald_chunk.png";}
-        else if(name.equals("nagadus_emerald_gemstone")){return "/drawable/nagadus_emerald_gemstone.png";}
+            /** Common*/
+            case "牢固的箭簇":
+                return "/drawable/firm_arrowhead.png";
+            case "銳利的箭簇":
+                return "/drawable/sharp_arrowhead.png";
+            case "歷戰的箭簇":
+                return "/drawable/weathered_arrowhead.png";
+            case "導能繪卷":
+                return "/drawable/divining_scroll.png";
+            case "封魔繪卷":
+                return "/drawable/sealed_scroll.png";
+            case "禁咒繪卷":
+                return "/drawable/forbidden_curse_scroll.png";
+            case "尋寶鴉印":
+                return "/drawable/treasure_hoarder_insignia.png";
+            case "藏銀鴉印":
+                return "/drawable/silver_raven_insignia.png";
+            case "攫金鴉印":
+                return "/drawable/golden_raven_insignia.png";
+            case "破損的面具":
+                return "/drawable/damaged_mask.png";
+            case "污穢的面具":
+                return "/drawable/stained_mask.png";
+            case "不祥的面具":
+                return "/drawable/ominous_mask.png";
+            case "新兵的徽記":
+                return "/drawable/recruits_insignia.png";
+            case "士官的徽記":
+                return "/drawable/sergeants_insignia.png";
+            case "尉官的徽記":
+                return "/drawable/lieutenants_insignia.png";
+            case "騙騙花蜜":
+                return "/drawable/whopperflower_nectar.png";
+            case "微光花蜜":
+                return "/drawable/shimmering_nectar.png";
+            case "原素花蜜":
+                return "/drawable/energy_nectar.png";
+            case "史萊姆凝液":
+                return "/drawable/slime_condensate.png";
+            case "史萊姆清":
+                return "/drawable/slime_secretions.png";
+            case "史萊姆原漿":
+                return "/drawable/slime_concentrate.png";
+            case "破舊的刀鐔":
+                return "/drawable/old_handguard.png";
+            case "影打刀鐔":
+                return "/drawable/kageuchi_handguard.png";
+            case "名刀鐔":
+                return "/drawable/famed_handguard.png";
+            //add in 20210910
+            case "浮游乾核":
+                return "/drawable/spectral_husk.png";
+            case "浮游幽核":
+                return "/drawable/spectral_heart.png";
+            case "浮游晶化核":
+                return "/drawable/spectral_nucleus.png";
+            //add in 20211024 (RE)
+            case "漆黑隕鐵的一粒":
+                return "/drawable/grain_of_aerosiderite.png";
+            case "漆黑隕鐵的一片":
+                return "/drawable/piece_of_aerosiderite.png";
+            case "漆黑隕鐵的一角":
+                return "/drawable/bit_of_aerosiderite.png";
+            case "漆黑隕鐵的一塊":
+                return "/drawable/chunk_of_aerosiderite.png";
+            case "鳴神御靈的明惠":
+                return "/drawable/narukamis_wisdom.png";
+            case "鳴神御靈的歡喜":
+                return "/drawable/narukamis_joy.png";
+            case "鳴神御靈的親愛":
+                return "/drawable/narukamis_affection.png";
+            case "鳴神御靈的勇武":
+                return "/drawable/narukamis_valor.png";
+            case "遠海夷地的瑚枝":
+                return "/drawable/coral_branch_of_a_distant_sea.png";
+            case "遠海夷地的玉枝":
+                return "/drawable/jeweled_branch_of_a_distant_sea.png";
+            case "遠海夷地的瓊枝":
+                return "/drawable/jade_branch_of_a_distant_sea.png";
+            case "遠海夷地的金枝":
+                return "/drawable/golden_branch_of_a_distant_sea.png";
+            case "凜風奔狼的始齔":
+                return "/drawable/boreal_wolfs_milk_tooth.png";
+            case "凜風奔狼的裂齒":
+                return "/drawable/boreal_wolfs_cracked_tooth.png";
+            case "凜風奔狼的斷牙":
+                return "/drawable/boreal_wolfs_broken_fang.png";
+            case "凜風奔狼的懷鄉":
+                return "/drawable/boreal_wolfs_nostalgia.png";
+            case "高塔孤王的破瓦":
+                return "/drawable/tile_of_decarabians_tower.png";
+            case "高塔孤王的殘垣":
+                return "/drawable/debris_of_decarabians_city.png";
+            case "高塔孤王的斷片":
+                return "/drawable/fragment_of_decarabians_epic.png";
+            case "高塔孤王的碎夢":
+                return "/drawable/scattered_piece_of_decarabianss_dream.png";
+            case "霧海雲間的鉛丹":
+                return "/drawable/mist_veiled_lead_elixir.png";
+            case "霧海雲間的汞丹":
+                return "/drawable/mist_veiled_mercury_elixir.png";
+            case "霧海雲間的金丹":
+                return "/drawable/mist_veiled_gold_elixir.png";
+            case "霧海雲間的轉還":
+                return "/drawable/mist_veiled_primo_elixir.png";
+            case "獅牙鬥士的枷鎖":
+                return "/drawable/fetters_of_the_dandelion_gladiator.png";
+            case "獅牙鬥士的鐵鍊":
+                return "/drawable/chains_of_the_dandelion_gladiator.png";
+            case "獅牙鬥士的鐐銬":
+                return "/drawable/shackles_of_the_dandelion_gladiator.png";
+            case "獅牙鬥士的理想":
+                return "/drawable/dream_of_the_dandelion_gladiator.png";
+            case "孤雲寒林的光砂":
+                return "/drawable/luminous_sands_from_guyun.png";
+            case "孤雲寒林的輝岩":
+                return "/drawable/lustrous_stone_from_guyun.png";
+            case "孤雲寒林的聖骸":
+                return "/drawable/relic_from_guyun.png";
+            case "孤雲寒林的神體":
+                return "/drawable/divine_body_from_guyun.png";
+            case "今昔劇畫的惡尉":
+                return "/drawable/mask_of_the_wicked_lieutenant.png";
+            case "今昔劇畫的虎囓":
+                return "/drawable/mask_of_the_tigers_bite.png";
+            case "今昔劇畫的一角":
+                return "/drawable/mask_of_the_one_horned.png";
+            case "今昔劇畫的鬼人":
+                return "/drawable/mask_of_the_kijin.png";
+            case "混沌機關":
+                return "/drawable/chaos_gear.png";
+            case "混沌樞紐":
+                return "/drawable/chaos_axis.png";
+            case "混沌真眼":
+                return "/drawable/chaos_oculus.png";
+            case "混沌裝置":
+                return "/drawable/chaos_device.png";
+            case "混沌迴路":
+                return "/drawable/chaos_circuit.png";
+            case "混沌爐心":
+                return "/drawable/chaos_core.png";
+            case "脆弱的骨片":
+                return "/drawable/sturdy_bone_shard.png";
+            case "結實的骨片":
+                return "/drawable/fragile_bone_shard.png";
+            case "石化的骨片":
+                return "/drawable/fossilized_bone_shard.png";
+            case "霧虛花粉":
+                return "/drawable/mist_grass_pollen.png";
+            case "霧虛草囊":
+                return "/drawable/mist_grass_wick.png";
+            case "霧虛燈芯":
+                return "/drawable/mist_grass.png";
+            case "獵兵祭刀":
+                return "/drawable/hunters_sacrificial_knife.png";
+            case "特工祭刀":
+                return "/drawable/inspectors_sacrificial_knife.png";
+            case "督察長祭刀":
+                return "/drawable/agents_sacrificial_knife.png";
+            case "沉重號角":
+                return "/drawable/heavy_horn.png";
+            case "黑銅號角":
+                return "/drawable/black_bronze_horn.png";
+            case "黑晶號角":
+                return "/drawable/black_crystal_horn.png";
+            case "地脈的舊枝":
+                return "/drawable/dead_ley_line_branch.png";
+            case "地脈的枯葉":
+                return "/drawable/dead_ley_line_leaves.png";
+            case "地脈的新芽":
+                return "/drawable/ley_line_sprout.png";
+            case "黯淡棱鏡":
+                return "/drawable/dismal_prism.png";
+            case "水晶棱鏡":
+                return "/drawable/crystal_prism.png";
+            case "偏光棱鏡":
+                return "/drawable/polarizing_prism.png";
+            case "隱獸指爪":
+                return "/drawable/concealed_claw.png";
+            case "隱獸利爪":
+                return "/drawable/concealed_unguis.png";
+            case "隱獸鬼爪":
+                return "/drawable/concealed_talon.png";
+            //add in 20220105
+            case "獸境王器":
+                return "/drawable/riftborn_regalia.png";
+            case "龍嗣偽鰭":
+                return "/drawable/dragonheirs_false_fin.png";
 
-        /** Others*/
-        else if(name.equals("智識之冕")){return "/drawable/crown_of_sagehood.png";}
-        else if(name.equals("摩拉")){return "/drawable/mora.png";}
-        else if(name.equals("流浪者的經驗")){return "/drawable/wanderers_advice.png";}
-        else if(name.equals("冒險家的經驗")){return "/drawable/adventurers_experience.png";}
-        else if(name.equals("大英雄的經驗")){return "/drawable/heros_wit.png";}
-        else if(name.equals("精鍛用雜礦")){return "/drawable/enchancement_ore.png";}
-        else if(name.equals("精鍛用良礦")){return "/drawable/fine_enchancement_ore.png";}
-        else if(name.equals("精鍛用魔礦")){return "/drawable/mystic_enchancement_ore.png";}
-        else if(name.equals("祝聖油膏")){return "/drawable/sanctifying_unction.png";}
-        else if(name.equals("祝聖精華")){return "/drawable/sanctifying_essence.png";}
 
-        else {return "/drawable/paimon_lost.png";}
+            /** T-Book*/
+            case "「自由」的教導":
+                return "/drawable/teaching_of_freedom.png";
+            case "「黃金」的教導":
+                return "/drawable/teaching_of_gold.png";
+            case "「抗爭」的教導":
+                return "/drawable/teaching_of_resistance.png";
+            case "「繁榮」的教導":
+                return "/drawable/teaching_of_prosperity.png";
+            case "「詩文」的教導":
+                return "/drawable/teaching_of_ballad.png";
+            case "「勤勞」的教導":
+                return "/drawable/teaching_of_diligence.png";
+            case "「風雅」的教導":
+                return "/drawable/teachings_of_elegance.png";
+            case "「浮世」的教導":
+                return "/drawable/teachings_of_transience.png";
+            case "「天光」的教導":
+                return "/drawable/teachings_of_light.png";
+            case "「自由」的指引":
+                return "/drawable/guide_to_freedom.png";
+            case "「黃金」的指引":
+                return "/drawable/guide_to_gold.png";
+            case "「抗爭」的指引":
+                return "/drawable/guide_to_resistance.png";
+            case "「繁榮」的指引":
+                return "/drawable/guide_to_prosperity.png";
+            case "「詩文」的指引":
+                return "/drawable/guide_to_ballad.png";
+            case "「勤勞」的指引":
+                return "/drawable/guide_to_diligence.png";
+            case "「風雅」的指引":
+                return "/drawable/guide_of_elegance.png";
+            case "「浮世」的指引":
+                return "/drawable/guide_of_transience.png";
+            case "「天光」的指引":
+                return "/drawable/guide_of_light.png";
+            case "「自由」的哲學":
+                return "/drawable/philosophies_of_freedom.png";
+            case "「黃金」的哲學":
+                return "/drawable/philosophies_of_gold.png";
+            case "「抗爭」的哲學":
+                return "/drawable/philosophies_of_resistance.png";
+            case "「繁榮」的哲學":
+                return "/drawable/philosophies_of_prosperity.png";
+            case "「詩文」的哲學":
+                return "/drawable/philosophies_of_ballad.png";
+            case "「勤勞」的哲學":
+                return "/drawable/philosophies_of_diligence.png";
+            case "「風雅」的哲學":
+                return "/drawable/philosophies_of_elegance.png";
+            case "「浮世」的哲學":
+                return "/drawable/philosophies_of_transience.png";
+            case "「天光」的哲學":
+                return "/drawable/philosophies_of_light.png";
+
+            /** Crystal*/
+            case "燃願瑪瑙碎屑":
+                return "/drawable/agnidus_agate_sliver.png";
+            case "燃願瑪瑙斷片":
+                return "/drawable/agnidus_agate_fragment.png";
+            case "燃願瑪瑙塊":
+                return "/drawable/agnidus_agate_chunk.png";
+            case "燃願瑪瑙":
+                return "/drawable/agnidus_agate_gemstone.png";
+            case "滌淨青金碎屑":
+                return "/drawable/varunada_lazurite_sliver.png";
+            case "滌淨青金斷片":
+                return "/drawable/varunada_lazurite_fragment.png";
+            case "滌淨青金塊":
+                return "/drawable/varunada_lazurite_chunk.png";
+            case "滌淨青金":
+                return "/drawable/varunada_lazurite_gemstone.png";
+            case "最勝紫晶碎屑":
+                return "/drawable/vajrada_amethyst_sliver.png";
+            case "最勝紫晶斷片":
+                return "/drawable/vajrada_amethyst_fragment.png";
+            case "最勝紫晶塊":
+                return "/drawable/vajrada_amethyst_chunk.png";
+            case "最勝紫晶":
+                return "/drawable/vajrada_amethyst_gemstone.png";
+            case "哀敘冰玉碎屑":
+                return "/drawable/shivada_jade_sliver.png";
+            case "哀敘冰玉斷片":
+                return "/drawable/shivada_jade_fragment.png";
+            case "哀敘冰玉塊":
+                return "/drawable/shivada_jade_chunk.png";
+            case "哀敘冰玉":
+                return "/drawable/shivada_jade_gemstone.png";
+            case "自在松石碎屑":
+                return "/drawable/vayuda_turquoise_sliver.png";
+            case "自在松石斷片":
+                return "/drawable/vayuda_turquoise_fragment.png";
+            case "自在松石塊":
+                return "/drawable/vayuda_turquoise_chunk.png";
+            case "自在松石":
+                return "/drawable/vayuda_turquoise_gemstone.png";
+            case "堅牢黃玉碎屑":
+                return "/drawable/prithiva_topaz_sliver.png";
+            case "堅牢黃玉斷片":
+                return "/drawable/prithiva_topaz_fragment.png";
+            case "堅牢黃玉塊":
+                return "/drawable/prithiva_topaz_chunk.png";
+            case "堅牢黃玉":
+                return "/drawable/prithiva_topaz_gemstone.png";
+            case "brilliant_diamond_sliver":
+                return "/drawable/brilliant_diamond_sliver.png";
+            case "brilliant_diamond_fragment":
+                return "/drawable/brilliant_diamond_fragment.png";
+            case "brilliant_diamond_chunk":
+                return "/drawable/brilliant_diamond_chunk.png";
+            case "brilliant_diamond_gemstone":
+                return "/drawable/brilliant_diamond_gemstone.png";
+            case "nagadus_emerald_sliver":
+                return "/drawable/nagadus_emerald_sliver.png";
+            case "nagadus_emerald_fragment":
+                return "/drawable/nagadus_emerald_fragment.png";
+            case "nagadus_emerald_chunk":
+                return "/drawable/nagadus_emerald_chunk.png";
+            case "nagadus_emerald_gemstone":
+                return "/drawable/nagadus_emerald_gemstone.png";
+
+            /** Others*/
+            case "智識之冕":
+                return "/drawable/crown_of_sagehood.png";
+            case "摩拉":
+                return "/drawable/mora.png";
+            case "流浪者的經驗":
+                return "/drawable/wanderers_advice.png";
+            case "冒險家的經驗":
+                return "/drawable/adventurers_experience.png";
+            case "大英雄的經驗":
+                return "/drawable/heros_wit.png";
+            case "精鍛用雜礦":
+                return "/drawable/enchancement_ore.png";
+            case "精鍛用良礦":
+                return "/drawable/fine_enchancement_ore.png";
+            case "精鍛用魔礦":
+                return "/drawable/mystic_enchancement_ore.png";
+            case "祝聖油膏":
+                return "/drawable/sanctifying_unction.png";
+            case "祝聖精華":
+                return "/drawable/sanctifying_essence.png";
+            default:
+                return "/drawable/paimon_lost.png";
+        }
     }
 
     public String getLocaleTeaches (String name, Context context){

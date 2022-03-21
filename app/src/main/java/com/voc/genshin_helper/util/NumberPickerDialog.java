@@ -51,7 +51,7 @@ public class NumberPickerDialog {
         ok.setOnClickListener((v -> {
             /**這邊將值放進OnDialogRespond中*/
             onDialogRespond.onRespond(np.getValue(),XPR);
-            Toast.makeText(activity, String.valueOf(np.getValue()), Toast.LENGTH_SHORT).show();
+            //Toast.makeText(activity, String.valueOf(np.getValue()), Toast.LENGTH_SHORT).show();
             dialog.dismiss();
         }));
         //dialog.getButton(AlertDialog.BUTTON_NEGATIVE)

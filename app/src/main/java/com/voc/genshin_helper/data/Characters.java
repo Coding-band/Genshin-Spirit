@@ -5,7 +5,11 @@ package com.voc.genshin_helper.data;
  * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
  * Copyright © 2022 Xectorda 版權所有
  */
-public class Characters {
+
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class Characters implements Serializable {
     public String name; //名稱
     public String element; //元素
     public int rare; //稀有度

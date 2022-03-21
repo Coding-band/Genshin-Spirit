@@ -60,6 +60,8 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
     private AdapterView.OnItemClickListener mListener;
     private WebView webView ;
     private Activity activity ;
+    private Characters Characters ;
+    private ArrayList<Characters> charactersA = new ArrayList<Characters>();
 
     public CharactersAdapter(Context context, List<Characters> charactersList,Activity activity) {
         this.context = context;
@@ -88,13 +90,8 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
             }
 
         }else if(context instanceof CalculatorUI){
-            if(((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }else{
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }
+            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square, parent, false);
+            evh = new ViewHolder(v, (OnItemClickListener) mListener);
         }
 
         return evh;
@@ -102,18 +99,20 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Characters Characters = charactersList.get(position);
+        this.Characters = charactersList.get(position);
         ItemRss item_rss = new ItemRss();
         int width = 0, height = 0;
         int count = 3;
-        final int radius = 25;
+        final int radius = 50;
         final int margin = 0;
-        final Transformation transformation = new RoundedCornersTransformation(radius, margin,TOP);
+        final Transformation transformation = new RoundedCornersTransformation(radius, margin);
 
 
         final int radius_circ = 360;
         final int margin_circ = 0;
         final Transformation transformation_circ = new RoundedCornersTransformation(radius_circ, margin_circ);
+
+        charactersA.add(Characters);
 
         holder.char_name.setText(Characters.getName());
         holder.char_base_name.setText(Characters.getName());
@@ -129,13 +128,18 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
         //if(Characters.getRare() >3 && Characters.getRare() < 6){holder.char_star.setNumStars(Characters.getRare());holder.char_star.setRating(Characters.getRare());}
 
+        boolean isNight = false;
         // Background of item
+        if (context.getResources().getString(R.string.mode).equals("Night")) {
+            isNight = true;
+        }
+
 
         if(context.getSharedPreferences("user_info",MODE_PRIVATE).getString("curr_ui_grid", "2").equals("2") ){
             switch (Characters.getElement()){
                 case "Anemo" : {
                     holder.char_element.setImageResource(R.drawable.anemo_ico);
-                    if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+                    if(isNight == true){
                         holder.char_bg.setBackgroundResource(R.drawable.anemo_800x1600_dark);
                         Drawable drawable = context.getResources().getDrawable(R.drawable.anemo_800x1600_dark_mask);
                         holder.char_bg.setForeground(drawable);
@@ -149,7 +153,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
                 case "Cryo" : {
                     holder.char_element.setImageResource(R.drawable.cryo_ico);
-                    if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+                    if(isNight == true){
                         holder.char_bg.setBackgroundResource(R.drawable.cryo_800x1600_dark);
                         Drawable drawable = context.getResources().getDrawable(R.drawable.cryo_800x1600_dark_mask);
                         holder.char_bg.setForeground(drawable);
@@ -163,7 +167,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
                 case "Dendro" : {
                     holder.char_element.setImageResource(R.drawable.dendro_ico);
-                    if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+                    if(isNight == true){
                         holder.char_bg.setBackgroundResource(R.drawable.dendro_800x1600_dark);
                         Drawable drawable = context.getResources().getDrawable(R.drawable.dendro_800x1600_dark_mask);
                         holder.char_bg.setForeground(drawable);
@@ -177,7 +181,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
                 case "Electro" : {
                     holder.char_element.setImageResource(R.drawable.electro_ico);
-                    if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+                    if(isNight == true){
                         holder.char_bg.setBackgroundResource(R.drawable.electro_800x1600_dark);
                         Drawable drawable = context.getResources().getDrawable(R.drawable.electro_800x1600_dark_mask);
                         holder.char_bg.setForeground(drawable);
@@ -191,7 +195,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
                 case "Geo" : {
                     holder.char_element.setImageResource(R.drawable.geo_ico);
-                    if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+                    if(isNight == true){
                         holder.char_bg.setBackgroundResource(R.drawable.geo_800x1600_dark);
                         Drawable drawable = context.getResources().getDrawable(R.drawable.geo_800x1600_dark_mask);
                         holder.char_bg.setForeground(drawable);
@@ -205,7 +209,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
                 case "Hydro" : {
                     holder.char_element.setImageResource(R.drawable.hydro_ico);
-                    if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+                    if(isNight == true){
                         holder.char_bg.setBackgroundResource(R.drawable.hydro_800x1600_dark);
                         Drawable drawable = context.getResources().getDrawable(R.drawable.hydro_800x1600_dark_mask);
                         holder.char_bg.setForeground(drawable);
@@ -219,7 +223,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
                 case "Pyro" : {
                     holder.char_element.setImageResource(R.drawable.pyro_ico);
-                    if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+                    if(isNight == true){
                         holder.char_bg.setBackgroundResource(R.drawable.pyro_800x1600_dark);
                         Drawable drawable = context.getResources().getDrawable(R.drawable.pyro_800x1600_dark_mask);
                         holder.char_bg.setForeground(drawable);
@@ -237,7 +241,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
             switch (Characters.getElement()){
                 case "Anemo" : {
                     holder.char_element.setImageResource(R.drawable.anemo_ico);
-                    if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+                    if(isNight == true){
                         holder.char_bg.setBackgroundResource(R.drawable.anemo_800x1000_dark);
                         Drawable drawable = context.getResources().getDrawable(R.drawable.anemo_800x1000_dark_mask);
                         holder.char_bg.setForeground(drawable);
@@ -251,7 +255,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
                 case "Cryo" : {
                     holder.char_element.setImageResource(R.drawable.cryo_ico);
-                    if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+                    if(isNight == true){
                         holder.char_bg.setBackgroundResource(R.drawable.cryo_800x1000_dark);
                         Drawable drawable = context.getResources().getDrawable(R.drawable.cryo_800x1000_dark_mask);
                         holder.char_bg.setForeground(drawable);
@@ -265,7 +269,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
                 case "Dendro" : {
                     holder.char_element.setImageResource(R.drawable.dendro_ico);
-                    if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+                    if(isNight == true){
                         holder.char_bg.setBackgroundResource(R.drawable.dendro_800x1000_dark);
                         Drawable drawable = context.getResources().getDrawable(R.drawable.dendro_800x1000_dark_mask);
                         holder.char_bg.setForeground(drawable);
@@ -279,7 +283,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
                 case "Electro" : {
                     holder.char_element.setImageResource(R.drawable.electro_ico);
-                    if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+                    if(isNight == true){
                         holder.char_bg.setBackgroundResource(R.drawable.electro_800x1000_dark);
                         Drawable drawable = context.getResources().getDrawable(R.drawable.electro_800x1000_dark_mask);
                         holder.char_bg.setForeground(drawable);
@@ -293,7 +297,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
                 case "Geo" : {
                     holder.char_element.setImageResource(R.drawable.geo_ico);
-                    if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+                    if(isNight == true){
                         holder.char_bg.setBackgroundResource(R.drawable.geo_800x1000_dark);
                         Drawable drawable = context.getResources().getDrawable(R.drawable.geo_800x1000_dark_mask);
                         holder.char_bg.setForeground(drawable);
@@ -307,7 +311,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
                 case "Hydro" : {
                     holder.char_element.setImageResource(R.drawable.hydro_ico);
-                    if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+                    if(isNight == true){
                         holder.char_bg.setBackgroundResource(R.drawable.hydro_800x1000_dark);
                         Drawable drawable = context.getResources().getDrawable(R.drawable.hydro_800x1000_dark_mask);
                         holder.char_bg.setForeground(drawable);
@@ -321,7 +325,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
                 case "Pyro" : {
                     holder.char_element.setImageResource(R.drawable.pyro_ico);
-                    if(AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES){
+                    if(isNight == true){
                         holder.char_bg.setBackgroundResource(R.drawable.pyro_800x1000_dark);
                         Drawable drawable = context.getResources().getDrawable(R.drawable.pyro_800x1000_dark_mask);
                         holder.char_bg.setForeground(drawable);
@@ -354,31 +358,39 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         if(context instanceof MainActivity){
 
             if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                if(width_curr / ((int)width_curr/size_per_img+1) > size_per_img*0.75){
+                if(width_curr / ((int)width_curr/size_per_img+1) > size_per_img){
                     width = (width_curr) / ((int)width_curr/size_per_img+1);
-                    height = (width * 52) / 32;
+                    height = (width * 14) / 8;
+                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 8;
+
                 }else{
                     width = size_per_img;
-                    height = (width * 52) / 32;
+                    height = (width * 14) / 8;
+                    holder.char_name_ll.getLayoutParams().width = size_per_img;
+                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 8;
                 }
             } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                if(width_curr / ((int)width_curr/size_per_img_sq+1) > size_per_img_sq*0.75){
+                if(width_curr / ((int)width_curr/size_per_img_sq+1) > size_per_img_sq){
                     width = (width_curr) / ((int)width_curr/size_per_img_sq+1);
                     height = (width_curr) / ((int)width_curr/size_per_img_sq+1);
+                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 5;
                 }else{
                     width = size_per_img_sq;
                     height = size_per_img_sq;
+                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 5;
                 }
             }
 
 
         }else if(context instanceof CalculatorUI){
-            if(width_curr / ((int)width_curr/size_per_img_sq+1) > size_per_img_sq*0.75){
+            if(width_curr / ((int)width_curr/size_per_img_sq+1) > size_per_img_sq){
                 width = (width_curr) / ((int)width_curr/size_per_img_sq+1);
                 height = (width_curr) / ((int)width_curr/size_per_img_sq+1);
+                holder.char_name_ll.getLayoutParams().height = (width * 2) / 5;
             }else{
                 width = size_per_img_sq;
                 height = size_per_img_sq;
+                holder.char_name_ll.getLayoutParams().height = (width * 2) / 5;
             }
         }
 
@@ -459,6 +471,8 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                 }
         );
 
+        System.out.println("ITEM WIDTH * HEIGH = " + width +"*" + height +" || SCREEN WIDTH * HEIGH = "+ width_curr +"*" + height_curr+" || MASK WIDTH * HEIGH = "+ holder.char_bg.getWidth() +"*" + holder.char_bg.getHeight());
+
     }
 
     @Override
@@ -472,6 +486,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         //public LinearLayout char_nl;
         //public RatingBar char_star;
         public ConstraintLayout char_bg;
+        public LinearLayout char_name_ll;
 
         public ViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
@@ -486,15 +501,29 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
             //char_nl = itemView.findViewById(R.id.char_nl);
             char_bg = itemView.findViewById(R.id.char_bg);
             char_press_mask = itemView.findViewById(R.id.char_press_mask);
+            char_name_ll = itemView.findViewById(R.id.char_name_ll);
 
             char_press_mask.startAnimation(buttonClick);
 
-            char_icon.setOnClickListener(new View.OnClickListener() {
+            char_press_mask.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    if (context instanceof MainActivity){Log.wtf("YES","IT's");
+                        if (charactersList.get(getAdapterPosition()).getName().equals(char_base_name.getText())){
+                            (((MainActivity) context)).runSipTikCal(charactersA.get(getAdapterPosition()),activity);
+                        }
+
+                    }
+                    return false;
+                }
+            });
+
+            char_press_mask.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Log.wtf("is context instanceof MainActivity ?",context.getPackageName());
                     if (context instanceof MainActivity){Log.wtf("YES","IT's");
-                        (((MainActivity) context)).startInfo(String.valueOf(char_base_name.getText()));
+                        (((MainActivity) context)).startInfo(String.valueOf(char_base_name.getText()),activity);
 
                     }
                     else if (context instanceof CalculatorUI){Log.wtf("YES","IT's");

@@ -11,6 +11,12 @@
         <item name="android:windowFullscreen">true</item>
     </style>
 
+    <style name="rareStar" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/star_24</item>
+        <item name="android:minHeight">24dp</item>
+        <item name="android:maxHeight">48dp</item>
+    </style>
+
     <style name="NoTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/theme_color</item>
         <item name="colorPrimaryDark">@color/theme_color</item>

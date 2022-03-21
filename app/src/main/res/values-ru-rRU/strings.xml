@@ -919,6 +919,11 @@
     <string name="buff_cal_thx">✧ Особая благодарность dfsly\n✧ Кто разрешил продолжение Genshin Calculator как встроенную функцию</string>
     <string name="buff_calcluator">Калькулятор баффов</string>
 
+    <!-- add in 20220304 -->
+    <string name="rectangle" >прямоугольник</string>
+    <string name="square" >квадратный</string>
+    <string name="char_suit_on" >Сменить наряд</string>
+
 
 </resources>
 

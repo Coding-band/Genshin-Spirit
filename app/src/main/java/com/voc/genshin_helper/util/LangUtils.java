@@ -21,6 +21,7 @@ public class LangUtils {
     private static final int ru_RU = 3;
     private static final int zh_CH = 1;
     private static final int zh_HK = 0;
+    private static final int uk_UA = 6;
 
     public static Locale getCurrentLang(int i) {
         switch (i) {
@@ -38,6 +39,8 @@ public class LangUtils {
                 return Locale.JAPAN;
             case 5:
                 return Locale.FRANCE;
+            case 6:
+                return new Locale("uk", "UA");
             default:
                 return Locale.US;
         }

@@ -15,6 +15,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.content.res.ColorStateList;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
@@ -436,7 +437,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                         CalculatorProcess calculatorProcess = new CalculatorProcess();
                         calculatorProcess.setVP(viewPager,viewPager3);
                         calculatorProcess.setDBName(dataSheetName);
-                        calculatorProcess.setup(context);
+                        calculatorProcess.setup(context,activity);
                         calculatorProcess.char_setup(choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList,"READ");
                         calculatorProcess.artifact_setup(artifactChoosedNameList,artifactChoosedBeforeLvlList,artifactChoosedAfterLvlList,artifactChoosedIsCal,artifactChoosedFollowList,artifactChoosedRare,artifactChoosedType,artifactChoosedIdList,"READ");
                         calculatorProcess.weapon_setup(weaponChoosedNameList,weaponChoosedBeforeLvlList,weaponChoosedAfterLvlList,weaponChoosedBeforeBreakLvlList,weaponChoosedAfterBreakLvlList,weaponChoosedIsCal,weaponChoosedBeforeBreakUPLvlList,weaponChoosedAfterBreakUPLvlList,weaponChoosedFollowList,weaponChoosedRare,weaponChoosedIdList,"READ");
@@ -474,6 +475,15 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         mList_char = viewPager0.findViewById(R.id.main_list);
         mCharAdapter = new CharactersAdapter(context, charactersList,activity);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 3);
+        DisplayMetrics displayMetrics_a = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics_a);
+        int height_a = displayMetrics_a.heightPixels;
+        int width_a = displayMetrics_a.widthPixels;
+        if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            mLayoutManager = new GridLayoutManager(context,  width_a/400+1);
+        }else{
+            mLayoutManager = new GridLayoutManager(context,  3);
+        }
         LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
         paramsMsg.gravity = Gravity.CENTER;
         mList_char.setLayoutManager(mLayoutManager);
@@ -705,9 +715,16 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
     private void weapon_setup() {
         mList_weapon = viewPager1.findViewById(R.id.main_list);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 3);
-        mLayoutManager = new GridLayoutManager(context, 3);
         mWeaponAdapter = new WeaponsAdapter(context,weaponsList,activity);
-
+        DisplayMetrics displayMetrics_a = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics_a);
+        int height_a = displayMetrics_a.heightPixels;
+        int width_a = displayMetrics_a.widthPixels;
+        if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            mLayoutManager = new GridLayoutManager(context,  width_a/400+1);
+        }else{
+            mLayoutManager = new GridLayoutManager(context,  3);
+        }
         LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
         paramsMsg.gravity = Gravity.CENTER;
         mList_weapon.setLayoutManager(mLayoutManager);
@@ -916,6 +933,15 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         mList_artifact = viewPager2.findViewById(R.id.main_list);
         mArtifactAdapter = new ArtifactsAdapter(context, artifactsList,activity);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 3);
+        DisplayMetrics displayMetrics_a = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics_a);
+        int height_a = displayMetrics_a.heightPixels;
+        int width_a = displayMetrics_a.widthPixels;
+        if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            mLayoutManager = new GridLayoutManager(context,  width_a/400+1);
+        }else{
+            mLayoutManager = new GridLayoutManager(context,  3);
+        }
         LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
         paramsMsg.gravity = Gravity.CENTER;
         mList_artifact.setLayoutManager(mLayoutManager);
@@ -1454,7 +1480,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                     }
                 }
                 calculatorProcess.setDBName(dataSheetName);
-                calculatorProcess.setup(context);
+                calculatorProcess.setup(context,activity);
                 calculatorProcess.char_setup(choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList,"WRITE");
                 calculatorProcess.artifact_setup(artifactChoosedNameList,artifactChoosedBeforeLvlList,artifactChoosedAfterLvlList,artifactChoosedIsCal,artifactChoosedFollowList,artifactChoosedRare,artifactChoosedType,artifactChoosedIdList,"READ");
                 calculatorProcess.weapon_setup(weaponChoosedNameList,weaponChoosedBeforeLvlList,weaponChoosedAfterLvlList,weaponChoosedBeforeBreakLvlList,weaponChoosedAfterBreakLvlList,weaponChoosedIsCal,weaponChoosedBeforeBreakUPLvlList,weaponChoosedAfterBreakUPLvlList,weaponChoosedFollowList,weaponChoosedRare,weaponChoosedIdList,"READ");
@@ -1477,7 +1503,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                 addCharIntoListUI(CharName_BASE,before_lvl,after_lvl,before_break,after_break,skill1_before,skill1_after,skill2_before,skill2_after,skill3_before,skill3_after,isCal,menu_break_lvl_before_switch.isChecked(),menu_break_lvl_after_switch.isChecked(),XPR,k);
 
                 calculatorProcess.setDBName(dataSheetName);
-                calculatorProcess.setup(context);
+                calculatorProcess.setup(context,activity);
                 calculatorProcess.char_setup(choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList,"WRITE");
                 calculatorProcess.artifact_setup(artifactChoosedNameList,artifactChoosedBeforeLvlList,artifactChoosedAfterLvlList,artifactChoosedIsCal,artifactChoosedFollowList,artifactChoosedRare,artifactChoosedType,artifactChoosedIdList,"READ");
                 calculatorProcess.weapon_setup(weaponChoosedNameList,weaponChoosedBeforeLvlList,weaponChoosedAfterLvlList,weaponChoosedBeforeBreakLvlList,weaponChoosedAfterBreakLvlList,weaponChoosedIsCal,weaponChoosedBeforeBreakUPLvlList,weaponChoosedAfterBreakUPLvlList,weaponChoosedFollowList,weaponChoosedRare,weaponChoosedIdList,"READ");
@@ -1890,7 +1916,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                 }
 
                 calculatorProcess.setDBName(dataSheetName);
-                calculatorProcess.setup(context);
+                calculatorProcess.setup(context,activity);
                 calculatorProcess.char_setup(choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList,"WRITE");
                 calculatorProcess.artifact_setup(artifactChoosedNameList,artifactChoosedBeforeLvlList,artifactChoosedAfterLvlList,artifactChoosedIsCal,artifactChoosedFollowList,artifactChoosedRare,artifactChoosedType,artifactChoosedIdList,"READ");
                 calculatorProcess.weapon_setup(weaponChoosedNameList,weaponChoosedBeforeLvlList,weaponChoosedAfterLvlList,weaponChoosedBeforeBreakLvlList,weaponChoosedAfterBreakLvlList,weaponChoosedIsCal,weaponChoosedBeforeBreakUPLvlList,weaponChoosedAfterBreakUPLvlList,weaponChoosedFollowList,weaponChoosedRare,weaponChoosedIdList,"READ");
@@ -1911,7 +1937,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
                 addWeaponIntoListUI(CharName_BASE,before_lvl,after_lvl,before_break,after_break,isCal,menu_break_lvl_before_switch.isChecked(),menu_break_lvl_after_switch.isChecked(),XPR,k,rare,follow_char_tmp);
                 calculatorProcess.setDBName(dataSheetName);
-                calculatorProcess.setup(context);
+                calculatorProcess.setup(context,activity);
                 calculatorProcess.char_setup(choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList,"WRITE");
                 calculatorProcess.artifact_setup(artifactChoosedNameList,artifactChoosedBeforeLvlList,artifactChoosedAfterLvlList,artifactChoosedIsCal,artifactChoosedFollowList,artifactChoosedRare,artifactChoosedType,artifactChoosedIdList,"READ");
                 calculatorProcess.weapon_setup(weaponChoosedNameList,weaponChoosedBeforeLvlList,weaponChoosedAfterLvlList,weaponChoosedBeforeBreakLvlList,weaponChoosedAfterBreakLvlList,weaponChoosedIsCal,weaponChoosedBeforeBreakUPLvlList,weaponChoosedAfterBreakUPLvlList,weaponChoosedFollowList,weaponChoosedRare,weaponChoosedIdList,"READ");
@@ -2412,7 +2438,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                     cal_choosed_list.addView(char_view);
                 }
                 calculatorProcess.setDBName(dataSheetName);
-                calculatorProcess.setup(context);
+                calculatorProcess.setup(context,activity);
                 calculatorProcess.char_setup(choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList,"WRITE");
                 calculatorProcess.artifact_setup(artifactChoosedNameList,artifactChoosedBeforeLvlList,artifactChoosedAfterLvlList,artifactChoosedIsCal,artifactChoosedFollowList,artifactChoosedRare,artifactChoosedType,artifactChoosedIdList,"READ");
                 calculatorProcess.weapon_setup(weaponChoosedNameList,weaponChoosedBeforeLvlList,weaponChoosedAfterLvlList,weaponChoosedBeforeBreakLvlList,weaponChoosedAfterBreakLvlList,weaponChoosedIsCal,weaponChoosedBeforeBreakUPLvlList,weaponChoosedAfterBreakUPLvlList,weaponChoosedFollowList,weaponChoosedRare,weaponChoosedIdList,"READ");
@@ -2431,7 +2457,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
                 addArtifactIntoListUI(CharName_BASE,before_lvl,after_lvl,isCal,XPR,k,rare,follow_char_tmp,tmp_artifact_type,position_tmp);
                 calculatorProcess.setDBName(dataSheetName);
-                calculatorProcess.setup(context);
+                calculatorProcess.setup(context,activity);
                 calculatorProcess.char_setup(choosedNameList,choosedBeforeLvlList,choosedAfterLvlList,choosedBeforeBreakLvlList,choosedAfterBreakLvlList,choosedBeforeSkill1LvlList,choosedAfterSkill1LvlList,choosedBeforeSkill2LvlList,choosedAfterSkill2LvlList,choosedBeforeSkill3LvlList,choosedAfterSkill3LvlList,choosedIsCal,choosedBeforeBreakUPLvlList,choosedAfterBreakUPLvlList,"WRITE");
                 calculatorProcess.artifact_setup(artifactChoosedNameList,artifactChoosedBeforeLvlList,artifactChoosedAfterLvlList,artifactChoosedIsCal,artifactChoosedFollowList,artifactChoosedRare,artifactChoosedType,artifactChoosedIdList,"READ");
                 calculatorProcess.weapon_setup(weaponChoosedNameList,weaponChoosedBeforeLvlList,weaponChoosedAfterLvlList,weaponChoosedBeforeBreakLvlList,weaponChoosedAfterBreakLvlList,weaponChoosedIsCal,weaponChoosedBeforeBreakUPLvlList,weaponChoosedAfterBreakUPLvlList,weaponChoosedFollowList,weaponChoosedRare,weaponChoosedIdList,"READ");

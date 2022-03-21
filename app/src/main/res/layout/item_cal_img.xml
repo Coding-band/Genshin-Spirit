@@ -5,39 +5,66 @@
   ~ Copyright © 2022 Xectorda 版權所有
   -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="wrap_content"
+    android:layout_width="128dp"
     android:layout_height="wrap_content"
     android:layout_centerInParent="false"
     android:orientation="vertical">
 
+    <LinearLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="128dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/item_cal_img"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true" />
+
+        <TextView
+            android:id="@+id/item_cal_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:text="999,999,999"
+            android:textAlignment="center"
+            android:textColor="@color/tv_color"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/item_weekly_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="4dp"
+            android:singleLine="true"
+            android:textAlignment="center"
+            android:textColor="@color/tv_color"
+            android:textSize="12sp"
+            android:visibility="gone" />
+    </LinearLayout>
+
     <ImageView
-        android:id="@+id/item_cal_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:adjustViewBounds="true" />
+        android:id="@+id/item_press_mask"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="@drawable/item_selected_circle_effect"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <TextView
-        android:id="@+id/item_cal_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="4dp"
-        android:text="999,999,999"
-        android:textAlignment="center"
-        android:textColor="@color/tv_color"
-        android:textSize="16sp" />
-
-    <TextView
-        android:id="@+id/item_weekly_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="4dp"
-        android:singleLine="true"
-        android:textAlignment="center"
-        android:textColor="@color/tv_color"
-        android:textSize="12sp" />
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -69,6 +69,7 @@ import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.BuildConfig;
 import com.voc.genshin_helper.R;
+import com.voc.genshin_helper.buff.SipTikCal;
 import com.voc.genshin_helper.data.Artifacts;
 import com.voc.genshin_helper.data.ArtifactsAdapter;
 import com.voc.genshin_helper.data.Characters;
@@ -188,6 +189,7 @@ public class MainActivity extends AppCompatActivity {
     RadioButton theme_default;
 
     Switch other_exit_confirm ;
+    Switch other_char_suit ;
 
     String[] langList ;
     String[] serverList ;
@@ -1100,7 +1102,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Translate
-        langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp),getString(R.string.fr_fr)};
+        langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp),getString(R.string.fr_fr),getString(R.string.uk_ua)};
         ArrayAdapter lang_aa = new ArrayAdapter(context,R.layout.spinner_item,langList);
         lang_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
@@ -1155,6 +1157,13 @@ public class MainActivity extends AppCompatActivity {
                         editor.apply();
                         LangUtils.getAttachBaseContext(context,position);
                         recreate();
+                    }else if(position == 6){
+                        editor.putString("curr_lang","uk-UA");
+                        editor.putInt("curr_lang_pos",position);
+                        editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
+                        editor.apply();
+                        LangUtils.getAttachBaseContext(context,position);
+                        recreate();
                     }
                 }
                 check_spinner = check_spinner +1;
@@ -1167,7 +1176,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         // List_Grid
-        gridList = new String[]{"2","3"};
+
+        gridList = new String[]{context.getString(R.string.rectangle),context.getString(R.string.square)};
         ArrayAdapter grid_aa = new ArrayAdapter(context,R.layout.spinner_item,gridList);
         grid_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
@@ -1403,6 +1413,22 @@ public class MainActivity extends AppCompatActivity {
                     editor.apply();
                 }else if(other_exit_confirm.isChecked() == true){
                     editor.putBoolean("isExitConfirmEnable",true);
+                    editor.apply();
+                }
+            }
+        });
+        //Other -> Change Suits
+        other_char_suit = viewPager4.findViewById(R.id.other_char_suit);
+        boolean isCharChangeEventSuit = sharedPreferences.getBoolean("isCharChangeEventSuit",false);
+        other_char_suit.setChecked(isCharChangeEventSuit);
+        other_char_suit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(other_char_suit.isChecked() == false){
+                    editor.putBoolean("isCharChangeEventSuit",false);
+                    editor.apply();
+                }else if(other_char_suit.isChecked() == true){
+                    editor.putBoolean("isCharChangeEventSuit",true);
                     editor.apply();
                 }
             }
@@ -1991,10 +2017,14 @@ public class MainActivity extends AppCompatActivity {
             view.setLayoutParams (param);
         }
     }
-    public void startInfo (String name){
+    public void startInfo (String name, Activity activity){
         Characters_Info cif = new Characters_Info();
-        Log.wtf("YES","IT's two");
-        cif.setup(String.valueOf(name),context);
+        cif.setup(String.valueOf(name),context,activity);
+    }
+    public void runSipTikCal (Characters characters, Activity activity){
+        Intent intent = new Intent(this,SipTikCal.class);
+        intent.putExtra("characters",characters);
+        startActivity(intent);
     }
 
     public void cbg() {
@@ -2244,6 +2274,8 @@ public class MainActivity extends AppCompatActivity {
                 editor.putString("curr_lang","ja-JP"); editor.putInt("curr_lang_pos",4);x=4;
             }else if(tag.contains("fr-")){
                 editor.putString("curr_lang","ft-FR"); editor.putInt("curr_lang_pos",5);x=5;
+            }else if(tag.contains("uk-")){
+                editor.putString("curr_lang","uk-UA"); editor.putInt("curr_lang_pos",6);x=6;
             }else{
                 editor.putString("curr_lang","en-US"); editor.putInt("curr_lang_pos",2);x=2;
             }

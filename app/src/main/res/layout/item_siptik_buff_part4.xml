@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2022 Xectorda 版權所有
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView53"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/weapon_stat_atk"
+                    android:textAlignment="center"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/siptik_atk_et"
+                    style="@style/Widget.AppCompat.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:digits="0123456789"
+                    android:editable="true"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="15"
+                    android:text="0"
+                    android:textColor="@color/tv_color"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView54"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/weapon_stat_HP"
+                    android:textAlignment="center"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/siptik_hp_et"
+                    style="@style/Widget.AppCompat.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:digits="0123456789"
+                    android:editable="true"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="15"
+                    android:text="0"
+                    android:textColor="@color/tv_color"
+                    android:visibility="visible" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView52"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/weapon_stat_DEF"
+                    android:textAlignment="center"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/siptik_def_et"
+                    style="@style/Widget.AppCompat.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:digits="0123456789"
+                    android:editable="true"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="15"
+                    android:text="0"
+                    android:textColor="@color/tv_color"
+                    android:visibility="visible" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView55"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/weapon_stat_CritRateP"
+                    android:textAlignment="center"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/siptik_crit_rate_et"
+                    style="@style/Widget.AppCompat.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:digits="0123456789"
+                    android:editable="true"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="15"
+                    android:text="0"
+                    android:textColor="@color/tv_color"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView56"
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="@string/weapon_stat_CritDMGP"
+                    android:textAlignment="center"
+                    android:textSize="14sp" />
+
+                <EditText
+                    android:id="@+id/siptik_crit_dmg_et"
+                    style="@style/Widget.AppCompat.EditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:digits="0123456789"
+                    android:editable="true"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:maxLength="15"
+                    android:text="0"
+                    android:textColor="@color/tv_color"
+                    android:visibility="visible" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView59"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/weapon_stat_EnRechP"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/siptik_enrech_et"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:digits="0123456789"
+                android:editable="true"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="15"
+                android:text="0"
+                android:textAlignment="viewStart"
+                android:textColor="@color/tv_color"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView58"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/weapon_stat_EleMas"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/siptik_elemas_et"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:digits="0123456789"
+                android:editable="true"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="15"
+                android:text="0"
+                android:textColor="@color/tv_color"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView60"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/weapon_stat_EleDMGP_Electro"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/siptik_element_dmg_et1"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:digits="0123456789"
+                android:editable="true"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="15"
+                android:text="0"
+                android:textColor="@color/tv_color"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView61"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/weapon_stat_EleDMGP_Pyro"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/siptik_element_dmg_et2"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:digits="0123456789"
+                android:editable="true"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="15"
+                android:text="0"
+                android:textColor="@color/tv_color"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView62"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/weapon_stat_EleDMGP_Hydro"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/siptik_element_dmg_et3"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:digits="0123456789"
+                android:editable="true"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="15"
+                android:text="0"
+                android:textColor="@color/tv_color"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView63"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/weapon_stat_EleDMGP_Cryo"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/siptik_element_dmg_et4"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:digits="0123456789"
+                android:editable="true"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="15"
+                android:text="0"
+                android:textColor="@color/tv_color"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView64"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/weapon_stat_EleDMGP_Anemo"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/siptik_element_dmg_et5"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:digits="0123456789"
+                android:editable="true"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="15"
+                android:text="0"
+                android:textColor="@color/tv_color"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView65"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/weapon_stat_EleDMGP_Geo"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/siptik_element_dmg_et6"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:digits="0123456789"
+                android:editable="true"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="15"
+                android:text="0"
+                android:textColor="@color/tv_color"
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView66"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/weapon_stat_PhyDMGP"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/siptik_element_dmg_et7"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:digits="0123456789"
+                android:editable="true"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="15"
+                android:text="0"
+                android:textColor="@color/tv_color"
+                android:visibility="visible" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/textView67"
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/weapon_stat_EleDMGP_Dendor"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <EditText
+                android:id="@+id/siptik_element_dmg_et10"
+                style="@style/Widget.AppCompat.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:digits="0123456789"
+                android:editable="true"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="15"
+                android:text="0"
+                android:textColor="@color/tv_color"
+                android:visibility="visible" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

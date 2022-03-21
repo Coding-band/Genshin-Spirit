@@ -9,7 +9,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:background="@color/page_bg" android:layout_width="match_parent" android:layout_height="wrap_content">
     <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
-        <androidx.constraintlayout.widget.ConstraintLayout android:layout_gravity="center" android:orientation="vertical" android:id="@+id/item_bg" android:layout_width="96dp" android:layout_height="96dp" android:layout_margin="8dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/item_bg"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:orientation="vertical"
+            android:visibility="gone">
 
             <ImageView
                 android:id="@+id/item_img"
@@ -23,9 +31,37 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/klee_ico" />
-            <LinearLayout android:orientation="vertical" android:id="@+id/item_nl" android:background="@drawable/bg_rare5_char" android:layout_width="0dp" android:layout_height="wrap_content" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="1" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent" app:layout_constraintVertical_bias="1">
-                <RatingBar android:layout_gravity="center_horizontal" android:id="@+id/item_star" android:layout_width="wrap_content" android:layout_height="wrap_content" android:numStars="5" android:rating="5" android:stepSize="0.1" android:isIndicator="true" android:progressTint="#ffff00" style="?android:attr/ratingBarStyleSmall"/>
-                <TextView android:id="@+id/item_base_name" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content"/>
+
+            <LinearLayout
+                android:id="@+id/item_nl"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rare5_char"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="1">
+
+                <RatingBar
+                    android:id="@+id/item_star"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:progressTint="#ffff00"
+                    android:rating="5"
+                    android:stepSize="0.1" />
+
+                <TextView
+                    android:id="@+id/item_base_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
             </LinearLayout>
 
             <ImageView
