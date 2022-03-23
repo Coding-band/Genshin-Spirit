@@ -944,6 +944,7 @@
     <string name="developer">デベロッパー</string>
     <string name="buff_cal_thx">✧インライン関数としてGenshinCalculatorの継続を許可してくれたdfslylz \n✧に感謝します</string>
     <string name="buff_calcluator">バフ計算機</string>
+    <string name="ui_design">UIデザイン</string>
 
     <!-- add in 20220304 -->
     <string name="rectangle" >長方形</string>

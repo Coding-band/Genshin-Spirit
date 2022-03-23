@@ -193,7 +193,7 @@
                                 android:id="@+id/birth_char_tv"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/jf_openhuninn"
+                                android:fontFamily="@font/genshin_font"
                                 android:text="@string/klee"
                                 android:textAlignment="center"
                                 android:textSize="24sp" />
@@ -202,7 +202,7 @@
                                 android:id="@+id/birth_char_date"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/jf_openhuninn"
+                                android:fontFamily="@font/genshin_font"
                                 android:text="07/27"
                                 android:textAlignment="center"
                                 android:textSize="24sp" />

@@ -62,7 +62,7 @@
             android:layout_margin="4dp"
             android:layout_weight="1"
             android:adjustViewBounds="false"
-            app:srcCompat="@drawable/pyro" />
+            app:srcCompat="@drawable/pyro_ico" />
 
         <ImageView
             android:id="@+id/hydro_ico"
@@ -71,7 +71,7 @@
             android:layout_margin="4dp"
             android:layout_weight="1"
             android:adjustViewBounds="false"
-            app:srcCompat="@drawable/hydro" />
+            app:srcCompat="@drawable/hydro_ico" />
 
         <ImageView
             android:id="@+id/anemo_ico"
@@ -80,7 +80,7 @@
             android:layout_margin="4dp"
             android:layout_weight="1"
             android:adjustViewBounds="false"
-            app:srcCompat="@drawable/anemo" />
+            app:srcCompat="@drawable/anemo_ico" />
 
         <ImageView
             android:id="@+id/electro_ico"
@@ -89,7 +89,7 @@
             android:layout_margin="4dp"
             android:layout_weight="1"
             android:adjustViewBounds="false"
-            app:srcCompat="@drawable/electro" />
+            app:srcCompat="@drawable/electro_ico" />
 
         <ImageView
             android:id="@+id/dendor_ico"
@@ -98,7 +98,7 @@
             android:layout_margin="4dp"
             android:layout_weight="1"
             android:adjustViewBounds="false"
-            app:srcCompat="@drawable/dendro" />
+            app:srcCompat="@drawable/dendro_ico" />
 
         <ImageView
             android:id="@+id/cryo_ico"
@@ -107,7 +107,7 @@
             android:layout_margin="4dp"
             android:layout_weight="1"
             android:adjustViewBounds="false"
-            app:srcCompat="@drawable/cryo" />
+            app:srcCompat="@drawable/cryo_ico" />
 
         <ImageView
             android:id="@+id/geo_ico"
@@ -116,7 +116,7 @@
             android:layout_margin="4dp"
             android:layout_weight="1"
             android:adjustViewBounds="false"
-            app:srcCompat="@drawable/geo" />
+            app:srcCompat="@drawable/geo_ico" />
     </LinearLayout>
 
     <TextView
@@ -190,8 +190,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:isIndicator="false"
         android:numStars="5"
-        android:progressTint="#FFEB3B"
+        android:progressDrawable="@drawable/rating_bar"
         android:rating="0"
         android:stepSize="1" />
 

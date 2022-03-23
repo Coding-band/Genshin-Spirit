@@ -743,7 +743,7 @@
                         android:layout_gravity="center"
                         android:layout_marginTop="8dp"
                         android:background="@drawable/bg_kwang_light"
-                        android:fontFamily="@font/jf_openhuninn"
+                        android:fontFamily="@font/genshin_font"
                         android:padding="8dp"
                         android:text="Changelog" />
 

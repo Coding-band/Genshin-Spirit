@@ -26,8 +26,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:isIndicator="false"
         android:numStars="5"
-        android:progressTint="#ffeb3b"
+        android:progressDrawable="@drawable/rating_bar"
         android:rating="0"
         android:stepSize="1" />
 

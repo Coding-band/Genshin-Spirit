@@ -10,6 +10,7 @@ plugins {
 
 android {
     compileSdkVersion 32
+    buildToolsVersion "32.0.0"
     def ver
     def verN
     defaultConfig {

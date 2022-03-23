@@ -11,7 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@color/page_bg"
-        android:fontFamily="@font/jf_openhuninn"
+        android:fontFamily="@font/genshin_font"
         android:padding="8dp"
         android:text="Changelog"
         android:textAlignment="center"

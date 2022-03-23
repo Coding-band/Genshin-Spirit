@@ -17,6 +17,7 @@ import android.text.Html;
 import android.text.PrecomputedText;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
@@ -28,6 +29,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
+import androidx.gridlayout.widget.GridLayout;
 
 import com.squareup.picasso.Picasso;
 import com.voc.genshin_helper.R;
@@ -146,19 +148,26 @@ public class Characters_Info {
     String[] main_artifacts1 = {};
     String[] main_artifacts2 = {};
     String[] main_artifacts3 = {};
+    String[] main_artifacts4 = {};
+    String[] main_artifacts5 = {};
 
     String[] support_artifacts1 = {};
     String[] support_artifacts2 = {};
     String[] support_artifacts3 = {};
+    String[] support_artifacts4 = {};
+    String[] support_artifacts5 = {};
 
     String[] util_artifacts1 = {};
     String[] util_artifacts2 = {};
     String[] util_artifacts3 = {};
+    String[] util_artifacts4 = {};
+    String[] util_artifacts5 = {};
 
     String[] team1 = {};
     String[] team2 = {};
     String[] team3 = {};
     String[] team4 = {};
+    String[] team5 = {};
 
     /** https://stackoverflow.com/questions/45247927/how-to-parse-json-object-inside-json-object-in-java */
     public void JsonToStr (String str , String str_dps){
@@ -273,6 +282,16 @@ public class Characters_Info {
                         main_artifacts3 = art3_temp.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
                     }
 
+                    if(jsonObjectDps.has("dps_art4")) {
+                        JSONArray art4_temp = jsonObjectDps.getJSONArray("dps_art4");
+                        main_artifacts4 = art4_temp.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
+                    }
+
+                    if(jsonObjectDps.has("dps_art5")) {
+                        JSONArray art5_temp = jsonObjectDps.getJSONArray("dps_art5");
+                        main_artifacts5 = art5_temp.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
+                    }
+
                     if(jsonObjectDps.has("sup_dps_art1")) {
                         JSONArray art1_temp = jsonObjectDps.getJSONArray("sup_dps_art1");
                         support_artifacts1 = art1_temp.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
@@ -284,6 +303,14 @@ public class Characters_Info {
                     if(jsonObjectDps.has("sup_dps_art3")) {
                         JSONArray art3_temp = jsonObjectDps.getJSONArray("sup_dps_art3");
                         support_artifacts3 = art3_temp.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
+                    }
+                    if(jsonObjectDps.has("sup_dps_art4")) {
+                        JSONArray art4_temp = jsonObjectDps.getJSONArray("sup_dps_art4");
+                        support_artifacts4 = art4_temp.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
+                    }
+                    if(jsonObjectDps.has("sup_dps_art5")) {
+                        JSONArray art5_temp = jsonObjectDps.getJSONArray("sup_dps_art5");
+                        support_artifacts5 = art5_temp.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
                     }
 
                     if(jsonObjectDps.has("util_art1")) {
@@ -297,6 +324,14 @@ public class Characters_Info {
                     if(jsonObjectDps.has("util_art3")) {
                         JSONArray art3_temp = jsonObjectDps.getJSONArray("util_art3");
                         util_artifacts3 = art3_temp.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
+                    }
+                    if(jsonObjectDps.has("util_art4")) {
+                        JSONArray art4_temp = jsonObjectDps.getJSONArray("util_art4");
+                        util_artifacts4 = art4_temp.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
+                    }
+                    if(jsonObjectDps.has("util_art5")) {
+                        JSONArray art5_temp = jsonObjectDps.getJSONArray("util_art5");
+                        util_artifacts5 = art5_temp.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
                     }
 
                     if(jsonObjectDps.has("team1")) {
@@ -313,8 +348,12 @@ public class Characters_Info {
                     }
 
                     if(jsonObjectDps.has("team4")) {
-                        JSONArray art3_temp = jsonObjectDps.getJSONArray("team4");
-                        team4 = art3_temp.toString().replace("[", "").replace("]", "").replace("\"","").replace(" ", "XPR").replace(",", " ").split(" ");
+                        JSONArray art4_temp = jsonObjectDps.getJSONArray("team4");
+                        team4 = art4_temp.toString().replace("[", "").replace("]", "").replace("\"","").replace(" ", "XPR").replace(",", " ").split(" ");
+                    }
+                    if(jsonObjectDps.has("team5")) {
+                        JSONArray art5_temp = jsonObjectDps.getJSONArray("team5");
+                        team5 = art5_temp.toString().replace("[", "").replace("]", "").replace("\"","").replace(" ", "XPR").replace(",", " ").split(" ");
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -448,20 +487,26 @@ public class Characters_Info {
         TextView char_sof6_normal = view.findViewById(R.id.info_sof6_normal);
 
         /** Method of advice */
-        LinearLayout advice_main_weapon_ll = view.findViewById(R.id.advice_main_weapon_ll);
+        GridLayout advice_main_weapon_ll = view.findViewById(R.id.advice_main_weapon_ll);
         LinearLayout advice_main_art_ll1 = view.findViewById(R.id.advice_main_art_ll1);
         LinearLayout advice_main_art_ll2 = view.findViewById(R.id.advice_main_art_ll2);
         LinearLayout advice_main_art_ll3 = view.findViewById(R.id.advice_main_art_ll3);
+        LinearLayout advice_main_art_ll4 = view.findViewById(R.id.advice_main_art_ll4);
+        LinearLayout advice_main_art_ll5 = view.findViewById(R.id.advice_main_art_ll5);
 
-        LinearLayout advice_support_weapon_ll = view.findViewById(R.id.advice_support_weapon_ll);
+        GridLayout advice_support_weapon_ll = view.findViewById(R.id.advice_support_weapon_ll);
         LinearLayout advice_support_art_ll1 = view.findViewById(R.id.advice_support_art_ll1);
         LinearLayout advice_support_art_ll2 = view.findViewById(R.id.advice_support_art_ll2);
         LinearLayout advice_support_art_ll3 = view.findViewById(R.id.advice_support_art_ll3);
+        LinearLayout advice_support_art_ll4 = view.findViewById(R.id.advice_support_art_ll4);
+        LinearLayout advice_support_art_ll5 = view.findViewById(R.id.advice_support_art_ll5);
 
-        LinearLayout advice_util_weapon_ll = view.findViewById(R.id.advice_util_weapon_ll);
+        GridLayout advice_util_weapon_ll = view.findViewById(R.id.advice_util_weapon_ll);
         LinearLayout advice_util_art_ll1 = view.findViewById(R.id.advice_util_art_ll1);
         LinearLayout advice_util_art_ll2 = view.findViewById(R.id.advice_util_art_ll2);
         LinearLayout advice_util_art_ll3 = view.findViewById(R.id.advice_util_art_ll3);
+        LinearLayout advice_util_art_ll4 = view.findViewById(R.id.advice_util_art_ll4);
+        LinearLayout advice_util_art_ll5 = view.findViewById(R.id.advice_util_art_ll5);
 
         CardView info_advice_main_card = view.findViewById(R.id.info_advice_main_card);
         CardView info_advice_support_card = view.findViewById(R.id.info_advice_support_card);
@@ -472,6 +517,11 @@ public class Characters_Info {
         LinearLayout advice_team_ll2 = view.findViewById(R.id.advice_team2);
         LinearLayout advice_team_ll3 = view.findViewById(R.id.advice_team3);
         LinearLayout advice_team_ll4 = view.findViewById(R.id.advice_team4);
+        LinearLayout advice_team_ll5 = view.findViewById(R.id.advice_team5);
+
+        TextView info_advice_main_art_info = view.findViewById(R.id.info_advice_main_art_info);
+        TextView info_advice_support_art_info = view.findViewById(R.id.info_advice_support_art_info);
+        TextView info_advice_util_art_info = view.findViewById(R.id.info_advice_util_art_info);
 
         /** THEME COLOR SET*/
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
@@ -831,13 +881,23 @@ public class Characters_Info {
             if(jsonObjectDps.has("dps_weapons")){
                 Log.wtf("OK","AK");
                 advice_main_weapon_ll.removeAllViews();
-                for (int x = 0 ; x < main_weapon_advice.length; x++) {
+                advice_main_weapon_ll.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
+                for (int x = 0 , c = 0, r = 0; x < main_weapon_advice.length; x++,c++) {
+                    if(c == 5) { c = 0;r++; }
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_main_weapon_ll, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
                     Picasso.get()
-                            .load(FileLoader.loadIMG(item_rss.getWeaponByName(item_rss.getWeaponNameByFileName(main_weapon_advice[x]),context)[1],context)).fit().centerInside().transform(roundedCornersTransformation)
+                            .load(FileLoader.loadIMG(item_rss.getWeaponByName(item_rss.getWeaponNameByFileName(main_weapon_advice[x]),context)[1],context)).resize(128,128).transform(roundedCornersTransformation)
                             .error(R.drawable.paimon_lost)
                             .into(item_img);
+                    GridLayout.LayoutParams param =new GridLayout.LayoutParams();
+                    param.height = GridLayout.LayoutParams.WRAP_CONTENT;
+                    param.width = GridLayout.LayoutParams.WRAP_CONTENT;
+                    param.setGravity(Gravity.CENTER_VERTICAL);
+                    param.columnSpec = GridLayout.spec(c);
+                    param.rowSpec = GridLayout.spec(r);
+                    param.setMargins(16,0,16,0);
+                    char_view.setLayoutParams (param);
                     advice_main_weapon_ll.addView(char_view);
                 }
                 info_advice_main_card.setVisibility(View.VISIBLE);
@@ -845,13 +905,22 @@ public class Characters_Info {
             }
             if(jsonObjectDps.has("sup_dps_weapons")){
                 advice_support_weapon_ll.removeAllViews();
-                for (int x = 0 ; x < support_weapon_advice.length; x++) {
+                advice_support_weapon_ll.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
+                for (int x = 0  , c = 0, r = 0; x < support_weapon_advice.length; x++,c++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_support_weapon_ll, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
                     Picasso.get()
-                            .load(FileLoader.loadIMG(item_rss.getWeaponByName(item_rss.getWeaponNameByFileName(support_weapon_advice[x]),context)[1],context)).fit().centerInside().transform(roundedCornersTransformation)
+                            .load(FileLoader.loadIMG(item_rss.getWeaponByName(item_rss.getWeaponNameByFileName(support_weapon_advice[x]),context)[1],context)).resize(128,128).transform(roundedCornersTransformation)
                             .error(R.drawable.paimon_lost)
                             .into(item_img);
+                    GridLayout.LayoutParams param =new GridLayout.LayoutParams();
+                    param.height = GridLayout.LayoutParams.WRAP_CONTENT;
+                    param.width = GridLayout.LayoutParams.WRAP_CONTENT;
+                    param.setGravity(Gravity.CENTER_VERTICAL);
+                    param.columnSpec = GridLayout.spec(c);
+                    param.rowSpec = GridLayout.spec(r);
+                    param.setMargins(16,0,16,0);
+                    char_view.setLayoutParams (param);
                     advice_support_weapon_ll.addView(char_view);
                 }
                 info_advice_support_card.setVisibility(View.VISIBLE);
@@ -859,13 +928,23 @@ public class Characters_Info {
             }
             if(jsonObjectDps.has("util_weapons")){
                 advice_util_weapon_ll.removeAllViews();
-                for (int x = 0 ; x < util_weapon_advice.length; x++) {
+                advice_util_weapon_ll.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
+                for (int x = 0 ,c = 0 , r = 0; x < util_weapon_advice.length; x++,c++) {
+                    if(c == 5) { c = 0;r++; }
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_util_weapon_ll, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
                     Picasso.get()
-                            .load(FileLoader.loadIMG(item_rss.getWeaponByName(item_rss.getWeaponNameByFileName(util_weapon_advice[x]),context)[1],context)).fit().centerInside().transform(roundedCornersTransformation)
+                            .load(FileLoader.loadIMG(item_rss.getWeaponByName(item_rss.getWeaponNameByFileName(util_weapon_advice[x]),context)[1],context)).resize(128,128).transform(roundedCornersTransformation)
                             .error(R.drawable.paimon_lost)
                             .into(item_img);
+                    GridLayout.LayoutParams param =new GridLayout.LayoutParams();
+                    param.height = GridLayout.LayoutParams.MATCH_PARENT;
+                    param.width = GridLayout.LayoutParams.MATCH_PARENT;
+                    param.setGravity(Gravity.CENTER_VERTICAL);
+                    param.columnSpec = GridLayout.spec(c);
+                    param.rowSpec = GridLayout.spec(r);
+                    param.setMargins(16,0,16,0);
+                    char_view.setLayoutParams (param);
                     advice_util_weapon_ll.addView(char_view);
                 }
                 info_advice_util_card.setVisibility(View.VISIBLE);
@@ -914,6 +993,36 @@ public class Characters_Info {
                 advice_main_art_ll3.setVisibility(View.VISIBLE);
             }
 
+
+            if(jsonObjectDps.has("dps_art4")){
+                advice_main_art_ll4.removeAllViews();
+                for (int x = 0 ,c = 0 , r = 0; x < main_artifacts4.length; x++, c++) {
+                    if(c == 5) { c = 0;r++; }
+                    View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_main_art_ll4, false);
+                    ImageView item_img = char_view.findViewById(R.id.advice_item_img);
+                    Picasso.get()
+                            .load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(main_artifacts4[x]),context)[x+1],context)).fit().centerInside().transform(roundedCornersTransformation)
+                            .error(R.drawable.paimon_lost)
+                            .into(item_img);
+                }
+                advice_main_art_ll4.setVisibility(View.VISIBLE);
+            }
+
+            if(jsonObjectDps.has("dps_art5")){
+                advice_main_art_ll5.removeAllViews();
+                for (int x = 0 ,c = 0 , r = 0; x < main_artifacts5.length; x++, c++) {
+                    if(c == 5) { c = 0;r++; }
+                    View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_main_art_ll5, false);
+                    ImageView item_img = char_view.findViewById(R.id.advice_item_img);
+                    Picasso.get()
+                            .load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(main_artifacts5[x]),context)[x+1],context)).fit().centerInside().transform(roundedCornersTransformation)
+                            .error(R.drawable.paimon_lost)
+                            .into(item_img);
+                    advice_main_art_ll5.addView(char_view);
+                }
+                advice_main_art_ll5.setVisibility(View.VISIBLE);
+            }
+
             if(jsonObjectDps.has("sup_dps_art1")){
                 advice_support_art_ll1.removeAllViews();
                 for (int x = 0 ; x < support_artifacts1.length; x++) {
@@ -955,7 +1064,34 @@ public class Characters_Info {
                 }
                 advice_support_art_ll3.setVisibility(View.VISIBLE);
             }
-
+            if(jsonObjectDps.has("sup_dps_art4")){
+                advice_support_art_ll4.removeAllViews();
+                for (int x = 0 ,c = 0 , r = 0; x < support_artifacts4.length; x++, c++) {
+                    if(c == 5) { c = 0;r++; }
+                    View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_support_art_ll4, false);
+                    ImageView item_img = char_view.findViewById(R.id.advice_item_img);
+                    Picasso.get()
+                            .load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(support_artifacts4[x]),context)[x+1],context)).fit().centerInside().transform(roundedCornersTransformation)
+                            .error(R.drawable.paimon_lost)
+                            .into(item_img);
+                    advice_support_art_ll4.addView(char_view);
+                }
+                advice_support_art_ll4.setVisibility(View.VISIBLE);
+            }
+            if(jsonObjectDps.has("sup_dps_art5")){
+                advice_support_art_ll5.removeAllViews();
+                for (int x = 0 ,c = 0 , r = 0; x < support_artifacts5.length; x++, c++) {
+                    if(c == 5) { c = 0;r++; }
+                    View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_support_art_ll5, false);
+                    ImageView item_img = char_view.findViewById(R.id.advice_item_img);
+                    Picasso.get()
+                            .load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(support_artifacts5[x]),context)[x+1],context)).fit().centerInside().transform(roundedCornersTransformation)
+                            .error(R.drawable.paimon_lost)
+                            .into(item_img);
+                    advice_support_art_ll5.addView(char_view);
+                }
+                advice_support_art_ll5.setVisibility(View.VISIBLE);
+            }
             if(jsonObjectDps.has("util_art1")){
                 advice_util_art_ll1.removeAllViews();
                 for (int x = 0 ; x < util_artifacts1.length; x++) {
@@ -996,6 +1132,34 @@ public class Characters_Info {
                     advice_util_art_ll3.addView(char_view);
                 }
                 advice_util_art_ll3.setVisibility(View.VISIBLE);
+            }
+            if(jsonObjectDps.has("util_art4")){
+                advice_util_art_ll4.removeAllViews();
+                for (int x = 0 ,c = 0 , r = 0; x < util_artifacts4.length; x++, c++) {
+                    if(c == 5) { c = 0;r++; }
+                    View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_util_art_ll4, false);
+                    ImageView item_img = char_view.findViewById(R.id.advice_item_img);
+                    Picasso.get()
+                            .load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(util_artifacts4[x]),context)[x+1],context)).fit().centerInside().transform(roundedCornersTransformation)
+                            .error(R.drawable.paimon_lost)
+                            .into(item_img);
+                    advice_util_art_ll4.addView(char_view);
+                }
+                advice_util_art_ll4.setVisibility(View.VISIBLE);
+            }
+            if(jsonObjectDps.has("util_art5")){
+                advice_util_art_ll5.removeAllViews();
+                for (int x = 0 ,c = 0 , r = 0; x < util_artifacts4.length; x++, c++) {
+                    if(c == 5) { c = 0;r++; }
+                    View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice, advice_util_art_ll5, false);
+                    ImageView item_img = char_view.findViewById(R.id.advice_item_img);
+                    Picasso.get()
+                            .load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(util_artifacts4[x]),context)[x+1],context)).fit().centerInside().transform(roundedCornersTransformation)
+                            .error(R.drawable.paimon_lost)
+                            .into(item_img);
+                    advice_util_art_ll5.addView(char_view);
+                }
+                advice_util_art_ll5.setVisibility(View.VISIBLE);
             }
 
             if(jsonObjectDps.has("team1")){
@@ -1046,6 +1210,18 @@ public class Characters_Info {
                     advice_team_ll4.addView(char_view);
                 }
                 advice_team_ll4.setVisibility(View.VISIBLE);
+            }
+
+            if(jsonObjectDps.has("team5")){
+                advice_team_ll5.removeAllViews();
+                for (int x = 0 ; x < team4.length; x++) {
+                    View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team, advice_team_ll5, false);
+                    ImageView item_img = char_view.findViewById(R.id.advice_item_img);
+                    Bitmap icon = FileLoader.loadIMG2Bitmap(item_rss.getCharByName(team4[x].replace("XPR"," "),context)[3],context);
+                    item_img.setImageBitmap(getRoundBitmapByShader(icon, (int) Math.round(128),(int)Math.round(128),20, 0));
+                    advice_team_ll5.addView(char_view);
+                }
+                advice_team_ll5.setVisibility(View.VISIBLE);
             }
         }
 

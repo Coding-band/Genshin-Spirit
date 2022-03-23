@@ -105,7 +105,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_weight="1"
-                            android:fontFamily="@font/jf_openhuninn"
+                            android:fontFamily="@font/genshin_font"
                             android:text="★ Knowledgegod#2046" />
 
                         <TextView
@@ -113,8 +113,36 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_weight="1"
-                            android:fontFamily="@font/jf_openhuninn"
+                            android:fontFamily="@font/genshin_font"
                             android:text="★ Luke Tin#0619" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/helper_uk_ua"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:text="@string/uk_ua"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="12dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView46"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="★ SipTik#0004" />
                     </LinearLayout>
 
                     <TextView
@@ -140,7 +168,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_weight="1"
-                            android:fontFamily="@font/jf_openhuninn"
+                            android:fontFamily="@font/genshin_font"
                             android:text="★ SipTik#0004" />
 
                         <TextView
@@ -148,7 +176,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_weight="1"
-                            android:fontFamily="@font/jf_openhuninn"
+                            android:fontFamily="@font/genshin_font"
                             android:text="★ KillGor#1421" />
                     </LinearLayout>
 
@@ -176,7 +204,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_weight="1"
-                            android:fontFamily="@font/jf_openhuninn"
+                            android:fontFamily="@font/genshin_font"
                             android:text="★ 𝕽𝖚𝖗𝖎#3080" />
 
                         <TextView
@@ -211,7 +239,7 @@
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_weight="1"
-                            android:fontFamily="@font/jf_openhuninn"
+                            android:fontFamily="@font/genshin_font"
                             android:text="★ Misaïjar#9999" />
 
                         <TextView
@@ -243,7 +271,7 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="4dp"
                     android:layout_weight="1"
-                    android:fontFamily="@font/jf_openhuninn"
+                    android:fontFamily="@font/genshin_font"
                     android:text="★ 賴。普拿疼。潘志遠 醫生#6436" />
 
                 <TextView
@@ -255,7 +283,7 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="4dp"
                     android:layout_weight="1"
-                    android:fontFamily="@font/jf_openhuninn"
+                    android:fontFamily="@font/genshin_font"
                     android:text="★ jack lai#3582" />
 
                 <TextView
@@ -267,20 +295,8 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="4dp"
                     android:layout_weight="1"
-                    android:fontFamily="@font/jf_openhuninn"
+                    android:fontFamily="@font/genshin_font"
                     android:text="★ A~~~#6163" />
-
-                <TextView
-                    android:id="@+id/textView12"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="12dp"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="4dp"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/jf_openhuninn"
-                    android:text="★ 2O48#9733" />
 
                 <TextView
                     android:id="@+id/textView14"
@@ -291,7 +307,7 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="4dp"
                     android:layout_weight="1"
-                    android:fontFamily="@font/jf_openhuninn"
+                    android:fontFamily="@font/genshin_font"
                     android:text="★ 哇係小秋嘎嘎#4382" />
 
                 <TextView
@@ -303,7 +319,7 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="4dp"
                     android:layout_weight="1"
-                    android:fontFamily="@font/jf_openhuninn"
+                    android:fontFamily="@font/genshin_font"
                     android:text="★ Loliness#0599" />
 
                 <TextView
@@ -325,7 +341,7 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="4dp"
                     android:layout_weight="1"
-                    android:fontFamily="@font/jf_openhuninn"
+                    android:fontFamily="@font/genshin_font"
                     android:text="★ UK#5815" />
 
                 <TextView
@@ -337,11 +353,33 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="4dp"
                     android:layout_weight="1"
-                    android:fontFamily="@font/jf_openhuninn"
+                    android:fontFamily="@font/genshin_font"
                     android:text="★ shcowcow#9015" />
 
                 <TextView
                     android:id="@+id/helper_aldi_title2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/ui_design"
+                    android:textColor="@color/tv_color"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/genshin_font"
+                    android:text="★ 2O48#9733" />
+
+                <TextView
+                    android:id="@+id/helper_aldi_title3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -359,7 +397,7 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="4dp"
                     android:layout_weight="1"
-                    android:fontFamily="@font/jf_openhuninn"
+                    android:fontFamily="@font/genshin_font"
                     android:text="@string/buff_cal_thx" />
 
             </LinearLayout>

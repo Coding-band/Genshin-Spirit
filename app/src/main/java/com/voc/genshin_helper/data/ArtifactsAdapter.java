@@ -311,14 +311,14 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
         Context context2 = this.context;
         if (context2 instanceof MainActivity) {
             if (((MainActivity) context2).sharedPreferences.getString("curr_ui_grid", ExifInterface.GPS_MEASUREMENT_2D).equals(ExifInterface.GPS_MEASUREMENT_2D)) {
-                Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(artifacts.getName(),context)[1],context)).resize(width,height).transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.artifact_icon);
+                Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(artifacts.getName(),context)[1],context)).fit().centerCrop().error(R.drawable.paimon_full).into(viewHolder.artifact_icon);
             } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", ExifInterface.GPS_MEASUREMENT_3D).equals(ExifInterface.GPS_MEASUREMENT_3D)) {
-                Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(artifacts.getName(),context)[1],context)).resize(one_curr,one_curr).transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.artifact_icon);
+                Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(artifacts.getName(),context)[1],context)).resize(one_curr,one_curr).error(R.drawable.paimon_full).into(viewHolder.artifact_icon);
             }
         } else if (context2 instanceof CalculatorUI) {
-            Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(artifacts.getName(),context)[1],context)).resize(one_curr,one_curr).transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.artifact_icon);
+            Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(artifacts.getName(),context)[1],context)).resize(one_curr,one_curr).error(R.drawable.paimon_full).into(viewHolder.artifact_icon);
         } else if (context2 instanceof SipTikCal) {
-            Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(artifacts.getName(),context)[1],context)).resize(one_curr,one_curr).transform(roundedCornersTransformation).error(R.drawable.paimon_full).into(viewHolder.artifact_icon);
+            Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(artifacts.getName(),context)[1],context)).resize(one_curr,one_curr).error(R.drawable.paimon_full).into(viewHolder.artifact_icon);
         }
         viewHolder.artifact_name.setText(itemRss.getArtifactByName(artifacts.getName(),context)[0]);
         new ColorStateList(new int[][]{new int[]{16842919}, new int[]{-16842912}, new int[]{16842912}}, new int[]{this.context.getResources().getColor(R.color.tv_color), this.context.getResources().getColor(R.color.tv_color), Color.parseColor(this.context.getSharedPreferences("user_info", 0).getString("theme_color_hex", "#FF5A5A"))});
@@ -411,6 +411,7 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                                 ImageView imageView8 = (ImageView) inflate.findViewById(R.id.info_item5);
                                 Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(str4,context)[1],context)).fit().centerInside().transform(transformation).error(R.drawable.paimon_lost).into(imageView2);
                                 ((TextView) inflate.findViewById(R.id.item_name)).setText(ViewHolder.this.artifact_name.getText());
+                                //((TextView) inflate.findViewById(R.id.item_name)).setText(ViewHolder.this.artifact_base_name.getText());
                                 if (jSONObject.has("1pc")) {
                                     StringBuilder sb = new StringBuilder();
                                     imageView = imageView4;

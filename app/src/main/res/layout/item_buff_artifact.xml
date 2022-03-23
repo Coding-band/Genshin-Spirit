@@ -23,7 +23,7 @@
             android:layout_width="72dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:fontFamily="@font/jf_openhuninn"
+            android:fontFamily="@font/genshin_font"
             android:gravity="center"
             android:text="0" />
 
@@ -33,7 +33,7 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="8dp"
             android:layout_weight="5"
-            android:fontFamily="@font/jf_openhuninn"
+            android:fontFamily="@font/genshin_font"
             android:gravity="center|left"
             android:textSize="14sp" />
 
@@ -42,7 +42,7 @@
             android:layout_width="72dp"
             android:layout_height="match_parent"
             android:layout_weight="5"
-            android:fontFamily="@font/jf_openhuninn"
+            android:fontFamily="@font/genshin_font"
             android:gravity="center|left"
             android:text="@string/weapon_stat_HP"
             android:visibility="gone" />
@@ -61,7 +61,7 @@
             android:layout_width="72dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:fontFamily="@font/jf_openhuninn"
+            android:fontFamily="@font/genshin_font"
             android:gravity="center"
             android:text="0.0%" />
 
@@ -71,7 +71,7 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="8dp"
             android:layout_weight="5"
-            android:fontFamily="@font/jf_openhuninn"
+            android:fontFamily="@font/genshin_font"
             android:gravity="center|left"
             android:textSize="14sp" />
     </LinearLayout>
@@ -89,7 +89,7 @@
             android:layout_width="72dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:fontFamily="@font/jf_openhuninn"
+            android:fontFamily="@font/genshin_font"
             android:gravity="center"
             android:text="0.0%" />
 
@@ -99,7 +99,7 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="8dp"
             android:layout_weight="5"
-            android:fontFamily="@font/jf_openhuninn"
+            android:fontFamily="@font/genshin_font"
             android:gravity="center|left"
             android:textSize="14sp" />
     </LinearLayout>
@@ -117,7 +117,7 @@
             android:layout_width="72dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:fontFamily="@font/jf_openhuninn"
+            android:fontFamily="@font/genshin_font"
             android:gravity="center"
             android:text="0.0%" />
 
@@ -127,7 +127,7 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="8dp"
             android:layout_weight="5"
-            android:fontFamily="@font/jf_openhuninn"
+            android:fontFamily="@font/genshin_font"
             android:gravity="center|left"
             android:textSize="14sp" />
     </LinearLayout>
@@ -145,7 +145,7 @@
             android:layout_width="72dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:fontFamily="@font/jf_openhuninn"
+            android:fontFamily="@font/genshin_font"
             android:gravity="center"
             android:text="0" />
 
@@ -155,7 +155,7 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="8dp"
             android:layout_weight="5"
-            android:fontFamily="@font/jf_openhuninn"
+            android:fontFamily="@font/genshin_font"
             android:gravity="center|left"
             android:textSize="14sp" />
     </LinearLayout>

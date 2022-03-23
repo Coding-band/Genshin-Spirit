@@ -315,14 +315,14 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
         if (context2 instanceof MainActivity) {
             if (((MainActivity) context2).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
 
-                Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).resize(width,height).transform(transformation).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
+                Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).fit().centerCrop().error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
             } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).resize(one_curr,one_curr).transform(transformation).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
+                Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).resize(one_curr,one_curr).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
             }
         } else if (context2 instanceof CalculatorUI) {
-            Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).resize(one_curr,one_curr).transform(transformation).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
+            Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).resize(one_curr,one_curr).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
         } else if (context2 instanceof SipTikCal) {
-            Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).resize(one_curr,one_curr).transform(transformation).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
+            Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).resize(one_curr,one_curr).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
         }
         viewHolder.weapon_name.setText(itemRss.getWeaponByName(weapons.getName(),context)[0]);
 
@@ -441,6 +441,8 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                                         .error(R.drawable.paimon_lost)
                                         .into(item_img);
 
+                                //.setText(itemRss.getWeaponByName(name,context)[0]);
+                                //((TextView) inflate.findViewById(R.id.item_name)).setText(weapon_base_name.getText());
                                 ((TextView) inflate.findViewById(R.id.item_name)).setText(itemRss.getWeaponByName(name,context)[0]);
                                 ((TextView) inflate.findViewById(R.id.item_info)).setText(desc);
                                 ((ImageView) inflate.findViewById(R.id.item_element)).setVisibility(View.GONE);

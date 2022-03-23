@@ -930,6 +930,7 @@
 
     <string name="buff_cal_thx">✧ 特此感谢dfsly\n✧ 允许以内嵌功能方式延续Genshin Calculator</string>
     <string name="buff_calcluator">增益计算机</string>
+    <string name="ui_design">UI设计</string>
 
     <!-- add in 20220304 -->
     <string name="rectangle" >長方形</string>

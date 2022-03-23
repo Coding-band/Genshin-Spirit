@@ -46,14 +46,13 @@
                 android:textColor="@color/tv_color"
                 android:textSize="18sp" />
 
-            <LinearLayout
+            <androidx.gridlayout.widget.GridLayout
                 android:id="@+id/advice_main_weapon_ll"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="8dp"
                 android:gravity="center"
-                android:orientation="horizontal"
                 android:overScrollMode="never"
                 android:visibility="gone" />
 
@@ -65,6 +64,14 @@
                 android:text="@string/art_advice"
                 android:textColor="@color/tv_color"
                 android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/info_advice_main_art_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:textColor="@color/tv_color"
+                android:textSize="16sp" />
 
             <LinearLayout
                 android:id="@+id/advice_main_art_ll1"
@@ -90,6 +97,28 @@
 
             <LinearLayout
                 android:id="@+id/advice_main_art_ll3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/advice_main_art_ll4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/advice_main_art_ll5"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -138,14 +167,13 @@
                 android:textColor="@color/tv_color"
                 android:textSize="18sp" />
 
-            <LinearLayout
+            <androidx.gridlayout.widget.GridLayout
                 android:id="@+id/advice_support_weapon_ll"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="8dp"
                 android:gravity="center"
-                android:orientation="horizontal"
                 android:overScrollMode="never"
                 android:visibility="gone" />
 
@@ -157,6 +185,14 @@
                 android:text="@string/art_advice"
                 android:textColor="@color/tv_color"
                 android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/info_advice_support_art_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:textColor="@color/tv_color"
+                android:textSize="16sp" />
 
             <LinearLayout
                 android:id="@+id/advice_support_art_ll1"
@@ -182,6 +218,26 @@
 
             <LinearLayout
                 android:id="@+id/advice_support_art_ll3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                android:visibility="gone" />
+            <LinearLayout
+                android:id="@+id/advice_support_art_ll4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                android:visibility="gone" />
+            <LinearLayout
+                android:id="@+id/advice_support_art_ll5"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -230,14 +286,13 @@
                 android:textColor="@color/tv_color"
                 android:textSize="18sp" />
 
-            <LinearLayout
+            <androidx.gridlayout.widget.GridLayout
                 android:id="@+id/advice_util_weapon_ll"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="8dp"
                 android:gravity="center"
-                android:orientation="horizontal"
                 android:overScrollMode="never"
                 android:visibility="gone" />
 
@@ -249,6 +304,14 @@
                 android:text="@string/art_advice"
                 android:textColor="@color/tv_color"
                 android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/info_advice_util_art_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="24dp"
+                android:textColor="@color/tv_color"
+                android:textSize="16sp" />
 
             <LinearLayout
                 android:id="@+id/advice_util_art_ll1"
@@ -274,6 +337,28 @@
 
             <LinearLayout
                 android:id="@+id/advice_util_art_ll3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/advice_util_art_ll4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/advice_util_art_ll5"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -348,6 +433,16 @@
 
             <LinearLayout
                 android:id="@+id/advice_team4"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                android:visibility="gone" />
+            <LinearLayout
+                android:id="@+id/advice_team5"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"

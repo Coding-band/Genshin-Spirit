@@ -12,5 +12,5 @@
     android:layout_height="wrap_content"
     android:ellipsize="marquee"
     android:textAlignment="inherit"
-    android:fontFamily="@font/jf_openhuninn"
+    android:fontFamily="@font/genshin_font"
     android:textColor="@color/tv_color" />

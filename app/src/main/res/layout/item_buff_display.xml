@@ -23,7 +23,7 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="16dp"
             android:layout_weight="5"
-            android:fontFamily="@font/jf_openhuninn"
+            android:fontFamily="@font/genshin_font"
             android:gravity="center|left"
             android:text="一段傷害"
             android:textSize="18sp" />
@@ -33,7 +33,7 @@
             android:layout_width="72dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:fontFamily="@font/jf_openhuninn"
+            android:fontFamily="@font/genshin_font"
             android:gravity="center"
             android:text="36.74%" />
 
@@ -50,7 +50,7 @@
             android:id="@+id/buff_uncrit_value"
             android:layout_width="96dp"
             android:layout_height="48dp"
-            android:fontFamily="@font/jf_openhuninn"
+            android:fontFamily="@font/genshin_font"
             android:gravity="center"
             android:text="959" />
 
@@ -59,7 +59,7 @@
             android:layout_width="72dp"
             android:layout_height="48dp"
             android:layout_weight="5"
-            android:fontFamily="@font/jf_openhuninn"
+            android:fontFamily="@font/genshin_font"
             android:gravity="center|left"
             android:text="@string/buff_uncrit_dmg" />
 
@@ -76,7 +76,7 @@
             android:id="@+id/buff_crit_value"
             android:layout_width="96dp"
             android:layout_height="48dp"
-            android:fontFamily="@font/jf_openhuninn"
+            android:fontFamily="@font/genshin_font"
             android:gravity="center"
             android:text="5,433" />
 
@@ -85,7 +85,7 @@
             android:layout_width="72dp"
             android:layout_height="48dp"
             android:layout_weight="5"
-            android:fontFamily="@font/jf_openhuninn"
+            android:fontFamily="@font/genshin_font"
             android:gravity="center|left"
             android:text="@string/buff_crited_dmg" />
 

@@ -431,19 +431,18 @@ public class MainActivity extends AppCompatActivity {
                                 Button reset = view.findViewById(R.id.menu_reset);
                                 Button ok = view.findViewById(R.id.menu_ok);
 
-                                show_pyro = sharedPreferences.getBoolean("show_pyro",true);
-                                show_hydro = sharedPreferences.getBoolean("show_hydro",true);
-                                show_anemo = sharedPreferences.getBoolean("show_anemo",true);
-                                show_electro = sharedPreferences.getBoolean("show_electro",true);
-                                show_dendor = sharedPreferences.getBoolean("show_dendor",true);
-                                show_cryo = sharedPreferences.getBoolean("show_cryo",true);
-                                show_geo = sharedPreferences.getBoolean("show_geo",true);
-                                show_sword = sharedPreferences.getBoolean("show_sword",true);
-                                show_claymore = sharedPreferences.getBoolean("show_claymore",true);
-                                show_polearm = sharedPreferences.getBoolean("show_polearm",true);
-                                show_bow = sharedPreferences.getBoolean("show_bow",true);
-                                show_catalyst = sharedPreferences.getBoolean("show_catalyst",true);
-                                show_catalyst = sharedPreferences.getBoolean("show_catalyst",true);
+                                show_pyro = sharedPreferences.getBoolean("show_pyro",false);
+                                show_hydro = sharedPreferences.getBoolean("show_hydro",false);
+                                show_anemo = sharedPreferences.getBoolean("show_anemo",false);
+                                show_electro = sharedPreferences.getBoolean("show_electro",false);
+                                show_dendor = sharedPreferences.getBoolean("show_dendor",false);
+                                show_cryo = sharedPreferences.getBoolean("show_cryo",false);
+                                show_geo = sharedPreferences.getBoolean("show_geo",false);
+                                show_sword = sharedPreferences.getBoolean("show_sword",false);
+                                show_claymore = sharedPreferences.getBoolean("show_claymore",false);
+                                show_polearm = sharedPreferences.getBoolean("show_polearm",false);
+                                show_bow = sharedPreferences.getBoolean("show_bow",false);
+                                show_catalyst = sharedPreferences.getBoolean("show_catalyst",false);
                                 show_stars = sharedPreferences.getInt("char_stars",0);
 
                                 if(show_pyro){show_pyro = true;pyro.setColorFilter(Color.parseColor("#00000000"));}else{show_pyro = false;pyro.setColorFilter(Color.parseColor("#66313131"));}
@@ -484,19 +483,19 @@ public class MainActivity extends AppCompatActivity {
                                 reset.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
-                                        show_pyro = true;
-                                        show_hydro = true;
-                                        show_anemo = true;
-                                        show_dendor = true;
-                                        show_electro = true;
-                                        show_cryo = true;
-                                        show_geo = true;
+                                        show_pyro = false;
+                                        show_hydro = false;
+                                        show_anemo = false;
+                                        show_dendor = false;
+                                        show_electro = false;
+                                        show_cryo = false;
+                                        show_geo = false;
 
-                                        show_sword = true;
-                                        show_claymore = true;
-                                        show_polearm = true;
-                                        show_bow = true;
-                                        show_catalyst = true;
+                                        show_sword = false;
+                                        show_claymore = false;
+                                        show_polearm = false;
+                                        show_bow = false;
+                                        show_catalyst = false;
 
                                         ratingBar.setRating(0);
 
@@ -526,14 +525,30 @@ public class MainActivity extends AppCompatActivity {
                                     public void onClick(View v) {
                                         ArrayList<Characters> filteredList = new ArrayList<>();
                                         for (Characters item : charactersList) {
-                                            if (item.getElement().toLowerCase().equals("pyro") && show_pyro||item.getElement().toLowerCase().equals("hydro") && show_hydro||item.getElement().toLowerCase().equals("anemo") && show_anemo||item.getElement().toLowerCase().equals("electro") && show_electro||item.getElement().toLowerCase().equals("dendor") && show_dendor||item.getElement().toLowerCase().equals("cryo") && show_cryo||item.getElement().toLowerCase().equals("geo") && show_geo) {
-                                                if(item.getWeapon().toLowerCase().equals("sword") && show_sword||item.getWeapon().toLowerCase().equals("claymore") && show_claymore||item.getWeapon().toLowerCase().equals("polearm") && show_polearm||item.getWeapon().toLowerCase().equals("bow") && show_bow||item.getWeapon().toLowerCase().equals("catalyst") && show_catalyst){
+                                            if((show_sword == false && show_claymore == false && show_catalyst == false && show_bow == false && show_polearm == false) &&
+                                                    (show_anemo == false  && show_cryo == false && show_dendor == false && show_electro == false && show_hydro == false && show_geo == false && show_pyro == false)){
+                                                filteredList.add(item);
+                                            }else if ((item.getElement().toLowerCase().equals("pyro") && show_pyro||item.getElement().toLowerCase().equals("hydro") && show_hydro||item.getElement().toLowerCase().equals("anemo") && show_anemo||item.getElement().toLowerCase().equals("electro") && show_electro||item.getElement().toLowerCase().equals("dendor") && show_dendor||item.getElement().toLowerCase().equals("cryo") && show_cryo||item.getElement().toLowerCase().equals("geo") && show_geo)) {
+                                                if((show_sword == false && show_claymore == false && show_catalyst == false && show_bow == false && show_polearm == false)){
+                                                    filteredList.add(item);
+                                                }else if(item.getWeapon().toLowerCase().equals("sword") && show_sword||item.getWeapon().toLowerCase().equals("claymore") && show_claymore||item.getWeapon().toLowerCase().equals("polearm") && show_polearm||item.getWeapon().toLowerCase().equals("bow") && show_bow||item.getWeapon().toLowerCase().equals("catalyst") && show_catalyst){
                                                     if(ratingBar.getRating() != 0 && item.getRare() == ratingBar.getRating()){
                                                         filteredList.add(item);
                                                     }else if (ratingBar.getRating() == 0){
                                                         filteredList.add(item);
                                                     }
                                                 }
+                                            }else if ((item.getWeapon().toLowerCase().equals("sword") && show_sword||item.getWeapon().toLowerCase().equals("claymore") && show_claymore||item.getWeapon().toLowerCase().equals("polearm") && show_polearm||item.getWeapon().toLowerCase().equals("bow") && show_bow||item.getWeapon().toLowerCase().equals("catalyst") && show_catalyst)) {
+                                                if((show_anemo == false  && show_cryo == false && show_dendor == false && show_electro == false && show_hydro == false && show_geo == false && show_pyro == false)){
+                                                    filteredList.add(item);
+                                                }else if((item.getElement().toLowerCase().equals("pyro") && show_pyro||item.getElement().toLowerCase().equals("hydro") && show_hydro||item.getElement().toLowerCase().equals("anemo") && show_anemo||item.getElement().toLowerCase().equals("electro") && show_electro||item.getElement().toLowerCase().equals("dendor") && show_dendor||item.getElement().toLowerCase().equals("cryo") && show_cryo||item.getElement().toLowerCase().equals("geo") && show_geo)){
+                                                    if(ratingBar.getRating() != 0 && item.getRare() == ratingBar.getRating()){
+                                                        filteredList.add(item);
+                                                    }else if (ratingBar.getRating() == 0){
+                                                        filteredList.add(item);
+                                                    }
+                                                }
+
                                             }
                                         }
 
@@ -655,19 +670,19 @@ public class MainActivity extends AppCompatActivity {
                                 reset.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
-                                        show_pyro = true;
-                                        show_hydro = true;
-                                        show_anemo = true;
-                                        show_dendor = true;
-                                        show_electro = true;
-                                        show_cryo = true;
-                                        show_geo = true;
+                                        show_pyro = false;
+                                        show_hydro = false;
+                                        show_anemo = false;
+                                        show_dendor = false;
+                                        show_electro = false;
+                                        show_cryo = false;
+                                        show_geo = false;
 
-                                        show_sword = true;
-                                        show_claymore = true;
-                                        show_polearm = true;
-                                        show_bow = true;
-                                        show_catalyst = true;
+                                        show_sword = false;
+                                        show_claymore = false;
+                                        show_polearm = false;
+                                        show_bow = false;
+                                        show_catalyst = false;
 
                                         ratingBar.setRating(0);
 
@@ -823,19 +838,19 @@ public class MainActivity extends AppCompatActivity {
                                 Button reset = view.findViewById(R.id.menu_reset);
                                 Button ok = view.findViewById(R.id.menu_ok);
 
-                                show_pyro = sharedPreferences.getBoolean("show_pyro",true);
-                                show_hydro = sharedPreferences.getBoolean("show_hydro",true);
-                                show_anemo = sharedPreferences.getBoolean("show_anemo",true);
-                                show_electro = sharedPreferences.getBoolean("show_electro",true);
-                                show_dendor = sharedPreferences.getBoolean("show_dendor",true);
-                                show_cryo = sharedPreferences.getBoolean("show_cryo",true);
-                                show_geo = sharedPreferences.getBoolean("show_geo",true);
-                                show_sword = sharedPreferences.getBoolean("show_sword",true);
-                                show_claymore = sharedPreferences.getBoolean("show_claymore",true);
-                                show_polearm = sharedPreferences.getBoolean("show_polearm",true);
-                                show_bow = sharedPreferences.getBoolean("show_bow",true);
-                                show_catalyst = sharedPreferences.getBoolean("show_catalyst",true);
-                                show_catalyst = sharedPreferences.getBoolean("show_catalyst",true);
+                                show_pyro = sharedPreferences.getBoolean("show_pyro",false);
+                                show_hydro = sharedPreferences.getBoolean("show_hydro",false);
+                                show_anemo = sharedPreferences.getBoolean("show_anemo",false);
+                                show_electro = sharedPreferences.getBoolean("show_electro",false);
+                                show_dendor = sharedPreferences.getBoolean("show_dendor",false);
+                                show_cryo = sharedPreferences.getBoolean("show_cryo",false);
+                                show_geo = sharedPreferences.getBoolean("show_geo",false);
+                                show_sword = sharedPreferences.getBoolean("show_sword",false);
+                                show_claymore = sharedPreferences.getBoolean("show_claymore",false);
+                                show_polearm = sharedPreferences.getBoolean("show_polearm",false);
+                                show_bow = sharedPreferences.getBoolean("show_bow",false);
+                                show_catalyst = sharedPreferences.getBoolean("show_catalyst",false);
+                                show_catalyst = sharedPreferences.getBoolean("show_catalyst",false);
                                 show_stars = sharedPreferences.getInt("weapon_stars",0);
 
                                 if(show_sword){show_sword = true;ico_sword.setColorFilter(Color.parseColor("#00000000"));}else{show_sword = false;ico_sword.setColorFilter(Color.parseColor("#66313131"));}
@@ -862,19 +877,19 @@ public class MainActivity extends AppCompatActivity {
                                 reset.setOnClickListener(new View.OnClickListener() {
                                     @Override
                                     public void onClick(View v) {
-                                        show_pyro = true;
-                                        show_hydro = true;
-                                        show_anemo = true;
-                                        show_dendor = true;
-                                        show_electro = true;
-                                        show_cryo = true;
-                                        show_geo = true;
+                                        show_pyro = false;
+                                        show_hydro = false;
+                                        show_anemo = false;
+                                        show_dendor = false;
+                                        show_electro = false;
+                                        show_cryo = false;
+                                        show_geo = false;
 
-                                        show_sword = true;
-                                        show_claymore = true;
-                                        show_polearm = true;
-                                        show_bow = true;
-                                        show_catalyst = true;
+                                        show_sword = false;
+                                        show_claymore = false;
+                                        show_polearm = false;
+                                        show_bow = false;
+                                        show_catalyst = false;
 
                                         ratingBar.setRating(0);
 
@@ -904,7 +919,9 @@ public class MainActivity extends AppCompatActivity {
                                     public void onClick(View v) {
                                         ArrayList<Weapons> filteredList = new ArrayList<>();
                                         for (Weapons item : weaponsList) {
-                                            if(item.getWeapon().toLowerCase().equals("sword") && show_sword||item.getWeapon().toLowerCase().equals("claymore") && show_claymore||item.getWeapon().toLowerCase().equals("polearm") && show_polearm||item.getWeapon().toLowerCase().equals("bow") && show_bow||item.getWeapon().toLowerCase().equals("catalyst") && show_catalyst){
+                                            if((show_sword == false && show_claymore == false && show_catalyst == false && show_bow == false && show_polearm == false)){
+                                                filteredList.add(item);
+                                            }else if(item.getWeapon().toLowerCase().equals("sword") && show_sword||item.getWeapon().toLowerCase().equals("claymore") && show_claymore||item.getWeapon().toLowerCase().equals("polearm") && show_polearm||item.getWeapon().toLowerCase().equals("bow") && show_bow||item.getWeapon().toLowerCase().equals("catalyst") && show_catalyst){
                                                 if(ratingBar.getRating() != 0 && item.getRare() == ratingBar.getRating()){
                                                     filteredList.add(item);
                                                 }else if (ratingBar.getRating() == 0){
@@ -2115,12 +2132,15 @@ public class MainActivity extends AppCompatActivity {
         Button bg_changelog_btn = viewPager4.findViewById(R.id.bg_changelog_btn);
 
         Switch other_exit_confirm = viewPager4.findViewById(R.id.other_exit_confirm);
+        Switch other_char_suit = viewPager4.findViewById(R.id.other_char_suit);
         theme_light.setButtonTintList(myList);
         theme_dark.setButtonTintList(myList);
         theme_default.setButtonTintList(myList);
 
         other_exit_confirm.setThumbTintList(myList);
         other_exit_confirm.setTrackTintList(myList);
+        other_char_suit.setThumbTintList(myList);
+        other_char_suit.setTrackTintList(myList);
 
         bg_changelog_btn.setOnClickListener(new View.OnClickListener() {
             @Override

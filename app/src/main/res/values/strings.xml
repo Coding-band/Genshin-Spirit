@@ -959,6 +959,7 @@
 
     <string name="buff_cal_thx">✧ Special thanks to dfsly\n✧ Who allow continuation Genshin Calculator as inline function</string>
     <string name="buff_calcluator">Buff Calculator</string>
+    <string name="ui_design">UI Design</string>
 
     <string name="mode" translatable="false">Day</string>
 
