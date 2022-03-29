@@ -17,6 +17,7 @@
     <color name="invisible">#00FFFFFF</color>
 
     <color name="page_bg">#CCB3B3B3</color>
+    <color name="page_bg_solid">#B3B3B3</color>
     <color name="base_page_bg">#E0E0E0</color>
     <color name="tv_color">#4B4B4B</color>
     <color name="tv_anti_color">#FFFFFF</color>

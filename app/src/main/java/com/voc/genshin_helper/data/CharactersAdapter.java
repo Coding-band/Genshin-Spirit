@@ -103,9 +103,14 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         ItemRss item_rss = new ItemRss();
         int width = 0, height = 0;
         int count = 3;
-        final int radius = 50;
-        final int margin = 0;
-        final Transformation transformation = new RoundedCornersTransformation(radius, margin);
+
+        int radius = 100;
+        int margin = 0;
+        Transformation transformation = new RoundedCornersTransformation(radius, margin);
+
+        if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            transformation= new RoundedCornersTransformation(140, 0);
+        }
 
 
         final int radius_circ = 360;
@@ -505,6 +510,8 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
             char_press_mask.startAnimation(buttonClick);
 
+            // Release at 2.7.0
+            /*
             char_press_mask.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View view) {
@@ -517,6 +524,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                     return false;
                 }
             });
+             */
 
             char_press_mask.setOnClickListener(new View.OnClickListener() {
                 @Override

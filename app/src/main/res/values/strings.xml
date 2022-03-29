@@ -967,6 +967,18 @@
     <string name="rectangle" >Rectangle</string>
     <string name="square" >Square</string>
     <string name="char_suit_on" >Change to the event outfit</string>
+    <string name="circlet">" Circlet"</string>
+    <string name="sand">" Sand"</string>
+    <string name="goblet">" Goblet"</string>
+    <string name="main_entry">Main Entry :</string>
+    <string name="sub_entry">Sub Entry :</string>
+
+    <!-- add in 20220329 -->
+    <string name="haran_geppaku_futsu">Haran Geppaku Futsu</string>
+    <string name="echoes_of_an_offering">Echoes of an Offering</string>
+    <string name="vermillion_hereafter">Vermillion Hereafter</string>
+    <string name="kuki_shinobu">Kuki Shinobu</string>
+    <string name="yelan">Yelan</string>
 
 </resources>
 

@@ -568,6 +568,8 @@ public class ItemRss {
             //add in 20220126
             case "Kagura's Verity" : return new String[] {context.getString(R.string.kaguras_verity),"/drawable/kaguras_verity.png"};
             case "Oathsworn Eye" : return new String[] {context.getString(R.string.oathsworn_eye),"/drawable/oathsworn_eye.png"};
+            //add in 20220329
+            case "Haran Geppaku Futsu" : return new String[] {context.getString(R.string.haran_geppaku_futsu),"/drawable/haran_geppaku_futsu.png"};
 
             case "Hunter's Bow" : return new String[] {context.getString(R.string.hunters_bow),"/drawable/hunters_bow.png"};
             case "Seasoned Hunter's Bow" : return new String[] {context.getString(R.string.seasoned_hunters_bow),"/drawable/seasoned_hunters_bow.png"};
@@ -744,6 +746,8 @@ public class ItemRss {
             // add in 20220126
             case "kaguras_verity" : return "Kagura's Verity";
             case "oathsworn_eye" : return "Oathsworn Eye";
+            // add in 20220329
+            case "haran_geppaku_futsu" : return "Haran Geppaku Futsu";
 
             default: return  "PAIMON_ATE";
         }
@@ -790,6 +794,9 @@ public class ItemRss {
             // add in 20211127
             case "Husk of Opulent Dreams" : return new String[] {context.getString(R.string.husk_of_opulent_dreams),"/drawable/husk_of_opulent_dreams_1.png","/drawable/husk_of_opulent_dreams_2.png","/drawable/husk_of_opulent_dreams_3.png","/drawable/husk_of_opulent_dreams_4.png","/drawable/husk_of_opulent_dreams_5.png"};
             case "Ocean-Hued Clam" : return new String[] {context.getString(R.string.ocean_hued_clam),"/drawable/ocean_hued_clam_1.png","/drawable/ocean_hued_clam_2.png","/drawable/ocean_hued_clam_3.png","/drawable/ocean_hued_clam_4.png","/drawable/ocean_hued_clam_5.png"};
+            // add in 20220329
+            case "Echoes of an Offering" : return new String[] {context.getString(R.string.echoes_of_an_offering),"/drawable/echoes_of_an_offering_1.png","/drawable/echoes_of_an_offering_2.png","/drawable/echoes_of_an_offering_3.png","/drawable/echoes_of_an_offering_4.png","/drawable/echoes_of_an_offering_5.png"};
+            case "Vermillion Hereafter" : return new String[] {context.getString(R.string.vermillion_hereafter),"/drawable/vermillion_hereafter_1.png","/drawable/vermillion_hereafter_2.png","/drawable/vermillion_hereafter_3.png","/drawable/vermillion_hereafter_4.png","/drawable/vermillion_hereafter_5.png"};
 
             default: return new String[] {context.getString(R.string.unknown),"/drawable/paimon_lost.png","/drawable/paimon_lost.png","/drawable/paimon_lost.png","/drawable/paimon_lost.png","/drawable/paimon_lost.png"};
 
@@ -837,6 +844,9 @@ public class ItemRss {
             // add in 20211127
             case "husk_of_opulent_dreams" : return "Husk of Opulent Dreams";
             case "ocean_hued_clam" : return "Ocean-Hued Clam";
+            // add in 20220329
+            case "echoes_of_an_offering" : return "Echoes of an Offering";
+            case "vermillion_hereafter" : return "Vermillion Hereafter";
 
             default: return  "PAIMON_ATE";
         }
@@ -861,7 +871,9 @@ public class ItemRss {
     }
 
     public String[] getCharByName_BASE(String name, Context context){
-        if(name.equals("Kamisato Ayato")){return new String[] {"/drawable/kamisato_ayato_full.png",context.getString(R.string.kamisato_ayato),"/drawable/kamisato_ayato_gacha_splash.png","/drawable/kamisato_ayato_ico.png"};}
+        if(name.equals("Kuki Shinobu")){return new String[] {"/drawable/kuki_shinobu_full.png",context.getString(R.string.kuki_shinobu),"/drawable/kuki_shinobu_gacha_splash.png","/drawable/kuki_shinobu_ico.png"};}
+        else if(name.equals("Yelan")){return new String[] {"/drawable/yelan_full.png",context.getString(R.string.yelan),"/drawable/yelan_gacha_splash.png","/drawable/yelan_ico.png"};}
+        else if(name.equals("Kamisato Ayato")){return new String[] {"/drawable/kamisato_ayato_full.png",context.getString(R.string.kamisato_ayato),"/drawable/kamisato_ayato_gacha_splash.png","/drawable/kamisato_ayato_ico.png"};}
         else if(name.equals("Yae Miko")){return new String[] {"/drawable/yae_miko_full.png",context.getString(R.string.yae_miko),"/drawable/yae_miko_gacha_splash.png","/drawable/yae_miko_ico.png"};}
         else if(name.equals("Shenhe")){return new String[] {"/drawable/shenhe_full.png",context.getString(R.string.shenhe),"/drawable/shenhe_gacha_splash.png","/drawable/shenhe_ico.png"};}
         else if(name.equals("Yun Jin")){return new String[] {"/drawable/yun_jin_full.png",context.getString(R.string.yun_jin),"/drawable/yun_jin_gacha_splash.png","/drawable/yun_jin_ico.png"};}
@@ -994,6 +1006,8 @@ public class ItemRss {
         else if(name.equals("Shenhe") || name.equals("申鶴") || name.equals("申鹤") || name.equals("申鶴") || name.equals("Шэнь Хэ")){ return "Shenhe";}
         else if(name.equals("Yae Miko") || name.equals("八重神子") || name.equals("八重神子") || name.equals("八重神子") || name.equals("Яэ Мико")){ return "Yae Miko";}
         else if(name.equals("Kamisato Ayato") || name.equals("神里綾人") || name.equals("神里绫人") || name.equals("神里綾人") || name.equals("Камисато Аято")){ return "Kamisato Ayato";}
+        else if(name.equals("Kuki Shinobu") || name.equals("久岐忍") || name.equals("久岐忍") || name.equals("久岐忍") || name.equals("Куки Синобу")){ return "Kuki Shinobu";}
+        else if(name.equals("Yelan") || name.equals("夜蘭") || name.equals("夜兰") || name.equals("夜蘭") || name.equals("Е Лань")){ return "Yelan";}
         else if(name.equals("Traveler-Anemo") || name.equals("旅行者(風)") || name.equals("旅行者(风)") || name.equals("旅人 (風)") || name.equals("Путешественник(Анемо)")){ return "Traveler-Anemo";}
         else if(name.equals("Traveler-Electro") || name.equals("旅行者(岩)") || name.equals("旅行者(岩)") || name.equals("旅人 (岩)") || name.equals("Путешественник(Гео)")){ return "Traveler-Electro";}
         else if(name.equals("Traveler-Geo") || name.equals("旅行者(雷)") || name.equals("旅行者(雷)") || name.equals("旅人 (雷)") || name.equals("Путешественник(Электро)")){ return "Traveler-Geo";}
@@ -1625,6 +1639,7 @@ public class ItemRss {
                     case 10 : char_name = "Shenhe"; break;
                     case 14 : char_name = "Jean"; break;
                     case 21 : char_name = "Noelle"; break;
+                    case 26 : char_name = "Kamisato Ayato"; break;
                 }
                 break;
             }

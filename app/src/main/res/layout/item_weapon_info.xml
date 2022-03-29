@@ -5,8 +5,17 @@
   ~ Copyright © 2022 Xectorda 版權所有
   -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical" android:background="@color/page_bg" android:layout_width="match_parent" android:layout_height="wrap_content">
-    <LinearLayout android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/page_bg_solid"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/item_bg"
@@ -105,6 +114,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:text="【逃跑的太陽】Klee"
+                android:textColor="@color/tv_color"
                 android:textSize="24dp" />
 
             <TextView
@@ -113,11 +123,18 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="西風騎士團禁閉室的常客，蒙德的爆破大師。人稱「逃跑的太陽」"
+                android:textColor="@color/tv_color"
                 android:textSize="14sp"
                 android:textStyle="italic" />
         </LinearLayout>
     </LinearLayout>
-    <LinearLayout android:gravity="center" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_margin="8dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:orientation="horizontal">
 
         <ImageView
             android:id="@+id/item_weapon"
@@ -126,16 +143,83 @@
             android:adjustViewBounds="true"
             android:visibility="gone"
             app:srcCompat="@drawable/ico_catalyst" />
-        <LinearLayout android:gravity="center" android:orientation="horizontal" android:id="@+id/item_talent" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" android:layout_marginLeft="16dp">
-            <ImageView android:id="@+id/info_item1" android:background="@drawable/bg_pyro_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_weight="1" app:srcCompat="@drawable/ico_catalyst"/>
-            <ImageView android:id="@+id/info_item2" android:background="@drawable/bg_pyro_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_weight="1" app:srcCompat="@drawable/ico_catalyst"/>
-            <ImageView android:id="@+id/info_item3" android:background="@drawable/bg_pyro_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_weight="1" app:srcCompat="@drawable/ico_catalyst"/>
-            <ImageView android:id="@+id/info_item4" android:background="@drawable/bg_pyro_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_weight="1" app:srcCompat="@drawable/ico_catalyst"/>
-            <ImageView android:id="@+id/info_item5" android:background="@drawable/bg_pyro_bg" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginLeft="8dp" android:layout_weight="1" app:srcCompat="@drawable/ico_catalyst"/>
+
+        <LinearLayout
+            android:id="@+id/item_talent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="16dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/info_item1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_pyro_bg"
+                app:srcCompat="@drawable/ico_catalyst" />
+
+            <ImageView
+                android:id="@+id/info_item2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_pyro_bg"
+                app:srcCompat="@drawable/ico_catalyst" />
+
+            <ImageView
+                android:id="@+id/info_item3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_pyro_bg"
+                app:srcCompat="@drawable/ico_catalyst" />
+
+            <ImageView
+                android:id="@+id/info_item4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_pyro_bg"
+                app:srcCompat="@drawable/ico_catalyst" />
+
+            <ImageView
+                android:id="@+id/info_item5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_pyro_bg"
+                app:srcCompat="@drawable/ico_catalyst" />
         </LinearLayout>
-        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@+id/item_skill" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginLeft="16dp">
-            <TextView android:textSize="16sp" android:id="@+id/info_skill_title" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="8dp" app:srcCompat="@drawable/ico_catalyst"/>
-            <TextView android:id="@+id/info_skill_desc" android:layout_width="match_parent" android:layout_height="wrap_content" app:srcCompat="@drawable/ico_catalyst"/>
+
+        <LinearLayout
+            android:id="@+id/item_skill"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/info_skill_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:textSize="16sp"
+                app:srcCompat="@drawable/ico_catalyst" />
+
+            <TextView
+                android:id="@+id/info_skill_desc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ico_catalyst" />
         </LinearLayout>
     </LinearLayout>
 </LinearLayout>

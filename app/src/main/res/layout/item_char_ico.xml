@@ -87,8 +87,8 @@
 
             <ImageView
                 android:id="@+id/char_element"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
                 android:layout_gravity="center"
                 android:layout_margin="4dp"
                 android:scaleType="centerCrop"
@@ -109,7 +109,7 @@
                 android:text="可莉"
                 android:textAlignment="center"
                 android:textColor="@color/tv_color"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/char_base_name"

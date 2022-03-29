@@ -69,9 +69,11 @@
                 android:id="@+id/info_advice_main_art_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="8dp"
                 android:paddingLeft="24dp"
                 android:textColor="@color/tv_color"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:visibility="gone" />
 
             <LinearLayout
                 android:id="@+id/advice_main_art_ll1"
@@ -190,9 +192,11 @@
                 android:id="@+id/info_advice_support_art_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="8dp"
                 android:paddingLeft="24dp"
                 android:textColor="@color/tv_color"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:visibility="gone" />
 
             <LinearLayout
                 android:id="@+id/advice_support_art_ll1"
@@ -309,9 +313,11 @@
                 android:id="@+id/info_advice_util_art_info"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="8dp"
                 android:paddingLeft="24dp"
                 android:textColor="@color/tv_color"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:visibility="gone" />
 
             <LinearLayout
                 android:id="@+id/advice_util_art_ll1"

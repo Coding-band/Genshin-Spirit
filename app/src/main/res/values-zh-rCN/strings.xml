@@ -936,5 +936,17 @@
     <string name="rectangle" >長方形</string>
     <string name="square" >正方形</string>
     <string name="char_suit_on" >换上活动衣装</string>
+    <string name="goblet">杯</string>
+    <string name="circlet">冠</string>
+    <string name="sand">沙</string>
+    <string name="main_entry">主词条：</string>
+    <string name="sub_entry">副词条：</string>
+
+    <!-- add in 20220329 -->
+    <string name="haran_geppaku_futsu">波乱月白经津</string>
+    <string name="echoes_of_an_offering">来歆余响</string>
+    <string name="vermillion_hereafter">辰砂往生录</string>
+    <string name="kuki_shinobu">久岐忍</string>
+    <string name="yelan">夜兰</string>
 </resources>
 

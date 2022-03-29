@@ -15,6 +15,7 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="page_bg">#CC424242</color>
+    <color name="page_bg_solid">#424242</color>
     <color name="base_page_bg">#313131</color>
     <color name="tv_color">#FFFFFF</color>
     <color name="tv_anti_color">#000000</color>

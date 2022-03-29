@@ -14,7 +14,6 @@ import android.graphics.LinearGradient;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.text.Html;
-import android.text.PrecomputedText;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
@@ -38,7 +37,6 @@ import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
-import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -47,7 +45,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 
 import static android.content.Context.MODE_PRIVATE;
 import static com.voc.genshin_helper.data.RoundRectImageView.getRoundBitmapByShader;
@@ -398,7 +395,7 @@ public class Characters_Info {
         final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
         View view = View.inflate(context, R.layout.fragment_char_info, null);
 
-        BackgroundReload.BackgroundReload(context,view);
+        //BackgroundReload.BackgroundReload(context,view);
 
         /** Method of info_detail */
         ImageView char_img = view.findViewById(R.id.info_char_img);
@@ -639,6 +636,9 @@ public class Characters_Info {
         colorGradient(info_sof4_name ,start_color,end_color,isColorGradient,color_hex);
         colorGradient(info_sof5_name ,start_color,end_color,isColorGradient,color_hex);
         colorGradient(info_sof6_name ,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(info_advice_main_art_info ,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(info_advice_support_art_info ,start_color,end_color,isColorGradient,color_hex);
+        colorGradient(info_advice_util_art_info ,start_color,end_color,isColorGradient,color_hex);
 
         /**
          * PLS REMEMBER ADD BACK SUGGESTED WEAPON,ART IN XML
@@ -1162,6 +1162,10 @@ public class Characters_Info {
                 advice_util_art_ll5.setVisibility(View.VISIBLE);
             }
 
+            setAdviceText("dps",info_advice_main_art_info);
+            setAdviceText("sup_dps",info_advice_support_art_info);
+            setAdviceText("util",info_advice_util_art_info);
+
             if(jsonObjectDps.has("team1")){
                 advice_team_ll1.removeAllViews();
                 for (int x = 0 ; x < team1.length; x++) {
@@ -1296,6 +1300,87 @@ public class Characters_Info {
             textView.setTextColor(Color.parseColor(color));
         }
 
+    }
+
+    public void setAdviceText(String part, TextView info){
+        String dps_advice = context.getString(R.string.main_entry)+"\n\t";
+
+        if(jsonObjectDps.has(part+"_art_sand_entry")){
+            dps_advice = dps_advice + context.getString(R.string.sand) + " : ";
+            try {
+                JSONArray dps_advice_tmpJ = jsonObjectDps.getJSONArray(part+"_art_sand_entry");
+                String[] dps_advice_tmp = dps_advice_tmpJ.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
+                for (int x = 0 ; x < dps_advice_tmp.length ; x++){
+                    dps_advice = dps_advice+item_rss.getArtifactBuffName(dps_advice_tmp[x],context);
+                    if(x+1 < dps_advice_tmpJ.length()){
+                        dps_advice = dps_advice+"/";
+                    }
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            info.setText(dps_advice);
+            info.setVisibility(View.VISIBLE);
+        }
+
+
+        if(jsonObjectDps.has(part+"_art_goblet_entry")){
+            dps_advice = dps_advice+"\n\t";
+            dps_advice = dps_advice + context.getString(R.string.goblet) + " : ";
+            try {
+                JSONArray dps_advice_tmpJ = jsonObjectDps.getJSONArray(part+"_art_goblet_entry");
+                String[] dps_advice_tmp = dps_advice_tmpJ.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
+                for (int x = 0 ; x < dps_advice_tmp.length ; x++){
+                    dps_advice = dps_advice+item_rss.getArtifactBuffName(dps_advice_tmp[x],context);
+                    if(x+1 < dps_advice_tmpJ.length()){
+                        dps_advice = dps_advice+"/";
+                    }
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            info.setText(dps_advice);
+            info.setVisibility(View.VISIBLE);
+        }
+
+        if(jsonObjectDps.has(part+"_art_circlet_entry")){
+            dps_advice = dps_advice+"\n\t";
+            dps_advice = dps_advice + context.getString(R.string.circlet) + " : ";
+            try {
+                JSONArray dps_advice_tmpJ = jsonObjectDps.getJSONArray(part+"_art_circlet_entry");
+                String[] dps_advice_tmp = dps_advice_tmpJ.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
+                for (int x = 0 ; x < dps_advice_tmp.length ; x++){
+                    dps_advice = dps_advice+item_rss.getArtifactBuffName(dps_advice_tmp[x],context);
+                    if(x+1 < dps_advice_tmpJ.length()){
+                        dps_advice = dps_advice+"/";
+                    }
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            info.setText(dps_advice);
+            info.setVisibility(View.VISIBLE);
+        }
+        if(jsonObjectDps.has(part+"_art_sub_entry")){
+            dps_advice = dps_advice+"\n";
+            dps_advice = dps_advice + context.getString(R.string.sub_entry);
+            dps_advice = dps_advice+"\n\t";
+            try {
+                JSONArray dps_advice_tmpJ = jsonObjectDps.getJSONArray(part+"_art_sub_entry");
+                String[] dps_advice_tmp = dps_advice_tmpJ.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
+                for (int x = 0 ; x < dps_advice_tmp.length ; x++){
+                    dps_advice = dps_advice+item_rss.getArtifactBuffName(dps_advice_tmp[x],context);
+                    if(x+1 < dps_advice_tmpJ.length()){
+                        dps_advice = dps_advice+"/";
+                    }
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            info.setText(dps_advice);
+            info.setVisibility(View.VISIBLE);
+        }
+        System.out.println(dps_advice);
     }
 
 }
