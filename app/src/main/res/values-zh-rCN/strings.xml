@@ -73,7 +73,7 @@
 
     <!-- char_name -->
     <string name="aloy">亚萝伊</string>
-    <string name="kujou_sara">九条娑罗</string>
+    <string name="kujou_sara">九条裟罗</string>
     <string name="sangonomiya_kokomi">珊瑚宫心海</string>
     <string name="raiden_shogun">雷电将军</string>
     <string name="sayu">早柚</string>
@@ -103,7 +103,7 @@
     <string name="noelle">诺艾尔</string>
     <string name="ningguang">凝光</string>
     <string name="mona">莫娜</string>
-    <string name="lisa">莉萨</string>
+    <string name="lisa">丽莎</string>
     <string name="klee">可莉</string>
     <string name="keqing">刻晴</string>
     <string name="kaeya">凯亚</string>
@@ -318,7 +318,7 @@
     <string name="iron_sting">铁蜂刺</string>
     <string name="lions_roar">匣里龙吟</string>
     <string name="mistsplitter_reforged">雾切之回光</string>
-    <string name="primordial_jade_cutter">盘岩结绿</string>
+    <string name="primordial_jade_cutter">磐岩结绿</string>
     <string name="prototype_rancour">试作斩岩</string>
     <string name="royal_longsword">宗室长剑</string>
     <string name="sacrificial_sword">祭礼剑</string>

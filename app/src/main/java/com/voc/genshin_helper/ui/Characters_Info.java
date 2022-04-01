@@ -21,6 +21,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
@@ -34,6 +35,7 @@ import com.squareup.picasso.Picasso;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.util.BackgroundReload;
+import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
@@ -362,7 +364,7 @@ public class Characters_Info {
             e.printStackTrace();
             }
         }else{
-            Toast.makeText(context, context.getString(R.string.none_info), Toast.LENGTH_SHORT).show();
+            CustomToast.toast(context,activity,context.getString(R.string.none_info));
         }
     }
 
@@ -398,6 +400,7 @@ public class Characters_Info {
         //BackgroundReload.BackgroundReload(context,view);
 
         /** Method of info_detail */
+        FrameLayout char_bg = view.findViewById(R.id.info_char_bg);
         ImageView char_img = view.findViewById(R.id.info_char_img);
         ImageView char_layer = view.findViewById(R.id.info_char_layer);
         TextView char_name = view.findViewById(R.id.info_char_name);
@@ -676,13 +679,9 @@ public class Characters_Info {
                         .error(R.drawable.paimon_lost)
                         .into(char_layer);
                 if(isNight == true){
-                    char_img.setBackgroundResource(R.drawable.anemo_800x800_dark);
-                    Drawable drawable = context.getResources().getDrawable(R.drawable.anemo_800x800_dark_mask);
-                    //char_img.setForeground(drawable);
+                    char_bg.setBackgroundResource(R.drawable.anemo_800x800_dark);
                 }else{
-                    char_img.setBackgroundResource(R.drawable.anemo_800x800_light);
-                    Drawable drawable = context.getResources().getDrawable(R.drawable.anemo_800x800_light_mask);
-                    //char_img.setForeground(drawable);
+                    char_bg.setBackgroundResource(R.drawable.anemo_800x800_light);
                 }
                 break;
             }
@@ -693,13 +692,9 @@ public class Characters_Info {
                         .error(R.drawable.paimon_lost)
                         .into(char_layer);
                 if(isNight == true){
-                    char_img.setBackgroundResource(R.drawable.cryo_800x800_dark);
-                    Drawable drawable = context.getResources().getDrawable(R.drawable.cryo_800x800_dark_mask);
-                    //char_img.setForeground(drawable);
+                    char_bg.setBackgroundResource(R.drawable.cryo_800x800_dark);
                 }else{
-                    char_img.setBackgroundResource(R.drawable.cryo_800x800_light);
-                    Drawable drawable = context.getResources().getDrawable(R.drawable.cryo_800x800_light_mask);
-                    //char_img.setForeground(drawable);
+                    char_bg.setBackgroundResource(R.drawable.cryo_800x800_light);
                 }
                 break;
             }
@@ -711,13 +706,9 @@ public class Characters_Info {
                         .error(R.drawable.paimon_lost)
                         .into(char_layer);
                 if(isNight == true){
-                    char_img.setBackgroundResource(R.drawable.dendro_800x800_dark);
-                    Drawable drawable = context.getResources().getDrawable(R.drawable.dendro_800x800_dark_mask);
-                    //char_img.setForeground(drawable);
+                    char_bg.setBackgroundResource(R.drawable.dendro_800x800_dark);
                 }else{
-                    char_img.setBackgroundResource(R.drawable.dendro_800x800_light);
-                    Drawable drawable = context.getResources().getDrawable(R.drawable.dendro_800x800_light_mask);
-                    //char_img.setForeground(drawable);
+                    char_bg.setBackgroundResource(R.drawable.dendro_800x800_light);
                 }
                 break;
             }
@@ -728,13 +719,9 @@ public class Characters_Info {
                         .error(R.drawable.paimon_lost)
                         .into(char_layer);
                 if(isNight == true){
-                    char_img.setBackgroundResource(R.drawable.electro_800x800_dark);
-                    Drawable drawable = context.getResources().getDrawable(R.drawable.electro_800x800_dark_mask);
-                    //char_img.setForeground(drawable);
+                    char_bg.setBackgroundResource(R.drawable.electro_800x800_dark);
                 }else{
-                    char_img.setBackgroundResource(R.drawable.electro_800x800_light);
-                    Drawable drawable = context.getResources().getDrawable(R.drawable.electro_800x800_light_mask);
-                    //char_img.setForeground(drawable);
+                    char_bg.setBackgroundResource(R.drawable.electro_800x800_light);
                 }
                 break;
             }
@@ -745,13 +732,9 @@ public class Characters_Info {
                         .error(R.drawable.paimon_lost)
                         .into(char_layer);
                 if(isNight == true){
-                    char_img.setBackgroundResource(R.drawable.geo_800x800_dark);
-                    Drawable drawable = context.getResources().getDrawable(R.drawable.geo_800x800_dark_mask);
-                    //char_img.setForeground(drawable);
+                    char_bg.setBackgroundResource(R.drawable.geo_800x800_dark);
                 }else{
-                    char_img.setBackgroundResource(R.drawable.geo_800x800_light);
-                    Drawable drawable = context.getResources().getDrawable(R.drawable.geo_800x800_light_mask);
-                    //char_img.setForeground(drawable);
+                    char_bg.setBackgroundResource(R.drawable.geo_800x800_light);
                 }
                 break;
             }
@@ -762,13 +745,9 @@ public class Characters_Info {
                         .error(R.drawable.paimon_lost)
                         .into(char_layer);
                 if(isNight == true){
-                    char_img.setBackgroundResource(R.drawable.hydro_800x800_dark);
-                    Drawable drawable = context.getResources().getDrawable(R.drawable.hydro_800x800_dark_mask);
-                    //char_img.setForeground(drawable);
+                    char_bg.setBackgroundResource(R.drawable.hydro_800x800_dark);
                 }else{
-                    char_img.setBackgroundResource(R.drawable.hydro_800x800_light);
-                    Drawable drawable = context.getResources().getDrawable(R.drawable.hydro_800x800_light_mask);
-                    //char_img.setForeground(drawable);
+                    char_bg.setBackgroundResource(R.drawable.hydro_800x800_light);
                 }
                 break;
             }
@@ -779,13 +758,9 @@ public class Characters_Info {
                         .error(R.drawable.paimon_lost)
                         .into(char_layer);
                 if(isNight == true){
-                    char_img.setBackgroundResource(R.drawable.pyro_800x800_dark);
-                    Drawable drawable = context.getResources().getDrawable(R.drawable.pyro_800x800_dark_mask);
-                    //char_img.setForeground(drawable);
+                    char_bg.setBackgroundResource(R.drawable.pyro_800x800_dark);
                 }else{
-                    char_img.setBackgroundResource(R.drawable.pyro_800x800_light);
-                    Drawable drawable = context.getResources().getDrawable(R.drawable.pyro_800x800_light_mask);
-                    //char_img.setForeground(drawable);
+                    char_bg.setBackgroundResource(R.drawable.pyro_800x800_light);
                 }
                 break;
             }
@@ -1187,6 +1162,7 @@ public class Characters_Info {
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
                     Bitmap icon = FileLoader.loadIMG2Bitmap(item_rss.getCharByName(team2[x].replace("XPR"," "),context)[3],context);
                     item_img.setImageBitmap(getRoundBitmapByShader(icon, (int) Math.round(128),(int)Math.round(128),20, 0));
+                    Log.wtf("team2[x])[2]",team2[x]);
                     advice_team_ll2.addView(char_view);
                 }
                 advice_team_ll2.setVisibility(View.VISIBLE);

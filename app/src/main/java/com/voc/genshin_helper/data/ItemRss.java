@@ -1064,8 +1064,8 @@ public class ItemRss {
 
     /**EDIT WHEN ADD NEW ITEMS*/
     public String getItemIcoByName (String name ,Context context){
-        /** Boss*/
         switch (name) {
+            /** Boss*/
             case "常燃火種":
                 return "/drawable/everflame_seed.png";
             case "淨水之心":
@@ -1093,6 +1093,14 @@ public class ItemRss {
                 return "/drawable/storm_beads.png";
             case "排異之露":
                 return "/drawable/dew_of_repudiation.png";
+            //add in 20220105
+            case "獸境王器":
+                return "/drawable/riftborn_regalia.png";
+            case "龍嗣偽鰭":
+                return "/drawable/dragonheirs_false_fin.png";
+            //add in 20220331
+            case "符紋之齒":
+                return "/drawable/runic_fang.png";
 
             /** Local*/
             case "小燈草":
@@ -1369,11 +1377,6 @@ public class ItemRss {
                 return "/drawable/concealed_unguis.png";
             case "隱獸鬼爪":
                 return "/drawable/concealed_talon.png";
-            //add in 20220105
-            case "獸境王器":
-                return "/drawable/riftborn_regalia.png";
-            case "龍嗣偽鰭":
-                return "/drawable/dragonheirs_false_fin.png";
 
 
             /** T-Book*/

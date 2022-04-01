@@ -559,7 +559,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                         if (have == false) {
                             (((CalculatorUI) context)).charQuestion(String.valueOf(char_base_name.getText()), "ADD", 0);
                         } else {
-                            Toast.makeText(((CalculatorUI) context), context.getString(R.string.cal_choosed_already), Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(((CalculatorUI) context), context.getString(R.string.cal_choosed_already), Toast.LENGTH_SHORT).show();
                             CustomToast.toast(context,view,context.getString(R.string.cal_choosed_already));
                         }
                     }

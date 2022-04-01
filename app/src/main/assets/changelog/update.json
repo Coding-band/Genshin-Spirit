@@ -1,8 +1,8 @@
 [
   {
-    "version": "4966",
-    "verName": "2.6.0-gp (4966)",
-    "description": "Changelog - 2021-03-29<br><br><b>Calculator</b><br>1. Fixed display error of result item<br><br><b>Characters and weapons</b><br>1. Added Qiqi ~ Zhongli's character advice<br><br><b>UI</b><br>1. Improved lists' filter function<br>2. Re-design Character, Artifacts and Weapons list, thx for 2O48#9733 's help :person_bowing: <br>3. Added event suit function<br>4. Suitable for landscape device<br>5. Character Info Display District Icon<br>6. Press Animation<br>7. Fixed Traveller display error <br>8. Character Info added more suggestions<br>9. Character Info scroll & deleted background display<br>10. Updated Special Thanks Page"
+    "version": "5000",
+    "verName": "2.6.0-gp (5000)",
+    "description": "Changelog - 2021-03-31<br><br><b>Calculator</b><br>1. Fixed display error of result item<br><br><b>Characters and weapons</b><br>1. Added Qiqi ~ Zhongli's character advice<br><br><b>UI</b><br>1. Improved lists' filter function<br>2. Re-design Character, Artifacts and Weapons list, thx for 2O48#9733 's help :person_bowing: <br>3. Added event suit function<br>4. Suitable for landscape device<br>5. Character Info Display District Icon<br>6. Press Animation<br>7. Fixed Traveller display error <br>8. Character Info added more suggestions<br>9. Character Info scroll & deleted background display<br>10. Updated Special Thanks Page<br>11. Added Yelan & Kuki in character list (Preview only) and calculator"
   },{
     "version": "3160",
     "verName": "2.5.0-gp (3160)",

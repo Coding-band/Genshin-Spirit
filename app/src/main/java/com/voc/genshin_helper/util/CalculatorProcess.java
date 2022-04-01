@@ -74,6 +74,14 @@ public class CalculatorProcess {
     ArrayList<Integer> 自在松石 = new ArrayList<Integer>();
     ArrayList<Integer> 堅牢黃玉 = new ArrayList<Integer>();
 
+    /** UNKNOWN BOSS ITEM*/
+    int 未知常駐BOSS跌落物1 = 0;
+    int 未知常駐BOSS跌落物2 = 0;
+    int 未知常駐BOSS跌落物3 = 0;
+    int 未知周本BOSS跌落物1 = 0;
+    int 未知周本BOSS跌落物2 = 0;
+    int 未知周本BOSS跌落物3 = 0;
+
     /** BOSS ASC*/
     int  常燃火種  = 0 ;
     int  淨水之心  = 0 ;
@@ -89,6 +97,11 @@ public class CalculatorProcess {
     //add in 20210910
     int  雷霆數珠 = 0;
     int  排異之露 = 0;
+    //add in 20220105
+    int 獸境王器 = 0;
+    int 龍嗣偽鰭 = 0;
+    //add in 20220331
+    int  符紋之齒 = 0;
 
     /** LOCAL */
     int  小燈草  = 0 ;
@@ -153,9 +166,6 @@ public class CalculatorProcess {
     ArrayList<Integer> 名刀鐔 = new ArrayList<Integer>();
     //add in 20210910
     ArrayList<Integer> 浮游晶化核 = new ArrayList<Integer>();
-    //add in 20220105 -> All of them are only have one rare
-    int 獸境王器 = 0;
-    int 龍嗣偽鰭 = 0;
 
     /** T-COMMON*/
 
@@ -1130,8 +1140,8 @@ public class CalculatorProcess {
         }
 
         /** BOSS */
-        String[] boss_temp = new String[]{"常燃火種","淨水之心","雷光棱鏡","極寒之核","颶風之種","玄岩之塔","未熟之玉","晶凝之華","魔偶機心","恒常機關之心","陰燃之珠","雷霆數珠","排異之露","獸境王器","龍嗣偽鰭"};
-        int[] boss_temp_cnt = new int[]{常燃火種,淨水之心,雷光棱鏡,極寒之核,颶風之種,玄岩之塔,未熟之玉,晶凝之華,魔偶機心,恒常機關之心,陰燃之珠,雷霆數珠,排異之露,獸境王器,龍嗣偽鰭};
+        String[] boss_temp = new String[]{"未知常駐BOSS跌落物1","未知常駐BOSS跌落物2","未知常駐BOSS跌落物3","常燃火種","淨水之心","雷光棱鏡","極寒之核","颶風之種","玄岩之塔","未熟之玉","晶凝之華","魔偶機心","恒常機關之心","陰燃之珠","雷霆數珠","排異之露","獸境王器","龍嗣偽鰭","符紋之齒"};
+        int[] boss_temp_cnt = new int[]{未知常駐BOSS跌落物1,未知常駐BOSS跌落物2,未知常駐BOSS跌落物3,常燃火種,淨水之心,雷光棱鏡,極寒之核,颶風之種,玄岩之塔,未熟之玉,晶凝之華,魔偶機心,恒常機關之心,陰燃之珠,雷霆數珠,排異之露,獸境王器,龍嗣偽鰭,符紋之齒};
 
         for (int x = 0 ; x < boss_temp.length ; x++){
             if(boss_temp_cnt[x] > 0){
@@ -1143,10 +1153,9 @@ public class CalculatorProcess {
             }
         }
 
-
         /** WEEK-BOSS */
-        String[] week_boss_temp = new String[]{"北風之環","東風的吐息","東風之翎","北風的魂匣","東風之爪","北風之尾","魔王之刃·殘片","吞天之鯨·只角","武煉之魂·孤影","龍王之冕","血玉之枝","鎏金之鱗","熔毀之刻","灰燼之心","獄火之蝶","萬劫之真意","凶將之手眼","禍神之禊淚"};
-        int[] week_boss_temp_cnt = new int[]{北風之環,東風的吐息,東風之翎,北風的魂匣,東風之爪,北風之尾,魔王之刃_殘片,吞天之鯨_只角,武煉之魂_孤影,龍王之冕,血玉之枝,鎏金之鱗,熔毀之刻,灰燼之心,獄火之蝶,萬劫之真意,凶將之手眼,禍神之禊淚};
+        String[] week_boss_temp = new String[]{"未知周本BOSS跌落物1","未知周本BOSS跌落物2","未知周本BOSS跌落物3","北風之環","東風的吐息","東風之翎","北風的魂匣","東風之爪","北風之尾","魔王之刃·殘片","吞天之鯨·只角","武煉之魂·孤影","龍王之冕","血玉之枝","鎏金之鱗","熔毀之刻","灰燼之心","獄火之蝶","萬劫之真意","凶將之手眼","禍神之禊淚"};
+        int[] week_boss_temp_cnt = new int[]{未知周本BOSS跌落物1,未知周本BOSS跌落物2,未知周本BOSS跌落物3,北風之環,東風的吐息,東風之翎,北風的魂匣,東風之爪,北風之尾,魔王之刃_殘片,吞天之鯨_只角,武煉之魂_孤影,龍王之冕,血玉之枝,鎏金之鱗,熔毀之刻,灰燼之心,獄火之蝶,萬劫之真意,凶將之手眼,禍神之禊淚};
 
         for (int x = 0 ; x < week_boss_temp.length ; x++){
             if(week_boss_temp_cnt[x] > 0){
@@ -1258,7 +1267,6 @@ public class CalculatorProcess {
         mList.setAdapter(concatAdapter);
 
     }
-
 
     /**EDIT WHEN ADD NEW ITEMS*/
     public void resultShow () {
@@ -1497,8 +1505,8 @@ public class CalculatorProcess {
         }
 
         /** BOSS */
-        String[] boss_temp = new String[]{"常燃火種","淨水之心","雷光棱鏡","極寒之核","颶風之種","玄岩之塔","未熟之玉","晶凝之華","魔偶機心","恒常機關之心","陰燃之珠","雷霆數珠","排異之露","獸境王器","龍嗣偽鰭"};
-        int[] boss_temp_cnt = new int[]{常燃火種,淨水之心,雷光棱鏡,極寒之核,颶風之種,玄岩之塔,未熟之玉,晶凝之華,魔偶機心,恒常機關之心,陰燃之珠,雷霆數珠,排異之露,獸境王器,龍嗣偽鰭};
+        String[] boss_temp = new String[]{"未知常駐BOSS跌落物1","未知常駐BOSS跌落物2","未知常駐BOSS跌落物3","常燃火種","淨水之心","雷光棱鏡","極寒之核","颶風之種","玄岩之塔","未熟之玉","晶凝之華","魔偶機心","恒常機關之心","陰燃之珠","雷霆數珠","排異之露","獸境王器","龍嗣偽鰭","符紋之齒"};
+        int[] boss_temp_cnt = new int[]{未知常駐BOSS跌落物1,未知常駐BOSS跌落物2,未知常駐BOSS跌落物3,常燃火種,淨水之心,雷光棱鏡,極寒之核,颶風之種,玄岩之塔,未熟之玉,晶凝之華,魔偶機心,恒常機關之心,陰燃之珠,雷霆數珠,排異之露,獸境王器,龍嗣偽鰭,符紋之齒};
         gridLayout = viewPager.findViewById(R.id.result_boss_gl);
         gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
@@ -1537,8 +1545,8 @@ public class CalculatorProcess {
         }
 
         /** WEEK-BOSS */
-        String[] week_boss_temp = new String[]{"北風之環","東風的吐息","東風之翎","北風的魂匣","東風之爪","北風之尾","魔王之刃·殘片","吞天之鯨·只角","武煉之魂·孤影","龍王之冕","血玉之枝","鎏金之鱗","熔毀之刻","灰燼之心","獄火之蝶","萬劫之真意","凶將之手眼","禍神之禊淚"};
-        int[] week_boss_temp_cnt = new int[]{北風之環,東風的吐息,東風之翎,北風的魂匣,東風之爪,北風之尾,魔王之刃_殘片,吞天之鯨_只角,武煉之魂_孤影,龍王之冕,血玉之枝,鎏金之鱗,熔毀之刻,灰燼之心,獄火之蝶,萬劫之真意,凶將之手眼,禍神之禊淚};
+        String[] week_boss_temp = new String[]{"未知周本BOSS跌落物1","未知周本BOSS跌落物2","未知周本BOSS跌落物3","北風之環","東風的吐息","東風之翎","北風的魂匣","東風之爪","北風之尾","魔王之刃·殘片","吞天之鯨·只角","武煉之魂·孤影","龍王之冕","血玉之枝","鎏金之鱗","熔毀之刻","灰燼之心","獄火之蝶","萬劫之真意","凶將之手眼","禍神之禊淚"};
+        int[] week_boss_temp_cnt = new int[]{未知周本BOSS跌落物1,未知周本BOSS跌落物2,未知周本BOSS跌落物3,北風之環,東風的吐息,東風之翎,北風的魂匣,東風之爪,北風之尾,魔王之刃_殘片,吞天之鯨_只角,武煉之魂_孤影,龍王之冕,血玉之枝,鎏金之鱗,熔毀之刻,灰燼之心,獄火之蝶,萬劫之真意,凶將之手眼,禍神之禊淚};
         gridLayout = viewPager.findViewById(R.id.result_weekboss_gl);
         gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
@@ -2034,6 +2042,11 @@ public class CalculatorProcess {
             if(temp_item.get(4).equals("隱獸鬼爪")){addCountIntoVar(隱獸鬼爪,temp_count,"COPY2");}
 
             /** BOSS -> USING temp_count's pos 8 */
+            // SPECIAL CASE ONLY
+            if(temp_item.get(2).equals("未知常駐BOSS跌落物1")){未知常駐BOSS跌落物1 = addCountIntoVar(未知常駐BOSS跌落物1,temp_count,"BOSS");}
+            if(temp_item.get(2).equals("未知常駐BOSS跌落物2")){未知常駐BOSS跌落物2 = addCountIntoVar(未知常駐BOSS跌落物2,temp_count,"BOSS");}
+            if(temp_item.get(2).equals("未知常駐BOSS跌落物3")){未知常駐BOSS跌落物3 = addCountIntoVar(未知常駐BOSS跌落物3,temp_count,"BOSS");}
+            // NORMAL
             if(temp_item.get(2).equals("常燃火種")){常燃火種 = addCountIntoVar(常燃火種,temp_count,"BOSS");}
             if(temp_item.get(2).equals("淨水之心")){淨水之心 = addCountIntoVar(淨水之心,temp_count,"BOSS");}
             if(temp_item.get(2).equals("雷光棱鏡")){雷光棱鏡 = addCountIntoVar(雷光棱鏡,temp_count,"BOSS");}
@@ -2051,6 +2064,8 @@ public class CalculatorProcess {
             //add in 20220105
             if(temp_item.get(2).equals("獸境王器")){ 獸境王器 = addCountIntoVar(獸境王器,temp_count,"BOSS");}
             if(temp_item.get(2).equals("龍嗣偽鰭")){龍嗣偽鰭 = addCountIntoVar(龍嗣偽鰭,temp_count,"BOSS");}
+            //add in 20220331
+            if(temp_item.get(2).equals("符紋之齒")){符紋之齒 = addCountIntoVar(符紋之齒,temp_count,"BOSS");}
 
             /** LOCAL */
             if(temp_item.get(3).equals("小燈草")){小燈草 = addCountIntoVar(小燈草,temp_count,"LOCAL");}
@@ -2109,6 +2124,13 @@ public class CalculatorProcess {
             if(temp_item.get(1).equals("「浮世」的哲學")){addCountIntoVar(浮世_的哲學,temp_count,"T-BOOK");}
             if(temp_item.get(1).equals("「天光」的哲學")){addCountIntoVar(天光_的哲學,temp_count,"T-BOOK");}
 
+            /** T-BOSS -> USING temp_count's pos 3 */
+            // SPECIAL CASE ONLY
+            if(temp_item.get(3).equals("未知周本BOSS跌落物1")){未知周本BOSS跌落物1 = addCountIntoVar(未知周本BOSS跌落物1,temp_count,"T-BOSS");}
+            if(temp_item.get(3).equals("未知周本BOSS跌落物2")){未知周本BOSS跌落物2 = addCountIntoVar(未知周本BOSS跌落物2,temp_count,"T-BOSS");}
+            if(temp_item.get(3).equals("未知周本BOSS跌落物3")){未知周本BOSS跌落物3 = addCountIntoVar(未知周本BOSS跌落物3,temp_count,"T-BOSS");}
+
+            // NORMAL
             if(temp_item.get(3).equals("北風之環")){北風之環 = addCountIntoVar(北風之環,temp_count,"T-BOSS");}
             if(temp_item.get(3).equals("東風的吐息")){東風的吐息 = addCountIntoVar(東風的吐息,temp_count,"T-BOSS");}
             if(temp_item.get(3).equals("東風之翎")){東風之翎 = addCountIntoVar(東風之翎,temp_count,"T-BOSS");}
@@ -2125,7 +2147,7 @@ public class CalculatorProcess {
             if(temp_item.get(3).equals("熔毀之刻")){熔毀之刻 = addCountIntoVar(熔毀之刻,temp_count,"T-BOSS");}
             if(temp_item.get(3).equals("灰燼之心")){灰燼之心 = addCountIntoVar(灰燼之心,temp_count,"T-BOSS");}
             if(temp_item.get(3).equals("獄火之蝶")){獄火之蝶 = addCountIntoVar(獄火之蝶,temp_count,"T-BOSS");}
-
+            //add in 20220106
             if(temp_item.get(3).equals("萬劫之真意")){萬劫之真意 = addCountIntoVar(萬劫之真意,temp_count,"T-BOSS");}
             if(temp_item.get(3).equals("凶將之手眼")){凶將之手眼 = addCountIntoVar(凶將之手眼,temp_count,"T-BOSS");}
             if(temp_item.get(3).equals("禍神之禊淚")){禍神之禊淚 = addCountIntoVar(禍神之禊淚,temp_count,"T-BOSS");}

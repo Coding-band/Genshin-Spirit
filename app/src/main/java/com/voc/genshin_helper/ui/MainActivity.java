@@ -204,9 +204,6 @@ public class MainActivity extends AppCompatActivity {
     View viewPager0, viewPager1, viewPager2, viewPager3, viewPager4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        //忘憂喵
-        gs = new GoSleep();
-        gs.sleep();
 
         sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
         sharedPreferences_version = getSharedPreferences("changelog_version",MODE_PRIVATE);
@@ -239,6 +236,9 @@ public class MainActivity extends AppCompatActivity {
         nav_view = findViewById(R.id.nav_view);
         npd = new NumberPickerDialog(this);
 
+        //忘憂喵
+        gs = new GoSleep();
+        gs.sleep(context);
 
         // Check Is First Time Open
         if(sharedPreferences_version.getBoolean(BuildConfig.VERSION_NAME,false) == false){
@@ -2179,8 +2179,7 @@ public class MainActivity extends AppCompatActivity {
             SharedPreferences sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
             boolean isExitConfirmEnable = sharedPreferences.getBoolean("isExitConfirmEnable",true);
             if(exit == 0 && isExitConfirmEnable == true){
-                CustomToast customToast = new CustomToast();
-                customToast.toast(context,this,getString(R.string.press_exit));
+                CustomToast.toast(context,this,getString(R.string.press_exit));
                 exit = exit +1;
             }else {
                 exit = 0;

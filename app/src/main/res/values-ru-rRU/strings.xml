@@ -415,14 +415,14 @@
     <string name="thundering_pulse">"Громовой пульс"</string>
 
     <!-- char_info -->
-    <string name="none_info">Актуальной информации о нём/ей</string>>
+    <string name="none_info">Актуальной информации по нём/ей нету</string>>
     <string name="weapon_stat">"2-й артибут: "</string>
     <string name="weapon_stat_atk">"АТК"</string>
     <string name="weapon_stat_DEF">"ЗАЩ"</string>
     <string name="weapon_stat_HP">"HP"</string>
     <string name="weapon_stat_atkP">"АТК %"</string>
     <string name="weapon_stat_CritDMGP">"Крит. урон %"</string>
-    <string name="weapon_stat_CritRateP">"Шанс. кита %"</string>
+    <string name="weapon_stat_CritRateP">"Шанс. крита %"</string>
     <string name="weapon_stat_PhyDMGP">"Физ. урон %"</string>
     <string name="weapon_stat_EnRechP">"Вост. энергии %"</string>
     <string name="weapon_stat_EleMas">"Мастертво стихии"</string>
@@ -528,7 +528,7 @@
 
     <!-- add in 20220108 -->
     <string name="background_setting">Настройка фона</string>
-    <string name="background_accept_list">Принимаются только JPG,JPEG,PNG,GIF</string>
+    <string name="background_accept_list">Принимаются только JPG, JPEG, PNG, GIF</string>
     <string name="background_press_set">Настройка</string>
     <string name="background_source">Источник</string>
     <string name="background_display">Отображать</string>
@@ -916,19 +916,19 @@
     <string name="press_open_link">Нажмите, чтобы открыть сайт</string>
     <string name="developer">Разработчик</string>
 
-    <string name="buff_cal_thx">✧ Особая благодарность dfsly\n✧ Кто разрешил продолжение Genshin Calculator как встроенную функцию</string>
+    <string name="buff_cal_thx">✧ Особая благодарность dfsly\n✧ Тот кто разрешил использывать приложение Genshin Calculator, как встроенную функцию</string>
     <string name="buff_calcluator">Калькулятор баффов</string>
     <string name="ui_design">Дизайн пользовательского интерфейса</string>
 
     <!-- add in 20220304 -->
-    <string name="rectangle" >прямоугольник</string>
-    <string name="square" >квадратный</string>
+    <string name="rectangle" >Прямоугольник</string>
+    <string name="square" >Квадратный</string>
     <string name="char_suit_on" >Сменить наряд</string>
-    <string name="goblet">кружка</string>
+    <string name="goblet">Кружка</string>
     <string name="circlet">Корона</string>
-    <string name="sand">песок</string>
-    <string name="main_entry">Основная статья:</string>
-    <string name="sub_entry">Наречия:</string>
+    <string name="sand">Часы</string>
+    <string name="main_entry">Основные характеристики:</string>
+    <string name="sub_entry">Доп. характеристики</string>
 
     <!-- add in 20220329 -->
     <string name="haran_geppaku_futsu">Харан гэппаку фуцу</string>
@@ -938,4 +938,3 @@
     <string name="yelan">Е Лань</string>
 
 </resources>
-
