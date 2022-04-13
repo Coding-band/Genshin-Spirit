@@ -27,6 +27,63 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/char_card"
+            android:layout_width="420dp"
+            android:layout_height="200dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/bg_alpha_siptik"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/page_bg"
+            app:cardCornerRadius="80px"
+            app:cardElevation="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <cn.enjoytoday.shadow.ShadowLayout
+            android:id="@+id/char_card_bg_blur"
+            android:layout_width="420dp"
+            android:layout_height="200dp"
+            android:layout_margin="8dp"
+            android:alpha="0.7"
+            android:fadingEdge="horizontal|vertical"
+            android:fadingEdgeLength="30dp"
+            android:visibility="gone"
+            app:shadowColor="@color/shadow_char_ico"
+            app:shadowRadius="180dp"
+            app:bgColor="@color/colorWhiteAlpha"
+            app:blurRadius="10dp"
+            app:xOffset="0dp"
+            app:yOffset="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/char_card_bg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/klee_card" />
+
+        <ImageView
+            android:id="@+id/char_card_mask"
+            android:layout_width="420dp"
+            android:layout_height="200dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/bg_white_sharp" />
+
         <ImageView
             android:id="@+id/char_img"
             android:layout_width="160dp"
@@ -85,6 +142,23 @@
             app:layout_constraintTop_toBottomOf="@id/char_img"
             app:layout_constraintVertical_bias="1.0">
 
+            <RatingBar
+                android:id="@+id/char_star"
+                style="@style/rareStar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_weight="1"
+                android:numStars="5"
+                android:rating="5"
+                android:stepSize="0.1"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/char_name_ll"
+                app:layout_constraintStart_toStartOf="@+id/char_img"
+                app:layout_constraintTop_toBottomOf="@+id/char_img"
+                app:layout_constraintVertical_bias="0.0" />
+
             <ImageView
                 android:id="@+id/char_element"
                 android:layout_width="28dp"
@@ -115,6 +189,40 @@
                 android:id="@+id/char_base_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/char_weapon"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:layout_weight="1"
+                android:scaleType="centerCrop"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ico_catalyst" />
+
+            <TextView
+                android:id="@+id/char_role"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/genshin_font"
+                android:text="@string/support_dps"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/char_main_stat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/genshin_font"
+                android:text="@string/weapon_stat_CritDMGP"
+                android:textColor="@color/tv_siptik_color"
+                android:textSize="18sp"
                 android:visibility="gone" />
         </LinearLayout>
 

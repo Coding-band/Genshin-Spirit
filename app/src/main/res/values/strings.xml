@@ -124,7 +124,7 @@
 
     <!-- char_info -->
     <string name="search">Search...</string>
-    <string name="elements">Elements</string>
+    <string name="elements">Element</string>
     <string name="rarity">Rarity</string>
     <string name="filters">Filters</string>
     <string name="mondstadt">Mondstadt</string>
@@ -166,7 +166,7 @@
     <string name="art_advice">Artifacts Advice</string>
     <!-- added in 20211001 -->
     <string name="none_info">There is no relevant information about him/her/it at the moment</string>
-    <string name="weapon_stat">"Sec. attr : "</string>
+    <string name="weapon_stat">"Sub. attr : "</string>
     <string name="weapon_stat_atk">"ATK"</string>
     <string name="weapon_stat_DEF">"DEF"</string>
     <string name="weapon_stat_HP">"HP"</string>
@@ -979,6 +979,8 @@
     <string name="vermillion_hereafter">Vermillion Hereafter</string>
     <string name="kuki_shinobu">Kuki Shinobu</string>
     <string name="yelan">Yelan</string>
+    <string name="advance_stat">Advanced Stat</string>
+    <string name="card">Card</string>
 
 </resources>
 

@@ -20,6 +20,9 @@ android {
         versionCode 1
         versionName "2.6.0"
 
+        renderscriptTargetApi 21
+        renderscriptSupportModeEnabled true
+
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
         vectorDrawables.useSupportLibrary = true
@@ -135,6 +138,8 @@ dependencies {
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.22'
     implementation 'org.commonjava.googlecode.markdown4j:markdown4j:2.2-cj-1.1'
     implementation 'com.github.amikoj:ShadowView:1.0.1'
+    implementation 'jp.wasabeef:blurry:4.0.1'
+
     implementation("androidx.recyclerview:recyclerview:1.2.1")
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'

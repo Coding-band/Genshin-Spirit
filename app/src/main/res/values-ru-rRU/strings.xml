@@ -936,5 +936,7 @@
     <string name="vermillion_hereafter">Киноварное загробье</string>
     <string name="kuki_shinobu">Куки Синобу</string>
     <string name="yelan">Е Лань</string>
+    <string name="advance_stat">Расширенная статистика</string>
+    <string name="card">Карта</string>
 
 </resources>

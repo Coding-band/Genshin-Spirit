@@ -20,17 +20,6 @@
     </LinearLayout>
     <TextView android:textSize="16sp" android:textColor="@color/tv_color" android:gravity="left|center_vertical|center_horizontal|center" android:id="@+id/menu_rarity_title_tv" android:paddingLeft="16dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="@string/rarity"/>
 
-    <RatingBar
-        android:id="@+id/menu_rating2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:isIndicator="false"
-        android:numStars="5"
-        android:progressDrawable="@drawable/rating_bar"
-        android:rating="0"
-        android:stepSize="1" />
-
     <RatingBar android:layout_gravity="center" android:id="@+id/menu_rating" android:layout_width="wrap_content" android:layout_height="wrap_content" android:numStars="5" android:rating="0" android:stepSize="1" android:progressTint="#ffeb3b"/>
     <LinearLayout android:gravity="right" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content">
         <Button android:textColor="@color/theme_color" android:id="@+id/menu_cancel" android:background="@drawable/bg_square_border" android:layout_width="72dp" android:layout_height="36dp" android:layout_margin="4dp" android:text="@android:string/cancel" android:layout_weight="0"/>

@@ -14,9 +14,11 @@ import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.Color;
+
+import androidx.cardview.widget.CardView;
 import androidx.exifinterface.media.ExifInterface;
 
-import android.graphics.drawable.Drawable;
+import android.graphics.drawable.BitmapDrawable;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
@@ -32,15 +34,19 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
+
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.buff.SipTikCal;
 import com.voc.genshin_helper.ui.CalculatorUI;
 import com.voc.genshin_helper.ui.MainActivity;
+import com.voc.genshin_helper.util.ImageBlurBuilder;
 import com.voc.genshin_helper.util.CustomToast;
+import com.voc.genshin_helper.util.FadingImageView;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 import com.voc.genshin_helper.R;
@@ -49,12 +55,9 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.io.IOUtils;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -102,6 +105,8 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                 inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico, viewGroup, false);
             } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
                 inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_square, viewGroup, false);
+            } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_siptik, viewGroup, false);
             }
             return new ViewHolder(inflate, (OnItemClickListener) this.mListener);
         } else if (context instanceof CalculatorUI) {
@@ -129,9 +134,55 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
         }
 
         RoundedCornersTransformation roundedCornersTransformation = new RoundedCornersTransformation(25, 0, RoundedCornersTransformation.CornerType.TOP);
+
+        final int radius_circ_siptik = 80;
+        final int margin_circ_siptik = 0;
+        final Transformation transformation_circ_siptik = new RoundedCornersTransformation(radius_circ_siptik, margin_circ_siptik);
+        final int radius_circ_siptik_ico = 120;
+        final int margin_circ_siptik_ico = 0;
+        final Transformation transformation_circ_siptik_ico = new RoundedCornersTransformation(radius_circ_siptik_ico, margin_circ_siptik_ico);
+
         viewHolder.str = artifacts.getName();
         viewHolder.artifact_name.setText(artifacts.getName());
         viewHolder.artifact_base_name.setText(artifacts.getBaseName());
+
+        if(context.getSharedPreferences("user_info",MODE_PRIVATE).getString("curr_ui_grid", "2").equals("4") ){
+            String baseName = artifacts.getBaseName();
+            SharedPreferences sharedPreferences = ArtifactsAdapter.this.context.getSharedPreferences("user_info", 0);
+            String string = sharedPreferences.getString("curr_lang", "zh-HK");
+            String replace = baseName.replace("'", "_");
+            String str = LoadData("db/artifacts/" + string + "/" + replace + ".json");
+
+            if (str == null) {
+                str = LoadData("db/artifacts/en-US/" + replace + ".json");
+            }
+            if (str != null) {
+                try {
+                    JSONObject jSONObject = new JSONObject(str);
+
+                    if (jSONObject.has("1pc")) {
+                        viewHolder.artifact_desc_2_title.setText(context.getString(R.string.artifact_stat1)+" : ");
+                        viewHolder.artifact_desc_2.setText(jSONObject.getString("1pc"));
+                        viewHolder.artifact_desc_4.setVisibility(View.GONE);
+                        viewHolder.artifact_desc_4_title.setVisibility(View.GONE);
+                    }else if (jSONObject.has("2pc") && (jSONObject.has("4pc"))) {
+                        viewHolder.artifact_desc_2_title.setText(context.getString(R.string.artifact_stat2)+" : ");
+                        viewHolder.artifact_desc_2.setText(jSONObject.getString("2pc"));
+                        viewHolder.artifact_desc_4_title.setText(context.getString(R.string.artifact_stat4)+" : ");
+                        viewHolder.artifact_desc_4.setText(jSONObject.getString("4pc"));
+
+                        viewHolder.artifact_desc_2.setVisibility(View.VISIBLE);
+                        viewHolder.artifact_desc_2_title.setVisibility(View.VISIBLE);
+                        viewHolder.artifact_desc_4.setVisibility(View.VISIBLE);
+                        viewHolder.artifact_desc_4_title.setVisibility(View.VISIBLE);
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
         if (artifacts.getIsComing() == 0) {
             viewHolder.artifact_isComing.setVisibility(View.GONE);
         }
@@ -150,10 +201,12 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
         int curr = width_curr;
         int size_per_img = width_curr/2;
         int size_per_img_sq = width_curr/3;
+        int size_per_img_siptik = width_curr;
 
         if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
             size_per_img = 480;
             size_per_img_sq = 360;
+            size_per_img_siptik = 960;
         }
 
         if(context instanceof MainActivity){
@@ -174,6 +227,22 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                     width = size_per_img_sq;
                     height = size_per_img_sq;
                 }
+            } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+                if(width_curr / ((int)width_curr/size_per_img_siptik+1) > size_per_img_siptik){
+                    width = (width_curr) / ((int)width_curr/size_per_img_siptik+1);
+                    height = (int) ((width) / 2.1);
+
+                }else{
+                    width = (width_curr) / (int) (width_curr/size_per_img_siptik);
+                    height = (int) ((width) / 2.1);
+                }
+
+                viewHolder.artifact_card_bg.getLayoutParams().width = width;
+                viewHolder.artifact_card_bg.getLayoutParams().height = height;
+                viewHolder.artifact_card_mask.getLayoutParams().width = width;
+                viewHolder.artifact_card_mask.getLayoutParams().height = height;
+                viewHolder.artifact_card.getLayoutParams().width = width-36;
+                viewHolder.artifact_card.getLayoutParams().height = height-36;
             }
 
 
@@ -245,11 +314,128 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
 
             }
 
-
             viewHolder.artifact_name_ll.getLayoutParams().width = width;
             viewHolder.artifact_name_ll.getLayoutParams().height = width*4/8;
             viewHolder.artifact_main.getLayoutParams().width = width;
             viewHolder.artifact_main.getLayoutParams().height = height*10/9;
+        }else if(context.getSharedPreferences("user_info",MODE_PRIVATE).getString("curr_ui_grid", "2").equals("3") ){
+            switch (artifacts.getRare()){
+                case 1 : {
+                    if(isNight == true){
+                        viewHolder.artifact_bg.setBackgroundResource(R.drawable.rare1_800x1000_dark);
+                    }else{
+                        viewHolder.artifact_bg.setBackgroundResource(R.drawable.rare1_800x1000_light);
+                    }
+                    break;
+                }
+                case 2 : {
+                    if(isNight == true){
+                        viewHolder.artifact_bg.setBackgroundResource(R.drawable.rare2_800x1000_dark);
+                    }else{
+                        viewHolder.artifact_bg.setBackgroundResource(R.drawable.rare2_800x1000_light);
+                    }
+                    break;
+                }
+                case 3 : {
+                    if(isNight == true){
+                        viewHolder.artifact_bg.setBackgroundResource(R.drawable.rare3_800x1000_dark);
+                    }else{
+                        viewHolder.artifact_bg.setBackgroundResource(R.drawable.rare3_800x1000_light);
+                    }
+                    break;
+                }
+                case 4 : {
+                    if(isNight == true){
+                        viewHolder.artifact_bg.setBackgroundResource(R.drawable.rare4_800x1000_dark);
+                    }else{
+                        viewHolder.artifact_bg.setBackgroundResource(R.drawable.rare4_800x1000_light);
+                    }
+                    break;
+                }
+                case 5 : {
+                    if(isNight == true){
+                        viewHolder.artifact_bg.setBackgroundResource(R.drawable.rare5_800x1000_dark);
+                    }else{
+                        viewHolder.artifact_bg.setBackgroundResource(R.drawable.rare5_800x1000_light);
+                    }
+                    break;
+                }
+
+            }
+
+            viewHolder.artifact_name_ll.getLayoutParams().width = width;
+            viewHolder.artifact_name_ll.getLayoutParams().height = width*2/8;
+            viewHolder.artifact_main.getLayoutParams().width = width;
+            viewHolder.artifact_main.getLayoutParams().height = width;
+        }else if(context.getSharedPreferences("user_info",MODE_PRIVATE).getString("curr_ui_grid", "2").equals("4") ){
+            switch (artifacts.getRare()) {
+                case 1: {
+                    Picasso.get()
+                            .load(R.drawable.bg_rare1_siptik).resize((int) (width_curr), (int) ((width_curr) / 2.1)).transform(transformation_circ_siptik)
+                            .error(R.drawable.bg_rare1_siptik).transform(transformation_circ_siptik)
+                            .into(viewHolder.artifact_card_bg);
+                    break;
+                }
+                case 2: {
+                    Picasso.get()
+                            .load(R.drawable.bg_rare2_siptik).resize((int) (width_curr), (int) ((width_curr) / 2.1)).transform(transformation_circ_siptik)
+                            .error(R.drawable.bg_rare2_siptik).transform(transformation_circ_siptik)
+                            .into(viewHolder.artifact_card_bg);
+                    break;
+                }
+                case 3: {
+                    Picasso.get()
+                            .load(R.drawable.bg_rare3_siptik).resize((int) (width_curr), (int) ((width_curr) / 2.1)).transform(transformation_circ_siptik)
+                            .error(R.drawable.bg_rare3_siptik).transform(transformation_circ_siptik)
+                            .into(viewHolder.artifact_card_bg);
+                    break;
+                }
+                case 4: {
+                    Picasso.get()
+                            .load(R.drawable.bg_rare4_siptik).resize((int) (width_curr), (int) ((width_curr) / 2.1)).transform(transformation_circ_siptik)
+                            .error(R.drawable.bg_rare4_siptik).transform(transformation_circ_siptik)
+                            .into(viewHolder.artifact_card_bg);
+                    break;
+                }
+                case 5: {
+                    Picasso.get()
+                            .load(R.drawable.bg_rare5_siptik).resize((int) (width_curr), (int) ((width_curr) / 2.1)).transform(transformation_circ_siptik)
+                            .error(R.drawable.bg_rare5_siptik).transform(transformation_circ_siptik)
+                            .into(viewHolder.artifact_card_bg);
+                    break;
+                }
+
+            }
+
+            //viewHolder.artifact_name_ll.getLayoutParams().width = width;
+            //viewHolder.artifact_name_ll.getLayoutParams().height = width*2/8;
+            //viewHolder.artifact_main.getLayoutParams().width = width;
+            //viewHolder.artifact_main.getLayoutParams().height = width;
+
+            int frame = R.drawable.bg_day_frame;
+
+            if (isNight){
+                frame = R.drawable.bg_night_frame;
+            }
+
+            Picasso.get()
+                    .load (frame).resize((int) (width_curr),(int) ((width_curr)/2.1)).transform(transformation_circ_siptik)
+                    .error (frame).transform(transformation_circ_siptik)
+                    .into (viewHolder.artifact_card_mask);
+
+            Picasso.get()
+                    .load (R.drawable.bg_artifact_siptik_square).resize((int) (height_curr),(int) (height_curr)).transform(transformation_circ_siptik)
+                    .error (R.drawable.bg_artifact_siptik_square)
+                    .into (viewHolder.artifact_card_ico_deco);
+
+            viewHolder.artifact_card_bg.setPadding(8,8,8,8);
+            viewHolder.artifact_card_mask.setPadding(8,8,8,8);
+            viewHolder.artifact_card_ico_deco.setPadding(8,8,8,8);
+            viewHolder.artifact_card.setPadding(8,8,8,8);
+
+            viewHolder.artifact_card_ico_deco.setEdgeLength(100);
+            viewHolder.artifact_card_ico_deco.setFadeDirection(FadingImageView.FadeSide.RIGHT_SIDE);
+
         }else{
             switch (artifacts.getRare()){
                 case 1 : {
@@ -306,14 +492,24 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
         viewHolder.artifact_icon.getLayoutParams().width = width;
         viewHolder.artifact_icon.getLayoutParams().height = height;
 
-        Drawable drawable = context.getResources().getDrawable(R.drawable.item_selected_circle_effect);
-        viewHolder.artifact_icon.setForeground(drawable);
+        //Drawable drawable = context.getResources().getDrawable(R.drawable.item_selected_circle_effect);
+        //viewHolder.artifact_icon.setForeground(drawable);
         Context context2 = this.context;
+
         if (context2 instanceof MainActivity) {
             if (((MainActivity) context2).sharedPreferences.getString("curr_ui_grid", ExifInterface.GPS_MEASUREMENT_2D).equals(ExifInterface.GPS_MEASUREMENT_2D)) {
                 Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(artifacts.getName(),context)[1],context)).fit().centerCrop().error(R.drawable.paimon_full).into(viewHolder.artifact_icon);
             } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", ExifInterface.GPS_MEASUREMENT_3D).equals(ExifInterface.GPS_MEASUREMENT_3D)) {
                 Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(artifacts.getName(),context)[1],context)).resize(one_curr,one_curr).error(R.drawable.paimon_full).into(viewHolder.artifact_icon);
+            }else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+                viewHolder.artifact_icon.getLayoutParams().width = 96*width/315;
+                viewHolder.artifact_icon.getLayoutParams().height = 96*width/315;
+                Picasso.get()
+                        .load(FileLoader.loadIMG(itemRss.getArtifactByName(artifacts.getName(),context)[1],context))
+                        .resize(96*width/315,96*width/315)
+                        .transform(transformation_circ_siptik_ico)
+                        .error (R.drawable.paimon_full)
+                        .into (viewHolder.artifact_icon);
             }
         } else if (context2 instanceof CalculatorUI) {
             Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(artifacts.getName(),context)[1],context)).resize(one_curr,one_curr).error(R.drawable.paimon_full).into(viewHolder.artifact_icon);
@@ -345,6 +541,15 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
         public ImageView artifact_press_mask;
         public ConstraintLayout artifact_main;
         public LinearLayout artifact_name_ll;
+        public ImageView artifact_card_bg;
+        public ImageView artifact_card_mask;
+        public FadingImageView artifact_card_ico_deco;
+        public TextView artifact_desc_2;
+        public TextView artifact_desc_2_title;
+        public TextView artifact_desc_4;
+        public TextView artifact_desc_4_title;
+        public CardView artifact_card;
+
 
         public ViewHolder(View view, OnItemClickListener onItemClickListener) {
             super(view);
@@ -358,6 +563,16 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
             this.artifact_press_mask = (ImageView) view.findViewById(R.id.artifact_press_mask);
             this.artifact_name_ll = (LinearLayout) view.findViewById(R.id.artifact_name_ll);
             this.artifact_main = (ConstraintLayout) view.findViewById(R.id.artifact_main);
+
+            this.artifact_card_bg = itemView.findViewById(R.id.artifact_card_bg);
+            this.artifact_card_mask = itemView.findViewById(R.id.artifact_card_mask);
+            this.artifact_card_ico_deco = itemView.findViewById(R.id.artifact_card_ico_deco);
+            this.artifact_desc_2 = view.findViewById(R.id.artifact_desc_2);
+            this.artifact_desc_2_title = view.findViewById(R.id.artifact_desc_2_title);
+            this.artifact_desc_4 = view.findViewById(R.id.artifact_desc_4);
+            this.artifact_desc_4_title = view.findViewById(R.id.artifact_desc_4_title);
+
+            this.artifact_card = itemView.findViewById(R.id.artifact_card);
 
             artifact_press_mask.startAnimation(buttonClick);
 

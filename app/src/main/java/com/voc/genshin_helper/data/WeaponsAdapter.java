@@ -16,6 +16,7 @@ import android.content.res.AssetManager;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -32,15 +33,20 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.buff.SipTikCal;
 import com.voc.genshin_helper.ui.CalculatorUI;
 import com.voc.genshin_helper.ui.MainActivity;
+import com.voc.genshin_helper.util.ImageBlurBuilder;
 import com.voc.genshin_helper.util.CustomToast;
+import com.voc.genshin_helper.util.FadingImageView;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 import com.voc.genshin_helper.R;
@@ -49,13 +55,12 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.io.IOUtils;
+
 import org.json.JSONException;
 import org.json.JSONObject;
+
 
 /*
  * Project Genshin Spirit (原神小幫手) was
@@ -93,6 +98,8 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                 inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_weapon_ico, viewGroup, false);
             } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
                 inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_weapon_ico_square, viewGroup, false);
+            } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_weapon_ico_siptik, viewGroup, false);
             }
             return new ViewHolder(inflate, (OnItemClickListener) this.mListener);
         } else if (context instanceof CalculatorUI) {
@@ -112,6 +119,14 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
         final int radius = 50;
         final int margin = 0;
         final Transformation transformation = new RoundedCornersTransformation(radius, margin,TOP);
+
+
+        final int radius_circ_siptik = 80;
+        final int margin_circ_siptik = 0;
+        final Transformation transformation_circ_siptik = new RoundedCornersTransformation(radius_circ_siptik, margin_circ_siptik);
+        final int radius_circ_siptik_ico = 120;
+        final int margin_circ_siptik_ico = 0;
+        final Transformation transformation_circ_siptik_ico = new RoundedCornersTransformation(radius_circ_siptik_ico, margin_circ_siptik_ico);
 
         int width = 0;
         int height = 0;
@@ -148,6 +163,7 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
         int curr = width_curr;
         int size_per_img = width_curr/2;
         int size_per_img_sq = width_curr/3;
+        int size_per_img_siptik = width_curr;
 
         Drawable drawable = context.getResources().getDrawable(R.drawable.item_selected_circle_effect);
         viewHolder.weapon_icon.setForeground(drawable);
@@ -155,6 +171,7 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
         if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
             size_per_img = 480;
             size_per_img_sq = 360;
+            size_per_img_siptik = 960;
         }
 
         if(context instanceof MainActivity){
@@ -175,6 +192,22 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                     width = size_per_img_sq;
                     height = size_per_img_sq;
                 }
+            } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+                if(width_curr / ((int)width_curr/size_per_img_siptik+1) > size_per_img_siptik){
+                    width = (width_curr) / ((int)width_curr/size_per_img_siptik+1);
+                    height = (int) ((width) / 2.1);
+
+                }else{
+                    width = (width_curr) / (int) (width_curr/size_per_img_siptik);
+                    height = (int) ((width) / 2.1);
+                }
+
+                viewHolder.weapon_card_bg.getLayoutParams().width = width;
+                viewHolder.weapon_card_bg.getLayoutParams().height = height;
+                viewHolder.weapon_card_mask.getLayoutParams().width = width;
+                viewHolder.weapon_card_mask.getLayoutParams().height = height;
+                viewHolder.weapon_card.getLayoutParams().width = width-36;
+                viewHolder.weapon_card.getLayoutParams().height = height-36;
             }
 
 
@@ -201,6 +234,8 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
         }
 
         viewHolder.weapon_stat.setText(this.context.getString(itemRss.getSecAttr(weapons.stat_1)));
+        viewHolder.weapon_name.setText(itemRss.getWeaponByName(weapons.getName(),context)[0]);
+        viewHolder.weapon_weapon.setImageResource(itemRss.getWeaponTypeIMG(weapons.getWeapon()));
         //viewHolder.weapon_icon.setBackgroundResource(itemRss.getRareColorByName(weapons.getRare())[0]);
         //viewHolder.weapon_bg.setBackgroundResource(itemRss.getRareColorByName(weapons.getRare())[0]);
         //viewHolder.weapon_nl.setBackgroundResource(itemRss.getRareColorByName(weapons.getRare())[1]);
@@ -256,6 +291,124 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
             viewHolder.weapon_name_ll.getLayoutParams().height = width*4/8;
             viewHolder.weapon_main.getLayoutParams().width = width;
             viewHolder.weapon_main.getLayoutParams().height = height*10/9;
+        }else if(context.getSharedPreferences("user_info",MODE_PRIVATE).getString("curr_ui_grid", "2").equals("3") ){
+            switch (weapons.getRare()){
+                case 1 : {
+                    if(isNight == true){
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare1_800x1000_dark);
+                    }else{
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare1_800x1000_light);
+                    }
+                    break;
+                }
+                case 2 : {
+                    if(isNight == true){
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare2_800x1000_dark);
+                    }else{
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare2_800x1000_light);
+                    }
+                    break;
+                }
+                case 3 : {
+                    if(isNight == true){
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare3_800x1000_dark);
+                    }else{
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare3_800x1000_light);
+                    }
+                    break;
+                }
+                case 4 : {
+                    if(isNight == true){
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare4_800x1000_dark);
+                    }else{
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare4_800x1000_light);
+                    }
+                    break;
+                }
+                case 5 : {
+                    if(isNight == true){
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare5_800x1000_dark);
+                    }else{
+                        viewHolder.weapon_bg.setBackgroundResource(R.drawable.rare5_800x1000_light);
+                    }
+                    break;
+                }
+
+            }
+
+            viewHolder.weapon_name_ll.getLayoutParams().width = width;
+            viewHolder.weapon_name_ll.getLayoutParams().height = width*2/8;
+            viewHolder.weapon_main.getLayoutParams().width = width;
+            viewHolder.weapon_main.getLayoutParams().height = width;
+
+        }else if(context.getSharedPreferences("user_info",MODE_PRIVATE).getString("curr_ui_grid", "2").equals("4") && context instanceof MainActivity){
+            switch (weapons.getRare()){
+                case 1 : {
+                    Picasso.get()
+                            .load (R.drawable.bg_rare1_siptik).resize((int) (width_curr),(int) ((width_curr)/2.1)).transform(transformation_circ_siptik)
+                            .error (R.drawable.bg_rare1_siptik).transform(transformation_circ_siptik)
+                            .into (viewHolder.weapon_card_bg);
+                    break;
+                }
+                case 2 : {
+                    Picasso.get()
+                            .load (R.drawable.bg_rare2_siptik).resize((int) (width_curr),(int) ((width_curr)/2.1)).transform(transformation_circ_siptik)
+                            .error (R.drawable.bg_rare2_siptik).transform(transformation_circ_siptik)
+                            .into (viewHolder.weapon_card_bg);
+                    break;
+                }
+                case 3 : {
+                    Picasso.get()
+                            .load (R.drawable.bg_rare3_siptik).resize((int) (width_curr),(int) ((width_curr)/2.1)).transform(transformation_circ_siptik)
+                            .error (R.drawable.bg_rare3_siptik).transform(transformation_circ_siptik)
+                            .into (viewHolder.weapon_card_bg);
+                    break;
+                }
+                case 4 : {
+                    Picasso.get()
+                            .load (R.drawable.bg_rare4_siptik).resize((int) (width_curr),(int) ((width_curr)/2.1)).transform(transformation_circ_siptik)
+                            .error (R.drawable.bg_rare4_siptik).transform(transformation_circ_siptik)
+                            .into (viewHolder.weapon_card_bg);
+                    break;
+                }
+                case 5 : {
+                    Picasso.get()
+                            .load (R.drawable.bg_rare5_siptik).resize((int) (width_curr),(int) ((width_curr)/2.1)).transform(transformation_circ_siptik)
+                            .error (R.drawable.bg_rare5_siptik).transform(transformation_circ_siptik)
+                            .into(viewHolder.weapon_card_bg);
+                    break;
+                }
+            }
+
+
+            //viewHolder.weapon_name_ll.getLayoutParams().width = width;
+            //viewHolder.weapon_name_ll.getLayoutParams().height = width*2/8;
+            //viewHolder.weapon_main.getLayoutParams().width = width;
+            //viewHolder.weapon_main.getLayoutParams().height = width;
+
+            int frame = R.drawable.bg_day_frame;
+
+            if (isNight){
+                frame = R.drawable.bg_night_frame;
+            }
+
+            Picasso.get()
+                    .load (frame).resize((int) (width_curr),(int) ((width_curr)/2.1)).transform(transformation_circ_siptik)
+                    .error (frame).transform(transformation_circ_siptik)
+                    .into (viewHolder.weapon_card_mask);
+
+            Picasso.get()
+                    .load (R.drawable.bg_weapon_siptik_square).resize((int) (height_curr),(int) (height_curr)).transform(transformation_circ_siptik)
+                    .error (R.drawable.bg_weapon_siptik_square)
+                    .into (viewHolder.weapon_card_ico_deco);
+
+            viewHolder.weapon_card_bg.setPadding(8,8,8,8);
+            viewHolder.weapon_card_mask.setPadding(8,8,8,8);
+            viewHolder.weapon_card_ico_deco.setPadding(8,8,8,8);
+            viewHolder.weapon_card.setPadding(8,8,8,8);
+
+            viewHolder.weapon_card_ico_deco.setEdgeLength(100);
+            viewHolder.weapon_card_ico_deco.setFadeDirection(FadingImageView.FadeSide.RIGHT_SIDE);
         }else{
             switch (weapons.getRare()){
                 case 1 : {
@@ -305,6 +458,7 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
             viewHolder.weapon_name_ll.getLayoutParams().height = width*2/8;
             viewHolder.weapon_main.getLayoutParams().width = width;
             viewHolder.weapon_main.getLayoutParams().height = width;
+
         }
 
         viewHolder.weapon_icon.getLayoutParams().width = width;
@@ -315,16 +469,32 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
         if (context2 instanceof MainActivity) {
             if (((MainActivity) context2).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
 
-                Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).fit().centerCrop().error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
+                Picasso.get()
+                        .load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context))
+                        .fit().centerCrop()
+                        .error(R.drawable.paimon_full)
+                        .into(viewHolder.weapon_icon);
             } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).resize(one_curr,one_curr).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
+                Picasso.get()
+                        .load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context))
+                        .resize(one_curr,one_curr)
+                        .error(R.drawable.paimon_full)
+                        .into(viewHolder.weapon_icon);
+            }else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+                viewHolder.weapon_icon.getLayoutParams().width = 96*width/315;
+                viewHolder.weapon_icon.getLayoutParams().height = 96*width/315;
+                Picasso.get()
+                        .load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context))
+                        .resize(96*width/315,96*width/315)
+                        .transform(transformation_circ_siptik_ico)
+                        .error (R.drawable.paimon_full)
+                        .into (viewHolder.weapon_icon);
             }
         } else if (context2 instanceof CalculatorUI) {
             Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).resize(one_curr,one_curr).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
         } else if (context2 instanceof SipTikCal) {
             Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).resize(one_curr,one_curr).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
         }
-        viewHolder.weapon_name.setText(itemRss.getWeaponByName(weapons.getName(),context)[0]);
 
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
         String color_hex = sharedPreferences.getString("theme_color_hex","#FF5A5A"); // Must include #
@@ -362,6 +532,11 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
         public RatingBar weapon_star;
         public TextView weapon_stat;
         public ImageView weapon_press_mask;
+        public ImageView weapon_weapon;
+        public ImageView weapon_card_bg;
+        public ImageView weapon_card_mask;
+        public FadingImageView weapon_card_ico_deco;
+        public CardView weapon_card;
 
         public ViewHolder(View view, OnItemClickListener onItemClickListener) {
             super(view);
@@ -376,6 +551,13 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
             this.weapon_stat = (TextView) view.findViewById(R.id.weapon_stat);
             this.weapon_press_mask = (ImageView) view.findViewById(R.id.weapon_press_mask);
             this.weapon_main = (ConstraintLayout) view.findViewById(R.id.weapon_main);
+
+            this.weapon_weapon = itemView.findViewById(R.id.weapon_weapon);
+            this.weapon_card_bg = itemView.findViewById(R.id.weapon_card_bg);
+            this.weapon_card_mask = itemView.findViewById(R.id.weapon_card_mask);
+            this.weapon_card_ico_deco = itemView.findViewById(R.id.weapon_card_ico_deco);
+            this.weapon_card = itemView.findViewById(R.id.weapon_card);
+
             weapon_press_mask.startAnimation(buttonClick);
 
             this.weapon_press_mask.setOnClickListener(new View.OnClickListener() {

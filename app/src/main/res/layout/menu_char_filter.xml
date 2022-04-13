@@ -196,6 +196,69 @@
         android:rating="0"
         android:stepSize="1" />
 
+    <TextView
+        android:id="@+id/menu_role_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center|left"
+        android:paddingLeft="16dp"
+        android:text="@string/char_role"
+        android:textColor="@color/tv_color"
+        android:textSize="16sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <CheckBox
+            android:id="@+id/menu_role_dps"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/main_dps"
+            android:textAlignment="center"
+            android:textColor="@color/dps"
+            android:textSize="20sp" />
+
+        <CheckBox
+            android:id="@+id/menu_role_sub_dps"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/support_dps"
+            android:textAlignment="center"
+            android:textColor="@color/sub_dps"
+            android:textSize="20sp" />
+
+        <CheckBox
+            android:id="@+id/menu_role_utility"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/utility"
+            android:textAlignment="center"
+            android:textColor="@color/util"
+            android:textSize="20sp" />
+    </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

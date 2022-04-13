@@ -14,13 +14,14 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="page_bg">#CC424242</color>
+    <color name="page_bg">#A0424242</color>
     <color name="page_bg_solid">#424242</color>
     <color name="base_page_bg">#313131</color>
     <color name="tv_color">#FFFFFF</color>
     <color name="tv_anti_color">#000000</color>
     <color name="card_bg_less">#CC313131</color>
     <color name="item_bg_square">#444444</color>
+    <color name="tv_siptik_color">#FFFFFF</color>
     <color name="colorWhiteAlpha">#00000000</color>
     <color name="colorWhiteAlpha1">#10000000</color>
 
@@ -58,6 +59,10 @@
     <color name="rare3">#5d9cb1</color>
     <color name="rare4">#ae81c1</color>
     <color name="rare5">#dea44f</color>
+
+    <color name="dps">#F481FF</color>
+    <color name="sub_dps">#FC6363</color>
+    <color name="util">#81F9FF</color>
 
     <color name="shadow_char_ico">#22000000</color>
 

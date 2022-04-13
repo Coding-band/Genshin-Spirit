@@ -369,6 +369,12 @@ public class MainActivity extends AppCompatActivity {
                             }else{
                                 mLayoutManager = new GridLayoutManager(context,  3);
                             }
+                        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+                            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                                mLayoutManager = new GridLayoutManager(context,  width/960);
+                            }else{
+                                mLayoutManager = new GridLayoutManager(context,  1);
+                            }
                         }
                         LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
                         paramsMsg.gravity = Gravity.CENTER;
@@ -608,6 +614,12 @@ public class MainActivity extends AppCompatActivity {
                             }else{
                                 mLayoutManager = new GridLayoutManager(context,  3);
                             }
+                        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+                            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                                mLayoutManager = new GridLayoutManager(context,  width_a/960);
+                            }else{
+                                mLayoutManager = new GridLayoutManager(context,  1);
+                            }
                         }
                         paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
                         paramsMsg.gravity = Gravity.CENTER;
@@ -782,6 +794,12 @@ public class MainActivity extends AppCompatActivity {
                                 mLayoutManager = new GridLayoutManager(context,  width_w/400+1);
                             }else{
                                 mLayoutManager = new GridLayoutManager(context,  3);
+                            }
+                        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+                            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                                mLayoutManager = new GridLayoutManager(context,  width_w/960);
+                            }else{
+                                mLayoutManager = new GridLayoutManager(context,  1);
                             }
                         }
                         paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
@@ -1119,7 +1137,8 @@ public class MainActivity extends AppCompatActivity {
 
 
         // Translate
-        langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp),getString(R.string.fr_fr),getString(R.string.uk_ua)};
+        //langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp),getString(R.string.fr_fr),getString(R.string.uk_ua)};
+        langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp),getString(R.string.fr_fr)};
         ArrayAdapter lang_aa = new ArrayAdapter(context,R.layout.spinner_item,langList);
         lang_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
@@ -1194,7 +1213,7 @@ public class MainActivity extends AppCompatActivity {
 
         // List_Grid
 
-        gridList = new String[]{context.getString(R.string.rectangle),context.getString(R.string.square)};
+        gridList = new String[]{context.getString(R.string.rectangle),context.getString(R.string.square),context.getString(R.string.card)};
         ArrayAdapter grid_aa = new ArrayAdapter(context,R.layout.spinner_item,gridList);
         grid_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
 
@@ -1213,6 +1232,10 @@ public class MainActivity extends AppCompatActivity {
                         editor.apply();
                     }else if(position == 1){
                         editor.putString("curr_ui_grid","3");
+                        editor.putInt("curr_ui_grid_pos",position);
+                        editor.apply();
+                    }else if(position == 2){
+                        editor.putString("curr_ui_grid","4");
                         editor.putInt("curr_ui_grid_pos",position);
                         editor.apply();
                     }
@@ -1768,7 +1791,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void char_list_reload() {
         Log.wtf("DAAM","YEE");
-        String name ,element,weapon,nation,sex;
+        String name ,element,weapon,nation,sex,mainStat,role;
         int rare,isComing;
         charactersList.clear();
 
@@ -1783,6 +1806,8 @@ public class MainActivity extends AppCompatActivity {
                 weapon = object.getString("weapon");
                 nation = object.getString("nation");
                 sex = object.getString("sex");
+                role = object.getString("role");
+                mainStat = object.getString("mainStat");
                 rare = object.getInt("rare");
                 isComing = object.getInt("isComing");
 
@@ -1792,7 +1817,9 @@ public class MainActivity extends AppCompatActivity {
                 characters.setWeapon(weapon);
                 characters.setNation(nation);
                 characters.setSex(sex);
+                characters.setRole(role);
                 characters.setRare(rare);
+                characters.setMainStat(mainStat);
                 characters.setIsComing(isComing);
                 charactersList.add(characters);
             }

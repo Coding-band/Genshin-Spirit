@@ -24,8 +24,6 @@ public class GoSleep {
 
     String fin_str = "";
 
-
-    @RequiresApi(api = Build.VERSION_CODES.N)
     public void sleep (Context context){
         System.out.println("忘憂訓緊覺");
         for (int i = 1 ; i < 4 ; i++){

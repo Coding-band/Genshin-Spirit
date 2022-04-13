@@ -35,6 +35,7 @@
 
 
         <FrameLayout
+            android:id="@+id/info_char_bg"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1">
@@ -42,8 +43,7 @@
             <ImageView
                 android:id="@+id/info_char_img"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@color/pyro" />
+                android:layout_height="match_parent" />
 
             <LinearLayout
                 android:id="@+id/info_detail"

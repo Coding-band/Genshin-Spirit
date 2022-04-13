@@ -27,6 +27,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+        <androidx.cardview.widget.CardView
+            android:id="@+id/artifact_card"
+            android:layout_width="420dp"
+            android:layout_height="200dp"
+            android:layout_margin="8dp"
+            android:background="@drawable/bg_alpha_siptik"
+            android:visibility="gone"
+            app:cardBackgroundColor="@color/page_bg"
+            app:cardCornerRadius="80px"
+            app:cardElevation="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/artifact_main"
@@ -84,6 +98,71 @@
                 android:id="@+id/artifact_base_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:visibility="gone" />
+
+
+            <com.voc.genshin_helper.util.FadingImageView
+                android:id="@+id/artifact_card_ico_deco"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                android:alpha="0.5"
+                android:requiresFadingEdge="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/bg_artifact_siptik_square" />
+
+            <TextView
+                android:id="@+id/artifact_desc_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|left"
+                android:layout_marginTop="4dp"
+                android:layout_weight="0"
+                android:fontFamily="@font/genshin_font"
+                android:maxLines="2"
+                android:text="@string/artifact_stat2"
+                android:textColor="@color/tv_siptik_color"
+                android:visibility="gone"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/artifact_desc_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|left"
+                android:layout_marginTop="4dp"
+                android:layout_weight="0"
+                android:fontFamily="@font/genshin_font"
+                android:maxLines="2"
+                android:text="@string/artifact_stat4"
+                android:textColor="@color/tv_siptik_color"
+                android:visibility="gone"
+                android:textSize="14sp" />
+            <TextView
+                android:id="@+id/artifact_desc_2_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0"
+                android:fontFamily="@font/genshin_font"
+                android:text="@string/artifact_stat2"
+                android:textColor="@color/tv_siptik_color"
+                android:textSize="18sp"
+                android:visibility="gone" />
+            <TextView
+                android:id="@+id/artifact_desc_4_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="0"
+                android:fontFamily="@font/genshin_font"
+                android:text="@string/artifact_stat4"
+                android:textColor="@color/tv_siptik_color"
+                android:textSize="18sp"
                 android:visibility="gone" />
         </LinearLayout>
 

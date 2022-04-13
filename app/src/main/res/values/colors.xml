@@ -16,11 +16,12 @@
     <color name="shaderBG">#CC313131</color>
     <color name="invisible">#00FFFFFF</color>
 
-    <color name="page_bg">#CCB3B3B3</color>
+    <color name="page_bg">#AAB3B3B3</color>
     <color name="page_bg_solid">#B3B3B3</color>
     <color name="base_page_bg">#E0E0E0</color>
     <color name="tv_color">#4B4B4B</color>
     <color name="tv_anti_color">#FFFFFF</color>
+    <color name="tv_siptik_color">#3D3D3D</color>
     <color name="card_bg_less">#CCE0E0E0</color>
     <color name="item_bg_square">#D0D0D0</color>
 
@@ -67,6 +68,11 @@
 
     <color name="uncrit">#FFC71D</color>
     <color name="crit">#5AD529</color>
+
+    <color name="dps">#F481FF</color>
+    <color name="sub_dps">#FC6363</color>
+    <color name="util">#81F9FF</color>
+
 
     <color name="shadow_char_ico">#22000000</color>
 
