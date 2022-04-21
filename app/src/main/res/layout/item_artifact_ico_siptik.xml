@@ -108,15 +108,15 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/genshin_font"
-                android:shadowColor="@color/colorWhiteAlpha"
+                android:shadowColor="@color/tv_shadow_color"
                 android:shadowDx="2"
                 android:shadowDy="2"
-                android:shadowRadius="2"
+                android:shadowRadius="5"
                 android:singleLine="true"
                 android:text="@string/crimson_witch_of_flames"
                 android:textAlignment="center"
-                android:textColor="@color/tv_siptik_color"
-                android:textSize="20sp"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/artifact_name_ll"
                 app:layout_constraintEnd_toEndOf="@+id/artifact_card_mask"
                 app:layout_constraintStart_toEndOf="@+id/artifact_img"
@@ -158,9 +158,13 @@
                         android:layout_gravity="center"
                         android:layout_weight="0"
                         android:fontFamily="@font/genshin_font"
+                        android:shadowColor="@color/tv_shadow_color"
+                        android:shadowDx="2"
+                        android:shadowDy="2"
+                        android:shadowRadius="5"
                         android:text="@string/artifact_stat2"
-                        android:textColor="@color/tv_siptik_color"
-                        android:textSize="18sp" />
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 
@@ -174,9 +178,13 @@
                     android:ellipsize="end"
                     android:fontFamily="@font/genshin_font"
                     android:maxLines="3"
+                    android:shadowColor="@color/tv_shadow_color"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="5"
                     android:text="@string/artifact_stat2"
-                    android:textColor="@color/tv_siptik_color"
-                    android:textSize="14sp" />
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -193,9 +201,13 @@
                         android:layout_gravity="center"
                         android:layout_weight="0"
                         android:fontFamily="@font/genshin_font"
+                        android:shadowColor="@color/tv_shadow_color"
+                        android:shadowDx="2"
+                        android:shadowDy="2"
+                        android:shadowRadius="5"
                         android:text="@string/artifact_stat4"
-                        android:textColor="@color/tv_siptik_color"
-                        android:textSize="18sp" />
+                        android:textColor="@android:color/white"
+                        android:textSize="14sp" />
 
                 </LinearLayout>
 
@@ -209,9 +221,13 @@
                     android:ellipsize="end"
                     android:fontFamily="@font/genshin_font"
                     android:maxLines="3"
+                    android:shadowColor="@color/tv_shadow_color"
+                    android:shadowDx="2"
+                    android:shadowDy="2"
+                    android:shadowRadius="5"
                     android:text="@string/artifact_stat4"
-                    android:textColor="@color/tv_siptik_color"
-                    android:textSize="14sp" />
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -232,7 +248,7 @@
 
             <RatingBar
                 android:id="@+id/artifact_star"
-                style="@style/rareStar"
+                style="@style/rareStar16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

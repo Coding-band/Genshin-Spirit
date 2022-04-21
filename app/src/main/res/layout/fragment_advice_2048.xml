@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2022 Xectorda 版權所有
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/info_advice_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_2048_advice_single_title"
+        android:fontFamily="@font/genshin_font"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="@string/main_dps"
+        android:textColor="@color/tv_anti_color_2048"
+        android:textSize="18sp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/info_advice_main_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/gone_background"
+        app:cardBackgroundColor="@color/colorWhiteAlpha"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_2048_talent_card"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+
+            <TextView
+                android:id="@+id/info_advice_main_weapon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/genshin_font"
+                android:text="@string/weapon_advice"
+                android:textColor="@color/dialog_subtitle_tv_color_2048"
+                android:textSize="20sp" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fadingEdgeLength="30dp"
+                android:overScrollMode="never"
+                android:requiresFadingEdge="horizontal"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/advice_main_weapon_sc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="visible" />
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/info_advice_main_art"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/genshin_font"
+                android:text="@string/art_advice"
+                android:textColor="@color/dialog_subtitle_tv_color_2048"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/info_advice_main_art_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:paddingLeft="24dp"
+                android:textColor="@color/tv_color"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/advice_main_art_ll1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/advice_main_art_ll2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/advice_main_art_ll3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/advice_main_art_ll4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/advice_main_art_ll5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="visible" />
+
+
+            <LinearLayout
+                android:id="@+id/info_main_ll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="@string/sand"
+                        android:textColor="@color/tv_anti_color_2048"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/info_main_sand_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/genshin_font"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/dialog_desc_title_tv_color_2048"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="@string/goblet"
+                        android:textColor="@color/tv_anti_color_2048"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/info_main_goblet_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/genshin_font"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/dialog_desc_title_tv_color_2048"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="@string/circlet"
+                        android:textColor="@color/tv_anti_color_2048"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/info_main_circlet_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/genshin_font"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/dialog_desc_title_tv_color_2048"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="@string/sub_entry"
+                        android:textColor="@color/tv_anti_color_2048"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/info_main_sub_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/genshin_font"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/dialog_desc_title_tv_color_2048"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/info_advice_support"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_2048_advice_single_title"
+        android:fontFamily="@font/genshin_font"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="@string/support_dps"
+        android:textColor="@color/tv_anti_color_2048"
+        android:textSize="18sp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/info_advice_support_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/gone_background"
+        app:cardBackgroundColor="@color/colorWhiteAlpha"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_2048_talent_card"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+
+            <TextView
+                android:id="@+id/info_advice_support_weapon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/genshin_font"
+                android:text="@string/weapon_advice"
+                android:textColor="@color/dialog_subtitle_tv_color_2048"
+                android:textSize="20sp" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fadingEdgeLength="30dp"
+                android:overScrollMode="never"
+                android:requiresFadingEdge="horizontal"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/advice_support_weapon_sc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="visible" />
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/info_advice_support_art"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/genshin_font"
+                android:text="@string/art_advice"
+                android:textColor="@color/dialog_subtitle_tv_color_2048"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/info_advice_support_art_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:paddingLeft="24dp"
+                android:textColor="@color/tv_color"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/advice_support_art_ll1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/advice_support_art_ll2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/advice_support_art_ll3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/advice_support_art_ll4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/advice_support_art_ll5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="visible" />
+
+
+            <LinearLayout
+                android:id="@+id/info_support_ll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="@string/sand"
+                        android:textColor="@color/tv_anti_color_2048"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/info_support_sand_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/genshin_font"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/dialog_desc_title_tv_color_2048"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="@string/goblet"
+                        android:textColor="@color/tv_anti_color_2048"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/info_support_goblet_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/genshin_font"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/dialog_desc_title_tv_color_2048"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="@string/circlet"
+                        android:textColor="@color/tv_anti_color_2048"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/info_support_circlet_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/genshin_font"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/dialog_desc_title_tv_color_2048"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="@string/sub_entry"
+                        android:textColor="@color/tv_anti_color_2048"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/info_support_sub_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/genshin_font"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/dialog_desc_title_tv_color_2048"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/info_advice_util"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_2048_advice_single_title"
+        android:fontFamily="@font/genshin_font"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="@string/utility"
+        android:textColor="@color/tv_anti_color_2048"
+        android:textSize="18sp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/info_advice_util_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/gone_background"
+        app:cardBackgroundColor="@color/colorWhiteAlpha"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_2048_talent_card"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+
+            <TextView
+                android:id="@+id/info_advice_util_weapon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/genshin_font"
+                android:text="@string/weapon_advice"
+                android:textColor="@color/dialog_subtitle_tv_color_2048"
+                android:textSize="20sp" />
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fadingEdgeLength="30dp"
+                android:overScrollMode="never"
+                android:requiresFadingEdge="horizontal"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:id="@+id/advice_util_weapon_sc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:visibility="visible" />
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/info_advice_util_art"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/genshin_font"
+                android:text="@string/art_advice"
+                android:textColor="@color/dialog_subtitle_tv_color_2048"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/info_advice_util_art_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:paddingLeft="24dp"
+                android:textColor="@color/tv_color"
+                android:textSize="16sp"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:id="@+id/advice_util_art_ll1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/advice_util_art_ll2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/advice_util_art_ll3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/advice_util_art_ll4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/advice_util_art_ll5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:visibility="visible" />
+
+
+            <LinearLayout
+                android:id="@+id/info_util_ll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="@string/sand"
+                        android:textColor="@color/tv_anti_color_2048"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/info_util_sand_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/genshin_font"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/dialog_desc_title_tv_color_2048"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="@string/goblet"
+                        android:textColor="@color/tv_anti_color_2048"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/info_util_goblet_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/genshin_font"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/dialog_desc_title_tv_color_2048"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="@string/circlet"
+                        android:textColor="@color/tv_anti_color_2048"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/info_util_circlet_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/genshin_font"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/dialog_desc_title_tv_color_2048"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="@string/sub_entry"
+                        android:textColor="@color/tv_anti_color_2048"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/info_util_sub_tv"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/genshin_font"
+                        android:textAlignment="viewEnd"
+                        android:textColor="@color/dialog_desc_title_tv_color_2048"
+                        android:textSize="16sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/info_advice_team"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_2048_advice_single_title"
+        android:fontFamily="@font/genshin_font"
+        android:gravity="center"
+        android:text="@string/team_advice"
+        android:textColor="@color/tv_anti_color_2048"
+        android:textSize="18sp"
+        android:padding="8dp" />
+
+    <LinearLayout
+        android:id="@+id/advice_team1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_2048_talent_card"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:overScrollMode="never"
+        android:padding="8dp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/advice_team2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_2048_talent_card"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:overScrollMode="never"
+        android:padding="8dp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/advice_team3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_2048_talent_card"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:overScrollMode="never"
+        android:padding="8dp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/advice_team4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_2048_talent_card"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:overScrollMode="never"
+        android:padding="8dp"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:id="@+id/advice_team5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_2048_talent_card"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:overScrollMode="never"
+        android:padding="8dp"
+        android:visibility="gone" />
+
+</LinearLayout>

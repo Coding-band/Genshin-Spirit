@@ -1,0 +1,535 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2022 Xectorda 版權所有
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/info_talent1_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_2048_talent_card"
+        app:cardBackgroundColor="#00FFFFFF"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_2048_talent_card"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/info_talent1_ico"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ico_catalyst" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        app:cardBackgroundColor="@color/colorWhiteAlpha"
+                        app:cardCornerRadius="360dp"
+                        app:cardElevation="5dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/info_talent1_value_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_2048_char_value" />
+                    </androidx.cardview.widget.CardView>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/info_talent1_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="砰砰"
+                        android:textAlignment="center"
+                        android:textColor="@color/tv_anti_color_2048"
+                        android:textSize="24dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="@string/noraml_atk"
+                        android:textAlignment="center"
+                        android:textColor="@color/dialog_desc_title_tv_color_2048"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/info_talent1_normal_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:fontFamily="@font/genshin_font"
+                android:gravity="center"
+                android:text="@string/noraml_atk"
+                android:textAlignment="viewStart"
+                android:textColor="@color/dialog_title_tv_color_2048"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/info_talent1_normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:fontFamily="@font/genshin_font"
+                android:gravity="center"
+                android:text="投擲在碰撞後爆炸的好東西！進行至多三段的炸彈攻擊，造成火元素範圍傷害。"
+                android:textAlignment="viewStart"
+                android:textColor="@color/tv_anti_color_2048"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/info_talent1_hard_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:fontFamily="@font/genshin_font"
+                android:gravity="center"
+                android:text="@string/charged_atk"
+                android:textAlignment="viewStart"
+                android:textColor="@color/dialog_title_tv_color_2048"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/info_talent1_hard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:fontFamily="@font/genshin_font"
+                android:gravity="center"
+                android:text="消耗一定體力，短暫詠唱後，轟擊敵人，造成火元素範圍傷害。"
+                android:textAlignment="viewStart"
+                android:textColor="@color/tv_anti_color_2048"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/info_talent1_drop_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:fontFamily="@font/genshin_font"
+                android:gravity="center"
+                android:text="@string/plunging_atk"
+                android:textAlignment="viewStart"
+                android:textColor="@color/dialog_title_tv_color_2048"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/info_talent1_drop"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:fontFamily="@font/genshin_font"
+                android:gravity="center"
+                android:text="凝聚烈焰的力量，從空中下墜衝擊地面，攻擊下落路徑上的敵人，並在落地時造成火元素範圍傷害。"
+                android:textAlignment="viewStart"
+                android:textColor="@color/tv_anti_color_2048"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/info_talent2_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_2048_talent_card"
+        app:cardBackgroundColor="@color/colorWhiteAlpha"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp">>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_2048_talent_card"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/info_talent2_ico"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ico_catalyst" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        app:cardBackgroundColor="@color/colorWhiteAlpha"
+                        app:cardCornerRadius="360dp"
+                        app:cardElevation="5dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/info_talent2_value_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_2048_char_value" />
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/info_talent2_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="蹦蹦炸彈"
+                        android:textAlignment="center"
+                        android:textColor="@color/tv_anti_color_2048"
+                        android:textSize="24dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="@string/element_atk"
+                        android:textAlignment="center"
+                        android:textColor="@color/dialog_desc_title_tv_color_2048"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/info_talent2_detail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:fontFamily="@font/genshin_font"
+                android:gravity="center"
+                android:text="描述"
+                android:textAlignment="viewStart"
+                android:textColor="@color/dialog_title_tv_color_2048"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/info_talent2_normal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:fontFamily="@font/genshin_font"
+                android:gravity="center"
+                android:text="投出帶來無限快樂的蹦蹦炸彈！蹦蹦炸彈會連續彈跳三次，每次彈跳都會引發爆炸，造成火元素範圍傷害。\n第三次彈跳後，將分裂成許多(8個)詭雷。\n詭雷會在接觸到敵人或一段時間後爆炸，造成火元素範圍傷害。\n初始擁有2次可使用次數。\n\n蹦蹦是可莉的「好朋友」…可莉總是忍不住向人介紹他們。"
+                android:textAlignment="viewStart"
+                android:textColor="@color/tv_anti_color_2048"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/info_talent3_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_2048_talent_card"
+        app:cardBackgroundColor="@color/colorWhiteAlpha"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_2048_talent_card"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <ImageView
+                        android:id="@+id/info_talent3_ico"
+                        android:layout_width="72dp"
+                        android:layout_height="72dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ico_catalyst" />
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        app:cardBackgroundColor="@color/colorWhiteAlpha"
+                        app:cardCornerRadius="360dp"
+                        app:cardElevation="5dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <ImageView
+                            android:id="@+id/info_talent3_value_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/ic_2048_char_value" />
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/info_talent3_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="轟轟火花"
+                        android:textAlignment="center"
+                        android:textColor="@color/tv_anti_color_2048"
+                        android:textSize="24dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="@string/final_atk"
+                        android:textAlignment="center"
+                        android:textColor="@color/dialog_desc_title_tv_color_2048"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/info_talent3_detail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:fontFamily="@font/genshin_font"
+                android:gravity="center"
+                android:text="描述"
+                android:textAlignment="viewStart"
+                android:textColor="@color/dialog_title_tv_color_2048"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/info_talent3_normal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:fontFamily="@font/genshin_font"
+                android:gravity="center"
+                android:text="可莉火力全開！在技能持續時間內，不停召喚轟轟火花攻擊附近的敵人，造成火元素範圍傷害。\n\n騎士團的人相信，可莉從來不被自己的炸彈所傷，一定有幸運星眷顧著她吧…"
+                android:textAlignment="viewStart"
+                android:textColor="@color/tv_anti_color_2048"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/info_talent4_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/bg_2048_talent_card"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/colorWhiteAlpha"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_2048_talent_card"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/info_talent4_ico"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ico_catalyst" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/info_talent4_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="神里,莫娜適用"
+                        android:textAlignment="center"
+                        android:textColor="@color/tv_anti_color_2048"
+                        android:textSize="24dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="@string/other_title"
+                        android:textAlignment="center"
+                        android:textColor="@color/dialog_desc_title_tv_color_2048"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/info_talent4_detail"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:fontFamily="@font/genshin_font"
+                android:gravity="center"
+                android:text="描述"
+                android:textAlignment="viewStart"
+                android:textColor="@color/dialog_title_tv_color_2048"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/info_talent4_normal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:fontFamily="@font/genshin_font"
+                android:gravity="center"
+                android:text="talent4 -> get"
+                android:textAlignment="viewStart"
+                android:textColor="@color/tv_anti_color_2048"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

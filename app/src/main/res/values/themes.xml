@@ -6,15 +6,41 @@
 
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-	<style name="SplashTheme" parent="@style/Theme.AppCompat.NoActionBar">
+    <style name="SplashTheme" parent="@style/Theme.AppCompat.NoActionBar">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
     </style>
 
     <style name="rareStar" parent="@android:style/Widget.RatingBar">
-        <item name="android:progressDrawable">@drawable/star_24</item>
+        <item name="android:progressDrawable">@drawable/star_48</item>
         <item name="android:minHeight">24dp</item>
         <item name="android:maxHeight">48dp</item>
+    </style>
+
+    <style name="rareStar24" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/star_24</item>
+        <item name="android:minHeight">24dp</item>
+        <item name="android:maxHeight">32dp</item>
+    </style>
+
+    <style name="rareStar16" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/star_16</item>
+        <item name="android:minHeight">16dp</item>
+        <item name="android:maxHeight">24dp</item>
+    </style>
+
+    <!-- for text -->
+    <style name="AppTabTextAppearance" parent="TextAppearance.Design.Tab">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/orange</item>
+        <item name="textAllCaps">false</item>
+    </style>
+
+    <!-- roundImageView -->
+    <style name="roundImageView" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50px</item>
+        <item name="color">@color/white</item>
     </style>
 
     <style name="NoTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -44,7 +70,7 @@
         <item name="android:indeterminateDrawable">@drawable/star_empty</item>
     </style>
 
-    <style name="AppTheme.Picker" parent="Theme.AppCompat.Light.NoActionBar" >
+    <style name="AppTheme.Picker" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:textColorPrimary">@color/tv_color</item>
     </style>
 
@@ -85,6 +111,7 @@
         <!--背景变暗-->
         <item name="android:backgroundDimEnabled">true</item>
     </style>
+
     <style name="normalDialogAnim" parent="android:Animation">
         <item name="android:windowEnterAnimation">@anim/normal_navi_down_enter</item>
         <item name="android:windowExitAnimation">@anim/normal_navi_down_exit</item>
@@ -100,4 +127,13 @@
         <item name="android:textColorPrimary">@color/tv_color</item>
         <item name="android:textColor">@color/tv_color</item>
     </style>
+
+    <style name="NoTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="NoTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="NoTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>

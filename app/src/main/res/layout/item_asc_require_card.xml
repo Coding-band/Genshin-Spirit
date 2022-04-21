@@ -1,0 +1,1198 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2022 Xectorda 版權所有
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/asc_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_alpha_siptik"
+        app:cardBackgroundColor="@color/tab_bg_2048"
+        app:cardCornerRadius="50px"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView24"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:adjustViewBounds="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout7"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_2048_star_bg" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/linearLayout7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+
+                <LinearLayout
+                    android:id="@+id/linearLayout8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/imageView17"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/asc_material_ico"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="2dp"
+                            android:adjustViewBounds="true"
+                            app:srcCompat="@drawable/narukamis_wisdom" />
+
+                        <ImageView
+                            android:id="@+id/asc_material_tick"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="4dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/asc_material_tv"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/genshin_font"
+                            android:singleLine="true"
+                            android:text="@string/teaching_of_freedom"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/asc_material_location"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="2dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/genshin_font"
+                            android:singleLine="true"
+                            android:text="忘卻之峽"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/imageView17"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center|right"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_2048_locate" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginBottom="8dp"
+                android:fadingEdge="horizontal"
+                android:fadingEdgeLength="40dp"
+                android:overScrollMode="never"
+                android:requiresFadingEdge="horizontal"
+                android:scrollbars="none"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout7"
+                app:layout_constraintVertical_bias="0.0">
+
+                <LinearLayout
+                    android:id="@+id/asc_material_char_ll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico1"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick1"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico2"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick2"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico3"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick3"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico4"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick4"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico5"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick5"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll6"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico6"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick6"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll7"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico7"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick7"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll8"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico8"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick8"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll9"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico9"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick9"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll10"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico10"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick10"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll11"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico11"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick11"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll12"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico12"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick12"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll13"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico13"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick13"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll14"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico14"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick14"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll15"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico15"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick15"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll16"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico16"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick16"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll17"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico17"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick17"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll18"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico18"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick18"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll19"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico19"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick19"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll20"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico20"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick20"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll21"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico21"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick21"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll22"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico22"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick22"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll23"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico23"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick23"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll24"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico24"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick24"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll25"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico25"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick25"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll26"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico26"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick26"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll27"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico27"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick27"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll28"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico28"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick28"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll29"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico29"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick29"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll30"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico30"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick30"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll31"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico31"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick31"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll32"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico32"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick32"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll33"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico33"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick33"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll34"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico34"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick34"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll35"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico35"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick35"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll36"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico36"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick36"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll37"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico37"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick37"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll38"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico38"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick38"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll39"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico39"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick39"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll40"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico40"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick40"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll41"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico41"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick41"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll42"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico42"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick42"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll43"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico43"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick43"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll44"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico44"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick44"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/asc_char_ll45"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/asc_char_ico45"
+                            android:layout_width="72dp"
+                            android:layout_height="72dp"
+                            android:layout_marginRight="4dp"
+                            android:background="@drawable/item_char_list_bg_circ_5s"
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+
+                        <ImageView
+                            android:id="@+id/asc_char_tick45"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="bottom|right"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/ic_2048_need_tick" />
+                    </FrameLayout>
+
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>

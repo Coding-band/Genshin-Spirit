@@ -31,6 +31,9 @@ public class Today_Material {
     int[] Sat_char_TV =  {R.string.teaching_of_ballad,R.string.teaching_of_gold,R.string.teachings_of_light};
     int[] Sun_char_TV =  {R.string.teaching_of_freedom,R.string.teaching_of_prosperity,R.string.teachings_of_transience,R.string.teaching_of_resistance,R.string.teaching_of_diligence,R.string.teachings_of_elegance,R.string.teaching_of_ballad,R.string.teaching_of_gold,R.string.teachings_of_light};
 
+    int[] Sun_char_Location =  {R.string.forsaken_rift,R.string.taishan_mansion,R.string.violet_court,R.string.forsaken_rift,R.string.taishan_mansion,R.string.violet_court,R.string.forsaken_rift,R.string.taishan_mansion,R.string.violet_court};
+    int[] Weekday_char_Location =  {R.string.forsaken_rift,R.string.taishan_mansion,R.string.violet_court};
+
     int[] Mon_weapon_IMG =  {R.drawable.tile_of_decarabians_tower,R.drawable.luminous_sands_from_guyun,R.drawable.coral_branch_of_a_distant_sea};
     int[] Tue_weapon_IMG =  {R.drawable.mist_veiled_lead_elixir,R.drawable.boreal_wolfs_milk_tooth,R.drawable.narukamis_wisdom};
     int[] Wed_weapon_IMG =  {R.drawable.grain_of_aerosiderite,R.drawable.fetters_of_the_dandelion_gladiator,R.drawable.mask_of_the_wicked_lieutenant};
@@ -47,6 +50,9 @@ public class Today_Material {
     int[] Sat_weapon_TV =  {R.string.grain_of_aerosiderite,R.string.fetters_of_the_dandelion_gladiator,R.string.mask_of_the_wicked_lieutenant};
     int[] Sun_weapon_TV =  {R.string.tile_of_decarabians_tower,R.string.luminous_sands_from_guyun,R.string.coral_branch_of_a_distant_sea,R.string.mist_veiled_lead_elixir,R.string.boreal_wolfs_milk_tooth,R.string.narukamis_wisdom,R.string.grain_of_aerosiderite,R.string.fetters_of_the_dandelion_gladiator,R.string.mask_of_the_wicked_lieutenant};
 
+    int[] Sun_weapon_Location =  {R.string.cecilia_garden,R.string.hidden_palace_of_lianshan_formula,R.string.court_of_flowing_sand,R.string.cecilia_garden,R.string.hidden_palace_of_lianshan_formula,R.string.court_of_flowing_sand,R.string.cecilia_garden,R.string.hidden_palace_of_lianshan_formula,R.string.court_of_flowing_sand};
+    int[] Weekday_weapon_Location =  {R.string.cecilia_garden,R.string.hidden_palace_of_lianshan_formula,R.string.court_of_flowing_sand};
+
 
     public int[] today_char_IMG (int dow){
         if(dow == 2){return Mon_char_IMG;}
@@ -57,6 +63,11 @@ public class Today_Material {
         else if(dow == 7){return Sat_char_IMG;}
         else if(dow == 1){return Sun_char_IMG;}
         return Mon_char_IMG;
+    }
+
+    public int[] today_char_location (int dow){
+        if(dow == 1){return Sun_char_Location;}
+        else return Weekday_char_Location;
     }
 
     public int[] today_weapon_IMG (int dow){
@@ -92,6 +103,11 @@ public class Today_Material {
         return Mon_weapon_TV;
     }
 
+    public int[] today_weapon_location (int dow){
+        if(dow == 1){return Sun_weapon_Location;}
+        else return Weekday_weapon_Location;
+    }
+
     public int today_is (int ids){
         if(ArrayUtils.contains( Mon_char_IMG, ids)||ArrayUtils.contains( Thur_char_IMG, ids)||ArrayUtils.contains( Mon_weapon_IMG,ids)||ArrayUtils.contains( Thur_weapon_IMG,ids)){
             return R.string.dow_set1;
@@ -103,6 +119,36 @@ public class Today_Material {
             return R.string.dow_set3;
         }
         else return R.string.unknown;
+    }
+
+    public int findCharBookByZHName(String str){
+        switch (str){
+            case "「自由」的哲學" : return R.string.teaching_of_freedom;
+            case "「抗爭」的哲學" : return R.string.teaching_of_resistance;
+            case "「詩文」的哲學" : return R.string.teaching_of_ballad;
+            case "「黃金」的哲學" : return R.string.teaching_of_gold;
+            case "「勤勞」的哲學" : return R.string.teaching_of_diligence;
+            case "「繁榮」的哲學" : return R.string.teaching_of_prosperity;
+            case "「風雅」的哲學" : return R.string.teachings_of_elegance;
+            case "「天光」的哲學" : return R.string.teachings_of_light;
+            case "「浮世」的哲學" : return R.string.teachings_of_transience;
+            default: return R.string.teaching_of_freedom;
+        }
+    }
+
+    public int findWeaponMaterialByZHName(String str){
+        switch (str){
+            case "高塔孤王的碎夢" : return R.string.tile_of_decarabians_tower;
+            case "孤雲寒林的神體" : return R.string.luminous_sands_from_guyun;
+            case "遠海夷地的金枝" : return R.string.coral_branch_of_a_distant_sea;
+            case "霧海雲間的轉還" : return R.string.mist_veiled_lead_elixir;
+            case "凜風奔狼的懷鄉" : return R.string.boreal_wolfs_milk_tooth;
+            case "鳴神御靈的勇武" : return R.string.narukamis_wisdom;
+            case "漆黑隕鐵的一塊" : return R.string.grain_of_aerosiderite;
+            case "獅牙鬥士的理想" : return R.string.fetters_of_the_dandelion_gladiator;
+            case "今昔劇畫的鬼人" : return R.string.mask_of_the_wicked_lieutenant;
+            default: return R.string.tile_of_decarabians_tower;
+        }
     }
 
 }

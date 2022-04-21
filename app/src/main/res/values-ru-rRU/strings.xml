@@ -51,6 +51,7 @@
     <string name="mask_of_the_wicked_lieutenant">Маска злого военачальника</string>
 
     <!-- char_name -->
+    <string name="kamisato_ayato">Камисато Аято</string>
     <string name="aloy">Элой</string>
     <string name="kujou_sara">Кудзё Сара</string>
     <string name="sangonomiya_kokomi">Сангономия Кокоми</string>
@@ -118,26 +119,26 @@
     <string name="birth">День рождения</string>
     <string name="intro">Вступление</string>
     <string name="battle_talent">Боевой талант</string>
-    <string name="noraml_atk">【Обычная атака】</string>
-    <string name="charged_atk">【Заряженая атака】</string>
-    <string name="plunging_atk">【Атака в падении】</string>
-    <string name="element_atk">【Элементальный навык】</string>
-    <string name="final_atk">【Взрыв стихии】</string>
+    <string name="noraml_atk">Обычная атака</string>
+    <string name="charged_atk">Заряженая атака</string>
+    <string name="plunging_atk">Атака в падении</string>
+    <string name="element_atk">Элементальный навык</string>
+    <string name="final_atk">Взрыв стихии</string>
     <string name="basic_talent">Пассивный талант</string>
     <string name="asc0_unlock">Полезная пассивка</string>
     <string name="asc1_unlock">Разблокируется на 1 уровне возвышения</string>
     <string name="asc4_unlock">Разблокируется на 4 уровне возвышения</string>
     <string name="sof">Созвездие</string>
-    <string name="sof1">【Уровень 1】</string>
-    <string name="sof2">【Уровень 2】</string>
-    <string name="sof3">【Уровень 3】</string>
-    <string name="sof4">【Уровень 4】</string>
-    <string name="sof5">【Уровень 5】</string>
-    <string name="sof6">【Уровень 6】</string>
+    <string name="sof1">Уровень 1</string>
+    <string name="sof2">Уровень 2</string>
+    <string name="sof3">Уровень 3</string>
+    <string name="sof4">Уровень 4</string>
+    <string name="sof5">Уровень 5</string>
+    <string name="sof6">Уровень 6</string>
     <string name="advice">Совет</string>
     <string name="team_advice">Совет по отрядам</string>
     <string name="weapon_advice">Совет по оружию</string>
-    <string name="art_advice">Совет по артефакта </string>
+    <string name="art_advice">Совет по артефакта</string>
 
     <!-- alarm -->
     <string name="alarm_t1">Босс</string>
@@ -742,7 +743,7 @@
     <string name="the_great_snowboar_king">Король большой снежной свиньи</string>
 
     <!-- add in 20220209-->
-    <string name="element_reaction">【Элемент Реакция】</string>
+    <string name="element_reaction">Элемент Реакция</string>
     <string name="buff_normal_1_hit">Урон атаки 1</string>
     <string name="buff_normal_2_hit">Урон атаки 2</string>
     <string name="buff_normal_3_hit">Урон атаки 3</string>
@@ -924,9 +925,9 @@
     <string name="rectangle" >Прямоугольник</string>
     <string name="square" >Квадратный</string>
     <string name="char_suit_on" >Сменить наряд</string>
-    <string name="goblet">Кружка</string>
-    <string name="circlet">Корона</string>
-    <string name="sand">Часы</string>
+    <string name="goblet">Кубок пространства:</string>
+    <string name="circlet">Корона разума:</string>
+    <string name="sand">Пески времени:</string>
     <string name="main_entry">Основные характеристики:</string>
     <string name="sub_entry">Доп. характеристики</string>
 
@@ -936,7 +937,22 @@
     <string name="vermillion_hereafter">Киноварное загробье</string>
     <string name="kuki_shinobu">Куки Синобу</string>
     <string name="yelan">Е Лань</string>
-    <string name="advance_stat">Расширенная статистика</string>
-    <string name="card">Карта</string>
+    <string name="advance_stat">Хар.</string>
+    <string name="card">Карточный</string>
 
+    <!-- add in 20220419 -->
+    <string name="element_Electro">физ.</string>
+    <string name="element_Pyro">Пиро</string>
+    <string name="element_Hydro">Гидро</string>
+    <string name="element_Dendor">Дендро</string>
+    <string name="element_Cryo">Крио</string>
+    <string name="element_Anemo">Анемо</string>
+    <string name="element_Geo">Гео</string>
+    <string name="forsaken_rift">Забытый каньон</string>
+    <string name="taishan_mansion">Тайшаньфу</string>
+    <string name="violet_court">Фиалковый зал</string>
+    <string name="cecilia_garden">Сад Сесилии</string>
+    <string name="hidden_palace_of_lianshan_formula">Лабиринт Ляншан</string>
+    <string name="court_of_flowing_sand">Зал текущего песка</string>
+    <string name="img_reset_finish">фон был сброшен</string>
 </resources>

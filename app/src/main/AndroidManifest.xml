@@ -1,10 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  ~ Project Genshin Spirit (原神小幫手) was
-  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
-  ~ Copyright © 2022 Xectorda 版權所有
-  -->
-
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.voc.genshin_helper">
@@ -22,6 +16,7 @@
 
     <application
         android:allowBackup="true"
+        android:configChanges="uiMode"
         android:hardwareAccelerated="true"
         android:icon="@drawable/app_ico"
         android:label="@string/app_name"
@@ -31,8 +26,15 @@
         android:supportsRtl="true"
         android:theme="@style/NoTheme"
         android:usesCleartextTraffic="true"
-        android:configChanges="uiMode"
         android:windowSoftInputMode="stateHidden">
+        <activity
+            android:name=".ui.MMXLVIII.Characters_Info_Scroll_2048"
+            android:exported="false"
+            android:label="@string/title_activity_characters_info_scroll2048"
+            android:theme="@style/NoTheme.NoActionBar" />
+        <activity
+            android:name=".ui.MMXLVIII.Desk2048"
+            android:exported="false" />
         <activity
             android:name=".ui.BackgroundConfirmActivity"
             android:label="@string/app_name"
@@ -69,6 +71,7 @@
             android:name=".buff.SipTikCal"
             android:label="@string/app_name"
             android:windowSoftInputMode="stateHidden" />
+
         <receiver android:name=".util.ReminderBroadcast" />
         <receiver
             android:name=".util.SampleBootReceiver"

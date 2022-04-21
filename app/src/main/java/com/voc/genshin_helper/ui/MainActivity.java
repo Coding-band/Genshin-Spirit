@@ -37,9 +37,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -89,7 +86,6 @@ import com.voc.genshin_helper.util.LangUtils;
 import com.voc.genshin_helper.util.LocaleHelper;
 import com.voc.genshin_helper.util.NumberPickerDialog;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
-import com.voc.genshin_helper.util.Version;
 
 import org.jetbrains.annotations.NotNull;
 import org.json.JSONArray;
@@ -220,7 +216,6 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         //init
         tm = new Today_Material();
@@ -583,7 +578,12 @@ public class MainActivity extends AppCompatActivity {
                                 //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
                                 Window dialogWindow = dialog.getWindow();
                                 WindowManager.LayoutParams lp = dialogWindow.getAttributes();
-                                lp.width = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth());
+                                DisplayMetrics displayMetrics = new DisplayMetrics();
+                                getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+                                int height = displayMetrics.heightPixels;
+                                int width = displayMetrics.widthPixels;
+
+                                lp.width = width;
                                 lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
                                 lp.gravity = Gravity.BOTTOM;
                                 dialogWindow.setAttributes(lp);
@@ -744,7 +744,12 @@ public class MainActivity extends AppCompatActivity {
                                 //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
                                 Window dialogWindow = dialog.getWindow();
                                 WindowManager.LayoutParams lp = dialogWindow.getAttributes();
-                                lp.width = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth());
+                                DisplayMetrics displayMetrics = new DisplayMetrics();
+                                getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+                                int height = displayMetrics.heightPixels;
+                                int width = displayMetrics.widthPixels;
+
+                                lp.width = width;
                                 lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
                                 lp.gravity = Gravity.BOTTOM;
                                 dialogWindow.setAttributes(lp);
@@ -973,7 +978,12 @@ public class MainActivity extends AppCompatActivity {
                                 //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
                                 Window dialogWindow = dialog.getWindow();
                                 WindowManager.LayoutParams lp = dialogWindow.getAttributes();
-                                lp.width = (int) (ScreenSizeUtils.getInstance(context).getScreenWidth());
+                                DisplayMetrics displayMetrics = new DisplayMetrics();
+                                getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+                                int height = displayMetrics.heightPixels;
+                                int width = displayMetrics.widthPixels;
+
+                                lp.width = width;
                                 lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
                                 lp.gravity = Gravity.BOTTOM;
                                 dialogWindow.setAttributes(lp);

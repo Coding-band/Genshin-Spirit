@@ -15,7 +15,7 @@ import androidx.viewpager.widget.ViewPager;
 //https://stackoverflow.com/questions/7814017/is-it-possible-to-disable-scrolling-on-a-viewpager
 public class CustomViewPager extends ViewPager {
 
-    private boolean isPagingEnabled = false;
+    private boolean isPagingEnabled = true;
 
     public CustomViewPager(Context context) {
         super(context);

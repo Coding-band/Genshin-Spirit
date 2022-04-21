@@ -57,6 +57,7 @@ public class BuffCal2 {
     double 普通攻擊_斷流_破_傷害;
 
 
+
     String[] 元素戰技_baseName ;
     double[][] 元素戰技_value;
 

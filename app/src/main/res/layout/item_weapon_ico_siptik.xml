@@ -48,8 +48,8 @@
 
             <ImageView
                 android:id="@+id/weapon_card_bg"
-                android:layout_width="0dp"
-                android:layout_height="0dp"
+                android:layout_width="420dp"
+                android:layout_height="200dp"
                 android:adjustViewBounds="false"
                 android:alpha="0.7"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -102,15 +102,15 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/genshin_font"
-                android:shadowColor="@color/colorWhiteAlpha"
+                android:shadowColor="@color/tv_shadow_color"
                 android:shadowDx="2"
                 android:shadowDy="2"
-                android:shadowRadius="2"
+                android:shadowRadius="5"
                 android:singleLine="true"
                 android:text="@string/deathmatch"
                 android:textAlignment="center"
-                android:textColor="@color/tv_siptik_color"
-                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:textSize="16sp"
                 app:layout_constraintBottom_toTopOf="@+id/weapon_name_ll"
                 app:layout_constraintEnd_toEndOf="@+id/weapon_card_mask"
                 app:layout_constraintStart_toEndOf="@+id/weapon_img"
@@ -152,9 +152,13 @@
                         android:layout_gravity="center"
                         android:layout_weight="0"
                         android:fontFamily="@font/genshin_font"
+                        android:shadowColor="@color/tv_shadow_color"
+                        android:shadowDx="2"
+                        android:shadowDy="2"
+                        android:shadowRadius="5"
                         android:text="@string/weapon"
-                        android:textColor="@color/tv_siptik_color"
-                        android:textSize="18sp" />
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/textView69"
@@ -163,10 +167,14 @@
                         android:layout_gravity="center"
                         android:layout_weight="0"
                         android:fontFamily="@font/genshin_font"
+                        android:shadowColor="@color/tv_shadow_color"
+                        android:shadowDx="2"
+                        android:shadowDy="2"
+                        android:shadowRadius="5"
                         android:text=" : "
                         android:textAlignment="center"
-                        android:textColor="@color/tv_siptik_color"
-                        android:textSize="18sp" />
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
 
                     <ImageView
                         android:id="@+id/weapon_weapon"
@@ -194,9 +202,13 @@
                         android:layout_gravity="center"
                         android:layout_weight="0"
                         android:fontFamily="@font/genshin_font"
+                        android:shadowColor="@color/tv_shadow_color"
+                        android:shadowDx="2"
+                        android:shadowDy="2"
+                        android:shadowRadius="5"
                         android:text="@string/weapon_stat"
-                        android:textColor="@color/tv_siptik_color"
-                        android:textSize="18sp" />
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/textView77"
@@ -205,9 +217,13 @@
                         android:layout_gravity="center"
                         android:layout_weight="0"
                         android:fontFamily="@font/genshin_font"
+                        android:shadowColor="@color/tv_shadow_color"
+                        android:shadowDx="2"
+                        android:shadowDy="2"
+                        android:shadowRadius="5"
                         android:text=" "
                         android:textAlignment="center"
-                        android:textColor="@color/tv_siptik_color"
+                        android:textColor="@color/white"
                         android:textSize="18sp" />
 
                     <TextView
@@ -218,15 +234,15 @@
                         android:layout_margin="4dp"
                         android:layout_weight="0"
                         android:fontFamily="@font/genshin_font"
-                        android:shadowColor="@color/colorWhiteAlpha"
+                        android:shadowColor="@color/tv_shadow_color"
                         android:shadowDx="2"
                         android:shadowDy="2"
-                        android:shadowRadius="2"
+                        android:shadowRadius="5"
                         android:singleLine="true"
                         android:text="@string/weapon_stat_CritRateP"
                         android:textAlignment="center"
-                        android:textColor="@color/tv_siptik_color"
-                        android:textSize="18sp"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"
                         android:visibility="visible" />
 
                 </LinearLayout>
@@ -250,7 +266,7 @@
 
             <RatingBar
                 android:id="@+id/weapon_star"
-                style="@style/rareStar"
+                style="@style/rareStar16"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"

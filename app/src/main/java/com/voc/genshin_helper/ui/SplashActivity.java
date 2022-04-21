@@ -43,9 +43,14 @@ import com.hjq.permissions.Permission;
 import com.hjq.permissions.XXPermissions;
 import com.voc.genshin_helper.BuildConfig;
 import com.voc.genshin_helper.R;
+import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.DownloadTask;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -131,19 +136,11 @@ public class SplashActivity extends AppCompatActivity {
                     editor.putLong("lastUpdateUnix", System.currentTimeMillis());
                     editor.apply();
                 }
-
             });
             dialog.show();
         }else{
-            new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-                @Override
-                public void run() {
-                    SplashActivity.this.startActivity(new Intent(SplashActivity.this, MainActivity.class));
-                    SplashActivity.this.finish();
-                }
-            }, 2000);
+            check_updates();
         }
-
     }
 
     //https://blog.csdn.net/fitaotao/article/details/119700579
@@ -216,6 +213,116 @@ public class SplashActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         return 1;
+    }
+
+
+    public void check_updates(){
+        {
+            SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+
+            OkHttpClient client = new OkHttpClient();
+            String url = "http://113.254.213.196/genshin_spirit/update.json";
+            Request request = new Request.Builder().url(url).build();
+
+            long lastUnix = System.currentTimeMillis();
+
+            try {
+                Response sponse = client.newCall(request).execute();
+                String str = sponse.body().string();
+                JSONArray array = new JSONArray(str);
+                ArrayList<String> array_download = new ArrayList<String>();
+                ArrayList<String> array_fileName = new ArrayList<String>();
+                ArrayList<String> array_SfileName = new ArrayList<String>();
+                for (int i = 0; i < array.length(); i++) {
+                    JSONObject object = array.getJSONObject(i);
+                    long release_unix = object.getLong("release_unix");
+                    String fileName = object.getString("fileName");
+
+                    if (i == 0) {
+                        lastUnix = release_unix;
+                    }
+
+                    if (release_unix > sharedPreferences.getLong("lastUpdateUnix", 1)) {
+                        array_download.add("http://113.254.213.196/genshin_spirit/" + fileName);
+                        array_fileName.add(fileName);
+                        array_SfileName.add("/" + fileName);
+                    }
+                }
+                if(array_download.size()>0){
+                    androidx.appcompat.app.AlertDialog.Builder dialog = new androidx.appcompat.app.AlertDialog.Builder(SplashActivity.this,R.style.AlertDialogCustom);
+                    dialog.setCancelable(false);
+                    dialog.setTitle(context.getString(R.string.update_download_update_curr));
+                    dialog.setMessage(context.getString(R.string.update_download_found_update)+context.getString(R.string.update_download_advice)+"\n"+context.getString(R.string.update_download_base_file_size)+" "+prettyByteCount(getRemoteFileSizeA(array_download)));
+                    dialog.setNegativeButton(context.getString(R.string.update_download_later),new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            // TODO Auto-generated method stub
+                            Log.wtf("NOTHING","NOTHING");
+                        }
+
+                    });
+                    long finalLastUnix = lastUnix;
+                    dialog.setPositiveButton(context.getString(R.string.update_download_now),new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface arg0, int arg1) {
+                            // TODO Auto-generated method stub
+                            DownloadTask downloadTask = new DownloadTask();
+                            downloadTask.startA(array_download,array_fileName,array_SfileName,context,activity);
+                            editor.putLong("lastUpdateUnix", finalLastUnix);
+                            editor.apply();
+                            new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    SplashActivity.this.startActivity(new Intent(SplashActivity.this, Desk2048.class));
+                                    SplashActivity.this.finish();
+                                }
+                            }, 2000);
+                        }
+
+                    });
+                    dialog.show();
+                }else{
+                    CustomToast.toast(context,this,context.getString(R.string.update_download_not_found_update));
+                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            SplashActivity.this.startActivity(new Intent(SplashActivity.this, Desk2048.class));
+                            SplashActivity.this.finish();
+                        }
+                    }, 2000);
+                }
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+    public static long getRemoteFileSizeA (ArrayList<String> urlSTR) {
+        URL url = null;
+        long size = 0;
+        for (int x = 0 ;x< urlSTR.size() ; x++){
+            System.out.println(urlSTR.get(x));
+            try {
+                url = new URL(urlSTR.get(x));
+                URLConnection urlConnection = url.openConnection();
+                urlConnection.connect();
+                size = size+urlConnection.getContentLength();
+                System.out.println("getR : "+size);
+                System.out.println("getRX : "+urlConnection.getContentLength());
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+        return size;
     }
 }
 

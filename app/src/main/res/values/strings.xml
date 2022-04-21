@@ -130,8 +130,8 @@
     <string name="mondstadt">Mondstadt</string>
     <string name="liyue">Liyue</string>
     <string name="inazuma">Inazuma</string>
-    <string name="main_dps">Main DPS</string>
-    <string name="support_dps">Support DPS</string>
+    <string name="main_dps">Main</string>
+    <string name="support_dps">Support</string>
     <string name="utility">Utility</string>
     <string name="female">Female</string>
     <string name="male">Male</string>
@@ -144,22 +144,22 @@
     <string name="birth">Birth</string>
     <string name="intro">Intro</string>
     <string name="battle_talent">Battle Talent</string>
-    <string name="noraml_atk">【Normal ATK】</string>
-    <string name="charged_atk">【Charged ATK】</string>
-    <string name="plunging_atk">【Plunging ATK】</string>
-    <string name="element_atk">【Elemental Skill】</string>
-    <string name="final_atk">【Elemental Burst】</string>
+    <string name="noraml_atk">Normal ATK</string>
+    <string name="charged_atk">Charged ATK</string>
+    <string name="plunging_atk">Plunging ATK</string>
+    <string name="element_atk">Elemental Skill</string>
+    <string name="final_atk">Elemental Burst</string>
     <string name="basic_talent">Passive Talent</string>
     <string name="asc0_unlock">Utility Passive</string>
     <string name="asc1_unlock">1st Ascension Passive</string>
     <string name="asc4_unlock">4th Ascension Passive</string>
     <string name="sof">Constellation</string>
-    <string name="sof1">【Level 1】</string>
-    <string name="sof2">【Level 2】</string>
-    <string name="sof3">【Level 3】</string>
-    <string name="sof4">【Level 4】</string>
-    <string name="sof5">【Level 5】</string>
-    <string name="sof6">【Level 6】</string>
+    <string name="sof1">Level 1</string>
+    <string name="sof2">Level 2</string>
+    <string name="sof3">Level 3</string>
+    <string name="sof4">Level 4</string>
+    <string name="sof5">Level 5</string>
+    <string name="sof6">Level 6</string>
     <string name="advice">Advice</string>
     <string name="team_advice">Team Advice</string>
     <string name="weapon_advice">Weapon Advice</string>
@@ -774,7 +774,7 @@
     <string name="the_great_snowboar_king">The Great Snowboar King</string>
 
     <!-- add in 20220209-->
-    <string name="element_reaction">【Element Reaction】</string>
+    <string name="element_reaction">Element Reaction</string>
     <string name="buff_normal_1_hit">1-Hit DMG</string>
     <string name="buff_normal_2_hit">2-Hit DMG</string>
     <string name="buff_normal_3_hit">3-Hit DMG</string>
@@ -964,12 +964,12 @@
     <string name="mode" translatable="false">Day</string>
 
     <!-- add in 20220304 -->
-    <string name="rectangle" >Rectangle</string>
-    <string name="square" >Square</string>
-    <string name="char_suit_on" >Change to the event outfit</string>
-    <string name="circlet">" Circlet"</string>
-    <string name="sand">" Sand"</string>
-    <string name="goblet">" Goblet"</string>
+    <string name="rectangle">Rectangle</string>
+    <string name="square">Square</string>
+    <string name="char_suit_on">Change to the event outfit</string>
+    <string name="circlet">Circlet of Logos :</string>
+    <string name="sand">Sands of Eon :</string>
+    <string name="goblet">Goblet of Eonothem :</string>
     <string name="main_entry">Main Entry :</string>
     <string name="sub_entry">Sub Entry :</string>
 
@@ -982,5 +982,23 @@
     <string name="advance_stat">Advanced Stat</string>
     <string name="card">Card</string>
 
+    <!-- add in 20220419 -->
+    <string name="element_Electro">Electro</string>
+    <string name="element_Pyro">Pyro</string>
+    <string name="element_Hydro">Hydro</string>
+    <string name="element_Dendor">Dendor</string>
+    <string name="element_Cryo">Cryo</string>
+    <string name="element_Anemo">Anemo</string>
+    <string name="element_Geo">Geo</string>
+    <string name="forsaken_rift">Forsaken Rift</string>
+    <string name="taishan_mansion">Taishan Mansion</string>
+    <string name="violet_court">Violet Court</string>
+    <string name="cecilia_garden">Cecilia Garden</string>
+    <string name="hidden_palace_of_lianshan_formula">Hidden Palace of Lianshan Formula</string>
+    <string name="court_of_flowing_sand">Court of Flowing Sand</string>
+    <string name="img_reset_finish">The background has been reset</string>
+    <string name="title_activity_characters_info_scroll2048">Characters_Info_Scroll_2048</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
 </resources>
 

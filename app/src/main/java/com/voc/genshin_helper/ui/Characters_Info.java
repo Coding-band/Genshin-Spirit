@@ -968,7 +968,6 @@ public class Characters_Info {
                 advice_main_art_ll3.setVisibility(View.VISIBLE);
             }
 
-
             if(jsonObjectDps.has("dps_art4")){
                 advice_main_art_ll4.removeAllViews();
                 for (int x = 0 ,c = 0 , r = 0; x < main_artifacts4.length; x++, c++) {

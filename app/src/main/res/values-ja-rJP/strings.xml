@@ -142,22 +142,22 @@
     <string name="birth">誕生日</string>
     <string name="intro">概要</string>
     <string name="battle_talent">スキル</string>
-    <string name="noraml_atk">【通常攻撃】</string>
-    <string name="charged_atk">【重撃】</string>
-    <string name="plunging_atk">【落下攻撃】</string>
-    <string name="element_atk">【元素スキル】</string>
-    <string name="final_atk">【元素爆発】</string>
+    <string name="noraml_atk">通常攻撃</string>
+    <string name="charged_atk">重撃</string>
+    <string name="plunging_atk">落下攻撃</string>
+    <string name="element_atk">元素スキル</string>
+    <string name="final_atk">元素爆発</string>
     <string name="basic_talent">固有天賦</string>
     <string name="asc0_unlock">初期解放</string>
     <string name="asc1_unlock">突破Lv1で解放</string>
     <string name="asc4_unlock">突破Lv4で解放</string>
     <string name="sof">命ノ星座</string>
-    <string name="sof1">【Level 1】</string>
-    <string name="sof2">【Level 2】</string>
-    <string name="sof3">【Level 3】</string>
-    <string name="sof4">【Level 4】</string>
-    <string name="sof5">【Level 5】</string>
-    <string name="sof6">【Level 6】</string>
+    <string name="sof1">Level 1</string>
+    <string name="sof2">Level 2</string>
+    <string name="sof3">Level 3</string>
+    <string name="sof4">Level 4</string>
+    <string name="sof5">Level 5</string>
+    <string name="sof6">Level 6</string>
     <string name="advice">おすすめ</string>
     <string name="team_advice">おすすめパーティー</string>
     <string name="weapon_advice">おすすめ武器</string>
@@ -659,9 +659,9 @@
     <string name="thundercraven_rifthound_whelp">獣域ウェルプ·雷</string>
     <string name="rockfond_rifthound">獣域ハウンド·岩</string>
     <string name="thundercraven_rifthound">獣域ハウンド·雷</string>
-    <string name="beginning_golden_wolflord">【始める】黄金王獣</string>
+    <string name="beginning_golden_wolflord">始める黄金王獣</string>
     <string name="golden_wolflord">黄金王獣</string>
-    <string name="headbroken_golden_wolflord">【ブロークンヘッド】黄金王獣</string>
+    <string name="headbroken_golden_wolflord">ブロークンヘッド黄金王獣</string>
     <string name="shadowy_husk_standard_bearer">シャドウハスク·旗令</string>
     <string name="shadowy_husk_line_breaker">シャドウハスク·破陣</string>
     <string name="shadowy_husk_defender">シャドウハスク·守衛</string>
@@ -683,7 +683,7 @@
     <string name="ruin_defender">遺跡防衛者</string>
     <string name="ruin_scout">遺跡偵察者</string>
     <string name="perpetual_mechanical_array">恒常からくり陣形</string>
-    <string name="stunned_perpetual_mechanical_array">【弱い】恒常からくり陣形</string>
+    <string name="stunned_perpetual_mechanical_array">弱い恒常からくり陣形</string>
     <string name="treasure_hoarders_liuliu">宝盗団·「トンズラ」</string>
     <string name="treasure_hoarders_scout">宝盗団·斥候</string>
     <string name="treasure_hoarders_pyro_potioneer">宝盗団·炎の薬剤師</string>
@@ -735,17 +735,17 @@
     <string name="stormterror">風魔龍·トワリン</string>
     <string name="lupus_boreas">北風の王狼</string>
     <string name="phase_1_childe">「公子」第一段階</string>
-    <string name="stunned_phase_1_childe_">【弱い】「公子」第一段階</string>
+    <string name="stunned_phase_1_childe_">弱い「公子」第一段階</string>
     <string name="phase_2_childe">「公子」第二段階</string>
-    <string name="stunned_phase_2_childe">【弱い】「公子」第二段階</string>
+    <string name="stunned_phase_2_childe">弱い「公子」第二段階</string>
     <string name="phase_3_childe">「公子」第三段階</string>
-    <string name="azhdaha">【始める】若陀龍王</string>
-    <string name="pyro_azhdaha">【火】若陀龍王</string>
-    <string name="hydro_azhdaha">【水】若陀龍王</string>
-    <string name="firecryo_azhdaha">【火->冰】若陀龍王</string>
-    <string name="fireelectro_azhdaha">【火->雷】若陀龍王</string>
-    <string name="hydrocryo_azhdaha">【水->冰】若陀龍王</string>
-    <string name="hydroelectro_azhdaha">【水->雷】若陀龍王</string>
+    <string name="azhdaha">始める若陀龍王</string>
+    <string name="pyro_azhdaha">火若陀龍王</string>
+    <string name="hydro_azhdaha">水若陀龍王</string>
+    <string name="firecryo_azhdaha">火->冰若陀龍王</string>
+    <string name="fireelectro_azhdaha">火->雷若陀龍王</string>
+    <string name="hydrocryo_azhdaha">水->冰若陀龍王</string>
+    <string name="hydroelectro_azhdaha">水->雷若陀龍王</string>
     <string name="phase_1_la_signora">「淑女」第一段階</string>
     <string name="phase_2_la_signora">「淑女」第二段階</string>
     <string name="magatsu_mitake_narukami_no_mikoto">禍津御建鳴神命</string>
@@ -769,7 +769,7 @@
     <string name="the_great_snowboar_king">雪のイノシシ王</string>
 
     <!-- add in 20220209-->
-    <string name="element_reaction">【元素反応】</string>
+    <string name="element_reaction">元素反応</string>
     <string name="buff_normal_1_hit">1段ダメージ</string>
     <string name="buff_normal_2_hit">2段ダメージ</string>
     <string name="buff_normal_3_hit">3段ダメージ</string>
@@ -950,9 +950,9 @@
     <string name="rectangle" >長方形</string>
     <string name="square" >正方形</string>
     <string name = "char_suit_on">アクティブスーツに変更</string>
-    <string name="circlet">クラウン</string>
-    <string name="goblet">カップ</string>
-    <string name="sand">砂</string>
+    <string name="circlet">理の冠：</string>
+    <string name="goblet">空の杯：</string>
+    <string name="sand">時の砂：</string>
     <string name="main_entry">主詞：</string>
     <string name="sub_entry">副詞：</string>
 
@@ -964,6 +964,22 @@
     <string name="yelan">夜蘭</string>
     <string name="advance_stat">画期的なプロパティ</string>
     <string name="card">カード</string>
+
+    <!-- add in 20220419 -->
+    <string name="element_Electro">雷元素</string>
+    <string name="element_Pyro">炎元素</string>
+    <string name="element_Hydro">水元素</string>
+    <string name="element_Dendor">草元素</string>
+    <string name="element_Cryo">氷元素</string>
+    <string name="element_Anemo">風元素</string>
+    <string name="element_Geo">岩元素</string>
+    <string name="forsaken_rift">忘却の峡谷</string>
+    <string name="taishan_mansion">太山府</string>
+    <string name="violet_court">菫色ノ庭</string>
+    <string name="court_of_flowing_sand">砂流ノ庭</string>
+    <string name="hidden_palace_of_lianshan_formula">震雷連山密宮</string>
+    <string name="cecilia_garden">セシリアの苗床</string>
+    <string name="img_reset_finish">背景がリセットされました</string>
 </resources>
 
 

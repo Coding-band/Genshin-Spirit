@@ -4,7 +4,19 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable-v24/ic_baseline_attach_money_24.xml" value="0.21962313190383365" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/background_color.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/bg_2048_advice_single_title.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/bg_2048_char_info.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/bg_2048_char_info_selected.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/bg_2048_char_talent_card.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/bg_2048_spinner.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/bg_2048_spinner_bg.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/bg_2048_spinner_edge.xml" value="0.338" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/bg_2048_talent_card.xml" value="0.318" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/bg_circ_edge.xml" value="0.22236842105263158" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/bg_dialog_body_edge.xml" value="0.265" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/bg_dialog_btn.xml" value="0.265" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/bg_dialog_header_edge.xml" value="0.265" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/bg_item_edgeless_square.xml" value="0.21962313190383365" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/bg_kwang_filled.xml" value="0.22236842105263158" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/bg_kwang_light.xml" value="0.22236842105263158" />
@@ -13,6 +25,7 @@
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/bg_rare2_siptik.xml" value="0.338" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/bg_rare3_char.xml" value="0.22236842105263158" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/bg_rare3_siptik.xml" value="0.338" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/bg_rare4_bg.xml" value="0.265" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/bg_rare4_siptik.xml" value="0.338" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/bg_rare5_siptik.xml" value="0.338" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/bg_square_border.xml" value="0.1921875" />
@@ -25,47 +38,105 @@
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/cyberpunk.xml" value="0.35208333333333336" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/dream_color.xml" value="0.35208333333333336" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/gone_background.xml" value="0.35208333333333336" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_advice_btn.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_advice_btn_selected.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_back_btn.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_back_btn_selected.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_cancel_btn_ico.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_char_intro_btn.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_char_intro_btn_selected.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_char_value_selected.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_close_btn.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_close_btn_selected.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_constelations_btn.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_constelations_btn_selected.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_filter.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_locate.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_need_tick.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_need_tick_24.xml" value="0.265" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_ok_btn_ico.xml" value="0.179" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_search.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_select_tab.xml" value="0.179" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_setting_paimon_ico.xml" value="0.3235" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_switch.xml" value="0.179" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_tab_art.xml" value="0.3235" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_tab_art_selected.xml" value="0.3235" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_tab_char.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_tab_char_selected.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_tab_desk.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_tab_desk_selected.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_tab_toolbox.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_tab_toolbox_selected.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_tab_weapon.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_tab_weapon_selected.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_talent_btn.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_talent_btn_2048.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_2048_value_btn.xml" value="0.318" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_baseline_arrow_drop_down_24.xml" value="0.22236842105263158" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_baseline_arrow_left_24.xml" value="0.35208333333333336" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_baseline_arrow_right_24.xml" value="0.22236842105263158" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_baseline_calculate_24.xml" value="0.35208333333333336" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_baseline_color_lens_24.xml" value="0.3235" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_baseline_double_arrow_24.xml" value="0.22236842105263158" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_baseline_edit_24.xml" value="0.35208333333333336" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_baseline_keyboard_arrow_left_24.xml" value="0.35208333333333336" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_baseline_link_24.xml" value="0.35208333333333336" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/ic_baseline_person_pin_24.xml" value="0.35208333333333336" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/invisible_background.xml" value="0.35208333333333336" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/item_2048_blank.xml" value="0.318" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/item_2048_checkbox.xml" value="0.265" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/item_2048_checkbox_bg.xml" value="0.265" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/item_2048_checkbox_bg_check.xml" value="0.265" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/item_2048_checkbox_bg_uncheck.xml" value="0.265" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/item_2048_checkbox_uncheck.xml" value="0.265" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/item_char_list_bg_circ.xml" value="0.35208333333333336" />
-        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/item_char_list_bg_circ_4s.xml" value="0.35208333333333336" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/item_char_list_bg_circ_1s.xml" value="0.189" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/item_char_list_bg_circ_2s.xml" value="0.189" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/item_char_list_bg_circ_3s.xml" value="0.189" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/item_char_list_bg_circ_4s.xml" value="0.189" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/item_char_list_bg_circ_5s.xml" value="0.35208333333333336" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/item_fading_edge.xml" value="0.338" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/item_selected_circle_effect.xml" value="0.3770833333333333" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/navigation_empty_icon.xml" value="0.35208333333333336" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/pinky_day.xml" value="0.35208333333333336" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/rating_bar.xml" value="0.3355" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/rating_bar_24.xml" value="0.2635" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/rating_bar_icon.xml" value="0.3355" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/rating_bar_icon_empty.xml" value="0.3355" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/rating_bar_icon_full.xml" value="0.3355" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/rating_empty.xml" value="0.3355" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/rating_empty_24.xml" value="0.2635" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/rating_fill.xml" value="0.3355" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/rating_fill_24.xml" value="0.2635" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/shadow.xml" value="0.318" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/shape_siptik.xml" value="0.338" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/splash_background.xml" value="0.21962313190383365" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/splash_bg.xml" value="0.22236842105263158" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/star_24.xml" value="0.2635" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/star_empty_24.xml" value="0.2635" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/switch_thumb_material.xml" value="0.21962313190383365" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/drawable/tab_underline.xml" value="0.189" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout-land/fragment_char_info.xml" value="0.2502946954813359" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout-land/fragment_char_info_2048.xml" value="0.26464300983326206" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/activity_about.xml" value="0.33177083333333335" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/activity_alarm_ui.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/activity_background_confirm.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/activity_calculator_ui.xml" value="0.25" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/activity_characters_info_scroll2048.xml" value="0.27233860624198375" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/activity_demo.xml" value="0.33177083333333335" />
-        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/activity_desk_2048.xml" value="0.25" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/activity_organize.xml" value="0.22" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/activity_splash.xml" value="0.22" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/bg_kwang_circle.xml" value="0.33177083333333335" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/custom_dialog.xml" value="0.2069525666016894" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/custom_drawer_item.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/donate_view.xml" value="0.25" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/enhance_tab_layout.xml" value="0.27233860624198375" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_advice.xml" value="0.5" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_advice_2048.xml" value="0.5" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_art.xml" value="0.20953947368421053" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_art_2048.xml" value="0.27233860624198375" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_buff_page.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_cal_art.xml" value="0.20953947368421053" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_cal_buff.xml" value="0.25" />
@@ -74,25 +145,40 @@
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_cal_weapon.xml" value="0.2069525666016894" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_changelog.xml" value="0.33177083333333335" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_char.xml" value="0.2069525666016894" />
-        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_char_info.xml" value="0.33" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_char_2048.xml" value="0.5" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_char_desc_2048.xml" value="0.27233860624198375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_char_info.xml" value="0.25" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_char_info_2048.xml" value="0.5" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_char_info_advice_2048.xml" value="0.27233860624198375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_char_info_desc_2048.xml" value="0.27233860624198375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_char_info_frame_2048.xml" value="0.25" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_char_info_skill_2048.xml" value="0.27233860624198375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_char_info_sof_2048.xml" value="0.27233860624198375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_char_skill_dmg_2048.xml" value="0.5" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_choose_item.xml" value="0.33177083333333335" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_enemy_choose.xml" value="0.22" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_home_2048.xml" value="0.5" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_main_list.xml" value="0.2069525666016894" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_new_home.xml" value="0.20953947368421053" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_number_picker.xml" value="0.2069525666016894" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_result.xml" value="0.25" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_setting.xml" value="0.33" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_setting_2048.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_siptik_buff.xml" value="0.5" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_weapon.xml" value="0.25" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_weapon_2048.xml" value="0.5" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_web.xml" value="0.2069525666016894" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_alarm_list.xml" value="0.2069525666016894" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_artifact_ico.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_artifact_ico_old.xml" value="1.1" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_artifact_ico_rectangle_2048.xml" value="0.27233860624198375" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_artifact_ico_siptik.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_artifact_ico_square.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_artifact_ico_square_old.xml" value="0.33177083333333335" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_artifact_info.xml" value="0.25" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_asc_char_ico.xml" value="0.9" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_asc_require_card.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_buff_artifact.xml" value="0.67" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_buff_card.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_buff_display.xml" value="0.5" />
@@ -103,17 +189,29 @@
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_calculator_db.xml" value="0.5" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_calculator_db_ui.xml" value="0.20953947368421053" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_char_advice.xml" value="0.2069525666016894" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_char_advice_2048.xml" value="0.67" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_char_advice_team.xml" value="0.2069525666016894" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_char_advice_team_2048.xml" value="0.67" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_char_basic_talent.xml" value="0.2069525666016894" />
-        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_char_battle_talent.xml" value="0.25" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_char_basic_talent_2048.xml" value="0.33" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_char_battle_talent.xml" value="0.5" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_char_battle_talent_2048.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_char_ico.xml" value="0.38333333333333336" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_char_ico_old.xml" value="0.33177083333333335" />
-        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_char_ico_siptik.xml" value="0.33" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_char_ico_rect_2O48.xml" value="0.25247720967102655" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_char_ico_rectangle_2048.xml" value="0.25247720967102655" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_char_ico_siptik.xml" value="0.67" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_char_ico_square.xml" value="0.67" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_char_ico_square_2048.xml" value="0.27233860624198375" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_char_sof.xml" value="0.33177083333333335" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_char_sof_2048.xml" value="0.25" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_custom_tab.xml" value="0.5" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_custom_tab_selected.xml" value="0.27233860624198375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_custom_tab_unselected.xml" value="0.67" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_enemy_icon.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_enter_lvl.xml" value="0.33177083333333335" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_img.xml" value="0.5" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_search_et.xml" value="0.5" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_setting_data_link.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_setting_thanks.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_siptik_buff_part1.xml" value="0.33" />
@@ -130,7 +228,7 @@
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_version_item.xml" value="0.33177083333333335" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_weapon_ico.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_weapon_ico_old.xml" value="0.4013671875" />
-        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_weapon_ico_siptik.xml" value="0.33" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_weapon_ico_siptik.xml" value="0.5" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_weapon_ico_square.xml" value="0.67" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_weapon_ico_square_old.xml" value="0.33177083333333335" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_weapon_info.xml" value="0.33" />
@@ -142,12 +240,16 @@
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/menu_buff_artifact.xml" value="0.5" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/menu_char_add.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/menu_char_filter.xml" value="0.25" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/menu_char_filter_2048.xml" value="0.5" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/menu_db_add.xml" value="0.25" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/menu_edit_delete.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/menu_enemy_filter.xml" value="0.5" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/menu_weapon_filter.xml" value="0.20953947368421053" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/spinner_dropdown_item.xml" value="0.20953947368421053" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/spinner_dropdown_item_2048.xml" value="0.5" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/spinner_item.xml" value="0.20953947368421053" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/spinner_item_2048.xml" value="0.27233860624198375" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/tab_item_layout.xml" value="0.27233860624198375" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/test.xml" value="0.20953947368421053" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/tmp.xml" value="0.30175272382756985" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/menu/bottom_nav_bg_menu.xml" value="0.33177083333333335" />

@@ -50,6 +50,7 @@
     <string name="guides_of_elegance">「風雅」的指引</string>
     <string name="guides_of_transience">「浮世」的指引</string>
     <string name="guides_of_light">「天光」的指引</string>
+
     <string name="philosophies_of_freedom">「自由」的哲學</string>
     <string name="philosophies_of_gold">「黃金」的哲學</string>
     <string name="philosophies_of_resistance">「抗爭」的哲學</string>
@@ -140,22 +141,22 @@
     <string name="birth">生日</string>
     <string name="intro">簡介</string>
     <string name="battle_talent">戰鬥天賦</string>
-    <string name="noraml_atk">【普通攻擊】</string>
-    <string name="charged_atk">【重擊】</string>
-    <string name="plunging_atk">【俯衝攻擊】</string>
-    <string name="element_atk">【元素戰技】</string>
-    <string name="final_atk">【元素爆發】</string>
+    <string name="noraml_atk">普通攻擊</string>
+    <string name="charged_atk">重擊</string>
+    <string name="plunging_atk">俯衝攻擊</string>
+    <string name="element_atk">元素戰技</string>
+    <string name="final_atk">元素爆發</string>
     <string name="basic_talent">固有天賦</string>
-    <string name="asc0_unlock">【自動解鎖】</string>
-    <string name="asc1_unlock">【突破等級1解鎖】</string>
-    <string name="asc4_unlock">【突破等級4解鎖】</string>
+    <string name="asc0_unlock">自動解鎖</string>
+    <string name="asc1_unlock">突破等級1解鎖</string>
+    <string name="asc4_unlock">突破等級4解鎖</string>
     <string name="sof">命之座</string>
-    <string name="sof1">【命之座 1】</string>
-    <string name="sof2">【命之座 2】</string>
-    <string name="sof3">【命之座 3】</string>
-    <string name="sof4">【命之座 4】</string>
-    <string name="sof5">【命之座 5】</string>
-    <string name="sof6">【命之座 6】</string>
+    <string name="sof1">命之座 1</string>
+    <string name="sof2">命之座 2</string>
+    <string name="sof3">命之座 3</string>
+    <string name="sof4">命之座 4</string>
+    <string name="sof5">命之座 5</string>
+    <string name="sof6">命之座 6</string>
     <string name="advice">推薦</string>
     <string name="team_advice">組隊建議</string>
     <string name="weapon_advice">推薦武器</string>
@@ -646,9 +647,9 @@
     <string name="thundercraven_rifthound_whelp">嗜雷·獸境幼獸</string>
     <string name="rockfond_rifthound">嗜岩·獸境獵犬</string>
     <string name="thundercraven_rifthound">嗜雷·獸境獵犬</string>
-    <string name="beginning_golden_wolflord">【起始】黃金王獸</string>
+    <string name="beginning_golden_wolflord">起始黃金王獸</string>
     <string name="golden_wolflord">黃金王獸</string>
-    <string name="headbroken_golden_wolflord">【頭破】黃金王獸</string>
+    <string name="headbroken_golden_wolflord">頭破黃金王獸</string>
     <string name="shadowy_husk_standard_bearer">黯色空殼·旗令</string>
     <string name="shadowy_husk_line_breaker">黯色空殼·破陣</string>
     <string name="shadowy_husk_defender">黯色空殼·近衛</string>
@@ -670,7 +671,7 @@
     <string name="ruin_defender">遺蹟防衛者</string>
     <string name="ruin_scout">遺蹟偵察者</string>
     <string name="perpetual_mechanical_array">恒常機關陣列</string>
-    <string name="stunned_perpetual_mechanical_array">【虛弱】恒常機關陣列</string>
+    <string name="stunned_perpetual_mechanical_array">虛弱恒常機關陣列</string>
     <string name="treasure_hoarders_liuliu">盜寶團·「溜溜」</string>
     <string name="treasure_hoarders_scout">盜寶團·斥候</string>
     <string name="treasure_hoarders_pyro_potioneer">盜寶團·火之藥劑師</string>
@@ -697,13 +698,13 @@
     <string name="cryo_whopperflower">冰霜騙騙花</string>
     <string name="pyro_whopperflower">熾熱騙騙花</string>
     <string name="electro_whopperflower">電氣騙騙花</string>
-    <string name="stunned_pyro_whopperflower">【眩暈】熾熱騙騙花</string>
-    <string name="stunned_electro_whopperflower">【眩暈】電氣騙騙花</string>
-    <string name="stunned_cryo_whopperflower">【眩暈】冰霜騙騙花</string>
+    <string name="stunned_pyro_whopperflower">眩暈熾熱騙騙花</string>
+    <string name="stunned_electro_whopperflower">眩暈電氣騙騙花</string>
+    <string name="stunned_cryo_whopperflower">眩暈冰霜騙騙花</string>
     <string name="cryo_regisvine">急凍樹</string>
     <string name="pyro_regisvine">爆炎樹</string>
-    <string name="stunned_cryo_regisvine">【眩暈】急凍樹</string>
-    <string name="stunned_pyro_regisvine">【眩暈】爆炎樹</string>
+    <string name="stunned_cryo_regisvine">眩暈急凍樹</string>
+    <string name="stunned_pyro_regisvine">眩暈爆炎樹</string>
     <string name="geovishap_hatchling">幼岩龍蜥</string>
     <string name="geovishap">岩龍蜥</string>
     <string name="pyroinfused_geovishap">火岩龍蜥</string>
@@ -722,17 +723,17 @@
     <string name="stormterror">風魔龍·特瓦林</string>
     <string name="lupus_boreas">北風的王狼</string>
     <string name="phase_1_childe">「公子」第一階段</string>
-    <string name="stunned_phase_1_childe_">【虛弱】「公子」第一階段</string>
+    <string name="stunned_phase_1_childe_">虛弱「公子」第一階段</string>
     <string name="phase_2_childe">「公子」第二階段</string>
-    <string name="stunned_phase_2_childe">【虛弱】「公子」第二階段</string>
+    <string name="stunned_phase_2_childe">虛弱「公子」第二階段</string>
     <string name="phase_3_childe">「公子」第三階段</string>
-    <string name="azhdaha">【起始】若陀龍王</string>
-    <string name="pyro_azhdaha">【火】若陀龍王</string>
-    <string name="hydro_azhdaha">【水】若陀龍王</string>
-    <string name="firecryo_azhdaha">【火->冰】若陀龍王</string>
-    <string name="fireelectro_azhdaha">【火->雷】若陀龍王</string>
-    <string name="hydrocryo_azhdaha">【水->冰】若陀龍王</string>
-    <string name="hydroelectro_azhdaha">【水->雷】若陀龍王</string>
+    <string name="azhdaha">起始若陀龍王</string>
+    <string name="pyro_azhdaha">火若陀龍王</string>
+    <string name="hydro_azhdaha">水若陀龍王</string>
+    <string name="firecryo_azhdaha">火->冰若陀龍王</string>
+    <string name="fireelectro_azhdaha">火->雷若陀龍王</string>
+    <string name="hydrocryo_azhdaha">水->冰若陀龍王</string>
+    <string name="hydroelectro_azhdaha">水->雷若陀龍王</string>
     <string name="phase_1_la_signora">「女士」第一階段</string>
     <string name="phase_2_la_signora">「女士」第二階段</string>
     <string name="magatsu_mitake_narukami_no_mikoto">禍津禦建鳴神命</string>
@@ -756,7 +757,7 @@
     <string name="the_great_snowboar_king">大雪豬王</string>
 
     <!-- add in 20220209-->
-    <string name="element_reaction">【元素反應】</string>
+    <string name="element_reaction">元素反應</string>
     <string name="buff_normal_1_hit">一段傷害</string>
     <string name="buff_normal_2_hit">二段傷害</string>
     <string name="buff_normal_3_hit">三段傷害</string>
@@ -936,9 +937,9 @@
     <string name="rectangle" >長方形</string>
     <string name="square" >正方形</string>
     <string name="char_suit_on" >換上活動衣裝</string>
-    <string name="goblet">杯</string>
-    <string name="circlet">冠</string>
-    <string name="sand">沙</string>
+    <string name="goblet">空之杯：</string>
+    <string name="circlet">理之冠：</string>
+    <string name="sand">時之沙：</string>
     <string name="main_entry">主詞條：</string>
     <string name="sub_entry">副詞條：</string>
 
@@ -950,4 +951,22 @@
     <string name="yelan">夜蘭</string>
     <string name="advance_stat">突破屬性</string>
     <string name="card">卡片</string>
+
+    <!-- add in 20220419 -->
+    <string name="element_Electro">雷元素</string>
+    <string name="element_Pyro">火元素</string>
+    <string name="element_Hydro">水元素</string>
+    <string name="element_Dendor">草元素</string>
+    <string name="element_Cryo">冰元素</string>
+    <string name="element_Anemo">風元素</string>
+    <string name="element_Geo">岩元素</string>
+    <string name="forsaken_rift">忘卻之峽</string>
+    <string name="taishan_mansion">太山府</string>
+    <string name="violet_court">菫色之庭</string>
+    <string name="court_of_flowing_sand">砂流之庭</string>
+    <string name="hidden_palace_of_lianshan_formula">震雷連山密宮</string>
+    <string name="cecilia_garden">塞西莉亞苗圃</string>
+
+    <!-- add in 20220421 -->
+    <string name="img_reset_finish">背景已重設</string>
 </resources>

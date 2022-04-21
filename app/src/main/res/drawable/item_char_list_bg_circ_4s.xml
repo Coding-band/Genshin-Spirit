@@ -19,7 +19,7 @@
 
     <item>
         <shape android:shape="oval">
-            <solid android:color="#5E5F96"/>
+            <solid android:color="#B78DC8"/>
             <size android:width="50px"
                 android:height="50px"/>
             <corners android:radius="50px"/>

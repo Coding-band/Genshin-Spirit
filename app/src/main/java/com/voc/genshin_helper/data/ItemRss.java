@@ -471,6 +471,7 @@ public class ItemRss {
             case "Festering Desire" : return new String[] {context.getString(R.string.festering_desire),"/drawable/festering_desire.png"};
             case "Fillet Blade" : return new String[] {context.getString(R.string.fillet_blade),"/drawable/fillet_blade.png"};
             case "Freedom-Sworn" : return new String[] {context.getString(R.string.freedom_sworn),"/drawable/freedom_sworn.png"};
+            case "Freedom Sworn" : return new String[] {context.getString(R.string.freedom_sworn),"/drawable/freedom_sworn.png"};
             case "Harbinger of Dawn" : return new String[] {context.getString(R.string.harbinger_of_dawn),"/drawable/harbinger_of_dawn.png"};
             case "Iron Sting" : return new String[] {context.getString(R.string.iron_sting),"/drawable/iron_sting.png"};
             case "Lion's Roar" : return new String[] {context.getString(R.string.lions_roar),"/drawable/lions_roar.png"};
@@ -601,7 +602,8 @@ public class ItemRss {
             case "Thundering Pulse" : return new String[] {context.getString(R.string.thundering_pulse),"/drawable/thundering_pulse.png"};
             case "Mouun's Moon" : return new String[] {context.getString(R.string.mouuns_moon),"/drawable/mouuns_moon.png"};
 
-            default : return new String[] {context.getString(R.string.unknown),"/drawable/paimon_lost.png"};
+            default :
+                System.out.println("WEAPON+ NAME ERROR : "+str);return new String[] {context.getString(R.string.unknown),"/drawable/paimon_lost.png"};
         }
     }
 
@@ -616,7 +618,7 @@ public class ItemRss {
             case "favonius_sword" : return "Favonius Sword";
             case "festering_desire" : return "Festering Desire";
             case "fillet_blade" : return "Fillet Blade";
-            case "freedom_sworn" : return "Freedom-Sworn";
+            case "freedom_sworn" : return "Freedom Sworn";
             case "harbinger_of_dawn" : return "Harbinger of Dawn";
             case "iron_sting" : return "Iron Sting";
             case "lions_roar" : return "Lion's Roar";
@@ -855,7 +857,7 @@ public class ItemRss {
     }
         /**
          * @param name is Char's Identify Name -> JSON
-         * @return IMG_ID , NAME_LOCAL , FULL_IMG_ID , ICO_IMG_ID
+         * @return IMG_ID , NAME_LOCAL , FULL_IMG_ID , ICO_IMG_ID , CARD_ID
          */
 
     /**EDIT WHEN ADD NEW ITEMS*/
@@ -958,6 +960,7 @@ public class ItemRss {
         // ???
         else if(name.equals("Voc-夜芷冰")){return new String[] {"/drawable/mascot.png",context.getString(R.string.voc),"/drawable/mascot.png","/drawable/mascot_head.png","/drawable/mascot_card.png"};}
 
+        System.out.println("CHARACTER NAME ERROR : "+name);
         return new String[] {"/drawable/paimon_lost.png",context.getString(R.string.unknown),"/drawable/paimon_lost.png","/drawable/paimon_lost.png","/drawable/unknown.png"};
     }
 
@@ -1024,14 +1027,24 @@ public class ItemRss {
      * @return ICON_ID , RAD_BG_ID , BG_COLOR_ID
      */
     public int[] getElementByName (String element) {
-        if(element.equals("Anemo")) {return new int[] {R.drawable.anemo_ico,R.drawable.bg_anemo_char,R.color.anemo};}
-        else if(element.equals("Cryo")) {return new int[] {R.drawable.cryo_ico,R.drawable.bg_cryo_char,R.color.cryo};}
-        else if(element.equals("Dendor")) {return new int[] {R.drawable.dendro_ico,R.drawable.bg_dendro_char,R.color.dendor};}
-        else if(element.equals("Electro")) {return new int[] {R.drawable.electro_ico,R.drawable.bg_electro_char,R.color.electro};}
-        else if(element.equals("Geo")) {return new int[] {R.drawable.geo_ico,R.drawable.bg_geo_char,R.color.geo};}
-        else if(element.equals("Hydro")) {return new int[] {R.drawable.hydro_ico,R.drawable.bg_hydro_char,R.color.hydro};}
-        else if(element.equals("Pyro")) {return new int[] {R.drawable.pyro_ico,R.drawable.bg_pyro_char,R.color.pyro};}
-        else return new int[] {R.drawable.paimon_lost,R.drawable.paimon_lost,R.color.anemo};
+        switch (element) {
+            case "Anemo":
+                return new int[]{R.drawable.anemo_ico, R.drawable.bg_anemo_char, R.color.anemo};
+            case "Cryo":
+                return new int[]{R.drawable.cryo_ico, R.drawable.bg_cryo_char, R.color.cryo};
+            case "Dendor":
+                return new int[]{R.drawable.dendro_ico, R.drawable.bg_dendro_char, R.color.dendor};
+            case "Electro":
+                return new int[]{R.drawable.electro_ico, R.drawable.bg_electro_char, R.color.electro};
+            case "Geo":
+                return new int[]{R.drawable.geo_ico, R.drawable.bg_geo_char, R.color.geo};
+            case "Hydro":
+                return new int[]{R.drawable.hydro_ico, R.drawable.bg_hydro_char, R.color.hydro};
+            case "Pyro":
+                return new int[]{R.drawable.pyro_ico, R.drawable.bg_pyro_char, R.color.pyro};
+            default:
+                return new int[]{R.drawable.paimon_lost, R.drawable.paimon_lost, R.color.anemo};
+        }
     }
 
     public Drawable getTalentIcoByName (String name, Context context){

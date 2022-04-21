@@ -67,6 +67,8 @@ public class BackgroundReload {
             if (gif_png.matches("gif")){gifImageView1.setImageDrawable(gifFromFile);}
             if (gif_png.matches("png")){gifImageView1.setImageDrawable(bd);}
             if (gif_png.matches("jpg")||gif_png.matches("jpeg")){gifImageView1.setImageDrawable(bd2);}
+        }else{
+            gifImageView1.setImageResource(R.color.base_page_bg);
         }
 
     }
