@@ -77,10 +77,13 @@
 
     <color name="shadow_char_ico">#22000000</color>
 
+    <!-- 2O48 -->
     <color name="tv_color_2048">#ECE5D8</color>
     <color name="tv_spinner_color_2048">#ECE5D8</color>
+    <color name="tv_spinner_color_anti_2048">#ECE5D8</color>
     <color name="tv_anti_color_2048">#3B4255</color>
     <color name="tab_bg_2048">#FFECE5D8</color>
+    <color name="tab_bg_2048_anti">#4D5668</color>
     <color name="tab_stroke_2048">#99FFFFFF</color>
     <color name="spinner_bg_2048">#FF495366</color>
     <color name="spinner_stroke_2048">#CC495366</color>
@@ -111,7 +114,55 @@
     <color name="card_header_bg_start_2048">#FF4D5668</color>
     <color name="card_header_bg_end_2048">#804D5668</color>
 
+    <!-- SIPTIK -->
+    <color name="tv_color_siptik">#ECE5D8</color>
+    <color name="tv_spinner_color_siptik">#ECE5D8</color>
+    <color name="tv_spinner_color_anti_siptik">#ECE5D8</color>
+    <color name="tv_anti_color_siptik">#3B4255</color>
+    <color name="tab_bg_siptik">#B3FFFFFF</color>
+    <color name="tab_bg_siptik_anti">#85E6E2E2</color>
+    <color name="tab_stroke_siptik">#99FFFFFF</color>
+    <color name="spinner_bg_siptik">#B3FFFFFF</color>
+    <color name="spinner_stroke_siptik">#B3FFFFFF</color>
+
+    <color name="tab_selected_obj_siptik">#4D5668</color>
+    <color name="tab_unselected_obj_siptik">#ECE5D8</color>
+    <color name="tab_selected_bg_siptik">#ECE5D8</color>
+    <color name="tab_unselected_bg_siptik">#4D5668</color>
+    <color name="tab_stroke_edge_siptik">#33FFFFFF</color>
+    <color name="tab_selected_siptik">#3B4255</color>
+    <color name="tab_selected_char_siptik">#3B4255</color>
+    <color name="tab_unselected_char_siptik">#4D5668</color>
+    <color name="tab_unselected_siptik">#3B4255</color>
+
+    <color name="tab_no_circ_unselected_bg_siptik">#FF667289</color>
+    <color name="tab_no_circ_unselected_inline_siptik">#FFECE5D8</color>
+    <color name="tab_no_circ_selected_bg_siptik">#FF4D5668</color>
+    <color name="tab_no_circ_selected_inline_siptik">#FFECE5D8</color>
+
+    <color name="bg_dialog_title_siptik">#454E5E</color>
+    <color name="bg_dialog_info_siptik">#4D5668</color>
+    <color name="dialog_title_tv_color_siptik">#D3BC8E</color>
+    <color name="dialog_subtitle_tv_color_siptik">#8F5923</color>
+    <color name="dialog_desc_title_tv_color_siptik">#A84D5668</color>
+    <color name="card_char_info_bg_kwang_siptik">#FFD3BC8E</color>
+    <color name="card_char_info_bg_start_siptik">#FFECE5D8</color>
+    <color name="card_char_info_bg_end_siptik">#CCECE5D8</color>
+    <color name="card_header_bg_start_siptik">#FF4D5668</color>
+    <color name="card_header_bg_end_siptik">#804D5668</color>
+
+    <color name="status_bar_2048">#4D5668</color>
+    <color name="tab_bar_2048">#FFECE5D8</color>
+    <color name="search_bar_alpha">#1AFFFFFF</color>
+    <color name="tab_bar_siptik">#D9FFFFFF</color>
+
     <color name="tv_shadow_color">#3D3D3D</color>
+    <color name="tv_anti_solid_color">#3B4255</color>
+    <color name="mask_custom">#A63C3C3C</color>
+
+    <color name="app_ico_item_fill">#FFDBCB9C</color>
+    <color name="app_ico_item_stroke">#FFFFEDAB</color>
+    <color name="app_ico_bg">#FF54B7A5</color>
 
 
 </resources>

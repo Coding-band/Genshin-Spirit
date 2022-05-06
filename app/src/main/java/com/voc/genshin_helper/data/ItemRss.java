@@ -49,6 +49,40 @@ public class ItemRss {
 
         else {return str;}
     }
+
+    public String getObtainCode(String str, Context context){
+        switch (str){
+            case "N/A" : return context.getString(R.string.obtain_no);
+            case "FORGE_MISSION_NMDBJ" : return context.getString(R.string.obtain_forge_mission_nmdbj);
+            case "LIMITED_WISH" : return context.getString(R.string.obtain_limited_wish);
+            case "WISH" : return context.getString(R.string.obtain_wish);
+            case "FIRST_GIFT" : return context.getString(R.string.obtain_first_gift);
+            case "SHOP" : return context.getString(R.string.obtain_shop);
+            case "CHEST_SHOP" : return context.getString(R.string.obtain_chest_shop);
+            case "FORGE" : return context.getString(R.string.obtain_forge);
+            case "CHAT_YMDJY" : return context.getString(R.string.obtain_chat_ymdjy);
+            case "BATTLEPASS" : return context.getString(R.string.obtain_battlepass);
+            case "WISH_CHEST" : return context.getString(R.string.obtain_wish_chest);
+            case "EVENT" : return context.getString(R.string.obtain_event);
+            case "FORGE_EVENT" : return context.getString(R.string.obtain_forge_event);
+            case "WISH_EVENT_GLYJYJG" : return context.getString(R.string.obtain_wish_event_glyjyjg);
+            case "FORGE_YHBH" : return context.getString(R.string.obtain_forge_yhbh);
+            case "CHEST" : return context.getString(R.string.obtain_chest);
+            case "FORGE_HLDW" : return context.getString(R.string.obtain_forge_hldw);
+            case "WISH_EVENT_HDBBHJYJJ" : return context.getString(R.string.obtain_wish_event_hdbbhjyjj);
+            case "FORGE_TBMY" : return context.getString(R.string.obtain_forge_tbmy);
+            case "FORGE_YLYSWS" : return context.getString(R.string.obtain_forge_ylysws);
+            case "CHESR_MD" : return context.getString(R.string.obtain_chesr_md);
+            case "PLAYSTATION_LOGIN" : return context.getString(R.string.obtain_playstation_login);
+            case "FORGE_LVL10_SJGW" : return context.getString(R.string.obtain_forge_lvl10_sjgw);
+            case "PLAYSTATION_SP_GIFT" : return context.getString(R.string.obtain_playstation_sp_gift);
+            case "NPC_DCDYHW" : return context.getString(R.string.obtain_npc_dcdyhw);
+            case "CHESR_LY" : return context.getString(R.string.obtain_chesr_ly);
+            case "CHEST_GWK" : return context.getString(R.string.obtain_chest_gwk);
+            default: return str;
+
+        }
+    }
     public String LocaleCharStr(int i, Context context) {
         return context.getString(this.char_names[i]);
     }

@@ -186,7 +186,7 @@
 
         <RatingBar
             android:id="@+id/weapon_star"
-            style="@style/rareStar"
+            style="@style/rareStar24"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"

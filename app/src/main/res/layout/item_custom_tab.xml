@@ -4,12 +4,28 @@
   ~ Copyright © 2022 Xectorda 版權所有
   -->
 
-<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/icon"
-    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:adjustViewBounds="true"
-    app:srcCompat="@drawable/ic_2048_tab_desk">
+    android:layout_width="wrap_content"
+    android:orientation="vertical">
 
-</ImageView>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:id="@+id/icon"
+        android:adjustViewBounds="true"
+        app:srcCompat="@drawable/ic_2048_tab_desk"
+        android:layout_height="wrap_content">
+
+    </ImageView>
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="10sp"
+        android:visibility="gone" />
+
+</LinearLayout>

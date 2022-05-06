@@ -10,62 +10,40 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.content.res.ColorStateList;
-import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
-import android.os.Bundle;
-import android.os.Handler;
-import android.text.Editable;
 import android.text.Html;
 import android.text.SpannableString;
 import android.text.Spanned;
-import android.text.TextWatcher;
 import android.text.style.ForegroundColorSpan;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
-import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
-import androidx.viewpager2.adapter.FragmentStateAdapter;
-import androidx.viewpager2.widget.ViewPager2;
 
 import com.google.android.material.tabs.TabLayout;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.R;
-import com.voc.genshin_helper.data.Artifacts;
-import com.voc.genshin_helper.data.ArtifactsAdapter;
-import com.voc.genshin_helper.data.Characters;
-import com.voc.genshin_helper.data.CharactersAdapter;
 import com.voc.genshin_helper.data.ItemRss;
-import com.voc.genshin_helper.data.Weapons;
-import com.voc.genshin_helper.data.WeaponsAdapter;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.FileLoader;
@@ -82,8 +60,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-
-import pl.droidsonroids.gif.GifImageView;
 
 //https://stackoverflow.com/questions/3592836/check-for-file-existence-in-androids-assets-folder/7337516
 
@@ -226,6 +202,43 @@ public class Characters_Info_2048 {
     private ArrayList<View> viewPager_List;
     View charDescPage, charSkillPage, charSofPage, charAdvicePage;
 
+    /** [BASIC] CHARACTER LVL EXP + MORA */
+    public ArrayList<Integer> lvlEXPList = new ArrayList<Integer>();
+    public ArrayList<Integer> expEXPList = new ArrayList<Integer>();
+    public ArrayList<Integer> moraEXPList = new ArrayList<Integer>();
+
+    /** [BASIC] CHARACTER ASC LVL + MORA */
+    public ArrayList<Integer> lvlASCList = new ArrayList<Integer>();
+    public ArrayList<Integer> silverASCList = new ArrayList<Integer>();
+    public ArrayList<Integer> fragASCList = new ArrayList<Integer>();
+    public ArrayList<Integer> chunkASCList = new ArrayList<Integer>();
+    public ArrayList<Integer> gemASCList = new ArrayList<Integer>();
+    public ArrayList<Integer> bossASCList = new ArrayList<Integer>();
+    public ArrayList<Integer> localASCList = new ArrayList<Integer>();
+    public ArrayList<Integer> com1ASCList = new ArrayList<Integer>();
+    public ArrayList<Integer> com2ASCList = new ArrayList<Integer>();
+    public ArrayList<Integer> com3ASCList = new ArrayList<Integer>();
+    public ArrayList<Integer> moraASCList = new ArrayList<Integer>();
+
+    /** [BASIC] CHARACTER SKILL LVL + MORA */
+    public ArrayList<Integer> lvlSKILLList = new ArrayList<Integer>();
+    public ArrayList<Integer> teachSKILLList = new ArrayList<Integer>();
+    public ArrayList<Integer> guideSKILLList = new ArrayList<Integer>();
+    public ArrayList<Integer> phiSKILLList = new ArrayList<Integer>();
+    public ArrayList<Integer> com1SKILLList = new ArrayList<Integer>();
+    public ArrayList<Integer> com2SKILLList = new ArrayList<Integer>();
+    public ArrayList<Integer> com3SKILLList = new ArrayList<Integer>();
+    public ArrayList<Integer> bossSKILLList = new ArrayList<Integer>();
+    public ArrayList<Integer> moraSkillList = new ArrayList<Integer>();
+
+    /** [CHAR] CHARACTER REQUIRE ON ASC AND SKILL */
+    public  String crystalREQUIRE = "XPR";
+    public  String bossREQUIRE = "XPR";
+    public  String localREQUIRE = "XPR";
+    public  String commonREQUIRE = "XPR";
+    public  String bookREQUIRE = "XPR";
+    public  String t_bossREQUIRE = "XPR";
+
     /** https://stackoverflow.com/questions/45247927/how-to-parse-json-object-inside-json-object-in-java */
     public void JsonToStr (String str , String str_dps){
         if(!str.equals("")){
@@ -322,7 +335,6 @@ public class Characters_Info_2048 {
                 }
             }
              */
-
                         if(jsonObjectDps.has("dps_art1")) {
                             JSONArray art1_temp = jsonObjectDps.getJSONArray("dps_art1");
                             main_artifacts1 = art1_temp.toString().replace("[", "").replace("]", "").replace(",", " ").replace("\"", "").split(" ");
@@ -415,7 +427,7 @@ public class Characters_Info_2048 {
                         e.printStackTrace();
                     }
                 }
-
+                readCharAscData();
                 show();
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -457,12 +469,10 @@ public class Characters_Info_2048 {
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int height = displayMetrics.heightPixels;
         int width = displayMetrics.widthPixels;
-        //BackgroundReload.BackgroundReload(context,view);
 
         /** Method of header */
         TabLayout info_tablelayout = view.findViewById(R.id.info_tablelayout);
         ImageView info_back_btn = view.findViewById(R.id.info_back_btn);
-        GifImageView gifImageView1 = (GifImageView) view.findViewById(R.id.global_bg);
         ImageView info_header_bg = view.findViewById(R.id.info_header_bg);
         viewPager = (ViewPager) view.findViewById(R.id.vp);
 
@@ -636,10 +646,19 @@ public class Characters_Info_2048 {
         TextView info_advice_main = charAdvicePage.findViewById(R.id.info_advice_main);
         TextView info_advice_support = charAdvicePage.findViewById(R.id.info_advice_support);
         TextView info_advice_util = charAdvicePage.findViewById(R.id.info_advice_util);
+        TextView info_advice_team = charAdvicePage.findViewById(R.id.info_advice_team_tv);
+        TextView info_advice_result = charAdvicePage.findViewById(R.id.info_advice_result);
+
+        LinearLayout base_lvl_ll = charAdvicePage.findViewById(R.id.base_lvl_ll);
+        LinearLayout talent_lvl_ll = charAdvicePage.findViewById(R.id.talent_lvl_ll);
+
+        readCharMaterialByBuff(base_lvl_ll);
+        readSkillMaterialByBuff(talent_lvl_ll);
 
         info_advice_main.setVisibility(View.GONE);
         info_advice_support.setVisibility(View.GONE);
         info_advice_util.setVisibility(View.GONE);
+        info_advice_team.setVisibility(View.GONE);
 
         /** THEME COLOR SET*/
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
@@ -761,7 +780,6 @@ public class Characters_Info_2048 {
         info_tablelayout.setTabMode(MODE_FIXED);
         info_tablelayout.setTabIndicatorAnimationMode(TabLayout.INDICATOR_ANIMATION_MODE_ELASTIC);
         info_tablelayout.getLayoutParams().width = WRAP_CONTENT;
-        gifImageView1.setVisibility(View.GONE);
         info_tablelayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -912,6 +930,9 @@ public class Characters_Info_2048 {
                 dialog.setCanceledOnTouchOutside(true);
                 Window dialogWindow = dialog.getWindow();
                 WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+                // 2O48 DESIGN
+                dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+                dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
 
                 lp.width = (int) (width);
                 lp.height = WRAP_CONTENT;
@@ -1018,6 +1039,10 @@ public class Characters_Info_2048 {
                 dialog.setCanceledOnTouchOutside(true);
                 Window dialogWindow = dialog.getWindow();
                 WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+                // 2O48 DESIGN
+                dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+                dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
+
                 DisplayMetrics displayMetrics = new DisplayMetrics();
                 activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
                 int height = displayMetrics.heightPixels;
@@ -1128,6 +1153,10 @@ public class Characters_Info_2048 {
                 dialog.setCanceledOnTouchOutside(true);
                 Window dialogWindow = dialog.getWindow();
                 WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+                // 2O48 DESIGN
+                dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+                dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
+
                 DisplayMetrics displayMetrics = new DisplayMetrics();
                 activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
                 int height = displayMetrics.heightPixels;
@@ -1241,6 +1270,10 @@ public class Characters_Info_2048 {
                 dialog.setCanceledOnTouchOutside(true);
                 Window dialogWindow = dialog.getWindow();
                 WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+                // 2O48 DESIGN
+                dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+                dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
+
                 DisplayMetrics displayMetrics = new DisplayMetrics();
                 activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
                 int height = displayMetrics.heightPixels;
@@ -1257,6 +1290,7 @@ public class Characters_Info_2048 {
         /** MAIN */
         char_name.setText(item_rss.getCharByName(name,context)[1]);
         char_title.setText(nick);
+        //Picasso.get().load(FileLoader.loadIMG(item_rss.getCharByName(name,context)[0],context)).centerCrop().into(char_img);
         char_img.setImageDrawable(FileLoader.loadIMG2Drawable(item_rss.getCharByName(name,context)[0],context));
 
         displayMetrics = new DisplayMetrics();
@@ -1464,6 +1498,7 @@ public class Characters_Info_2048 {
             setAdviceText("util", info_util_ll, info_util_sand_tv, info_util_goblet_tv, info_util_circlet_tv, info_util_sub_tv);
 
             if(jsonObjectDps.has("team1")){
+                info_advice_team.setVisibility(View.VISIBLE);
                 advice_team_ll1.removeAllViews();
                 for (int x = 0 ; x < team1.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team_2048, advice_team_ll1, false);
@@ -1511,6 +1546,7 @@ public class Characters_Info_2048 {
             }
 
             if(jsonObjectDps.has("team2")){
+                info_advice_team.setVisibility(View.VISIBLE);
                 advice_team_ll2.removeAllViews();
                 for (int x = 0 ; x < team2.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team_2048, advice_team_ll2, false);
@@ -1558,6 +1594,7 @@ public class Characters_Info_2048 {
             }
 
             if(jsonObjectDps.has("team3")){
+                info_advice_team.setVisibility(View.VISIBLE);
                 advice_team_ll3.removeAllViews();
                 for (int x = 0 ; x < team3.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team_2048, advice_team_ll3, false);
@@ -1605,6 +1642,7 @@ public class Characters_Info_2048 {
             }
 
             if(jsonObjectDps.has("team4")){
+                info_advice_team.setVisibility(View.VISIBLE);
                 advice_team_ll4.removeAllViews();
                 for (int x = 0 ; x < team4.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team_2048, advice_team_ll4, false);
@@ -1652,6 +1690,7 @@ public class Characters_Info_2048 {
             }
 
             if(jsonObjectDps.has("team5")){
+                info_advice_team.setVisibility(View.VISIBLE);
                 advice_team_ll5.removeAllViews();
                 for (int x = 0 ; x < team5.length; x++) {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team_2048, advice_team_ll5, false);
@@ -1705,6 +1744,10 @@ public class Characters_Info_2048 {
         //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
         Window dialogWindow = dialog.getWindow();
         WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+        // 2O48 DESIGN
+        dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+        dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
+
         lp.width = WindowManager.LayoutParams.MATCH_PARENT;
         lp.height = WindowManager.LayoutParams.MATCH_PARENT;
         dialogWindow.setAttributes(lp);
@@ -2373,5 +2416,395 @@ public class Characters_Info_2048 {
         }
     }
 
+    public void readCharAscData(){
+        String char_lvl_exp = LoadData("db/char/char_lvl_exp.json");
+        String char_asc_lvl = LoadData("db/char/char_asc_lvl.json");
+        String char_skill_lvl = LoadData("db/char/char_skill_lvl.json");
+        String char_require_asc_skill = LoadData("db/char/char_require_asc_skill.json");
 
+        //Log.wtf("Procedure","char_readJSON_1"+" || "+System.currentTimeMillis());
+        try {
+            JSONArray array = new JSONArray(char_lvl_exp);
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject object = array.getJSONObject(i);
+                int lvl = object.getInt("lvl");
+                int exp = object.getInt("exp");
+                int mora = object.getInt("mora");
+                lvlEXPList.add(lvl);
+                expEXPList.add(exp);
+                moraEXPList.add(mora);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            JSONArray array = new JSONArray(char_asc_lvl);
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject object = array.getJSONObject(i);
+                int lvl = object.getInt("lvl");
+                int silver = object.getInt("silver");
+                int fragment = object.getInt("fragment");
+                int chunk = object.getInt("chunk");
+                int gemstone = object.getInt("gemstone");
+                int local = object.getInt("local");
+                int common1 = object.getInt("common1");
+                int common2 = object.getInt("common2");
+                int common3 = object.getInt("common3");
+                int boss = object.getInt("boss");
+                int mora = object.getInt("mora");
+                lvlASCList.add(lvl);
+                silverASCList.add(silver);
+                fragASCList.add(fragment);
+                chunkASCList.add(chunk);
+                gemASCList.add(gemstone);
+                localASCList.add(local);
+                com1ASCList.add(common1);
+                com2ASCList.add(common2);
+                com3ASCList.add(common3);
+                bossASCList.add(boss);
+                moraASCList.add(mora);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            JSONArray array = new JSONArray(char_skill_lvl);
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject object = array.getJSONObject(i);
+                int lvl = object.getInt("lvl");
+                int teach = object.getInt("teach");
+                int guide = object.getInt("guide");
+                int phi = object.getInt("phi");
+                int common1 = object.getInt("common1");
+                int common2 = object.getInt("common2");
+                int common3 = object.getInt("common3");
+                int boss = object.getInt("boss");
+                int mora = object.getInt("mora");
+                lvlSKILLList.add(lvl);
+                teachSKILLList.add(teach);
+                guideSKILLList.add(guide);
+                phiSKILLList.add(phi);
+                com1SKILLList.add(common1);
+                com2SKILLList.add(common2);
+                com3SKILLList.add(common3);
+                bossSKILLList.add(boss);
+                moraSkillList.add(mora);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            JSONArray array = new JSONArray(char_require_asc_skill);
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject object = array.getJSONObject(i);
+                String name = object.getString("name");
+                String crystal = object.getString("crystal");
+                String boss = object.getString("boss");
+                String local = object.getString("local");
+                String common = object.getString("common");
+                String book = object.getString("book");
+                String t_boss = object.getString("t_boss");
+
+                System.out.println("CharName_BASE CIF : "+CharName_BASE);
+                String CharName = CharName_BASE.replace("_"," ");
+                if(name.equals(CharName)){
+                    crystalREQUIRE = crystal;
+                    bossREQUIRE = boss;
+                    localREQUIRE = local;
+                    commonREQUIRE = common;
+                    bookREQUIRE = book;
+                    t_bossREQUIRE = t_boss;
+
+                    System.out.println("crystal CIF : "+crystal);
+                    System.out.println("boss CIF : "+boss);
+                    System.out.println("local CIF : "+local);
+                    System.out.println("common CIF : "+common);
+                    System.out.println("book CIF : "+book);
+                    System.out.println("t_boss CIF : "+t_boss);
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void readCharMaterialByBuff(LinearLayout base_lvl_ll) {
+        Spinner base_lvl_spinner = charAdvicePage.findViewById(R.id.base_lvl_spinner);
+        String[] lvList = new String[]{"LV20","LV40","LV50","LV60","LV70","LV80","LV90"};
+        ArrayAdapter lv_aa = new ArrayAdapter(context,R.layout.spinner_item_anti_2048,lvList);
+        lv_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_anti_2048);
+        base_lvl_spinner.setAdapter(lv_aa);
+
+        base_lvl_spinner.setSelection(0);
+        base_lvl_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l) {
+                base_lvl_ll.removeAllViews();
+                base_lvl_ll.removeAllViewsInLayout();
+                addItemInLL(pos,base_lvl_ll);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+    }
+
+
+    public void readSkillMaterialByBuff(LinearLayout talent_lvl_ll) {
+        Spinner base_lvl_spinner = charAdvicePage.findViewById(R.id.talent_lvl_spinner);
+        String[] lvList = new String[]{"LV1","LV2","LV3","LV4","LV5","LV6","LV7","LV8","LV9","LV10"};
+        ArrayAdapter lv_aa = new ArrayAdapter(context,R.layout.spinner_item_anti_2048,lvList);
+        lv_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_anti_2048);
+        base_lvl_spinner.setAdapter(lv_aa);
+
+        base_lvl_spinner.setSelection(0);
+        base_lvl_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int pos, long l) {
+                talent_lvl_ll.removeAllViews();
+                talent_lvl_ll.removeAllViewsInLayout();
+                addItemInLLT(pos,talent_lvl_ll);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+    }
+
+    public void addItemInLL(int pos, LinearLayout base_lvl_ll){
+        int mora = 0;
+        int exp = 0;
+        int exp_big = 0;
+        int exp_mid = 0;
+        int exp_small = 0;
+
+        int[] lvIntBegin = new int[]{0,21,41,51,61,71,81};
+        int[] lvIntEnd = new int[]{20,40,50,60,70,80,90}; // UN ASC
+
+        for (int x = lvIntBegin[pos] ; x < lvIntEnd[pos] ; x++){
+            mora = mora+ moraEXPList.get(x);
+            exp = exp+ expEXPList.get(x);
+        }
+
+        if(pos != 0){
+            mora = moraASCList.get(pos-1);
+        }
+
+        exp_small = expReturn(exp)[0];
+        exp_mid = expReturn(exp)[1];
+        exp_big = expReturn(exp)[2];
+
+        String[] itemNameListBASE = new String[]{"摩拉","流浪者的經驗", "冒險家的經驗","大英雄的經驗"};
+        int[] itemValueListBASE = new int[]{mora,exp_small,exp_mid,exp_big};
+        int[] itemRareListBASE = new int[]{2,2,3,4};
+        for (int x = 0 ; x < itemNameListBASE.length ; x++){
+            if (itemValueListBASE[x] > 0) {
+                View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_base_lvl_material_2048, base_lvl_ll, false);
+                ImageView img_bg  = char_view.findViewById(R.id.base_lvl_bg);
+                ImageView img_img = char_view.findViewById(R.id.base_lvl_img);
+                TextView img_tv = char_view.findViewById(R.id.base_lvl_tv);
+
+                Picasso.get().load(getRssByRare(itemRareListBASE[x])).resize(150,180).into(img_bg);
+                Picasso.get().load(FileLoader.loadIMG(item_rss.getItemIcoByName(itemNameListBASE[x],context),context)).resize(144,144).into(img_img);
+                img_tv.setText(prettyCount(itemValueListBASE[x],0));
+
+                img_bg.getLayoutParams().width = 150;
+                img_bg.getLayoutParams().height = 180;
+                img_img.getLayoutParams().width = 144;
+                img_img.getLayoutParams().height = 144;
+                img_tv.getLayoutParams().width = 150;
+                img_tv.getLayoutParams().height = 36;
+                base_lvl_ll.addView(char_view);
+            }
+        }
+
+        if (pos != 0){
+            String[] itemNameList = new String[]{
+                    getCharCrystalListByItemName(crystalREQUIRE)[0],
+                    getCharCrystalListByItemName(crystalREQUIRE)[1],
+                    getCharCrystalListByItemName(crystalREQUIRE)[2],
+                    getCharCrystalListByItemName(crystalREQUIRE)[3],
+                    bossREQUIRE,
+                    localREQUIRE,
+                    getCharCommonListByItemName(commonREQUIRE)[0],
+                    getCharCommonListByItemName(commonREQUIRE)[1],
+                    getCharCommonListByItemName(commonREQUIRE)[2]
+            };
+
+            int[] itemValueList = new int[]{
+                    silverASCList.get(pos-1),
+                    fragASCList.get(pos-1),
+                    chunkASCList.get(pos-1),
+                    gemASCList.get(pos-1),
+                    bossASCList.get(pos-1),
+                    localASCList.get(pos-1),
+                    com1ASCList.get(pos-1),
+                    com2ASCList.get(pos-1),
+                    com3ASCList.get(pos-1)
+            };
+
+            int[] itemRareList = new int[]{2,3,4,5,4,1,1,2,3};
+            for (int x = 0 ; x < itemNameList.length ; x++){
+                if (itemValueList[x] > 0) {
+                    View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_base_lvl_material_2048, base_lvl_ll, false);
+                    ImageView img_bg  = char_view.findViewById(R.id.base_lvl_bg);
+                    ImageView img_img = char_view.findViewById(R.id.base_lvl_img);
+                    TextView img_tv = char_view.findViewById(R.id.base_lvl_tv);
+                    Picasso.get().load(getRssByRare(itemRareList[x])).resize(150,180).into(img_bg);
+                    Picasso.get().load(FileLoader.loadIMG(item_rss.getItemIcoByName(itemNameList[x],context),context)).resize(144,144).into(img_img);
+                    img_tv.setText(prettyCount(itemValueList[x],0));
+
+                    img_bg.getLayoutParams().width = 150;
+                    img_bg.getLayoutParams().height = 180;
+                    img_img.getLayoutParams().width = 144;
+                    img_img.getLayoutParams().height = 144;
+                    img_tv.getLayoutParams().width = 150;
+                    img_tv.getLayoutParams().height = 36;
+                    base_lvl_ll.addView(char_view);
+                }
+            }
+        }
+    }
+
+    public void addItemInLLT(int pos, LinearLayout talent_lvl_ll){
+        int mora = 0;
+
+        mora = mora + moraSkillList.get(pos);
+
+        if (pos != 0){
+            String[] itemNameList = new String[]{
+                    "摩拉",
+                    getBookListByItemName(bookREQUIRE)[0],
+                    getBookListByItemName(bookREQUIRE)[1],
+                    getBookListByItemName(bookREQUIRE)[2],
+                    getCharCommonListByItemName(commonREQUIRE)[0],
+                    getCharCommonListByItemName(commonREQUIRE)[1],
+                    getCharCommonListByItemName(commonREQUIRE)[2],
+                    t_bossREQUIRE
+            };
+
+            int[] itemValueList = new int[]{
+                    mora,
+                    teachSKILLList.get(pos),
+                    guideSKILLList.get(pos),
+                    phiSKILLList.get(pos),
+                    com1SKILLList.get(pos),
+                    com2SKILLList.get(pos),
+                    com3SKILLList.get(pos),
+                    bossSKILLList.get(pos)
+            };
+
+            int[] itemRareList = new int[]{2,2,3,4,1,2,3,5};
+            for (int x = 0 ; x < itemNameList.length ; x++){
+                if (itemValueList[x] > 0) {
+                    View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_base_lvl_material_2048, talent_lvl_ll, false);
+                    ImageView img_bg  = char_view.findViewById(R.id.base_lvl_bg);
+                    ImageView img_img = char_view.findViewById(R.id.base_lvl_img);
+                    TextView img_tv = char_view.findViewById(R.id.base_lvl_tv);
+                    Picasso.get().load(getRssByRare(itemRareList[x])).resize(150,180).into(img_bg);
+                    Picasso.get().load(FileLoader.loadIMG(item_rss.getItemIcoByName(itemNameList[x],context),context)).resize(144,144).into(img_img);
+                    img_tv.setText(prettyCount(itemValueList[x],0));
+
+                    img_bg.getLayoutParams().width = 150;
+                    img_bg.getLayoutParams().height = 180;
+                    img_img.getLayoutParams().width = 144;
+                    img_img.getLayoutParams().height = 144;
+                    img_tv.getLayoutParams().width = 150;
+                    img_tv.getLayoutParams().height = 36;
+                    talent_lvl_ll.addView(char_view);
+                }
+            }
+            if (pos == 9) {
+                View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_base_lvl_material_2048, talent_lvl_ll, false);
+                ImageView img_bg  = char_view.findViewById(R.id.base_lvl_bg);
+                ImageView img_img = char_view.findViewById(R.id.base_lvl_img);
+                TextView img_tv = char_view.findViewById(R.id.base_lvl_tv);
+                Picasso.get().load(getRssByRare(5)).resize(150,180).into(img_bg);
+                Picasso.get().load(FileLoader.loadIMG(item_rss.getItemIcoByName("智識之冕",context),context)).resize(144,144).into(img_img);
+                img_tv.setText(prettyCount(1,0));
+
+                img_bg.getLayoutParams().width = 150;
+                img_bg.getLayoutParams().height = 180;
+                img_img.getLayoutParams().width = 144;
+                img_img.getLayoutParams().height = 144;
+                img_tv.getLayoutParams().width = 150;
+                img_tv.getLayoutParams().height = 36;
+                talent_lvl_ll.addView(char_view);
+            }
+        }
+    }
+
+    public String[] getCharCrystalListByItemName (String str){
+        switch (str){
+            case "燃願瑪瑙" : return new String[]{"燃願瑪瑙碎屑","燃願瑪瑙斷片","燃願瑪瑙塊","燃願瑪瑙"};
+            case "滌淨青金" : return new String[]{"滌淨青金碎屑","滌淨青金斷片","滌淨青金塊","滌淨青金"};
+            case "最勝紫晶" : return new String[]{"最勝紫晶碎屑","最勝紫晶斷片","最勝紫晶塊","最勝紫晶"};
+            case "哀敘冰玉" : return new String[]{"哀敘冰玉碎屑","哀敘冰玉斷片","哀敘冰玉塊","哀敘冰玉"};
+            case "自在松石" : return new String[]{"自在松石碎屑","自在松石斷片","自在松石塊","自在松石"};
+            case "堅牢黃玉" : return new String[]{"堅牢黃玉碎屑","堅牢黃玉斷片","堅牢黃玉塊","堅牢黃玉"};
+
+            default: return new String[]{"N/A","N/A","N/A","N/A"};
+        }
+    }
+    public String[] getCharCommonListByItemName (String str){
+        switch (str){
+            case "歷戰的箭簇" : return new String[]{"牢固的箭簇","銳利的箭簇","歷戰的箭簇"};
+            case "禁咒繪卷" : return new String[]{"導能繪卷","封魔繪卷","禁咒繪卷"};
+            case "攫金鴉印" : return new String[]{"尋寶鴉印","藏銀鴉印","攫金鴉印"};
+            case "不祥的面具" : return new String[]{"破損的面具","污穢的面具","不祥的面具"};
+            case "尉官的徽記" : return new String[]{"新兵的徽記","士官的徽記","尉官的徽記"};
+            case "原素花蜜" : return new String[]{"騙騙花蜜","微光花蜜","原素花蜜"};
+            case "史萊姆原漿" : return new String[]{"史萊姆凝液","史萊姆清","史萊姆原漿"};
+            case "名刀鐔" : return new String[]{"破舊的刀鐔","影打刀鐔","名刀鐔"};
+            case "浮游晶化核" : return new String[]{"浮游乾核","浮游幽核","浮游晶化核"};
+
+            default: return new String[]{"N/A","N/A","N/A"};
+        }
+    }
+    public String[] getBookListByItemName (String str){
+        switch (str){
+            case "「自由」的哲學" : return new String[]{"「自由」的教導","「自由」的指引","「自由」的哲學"};
+            case "「黃金」的哲學" : return new String[]{"「黃金」的教導","「黃金」的指引","「黃金」的哲學"};
+            case "「抗爭」的哲學" : return new String[]{"「抗爭」的教導","「抗爭」的指引","「抗爭」的哲學"};
+            case "「繁榮」的哲學" : return new String[]{"「繁榮」的教導","「繁榮」的指引","「繁榮」的哲學"};
+            case "「詩文」的哲學" : return new String[]{"「詩文」的教導","「詩文」的指引","「詩文」的哲學"};
+            case "「勤勞」的哲學" : return new String[]{"「勤勞」的教導","「勤勞」的指引","「勤勞」的哲學"};
+            case "「風雅」的哲學" : return new String[]{"「風雅」的教導","「風雅」的指引","「風雅」的哲學"};
+            case "「浮世」的哲學" : return new String[]{"「浮世」的教導","「浮世」的指引","「浮世」的哲學"};
+            case "「天光」的哲學" : return new String[]{"「天光」的教導","「天光」的指引","「天光」的哲學"};
+
+            default: return new String[]{"N/A","N/A","N/A"};
+        }
+    }
+    public int getRssByRare (int lvl){
+        switch (lvl){
+            case 1: return R.drawable.rare1_800x1000_light;
+            case 2: return R.drawable.rare2_800x1000_light;
+            case 3: return R.drawable.rare3_800x1000_light;
+            case 4: return R.drawable.rare4_800x1000_light;
+            case 5: return R.drawable.rare5_800x1000_light;
+            default: return R.drawable.rare1_800x1000_light;
+        }
+    }
+
+    public int[] expReturn(int exp){
+        int exp_big , exp_mid , exp_small = 0;
+        exp_big = (int) exp / 20000;
+        exp = exp % 20000;
+        exp_mid = (int) exp / 5000;
+        exp = exp % 5000;
+        exp_small = (int) exp / 1000;
+        if (exp % 1000 < 1000){
+            exp_small = exp_small + 1;
+        }
+
+        return new int[]{exp_small,exp_mid,exp_big};
+    }
 }

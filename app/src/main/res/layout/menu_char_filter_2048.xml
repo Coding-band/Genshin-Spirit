@@ -25,7 +25,7 @@
             android:gravity="center"
             android:padding="8dp"
             android:text="@string/filters"
-            android:textColor="@color/tv_color_2048"
+            android:textColor="@color/tv_spinner_color_2048"
             android:textSize="20sp" />
 
         <ImageView
@@ -53,10 +53,11 @@
             android:gravity="center|left"
             android:paddingLeft="12dp"
             android:text="@string/elements"
-            android:textColor="@color/tv_color_2048"
+            android:textColor="@color/tv_spinner_color_2048"
             android:textSize="18sp" />
 
         <LinearLayout
+            android:id="@+id/menu_elements_ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -185,10 +186,11 @@
             android:gravity="center|left"
             android:paddingLeft="12dp"
             android:text="@string/title_weapons"
-            android:textColor="@color/tv_color_2048"
+            android:textColor="@color/tv_spinner_color_2048"
             android:textSize="18sp" />
 
         <LinearLayout
+            android:id="@+id/menu_weapons_ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="4dp"
@@ -208,8 +210,7 @@
                     android:layout_height="36dp"
                     android:layout_margin="4dp"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/ico_sword"
-                    app:tint="@color/tv_color_2048" />
+                    app:srcCompat="@drawable/ico_sword" />
             </LinearLayout>
 
             <LinearLayout
@@ -225,8 +226,7 @@
                     android:layout_height="36dp"
                     android:layout_margin="4dp"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/ico_claymore"
-                    app:tint="@color/tv_color_2048" />
+                    app:srcCompat="@drawable/ico_claymore" />
             </LinearLayout>
 
             <LinearLayout
@@ -242,8 +242,7 @@
                     android:layout_height="36dp"
                     android:layout_margin="4dp"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/ico_polearm"
-                    app:tint="@color/tv_color_2048" />
+                    app:srcCompat="@drawable/ico_polearm" />
             </LinearLayout>
 
             <LinearLayout
@@ -259,8 +258,7 @@
                     android:layout_height="36dp"
                     android:layout_margin="4dp"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/ico_bow"
-                    app:tint="@color/tv_color_2048" />
+                    app:srcCompat="@drawable/ico_bow" />
             </LinearLayout>
 
             <LinearLayout
@@ -276,8 +274,7 @@
                     android:layout_height="36dp"
                     android:layout_margin="4dp"
                     android:adjustViewBounds="true"
-                    app:srcCompat="@drawable/ico_catalyst"
-                    app:tint="@color/tv_color_2048" />
+                    app:srcCompat="@drawable/ico_catalyst" />
             </LinearLayout>
 
         </LinearLayout>
@@ -290,10 +287,11 @@
             android:gravity="center|left"
             android:paddingLeft="12dp"
             android:text="@string/rarity"
-            android:textColor="@color/tv_color_2048"
+            android:textColor="@color/tv_spinner_color_2048"
             android:textSize="18sp" />
 
         <LinearLayout
+            android:id="@+id/menu_rarity_ll"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="4dp"
@@ -321,7 +319,7 @@
                 android:singleLine="true"
                 android:text="五星"
                 android:textAlignment="viewEnd"
-                android:textColor="@color/item_2048_checkbox_tv"
+                android:textColor="@color/tv_spinner_color_2048"
                 android:textSize="16sp" />
 
             <CheckBox
@@ -346,9 +344,23 @@
                 android:singleLine="true"
                 android:text="四星"
                 android:textAlignment="viewEnd"
-                android:textColor="@color/item_2048_checkbox_tv"
+                android:textColor="@color/tv_spinner_color_2048"
                 android:textSize="16sp" />
+
         </LinearLayout>
+
+        <RatingBar
+            android:id="@+id/menu_rating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:isIndicator="false"
+            android:numStars="5"
+            android:progressDrawable="@drawable/rating_bar"
+            android:rating="0"
+            android:stepSize="1"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/menu_release_title_tv"
@@ -358,10 +370,11 @@
             android:gravity="center|left"
             android:paddingLeft="12dp"
             android:text="發佈狀態"
-            android:textColor="@color/tv_color_2048"
+            android:textColor="@color/tv_spinner_color_2048"
             android:textSize="18sp" />
 
         <LinearLayout
+            android:id="@+id/menu_realease_ll"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="4dp"
@@ -389,7 +402,7 @@
                 android:singleLine="true"
                 android:text="已發佈"
                 android:textAlignment="viewEnd"
-                android:textColor="@color/item_2048_checkbox_tv"
+                android:textColor="@color/tv_spinner_color_2048"
                 android:textSize="16sp" />
 
             <CheckBox
@@ -414,7 +427,7 @@
                 android:singleLine="true"
                 android:text="未發佈"
                 android:textAlignment="viewEnd"
-                android:textColor="@color/item_2048_checkbox_tv"
+                android:textColor="@color/tv_spinner_color_2048"
                 android:textSize="16sp" />
 
         </LinearLayout>
@@ -428,10 +441,11 @@
             android:gravity="center|left"
             android:paddingLeft="12dp"
             android:text="@string/char_role"
-            android:textColor="@color/tv_color_2048"
+            android:textColor="@color/tv_spinner_color_2048"
             android:textSize="18sp" />
 
         <LinearLayout
+            android:id="@+id/menu_role_ll"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_margin="4dp"
@@ -457,11 +471,11 @@
                 android:paddingLeft="16dp"
                 android:paddingTop="12dp"
                 android:paddingBottom="12dp"
+                android:singleLine="true"
                 android:text="@string/main_dps"
                 android:textAlignment="viewEnd"
-                android:textColor="@color/item_2048_checkbox_tv"
-                android:textSize="14sp"
-                android:singleLine="true" />
+                android:textColor="@color/tv_spinner_color_2048"
+                android:textSize="14sp" />
 
             <CheckBox
                 android:id="@+id/menu_role_sub_dps"
@@ -484,7 +498,7 @@
                 android:singleLine="true"
                 android:text="@string/support_dps"
                 android:textAlignment="viewEnd"
-                android:textColor="@color/item_2048_checkbox_tv"
+                android:textColor="@color/tv_spinner_color_2048"
                 android:textSize="14sp" />
 
             <CheckBox
@@ -508,7 +522,7 @@
                 android:singleLine="true"
                 android:text="@string/utility"
                 android:textAlignment="viewEnd"
-                android:textColor="@color/item_2048_checkbox_tv"
+                android:textColor="@color/tv_spinner_color_2048"
                 android:textSize="14sp" />
         </LinearLayout>
 

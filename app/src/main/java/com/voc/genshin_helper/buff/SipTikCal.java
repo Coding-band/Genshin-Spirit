@@ -68,6 +68,7 @@ public class SipTikCal extends AppCompatActivity {
 
     Context context;
     Activity activity;
+    public SharedPreferences sharedPreferences;
     ItemRss item_rss;
     Characters characters;
     Weapons weapons;
@@ -92,7 +93,6 @@ public class SipTikCal extends AppCompatActivity {
     RecyclerView mArtifactList;
     public List<Artifacts> artifactsList = new ArrayList();
 
-    SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     Dialog dialog1 ;
     Dialog dialog2 ;

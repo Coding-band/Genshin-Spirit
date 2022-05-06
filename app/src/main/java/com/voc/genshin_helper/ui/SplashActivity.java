@@ -44,6 +44,7 @@ import com.hjq.permissions.XXPermissions;
 import com.voc.genshin_helper.BuildConfig;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
+import com.voc.genshin_helper.ui.SipTik.DeskSipTik;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.DownloadTask;
@@ -98,7 +99,7 @@ public class SplashActivity extends AppCompatActivity {
         }
         ((TextView) findViewById(R.id.version_tv)).setText(BuildConfig.VERSION_NAME);
 
-        String[] checkList = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE};
+        String[] checkList = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.EXPAND_STATUS_BAR};
         List<String> needRequestList = checkPermission(activity, checkList);
         if (!needRequestList.isEmpty()) {
             requestPermission(activity, needRequestList.toArray(new String[needRequestList.size()]));
@@ -217,7 +218,6 @@ public class SplashActivity extends AppCompatActivity {
 
 
     public void check_updates(){
-        {
             SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
 
@@ -271,26 +271,59 @@ public class SplashActivity extends AppCompatActivity {
                             downloadTask.startA(array_download,array_fileName,array_SfileName,context,activity);
                             editor.putLong("lastUpdateUnix", finalLastUnix);
                             editor.apply();
-                            new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    SplashActivity.this.startActivity(new Intent(SplashActivity.this, Desk2048.class));
-                                    SplashActivity.this.finish();
-                                }
-                            }, 2000);
+
+                            if (sharedPreferences.getString("styleUI","N/A").equals("N/A")){
+                                AlertDialog.Builder dialog = new AlertDialog.Builder(SplashActivity.this,R.style.AlertDialogCustom);
+                                dialog.setCancelable(false);
+                                dialog.setTitle("Please choose the UI style");
+                                dialog.setNegativeButton("SipTik",new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface arg0, int arg1) {
+                                        editor.putString("styleUI","SipTik");
+                                        editor.apply();
+                                        runDesk(sharedPreferences);
+                                    }
+                                });
+                                dialog.setPositiveButton("2O48", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+                                        editor.putString("styleUI","2O48");
+                                        editor.apply();
+                                        runDesk(sharedPreferences);
+                                    }
+                                });
+
+                                dialog.show();
+                            }else{runDesk(sharedPreferences);}
                         }
 
                     });
                     dialog.show();
                 }else{
                     CustomToast.toast(context,this,context.getString(R.string.update_download_not_found_update));
-                    new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
-                        @Override
-                        public void run() {
-                            SplashActivity.this.startActivity(new Intent(SplashActivity.this, Desk2048.class));
-                            SplashActivity.this.finish();
-                        }
-                    }, 2000);
+                    if (sharedPreferences.getString("styleUI","N/A").equals("N/A")){
+                        AlertDialog.Builder dialog = new AlertDialog.Builder(SplashActivity.this,R.style.AlertDialogCustom);
+                        dialog.setCancelable(false);
+                        dialog.setTitle("Please choose the UI style");
+                        dialog.setNegativeButton("SipTik",new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface arg0, int arg1) {
+                                editor.putString("styleUI","SipTik");
+                                editor.apply();
+                                runDesk(sharedPreferences);
+                            }
+                        });
+                        dialog.setPositiveButton("2O48", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                editor.putString("styleUI","2O48");
+                                editor.apply();
+                                runDesk(sharedPreferences);
+                            }
+                        });
+
+                        dialog.show();
+                    }else{runDesk(sharedPreferences);}
                 }
 
             } catch (JSONException e) {
@@ -298,7 +331,24 @@ public class SplashActivity extends AppCompatActivity {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
+
+    }
+
+    private void runDesk(SharedPreferences sharedPreferences) {
+        new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if(sharedPreferences.getString("styleUI","N/A").equals("2O48")){
+                    SplashActivity.this.startActivity(new Intent(SplashActivity.this, Desk2048.class));
+                }else if (sharedPreferences.getString("styleUI","N/A").equals("SipTik")){
+                    SplashActivity.this.startActivity(new Intent(SplashActivity.this, DeskSipTik.class));
+                }else{
+                    SplashActivity.this.startActivity(new Intent(SplashActivity.this, MainActivity.class));
+                }
+                SplashActivity.this.finish();
+
+            }
+        }, 2000);
     }
 
 

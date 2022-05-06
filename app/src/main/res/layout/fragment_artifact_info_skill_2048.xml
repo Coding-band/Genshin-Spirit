@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+~ Project Genshin Spirit (原神小幫手) was
+~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+~ Copyright © 2022 Xectorda 版權所有
+-->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:id="@+id/info_sc"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:overScrollMode="always"
+        android:scrollbars="none"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/info_pc_desc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/bg_2048_talent_card"
+                app:cardBackgroundColor="#00FFFFFF"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_2048_talent_card"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/info_1pc_desc_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="4dp"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="@string/artifact_stat1"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dialog_title_tv_color_2048"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/info_1pc_desc_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="4dp"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="投擲在碰撞後爆炸的好東西！進行至多三段的炸彈攻擊，造成火元素範圍傷害。"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/tv_anti_color_2048"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/info_2pc_desc_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="4dp"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="@string/artifact_stat2"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dialog_title_tv_color_2048"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/info_2pc_desc_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="4dp"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="投擲在碰撞後爆炸的好東西！進行至多三段的炸彈攻擊，造成火元素範圍傷害。"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/tv_anti_color_2048"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/info_4pc_desc_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="4dp"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="@string/artifact_stat4"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dialog_title_tv_color_2048"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/info_4pc_desc_info"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="4dp"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="投擲在碰撞後爆炸的好東西！進行至多三段的炸彈攻擊，造成火元素範圍傷害。"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/tv_anti_color_2048"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/info_each_desc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/bg_2048_talent_card"
+                app:cardBackgroundColor="#00FFFFFF"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_2048_talent_card"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:id="@+id/info_each_title1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="4dp"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="樂團的晨光"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dialog_title_tv_color_2048"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/info_each_info1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="4dp"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="小小的花形徽章。側耳細聽的話，仿佛能聽到悠揚的笛聲和清新的歌唱聲。"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/tv_anti_color_2048"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/info_each_title2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="4dp"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="樂團的晨光"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dialog_title_tv_color_2048"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/info_each_info2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="4dp"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="小小的花形徽章。側耳細聽的話，仿佛能聽到悠揚的笛聲和清新的歌唱聲。"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/tv_anti_color_2048"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/info_each_title3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="4dp"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="樂團的晨光"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dialog_title_tv_color_2048"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/info_each_info3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="4dp"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="小小的花形徽章。側耳細聽的話，仿佛能聽到悠揚的笛聲和清新的歌唱聲。"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/tv_anti_color_2048"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/info_each_title4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="4dp"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="樂團的晨光"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dialog_title_tv_color_2048"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/info_each_info4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="4dp"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="小小的花形徽章。側耳細聽的話，仿佛能聽到悠揚的笛聲和清新的歌唱聲。"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/tv_anti_color_2048"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/info_each_title5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="4dp"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="樂團的晨光"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/dialog_title_tv_color_2048"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/info_each_info5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_margin="4dp"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="小小的花形徽章。側耳細聽的話，仿佛能聽到悠揚的笛聲和清新的歌唱聲。"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/tv_anti_color_2048"
+                        android:textSize="16sp" />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

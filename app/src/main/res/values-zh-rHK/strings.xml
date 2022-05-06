@@ -969,4 +969,34 @@
 
     <!-- add in 20220421 -->
     <string name="img_reset_finish">背景已重設</string>
+
+    <!-- add in 20220423 -->
+    <string name="obtain_no">無</string>
+    <string name="obtain_forge_mission_nmdbj">鍛造(農民的寶藏)</string>
+    <string name="obtain_limited_wish">限定祈願</string>
+    <string name="obtain_wish">祈願</string>
+    <string name="obtain_first_gift">初始武器贈送</string>
+    <string name="obtain_shop">商城兌換</string>
+    <string name="obtain_chest_shop">寶箱、商店購買</string>
+    <string name="obtain_forge">鍛造</string>
+    <string name="obtain_chat_ymdjy">對話(璃月港快刀陳對話)</string>
+    <string name="obtain_battlepass">紀行</string>
+    <string name="obtain_wish_chest">祈願、寶箱</string>
+    <string name="obtain_event">活動</string>
+    <string name="obtain_forge_event">鍛造、任務</string>
+    <string name="obtain_wish_event_glyjyjg">祈願、活動(巨龍與自由之歌)</string>
+    <string name="obtain_forge_yhbh">鍛造(影向祓行)</string>
+    <string name="obtain_chest">寶箱</string>
+    <string name="obtain_forge_hldw">鍛造(奇怪的海螺)</string>
+    <string name="obtain_wish_event_hdbbhjyjj">祈願、活動(海盜秘寶孔雀羽之章)</string>
+    <string name="obtain_forge_tbmy">鍛造(踏鞴物語)</string>
+    <string name="obtain_forge_ylysws">鍛造(遠呂羽氏遺事)</string>
+    <string name="obtain_chesr_md">蒙德寶箱</string>
+    <string name="obtain_playstation_login">PlayStation平台登錄遊戲</string>
+    <string name="obtain_forge_lvl10_sjgw">鍛造、星之歸還活動</string>
+    <string name="obtain_playstation_sp_gift">PlayStation Network特典</string>
+    <string name="obtain_npc_dcdyhw">NPC商店、稻妻釣魚協會兌換</string>
+    <string name="obtain_chesr_ly">璃月寶箱</string>
+    <string name="obtain_chest_gwk">孤雲閣附近拔出、寶箱</string>
+
 </resources>

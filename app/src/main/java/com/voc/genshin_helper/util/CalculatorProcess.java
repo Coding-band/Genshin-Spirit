@@ -13,18 +13,14 @@ import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.core.widget.ImageViewCompat;
 import androidx.recyclerview.widget.ConcatAdapter;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -35,7 +31,7 @@ import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
-import com.voc.genshin_helper.data.Materials;
+import com.voc.genshin_helper.data.material.Materials;
 import com.voc.genshin_helper.data.material.BossAdapter;
 import com.voc.genshin_helper.data.material.CharWeaponAdapter;
 import com.voc.genshin_helper.data.material.CommonAdapter;
@@ -1847,6 +1843,23 @@ public class CalculatorProcess {
             //Log.wtf("Procedure","resultShowOTHER"+" || "+x+" || "+System.currentTimeMillis());
         }
     }
+
+    /*
+    Advice from Voc in 20220423
+    public int[] expReturn(int exp){
+
+        int exp_big = (int) exp / 20000;
+        exp = exp % 20000;
+        int exp_mid = (int) exp / 5000;
+        exp = exp % 5000;
+        int exp_small = (int) exp / 1000;
+        if (exp % 1000 < 1000){
+            exp_small = exp_small + 1;
+        }
+
+        return new int[]{exp_small,exp_mid,exp_big};
+    }
+     */
 
     public void getCharEXPItemCount(int pos, int part_exp){
         int big0 = 0 , mid0 = 0 , small0 = 0;

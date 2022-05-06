@@ -30,6 +30,7 @@ import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.ui.CalculatorUI;
 import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
 import com.voc.genshin_helper.ui.MainActivity;
+import com.voc.genshin_helper.ui.SipTik.DeskSipTik;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
@@ -108,9 +109,35 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                 evh = new ViewHolder(v, (OnItemClickListener) mListener);
             }
 
+        }else if(context instanceof DeskSipTik){
+            if(((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")){
+                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_rectangle_2048, parent, false);
+                evh = new ViewHolder(v, (OnItemClickListener) mListener);
+            }else if(((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")){
+                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
+                evh = new ViewHolder(v, (OnItemClickListener) mListener);
+            }else if(((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")){
+                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_siptik, parent, false);
+                evh = new ViewHolder(v, (OnItemClickListener) mListener);
+            }else{
+                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
+                evh = new ViewHolder(v, (OnItemClickListener) mListener);
+            }
+
         }else if(context instanceof CalculatorUI){
-            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
-            evh = new ViewHolder(v, (OnItemClickListener) mListener);
+            if(((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")){
+                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_rectangle_2048, parent, false);
+                evh = new ViewHolder(v, (OnItemClickListener) mListener);
+            }else if(((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")){
+                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
+                evh = new ViewHolder(v, (OnItemClickListener) mListener);
+            }else if(((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")){
+                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_siptik, parent, false);
+                evh = new ViewHolder(v, (OnItemClickListener) mListener);
+            }else{
+                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
+                evh = new ViewHolder(v, (OnItemClickListener) mListener);
+            }
         }
 
         return evh;
@@ -636,6 +663,48 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
             }
 
 
+        }else if(context instanceof DeskSipTik){
+            if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
+                if(width_curr / ((int)width_curr/size_per_img+1) > size_per_img){
+                    width = (width_curr) / ((int)width_curr/size_per_img+1);
+                    height = (width * 14) / 8;
+                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 8;
+
+                }else{
+                    width = size_per_img;
+                    height = (width * 14) / 8;
+                    holder.char_name_ll.getLayoutParams().width = size_per_img;
+                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 8;
+                }
+            } else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
+                if(width_curr / ((int)width_curr/size_per_img_sq+1) > size_per_img_sq){
+                    width = (width_curr) / ((int)width_curr/size_per_img_sq+1);
+                    height = (width_curr) / ((int)width_curr/size_per_img_sq+1);
+                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 5;
+                }else{
+                    width = size_per_img_sq;
+                    height = size_per_img_sq;
+                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 5;
+                }
+            } else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+                if(width_curr / ((int)width_curr/size_per_img_siptik+1) > size_per_img_siptik){
+                    width = (width_curr) / ((int)width_curr/size_per_img_siptik+1);
+                    height = (int) ((width) / 2.1);
+
+                }else{
+                    width = (width_curr) / (int) (width_curr/size_per_img_siptik);
+                    height = (int) ((width) / 2.1);
+                }
+
+                holder.char_card_bg.getLayoutParams().width = width;
+                holder.char_card_bg.getLayoutParams().height = height;
+                holder.char_card_mask.getLayoutParams().width = width;
+                holder.char_card_mask.getLayoutParams().height = height;
+                holder.char_card.getLayoutParams().width = width-36;
+                holder.char_card.getLayoutParams().height = height-36;
+            }
+
+
         }else if(context instanceof CalculatorUI){
             if(width_curr / ((int)width_curr/size_per_img_sq+1) > size_per_img_sq){
                 width = (width_curr) / ((int)width_curr/size_per_img_sq+1);
@@ -723,6 +792,31 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                         .error (R.drawable.paimon_full)
                         .into (holder.char_icon);
             } else if (((Desk2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+                holder.char_icon.getLayoutParams().width = 96*width/315;
+                holder.char_icon.getLayoutParams().height = 96*width/315;
+                Picasso.get()
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(96*width/315,96*width/315).transform(transformation_circ_siptik_ico)
+                        .error (R.drawable.paimon_full)
+                        .into (holder.char_icon);
+            }
+        }else if(context instanceof DeskSipTik){
+
+            if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
+                holder.char_small_ico.setVisibility(View.VISIBLE);
+                Picasso.get()
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize((int) (width/3.25),(int) (width/3.25)).transform(transformation_circ)
+                        .error (R.drawable.paimon_lost)
+                        .into (holder.char_small_ico);
+                Picasso.get()
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[0],context)).fit().centerCrop().transform(transformation)
+                        .error (R.drawable.paimon_full)
+                        .into (holder.char_icon);
+            } else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
+                Picasso.get()
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize((int) (width/1),(int) (width/1)).transform(transformation_circ)
+                        .error (R.drawable.paimon_full)
+                        .into (holder.char_icon);
+            } else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
                 holder.char_icon.getLayoutParams().width = 96*width/315;
                 holder.char_icon.getLayoutParams().height = 96*width/315;
                 Picasso.get()
@@ -827,8 +921,9 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                         (((MainActivity) context)).startInfo(String.valueOf(char_base_name.getText()),activity);
 
                     }else if (context instanceof Desk2048){Log.wtf("YES","IT's");
-                        (((Desk2048) context)).startInfo(String.valueOf(char_base_name.getText()),activity);
-
+                        (((Desk2048) context)).startCharInfo(String.valueOf(char_base_name.getText()),activity);
+                    }else if (context instanceof DeskSipTik){Log.wtf("YES","IT's");
+                        (((DeskSipTik) context)).startCharInfo(String.valueOf(char_base_name.getText()),activity);
                     }
                     else if (context instanceof CalculatorUI){Log.wtf("YES","IT's");
                         ArrayList<String> nameList = (((CalculatorUI) context)).checkNameList();

@@ -396,7 +396,7 @@
 
 
             <TextView
-                android:id="@+id/info_advice_team"
+                android:id="@+id/info_advice_team_tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"

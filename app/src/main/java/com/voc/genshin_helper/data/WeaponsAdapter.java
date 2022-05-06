@@ -43,6 +43,7 @@ import com.voc.genshin_helper.buff.SipTikCal;
 import com.voc.genshin_helper.ui.CalculatorUI;
 import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
 import com.voc.genshin_helper.ui.MainActivity;
+import com.voc.genshin_helper.ui.SipTik.DeskSipTik;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.FadingImageView;
 import com.voc.genshin_helper.util.FileLoader;
@@ -110,10 +111,35 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                 inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_weapon_ico_siptik, viewGroup, false);
             }
             return new ViewHolder(inflate, (OnItemClickListener) this.mListener);
+        } else if (context instanceof DeskSipTik) {
+            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_weapon_ico_rectangle_2048, viewGroup, false);
+            if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
+                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_weapon_ico_rectangle_2048, viewGroup, false);
+            } else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
+                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_weapon_ico_square_2048, viewGroup, false);
+            } else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_weapon_ico_siptik, viewGroup, false);
+            }
+            return new ViewHolder(inflate, (OnItemClickListener) this.mListener);
         } else if (context instanceof CalculatorUI) {
-            return new ViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_weapon_ico_square_2048, viewGroup, false), (OnItemClickListener) this.mListener);
+            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_weapon_ico_rectangle_2048, viewGroup, false);
+            if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
+                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_weapon_ico_rectangle_2048, viewGroup, false);
+            } else if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
+                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_weapon_ico_square_2048, viewGroup, false);
+            } else if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_weapon_ico_siptik, viewGroup, false);
+            }
+            return new ViewHolder(inflate, (OnItemClickListener) this.mListener);
         } else if (context instanceof SipTikCal) {
-            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_weapon_ico_square_2048, viewGroup, false);
+            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_weapon_ico_rectangle_2048, viewGroup, false);
+            if (((SipTikCal) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
+                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_weapon_ico_rectangle_2048, viewGroup, false);
+            } else if (((SipTikCal) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
+                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_weapon_ico_square_2048, viewGroup, false);
+            } else if (((SipTikCal) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_weapon_ico_siptik, viewGroup, false);
+            }
             return new ViewHolder(inflate, (OnItemClickListener) this.mListener);
         }
         return null;
@@ -238,6 +264,43 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                     height = size_per_img_sq;
                 }
             } else if (((Desk2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+                if(width_curr / ((int)width_curr/size_per_img_siptik+1) > size_per_img_siptik){
+                    width = (width_curr) / ((int)width_curr/size_per_img_siptik+1);
+                    height = (int) ((width) / 2.1);
+
+                }else{
+                    width = (width_curr) / (int) (width_curr/size_per_img_siptik);
+                    height = (int) ((width) / 2.1);
+                }
+
+                viewHolder.weapon_card_bg.getLayoutParams().width = width;
+                viewHolder.weapon_card_bg.getLayoutParams().height = height;
+                viewHolder.weapon_card_mask.getLayoutParams().width = width;
+                viewHolder.weapon_card_mask.getLayoutParams().height = height;
+                viewHolder.weapon_card.getLayoutParams().width = width-36;
+                viewHolder.weapon_card.getLayoutParams().height = height-36;
+            }
+
+
+        }else  if(context instanceof DeskSipTik){
+
+            if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
+                if(width_curr / ((int)width_curr/size_per_img+1) > size_per_img){
+                    width = (width_curr) / ((int)width_curr/size_per_img+1);
+                    height = (int) ((width * 9) / 8);
+                }else{
+                    width = size_per_img;
+                    height = (int) ((width * 9) / 8);
+                }
+            } else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
+                if(width_curr / ((int)width_curr/size_per_img_sq+1) > size_per_img_sq){
+                    width = (width_curr) / ((int)width_curr/size_per_img_sq+1);
+                    height = (width_curr) / ((int)width_curr/size_per_img_sq+1);
+                }else{
+                    width = size_per_img_sq;
+                    height = size_per_img_sq;
+                }
+            } else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
                 if(width_curr / ((int)width_curr/size_per_img_siptik+1) > size_per_img_siptik){
                     width = (width_curr) / ((int)width_curr/size_per_img_siptik+1);
                     height = (int) ((width) / 2.1);
@@ -386,7 +449,7 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
             viewHolder.weapon_main.getLayoutParams().width = width;
             viewHolder.weapon_main.getLayoutParams().height = width;
 
-        }else if(context.getSharedPreferences("user_info",MODE_PRIVATE).getString("curr_ui_grid", "2").equals("4") && (context instanceof MainActivity || context instanceof Desk2048)){
+        }else if(context.getSharedPreferences("user_info",MODE_PRIVATE).getString("curr_ui_grid", "2").equals("4") && (context instanceof MainActivity || context instanceof Desk2048|| context instanceof DeskSipTik)){
             switch (weapons.getRare()){
                 case 1 : {
                     Picasso.get()
@@ -559,6 +622,30 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                         .error (R.drawable.paimon_full)
                         .into (viewHolder.weapon_icon);
             }
+        } if (context2 instanceof DeskSipTik) {
+            if (((DeskSipTik) context2).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
+
+                Picasso.get()
+                        .load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context))
+                        .fit().centerCrop()
+                        .error(R.drawable.paimon_full)
+                        .into(viewHolder.weapon_icon);
+            } else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
+                Picasso.get()
+                        .load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context))
+                        .resize(one_curr,one_curr)
+                        .error(R.drawable.paimon_full)
+                        .into(viewHolder.weapon_icon);
+            }else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+                viewHolder.weapon_icon.getLayoutParams().width = 96*width/315;
+                viewHolder.weapon_icon.getLayoutParams().height = 96*width/315;
+                Picasso.get()
+                        .load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context))
+                        .resize(96*width/315,96*width/315)
+                        .transform(transformation_circ_siptik_ico)
+                        .error (R.drawable.paimon_full)
+                        .into (viewHolder.weapon_icon);
+            }
         } else if (context2 instanceof CalculatorUI) {
             Picasso.get().load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context)).resize(one_curr,one_curr).error(R.drawable.paimon_full).into(viewHolder.weapon_icon);
         } else if (context2 instanceof SipTikCal) {
@@ -621,11 +708,11 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
             this.weapon_press_mask = (ImageView) view.findViewById(R.id.weapon_press_mask);
             this.weapon_main = (ConstraintLayout) view.findViewById(R.id.weapon_main);
 
-            this.weapon_weapon = itemView.findViewById(R.id.weapon_weapon);
-            this.weapon_card_bg = itemView.findViewById(R.id.weapon_card_bg);
-            this.weapon_card_mask = itemView.findViewById(R.id.weapon_card_mask);
-            this.weapon_card_ico_deco = itemView.findViewById(R.id.weapon_card_ico_deco);
-            this.weapon_card = itemView.findViewById(R.id.weapon_card);
+            this.weapon_weapon = view.findViewById(R.id.weapon_weapon);
+            this.weapon_card_bg = view.findViewById(R.id.weapon_card_bg);
+            this.weapon_card_mask = view.findViewById(R.id.weapon_card_mask);
+            this.weapon_card_ico_deco = view.findViewById(R.id.weapon_card_ico_deco);
+            this.weapon_card = view.findViewById(R.id.weapon_card);
 
             weapon_press_mask.startAnimation(buttonClick);
 
@@ -634,7 +721,7 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                 public void onClick(View v) {
 
                     Log.wtf("is context instanceof MainActivity ?", WeaponsAdapter.this.context.getPackageName());
-                    if (context instanceof MainActivity || context instanceof Desk2048) {
+                    if (context instanceof MainActivity) {
 
                         String valueOf = String.valueOf(ViewHolder.this.weapon_base_name.getText());
 
@@ -741,7 +828,13 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                         Log.wtf("YES", "IT's");
                         Log.w("WEAPON_BASE", (String) ViewHolder.this.weapon_base_name.getText());
                         ((CalculatorUI) WeaponsAdapter.this.context).weaponQuestion(String.valueOf(weapon_base_name.getText()), "ADD", 0, (int) weapon_star.getRating());
-                    } else if (context instanceof SipTikCal){Log.wtf("YES","IT's");
+                    } else if (context instanceof Desk2048){Log.wtf("YES","IT's");
+                        (((Desk2048) context)).startWeaponInfo(String.valueOf(weapon_base_name.getText()),activity);
+
+                    } else if (context instanceof DeskSipTik){Log.wtf("YES","IT's");
+                        (((DeskSipTik) context)).startWeaponInfo(String.valueOf(weapon_base_name.getText()),activity);
+
+                    }else if (context instanceof SipTikCal){Log.wtf("YES","IT's");
                         for (int x = 0 ; x < weaponsList.size() ; x++){
                             if (weaponsList.get(x).getName().equals(weapon_base_name.getText())){
                                 (((SipTikCal) context)).weaponChoosed(weaponA.get(x));

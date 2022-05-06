@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<issues format="6" by="lint 7.1.3" type="baseline" client="gradle" dependencies="false" name="AGP (7.1.3)" variant="fatal" version="7.1.3">
+
+    <issue
+        id="UnknownId"
+        message="The id &quot;`menu_search_et`&quot; is not defined anywhere."
+        errorLine1="                app:layout_constraintStart_toEndOf=&quot;@+id/menu_search_et&quot;"
+        errorLine2="                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
+        <location
+            file="src/main/res/layout/item_search_et.xml"
+            line="72"
+            column="17"/>
+    </issue>
+
+</issues>

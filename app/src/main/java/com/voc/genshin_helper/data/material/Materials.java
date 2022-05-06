@@ -1,4 +1,4 @@
-package com.voc.genshin_helper.data;
+package com.voc.genshin_helper.data.material;
 
 import java.io.Serializable;
 

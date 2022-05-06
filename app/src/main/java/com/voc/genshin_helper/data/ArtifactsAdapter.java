@@ -43,6 +43,7 @@ import com.voc.genshin_helper.buff.SipTikCal;
 import com.voc.genshin_helper.ui.CalculatorUI;
 import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
 import com.voc.genshin_helper.ui.MainActivity;
+import com.voc.genshin_helper.ui.SipTik.DeskSipTik;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.FadingImageView;
 import com.voc.genshin_helper.util.FileLoader;
@@ -117,10 +118,35 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                 inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_siptik, viewGroup, false);
             }
             return new ViewHolder(inflate, (OnItemClickListener) this.mListener);
+        } else if (context instanceof DeskSipTik) {
+            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_rectangle_2048, viewGroup, false);
+            if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
+                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_rectangle_2048, viewGroup, false);
+            } else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
+                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_square_2048, viewGroup, false);
+            } else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_siptik, viewGroup, false);
+            }
+            return new ViewHolder(inflate, (OnItemClickListener) this.mListener);
         } else if (context instanceof CalculatorUI) {
-            return new ViewHolder(LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_square_2048, viewGroup, false), (OnItemClickListener) this.mListener);
+            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_rectangle_2048, viewGroup, false);
+            if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
+                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_rectangle_2048, viewGroup, false);
+            } else if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
+                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_square_2048, viewGroup, false);
+            } else if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_siptik, viewGroup, false);
+            }
+            return new ViewHolder(inflate, (OnItemClickListener) this.mListener);
         } else if (context instanceof SipTikCal) {
-            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_square_2048, viewGroup, false);
+            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_rectangle_2048, viewGroup, false);
+            if (((SipTikCal) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
+                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_rectangle_2048, viewGroup, false);
+            } else if (((SipTikCal) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
+                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_square_2048, viewGroup, false);
+            } else if (((SipTikCal) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_siptik, viewGroup, false);
+            }
             return new ViewHolder(inflate, (OnItemClickListener) this.mListener);
         } else {
             return null;
@@ -273,6 +299,43 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                     height = size_per_img_sq;
                 }
             } else if (((Desk2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+                if(width_curr / ((int)width_curr/size_per_img_siptik+1) > size_per_img_siptik){
+                    width = (width_curr) / ((int)width_curr/size_per_img_siptik+1);
+                    height = (int) ((width) / 2.1);
+
+                }else{
+                    width = (width_curr) / (int) (width_curr/size_per_img_siptik);
+                    height = (int) ((width) / 2.1);
+                }
+
+                viewHolder.artifact_card_bg.getLayoutParams().width = width;
+                viewHolder.artifact_card_bg.getLayoutParams().height = height;
+                viewHolder.artifact_card_mask.getLayoutParams().width = width;
+                viewHolder.artifact_card_mask.getLayoutParams().height = height;
+                viewHolder.artifact_card.getLayoutParams().width = width-36;
+                viewHolder.artifact_card.getLayoutParams().height = height-36;
+            }
+
+
+        }else if(context instanceof DeskSipTik){
+
+            if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
+                if(width_curr / ((int)width_curr/size_per_img+1) > size_per_img){
+                    width = (width_curr) / ((int)width_curr/size_per_img+1);
+                    height = (int) ((width * 9) / 8);
+                }else{
+                    width = size_per_img;
+                    height = (int) ((width * 9) / 8);
+                }
+            } else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
+                if(width_curr / ((int)width_curr/size_per_img_sq+1) > size_per_img_sq){
+                    width = (width_curr) / ((int)width_curr/size_per_img_sq+1);
+                    height = (width_curr) / ((int)width_curr/size_per_img_sq+1);
+                }else{
+                    width = size_per_img_sq;
+                    height = size_per_img_sq;
+                }
+            } else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
                 if(width_curr / ((int)width_curr/size_per_img_siptik+1) > size_per_img_siptik){
                     width = (width_curr) / ((int)width_curr/size_per_img_siptik+1);
                     height = (int) ((width) / 2.1);
@@ -571,6 +634,21 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                         .error (R.drawable.paimon_full)
                         .into (viewHolder.artifact_icon);
             }
+        }else  if (context2 instanceof DeskSipTik) {
+            if (((DeskSipTik) context2).sharedPreferences.getString("curr_ui_grid", ExifInterface.GPS_MEASUREMENT_2D).equals(ExifInterface.GPS_MEASUREMENT_2D)) {
+                Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(artifacts.getName(),context)[1],context)).fit().centerCrop().error(R.drawable.paimon_full).into(viewHolder.artifact_icon);
+            } else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", ExifInterface.GPS_MEASUREMENT_3D).equals(ExifInterface.GPS_MEASUREMENT_3D)) {
+                Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(artifacts.getName(),context)[1],context)).resize(one_curr,one_curr).error(R.drawable.paimon_full).into(viewHolder.artifact_icon);
+            }else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+                viewHolder.artifact_icon.getLayoutParams().width = 96*width/315;
+                viewHolder.artifact_icon.getLayoutParams().height = 96*width/315;
+                Picasso.get()
+                        .load(FileLoader.loadIMG(itemRss.getArtifactByName(artifacts.getName(),context)[1],context))
+                        .resize(96*width/315,96*width/315)
+                        .transform(transformation_circ_siptik_ico)
+                        .error (R.drawable.paimon_full)
+                        .into (viewHolder.artifact_icon);
+            }
         } else if (context2 instanceof CalculatorUI) {
             Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(artifacts.getName(),context)[1],context)).resize(one_curr,one_curr).error(R.drawable.paimon_full).into(viewHolder.artifact_icon);
         } else if (context2 instanceof SipTikCal) {
@@ -624,15 +702,15 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
             this.artifact_name_ll = (LinearLayout) view.findViewById(R.id.artifact_name_ll);
             this.artifact_main = (ConstraintLayout) view.findViewById(R.id.artifact_main);
 
-            this.artifact_card_bg = itemView.findViewById(R.id.artifact_card_bg);
-            this.artifact_card_mask = itemView.findViewById(R.id.artifact_card_mask);
-            this.artifact_card_ico_deco = itemView.findViewById(R.id.artifact_card_ico_deco);
+            this.artifact_card_bg = view.findViewById(R.id.artifact_card_bg);
+            this.artifact_card_mask = view.findViewById(R.id.artifact_card_mask);
+            this.artifact_card_ico_deco = view.findViewById(R.id.artifact_card_ico_deco);
             this.artifact_desc_2 = view.findViewById(R.id.artifact_desc_2);
             this.artifact_desc_2_title = view.findViewById(R.id.artifact_desc_2_title);
             this.artifact_desc_4 = view.findViewById(R.id.artifact_desc_4);
             this.artifact_desc_4_title = view.findViewById(R.id.artifact_desc_4_title);
 
-            this.artifact_card = itemView.findViewById(R.id.artifact_card);
+            this.artifact_card = view.findViewById(R.id.artifact_card);
 
             artifact_press_mask.startAnimation(buttonClick);
 
@@ -641,7 +719,7 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                 public void onClick(View view) {
                     ImageView imageView;
                     Log.wtf("is context instanceof MainActivity ?", ArtifactsAdapter.this.context.getPackageName());
-                    if (ArtifactsAdapter.this.context instanceof MainActivity || ArtifactsAdapter.this.context instanceof Desk2048) {
+                    if (ArtifactsAdapter.this.context instanceof MainActivity) {
                         Log.wtf("YES", "IT's");
                         Log.wtf("BETA", String.valueOf(ViewHolder.this.artifact_base_name.getText()));
                         String valueOf = String.valueOf(ViewHolder.this.artifact_base_name.getText());
@@ -755,6 +833,10 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                             //Toast.makeText((CalculatorUI) ArtifactsAdapter.this.context, ArtifactsAdapter.this.context.getString(R.string.cal_choosed_already), Toast.LENGTH_SHORT).show();
                             CustomToast.toast(context,view,context.getString(R.string.cal_choosed_already));
                         }
+                    } else if (ArtifactsAdapter.this.context instanceof Desk2048) {
+                        (((Desk2048) context)).startArtifactInfo(String.valueOf(artifact_base_name.getText()),activity);
+                    } else if (ArtifactsAdapter.this.context instanceof DeskSipTik) {
+                        (((DeskSipTik) context)).startArtifactInfo(String.valueOf(artifact_base_name.getText()),activity);
                     } else if (ArtifactsAdapter.this.context instanceof SipTikCal){
                         for (int x = 0 ; x < artifactsList.size() ; x++){
                             if (artifactsList.get(x).getBaseName().equals(artifact_base_name.getText())){

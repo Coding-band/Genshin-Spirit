@@ -10,6 +10,7 @@
     <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
     <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR"/>
     <uses-permission
         android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
         tools:ignore="ProtectedPermissions" />
@@ -28,12 +29,11 @@
         android:usesCleartextTraffic="true"
         android:windowSoftInputMode="stateHidden">
         <activity
-            android:name=".ui.MMXLVIII.Characters_Info_Scroll_2048"
-            android:exported="false"
-            android:label="@string/title_activity_characters_info_scroll2048"
-            android:theme="@style/NoTheme.NoActionBar" />
-        <activity
             android:name=".ui.MMXLVIII.Desk2048"
+            android:exported="false" />
+        <activity
+            android:name=".ui.SipTik.DeskSipTik"
+            android:fitsSystemWindows="true"
             android:exported="false" />
         <activity
             android:name=".ui.BackgroundConfirmActivity"

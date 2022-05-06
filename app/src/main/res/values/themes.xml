@@ -54,6 +54,18 @@
         <item name="android:statusBarColor" tools:targetApi="l">@color/theme_dark_color</item>
     </style>
 
+    <style name="NoThemeSipTik" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/theme_color</item>
+        <item name="colorPrimaryDark">@color/theme_color</item>
+        <item name="colorAccent">#05BBA9</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:textColor">@color/tv_color</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/theme_dark_color</item>
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
     <style name="WindowAnimationTransition">
         <item name="android:windowEnterAnimation">@android:anim/fade_in</item>
         <item name="android:windowExitAnimation">@android:anim/fade_out</item>

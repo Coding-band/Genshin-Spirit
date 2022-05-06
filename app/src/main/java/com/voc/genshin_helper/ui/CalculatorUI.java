@@ -479,10 +479,24 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics_a);
         int height_a = displayMetrics_a.heightPixels;
         int width_a = displayMetrics_a.widthPixels;
-        if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-            mLayoutManager = new GridLayoutManager(context,  width_a/400+1);
-        }else{
-            mLayoutManager = new GridLayoutManager(context,  3);
+        if (sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
+            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                mLayoutManager = new GridLayoutManager(context,  width_a/480+1);
+            }else{
+                mLayoutManager = new GridLayoutManager(context,  2);
+            }
+        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
+            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                mLayoutManager = new GridLayoutManager(context,  width_a/400+1);
+            }else{
+                mLayoutManager = new GridLayoutManager(context,  3);
+            }
+        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                mLayoutManager = new GridLayoutManager(context,  width_a/960);
+            }else{
+                mLayoutManager = new GridLayoutManager(context,  1);
+            }
         }
         LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
         paramsMsg.gravity = Gravity.CENTER;
@@ -735,10 +749,24 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics_a);
         int height_a = displayMetrics_a.heightPixels;
         int width_a = displayMetrics_a.widthPixels;
-        if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-            mLayoutManager = new GridLayoutManager(context,  width_a/400+1);
-        }else{
-            mLayoutManager = new GridLayoutManager(context,  3);
+        if (sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
+            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                mLayoutManager = new GridLayoutManager(context,  width_a/480+1);
+            }else{
+                mLayoutManager = new GridLayoutManager(context,  2);
+            }
+        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
+            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                mLayoutManager = new GridLayoutManager(context,  width_a/400+1);
+            }else{
+                mLayoutManager = new GridLayoutManager(context,  3);
+            }
+        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                mLayoutManager = new GridLayoutManager(context,  width_a/960);
+            }else{
+                mLayoutManager = new GridLayoutManager(context,  1);
+            }
         }
         LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
         paramsMsg.gravity = Gravity.CENTER;
@@ -954,10 +982,24 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics_a);
         int height_a = displayMetrics_a.heightPixels;
         int width_a = displayMetrics_a.widthPixels;
-        if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-            mLayoutManager = new GridLayoutManager(context,  width_a/400+1);
-        }else{
-            mLayoutManager = new GridLayoutManager(context,  3);
+        if (sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
+            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                mLayoutManager = new GridLayoutManager(context,  width_a/480+1);
+            }else{
+                mLayoutManager = new GridLayoutManager(context,  2);
+            }
+        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
+            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                mLayoutManager = new GridLayoutManager(context,  width_a/400+1);
+            }else{
+                mLayoutManager = new GridLayoutManager(context,  3);
+            }
+        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                mLayoutManager = new GridLayoutManager(context,  width_a/960);
+            }else{
+                mLayoutManager = new GridLayoutManager(context,  1);
+            }
         }
         LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
         paramsMsg.gravity = Gravity.CENTER;

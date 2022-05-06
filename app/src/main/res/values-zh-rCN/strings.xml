@@ -965,6 +965,37 @@
     <string name="cecilia_garden">塞西莉亚苗圃</string>
     <string name="hidden_palace_of_lianshan_formula">震雷连山密宫</string>
     <string name="court_of_flowing_sand">砂流之庭</string>
-    <string name="img_reset_finish">背景がリセットされました</string>
+    <string name="img_reset_finish">背景已重設</string>
+
+    <!-- add in 20220423 -->
+    <string name="obtain_no">无</string>
+    <string name="obtain_forge_mission_nmdbj">锻造(农民的宝藏)</string>
+    <string name="obtain_limited_wish">限定祈愿</string>
+    <string name="obtain_wish">祈愿</string>
+    <string name="obtain_first_gift">初始武器赠送</string>
+    <string name="obtain_shop">商城兑换</string>
+    <string name="obtain_chest_shop">宝箱、商店购买</string>
+    <string name="obtain_forge">锻造</string>
+    <string name="obtain_chat_ymdjy">对话(璃月港快刀陈对话)</string>
+    <string name="obtain_battlepass">纪行</string>
+    <string name="obtain_wish_chest">祈愿、宝箱</string>
+    <string name="obtain_event">活动</string>
+    <string name="obtain_forge_event">锻造、任务</string>
+    <string name="obtain_wish_event_glyjyjg">祈愿、活动(巨龙与自由之歌)</string>
+    <string name="obtain_forge_yhbh">锻造(影向祓行)</string>
+    <string name="obtain_chest">宝箱</string>
+    <string name="obtain_forge_hldw">锻造(奇怪的海螺)</string>
+    <string name="obtain_wish_event_hdbbhjyjj">祈愿、活动(海盗秘宝孔雀羽之章)</string>
+    <string name="obtain_forge_tbmy">锻造(踏鞴物语)</string>
+    <string name="obtain_forge_ylysws">锻造(远吕羽氏遗事)</string>
+    <string name="obtain_chesr_md">蒙德宝箱</string>
+    <string name="obtain_playstation_login">PlayStation平台登录游戏</string>
+    <string name="obtain_forge_lvl10_sjgw">锻造、星之归还活动</string>
+    <string name="obtain_playstation_sp_gift">PlayStation Network特典</string>
+    <string name="obtain_npc_dcdyhw">NPC商店、稻妻钓鱼协会兑换</string>
+    <string name="obtain_chesr_ly">璃月宝箱</string>
+    <string name="obtain_chest_gwk">孤云阁附近拔出、宝箱</string>
+
+
 </resources>
 
