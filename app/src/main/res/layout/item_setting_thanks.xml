@@ -27,32 +27,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="8dp">
-
-                <ImageView
-                    android:id="@+id/helper_ico"
-                    android:layout_width="24dp"
-                    android:layout_height="24dp"
-                    android:layout_weight="0"
-                    app:srcCompat="@drawable/ic_baseline_g_translate_24" />
-
-                <TextView
-                    android:id="@+id/link_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="24dp"
-                    android:layout_weight="0"
-                    android:fontFamily="@font/genshin_font"
-                    android:gravity="center|left"
-                    android:paddingLeft="8dp"
-                    android:text="@string/thanks_title"
-                    android:textColor="@color/tv_color"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
             <TextView
                 android:id="@+id/helper_thanks_intro"
                 android:layout_width="match_parent"
@@ -144,7 +118,7 @@
                             android:layout_gravity="center"
                             android:layout_weight="1"
                             android:fontFamily="@font/genshin_font"
-                            android:text="★ SipTik#0004" />
+                            android:text="★ SipTik#1171" />
                     </LinearLayout>
 
                     <TextView
@@ -171,7 +145,7 @@
                             android:layout_gravity="center"
                             android:layout_weight="1"
                             android:fontFamily="@font/genshin_font"
-                            android:text="★ SipTik#0004" />
+                            android:text="★ SipTik#1171" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -379,6 +353,18 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/genshin_font"
                     android:text="★ 2O48#9733" />
+
+                <TextView
+                    android:id="@+id/textView82"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/genshin_font"
+                    android:text="★ SipTik#1171" />
 
                 <TextView
                     android:id="@+id/helper_aldi_title3"

@@ -79,7 +79,9 @@ import com.voc.genshin_helper.ui.AlarmUI;
 import com.voc.genshin_helper.ui.BackgroundConfirmActivity;
 import com.voc.genshin_helper.ui.CalculatorDBActivity;
 import com.voc.genshin_helper.ui.MainActivity;
+import com.voc.genshin_helper.ui.SipTik.DeskSipTik;
 import com.voc.genshin_helper.util.BackgroundReload;
+import com.voc.genshin_helper.util.BitmapToRGB565;
 import com.voc.genshin_helper.util.ChangeLog;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.DownloadTask;
@@ -197,7 +199,20 @@ public class Desk2048 extends AppCompatActivity {
     RadioButton theme_default;
 
     Switch other_exit_confirm ;
-    Switch other_char_suit ;
+
+    RadioButton style_Voc_rb;
+    RadioButton style_2O48_rb;
+    RadioButton style_SipTik_rb;
+
+    RadioButton outfit_standard_rb;
+    RadioButton outfit_event_rb;
+
+    RadioButton traveler_female_rb;
+    RadioButton traveler_male_rb;
+
+    RadioButton grid_2_rb;
+    RadioButton grid_3_rb;
+    RadioButton grid_4_rb;
 
     String[] weekdayList ;
     String[] langList ;
@@ -273,8 +288,9 @@ public class Desk2048 extends AppCompatActivity {
 
 
         //忘憂喵
-        gs = new GoSleep();
-        gs.sleep(context);
+        //gs = new GoSleep();
+        //gs.sleep(context);
+        //gs.psw();
 
         lang_setup();
         home();
@@ -290,6 +306,8 @@ public class Desk2048 extends AppCompatActivity {
         setup_art();
         setup_setting();
         BackgroundReload.BackgroundReload(context,activity);
+
+        //BitmapToRGB565.order(context);
 
         LinearLayout char_ll = viewPager0.findViewById(R.id.char_ll);
         LinearLayout weapon_ll = viewPager0.findViewById(R.id.weapon_ll);
@@ -460,7 +478,9 @@ public class Desk2048 extends AppCompatActivity {
             }
         }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
             if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-                mLayoutManager = new GridLayoutManager(context,  width_w/960);
+                int tmp_cnt = (int) width_w/960;
+                if (tmp_cnt < 1){tmp_cnt = 1;}
+                mLayoutManager = new GridLayoutManager(context,  tmp_cnt);
             }else{
                 mLayoutManager = new GridLayoutManager(context,  1);
             }
@@ -819,7 +839,9 @@ public class Desk2048 extends AppCompatActivity {
             }
         }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
             if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-                mLayoutManager = new GridLayoutManager(context,  width/960);
+                int tmp_cnt = (int) width/960;
+                if (tmp_cnt < 1){tmp_cnt = 1;}
+                mLayoutManager = new GridLayoutManager(context,  tmp_cnt);
             }else{
                 mLayoutManager = new GridLayoutManager(context,  1);
             }
@@ -1139,7 +1161,9 @@ public class Desk2048 extends AppCompatActivity {
             }
         }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
             if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-                mLayoutManager = new GridLayoutManager(context,  width_a/960);
+                int tmp_cnt = (int) width_a/960;
+                if (tmp_cnt < 1){tmp_cnt = 1;}
+                mLayoutManager = new GridLayoutManager(context,  tmp_cnt);
             }else{
                 mLayoutManager = new GridLayoutManager(context,  1);
             }
@@ -1662,94 +1686,13 @@ public class Desk2048 extends AppCompatActivity {
             }
         });
 
-        // List_Grid
-
-        gridList = new String[]{context.getString(R.string.rectangle),context.getString(R.string.square),context.getString(R.string.card)};
-        ArrayAdapter grid_aa = new ArrayAdapter(context,R.layout.spinner_item,gridList);
-        grid_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
-
-        Spinner grid_sp = viewPager4.findViewById(R.id.ui_box_spinner);
-        grid_sp.setAdapter(grid_aa);
-        grid_sp.setSelection(sharedPreferences.getInt("curr_ui_grid_pos",0));
-        grid_sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                // https://blog.csdn.net/pigdreams/article/details/81277110
-                // https://stackoverflow.com/questions/13397933/android-spinner-avoid-onitemselected-calls-during-initialization
-                if(check_spinner >0){
-                    if(position == 0){
-                        editor.putString("curr_ui_grid","2");
-                        editor.putInt("curr_ui_grid_pos",position);
-                        editor.apply();
-                    }else if(position == 1){
-                        editor.putString("curr_ui_grid","3");
-                        editor.putInt("curr_ui_grid_pos",position);
-                        editor.apply();
-                    }else if(position == 2){
-                        editor.putString("curr_ui_grid","4");
-                        editor.putInt("curr_ui_grid_pos",position);
-                        editor.apply();
-                    }
-
-                    setup_home();
-                    setup_char();
-                    setup_weapon();
-                    setup_art();
-                }
-                check_spinner = check_spinner +1;
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        // Traveler Sex
-
-        String[] travelerList = new String[]{css.getLocaleName("Female",context),css.getLocaleName("Male",context)};
-        ArrayAdapter traveler_aa = new ArrayAdapter(context,R.layout.spinner_item,travelerList);
-        traveler_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
-
-        Spinner traveler_sp = viewPager4.findViewById(R.id.traveler_spinner);
-        traveler_sp.setAdapter(traveler_aa);
-        switch (sharedPreferences.getString("traveler_sex","F")){
-            case "F" : traveler_sp.setSelection(0);break;
-            case "M" : traveler_sp.setSelection(1);break;
-        }
-
-
-
-        traveler_sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                // https://blog.csdn.net/pigdreams/article/details/81277110
-                // https://stackoverflow.com/questions/13397933/android-spinner-avoid-onitemselected-calls-during-initialization
-                if(check_spinner >0){
-                    if(position == 0){
-                        editor.putString("traveler_sex","F");
-                        editor.apply();
-                    }else if(position == 1){
-                        editor.putString("traveler_sex","M");
-                        editor.apply();
-                    }
-                }
-                check_spinner = check_spinner +1;
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
         // Background
         Button bg_setting_btn = viewPager4.findViewById(R.id.bg_setting_btn);
         bg_setting_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_PICK,
-                        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
                 startActivityForResult(intent, IMAGE);
             }
         });
@@ -1906,7 +1849,7 @@ public class Desk2048 extends AppCompatActivity {
             }
         });
 
-        //Other -> Switchs
+        //Other -> Exit Confirm
         other_exit_confirm = viewPager4.findViewById(R.id.other_exit_confirm);
         SharedPreferences sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
         boolean isExitConfirmEnable = sharedPreferences.getBoolean("isExitConfirmEnable",true);
@@ -1923,20 +1866,197 @@ public class Desk2048 extends AppCompatActivity {
                 }
             }
         });
-        //Other -> Change Suits
-        other_char_suit = viewPager4.findViewById(R.id.other_char_suit);
-        boolean isCharChangeEventSuit = sharedPreferences.getBoolean("isCharChangeEventSuit",false);
-        other_char_suit.setChecked(isCharChangeEventSuit);
-        other_char_suit.setOnClickListener(new View.OnClickListener() {
+
+        //Other -> Style
+        style_Voc_rb = viewPager4.findViewById(R.id.ui_Voc_rb);
+        style_2O48_rb = viewPager4.findViewById(R.id.ui_2O48_rb);
+        style_SipTik_rb = viewPager4.findViewById(R.id.ui_SipTik_rb);
+        String styleUI = sharedPreferences.getString("styleUI","Voc");
+        // StyleCode : "Voc" , "2O48" , "SipTik"
+
+        if (styleUI.equals("Voc")){
+            style_Voc_rb.setChecked(true);
+            style_2O48_rb.setChecked(false);
+            style_SipTik_rb.setChecked(false);
+        }else if (styleUI.equals("2O48")){
+            style_Voc_rb.setChecked(false);
+            style_2O48_rb.setChecked(true);
+            style_SipTik_rb.setChecked(false);
+        }else if (styleUI.equals("SipTik")) {
+            style_Voc_rb.setChecked(false);
+            style_2O48_rb.setChecked(false);
+            style_SipTik_rb.setChecked(true);
+        }
+
+        style_Voc_rb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(other_char_suit.isChecked() == false){
-                    editor.putBoolean("isCharChangeEventSuit",false);
-                    editor.apply();
-                }else if(other_char_suit.isChecked() == true){
-                    editor.putBoolean("isCharChangeEventSuit",true);
-                    editor.apply();
-                }
+                editor.putString("styleUI","Voc");
+                editor.apply();
+                style_Voc_rb.setChecked(true);
+                style_2O48_rb.setChecked(false);
+                style_SipTik_rb.setChecked(false);
+                CustomToast.toast(context,activity,context.getString(R.string.pls_restart_app));
+            }
+        });
+
+        style_2O48_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("styleUI","2O48");
+                editor.apply();
+                style_Voc_rb.setChecked(false);
+                style_2O48_rb.setChecked(true);
+                style_SipTik_rb.setChecked(false);
+                CustomToast.toast(context,activity,context.getString(R.string.pls_restart_app));
+            }
+        });
+
+        style_SipTik_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("styleUI","SipTik");
+                editor.apply();
+                style_Voc_rb.setChecked(false);
+                style_2O48_rb.setChecked(false);
+                style_SipTik_rb.setChecked(true);
+                CustomToast.toast(context,activity,context.getString(R.string.pls_restart_app));
+            }
+        });
+
+        //Other -> Change Suits
+        outfit_standard_rb = viewPager4.findViewById(R.id.outfit_standard_rb);
+        outfit_event_rb = viewPager4.findViewById(R.id.outfit_event_rb);
+        boolean isCharChangeEventSuit = sharedPreferences.getBoolean("isCharChangeEventSuit",false);
+
+        if (isCharChangeEventSuit){
+            outfit_event_rb.setChecked(true);
+            outfit_standard_rb.setChecked(false);
+        }else{
+            outfit_event_rb.setChecked(false);
+            outfit_standard_rb.setChecked(true);
+        }
+
+        outfit_standard_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putBoolean("isCharChangeEventSuit",false);
+                editor.apply();
+                outfit_event_rb.setChecked(false);
+                outfit_standard_rb.setChecked(true);
+                setup_char();
+            }
+        });
+
+        outfit_event_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putBoolean("isCharChangeEventSuit",true);
+                editor.apply();
+                outfit_event_rb.setChecked(true);
+                outfit_standard_rb.setChecked(false);
+                setup_char();
+            }
+        });
+
+        //Other -> List_Grid
+        grid_2_rb = viewPager4.findViewById(R.id.grid_2);
+        grid_3_rb = viewPager4.findViewById(R.id.grid_3);
+        grid_4_rb = viewPager4.findViewById(R.id.grid_4);
+        String currUiGrid = sharedPreferences.getString("curr_ui_grid","2");
+
+        if (currUiGrid.equals("2")){
+            grid_2_rb.setChecked(true);
+            grid_3_rb.setChecked(false);
+            grid_4_rb.setChecked(false);
+        }else if(currUiGrid.equals("3")){
+            grid_2_rb.setChecked(false);
+            grid_3_rb.setChecked(true);
+            grid_4_rb.setChecked(false);
+        }else{
+            grid_2_rb.setChecked(false);
+            grid_3_rb.setChecked(false);
+            grid_4_rb.setChecked(true);
+        }
+
+        grid_2_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("curr_ui_grid","2");
+                editor.apply();
+                grid_2_rb.setChecked(true);
+                grid_3_rb.setChecked(false);
+                grid_4_rb.setChecked(false);
+
+                setup_home();
+                setup_char();
+                setup_weapon();
+                setup_art();
+            }
+        });
+        grid_3_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("curr_ui_grid","3");
+                editor.apply();
+                grid_2_rb.setChecked(false);
+                grid_3_rb.setChecked(true);
+                grid_4_rb.setChecked(false);
+
+                setup_home();
+                setup_char();
+                setup_weapon();
+                setup_art();
+            }
+        });
+        grid_4_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("curr_ui_grid","4");
+                editor.apply();
+                grid_2_rb.setChecked(false);
+                grid_3_rb.setChecked(false);
+                grid_4_rb.setChecked(true);
+
+                setup_home();
+                setup_char();
+                setup_weapon();
+                setup_art();
+            }
+        });
+
+        //Other -> Traveler Sex
+        traveler_female_rb = viewPager4.findViewById(R.id.traveler_female_rb);
+        traveler_male_rb = viewPager4.findViewById(R.id.traveler_male_rb);
+        String travelerSex = sharedPreferences.getString("traveler_sex","F");
+
+        if (travelerSex.equals("F")){
+            traveler_female_rb.setChecked(true);
+            traveler_male_rb.setChecked(false);
+        }else{
+            traveler_female_rb.setChecked(false);
+            traveler_male_rb.setChecked(true);
+        }
+
+        traveler_male_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("traveler_sex","M");
+                editor.apply();
+                traveler_female_rb.setChecked(false);
+                traveler_male_rb.setChecked(true);
+                setup_char();
+            }
+        });
+
+        traveler_female_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("traveler_sex","F");
+                editor.apply();
+                traveler_female_rb.setChecked(true);
+                traveler_male_rb.setChecked(false);
+                setup_char();
             }
         });
     }
@@ -2615,15 +2735,12 @@ public class Desk2048 extends AppCompatActivity {
         Button bg_changelog_btn = viewPager4.findViewById(R.id.bg_changelog_btn);
 
         Switch other_exit_confirm = viewPager4.findViewById(R.id.other_exit_confirm);
-        Switch other_char_suit = viewPager4.findViewById(R.id.other_char_suit);
         theme_light.setButtonTintList(myList);
         theme_dark.setButtonTintList(myList);
         theme_default.setButtonTintList(myList);
 
         other_exit_confirm.setThumbTintList(myList);
         other_exit_confirm.setTrackTintList(myList);
-        other_char_suit.setThumbTintList(myList);
-        other_char_suit.setTrackTintList(myList);
 
         bg_changelog_btn.setOnClickListener(new View.OnClickListener() {
             @Override

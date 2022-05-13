@@ -641,6 +641,155 @@ public class ItemRss {
         }
     }
 
+
+    public String[] getWeaponGachaByName(String str,Context context) {
+        switch (str){
+            case "Amenoma Kageuchi" : return new String[] {context.getString(R.string.amenoma_kageuchi),"/drawable/amenoma_kageuchi_gacha.png"};
+            case "Aquila Favonia" : return new String[] {context.getString(R.string.aquila_favonia),"/drawable/aquila_favonia_gacha.png"};
+            case "Blackcliff Longsword" : return new String[] {context.getString(R.string.blackcliff_longsword),"/drawable/blackcliff_longsword_gacha.png"};
+            case "Cool Steel" : return new String[] {context.getString(R.string.cool_steel),"/drawable/cool_steel_gacha.png"};
+            case "Dark Iron Sword" : return new String[] {context.getString(R.string.dark_iron_sword),"/drawable/dark_iron_sword_gacha.png"};
+            case "Dull Blade" : return new String[] {context.getString(R.string.dull_blade),"/drawable/dull_blade_gacha.png"};
+            case "Favonius Sword" : return new String[] {context.getString(R.string.favonius_sword),"/drawable/favonius_sword_gacha.png"};
+            case "Festering Desire" : return new String[] {context.getString(R.string.festering_desire),"/drawable/festering_desire_gacha.png"};
+            case "Fillet Blade" : return new String[] {context.getString(R.string.fillet_blade),"/drawable/fillet_blade_gacha.png"};
+            case "Freedom-Sworn" : return new String[] {context.getString(R.string.freedom_sworn),"/drawable/freedom_sworn_gacha.png"};
+            case "Freedom Sworn" : return new String[] {context.getString(R.string.freedom_sworn),"/drawable/freedom_sworn_gacha.png"};
+            case "Harbinger of Dawn" : return new String[] {context.getString(R.string.harbinger_of_dawn),"/drawable/harbinger_of_dawn_gacha.png"};
+            case "Iron Sting" : return new String[] {context.getString(R.string.iron_sting),"/drawable/iron_sting_gacha.png"};
+            case "Lion's Roar" : return new String[] {context.getString(R.string.lions_roar),"/drawable/lions_roar_gacha.png"};
+            case "Mistsplitter Reforged" : return new String[] {context.getString(R.string.mistsplitter_reforged),"/drawable/mistsplitter_reforged_gacha.png"};
+            case "Primordial Jade Cutter" : return new String[] {context.getString(R.string.primordial_jade_cutter),"/drawable/primordial_jade_cutter_gacha.png"};
+            case "Prototype Rancour" : return new String[] {context.getString(R.string.prototype_rancour),"/drawable/prototype_rancour_gacha.png"};
+            case "Royal Longsword" : return new String[] {context.getString(R.string.royal_longsword),"/drawable/royal_longsword_gacha.png"};
+            case "Sacrificial Sword" : return new String[] {context.getString(R.string.sacrificial_sword),"/drawable/sacrificial_sword_gacha.png"};
+            case "Silver Sword" : return new String[] {context.getString(R.string.silver_sword),"/drawable/silver_sword_gacha.png"};
+            case "Skyrider Sword" : return new String[] {context.getString(R.string.skyrider_sword),"/drawable/skyrider_sword_gacha.png"};
+            case "Skyward Blade" : return new String[] {context.getString(R.string.skyward_blade),"/drawable/skyward_blade_gacha.png"};
+            case "Summit Shaper" : return new String[] {context.getString(R.string.summit_shaper),"/drawable/summit_shaper_gacha.png"};
+            case "Sword of Descension" : return new String[] {context.getString(R.string.sword_of_descension),"/drawable/sword_of_descension_gacha.png"};
+            case "The Alley Flash" : return new String[] {context.getString(R.string.the_alley_flash),"/drawable/the_alley_flash_gacha.png"};
+            case "The Black Sword" : return new String[] {context.getString(R.string.the_black_sword),"/drawable/the_black_sword_gacha.png"};
+            case "The Flute" : return new String[] {context.getString(R.string.the_flute),"/drawable/the_flute_gacha.png"};
+            case "Traveler's Handy Sword" : return new String[] {context.getString(R.string.travelers_handy_sword),"/drawable/travelers_handy_sword_gacha.png"};
+            case "Cinnabar Spindle" : return new String[] {context.getString(R.string.cinnabar_spindle),"/drawable/cinnabar_spindle_gacha.png"};
+
+            case "Waster Greatsword" : return new String[] {context.getString(R.string.waster_greatsword),"/drawable/waster_greatsword_gacha.png"};
+            case "Old Merc's Pal" : return new String[] {context.getString(R.string.old_mercs_pal),"/drawable/old_mercs_pal_gacha.png"};
+            case "Bloodtainted Greatsword" : return new String[] {context.getString(R.string.bloodtainted_greatsword),"/drawable/bloodtainted_greatsword_gacha.png"};
+            case "Debate Club" : return new String[] {context.getString(R.string.debate_club),"/drawable/debate_club_gacha.png"};
+            case "Quartz" : return new String[] {context.getString(R.string.quartz),"/drawable/quartz_gacha.png"};
+            case "Ferrous Shadow" : return new String[] {context.getString(R.string.ferrous_shadow),"/drawable/ferrous_shadow_gacha.png"};
+            case "Skyrider Greatsword" : return new String[] {context.getString(R.string.skyrider_greatsword),"/drawable/skyrider_greatsword_gacha.png"};
+            case "White Iron Greatsword" : return new String[] {context.getString(R.string.white_iron_greatsword),"/drawable/white_iron_greatsword_gacha.png"};
+            case "Blackcliff Slasher" : return new String[] {context.getString(R.string.blackcliff_slasher),"/drawable/blackcliff_slasher_gacha.png"};
+            case "Favonius Greatsword" : return new String[] {context.getString(R.string.favonius_greatsword),"/drawable/favonius_greatsword_gacha.png"};
+            case "Katsuragikiri Nagamasa" : return new String[] {context.getString(R.string.katsuragikiri_nagamasa),"/drawable/katsuragikiri_nagamasa_gacha.png"};
+            case "Lithic Blade" : return new String[] {context.getString(R.string.lithic_blade),"/drawable/lithic_blade_gacha.png"};
+            case "Luxurious Sea-Lord" : return new String[] {context.getString(R.string.luxurious_sea_lord),"/drawable/luxurious_sea_lord_gacha.png"};
+            case "Prototype Archaic" : return new String[] {context.getString(R.string.prototype_archaic),"/drawable/prototype_archaic_gacha.png"};
+            case "Rainslasher" : return new String[] {context.getString(R.string.rainslasher),"/drawable/rainslasher_gacha.png"};
+            case "Royal Greatsword" : return new String[] {context.getString(R.string.royal_greatsword),"/drawable/royal_greatsword_gacha.png"};
+            case "Sacrificial Greatsword" : return new String[] {context.getString(R.string.sacrificial_greatsword),"/drawable/sacrificial_greatsword_gacha.png"};
+            case "Serpent Spine" : return new String[] {context.getString(R.string.serpent_spine),"/drawable/serpent_spine_gacha.png"};
+            case "Snow-Tombed Starsilver" : return new String[] {context.getString(R.string.snow_tombed_starsilver),"/drawable/snow_tombed_starsilver_gacha.png"};
+            case "The Bell" : return new String[] {context.getString(R.string.the_bell),"/drawable/the_bell_gacha.png"};
+            case "Whiteblind" : return new String[] {context.getString(R.string.whiteblind),"/drawable/whiteblind_gacha.png"};
+            case "Skyward Pride" : return new String[] {context.getString(R.string.skyward_pride),"/drawable/skyward_pride_gacha.png"};
+            case "Song of Broken Pines" : return new String[] {context.getString(R.string.song_of_broken_pines),"/drawable/song_of_broken_pines_gacha.png"};
+            case "The Unforged" : return new String[] {context.getString(R.string.the_unforged),"/drawable/the_unforged_gacha.png"};
+            case "Wolf's Gravestone" : return new String[] {context.getString(R.string.wolfs_gravestone),"/drawable/wolfs_gravestone_gacha.png"};
+            case "Akuoumaru" : return new String[] {context.getString(R.string.akuoumaru),"/drawable/akuoumaru_gacha.png"};
+            case "Redhorn Stonethresher" : return new String[] {context.getString(R.string.redhorn_stonethresher),"/drawable/redhorn_stonethresher_gacha.png"};
+
+            case "Beginner's Protector" : return new String[] {context.getString(R.string.beginners_protector),"/drawable/beginners_protector_gacha.png"};
+            case "Iron Point" : return new String[] {context.getString(R.string.iron_point),"/drawable/iron_point_gacha.png"};
+            case "Black Tassel" : return new String[] {context.getString(R.string.black_tassel),"/drawable/black_tassel_gacha.png"};
+            case "Halberd" : return new String[] {context.getString(R.string.halberd),"/drawable/halberd_gacha.png"};
+            case "White Tassel" : return new String[] {context.getString(R.string.white_tassel),"/drawable/white_tassel_gacha.png"};
+            case "Blackcliff Pole" : return new String[] {context.getString(R.string.blackcliff_pole),"/drawable/blackcliff_pole_gacha.png"};
+            case "Crescent Pike" : return new String[] {context.getString(R.string.crescent_pike),"/drawable/crescent_pike_gacha.png"};
+            case "Deathmatch" : return new String[] {context.getString(R.string.deathmatch),"/drawable/deathmatch_gacha.png"};
+            case "Dragon's Bane" : return new String[] {context.getString(R.string.dragons_bane),"/drawable/dragons_bane_gacha.png"};
+            case "Dragonspine Spear" : return new String[] {context.getString(R.string.dragonspine_spear),"/drawable/dragonspine_spear_gacha.png"};
+            case "Favonius Lance" : return new String[] {context.getString(R.string.favonius_lance),"/drawable/favonius_lance_gacha.png"};
+            case "Kitain Cross Spear" : return new String[] {context.getString(R.string.kitain_cross_spear),"/drawable/kitain_cross_spear_gacha.png"};
+            case "Lithic Spear" : return new String[] {context.getString(R.string.lithic_spear),"/drawable/lithic_spear_gacha.png"};
+            case "Prototype Starglitter" : return new String[] {context.getString(R.string.prototype_starglitter),"/drawable/prototype_starglitter_gacha.png"};
+            case "Royal Spear" : return new String[] {context.getString(R.string.royal_spear),"/drawable/royal_spear_gacha.png"};
+            case "The Catch" : return new String[] {context.getString(R.string.the_catch),"/drawable/the_catch_gacha.png"};
+            case "Engulfing Lightning" : return new String[] {context.getString(R.string.engulfing_lightning),"/drawable/engulfing_lightning_gacha.png"};
+            case "Primordial Jade Winged-Spear" : return new String[] {context.getString(R.string.primordial_jade_winged_spear),"/drawable/primordial_jade_winged_spear_gacha.png"};
+            case "Skyward Spine" : return new String[] {context.getString(R.string.skyward_spine),"/drawable/skyward_spine_gacha.png"};
+            case "Staff of Homa" : return new String[] {context.getString(R.string.staff_of_homa),"/drawable/staff_of_homa_gacha.png"};
+            case "Vortex Vanquisher" : return new String[] {context.getString(R.string.vortex_vanquisher),"/drawable/vortex_vanquisher_gacha.png"};
+            case "Wavebreaker's Fin" : return new String[] {context.getString(R.string.wavebreakers_fin),"/drawable/wavebreakers_fin_gacha.png"};
+            case "Calamity Queller" : return new String[] {context.getString(R.string.calamity_queller),"/drawable/calamity_queller_gacha.png"};
+
+            case "Apprentice's Notes" : return new String[] {context.getString(R.string.apprentices_notes),"/drawable/apprentices_notes_gacha.png"};
+            case "Pocket Grimoire" : return new String[] {context.getString(R.string.pocket_grimoire),"/drawable/pocket_grimoire_gacha.png"};
+            case "Amber Catalyst" : return new String[] {context.getString(R.string.amber_catalyst),"/drawable/amber_catalyst_gacha.png"};
+            case "Emerald Orb" : return new String[] {context.getString(R.string.emerald_orb),"/drawable/emerald_orb_gacha.png"};
+            case "Magic Guide" : return new String[] {context.getString(R.string.magic_guide),"/drawable/magic_guide_gacha.png"};
+            case "Otherworldly Story" : return new String[] {context.getString(R.string.otherworldly_story),"/drawable/otherworldly_story_gacha.png"};
+            case "Thrilling Tales of Dragon Slayers" : return new String[] {context.getString(R.string.thrilling_tales_of_dragon_slayers),"/drawable/thrilling_tales_of_dragon_slayers_gacha.png"};
+            case "Twin Nephrite" : return new String[] {context.getString(R.string.twin_nephrite),"/drawable/twin_nephrite_gacha.png"};
+            case "Blackcliff Agate" : return new String[] {context.getString(R.string.blackcliff_agate),"/drawable/blackcliff_agate_gacha.png"};
+            case "Dodoco Tales" : return new String[] {context.getString(R.string.dodoco_tales),"/drawable/dodoco_tales_gacha.png"};
+            case "Eye of Perception" : return new String[] {context.getString(R.string.eye_of_perception),"/drawable/eye_of_perception_gacha.png"};
+            case "Favonius Codex" : return new String[] {context.getString(R.string.favonius_codex),"/drawable/favonius_codex_gacha.png"};
+            case "Frostbearer" : return new String[] {context.getString(R.string.frostbearer),"/drawable/frostbearer_gacha.png"};
+            case "Hakushin Ring" : return new String[] {context.getString(R.string.hakushin_ring),"/drawable/hakushin_ring_gacha.png"};
+            case "Mappa Mare" : return new String[] {context.getString(R.string.mappa_mare),"/drawable/mappa_mare_gacha.png"};
+            case "Prototype Amber" : return new String[] {context.getString(R.string.prototype_amber),"/drawable/prototype_amber_gacha.png"};
+            case "Royal Grimoire" : return new String[] {context.getString(R.string.royal_grimoire),"/drawable/royal_grimoire_gacha.png"};
+            case "Sacrificial Fragments" : return new String[] {context.getString(R.string.sacrificial_fragments),"/drawable/sacrificial_fragments_gacha.png"};
+            case "Solar Pearl" : return new String[] {context.getString(R.string.solar_pearl),"/drawable/solar_pearl_gacha.png"};
+            case "The Widsith" : return new String[] {context.getString(R.string.the_widsith),"/drawable/the_widsith_gacha.png"};
+            case "Wine and Song" : return new String[] {context.getString(R.string.wine_and_song),"/drawable/wine_and_song_gacha.png"};
+            case "Everlasting Moonglow" : return new String[] {context.getString(R.string.everlasting_moonglow),"/drawable/everlasting_moonglow_gacha.png"};
+            case "Lost Prayer to the Sacred Winds" : return new String[] {context.getString(R.string.lost_prayer_to_the_sacred_winds),"/drawable/lost_prayer_to_the_sacred_winds_gacha.png"};
+            case "Memory of Dust" : return new String[] {context.getString(R.string.memory_of_dust),"/drawable/memory_of_dust_gacha.png"};
+            case "Skyward Atlas" : return new String[] {context.getString(R.string.skyward_atlas),"/drawable/skyward_atlas_gacha.png"};
+            //add in 20220126
+            case "Kagura's Verity" : return new String[] {context.getString(R.string.kaguras_verity),"/drawable/kaguras_verity_gacha.png"};
+            case "Oathsworn Eye" : return new String[] {context.getString(R.string.oathsworn_eye),"/drawable/oathsworn_eye_gacha.png"};
+            //add in 20220329
+            case "Haran Geppaku Futsu" : return new String[] {context.getString(R.string.haran_geppaku_futsu),"/drawable/haran_geppaku_futsu_gacha.png"};
+
+            case "Hunter's Bow" : return new String[] {context.getString(R.string.hunters_bow),"/drawable/hunters_bow_gacha.png"};
+            case "Seasoned Hunter's Bow" : return new String[] {context.getString(R.string.seasoned_hunters_bow),"/drawable/seasoned_hunters_bow_gacha.png"};
+            case "Ebony Bow" : return new String[] {context.getString(R.string.ebony_bow),"/drawable/ebony_bow_gacha.png"};
+            case "Messenger" : return new String[] {context.getString(R.string.messenger),"/drawable/messenger_gacha.png"};
+            case "Raven Bow" : return new String[] {context.getString(R.string.raven_bow),"/drawable/raven_bow_gacha.png"};
+            case "Recurve Bow" : return new String[] {context.getString(R.string.recurve_bow),"/drawable/recurve_bow_gacha.png"};
+            case "Sharpshooter's Oath" : return new String[] {context.getString(R.string.sharpshooters_oath),"/drawable/sharpshooters_oath_gacha.png"};
+            case "Slingshot" : return new String[] {context.getString(R.string.slingshot),"/drawable/slingshot_gacha.png"};
+            case "Alley Hunter" : return new String[] {context.getString(R.string.alley_hunter),"/drawable/alley_hunter_gacha.png"};
+            case "Blackcliff Warbow" : return new String[] {context.getString(R.string.blackcliff_warbow),"/drawable/blackcliff_warbow_gacha.png"};
+            case "Compound Bow" : return new String[] {context.getString(R.string.compound_bow),"/drawable/compound_bow_gacha.png"};
+            case "Favonius Warbow" : return new String[] {context.getString(R.string.favonius_warbow),"/drawable/favonius_warbow_gacha.png"};
+            case "Hamayumi" : return new String[] {context.getString(R.string.hamayumi),"/drawable/hamayumi_gacha.png"};
+            case "Mitternachts Waltz" : return new String[] {context.getString(R.string.mitternachts_waltz),"/drawable/mitternachts_waltz_gacha.png"};
+            case "Predator" : return new String[] {context.getString(R.string.predator),"/drawable/predator_gacha.png"};
+            case "Prototype Crescent" : return new String[] {context.getString(R.string.prototype_crescent),"/drawable/prototype_crescent_gacha.png"};
+            case "Royal Bow" : return new String[] {context.getString(R.string.royal_bow),"/drawable/royal_bow_gacha.png"};
+            case "Rust" : return new String[] {context.getString(R.string.rust),"/drawable/rust_gacha.png"};
+            case "Sacrificial Bow" : return new String[] {context.getString(R.string.sacrificial_bow),"/drawable/sacrificial_bow_gacha.png"};
+            case "The Stringless" : return new String[] {context.getString(R.string.the_stringless),"/drawable/the_stringless_gacha.png"};
+            case "The Viridescent Hunt" : return new String[] {context.getString(R.string.the_viridescent_hunt),"/drawable/the_viridescent_hunt_gacha.png"};
+            case "Windblume Ode" : return new String[] {context.getString(R.string.windblume_ode),"/drawable/windblume_ode_gacha.png"};
+            case "Amos' Bow" : return new String[] {context.getString(R.string.amos_bow),"/drawable/amos_bow_gacha.png"};
+            case "Elegy for the End" : return new String[] {context.getString(R.string.elegy_for_the_end),"/drawable/elegy_for_the_end_gacha.png"};
+            case "Skyward Harp" : return new String[] {context.getString(R.string.skyward_harp),"/drawable/skyward_harp_gacha.png"};
+            case "Thundering Pulse" : return new String[] {context.getString(R.string.thundering_pulse),"/drawable/thundering_pulse_gacha.png"};
+            case "Mouun's Moon" : return new String[] {context.getString(R.string.mouuns_moon),"/drawable/mouuns_moon_gacha.png"};
+
+            default :
+                System.out.println("WEAPON+ NAME ERROR : "+str);return new String[] {context.getString(R.string.unknown),"/drawable/paimon_lost_gacha.png"};
+        }
+    }
+
     public String getWeaponNameByFileName (String str){
         switch (str){
             case "amenoma_kageuchi" : return "Amenoma Kageuchi";
@@ -1063,19 +1212,19 @@ public class ItemRss {
     public int[] getElementByName (String element) {
         switch (element) {
             case "Anemo":
-                return new int[]{R.drawable.anemo_ico, R.drawable.bg_anemo_char, R.color.anemo};
+                return new int[]{R.drawable.siptik_anemo_ico, R.drawable.bg_anemo_char, R.color.anemo};
             case "Cryo":
-                return new int[]{R.drawable.cryo_ico, R.drawable.bg_cryo_char, R.color.cryo};
+                return new int[]{R.drawable.siptik_cryo_ico, R.drawable.bg_cryo_char, R.color.cryo};
             case "Dendor":
-                return new int[]{R.drawable.dendro_ico, R.drawable.bg_dendro_char, R.color.dendor};
+                return new int[]{R.drawable.siptik_dendor_ico, R.drawable.bg_dendro_char, R.color.dendor};
             case "Electro":
-                return new int[]{R.drawable.electro_ico, R.drawable.bg_electro_char, R.color.electro};
+                return new int[]{R.drawable.siptik_electro_ico, R.drawable.bg_electro_char, R.color.electro};
             case "Geo":
-                return new int[]{R.drawable.geo_ico, R.drawable.bg_geo_char, R.color.geo};
+                return new int[]{R.drawable.siptik_geo_ico, R.drawable.bg_geo_char, R.color.geo};
             case "Hydro":
-                return new int[]{R.drawable.hydro_ico, R.drawable.bg_hydro_char, R.color.hydro};
+                return new int[]{R.drawable.siptik_hydro_ico, R.drawable.bg_hydro_char, R.color.hydro};
             case "Pyro":
-                return new int[]{R.drawable.pyro_ico, R.drawable.bg_pyro_char, R.color.pyro};
+                return new int[]{R.drawable.siptik_pyro_ico, R.drawable.bg_pyro_char, R.color.pyro};
             default:
                 return new int[]{R.drawable.paimon_lost, R.drawable.paimon_lost, R.color.anemo};
         }

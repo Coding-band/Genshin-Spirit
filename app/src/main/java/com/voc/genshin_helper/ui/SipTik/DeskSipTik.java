@@ -1,5 +1,7 @@
 package com.voc.genshin_helper.ui.SipTik;
 
+import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
+import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 import static com.voc.genshin_helper.util.RoundedCornersTransformation.CornerType.ALL;
 
 import android.animation.Animator;
@@ -200,7 +202,20 @@ public class DeskSipTik extends AppCompatActivity {
     RadioButton theme_default;
 
     Switch other_exit_confirm ;
-    Switch other_char_suit ;
+
+    RadioButton style_Voc_rb;
+    RadioButton style_2O48_rb;
+    RadioButton style_SipTik_rb;
+
+    RadioButton outfit_standard_rb;
+    RadioButton outfit_event_rb;
+
+    RadioButton traveler_female_rb;
+    RadioButton traveler_male_rb;
+
+    RadioButton grid_2_rb;
+    RadioButton grid_3_rb;
+    RadioButton grid_4_rb;
 
     String[] weekdayList ;
     String[] langList ;
@@ -250,6 +265,7 @@ public class DeskSipTik extends AppCompatActivity {
         viewPager = (ViewPager) findViewById(R.id.vp);
         desk_tablayout = findViewById(R.id.desk_tablayout);
         npd = new NumberPickerDialog(this);
+
 
         // Check Is First Time Open
         if(sharedPreferences_version.getBoolean(BuildConfig.VERSION_NAME,false) == false){
@@ -351,6 +367,7 @@ public class DeskSipTik extends AppCompatActivity {
             tab_icon.setImageResource(tabItemImageSelectedArray[0]);
         }
 
+
         desk_tablayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -441,7 +458,9 @@ public class DeskSipTik extends AppCompatActivity {
             }
         }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
             if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-                mLayoutManager = new GridLayoutManager(context,  width_w/960);
+                int tmp_cnt = (int) width_w/960;
+                if (tmp_cnt < 1){tmp_cnt = 1;}
+                mLayoutManager = new GridLayoutManager(context,  tmp_cnt);
             }else{
                 mLayoutManager = new GridLayoutManager(context,  1);
             }
@@ -779,7 +798,9 @@ public class DeskSipTik extends AppCompatActivity {
             }
         }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
             if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-                mLayoutManager = new GridLayoutManager(context,  width/960);
+                int tmp_cnt = (int) width/960;
+                if (tmp_cnt < 1){tmp_cnt = 1;}
+                mLayoutManager = new GridLayoutManager(context,  tmp_cnt);
             }else{
                 mLayoutManager = new GridLayoutManager(context,  1);
             }
@@ -863,37 +884,97 @@ public class DeskSipTik extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
-                View view = View.inflate(context, R.layout.menu_char_filter_2048, null);
+                View view = View.inflate(context, R.layout.menu_char_filter_siptik, null);
                 // Elements
-                ImageView pyro = view.findViewById(R.id.pyro_ico);
-                ImageView hydro = view.findViewById(R.id.hydro_ico);
-                ImageView anemo = view.findViewById(R.id.anemo_ico);
-                ImageView electro = view.findViewById(R.id.electro_ico);
-                ImageView dendor = view.findViewById(R.id.dendor_ico);
-                ImageView cryo = view.findViewById(R.id.cryo_ico);
-                ImageView geo = view.findViewById(R.id.geo_ico);
+                ImageView pyro_kwang = view.findViewById(R.id.pyro_kwang);
+                ImageView hydro_kwang = view.findViewById(R.id.hydro_kwang);
+                ImageView anemo_kwang = view.findViewById(R.id.anemo_kwang);
+                ImageView electro_kwang = view.findViewById(R.id.electro_kwang);
+                ImageView dendor_kwang = view.findViewById(R.id.dendor_kwang);
+                ImageView cryo_kwang = view.findViewById(R.id.cryo_kwang);
+                ImageView geo_kwang = view.findViewById(R.id.geo_kwang);
+
+                CardView pyro_bg = view.findViewById(R.id.pyro_bg);
+                CardView hydro_bg = view.findViewById(R.id.hydro_bg);
+                CardView anemo_bg = view.findViewById(R.id.anemo_bg);
+                CardView electro_bg = view.findViewById(R.id.electro_bg);
+                CardView dendor_bg = view.findViewById(R.id.dendor_bg);
+                CardView cryo_bg = view.findViewById(R.id.cryo_bg);
+                CardView geo_bg = view.findViewById(R.id.geo_bg);
                 // Weapons
                 ImageView ico_sword = view.findViewById(R.id.ico_sword);
                 ImageView ico_claymore = view.findViewById(R.id.ico_claymore);
                 ImageView ico_polearm = view.findViewById(R.id.ico_polearm);
                 ImageView ico_bow = view.findViewById(R.id.ico_bow);
                 ImageView ico_catalyst = view.findViewById(R.id.ico_catalyst);
+                // Role
+                Spinner role_spinner = view.findViewById(R.id.role_spinner);
                 // Rarity
-                CheckBox menu_rare4 = view.findViewById(R.id.menu_rare4);
-                CheckBox menu_rare5 = view.findViewById(R.id.menu_rare5);
-                RatingBar menu_rating = view.findViewById(R.id.menu_rating);
-                menu_rating.setVisibility(View.GONE);
+                Spinner rare_spinner = view.findViewById(R.id.rare_spinner);
                 // Release
                 CheckBox menu_release_0 = view.findViewById(R.id.menu_release_0);
                 CheckBox menu_release_1 = view.findViewById(R.id.menu_release_1);
-                // Role
-                CheckBox menu_role_dps = view.findViewById(R.id.menu_role_dps);
-                CheckBox menu_role_sub_dps = view.findViewById(R.id.menu_role_sub_dps);
-                CheckBox menu_role_utility = view.findViewById(R.id.menu_role_utility);
+
                 // Function Buttons
-                ImageView cancel = view.findViewById(R.id.menu_cancel);
-                FrameLayout reset = view.findViewById(R.id.menu_reset);
+                FrameLayout cancel = view.findViewById(R.id.menu_cancel);
                 FrameLayout ok = view.findViewById(R.id.menu_ok);
+
+                if (show_rare1){role_spinner.setSelection(1);}
+                if (show_rare2){role_spinner.setSelection(2);}
+                if (show_rare3){role_spinner.setSelection(3);}
+                if (show_rare4){role_spinner.setSelection(4);}
+                if (show_rare5){role_spinner.setSelection(5);}
+
+                if (show_dps){ rare_spinner.setSelection(0); }
+                if (show_sub_dps){rare_spinner.setSelection(1); }
+                if (show_util){rare_spinner.setSelection(2);}
+
+                String[] roleList = new String[]{"ALL",context.getString(R.string.main_dps),context.getString(R.string.support_dps),context.getString(R.string.utility)};
+                String[] rareList = new String[]{"ALL","1","2","3","4","5"};
+
+                ArrayAdapter rare_aa = new ArrayAdapter(context,R.layout.spinner_item,rareList);
+                rare_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
+
+                rare_spinner.setAdapter(rare_aa);
+                rare_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                        switch (i){
+                            case 0: {show_rare1 = false; show_rare2 = false; show_rare3 = false; show_rare4 = false; show_rare5 = false;break;}
+                            case 1: {show_rare1 = true; show_rare2 = false; show_rare3 = false; show_rare4 = false; show_rare5 = false;break;}
+                            case 2: {show_rare1 = false; show_rare2 = true; show_rare3 = false; show_rare4 = false; show_rare5 = false;break;}
+                            case 3: {show_rare1 = false; show_rare2 = false; show_rare3 = true; show_rare4 = false; show_rare5 = false;break;}
+                            case 4: {show_rare1 = false; show_rare2 = false; show_rare3 = false; show_rare4 = true; show_rare5 = false;break;}
+                            case 5: {show_rare1 = false; show_rare2 = false; show_rare3 = false; show_rare4 = false; show_rare5 = true;break;}
+                        }
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> adapterView) {
+
+                    }
+                });
+
+                ArrayAdapter role_aa = new ArrayAdapter(context,R.layout.spinner_item,roleList);
+                role_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
+
+                role_spinner.setAdapter(role_aa);
+                role_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                        switch (i){
+                            case 0: {show_dps = false; show_sub_dps = false; show_util = false;break;}
+                            case 1: {show_dps = true; show_sub_dps = false; show_util = false;break;}
+                            case 2: {show_dps = false; show_sub_dps = true; show_util = false;break;}
+                            case 3: {show_dps = false; show_sub_dps = true; show_util = true;break;}
+                        }
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> adapterView) {
+
+                    }
+                });
 
                 show_pyro = sharedPreferences.getBoolean("show_pyro",false);
                 show_hydro = sharedPreferences.getBoolean("show_hydro",false);
@@ -915,40 +996,34 @@ public class DeskSipTik extends AppCompatActivity {
                 show_sub_dps = sharedPreferences.getBoolean("show_sub_dps",false);
                 show_util = sharedPreferences.getBoolean("show_util",false);
 
-                if(show_pyro){show_pyro = true;pyro.setColorFilter(Color.parseColor("#00000000"));}else{show_pyro = false;pyro.setColorFilter(Color.parseColor("#66313131"));}
-                if(show_hydro){show_hydro = true;hydro.setColorFilter(Color.parseColor("#00000000"));}else{show_hydro = false;hydro.setColorFilter(Color.parseColor("#66313131"));}
-                if(show_anemo){show_anemo = true;anemo.setColorFilter(Color.parseColor("#00000000"));}else{show_anemo = false;anemo.setColorFilter(Color.parseColor("#66313131"));}
-                if(show_electro){show_electro = true;electro.setColorFilter(Color.parseColor("#00000000"));}else{show_electro = false;electro.setColorFilter(Color.parseColor("#66313131"));}
-                if(show_dendor){show_dendor = true;dendor.setColorFilter(Color.parseColor("#00000000"));}else{show_dendor = false;dendor.setColorFilter(Color.parseColor("#66313131"));}
-                if(show_cryo){show_cryo = true;cryo.setColorFilter(Color.parseColor("#00000000"));}else{show_cryo = false;cryo.setColorFilter(Color.parseColor("#66313131"));}
-                if(show_geo){show_geo = true;geo.setColorFilter(Color.parseColor("#00000000"));}else{show_geo = false;geo.setColorFilter(Color.parseColor("#66313131"));}
-                if(show_sword){show_sword = true;ico_sword.setColorFilter(Color.parseColor("#00000000"));}else{show_sword = false;ico_sword.setColorFilter(Color.parseColor("#66313131"));}
-                if(show_claymore){show_claymore = true;ico_claymore.setColorFilter(Color.parseColor("#00000000"));}else{show_claymore = false;ico_claymore.setColorFilter(Color.parseColor("#66313131"));}
-                if(show_polearm){show_polearm = true;ico_polearm.setColorFilter(Color.parseColor("#00000000"));}else{show_polearm = false;ico_polearm.setColorFilter(Color.parseColor("#66313131"));}
-                if(show_bow){show_bow = true;ico_bow.setColorFilter(Color.parseColor("#00000000"));}else{show_bow = false;ico_bow.setColorFilter(Color.parseColor("#66313131"));}
-                if(show_catalyst){show_catalyst = true;ico_catalyst.setColorFilter(Color.parseColor("#00000000"));}else{show_catalyst = false;ico_catalyst.setColorFilter(Color.parseColor("#66313131"));}
+                if(show_pyro){show_pyro = true;pyro_kwang.setVisibility(View.VISIBLE);pyro_bg.setAlpha(1);}else{show_pyro = false;pyro_kwang.setVisibility(View.GONE);pyro_bg.setAlpha(0.5f);}
+                if(show_hydro){show_hydro = true;hydro_kwang.setVisibility(View.VISIBLE);hydro_bg.setAlpha(1);}else{show_hydro = false;hydro_kwang.setVisibility(View.GONE);hydro_bg.setAlpha(0.5f);}
+                if(show_anemo){show_anemo = true;anemo_kwang.setVisibility(View.VISIBLE);anemo_bg.setAlpha(1);}else{show_anemo = false;anemo_kwang.setVisibility(View.GONE);anemo_bg.setAlpha(0.5f);}
+                if(show_electro){show_electro = true;electro_kwang.setVisibility(View.VISIBLE);electro_bg.setAlpha(1);}else{show_electro = false;electro_kwang.setVisibility(View.GONE);electro_bg.setAlpha(0.5f);}
+                if(show_dendor){show_dendor = true;dendor_kwang.setVisibility(View.VISIBLE);dendor_bg.setAlpha(1);}else{show_dendor = false;dendor_kwang.setVisibility(View.GONE);dendor_bg.setAlpha(0.5f);}
+                if(show_cryo){show_cryo = true;cryo_kwang.setVisibility(View.VISIBLE);cryo_bg.setAlpha(1);}else{show_cryo = false;cryo_kwang.setVisibility(View.GONE);cryo_bg.setAlpha(0.5f);}
+                if(show_geo){show_geo = true;geo_kwang.setVisibility(View.VISIBLE);geo_bg.setAlpha(1);}else{show_geo = false;geo_kwang.setVisibility(View.GONE);geo_bg.setAlpha(0.5f);}
+                if(show_sword){show_sword = true;ico_sword.setAlpha(1f);}else{show_sword = false;ico_sword.setAlpha(0.5f);}
+                if(show_claymore){show_claymore = true;ico_claymore.setAlpha(1f);}else{show_claymore = false;ico_claymore.setAlpha(0.5f);}
+                if(show_polearm){show_polearm = true;ico_polearm.setAlpha(1f);}else{show_polearm = false;ico_polearm.setAlpha(0.5f);}
+                if(show_bow){show_bow = true;ico_bow.setAlpha(1f);}else{show_bow = false;ico_bow.setAlpha(0.5f);}
+                if(show_catalyst){show_catalyst = true;ico_catalyst.setAlpha(1f);}else{show_catalyst = false;ico_catalyst.setAlpha(0.5f);}
 
-                if (show_rare4){ menu_rare4.setChecked(true); }
-                if (show_rare5){ menu_rare5.setChecked(true); }
                 if (show_released){ menu_release_0.setChecked(true); }
                 if (show_unreleased){ menu_release_1.setChecked(true); }
-                if (show_dps){ menu_role_dps.setChecked(true); }
-                if (show_sub_dps){ menu_role_sub_dps.setChecked(true); }
-                if (show_util){ menu_role_utility.setChecked(true); }
 
-                pyro.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_pyro){show_pyro = false;pyro.setColorFilter(Color.parseColor("#66313131"));}else{show_pyro = true;pyro.setColorFilter(Color.parseColor("#00000000"));}}});
-                hydro.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_hydro){show_hydro = false;hydro.setColorFilter(Color.parseColor("#66313131"));}else{show_hydro = true;hydro.setColorFilter(Color.parseColor("#00000000"));}}});
-                anemo.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_anemo){show_anemo = false;anemo.setColorFilter(Color.parseColor("#66313131"));}else{show_anemo = true;anemo.setColorFilter(Color.parseColor("#00000000"));}}});
-                electro.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_electro){show_electro = false;electro.setColorFilter(Color.parseColor("#66313131"));}else{show_electro = true;electro.setColorFilter(Color.parseColor("#00000000"));}}});
-                dendor.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_dendor){show_dendor = false;dendor.setColorFilter(Color.parseColor("#66313131"));}else{show_dendor = true;dendor.setColorFilter(Color.parseColor("#00000000"));}}});
-                cryo.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_cryo){show_cryo = false;cryo.setColorFilter(Color.parseColor("#66313131"));}else{show_cryo = true;cryo.setColorFilter(Color.parseColor("#00000000"));}}});
-                geo.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_geo){show_geo = false;geo.setColorFilter(Color.parseColor("#66313131"));}else{show_geo = true;geo.setColorFilter(Color.parseColor("#00000000"));}}});
-                ico_sword.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_sword){show_sword = false;ico_sword.setColorFilter(Color.parseColor("#66313131"));}else{show_sword = true;ico_sword.setColorFilter(Color.parseColor("#00000000"));}}});
-                ico_claymore.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_claymore){show_claymore = false;ico_claymore.setColorFilter(Color.parseColor("#66313131"));}else{show_claymore = true;ico_claymore.setColorFilter(Color.parseColor("#00000000"));}}});
-                ico_polearm.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_polearm){show_polearm = false;ico_polearm.setColorFilter(Color.parseColor("#66313131"));}else{show_polearm = true;ico_polearm.setColorFilter(Color.parseColor("#00000000"));}}});
-                ico_bow.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_bow){show_bow = false;ico_bow.setColorFilter(Color.parseColor("#66313131"));}else{show_bow = true;ico_bow.setColorFilter(Color.parseColor("#00000000"));}}});
-                ico_catalyst.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_catalyst){show_catalyst = false;ico_catalyst.setColorFilter(Color.parseColor("#66313131"));}else{show_catalyst = true;ico_catalyst.setColorFilter(Color.parseColor("#00000000"));}}});
-                ico_catalyst.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_catalyst){show_catalyst = false;ico_catalyst.setColorFilter(Color.parseColor("#66313131"));}else{show_catalyst = true;ico_catalyst.setColorFilter(Color.parseColor("#00000000"));}}});
+                pyro_bg.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_pyro){show_pyro = false;pyro_kwang.setVisibility(View.GONE);pyro_bg.setAlpha(0.5f);}else{show_pyro = true;pyro_kwang.setVisibility(View.VISIBLE);pyro_bg.setAlpha(1);}}});
+                hydro_bg.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_hydro){show_hydro = false;hydro_kwang.setVisibility(View.GONE);hydro_bg.setAlpha(0.5f);}else{show_hydro = true;hydro_kwang.setVisibility(View.VISIBLE);hydro_bg.setAlpha(1);}}});
+                anemo_bg.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_anemo){show_anemo = false;anemo_kwang.setVisibility(View.GONE);anemo_bg.setAlpha(0.5f);}else{show_anemo = true;anemo_kwang.setVisibility(View.VISIBLE);anemo_bg.setAlpha(1);}}});
+                electro_bg.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_electro){show_electro = false;electro_kwang.setVisibility(View.GONE);electro_bg.setAlpha(0.5f);}else{show_electro = true;electro_kwang.setVisibility(View.VISIBLE);electro_bg.setAlpha(1);}}});
+                dendor_bg.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_dendor){show_dendor = false;dendor_kwang.setVisibility(View.GONE);dendor_bg.setAlpha(0.5f);}else{show_dendor = true;dendor_kwang.setVisibility(View.VISIBLE);dendor_bg.setAlpha(1);}}});
+                cryo_bg.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_cryo){show_cryo = false;cryo_kwang.setVisibility(View.GONE);cryo_bg.setAlpha(0.5f);}else{show_cryo = true;cryo_kwang.setVisibility(View.VISIBLE);cryo_bg.setAlpha(1);}}});
+                geo_bg.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_geo){show_geo = false;geo_kwang.setVisibility(View.GONE);geo_bg.setAlpha(0.5f);}else{show_geo = true;geo_kwang.setVisibility(View.VISIBLE);geo_bg.setAlpha(1);}}});
+                    ico_sword.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_sword){show_sword = false;ico_sword.setAlpha(0.5f);}else{show_sword = true;ico_sword.setAlpha(1f);}}});
+                    ico_claymore.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_claymore){show_claymore = false;ico_claymore.setAlpha(0.5f);}else{show_claymore = true;ico_claymore.setAlpha(1f);}}});
+                    ico_polearm.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_polearm){show_polearm = false;ico_polearm.setAlpha(0.5f);}else{show_polearm = true;ico_polearm.setAlpha(1f);}}});
+                    ico_bow.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_bow){show_bow = false;ico_bow.setAlpha(0.5f);}else{show_bow = true;ico_bow.setAlpha(1f);}}});
+                    ico_catalyst.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_catalyst){show_catalyst = false;ico_catalyst.setAlpha(0.5f);}else{show_catalyst = true;ico_catalyst.setAlpha(1f);}}});
 
                 cancel.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -957,6 +1032,7 @@ public class DeskSipTik extends AppCompatActivity {
                     }
                 });
 
+                /*
                 reset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -1014,17 +1090,12 @@ public class DeskSipTik extends AppCompatActivity {
 
                     }
                 });
-
+                 */
                 ok.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        if (menu_rare4.isChecked()){show_rare4 = true;}else{show_rare4 = false;}
-                        if (menu_rare5.isChecked()){show_rare5 = true;}else{show_rare5 = false;}
                         if (menu_release_0.isChecked()){show_released = true;}else{show_released = false;}
                         if (menu_release_1.isChecked()){show_unreleased = true;}else{show_unreleased = false;}
-                        if (menu_role_dps.isChecked()){show_dps = true;}else{show_dps = false;}
-                        if (menu_role_sub_dps.isChecked()){show_sub_dps = true;}else{show_sub_dps = false;}
-                        if (menu_role_utility.isChecked()){show_util = true;}else{show_util = false;}
                         filterCharAlgothm();
                         dialog.dismiss();
                     }
@@ -1077,7 +1148,9 @@ public class DeskSipTik extends AppCompatActivity {
             }
         }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
             if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-                mLayoutManager = new GridLayoutManager(context,  width_a/960);
+                int tmp_cnt = (int) width_a/960;
+                if (tmp_cnt < 1){tmp_cnt = 1;}
+                mLayoutManager = new GridLayoutManager(context,  tmp_cnt);
             }else{
                 mLayoutManager = new GridLayoutManager(context,  1);
             }
@@ -1543,91 +1616,6 @@ public class DeskSipTik extends AppCompatActivity {
             }
         });
 
-        // List Grid and Traveler Sex will get replace by ico typing
-        /*
-
-        // List_Grid
-
-        gridList = new String[]{context.getString(R.string.rectangle),context.getString(R.string.square),context.getString(R.string.card)};
-        ArrayAdapter grid_aa = new ArrayAdapter(context,R.layout.spinner_item,gridList);
-        grid_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
-
-        Spinner grid_sp = viewPager4.findViewById(R.id.ui_box_spinner);
-        grid_sp.setAdapter(grid_aa);
-        grid_sp.setSelection(sharedPreferences.getInt("curr_ui_grid_pos",0));
-        grid_sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                // https://blog.csdn.net/pigdreams/article/details/81277110
-                // https://stackoverflow.com/questions/13397933/android-spinner-avoid-onitemselected-calls-during-initialization
-                if(check_spinner >0){
-                    if(position == 0){
-                        editor.putString("curr_ui_grid","2");
-                        editor.putInt("curr_ui_grid_pos",position);
-                        editor.apply();
-                    }else if(position == 1){
-                        editor.putString("curr_ui_grid","3");
-                        editor.putInt("curr_ui_grid_pos",position);
-                        editor.apply();
-                    }else if(position == 2){
-                        editor.putString("curr_ui_grid","4");
-                        editor.putInt("curr_ui_grid_pos",position);
-                        editor.apply();
-                    }
-
-                    setup_home();
-                    setup_char();
-                    setup_weapon();
-                    setup_art();
-                }
-                check_spinner = check_spinner +1;
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-
-        // Traveler Sex
-
-        String[] travelerList = new String[]{css.getLocaleName("Female",context),css.getLocaleName("Male",context)};
-        ArrayAdapter traveler_aa = new ArrayAdapter(context,R.layout.spinner_item,travelerList);
-        traveler_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
-
-        Spinner traveler_sp = viewPager4.findViewById(R.id.traveler_spinner);
-        traveler_sp.setAdapter(traveler_aa);
-        switch (sharedPreferences.getString("traveler_sex","F")){
-            case "F" : traveler_sp.setSelection(0);break;
-            case "M" : traveler_sp.setSelection(1);break;
-        }
-
-
-
-        traveler_sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                // https://blog.csdn.net/pigdreams/article/details/81277110
-                // https://stackoverflow.com/questions/13397933/android-spinner-avoid-onitemselected-calls-during-initialization
-                if(check_spinner >0){
-                    if(position == 0){
-                        editor.putString("traveler_sex","F");
-                        editor.apply();
-                    }else if(position == 1){
-                        editor.putString("traveler_sex","M");
-                        editor.apply();
-                    }
-                }
-                check_spinner = check_spinner +1;
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-         */
-
         // Background
         Button bg_setting_btn = viewPager4.findViewById(R.id.bg_setting_btn);
         bg_setting_btn.setOnClickListener(new View.OnClickListener() {
@@ -1791,7 +1779,7 @@ public class DeskSipTik extends AppCompatActivity {
             }
         });
 
-        //Other -> Switchs
+        //Other -> Exit Confirm
         other_exit_confirm = viewPager4.findViewById(R.id.other_exit_confirm);
         SharedPreferences sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
         boolean isExitConfirmEnable = sharedPreferences.getBoolean("isExitConfirmEnable",true);
@@ -1808,20 +1796,197 @@ public class DeskSipTik extends AppCompatActivity {
                 }
             }
         });
-        //Other -> Change Suits
-        other_char_suit = viewPager4.findViewById(R.id.other_char_suit);
-        boolean isCharChangeEventSuit = sharedPreferences.getBoolean("isCharChangeEventSuit",false);
-        other_char_suit.setChecked(isCharChangeEventSuit);
-        other_char_suit.setOnClickListener(new View.OnClickListener() {
+
+        //Other -> Style
+        style_Voc_rb = viewPager4.findViewById(R.id.ui_Voc_rb);
+        style_2O48_rb = viewPager4.findViewById(R.id.ui_2O48_rb);
+        style_SipTik_rb = viewPager4.findViewById(R.id.ui_SipTik_rb);
+        String styleUI = sharedPreferences.getString("styleUI","Voc");
+        // StyleCode : "Voc" , "2O48" , "SipTik"
+
+        if (styleUI.equals("Voc")){
+            style_Voc_rb.setChecked(true);
+            style_2O48_rb.setChecked(false);
+            style_SipTik_rb.setChecked(false);
+        }else if (styleUI.equals("2O48")){
+            style_Voc_rb.setChecked(false);
+            style_2O48_rb.setChecked(true);
+            style_SipTik_rb.setChecked(false);
+        }else if (styleUI.equals("SipTik")) {
+            style_Voc_rb.setChecked(false);
+            style_2O48_rb.setChecked(false);
+            style_SipTik_rb.setChecked(true);
+        }
+
+        style_Voc_rb.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(other_char_suit.isChecked() == false){
-                    editor.putBoolean("isCharChangeEventSuit",false);
-                    editor.apply();
-                }else if(other_char_suit.isChecked() == true){
-                    editor.putBoolean("isCharChangeEventSuit",true);
-                    editor.apply();
-                }
+                editor.putString("styleUI","Voc");
+                editor.apply();
+                style_Voc_rb.setChecked(true);
+                style_2O48_rb.setChecked(false);
+                style_SipTik_rb.setChecked(false);
+                CustomToast.toast(context,activity,context.getString(R.string.pls_restart_app));
+            }
+        });
+
+        style_2O48_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("styleUI","2O48");
+                editor.apply();
+                style_Voc_rb.setChecked(false);
+                style_2O48_rb.setChecked(true);
+                style_SipTik_rb.setChecked(false);
+                CustomToast.toast(context,activity,context.getString(R.string.pls_restart_app));
+            }
+        });
+
+        style_SipTik_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("styleUI","SipTik");
+                editor.apply();
+                style_Voc_rb.setChecked(false);
+                style_2O48_rb.setChecked(false);
+                style_SipTik_rb.setChecked(true);
+                CustomToast.toast(context,activity,context.getString(R.string.pls_restart_app));
+            }
+        });
+
+        //Other -> Change Suits
+        outfit_standard_rb = viewPager4.findViewById(R.id.outfit_standard_rb);
+        outfit_event_rb = viewPager4.findViewById(R.id.outfit_event_rb);
+        boolean isCharChangeEventSuit = sharedPreferences.getBoolean("isCharChangeEventSuit",false);
+
+        if (isCharChangeEventSuit){
+            outfit_event_rb.setChecked(true);
+            outfit_standard_rb.setChecked(false);
+        }else{
+            outfit_event_rb.setChecked(false);
+            outfit_standard_rb.setChecked(true);
+        }
+
+        outfit_standard_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putBoolean("isCharChangeEventSuit",false);
+                editor.apply();
+                outfit_event_rb.setChecked(false);
+                outfit_standard_rb.setChecked(true);
+                setup_char();
+            }
+        });
+
+        outfit_event_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putBoolean("isCharChangeEventSuit",true);
+                editor.apply();
+                outfit_event_rb.setChecked(true);
+                outfit_standard_rb.setChecked(false);
+                setup_char();
+            }
+        });
+
+        //Other -> List_Grid
+        grid_2_rb = viewPager4.findViewById(R.id.grid_2);
+        grid_3_rb = viewPager4.findViewById(R.id.grid_3);
+        grid_4_rb = viewPager4.findViewById(R.id.grid_4);
+        String currUiGrid = sharedPreferences.getString("curr_ui_grid","2");
+
+        if (currUiGrid.equals("2")){
+            grid_2_rb.setChecked(true);
+            grid_3_rb.setChecked(false);
+            grid_4_rb.setChecked(false);
+        }else if(currUiGrid.equals("3")){
+            grid_2_rb.setChecked(false);
+            grid_3_rb.setChecked(true);
+            grid_4_rb.setChecked(false);
+        }else{
+            grid_2_rb.setChecked(false);
+            grid_3_rb.setChecked(false);
+            grid_4_rb.setChecked(true);
+        }
+
+        grid_2_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("curr_ui_grid","2");
+                editor.apply();
+                grid_2_rb.setChecked(true);
+                grid_3_rb.setChecked(false);
+                grid_4_rb.setChecked(false);
+
+                setup_home();
+                setup_char();
+                setup_weapon();
+                setup_art();
+            }
+        });
+        grid_3_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("curr_ui_grid","3");
+                editor.apply();
+                grid_2_rb.setChecked(false);
+                grid_3_rb.setChecked(true);
+                grid_4_rb.setChecked(false);
+
+                setup_home();
+                setup_char();
+                setup_weapon();
+                setup_art();
+            }
+        });
+        grid_4_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("curr_ui_grid","4");
+                editor.apply();
+                grid_2_rb.setChecked(false);
+                grid_3_rb.setChecked(false);
+                grid_4_rb.setChecked(true);
+
+                setup_home();
+                setup_char();
+                setup_weapon();
+                setup_art();
+            }
+        });
+
+        //Other -> Traveler Sex
+        traveler_female_rb = viewPager4.findViewById(R.id.traveler_female_rb);
+        traveler_male_rb = viewPager4.findViewById(R.id.traveler_male_rb);
+        String travelerSex = sharedPreferences.getString("traveler_sex","F");
+
+        if (travelerSex.equals("F")){
+            traveler_female_rb.setChecked(true);
+            traveler_male_rb.setChecked(false);
+        }else{
+            traveler_female_rb.setChecked(false);
+            traveler_male_rb.setChecked(true);
+        }
+
+        traveler_male_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("traveler_sex","M");
+                editor.apply();
+                traveler_female_rb.setChecked(false);
+                traveler_male_rb.setChecked(true);
+                setup_char();
+            }
+        });
+
+        traveler_female_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("traveler_sex","F");
+                editor.apply();
+                traveler_female_rb.setChecked(true);
+                traveler_male_rb.setChecked(false);
+                setup_char();
             }
         });
     }
@@ -2429,7 +2594,7 @@ public class DeskSipTik extends AppCompatActivity {
     }
 
     public void startCharInfo (String name, Activity activity){
-        Characters_Info_2048 cif = new Characters_Info_2048();
+        Characters_Info_SipTik cif = new Characters_Info_SipTik();
         cif.setup(String.valueOf(name),context,activity);
     }
     public void startWeaponInfo (String name, Activity activity){
@@ -2526,16 +2691,10 @@ public class DeskSipTik extends AppCompatActivity {
         RadioButton theme_default = viewPager4.findViewById(R.id.theme_default);
         Button bg_changelog_btn = viewPager4.findViewById(R.id.bg_changelog_btn);
 
-        Switch other_exit_confirm = viewPager4.findViewById(R.id.other_exit_confirm);
-        Switch other_char_suit = viewPager4.findViewById(R.id.other_char_suit);
         theme_light.setButtonTintList(myList);
         theme_dark.setButtonTintList(myList);
         theme_default.setButtonTintList(myList);
-
-        other_exit_confirm.setThumbTintList(myList);
-        other_exit_confirm.setTrackTintList(myList);
-        other_char_suit.setThumbTintList(myList);
-        other_char_suit.setTrackTintList(myList);
+        Switch other_exit_confirm = viewPager4.findViewById(R.id.other_exit_confirm);
 
         bg_changelog_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -2701,8 +2860,8 @@ public class DeskSipTik extends AppCompatActivity {
         BackgroundReload.BackgroundReload(context,activity);
 
         getDOW();
-        //char_reload(dow);
-        //weapon_reload(dow);
+        char_reload(dow);
+        weapon_reload(dow);
         bday_reload();
     }
 
@@ -3151,4 +3310,3 @@ public class DeskSipTik extends AppCompatActivity {
         editor.apply();
     }
 }
-

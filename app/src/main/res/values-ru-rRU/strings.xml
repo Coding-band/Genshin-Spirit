@@ -955,4 +955,7 @@
     <string name="hidden_palace_of_lianshan_formula">Лабиринт Ляншан</string>
     <string name="court_of_flowing_sand">Зал текущего песка</string>
     <string name="img_reset_finish">фон был сброшен</string>
+    <string name="ui_2048_name">игра</string>
+    <string name="ui_siptik_name">материал</string>
+    <string name="ui_voc_name">классический</string>
 </resources>

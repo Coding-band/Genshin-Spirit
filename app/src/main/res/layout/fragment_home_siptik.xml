@@ -37,7 +37,7 @@
                 android:layout_marginRight="8dp"
                 android:fontFamily="@font/genshin_font"
                 android:singleLine="false"
-                android:text="@string/char_asc_mater"
+                android:text="@string/material_force"
                 android:textAlignment="viewStart"
                 android:textColor="@color/tv_color"
                 android:textSize="18sp"

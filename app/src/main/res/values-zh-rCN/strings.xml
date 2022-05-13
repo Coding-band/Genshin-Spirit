@@ -995,6 +995,9 @@
     <string name="obtain_npc_dcdyhw">NPC商店、稻妻钓鱼协会兑换</string>
     <string name="obtain_chesr_ly">璃月宝箱</string>
     <string name="obtain_chest_gwk">孤云阁附近拔出、宝箱</string>
+    <string name="ui_voc_name">经典</string>
+    <string name="ui_2048_name">游戏</string>
+    <string name="ui_siptik_name">素材</string>
 
 
 </resources>

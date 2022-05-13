@@ -1029,5 +1029,8 @@
     <string name="obtain_npc_dcdyhw">NPC商店、稻妻釣魚協會兌換</string>
     <string name="obtain_chesr_ly">璃月寶箱</string>
     <string name="obtain_chest_gwk">孤雲閣附近拔出、寶箱</string>
+    <string name="ui_2048_name">Game</string>
+    <string name="ui_siptik_name">Material</string>
+    <string name="ui_voc_name">Classic</string>
 </resources>
 

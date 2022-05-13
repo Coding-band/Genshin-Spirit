@@ -26,7 +26,14 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.StrictMode;
 import android.provider.Settings;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
+import android.widget.FrameLayout;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -77,6 +84,8 @@ public class SplashActivity extends AppCompatActivity {
     public int REQUEST_CODE = 2296;
     Context context ;
     Activity activity ;
+    String choice = "N/A";
+    SharedPreferences sharedPreferences;
     @Override
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
@@ -87,7 +96,7 @@ public class SplashActivity extends AppCompatActivity {
         activity = this;
         BackgroundReload.BackgroundReload(context,activity);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("user_info", 0);
+        sharedPreferences = getSharedPreferences("user_info", 0);
         if (sharedPreferences.getBoolean("theme_light", true) == true) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
@@ -109,7 +118,7 @@ public class SplashActivity extends AppCompatActivity {
 
     }
     private void goMain() {
-        SharedPreferences sharedPreferences = getSharedPreferences("user_info", 0);
+        sharedPreferences = getSharedPreferences("user_info", 0);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         if (sharedPreferences.getBoolean("downloadBase", false) == false) {
@@ -132,7 +141,7 @@ public class SplashActivity extends AppCompatActivity {
                     DownloadTask downloadTask = new DownloadTask();
                     downloadTask.start("http://113.254.213.196/genshin_spirit/base.zip","base.zip","/base.zip",context,activity);
 
-                    SharedPreferences sharedPreferences = getSharedPreferences("user_info", 0);
+                    sharedPreferences = getSharedPreferences("user_info", 0);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putLong("lastUpdateUnix", System.currentTimeMillis());
                     editor.apply();
@@ -191,7 +200,7 @@ public class SplashActivity extends AppCompatActivity {
             base = base +1;
         }
 
-        SharedPreferences sharedPreferences = getSharedPreferences("user_info", Context.MODE_PRIVATE);
+        sharedPreferences = getSharedPreferences("user_info", Context.MODE_PRIVATE);
         int decimal_num = 2;//sharedPreferences.getInt("decimal_num", 0);
         boolean decimal  = sharedPreferences.getBoolean("decimal", false);
         if (base < suffix.length) {
@@ -218,7 +227,7 @@ public class SplashActivity extends AppCompatActivity {
 
 
     public void check_updates(){
-            SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
+            sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
 
             OkHttpClient client = new OkHttpClient();
@@ -268,62 +277,17 @@ public class SplashActivity extends AppCompatActivity {
                         public void onClick(DialogInterface arg0, int arg1) {
                             // TODO Auto-generated method stub
                             DownloadTask downloadTask = new DownloadTask();
-                            downloadTask.startA(array_download,array_fileName,array_SfileName,context,activity);
+                            downloadTask.startAWithRun(array_download,array_fileName,array_SfileName,context,activity,true);
                             editor.putLong("lastUpdateUnix", finalLastUnix);
                             editor.apply();
-
-                            if (sharedPreferences.getString("styleUI","N/A").equals("N/A")){
-                                AlertDialog.Builder dialog = new AlertDialog.Builder(SplashActivity.this,R.style.AlertDialogCustom);
-                                dialog.setCancelable(false);
-                                dialog.setTitle("Please choose the UI style");
-                                dialog.setNegativeButton("SipTik",new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface arg0, int arg1) {
-                                        editor.putString("styleUI","SipTik");
-                                        editor.apply();
-                                        runDesk(sharedPreferences);
-                                    }
-                                });
-                                dialog.setPositiveButton("2O48", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialogInterface, int i) {
-                                        editor.putString("styleUI","2O48");
-                                        editor.apply();
-                                        runDesk(sharedPreferences);
-                                    }
-                                });
-
-                                dialog.show();
-                            }else{runDesk(sharedPreferences);}
                         }
 
                     });
                     dialog.show();
                 }else{
                     CustomToast.toast(context,this,context.getString(R.string.update_download_not_found_update));
-                    if (sharedPreferences.getString("styleUI","N/A").equals("N/A")){
-                        AlertDialog.Builder dialog = new AlertDialog.Builder(SplashActivity.this,R.style.AlertDialogCustom);
-                        dialog.setCancelable(false);
-                        dialog.setTitle("Please choose the UI style");
-                        dialog.setNegativeButton("SipTik",new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface arg0, int arg1) {
-                                editor.putString("styleUI","SipTik");
-                                editor.apply();
-                                runDesk(sharedPreferences);
-                            }
-                        });
-                        dialog.setPositiveButton("2O48", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialogInterface, int i) {
-                                editor.putString("styleUI","2O48");
-                                editor.apply();
-                                runDesk(sharedPreferences);
-                            }
-                        });
 
-                        dialog.show();
-                    }else{runDesk(sharedPreferences);}
+                    checkStyleUI();
                 }
 
             } catch (JSONException e) {
@@ -342,6 +306,8 @@ public class SplashActivity extends AppCompatActivity {
                     SplashActivity.this.startActivity(new Intent(SplashActivity.this, Desk2048.class));
                 }else if (sharedPreferences.getString("styleUI","N/A").equals("SipTik")){
                     SplashActivity.this.startActivity(new Intent(SplashActivity.this, DeskSipTik.class));
+                }else if (sharedPreferences.getString("styleUI","N/A").equals("Voc")){
+                    SplashActivity.this.startActivity(new Intent(SplashActivity.this, MainActivity.class));
                 }else{
                     SplashActivity.this.startActivity(new Intent(SplashActivity.this, MainActivity.class));
                 }
@@ -373,6 +339,82 @@ public class SplashActivity extends AppCompatActivity {
 
 
         return size;
+    }
+
+    public void checkStyleUI(){
+        if (sharedPreferences.getString("styleUI","N/A").equals("N/A")){
+            final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+            View view = View.inflate(context, R.layout.fragment_choose_style_ui, null);
+
+            RadioButton style_Voc_rb = view.findViewById(R.id.ui_Voc_rb);
+            RadioButton style_2O48_rb = view.findViewById(R.id.ui_2O48_rb);
+            RadioButton style_SipTik_rb = view.findViewById(R.id.ui_SipTik_rb);
+            FrameLayout menu_ok = view.findViewById(R.id.menu_ok);
+
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+
+            style_Voc_rb.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    style_Voc_rb.setChecked(true);
+                    style_2O48_rb.setChecked(false);
+                    style_SipTik_rb.setChecked(false);
+                    choice = "Voc";
+                }
+            });
+
+            style_2O48_rb.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    style_Voc_rb.setChecked(false);
+                    style_2O48_rb.setChecked(true);
+                    style_SipTik_rb.setChecked(false);
+                    choice = "2O48";
+                }
+            });
+
+            style_SipTik_rb.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    editor.putString("styleUI","SipTik");
+                    editor.apply();
+                    style_Voc_rb.setChecked(false);
+                    style_2O48_rb.setChecked(false);
+                    style_SipTik_rb.setChecked(true);
+                    choice = "SipTik";
+                }
+            });
+
+            menu_ok.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (!choice.equals("N/A")){
+                        editor.putString("styleUI",choice);
+                        editor.apply();
+                        dialog.dismiss();
+                        runDesk(sharedPreferences);
+                    }
+                }
+            });
+
+            dialog.setContentView(view);
+            dialog.setCanceledOnTouchOutside(true);
+            Window dialogWindow = dialog.getWindow();
+            WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+
+            DisplayMetrics displayMetrics = new DisplayMetrics();
+            getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+            int height = displayMetrics.heightPixels;
+            int width = displayMetrics.widthPixels;
+
+            lp.width = (int) (width*0.9);
+            lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+            lp.gravity = Gravity.CENTER;
+            dialogWindow.setAttributes(lp);
+            dialog.show();
+        }else{
+            runDesk(sharedPreferences);
+        }
     }
 }
 

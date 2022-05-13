@@ -479,41 +479,44 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
             switch (artifacts.getRare()) {
                 case 1: {
                     Picasso.get()
-                            .load(R.drawable.bg_rare1_siptik).resize((int) (width_curr), (int) ((width_curr) / 2.1)).transform(transformation_circ_siptik)
-                            .error(R.drawable.bg_rare1_siptik).transform(transformation_circ_siptik)
+                            .load(R.drawable.bg_rare1_siptik).resize(width, height)//.transform(transformation_circ_siptik)
+                            .error(R.drawable.bg_rare1_siptik)//.transform(transformation_circ_siptik)
                             .into(viewHolder.artifact_card_bg);
                     break;
                 }
                 case 2: {
                     Picasso.get()
-                            .load(R.drawable.bg_rare2_siptik).resize((int) (width_curr), (int) ((width_curr) / 2.1)).transform(transformation_circ_siptik)
-                            .error(R.drawable.bg_rare2_siptik).transform(transformation_circ_siptik)
+                            .load(R.drawable.bg_rare2_siptik).resize(width, height)//.transform(transformation_circ_siptik)
+                            .error(R.drawable.bg_rare2_siptik)//.transform(transformation_circ_siptik)
                             .into(viewHolder.artifact_card_bg);
                     break;
                 }
                 case 3: {
                     Picasso.get()
-                            .load(R.drawable.bg_rare3_siptik).resize((int) (width_curr), (int) ((width_curr) / 2.1)).transform(transformation_circ_siptik)
-                            .error(R.drawable.bg_rare3_siptik).transform(transformation_circ_siptik)
+                            .load(R.drawable.bg_rare3_siptik).resize(width, height)//.transform(transformation_circ_siptik)
+                            .error(R.drawable.bg_rare3_siptik)//.transform(transformation_circ_siptik)
                             .into(viewHolder.artifact_card_bg);
                     break;
                 }
                 case 4: {
                     Picasso.get()
-                            .load(R.drawable.bg_rare4_siptik).resize((int) (width_curr), (int) ((width_curr) / 2.1)).transform(transformation_circ_siptik)
-                            .error(R.drawable.bg_rare4_siptik).transform(transformation_circ_siptik)
+                            .load(R.drawable.bg_rare4_siptik).resize(width, height)//.transform(transformation_circ_siptik)
+                            .error(R.drawable.bg_rare4_siptik)//.transform(transformation_circ_siptik)
                             .into(viewHolder.artifact_card_bg);
                     break;
                 }
                 case 5: {
                     Picasso.get()
-                            .load(R.drawable.bg_rare5_siptik).resize((int) (width_curr), (int) ((width_curr) / 2.1)).transform(transformation_circ_siptik)
-                            .error(R.drawable.bg_rare5_siptik).transform(transformation_circ_siptik)
+                            .load(R.drawable.bg_rare5_siptik).resize(width, height)//.transform(transformation_circ_siptik)
+                            .error(R.drawable.bg_rare5_siptik)//.transform(transformation_circ_siptik)
                             .into(viewHolder.artifact_card_bg);
                     break;
                 }
 
             }
+
+            viewHolder.artifact_card_bg.getLayoutParams().width = width+32;
+            viewHolder.artifact_card_bg.getLayoutParams().height = height+32;
 
             //viewHolder.artifact_name_ll.getLayoutParams().width = width;
             //viewHolder.artifact_name_ll.getLayoutParams().height = width*2/8;

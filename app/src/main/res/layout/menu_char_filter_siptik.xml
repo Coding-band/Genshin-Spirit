@@ -1,0 +1,789 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2022 Xectorda 版權所有
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/menu_title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_weight="0"
+            android:background="@drawable/bg_dialog_header_edge"
+            android:fontFamily="@font/genshin_font"
+            android:gravity="center"
+            android:padding="8dp"
+            android:text="@string/filters"
+            android:textColor="@color/tv_spinner_color_2048"
+            android:textSize="20sp" />
+
+    </FrameLayout>
+
+    <ProgressBar
+        android:id="@+id/progressBar2"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/white" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_dialog_body_edge"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/menu_elements_title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/genshin_font"
+            android:gravity="center|left"
+            android:paddingLeft="12dp"
+            android:text="@string/elements"
+            android:textColor="@color/tv_spinner_color_2048"
+            android:textSize="18sp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/menu_elements_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="4dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_max="630dp">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/pyro_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:alpha="0.5"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_siptik_tv_bg_small_edge">
+
+                        <ImageView
+                            android:id="@+id/pyro_ico"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:padding="4dp"
+                            android:rotation="0"
+                            android:rotationX="0"
+                            android:rotationY="0"
+                            app:srcCompat="@drawable/siptik_pyro_ico" />
+
+                        <ImageView
+                            android:id="@+id/pyro_kwang"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:rotation="0"
+                            android:rotationX="0"
+                            android:rotationY="0"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/item_siptik_pyro_kwang" />
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/hydro_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:alpha="0.5"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_siptik_tv_bg_small_edge">
+
+                        <ImageView
+                            android:id="@+id/hydro_ico"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:padding="4dp"
+                            android:rotation="0"
+                            android:rotationX="0"
+                            android:rotationY="0"
+                            app:srcCompat="@drawable/siptik_hydro_ico" />
+
+                        <ImageView
+                            android:id="@+id/hydro_kwang"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:rotation="0"
+                            android:rotationX="0"
+                            android:rotationY="0"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/item_siptik_hydro_kwang" />
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/anemo_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:alpha="0.5"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_siptik_tv_bg_small_edge">
+
+                        <ImageView
+                            android:id="@+id/anemo_ico"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:padding="4dp"
+                            android:rotation="0"
+                            android:rotationX="0"
+                            android:rotationY="0"
+                            app:srcCompat="@drawable/siptik_anemo_ico" />
+
+                        <ImageView
+                            android:id="@+id/anemo_kwang"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:rotation="0"
+                            android:rotationX="0"
+                            android:rotationY="0"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/item_siptik_anemo_kwang" />
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/electro_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:alpha="0.5"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_siptik_tv_bg_small_edge">
+
+                        <ImageView
+                            android:id="@+id/electro_ico"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:padding="4dp"
+                            android:rotation="0"
+                            android:rotationX="0"
+                            android:rotationY="0"
+                            app:srcCompat="@drawable/siptik_electro_ico" />
+
+                        <ImageView
+                            android:id="@+id/electro_kwang"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:rotation="0"
+                            android:rotationX="0"
+                            android:rotationY="0"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/item_siptik_electro_kwang" />
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/dendor_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:alpha="0.5"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_siptik_tv_bg_small_edge">
+
+                        <ImageView
+                            android:id="@+id/dendor_ico"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:padding="4dp"
+                            android:rotation="0"
+                            android:rotationX="0"
+                            android:rotationY="0"
+                            app:srcCompat="@drawable/siptik_dendor_ico" />
+
+                        <ImageView
+                            android:id="@+id/dendor_kwang"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:rotation="0"
+                            android:rotationX="0"
+                            android:rotationY="0"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/item_siptik_dendor_kwang" />
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cryo_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:alpha="0.5"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_siptik_tv_bg_small_edge">
+
+                        <ImageView
+                            android:id="@+id/cryo_ico"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:padding="4dp"
+                            android:rotation="0"
+                            android:rotationX="0"
+                            android:rotationY="0"
+                            app:srcCompat="@drawable/siptik_cryo_ico" />
+
+                        <ImageView
+                            android:id="@+id/cryo_kwang"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:rotation="0"
+                            android:rotationX="0"
+                            android:rotationY="0"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/item_siptik_cryo_kwang" />
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/geo_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:alpha="0.5"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="8dp">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/bg_siptik_tv_bg_small_edge">
+
+                        <ImageView
+                            android:id="@+id/geo_ico"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:padding="4dp"
+                            android:rotation="0"
+                            android:rotationX="0"
+                            android:rotationY="0"
+                            app:srcCompat="@drawable/siptik_geo_ico" />
+
+                        <ImageView
+                            android:id="@+id/geo_kwang"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:adjustViewBounds="true"
+                            android:rotation="0"
+                            android:rotationX="0"
+                            android:rotationY="0"
+                            android:visibility="gone"
+                            app:srcCompat="@drawable/item_siptik_geo_kwang" />
+                    </FrameLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/menu_weapons_title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/genshin_font"
+            android:gravity="center|left"
+            android:paddingLeft="12dp"
+            android:text="@string/title_weapons"
+            android:textColor="@color/tv_spinner_color_2048"
+            android:textSize="18sp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/menu_weapons_ll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="4dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginEnd="4dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_max="350dp">
+
+                <ImageView
+                    android:id="@+id/ico_sword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:alpha="0.5"
+                    android:background="@drawable/item_siptik_other_bg"
+                    android:padding="4dp"
+                    app:srcCompat="@drawable/ico_sword"
+                    app:tint="#747474" />
+
+                <ImageView
+                    android:id="@+id/ico_claymore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:alpha="0.5"
+                    android:background="@drawable/item_siptik_other_bg"
+                    android:padding="4dp"
+                    app:srcCompat="@drawable/ico_claymore"
+                    app:tint="#747474" />
+
+                <ImageView
+                    android:id="@+id/ico_polearm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:alpha="0.5"
+                    android:background="@drawable/item_siptik_other_bg"
+                    android:padding="4dp"
+                    app:srcCompat="@drawable/ico_polearm"
+                    app:tint="#747474" />
+
+                <ImageView
+                    android:id="@+id/ico_bow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:alpha="0.5"
+                    android:background="@drawable/item_siptik_other_bg"
+                    android:padding="4dp"
+                    app:srcCompat="@drawable/ico_bow"
+                    app:tint="#747474" />
+
+                <ImageView
+                    android:id="@+id/ico_catalyst"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:alpha="0.5"
+                    android:background="@drawable/item_siptik_other_bg"
+                    android:padding="4dp"
+                    app:srcCompat="@drawable/ico_catalyst"
+                    app:tint="#747474" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/menu_release_title_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/genshin_font"
+            android:gravity="center|left"
+            android:paddingLeft="12dp"
+            android:text="@string/other_title"
+            android:textColor="@color/tv_spinner_color_2048"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:id="@+id/menu_rarity_ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:layout_marginStart="4dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/menu_rarity_title_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="0"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center|left"
+                    android:text="@string/char_role"
+                    android:textColor="@color/tv_spinner_color_2048"
+                    android:textSize="18sp" />
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center|right"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="0"
+                    android:fadingEdge="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:fadingEdgeLength="64dp"
+                        android:requiresFadingEdge="horizontal|vertical"
+                        app:shapeAppearanceOverlay="@style/roundImageView"
+                        app:srcCompat="@drawable/bg_siptik_spinner" />
+
+                    <Spinner
+                        android:id="@+id/role_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center|right|end"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:popupBackground="@drawable/bg_2048_spinner_bg"
+                        android:requiresFadingEdge="none"
+                        android:spinnerMode="dropdown"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toEndOf="@+id/char_tv"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center|right"
+                        android:layout_marginRight="4dp"
+                        app:srcCompat="@drawable/ic_baseline_arrow_drop_down_24" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/menu_rarity_title_tv3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="0"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center|left"
+                    android:text="@string/rarity"
+                    android:textColor="@color/tv_spinner_color_2048"
+                    android:textSize="18sp" />
+
+                <FrameLayout
+                    android:id="@+id/linearLayout6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="28dp"
+                    android:layout_gravity="center|right"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="0"
+                    android:fadingEdge="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageView
+                        android:id="@+id/imageView18"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:fadingEdgeLength="64dp"
+                        android:requiresFadingEdge="horizontal|vertical"
+                        app:shapeAppearanceOverlay="@style/roundImageView"
+                        app:srcCompat="@drawable/bg_siptik_spinner" />
+
+                    <Spinner
+                        android:id="@+id/rare_spinner"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center|right|end"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:popupBackground="@drawable/bg_2048_spinner_bg"
+                        android:requiresFadingEdge="none"
+                        android:spinnerMode="dropdown"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toEndOf="@+id/char_tv"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center|right"
+                        android:layout_marginRight="4dp"
+                        app:srcCompat="@drawable/ic_baseline_arrow_drop_down_24" />
+                </FrameLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/menu_release_title_tv2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/genshin_font"
+            android:gravity="center|left"
+            android:paddingLeft="12dp"
+            android:text="發佈狀態"
+            android:textColor="@color/tv_spinner_color_2048"
+            android:textSize="18sp" />
+
+        <LinearLayout
+            android:id="@+id/menu_realease_ll"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/menu_release_0"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/item_2048_checkbox_bg"
+                android:button="@drawable/item_2048_checkbox"
+                android:checked="false"
+                android:clickable="true"
+                android:fontFamily="@font/genshin_font"
+                android:gravity="center"
+                android:layoutDirection="rtl"
+                android:paddingLeft="16dp"
+                android:paddingTop="12dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="12dp"
+                android:singleLine="true"
+                android:text="已發佈"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/tv_spinner_color_2048"
+                android:textSize="16sp" />
+
+            <CheckBox
+                android:id="@+id/menu_release_1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:background="@drawable/item_2048_checkbox_bg"
+                android:button="@drawable/item_2048_checkbox"
+                android:checked="false"
+                android:clickable="true"
+                android:fontFamily="@font/genshin_font"
+                android:gravity="center"
+                android:layoutDirection="rtl"
+                android:paddingLeft="16dp"
+                android:paddingTop="12dp"
+                android:paddingRight="12dp"
+                android:paddingBottom="12dp"
+                android:singleLine="true"
+                android:text="未發佈"
+                android:textAlignment="viewEnd"
+                android:textColor="@color/tv_spinner_color_2048"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5">
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/menu_cancel"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_dialog_btn_siptik"
+                android:text="@string/cal_reset">
+
+                <ImageView
+                    android:id="@+id/imageView14"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center|left"
+                    android:layout_marginLeft="8dp"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/ic_siptik_cancel_btn_ico" />
+
+                <TextView
+                    android:id="@+id/menu_reset_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center"
+                    android:text="@android:string/cancel"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/menu_ok"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_dialog_btn_siptik"
+                android:text="@android:string/ok">
+
+                <ImageView
+                    android:id="@+id/imageView15"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center|left"
+                    android:layout_marginLeft="8dp"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/ic_siptik_ok_btn_ico" />
+
+                <TextView
+                    android:id="@+id/menu_ok_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center"
+                    android:text="@android:string/ok"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1.5">
+
+            </FrameLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

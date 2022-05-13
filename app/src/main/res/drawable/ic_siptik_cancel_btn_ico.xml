@@ -5,15 +5,20 @@
   -->
 
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="28dp"
-    android:height="28dp"
-    android:viewportWidth="28"
-    android:viewportHeight="28">
+    android:width="36dp"
+    android:height="36dp"
+    android:viewportWidth="36"
+    android:viewportHeight="36">
     <path
-        android:fillColor="#FF313131"
-        android:pathData="M14 0A14 14 0 1 0 14 28 14 14 0 1 0 14 0z"/>
+        android:strokeColor="#FF707070"
+        android:strokeWidth="2"
+        android:pathData="M18 1A17 17 0 1 0 18 35 17 17 0 1 0 18 1z"/>
     <path
-        android:fillColor="#FF87C7EB"
-        android:fillType="evenOdd"
-        android:pathData="M18.54 19.95c0.39 0.4 1.02 0.4 1.41 0 0.4-0.39 0.4-1.02 0-1.41l-4.41-4.42 4.41-4.41c0.4-0.4 0.4-1.03 0-1.42-0.39-0.39-1.02-0.39-1.41 0l-4.42 4.42-4.41-4.42C9.3 7.9 8.68 7.9 8.29 8.3 7.9 8.7 7.9 9.32 8.3 9.71l4.42 4.41-4.42 4.42c-0.39 0.39-0.39 1.02 0 1.41 0.4 0.4 1.03 0.4 1.42 0l4.41-4.41 4.42 4.41Z"/>
+        android:strokeColor="#FF707070"
+        android:strokeWidth="2"
+        android:pathData="M10.71 10.29L24.85 24.43"/>
+    <path
+        android:strokeColor="#FF707070"
+        android:strokeWidth="2"
+        android:pathData="M24.85 10.71L10.71 24.85"/>
 </vector>

@@ -10,6 +10,7 @@ import android.util.Log;
 
 import androidx.annotation.RequiresApi;
 
+import java.io.Console;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
 import java.util.Arrays;
@@ -78,5 +79,26 @@ public class GoSleep {
 
         str = str.replace("tt",replaceStr);
         System.out.println("SCLeon : "+str);
+    }
+
+    public void psw(){
+        String password = "a123456";
+        int x = 3;
+        String psw_input = null;
+
+        while (true){
+            System.out.println("Enter Password : ");
+            psw_input = System.console().readLine();
+            if (psw_input.equals(password)){
+                System.out.println("Success");
+                break;
+            }else{
+                x --;
+                System.out.println("fail, 還有"+x+"次機會");
+                if (x == 0){
+                    break;
+                }
+            }
+        }
     }
 }

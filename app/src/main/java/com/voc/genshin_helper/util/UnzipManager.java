@@ -46,6 +46,7 @@ public class UnzipManager {
     ArrayList<String> zipnames = new ArrayList<String>();
     int total = 0;
     int curr = 0;
+    boolean runStyleUI = false;
 
     ZipInputStream zis = null;
 
@@ -58,6 +59,15 @@ public class UnzipManager {
     }
 
     public void pbShowA(String path, ArrayList<String> zipnames, Context context, Activity activity){
+        this.context = context;
+        this.path = path;
+        this.zipnames = zipnames;
+        this.activity = activity;
+        new unzipA().execute();
+    }
+
+    public void pbShowAWithRun(String path, ArrayList<String> zipnames, Context context, Activity activity, boolean runStyleUI){
+        this.runStyleUI = runStyleUI;
         this.context = context;
         this.path = path;
         this.zipnames = zipnames;
@@ -153,11 +163,14 @@ public class UnzipManager {
                     editor.putBoolean("downloadBase",true);
                     editor.apply();
                     if(context instanceof SplashActivity){
+                        /*
                         ((SplashActivity) context).startActivity(new Intent(context, MainActivity.class));
                         ((SplashActivity) context).finish();
+                         */
+                        ((SplashActivity)context).checkStyleUI();
                     }
                 }
-            }, 2000);
+            }, 10);
         }
 
     }
@@ -249,6 +262,9 @@ public class UnzipManager {
                 }
             }
             CustomToast.toast(context,activity,context.getString(R.string.update_download_done));
+            if (runStyleUI){
+                ((SplashActivity) context).checkStyleUI();
+            }
         }
 
     }

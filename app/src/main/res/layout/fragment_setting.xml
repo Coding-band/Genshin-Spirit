@@ -40,12 +40,45 @@
             android:overScrollMode="never"
             android:scrollbars="none">
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/theme_ico"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/ic_baseline_color_lens_24" />
+
+                <TextView
+                    android:id="@+id/theme_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="0"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center|left"
+                    android:text="@string/bg_title"
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/theme_card"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="8dp"
-                android:background="@drawable/gone_background"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="4dp"
                 android:visibility="visible"
                 app:cardBackgroundColor="@color/colorWhiteAlpha"
                 app:cardCornerRadius="20dp"
@@ -54,32 +87,9 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="8dp">
-
-                        <ImageView
-                            android:id="@+id/theme_ico"
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_weight="0"
-                            app:srcCompat="@drawable/ic_baseline_color_lens_24" />
-
-                        <TextView
-                            android:id="@+id/theme_title"
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:layout_weight="0"
-                            android:gravity="center|left"
-                            android:paddingLeft="8dp"
-                            android:text="@string/bg_title"
-                            android:textColor="@color/tv_color"
-                            android:textSize="16sp" />
-                    </LinearLayout>
+                    android:orientation="vertical"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
 
                     <RadioButton
                         android:id="@+id/theme_light"
@@ -88,6 +98,7 @@
                         android:layout_marginLeft="4dp"
                         android:buttonTint="@color/theme_color"
                         android:checked="false"
+                        android:fontFamily="@font/genshin_font"
                         android:text="@string/light_theme"
                         android:textColor="@color/tv_color" />
 
@@ -98,6 +109,7 @@
                         android:layout_marginLeft="4dp"
                         android:buttonTint="@color/theme_color"
                         android:checked="false"
+                        android:fontFamily="@font/genshin_font"
                         android:text="@string/dark_theme"
                         android:textColor="@color/tv_color" />
 
@@ -108,6 +120,7 @@
                         android:layout_marginLeft="4dp"
                         android:buttonTint="@color/theme_color"
                         android:checked="false"
+                        android:fontFamily="@font/genshin_font"
                         android:text="@string/sys_theme"
                         android:textColor="@color/tv_color" />
 
@@ -115,11 +128,45 @@
 
             </androidx.cardview.widget.CardView>
 
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/color_ico"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/ic_baseline_invert_colors_24" />
+
+                <TextView
+                    android:id="@+id/color_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="0"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center|left"
+                    android:text="@string/tv_title"
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/color_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="4dp"
                 android:background="@drawable/gone_background"
                 android:visibility="visible"
                 app:cardBackgroundColor="@color/colorWhiteAlpha"
@@ -130,31 +177,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="8dp">
-
-                        <ImageView
-                            android:id="@+id/color_ico"
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_weight="0"
-                            app:srcCompat="@drawable/ic_baseline_colorize_24" />
-
-                        <TextView
-                            android:id="@+id/color_title"
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:layout_weight="0"
-                            android:gravity="center|left"
-                            android:paddingLeft="8dp"
-                            android:text="@string/tv_title"
-                            android:textColor="@color/tv_color"
-                            android:textSize="16sp" />
-                    </LinearLayout>
 
                     <TableLayout
                         android:layout_width="match_parent"
@@ -166,65 +188,108 @@
                             android:layout_height="match_parent"
                             android:layout_margin="8dp">
 
-                            <ImageView
-                                android:id="@+id/color_block1"
+                            <androidx.cardview.widget.CardView
                                 android:layout_width="32dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_marginLeft="4dp"
                                 android:layout_marginRight="4dp"
                                 android:layout_weight="1"
-                                android:adjustViewBounds="true"
-                                app:srcCompat="@color/color_theme_1" />
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
 
-                            <ImageView
-                                android:id="@+id/color_block2"
-                                android:layout_width="32dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="4dp"
-                                android:layout_marginRight="4dp"
-                                android:layout_weight="1"
-                                android:adjustViewBounds="true"
-                                app:srcCompat="@color/color_theme_2" />
+                                <ImageView
+                                    android:id="@+id/color_block1"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:adjustViewBounds="true"
+                                    app:srcCompat="@color/color_theme_1" />
+                            </androidx.cardview.widget.CardView>
 
-                            <ImageView
-                                android:id="@+id/color_block3"
+                            <androidx.cardview.widget.CardView
                                 android:layout_width="32dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_marginLeft="4dp"
                                 android:layout_marginRight="4dp"
                                 android:layout_weight="1"
-                                android:adjustViewBounds="true"
-                                app:srcCompat="@color/color_theme_3" />
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
 
-                            <ImageView
-                                android:id="@+id/color_block4"
-                                android:layout_width="32dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="4dp"
-                                android:layout_marginRight="4dp"
-                                android:layout_weight="1"
-                                android:adjustViewBounds="true"
-                                app:srcCompat="@color/color_theme_4" />
+                                <ImageView
+                                    android:id="@+id/color_block2"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:adjustViewBounds="true"
+                                    app:srcCompat="@color/color_theme_2" />
+                            </androidx.cardview.widget.CardView>
 
-                            <ImageView
-                                android:id="@+id/color_block5"
+                            <androidx.cardview.widget.CardView
                                 android:layout_width="32dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_marginLeft="4dp"
                                 android:layout_marginRight="4dp"
                                 android:layout_weight="1"
-                                android:adjustViewBounds="true"
-                                app:srcCompat="@color/color_theme_5" />
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
 
-                            <ImageView
-                                android:id="@+id/color_block6"
+                                <ImageView
+                                    android:id="@+id/color_block3"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:adjustViewBounds="true"
+                                    app:srcCompat="@color/color_theme_3" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
                                 android:layout_width="32dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_marginLeft="4dp"
                                 android:layout_marginRight="4dp"
                                 android:layout_weight="1"
-                                android:adjustViewBounds="true"
-                                app:srcCompat="@color/color_theme_6" />
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
+
+                                <ImageView
+                                    android:id="@+id/color_block4"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:adjustViewBounds="true"
+                                    app:srcCompat="@color/color_theme_4" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="32dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
+
+                                <ImageView
+                                    android:id="@+id/color_block5"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:adjustViewBounds="true"
+                                    app:srcCompat="@color/color_theme_5" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="32dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
+
+                                <ImageView
+                                    android:id="@+id/color_block6"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:adjustViewBounds="true"
+                                    app:srcCompat="@color/color_theme_6" />
+                            </androidx.cardview.widget.CardView>
+
                         </TableRow>
 
                         <TableRow
@@ -232,65 +297,108 @@
                             android:layout_height="match_parent"
                             android:layout_margin="8dp">
 
-                            <ImageView
-                                android:id="@+id/color_block7"
+                            <androidx.cardview.widget.CardView
                                 android:layout_width="32dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_marginLeft="4dp"
                                 android:layout_marginRight="4dp"
                                 android:layout_weight="1"
-                                android:adjustViewBounds="true"
-                                app:srcCompat="@color/color_theme_7" />
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
 
-                            <ImageView
-                                android:id="@+id/color_block8"
-                                android:layout_width="32dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="4dp"
-                                android:layout_marginRight="4dp"
-                                android:layout_weight="1"
-                                android:adjustViewBounds="true"
-                                app:srcCompat="@color/color_theme_8" />
+                                <ImageView
+                                    android:id="@+id/color_block7"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:adjustViewBounds="true"
+                                    app:srcCompat="@color/color_theme_7" />
+                            </androidx.cardview.widget.CardView>
 
-                            <ImageView
-                                android:id="@+id/color_block9"
+                            <androidx.cardview.widget.CardView
                                 android:layout_width="32dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_marginLeft="4dp"
                                 android:layout_marginRight="4dp"
                                 android:layout_weight="1"
-                                android:adjustViewBounds="true"
-                                app:srcCompat="@color/color_theme_9" />
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
 
-                            <ImageView
-                                android:id="@+id/color_block10"
-                                android:layout_width="32dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="4dp"
-                                android:layout_marginRight="4dp"
-                                android:layout_weight="1"
-                                android:adjustViewBounds="true"
-                                app:srcCompat="@color/color_theme_10" />
+                                <ImageView
+                                    android:id="@+id/color_block8"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:adjustViewBounds="true"
+                                    app:srcCompat="@color/color_theme_8" />
+                            </androidx.cardview.widget.CardView>
 
-                            <ImageView
-                                android:id="@+id/color_block11"
+                            <androidx.cardview.widget.CardView
                                 android:layout_width="32dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_marginLeft="4dp"
                                 android:layout_marginRight="4dp"
                                 android:layout_weight="1"
-                                android:adjustViewBounds="true"
-                                app:srcCompat="@color/color_theme_11" />
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
 
-                            <ImageView
-                                android:id="@+id/color_block12"
+                                <ImageView
+                                    android:id="@+id/color_block9"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:adjustViewBounds="true"
+                                    app:srcCompat="@color/color_theme_9" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
                                 android:layout_width="32dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_marginLeft="4dp"
                                 android:layout_marginRight="4dp"
                                 android:layout_weight="1"
-                                android:adjustViewBounds="true"
-                                app:srcCompat="@color/color_theme_12" />
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
+
+                                <ImageView
+                                    android:id="@+id/color_block10"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:adjustViewBounds="true"
+                                    app:srcCompat="@color/color_theme_10" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="32dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
+
+                                <ImageView
+                                    android:id="@+id/color_block11"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:adjustViewBounds="true"
+                                    app:srcCompat="@color/color_theme_11" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="32dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
+
+                                <ImageView
+                                    android:id="@+id/color_block12"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:adjustViewBounds="true"
+                                    app:srcCompat="@color/color_theme_12" />
+                            </androidx.cardview.widget.CardView>
+
                         </TableRow>
 
                         <TableRow
@@ -298,65 +406,108 @@
                             android:layout_height="match_parent"
                             android:layout_margin="8dp">
 
-                            <ImageView
-                                android:id="@+id/color_block13"
+                            <androidx.cardview.widget.CardView
                                 android:layout_width="32dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_marginLeft="4dp"
                                 android:layout_marginRight="4dp"
                                 android:layout_weight="1"
-                                android:adjustViewBounds="true"
-                                app:srcCompat="@color/color_theme_13" />
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
 
-                            <ImageView
-                                android:id="@+id/color_block14"
-                                android:layout_width="32dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="4dp"
-                                android:layout_marginRight="4dp"
-                                android:layout_weight="1"
-                                android:adjustViewBounds="true"
-                                app:srcCompat="@color/color_theme_14" />
+                                <ImageView
+                                    android:id="@+id/color_block13"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:adjustViewBounds="true"
+                                    app:srcCompat="@color/color_theme_13" />
+                            </androidx.cardview.widget.CardView>
 
-                            <ImageView
-                                android:id="@+id/color_block15"
+                            <androidx.cardview.widget.CardView
                                 android:layout_width="32dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_marginLeft="4dp"
                                 android:layout_marginRight="4dp"
                                 android:layout_weight="1"
-                                android:adjustViewBounds="true"
-                                app:srcCompat="@color/color_theme_15" />
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
 
-                            <ImageView
-                                android:id="@+id/color_block16"
-                                android:layout_width="32dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="4dp"
-                                android:layout_marginRight="4dp"
-                                android:layout_weight="1"
-                                android:adjustViewBounds="true"
-                                app:srcCompat="@color/color_theme_16" />
+                                <ImageView
+                                    android:id="@+id/color_block14"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:adjustViewBounds="true"
+                                    app:srcCompat="@color/color_theme_14" />
+                            </androidx.cardview.widget.CardView>
 
-                            <ImageView
-                                android:id="@+id/color_block17"
+                            <androidx.cardview.widget.CardView
                                 android:layout_width="32dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_marginLeft="4dp"
                                 android:layout_marginRight="4dp"
                                 android:layout_weight="1"
-                                android:adjustViewBounds="true"
-                                app:srcCompat="@color/color_theme_17" />
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
 
-                            <ImageView
-                                android:id="@+id/color_block18"
+                                <ImageView
+                                    android:id="@+id/color_block15"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:adjustViewBounds="true"
+                                    app:srcCompat="@color/color_theme_15" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
                                 android:layout_width="32dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_marginLeft="4dp"
                                 android:layout_marginRight="4dp"
                                 android:layout_weight="1"
-                                android:adjustViewBounds="true"
-                                app:srcCompat="@color/color_theme_18" />
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
+
+                                <ImageView
+                                    android:id="@+id/color_block16"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:adjustViewBounds="true"
+                                    app:srcCompat="@color/color_theme_16" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="32dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
+
+                                <ImageView
+                                    android:id="@+id/color_block17"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:adjustViewBounds="true"
+                                    app:srcCompat="@color/color_theme_17" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="32dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
+
+                                <ImageView
+                                    android:id="@+id/color_block18"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:adjustViewBounds="true"
+                                    app:srcCompat="@color/color_theme_18" />
+                            </androidx.cardview.widget.CardView>
+
                         </TableRow>
 
                         <TableRow
@@ -364,70 +515,113 @@
                             android:layout_height="match_parent"
                             android:layout_margin="8dp">
 
-                            <ImageView
-                                android:id="@+id/color_block19"
+                            <androidx.cardview.widget.CardView
                                 android:layout_width="32dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_marginLeft="4dp"
                                 android:layout_marginRight="4dp"
                                 android:layout_weight="1"
-                                android:adjustViewBounds="true"
-                                app:srcCompat="@drawable/blue_sea" />
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
 
-                            <ImageView
-                                android:id="@+id/color_block20"
-                                android:layout_width="32dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="4dp"
-                                android:layout_marginRight="4dp"
-                                android:layout_weight="1"
-                                android:adjustViewBounds="true"
-                                android:visibility="visible"
-                                app:srcCompat="@drawable/pinky_day" />
+                                <ImageView
+                                    android:id="@+id/color_block19"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:adjustViewBounds="true"
+                                    app:srcCompat="@drawable/blue_sea" />
+                            </androidx.cardview.widget.CardView>
 
-                            <ImageView
-                                android:id="@+id/color_block21"
+                            <androidx.cardview.widget.CardView
                                 android:layout_width="32dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_marginLeft="4dp"
                                 android:layout_marginRight="4dp"
                                 android:layout_weight="1"
-                                android:adjustViewBounds="true"
-                                android:visibility="visible"
-                                app:srcCompat="@drawable/dream_color" />
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
 
-                            <ImageView
-                                android:id="@+id/color_block22"
-                                android:layout_width="32dp"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="4dp"
-                                android:layout_marginRight="4dp"
-                                android:layout_weight="1"
-                                android:adjustViewBounds="true"
-                                android:visibility="visible"
-                                app:srcCompat="@drawable/cyber_color" />
+                                <ImageView
+                                    android:id="@+id/color_block20"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:adjustViewBounds="true"
+                                    android:visibility="visible"
+                                    app:srcCompat="@drawable/pinky_day" />
+                            </androidx.cardview.widget.CardView>
 
-                            <ImageView
-                                android:id="@+id/color_block23"
+                            <androidx.cardview.widget.CardView
                                 android:layout_width="32dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_marginLeft="4dp"
                                 android:layout_marginRight="4dp"
                                 android:layout_weight="1"
-                                android:adjustViewBounds="true"
-                                android:visibility="visible"
-                                app:srcCompat="@drawable/cream_color" />
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
 
-                            <ImageView
-                                android:id="@+id/color_block24"
+                                <ImageView
+                                    android:id="@+id/color_block21"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:adjustViewBounds="true"
+                                    android:visibility="visible"
+                                    app:srcCompat="@drawable/dream_color" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
                                 android:layout_width="32dp"
-                                android:layout_height="wrap_content"
+                                android:layout_height="match_parent"
                                 android:layout_marginLeft="4dp"
                                 android:layout_marginRight="4dp"
                                 android:layout_weight="1"
-                                android:adjustViewBounds="true"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
+
+                                <ImageView
+                                    android:id="@+id/color_block22"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:adjustViewBounds="true"
+                                    android:visibility="visible"
+                                    app:srcCompat="@drawable/cyber_color" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="32dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
+
+                                <ImageView
+                                    android:id="@+id/color_block23"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:adjustViewBounds="true"
+                                    android:visibility="visible"
+                                    app:srcCompat="@drawable/cream_color" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="32dp"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="4dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_weight="1"
                                 android:visibility="invisible"
-                                app:srcCompat="@color/color_theme_13" />
+                                app:cardCornerRadius="12dp"
+                                app:cardElevation="0dp">
+
+                                <ImageView
+                                    android:id="@+id/color_block24"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:adjustViewBounds="true"
+                                    android:visibility="invisible"
+                                    app:srcCompat="@color/color_theme_13" />
+                            </androidx.cardview.widget.CardView>
 
 
                         </TableRow>
@@ -438,11 +632,45 @@
 
             </androidx.cardview.widget.CardView>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/lang_ico"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/ic_baseline_language_24" />
+
+                <TextView
+                    android:id="@+id/lang_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="0"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center|left"
+                    android:paddingLeft="8dp"
+                    android:text="@string/lang_title"
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/lang_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="4dp"
                 android:background="@drawable/gone_background"
                 android:visibility="visible"
                 app:cardBackgroundColor="@color/colorWhiteAlpha"
@@ -454,46 +682,566 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="8dp">
-
-                        <ImageView
-                            android:id="@+id/lang_ico"
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_weight="0"
-                            app:srcCompat="@drawable/ic_baseline_language_24" />
-
-                        <TextView
-                            android:id="@+id/lang_title"
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:layout_weight="0"
-                            android:gravity="center|left"
-                            android:paddingLeft="8dp"
-                            android:text="@string/lang_title"
-                            android:textColor="@color/tv_color"
-                            android:textSize="16sp" />
-                    </LinearLayout>
 
                     <Spinner
                         android:id="@+id/lang_spinner"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
-                        android:layout_margin="8dp" />
+                        android:layout_margin="8dp"
+                        android:popupBackground="@drawable/bg_2048_spinner_bg" />
 
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="0"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/ic_baseline_dashboard_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_weight="0"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center|left"
+                    android:paddingLeft="8dp"
+                    android:text="@string/list_grid"
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="0"
+                android:background="@drawable/gone_background"
+                android:visibility="visible"
+                app:cardBackgroundColor="@color/colorWhiteAlpha"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <RadioButton
+                        android:id="@+id/grid_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:buttonTint="@color/theme_color"
+                        android:checked="false"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="@string/rectangle"
+                        android:textColor="@color/tv_color" />
+
+                    <RadioButton
+                        android:id="@+id/grid_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:buttonTint="@color/theme_color"
+                        android:checked="false"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="@string/square"
+                        android:textColor="@color/tv_color" />
+
+                    <RadioButton
+                        android:id="@+id/grid_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:buttonTint="@color/theme_color"
+                        android:checked="false"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="@string/card"
+                        android:textColor="@color/tv_color" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="0"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/ic_baseline_auto_fix_high_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_weight="0"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center|left"
+                    android:paddingLeft="8dp"
+                    android:text="@string/ui_design"
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="0"
+                android:background="@drawable/gone_background"
+                android:visibility="visible"
+                app:cardBackgroundColor="@color/colorWhiteAlpha"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/ui_2O48_img"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="8dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/bg_2048_light" />
+
+                            <RadioButton
+                                android:id="@+id/ui_2O48_rb"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:buttonTint="@color/theme_color"
+                                android:checked="false"
+                                android:fontFamily="@font/genshin_font"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="4dp"
+                                android:singleLine="true"
+                                android:text="@string/ui_2048_name"
+                                android:textColor="@color/tv_color" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/ui_SipTik_img"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="8dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/bg_siptik_light" />
+
+                            <RadioButton
+                                android:id="@+id/ui_SipTik_rb"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:buttonTint="@color/theme_color"
+                                android:checked="false"
+                                android:fontFamily="@font/genshin_font"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="4dp"
+                                android:singleLine="true"
+                                android:text="@string/ui_siptik_name"
+                                android:textColor="@color/tv_color" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/ui_Voc_img"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginRight="16dp"
+                                android:layout_marginBottom="8dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/bg_voc_light" />
+
+                            <RadioButton
+                                android:id="@+id/ui_Voc_rb"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:buttonTint="@color/theme_color"
+                                android:checked="false"
+                                android:fontFamily="@font/genshin_font"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="4dp"
+                                android:singleLine="true"
+                                android:text="@string/ui_voc_name"
+                                android:textColor="@color/tv_color" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="0"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/imageView16"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_weight="1"
+                    app:srcCompat="@drawable/ic_baseline_refresh_24" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center|left"
+                    android:paddingLeft="8dp"
+                    android:text="@string/traveler_sex_setting"
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="0"
+                android:background="@drawable/gone_background"
+                android:visibility="visible"
+                app:cardBackgroundColor="@color/colorWhiteAlpha"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/traveler_female_ico"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="32dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginRight="32dp"
+                                android:layout_marginBottom="8dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/lumine_ico" />
+
+                            <RadioButton
+                                android:id="@+id/traveler_female_rb"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="24dp"
+                                android:layout_marginRight="24dp"
+                                android:buttonTint="@color/theme_color"
+                                android:checked="false"
+                                android:fontFamily="@font/genshin_font"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="4dp"
+                                android:text="@string/female"
+                                android:textColor="@color/tv_color" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/traveler_male_ico"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="32dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginRight="32dp"
+                                android:layout_marginBottom="8dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/aether_ico" />
+
+                            <RadioButton
+                                android:id="@+id/traveler_male_rb"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="24dp"
+                                android:layout_marginRight="24dp"
+                                android:buttonTint="@color/theme_color"
+                                android:checked="false"
+                                android:fontFamily="@font/genshin_font"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="4dp"
+                                android:text="@string/male"
+                                android:textColor="@color/tv_color" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_weight="0"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/ic_baseline_auto_awesome_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_weight="0"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center|left"
+                    android:paddingLeft="8dp"
+                    android:text="@string/char_suit_on"
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="0"
+                android:background="@drawable/gone_background"
+                android:visibility="visible"
+                app:cardBackgroundColor="@color/colorWhiteAlpha"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/outfit_standard_ico"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="32dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginRight="32dp"
+                                android:layout_marginBottom="8dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/keqing_ico" />
+
+                            <RadioButton
+                                android:id="@+id/outfit_standard_rb"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="24dp"
+                                android:layout_marginRight="24dp"
+                                android:buttonTint="@color/theme_color"
+                                android:checked="false"
+                                android:fontFamily="@font/genshin_font"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="4dp"
+                                android:text="一般衣裝"
+                                android:textColor="@color/tv_color" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/outfit_event_ico"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="32dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginRight="32dp"
+                                android:layout_marginBottom="8dp"
+                                android:layout_weight="1"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/keqing_suit1_ico" />
+
+                            <RadioButton
+                                android:id="@+id/outfit_event_rb"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="24dp"
+                                android:layout_marginRight="24dp"
+                                android:buttonTint="@color/theme_color"
+                                android:checked="false"
+                                android:fontFamily="@font/genshin_font"
+                                android:paddingLeft="4dp"
+                                android:paddingRight="4dp"
+                                android:text="活動衣裝"
+                                android:textColor="@color/tv_color" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/other_ico"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/ic_baseline_settings_24" />
+
+                <TextView
+                    android:id="@+id/other_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_weight="0"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center|left"
+                    android:paddingLeft="8dp"
+                    android:text="@string/other_title"
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/other_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="4dp"
                 android:background="@drawable/gone_background"
                 android:visibility="visible"
                 app:cardBackgroundColor="@color/colorWhiteAlpha"
@@ -505,50 +1253,17 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="8dp">
-
-                        <ImageView
-                            android:id="@+id/other_ico"
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_weight="0"
-                            app:srcCompat="@drawable/ic_baseline_settings_24" />
-
-                        <TextView
-                            android:id="@+id/other_title"
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:layout_weight="0"
-                            android:gravity="center|left"
-                            android:paddingLeft="8dp"
-                            android:text="@string/other_title"
-                            android:textColor="@color/tv_color"
-                            android:textSize="16sp" />
-                    </LinearLayout>
 
                     <Switch
                         android:id="@+id/other_exit_confirm"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
-                        android:checked="true"
-                        android:text="@string/press_exit"
-                        android:textColor="@color/tv_color" />
-
-                    <Switch
-                        android:id="@+id/other_char_suit"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginRight="8dp"
-                        android:checked="false"
-                        android:text="@string/char_suit_on"
+                        android:checked="true"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="@string/press_exit"
                         android:textColor="@color/tv_color" />
 
                     <TextView
@@ -556,6 +1271,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
+                        android:fontFamily="@font/genshin_font"
                         android:text="@string/acc_in_server" />
 
                     <Spinner
@@ -567,40 +1283,11 @@
                         android:layout_marginBottom="8dp" />
 
                     <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:text="@string/list_grid" />
-
-                    <Spinner
-                        android:id="@+id/ui_box_spinner"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
-                        android:layout_marginBottom="8dp" />
-
-                    <TextView
-                        android:id="@+id/textView30"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:text="@string/traveler_sex_setting" />
-
-                    <Spinner
-                        android:id="@+id/traveler_spinner"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
-                        android:layout_marginBottom="8dp" />
-
-                    <TextView
                         android:id="@+id/textView17"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
+                        android:fontFamily="@font/genshin_font"
                         android:text="@string/background_setting" />
 
                     <TextView
@@ -608,6 +1295,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
+                        android:fontFamily="@font/genshin_font"
                         android:text="@string/background_accept_list"
                         android:textSize="12sp"
                         android:textStyle="bold" />
@@ -623,13 +1311,29 @@
                         android:layout_marginRight="8dp"
                         android:layout_marginBottom="8dp"
                         android:background="@drawable/bg_kwang_light"
+                        android:fontFamily="@font/genshin_font"
                         android:text="@string/background_press_set" />
+
+                    <Button
+                        android:id="@+id/bg_setting_btn_reset"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/bg_kwang_light"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="@string/cal_reset" />
 
                     <TextView
                         android:id="@+id/textView33"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
+                        android:fontFamily="@font/genshin_font"
                         android:text="@string/update_download_check" />
 
                     <Button
@@ -643,6 +1347,7 @@
                         android:layout_marginRight="8dp"
                         android:layout_marginBottom="8dp"
                         android:background="@drawable/bg_kwang_light"
+                        android:fontFamily="@font/genshin_font"
                         android:text="@string/update_download_check" />
 
                     <TextView
@@ -650,6 +1355,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
+                        android:fontFamily="@font/genshin_font"
                         android:text="@string/update_download_update_base" />
 
                     <Button
@@ -663,6 +1369,7 @@
                         android:layout_marginRight="8dp"
                         android:layout_marginBottom="8dp"
                         android:background="@drawable/bg_kwang_light"
+                        android:fontFamily="@font/genshin_font"
                         android:text="@string/update_download_update_base" />
 
 
@@ -670,11 +1377,43 @@
 
             </androidx.cardview.widget.CardView>
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:id="@+id/info_ico"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/ic_baseline_info_24" />
+
+                <TextView
+                    android:id="@+id/info_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_weight="0"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center|left"
+                    android:paddingLeft="8dp"
+                    android:text="@string/about"
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/info_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="4dp"
                 android:background="@drawable/gone_background"
                 android:visibility="visible"
                 app:cardBackgroundColor="@color/colorWhiteAlpha"
@@ -686,30 +1425,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="8dp">
-
-                        <ImageView
-                            android:id="@+id/info_ico"
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_weight="0"
-                            app:srcCompat="@drawable/ic_baseline_info_24" />
-
-                        <TextView
-                            android:id="@+id/info_title"
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:layout_weight="0"
-                            android:gravity="center|left"
-                            android:paddingLeft="8dp"
-                            android:text="@string/about"
-                            android:textColor="@color/tv_color"
-                            android:textSize="16sp" />
-                    </LinearLayout>
 
                     <ImageView
                         android:id="@+id/imageView2"
@@ -722,6 +1437,7 @@
                         android:id="@+id/info_app_name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/genshin_font"
                         android:text="@string/app_name"
                         android:textAlignment="center"
                         android:textColor="@color/tv_color"
@@ -731,6 +1447,7 @@
                         android:id="@+id/info_app_version"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:fontFamily="@font/genshin_font"
                         android:text="Version 1.0.0 (200)"
                         android:textAlignment="center"
                         android:textColor="@color/tv_color"
@@ -757,6 +1474,7 @@
                             android:id="@+id/info_mjsm_title"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/genshin_font"
                             android:text="@string/about_title1"
                             android:textColor="@color/tv_color"
                             android:textSize="16sp"
@@ -766,6 +1484,7 @@
                             android:id="@+id/info_mjsm_tv"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/genshin_font"
                             android:text="@string/about_info1"
                             android:textColor="@color/tv_color" />
 
@@ -774,6 +1493,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
+                            android:fontFamily="@font/genshin_font"
                             android:text="@string/about_title2"
                             android:textColor="@color/tv_color"
                             android:textSize="16sp"
@@ -783,6 +1503,7 @@
                             android:id="@+id/info_sy_tv"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/genshin_font"
                             android:text="@string/about_info2"
                             android:textColor="@color/tv_color" />
 
@@ -791,6 +1512,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
+                            android:fontFamily="@font/genshin_font"
                             android:text="@string/about_title3"
                             android:textColor="@color/tv_color"
                             android:textSize="16sp"
@@ -800,6 +1522,7 @@
                             android:id="@+id/info_jl_tv"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/genshin_font"
                             android:text="@string/about_info3"
                             android:textColor="@color/tv_color" />
 
@@ -808,6 +1531,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
+                            android:fontFamily="@font/genshin_font"
                             android:text="@string/about_title4"
                             android:textColor="@color/tv_color"
                             android:textSize="16sp"
@@ -817,6 +1541,7 @@
                             android:id="@+id/info_hy_tv"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:fontFamily="@font/genshin_font"
                             android:text="@string/about_info4"
                             android:textColor="@color/tv_color" />
                     </LinearLayout>
@@ -827,23 +1552,120 @@
             </androidx.cardview.widget.CardView>
 
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/helper_ico"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/ic_baseline_g_translate_24" />
+
+                <TextView
+                    android:id="@+id/helper_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_weight="0"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center|left"
+                    android:paddingLeft="8dp"
+                    android:text="@string/thanks_title"
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
             <include
                 layout="@layout/item_setting_thanks"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/bg_siptik_tv_bg"
                 android:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/link_ico"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/ic_baseline_link_24" />
+
+                <TextView
+                    android:id="@+id/link_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_weight="0"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center|left"
+                    android:paddingLeft="8dp"
+                    android:text="@string/link"
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp" />
+            </LinearLayout>
 
             <include
                 layout="@layout/item_setting_data_link"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/bg_siptik_tv_bg"
                 android:visibility="visible" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:orientation="horizontal"
+                android:padding="8dp">
+
+                <ImageView
+                    android:id="@+id/contact_ico"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/ic_baseline_person_pin_24" />
+
+                <TextView
+                    android:id="@+id/contact_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:layout_weight="0"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center|left"
+                    android:paddingLeft="8dp"
+                    android:text="@string/developer"
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp" />
+            </LinearLayout>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/contact_card"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_margin="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="4dp"
                 android:background="@drawable/gone_background"
                 android:visibility="visible"
                 app:cardBackgroundColor="@color/colorWhiteAlpha"
@@ -855,32 +1677,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="8dp"
-                        android:orientation="horizontal"
-                        android:padding="8dp">
-
-                        <ImageView
-                            android:id="@+id/contact_ico"
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_weight="0"
-                            app:srcCompat="@drawable/ic_baseline_person_pin_24" />
-
-                        <TextView
-                            android:id="@+id/contact_title"
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:layout_weight="0"
-                            android:gravity="center|left"
-                            android:paddingLeft="8dp"
-                            android:text="@string/developer"
-                            android:textColor="@color/tv_color"
-                            android:textSize="16sp" />
-                    </LinearLayout>
-
                     <TextView
                         android:id="@+id/contact_link3"
                         android:layout_width="match_parent"
@@ -888,6 +1684,7 @@
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
                         android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/genshin_font"
                         android:text="Discord : Voc-夜芷冰#2512"
                         android:textAlignment="center"
                         android:textColor="@color/tv_color"
@@ -900,6 +1697,7 @@
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
                         android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/genshin_font"
                         android:text="QQ : 822001886"
                         android:textAlignment="center"
                         android:textColor="@color/tv_color"
@@ -912,6 +1710,7 @@
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
                         android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/genshin_font"
                         android:text="Email : voc.app.programmer@gmail.com"
                         android:textAlignment="center"
                         android:textColor="@color/tv_color"

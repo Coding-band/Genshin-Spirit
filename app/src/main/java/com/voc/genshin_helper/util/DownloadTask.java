@@ -30,6 +30,7 @@ public class DownloadTask {
     Context context;
     Activity activity;
     ProgressDialog pDialog;
+    boolean runStyleUI = false;
 
 
     ArrayList<String> urls,fileNames,savePaths = new ArrayList<String>();
@@ -133,6 +134,15 @@ public class DownloadTask {
         this.activity = activity;
         new DownloadFileFromURLArray().execute();
     }
+    public void startAWithRun(ArrayList<String> url, ArrayList<String> fileName, ArrayList<String> savePath, Context context, Activity activity, boolean runStyleUI){
+        this.runStyleUI = runStyleUI;
+        this.urls = url;
+        this.fileNames = fileName;
+        this.savePaths = savePath;
+        this.context = context;
+        this.activity = activity;
+        new DownloadFileFromURLArray().execute();
+    }
 
     public class DownloadFileFromURLArray extends AsyncTask<String, Integer, String> {
 
@@ -215,7 +225,11 @@ public class DownloadTask {
             System.out.println("Downloaded");
             pDialog.dismiss();
             UnzipManager unzipManager = new UnzipManager();
-            unzipManager.pbShowA(String.valueOf(context.getFilesDir()),fileNames,context,activity);
+            if (runStyleUI){
+                unzipManager.pbShowAWithRun(String.valueOf(context.getFilesDir()),fileNames,context,activity,runStyleUI);
+            }else{
+                unzipManager.pbShowA(String.valueOf(context.getFilesDir()),fileNames,context,activity);
+            }
         }
 
     }

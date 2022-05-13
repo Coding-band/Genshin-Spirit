@@ -980,6 +980,9 @@
     <string name="hidden_palace_of_lianshan_formula">震雷連山密宮</string>
     <string name="cecilia_garden">セシリアの苗床</string>
     <string name="img_reset_finish">背景がリセットされました</string>
+    <string name="ui_voc_name">クラシック</string>
+    <string name="ui_siptik_name">材料</string>
+    <string name="ui_2048_name">ゲーム</string>
 </resources>
 
 

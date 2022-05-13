@@ -453,42 +453,44 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
             switch (weapons.getRare()){
                 case 1 : {
                     Picasso.get()
-                            .load (R.drawable.bg_rare1_siptik).resize((int) (width_curr),(int) ((width_curr)/2.1)).transform(transformation_circ_siptik)
-                            .error (R.drawable.bg_rare1_siptik).transform(transformation_circ_siptik)
+                            .load (R.drawable.bg_rare1_siptik).resize(width, height)//.transform(transformation_circ_siptik)
+                            .error (R.drawable.bg_rare1_siptik)//.transform(transformation_circ_siptik)
                             .into (viewHolder.weapon_card_bg);
                     break;
                 }
                 case 2 : {
                     Picasso.get()
-                            .load (R.drawable.bg_rare2_siptik).resize((int) (width_curr),(int) ((width_curr)/2.1)).transform(transformation_circ_siptik)
-                            .error (R.drawable.bg_rare2_siptik).transform(transformation_circ_siptik)
+                            .load (R.drawable.bg_rare2_siptik).resize(width, height)//.transform(transformation_circ_siptik)
+                            .error (R.drawable.bg_rare2_siptik)//.transform(transformation_circ_siptik)
                             .into (viewHolder.weapon_card_bg);
                     break;
                 }
                 case 3 : {
                     Picasso.get()
-                            .load (R.drawable.bg_rare3_siptik).resize((int) (width_curr),(int) ((width_curr)/2.1)).transform(transformation_circ_siptik)
-                            .error (R.drawable.bg_rare3_siptik).transform(transformation_circ_siptik)
+                            .load (R.drawable.bg_rare3_siptik).resize(width, height)//.transform(transformation_circ_siptik)
+                            .error (R.drawable.bg_rare3_siptik)//.transform(transformation_circ_siptik)
                             .into (viewHolder.weapon_card_bg);
                     break;
                 }
                 case 4 : {
                     Picasso.get()
-                            .load (R.drawable.bg_rare4_siptik).resize((int) (width_curr),(int) ((width_curr)/2.1)).transform(transformation_circ_siptik)
-                            .error (R.drawable.bg_rare4_siptik).transform(transformation_circ_siptik)
+                            .load (R.drawable.bg_rare4_siptik).resize(width, height)//.transform(transformation_circ_siptik)
+                            .error (R.drawable.bg_rare4_siptik)//.transform(transformation_circ_siptik)
                             .into (viewHolder.weapon_card_bg);
                     break;
                 }
                 case 5 : {
                     Picasso.get()
-                            .load (R.drawable.bg_rare5_siptik).resize((int) (width_curr),(int) ((width_curr)/2.1)).transform(transformation_circ_siptik)
-                            .error (R.drawable.bg_rare5_siptik).transform(transformation_circ_siptik)
+                            .load (R.drawable.bg_rare5_siptik).resize(width, height)//.transform(transformation_circ_siptik)
+                            .error (R.drawable.bg_rare5_siptik)//.transform(transformation_circ_siptik)
                             .into(viewHolder.weapon_card_bg);
                     break;
                 }
             }
 
 
+            viewHolder.weapon_card_bg.getLayoutParams().width = width+32;
+            viewHolder.weapon_card_bg.getLayoutParams().height = height+32;
             //viewHolder.weapon_name_ll.getLayoutParams().width = width;
             //viewHolder.weapon_name_ll.getLayoutParams().height = width*2/8;
             //viewHolder.weapon_main.getLayoutParams().width = width;
