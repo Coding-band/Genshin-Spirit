@@ -475,7 +475,6 @@
             android:textSize="18sp" />
 
         <LinearLayout
-            android:id="@+id/menu_rarity_ll"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="4dp"
@@ -483,6 +482,7 @@
             android:orientation="horizontal">
 
             <LinearLayout
+                android:id="@+id/menu_role_ll"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
@@ -553,6 +553,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/menu_rarity_ll"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"

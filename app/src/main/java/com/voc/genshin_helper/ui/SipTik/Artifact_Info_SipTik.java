@@ -1,4 +1,4 @@
-package com.voc.genshin_helper.ui.MMXLVIII;
+package com.voc.genshin_helper.ui.SipTik;
 
 import static android.content.Context.MODE_PRIVATE;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
@@ -20,23 +20,17 @@ import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
-import android.widget.Spinner;
 import android.widget.TextView;
 
-import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.ViewPager;
 
@@ -69,7 +63,7 @@ import java.util.ArrayList;
  * Copyright © 2022 Xectorda 版權所有
  */
 
-public class Artifact_Info_2048 {
+public class Artifact_Info_SipTik {
     /** Method of requirements */
     Context context;
     Activity activity;
@@ -83,7 +77,8 @@ public class Artifact_Info_2048 {
 
     // Main
     String name = "XPR" ;
-    int star = 4;
+    int star = 0;
+    int star2 = 0;
     String artifact = "XPR" ;
     boolean isComing = false ;
     String desc = "XPR" ;
@@ -98,10 +93,6 @@ public class Artifact_Info_2048 {
     String talent_name = "XPR";
     String talent_img = "XPR";
     String talent_desc = "XPR";
-
-    private ViewPager viewPager;
-    private ArrayList<View> viewPager_List;
-    View artifactDescPage, artifactSkillPage;
 
     String artifactSet1PC = "XPR";
     String artifactSet2PC = "XPR";
@@ -133,7 +124,11 @@ public class Artifact_Info_2048 {
                 artifactDescLocale[3] = jsonObject.getJSONObject("goblet").getString("description");
                 artifactDescLocale[4] = jsonObject.getJSONObject("circlet").getString("description");
 
-                star = Integer.parseInt(jsonObject.getJSONArray("rarity").getString(jsonObject.getJSONArray("rarity").length()-1));
+
+                star = (int) jsonObject.getJSONArray("rarity").getInt(jsonObject.getJSONArray("rarity").length()-1);
+                if(jsonObject.getJSONArray("rarity").length() == 2){
+                    star2 = (int) jsonObject.getJSONArray("rarity").getInt(jsonObject.getJSONArray("rarity").length()-2);
+                }
 
                 show();
             } catch (JSONException e) {
@@ -173,58 +168,49 @@ public class Artifact_Info_2048 {
 
     public void show() {
         final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
-        View view = View.inflate(context, R.layout.fragment_artifact_info_frame_2048, null);
+        View view = View.inflate(context, R.layout.fragment_artifact_info_frame_siptik, null);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int height = displayMetrics.heightPixels;
         int width = displayMetrics.widthPixels;
 
         /** Method of header */
-        TabLayout info_tablelayout = view.findViewById(R.id.info_tablelayout);
-        ImageView info_back_btn = view.findViewById(R.id.info_back_btn);
-        ImageView info_header_bg = view.findViewById(R.id.info_header_bg);
-        viewPager = (ViewPager) view.findViewById(R.id.vp);
-
-        final LayoutInflater mInflater = activity.getLayoutInflater().from(context);
-        artifactDescPage = mInflater.inflate(R.layout.fragment_artifact_info_desc_2048, null,false);
-        artifactSkillPage = mInflater.inflate(R.layout.fragment_artifact_info_skill_2048, null,false);
-
-        viewPager_List = new ArrayList<View>();
-        viewPager_List.add(artifactDescPage);
-        viewPager_List.add(artifactSkillPage);
-        viewPager.setAdapter(new MyViewPagerAdapter(viewPager_List));
+        //TabLayout info_tablelayout = view.findViewById(R.id.info_tablelayout);
+        //ImageView info_back_btn = view.findViewById(R.id.info_back_btn);
+        //ImageView info_header_bg = view.findViewById(R.id.info_header_bg);
 
         BackgroundReload.BackgroundReload(context,view);
 
         /** Method of info_detail */
-        ConstraintLayout art_con = artifactDescPage.findViewById(R.id.art_con);
-        ImageView artifact_img = artifactDescPage.findViewById(R.id.info_artifact_img);
-        ImageView artifact_img1 = artifactDescPage.findViewById(R.id.info_artifact_img1);
-        ImageView artifact_img2 = artifactDescPage.findViewById(R.id.info_artifact_img2);
-        ImageView artifact_img3 = artifactDescPage.findViewById(R.id.info_artifact_img3);
-        ImageView artifact_img4 = artifactDescPage.findViewById(R.id.info_artifact_img4);
-        ImageView artifact_img5 = artifactDescPage.findViewById(R.id.info_artifact_img5);
-        TextView artifact_name = artifactDescPage.findViewById(R.id.info_artifact_name);
-        TextView artifact_obtain_way_tv = artifactDescPage.findViewById(R.id.info_obtain_way_tv);
-        RatingBar artifact_stars = artifactDescPage.findViewById(R.id.info_stars);
+        LinearLayout artifact_list = view.findViewById(R.id.info_artifact_list);
+        ImageView artifact_img = view.findViewById(R.id.info_artifact_img);
+        ImageView artifact_img1 = view.findViewById(R.id.info_artifact_img1);
+        ImageView artifact_img2 = view.findViewById(R.id.info_artifact_img2);
+        ImageView artifact_img3 = view.findViewById(R.id.info_artifact_img3);
+        ImageView artifact_img4 = view.findViewById(R.id.info_artifact_img4);
+        ImageView artifact_img5 = view.findViewById(R.id.info_artifact_img5);
+        TextView artifact_name = view.findViewById(R.id.info_artifact_name);
+        RatingBar artifact_stars = view.findViewById(R.id.info_stars);
+        RatingBar artifact_stars_sub = view.findViewById(R.id.info_stars_sub);
+        TextView info_starts_slash1 = view.findViewById(R.id.info_starts_slash1);
 
-        TextView info_1pc_desc_info = artifactSkillPage.findViewById(R.id.info_1pc_desc_info);
-        TextView info_2pc_desc_info = artifactSkillPage.findViewById(R.id.info_2pc_desc_info);
-        TextView info_4pc_desc_info = artifactSkillPage.findViewById(R.id.info_4pc_desc_info);
-        TextView info_1pc_desc_title = artifactSkillPage.findViewById(R.id.info_1pc_desc_title);
-        TextView info_2pc_desc_title = artifactSkillPage.findViewById(R.id.info_2pc_desc_title);
-        TextView info_4pc_desc_title= artifactSkillPage.findViewById(R.id.info_4pc_desc_title);
+        TextView info_1pc_desc_info = view.findViewById(R.id.info_1pc_desc_info);
+        TextView info_2pc_desc_info = view.findViewById(R.id.info_2pc_desc_info);
+        TextView info_4pc_desc_info = view.findViewById(R.id.info_4pc_desc_info);
+        TextView info_1pc_desc_title = view.findViewById(R.id.info_1pc_desc_title);
+        TextView info_2pc_desc_title = view.findViewById(R.id.info_2pc_desc_title);
+        TextView info_4pc_desc_title= view.findViewById(R.id.info_4pc_desc_title);
 
-        TextView info_each_title1 = artifactSkillPage.findViewById(R.id.info_each_title1);
-        TextView info_each_title2 = artifactSkillPage.findViewById(R.id.info_each_title2);
-        TextView info_each_title3 = artifactSkillPage.findViewById(R.id.info_each_title3);
-        TextView info_each_title4 = artifactSkillPage.findViewById(R.id.info_each_title4);
-        TextView info_each_title5 = artifactSkillPage.findViewById(R.id.info_each_title5);
-        TextView info_each_info1 = artifactSkillPage.findViewById(R.id.info_each_info1);
-        TextView info_each_info2 = artifactSkillPage.findViewById(R.id.info_each_info2);
-        TextView info_each_info3 = artifactSkillPage.findViewById(R.id.info_each_info3);
-        TextView info_each_info4 = artifactSkillPage.findViewById(R.id.info_each_info4);
-        TextView info_each_info5 = artifactSkillPage.findViewById(R.id.info_each_info5);
+        TextView info_each_title1 = view.findViewById(R.id.info_each_title1);
+        TextView info_each_title2 = view.findViewById(R.id.info_each_title2);
+        TextView info_each_title3 = view.findViewById(R.id.info_each_title3);
+        TextView info_each_title4 = view.findViewById(R.id.info_each_title4);
+        TextView info_each_title5 = view.findViewById(R.id.info_each_title5);
+        TextView info_each_info1 = view.findViewById(R.id.info_each_info1);
+        TextView info_each_info2 = view.findViewById(R.id.info_each_info2);
+        TextView info_each_info3 = view.findViewById(R.id.info_each_info3);
+        TextView info_each_info4 = view.findViewById(R.id.info_each_info4);
+        TextView info_each_info5 = view.findViewById(R.id.info_each_info5);
 
         if(artifactSet1PC.equals("XPR")){
             info_1pc_desc_info.setVisibility(View.GONE);
@@ -329,85 +315,9 @@ public class Artifact_Info_2048 {
         colorGradient(info_advice_util_art_info ,start_color,end_color,isColorGradient,color_hex);
          */
 
-        /**
-         * PLS REMEMBER ADD BACK SUGGESTED WEAPON,ART IN XML
-         */
-
-        /** HEADER */
-        int[] tabItemImageArray = new int[]{R.drawable.ic_2048_artifact_intro_btn,R.drawable.ic_2048_talent_btn};
-        int[] tabItemImageSelectedArray = new int[]{R.drawable.ic_2048_artifact_intro_btn_selected,R.drawable.ic_2048_talent_btn_selected};
-
-        for (int x = 0 ; x < 2 ; x++){
-            View view1 = activity.getLayoutInflater().inflate(R.layout.item_custom_tab, null);
-            ImageView ico_img = view1.findViewById(R.id.icon);
-            ico_img.setImageResource(tabItemImageArray[x]);
-            info_tablelayout.addTab(info_tablelayout.newTab().setCustomView(view1).setId(x));
-        }
-
-        info_header_bg.getLayoutParams().height = info_tablelayout.getLayoutParams().height;
-
-        info_tablelayout.selectTab(info_tablelayout.getTabAt(0));
-
-        View view1 = info_tablelayout.getTabAt(0).getCustomView();
-        ImageView tab_icon = (ImageView) view1.findViewById(R.id.icon);
-        tab_icon.setImageResource(tabItemImageSelectedArray[0]);
-
-        info_tablelayout.setTabMode(MODE_FIXED);
-        info_tablelayout.setTabIndicatorAnimationMode(TabLayout.INDICATOR_ANIMATION_MODE_ELASTIC);
-        info_tablelayout.getLayoutParams().width = WRAP_CONTENT;
-        info_tablelayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                View view1 = tab.getCustomView();
-                ImageView tab_icon = (ImageView) view1.findViewById(R.id.icon);
-                tab_icon.setImageResource(tabItemImageSelectedArray[tab.getPosition()]);
-
-                viewPager.setCurrentItem(tab.getPosition());
-            }
-
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-                View view1 = tab.getCustomView();
-                ImageView tab_icon = (ImageView) view1.findViewById(R.id.icon);
-                tab_icon.setImageResource(tabItemImageArray[tab.getPosition()]);
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
-
-        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                //info_tablelayout.selectTab(info_tablelayout.getTabAt(position));
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                info_tablelayout.selectTab(info_tablelayout.getTabAt(position));
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
-
-
-        info_back_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.dismiss();
-            }
-        });
-
         /** MAIN */
 
         artifact_name.setText(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[0]);
-        artifact_obtain_way_tv.setText(item_rss.getObtainCode(obtain_way,context));
         //artifact_title.setText(nick);
         //Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(name,context)[0],context)).centerCrop().into(artifact_img);
         if (!artifactSet1PC.equals("XPR")){
@@ -428,9 +338,8 @@ public class Artifact_Info_2048 {
 
         Animation animImgLTR = AnimationUtils.loadAnimation(context,R.anim.img_ltr);
         Animation animImgRTL = AnimationUtils.loadAnimation(context,R.anim.img_rtl);
-        art_con.setAnimation(animImgLTR);
-        LinearLayout info_detail = artifactDescPage.findViewById(R.id.info_detail);
-        info_detail.setAnimation(animImgRTL);
+        artifact_name.setAnimation(animImgLTR);
+        artifact_list.setAnimation(animImgRTL);
 
         //artifact_img.setBackgroundResource(item_rss.getElementByName(element)[2]);
 
@@ -440,8 +349,17 @@ public class Artifact_Info_2048 {
             isNight = true;
         }
 
+        if (star2 > 0){
+            artifact_stars_sub.setVisibility(View.VISIBLE);
+            info_starts_slash1.setVisibility(View.VISIBLE);
+        }else{
+            artifact_stars_sub.setVisibility(View.GONE);
+            info_starts_slash1.setVisibility(View.GONE);
+        }
         artifact_stars.setNumStars(star);
         artifact_stars.setRating(star);
+        artifact_stars_sub.setNumStars(star2);
+        artifact_stars_sub.setRating(star2);
         //artifact_element.setImageResource(item_rss.getElementByName(element)[0]);
         //artifact_area.setText(item_rss.getLocaleName(area,context));
         //artifact_area_ico.setImageResource(item_rss.getDistrictIMG(area));

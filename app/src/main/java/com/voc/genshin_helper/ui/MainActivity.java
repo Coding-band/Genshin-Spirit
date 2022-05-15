@@ -83,6 +83,7 @@ import com.voc.genshin_helper.data.Weapons;
 import com.voc.genshin_helper.data.WeaponsAdapter;
 import com.voc.genshin_helper.kidding.GoSleep;
 import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
+import com.voc.genshin_helper.ui.SipTik.DeskSipTik;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.ChangeLog;
 import com.voc.genshin_helper.util.CustomToast;
@@ -1594,7 +1595,9 @@ public class MainActivity extends AppCompatActivity {
                 style_Voc_rb.setChecked(true);
                 style_2O48_rb.setChecked(false);
                 style_SipTik_rb.setChecked(false);
-                CustomToast.toast(context,activity,context.getString(R.string.pls_restart_app));
+                startActivity(new Intent(context,MainActivity.class));
+                finish();
+                //CustomToast.toast(context,activity,context.getString(R.string.pls_restart_app));
             }
         });
 
@@ -1606,7 +1609,9 @@ public class MainActivity extends AppCompatActivity {
                 style_Voc_rb.setChecked(false);
                 style_2O48_rb.setChecked(true);
                 style_SipTik_rb.setChecked(false);
-                CustomToast.toast(context,activity,context.getString(R.string.pls_restart_app));
+                startActivity(new Intent(context,Desk2048.class));
+                finish();
+                //CustomToast.toast(context,activity,context.getString(R.string.pls_restart_app));
             }
         });
 
@@ -1618,7 +1623,9 @@ public class MainActivity extends AppCompatActivity {
                 style_Voc_rb.setChecked(false);
                 style_2O48_rb.setChecked(false);
                 style_SipTik_rb.setChecked(true);
-                CustomToast.toast(context,activity,context.getString(R.string.pls_restart_app));
+                startActivity(new Intent(context, DeskSipTik.class));
+                finish();
+                //CustomToast.toast(context,activity,context.getString(R.string.pls_restart_app));
             }
         });
 

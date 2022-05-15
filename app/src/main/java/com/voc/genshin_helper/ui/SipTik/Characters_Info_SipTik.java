@@ -28,6 +28,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
+import android.view.translation.TranslationContext;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
@@ -505,6 +508,7 @@ public class Characters_Info_SipTik {
         /** Method of info_detail */
         ConstraintLayout info_char_bg = view.findViewById(R.id.info_char_bg);
         ImageView char_img = view.findViewById(R.id.info_char_img);
+        FrameLayout fragment_1 = view.findViewById(R.id.fragment_1);
         TextView char_name = view.findViewById(R.id.info_char_name);
         TextView char_title = view.findViewById(R.id.info_char_title);
         RatingBar char_stars = view.findViewById(R.id.info_stars);
@@ -660,6 +664,13 @@ public class Characters_Info_SipTik {
         info_advice_support.setVisibility(View.GONE);
         info_advice_util.setVisibility(View.GONE);
         info_advice_team.setVisibility(View.GONE);
+
+        /** Method of Animation*/
+        Animation animImgLTR = AnimationUtils.loadAnimation(context,R.anim.img_ltr);
+        Animation animImgRTL = AnimationUtils.loadAnimation(context,R.anim.img_rtl);
+        char_img.setAnimation(animImgLTR);
+        LinearLayout info_detail = view.findViewById(R.id.info_detail);
+        info_detail.setAnimation(animImgRTL);
 
         /** THEME COLOR SET*/
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
@@ -1305,15 +1316,16 @@ public class Characters_Info_SipTik {
         });
 
         /** MAIN */
+        displayMetrics = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height_curr = displayMetrics.heightPixels;
+        int width_curr = displayMetrics.widthPixels;
         char_name.setText(item_rss.getCharByName(name,context)[1]);
         char_title.setText(nick);
         //Picasso.get().load(FileLoader.loadIMG(item_rss.getCharByName(name,context)[0],context)).centerCrop().into(char_img);
         char_img.setImageDrawable(FileLoader.loadIMG2Drawable(item_rss.getCharByName(name,context)[0],context));
 
-        displayMetrics = new DisplayMetrics();
-        activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        int height_curr = displayMetrics.heightPixels;
-        int width_curr = displayMetrics.widthPixels;
+        fragment_1.getLayoutParams().height = (int) (height_curr/1.5);
 
         //char_img.setBackgroundResource(item_rss.getElementByName(element)[2]);
 
@@ -1769,6 +1781,7 @@ public class Characters_Info_SipTik {
         lp.height = WindowManager.LayoutParams.MATCH_PARENT;
         dialogWindow.setAttributes(lp);
         dialog.show();
+
     }
 
     private boolean isType0(double v) {

@@ -38,6 +38,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:overScrollMode="never"
+            android:paddingBottom="72dp"
             android:scrollbars="none">
 
             <LinearLayout
@@ -1410,7 +1411,7 @@
 
 
                     <ImageView
-                        android:id="@+id/imageView2"
+                        android:id="@+id/app_ico"
                         android:layout_width="96dp"
                         android:layout_height="96dp"
                         android:layout_gravity="center"

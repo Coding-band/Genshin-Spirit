@@ -26,6 +26,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
@@ -659,6 +661,12 @@ public class Characters_Info_2048 {
         info_advice_support.setVisibility(View.GONE);
         info_advice_util.setVisibility(View.GONE);
         info_advice_team.setVisibility(View.GONE);
+
+        Animation animImgLTR = AnimationUtils.loadAnimation(context,R.anim.img_ltr);
+        Animation animImgRTL = AnimationUtils.loadAnimation(context,R.anim.img_rtl);
+        char_img.setAnimation(animImgLTR);
+        LinearLayout info_detail = charDescPage.findViewById(R.id.info_detail);
+        info_detail.setAnimation(animImgRTL);
 
         /** THEME COLOR SET*/
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);

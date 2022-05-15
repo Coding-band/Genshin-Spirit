@@ -1,4 +1,4 @@
-package com.voc.genshin_helper.ui.MMXLVIII;
+package com.voc.genshin_helper.ui.SipTik;
 
 import static android.content.Context.MODE_PRIVATE;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
@@ -15,7 +15,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
-import android.text.Html;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
@@ -43,7 +42,6 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.util.BackgroundReload;
@@ -71,7 +69,7 @@ import java.util.ArrayList;
  * Copyright © 2022 Xectorda 版權所有
  */
 
-public class Weapon_Info_2048 {
+public class Weapon_Info_Siptik {
     /** Method of requirements */
     Context context;
     Activity activity;
@@ -147,10 +145,6 @@ public class Weapon_Info_2048 {
     double 武器基礎攻擊力,武器生命值加成,武器攻擊力加成,武器防禦力加成,武器暴擊率,武器暴擊傷害,武器元素充能,武器元素精通,武器物理傷害加成;
 
 
-    private ViewPager viewPager;
-    private ArrayList<View> viewPager_List;
-    View weaponDescPage, weaponSkillPage, weaponAdvicePage;
-
     /** https://stackoverflow.com/questions/45247927/how-to-parse-json-object-inside-json-object-in-java */
     public void JsonToStr (String str){
         if(!str.equals("")){
@@ -205,66 +199,40 @@ public class Weapon_Info_2048 {
 
     public void show() {
         final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
-        View view = View.inflate(context, R.layout.fragment_weapon_info_frame_2048, null);
+        View view = View.inflate(context, R.layout.fragment_weapon_info_frame_siptik, null);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int height = displayMetrics.heightPixels;
         int width = displayMetrics.widthPixels;
 
-        /** Method of header */
-        TabLayout info_tablelayout = view.findViewById(R.id.info_tablelayout);
-        ImageView info_back_btn = view.findViewById(R.id.info_back_btn);
-        ImageView info_header_bg = view.findViewById(R.id.info_header_bg);
-        viewPager = (ViewPager) view.findViewById(R.id.vp);
-
-        final LayoutInflater mInflater = activity.getLayoutInflater().from(context);
-        weaponDescPage = mInflater.inflate(R.layout.fragment_weapon_info_desc_2048, null,false);
-        weaponSkillPage = mInflater.inflate(R.layout.fragment_weapon_info_skill_2048, null,false);
-        weaponAdvicePage = mInflater.inflate(R.layout.fragment_weapon_info_advice_2048, null,false);
-
-        viewPager_List = new ArrayList<View>();
-        viewPager_List.add(weaponDescPage);
-        viewPager_List.add(weaponSkillPage);
-        viewPager_List.add(weaponAdvicePage);
-        viewPager.setAdapter(new MyViewPagerAdapter(viewPager_List));
-
         BackgroundReload.BackgroundReload(context,view);
 
         /** Method of info_detail */
-        ConstraintLayout info_weapon_bg = weaponDescPage.findViewById(R.id.info_weapon_bg);
-        //ConstraintLayout weapon_bg = view.findViewById(R.id.info_weapon_bg);
-        ImageView weapon_img = weaponDescPage.findViewById(R.id.info_weapon_img);
-        //ImageView weapon_layer = view.findViewById(R.id.info_weapon_layer);
-        TextView weapon_name = weaponDescPage.findViewById(R.id.info_weapon_name);
-        TextView weapon_obtain_way_tv = weaponDescPage.findViewById(R.id.info_obtain_way_tv);
-        //TextView weapon_title = weaponDescPage.findViewById(R.id.info_weapon_title);
-        RatingBar weapon_stars = weaponDescPage.findViewById(R.id.info_stars);
-        //ImageView weapon_element = weaponDescPage.findViewById(R.id.info_element_img);
-        //TextView weapon_area = weaponDescPage.findViewById(R.id.info_area_tv);
-        //ImageView weapon_area_ico = weaponDescPage.findViewById(R.id.info_area_ico);
-        ImageView weapon_weapon = weaponDescPage.findViewById(R.id.info_weapon);
+        ConstraintLayout info_weapon_bg = view.findViewById(R.id.info_weapon_bg);
+        ImageView weapon_img = view.findViewById(R.id.info_weapon_img);
+        TextView weapon_name = view.findViewById(R.id.info_weapon_name);
+        TextView weapon_obtain_way_tv = view.findViewById(R.id.info_obtain_way_tv);
+        RatingBar weapon_stars = view.findViewById(R.id.info_stars);
+        ImageView weapon_weapon = view.findViewById(R.id.info_weapon);
 
         /** Method of introduce */
-        //TextView info_intro = view.findViewById(R.id.info_intro);
+        TextView info_intro = view.findViewById(R.id.info_intro_tv);
 
         /** Method of value btn */
-        //ImageView info_talent1_value_btn = weaponSkillPage.findViewById(R.id.info_talent1_value_btn);
-        //ImageView info_talent2_value_btn = weaponSkillPage.findViewById(R.id.info_talent2_value_btn);
-        //ImageView info_talent3_value_btn = weaponSkillPage.findViewById(R.id.info_talent3_value_btn);
-        ImageView info_weapon_base_value_btn = weaponDescPage.findViewById(R.id.info_weapon_base_value_btn);
+        ImageView info_weapon_base_value_btn = view.findViewById(R.id.info_weapon_base_value_btn);
 
         /** Method of battle_talent */
-        CardView weapon_talent_card = weaponSkillPage.findViewById(R.id.info_talent_card);
-        TextView weapon_talent_name = weaponSkillPage.findViewById(R.id.info_talent_name);
-        TextView weapon_talent_normal = weaponSkillPage.findViewById(R.id.info_talent_normal);
+        CardView weapon_talent_card = view.findViewById(R.id.info_talent_card);
+        TextView weapon_talent_name = view.findViewById(R.id.info_talent_name);
+        TextView weapon_talent_normal = view.findViewById(R.id.info_talent_normal);
 
+        LinearLayout base_lvl_ll = view.findViewById(R.id.base_lvl_ll);
 
-        LinearLayout base_lvl_ll = weaponAdvicePage.findViewById(R.id.base_lvl_ll);
-
-        readWeaponMaterialByBuff(base_lvl_ll);
+        readWeaponMaterialByBuff(base_lvl_ll,view);
 
         weapon_talent_name.setText(skill_name);
         weapon_talent_normal.setText(skill_desc);
+
 
         /** THEME COLOR SET*/
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
@@ -344,77 +312,6 @@ public class Weapon_Info_2048 {
         /**
          * PLS REMEMBER ADD BACK SUGGESTED WEAPON,ART IN XML
          */
-
-        /** HEADER */
-        int[] tabItemImageArray = new int[]{R.drawable.ic_2048_weapon_intro_btn,R.drawable.ic_2048_talent_btn,R.drawable.ic_2048_advice_btn};
-        int[] tabItemImageSelectedArray = new int[]{R.drawable.ic_2048_weapon_intro_btn_selected,R.drawable.ic_2048_talent_btn_selected,R.drawable.ic_2048_advice_btn_selected};
-
-        for (int x = 0 ; x < tabItemImageArray.length ; x++){
-            View view1 = activity.getLayoutInflater().inflate(R.layout.item_custom_tab, null);
-            ImageView ico_img = view1.findViewById(R.id.icon);
-            ico_img.setImageResource(tabItemImageArray[x]);
-            info_tablelayout.addTab(info_tablelayout.newTab().setCustomView(view1).setId(x));
-        }
-
-        info_header_bg.getLayoutParams().height = info_tablelayout.getLayoutParams().height;
-
-        info_tablelayout.selectTab(info_tablelayout.getTabAt(0));
-
-        View view1 = info_tablelayout.getTabAt(0).getCustomView();
-        ImageView tab_icon = (ImageView) view1.findViewById(R.id.icon);
-        tab_icon.setImageResource(tabItemImageSelectedArray[0]);
-
-        info_tablelayout.setTabMode(MODE_FIXED);
-        info_tablelayout.setTabIndicatorAnimationMode(TabLayout.INDICATOR_ANIMATION_MODE_ELASTIC);
-        info_tablelayout.getLayoutParams().width = WRAP_CONTENT;
-        info_tablelayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                View view1 = tab.getCustomView();
-                ImageView tab_icon = (ImageView) view1.findViewById(R.id.icon);
-                tab_icon.setImageResource(tabItemImageSelectedArray[tab.getPosition()]);
-
-                viewPager.setCurrentItem(tab.getPosition());
-            }
-
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-                View view1 = tab.getCustomView();
-                ImageView tab_icon = (ImageView) view1.findViewById(R.id.icon);
-                tab_icon.setImageResource(tabItemImageArray[tab.getPosition()]);
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
-
-        viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                //info_tablelayout.selectTab(info_tablelayout.getTabAt(position));
-            }
-
-            @Override
-            public void onPageSelected(int position) {
-                info_tablelayout.selectTab(info_tablelayout.getTabAt(position));
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
-
-
-        info_back_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                dialog.dismiss();
-            }
-        });
 
 
         info_weapon_base_value_btn.setOnClickListener(new View.OnClickListener() {
@@ -540,7 +437,6 @@ public class Weapon_Info_2048 {
         //weapon_title.setText(nick);
         //Picasso.get().load(FileLoader.loadIMG(item_rss.getWeaponByName(name,context)[0],context)).centerCrop().into(weapon_img);
         weapon_img.setImageDrawable(FileLoader.loadIMG2Drawable(item_rss.getWeaponGachaByName(name,context)[1],context));
-
         switch (weapon){
             case "Sword" :
             case "Polearm" :
@@ -552,7 +448,7 @@ public class Weapon_Info_2048 {
         Animation animImgLTR = AnimationUtils.loadAnimation(context,R.anim.img_ltr);
         Animation animImgRTL = AnimationUtils.loadAnimation(context,R.anim.img_rtl);
         weapon_img.setAnimation(animImgLTR);
-        LinearLayout info_detail = weaponDescPage.findViewById(R.id.info_detail);
+        LinearLayout info_detail = view.findViewById(R.id.info_detail);
         info_detail.setAnimation(animImgRTL);
 
         displayMetrics = new DisplayMetrics();
@@ -578,7 +474,7 @@ public class Weapon_Info_2048 {
         //weapon_role.setText(item_rss.getLocaleName(role,context));
         //weapon_sex.setText(item_rss.getLocaleName(sex,context));
         //weapon_birth.setText(item_rss.getLocaleBirth(birth,context)); // -> If necessary will change to Month | Day -> E.g. July 24th
-        //info_intro.setText(desc);
+        info_intro.setText(desc);
 
         RoundedCornersTransformation roundedCornersTransformation = new RoundedCornersTransformation(25, 0, RoundedCornersTransformation.CornerType.ALL);
 
@@ -747,8 +643,8 @@ public class Weapon_Info_2048 {
 
     }
 
-    public void readWeaponMaterialByBuff(LinearLayout base_lvl_ll) {
-        Spinner base_lvl_spinner = weaponAdvicePage.findViewById(R.id.base_lvl_spinner);
+    public void readWeaponMaterialByBuff(LinearLayout base_lvl_ll,View view) {
+        Spinner base_lvl_spinner = view.findViewById(R.id.base_lvl_spinner);
         String[] lvList = new String[]{"LV20","LV40","LV50","LV60","LV70"};
 
         switch (star){
