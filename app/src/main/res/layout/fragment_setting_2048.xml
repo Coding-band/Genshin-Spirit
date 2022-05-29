@@ -833,6 +833,17 @@
                         android:fontFamily="@font/genshin_font"
                         android:text="@string/card"
                         android:textColor="@color/tv_color" />
+
+                    <RadioButton
+                        android:id="@+id/grid_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:buttonTint="@color/theme_color"
+                        android:checked="false"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="@string/detail"
+                        android:textColor="@color/tv_color" />
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -1213,7 +1224,7 @@
                                 android:fontFamily="@font/genshin_font"
                                 android:paddingLeft="4dp"
                                 android:paddingRight="4dp"
-                                android:text="一般衣裝"
+                                android:text="@string/outfit_standard"
                                 android:textColor="@color/tv_color" />
                         </LinearLayout>
 
@@ -1248,7 +1259,7 @@
                                 android:fontFamily="@font/genshin_font"
                                 android:paddingLeft="4dp"
                                 android:paddingRight="4dp"
-                                android:text="活動衣裝"
+                                android:text="@string/outfit_event"
                                 android:textColor="@color/tv_color" />
                         </LinearLayout>
 
@@ -1332,7 +1343,8 @@
                         android:layout_height="48dp"
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
-                        android:layout_marginBottom="8dp" />
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/bg_2048_spinner_bg" />
 
                     <TextView
                         android:id="@+id/textView17"

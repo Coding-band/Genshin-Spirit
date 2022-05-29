@@ -121,7 +121,6 @@
                 android:layout_height="match_parent"
                 android:layout_margin="8dp"
                 android:background="@drawable/bg_siptik_tv_bg"
-                android:visibility="visible"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -475,8 +474,7 @@
                 android:text="@string/intro"
                 android:textAlignment="viewStart"
                 android:textColor="@color/tv_color"
-                android:textSize="16sp"
-                android:visibility="visible" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/info_intro_tv"
@@ -492,8 +490,7 @@
                 android:text="An explosives expert and a regular at the Knights of Favonius' confinement room. Also known as Fleeing Sunlight."
                 android:textAlignment="viewStart"
                 android:textColor="@color/tv_color"
-                android:textSize="16sp"
-                android:visibility="visible" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/info_talent"
@@ -510,14 +507,12 @@
                 android:text="@string/battle_talent"
                 android:textAlignment="viewStart"
                 android:textColor="@color/tv_color"
-                android:textSize="20sp"
-                android:visibility="visible" />
+                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:visibility="visible">
+                android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/info_talent1_card"
@@ -1010,14 +1005,12 @@
                 android:text="@string/basic_talent"
                 android:textAlignment="viewStart"
                 android:textColor="@color/tv_color"
-                android:textSize="20sp"
-                android:visibility="visible" />
+                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:visibility="visible">
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -1241,14 +1234,12 @@
                 android:text="@string/sof"
                 android:textAlignment="viewStart"
                 android:textColor="@color/tv_color"
-                android:textSize="20sp"
-                android:visibility="visible" />
+                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:visibility="visible">
+                android:orientation="vertical">
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/info_sof1_card"
@@ -2710,15 +2701,15 @@
 
                             <TextView
                                 android:id="@+id/info_advice_result_base_lvl_title"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/genshin_font"
+                                android:singleLine="true"
                                 android:text="@string/char_lvls"
                                 android:textColor="@color/tv_siptik_color"
                                 android:textSize="20sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintHorizontal_bias="0.0"
+                                app:layout_constraintEnd_toStartOf="@id/frameLayout2"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:layout_constraintVertical_bias="0.5" />
@@ -2732,7 +2723,7 @@
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="1.0"
-                                app:layout_constraintStart_toEndOf="@+id/info_advice_result_base_lvl_title"
+                                app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent">
 
                                 <ImageView
@@ -2814,20 +2805,22 @@
 
                             <TextView
                                 android:id="@+id/info_advice_result_talent_lvl_title"
-                                android:layout_width="wrap_content"
+                                android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/genshin_font"
                                 android:text="@string/battle_talent"
                                 android:textColor="@color/tv_siptik_color"
                                 android:textSize="20sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/frameLayout3"
                                 app:layout_constraintHorizontal_bias="0.0"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.5" />
+                                app:layout_constraintVertical_bias="0.5"
+                                android:singleLine="true" />
 
                             <FrameLayout
+                                android:id="@+id/frameLayout3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center|right"
@@ -2835,7 +2828,7 @@
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="1.0"
-                                app:layout_constraintStart_toEndOf="@+id/info_advice_result_talent_lvl_title"
+                                app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent">
 
                                 <ImageView

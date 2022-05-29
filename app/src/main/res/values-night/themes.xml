@@ -53,6 +53,23 @@
         <item name="android:backgroundDimEnabled">true</item>
     </style>
 
+    <style name="TutorialUI">
+        <!--对话框背景 -->
+        <item name="android:windowBackground">@color/colorWhiteAlpha</item>
+        <!--没有标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 是否浮现在Activity之上 -->
+        <item name="android:windowIsFloating">true</item>
+        <!--背景透明 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 是否有覆盖 -->
+        <item name="android:windowContentOverlay">@null</item>
+        <!--进出的显示动画 -->
+        <item name="android:windowAnimationStyle">@style/normalFadeAnim</item>
+        <!--背景变暗-->
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
     <style name="NormalDialogStyle_D">
         <!--对话框背景 -->
         <item name="android:windowBackground">@color/colorWhiteAlpha</item>

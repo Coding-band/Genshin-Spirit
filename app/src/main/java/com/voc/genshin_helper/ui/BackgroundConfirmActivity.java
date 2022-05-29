@@ -20,6 +20,7 @@ import com.voc.genshin_helper.ui.CalculatorUI;
 import com.voc.genshin_helper.ui.MainActivity;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.CustomToast;
+import com.voc.genshin_helper.util.LangUtils;
 
 import java.io.File;
 import java.io.IOException;
@@ -120,5 +121,11 @@ public class BackgroundConfirmActivity extends AppCompatActivity {
             if (gif_png.matches("jpg")||gif_png.matches("jpeg")){gifImageView1.setImageDrawable(bd2);}
         }
 
+    }
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        SharedPreferences sharedPreferences = newBase.getSharedPreferences("user_info",MODE_PRIVATE);
+        sharedPreferences.getInt("curr_lang_pos",2);
+        super.attachBaseContext(LangUtils.getAttachBaseContext(newBase, sharedPreferences.getInt("curr_lang_pos",2)));
     }
 }

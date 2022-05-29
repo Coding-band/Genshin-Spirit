@@ -7,6 +7,6 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
     <solid
-        android:color="@color/tab_bg_2048">
+        android:color="@color/tab_bg_2048_always">
     </solid>
 </shape>

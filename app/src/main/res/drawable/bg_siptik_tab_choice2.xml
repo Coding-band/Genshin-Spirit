@@ -12,8 +12,4 @@
     <solid
         android:color="@color/tab_bar_siptik"/>
 
-    <corners
-        android:bottomLeftRadius="12dp"
-        android:bottomRightRadius="12dp"/>
-
 </shape>

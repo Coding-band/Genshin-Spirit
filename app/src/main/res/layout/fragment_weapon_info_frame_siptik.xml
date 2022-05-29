@@ -313,7 +313,7 @@
                             android:layout_weight="0"
                             android:fontFamily="@font/genshin_font"
                             android:gravity="center"
-                            android:text="獲取途徑"
+                            android:text="@string/obtain_way"
                             android:textColor="@color/tv_color"
                             android:textSize="18sp" />
 
@@ -546,8 +546,7 @@
                 android:text="@string/intro"
                 android:textAlignment="viewStart"
                 android:textColor="@color/tv_color"
-                android:textSize="16sp"
-                android:visibility="visible" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/info_intro_tv"
@@ -563,8 +562,7 @@
                 android:text="An explosives expert and a regular at the Knights of Favonius' confinement room. Also known as Fleeing Sunlight."
                 android:textAlignment="viewStart"
                 android:textColor="@color/tv_color"
-                android:textSize="16sp"
-                android:visibility="visible" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/info_weapon_skill"
@@ -574,7 +572,7 @@
                 android:background="@drawable/bg_siptik_tv_bg"
                 android:fontFamily="@font/genshin_font"
                 android:padding="8dp"
-                android:text="武器技能"
+                android:text="@string/weapon_skill"
                 android:textSize="16sp" />
 
             <androidx.cardview.widget.CardView
@@ -594,23 +592,27 @@
                     android:layout_height="match_parent"
                     android:background="@drawable/bg_siptik_tv_bg"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="16dp"
+                    android:visibility="gone">
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        android:visibility="gone">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1">
+                            android:layout_weight="1"
+                            android:visibility="gone">
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
                                 android:orientation="vertical"
+                                android:visibility="gone"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -626,7 +628,8 @@
                                     android:text="砰砰"
                                     android:textAlignment="center"
                                     android:textColor="@color/tv_anti_color_2048"
-                                    android:textSize="24dp" />
+                                    android:textSize="24dp"
+                                    android:visibility="gone" />
 
                             </LinearLayout>
 
@@ -648,6 +651,7 @@
                                     android:id="@+id/info_talent_value_btn"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
+                                    android:visibility="gone"
                                     app:srcCompat="@drawable/ic_2048_char_value" />
                             </androidx.cardview.widget.CardView>
                         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -665,7 +669,8 @@
                         android:text="投擲在碰撞後爆炸的好東西！進行至多三段的炸彈攻擊，造成火元素範圍傷害。"
                         android:textAlignment="viewStart"
                         android:textColor="@color/tv_anti_color_2048"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        android:visibility="gone" />
 
                 </LinearLayout>
 
@@ -707,14 +712,15 @@
 
                         <TextView
                             android:id="@+id/info_advice_result_base_lvl_title"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/genshin_font"
-                            android:text="武器等級"
+                            android:singleLine="true"
+                            android:text="@string/weapon_level"
                             android:textColor="@color/dialog_subtitle_tv_color_2048"
                             android:textSize="20sp"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintEnd_toStartOf="@+id/frameLayout2"
                             app:layout_constraintHorizontal_bias="0.0"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -729,7 +735,7 @@
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="1.0"
-                            app:layout_constraintStart_toEndOf="@+id/info_advice_result_base_lvl_title"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent">
 
                             <ImageView

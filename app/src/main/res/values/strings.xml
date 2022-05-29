@@ -1002,35 +1002,82 @@
     <string name="tab_text_2">Tab 2</string>
 
     <!-- add in 20220423 -->
-    <string name="obtain_no">無</string>
-    <string name="obtain_forge_mission_nmdbj">鍛造(農民的寶藏)</string>
-    <string name="obtain_limited_wish">限定祈願</string>
-    <string name="obtain_wish">祈願</string>
-    <string name="obtain_first_gift">初始武器贈送</string>
-    <string name="obtain_shop">商城兌換</string>
-    <string name="obtain_chest_shop">寶箱、商店購買</string>
-    <string name="obtain_forge">鍛造</string>
-    <string name="obtain_chat_ymdjy">對話(璃月港快刀陳對話)</string>
-    <string name="obtain_battlepass">紀行</string>
-    <string name="obtain_wish_chest">祈願、寶箱</string>
-    <string name="obtain_event">活動</string>
-    <string name="obtain_forge_event">鍛造、任務</string>
-    <string name="obtain_wish_event_glyjyjg">祈願、活動(巨龍與自由之歌)</string>
-    <string name="obtain_forge_yhbh">鍛造(影向祓行)</string>
-    <string name="obtain_chest">寶箱</string>
-    <string name="obtain_forge_hldw">鍛造(奇怪的海螺)</string>
-    <string name="obtain_wish_event_hdbbhjyjj">祈願、活動(海盜秘寶孔雀羽之章)</string>
-    <string name="obtain_forge_tbmy">鍛造(踏鞴物語)</string>
-    <string name="obtain_forge_ylysws">鍛造(遠呂羽氏遺事)</string>
-    <string name="obtain_chesr_md">蒙德寶箱</string>
-    <string name="obtain_playstation_login">PlayStation平台登錄遊戲</string>
-    <string name="obtain_forge_lvl10_sjgw">鍛造、星之歸還活動</string>
-    <string name="obtain_playstation_sp_gift">PlayStation Network特典</string>
-    <string name="obtain_npc_dcdyhw">NPC商店、稻妻釣魚協會兌換</string>
-    <string name="obtain_chesr_ly">璃月寶箱</string>
-    <string name="obtain_chest_gwk">孤雲閣附近拔出、寶箱</string>
+    <string name="obtain_no">N/A</string>
+    <string name="obtain_forge_mission_nmdbj">Forge(The Farmer\'s Treasure)</string>
+    <string name="obtain_limited_wish">Limited Wish</string>
+    <string name="obtain_wish">Wish</string>
+    <string name="obtain_first_gift">Initial weapon gift</string>
+    <string name="obtain_shop">Shop exchange</string>
+    <string name="obtain_chest_shop">Chest, Shop exchange</string>
+    <string name="obtain_forge">Forge</string>
+    <string name="obtain_chat_ymdjy">Chat(Kuai Dao Chen)</string>
+    <string name="obtain_battlepass">Battlepass</string>
+    <string name="obtain_wish_chest">Wish, Chest</string>
+    <string name="obtain_event">Event</string>
+    <string name="obtain_forge_event">Forge, Mission</string>
+    <string name="obtain_wish_event_glyjyjg">Wish、Event(Song of the Dragon and Freedom)</string>
+    <string name="obtain_forge_yhbh">Forge(Yougou Cleansing)</string>
+    <string name="obtain_chest">Chest</string>
+    <string name="obtain_forge_hldw">Forge(They Who Hear the Sea)</string>
+    <string name="obtain_wish_event_hdbbhjyjj">Wish, Event(Pavo Ocellus -- Secret Pirate Treasure)</string>
+    <string name="obtain_forge_tbmy">Forge(Tatara Tales)</string>
+    <string name="obtain_forge_ylysws">Forge(Orobashi\'s Legacy: Part V)</string>
+    <string name="obtain_chesr_md">Chest in Mondstadt</string>
+    <string name="obtain_playstation_login">PlayStation login reward</string>
+    <string name="obtain_forge_lvl10_sjgw">Forge, Return of the Star</string>
+    <string name="obtain_playstation_sp_gift">PlayStation Network gift</string>
+    <string name="obtain_npc_dcdyhw">NPC shop, Inazuma Fishing Association</string>
+    <string name="obtain_chesr_ly">Chest in Liyue</string>
+    <string name="obtain_chest_gwk">Chest in Guyun Stone Forest</string>
+
+    <!-- add in 20220512 -->
     <string name="ui_2048_name">Game</string>
     <string name="ui_siptik_name">Material</string>
     <string name="ui_voc_name">Classic</string>
+    <string name="shikanoin_heizou">Shikanoin Heizou</string>
+    <string name="detail">Detail</string>
+
+    <!-- add in 20220521 -->
+    <string name="release_state">Release State</string>
+    <string name="released">Released</string>
+    <string name="unreleased">Unreleased</string>
+    <string name="all">All</string>
+    <string name="navigation_bar">Navigation Bar</string>
+    <string name="obtain_way">Obtain Way</string>
+    <string name="weapon_skill">Weapon Skill</string>
+    <string name="weapon_level">Weapon Level</string>
+    <string name="outfit_standard">Standard Outfit</string>
+    <string name="outfit_event">Event Outfit</string>
+    <string name="paimon">Paimon</string>
+    <string name="aqua_simulacra">Aqua Simulacra</string>
+    <string name="this_is_a_sword">This is a sword</string>
+    <string name="fading_twilight">Fading Twilight</string>
+
+    <!-- add in 20220529 -->
+    <string name="tut_part0_1">"Hi, I'm Voc-夜芷冰, the developer of Genshin Spirit, and I'm your guide of this tutorial."</string>
+    <string name="tut_part0_2">"First, please let me have a little introduction of Genshin Spirit. "</string>
+    <string name="tut_part0_3">"Genshin Spirit is an app which contains both information lookup and calculation functions."</string>
+    <string name="tut_part0_4">"Also, it's an open-source project, we are always welcome everyone to give suggestions about new functions ~"</string>
+    <string name="tut_part0_5">"Alright, let's start the tutorial now ~"</string>
+    <string name="tut_part0_6">"The bottom of this page  is the navigation bar, which you change the page by pressing them "</string>
+    <string name="tut_part0_7">"It is also possible to scroll left/right to change the page"</string>
+    <string name="tut_part1_1">"This is our home page, you will see the highlights of today, such as character ascension material, weapon ascension material,etc..."</string>
+    <string name="tut_part1_2">"If you want to read further information of this character/weapon, simply to press the character/weapon's icon"</string>
+    <string name="tut_part1_3">"Also, there will have a birthday reminder if today is one of the character's birthday"</string>
+    <string name="tut_part1_4">"I wish this page will be helpful to you on planning "</string>
+    <string name="tut_part2_1">"This is character list, where you can search any characters inside the game"</string>
+    <string name="tut_part2_2">"Simply to press them to read the detail ~"</string>
+    <string name="tut_part2_3">"If you want to search specificity requirement, please press the Filter Button to switch on the filter"</string>
+    <string name="tut_part2_4">"If you want to search via their local name or English name, please press the Search Button to switch on the search"</string>
+    <string name="tut_part3_5">"This is weapon list, where you can search any weapons inside the game"</string>
+    <string name="tut_part3_6">"Basically as like as Character List ~"</string>
+    <string name="tut_part4_1">"This is artifact list, basically as like as Character List ~"</string>
+    <string name="tut_part5_1">"This is Setting/Paimon page, where you can do setting inside there"</string>
+    <string name="tut_part5_2">"Alright, I think it should be the ending of the tutorial"</string>
+    <string name="tut_part5_3">"If you have any questions or problems, you may directly find me in Discord"</string>
+    <string name="tut_part5_4">"The invite link of our offical Discord Server has already put in the 'About' part in setting page ~"</string>
+    <string name="tut_part5_5">"See ya around in Discord ~"</string>
+
+
 </resources>
 

@@ -1,7 +1,5 @@
 package com.voc.genshin_helper.ui.SipTik;
 
-import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
-import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 import static com.voc.genshin_helper.util.RoundedCornersTransformation.CornerType.ALL;
 
 import android.animation.Animator;
@@ -28,6 +26,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
 import android.provider.MediaStore;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.text.method.LinkMovementMethod;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -47,7 +47,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
-import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -76,15 +75,12 @@ import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.data.Today_Material;
 import com.voc.genshin_helper.data.Weapons;
 import com.voc.genshin_helper.data.WeaponsAdapter;
-import com.voc.genshin_helper.easter_egg.EasterEgg_LYS;
 import com.voc.genshin_helper.kidding.GoSleep;
+import com.voc.genshin_helper.tutorial.TutorialUI;
 import com.voc.genshin_helper.ui.AlarmUI;
 import com.voc.genshin_helper.ui.BackgroundConfirmActivity;
 import com.voc.genshin_helper.ui.CalculatorDBActivity;
-import com.voc.genshin_helper.ui.MMXLVIII.Artifact_Info_2048;
-import com.voc.genshin_helper.ui.MMXLVIII.Characters_Info_2048;
 import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
-import com.voc.genshin_helper.ui.MMXLVIII.Weapon_Info_2048;
 import com.voc.genshin_helper.ui.MainActivity;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.ChangeLog;
@@ -219,6 +215,7 @@ public class DeskSipTik extends AppCompatActivity {
     RadioButton grid_2_rb;
     RadioButton grid_3_rb;
     RadioButton grid_4_rb;
+    RadioButton grid_5_rb;
 
     String[] weekdayList ;
     String[] langList ;
@@ -330,15 +327,31 @@ public class DeskSipTik extends AppCompatActivity {
                 pix = displayMetrics.heightPixels;
             }
 
-            if ((int) (((pix-32-5^8)/10)*1.2-16) <= 200){
-                ico_img.setMaxHeight((int) ((pix-32-5^8)/10*1.2-16));
+            if ((int) (((pix-32-5*8)/10)*1.2-16) <= 200){
+                ico_img.setMaxHeight((int) ((pix-32-5*8)/10*1.2-16));
             }else{
                 ico_img.setMaxHeight(200);
             }
+            LinearLayout ll = view1.findViewById(R.id.ll);
+            desk_tablayout.setMinimumHeight(ll.getMeasuredHeight());
             desk_tablayout.addTab(desk_tablayout.newTab().setCustomView(view1).setId(x));
         }
 
         desk_tablayout.setTabIndicatorFullWidth(false);
+
+        if (sharedPreferences.getString("SipTikNavi","Hover").equals("Hover")){
+            desk_tablayout.setBackgroundResource(R.drawable.bg_siptik_tab);
+            ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) desk_tablayout.getLayoutParams();
+            layoutParams.setMargins(8,8,8,8);
+            layoutParams.verticalBias = 1f;
+            desk_tablayout.setLayoutParams(layoutParams);
+        }else if (sharedPreferences.getString("SipTikNavi","Hover").equals("Solid")){
+            desk_tablayout.setBackgroundResource(R.drawable.bg_siptik_tab_choice2);
+            ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) desk_tablayout.getLayoutParams();
+            layoutParams.setMargins(0,0,0,0);
+            layoutParams.verticalBias = 1f;
+            desk_tablayout.setLayoutParams(layoutParams);
+        }
 
         app_started = sharedPreferences.getInt("app_started",1);
         boolean voted = sharedPreferences.getBoolean("voted",false);
@@ -435,6 +448,10 @@ public class DeskSipTik extends AppCompatActivity {
 
             }
         });
+
+        TutorialUI tutorialUI = new TutorialUI();
+        tutorialUI.deskSetPosArray(0,1,2,3,4);
+        tutorialUI.setup(context,activity,viewPager0,viewPager1,viewPager2,viewPager3,viewPager4,desk_tablayout,null);
     }
 
     private void setup_weapon() {
@@ -460,6 +477,14 @@ public class DeskSipTik extends AppCompatActivity {
                 mLayoutManager = new GridLayoutManager(context,  3);
             }
         }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                int tmp_cnt = (int) width_w/960;
+                if (tmp_cnt < 1){tmp_cnt = 1;}
+                mLayoutManager = new GridLayoutManager(context,  tmp_cnt);
+            }else{
+                mLayoutManager = new GridLayoutManager(context,  1);
+            }
+        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
             if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
                 int tmp_cnt = (int) width_w/960;
                 if (tmp_cnt < 1){tmp_cnt = 1;}
@@ -510,11 +535,9 @@ public class DeskSipTik extends AppCompatActivity {
             public void onClick(View view) {
                 View header_search = viewPager2.findViewById(R.id.header_search);
                 EditText header_search_et = viewPager2.findViewById(R.id.header_search_et);
-                ImageView header_search_cancel = viewPager2.findViewById(R.id.header_search_cancel);
-                Button menu_search_confirm = viewPager2.findViewById(R.id.menu_search_confirm);
+                Button menu_search_cancel = viewPager2.findViewById(R.id.menu_search_cancel);
+                ImageView header_search_reset = viewPager2.findViewById(R.id.header_search_reset);
 
-
-                header_search.setVisibility(View.VISIBLE);
                 header_search.animate()
                         .alpha(1.0f)
                         .setDuration(300)
@@ -524,10 +547,21 @@ public class DeskSipTik extends AppCompatActivity {
                                 super.onAnimationEnd(animation);
                             }
                         });
+                header_search.setVisibility(View.VISIBLE);
 
-                menu_search_confirm.setOnClickListener(new View.OnClickListener() {
+                header_search_et.addTextChangedListener(new TextWatcher() {
                     @Override
-                    public void onClick(View view) {
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
                         if (header_search_et.getText() != null){
                             String request = header_search_et.getText().toString();
                             if (!request.equals("")){
@@ -550,7 +584,7 @@ public class DeskSipTik extends AppCompatActivity {
                     }
                 });
 
-                header_search_cancel.setOnClickListener(new View.OnClickListener() {
+                menu_search_cancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         header_search_et.setText("");
@@ -564,7 +598,13 @@ public class DeskSipTik extends AppCompatActivity {
                                         header_search.setVisibility(View.GONE);
                                     }
                                 });
+                    }
+                });
 
+                header_search_reset.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        header_search_et.setText("");
                     }
                 });
 
@@ -634,7 +674,7 @@ public class DeskSipTik extends AppCompatActivity {
                 String[] rareList = new String[]{"ALL","1","2","3","4","5"};
 
                 ArrayAdapter rare_aa = new ArrayAdapter(context,R.layout.spinner_item,rareList);
-                rare_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
+                rare_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_2048);
 
                 rare_spinner.setAdapter(rare_aa);
                 rare_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -657,7 +697,7 @@ public class DeskSipTik extends AppCompatActivity {
                 });
 
                 ArrayAdapter role_aa = new ArrayAdapter(context,R.layout.spinner_item,roleList);
-                role_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
+                role_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_2048);
 
                 role_spinner.setAdapter(role_aa);
                 role_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -876,6 +916,14 @@ public class DeskSipTik extends AppCompatActivity {
             }else{
                 mLayoutManager = new GridLayoutManager(context,  1);
             }
+        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
+            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                int tmp_cnt = (int) width/960;
+                if (tmp_cnt < 1){tmp_cnt = 1;}
+                mLayoutManager = new GridLayoutManager(context,  tmp_cnt);
+            }else{
+                mLayoutManager = new GridLayoutManager(context,  1);
+            }
         }
         LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         paramsMsg.gravity = Gravity.CENTER;
@@ -891,8 +939,8 @@ public class DeskSipTik extends AppCompatActivity {
             public void onClick(View view) {
                 View header_search = viewPager1.findViewById(R.id.header_search);
                 EditText header_search_et = viewPager1.findViewById(R.id.header_search_et);
-                ImageView header_search_cancel = viewPager1.findViewById(R.id.header_search_cancel);
-                Button menu_search_confirm = viewPager1.findViewById(R.id.menu_search_confirm);
+                Button menu_search_cancel = viewPager1.findViewById(R.id.menu_search_cancel);
+                ImageView header_search_reset = viewPager1.findViewById(R.id.header_search_reset);
 
                 header_search.animate()
                         .alpha(1.0f)
@@ -905,32 +953,42 @@ public class DeskSipTik extends AppCompatActivity {
                         });
                 header_search.setVisibility(View.VISIBLE);
 
-                menu_search_confirm.setOnClickListener(new View.OnClickListener() {
+                header_search_et.addTextChangedListener(new TextWatcher() {
                     @Override
-                    public void onClick(View view) {
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
                         if (header_search_et.getText() != null){
                             String request = header_search_et.getText().toString();
                             if (!request.equals("")){
-                                ArrayList<Characters> filteredList = new ArrayList<>();
+                                ArrayList<Artifacts> filteredList = new ArrayList<>();
                                 int x = 0;
-                                for (Characters item : charactersList) {
+                                for (Artifacts item : artifactsList) {
                                     String str = request.toLowerCase();
-                                    if (css.getCharByName(item.getName(),context)[1].contains(str)||css.getCharByName(item.getName(),context)[1].toLowerCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
+                                    if (css.getArtifactByName(item.getName(),context)[0].contains(str)||css.getArtifactByName(item.getName(),context)[0].toLowerCase().contains(str)||css.getArtifactByName(item.getName(),context)[0].toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
                                         filteredList.add(item);
                                     }
                                     x = x +1;
                                 }
-                                mAdapter.filterList(filteredList);
+                                mArtifactAdapter.filterList(filteredList);
                             }else{
-                                mAdapter.filterList(charactersList);
+                                mArtifactAdapter.filterList(artifactsList);
                             }
                         }else{
-                            mAdapter.filterList(charactersList);
+                            mArtifactAdapter.filterList(artifactsList);
                         }
                     }
                 });
 
-                header_search_cancel.setOnClickListener(new View.OnClickListener() {
+                menu_search_cancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         header_search_et.setText("");
@@ -944,6 +1002,13 @@ public class DeskSipTik extends AppCompatActivity {
                                         header_search.setVisibility(View.GONE);
                                     }
                                 });
+                    }
+                });
+
+                header_search_reset.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        header_search_et.setText("");
                     }
                 });
 
@@ -1001,11 +1066,11 @@ public class DeskSipTik extends AppCompatActivity {
                 if (show_sub_dps){rare_spinner.setSelection(1); }
                 if (show_util){rare_spinner.setSelection(2);}
 
-                String[] roleList = new String[]{"ALL",context.getString(R.string.main_dps),context.getString(R.string.support_dps),context.getString(R.string.utility)};
-                String[] rareList = new String[]{"ALL","1","2","3","4","5"};
+                String[] roleList = new String[]{context.getString(R.string.all),context.getString(R.string.main_dps),context.getString(R.string.support_dps),context.getString(R.string.utility)};
+                String[] rareList = new String[]{context.getString(R.string.all),"1","2","3","4","5"};
 
                 ArrayAdapter rare_aa = new ArrayAdapter(context,R.layout.spinner_item,rareList);
-                rare_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
+                rare_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_2048);
 
                 rare_spinner.setAdapter(rare_aa);
                 rare_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -1028,7 +1093,7 @@ public class DeskSipTik extends AppCompatActivity {
                 });
 
                 ArrayAdapter role_aa = new ArrayAdapter(context,R.layout.spinner_item,roleList);
-                role_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
+                role_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_2048);
 
                 role_spinner.setAdapter(role_aa);
                 role_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -1229,6 +1294,14 @@ public class DeskSipTik extends AppCompatActivity {
             }else{
                 mLayoutManager = new GridLayoutManager(context,  1);
             }
+        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
+            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                int tmp_cnt = (int) width_a/960;
+                if (tmp_cnt < 1){tmp_cnt = 1;}
+                mLayoutManager = new GridLayoutManager(context,  tmp_cnt);
+            }else{
+                mLayoutManager = new GridLayoutManager(context,  1);
+            }
         }
         LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         paramsMsg.gravity = Gravity.CENTER;
@@ -1273,9 +1346,8 @@ public class DeskSipTik extends AppCompatActivity {
             public void onClick(View view) {
                 View header_search = viewPager3.findViewById(R.id.header_search);
                 EditText header_search_et = viewPager3.findViewById(R.id.header_search_et);
-                ImageView header_search_cancel = viewPager3.findViewById(R.id.header_search_cancel);
-                Button menu_search_confirm = viewPager3.findViewById(R.id.menu_search_confirm);
-
+                Button menu_search_cancel = viewPager3.findViewById(R.id.menu_search_cancel);
+                Button header_search_reset = viewPager3.findViewById(R.id.header_search_reset);
 
                 header_search.animate()
                         .alpha(1.0f)
@@ -1284,13 +1356,23 @@ public class DeskSipTik extends AppCompatActivity {
                             @Override
                             public void onAnimationEnd(Animator animation) {
                                 super.onAnimationEnd(animation);
-                                header_search.setVisibility(View.VISIBLE);
                             }
                         });
+                header_search.setVisibility(View.VISIBLE);
 
-                menu_search_confirm.setOnClickListener(new View.OnClickListener() {
+                header_search_et.addTextChangedListener(new TextWatcher() {
                     @Override
-                    public void onClick(View view) {
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
                         if (header_search_et.getText() != null){
                             String request = header_search_et.getText().toString();
                             if (!request.equals("")){
@@ -1313,11 +1395,10 @@ public class DeskSipTik extends AppCompatActivity {
                     }
                 });
 
-                header_search_cancel.setOnClickListener(new View.OnClickListener() {
+                menu_search_cancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         header_search_et.setText("");
-
                         header_search.animate()
                                 .alpha(0.0f)
                                 .setDuration(300)
@@ -1328,6 +1409,13 @@ public class DeskSipTik extends AppCompatActivity {
                                         header_search.setVisibility(View.GONE);
                                     }
                                 });
+                    }
+                });
+
+                header_search_reset.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        header_search_et.setText("");
                     }
                 });
 
@@ -1401,7 +1489,7 @@ public class DeskSipTik extends AppCompatActivity {
                 String[] rareList = new String[]{"ALL","1","2","3","4","5"};
 
                 ArrayAdapter rare_aa = new ArrayAdapter(context,R.layout.spinner_item,rareList);
-                rare_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
+                rare_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_2048);
 
                 rare_spinner.setAdapter(rare_aa);
                 rare_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -1424,7 +1512,7 @@ public class DeskSipTik extends AppCompatActivity {
                 });
 
                 ArrayAdapter role_aa = new ArrayAdapter(context,R.layout.spinner_item,roleList);
-                role_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
+                role_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_2048);
 
                 role_spinner.setAdapter(role_aa);
                 role_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -1704,13 +1792,114 @@ public class DeskSipTik extends AppCompatActivity {
         color_bk22.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk22,21); }});
         color_bk23.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk23,22); }});
 
+        // Navigation Bar
+        TabLayout desk_tablayout_hover = viewPager4.findViewById(R.id.desk_tablayout_hover);
+        TabLayout desk_tablayout_solid = viewPager4.findViewById(R.id.desk_tablayout_solid);
+        RadioButton navigation_hover = viewPager4.findViewById(R.id.navigation_hover);
+        RadioButton navigation_solid = viewPager4.findViewById(R.id.navigation_solid);
 
+        if (sharedPreferences.getString("SipTikNavi","Hover").equals("Hover")){
+            navigation_hover.setChecked(true);
+            navigation_solid.setChecked(false);
+        }else if (sharedPreferences.getString("SipTikNavi","Hover").equals("Solid")){
+            navigation_hover.setChecked(false);
+            navigation_solid.setChecked(true);
+        }
+
+        for (int x = 0 ; x < 5 ; x++){
+            View view1 = getLayoutInflater().inflate(R.layout.item_custom_tab, null);
+            ImageView ico_img = view1.findViewById(R.id.icon);
+            TextView name = view1.findViewById(R.id.name);
+            ico_img.setImageResource(tabItemImageArray[x]);
+            name.setText(context.getString(tabItemNameArray[x]));
+            name.setVisibility(View.VISIBLE);
+            DisplayMetrics displayMetrics = new DisplayMetrics();
+            activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+            int pix = displayMetrics.widthPixels;
+            if (displayMetrics.heightPixels < displayMetrics.widthPixels){
+                pix = displayMetrics.heightPixels;
+            }
+
+            if ((int) (((pix-32-5*8)/10)*1.2-16) <= 200){
+                ico_img.setMaxHeight((int) ((pix-32-5*8)/10*1.2-16));
+            }else{
+                ico_img.setMaxHeight(200);
+            }
+
+            LinearLayout ll = view1.findViewById(R.id.ll);
+            desk_tablayout_hover.setMinimumHeight(ll.getMeasuredHeight());
+
+            desk_tablayout_hover.addTab(desk_tablayout_hover.newTab().setCustomView(view1).setId(x));
+            desk_tablayout_hover.setTabIndicatorFullWidth(false);
+        }
+
+
+        for (int x = 0 ; x < 5 ; x++){
+            View view1 = getLayoutInflater().inflate(R.layout.item_custom_tab, null);
+            ImageView ico_img = view1.findViewById(R.id.icon);
+            TextView name = view1.findViewById(R.id.name);
+            ico_img.setImageResource(tabItemImageArray[x]);
+            name.setText(context.getString(tabItemNameArray[x]));
+            name.setVisibility(View.VISIBLE);
+            DisplayMetrics displayMetrics = new DisplayMetrics();
+            activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+            int pix = displayMetrics.widthPixels;
+            if (displayMetrics.heightPixels < displayMetrics.widthPixels){
+                pix = displayMetrics.heightPixels;
+            }
+
+            if ((int) (((pix-32-5*8)/10)*1.2-16) <= 200){
+                ico_img.setMaxHeight((int) ((pix-32-5*8)/10*1.2-16));
+            }else{
+                ico_img.setMaxHeight(200);
+            }
+
+            LinearLayout ll = view1.findViewById(R.id.ll);
+            desk_tablayout_solid.setMinimumHeight(ll.getMeasuredHeight());
+
+            desk_tablayout_solid.addTab(desk_tablayout_solid.newTab().setCustomView(view1).setId(x));
+            desk_tablayout_solid.setTabIndicatorFullWidth(false);
+        }
+
+        navigation_hover.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigation_hover.setChecked(true);
+                navigation_solid.setChecked(false);
+
+                editor.putString("SipTikNavi","Hover");
+                editor.apply();
+
+                desk_tablayout.setBackgroundResource(R.drawable.bg_siptik_tab);
+                ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) desk_tablayout.getLayoutParams();
+                layoutParams.setMargins(8,8,8,8);
+                layoutParams.verticalBias = 1f;
+                desk_tablayout.setLayoutParams(layoutParams);
+            }
+        });
+
+        navigation_solid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                navigation_hover.setChecked(false);
+                navigation_solid.setChecked(true);
+
+                editor.putString("SipTikNavi","Solid");
+                editor.apply();
+
+                desk_tablayout.setBackgroundResource(R.drawable.bg_siptik_tab_choice2);
+                ConstraintLayout.LayoutParams layoutParams = (ConstraintLayout.LayoutParams) desk_tablayout.getLayoutParams();
+                layoutParams.setMargins(0,0,0,0);
+                layoutParams.verticalBias = 1f;
+                desk_tablayout.setLayoutParams(layoutParams);
+            }
+        });
 
         // Translate
         //langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp),getString(R.string.fr_fr),getString(R.string.uk_ua)};
         langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp),getString(R.string.fr_fr)};
         ArrayAdapter lang_aa = new ArrayAdapter(context,R.layout.spinner_item,langList);
-        lang_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
+        lang_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_2048);
 
         Spinner lang_sp = viewPager4.findViewById(R.id.lang_spinner);
         lang_sp.setAdapter(lang_aa);
@@ -1901,7 +2090,7 @@ public class DeskSipTik extends AppCompatActivity {
         // Other -> Server Location
 
         ArrayAdapter server_aa = new ArrayAdapter(context,R.layout.spinner_item,serverList);
-        server_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
+        server_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_2048);
 
         Spinner server_spinner = viewPager4.findViewById(R.id.server_spinner);
         server_spinner.setAdapter(server_aa);
@@ -2078,20 +2267,29 @@ public class DeskSipTik extends AppCompatActivity {
         grid_2_rb = viewPager4.findViewById(R.id.grid_2);
         grid_3_rb = viewPager4.findViewById(R.id.grid_3);
         grid_4_rb = viewPager4.findViewById(R.id.grid_4);
+        grid_5_rb = viewPager4.findViewById(R.id.grid_5);
         String currUiGrid = sharedPreferences.getString("curr_ui_grid","2");
 
         if (currUiGrid.equals("2")){
             grid_2_rb.setChecked(true);
             grid_3_rb.setChecked(false);
             grid_4_rb.setChecked(false);
+            grid_5_rb.setChecked(false);
         }else if(currUiGrid.equals("3")){
             grid_2_rb.setChecked(false);
             grid_3_rb.setChecked(true);
             grid_4_rb.setChecked(false);
-        }else{
+            grid_5_rb.setChecked(false);
+        }else if(currUiGrid.equals("4")){
             grid_2_rb.setChecked(false);
             grid_3_rb.setChecked(false);
             grid_4_rb.setChecked(true);
+            grid_5_rb.setChecked(false);
+        }else{
+            grid_2_rb.setChecked(false);
+            grid_3_rb.setChecked(false);
+            grid_4_rb.setChecked(false);
+            grid_5_rb.setChecked(true);
         }
 
         grid_2_rb.setOnClickListener(new View.OnClickListener() {
@@ -2102,6 +2300,7 @@ public class DeskSipTik extends AppCompatActivity {
                 grid_2_rb.setChecked(true);
                 grid_3_rb.setChecked(false);
                 grid_4_rb.setChecked(false);
+                grid_5_rb.setChecked(false);
 
                 setup_home();
                 setup_char();
@@ -2117,6 +2316,7 @@ public class DeskSipTik extends AppCompatActivity {
                 grid_2_rb.setChecked(false);
                 grid_3_rb.setChecked(true);
                 grid_4_rb.setChecked(false);
+                grid_5_rb.setChecked(false);
 
                 setup_home();
                 setup_char();
@@ -2132,6 +2332,23 @@ public class DeskSipTik extends AppCompatActivity {
                 grid_2_rb.setChecked(false);
                 grid_3_rb.setChecked(false);
                 grid_4_rb.setChecked(true);
+                grid_5_rb.setChecked(false);
+
+                setup_home();
+                setup_char();
+                setup_weapon();
+                setup_art();
+            }
+        });
+        grid_5_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("curr_ui_grid","5");
+                editor.apply();
+                grid_2_rb.setChecked(false);
+                grid_3_rb.setChecked(false);
+                grid_4_rb.setChecked(false);
+                grid_5_rb.setChecked(true);
 
                 setup_home();
                 setup_char();
@@ -2668,7 +2885,6 @@ public class DeskSipTik extends AppCompatActivity {
             //Set tv and img
             asc_material_ico.getLayoutParams().width = (int) (asc_material_ico.getLayoutParams().width*0.8);
             asc_material_ico.getLayoutParams().height = (int) (asc_material_ico.getLayoutParams().height*0.8);
-            asc_card.getLayoutParams().width = pix;
             asc_material_tv.setText(getString(today_TV[x]));
             Picasso.get().load(today_IMG[x]).into(asc_material_ico);
             asc_material_location.setText(getString(today_Location[x]));
@@ -2759,8 +2975,6 @@ public class DeskSipTik extends AppCompatActivity {
             DisplayMetrics displayMetrics = new DisplayMetrics();
             activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
             int pix = displayMetrics.widthPixels-16;
-
-            asc_card.getLayoutParams().width = pix;
 
             int[] asc_weapon_ico = new int[]{R.id.asc_char_ico1,R.id.asc_char_ico2,R.id.asc_char_ico3,R.id.asc_char_ico4,R.id.asc_char_ico5,R.id.asc_char_ico6,R.id.asc_char_ico7,R.id.asc_char_ico8,R.id.asc_char_ico9,R.id.asc_char_ico10,R.id.asc_char_ico11,R.id.asc_char_ico12,R.id.asc_char_ico13,R.id.asc_char_ico14,R.id.asc_char_ico15,R.id.asc_char_ico16,R.id.asc_char_ico17,R.id.asc_char_ico18,R.id.asc_char_ico19,R.id.asc_char_ico20,R.id.asc_char_ico21,R.id.asc_char_ico22,R.id.asc_char_ico23,R.id.asc_char_ico24,R.id.asc_char_ico25,R.id.asc_char_ico26,R.id.asc_char_ico27,R.id.asc_char_ico28,R.id.asc_char_ico29,R.id.asc_char_ico30,R.id.asc_char_ico31,R.id.asc_char_ico32,R.id.asc_char_ico33,R.id.asc_char_ico34,R.id.asc_char_ico35,R.id.asc_char_ico36,R.id.asc_char_ico37,R.id.asc_char_ico38,R.id.asc_char_ico39,R.id.asc_char_ico40,R.id.asc_char_ico41,R.id.asc_char_ico42,R.id.asc_char_ico43,R.id.asc_char_ico44,R.id.asc_char_ico45};
             int[] asc_weapon_tick = new int[]{R.id.asc_char_tick1,R.id.asc_char_tick2,R.id.asc_char_tick3,R.id.asc_char_tick4,R.id.asc_char_tick5,R.id.asc_char_tick6,R.id.asc_char_tick7,R.id.asc_char_tick8,R.id.asc_char_tick9,R.id.asc_char_tick10,R.id.asc_char_tick11,R.id.asc_char_tick12,R.id.asc_char_tick13,R.id.asc_char_tick14,R.id.asc_char_tick15,R.id.asc_char_tick16,R.id.asc_char_tick17,R.id.asc_char_tick18,R.id.asc_char_tick19,R.id.asc_char_tick20,R.id.asc_char_tick21,R.id.asc_char_tick22,R.id.asc_char_tick23,R.id.asc_char_tick24,R.id.asc_char_tick25,R.id.asc_char_tick26,R.id.asc_char_tick27,R.id.asc_char_tick28,R.id.asc_char_tick29,R.id.asc_char_tick30,R.id.asc_char_tick31,R.id.asc_char_tick32,R.id.asc_char_tick33,R.id.asc_char_tick34,R.id.asc_char_tick35,R.id.asc_char_tick36,R.id.asc_char_tick37,R.id.asc_char_tick38,R.id.asc_char_tick39,R.id.asc_char_tick40,R.id.asc_char_tick41,R.id.asc_char_tick42,R.id.asc_char_tick43,R.id.asc_char_tick44,R.id.asc_char_tick45};

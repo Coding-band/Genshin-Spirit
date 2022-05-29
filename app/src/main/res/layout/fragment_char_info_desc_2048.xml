@@ -24,6 +24,7 @@
             android:id="@+id/info_char_img"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:adjustViewBounds="true"
             android:fadingEdgeLength="32dp"
             android:requiresFadingEdge="horizontal|vertical"
             app:layout_constraintBottom_toTopOf="@+id/info_detail"

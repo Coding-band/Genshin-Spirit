@@ -17,6 +17,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
+import android.os.Handler;
 import android.text.Html;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -503,6 +504,12 @@ public class Characters_Info_SipTik {
         // MAIN ITEM -> VISIBLE / GONE
         CardView director_menu_card = view.findViewById(R.id.director_menu_card);
 
+        director_char_card.setVisibility(View.GONE);
+        director_talent_card.setVisibility(View.GONE);
+        director_cons_card.setVisibility(View.GONE);
+        director_advice_card.setVisibility(View.GONE);
+        director_value_card.setVisibility(View.GONE);
+
         BackgroundReload.BackgroundReload(context,view);
 
         /** Method of info_detail */
@@ -770,35 +777,48 @@ public class Characters_Info_SipTik {
             @Override
             public void onClick(View view) {
                 if (isMenuDisplay == false){
-                    director_menu_card.animate()
-                            .setDuration(300)
-                            .rotation(90)
-                            .setListener(new AnimatorListenerAdapter() {
-                                @Override
-                                public void onAnimationStart(Animator animation) {
-                                    super.onAnimationStart(animation);
-                                    if (tmp_cnt_dis == 0){
-                                        char_pos = director_char_card.getTop();
-                                        talent_pos = director_talent_card.getTop();
-                                        cons_pos = director_cons_card.getTop();
-                                        advice_pos = director_advice_card.getTop();
-                                        value_pos = director_value_card.getTop();
-                                    }
 
-                                    director_char_card.setY(director_menu_card.getTop());
-                                    director_advice_card.setY(director_menu_card.getTop());
-                                    director_cons_card.setY(director_menu_card.getTop());
-                                    director_talent_card.setY(director_menu_card.getTop());
-                                    director_value_card.setY(director_menu_card.getTop());
+                    director_char_card.setVisibility(View.VISIBLE);
+                    director_talent_card.setVisibility(View.VISIBLE);
+                    director_cons_card.setVisibility(View.VISIBLE);
+                    director_advice_card.setVisibility(View.VISIBLE);
+                    director_value_card.setVisibility(View.VISIBLE);
 
-                                    director_value_card.animate().setDuration(300).alpha(1f).y(value_pos);
-                                    director_advice_card.animate().setDuration(300).alpha(1f).y(advice_pos);
-                                    director_cons_card.animate().setDuration(300).alpha(1f).y(cons_pos);
-                                    director_talent_card.animate().setDuration(300).alpha(1f).y(talent_pos);
-                                    director_char_card.animate().setDuration(300).alpha(1f).y(char_pos);
-                                    isMenuDisplay = true;
-                                }
-                            });
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable(){
+
+                        @Override
+                        public void run() {
+                            director_menu_card.animate()
+                                    .setDuration(300)
+                                    .rotation(90)
+                                    .setListener(new AnimatorListenerAdapter() {
+                                        @Override
+                                        public void onAnimationStart(Animator animation) {
+                                            super.onAnimationStart(animation);
+                                            if (tmp_cnt_dis == 0){
+                                                char_pos = director_char_card.getTop();
+                                                talent_pos = director_talent_card.getTop();
+                                                cons_pos = director_cons_card.getTop();
+                                                advice_pos = director_advice_card.getTop();
+                                                value_pos = director_value_card.getTop();
+                                            }
+
+                                            director_char_card.setY(director_menu_card.getTop());
+                                            director_advice_card.setY(director_menu_card.getTop());
+                                            director_cons_card.setY(director_menu_card.getTop());
+                                            director_talent_card.setY(director_menu_card.getTop());
+                                            director_value_card.setY(director_menu_card.getTop());
+
+                                            director_value_card.animate().setDuration(300).alpha(1f).y(value_pos);
+                                            director_advice_card.animate().setDuration(300).alpha(1f).y(advice_pos);
+                                            director_cons_card.animate().setDuration(300).alpha(1f).y(cons_pos);
+                                            director_talent_card.animate().setDuration(300).alpha(1f).y(talent_pos);
+                                            director_char_card.animate().setDuration(300).alpha(1f).y(char_pos);
+                                            isMenuDisplay = true;
+                                        }
+                                    });
+                        }}, 100);
                 }else{
 
                     director_menu_card.animate()
@@ -820,6 +840,19 @@ public class Characters_Info_SipTik {
                                     director_talent_card.animate().alpha(0f).setDuration(300).y(director_menu_card.getTop());
                                     director_char_card.animate().alpha(0f).setDuration(300).y(director_menu_card.getTop());
                                     isMenuDisplay = false;
+
+                                    Handler handler = new Handler();
+                                    handler.postDelayed(new Runnable(){
+
+                                        @Override
+                                        public void run() {
+                                            director_char_card.setVisibility(View.GONE);
+                                            director_talent_card.setVisibility(View.GONE);
+                                            director_cons_card.setVisibility(View.GONE);
+                                            director_advice_card.setVisibility(View.GONE);
+                                            director_value_card.setVisibility(View.GONE);
+                                        }}, 300);
+
                                 }
                             });
                 }

@@ -16,7 +16,7 @@
         android:layout_margin="8dp"
         android:background="@drawable/bg_alpha_siptik"
         app:cardBackgroundColor="@color/tab_bg_2048"
-        app:cardCornerRadius="50px"
+        app:cardCornerRadius="15dp"
         app:cardElevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -57,7 +57,7 @@
                     android:layout_margin="16dp"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/imageView17"
+                    app:layout_constraintEnd_toStartOf="@+id/asc_material_locate"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -118,7 +118,7 @@
                 </LinearLayout>
 
                 <ImageView
-                    android:id="@+id/imageView17"
+                    android:id="@+id/asc_material_locate"
                     android:layout_width="48dp"
                     android:layout_height="48dp"
                     android:layout_gravity="center|right"

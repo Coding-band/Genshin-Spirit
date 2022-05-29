@@ -65,7 +65,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <ImageView
-                android:id="@+id/header_search_cancel"
+                android:id="@+id/header_search_reset"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center|right"
@@ -78,7 +78,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <Button
-            android:id="@+id/menu_search_confirm"
+            android:id="@+id/menu_search_cancel"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_gravity="center"
@@ -86,7 +86,7 @@
             android:layout_weight="3"
             android:background="@drawable/item_siptik_search_bar_confirm"
             android:fontFamily="@font/genshin_font"
-            android:text="@android:string/search_go"
+            android:text="@android:string/cancel"
             android:textColor="@color/tv_color"
             android:textSize="16sp" />
 

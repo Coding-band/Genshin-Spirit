@@ -203,7 +203,7 @@
     <!-- Language (Don't translate)-->
 
     <!-- main_page -->
-    <string name="material_force">Материалы доступные сегодня</string>
+    <string name="material_force">Ежедненвный сбор</string>
     <string name="char_asc_mater">Материалы возвышения персонажа</string>
     <string name="weapon_asc_mater">Материалы возвышения оружия</string>
     <string name="gaming_tools">Игровые инструменты</string>
@@ -226,7 +226,7 @@
     <string name="about_title1">Отказ от ответственности</string>
     <string name="about_info1">Это приложение не принадлежит miHoYo Co., Ltd. и не было одобрено ею. 原神小幫手 (Genshin Spirit) - это всего лишь приложение, которое предоставляет данные, разработанные фанатами.  Информация, представленная в этом приложении, предназначена только для справки. Genshin Spirit не гарантирует точность и полноту любой содержащейся в нем информации в какой-либо степени.</string>
     <string name="about_title2">Заявление о конфиденциальности</string>
-    <string name="about_info2">Это приложение не будет собирать какие-либо личные данные о конфиденциальности, оно не может использоваться для идентификации и отслеживания пользователей и другой информации. При необходимости приложение будет собирать только уведомленные данные, такие как стек сбоя программы. Приведенные выше данные используются только для устранения уязвимостей приложений и улучшения взаимодействия с пользователем.the</string>
+    <string name="about_info2">Это приложение не будет собирать какие-либо личные данные о конфиденциальности, оно не может использоваться для идентификации и отслеживания пользователей и другой информации. При необходимости приложение будет собирать только уведомленные данные, такие как стек сбоя программы. Приведенные выше данные используются только для устранения уязвимостей приложений и улучшения взаимодействия с пользователем.</string>
     <string name="about_title3">Заявление об использовании ресурсов</string>
     <string name="about_info3">Это приложение разработано на основе Shiori for Genshin и направлено на то, чтобы отдать дань уважения Shiori for Genshin и его сотрудников, но оно еще не было признано его сотрудниками. Некоторые изображения этого приложения, данные взяты из проектов с открытым исходным кодом, ссылки будут прикреплены ниже. Поэтому часть интерфейса и верстка этого приложения очень похожи на Shiori for Genshin. Однако это приложение использует Java вместо Dart в качестве языка программирования, и оно будет работать только на Android и (или) любых поддерживающих форматах файлов .apk и .aab., или других платформ поддержуешие эти форматы.</string>
     <string name="about_title4">Заявление об открытом исходном коде проекта</string>
@@ -955,7 +955,55 @@
     <string name="hidden_palace_of_lianshan_formula">Лабиринт Ляншан</string>
     <string name="court_of_flowing_sand">Зал текущего песка</string>
     <string name="img_reset_finish">фон был сброшен</string>
-    <string name="ui_2048_name">игра</string>
-    <string name="ui_siptik_name">материал</string>
-    <string name="ui_voc_name">классический</string>
+
+    <!-- add in 20220423 -->
+    <string name="obtain_no">N/A</string>
+    <string name="obtain_forge_mission_nmdbj">Ковка (Сокровище фермера)</string>
+    <string name="obtain_limited_wish">Лимитированые молитвы</string>
+    <string name="obtain_wish">Молитвы</string>
+    <string name="obtain_first_gift">Исходное оружие</string>
+    <string name="obtain_shop">Магазин обмена</string>
+    <string name="obtain_chest_shop">Сундуки, магазин обмена</string>
+    <string name="obtain_forge">Ковка</string>
+    <string name="obtain_chat_ymdjy">Общение(Kuai Dao Chen)</string>
+    <string name="obtain_battlepass">Боевой пропуск</string>
+    <string name="obtain_wish_chest">Молитвы, сундуки</string>
+    <string name="obtain_event">Событие</string>
+    <string name="obtain_forge_event">Ковка, миссия</string>
+    <string name="obtain_wish_event_glyjyjg">Молитвы、Событие(Песнь о драконьей свободе)</string>
+    <string name="obtain_forge_yhbh">Ковка (Очищение Священной сакуры)</string>
+    <string name="obtain_chest">Сундуки</string>
+    <string name="obtain_forge_hldw">Ковка (Те, что слышат море)</string>
+    <string name="obtain_wish_event_hdbbhjyjj">Молитвы, событие (Павлинье Перо -- Пиратский клад)</string>
+    <string name="obtain_forge_tbmy">Ковка (Сказания из Татары)</string>
+    <string name="obtain_forge_ylysws">Ковка (Наследие Оробаси. Часть V)</string>
+    <string name="obtain_chesr_md">Сундуки в Мондштадте</string>
+    <string name="obtain_playstation_login">Вознаграждение за вход в PlayStation</string>
+    <string name="obtain_forge_lvl10_sjgw">Ковка, Звёздное воссоединениеr</string>
+    <string name="obtain_playstation_sp_gift">PlayStation Network подарок</string>
+    <string name="obtain_npc_dcdyhw">Магазин NPC,  Ассоциация рыболовов Инадзумы</string>
+    <string name="obtain_chesr_ly">Сундуки в Ли Юэ</string>
+    <string name="obtain_chest_gwk">Сундуки в Каменном лесу Гуюнь</string>
+
+    <!-- add in 20220512 -->
+    <string name="ui_2048_name">Game</string>
+    <string name="ui_siptik_name">Material</string>
+    <string name="ui_voc_name">Classic</string>
+    <string name="shikanoin_heizou">Сиканоин Хэйдзо</string>
+    <string name="detail">Подробнее</string>
+
+    <!-- add in 20220521 -->
+    <string name="release_state">Состояние выпуска</string>
+    <string name="released">Выпущен</string>
+    <string name="unreleased">Не выпущенный</string>
+    <string name="all">Все</string>
+    <string name="navigation_bar">Панель навигации</string>
+    <string name="obtain_way">Способ получения</string>
+    <string name="weapon_skill">Оружейный навык</string>
+    <string name="weapon_level">Уровеь оружия</string>
+    <string name="outfit_standard">Стандартный костюм</string>
+    <string name="outfit_event">Костюм события</string>
+    <string name="paimon">Паймон</string>
+    <string name="aqua_simulacra">Аква симулякрум</string>
+    <string name="this_is_a_sword">Это меч</string>
 </resources>

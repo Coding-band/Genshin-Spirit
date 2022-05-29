@@ -87,7 +87,10 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                 v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
                 evh = new ViewHolder(v, (OnItemClickListener) mListener);
             }else if(((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_siptik, parent, false);
+                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_card_siptik, parent, false);
+                evh = new ViewHolder(v, (OnItemClickListener) mListener);
+            }else if(((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")){
+                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_detail_siptik, parent, false);
                 evh = new ViewHolder(v, (OnItemClickListener) mListener);
             }else{
                 v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
@@ -102,7 +105,10 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                 v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
                 evh = new ViewHolder(v, (OnItemClickListener) mListener);
             }else if(((Desk2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_siptik, parent, false);
+                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_card_siptik, parent, false);
+                evh = new ViewHolder(v, (OnItemClickListener) mListener);
+            }else if(((Desk2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")){
+                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_detail_siptik, parent, false);
                 evh = new ViewHolder(v, (OnItemClickListener) mListener);
             }else{
                 v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
@@ -117,7 +123,10 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                 v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
                 evh = new ViewHolder(v, (OnItemClickListener) mListener);
             }else if(((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_siptik, parent, false);
+                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_card_siptik, parent, false);
+                evh = new ViewHolder(v, (OnItemClickListener) mListener);
+            }else if(((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")){
+                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_detail_siptik, parent, false);
                 evh = new ViewHolder(v, (OnItemClickListener) mListener);
             }else{
                 v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
@@ -132,7 +141,10 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                 v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
                 evh = new ViewHolder(v, (OnItemClickListener) mListener);
             }else if(((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_siptik, parent, false);
+                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_card_siptik, parent, false);
+                evh = new ViewHolder(v, (OnItemClickListener) mListener);
+            }else if(((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")){
+                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_detail_siptik, parent, false);
                 evh = new ViewHolder(v, (OnItemClickListener) mListener);
             }else{
                 v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
@@ -153,11 +165,6 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         int radius = 80;
         int margin = 0;
         Transformation transformation = new RoundedCornersTransformation(radius, margin);
-
-        if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-            transformation= new RoundedCornersTransformation(80, 0);
-        }
-
 
         final int radius_circ = 360;
         final int margin_circ = 0;
@@ -464,8 +471,68 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                     .error (frame)
                     .into (holder.char_card_mask);
 
-            holder.char_card_bg.setPadding(8,8,8,8);
-            holder.char_card_mask.setPadding(8,8,8,8);
+            //holder.char_card_bg.setPadding(8,8,8,8);
+            //holder.char_card_mask.setPadding(8,8,8,8);
+            holder.char_press_mask.setPadding(8,8,8,8);
+            holder.char_card.setPadding(8,8,8,8);
+
+        }else if(context.getSharedPreferences("user_info",MODE_PRIVATE).getString("curr_ui_grid", "2").equals("5") ){
+
+            switch (Characters.getElement()){
+                case "Anemo" : {
+                    holder.char_element.setImageResource(R.drawable.anemo_ico);
+                    break;
+                }
+
+                case "Cryo" : {
+                    holder.char_element.setImageResource(R.drawable.cryo_ico);
+                    break;
+                }
+
+                case "Dendro" : {
+                    holder.char_element.setImageResource(R.drawable.dendro_ico);
+                    break;
+                }
+
+                case "Electro" : {
+                    holder.char_element.setImageResource(R.drawable.electro_ico);
+                    break;
+                }
+
+                case "Geo" : {
+                    holder.char_element.setImageResource(R.drawable.geo_ico);
+                    break;
+                }
+
+                case "Hydro" : {
+                    holder.char_element.setImageResource(R.drawable.hydro_ico);
+                    break;
+                }
+
+                case "Pyro" : {
+                    holder.char_element.setImageResource(R.drawable.pyro_ico);
+                    break;
+                }
+            }
+
+            Picasso.get()
+                    .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[4],context)).resize((int) (width_curr),(int) ((width_curr)/2.1))//.transform(transformation_circ_siptik)
+                    .error (R.drawable.paimon_lost)
+                    .into(holder.char_card_bg);
+
+            int frame = R.drawable.bg_day_frame;
+
+            if (isNight){
+                frame = R.drawable.bg_night_frame;
+            }
+
+            Picasso.get()
+                    .load (frame).resize((int) (width_curr),(int) ((width_curr)/2.1))//.transform(transformation_circ_siptik)
+                    .error (frame)
+                    .into (holder.char_card_mask);
+
+            //holder.char_card_bg.setPadding(8,8,8,8);
+            //holder.char_card_mask.setPadding(8,8,8,8);
             holder.char_press_mask.setPadding(8,8,8,8);
             holder.char_card.setPadding(8,8,8,8);
 
@@ -616,8 +683,24 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                 holder.char_card_bg.getLayoutParams().height = height;
                 holder.char_card_mask.getLayoutParams().width = width;
                 holder.char_card_mask.getLayoutParams().height = height;
-                holder.char_card.getLayoutParams().width = width-36;
-                holder.char_card.getLayoutParams().height = height-36;
+                holder.char_card.getLayoutParams().width = width-16;
+                holder.char_card.getLayoutParams().height = height-16;
+            } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
+                if(width_curr / ((int)width_curr/size_per_img_siptik+1) > size_per_img_siptik){
+                    width = (width_curr) / ((int)width_curr/size_per_img_siptik+1);
+                    height = (int) ((width) / 2.1);
+
+                }else{
+                    width = (width_curr) / (int) (width_curr/size_per_img_siptik);
+                    height = (int) ((width) / 2.1);
+                }
+
+                holder.char_card_bg.getLayoutParams().width = width;
+                holder.char_card_bg.getLayoutParams().height = height;
+                holder.char_card_mask.getLayoutParams().width = width;
+                holder.char_card_mask.getLayoutParams().height = height;
+                holder.char_card.getLayoutParams().width = width-16;
+                holder.char_card.getLayoutParams().height = height-16;
             }
 
 
@@ -658,8 +741,24 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                 holder.char_card_bg.getLayoutParams().height = height;
                 holder.char_card_mask.getLayoutParams().width = width;
                 holder.char_card_mask.getLayoutParams().height = height;
-                holder.char_card.getLayoutParams().width = width-36;
-                holder.char_card.getLayoutParams().height = height-36;
+                holder.char_card.getLayoutParams().width = width-16;
+                holder.char_card.getLayoutParams().height = height-16;
+            } else if (((Desk2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
+                if(width_curr / ((int)width_curr/size_per_img_siptik+1) > size_per_img_siptik){
+                    width = (width_curr) / ((int)width_curr/size_per_img_siptik+1);
+                    height = (int) ((width) / 2.1);
+
+                }else{
+                    width = (width_curr) / (int) (width_curr/size_per_img_siptik);
+                    height = (int) ((width) / 2.1);
+                }
+
+                holder.char_card_bg.getLayoutParams().width = width;
+                holder.char_card_bg.getLayoutParams().height = height;
+                holder.char_card_mask.getLayoutParams().width = width;
+                holder.char_card_mask.getLayoutParams().height = height;
+                holder.char_card.getLayoutParams().width = width-16;
+                holder.char_card.getLayoutParams().height = height-16;
             }
 
 
@@ -700,21 +799,85 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                 holder.char_card_bg.getLayoutParams().height = height;
                 holder.char_card_mask.getLayoutParams().width = width;
                 holder.char_card_mask.getLayoutParams().height = height;
-                holder.char_card.getLayoutParams().width = width-36;
-                holder.char_card.getLayoutParams().height = height-36;
+                holder.char_card.getLayoutParams().width = width-16;
+                holder.char_card.getLayoutParams().height = height-16;
+            } else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
+                if(width_curr / ((int)width_curr/size_per_img_siptik+1) > size_per_img_siptik){
+                    width = (width_curr) / ((int)width_curr/size_per_img_siptik+1);
+                    height = (int) ((width) / 2.1);
+
+                }else{
+                    width = (width_curr) / (int) (width_curr/size_per_img_siptik);
+                    height = (int) ((width) / 2.1);
+                }
+
+                holder.char_card_bg.getLayoutParams().width = width;
+                holder.char_card_bg.getLayoutParams().height = height;
+                holder.char_card_mask.getLayoutParams().width = width;
+                holder.char_card_mask.getLayoutParams().height = height;
+                holder.char_card.getLayoutParams().width = width-16;
+                holder.char_card.getLayoutParams().height = height-16;
             }
 
 
         }else if(context instanceof CalculatorUI){
-            if(width_curr / ((int)width_curr/size_per_img_sq+1) > size_per_img_sq){
-                width = (width_curr) / ((int)width_curr/size_per_img_sq+1);
-                height = (width_curr) / ((int)width_curr/size_per_img_sq+1);
-                holder.char_name_ll.getLayoutParams().height = (width * 2) / 5;
-            }else{
-                width = size_per_img_sq;
-                height = size_per_img_sq;
-                holder.char_name_ll.getLayoutParams().height = (width * 2) / 5;
+            if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
+                if(width_curr / ((int)width_curr/size_per_img+1) > size_per_img){
+                    width = (width_curr) / ((int)width_curr/size_per_img+1);
+                    height = (width * 14) / 8;
+                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 8;
+
+                }else{
+                    width = size_per_img;
+                    height = (width * 14) / 8;
+                    holder.char_name_ll.getLayoutParams().width = size_per_img;
+                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 8;
+                }
+            } else if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
+                if(width_curr / ((int)width_curr/size_per_img_sq+1) > size_per_img_sq){
+                    width = (width_curr) / ((int)width_curr/size_per_img_sq+1);
+                    height = (width_curr) / ((int)width_curr/size_per_img_sq+1);
+                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 5;
+                }else{
+                    width = size_per_img_sq;
+                    height = size_per_img_sq;
+                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 5;
+                }
+            } else if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+                if(width_curr / ((int)width_curr/size_per_img_siptik+1) > size_per_img_siptik){
+                    width = (width_curr) / ((int)width_curr/size_per_img_siptik+1);
+                    height = (int) ((width) / 2.1);
+
+                }else{
+                    width = (width_curr) / (int) (width_curr/size_per_img_siptik);
+                    height = (int) ((width) / 2.1);
+                }
+
+                holder.char_card_bg.getLayoutParams().width = width;
+                holder.char_card_bg.getLayoutParams().height = height;
+                holder.char_card_mask.getLayoutParams().width = width;
+                holder.char_card_mask.getLayoutParams().height = height;
+                holder.char_card.getLayoutParams().width = width-16;
+                holder.char_card.getLayoutParams().height = height-16;
+            } else if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
+                if(width_curr / ((int)width_curr/size_per_img_siptik+1) > size_per_img_siptik){
+                    width = (width_curr) / ((int)width_curr/size_per_img_siptik+1);
+                    height = (int) ((width) / 2.1);
+
+                }else{
+                    width = (width_curr) / (int) (width_curr/size_per_img_siptik);
+                    height = (int) ((width) / 2.1);
+                }
+
+                holder.char_card_bg.getLayoutParams().width = width;
+                holder.char_card_bg.getLayoutParams().height = height;
+                holder.char_card_mask.getLayoutParams().width = width;
+                holder.char_card_mask.getLayoutParams().height = height;
+                holder.char_card.getLayoutParams().width = width-16;
+                holder.char_card.getLayoutParams().height = height-16;
             }
+
+
         }
 
 
@@ -773,6 +936,13 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                         .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(96*width/315,96*width/315).transform(transformation_circ_siptik_ico)
                         .error (R.drawable.paimon_full)
                         .into (holder.char_icon);
+            } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
+                holder.char_icon.getLayoutParams().width = 96*width/315;
+                holder.char_icon.getLayoutParams().height = 96*width/315;
+                Picasso.get()
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(96*width/315,96*width/315).transform(transformation_circ_siptik_ico)
+                        .error (R.drawable.paimon_full)
+                        .into (holder.char_icon);
             }
         }else if(context instanceof Desk2048){
 
@@ -792,6 +962,13 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                         .error (R.drawable.paimon_full)
                         .into (holder.char_icon);
             } else if (((Desk2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+                holder.char_icon.getLayoutParams().width = 96*width/315;
+                holder.char_icon.getLayoutParams().height = 96*width/315;
+                Picasso.get()
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(96*width/315,96*width/315).transform(transformation_circ_siptik_ico)
+                        .error (R.drawable.paimon_full)
+                        .into (holder.char_icon);
+            } else if (((Desk2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
                 holder.char_icon.getLayoutParams().width = 96*width/315;
                 holder.char_icon.getLayoutParams().height = 96*width/315;
                 Picasso.get()
@@ -823,22 +1000,60 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                         .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(96*width/315,96*width/315).transform(transformation_circ_siptik_ico)
                         .error (R.drawable.paimon_full)
                         .into (holder.char_icon);
+            } else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
+                holder.char_icon.getLayoutParams().width = 96*width/315;
+                holder.char_icon.getLayoutParams().height = 96*width/315;
+                Picasso.get()
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(96*width/315,96*width/315).transform(transformation_circ_siptik_ico)
+                        .error (R.drawable.paimon_full)
+                        .into (holder.char_icon);
             }
         }else if(context instanceof CalculatorUI){
-            Picasso.get()
-                    .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize((int) (width/1),(int) (width/1)).transform(transformation_circ)
-                    .error (R.drawable.paimon_full)
-                    .into (holder.char_icon);
 
+            if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
+                holder.char_small_ico.setVisibility(View.VISIBLE);
+                Picasso.get()
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize((int) (width/3.25),(int) (width/3.25)).transform(transformation_circ)
+                        .error (R.drawable.paimon_lost)
+                        .into (holder.char_small_ico);
+                Picasso.get()
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[0],context)).fit().centerCrop().transform(transformation)
+                        .error (R.drawable.paimon_full)
+                        .into (holder.char_icon);
+            } else if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
+                Picasso.get()
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize((int) (width/1),(int) (width/1)).transform(transformation_circ)
+                        .error (R.drawable.paimon_full)
+                        .into (holder.char_icon);
+            } else if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+                holder.char_icon.getLayoutParams().width = 96*width/315;
+                holder.char_icon.getLayoutParams().height = 96*width/315;
+                Picasso.get()
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(96*width/315,96*width/315).transform(transformation_circ_siptik_ico)
+                        .error (R.drawable.paimon_full)
+                        .into (holder.char_icon);
+            }else if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
+                holder.char_icon.getLayoutParams().width = 96*width/315;
+                holder.char_icon.getLayoutParams().height = 96*width/315;
+                Picasso.get()
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(96*width/315,96*width/315).transform(transformation_circ_siptik_ico)
+                        .error (R.drawable.paimon_full)
+                        .into (holder.char_icon);
+            }
         }
+        SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
+        String color_hex = sharedPreferences.getString("theme_color_hex","#FF5A5A"); // Must include #
 
         holder.char_name.setText(item_rss.getCharByName(Characters.getName(),context)[1]);
         holder.char_weapon.setImageResource(item_rss.getWeaponTypeIMG(Characters.getWeapon()));
         holder.char_role.setText(item_rss.getLocaleName(Characters.getRole(),context));
         holder.char_main_stat.setText(item_rss.getArtifactBuffName(Characters.getMainStat(),context));
 
-        SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
-        String color_hex = sharedPreferences.getString("theme_color_hex","#FF5A5A"); // Must include #
+        if (sharedPreferences.getString("curr_ui_grid","2").equals("5")){
+            holder.char_region.setText(item_rss.getLocaleName(Characters.getNation(),context));
+            holder.char_region_img.setImageResource(item_rss.getDistrictIMG(Characters.getNation()));
+        }
+
 
         ColorStateList myList = new ColorStateList(
                 new int[][]{
@@ -872,6 +1087,8 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         public ImageView char_card_mask;
         public LinearLayout char_name_ll;
         public CardView char_card;
+        public ImageView char_region_img ;
+        public TextView char_region ;
 
         public ViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
@@ -886,6 +1103,11 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
             //char_nl = itemView.findViewById(R.id.char_nl);
             char_bg = itemView.findViewById(R.id.char_bg);
 
+            if (itemView.findViewById(R.id.char_region) != null && itemView.findViewById(R.id.char_region_img) != null){
+                char_region = itemView.findViewById(R.id.char_region);
+                char_region_img = itemView.findViewById(R.id.char_region_img);
+            }
+
             char_press_mask = itemView.findViewById(R.id.char_press_mask);
             char_name_ll = itemView.findViewById(R.id.char_name_ll);
             char_weapon = itemView.findViewById(R.id.char_weapon);
@@ -897,7 +1119,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
             char_press_mask.startAnimation(buttonClick);
 
 
-            // Release at 2.7.0
+            // Release at 2.8.0
             /*
             char_press_mask.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override

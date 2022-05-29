@@ -83,6 +83,7 @@
     <color name="tv_spinner_color_anti_2048">#ECE5D8</color>
     <color name="tv_anti_color_2048">#3B4255</color>
     <color name="tab_bg_2048">#FFECE5D8</color>
+    <color name="tab_bg_2048_always">#4A4842</color>
     <color name="tab_bg_2048_anti">#4D5668</color>
     <color name="tab_stroke_2048">#99FFFFFF</color>
     <color name="spinner_bg_2048">#FF495366</color>

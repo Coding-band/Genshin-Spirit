@@ -62,6 +62,7 @@ import com.voc.genshin_helper.database.DataBaseHelper;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.CalculatorProcess;
 import com.voc.genshin_helper.util.FileLoader;
+import com.voc.genshin_helper.util.LangUtils;
 import com.voc.genshin_helper.util.NumberPickerDialog;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
@@ -3177,5 +3178,12 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         while(cursor.moveToNext()) {
             artifactChoosedIdList.add(cursor.getInt(cursor.getColumnIndexOrThrow("artifactId")));
         }
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        SharedPreferences sharedPreferences = newBase.getSharedPreferences("user_info",MODE_PRIVATE);
+        sharedPreferences.getInt("curr_lang_pos",2);
+        super.attachBaseContext(LangUtils.getAttachBaseContext(newBase, sharedPreferences.getInt("curr_lang_pos",2)));
     }
 }

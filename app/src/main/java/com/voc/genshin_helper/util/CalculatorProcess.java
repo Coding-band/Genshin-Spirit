@@ -125,6 +125,7 @@ public class CalculatorProcess {
     int  血斛  = 0 ;
     int  幽燈蕈  = 0 ;
     int  珊瑚真珠  = 0 ;
+    int  鬼兜蟲  = 0 ;
 
     /** T-BOSS ASC*/
 
@@ -1164,8 +1165,8 @@ public class CalculatorProcess {
         }
 
         /** LOCAL */
-        String[] local_temp = new String[]{"小燈草","慕風蘑菇","夜泊石","風車菊","石珀","蒲公英籽","嘟嘟蓮","落落莓","琉璃百合","琉璃袋","鉤鉤果","塞西莉亞花","絕雲椒椒","霓裳花","星螺","清心","海靈芝","緋櫻繡球","鳴草","晶化骨髓","天雲草實","血斛","幽燈蕈","珊瑚真珠"};
-        int[] local_temp_cnt = new int[]{小燈草,慕風蘑菇,夜泊石,風車菊,石珀,蒲公英籽,嘟嘟蓮,落落莓,琉璃百合,琉璃袋,鉤鉤果,塞西莉亞花,絕雲椒椒,霓裳花,星螺,清心,海靈芝,緋櫻繡球,鳴草,晶化骨髓,天雲草實,血斛,幽燈蕈,珊瑚真珠};
+        String[] local_temp = new String[]{"小燈草","慕風蘑菇","夜泊石","風車菊","石珀","蒲公英籽","嘟嘟蓮","落落莓","琉璃百合","琉璃袋","鉤鉤果","塞西莉亞花","絕雲椒椒","霓裳花","星螺","清心","海靈芝","緋櫻繡球","鳴草","晶化骨髓","天雲草實","血斛","幽燈蕈","珊瑚真珠","鬼兜蟲"};
+        int[] local_temp_cnt = new int[]{小燈草,慕風蘑菇,夜泊石,風車菊,石珀,蒲公英籽,嘟嘟蓮,落落莓,琉璃百合,琉璃袋,鉤鉤果,塞西莉亞花,絕雲椒椒,霓裳花,星螺,清心,海靈芝,緋櫻繡球,鳴草,晶化骨髓,天雲草實,血斛,幽燈蕈,珊瑚真珠,鬼兜蟲};
 
         for (int x = 0 ; x < local_temp.length ; x++){
             if(local_temp_cnt[x] > 0){
@@ -1581,8 +1582,8 @@ public class CalculatorProcess {
         }
 
         /** LOCAL */
-        String[] local_temp = new String[]{"小燈草","慕風蘑菇","夜泊石","風車菊","石珀","蒲公英籽","嘟嘟蓮","落落莓","琉璃百合","琉璃袋","鉤鉤果","塞西莉亞花","絕雲椒椒","霓裳花","星螺","清心","海靈芝","緋櫻繡球","鳴草","晶化骨髓","天雲草實","血斛","幽燈蕈","珊瑚真珠"};
-        int[] local_temp_cnt = new int[]{小燈草,慕風蘑菇,夜泊石,風車菊,石珀,蒲公英籽,嘟嘟蓮,落落莓,琉璃百合,琉璃袋,鉤鉤果,塞西莉亞花,絕雲椒椒,霓裳花,星螺,清心,海靈芝,緋櫻繡球,鳴草,晶化骨髓,天雲草實,血斛,幽燈蕈,珊瑚真珠};
+        String[] local_temp = new String[]{"小燈草","慕風蘑菇","夜泊石","風車菊","石珀","蒲公英籽","嘟嘟蓮","落落莓","琉璃百合","琉璃袋","鉤鉤果","塞西莉亞花","絕雲椒椒","霓裳花","星螺","清心","海靈芝","緋櫻繡球","鳴草","晶化骨髓","天雲草實","血斛","幽燈蕈","珊瑚真珠","鬼兜蟲"};
+        int[] local_temp_cnt = new int[]{小燈草,慕風蘑菇,夜泊石,風車菊,石珀,蒲公英籽,嘟嘟蓮,落落莓,琉璃百合,琉璃袋,鉤鉤果,塞西莉亞花,絕雲椒椒,霓裳花,星螺,清心,海靈芝,緋櫻繡球,鳴草,晶化骨髓,天雲草實,血斛,幽燈蕈,珊瑚真珠,鬼兜蟲};
         gridLayout = viewPager.findViewById(R.id.result_local_gl);
         gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
@@ -2106,6 +2107,7 @@ public class CalculatorProcess {
             else if(temp_item.get(3).equals("血斛")){血斛 = addCountIntoVar(血斛,temp_count,"LOCAL");}
             else if(temp_item.get(3).equals("幽燈蕈")){幽燈蕈 = addCountIntoVar(幽燈蕈,temp_count,"LOCAL");}
             else if(temp_item.get(3).equals("珊瑚真珠")){珊瑚真珠 = addCountIntoVar(珊瑚真珠,temp_count,"LOCAL");}
+            else if(temp_item.get(3).equals("鬼兜蟲")){鬼兜蟲 = addCountIntoVar(鬼兜蟲,temp_count,"LOCAL");}
 
             //add in 2021024 (RE)
 

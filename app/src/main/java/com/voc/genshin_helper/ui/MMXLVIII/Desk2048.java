@@ -37,6 +37,8 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
 import android.provider.MediaStore;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.text.method.LinkMovementMethod;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -77,6 +79,7 @@ import com.voc.genshin_helper.data.Today_Material;
 import com.voc.genshin_helper.data.Weapons;
 import com.voc.genshin_helper.data.WeaponsAdapter;
 import com.voc.genshin_helper.kidding.GoSleep;
+import com.voc.genshin_helper.tutorial.TutorialUI;
 import com.voc.genshin_helper.ui.AlarmUI;
 import com.voc.genshin_helper.ui.BackgroundConfirmActivity;
 import com.voc.genshin_helper.ui.CalculatorDBActivity;
@@ -216,6 +219,7 @@ public class Desk2048 extends AppCompatActivity {
     RadioButton grid_2_rb;
     RadioButton grid_3_rb;
     RadioButton grid_4_rb;
+    RadioButton grid_5_rb;
 
     String[] weekdayList ;
     String[] langList ;
@@ -269,6 +273,7 @@ public class Desk2048 extends AppCompatActivity {
         // Check Is First Time Open
         if(sharedPreferences_version.getBoolean(BuildConfig.VERSION_NAME,false) == false){
             ChangeLog.show(context,activity);
+
             editor2 = sharedPreferences_version.edit();
             editor2.putBoolean(BuildConfig.VERSION_NAME,true);
             editor2.apply();
@@ -290,7 +295,6 @@ public class Desk2048 extends AppCompatActivity {
 
         check_spinner = 0;
 
-
         //忘憂喵
         //gs = new GoSleep();
         //gs.sleep(context);
@@ -308,6 +312,7 @@ public class Desk2048 extends AppCompatActivity {
         setup_weapon();
         setup_art();
         setup_paimon();
+
         BackgroundReload.BackgroundReload(context,activity);
 
         //BitmapToRGB565.order(context);
@@ -363,11 +368,13 @@ public class Desk2048 extends AppCompatActivity {
 
         desk_tablayout.setTabIndicatorFullWidth(false);
 
+
         app_started = sharedPreferences.getInt("app_started",1);
         boolean voted = sharedPreferences.getBoolean("voted",false);
         if(voted == false && app_started >= 5){
             showVoteDialog();
         }
+
         if(sharedPreferences.getBoolean("PASS_JUST_CHANGED_THEME",false) == false){
             editor.putInt("app_started",app_started+1);
             editor.apply();
@@ -376,6 +383,7 @@ public class Desk2048 extends AppCompatActivity {
         if (sharedPreferences.getBoolean("PASS_JUST_CHANGED_THEME",false) == true) {
             editor.putBoolean("PASS_JUST_CHANGED_THEME", false);
             editor.apply();
+
 
             viewPager.setCurrentItem(4);
             desk_tablayout.selectTab(desk_tablayout.getTabAt(4));
@@ -412,6 +420,8 @@ public class Desk2048 extends AppCompatActivity {
         }else{
             desk_tablayout.selectTab(desk_tablayout.getTabAt(0));
             viewPager.setCurrentItem(0);
+
+
 
             View view1 = desk_tablayout.getTabAt(0).getCustomView();
             ImageView tab_icon = (ImageView) view1.findViewById(R.id.icon);
@@ -456,6 +466,11 @@ public class Desk2048 extends AppCompatActivity {
 
             }
         });
+
+
+        TutorialUI tutorialUI = new TutorialUI();
+        tutorialUI.deskSetPosArray(0,1,2,3,4);
+        tutorialUI.setup(context,activity,viewPager0,viewPager1,viewPager2,viewPager3,viewPager4,desk_tablayout,null);
     }
 
     private void setup_paimon() {
@@ -587,6 +602,14 @@ public class Desk2048 extends AppCompatActivity {
             }else{
                 mLayoutManager = new GridLayoutManager(context,  1);
             }
+        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
+            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                int tmp_cnt = (int) width_w/960;
+                if (tmp_cnt < 1){tmp_cnt = 1;}
+                mLayoutManager = new GridLayoutManager(context,  tmp_cnt);
+            }else{
+                mLayoutManager = new GridLayoutManager(context,  1);
+            }
         }
         LinearLayout.LayoutParams  paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
         paramsMsg.gravity = Gravity.CENTER;
@@ -631,8 +654,8 @@ public class Desk2048 extends AppCompatActivity {
                 ConstraintLayout header_con = viewPager2.findViewById(R.id.header_con);
                 View header_search = viewPager2.findViewById(R.id.header_search);
                 EditText header_search_et = viewPager2.findViewById(R.id.header_search_et);
-                ImageView header_search_cancel = viewPager2.findViewById(R.id.header_search_cancel);
-                Button menu_search_confirm = viewPager2.findViewById(R.id.menu_search_confirm);
+                Button menu_search_cancel = viewPager2.findViewById(R.id.menu_search_cancel);
+                ImageView header_search_reset = viewPager2.findViewById(R.id.header_search_reset);
 
                 header_con.animate()
                         .alpha(0.0f)
@@ -656,9 +679,19 @@ public class Desk2048 extends AppCompatActivity {
                             }
                         });
 
-                menu_search_confirm.setOnClickListener(new View.OnClickListener() {
+                header_search_et.addTextChangedListener(new TextWatcher() {
                     @Override
-                    public void onClick(View view) {
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
                         if (header_search_et.getText() != null){
                             String request = header_search_et.getText().toString();
                             if (!request.equals("")){
@@ -681,7 +714,7 @@ public class Desk2048 extends AppCompatActivity {
                     }
                 });
 
-                header_search_cancel.setOnClickListener(new View.OnClickListener() {
+                menu_search_cancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         header_search_et.setText("");
@@ -705,7 +738,13 @@ public class Desk2048 extends AppCompatActivity {
                                         header_con.setVisibility(View.VISIBLE);
                                     }
                                 });
+                    }
+                });
 
+                header_search_reset.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        header_search_et.setText("");
                     }
                 });
 
@@ -947,6 +986,14 @@ public class Desk2048 extends AppCompatActivity {
             }else{
                 mLayoutManager = new GridLayoutManager(context,  1);
             }
+        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
+            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                int tmp_cnt = (int) width/960;
+                if (tmp_cnt < 1){tmp_cnt = 1;}
+                mLayoutManager = new GridLayoutManager(context,  tmp_cnt);
+            }else{
+                mLayoutManager = new GridLayoutManager(context,  1);
+            }
         }
         LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
         paramsMsg.gravity = Gravity.CENTER;
@@ -963,8 +1010,8 @@ public class Desk2048 extends AppCompatActivity {
                 ConstraintLayout header_con = viewPager1.findViewById(R.id.header_con);
                 View header_search = viewPager1.findViewById(R.id.header_search);
                 EditText header_search_et = viewPager1.findViewById(R.id.header_search_et);
-                ImageView header_search_cancel = viewPager1.findViewById(R.id.header_search_cancel);
-                Button menu_search_confirm = viewPager1.findViewById(R.id.menu_search_confirm);
+                Button menu_search_cancel = viewPager1.findViewById(R.id.menu_search_cancel);
+                ImageView header_search_reset = viewPager1.findViewById(R.id.header_search_reset);
 
                 header_con.animate()
                         .alpha(0.0f)
@@ -988,9 +1035,19 @@ public class Desk2048 extends AppCompatActivity {
                             }
                         });
 
-                menu_search_confirm.setOnClickListener(new View.OnClickListener() {
+                header_search_et.addTextChangedListener(new TextWatcher() {
                     @Override
-                    public void onClick(View view) {
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
                         if (header_search_et.getText() != null){
                             String request = header_search_et.getText().toString();
                             if (!request.equals("")){
@@ -1013,7 +1070,7 @@ public class Desk2048 extends AppCompatActivity {
                     }
                 });
 
-                header_search_cancel.setOnClickListener(new View.OnClickListener() {
+                menu_search_cancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         header_search_et.setText("");
@@ -1037,6 +1094,13 @@ public class Desk2048 extends AppCompatActivity {
                                         header_con.setVisibility(View.VISIBLE);
                                     }
                                 });
+                    }
+                });
+
+                header_search_reset.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        header_search_et.setText("");
                     }
                 });
 
@@ -1269,6 +1333,14 @@ public class Desk2048 extends AppCompatActivity {
             }else{
                 mLayoutManager = new GridLayoutManager(context,  1);
             }
+        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
+            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                int tmp_cnt = (int) width_a/960;
+                if (tmp_cnt < 1){tmp_cnt = 1;}
+                mLayoutManager = new GridLayoutManager(context,  tmp_cnt);
+            }else{
+                mLayoutManager = new GridLayoutManager(context,  1);
+            }
         }
         LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
         paramsMsg.gravity = Gravity.CENTER;
@@ -1314,8 +1386,8 @@ public class Desk2048 extends AppCompatActivity {
                 ConstraintLayout header_con = viewPager3.findViewById(R.id.header_con);
                 View header_search = viewPager3.findViewById(R.id.header_search);
                 EditText header_search_et = viewPager3.findViewById(R.id.header_search_et);
-                ImageView header_search_cancel = viewPager3.findViewById(R.id.header_search_cancel);
-                Button menu_search_confirm = viewPager3.findViewById(R.id.menu_search_confirm);
+                Button menu_search_cancel = viewPager3.findViewById(R.id.menu_search_cancel);
+                ImageView header_search_reset = viewPager3.findViewById(R.id.header_search_reset);
 
                 header_con.animate()
                         .alpha(0.0f)
@@ -1339,9 +1411,19 @@ public class Desk2048 extends AppCompatActivity {
                             }
                         });
 
-                menu_search_confirm.setOnClickListener(new View.OnClickListener() {
+                header_search_et.addTextChangedListener(new TextWatcher() {
                     @Override
-                    public void onClick(View view) {
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
                         if (header_search_et.getText() != null){
                             String request = header_search_et.getText().toString();
                             if (!request.equals("")){
@@ -1364,11 +1446,10 @@ public class Desk2048 extends AppCompatActivity {
                     }
                 });
 
-                header_search_cancel.setOnClickListener(new View.OnClickListener() {
+                menu_search_cancel.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         header_search_et.setText("");
-
                         header_search.animate()
                                 .alpha(0.0f)
                                 .setDuration(300)
@@ -1389,6 +1470,13 @@ public class Desk2048 extends AppCompatActivity {
                                         header_con.setVisibility(View.VISIBLE);
                                     }
                                 });
+                    }
+                });
+
+                header_search_reset.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        header_search_et.setText("");
                     }
                 });
 
@@ -1720,7 +1808,7 @@ public class Desk2048 extends AppCompatActivity {
         //langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp),getString(R.string.fr_fr),getString(R.string.uk_ua)};
         langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp),getString(R.string.fr_fr)};
         ArrayAdapter lang_aa = new ArrayAdapter(context,R.layout.spinner_item,langList);
-        lang_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
+        lang_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_2048);
 
         Spinner lang_sp = viewPager4.findViewById(R.id.lang_spinner);
         lang_sp.setAdapter(lang_aa);
@@ -1856,7 +1944,7 @@ public class Desk2048 extends AppCompatActivity {
         // Other -> Server Location
 
         ArrayAdapter server_aa = new ArrayAdapter(context,R.layout.spinner_item,serverList);
-        server_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
+        server_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_2048);
 
         Spinner server_spinner = viewPager4.findViewById(R.id.server_spinner);
         server_spinner.setAdapter(server_aa);
@@ -2019,20 +2107,34 @@ public class Desk2048 extends AppCompatActivity {
         grid_2_rb = viewPager4.findViewById(R.id.grid_2);
         grid_3_rb = viewPager4.findViewById(R.id.grid_3);
         grid_4_rb = viewPager4.findViewById(R.id.grid_4);
+        grid_5_rb = viewPager4.findViewById(R.id.grid_5);
         String currUiGrid = sharedPreferences.getString("curr_ui_grid","2");
 
         if (currUiGrid.equals("2")){
             grid_2_rb.setChecked(true);
             grid_3_rb.setChecked(false);
             grid_4_rb.setChecked(false);
+            grid_5_rb.setChecked(false);
         }else if(currUiGrid.equals("3")){
             grid_2_rb.setChecked(false);
             grid_3_rb.setChecked(true);
             grid_4_rb.setChecked(false);
-        }else{
+            grid_5_rb.setChecked(false);
+        }else if(currUiGrid.equals("4")){
             grid_2_rb.setChecked(false);
             grid_3_rb.setChecked(false);
             grid_4_rb.setChecked(true);
+            grid_5_rb.setChecked(false);
+        }else if(currUiGrid.equals("5")){
+            grid_2_rb.setChecked(false);
+            grid_3_rb.setChecked(false);
+            grid_4_rb.setChecked(false);
+            grid_5_rb.setChecked(true);
+        }else{
+            grid_2_rb.setChecked(true);
+            grid_3_rb.setChecked(false);
+            grid_4_rb.setChecked(false);
+            grid_5_rb.setChecked(false);
         }
 
         grid_2_rb.setOnClickListener(new View.OnClickListener() {
@@ -2043,6 +2145,7 @@ public class Desk2048 extends AppCompatActivity {
                 grid_2_rb.setChecked(true);
                 grid_3_rb.setChecked(false);
                 grid_4_rb.setChecked(false);
+                grid_5_rb.setChecked(false);
 
                 setup_home();
                 setup_char();
@@ -2058,6 +2161,7 @@ public class Desk2048 extends AppCompatActivity {
                 grid_2_rb.setChecked(false);
                 grid_3_rb.setChecked(true);
                 grid_4_rb.setChecked(false);
+                grid_5_rb.setChecked(false);
 
                 setup_home();
                 setup_char();
@@ -2073,6 +2177,39 @@ public class Desk2048 extends AppCompatActivity {
                 grid_2_rb.setChecked(false);
                 grid_3_rb.setChecked(false);
                 grid_4_rb.setChecked(true);
+                grid_5_rb.setChecked(false);
+
+                setup_home();
+                setup_char();
+                setup_weapon();
+                setup_art();
+            }
+        });
+        grid_5_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("curr_ui_grid","5");
+                editor.apply();
+                grid_2_rb.setChecked(false);
+                grid_3_rb.setChecked(false);
+                grid_4_rb.setChecked(false);
+                grid_5_rb.setChecked(true);
+
+                setup_home();
+                setup_char();
+                setup_weapon();
+                setup_art();
+            }
+        });
+        grid_5_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("curr_ui_grid","5");
+                editor.apply();
+                grid_2_rb.setChecked(false);
+                grid_3_rb.setChecked(false);
+                grid_4_rb.setChecked(false);
+                grid_5_rb.setChecked(true);
 
                 setup_home();
                 setup_char();
@@ -2612,6 +2749,7 @@ public class Desk2048 extends AppCompatActivity {
             View view = LayoutInflater.from(context).inflate(R.layout.item_asc_require_card_2048, char_ll, false);
             ImageView asc_material_ico = view.findViewById(R.id.asc_material_ico);
             ImageView asc_material_tick = view.findViewById(R.id.asc_material_tick);
+            ImageView asc_material_locate = view.findViewById(R.id.asc_material_locate);
             TextView asc_material_tv = view.findViewById(R.id.asc_material_tv);
             TextView asc_material_location = view.findViewById(R.id.asc_material_location);
             LinearLayout asc_material_char_ll = view.findViewById(R.id.asc_material_char_ll);
@@ -2622,6 +2760,15 @@ public class Desk2048 extends AppCompatActivity {
             asc_material_tv.setText(getString(today_TV[x]));
             Picasso.get().load(today_IMG[x]).into(asc_material_ico);
             asc_material_location.setText(getString(today_Location[x]));
+
+            int finalX = x;
+            asc_material_locate.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://webstatic-sea.hoyolab.com/ys/app/interactive-map/index.html?lang=zh-tw#/map/2?shown_types=3,154&center="+tm.today_char_location_url(dow)[finalX]+"&zoom=0.50"));
+                    startActivity(browserIntent);
+                }
+            });
 
             int[] asc_char_ico = new int[]{R.id.asc_char_ico1,R.id.asc_char_ico2,R.id.asc_char_ico3,R.id.asc_char_ico4,R.id.asc_char_ico5,R.id.asc_char_ico6,R.id.asc_char_ico7,R.id.asc_char_ico8,R.id.asc_char_ico9,R.id.asc_char_ico10,R.id.asc_char_ico11,R.id.asc_char_ico12,R.id.asc_char_ico13,R.id.asc_char_ico14,R.id.asc_char_ico15,R.id.asc_char_ico16,R.id.asc_char_ico17,R.id.asc_char_ico18,R.id.asc_char_ico19,R.id.asc_char_ico20,R.id.asc_char_ico21,R.id.asc_char_ico22,R.id.asc_char_ico23,R.id.asc_char_ico24,R.id.asc_char_ico25,R.id.asc_char_ico26,R.id.asc_char_ico27,R.id.asc_char_ico28,R.id.asc_char_ico29,R.id.asc_char_ico30,R.id.asc_char_ico31,R.id.asc_char_ico32,R.id.asc_char_ico33,R.id.asc_char_ico34,R.id.asc_char_ico35,R.id.asc_char_ico36,R.id.asc_char_ico37,R.id.asc_char_ico38,R.id.asc_char_ico39,R.id.asc_char_ico40,R.id.asc_char_ico41,R.id.asc_char_ico42,R.id.asc_char_ico43,R.id.asc_char_ico44,R.id.asc_char_ico45};
             int[] asc_char_tick = new int[]{R.id.asc_char_tick1,R.id.asc_char_tick2,R.id.asc_char_tick3,R.id.asc_char_tick4,R.id.asc_char_tick5,R.id.asc_char_tick6,R.id.asc_char_tick7,R.id.asc_char_tick8,R.id.asc_char_tick9,R.id.asc_char_tick10,R.id.asc_char_tick11,R.id.asc_char_tick12,R.id.asc_char_tick13,R.id.asc_char_tick14,R.id.asc_char_tick15,R.id.asc_char_tick16,R.id.asc_char_tick17,R.id.asc_char_tick18,R.id.asc_char_tick19,R.id.asc_char_tick20,R.id.asc_char_tick21,R.id.asc_char_tick22,R.id.asc_char_tick23,R.id.asc_char_tick24,R.id.asc_char_tick25,R.id.asc_char_tick26,R.id.asc_char_tick27,R.id.asc_char_tick28,R.id.asc_char_tick29,R.id.asc_char_tick30,R.id.asc_char_tick31,R.id.asc_char_tick32,R.id.asc_char_tick33,R.id.asc_char_tick34,R.id.asc_char_tick35,R.id.asc_char_tick36,R.id.asc_char_tick37,R.id.asc_char_tick38,R.id.asc_char_tick39,R.id.asc_char_tick40,R.id.asc_char_tick41,R.id.asc_char_tick42,R.id.asc_char_tick43,R.id.asc_char_tick44,R.id.asc_char_tick45};
@@ -2695,6 +2842,7 @@ public class Desk2048 extends AppCompatActivity {
             ImageView asc_material_tick = view.findViewById(R.id.asc_material_tick);
             TextView asc_material_tv = view.findViewById(R.id.asc_material_tv);
             TextView asc_material_location = view.findViewById(R.id.asc_material_location);
+            ImageView asc_material_locate = view.findViewById(R.id.asc_material_locate);
             LinearLayout asc_material_weapon_ll = view.findViewById(R.id.asc_material_char_ll);
 
             //Set tv and img
@@ -2703,6 +2851,15 @@ public class Desk2048 extends AppCompatActivity {
             asc_material_tv.setText(getString(today_TV[x]));
             Picasso.get().load(today_IMG[x]).into(asc_material_ico);
             asc_material_location.setText(getString(today_Location[x]));
+
+            int finalX = x;
+            asc_material_locate.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://webstatic-sea.hoyolab.com/ys/app/interactive-map/index.html?lang=zh-tw#/map/2?shown_types=3,154&center="+tm.today_weapon_location_url(dow)[finalX]+"&zoom=0.50"));
+                    startActivity(browserIntent);
+                }
+            });
 
             int[] asc_weapon_ico = new int[]{R.id.asc_char_ico1,R.id.asc_char_ico2,R.id.asc_char_ico3,R.id.asc_char_ico4,R.id.asc_char_ico5,R.id.asc_char_ico6,R.id.asc_char_ico7,R.id.asc_char_ico8,R.id.asc_char_ico9,R.id.asc_char_ico10,R.id.asc_char_ico11,R.id.asc_char_ico12,R.id.asc_char_ico13,R.id.asc_char_ico14,R.id.asc_char_ico15,R.id.asc_char_ico16,R.id.asc_char_ico17,R.id.asc_char_ico18,R.id.asc_char_ico19,R.id.asc_char_ico20,R.id.asc_char_ico21,R.id.asc_char_ico22,R.id.asc_char_ico23,R.id.asc_char_ico24,R.id.asc_char_ico25,R.id.asc_char_ico26,R.id.asc_char_ico27,R.id.asc_char_ico28,R.id.asc_char_ico29,R.id.asc_char_ico30,R.id.asc_char_ico31,R.id.asc_char_ico32,R.id.asc_char_ico33,R.id.asc_char_ico34,R.id.asc_char_ico35,R.id.asc_char_ico36,R.id.asc_char_ico37,R.id.asc_char_ico38,R.id.asc_char_ico39,R.id.asc_char_ico40,R.id.asc_char_ico41,R.id.asc_char_ico42,R.id.asc_char_ico43,R.id.asc_char_ico44,R.id.asc_char_ico45};
             int[] asc_weapon_tick = new int[]{R.id.asc_char_tick1,R.id.asc_char_tick2,R.id.asc_char_tick3,R.id.asc_char_tick4,R.id.asc_char_tick5,R.id.asc_char_tick6,R.id.asc_char_tick7,R.id.asc_char_tick8,R.id.asc_char_tick9,R.id.asc_char_tick10,R.id.asc_char_tick11,R.id.asc_char_tick12,R.id.asc_char_tick13,R.id.asc_char_tick14,R.id.asc_char_tick15,R.id.asc_char_tick16,R.id.asc_char_tick17,R.id.asc_char_tick18,R.id.asc_char_tick19,R.id.asc_char_tick20,R.id.asc_char_tick21,R.id.asc_char_tick22,R.id.asc_char_tick23,R.id.asc_char_tick24,R.id.asc_char_tick25,R.id.asc_char_tick26,R.id.asc_char_tick27,R.id.asc_char_tick28,R.id.asc_char_tick29,R.id.asc_char_tick30,R.id.asc_char_tick31,R.id.asc_char_tick32,R.id.asc_char_tick33,R.id.asc_char_tick34,R.id.asc_char_tick35,R.id.asc_char_tick36,R.id.asc_char_tick37,R.id.asc_char_tick38,R.id.asc_char_tick39,R.id.asc_char_tick40,R.id.asc_char_tick41,R.id.asc_char_tick42,R.id.asc_char_tick43,R.id.asc_char_tick44,R.id.asc_char_tick45};

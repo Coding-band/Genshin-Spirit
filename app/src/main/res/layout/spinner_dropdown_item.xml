@@ -9,8 +9,7 @@
     style="?android:attr/spinnerDropDownItemStyle"
     android:layout_width="match_parent"
     android:layout_height="48dp"
-    android:background="@color/page_bg"
     android:ellipsize="marquee"
-    android:singleLine="true"
     android:fontFamily="@font/genshin_font"
+    android:singleLine="true"
     android:textColor="@color/tv_color" />

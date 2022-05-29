@@ -987,10 +987,10 @@
     <string name="obtain_wish_event_glyjyjg">祈願、活動(巨龍與自由之歌)</string>
     <string name="obtain_forge_yhbh">鍛造(影向祓行)</string>
     <string name="obtain_chest">寶箱</string>
-    <string name="obtain_forge_hldw">鍛造(奇怪的海螺)</string>
-    <string name="obtain_wish_event_hdbbhjyjj">祈願、活動(海盜秘寶孔雀羽之章)</string>
+    <string name="obtain_forge_hldw">鍛造(聽海人)</string>
+    <string name="obtain_wish_event_hdbbhjyjj">祈願、活動(孔雀羽之章--海盜秘寶)</string>
     <string name="obtain_forge_tbmy">鍛造(踏鞴物語)</string>
-    <string name="obtain_forge_ylysws">鍛造(遠呂羽氏遺事)</string>
+    <string name="obtain_forge_ylysws">鍛造(遠呂羽氏遺事·其五)</string>
     <string name="obtain_chesr_md">蒙德寶箱</string>
     <string name="obtain_playstation_login">PlayStation平台登錄遊戲</string>
     <string name="obtain_forge_lvl10_sjgw">鍛造、星之歸還活動</string>
@@ -1001,5 +1001,47 @@
     <string name="ui_siptik_name">素材</string>
     <string name="ui_2048_name">遊戲</string>
     <string name="ui_voc_name">經典</string>
+    <string name="shikanoin_heizou">鹿野院平藏</string>
+    <string name="detail">細節</string>
+    <string name="release_state">發佈狀態</string>
+    <string name="released">已發佈</string>
+    <string name="unreleased">未發佈</string>
+    <string name="all">所有</string>
+    <string name="navigation_bar">導航欄</string>
+    <string name="obtain_way">獲取途徑</string>
+    <string name="weapon_skill">武器技能</string>
+    <string name="weapon_level">武器等級</string>
+    <string name="outfit_standard">一般衣裝</string>
+    <string name="outfit_event">活動衣裝</string>
+    <string name="paimon">派蒙</string>
+    <string name="aqua_simulacra">若水</string>
+    <string name="this_is_a_sword">這是一把劍</string>
+    <string name="fading_twilight">落霞</string>
+
+
+    <!-- add in 20220529 -->
+    <string name="tut_part0_1">"嗨，我是Voc-夜芷冰，原神小幫手的開發者，亦是這次使用教學的解說者。"</string>
+    <string name="tut_part0_2">"首先，請容我稍微介紹原神小幫手"</string>
+    <string name="tut_part0_3">"原神小幫手是一款包括查看資訊及計算功能的App"</string>
+    <string name="tut_part0_4">"另外，它是一個開源的專案，我們十分歡迎任何人對於新功能給予任何建議～"</string>
+    <string name="tut_part0_5">"喔對了，讓我們開始使用教學吧～"</string>
+    <string name="tut_part0_6">"頁面底部的便是導航欄，您可以透過按下對應按鈕轉換頁面"</string>
+    <string name="tut_part0_7">"另外，你也可以向左／右滑動頁面來轉換頁面"</string>
+    <string name="tut_part1_1">"這是主頁面，在這裡能看到今天的焦點，例如角色突破素材，武器突破素材等等"</string>
+    <string name="tut_part1_2">"如果你想閱讀更多有關這個角色／武器的資料，只需簡簡單單地按下角色／武器的頭像"</string>
+    <string name="tut_part1_3">"另外，如果當天是任何一個角色的生日，這裡將會有有一個生日提醒"</string>
+    <string name="tut_part1_4">"希望這一頁的內容能夠對你的規劃有所幫助"</string>
+    <string name="tut_part2_1">"這是角色列表，您可以在這裡找到任何一個在遊戲裡的角色"</string>
+    <string name="tut_part2_2">"只需要按下對應角色即可以閱讀其詳細資料～"</string>
+    <string name="tut_part2_3">"如果您想搜尋符合指定要求的角色，請按下篩選圖示的按鈕以開啟篩選頁面"</string>
+    <string name="tut_part2_4">"如果您想透過角色譯名或英文名稱搜尋角色，請按下查詢圖示開啟查詢介面"</string>
+    <string name="tut_part3_5">"這是武器列表，您可以在這裡找到任何一個在遊戲裡的武器"</string>
+    <string name="tut_part3_6">"基本上，它與角色列表的使用方法一模一樣～"</string>
+    <string name="tut_part4_1">"這是聖遺物列表，基本上，它與角色列表的使用方法一模一樣～"</string>
+    <string name="tut_part5_1">"這是設定／派蒙頁面，您可以在這裡設定App"</string>
+    <string name="tut_part5_2">"嗯。。。這次的教學差不多完結了"</string>
+    <string name="tut_part5_3">"如果你有任何問題或者疑難，您可以直接到Discord找我"</string>
+    <string name="tut_part5_4">"我們的官方伺服器邀請連結已經放在設定內的【關於】部分"</string>
+    <string name="tut_part5_5">"那我們在Discord裏再見吧～拜拜 ~"</string>
 
 </resources>

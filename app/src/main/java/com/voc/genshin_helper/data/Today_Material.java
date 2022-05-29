@@ -34,6 +34,10 @@ public class Today_Material {
     int[] Sun_char_Location =  {R.string.forsaken_rift,R.string.taishan_mansion,R.string.violet_court,R.string.forsaken_rift,R.string.taishan_mansion,R.string.violet_court,R.string.forsaken_rift,R.string.taishan_mansion,R.string.violet_court};
     int[] Weekday_char_Location =  {R.string.forsaken_rift,R.string.taishan_mansion,R.string.violet_court};
 
+    //https://webstatic-sea.hoyolab.com/ys/app/interactive-map/index.html?lang=zh-tw#/map/2?shown_types=3,154&center={X,Y}&zoom=0.50
+    String[] Sun_char_Location_URL = {"656.47,94.08","1665.33,-1944.69","5532.32,3176.36","656.47,94.08","1665.33,-1944.69","5532.32,3176.36","656.47,94.08","1665.33,-1944.69","5532.32,3176.36"};
+    String[] Weekday_char_Location_URL = {"656.47,94.08","1665.33,-1944.69","5532.32,3176.36"};
+
     int[] Mon_weapon_IMG =  {R.drawable.tile_of_decarabians_tower,R.drawable.luminous_sands_from_guyun,R.drawable.coral_branch_of_a_distant_sea};
     int[] Tue_weapon_IMG =  {R.drawable.mist_veiled_lead_elixir,R.drawable.boreal_wolfs_milk_tooth,R.drawable.narukamis_wisdom};
     int[] Wed_weapon_IMG =  {R.drawable.grain_of_aerosiderite,R.drawable.fetters_of_the_dandelion_gladiator,R.drawable.mask_of_the_wicked_lieutenant};
@@ -53,6 +57,9 @@ public class Today_Material {
     int[] Sun_weapon_Location =  {R.string.cecilia_garden,R.string.hidden_palace_of_lianshan_formula,R.string.court_of_flowing_sand,R.string.cecilia_garden,R.string.hidden_palace_of_lianshan_formula,R.string.court_of_flowing_sand,R.string.cecilia_garden,R.string.hidden_palace_of_lianshan_formula,R.string.court_of_flowing_sand};
     int[] Weekday_weapon_Location =  {R.string.cecilia_garden,R.string.hidden_palace_of_lianshan_formula,R.string.court_of_flowing_sand};
 
+    //https://webstatic-sea.hoyolab.com/ys/app/interactive-map/index.html?lang=zh-tw#/map/2?shown_types=3,154&center={X,Y}&zoom=0.50
+    String[] Sun_weapon_Location_URL = {"47.65,-564.24","1582.07,-432.71","4714.55,3606.99","47.65,-564.24","1582.07,-432.71","4714.55,3606.99","47.65,-564.24","1582.07,-432.71","4714.55,3606.99"};
+    String[] Weekday_weapon_Location_URL = {"47.65,-564.24","1582.07,-432.71","4714.55,3606.99"};
 
     public int[] today_char_IMG (int dow){
         if(dow == 2){return Mon_char_IMG;}
@@ -106,6 +113,15 @@ public class Today_Material {
     public int[] today_weapon_location (int dow){
         if(dow == 1){return Sun_weapon_Location;}
         else return Weekday_weapon_Location;
+    }
+
+    public String[] today_weapon_location_url (int dow){
+        if(dow == 1){return Sun_weapon_Location_URL;}
+        else return Weekday_weapon_Location_URL;
+    }
+    public String[] today_char_location_url (int dow){
+        if(dow == 1){return Sun_char_Location_URL;}
+        else return Weekday_char_Location_URL;
     }
 
     public int today_is (int ids){

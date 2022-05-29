@@ -1300,6 +1300,7 @@ public class Characters_Info_2048 {
         char_title.setText(nick);
         //Picasso.get().load(FileLoader.loadIMG(item_rss.getCharByName(name,context)[0],context)).centerCrop().into(char_img);
         char_img.setImageDrawable(FileLoader.loadIMG2Drawable(item_rss.getCharByName(name,context)[0],context));
+        char_img.getLayoutParams().width = width;
 
         displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);

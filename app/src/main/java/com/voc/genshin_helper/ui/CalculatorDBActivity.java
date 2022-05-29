@@ -49,6 +49,7 @@ import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.IndexDBHelper;
+import com.voc.genshin_helper.util.LangUtils;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
 import java.io.File;
@@ -607,5 +608,12 @@ public class CalculatorDBActivity extends AppCompatActivity {
         int count = cursor.getInt(0);
         cursor.close();
         return count > 0;
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        SharedPreferences sharedPreferences = newBase.getSharedPreferences("user_info",MODE_PRIVATE);
+        sharedPreferences.getInt("curr_lang_pos",2);
+        super.attachBaseContext(LangUtils.getAttachBaseContext(newBase, sharedPreferences.getInt("curr_lang_pos",2)));
     }
 }

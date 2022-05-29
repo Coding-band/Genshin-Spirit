@@ -82,6 +82,7 @@ import com.voc.genshin_helper.data.Today_Material;
 import com.voc.genshin_helper.data.Weapons;
 import com.voc.genshin_helper.data.WeaponsAdapter;
 import com.voc.genshin_helper.kidding.GoSleep;
+import com.voc.genshin_helper.tutorial.TutorialUI;
 import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
 import com.voc.genshin_helper.ui.SipTik.DeskSipTik;
 import com.voc.genshin_helper.util.BackgroundReload;
@@ -217,6 +218,7 @@ public class MainActivity extends AppCompatActivity {
     RadioButton grid_2_rb;
     RadioButton grid_3_rb;
     RadioButton grid_4_rb;
+    RadioButton grid_5_rb;
 
     String[] langList ;
     String[] serverList ;
@@ -429,6 +431,10 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
+
+        TutorialUI tutorialUI = new TutorialUI();
+        tutorialUI.deskSetPosArray(2,0,3,1,4);
+        tutorialUI.setup(context,activity,viewPager2,viewPager0,viewPager3,viewPager1,viewPager4,null,nav_view);
     }
     private void setup_weapon() {
         check_spinner = 0;
@@ -453,6 +459,14 @@ public class MainActivity extends AppCompatActivity {
                 mLayoutManager = new GridLayoutManager(context,  3);
             }
         }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                int tmp_cnt = (int) width_w/960;
+                if (tmp_cnt < 1){tmp_cnt = 1;}
+                mLayoutManager = new GridLayoutManager(context,  tmp_cnt);
+            }else{
+                mLayoutManager = new GridLayoutManager(context,  1);
+            }
+        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
             if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
                 int tmp_cnt = (int) width_w/960;
                 if (tmp_cnt < 1){tmp_cnt = 1;}
@@ -732,6 +746,14 @@ public class MainActivity extends AppCompatActivity {
             }else{
                 mLayoutManager = new GridLayoutManager(context,  1);
             }
+        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
+            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                int tmp_cnt = (int) width/960;
+                if (tmp_cnt < 1){tmp_cnt = 1;}
+                mLayoutManager = new GridLayoutManager(context,  tmp_cnt);
+            }else{
+                mLayoutManager = new GridLayoutManager(context,  1);
+            }
         }
         LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
         paramsMsg.gravity = Gravity.CENTER;
@@ -985,6 +1007,14 @@ public class MainActivity extends AppCompatActivity {
                 mLayoutManager = new GridLayoutManager(context,  3);
             }
         }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                int tmp_cnt = (int) width_a/960;
+                if (tmp_cnt < 1){tmp_cnt = 1;}
+                mLayoutManager = new GridLayoutManager(context,  tmp_cnt);
+            }else{
+                mLayoutManager = new GridLayoutManager(context,  1);
+            }
+        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
             if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
                 int tmp_cnt = (int) width_a/960;
                 if (tmp_cnt < 1){tmp_cnt = 1;}
@@ -1314,7 +1344,7 @@ public class MainActivity extends AppCompatActivity {
         //langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp),getString(R.string.fr_fr),getString(R.string.uk_ua)};
         langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp),getString(R.string.fr_fr)};
         ArrayAdapter lang_aa = new ArrayAdapter(context,R.layout.spinner_item,langList);
-        lang_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
+        lang_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_2048);
 
         Spinner lang_sp = viewPager4.findViewById(R.id.lang_spinner);
         lang_sp.setAdapter(lang_aa);
@@ -1505,7 +1535,7 @@ public class MainActivity extends AppCompatActivity {
         // Other -> Server Location
 
         ArrayAdapter server_aa = new ArrayAdapter(context,R.layout.spinner_item,serverList);
-        server_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
+        server_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_2048);
 
         Spinner server_spinner = viewPager4.findViewById(R.id.server_spinner);
         server_spinner.setAdapter(server_aa);
@@ -1668,20 +1698,29 @@ public class MainActivity extends AppCompatActivity {
         grid_2_rb = viewPager4.findViewById(R.id.grid_2);
         grid_3_rb = viewPager4.findViewById(R.id.grid_3);
         grid_4_rb = viewPager4.findViewById(R.id.grid_4);
+        grid_5_rb = viewPager4.findViewById(R.id.grid_5);
         String currUiGrid = sharedPreferences.getString("curr_ui_grid","2");
 
         if (currUiGrid.equals("2")){
             grid_2_rb.setChecked(true);
             grid_3_rb.setChecked(false);
             grid_4_rb.setChecked(false);
+            grid_5_rb.setChecked(false);
         }else if(currUiGrid.equals("3")){
             grid_2_rb.setChecked(false);
             grid_3_rb.setChecked(true);
             grid_4_rb.setChecked(false);
-        }else{
+            grid_5_rb.setChecked(false);
+        }else if(currUiGrid.equals("4")){
             grid_2_rb.setChecked(false);
             grid_3_rb.setChecked(false);
             grid_4_rb.setChecked(true);
+            grid_5_rb.setChecked(false);
+        }else{
+            grid_2_rb.setChecked(false);
+            grid_3_rb.setChecked(false);
+            grid_4_rb.setChecked(false);
+            grid_5_rb.setChecked(true);
         }
 
         grid_2_rb.setOnClickListener(new View.OnClickListener() {
@@ -1722,6 +1761,22 @@ public class MainActivity extends AppCompatActivity {
                 grid_2_rb.setChecked(false);
                 grid_3_rb.setChecked(false);
                 grid_4_rb.setChecked(true);
+
+                setup_home();
+                setup_char();
+                setup_weapon();
+                setup_art();
+            }
+        });
+        grid_5_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("curr_ui_grid","4");
+                editor.apply();
+                grid_2_rb.setChecked(false);
+                grid_3_rb.setChecked(false);
+                grid_4_rb.setChecked(false);
+                grid_5_rb.setChecked(true);
 
                 setup_home();
                 setup_char();

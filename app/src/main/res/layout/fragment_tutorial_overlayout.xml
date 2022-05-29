@@ -1,65 +1,41 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Project Genshin Spirit (原神小幫手) was
   ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
   ~ Copyright © 2022 Xectorda 版權所有
   -->
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tut_char_con"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/artifact_list"
+    <LinearLayout
+        android:id="@+id/tut_char_ll"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:overScrollMode="always"
-        android:scrollbars="none"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <ImageView
-        android:id="@+id/artifact_filter"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/artifact_search"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_2048_filter" />
+        <ImageView
+            android:id="@+id/tut_char_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/paimon_full" />
 
-    <ImageView
-        android:id="@+id/artifact_search"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="80dp"
-        android:layout_weight="0"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_2048_search" />
-
-    <include
-        android:id="@+id/header_search"
-        layout="@layout/item_search_et_siptik"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_weight="1"
-        android:visibility="gone" />
+        <ImageView
+            android:id="@+id/tut_char_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/paimon_full" />
+    </LinearLayout>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/tut_char_card"
@@ -68,8 +44,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="96dp"
-        android:visibility="gone"
+        android:layout_marginBottom="16dp"
         app:cardBackgroundColor="@color/tv_color_2048"
         app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -102,8 +77,7 @@
                 <ImageView
                     android:id="@+id/tut_char_ico"
                     android:layout_width="72dp"
-                    android:layout_height="72dp"
-                    android:layout_gravity="center"
+                    android:layout_height="match_parent"
                     android:layout_margin="8dp"
                     android:adjustViewBounds="true"
                     app:srcCompat="@drawable/voc" />
@@ -133,5 +107,15 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <ImageView
+        android:id="@+id/tut_barrier"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#CC313131"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -49,6 +49,7 @@ import com.voc.genshin_helper.data.Characters;
 import com.voc.genshin_helper.data.CharactersAdapter;
 import com.voc.genshin_helper.data.ScreenSizeUtils;
 import com.voc.genshin_helper.util.BackgroundReload;
+import com.voc.genshin_helper.util.LangUtils;
 import com.voc.genshin_helper.util.ReminderBroadcast;
 import com.voc.genshin_helper.util.SampleBootReceiver;
 
@@ -1036,5 +1037,10 @@ public class AlarmUI extends AppCompatActivity {
         dialogWindow.setAttributes(lp);
         dialog.show();
     }
-
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        SharedPreferences sharedPreferences = newBase.getSharedPreferences("user_info",MODE_PRIVATE);
+        sharedPreferences.getInt("curr_lang_pos",2);
+        super.attachBaseContext(LangUtils.getAttachBaseContext(newBase, sharedPreferences.getInt("curr_lang_pos",2)));
+    }
 }

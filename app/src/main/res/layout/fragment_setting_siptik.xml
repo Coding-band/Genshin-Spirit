@@ -5,7 +5,7 @@
   ~ Copyright © 2022 Xectorda 版權所有
   -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -22,7 +22,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/vp"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/acquaint_fate" />
 
@@ -31,7 +30,11 @@
         android:layout_height="match_parent"
         android:orientation="horizontal"
         android:overScrollMode="always"
-        android:scrollbars="none">
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -690,6 +693,7 @@
 
             </androidx.cardview.widget.CardView>
 
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -769,6 +773,172 @@
                         android:fontFamily="@font/genshin_font"
                         android:text="@string/card"
                         android:textColor="@color/tv_color" />
+
+                    <RadioButton
+                        android:id="@+id/grid_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:buttonTint="@color/theme_color"
+                        android:checked="false"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="@string/detail"
+                        android:textColor="@color/tv_color" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="0"
+                android:background="@drawable/bg_siptik_tv_bg"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_weight="0"
+                    app:srcCompat="@drawable/ic_baseline_touch_app_24" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_weight="0"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center|left"
+                    android:paddingLeft="8dp"
+                    android:text="@string/navigation_bar"
+                    android:textColor="@color/tv_color"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_weight="0"
+                android:background="@drawable/gone_background"
+                android:visibility="visible"
+                app:cardBackgroundColor="@color/colorWhiteAlpha"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_siptik_tv_bg"
+                    android:orientation="vertical"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="8dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/navigation_hover"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="8dp"
+                            android:buttonTint="@color/theme_color"
+                            android:checked="false"
+                            android:fontFamily="@font/genshin_font"
+                            android:textColor="@color/tv_color" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.tabs.TabLayout
+                                android:id="@+id/desk_tablayout_hover"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:layout_weight="0"
+                                android:background="@drawable/bg_siptik_tab"
+                                android:padding="0dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="1"
+                                app:tabGravity="fill"
+                                app:tabIndicator="@drawable/tab_underline"
+                                app:tabIndicatorColor="@color/tab_selected_2048"
+                                app:tabIndicatorFullWidth="false"
+                                app:tabIndicatorHeight="5dp"
+                                app:tabInlineLabel="true"
+                                app:tabMode="fixed"
+                                app:tabPaddingBottom="4dp"
+                                app:tabPaddingTop="4dp" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/navigation_solid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_margin="8dp"
+                            android:buttonTint="@color/theme_color"
+                            android:checked="false"
+                            android:fontFamily="@font/genshin_font"
+                            android:textColor="@color/tv_color" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.tabs.TabLayout
+                                android:id="@+id/desk_tablayout_solid"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="8dp"
+                                android:layout_weight="0"
+                                android:background="@drawable/bg_siptik_tab_choice2"
+                                android:padding="0dp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:layout_constraintVertical_bias="1.0"
+                                app:tabGravity="fill"
+                                app:tabIndicator="@drawable/tab_underline"
+                                app:tabIndicatorColor="@color/tab_selected_2048"
+                                app:tabIndicatorFullWidth="false"
+                                app:tabIndicatorHeight="5dp"
+                                app:tabInlineLabel="true"
+                                app:tabMode="fixed"
+                                app:tabPaddingBottom="4dp"
+                                app:tabPaddingTop="4dp" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                        </LinearLayout>
+                    </LinearLayout>
+
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -1148,7 +1318,7 @@
                                 android:fontFamily="@font/genshin_font"
                                 android:paddingLeft="4dp"
                                 android:paddingRight="4dp"
-                                android:text="一般衣裝"
+                                android:text="@string/outfit_standard"
                                 android:textColor="@color/tv_color" />
                         </LinearLayout>
 
@@ -1183,7 +1353,7 @@
                                 android:fontFamily="@font/genshin_font"
                                 android:paddingLeft="4dp"
                                 android:paddingRight="4dp"
-                                android:text="活動衣裝"
+                                android:text="@string/outfit_event"
                                 android:textColor="@color/tv_color" />
                         </LinearLayout>
 
@@ -1266,7 +1436,8 @@
                         android:layout_height="48dp"
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
-                        android:layout_marginBottom="8dp" />
+                        android:layout_marginBottom="8dp"
+                        android:popupBackground="@drawable/bg_2048_spinner_bg" />
 
                     <TextView
                         android:id="@+id/textView17"
@@ -1710,4 +1881,77 @@
         </LinearLayout>
     </ScrollView>
 
-</LinearLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/tut_char_card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="96dp"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/tv_color_2048"
+        app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tut_char_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/cyber_color"
+                android:fontFamily="@font/genshin_font"
+                android:paddingLeft="16dp"
+                android:text="@string/voc"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/tut_char_ico"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/voc" />
+
+                <TextView
+                    android:id="@+id/tut_char_message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:fontFamily="@font/genshin_font"
+                    android:text="This is a tutorial made by Voc, developer of Genshin Spirit, what you are watching is a demo of this nice tutorial function ~ This idea was from SipTik while making calculator."
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/tv_color" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageView22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|right"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:visibility="gone"
+                app:srcCompat="@drawable/ic_baseline_arrow_drop_down_24" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

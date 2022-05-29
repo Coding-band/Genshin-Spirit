@@ -183,7 +183,7 @@
                     android:layout_weight="0"
                     android:fontFamily="@font/genshin_font"
                     android:gravity="center"
-                    android:text="獲取途徑"
+                    android:text="@string/obtain_way"
                     android:textColor="@color/tv_color"
                     android:textSize="20sp" />
 

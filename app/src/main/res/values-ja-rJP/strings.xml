@@ -980,9 +980,58 @@
     <string name="hidden_palace_of_lianshan_formula">震雷連山密宮</string>
     <string name="cecilia_garden">セシリアの苗床</string>
     <string name="img_reset_finish">背景がリセットされました</string>
-    <string name="ui_voc_name">クラシック</string>
-    <string name="ui_siptik_name">材料</string>
+
+    <!-- add in 20220423 -->
+    <string name="obtain_no">N/A</string>
+    <string name="obtain_forge_mission_nmdbj">鍛冶屋(農夫の宝)</string>
+    <string name="obtain_limited_wish">限定祈願</string>
+    <string name="obtain_wish">祈願</string>
+    <string name="obtain_first_gift">初期兵器ギフト</string>
+    <string name="obtain_shop">ショップ交換</string>
+    <string name="obtain_chest_shop">宝箱、ショップ交換</string>
+    <string name="obtain_forge">鍛冶屋</string>
+    <string name="obtain_chat_ymdjy">チャット</string>
+    <string name="obtain_battlepass">バトルパス</string>
+    <string name="obtain_wish_chest">祈願宝箱</string>
+    <string name="obtain_event">イベント</string>
+    <string name="obtain_forge_event">鍛冶屋ミッション</string>
+    <string name="obtain_wish_event_glyjyjg">祈願イベント(龍と自由の歌)</string>
+    <string name="obtain_forge_yhbh">鍛冶屋(影向祓)</string>
+    <string name="obtain_chest">宝箱</string>
+    <string name="obtain_forge_hldw">鍛冶屋(海を聞く者たち)</string>
+    <string name="obtain_wish_event_hdbbhjyjj">祈願、イベント(クジャク属・オセロス--秘秘宝)</string>
+    <string name="obtain_forge_tbmy">鍛冶屋(たたら物語)</string>
+    <string name="obtain_forge_ylysws">鍛冶屋(オロバシ遺産パートⅤ)</string>
+    <string name="obtain_chesr_md">モンドの宝箱</string>
+    <string name="obtain_playstation_login">PlayStationログイン報酬</string>
+    <string name="obtain_forge_lvl10_sjgw">鍛冶屋、星の帰還</string>
+    <string name="obtain_playstation_sp_gift">PlayStation Network ギフト</string>
+    <string name="obtain_npc_dcdyhw">ギフトNPC店、稲妻漁業協同組合</string>
+    <string name="obtain_chesr_ly">璃月のチェスト</string>
+    <string name="obtain_chest_gwk">孤雲閣のチェスト</string>
+
+    <!-- add in 20220512 -->
     <string name="ui_2048_name">ゲーム</string>
+    <string name="ui_siptik_name">マテリアル</string>
+    <string name="ui_voc_name">クラシック</string>
+    <string name="shikanoin_heizou">鹿野院平蔵</string>
+    <string name="detail">詳細</string>
+
+    <!-- add in 20220521 -->
+    <string name="release_state">実装状態</string>
+    <string name="released">実装済み</string>
+    <string name="unreleased">未実装</string>
+    <string name="all">すべて</string>
+    <string name="navigation_bar">ナビゲーションバー</string>
+    <string name="obtain_way">取得方法</string>
+    <string name="weapon_skill">武器スキル</string>
+    <string name="weapon_level">武器レベル</string>
+    <string name="outfit_standard">通常衣装</string>
+    <string name="outfit_event">イベント衣装</string>
+    <string name="paimon">パイモン</string>
+    <string name="aqua_simulacra">若水</string>
+    <string name="this_is_a_sword">それは剣です</string>
+    <string name="fading_twilight">落霞</string>
 </resources>
 
 

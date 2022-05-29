@@ -88,7 +88,7 @@
                 android:shadowDx="2"
                 android:shadowDy="2"
                 android:shadowRadius="2"
-                android:singleLine="true"
+                android:singleLine="false"
                 android:text="無鋒劍"
                 android:textAlignment="center"
                 android:textColor="@color/tv_color"

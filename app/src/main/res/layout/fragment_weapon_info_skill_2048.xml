@@ -85,7 +85,7 @@
                                     android:layout_gravity="center"
                                     android:fontFamily="@font/genshin_font"
                                     android:gravity="center"
-                                    android:text="武器技能"
+                                    android:text="@string/weapon_skill"
                                     android:textAlignment="center"
                                     android:textColor="@color/dialog_desc_title_tv_color_2048"
                                     android:textSize="18sp" />
