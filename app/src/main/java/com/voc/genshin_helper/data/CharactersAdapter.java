@@ -921,9 +921,11 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                         .error (R.drawable.paimon_lost)
                         .into (holder.char_small_ico);
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[0],context)).fit().centerCrop().transform(transformation)
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[0],context)).resize((int)(width/1.5),(int)(height/1.5)).centerCrop().transform(transformation)
                         .error (R.drawable.paimon_full)
                         .into (holder.char_icon);
+                holder.char_icon.getLayoutParams().width = width;
+                holder.char_icon.getLayoutParams().height = height;
             } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
                 Picasso.get()
                         .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize((int) (width/1),(int) (width/1)).transform(transformation_circ)
@@ -953,9 +955,11 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                         .error (R.drawable.paimon_lost)
                         .into (holder.char_small_ico);
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[0],context)).fit().centerCrop().transform(transformation)
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[0],context)).resize((int)(width/1.5),(int)(height/1.5)).centerCrop().transform(transformation)
                         .error (R.drawable.paimon_full)
                         .into (holder.char_icon);
+                holder.char_icon.getLayoutParams().width = width;
+                holder.char_icon.getLayoutParams().height = height;
             } else if (((Desk2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
                 Picasso.get()
                         .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize((int) (width/1),(int) (width/1)).transform(transformation_circ)
@@ -985,9 +989,11 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                         .error (R.drawable.paimon_lost)
                         .into (holder.char_small_ico);
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[0],context)).fit().centerCrop().transform(transformation)
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[0],context)).resize((int)(width/1.5),(int)(height/1.5)).centerCrop().transform(transformation)
                         .error (R.drawable.paimon_full)
                         .into (holder.char_icon);
+                holder.char_icon.getLayoutParams().width = width;
+                holder.char_icon.getLayoutParams().height = height;
             } else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
                 Picasso.get()
                         .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize((int) (width/1),(int) (width/1)).transform(transformation_circ)
@@ -1017,9 +1023,11 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                         .error (R.drawable.paimon_lost)
                         .into (holder.char_small_ico);
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[0],context)).fit().centerCrop().transform(transformation)
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[0],context)).resize((int)(width/1.5),(int)(height/1.5)).centerCrop().transform(transformation)
                         .error (R.drawable.paimon_full)
                         .into (holder.char_icon);
+                holder.char_icon.getLayoutParams().width = width;
+                holder.char_icon.getLayoutParams().height = height;
             } else if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
                 Picasso.get()
                         .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize((int) (width/1),(int) (width/1)).transform(transformation_circ)

@@ -82,6 +82,22 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_2048_back_btn" />
 
+        <ImageView
+            android:id="@+id/discord_ico"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center|right"
+            android:layout_marginRight="8dp"
+            android:padding="12dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/discord_ico" />
+
     </FrameLayout>
 
     <ScrollView
@@ -1344,7 +1360,7 @@
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
                         android:layout_marginBottom="8dp"
-                        android:background="@drawable/bg_2048_spinner_bg" />
+                        android:popupBackground="@drawable/bg_2048_spinner_bg" />
 
                     <TextView
                         android:id="@+id/textView17"
@@ -1444,5 +1460,23 @@
 
         </LinearLayout>
     </ScrollView>
+
+    <ImageView
+        android:id="@+id/discord_icoX"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/dc_bg"
+        android:paddingLeft="24dp"
+        android:paddingTop="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/discord_ico" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

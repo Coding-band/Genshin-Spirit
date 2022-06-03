@@ -5,11 +5,7 @@
   -->
 
 <shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <corners
-        android:radius="30dp"/>
-    <solid
-        android:color="@color/spinner_bg_2048"/>
-    <stroke
-        android:width="10dp"
-        android:color="@color/spinner_stroke_2048"/>
+    <solid android:color="@color/spinner_bg_siptik"/>
+    <stroke android:color="@color/spinner_stroke_2048"
+        android:width="5dp"/>
 </shape>

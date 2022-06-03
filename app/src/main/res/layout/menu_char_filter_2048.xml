@@ -299,7 +299,7 @@
 
             <CheckBox
                 android:id="@+id/menu_rare5"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_marginLeft="16dp"
@@ -317,14 +317,14 @@
                 android:paddingRight="12dp"
                 android:paddingBottom="12dp"
                 android:singleLine="true"
-                android:text="五星"
+                android:text="★5"
                 android:textAlignment="viewEnd"
                 android:textColor="@color/tv_spinner_color_2048"
                 android:textSize="16sp" />
 
             <CheckBox
                 android:id="@+id/menu_rare4"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:layout_marginLeft="8dp"
@@ -342,7 +342,7 @@
                 android:paddingRight="12dp"
                 android:paddingBottom="12dp"
                 android:singleLine="true"
-                android:text="四星"
+                android:text="★4"
                 android:textAlignment="viewEnd"
                 android:textColor="@color/tv_spinner_color_2048"
                 android:textSize="16sp" />
@@ -369,7 +369,7 @@
             android:fontFamily="@font/genshin_font"
             android:gravity="center|left"
             android:paddingLeft="12dp"
-            android:text="發佈狀態"
+            android:text="@string/release_state"
             android:textColor="@color/tv_spinner_color_2048"
             android:textSize="18sp" />
 
@@ -400,7 +400,7 @@
                 android:paddingRight="12dp"
                 android:paddingBottom="12dp"
                 android:singleLine="true"
-                android:text="已發佈"
+                android:text="@string/released"
                 android:textAlignment="viewEnd"
                 android:textColor="@color/tv_spinner_color_2048"
                 android:textSize="16sp" />
@@ -425,7 +425,7 @@
                 android:paddingRight="12dp"
                 android:paddingBottom="12dp"
                 android:singleLine="true"
-                android:text="未發佈"
+                android:text="@string/unreleased"
                 android:textAlignment="viewEnd"
                 android:textColor="@color/tv_spinner_color_2048"
                 android:textSize="16sp" />

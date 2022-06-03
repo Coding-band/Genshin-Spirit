@@ -136,7 +136,7 @@
                 android:layout_height="match_parent"
                 android:layout_margin="8dp"
                 android:background="@drawable/gone_background"
-                android:visibility="gone"
+                android:visibility="visible"
                 app:cardBackgroundColor="@color/colorWhiteAlpha"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="0dp">
@@ -147,65 +147,245 @@
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:padding="8dp">
-
-                        <ImageView
-                            android:id="@+id/birth_ico"
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_weight="0"
-                            app:srcCompat="@drawable/cake" />
-
-                        <TextView
-                            android:id="@+id/birth_title"
-                            android:layout_width="match_parent"
-                            android:layout_height="24dp"
-                            android:layout_weight="0"
-                            android:gravity="center|left"
-                            android:paddingLeft="8dp"
-                            android:text="@string/happy_birthday"
-                            android:textColor="@color/tv_color"
-                            android:textSize="16sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
+                        android:id="@+id/birth_celebrate"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:orientation="vertical"
+                        android:visibility="gone">
 
-                        <ImageView
-                            android:id="@+id/birth_char"
-                            android:layout_width="96dp"
-                            android:layout_height="96dp"
-                            android:layout_margin="8dp"
-                            app:srcCompat="@drawable/klee_ico" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:padding="8dp">
+
+                            <ImageView
+                                android:id="@+id/birth_ico"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_weight="0"
+                                app:srcCompat="@drawable/cake" />
+
+                            <TextView
+                                android:id="@+id/birth_title"
+                                android:layout_width="match_parent"
+                                android:layout_height="24dp"
+                                android:layout_weight="0"
+                                android:gravity="center|left"
+                                android:paddingLeft="8dp"
+                                android:text="@string/happy_birthday"
+                                android:textColor="@color/tv_color"
+                                android:textSize="16sp" />
+                        </LinearLayout>
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/birth_char"
+                                android:layout_width="96dp"
+                                android:layout_height="96dp"
+                                android:layout_margin="8dp"
+                                app:srcCompat="@drawable/klee_ico" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/birth_char_tv"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/genshin_font"
+                                    android:text="@string/klee"
+                                    android:textAlignment="center"
+                                    android:textSize="24sp" />
+
+                                <TextView
+                                    android:id="@+id/birth_char_date"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/genshin_font"
+                                    android:text="07/27"
+                                    android:textAlignment="center"
+                                    android:textSize="24sp" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/birth_title2"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_weight="0"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center|left"
+                        android:text="@string/birth"
+                        android:textColor="@color/tv_color"
+                        android:textSize="16sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="8dp"
+                        android:layout_weight="0"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
                             android:orientation="vertical">
 
-                            <TextView
-                                android:id="@+id/birth_char_tv"
+                            <ImageView
+                                android:id="@+id/bday_next1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:fontFamily="@font/genshin_font"
-                                android:text="@string/klee"
-                                android:textAlignment="center"
-                                android:textSize="24sp" />
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/klee_ico" />
 
                             <TextView
-                                android:id="@+id/birth_char_date"
+                                android:id="@+id/bday_next_tv1"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/genshin_font"
-                                android:text="07/27"
+                                android:singleLine="true"
+                                android:text="6th Feb"
                                 android:textAlignment="center"
-                                android:textSize="24sp" />
+                                android:textColor="@color/tv_color"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/bday_next2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/klee_ico" />
+
+                            <TextView
+                                android:id="@+id/bday_next_tv2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/genshin_font"
+                                android:singleLine="true"
+                                android:text="6th Feb"
+                                android:textAlignment="center"
+                                android:textColor="@color/tv_color"
+                                android:textSize="12sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/bday_next3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/klee_ico" />
+
+                            <TextView
+                                android:id="@+id/bday_next_tv3"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/genshin_font"
+                                android:singleLine="true"
+                                android:text="6th Feb"
+                                android:textAlignment="center"
+                                android:textColor="@color/tv_color"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/bday_next4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/klee_ico" />
+
+                            <TextView
+                                android:id="@+id/bday_next_tv4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/genshin_font"
+                                android:singleLine="true"
+                                android:text="6th Feb"
+                                android:textAlignment="center"
+                                android:textColor="@color/tv_color"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/bday_next5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/klee_ico" />
+
+                            <TextView
+                                android:id="@+id/bday_next_tv5"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/genshin_font"
+                                android:singleLine="true"
+                                android:text="6th Feb"
+                                android:textAlignment="center"
+                                android:textColor="@color/tv_color"
+                                android:textSize="12sp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/bday_next6"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/klee_ico" />
+
+                            <TextView
+                                android:id="@+id/bday_next_tv6"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/genshin_font"
+                                android:singleLine="true"
+                                android:text="6th Feb"
+                                android:textAlignment="center"
+                                android:textColor="@color/tv_color"
+                                android:textSize="12sp" />
                         </LinearLayout>
                     </LinearLayout>
 

@@ -1032,6 +1032,31 @@
     <string name="aqua_simulacra">若水</string>
     <string name="this_is_a_sword">それは剣です</string>
     <string name="fading_twilight">落霞</string>
+
+    <!-- add in 20220529 -->
+    <string name="tut_part0_1">"こんにちは、私はGenshinSpiritの開発者であるVoc-夜芷冰です。私はこのチュートリアルのガイドです。"</string>
+    <string name="tut_part0_2">"まず、GenshinSpiritについて少しご紹介させていただきます。"</string>
+    <string name="tut_part0_3">"GenshinSpiritは、情報検索機能と計算機能の両方を備えたアプリです。"</string>
+    <string name="tut_part0_4">"また、オープンソースのプロジェクトなので、新しい機能についての提案をいつでも歓迎します。"</string>
+    <string name="tut_part0_5">"では、チュートリアルを始めましょう。"</string>
+    <string name="tut_part0_6">"このページの下部はナビゲーションバーで、ボタンを押すとページが切り替わります。"</string>
+    <string name="tut_part0_7">"左右にスクロールしてページを変更することも可能です。"</string>
+    <string name="tut_part1_1">"このページでは、今日のハイライトである武器やキャラクタの天賦育成素材などを見ることができます。"</string>
+    <string name="tut_part1_2">"キャラクターや武器の詳細情報を見たい場合は、そのキャラクターや武器のアイコンを押すとページに行けます。"</string>
+    <string name="tut_part1_3">"また、今日が誕生日のキャラクターは、誕生日リマインダーが表示されます。"</string>
+    <string name="tut_part1_4">"このページが計画に役立つことを願っています。"</string>
+    <string name="tut_part2_1">"これはキャラクタータブで、ゲーム内のキャラクターを検索することができます。"</string>
+    <string name="tut_part2_2">"押すと詳細が読めます。"</string>
+    <string name="tut_part2_3">"もし、特定の条件で検索したい場合は、フィルタボタンを押して、フィルタをオンにしてください。"</string>
+    <string name="tut_part2_4">"ローカル名または英語名で検索する場合は、検索ボタンを押して検索を押してください。"</string>
+    <string name="tut_part3_5">"これは武器タブで、ゲーム内の武器を検索することができます。"</string>
+    <string name="tut_part3_6">"基本的にキャラクタータブと同じです。"</string>
+    <string name="tut_part4_1">"これはアーティファクトタブで、基本的にキャラクタータブと同じです。"</string>
+    <string name="tut_part5_1">"これらはパイモンタブ内の設定から変更できます。"</string>
+    <string name="tut_part5_2">"さて、これでチュートリアルは終わりです。"</string>
+    <string name="tut_part5_3">"質問や問題がある場合は、Discordで直接質問することができます。"</string>
+    <string name="tut_part5_4">"私たちの公式Discordサーバーの招待リンクは、パイモンタブの'About'もしくは設定タブの'About'に記載されています。"</string>
+    <string name="tut_part5_5">"それでは、またDiscordでお会いしましょう。"</string>
 </resources>
 
 

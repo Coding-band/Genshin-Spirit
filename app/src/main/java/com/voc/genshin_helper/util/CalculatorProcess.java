@@ -14,6 +14,7 @@ import android.graphics.LinearGradient;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -1056,10 +1057,10 @@ public class CalculatorProcess {
         if(weapon_fin == true && char_fin == true){
 
             //Log.wtf("Procedure","check_cal_finished"+" || "+System.currentTimeMillis());
-            resultShow();
-            saveToDB();
             weapon_fin = false;
             char_fin = false;
+            resultShow();
+            saveToDB();
         }
     }
 
@@ -1267,6 +1268,7 @@ public class CalculatorProcess {
 
     /**EDIT WHEN ADD NEW ITEMS*/
     public void resultShow () {
+        Log.wtf("Procedure","resultShowBegin"+" || "+System.currentTimeMillis());
         /** INIT of UI GONE*/
         TextView result_crystal_title = viewPager.findViewById(R.id.result_crystal_title);
         TextView result_boss_title = viewPager.findViewById(R.id.result_boss_title);
@@ -1404,12 +1406,12 @@ public class CalculatorProcess {
         final Transformation transformation = new RoundedCornersTransformation(radius, margin);
         for (int x = 0, c = 0, r = 0; NameList != null && WeaponNameList != null && x < NameList.size() + WeaponNameList.size(); x++, c++) {
             if(c == column150) { c = 0;r++; }
-            View view = View.inflate(context, R.layout.item_cal_img, null);
-            ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
-            TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
-            LinearLayout linearLayout5 = view.findViewById(R.id.linearLayout5);
 
             if(x < NameList.size()){
+                View view = View.inflate(context, R.layout.item_cal_img, null);
+                ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
+                TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
+                LinearLayout linearLayout5 = view.findViewById(R.id.linearLayout5);
                 item_cal_img.getLayoutParams().height = LinearLayout.LayoutParams.WRAP_CONTENT;
                 item_cal_img.getLayoutParams().width = size150;
                 linearLayout5.getLayoutParams().height  = LinearLayout.LayoutParams.WRAP_CONTENT;
@@ -1426,8 +1428,20 @@ public class CalculatorProcess {
                     Drawable drawable = context.getResources().getDrawable(R.drawable.barrier);
                     item_cal_img.setForeground(drawable);
                 }
+                gridLayout.addView(view);
+                GridLayout.LayoutParams param =new GridLayout.LayoutParams();
+                param.height = GridLayout.LayoutParams.WRAP_CONTENT;
+                param.width = GridLayout.LayoutParams.WRAP_CONTENT;
+                param.setGravity(Gravity.CENTER_VERTICAL);
+                param.columnSpec = GridLayout.spec(c);
+                param.rowSpec = GridLayout.spec(r);
+                view.setLayoutParams (param);
 
             }else if (NameList.size() + WeaponNameList.size() >0){
+                View view = View.inflate(context, R.layout.item_cal_img, null);
+                ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
+                TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
+                LinearLayout linearLayout5 = view.findViewById(R.id.linearLayout5);
                 item_cal_img.getLayoutParams().height = LinearLayout.LayoutParams.WRAP_CONTENT;
                 item_cal_img.getLayoutParams().width = size150;
                 linearLayout5.getLayoutParams().height  = LinearLayout.LayoutParams.WRAP_CONTENT;
@@ -1444,18 +1458,15 @@ public class CalculatorProcess {
                     Drawable drawable = context.getResources().getDrawable(R.drawable.barrier);
                     item_cal_img.setForeground(drawable);
                 }
+                gridLayout.addView(view);
+                GridLayout.LayoutParams param =new GridLayout.LayoutParams();
+                param.height = GridLayout.LayoutParams.WRAP_CONTENT;
+                param.width = GridLayout.LayoutParams.WRAP_CONTENT;
+                param.setGravity(Gravity.CENTER_VERTICAL);
+                param.columnSpec = GridLayout.spec(c);
+                param.rowSpec = GridLayout.spec(r);
+                view.setLayoutParams (param);
             }
-
-            gridLayout.addView(view);
-            GridLayout.LayoutParams param =new GridLayout.LayoutParams();
-            param.height = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.width = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.setGravity(Gravity.CENTER_VERTICAL);
-            param.columnSpec = GridLayout.spec(c);
-            param.rowSpec = GridLayout.spec(r);
-            view.setLayoutParams (param);
-
-
             //Log.wtf("Procedure","resultShowCHAR&WEAPON"+" || "+x+" || "+System.currentTimeMillis());
         }
 
@@ -1469,12 +1480,12 @@ public class CalculatorProcess {
 
         for (int x = 0, c = 0, r = 0; isZero(crystal_temp_cnt) == false && x < crystal_temp.length; x++) {
             if(c == column) { c = 0;r++; }
-            View view = View.inflate(context, R.layout.item_cal_img, null);
-            ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
-            LinearLayout linearLayout5 = view.findViewById(R.id.linearLayout5);
-            TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
             if(crystal_temp_cnt[x] > 0){
 
+                View view = View.inflate(context, R.layout.item_cal_img, null);
+                ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
+                LinearLayout linearLayout5 = view.findViewById(R.id.linearLayout5);
+                TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
                 item_cal_img.getLayoutParams().height = LinearLayout.LayoutParams.WRAP_CONTENT;
                 item_cal_img.getLayoutParams().width = size;
                 linearLayout5.getLayoutParams().height  = LinearLayout.LayoutParams.WRAP_CONTENT;
@@ -1490,15 +1501,15 @@ public class CalculatorProcess {
                 result_crystal_title.setVisibility(View.VISIBLE);
                 gridLayout.addView(view);
                 c++;
+                GridLayout.LayoutParams param =new GridLayout.LayoutParams();
+                param.height = GridLayout.LayoutParams.WRAP_CONTENT;
+                param.width = GridLayout.LayoutParams.WRAP_CONTENT;
+                param.setGravity(Gravity.CENTER_VERTICAL);
+                param.columnSpec = GridLayout.spec(c);
+                param.rowSpec = GridLayout.spec(r);
+                view.setLayoutParams (param);
                 //Log.wtf("Procedure","resultShowCRYSTAL"+" || "+x+" || "+System.currentTimeMillis());
             }
-            GridLayout.LayoutParams param =new GridLayout.LayoutParams();
-            param.height = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.width = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.setGravity(Gravity.CENTER_VERTICAL);
-            param.columnSpec = GridLayout.spec(c);
-            param.rowSpec = GridLayout.spec(r);
-            view.setLayoutParams (param);
         }
 
         /** BOSS */
@@ -1510,12 +1521,12 @@ public class CalculatorProcess {
 
         for (int x = 0, c = 0, r = 0; isZero(boss_temp_cnt) == false && x < boss_temp.length; x++) {
             if(c == column) { c = 0;r++; }
-            View view = View.inflate(context, R.layout.item_cal_img, null);
-            ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
-            LinearLayout linearLayout5 = view.findViewById(R.id.linearLayout5);
-            TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
             //Log.wtf("Procedure","resultShowBOSS"+" || "+x+" || "+System.currentTimeMillis());
             if(boss_temp_cnt[x] > 0){
+                View view = View.inflate(context, R.layout.item_cal_img, null);
+                ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
+                LinearLayout linearLayout5 = view.findViewById(R.id.linearLayout5);
+                TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
                 item_cal_img.getLayoutParams().height = LinearLayout.LayoutParams.WRAP_CONTENT;
                 item_cal_img.getLayoutParams().width = size;
                 linearLayout5.getLayoutParams().height  = LinearLayout.LayoutParams.WRAP_CONTENT;
@@ -1531,14 +1542,14 @@ public class CalculatorProcess {
                 result_boss_title.setVisibility(View.VISIBLE);
                 gridLayout.addView(view);
                 c++;
+                GridLayout.LayoutParams param =new GridLayout.LayoutParams();
+                param.height = GridLayout.LayoutParams.WRAP_CONTENT;
+                param.width = GridLayout.LayoutParams.WRAP_CONTENT;
+                param.setGravity(Gravity.CENTER_VERTICAL);
+                param.columnSpec = GridLayout.spec(c);
+                param.rowSpec = GridLayout.spec(r);
+                view.setLayoutParams (param);
             }
-            GridLayout.LayoutParams param =new GridLayout.LayoutParams();
-            param.height = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.width = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.setGravity(Gravity.CENTER_VERTICAL);
-            param.columnSpec = GridLayout.spec(c);
-            param.rowSpec = GridLayout.spec(r);
-            view.setLayoutParams (param);
         }
 
         /** WEEK-BOSS */
@@ -1550,11 +1561,11 @@ public class CalculatorProcess {
 
         for (int x = 0, c = 0, r = 0; isZero(week_boss_temp_cnt) == false && x < week_boss_temp.length; x++) {
             if(c == column) { c = 0;r++; }
-            View view = View.inflate(context, R.layout.item_cal_img, null);
-            ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
-            LinearLayout linearLayout5 = view.findViewById(R.id.linearLayout5);
-            TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
             if(week_boss_temp_cnt[x] > 0){
+                View view = View.inflate(context, R.layout.item_cal_img, null);
+                ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
+                LinearLayout linearLayout5 = view.findViewById(R.id.linearLayout5);
+                TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
                 item_cal_img.getLayoutParams().height = LinearLayout.LayoutParams.WRAP_CONTENT;
                 item_cal_img.getLayoutParams().width = size;
                 linearLayout5.getLayoutParams().height  = LinearLayout.LayoutParams.WRAP_CONTENT;
@@ -1571,14 +1582,14 @@ public class CalculatorProcess {
                 gridLayout.addView(view);
                 c++;
                 //Log.wtf("Procedure","resultShowWEEK_BOSS"+" || "+x+" || "+System.currentTimeMillis());
+                GridLayout.LayoutParams param =new GridLayout.LayoutParams();
+                param.height = GridLayout.LayoutParams.WRAP_CONTENT;
+                param.width = GridLayout.LayoutParams.WRAP_CONTENT;
+                param.setGravity(Gravity.CENTER_VERTICAL);
+                param.columnSpec = GridLayout.spec(c);
+                param.rowSpec = GridLayout.spec(r);
+                view.setLayoutParams (param);
             }
-            GridLayout.LayoutParams param =new GridLayout.LayoutParams();
-            param.height = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.width = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.setGravity(Gravity.CENTER_VERTICAL);
-            param.columnSpec = GridLayout.spec(c);
-            param.rowSpec = GridLayout.spec(r);
-            view.setLayoutParams (param);
         }
 
         /** LOCAL */
@@ -1590,11 +1601,11 @@ public class CalculatorProcess {
 
         for (int x = 0, c = 0, r = 0; isZero(local_temp_cnt) == false && x < local_temp.length; x++) {
             if(c == column) { c = 0;r++; }
-            View view = View.inflate(context, R.layout.item_cal_img, null);
-            ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
-            LinearLayout linearLayout5 = view.findViewById(R.id.linearLayout5);
-            TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
             if(local_temp_cnt[x] > 0){
+                View view = View.inflate(context, R.layout.item_cal_img, null);
+                ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
+                LinearLayout linearLayout5 = view.findViewById(R.id.linearLayout5);
+                TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
                 item_cal_img.getLayoutParams().height = LinearLayout.LayoutParams.WRAP_CONTENT;
                 item_cal_img.getLayoutParams().width = size;
                 linearLayout5.getLayoutParams().height  = LinearLayout.LayoutParams.WRAP_CONTENT;
@@ -1610,15 +1621,15 @@ public class CalculatorProcess {
                 result_local_title.setVisibility(View.VISIBLE);
                 gridLayout.addView(view);
                 c++;
+                GridLayout.LayoutParams param =new GridLayout.LayoutParams();
+                param.height = GridLayout.LayoutParams.WRAP_CONTENT;
+                param.width = GridLayout.LayoutParams.WRAP_CONTENT;
+                param.setGravity(Gravity.CENTER_VERTICAL);
+                param.columnSpec = GridLayout.spec(c);
+                param.rowSpec = GridLayout.spec(r);
+                view.setLayoutParams (param);
                 //Log.wtf("Procedure","resultShowLOCAL"+" || "+x+" || "+System.currentTimeMillis());
             }
-            GridLayout.LayoutParams param =new GridLayout.LayoutParams();
-            param.height = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.width = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.setGravity(Gravity.CENTER_VERTICAL);
-            param.columnSpec = GridLayout.spec(c);
-            param.rowSpec = GridLayout.spec(r);
-            view.setLayoutParams (param);
         }
 
         /** COMMON */
@@ -1630,11 +1641,11 @@ public class CalculatorProcess {
 
         for (int x = 0, c = 0, r = 0; isZero(common_temp_cnt) == false && x < common_temp.length; x++) {
             if(c == column) { c = 0;r++; }
-            View view = View.inflate(context, R.layout.item_cal_img, null);
-            ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
-            LinearLayout linearLayout5 = view.findViewById(R.id.linearLayout5);
-            TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
             if(common_temp_cnt[x] > 0){
+                View view = View.inflate(context, R.layout.item_cal_img, null);
+                ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
+                LinearLayout linearLayout5 = view.findViewById(R.id.linearLayout5);
+                TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
                 item_cal_img.getLayoutParams().height = LinearLayout.LayoutParams.WRAP_CONTENT;
                 item_cal_img.getLayoutParams().width = size;
                 linearLayout5.getLayoutParams().height = LinearLayout.LayoutParams.WRAP_CONTENT;
@@ -1651,14 +1662,14 @@ public class CalculatorProcess {
                 gridLayout.addView(view);
                 c++;
                 //Log.wtf("Procedure","resultShowCOMMON"+" || "+x+" || "+System.currentTimeMillis());
+                GridLayout.LayoutParams param =new GridLayout.LayoutParams();
+                param.height = GridLayout.LayoutParams.WRAP_CONTENT;
+                param.width = GridLayout.LayoutParams.WRAP_CONTENT;
+                param.setGravity(Gravity.CENTER_VERTICAL);
+                param.columnSpec = GridLayout.spec(c);
+                param.rowSpec = GridLayout.spec(r);
+                view.setLayoutParams (param);
             }
-            GridLayout.LayoutParams param =new GridLayout.LayoutParams();
-            param.height = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.width = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.setGravity(Gravity.CENTER_VERTICAL);
-            param.columnSpec = GridLayout.spec(c);
-            param.rowSpec = GridLayout.spec(r);
-            view.setLayoutParams (param);
         }
 
         /** WEEKLY-MON-THUR-SUN */
@@ -1670,12 +1681,12 @@ public class CalculatorProcess {
 
         for (int x = 0, c = 0, r = 0; isZero(weeklybk1_temp_cnt) == false && x < weeklybk1_temp.length; x++) {
             if(c == column200) { c = 0;r++; }
-            View view = View.inflate(context, R.layout.item_cal_img, null);
-            ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
-            TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
-            TextView item_weekly_tv = view.findViewById(R.id.item_weekly_tv);
-            LinearLayout linearLayout5 = view.findViewById(R.id.linearLayout5);
             if(weeklybk1_temp_cnt[x] > 0){
+                View view = View.inflate(context, R.layout.item_cal_img, null);
+                ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
+                TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
+                TextView item_weekly_tv = view.findViewById(R.id.item_weekly_tv);
+                LinearLayout linearLayout5 = view.findViewById(R.id.linearLayout5);
                 item_cal_img.getLayoutParams().height = LinearLayout.LayoutParams.WRAP_CONTENT;
                 item_cal_img.getLayoutParams().width = size;
                 linearLayout5.getLayoutParams().height  = LinearLayout.LayoutParams.WRAP_CONTENT;
@@ -1695,15 +1706,15 @@ public class CalculatorProcess {
                 result_weeklybk1_title.setVisibility(View.VISIBLE);
                 gridLayout.addView(view);
                 c++;
+                GridLayout.LayoutParams param =new GridLayout.LayoutParams();
+                param.height = GridLayout.LayoutParams.WRAP_CONTENT;
+                param.width = GridLayout.LayoutParams.WRAP_CONTENT;
+                param.setGravity(Gravity.CENTER_VERTICAL);
+                param.columnSpec = GridLayout.spec(c);
+                param.rowSpec = GridLayout.spec(r);
+                view.setLayoutParams (param);
                 //Log.wtf("Procedure","resultShowWEEKLY1"+" || "+x+" || "+System.currentTimeMillis());
             }
-            GridLayout.LayoutParams param =new GridLayout.LayoutParams();
-            param.height = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.width = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.setGravity(Gravity.CENTER_VERTICAL);
-            param.columnSpec = GridLayout.spec(c);
-            param.rowSpec = GridLayout.spec(r);
-            view.setLayoutParams (param);
         }
 
         /** WEEKLY-TUE-FRI-SUN */
@@ -1715,12 +1726,12 @@ public class CalculatorProcess {
 
         for (int x = 0, c = 0, r = 0; isZero(weeklybk2_temp_cnt) == false && x < weeklybk2_temp.length; x++) {
             if(c == column200) { c = 0;r++; }
-            View view = View.inflate(context, R.layout.item_cal_img, null);
-            ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
-            TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
-            TextView item_weekly_tv = view.findViewById(R.id.item_weekly_tv);
-            LinearLayout linearLayout5 = view.findViewById(R.id.linearLayout5);
             if(weeklybk2_temp_cnt[x] > 0){
+                View view = View.inflate(context, R.layout.item_cal_img, null);
+                ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
+                TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
+                TextView item_weekly_tv = view.findViewById(R.id.item_weekly_tv);
+                LinearLayout linearLayout5 = view.findViewById(R.id.linearLayout5);
                 item_cal_img.getLayoutParams().height = LinearLayout.LayoutParams.WRAP_CONTENT;
                 item_cal_img.getLayoutParams().width = size;
                 linearLayout5.getLayoutParams().height  = LinearLayout.LayoutParams.WRAP_CONTENT;
@@ -1740,15 +1751,15 @@ public class CalculatorProcess {
                 result_weeklybk2_title.setVisibility(View.VISIBLE);
                 gridLayout.addView(view);
                 c++;
+                GridLayout.LayoutParams param =new GridLayout.LayoutParams();
+                param.height = GridLayout.LayoutParams.WRAP_CONTENT;
+                param.width = GridLayout.LayoutParams.WRAP_CONTENT;
+                param.setGravity(Gravity.CENTER_VERTICAL);
+                param.columnSpec = GridLayout.spec(c);
+                param.rowSpec = GridLayout.spec(r);
+                view.setLayoutParams (param);
                 //Log.wtf("Procedure","resultShowWEEKLY2"+" || "+x+" || "+System.currentTimeMillis());
             }
-            GridLayout.LayoutParams param =new GridLayout.LayoutParams();
-            param.height = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.width = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.setGravity(Gravity.CENTER_VERTICAL);
-            param.columnSpec = GridLayout.spec(c);
-            param.rowSpec = GridLayout.spec(r);
-            view.setLayoutParams (param);
         }
         //Log.wtf("Procedure","resultShowWEEKLY2"+" || "+System.currentTimeMillis());
 
@@ -1762,11 +1773,11 @@ public class CalculatorProcess {
         for (int x = 0, c = 0, r = 0; isZero(weeklybk3_temp_cnt) == false && x < weeklybk3_temp.length; x++) {
             if(c == column200) { c = 0;r++; }
             View view = View.inflate(context, R.layout.item_cal_img, null);
-            ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
-            TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
-            TextView item_weekly_tv = view.findViewById(R.id.item_weekly_tv);
-            LinearLayout linearLayout5 = view.findViewById(R.id.linearLayout5);
             if(weeklybk3_temp_cnt[x] > 0){
+                ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
+                TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
+                TextView item_weekly_tv = view.findViewById(R.id.item_weekly_tv);
+                LinearLayout linearLayout5 = view.findViewById(R.id.linearLayout5);
                 item_cal_img.getLayoutParams().height = LinearLayout.LayoutParams.WRAP_CONTENT;
                 item_cal_img.getLayoutParams().width = size;
                 linearLayout5.getLayoutParams().height  = LinearLayout.LayoutParams.WRAP_CONTENT;
@@ -1785,15 +1796,15 @@ public class CalculatorProcess {
                 result_weeklybk3_title.setVisibility(View.VISIBLE);
                 gridLayout.addView(view);
                 c++;
+                GridLayout.LayoutParams param =new GridLayout.LayoutParams();
+                param.height = GridLayout.LayoutParams.WRAP_CONTENT;
+                param.width = GridLayout.LayoutParams.WRAP_CONTENT;
+                param.setGravity(Gravity.CENTER_VERTICAL);
+                param.columnSpec = GridLayout.spec(c);
+                param.rowSpec = GridLayout.spec(r);
+                view.setLayoutParams (param);
                 //Log.wtf("Procedure","resultShowWEEKLY3"+" || "+x+" || "+System.currentTimeMillis());
             }
-            GridLayout.LayoutParams param =new GridLayout.LayoutParams();
-            param.height = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.width = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.setGravity(Gravity.CENTER_VERTICAL);
-            param.columnSpec = GridLayout.spec(c);
-            param.rowSpec = GridLayout.spec(r);
-            view.setLayoutParams (param);
         }
 
         /** OTHERS*/
@@ -1813,11 +1824,11 @@ public class CalculatorProcess {
 
         for (int x = 0, c = 0, r = 0; isZero(other_temp_cnt) == false && x < other_temp.length; x++) {
             if(c == column) { c = 0;r++; }
-            View view = View.inflate(context, R.layout.item_cal_img, null);
-            ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
-            TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
-            LinearLayout linearLayout5 = view.findViewById(R.id.linearLayout5);
             if(other_temp_cnt[x] > 0){
+                View view = View.inflate(context, R.layout.item_cal_img, null);
+                ImageView item_cal_img = view.findViewById(R.id.item_cal_img);
+                TextView item_cal_tv = view.findViewById(R.id.item_cal_tv);
+                LinearLayout linearLayout5 = view.findViewById(R.id.linearLayout5);
                 item_cal_img.getLayoutParams().height = LinearLayout.LayoutParams.WRAP_CONTENT;
                 item_cal_img.getLayoutParams().width = size;
                 linearLayout5.getLayoutParams().height  = LinearLayout.LayoutParams.WRAP_CONTENT;
@@ -1833,16 +1844,18 @@ public class CalculatorProcess {
                 result_other_title.setVisibility(View.VISIBLE);
                 gridLayout.addView(view);
                 c++;
+                GridLayout.LayoutParams param =new GridLayout.LayoutParams();
+                param.height = GridLayout.LayoutParams.WRAP_CONTENT;
+                param.width = GridLayout.LayoutParams.WRAP_CONTENT;
+                param.setGravity(Gravity.CENTER_VERTICAL);
+                param.columnSpec = GridLayout.spec(c);
+                param.rowSpec = GridLayout.spec(r);
+                view.setLayoutParams (param);
             }
-            GridLayout.LayoutParams param =new GridLayout.LayoutParams();
-            param.height = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.width = GridLayout.LayoutParams.WRAP_CONTENT;
-            param.setGravity(Gravity.CENTER_VERTICAL);
-            param.columnSpec = GridLayout.spec(c);
-            param.rowSpec = GridLayout.spec(r);
-            view.setLayoutParams (param);
             //Log.wtf("Procedure","resultShowOTHER"+" || "+x+" || "+System.currentTimeMillis());
         }
+
+        Log.wtf("Procedure","resultShowEND"+" || "+System.currentTimeMillis());
     }
 
     /*

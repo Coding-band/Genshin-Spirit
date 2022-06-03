@@ -1922,8 +1922,8 @@ public class ItemRss {
             case Calendar.JUNE: {
                 switch (dom) {
                     case 1 : char_name = "Arataki Itto"; break;
-                    case 9 : char_name = "Lisa"; break;
-                    case 16 : char_name = "Venti"; break;
+                    case 6 : char_name = "Lisa"; break;
+                    case 9 : char_name = "Venti"; break;
                     case 21 : char_name = "Yoimiya"; break;
                     case 26 : char_name = "Raiden Shogun"; break;
                     case 27 : char_name = "Yae Miko"; break;
@@ -1934,7 +1934,7 @@ public class ItemRss {
             case Calendar.JULY: {
                 switch (dom) {
                     case 5 : char_name = "Barbara"; break;
-                    case 14 : char_name = "Kujou Sara"; break;
+                    case 14 : char_name = "Kujor Sara"; break;
                     case 15 : char_name = "Hu Tao"; break;
                     case 19 : char_name = "Voc-夜芷冰"; break;
                     case 20 : char_name = "Tartaglia"; break;

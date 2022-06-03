@@ -110,6 +110,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
@@ -1696,6 +1697,15 @@ public class Desk2048 extends AppCompatActivity {
             theme_light.setChecked(false);
         }
 
+        ImageView discord_ico = viewPager4.findViewById(R.id.discord_ico);
+        discord_ico.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("https://discord.gg/uXatcbWKv2"); // missing 'http://' will cause crashed
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
         // THEME
 
         theme_light = viewPager4.findViewById(R.id.theme_light);
@@ -1897,6 +1907,7 @@ public class Desk2048 extends AppCompatActivity {
                 editor.apply();
                 CustomToast.toast(context,activity,context.getString(R.string.img_reset_finish));
                 BackgroundReload.BackgroundReload(context,activity);
+                BackgroundReload.BackgroundReload(context,viewPager4);
             }
         });
 
@@ -2714,18 +2725,24 @@ public class Desk2048 extends AppCompatActivity {
 
         char_name = css.char_birth(moy,dom);
 
+        // Setting
+        CardView birth_card = viewPager0.findViewById(R.id.birth_card);
+        ConstraintLayout birth_celebrate = viewPager0.findViewById(R.id.birth_celebrate);
+        ImageView birth_char = viewPager0.findViewById(R.id.birth_char);
+        TextView birth_char_tv = viewPager0.findViewById(R.id.birth_char_tv);
+        TextView birth_char_date = viewPager0.findViewById(R.id.birth_char_date);
+
+        // Big Icon
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int pix = (int) ((displayMetrics.widthPixels-16)/6-8);
+
+        final int radius = 180;
+        final int margin = 4;
+        final Transformation transformation = new RoundedCornersTransformation(radius, margin);
+
         if(!char_name.equals("EMPTY")){
-            // Setting
-            CardView birth_card = viewPager0.findViewById(R.id.birth_card);
-            ImageView birth_char = viewPager0.findViewById(R.id.birth_char);
-            TextView birth_char_tv = viewPager0.findViewById(R.id.birth_char_tv);
-            TextView birth_char_date = viewPager0.findViewById(R.id.birth_char_date);
-
             birth_card.setVisibility(View.VISIBLE);
-
-            final int radius = 180;
-            final int margin = 4;
-            final Transformation transformation = new RoundedCornersTransformation(radius, margin);
             Picasso.get()
                     .load (FileLoader.loadIMG(css.getCharByName(char_name,context)[3],context))
                     .transform(transformation)
@@ -2734,6 +2751,46 @@ public class Desk2048 extends AppCompatActivity {
             birth_char_tv.setText(css.getCharByName(char_name,context)[1]);
             birth_char_date.setText(css.getLocaleBirth(String.valueOf(moy+1)+"/"+String.valueOf(dom),context));
 
+            birth_celebrate.setVisibility(View.VISIBLE);
+        }else{
+            birth_celebrate.setVisibility(View.GONE);
+        }
+        // List
+
+        int dom_TMP = dom;
+        int moy_TMP = moy;
+        while (char_name.equals("EMPTY")){
+            dom_TMP++;
+            if (moy_TMP > 13){moy_TMP = 0;}
+            if (dom_TMP > 32){dom_TMP = 0;dom_TMP++;}
+            char_name = css.char_birth(moy_TMP,dom_TMP);
+        }
+
+        int index = Arrays.asList(css.charBirthName).indexOf(char_name);
+        int[] imageArray = {R.id.bday_next1,R.id.bday_next2,R.id.bday_next3,R.id.bday_next4,R.id.bday_next5,R.id.bday_next6};
+        int[] tvArray = {R.id.bday_next_tv1,R.id.bday_next_tv2,R.id.bday_next_tv3,R.id.bday_next_tv4,R.id.bday_next_tv5,R.id.bday_next_tv6};
+
+        for (int x = 0 ; x < 6; x++ , index++){
+            if (index >= css.charBirthName.length){
+                index = 0;
+            }
+            String nextBirthCharName = css.charBirthName[index];
+            int nextBirthCharMonth =  css.charBirthMonth[index];
+            int nextBirthCharDay = css.charBirthDay[index];
+
+            ImageView img = viewPager0.findViewById(imageArray[x]);
+            TextView tv = viewPager0.findViewById(tvArray[x]);
+            Picasso.get()
+                    .load (FileLoader.loadIMG(css.getCharByName(nextBirthCharName,context)[3],context))
+                    .transform(transformation)
+                    .resize((int) (pix*2), (int) (pix*2))
+                    .error (R.drawable.paimon_lost)
+                    .into (img);
+
+            tv.setText(css.getLocaleBirth(String.valueOf(nextBirthCharMonth+1)+"/"+String.valueOf(nextBirthCharDay),context));
+
+            img.getLayoutParams().width = pix;
+            img.getLayoutParams().height = pix;
         }
     }
 
@@ -3444,11 +3501,11 @@ public class Desk2048 extends AppCompatActivity {
     public void filterWeaponAlgothm(int star){
         switch (star){
             case 0: show_rare1 = false; show_rare2 = false ; show_rare3 = false;show_rare4 = false ; show_rare5 = false;break;
-            case 1: show_rare1 = true;break;
-            case 2: show_rare2 = true;break;
-            case 3: show_rare3 = true;break;
-            case 4: show_rare4 = true;break;
-            case 5: show_rare5 = true;break;
+            case 1: show_rare1 = true; show_rare2 = false ; show_rare3 = false;show_rare4 = false ; show_rare5 = false;break;
+            case 2: show_rare2 = true; show_rare1 = false ; show_rare3 = false;show_rare4 = false ; show_rare5 = false;break;
+            case 3: show_rare3 = true;show_rare1 = false; show_rare2 = false ;show_rare4 = false ; show_rare5 = false;break;
+            case 4: show_rare4 = true;show_rare1 = false; show_rare2 = false ; show_rare3 = false ; show_rare5 = false;break;
+            case 5: show_rare5 = true;show_rare1 = false; show_rare2 = false ; show_rare3 = false;show_rare4 = false ;break;
         }
 
         ArrayList<Weapons> filteredList = new ArrayList<>();
@@ -3493,15 +3550,15 @@ public class Desk2048 extends AppCompatActivity {
                 }
 
                 if(isSingleRare == 1){
-                    if(show_rare1 && item.getRare() !=4 ){isAllTrue = false;}
-                    if(show_rare2 && item.getRare() !=4 ){isAllTrue = false;}
-                    if(show_rare3 && item.getRare() !=4 ){isAllTrue = false;}
+                    if(show_rare1 && item.getRare() !=1 ){isAllTrue = false;}
+                    if(show_rare2 && item.getRare() !=2 ){isAllTrue = false;}
+                    if(show_rare3 && item.getRare() !=3 ){isAllTrue = false;}
                     if(show_rare4 && item.getRare() !=4 ){isAllTrue = false;}
                     if(show_rare5 && item.getRare() !=5 ){isAllTrue = false;}
                 }else if ((show_rare1 == false &&show_rare2 == false &&show_rare3 == false &&show_rare4 == false && show_rare5 == false ) == false){
-                    if(!show_rare1 && item.getRare() ==4 ){isAllTrue = false;}
-                    if(!show_rare2 && item.getRare() ==4 ){isAllTrue = false;}
-                    if(!show_rare3 && item.getRare() ==4 ){isAllTrue = false;}
+                    if(!show_rare1 && item.getRare() ==1 ){isAllTrue = false;}
+                    if(!show_rare2 && item.getRare() ==2 ){isAllTrue = false;}
+                    if(!show_rare3 && item.getRare() ==3 ){isAllTrue = false;}
                     if(!show_rare4 && item.getRare() ==4 ){isAllTrue = false;}
                     if(!show_rare5 && item.getRare() ==5 ){isAllTrue = false;}
                 }
@@ -3548,12 +3605,13 @@ public class Desk2048 extends AppCompatActivity {
 
     public void filterArtifactAlgothm(int star){
         switch (star){
+
             case 0: show_rare1 = false; show_rare2 = false ; show_rare3 = false;show_rare4 = false ; show_rare5 = false;break;
-            case 1: show_rare1 = true;break;
-            case 2: show_rare2 = true;break;
-            case 3: show_rare3 = true;break;
-            case 4: show_rare4 = true;break;
-            case 5: show_rare5 = true;break;
+            case 1: show_rare1 = true; show_rare2 = false ; show_rare3 = false;show_rare4 = false ; show_rare5 = false;break;
+            case 2: show_rare2 = true; show_rare1 = false ; show_rare3 = false;show_rare4 = false ; show_rare5 = false;break;
+            case 3: show_rare3 = true;show_rare1 = false; show_rare2 = false ;show_rare4 = false ; show_rare5 = false;break;
+            case 4: show_rare4 = true;show_rare1 = false; show_rare2 = false ; show_rare3 = false ; show_rare5 = false;break;
+            case 5: show_rare5 = true;show_rare1 = false; show_rare2 = false ; show_rare3 = false;show_rare4 = false ;break;
         }
         ArrayList<Artifacts> filteredList = new ArrayList<>();
         for (Artifacts item : artifactsList) {
@@ -3576,15 +3634,15 @@ public class Desk2048 extends AppCompatActivity {
 
 
                 if(isSingleRare == 1){
-                    if(show_rare1 && item.getRare() !=4 ){isAllTrue = false;}
-                    if(show_rare2 && item.getRare() !=4 ){isAllTrue = false;}
-                    if(show_rare3 && item.getRare() !=4 ){isAllTrue = false;}
+                    if(show_rare1 && item.getRare() !=1 ){isAllTrue = false;}
+                    if(show_rare2 && item.getRare() !=2 ){isAllTrue = false;}
+                    if(show_rare3 && item.getRare() !=3 ){isAllTrue = false;}
                     if(show_rare4 && item.getRare() !=4 ){isAllTrue = false;}
                     if(show_rare5 && item.getRare() !=5 ){isAllTrue = false;}
                 }else if ((show_rare1 == false &&show_rare2 == false &&show_rare3 == false &&show_rare4 == false && show_rare5 == false ) == false){
-                    if(!show_rare1 && item.getRare() ==4 ){isAllTrue = false;}
-                    if(!show_rare2 && item.getRare() ==4 ){isAllTrue = false;}
-                    if(!show_rare3 && item.getRare() ==4 ){isAllTrue = false;}
+                    if(!show_rare1 && item.getRare() ==1 ){isAllTrue = false;}
+                    if(!show_rare2 && item.getRare() ==2 ){isAllTrue = false;}
+                    if(!show_rare3 && item.getRare() ==3 ){isAllTrue = false;}
                     if(!show_rare4 && item.getRare() ==4 ){isAllTrue = false;}
                     if(!show_rare5 && item.getRare() ==5 ){isAllTrue = false;}
                 }

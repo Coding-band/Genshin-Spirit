@@ -422,15 +422,19 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                 switch (position)
                 {
                     case 0:
+                        nav_view.setSelectedItemId(R.id.nav_char);
                         break;
 
                     case 1:
+                        nav_view.setSelectedItemId(R.id.nav_weapons);
                         break;
 
                     case 2:
+                        nav_view.setSelectedItemId(R.id.nav_artifacts);
                         break;
 
                     case 3:
+                        nav_view.setSelectedItemId(R.id.nav_result);
 
                         cursorArtifactIds();
                         cursorWeaponIds();
@@ -447,6 +451,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                         break;
 
                     case 4:
+                        nav_view.setSelectedItemId(R.id.nav_buff);
 
                         cursorArtifactIds();
                         cursorWeaponIds();

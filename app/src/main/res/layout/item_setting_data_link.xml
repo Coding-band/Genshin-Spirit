@@ -156,7 +156,8 @@
                     android:text="Discord Server"
                     android:textColor="@color/tv_color"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/textView40"
@@ -169,7 +170,8 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/genshin_font"
                     android:text="@string/genshindb_dclink"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:visibility="gone" />
 
                 <TextView
                     android:id="@+id/textView41"
@@ -182,7 +184,8 @@
                     android:layout_weight="1"
                     android:fontFamily="@font/genshin_font"
                     android:text="@string/genshinhelper_dclink"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"
+                    android:visibility="gone" />
 
             </LinearLayout>
 

@@ -259,31 +259,61 @@ public class SplashActivity extends AppCompatActivity {
                     }
                 }
                 if(array_download.size()>0){
-                    androidx.appcompat.app.AlertDialog.Builder dialog = new androidx.appcompat.app.AlertDialog.Builder(SplashActivity.this,R.style.AlertDialogCustom);
-                    dialog.setCancelable(false);
-                    dialog.setTitle(context.getString(R.string.update_download_update_curr));
-                    dialog.setMessage(context.getString(R.string.update_download_found_update)+context.getString(R.string.update_download_advice)+"\n"+context.getString(R.string.update_download_base_file_size)+" "+prettyByteCount(getRemoteFileSizeA(array_download)));
-                    dialog.setNegativeButton(context.getString(R.string.update_download_later),new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface arg0, int arg1) {
-                            // TODO Auto-generated method stub
-                            Log.wtf("NOTHING","NOTHING");
-                        }
+                    if (getRemoteFileSize("http://113.254.213.196/genshin_spirit/base.zip") > getRemoteFileSizeA(array_download)){
+                        androidx.appcompat.app.AlertDialog.Builder dialog = new androidx.appcompat.app.AlertDialog.Builder(SplashActivity.this,R.style.AlertDialogCustom);
+                        dialog.setCancelable(false);
+                        dialog.setTitle(context.getString(R.string.update_download_update_curr));
+                        dialog.setMessage(context.getString(R.string.update_download_found_update)+context.getString(R.string.update_download_advice)+"\n"+context.getString(R.string.update_download_base_file_size)+" "+prettyByteCount(getRemoteFileSizeA(array_download)));
+                        dialog.setNegativeButton(context.getString(R.string.update_download_later),new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface arg0, int arg1) {
+                                // TODO Auto-generated method stub
+                                Log.wtf("NOTHING","NOTHING");
+                            }
 
-                    });
-                    long finalLastUnix = lastUnix;
-                    dialog.setPositiveButton(context.getString(R.string.update_download_now),new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface arg0, int arg1) {
-                            // TODO Auto-generated method stub
-                            DownloadTask downloadTask = new DownloadTask();
-                            downloadTask.startAWithRun(array_download,array_fileName,array_SfileName,context,activity,true);
-                            editor.putLong("lastUpdateUnix", finalLastUnix);
-                            editor.apply();
-                        }
+                        });
+                        long finalLastUnix = lastUnix;
+                        dialog.setPositiveButton(context.getString(R.string.update_download_now),new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface arg0, int arg1) {
+                                // TODO Auto-generated method stub
+                                DownloadTask downloadTask = new DownloadTask();
+                                downloadTask.startAWithRun(array_download,array_fileName,array_SfileName,context,activity,true);
+                                editor.putLong("lastUpdateUnix", finalLastUnix);
+                                editor.apply();
+                            }
 
-                    });
-                    dialog.show();
+                        });
+                        dialog.show();
+                    }else{
+                        AlertDialog.Builder dialog = new AlertDialog.Builder(SplashActivity.this,R.style.AlertDialogCustom);
+                        dialog.setCancelable(false);
+                        dialog.setTitle(context.getString(R.string.update_download_update_base));
+                        dialog.setMessage(context.getString(R.string.update_download_advice)+"\n"+context.getString(R.string.update_download_base_file_size)+prettyByteCount(getRemoteFileSize("http://113.254.213.196/genshin_spirit/base.zip")));
+                        dialog.setNegativeButton(context.getString(R.string.update_download_later),new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface arg0, int arg1) {
+                                // TODO Auto-generated method stub
+                                finish();
+                            }
+
+                        });
+                        dialog.setPositiveButton(context.getString(R.string.update_download_now),new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface arg0, int arg1) {
+                                // TODO Auto-generated method stub
+                                DownloadTask downloadTask = new DownloadTask();
+                                downloadTask.start("http://113.254.213.196/genshin_spirit/base.zip","base.zip","/base.zip",context,activity);
+
+                                sharedPreferences = getSharedPreferences("user_info", 0);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putLong("lastUpdateUnix", System.currentTimeMillis());
+                                editor.apply();
+                            }
+                        });
+                        dialog.show();
+                    }
+
                 }else{
                     CustomToast.toast(context,this,context.getString(R.string.update_download_not_found_update));
 

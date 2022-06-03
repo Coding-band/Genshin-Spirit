@@ -1792,6 +1792,16 @@ public class DeskSipTik extends AppCompatActivity {
         color_bk22.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk22,21); }});
         color_bk23.setOnClickListener(new View.OnClickListener() {@Override public void onClick(View v) { giveTickById(color_bk23,22); }});
 
+        ImageView discord_ico = viewPager4.findViewById(R.id.discord_ico);
+        discord_ico.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("https://discord.gg/uXatcbWKv2"); // missing 'http://' will cause crashed
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+
         // Navigation Bar
         TabLayout desk_tablayout_hover = viewPager4.findViewById(R.id.desk_tablayout_hover);
         TabLayout desk_tablayout_solid = viewPager4.findViewById(R.id.desk_tablayout_solid);
@@ -2797,23 +2807,25 @@ public class DeskSipTik extends AppCompatActivity {
 
         char_name = css.char_birth(moy,dom);
 
+        // Setting
+        CardView birth_card = viewPager0.findViewById(R.id.birth_card);
+        LinearLayout birth_celebrate = viewPager0.findViewById(R.id.birth_celebrate);
+        ImageView birth_char = viewPager0.findViewById(R.id.birth_char);
+        TextView birth_title_char = viewPager0.findViewById(R.id.birth_title_char);
+        TextView birth_title_tv = viewPager0.findViewById(R.id.birth_title_tv);
+        birth_card.setVisibility(View.VISIBLE);
+        birth_title_tv.setVisibility(View.VISIBLE);
+
+        // Big Icon
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int pix = (int) ((displayMetrics.widthPixels-16)/6-8);
+
+        final int radius = 180;
+        final int margin = 4;
+        final Transformation transformation = new RoundedCornersTransformation(radius, margin);
+
         if(!char_name.equals("EMPTY")){
-            // Setting
-            CardView birth_card = viewPager0.findViewById(R.id.birth_card);
-            ImageView birth_char = viewPager0.findViewById(R.id.birth_char);
-            TextView birth_title_char = viewPager0.findViewById(R.id.birth_title_char);
-            TextView birth_title_tv = viewPager0.findViewById(R.id.birth_title_tv);
-            birth_card.setVisibility(View.VISIBLE);
-            birth_title_tv.setVisibility(View.VISIBLE);
-
-            // Big Icon
-            DisplayMetrics displayMetrics = new DisplayMetrics();
-            activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-            int pix = (int) ((displayMetrics.widthPixels-16)/6-8);
-
-            final int radius = 180;
-            final int margin = 4;
-            final Transformation transformation = new RoundedCornersTransformation(radius, margin);
             Picasso.get()
                     .load (FileLoader.loadIMG(css.getCharByName(char_name,context)[3],context))
                     .transform(transformation)
@@ -2824,40 +2836,46 @@ public class DeskSipTik extends AppCompatActivity {
             birth_char.getLayoutParams().width = (int) (pix*1.2);
             birth_char.getLayoutParams().height = (int) (pix*1.2);
             birth_title_char.setText(css.getCharByName(char_name,context)[1]);
-
-            // List
-            int index = Arrays.asList(css.charBirthName).indexOf(char_name)+1;
-            int[] imageArray = {R.id.bday_next1,R.id.bday_next2,R.id.bday_next3,R.id.bday_next4,R.id.bday_next5,R.id.bday_next6};
-            int[] tvArray = {R.id.bday_next_tv1,R.id.bday_next_tv2,R.id.bday_next_tv3,R.id.bday_next_tv4,R.id.bday_next_tv5,R.id.bday_next_tv6};
-
-            for (int x = 0 ; x < 6; x++ , index++){
-                if (index > css.charBirthName.length){
-                    index = 0;
-                }
-                String nextBirthCharName = css.charBirthName[index];
-                int nextBirthCharMonth =  css.charBirthMonth[index];
-                int nextBirthCharDay = css.charBirthDay[index];
-
-                ImageView img = viewPager0.findViewById(imageArray[x]);
-                TextView tv = viewPager0.findViewById(tvArray[x]);
-                Picasso.get()
-                        .load (FileLoader.loadIMG(css.getCharByName(nextBirthCharName,context)[3],context))
-                        .transform(transformation)
-                        .resize((int) (pix*2), (int) (pix*2))
-                        .error (R.drawable.paimon_lost)
-                        .into (img);
-
-                tv.setText(css.getLocaleBirth(String.valueOf(nextBirthCharMonth+1)+"/"+String.valueOf(nextBirthCharDay),context));
-
-                img.getLayoutParams().width = pix;
-                img.getLayoutParams().height = pix;
-            }
-
+            birth_celebrate.setVisibility(View.VISIBLE);
         }else{
-            CardView birth_card = viewPager0.findViewById(R.id.birth_card);
-            birth_card.setVisibility(View.GONE);
-            TextView birth_title_tv = viewPager0.findViewById(R.id.birth_title_tv);
-            birth_title_tv.setVisibility(View.GONE);
+            birth_celebrate.setVisibility(View.GONE);
+        }
+        // List
+
+        int dom_TMP = dom;
+        int moy_TMP = moy;
+        while (char_name.equals("EMPTY")){
+            dom_TMP++;
+            if (moy_TMP > 13){moy_TMP = 0;}
+            if (dom_TMP > 32){dom_TMP = 0;dom_TMP++;}
+            char_name = css.char_birth(moy_TMP,dom_TMP);
+        }
+
+        int index = Arrays.asList(css.charBirthName).indexOf(char_name);
+        int[] imageArray = {R.id.bday_next1,R.id.bday_next2,R.id.bday_next3,R.id.bday_next4,R.id.bday_next5,R.id.bday_next6};
+        int[] tvArray = {R.id.bday_next_tv1,R.id.bday_next_tv2,R.id.bday_next_tv3,R.id.bday_next_tv4,R.id.bday_next_tv5,R.id.bday_next_tv6};
+
+        for (int x = 0 ; x < 6; x++ , index++){
+            if (index >= css.charBirthName.length){
+                index = 0;
+            }
+            String nextBirthCharName = css.charBirthName[index];
+            int nextBirthCharMonth =  css.charBirthMonth[index];
+            int nextBirthCharDay = css.charBirthDay[index];
+
+            ImageView img = viewPager0.findViewById(imageArray[x]);
+            TextView tv = viewPager0.findViewById(tvArray[x]);
+            Picasso.get()
+                    .load (FileLoader.loadIMG(css.getCharByName(nextBirthCharName,context)[3],context))
+                    .transform(transformation)
+                    .resize((int) (pix*2), (int) (pix*2))
+                    .error (R.drawable.paimon_lost)
+                    .into (img);
+
+            tv.setText(css.getLocaleBirth(String.valueOf(nextBirthCharMonth+1)+"/"+String.valueOf(nextBirthCharDay),context));
+
+            img.getLayoutParams().width = pix;
+            img.getLayoutParams().height = pix;
         }
     }
 

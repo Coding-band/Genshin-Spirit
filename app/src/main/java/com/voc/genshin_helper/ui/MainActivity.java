@@ -109,6 +109,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
@@ -1532,6 +1533,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        ImageView discord_ico = viewPager4.findViewById(R.id.discord_ico);
+        discord_ico.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("https://discord.gg/uXatcbWKv2"); // missing 'http://' will cause crashed
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
+            }
+        });
+
         // Other -> Server Location
 
         ArrayAdapter server_aa = new ArrayAdapter(context,R.layout.spinner_item,serverList);
@@ -2310,18 +2321,24 @@ public class MainActivity extends AppCompatActivity {
 
         char_name = css.char_birth(moy,dom);
 
+        // Setting
+        CardView birth_card = viewPager2.findViewById(R.id.birth_card);
+        ImageView birth_char = viewPager2.findViewById(R.id.birth_char);
+        TextView birth_char_tv = viewPager2.findViewById(R.id.birth_char_tv);
+        TextView birth_char_date = viewPager2.findViewById(R.id.birth_char_date);
+        LinearLayout birth_celebrate = viewPager2.findViewById(R.id.birth_celebrate);
+
+        // Big Icon
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int pix = (int) ((displayMetrics.widthPixels-16)/6-8);
+
+        final int radius = 180;
+        final int margin = 4;
+        final Transformation transformation = new RoundedCornersTransformation(radius, margin);
+
         if(!char_name.equals("EMPTY")){
-            // Setting
-            CardView birth_card = viewPager2.findViewById(R.id.birth_card);
-            ImageView birth_char = viewPager2.findViewById(R.id.birth_char);
-            TextView birth_char_tv = viewPager2.findViewById(R.id.birth_char_tv);
-            TextView birth_char_date = viewPager2.findViewById(R.id.birth_char_date);
-
             birth_card.setVisibility(View.VISIBLE);
-
-            final int radius = 180;
-            final int margin = 4;
-            final Transformation transformation = new RoundedCornersTransformation(radius, margin);
             Picasso.get()
                     .load (FileLoader.loadIMG(css.getCharByName(char_name,context)[3],context))
                     .transform(transformation)
@@ -2329,7 +2346,47 @@ public class MainActivity extends AppCompatActivity {
                     .into (birth_char);
             birth_char_tv.setText(css.getCharByName(char_name,context)[1]);
             birth_char_date.setText(css.getLocaleBirth(String.valueOf(moy+1)+"/"+String.valueOf(dom),context));
+            birth_celebrate.setVisibility(View.VISIBLE);
 
+        }else{
+            birth_celebrate.setVisibility(View.GONE);
+        }
+        // List
+
+        int dom_TMP = dom;
+        int moy_TMP = moy;
+        while (char_name.equals("EMPTY")){
+            dom_TMP++;
+            if (moy_TMP > 13){moy_TMP = 0;}
+            if (dom_TMP > 32){dom_TMP = 0;dom_TMP++;}
+            char_name = css.char_birth(moy_TMP,dom_TMP);
+        }
+
+        int index = Arrays.asList(css.charBirthName).indexOf(char_name);
+        int[] imageArray = {R.id.bday_next1,R.id.bday_next2,R.id.bday_next3,R.id.bday_next4,R.id.bday_next5,R.id.bday_next6};
+        int[] tvArray = {R.id.bday_next_tv1,R.id.bday_next_tv2,R.id.bday_next_tv3,R.id.bday_next_tv4,R.id.bday_next_tv5,R.id.bday_next_tv6};
+
+        for (int x = 0 ; x < 6; x++ , index++){
+            if (index >= css.charBirthName.length){
+                index = 0;
+            }
+            String nextBirthCharName = css.charBirthName[index];
+            int nextBirthCharMonth =  css.charBirthMonth[index];
+            int nextBirthCharDay = css.charBirthDay[index];
+
+            ImageView img = viewPager2.findViewById(imageArray[x]);
+            TextView tv = viewPager2.findViewById(tvArray[x]);
+            Picasso.get()
+                    .load (FileLoader.loadIMG(css.getCharByName(nextBirthCharName,context)[3],context))
+                    .transform(transformation)
+                    .resize((int) (pix*2), (int) (pix*2))
+                    .error (R.drawable.paimon_lost)
+                    .into (img);
+
+            tv.setText(css.getLocaleBirth(String.valueOf(nextBirthCharMonth+1)+"/"+String.valueOf(nextBirthCharDay),context));
+
+            img.getLayoutParams().width = pix;
+            img.getLayoutParams().height = pix;
         }
     }
 
@@ -3028,15 +3085,15 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if(isSingleRare == 1){
-                    if(show_rare1 && item.getRare() !=4 ){isAllTrue = false;}
-                    if(show_rare2 && item.getRare() !=4 ){isAllTrue = false;}
-                    if(show_rare3 && item.getRare() !=4 ){isAllTrue = false;}
+                    if(show_rare1 && item.getRare() !=1 ){isAllTrue = false;}
+                    if(show_rare2 && item.getRare() !=2 ){isAllTrue = false;}
+                    if(show_rare3 && item.getRare() !=3 ){isAllTrue = false;}
                     if(show_rare4 && item.getRare() !=4 ){isAllTrue = false;}
                     if(show_rare5 && item.getRare() !=5 ){isAllTrue = false;}
                 }else if ((show_rare1 == false &&show_rare2 == false &&show_rare3 == false &&show_rare4 == false && show_rare5 == false ) == false){
-                    if(!show_rare1 && item.getRare() ==4 ){isAllTrue = false;}
-                    if(!show_rare2 && item.getRare() ==4 ){isAllTrue = false;}
-                    if(!show_rare3 && item.getRare() ==4 ){isAllTrue = false;}
+                    if(!show_rare1 && item.getRare() ==1 ){isAllTrue = false;}
+                    if(!show_rare2 && item.getRare() ==2 ){isAllTrue = false;}
+                    if(!show_rare3 && item.getRare() ==3 ){isAllTrue = false;}
                     if(!show_rare4 && item.getRare() ==4 ){isAllTrue = false;}
                     if(!show_rare5 && item.getRare() ==5 ){isAllTrue = false;}
                 }
@@ -3111,15 +3168,15 @@ public class MainActivity extends AppCompatActivity {
 
 
                 if(isSingleRare == 1){
-                    if(show_rare1 && item.getRare() !=4 ){isAllTrue = false;}
-                    if(show_rare2 && item.getRare() !=4 ){isAllTrue = false;}
-                    if(show_rare3 && item.getRare() !=4 ){isAllTrue = false;}
+                    if(show_rare1 && item.getRare() !=1 ){isAllTrue = false;}
+                    if(show_rare2 && item.getRare() !=2 ){isAllTrue = false;}
+                    if(show_rare3 && item.getRare() !=3 ){isAllTrue = false;}
                     if(show_rare4 && item.getRare() !=4 ){isAllTrue = false;}
                     if(show_rare5 && item.getRare() !=5 ){isAllTrue = false;}
                 }else if ((show_rare1 == false &&show_rare2 == false &&show_rare3 == false &&show_rare4 == false && show_rare5 == false ) == false){
-                    if(!show_rare1 && item.getRare() ==4 ){isAllTrue = false;}
-                    if(!show_rare2 && item.getRare() ==4 ){isAllTrue = false;}
-                    if(!show_rare3 && item.getRare() ==4 ){isAllTrue = false;}
+                    if(!show_rare1 && item.getRare() ==1 ){isAllTrue = false;}
+                    if(!show_rare2 && item.getRare() ==2 ){isAllTrue = false;}
+                    if(!show_rare3 && item.getRare() ==3 ){isAllTrue = false;}
                     if(!show_rare4 && item.getRare() ==4 ){isAllTrue = false;}
                     if(!show_rare5 && item.getRare() ==5 ){isAllTrue = false;}
                 }

@@ -2597,8 +2597,8 @@ public class Characters_Info_SipTik {
     public void readCharMaterialByBuff(LinearLayout base_lvl_ll, View view) {
         Spinner base_lvl_spinner = view.findViewById(R.id.base_lvl_spinner);
         String[] lvList = new String[]{"LV20","LV40","LV50","LV60","LV70","LV80","LV90"};
-        ArrayAdapter lv_aa = new ArrayAdapter(context,R.layout.spinner_item_anti_2048,lvList);
-        lv_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_anti_2048);
+        ArrayAdapter lv_aa = new ArrayAdapter(context,R.layout.spinner_item_2048,lvList);
+        lv_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_2048);
         base_lvl_spinner.setAdapter(lv_aa);
 
         base_lvl_spinner.setSelection(0);
@@ -2621,8 +2621,8 @@ public class Characters_Info_SipTik {
     public void readSkillMaterialByBuff(LinearLayout talent_lvl_ll, View view) {
         Spinner base_lvl_spinner = view.findViewById(R.id.talent_lvl_spinner);
         String[] lvList = new String[]{"LV1","LV2","LV3","LV4","LV5","LV6","LV7","LV8","LV9","LV10"};
-        ArrayAdapter lv_aa = new ArrayAdapter(context,R.layout.spinner_item_anti_2048,lvList);
-        lv_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_anti_2048);
+        ArrayAdapter lv_aa = new ArrayAdapter(context,R.layout.spinner_item_2048,lvList);
+        lv_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_2048);
         base_lvl_spinner.setAdapter(lv_aa);
 
         base_lvl_spinner.setSelection(0);

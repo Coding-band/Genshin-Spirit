@@ -1954,4 +1954,21 @@
 
     </androidx.cardview.widget.CardView>
 
+    <ImageView
+        android:id="@+id/discord_ico"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/dc_bg"
+        android:paddingLeft="24dp"
+        android:paddingTop="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/discord_ico" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,9 @@
 [
   {
+    "version": "8566",
+    "verName": "2.7.0-gp (8566)",
+    "description": "Changelog - 2022-05-17<br><br><b>UI</b><br>1. Added new List Style [Card],[Details], thx for @SipTik#1171 's help<br>2. Background filter's transparent has been changed to higher <br>3. Added 2 new UI style , user can choose which they want when first open the app (after update), there have quite much things re-newed, we wish enjoy these nice UI style.<br>4. Added different new functions in 2 new UI style<br>5. Improved the user experience at Home page<br>6. Add tutorial<br>7. Fixed Calculator laggy problem"
+  },{
     "version": "5000",
     "verName": "2.6.0-gp (5000)",
     "description": "Changelog - 2021-03-31<br><br><b>Calculator</b><br>1. Fixed display error of result item<br><br><b>Characters and weapons</b><br>1. Added Qiqi ~ Zhongli's character advice<br><br><b>UI</b><br>1. Improved lists' filter function<br>2. Re-design Character, Artifacts and Weapons list, thx for 2O48#9733 's help :person_bowing: <br>3. Added event suit function<br>4. Suitable for landscape device<br>5. Character Info Display District Icon<br>6. Press Animation<br>7. Fixed Traveller display error <br>8. Character Info added more suggestions<br>9. Character Info scroll & deleted background display<br>10. Updated Special Thanks Page<br>11. Added Yelan & Kuki in character list (Preview only) and calculator"
