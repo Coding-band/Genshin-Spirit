@@ -63,7 +63,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/genshin_font"
                         android:gravity="center|left"
-                        android:text="技能等級"
+                        android:text="@string/skill_level"
                         android:textColor="@color/tv_spinner_color_2048"
                         android:textSize="20sp"
                         app:layout_constraintBottom_toBottomOf="parent"

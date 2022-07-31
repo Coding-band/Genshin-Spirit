@@ -1341,9 +1341,8 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        // Translate
-        //langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp),getString(R.string.fr_fr),getString(R.string.uk_ua)};
-        langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp),getString(R.string.fr_fr)};
+        // Translate -- U MUST NOT DELETE ANYTHING
+        langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp),getString(R.string.fr_fr),getString(R.string.uk_ua)};
         ArrayAdapter lang_aa = new ArrayAdapter(context,R.layout.spinner_item,langList);
         lang_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_2048);
 
@@ -2025,7 +2024,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481"));
+                String lang = "en-us";
+                switch (sharedPreferences.getString("curr_lang","en-US")){
+                    case "zh-HK" : lang = "zh-tw";break;
+                    default: lang = sharedPreferences.getString("curr_lang","en-US").toLowerCase();break;
+                }
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481&lang="+lang));
                 startActivity(browserIntent);
 
                 /*
@@ -2085,7 +2089,12 @@ public class MainActivity extends AppCompatActivity {
         map_ll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481"));
+                String lang = "en-us";
+                switch (sharedPreferences.getString("curr_lang","en-US")){
+                    case "zh-HK" : lang = "zh-tw";break;
+                    default: lang = sharedPreferences.getString("curr_lang","en-US").toLowerCase();break;
+                }
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://act.hoyolab.com/ys/app/interactive-map/index.html?lang="+lang+"#/map/2"));
                 startActivity(browserIntent);
                 /*
                 final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
@@ -2946,7 +2955,7 @@ public class MainActivity extends AppCompatActivity {
                     if(show_pyro && !item.getElement().toLowerCase().equals("pyro") ){isAllTrue = false;}
                     if(show_hydro && !item.getElement().toLowerCase().equals("hydro") ){isAllTrue = false;}
                     if(show_anemo && !item.getElement().toLowerCase().equals("anemo") ){isAllTrue = false;}
-                    if(show_dendor && !item.getElement().toLowerCase().equals("dendor")){isAllTrue = false;}
+                    if(show_dendor && !item.getElement().toLowerCase().equals("dendro")){isAllTrue = false;}
                     if(show_electro && !item.getElement().toLowerCase().equals("electro")){isAllTrue = false;}
                     if(show_cryo && !item.getElement().toLowerCase().equals("cryo")){isAllTrue = false;}
                     if(show_geo && !item.getElement().toLowerCase().equals("geo") ){isAllTrue = false;}
@@ -2954,7 +2963,7 @@ public class MainActivity extends AppCompatActivity {
                     if(!show_pyro && item.getElement().toLowerCase().equals("pyro") ){isAllTrue = false;}
                     if(!show_hydro && item.getElement().toLowerCase().equals("hydro") ){isAllTrue = false;}
                     if(!show_anemo && item.getElement().toLowerCase().equals("anemo") ){isAllTrue = false;}
-                    if(!show_dendor && item.getElement().toLowerCase().equals("dendor")){isAllTrue = false;}
+                    if(!show_dendor && item.getElement().toLowerCase().equals("dendro")){isAllTrue = false;}
                     if(!show_electro && item.getElement().toLowerCase().equals("electro")){isAllTrue = false;}
                     if(!show_cryo && item.getElement().toLowerCase().equals("cryo")){isAllTrue = false;}
                     if(!show_geo && item.getElement().toLowerCase().equals("geo") ){isAllTrue = false;}

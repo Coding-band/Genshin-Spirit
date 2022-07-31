@@ -82,6 +82,7 @@ import com.voc.genshin_helper.ui.BackgroundConfirmActivity;
 import com.voc.genshin_helper.ui.CalculatorDBActivity;
 import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
 import com.voc.genshin_helper.ui.MainActivity;
+import com.voc.genshin_helper.ui.NotificationActivity;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.ChangeLog;
 import com.voc.genshin_helper.util.CustomToast;
@@ -382,6 +383,7 @@ public class DeskSipTik extends AppCompatActivity {
             ImageView tab_icon = (ImageView) view1.findViewById(R.id.icon);
             tab_icon.setImageResource(tabItemImageSelectedArray[0]);
         }
+
 
 
         desk_tablayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
@@ -969,21 +971,21 @@ public class DeskSipTik extends AppCompatActivity {
                         if (header_search_et.getText() != null){
                             String request = header_search_et.getText().toString();
                             if (!request.equals("")){
-                                ArrayList<Artifacts> filteredList = new ArrayList<>();
+                                ArrayList<Characters> filteredList = new ArrayList<>();
                                 int x = 0;
-                                for (Artifacts item : artifactsList) {
+                                for (Characters item : charactersList) {
                                     String str = request.toLowerCase();
-                                    if (css.getArtifactByName(item.getName(),context)[0].contains(str)||css.getArtifactByName(item.getName(),context)[0].toLowerCase().contains(str)||css.getArtifactByName(item.getName(),context)[0].toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
+                                    if (css.getCharByName(item.getName(),context)[1].contains(str)||css.getCharByName(item.getName(),context)[1].toLowerCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
                                         filteredList.add(item);
                                     }
                                     x = x +1;
                                 }
-                                mArtifactAdapter.filterList(filteredList);
+                                mAdapter.filterList(filteredList);
                             }else{
-                                mArtifactAdapter.filterList(artifactsList);
+                                mAdapter.filterList(charactersList);
                             }
                         }else{
-                            mArtifactAdapter.filterList(artifactsList);
+                            mAdapter.filterList(charactersList);
                         }
                     }
                 });
@@ -1347,7 +1349,7 @@ public class DeskSipTik extends AppCompatActivity {
                 View header_search = viewPager3.findViewById(R.id.header_search);
                 EditText header_search_et = viewPager3.findViewById(R.id.header_search_et);
                 Button menu_search_cancel = viewPager3.findViewById(R.id.menu_search_cancel);
-                Button header_search_reset = viewPager3.findViewById(R.id.header_search_reset);
+                ImageView header_search_reset = viewPager3.findViewById(R.id.header_search_reset);
 
                 header_search.animate()
                         .alpha(1.0f)
@@ -1905,9 +1907,8 @@ public class DeskSipTik extends AppCompatActivity {
             }
         });
 
-        // Translate
-        //langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp),getString(R.string.fr_fr),getString(R.string.uk_ua)};
-        langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp),getString(R.string.fr_fr)};
+        // Translate -- U MUST NOT DELETE ANYTHING
+        langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp),getString(R.string.fr_fr),getString(R.string.uk_ua)};
         ArrayAdapter lang_aa = new ArrayAdapter(context,R.layout.spinner_item,langList);
         lang_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_2048);
 
@@ -2605,15 +2606,24 @@ public class DeskSipTik extends AppCompatActivity {
         daily_login_ll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481"));
+                String lang = "en-us";
+                switch (sharedPreferences.getString("curr_lang","en-US")){
+                    case "zh-HK" : lang = "zh-tw";break;
+                    default: lang = sharedPreferences.getString("curr_lang","en-US").toLowerCase();break;
+                }
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481&lang="+lang));
                 startActivity(browserIntent);
             }
         });
         map_ll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://webstatic-sea.mihoyo.com/app/ys-map-sea/index.html?utm_source=hoyolab&lang=zh-tw#/map/2"));
+                String lang = "en-us";
+                switch (sharedPreferences.getString("curr_lang","en-US")){
+                    case "zh-HK" : lang = "zh-tw";break;
+                    default: lang = sharedPreferences.getString("curr_lang","en-US").toLowerCase();break;
+                }
+                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://act.hoyolab.com/ys/app/interactive-map/index.html?lang="+lang+"#/map/2"));
                 startActivity(browserIntent);
             }
         });
@@ -3497,7 +3507,7 @@ public class DeskSipTik extends AppCompatActivity {
                     if(show_pyro && !item.getElement().toLowerCase().equals("pyro") ){isAllTrue = false;}
                     if(show_hydro && !item.getElement().toLowerCase().equals("hydro") ){isAllTrue = false;}
                     if(show_anemo && !item.getElement().toLowerCase().equals("anemo") ){isAllTrue = false;}
-                    if(show_dendor && !item.getElement().toLowerCase().equals("dendor")){isAllTrue = false;}
+                    if(show_dendor && !item.getElement().toLowerCase().equals("dendro")){isAllTrue = false;}
                     if(show_electro && !item.getElement().toLowerCase().equals("electro")){isAllTrue = false;}
                     if(show_cryo && !item.getElement().toLowerCase().equals("cryo")){isAllTrue = false;}
                     if(show_geo && !item.getElement().toLowerCase().equals("geo") ){isAllTrue = false;}
@@ -3505,7 +3515,7 @@ public class DeskSipTik extends AppCompatActivity {
                     if(!show_pyro && item.getElement().toLowerCase().equals("pyro") ){isAllTrue = false;}
                     if(!show_hydro && item.getElement().toLowerCase().equals("hydro") ){isAllTrue = false;}
                     if(!show_anemo && item.getElement().toLowerCase().equals("anemo") ){isAllTrue = false;}
-                    if(!show_dendor && item.getElement().toLowerCase().equals("dendor")){isAllTrue = false;}
+                    if(!show_dendor && item.getElement().toLowerCase().equals("dendro")){isAllTrue = false;}
                     if(!show_electro && item.getElement().toLowerCase().equals("electro")){isAllTrue = false;}
                     if(!show_cryo && item.getElement().toLowerCase().equals("cryo")){isAllTrue = false;}
                     if(!show_geo && item.getElement().toLowerCase().equals("geo") ){isAllTrue = false;}

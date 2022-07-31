@@ -1165,6 +1165,27 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                         }
 
                         /*
+                            if (context instanceof MainActivity){Log.wtf("YES","IT's");
+                        if(char_isComing.getVisibility() == View.GONE){
+                            (((MainActivity) context)).startInfo(String.valueOf(char_base_name.getText()),activity);
+                        }else{
+                            CustomToast.toast(context,view,context.getString(R.string.unreleased));
+                        }
+                    }else if (context instanceof Desk2048){Log.wtf("YES","IT's");
+                        if(char_isComing.getVisibility() == View.GONE){
+                            (((Desk2048) context)).startCharInfo(String.valueOf(char_base_name.getText()),activity);
+                        }else{
+                            CustomToast.toast(context,view,context.getString(R.string.unreleased));
+                        }
+                    }else if (context instanceof DeskSipTik){Log.wtf("YES","IT's");
+                        if(char_isComing.getVisibility() == View.GONE){
+                            (((DeskSipTik) context)).startCharInfo(String.valueOf(char_base_name.getText()),activity);
+                        }else{
+                            CustomToast.toast(context,view,context.getString(R.string.unreleased));
+                        }
+                    }
+                         */
+                        /*
                         if(char_isComing.getVisibility() == View.GONE) {
                             if (have == false) {
                                 (((CalculatorUI) context)).charQuestion(String.valueOf(char_base_name.getText()), "ADD", 0);

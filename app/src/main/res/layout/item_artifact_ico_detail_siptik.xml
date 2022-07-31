@@ -16,10 +16,10 @@
     <androidx.cardview.widget.CardView
         android:id="@+id/artifact_card"
         android:layout_width="420dp"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:background="@drawable/bg_alpha_siptik"
-        app:cardBackgroundColor="#808080"
+        app:cardBackgroundColor="@color/detail_bg"
         app:cardCornerRadius="30dp"
         app:cardElevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -68,7 +68,7 @@
                         android:singleLine="false"
                         android:text="@string/crimson_witch_of_flames"
                         android:textAlignment="center"
-                        android:textColor="@android:color/white"
+                        android:textColor="@color/tv_siptik_color"
                         android:textSize="16sp" />
 
                 </LinearLayout>
@@ -101,6 +101,7 @@
                 android:id="@+id/artifact_bg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -215,7 +216,7 @@
                                 android:shadowDy="2"
                                 android:shadowRadius="5"
                                 android:text="@string/artifact_stat2"
-                                android:textColor="@android:color/white"
+                                android:textColor="@color/tv_siptik_color"
                                 android:textSize="14sp" />
 
                         </LinearLayout>
@@ -235,7 +236,7 @@
                             android:shadowDy="2"
                             android:shadowRadius="5"
                             android:text="testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing "
-                            android:textColor="@android:color/white"
+                            android:textColor="@color/tv_siptik_color"
                             android:textSize="12sp" />
                     </LinearLayout>
 
@@ -264,7 +265,7 @@
                                 android:shadowDy="2"
                                 android:shadowRadius="5"
                                 android:text="@string/artifact_stat4"
-                                android:textColor="@android:color/white"
+                                android:textColor="@color/tv_siptik_color"
                                 android:textSize="14sp" />
 
                         </LinearLayout>
@@ -284,7 +285,7 @@
                             android:shadowDy="2"
                             android:shadowRadius="5"
                             android:text="testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing "
-                            android:textColor="@android:color/white"
+                            android:textColor="@color/tv_siptik_color"
                             android:textSize="12sp" />
 
                     </LinearLayout>

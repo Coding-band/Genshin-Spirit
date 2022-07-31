@@ -11,7 +11,7 @@
     android:viewportHeight="36">
     <path
         android:fillColor="@color/tab_bg_2048"
-        android:pathData="M1 18c0-9.39 7.61-17 17-17h119c9.39 0 17 7.61 17 17v0c0 9.39-7.61 17-17 17h-119c-9.39 0-17-7.61-17-17z"/>
+        android:pathData="M0 18c0-9.94 8.06-18 18-18h119c9.94 0 18 8.06 18 18v0c0 9.94-8.06 18-18 18h-119c-9.94 0-18-8.06-18-18z"/>
     <path
         android:strokeColor="@color/tab_stroke_2048"
         android:strokeWidth="1"

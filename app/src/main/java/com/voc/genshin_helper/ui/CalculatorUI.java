@@ -503,6 +503,12 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             }else{
                 mLayoutManager = new GridLayoutManager(context,  1);
             }
+        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
+            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                mLayoutManager = new GridLayoutManager(context,  width_a/960);
+            }else{
+                mLayoutManager = new GridLayoutManager(context,  1);
+            }
         }
         LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
         paramsMsg.gravity = Gravity.CENTER;
@@ -689,7 +695,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                             if((show_sword == false && show_claymore == false && show_catalyst == false && show_bow == false && show_polearm == false) &&
                                     (show_anemo == false  && show_cryo == false && show_dendor == false && show_electro == false && show_hydro == false && show_geo == false && show_pyro == false)){
                                 filteredList.add(item);
-                            }else if ((item.getElement().toLowerCase().equals("pyro") && show_pyro||item.getElement().toLowerCase().equals("hydro") && show_hydro||item.getElement().toLowerCase().equals("anemo") && show_anemo||item.getElement().toLowerCase().equals("electro") && show_electro||item.getElement().toLowerCase().equals("dendor") && show_dendor||item.getElement().toLowerCase().equals("cryo") && show_cryo||item.getElement().toLowerCase().equals("geo") && show_geo)) {
+                            }else if ((item.getElement().toLowerCase().equals("pyro") && show_pyro||item.getElement().toLowerCase().equals("hydro") && show_hydro||item.getElement().toLowerCase().equals("anemo") && show_anemo||item.getElement().toLowerCase().equals("electro") && show_electro||item.getElement().toLowerCase().equals("dendro") && show_dendor||item.getElement().toLowerCase().equals("cryo") && show_cryo||item.getElement().toLowerCase().equals("geo") && show_geo)) {
                                 if((show_sword == false && show_claymore == false && show_catalyst == false && show_bow == false && show_polearm == false)){
                                     filteredList.add(item);
                                 }else if(item.getWeapon().toLowerCase().equals("sword") && show_sword||item.getWeapon().toLowerCase().equals("claymore") && show_claymore||item.getWeapon().toLowerCase().equals("polearm") && show_polearm||item.getWeapon().toLowerCase().equals("bow") && show_bow||item.getWeapon().toLowerCase().equals("catalyst") && show_catalyst){
@@ -702,7 +708,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                             }else if ((item.getWeapon().toLowerCase().equals("sword") && show_sword||item.getWeapon().toLowerCase().equals("claymore") && show_claymore||item.getWeapon().toLowerCase().equals("polearm") && show_polearm||item.getWeapon().toLowerCase().equals("bow") && show_bow||item.getWeapon().toLowerCase().equals("catalyst") && show_catalyst)) {
                                 if((show_anemo == false  && show_cryo == false && show_dendor == false && show_electro == false && show_hydro == false && show_geo == false && show_pyro == false)){
                                     filteredList.add(item);
-                                }else if((item.getElement().toLowerCase().equals("pyro") && show_pyro||item.getElement().toLowerCase().equals("hydro") && show_hydro||item.getElement().toLowerCase().equals("anemo") && show_anemo||item.getElement().toLowerCase().equals("electro") && show_electro||item.getElement().toLowerCase().equals("dendor") && show_dendor||item.getElement().toLowerCase().equals("cryo") && show_cryo||item.getElement().toLowerCase().equals("geo") && show_geo)){
+                                }else if((item.getElement().toLowerCase().equals("pyro") && show_pyro||item.getElement().toLowerCase().equals("hydro") && show_hydro||item.getElement().toLowerCase().equals("anemo") && show_anemo||item.getElement().toLowerCase().equals("electro") && show_electro||item.getElement().toLowerCase().equals("dendro") && show_dendor||item.getElement().toLowerCase().equals("cryo") && show_cryo||item.getElement().toLowerCase().equals("geo") && show_geo)){
                                     if(ratingBar.getRating() != 0 && item.getRare() == ratingBar.getRating()){
                                         filteredList.add(item);
                                     }else if (ratingBar.getRating() == 0){
@@ -768,6 +774,12 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                 mLayoutManager = new GridLayoutManager(context,  3);
             }
         }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                mLayoutManager = new GridLayoutManager(context,  width_a/960);
+            }else{
+                mLayoutManager = new GridLayoutManager(context,  1);
+            }
+        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
             if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
                 mLayoutManager = new GridLayoutManager(context,  width_a/960);
             }else{
@@ -1001,6 +1013,12 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                 mLayoutManager = new GridLayoutManager(context,  3);
             }
         }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+                mLayoutManager = new GridLayoutManager(context,  width_a/960);
+            }else{
+                mLayoutManager = new GridLayoutManager(context,  1);
+            }
+        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
             if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
                 mLayoutManager = new GridLayoutManager(context,  width_a/960);
             }else{
@@ -2947,7 +2965,9 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                 characters.setRare(rare);
                 characters.setMainStat(mainStat);
                 characters.setIsComing(isComing);
-                charactersList.add(characters);
+                if(!characters.getName().contains("Traveler")){
+                    charactersList.add(characters);
+                }
             }
             mCharAdapter.filterList(charactersList);
         } catch (JSONException e) {

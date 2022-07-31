@@ -70,6 +70,8 @@ public class CalculatorProcess {
     ArrayList<Integer> 哀敘冰玉 = new ArrayList<Integer>();
     ArrayList<Integer> 自在松石 = new ArrayList<Integer>();
     ArrayList<Integer> 堅牢黃玉 = new ArrayList<Integer>();
+    ArrayList<Integer> 生長碧翡 = new ArrayList<Integer>();
+    ArrayList<Integer> 璀璨原鑽 = new ArrayList<Integer>();
 
     /** UNKNOWN BOSS ITEM*/
     int 未知常駐BOSS跌落物1 = 0;
@@ -98,7 +100,10 @@ public class CalculatorProcess {
     int 獸境王器 = 0;
     int 龍嗣偽鰭 = 0;
     //add in 20220331
-    int  符紋之齒 = 0;
+    int 符紋之齒 = 0;
+    //add in 20220716
+    int 蕈王鉤喙 = 0;
+    int 藏雷野實 = 0;
 
     /** LOCAL */
     int  小燈草  = 0 ;
@@ -127,6 +132,10 @@ public class CalculatorProcess {
     int  幽燈蕈  = 0 ;
     int  珊瑚真珠  = 0 ;
     int  鬼兜蟲  = 0 ;
+    //add in 20220716
+    int  樹王聖體菇 = 0;
+    int  劫波蓮 = 0;
+    int  月蓮 = 0;
 
     /** T-BOSS ASC*/
 
@@ -164,9 +173,17 @@ public class CalculatorProcess {
     ArrayList<Integer> 名刀鐔 = new ArrayList<Integer>();
     //add in 20210910
     ArrayList<Integer> 浮游晶化核 = new ArrayList<Integer>();
+    //add in 20220716
+    ArrayList<Integer> 織金紅綢 = new ArrayList<Integer>();
+    ArrayList<Integer> 孢囊晶塵 = new ArrayList<Integer>();
+    ArrayList<Integer> 幽邃刻像 = new ArrayList<Integer>();
+
 
     /** T-COMMON*/
 
+    ArrayList<Integer> 未知1_的哲學 = new ArrayList<Integer>();
+    ArrayList<Integer> 未知2_的哲學 = new ArrayList<Integer>();
+    ArrayList<Integer> 未知3_的哲學 = new ArrayList<Integer>();
     ArrayList<Integer> 自由_的哲學 = new ArrayList<Integer>();
     ArrayList<Integer> 黃金_的哲學 = new ArrayList<Integer>();
     ArrayList<Integer> 抗爭_的哲學 = new ArrayList<Integer>();
@@ -436,6 +453,8 @@ public class CalculatorProcess {
             哀敘冰玉.add(0);
             自在松石.add(0);
             堅牢黃玉.add(0);
+            生長碧翡.add(0);
+            璀璨原鑽.add(0);
 
             漆黑隕鐵的一塊.add(0);
             獅牙鬥士的理想.add(0);
@@ -459,6 +478,9 @@ public class CalculatorProcess {
             史萊姆原漿.add(0);
             名刀鐔.add(0);
             浮游晶化核.add(0);
+            織金紅綢.add(0);
+            孢囊晶塵.add(0);
+            幽邃刻像.add(0);
 
             混沌真眼.add(0);
             混沌爐心.add(0);
@@ -479,6 +501,10 @@ public class CalculatorProcess {
             風雅_的哲學.add(0);
             浮世_的哲學.add(0);
             天光_的哲學.add(0);
+
+            未知1_的哲學.add(0);
+            未知2_的哲學.add(0);
+            未知3_的哲學.add(0);
 
         }
 
@@ -1083,190 +1109,6 @@ public class CalculatorProcess {
     }
 
     /**EDIT WHEN ADD NEW ITEMS*/
-    public void resultShow2(){
-
-        List<Materials> charWeaponList = new ArrayList();
-        List<Materials> crystalList = new ArrayList();
-        List<Materials> bossList = new ArrayList();
-        List<Materials> weekBossList = new ArrayList();
-        List<Materials> localList = new ArrayList();
-        List<Materials> commonList = new ArrayList();
-        List<Materials> weeklyBK1List = new ArrayList();
-        List<Materials> weeklyBK2List = new ArrayList();
-        List<Materials> weeklyBK3List = new ArrayList();
-        List<Materials> otherList = new ArrayList();
-
-        DisplayMetrics displayMetrics_w = new DisplayMetrics();
-        activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics_w);
-        int height_w = displayMetrics_w.heightPixels;
-        int width_w = displayMetrics_w.widthPixels;
-        GridLayoutManager mLayoutManager = new GridLayoutManager(context, width_w/128);
-
-        LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
-        paramsMsg.gravity = Gravity.CENTER;
-        mList.removeAllViewsInLayout();
-        mList.setLayoutParams(paramsMsg);
-
-        /** CHAR & WEAPON*/
-        for (int x = 0  ;NameList != null && x < NameList.size()  ; x++){
-            Materials materials = new Materials();
-            materials.setName(NameList.get(x));
-            materials.setType(1);
-            materials.setIsCal(IsCal.get(x));
-            charWeaponList.add(materials);
-        }
-        for (int x = 0  ;WeaponNameList != null && x < WeaponNameList.size()  ; x++){
-            Materials materials = new Materials();
-            materials.setName(WeaponNameList.get(x));
-            materials.setType(1);
-            materials.setIsCal(WeaponIsCal.get(x));
-            charWeaponList.add(materials);
-        }
-
-        /** CRYSTAL*/
-        String[] crystal_temp = new String[]{"燃願瑪瑙碎屑","燃願瑪瑙斷片","燃願瑪瑙塊","燃願瑪瑙","滌淨青金碎屑","滌淨青金斷片","滌淨青金塊","滌淨青金","最勝紫晶碎屑","最勝紫晶斷片","最勝紫晶塊","最勝紫晶","哀敘冰玉碎屑","哀敘冰玉斷片","哀敘冰玉塊","哀敘冰玉","自在松石碎屑","自在松石斷片","自在松石塊","自在松石","堅牢黃玉碎屑","堅牢黃玉斷片","堅牢黃玉塊","堅牢黃玉"};
-        int[] crystal_temp_cnt = new int[]{燃願瑪瑙.get(0),燃願瑪瑙.get(1),燃願瑪瑙.get(2),燃願瑪瑙.get(3),滌淨青金.get(0),滌淨青金.get(1),滌淨青金.get(2),滌淨青金.get(3),最勝紫晶.get(0),最勝紫晶.get(1),最勝紫晶.get(2),最勝紫晶.get(3),哀敘冰玉.get(0),哀敘冰玉.get(1),哀敘冰玉.get(2),哀敘冰玉.get(3),自在松石.get(0),自在松石.get(1),自在松石.get(2),自在松石.get(3),堅牢黃玉.get(0),堅牢黃玉.get(1),堅牢黃玉.get(2),堅牢黃玉.get(3)};
-
-        for (int x = 0 ; x < crystal_temp.length ; x++){
-            if(crystal_temp_cnt[x] > 0){
-                Materials materials = new Materials();
-                materials.setInside_name(crystal_temp[x]);
-                materials.setCount(crystal_temp_cnt[x]);
-                materials.setType(2);
-                crystalList.add(materials);
-            }
-        }
-
-        /** BOSS */
-        String[] boss_temp = new String[]{"未知常駐BOSS跌落物1","未知常駐BOSS跌落物2","未知常駐BOSS跌落物3","常燃火種","淨水之心","雷光棱鏡","極寒之核","颶風之種","玄岩之塔","未熟之玉","晶凝之華","魔偶機心","恒常機關之心","陰燃之珠","雷霆數珠","排異之露","獸境王器","龍嗣偽鰭","符紋之齒"};
-        int[] boss_temp_cnt = new int[]{未知常駐BOSS跌落物1,未知常駐BOSS跌落物2,未知常駐BOSS跌落物3,常燃火種,淨水之心,雷光棱鏡,極寒之核,颶風之種,玄岩之塔,未熟之玉,晶凝之華,魔偶機心,恒常機關之心,陰燃之珠,雷霆數珠,排異之露,獸境王器,龍嗣偽鰭,符紋之齒};
-
-        for (int x = 0 ; x < boss_temp.length ; x++){
-            if(boss_temp_cnt[x] > 0){
-                Materials materials = new Materials();
-                materials.setInside_name(boss_temp[x]);
-                materials.setCount(boss_temp_cnt[x]);
-                materials.setType(3);
-                bossList.add(materials);
-            }
-        }
-
-        /** WEEK-BOSS */
-        String[] week_boss_temp = new String[]{"未知周本BOSS跌落物1","未知周本BOSS跌落物2","未知周本BOSS跌落物3","北風之環","東風的吐息","東風之翎","北風的魂匣","東風之爪","北風之尾","魔王之刃·殘片","吞天之鯨·只角","武煉之魂·孤影","龍王之冕","血玉之枝","鎏金之鱗","熔毀之刻","灰燼之心","獄火之蝶","萬劫之真意","凶將之手眼","禍神之禊淚"};
-        int[] week_boss_temp_cnt = new int[]{未知周本BOSS跌落物1,未知周本BOSS跌落物2,未知周本BOSS跌落物3,北風之環,東風的吐息,東風之翎,北風的魂匣,東風之爪,北風之尾,魔王之刃_殘片,吞天之鯨_只角,武煉之魂_孤影,龍王之冕,血玉之枝,鎏金之鱗,熔毀之刻,灰燼之心,獄火之蝶,萬劫之真意,凶將之手眼,禍神之禊淚};
-
-        for (int x = 0 ; x < week_boss_temp.length ; x++){
-            if(week_boss_temp_cnt[x] > 0){
-                Materials materials = new Materials();
-                materials.setInside_name(week_boss_temp[x]);
-                materials.setCount(week_boss_temp_cnt[x]);
-                materials.setType(4);
-                weekBossList.add(materials);
-            }
-        }
-
-        /** LOCAL */
-        String[] local_temp = new String[]{"小燈草","慕風蘑菇","夜泊石","風車菊","石珀","蒲公英籽","嘟嘟蓮","落落莓","琉璃百合","琉璃袋","鉤鉤果","塞西莉亞花","絕雲椒椒","霓裳花","星螺","清心","海靈芝","緋櫻繡球","鳴草","晶化骨髓","天雲草實","血斛","幽燈蕈","珊瑚真珠","鬼兜蟲"};
-        int[] local_temp_cnt = new int[]{小燈草,慕風蘑菇,夜泊石,風車菊,石珀,蒲公英籽,嘟嘟蓮,落落莓,琉璃百合,琉璃袋,鉤鉤果,塞西莉亞花,絕雲椒椒,霓裳花,星螺,清心,海靈芝,緋櫻繡球,鳴草,晶化骨髓,天雲草實,血斛,幽燈蕈,珊瑚真珠,鬼兜蟲};
-
-        for (int x = 0 ; x < local_temp.length ; x++){
-            if(local_temp_cnt[x] > 0){
-                Materials materials = new Materials();
-                materials.setInside_name(local_temp[x]);
-                materials.setCount(local_temp_cnt[x]);
-                materials.setType(5);
-                localList.add(materials);
-            }
-        }
-
-        /** COMMON */
-        String[] common_temp = new String[]{"牢固的箭簇","銳利的箭簇","歷戰的箭簇","導能繪卷","封魔繪卷","禁咒繪卷","尋寶鴉印","藏銀鴉印","攫金鴉印","破損的面具","污穢的面具","不祥的面具","新兵的徽記","士官的徽記","尉官的徽記","騙騙花蜜","微光花蜜","原素花蜜","史萊姆凝液","史萊姆清","史萊姆原漿","破舊的刀鐔","影打刀鐔","名刀鐔","浮游乾核","浮游幽核","浮游晶化核", "混沌機關", "混沌樞紐", "混沌真眼", "混沌裝置", "混沌迴路", "混沌爐心", "脆弱的骨片", "結實的骨片", "石化的骨片", "霧虛花粉", "霧虛草囊", "霧虛燈芯", "獵兵祭刀", "特工祭刀", "督察長祭刀", "沉重號角", "黑銅號角", "黑晶號角", "地脈的舊枝", "地脈的枯葉", "地脈的新芽", "黯淡棱鏡", "水晶棱鏡", "偏光棱鏡","隱獸指爪","隱獸利爪","隱獸鬼爪"};
-        int[] common_temp_cnt = new int[]{歷戰的箭簇.get(0),歷戰的箭簇.get(1),歷戰的箭簇.get(2),禁咒繪卷.get(0),禁咒繪卷.get(1),禁咒繪卷.get(2),攫金鴉印.get(0),攫金鴉印.get(1),攫金鴉印.get(2),不祥的面具.get(0),不祥的面具.get(1),不祥的面具.get(2),尉官的徽記.get(0),尉官的徽記.get(1),尉官的徽記.get(2),原素花蜜.get(0),原素花蜜.get(1),原素花蜜.get(2),史萊姆原漿.get(0),史萊姆原漿.get(1),史萊姆原漿.get(2),名刀鐔.get(0),名刀鐔.get(1),名刀鐔.get(2),浮游晶化核.get(0),浮游晶化核.get(1),浮游晶化核.get(2),混沌真眼.get(0),混沌真眼.get(1),混沌真眼.get(2),混沌爐心.get(0),混沌爐心.get(1),混沌爐心.get(2),石化的骨片.get(0),石化的骨片.get(1),石化的骨片.get(2),霧虛燈芯.get(0),霧虛燈芯.get(1),霧虛燈芯.get(2),督察長祭刀.get(0),督察長祭刀.get(1),督察長祭刀.get(2),黑晶號角.get(0),黑晶號角.get(1),黑晶號角.get(2),地脈的新芽.get(0),地脈的新芽.get(1),地脈的新芽.get(2),偏光棱鏡.get(0),偏光棱鏡.get(1),偏光棱鏡.get(2),隱獸鬼爪.get(0),隱獸鬼爪.get(1),隱獸鬼爪.get(2)};
-
-        for (int x = 0 ; x < common_temp.length ; x++){
-            if(common_temp_cnt[x] > 0){
-                Materials materials = new Materials();
-                materials.setInside_name(common_temp[x]);
-                materials.setCount(common_temp_cnt[x]);
-                materials.setType(6);
-                commonList.add(materials);
-            }
-        }
-
-        /** WEEKLY-MON-THUR-SUN */
-        String[] weeklybk1_temp = new String[]{"「自由」的教導","「自由」的指引","「自由」的哲學","「繁榮」的教導","「繁榮」的指引","「繁榮」的哲學","「浮世」的教導","「浮世」的指引","「浮世」的哲學","高塔孤王的破瓦", "高塔孤王的殘垣", "高塔孤王的斷片", "高塔孤王的碎夢", "孤雲寒林的光砂", "孤雲寒林的輝岩", "孤雲寒林的聖骸", "孤雲寒林的神體", "遠海夷地的瑚枝", "遠海夷地的玉枝", "遠海夷地的瓊枝", "遠海夷地的金枝"};
-        int[] weeklybk1_temp_cnt = new int[]{自由_的哲學.get(0),自由_的哲學.get(1),自由_的哲學.get(2),繁榮_的哲學.get(0),繁榮_的哲學.get(1),繁榮_的哲學.get(2),浮世_的哲學.get(0),浮世_的哲學.get(1),浮世_的哲學.get(2),高塔孤王的碎夢.get(0),高塔孤王的碎夢.get(1),高塔孤王的碎夢.get(2),高塔孤王的碎夢.get(3),孤雲寒林的神體.get(0),孤雲寒林的神體.get(1),孤雲寒林的神體.get(2),孤雲寒林的神體.get(3),遠海夷地的金枝.get(0),遠海夷地的金枝.get(1),遠海夷地的金枝.get(2),遠海夷地的金枝.get(3)};
-
-        for (int x = 0 ; x < weeklybk1_temp.length ; x++){
-            if(weeklybk1_temp_cnt[x] > 0){
-                Materials materials = new Materials();
-                materials.setInside_name(weeklybk1_temp[x]);
-                materials.setCount(weeklybk1_temp_cnt[x]);
-                materials.setType(7);
-                weeklyBK1List.add(materials);
-            }
-        }
-
-        /** WEEKLY-TUE-FRI-SUN */
-        String[] weeklybk2_temp = new String[]{"「抗爭」的教導","「抗爭」的指引","「抗爭」的哲學","「勤勞」的教導","「勤勞」的指引","「勤勞」的哲學","「風雅」的教導","「風雅」的指引","「風雅」的哲學" , "凜風奔狼的始齔", "凜風奔狼的裂齒", "凜風奔狼的斷牙", "凜風奔狼的懷鄉", "霧海雲間的鉛丹", "霧海雲間的汞丹", "霧海雲間的金丹", "霧海雲間的轉還", "鳴神御靈的明惠", "鳴神御靈的歡喜", "鳴神御靈的親愛", "鳴神御靈的勇武"};
-        int[] weeklybk2_temp_cnt = new int[]{抗爭_的哲學.get(0),抗爭_的哲學.get(1),抗爭_的哲學.get(2),勤勞_的哲學.get(0),勤勞_的哲學.get(1),勤勞_的哲學.get(2),風雅_的哲學.get(0),風雅_的哲學.get(1),風雅_的哲學.get(2),凜風奔狼的懷鄉.get(0),凜風奔狼的懷鄉.get(1),凜風奔狼的懷鄉.get(2),凜風奔狼的懷鄉.get(3),霧海雲間的轉還.get(0),霧海雲間的轉還.get(1),霧海雲間的轉還.get(2),霧海雲間的轉還.get(3),鳴神御靈的勇武.get(0),鳴神御靈的勇武.get(1),鳴神御靈的勇武.get(2),鳴神御靈的勇武.get(3)};
-
-        for (int x = 0 ; x < weeklybk2_temp.length ; x++){
-            if(weeklybk2_temp_cnt[x] > 0){
-                Materials materials = new Materials();
-                materials.setInside_name(weeklybk2_temp[x]);
-                materials.setCount(weeklybk2_temp_cnt[x]);
-                materials.setType(8);
-                weeklyBK2List.add(materials);
-            }
-        }
-
-        /** WEEKLY-WED-SAT-SUN */
-        String[] weeklybk3_temp = new String[]{"「黃金」的教導","「黃金」的指引","「黃金」的哲學","「詩文」的教導","「詩文」的指引","「詩文」的哲學","「天光」的教導","「天光」的指引","「天光」的哲學", "獅牙鬥士的枷鎖", "獅牙鬥士的鐵鍊", "獅牙鬥士的鐐銬", "獅牙鬥士的理想", "漆黑隕鐵的一粒", "漆黑隕鐵的一片", "漆黑隕鐵的一角", "漆黑隕鐵的一塊", "今昔劇畫的惡尉", "今昔劇畫的虎囓", "今昔劇畫的一角", "今昔劇畫的鬼人"};
-        int[] weeklybk3_temp_cnt = new int[]{黃金_的哲學.get(0),黃金_的哲學.get(1),黃金_的哲學.get(2),詩文_的哲學.get(0),詩文_的哲學.get(1),詩文_的哲學.get(2),天光_的哲學.get(0),天光_的哲學.get(1),天光_的哲學.get(2),獅牙鬥士的理想.get(0),獅牙鬥士的理想.get(1),獅牙鬥士的理想.get(2),獅牙鬥士的理想.get(3),漆黑隕鐵的一塊.get(0),漆黑隕鐵的一塊.get(1),漆黑隕鐵的一塊.get(2),漆黑隕鐵的一塊.get(3),今昔劇畫的鬼人.get(0),今昔劇畫的鬼人.get(1),今昔劇畫的鬼人.get(2),今昔劇畫的鬼人.get(3)};
-
-        for (int x = 0 ; x < weeklybk3_temp.length ; x++){
-            if(weeklybk3_temp_cnt[x] > 0){
-                Materials materials = new Materials();
-                materials.setInside_name(weeklybk3_temp[x]);
-                materials.setCount(weeklybk3_temp_cnt[x]);
-                materials.setType(9);
-                weeklyBK3List.add(materials);
-            }
-        }
-
-        /** OTHERS*/
-        String[] other_temp = new String[]{"流浪者的經驗", "冒險家的經驗", "大英雄的經驗", "精鍛用雜礦", "精鍛用良礦", "精鍛用魔礦","祝聖油膏","祝聖精華","摩拉", "智識之冕"};
-        int[] other_temp_cnt = new int[]{exp_small,exp_mid,exp_big,weapon_small,weapon_mid,weapon_big,artifact_mid,artifact_big,morax,智識之冕};
-
-        for (int x = 0 ; x < other_temp.length ; x++){
-            if(other_temp_cnt[x] > 0){
-                Materials materials = new Materials();
-                materials.setInside_name(other_temp[x]);
-                materials.setCount(other_temp_cnt[x]);
-                materials.setType(10);
-                otherList.add(materials);
-            }
-        }
-
-        CharWeaponAdapter charWeaponAdapter = new CharWeaponAdapter(context,charWeaponList,activity);
-        CrystalAdapter crystalAdapter = new CrystalAdapter(context,crystalList,activity);
-        BossAdapter bossAdapter = new BossAdapter(context,bossList,activity);
-        WeekBossAdapter weekBossAdapter = new WeekBossAdapter(context,weekBossList,activity);
-        LocalAdapter localAdapter = new LocalAdapter(context,localList,activity);
-        CommonAdapter commonAdapter = new CommonAdapter(context,commonList,activity);
-        WeeklyBK1Adapter weeklyBK1Adapter = new WeeklyBK1Adapter(context,weeklyBK1List,activity);
-        WeeklyBK2Adapter weeklyBK2Adapter = new WeeklyBK2Adapter(context,weeklyBK2List,activity);
-        WeeklyBK3Adapter weeklyBK3Adapter = new WeeklyBK3Adapter(context,weeklyBK3List,activity);
-        OtherAdapter otherAdapter = new OtherAdapter(context,otherList,activity);
-
-        ConcatAdapter concatAdapter = new ConcatAdapter(charWeaponAdapter,crystalAdapter,bossAdapter,weekBossAdapter,localAdapter,commonAdapter,weeklyBK1Adapter,weeklyBK2Adapter,weeklyBK3Adapter,otherAdapter);
-        mList.setLayoutManager(mLayoutManager);
-        mList.setAdapter(concatAdapter);
-
-    }
-
-    /**EDIT WHEN ADD NEW ITEMS*/
     public void resultShow () {
         Log.wtf("Procedure","resultShowBegin"+" || "+System.currentTimeMillis());
         /** INIT of UI GONE*/
@@ -1471,8 +1313,8 @@ public class CalculatorProcess {
         }
 
         /** CRYSTAL*/
-        String[] crystal_temp = new String[]{"燃願瑪瑙碎屑","燃願瑪瑙斷片","燃願瑪瑙塊","燃願瑪瑙","滌淨青金碎屑","滌淨青金斷片","滌淨青金塊","滌淨青金","最勝紫晶碎屑","最勝紫晶斷片","最勝紫晶塊","最勝紫晶","哀敘冰玉碎屑","哀敘冰玉斷片","哀敘冰玉塊","哀敘冰玉","自在松石碎屑","自在松石斷片","自在松石塊","自在松石","堅牢黃玉碎屑","堅牢黃玉斷片","堅牢黃玉塊","堅牢黃玉"};
-        int[] crystal_temp_cnt = new int[]{燃願瑪瑙.get(0),燃願瑪瑙.get(1),燃願瑪瑙.get(2),燃願瑪瑙.get(3),滌淨青金.get(0),滌淨青金.get(1),滌淨青金.get(2),滌淨青金.get(3),最勝紫晶.get(0),最勝紫晶.get(1),最勝紫晶.get(2),最勝紫晶.get(3),哀敘冰玉.get(0),哀敘冰玉.get(1),哀敘冰玉.get(2),哀敘冰玉.get(3),自在松石.get(0),自在松石.get(1),自在松石.get(2),自在松石.get(3),堅牢黃玉.get(0),堅牢黃玉.get(1),堅牢黃玉.get(2),堅牢黃玉.get(3)};
+        String[] crystal_temp = new String[]{"璀璨原鑽碎屑","璀璨原鑽斷片","璀璨原鑽塊","璀璨原鑽","燃願瑪瑙碎屑","燃願瑪瑙斷片","燃願瑪瑙塊","燃願瑪瑙","滌淨青金碎屑","滌淨青金斷片","滌淨青金塊","滌淨青金","最勝紫晶碎屑","最勝紫晶斷片","最勝紫晶塊","最勝紫晶","哀敘冰玉碎屑","哀敘冰玉斷片","哀敘冰玉塊","哀敘冰玉","自在松石碎屑","自在松石斷片","自在松石塊","自在松石","堅牢黃玉碎屑","堅牢黃玉斷片","堅牢黃玉塊","堅牢黃玉","生長碧翡碎屑","生長碧翡斷片","生長碧翡塊","生長碧翡"};
+        int[] crystal_temp_cnt = new int[]{璀璨原鑽.get(0),璀璨原鑽.get(1),璀璨原鑽.get(2),璀璨原鑽.get(3),燃願瑪瑙.get(0),燃願瑪瑙.get(1),燃願瑪瑙.get(2),燃願瑪瑙.get(3),滌淨青金.get(0),滌淨青金.get(1),滌淨青金.get(2),滌淨青金.get(3),最勝紫晶.get(0),最勝紫晶.get(1),最勝紫晶.get(2),最勝紫晶.get(3),哀敘冰玉.get(0),哀敘冰玉.get(1),哀敘冰玉.get(2),哀敘冰玉.get(3),自在松石.get(0),自在松石.get(1),自在松石.get(2),自在松石.get(3),堅牢黃玉.get(0),堅牢黃玉.get(1),堅牢黃玉.get(2),堅牢黃玉.get(3),生長碧翡.get(0),生長碧翡.get(1),生長碧翡.get(2),生長碧翡.get(3)};
 
         gridLayout = viewPager.findViewById(R.id.result_crystal_gl);
         gridLayout.removeAllViewsInLayout();
@@ -1593,8 +1435,8 @@ public class CalculatorProcess {
         }
 
         /** LOCAL */
-        String[] local_temp = new String[]{"小燈草","慕風蘑菇","夜泊石","風車菊","石珀","蒲公英籽","嘟嘟蓮","落落莓","琉璃百合","琉璃袋","鉤鉤果","塞西莉亞花","絕雲椒椒","霓裳花","星螺","清心","海靈芝","緋櫻繡球","鳴草","晶化骨髓","天雲草實","血斛","幽燈蕈","珊瑚真珠","鬼兜蟲"};
-        int[] local_temp_cnt = new int[]{小燈草,慕風蘑菇,夜泊石,風車菊,石珀,蒲公英籽,嘟嘟蓮,落落莓,琉璃百合,琉璃袋,鉤鉤果,塞西莉亞花,絕雲椒椒,霓裳花,星螺,清心,海靈芝,緋櫻繡球,鳴草,晶化骨髓,天雲草實,血斛,幽燈蕈,珊瑚真珠,鬼兜蟲};
+        String[] local_temp = new String[]{"小燈草","慕風蘑菇","夜泊石","風車菊","石珀","蒲公英籽","嘟嘟蓮","落落莓","琉璃百合","琉璃袋","鉤鉤果","塞西莉亞花","絕雲椒椒","霓裳花","星螺","清心","海靈芝","緋櫻繡球","鳴草","晶化骨髓","天雲草實","血斛","幽燈蕈","珊瑚真珠","鬼兜蟲","樹王聖體菇","月蓮","劫波蓮"};
+        int[] local_temp_cnt = new int[]{小燈草,慕風蘑菇,夜泊石,風車菊,石珀,蒲公英籽,嘟嘟蓮,落落莓,琉璃百合,琉璃袋,鉤鉤果,塞西莉亞花,絕雲椒椒,霓裳花,星螺,清心,海靈芝,緋櫻繡球,鳴草,晶化骨髓,天雲草實,血斛,幽燈蕈,珊瑚真珠,鬼兜蟲,樹王聖體菇,月蓮,劫波蓮};
         gridLayout = viewPager.findViewById(R.id.result_local_gl);
         gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
@@ -1633,8 +1475,8 @@ public class CalculatorProcess {
         }
 
         /** COMMON */
-        String[] common_temp = new String[]{"牢固的箭簇","銳利的箭簇","歷戰的箭簇","導能繪卷","封魔繪卷","禁咒繪卷","尋寶鴉印","藏銀鴉印","攫金鴉印","破損的面具","污穢的面具","不祥的面具","新兵的徽記","士官的徽記","尉官的徽記","騙騙花蜜","微光花蜜","原素花蜜","史萊姆凝液","史萊姆清","史萊姆原漿","破舊的刀鐔","影打刀鐔","名刀鐔","浮游乾核","浮游幽核","浮游晶化核", "混沌機關", "混沌樞紐", "混沌真眼", "混沌裝置", "混沌迴路", "混沌爐心", "脆弱的骨片", "結實的骨片", "石化的骨片", "霧虛花粉", "霧虛草囊", "霧虛燈芯", "獵兵祭刀", "特工祭刀", "督察長祭刀", "沉重號角", "黑銅號角", "黑晶號角", "地脈的舊枝", "地脈的枯葉", "地脈的新芽", "黯淡棱鏡", "水晶棱鏡", "偏光棱鏡","隱獸指爪","隱獸利爪","隱獸鬼爪"};
-        int[] common_temp_cnt = new int[]{歷戰的箭簇.get(0),歷戰的箭簇.get(1),歷戰的箭簇.get(2),禁咒繪卷.get(0),禁咒繪卷.get(1),禁咒繪卷.get(2),攫金鴉印.get(0),攫金鴉印.get(1),攫金鴉印.get(2),不祥的面具.get(0),不祥的面具.get(1),不祥的面具.get(2),尉官的徽記.get(0),尉官的徽記.get(1),尉官的徽記.get(2),原素花蜜.get(0),原素花蜜.get(1),原素花蜜.get(2),史萊姆原漿.get(0),史萊姆原漿.get(1),史萊姆原漿.get(2),名刀鐔.get(0),名刀鐔.get(1),名刀鐔.get(2),浮游晶化核.get(0),浮游晶化核.get(1),浮游晶化核.get(2),混沌真眼.get(0),混沌真眼.get(1),混沌真眼.get(2),混沌爐心.get(0),混沌爐心.get(1),混沌爐心.get(2),石化的骨片.get(0),石化的骨片.get(1),石化的骨片.get(2),霧虛燈芯.get(0),霧虛燈芯.get(1),霧虛燈芯.get(2),督察長祭刀.get(0),督察長祭刀.get(1),督察長祭刀.get(2),黑晶號角.get(0),黑晶號角.get(1),黑晶號角.get(2),地脈的新芽.get(0),地脈的新芽.get(1),地脈的新芽.get(2),偏光棱鏡.get(0),偏光棱鏡.get(1),偏光棱鏡.get(2),隱獸鬼爪.get(0),隱獸鬼爪.get(1),隱獸鬼爪.get(2)};
+        String[] common_temp = new String[]{"牢固的箭簇","銳利的箭簇","歷戰的箭簇","導能繪卷","封魔繪卷","禁咒繪卷","尋寶鴉印","藏銀鴉印","攫金鴉印","破損的面具","污穢的面具","不祥的面具","新兵的徽記","士官的徽記","尉官的徽記","騙騙花蜜","微光花蜜","原素花蜜","史萊姆凝液","史萊姆清","史萊姆原漿","破舊的刀鐔","影打刀鐔","名刀鐔","浮游乾核","浮游幽核","浮游晶化核", "混沌機關", "混沌樞紐", "混沌真眼", "混沌裝置", "混沌迴路", "混沌爐心", "脆弱的骨片", "結實的骨片", "石化的骨片", "霧虛花粉", "霧虛草囊", "霧虛燈芯", "獵兵祭刀", "特工祭刀", "督察長祭刀", "沉重號角", "黑銅號角", "黑晶號角", "地脈的舊枝", "地脈的枯葉", "地脈的新芽", "黯淡棱鏡", "水晶棱鏡", "偏光棱鏡","隱獸指爪","隱獸利爪","隱獸鬼爪","蕈獸孢子","螢光孢粉","孢囊晶塵","褪色紅綢","鑲邊紅綢","織金紅綢","晦暗刻像","夤夜刻像","幽邃刻像"};
+        int[] common_temp_cnt = new int[]{歷戰的箭簇.get(0),歷戰的箭簇.get(1),歷戰的箭簇.get(2),禁咒繪卷.get(0),禁咒繪卷.get(1),禁咒繪卷.get(2),攫金鴉印.get(0),攫金鴉印.get(1),攫金鴉印.get(2),不祥的面具.get(0),不祥的面具.get(1),不祥的面具.get(2),尉官的徽記.get(0),尉官的徽記.get(1),尉官的徽記.get(2),原素花蜜.get(0),原素花蜜.get(1),原素花蜜.get(2),史萊姆原漿.get(0),史萊姆原漿.get(1),史萊姆原漿.get(2),名刀鐔.get(0),名刀鐔.get(1),名刀鐔.get(2),浮游晶化核.get(0),浮游晶化核.get(1),浮游晶化核.get(2),混沌真眼.get(0),混沌真眼.get(1),混沌真眼.get(2),混沌爐心.get(0),混沌爐心.get(1),混沌爐心.get(2),石化的骨片.get(0),石化的骨片.get(1),石化的骨片.get(2),霧虛燈芯.get(0),霧虛燈芯.get(1),霧虛燈芯.get(2),督察長祭刀.get(0),督察長祭刀.get(1),督察長祭刀.get(2),黑晶號角.get(0),黑晶號角.get(1),黑晶號角.get(2),地脈的新芽.get(0),地脈的新芽.get(1),地脈的新芽.get(2),偏光棱鏡.get(0),偏光棱鏡.get(1),偏光棱鏡.get(2),隱獸鬼爪.get(0),隱獸鬼爪.get(1),隱獸鬼爪.get(2),孢囊晶塵.get(0),孢囊晶塵.get(1),孢囊晶塵.get(2),織金紅綢.get(0),織金紅綢.get(1),織金紅綢.get(2),幽邃刻像.get(0),幽邃刻像.get(1),幽邃刻像.get(2)};
         gridLayout = viewPager.findViewById(R.id.result_common_gl);
         gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
@@ -1673,8 +1515,8 @@ public class CalculatorProcess {
         }
 
         /** WEEKLY-MON-THUR-SUN */
-        String[] weeklybk1_temp = new String[]{"「自由」的教導","「自由」的指引","「自由」的哲學","「繁榮」的教導","「繁榮」的指引","「繁榮」的哲學","「浮世」的教導","「浮世」的指引","「浮世」的哲學","高塔孤王的破瓦", "高塔孤王的殘垣", "高塔孤王的斷片", "高塔孤王的碎夢", "孤雲寒林的光砂", "孤雲寒林的輝岩", "孤雲寒林的聖骸", "孤雲寒林的神體", "遠海夷地的瑚枝", "遠海夷地的玉枝", "遠海夷地的瓊枝", "遠海夷地的金枝"};
-        int[] weeklybk1_temp_cnt = new int[]{自由_的哲學.get(0),自由_的哲學.get(1),自由_的哲學.get(2),繁榮_的哲學.get(0),繁榮_的哲學.get(1),繁榮_的哲學.get(2),浮世_的哲學.get(0),浮世_的哲學.get(1),浮世_的哲學.get(2),高塔孤王的碎夢.get(0),高塔孤王的碎夢.get(1),高塔孤王的碎夢.get(2),高塔孤王的碎夢.get(3),孤雲寒林的神體.get(0),孤雲寒林的神體.get(1),孤雲寒林的神體.get(2),孤雲寒林的神體.get(3),遠海夷地的金枝.get(0),遠海夷地的金枝.get(1),遠海夷地的金枝.get(2),遠海夷地的金枝.get(3)};
+        String[] weeklybk1_temp = new String[]{"「未知1」的教導","「未知1」的指引","「未知1」的哲學","「自由」的教導","「自由」的指引","「自由」的哲學","「繁榮」的教導","「繁榮」的指引","「繁榮」的哲學","「浮世」的教導","「浮世」的指引","「浮世」的哲學","高塔孤王的破瓦", "高塔孤王的殘垣", "高塔孤王的斷片", "高塔孤王的碎夢", "孤雲寒林的光砂", "孤雲寒林的輝岩", "孤雲寒林的聖骸", "孤雲寒林的神體", "遠海夷地的瑚枝", "遠海夷地的玉枝", "遠海夷地的瓊枝", "遠海夷地的金枝"};
+        int[] weeklybk1_temp_cnt = new int[]{未知1_的哲學.get(0),未知1_的哲學.get(1),未知1_的哲學.get(2),自由_的哲學.get(0),自由_的哲學.get(1),自由_的哲學.get(2),繁榮_的哲學.get(0),繁榮_的哲學.get(1),繁榮_的哲學.get(2),浮世_的哲學.get(0),浮世_的哲學.get(1),浮世_的哲學.get(2),高塔孤王的碎夢.get(0),高塔孤王的碎夢.get(1),高塔孤王的碎夢.get(2),高塔孤王的碎夢.get(3),孤雲寒林的神體.get(0),孤雲寒林的神體.get(1),孤雲寒林的神體.get(2),孤雲寒林的神體.get(3),遠海夷地的金枝.get(0),遠海夷地的金枝.get(1),遠海夷地的金枝.get(2),遠海夷地的金枝.get(3)};
         gridLayout = viewPager.findViewById(R.id.result_weeklybk1_gl);
         gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
@@ -1698,9 +1540,12 @@ public class CalculatorProcess {
                         .into (item_cal_img);
                 item_cal_tv.setText(prettyCount(weeklybk1_temp_cnt[x]));
                 item_weekly_tv.setText(item_rss.getLocaleTeaches(weeklybk1_temp[x],context));
+                item_weekly_tv.setVisibility(View.VISIBLE);
+                /*
                 if(!item_rss.getLocaleTeaches(weeklybk1_temp[x],context).equals(context.getString(R.string.unknown))){
                     item_weekly_tv.setVisibility(View.VISIBLE);
                 }
+                 */
                 item_cal_img.setAdjustViewBounds(true);
                 gridLayout.setVisibility(View.VISIBLE);
                 result_weeklybk1_title.setVisibility(View.VISIBLE);
@@ -1718,8 +1563,8 @@ public class CalculatorProcess {
         }
 
         /** WEEKLY-TUE-FRI-SUN */
-        String[] weeklybk2_temp = new String[]{"「抗爭」的教導","「抗爭」的指引","「抗爭」的哲學","「勤勞」的教導","「勤勞」的指引","「勤勞」的哲學","「風雅」的教導","「風雅」的指引","「風雅」的哲學" , "凜風奔狼的始齔", "凜風奔狼的裂齒", "凜風奔狼的斷牙", "凜風奔狼的懷鄉", "霧海雲間的鉛丹", "霧海雲間的汞丹", "霧海雲間的金丹", "霧海雲間的轉還", "鳴神御靈的明惠", "鳴神御靈的歡喜", "鳴神御靈的親愛", "鳴神御靈的勇武"};
-        int[] weeklybk2_temp_cnt = new int[]{抗爭_的哲學.get(0),抗爭_的哲學.get(1),抗爭_的哲學.get(2),勤勞_的哲學.get(0),勤勞_的哲學.get(1),勤勞_的哲學.get(2),風雅_的哲學.get(0),風雅_的哲學.get(1),風雅_的哲學.get(2),凜風奔狼的懷鄉.get(0),凜風奔狼的懷鄉.get(1),凜風奔狼的懷鄉.get(2),凜風奔狼的懷鄉.get(3),霧海雲間的轉還.get(0),霧海雲間的轉還.get(1),霧海雲間的轉還.get(2),霧海雲間的轉還.get(3),鳴神御靈的勇武.get(0),鳴神御靈的勇武.get(1),鳴神御靈的勇武.get(2),鳴神御靈的勇武.get(3)};
+        String[] weeklybk2_temp = new String[]{"「未知2」的教導","「未知2」的指引","「未知2」的哲學","「抗爭」的教導","「抗爭」的指引","「抗爭」的哲學","「勤勞」的教導","「勤勞」的指引","「勤勞」的哲學","「風雅」的教導","「風雅」的指引","「風雅」的哲學" , "凜風奔狼的始齔", "凜風奔狼的裂齒", "凜風奔狼的斷牙", "凜風奔狼的懷鄉", "霧海雲間的鉛丹", "霧海雲間的汞丹", "霧海雲間的金丹", "霧海雲間的轉還", "鳴神御靈的明惠", "鳴神御靈的歡喜", "鳴神御靈的親愛", "鳴神御靈的勇武"};
+        int[] weeklybk2_temp_cnt = new int[]{未知2_的哲學.get(0),未知2_的哲學.get(1),未知2_的哲學.get(2),抗爭_的哲學.get(0),抗爭_的哲學.get(1),抗爭_的哲學.get(2),勤勞_的哲學.get(0),勤勞_的哲學.get(1),勤勞_的哲學.get(2),風雅_的哲學.get(0),風雅_的哲學.get(1),風雅_的哲學.get(2),凜風奔狼的懷鄉.get(0),凜風奔狼的懷鄉.get(1),凜風奔狼的懷鄉.get(2),凜風奔狼的懷鄉.get(3),霧海雲間的轉還.get(0),霧海雲間的轉還.get(1),霧海雲間的轉還.get(2),霧海雲間的轉還.get(3),鳴神御靈的勇武.get(0),鳴神御靈的勇武.get(1),鳴神御靈的勇武.get(2),鳴神御靈的勇武.get(3)};
         gridLayout = viewPager.findViewById(R.id.result_weeklybk2_gl);
         gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
@@ -1743,9 +1588,12 @@ public class CalculatorProcess {
                         .into (item_cal_img);
                 item_cal_tv.setText(prettyCount(weeklybk2_temp_cnt[x]));
                 item_weekly_tv.setText(item_rss.getLocaleTeaches(weeklybk2_temp[x],context));
+                item_weekly_tv.setVisibility(View.VISIBLE);
+                /*
                 if(!item_rss.getLocaleTeaches(weeklybk2_temp[x],context).equals(context.getString(R.string.unknown))){
                     item_weekly_tv.setVisibility(View.VISIBLE);
                 }
+                 */
                 item_cal_img.setAdjustViewBounds(true);
                 gridLayout.setVisibility(View.VISIBLE);
                 result_weeklybk2_title.setVisibility(View.VISIBLE);
@@ -1764,8 +1612,8 @@ public class CalculatorProcess {
         //Log.wtf("Procedure","resultShowWEEKLY2"+" || "+System.currentTimeMillis());
 
         /** WEEKLY-WED-SAT-SUN */
-        String[] weeklybk3_temp = new String[]{"「黃金」的教導","「黃金」的指引","「黃金」的哲學","「詩文」的教導","「詩文」的指引","「詩文」的哲學","「天光」的教導","「天光」的指引","「天光」的哲學", "獅牙鬥士的枷鎖", "獅牙鬥士的鐵鍊", "獅牙鬥士的鐐銬", "獅牙鬥士的理想", "漆黑隕鐵的一粒", "漆黑隕鐵的一片", "漆黑隕鐵的一角", "漆黑隕鐵的一塊", "今昔劇畫的惡尉", "今昔劇畫的虎囓", "今昔劇畫的一角", "今昔劇畫的鬼人"};
-        int[] weeklybk3_temp_cnt = new int[]{黃金_的哲學.get(0),黃金_的哲學.get(1),黃金_的哲學.get(2),詩文_的哲學.get(0),詩文_的哲學.get(1),詩文_的哲學.get(2),天光_的哲學.get(0),天光_的哲學.get(1),天光_的哲學.get(2),獅牙鬥士的理想.get(0),獅牙鬥士的理想.get(1),獅牙鬥士的理想.get(2),獅牙鬥士的理想.get(3),漆黑隕鐵的一塊.get(0),漆黑隕鐵的一塊.get(1),漆黑隕鐵的一塊.get(2),漆黑隕鐵的一塊.get(3),今昔劇畫的鬼人.get(0),今昔劇畫的鬼人.get(1),今昔劇畫的鬼人.get(2),今昔劇畫的鬼人.get(3)};
+        String[] weeklybk3_temp = new String[]{"「未知3」的教導","「未知3」的指引","「未知3」的哲學","「黃金」的教導","「黃金」的指引","「黃金」的哲學","「詩文」的教導","「詩文」的指引","「詩文」的哲學","「天光」的教導","「天光」的指引","「天光」的哲學", "獅牙鬥士的枷鎖", "獅牙鬥士的鐵鍊", "獅牙鬥士的鐐銬", "獅牙鬥士的理想", "漆黑隕鐵的一粒", "漆黑隕鐵的一片", "漆黑隕鐵的一角", "漆黑隕鐵的一塊", "今昔劇畫的惡尉", "今昔劇畫的虎囓", "今昔劇畫的一角", "今昔劇畫的鬼人"};
+        int[] weeklybk3_temp_cnt = new int[]{未知3_的哲學.get(0),未知3_的哲學.get(1),未知3_的哲學.get(2),黃金_的哲學.get(0),黃金_的哲學.get(1),黃金_的哲學.get(2),詩文_的哲學.get(0),詩文_的哲學.get(1),詩文_的哲學.get(2),天光_的哲學.get(0),天光_的哲學.get(1),天光_的哲學.get(2),獅牙鬥士的理想.get(0),獅牙鬥士的理想.get(1),獅牙鬥士的理想.get(2),獅牙鬥士的理想.get(3),漆黑隕鐵的一塊.get(0),漆黑隕鐵的一塊.get(1),漆黑隕鐵的一塊.get(2),漆黑隕鐵的一塊.get(3),今昔劇畫的鬼人.get(0),今昔劇畫的鬼人.get(1),今昔劇畫的鬼人.get(2),今昔劇畫的鬼人.get(3)};
         gridLayout = viewPager.findViewById(R.id.result_weeklybk3_gl);
         gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
@@ -1789,9 +1637,12 @@ public class CalculatorProcess {
                         .into (item_cal_img);
                 item_cal_tv.setText(prettyCount(weeklybk3_temp_cnt[x]));
                 item_weekly_tv.setText(item_rss.getLocaleTeaches(weeklybk3_temp[x],context));
+                item_weekly_tv.setVisibility(View.VISIBLE);
+                /*
                 if(!item_rss.getLocaleTeaches(weeklybk3_temp[x],context).equals(context.getString(R.string.unknown))){
                     item_weekly_tv.setVisibility(View.VISIBLE);
                 }
+                 */
                 gridLayout.setVisibility(View.VISIBLE);
                 result_weeklybk3_title.setVisibility(View.VISIBLE);
                 gridLayout.addView(view);
@@ -2053,6 +1904,8 @@ public class CalculatorProcess {
             if(temp_item.get(1).equals("哀敘冰玉")){addCountIntoVar(哀敘冰玉,temp_count,"CRYSTAL");}
             if(temp_item.get(1).equals("自在松石")){addCountIntoVar(自在松石,temp_count,"CRYSTAL");}
             if(temp_item.get(1).equals("堅牢黃玉")){addCountIntoVar(堅牢黃玉,temp_count,"CRYSTAL");}
+            if(temp_item.get(1).equals("生長碧翡")){addCountIntoVar(生長碧翡,temp_count,"CRYSTAL");}
+            if(temp_item.get(1).equals("璀璨原鑽")){addCountIntoVar(璀璨原鑽,temp_count,"CRYSTAL");}
 
             /** COMMON -> USING temp_count's pos 7-9*/
             if(temp_item.get(4).equals("歷戰的箭簇")){addCountIntoVar(歷戰的箭簇,temp_count,"COMMON");}
@@ -2065,8 +1918,9 @@ public class CalculatorProcess {
             if(temp_item.get(4).equals("名刀鐔")){addCountIntoVar(名刀鐔,temp_count,"COMMON");}
             //add in 20210910
             if(temp_item.get(4).equals("浮游晶化核")){addCountIntoVar(浮游晶化核,temp_count,"COMMON");}
-            //add in 20211030
-            if(temp_item.get(4).equals("隱獸鬼爪")){addCountIntoVar(隱獸鬼爪,temp_count,"COPY2");}
+            //add in 20220716
+            if(temp_item.get(4).equals("孢囊晶塵")){addCountIntoVar(孢囊晶塵,temp_count,"COMMON");}
+            if(temp_item.get(4).equals("織金紅綢")){addCountIntoVar(織金紅綢,temp_count,"COMMON");}
 
             /** BOSS -> USING temp_count's pos 8 */
             // SPECIAL CASE ONLY
@@ -2093,6 +1947,9 @@ public class CalculatorProcess {
             if(temp_item.get(2).equals("龍嗣偽鰭")){龍嗣偽鰭 = addCountIntoVar(龍嗣偽鰭,temp_count,"BOSS");}
             //add in 20220331
             if(temp_item.get(2).equals("符紋之齒")){符紋之齒 = addCountIntoVar(符紋之齒,temp_count,"BOSS");}
+            //add in 20220716
+            if(temp_item.get(2).equals("蕈王鉤喙")){蕈王鉤喙 = addCountIntoVar(蕈王鉤喙,temp_count,"BOSS");}
+            if(temp_item.get(2).equals("藏雷野實")){藏雷野實 = addCountIntoVar(藏雷野實,temp_count,"BOSS");}
 
             /** LOCAL */
             if(temp_item.get(3).equals("小燈草")){小燈草 = addCountIntoVar(小燈草,temp_count,"LOCAL");}
@@ -2121,8 +1978,10 @@ public class CalculatorProcess {
             else if(temp_item.get(3).equals("幽燈蕈")){幽燈蕈 = addCountIntoVar(幽燈蕈,temp_count,"LOCAL");}
             else if(temp_item.get(3).equals("珊瑚真珠")){珊瑚真珠 = addCountIntoVar(珊瑚真珠,temp_count,"LOCAL");}
             else if(temp_item.get(3).equals("鬼兜蟲")){鬼兜蟲 = addCountIntoVar(鬼兜蟲,temp_count,"LOCAL");}
-
-            //add in 2021024 (RE)
+            //add in 20220716
+            else if(temp_item.get(3).equals("樹王聖體菇")){樹王聖體菇 = addCountIntoVar(樹王聖體菇,temp_count,"LOCAL");}
+            else if(temp_item.get(3).equals("劫波蓮")){劫波蓮 = addCountIntoVar(劫波蓮,temp_count,"LOCAL");}
+            else if(temp_item.get(3).equals("月蓮")){月蓮 = addCountIntoVar(月蓮,temp_count,"LOCAL");}
 
         }
 
@@ -2138,8 +1997,9 @@ public class CalculatorProcess {
             if(temp_item.get(2).equals("名刀鐔")){addCountIntoVar(名刀鐔,temp_count,"T-COMMON");}
             //add in 20210910
             if(temp_item.get(2).equals("浮游晶化核")){addCountIntoVar(浮游晶化核,temp_count,"T-COMMON");}
-            //add in 20211030
-            if(temp_item.get(2).equals("隱獸鬼爪")){addCountIntoVar(隱獸鬼爪,temp_count,"COPY2");}
+            //add in 20220716
+            if(temp_item.get(2).equals("孢囊晶塵")){addCountIntoVar(孢囊晶塵,temp_count,"T-COMMON");}
+            if(temp_item.get(2).equals("織金紅綢")){addCountIntoVar(織金紅綢,temp_count,"T-COMMON");}
 
             /** T-BOOK -> USING temp_count's pos 0-2 */
             if(temp_item.get(1).equals("「自由」的哲學")){addCountIntoVar(自由_的哲學,temp_count,"T-BOOK");}
@@ -2151,6 +2011,9 @@ public class CalculatorProcess {
             if(temp_item.get(1).equals("「風雅」的哲學")){addCountIntoVar(風雅_的哲學,temp_count,"T-BOOK");}
             if(temp_item.get(1).equals("「浮世」的哲學")){addCountIntoVar(浮世_的哲學,temp_count,"T-BOOK");}
             if(temp_item.get(1).equals("「天光」的哲學")){addCountIntoVar(天光_的哲學,temp_count,"T-BOOK");}
+            if(temp_item.get(1).equals("「未知1」的哲學")){addCountIntoVar(未知1_的哲學,temp_count,"T-BOOK");}
+            if(temp_item.get(1).equals("「未知2」的哲學")){addCountIntoVar(未知2_的哲學,temp_count,"T-BOOK");}
+            if(temp_item.get(1).equals("「未知3」的哲學")){addCountIntoVar(未知3_的哲學,temp_count,"T-BOOK");}
 
             /** T-BOSS -> USING temp_count's pos 3 */
             // SPECIAL CASE ONLY
@@ -2952,4 +2815,187 @@ public class CalculatorProcess {
         }
     }
 
+    /**EDIT WHEN ADD NEW ITEMS*/
+    public void resultShow2(){
+
+        List<Materials> charWeaponList = new ArrayList();
+        List<Materials> crystalList = new ArrayList();
+        List<Materials> bossList = new ArrayList();
+        List<Materials> weekBossList = new ArrayList();
+        List<Materials> localList = new ArrayList();
+        List<Materials> commonList = new ArrayList();
+        List<Materials> weeklyBK1List = new ArrayList();
+        List<Materials> weeklyBK2List = new ArrayList();
+        List<Materials> weeklyBK3List = new ArrayList();
+        List<Materials> otherList = new ArrayList();
+
+        DisplayMetrics displayMetrics_w = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics_w);
+        int height_w = displayMetrics_w.heightPixels;
+        int width_w = displayMetrics_w.widthPixels;
+        GridLayoutManager mLayoutManager = new GridLayoutManager(context, width_w/128);
+
+        LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
+        paramsMsg.gravity = Gravity.CENTER;
+        mList.removeAllViewsInLayout();
+        mList.setLayoutParams(paramsMsg);
+
+        /** CHAR & WEAPON*/
+        for (int x = 0  ;NameList != null && x < NameList.size()  ; x++){
+            Materials materials = new Materials();
+            materials.setName(NameList.get(x));
+            materials.setType(1);
+            materials.setIsCal(IsCal.get(x));
+            charWeaponList.add(materials);
+        }
+        for (int x = 0  ;WeaponNameList != null && x < WeaponNameList.size()  ; x++){
+            Materials materials = new Materials();
+            materials.setName(WeaponNameList.get(x));
+            materials.setType(1);
+            materials.setIsCal(WeaponIsCal.get(x));
+            charWeaponList.add(materials);
+        }
+
+        /** CRYSTAL*/
+        String[] crystal_temp = new String[]{"璀璨原鑽碎屑","璀璨原鑽斷片","璀璨原鑽塊","璀璨原鑽","燃願瑪瑙碎屑","燃願瑪瑙斷片","燃願瑪瑙塊","燃願瑪瑙","滌淨青金碎屑","滌淨青金斷片","滌淨青金塊","滌淨青金","最勝紫晶碎屑","最勝紫晶斷片","最勝紫晶塊","最勝紫晶","哀敘冰玉碎屑","哀敘冰玉斷片","哀敘冰玉塊","哀敘冰玉","自在松石碎屑","自在松石斷片","自在松石塊","自在松石","堅牢黃玉碎屑","堅牢黃玉斷片","堅牢黃玉塊","堅牢黃玉","生長碧翡碎屑","生長碧翡斷片","生長碧翡塊","生長碧翡黃玉"};
+        int[] crystal_temp_cnt = new int[]{璀璨原鑽.get(0),璀璨原鑽.get(1),璀璨原鑽.get(2),璀璨原鑽.get(3),燃願瑪瑙.get(0),燃願瑪瑙.get(1),燃願瑪瑙.get(2),燃願瑪瑙.get(3),滌淨青金.get(0),滌淨青金.get(1),滌淨青金.get(2),滌淨青金.get(3),最勝紫晶.get(0),最勝紫晶.get(1),最勝紫晶.get(2),最勝紫晶.get(3),哀敘冰玉.get(0),哀敘冰玉.get(1),哀敘冰玉.get(2),哀敘冰玉.get(3),自在松石.get(0),自在松石.get(1),自在松石.get(2),自在松石.get(3),堅牢黃玉.get(0),堅牢黃玉.get(1),堅牢黃玉.get(2),堅牢黃玉.get(3),生長碧翡.get(0),生長碧翡.get(1),生長碧翡.get(2),生長碧翡.get(3)};
+
+        for (int x = 0 ; x < crystal_temp.length ; x++){
+            if(crystal_temp_cnt[x] > 0){
+                Materials materials = new Materials();
+                materials.setInside_name(crystal_temp[x]);
+                materials.setCount(crystal_temp_cnt[x]);
+                materials.setType(2);
+                crystalList.add(materials);
+            }
+        }
+
+        /** BOSS */
+        String[] boss_temp = new String[]{"未知常駐BOSS跌落物1","未知常駐BOSS跌落物2","未知常駐BOSS跌落物3","常燃火種","淨水之心","雷光棱鏡","極寒之核","颶風之種","玄岩之塔","未熟之玉","晶凝之華","魔偶機心","恒常機關之心","陰燃之珠","雷霆數珠","排異之露","獸境王器","龍嗣偽鰭","符紋之齒","蕈王鉤喙","藏雷野實"};
+        int[] boss_temp_cnt = new int[]{未知常駐BOSS跌落物1,未知常駐BOSS跌落物2,未知常駐BOSS跌落物3,常燃火種,淨水之心,雷光棱鏡,極寒之核,颶風之種,玄岩之塔,未熟之玉,晶凝之華,魔偶機心,恒常機關之心,陰燃之珠,雷霆數珠,排異之露,獸境王器,龍嗣偽鰭,符紋之齒,蕈王鉤喙,藏雷野實};
+
+        for (int x = 0 ; x < boss_temp.length ; x++){
+            if(boss_temp_cnt[x] > 0){
+                Materials materials = new Materials();
+                materials.setInside_name(boss_temp[x]);
+                materials.setCount(boss_temp_cnt[x]);
+                materials.setType(3);
+                bossList.add(materials);
+            }
+        }
+
+        /** WEEK-BOSS */
+        String[] week_boss_temp = new String[]{"未知周本BOSS跌落物1","未知周本BOSS跌落物2","未知周本BOSS跌落物3","北風之環","東風的吐息","東風之翎","北風的魂匣","東風之爪","北風之尾","魔王之刃·殘片","吞天之鯨·只角","武煉之魂·孤影","龍王之冕","血玉之枝","鎏金之鱗","熔毀之刻","灰燼之心","獄火之蝶","萬劫之真意","凶將之手眼","禍神之禊淚"};
+        int[] week_boss_temp_cnt = new int[]{未知周本BOSS跌落物1,未知周本BOSS跌落物2,未知周本BOSS跌落物3,北風之環,東風的吐息,東風之翎,北風的魂匣,東風之爪,北風之尾,魔王之刃_殘片,吞天之鯨_只角,武煉之魂_孤影,龍王之冕,血玉之枝,鎏金之鱗,熔毀之刻,灰燼之心,獄火之蝶,萬劫之真意,凶將之手眼,禍神之禊淚};
+
+        for (int x = 0 ; x < week_boss_temp.length ; x++){
+            if(week_boss_temp_cnt[x] > 0){
+                Materials materials = new Materials();
+                materials.setInside_name(week_boss_temp[x]);
+                materials.setCount(week_boss_temp_cnt[x]);
+                materials.setType(4);
+                weekBossList.add(materials);
+            }
+        }
+
+        /** LOCAL */
+        String[] local_temp = new String[]{"小燈草","慕風蘑菇","夜泊石","風車菊","石珀","蒲公英籽","嘟嘟蓮","落落莓","琉璃百合","琉璃袋","鉤鉤果","塞西莉亞花","絕雲椒椒","霓裳花","星螺","清心","海靈芝","緋櫻繡球","鳴草","晶化骨髓","天雲草實","血斛","幽燈蕈","珊瑚真珠","鬼兜蟲"};
+        int[] local_temp_cnt = new int[]{小燈草,慕風蘑菇,夜泊石,風車菊,石珀,蒲公英籽,嘟嘟蓮,落落莓,琉璃百合,琉璃袋,鉤鉤果,塞西莉亞花,絕雲椒椒,霓裳花,星螺,清心,海靈芝,緋櫻繡球,鳴草,晶化骨髓,天雲草實,血斛,幽燈蕈,珊瑚真珠,鬼兜蟲};
+
+        for (int x = 0 ; x < local_temp.length ; x++){
+            if(local_temp_cnt[x] > 0){
+                Materials materials = new Materials();
+                materials.setInside_name(local_temp[x]);
+                materials.setCount(local_temp_cnt[x]);
+                materials.setType(5);
+                localList.add(materials);
+            }
+        }
+
+        /** COMMON */
+        String[] common_temp = new String[]{"牢固的箭簇","銳利的箭簇","歷戰的箭簇","導能繪卷","封魔繪卷","禁咒繪卷","尋寶鴉印","藏銀鴉印","攫金鴉印","破損的面具","污穢的面具","不祥的面具","新兵的徽記","士官的徽記","尉官的徽記","騙騙花蜜","微光花蜜","原素花蜜","史萊姆凝液","史萊姆清","史萊姆原漿","破舊的刀鐔","影打刀鐔","名刀鐔","浮游乾核","浮游幽核","浮游晶化核", "混沌機關", "混沌樞紐", "混沌真眼", "混沌裝置", "混沌迴路", "混沌爐心", "脆弱的骨片", "結實的骨片", "石化的骨片", "霧虛花粉", "霧虛草囊", "霧虛燈芯", "獵兵祭刀", "特工祭刀", "督察長祭刀", "沉重號角", "黑銅號角", "黑晶號角", "地脈的舊枝", "地脈的枯葉", "地脈的新芽", "黯淡棱鏡", "水晶棱鏡", "偏光棱鏡","隱獸指爪","隱獸利爪","隱獸鬼爪","蕈獸孢子","螢光孢粉","孢囊晶塵","褪色紅綢","鑲邊紅綢","織金紅綢"};
+        int[] common_temp_cnt = new int[]{歷戰的箭簇.get(0),歷戰的箭簇.get(1),歷戰的箭簇.get(2),禁咒繪卷.get(0),禁咒繪卷.get(1),禁咒繪卷.get(2),攫金鴉印.get(0),攫金鴉印.get(1),攫金鴉印.get(2),不祥的面具.get(0),不祥的面具.get(1),不祥的面具.get(2),尉官的徽記.get(0),尉官的徽記.get(1),尉官的徽記.get(2),原素花蜜.get(0),原素花蜜.get(1),原素花蜜.get(2),史萊姆原漿.get(0),史萊姆原漿.get(1),史萊姆原漿.get(2),名刀鐔.get(0),名刀鐔.get(1),名刀鐔.get(2),浮游晶化核.get(0),浮游晶化核.get(1),浮游晶化核.get(2),混沌真眼.get(0),混沌真眼.get(1),混沌真眼.get(2),混沌爐心.get(0),混沌爐心.get(1),混沌爐心.get(2),石化的骨片.get(0),石化的骨片.get(1),石化的骨片.get(2),霧虛燈芯.get(0),霧虛燈芯.get(1),霧虛燈芯.get(2),督察長祭刀.get(0),督察長祭刀.get(1),督察長祭刀.get(2),黑晶號角.get(0),黑晶號角.get(1),黑晶號角.get(2),地脈的新芽.get(0),地脈的新芽.get(1),地脈的新芽.get(2),偏光棱鏡.get(0),偏光棱鏡.get(1),偏光棱鏡.get(2),隱獸鬼爪.get(0),隱獸鬼爪.get(1),隱獸鬼爪.get(2),孢囊晶塵.get(0),孢囊晶塵.get(1),孢囊晶塵.get(2),織金紅綢.get(0),織金紅綢.get(1),織金紅綢.get(2)};
+
+        for (int x = 0 ; x < common_temp.length ; x++){
+            if(common_temp_cnt[x] > 0){
+                Materials materials = new Materials();
+                materials.setInside_name(common_temp[x]);
+                materials.setCount(common_temp_cnt[x]);
+                materials.setType(6);
+                commonList.add(materials);
+            }
+        }
+
+        /** WEEKLY-MON-THUR-SUN */
+        String[] weeklybk1_temp = new String[]{"「未知1」的教導","「未知1」的指引","「未知1」的哲學","「自由」的教導","「自由」的指引","「自由」的哲學","「繁榮」的教導","「繁榮」的指引","「繁榮」的哲學","「浮世」的教導","「浮世」的指引","「浮世」的哲學","高塔孤王的破瓦", "高塔孤王的殘垣", "高塔孤王的斷片", "高塔孤王的碎夢", "孤雲寒林的光砂", "孤雲寒林的輝岩", "孤雲寒林的聖骸", "孤雲寒林的神體", "遠海夷地的瑚枝", "遠海夷地的玉枝", "遠海夷地的瓊枝", "遠海夷地的金枝"};
+        int[] weeklybk1_temp_cnt = new int[]{未知1_的哲學.get(0),未知1_的哲學.get(1),未知1_的哲學.get(2),自由_的哲學.get(0),自由_的哲學.get(1),自由_的哲學.get(2),繁榮_的哲學.get(0),繁榮_的哲學.get(1),繁榮_的哲學.get(2),浮世_的哲學.get(0),浮世_的哲學.get(1),浮世_的哲學.get(2),高塔孤王的碎夢.get(0),高塔孤王的碎夢.get(1),高塔孤王的碎夢.get(2),高塔孤王的碎夢.get(3),孤雲寒林的神體.get(0),孤雲寒林的神體.get(1),孤雲寒林的神體.get(2),孤雲寒林的神體.get(3),遠海夷地的金枝.get(0),遠海夷地的金枝.get(1),遠海夷地的金枝.get(2),遠海夷地的金枝.get(3)};
+
+        for (int x = 0 ; x < weeklybk1_temp.length ; x++){
+            if(weeklybk1_temp_cnt[x] > 0){
+                Materials materials = new Materials();
+                materials.setInside_name(weeklybk1_temp[x]);
+                materials.setCount(weeklybk1_temp_cnt[x]);
+                materials.setType(7);
+                weeklyBK1List.add(materials);
+            }
+        }
+
+        /** WEEKLY-TUE-FRI-SUN */
+        String[] weeklybk2_temp = new String[]{"「未知2」的教導","「未知2」的指引","「未知2」的哲學","「抗爭」的教導","「抗爭」的指引","「抗爭」的哲學","「勤勞」的教導","「勤勞」的指引","「勤勞」的哲學","「風雅」的教導","「風雅」的指引","「風雅」的哲學" , "凜風奔狼的始齔", "凜風奔狼的裂齒", "凜風奔狼的斷牙", "凜風奔狼的懷鄉", "霧海雲間的鉛丹", "霧海雲間的汞丹", "霧海雲間的金丹", "霧海雲間的轉還", "鳴神御靈的明惠", "鳴神御靈的歡喜", "鳴神御靈的親愛", "鳴神御靈的勇武"};
+        int[] weeklybk2_temp_cnt = new int[]{未知2_的哲學.get(0),未知2_的哲學.get(1),未知2_的哲學.get(2),抗爭_的哲學.get(0),抗爭_的哲學.get(1),抗爭_的哲學.get(2),勤勞_的哲學.get(0),勤勞_的哲學.get(1),勤勞_的哲學.get(2),風雅_的哲學.get(0),風雅_的哲學.get(1),風雅_的哲學.get(2),凜風奔狼的懷鄉.get(0),凜風奔狼的懷鄉.get(1),凜風奔狼的懷鄉.get(2),凜風奔狼的懷鄉.get(3),霧海雲間的轉還.get(0),霧海雲間的轉還.get(1),霧海雲間的轉還.get(2),霧海雲間的轉還.get(3),鳴神御靈的勇武.get(0),鳴神御靈的勇武.get(1),鳴神御靈的勇武.get(2),鳴神御靈的勇武.get(3)};
+
+        for (int x = 0 ; x < weeklybk2_temp.length ; x++){
+            if(weeklybk2_temp_cnt[x] > 0){
+                Materials materials = new Materials();
+                materials.setInside_name(weeklybk2_temp[x]);
+                materials.setCount(weeklybk2_temp_cnt[x]);
+                materials.setType(8);
+                weeklyBK2List.add(materials);
+            }
+        }
+
+        /** WEEKLY-WED-SAT-SUN */
+        String[] weeklybk3_temp = new String[]{"「未知3」的教導","「未知3」的指引","「未知3」的哲學","「黃金」的教導","「黃金」的指引","「黃金」的哲學","「詩文」的教導","「詩文」的指引","「詩文」的哲學","「天光」的教導","「天光」的指引","「天光」的哲學", "獅牙鬥士的枷鎖", "獅牙鬥士的鐵鍊", "獅牙鬥士的鐐銬", "獅牙鬥士的理想", "漆黑隕鐵的一粒", "漆黑隕鐵的一片", "漆黑隕鐵的一角", "漆黑隕鐵的一塊", "今昔劇畫的惡尉", "今昔劇畫的虎囓", "今昔劇畫的一角", "今昔劇畫的鬼人"};
+        int[] weeklybk3_temp_cnt = new int[]{未知3_的哲學.get(0),未知3_的哲學.get(0),未知3_的哲學.get(1),未知3_的哲學.get(2),黃金_的哲學.get(0),黃金_的哲學.get(1),黃金_的哲學.get(2),詩文_的哲學.get(0),詩文_的哲學.get(1),詩文_的哲學.get(2),天光_的哲學.get(0),天光_的哲學.get(1),天光_的哲學.get(2),獅牙鬥士的理想.get(0),獅牙鬥士的理想.get(1),獅牙鬥士的理想.get(2),獅牙鬥士的理想.get(3),漆黑隕鐵的一塊.get(0),漆黑隕鐵的一塊.get(1),漆黑隕鐵的一塊.get(2),漆黑隕鐵的一塊.get(3),今昔劇畫的鬼人.get(0),今昔劇畫的鬼人.get(1),今昔劇畫的鬼人.get(2),今昔劇畫的鬼人.get(3)};
+
+        for (int x = 0 ; x < weeklybk3_temp.length ; x++){
+            if(weeklybk3_temp_cnt[x] > 0){
+                Materials materials = new Materials();
+                materials.setInside_name(weeklybk3_temp[x]);
+                materials.setCount(weeklybk3_temp_cnt[x]);
+                materials.setType(9);
+                weeklyBK3List.add(materials);
+            }
+        }
+
+        /** OTHERS*/
+        String[] other_temp = new String[]{"流浪者的經驗", "冒險家的經驗", "大英雄的經驗", "精鍛用雜礦", "精鍛用良礦", "精鍛用魔礦","祝聖油膏","祝聖精華","摩拉", "智識之冕"};
+        int[] other_temp_cnt = new int[]{exp_small,exp_mid,exp_big,weapon_small,weapon_mid,weapon_big,artifact_mid,artifact_big,morax,智識之冕};
+
+        for (int x = 0 ; x < other_temp.length ; x++){
+            if(other_temp_cnt[x] > 0){
+                Materials materials = new Materials();
+                materials.setInside_name(other_temp[x]);
+                materials.setCount(other_temp_cnt[x]);
+                materials.setType(10);
+                otherList.add(materials);
+            }
+        }
+
+        CharWeaponAdapter charWeaponAdapter = new CharWeaponAdapter(context,charWeaponList,activity);
+        CrystalAdapter crystalAdapter = new CrystalAdapter(context,crystalList,activity);
+        BossAdapter bossAdapter = new BossAdapter(context,bossList,activity);
+        WeekBossAdapter weekBossAdapter = new WeekBossAdapter(context,weekBossList,activity);
+        LocalAdapter localAdapter = new LocalAdapter(context,localList,activity);
+        CommonAdapter commonAdapter = new CommonAdapter(context,commonList,activity);
+        WeeklyBK1Adapter weeklyBK1Adapter = new WeeklyBK1Adapter(context,weeklyBK1List,activity);
+        WeeklyBK2Adapter weeklyBK2Adapter = new WeeklyBK2Adapter(context,weeklyBK2List,activity);
+        WeeklyBK3Adapter weeklyBK3Adapter = new WeeklyBK3Adapter(context,weeklyBK3List,activity);
+        OtherAdapter otherAdapter = new OtherAdapter(context,otherList,activity);
+
+        ConcatAdapter concatAdapter = new ConcatAdapter(charWeaponAdapter,crystalAdapter,bossAdapter,weekBossAdapter,localAdapter,commonAdapter,weeklyBK1Adapter,weeklyBK2Adapter,weeklyBK3Adapter,otherAdapter);
+        mList.setLayoutManager(mLayoutManager);
+        mList.setAdapter(concatAdapter);
+
+    }
 }

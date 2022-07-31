@@ -5,6 +5,7 @@ package com.voc.genshin_helper.data;/*
  */
 
 import static android.content.Context.MODE_PRIVATE;
+import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 import static com.voc.genshin_helper.util.RoundedCornersTransformation.CornerType.TOP;
 
 import android.app.Activity;
@@ -386,11 +387,11 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                 }
 
                 viewHolder.artifact_card_bg.getLayoutParams().width = width;
-                viewHolder.artifact_card_bg.getLayoutParams().height = height;
+                viewHolder.artifact_card_bg.getLayoutParams().height = WRAP_CONTENT;
                 viewHolder.artifact_card_mask.getLayoutParams().width = width;
-                viewHolder.artifact_card_mask.getLayoutParams().height = height;
+                viewHolder.artifact_card_mask.getLayoutParams().height = WRAP_CONTENT;
                 viewHolder.artifact_card.getLayoutParams().width = width-16;
-                viewHolder.artifact_card.getLayoutParams().height = height-16;
+                viewHolder.artifact_card.getLayoutParams().height = WRAP_CONTENT;
             }
 
 
@@ -439,11 +440,11 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                 }
 
                 viewHolder.artifact_card_bg.getLayoutParams().width = width;
-                viewHolder.artifact_card_bg.getLayoutParams().height = height;
+                viewHolder.artifact_card_bg.getLayoutParams().height = WRAP_CONTENT;
                 viewHolder.artifact_card_mask.getLayoutParams().width = width;
-                viewHolder.artifact_card_mask.getLayoutParams().height = height;
+                viewHolder.artifact_card_mask.getLayoutParams().height = WRAP_CONTENT;
                 viewHolder.artifact_card.getLayoutParams().width = width-16;
-                viewHolder.artifact_card.getLayoutParams().height = height-16;
+                viewHolder.artifact_card.getLayoutParams().height = WRAP_CONTENT;
             }
 
 
@@ -492,11 +493,11 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                 }
 
                 viewHolder.artifact_card_bg.getLayoutParams().width = width;
-                viewHolder.artifact_card_bg.getLayoutParams().height = height;
+                viewHolder.artifact_card_bg.getLayoutParams().height = WRAP_CONTENT;
                 viewHolder.artifact_card_mask.getLayoutParams().width = width;
-                viewHolder.artifact_card_mask.getLayoutParams().height = height;
+                viewHolder.artifact_card_mask.getLayoutParams().height = WRAP_CONTENT;
                 viewHolder.artifact_card.getLayoutParams().width = width-16;
-                viewHolder.artifact_card.getLayoutParams().height = height-16;
+                viewHolder.artifact_card.getLayoutParams().height = WRAP_CONTENT;
             }
 
 
@@ -545,11 +546,11 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                 }
 
                 viewHolder.artifact_card_bg.getLayoutParams().width = width;
-                viewHolder.artifact_card_bg.getLayoutParams().height = height;
+                viewHolder.artifact_card_bg.getLayoutParams().height = WRAP_CONTENT;
                 viewHolder.artifact_card_mask.getLayoutParams().width = width;
-                viewHolder.artifact_card_mask.getLayoutParams().height = height;
+                viewHolder.artifact_card_mask.getLayoutParams().height = WRAP_CONTENT;
                 viewHolder.artifact_card.getLayoutParams().width = width-16;
-                viewHolder.artifact_card.getLayoutParams().height = height-16;
+                viewHolder.artifact_card.getLayoutParams().height = WRAP_CONTENT;
             }
 
 
@@ -1141,7 +1142,7 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                                 int height = displayMetrics.heightPixels;
                                 int width = displayMetrics.widthPixels;
                                 attributes.width = width;
-                                attributes.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+                                attributes.height = WRAP_CONTENT;
                                 attributes.gravity = Gravity.BOTTOM;
                                 window.setAttributes(attributes);
                                 dialog.show();

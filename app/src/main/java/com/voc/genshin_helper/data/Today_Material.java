@@ -34,6 +34,8 @@ public class Today_Material {
     int[] Sun_char_Location =  {R.string.forsaken_rift,R.string.taishan_mansion,R.string.violet_court,R.string.forsaken_rift,R.string.taishan_mansion,R.string.violet_court,R.string.forsaken_rift,R.string.taishan_mansion,R.string.violet_court};
     int[] Weekday_char_Location =  {R.string.forsaken_rift,R.string.taishan_mansion,R.string.violet_court};
 
+    int[] NullX = {1,2,3,4,5,6,7,8,9};
+
     //https://webstatic-sea.hoyolab.com/ys/app/interactive-map/index.html?lang=zh-tw#/map/2?shown_types=3,154&center={X,Y}&zoom=0.50
     String[] Sun_char_Location_URL = {"656.47,94.08","1665.33,-1944.69","5532.32,3176.36","656.47,94.08","1665.33,-1944.69","5532.32,3176.36","656.47,94.08","1665.33,-1944.69","5532.32,3176.36"};
     String[] Weekday_char_Location_URL = {"656.47,94.08","1665.33,-1944.69","5532.32,3176.36"};
@@ -148,7 +150,7 @@ public class Today_Material {
             case "「風雅」的哲學" : return R.string.teachings_of_elegance;
             case "「天光」的哲學" : return R.string.teachings_of_light;
             case "「浮世」的哲學" : return R.string.teachings_of_transience;
-            default: return R.string.teaching_of_freedom;
+            default: return R.string.unknown;
         }
     }
 
@@ -163,7 +165,7 @@ public class Today_Material {
             case "漆黑隕鐵的一塊" : return R.string.grain_of_aerosiderite;
             case "獅牙鬥士的理想" : return R.string.fetters_of_the_dandelion_gladiator;
             case "今昔劇畫的鬼人" : return R.string.mask_of_the_wicked_lieutenant;
-            default: return R.string.tile_of_decarabians_tower;
+            default: return R.string.unknown;
         }
     }
 

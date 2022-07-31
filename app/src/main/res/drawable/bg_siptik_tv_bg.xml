@@ -8,7 +8,7 @@
     <item android:width="30dp" android:height="30dp">
         <shape android:shape="rectangle">
             <corners android:radius="20dp" />
-            <solid android:color="@color/spinner_bg_siptik"/>
+            <solid android:color="@color/ui_bg_siptik"/>
         </shape>
     </item>
 </selector>

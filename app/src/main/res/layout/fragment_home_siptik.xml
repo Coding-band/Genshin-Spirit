@@ -39,7 +39,7 @@
                 android:singleLine="false"
                 android:text="@string/material_force"
                 android:textAlignment="viewStart"
-                android:textColor="@color/tv_color"
+                android:textColor="@color/ui_tv_siptik"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/linearLayout6"
@@ -131,7 +131,7 @@
                 android:paddingRight="8dp"
                 android:text="@string/birth"
                 android:textAlignment="viewStart"
-                android:textColor="@color/tv_color"
+                android:textColor="@color/ui_tv_siptik"
                 android:textSize="16sp"
                 android:visibility="visible" />
 
@@ -157,7 +157,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:orientation="vertical"
-                        android:visibility="gone">
+                        android:visibility="visible">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -173,7 +173,8 @@
 
                             <LinearLayout
                                 android:layout_width="match_parent"
-                                android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
                                 android:gravity="center"
                                 android:orientation="vertical">
 
@@ -186,7 +187,7 @@
                                     android:gravity="center|left"
                                     android:text="@string/happy_birthday"
                                     android:textAlignment="center"
-                                    android:textColor="@color/tv_color"
+                                    android:textColor="@color/ui_tv_siptik"
                                     android:textSize="28sp" />
 
                                 <TextView
@@ -198,7 +199,7 @@
                                     android:gravity="center|left"
                                     android:text="@string/klee"
                                     android:textAlignment="center"
-                                    android:textColor="@color/tv_color"
+                                    android:textColor="@color/ui_tv_siptik"
                                     android:textSize="20sp" />
                             </LinearLayout>
 
@@ -243,7 +244,7 @@
                                 android:singleLine="true"
                                 android:text="6th Feb"
                                 android:textAlignment="center"
-                                android:textColor="@color/tv_color"
+                                android:textColor="@color/ui_tv_siptik"
                                 android:textSize="12sp" />
                         </LinearLayout>
 
@@ -268,7 +269,7 @@
                                 android:singleLine="true"
                                 android:text="6th Feb"
                                 android:textAlignment="center"
-                                android:textColor="@color/tv_color"
+                                android:textColor="@color/ui_tv_siptik"
                                 android:textSize="12sp" />
 
                         </LinearLayout>
@@ -294,7 +295,7 @@
                                 android:singleLine="true"
                                 android:text="6th Feb"
                                 android:textAlignment="center"
-                                android:textColor="@color/tv_color"
+                                android:textColor="@color/ui_tv_siptik"
                                 android:textSize="12sp" />
                         </LinearLayout>
 
@@ -319,7 +320,7 @@
                                 android:singleLine="true"
                                 android:text="6th Feb"
                                 android:textAlignment="center"
-                                android:textColor="@color/tv_color"
+                                android:textColor="@color/ui_tv_siptik"
                                 android:textSize="12sp" />
                         </LinearLayout>
 
@@ -344,7 +345,7 @@
                                 android:singleLine="true"
                                 android:text="6th Feb"
                                 android:textAlignment="center"
-                                android:textColor="@color/tv_color"
+                                android:textColor="@color/ui_tv_siptik"
                                 android:textSize="12sp" />
                         </LinearLayout>
 
@@ -369,7 +370,7 @@
                                 android:singleLine="true"
                                 android:text="6th Feb"
                                 android:textAlignment="center"
-                                android:textColor="@color/tv_color"
+                                android:textColor="@color/ui_tv_siptik"
                                 android:textSize="12sp" />
                         </LinearLayout>
                     </LinearLayout>
@@ -392,7 +393,7 @@
                 android:paddingRight="8dp"
                 android:text="@string/char_asc_mater"
                 android:textAlignment="viewStart"
-                android:textColor="@color/tv_color"
+                android:textColor="@color/ui_tv_siptik"
                 android:textSize="16sp" />
 
             <HorizontalScrollView
@@ -424,7 +425,7 @@
                 android:paddingRight="8dp"
                 android:text="@string/weapon_asc_mater"
                 android:textAlignment="viewStart"
-                android:textColor="@color/tv_color"
+                android:textColor="@color/ui_tv_siptik"
                 android:textSize="16sp" />
 
             <HorizontalScrollView
@@ -458,7 +459,7 @@
                 android:paddingRight="8dp"
                 android:text="@string/gaming_tools"
                 android:textAlignment="viewStart"
-                android:textColor="@color/tv_color"
+                android:textColor="@color/ui_tv_siptik"
                 android:textSize="16sp" />
 
             <androidx.cardview.widget.CardView
@@ -466,7 +467,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="8dp"
-                app:cardBackgroundColor="@color/spinner_bg_siptik"
+                app:cardBackgroundColor="@color/ui_bg_siptik"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -501,6 +502,7 @@
                                 android:layout_height="72dp"
                                 android:adjustViewBounds="true"
                                 android:padding="8dp"
+                                app:tint="@color/ui_tv_siptik"
                                 app:srcCompat="@drawable/siptik_map_ico" />
 
                             <TextView
@@ -511,7 +513,7 @@
                                 android:fontFamily="@font/genshin_font"
                                 android:text="@string/map"
                                 android:textAlignment="center"
-                                android:textColor="@color/tv_color"
+                                android:textColor="@color/ui_tv_siptik"
                                 android:textSize="16sp" />
 
                         </LinearLayout>
@@ -531,6 +533,7 @@
                                 android:layout_height="72dp"
                                 android:adjustViewBounds="true"
                                 android:padding="8dp"
+                                app:tint="@color/ui_tv_siptik"
                                 app:srcCompat="@drawable/siptik_daily_ico" />
 
                             <TextView
@@ -541,7 +544,7 @@
                                 android:fontFamily="@font/genshin_font"
                                 android:text="@string/daily_login"
                                 android:textAlignment="center"
-                                android:textColor="@color/tv_color"
+                                android:textColor="@color/ui_tv_siptik"
                                 android:textSize="16sp" />
 
                         </LinearLayout>
@@ -562,7 +565,7 @@
                                 android:layout_height="72dp"
                                 android:adjustViewBounds="true"
                                 android:src="@drawable/ic_baseline_calculate_24"
-                                app:tint="@color/tv_color" />
+                                app:tint="@color/ui_tv_siptik" />
 
                             <TextView
                                 android:id="@+id/calculator_tv"
@@ -572,7 +575,7 @@
                                 android:fontFamily="@font/genshin_font"
                                 android:text="@string/calculator"
                                 android:textAlignment="center"
-                                android:textColor="@color/tv_color"
+                                android:textColor="@color/ui_tv_siptik"
                                 android:textSize="16sp" />
 
                         </LinearLayout>
@@ -592,7 +595,7 @@
                                 android:layout_height="72dp"
                                 android:adjustViewBounds="true"
                                 app:srcCompat="@drawable/ic_baseline_access_alarm_24"
-                                app:tint="@color/tv_color" />
+                                app:tint="@color/ui_tv_siptik" />
 
                             <TextView
                                 android:id="@+id/alarm_tv"
@@ -602,7 +605,7 @@
                                 android:fontFamily="@font/genshin_font"
                                 android:text="@string/alarm"
                                 android:textAlignment="center"
-                                android:textColor="@color/tv_color"
+                                android:textColor="@color/ui_tv_siptik"
                                 android:textSize="16sp" />
 
                         </LinearLayout>
@@ -623,7 +626,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="96dp"
         android:visibility="gone"
-        app:cardBackgroundColor="@color/tv_color_2048"
+        app:cardBackgroundColor="@color/ui_bg_siptik"
         app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -669,7 +672,7 @@
                     android:fontFamily="@font/genshin_font"
                     android:text="This is a tutorial made by Voc, developer of Genshin Spirit, what you are watching is a demo of this nice tutorial function ~ This idea was from SipTik while making calculator."
                     android:textAlignment="viewStart"
-                    android:textColor="@color/tv_color" />
+                    android:textColor="@color/ui_tv_siptik" />
 
             </LinearLayout>
 

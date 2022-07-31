@@ -1015,7 +1015,7 @@
     <string name="outfit_event">活動衣裝</string>
     <string name="paimon">派蒙</string>
     <string name="aqua_simulacra">若水</string>
-    <string name="this_is_a_sword">這是一把劍</string>
+    <string name="kagotsurube_isshin">籠釣瓶一心</string>
     <string name="fading_twilight">落霞</string>
 
 
@@ -1044,4 +1044,31 @@
     <string name="tut_part5_4">"我們的官方伺服器邀請連結已經放在設定內的【關於】部分"</string>
     <string name="tut_part5_5">"那我們在Discord裏再見吧～拜拜 ~"</string>
 
+    <!-- add in 20220714 -->
+    <string name="sumeru">須彌</string>
+    <string name="fontaine">楓丹</string>
+    <string name="natlan">納塔</string>
+    <string name="traveler_dendor">旅行者 (草)</string>
+    <string name="tighnari">提納里</string>
+    <string name="dori">多莉</string>
+    <string name="collei">柯萊</string>
+    <string name="timber_blade">原木刀</string>
+    <string name="forest_regalia">森林王器</string>
+    <string name="moonpiercer">貫月矢</string>
+    <string name="kings_squire">王下近侍</string>
+    <string name="trawler">竭澤</string>
+    <string name="hunters_path">獵人之徑</string>
+    <string name="fruit_of_fulfillment">盈滿之實</string>
+    <string name="skill_level">技能等級</string>
+    <string name="luminescent_pollen">螢光孢粉</string>
+    <string name="lunar_lotus">月蓮</string>
+    <string name="fungal_spores">蕈獸孢子</string>
+    <string name="crystalline_cyst_dust">孢囊晶塵</string>
+    <string name="thunderclap_fruitcore">藏雷野實</string>
+    <string name="kalpalata">劫波蓮</string>
+    <string name="faded_red_satin">褪色紅綢</string>
+    <string name="trimmed_red_silk">鑲邊紅綢</string>
+    <string name="rich_red_brocade">織金紅綢</string>
+    <string name="majestic_hooked_beak">蕈王鉤喙</string>
+    <string name="rukkhashava_mushrooms">樹王聖體菇</string>
 </resources>

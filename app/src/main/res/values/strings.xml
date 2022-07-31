@@ -1050,7 +1050,7 @@
     <string name="outfit_event">Event Outfit</string>
     <string name="paimon">Paimon</string>
     <string name="aqua_simulacra">Aqua Simulacra</string>
-    <string name="this_is_a_sword">This is a sword</string>
+    <string name="kagotsurube_isshin">Kagotsurube Isshin</string>
     <string name="fading_twilight">Fading Twilight</string>
 
     <!-- add in 20220529 -->
@@ -1078,6 +1078,33 @@
     <string name="tut_part5_4">"The invite link of our offical Discord Server has already put in the 'About' part in setting page ~"</string>
     <string name="tut_part5_5">"See ya around in Discord ~"</string>
 
+    <!-- add in 20220714 -->
+    <string name="sumeru">Sumeru</string>
+    <string name="fontaine">Fontaine</string>
+    <string name="natlan">Natlan</string>
+    <string name="traveler_dendor">Traveler(Dendro)</string>
+    <string name="tighnari">Tighnari</string>
+    <string name="dori">Dori</string>
+    <string name="collei">Collei</string>
+    <string name="timber_blade">Timber Blade</string>
+    <string name="forest_regalia">Forest Regalia</string>
+    <string name="moonpiercer">Moonpiercer</string>
+    <string name="kings_squire">King\'s Squire</string>
+    <string name="trawler">Trawler</string>
+    <string name="hunters_path">Hunter\'s Path</string>
+    <string name="fruit_of_fulfillment">Fruit of Fulfillment</string>
+    <string name="skill_level">Skill Level</string>
+    <string name="lunar_lotus">Lunar Lotus</string>
+    <string name="fungal_spores">Fungal Spores</string>
+    <string name="luminescent_pollen">Luminescent Pollen</string>
+    <string name="crystalline_cyst_dust">Crystalline Cyst Dust</string>
+    <string name="thunderclap_fruitcore">Thunderclap Fruitcore</string>
+    <string name="kalpalata">Kalpalata</string>
+    <string name="faded_red_satin">Faded Red Satin</string>
+    <string name="trimmed_red_silk">Trimmed Red Silk</string>
+    <string name="rich_red_brocade">Rich Red Brocade</string>
+    <string name="majestic_hooked_beak">Majestic Hooked Beak</string>
+    <string name="rukkhashava_mushrooms">Rukkhashava Mushrooms</string>
 
 </resources>
 

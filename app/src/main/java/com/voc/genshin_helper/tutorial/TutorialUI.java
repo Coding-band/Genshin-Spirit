@@ -105,7 +105,7 @@ public class TutorialUI {
             5,
             5,
             5,
-            5,
+            5
     };
 
     public void setup(Context context, Activity activity, View homeVP, View charVP, View weaponVP, View artVP, View settingVP, TabLayout desk_tablayout, BottomNavigationView bottomNavigationView) {

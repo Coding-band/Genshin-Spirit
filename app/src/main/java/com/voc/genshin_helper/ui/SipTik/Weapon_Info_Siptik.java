@@ -320,8 +320,7 @@ public class Weapon_Info_Siptik {
                 final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
                 View view = View.inflate(context, R.layout.fragment_char_skill_dmg_2048, null);
 
-                String[] lvList = new String[]{"LV1","LV20","LV20+","LV40","LV40+","LV50","LV50+","LV60","LV60+","LV70","LV70+","LV80","LV80+","LV90"};
-
+                String[] lvList = new String[]{"LV1","LV5","LV10","LV15","LV20","LV20+","LV25","LV30","LV35","LV40","LV40+","LV45","LV50","LV50+","LV55","LV60","LV60+","LV65","LV70","LV70+","LV75","LV80","LV80+","LV85","LV90"};
                 Spinner menu_lv_sp = view.findViewById(R.id.menu_lv_spinner);
                 FrameLayout menu_ok = view.findViewById(R.id.menu_ok);
 
@@ -379,7 +378,7 @@ public class Weapon_Info_Siptik {
                             TextView[] item_title_tv = new TextView[]{menu_part_title_tv1,menu_part_title_tv2,menu_part_title_tv3,menu_part_title_tv4,menu_part_title_tv5,menu_part_title_tv6,menu_part_title_tv7,menu_part_title_tv8,menu_part_title_tv9,menu_part_title_tv10,menu_part_title_tv11,menu_part_title_tv12,menu_part_title_tv13,menu_part_title_tv14,menu_part_title_tv15,menu_part_title_tv16};
                             TextView[] item_value_tv = new TextView[]{menu_part_value_tv1,menu_part_value_tv2,menu_part_value_tv3,menu_part_value_tv4,menu_part_value_tv5,menu_part_value_tv6,menu_part_value_tv7,menu_part_value_tv8,menu_part_value_tv9,menu_part_value_tv10,menu_part_value_tv11,menu_part_value_tv12,menu_part_value_tv13,menu_part_value_tv14,menu_part_value_tv15,menu_part_value_tv16};
                             double[] item_name_value = new double[]{武器基礎攻擊力,武器生命值加成,武器攻擊力加成,武器防禦力加成,武器暴擊率,武器暴擊傷害,武器元素充能,武器元素精通,武器物理傷害加成};
-                            String[] item_name = new String[]{context.getString(R.string.weapon_stat_atk),context.getString(R.string.weapon_stat_HP),context.getString(R.string.weapon_stat_HPP),context.getString(R.string.weapon_stat_atkP),context.getString(R.string.weapon_stat_DEFP),context.getString(R.string.weapon_stat_CritRateP),context.getString(R.string.weapon_stat_CritDMGP),context.getString(R.string.weapon_stat_EnRechP),context.getString(R.string.weapon_stat_EleMas),context.getString(R.string.weapon_stat_PhyDMGP)};
+                            String[] item_name = new String[]{context.getString(R.string.weapon_stat_atk),context.getString(R.string.weapon_stat_HPP),context.getString(R.string.weapon_stat_atkP),context.getString(R.string.weapon_stat_DEFP),context.getString(R.string.weapon_stat_CritRateP),context.getString(R.string.weapon_stat_CritDMGP),context.getString(R.string.weapon_stat_EnRechP),context.getString(R.string.weapon_stat_EleMas),context.getString(R.string.weapon_stat_PhyDMGP)};
 
                             for (int x = 0 ; x < item_title_tv.length ; x++){
                                 item_title_tv[x].setVisibility(View.GONE);

@@ -2912,7 +2912,7 @@
             android:alpha="0"
             app:cardBackgroundColor="@color/colorWhiteAlpha"
             app:cardCornerRadius="360dp"
-            app:cardElevation="5dp">
+            app:cardElevation="4dp">
 
             <ImageView
                 android:id="@+id/director_value"
@@ -2939,7 +2939,7 @@
             android:alpha="0"
             app:cardBackgroundColor="@color/colorWhiteAlpha"
             app:cardCornerRadius="360dp"
-            app:cardElevation="5dp">
+            app:cardElevation="4dp">
 
             <ImageView
                 android:id="@+id/director_advice"
@@ -2966,7 +2966,7 @@
             android:alpha="0"
             app:cardBackgroundColor="@color/colorWhiteAlpha"
             app:cardCornerRadius="360dp"
-            app:cardElevation="5dp">
+            app:cardElevation="4dp">
 
             <ImageView
                 android:id="@+id/director_cons"
@@ -2993,7 +2993,7 @@
             android:alpha="0"
             app:cardBackgroundColor="@color/colorWhiteAlpha"
             app:cardCornerRadius="360dp"
-            app:cardElevation="5dp">
+            app:cardElevation="4dp">
 
             <ImageView
                 android:id="@+id/director_talent"
@@ -3020,7 +3020,7 @@
             android:alpha="0"
             app:cardBackgroundColor="@color/colorWhiteAlpha"
             app:cardCornerRadius="360dp"
-            app:cardElevation="5dp">
+            app:cardElevation="4dp">
 
             <ImageView
                 android:id="@+id/director_char"
@@ -3046,12 +3046,12 @@
             android:layout_weight="0"
             app:cardBackgroundColor="@color/colorWhiteAlpha"
             app:cardCornerRadius="360dp"
-            app:cardElevation="5dp">
+            app:cardElevation="4dp">
 
             <ImageView
                 android:id="@+id/director_menu"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="match_parent"
                 android:layout_weight="0"
                 app:layout_constraintBottom_toTopOf="@+id/weapon_search"
                 app:layout_constraintEnd_toEndOf="parent"

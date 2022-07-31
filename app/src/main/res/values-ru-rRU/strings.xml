@@ -1005,7 +1005,7 @@
     <string name="outfit_event">Костюм события</string>
     <string name="paimon">Паймон</string>
     <string name="aqua_simulacra">Аква симулякрум</string>
-    <string name="this_is_a_sword">Это меч</string>
+    <string name="kagotsurube_isshin">Кагоцурубэ Иссин</string>
 
     <!-- add in 20220529 -->
     <string name="tut_part0_1">"Привет, я Voc-夜芷冰, разработчик Genshin Spirit, и я твой путеводитель по этому обучению."</string>
@@ -1031,4 +1031,32 @@
     <string name="tut_part5_3">"Если у вас есть какие-либо вопросы или проблемы, вы можете связаться со мной напрямую в Discord"</string>
     <string name="tut_part5_4">"Ссылка для приглашения на наш официальный сервер Discord уже размещена в разделе «Общая информация» на странице настроек ~"</string>
     <string name="tut_part5_5">"Увидимся в Дискорде ~"</string>
+
+    <!-- add in 20220714 -->
+    <string name="sumeru">Сумеру</string>
+    <string name="fontaine">Фонтейн</string>
+    <string name="natlan">Натлан</string>
+    <string name="traveler_dendor">Путешественник(Элементы)</string>
+    <string name="tighnari">Тигнари</string>
+    <string name="dori">Дори</string>
+    <string name="collei">Коллеи</string>
+    <string name="timber_blade">Деревянный клинок</string>
+    <string name="forest_regalia">Регалия леса</string>
+    <string name="moonpiercer">Пронзающий луну</string>
+    <string name="kings_squire">Приближённый короля</string>
+    <string name="trawler">Иссушитель</string>
+    <string name="hunters_path">Охотничья тропа</string>
+    <string name="fruit_of_fulfillment">Плод восполнения</string>
+    <string name="skill_level">Уровень квалификации</string>
+    <string name="lunar_lotus">Лунный лотос</string>
+    <string name="fungal_spores">Споры плесенника</string>
+    <string name="luminescent_pollen">Светящаяся пыльца</string>
+    <string name="crystalline_cyst_dust">Пыль кристаллоцистов</string>
+    <string name="thunderclap_fruitcore">Плод грома</string>
+    <string name="kalpalata">Кальпалата</string>
+    <string name="faded_red_satin">Выцветший красный шёлк</string>
+    <string name="trimmed_red_silk">Красный шёлк, обшитый каймой</string>
+    <string name="rich_red_brocade">Красный шёлк, расшитый золотом</string>
+    <string name="majestic_hooked_beak">Клюв короля плесенников</string>
+    <string name="rukkhashava_mushrooms">Грибы руккхашава</string>
 </resources>

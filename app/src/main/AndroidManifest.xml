@@ -23,15 +23,17 @@
         android:label="@string/app_name"
         android:largeHeap="true"
         android:requestLegacyExternalStorage="true"
-        android:roundIcon="@drawable/app_ico"
         android:supportsRtl="true"
         android:theme="@style/NoTheme"
         android:usesCleartextTraffic="true"
         android:windowSoftInputMode="stateHidden">
         <activity
-            android:name=".easter_egg.EasterEgg_LYS"
-            android:noHistory = "true"
+            android:name=".ui.NotificationActivity"
             android:exported="false" />
+        <activity
+            android:name=".easter_egg.EasterEgg_LYS"
+            android:exported="false"
+            android:noHistory="true" />
         <activity
             android:name=".ui.MMXLVIII.Desk2048"
             android:exported="false" />

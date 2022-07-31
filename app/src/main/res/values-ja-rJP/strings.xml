@@ -1030,7 +1030,7 @@
     <string name="outfit_event">イベント衣装</string>
     <string name="paimon">パイモン</string>
     <string name="aqua_simulacra">若水</string>
-    <string name="this_is_a_sword">それは剣です</string>
+    <string name="kagotsurube_isshin">籠釣瓶一心</string>
     <string name="fading_twilight">落霞</string>
 
     <!-- add in 20220529 -->
@@ -1057,6 +1057,34 @@
     <string name="tut_part5_3">"質問や問題がある場合は、Discordで直接質問することができます。"</string>
     <string name="tut_part5_4">"私たちの公式Discordサーバーの招待リンクは、パイモンタブの'About'もしくは設定タブの'About'に記載されています。"</string>
     <string name="tut_part5_5">"それでは、またDiscordでお会いしましょう。"</string>
+
+    <!-- add in 20220714 -->
+    <string name="sumeru">スメール</string>
+    <string name="fontaine">フォンテーヌ</string>
+    <string name="natlan">ナタ</string>
+    <string name="traveler_dendor">旅人 (草)</string>
+    <string name="tighnari">ティナリ</string>
+    <string name="dori">ドリー</string>
+    <string name="collei">コレイ</string>
+    <string name="timber_blade">原木刀</string>
+    <string name="forest_regalia">森林のレガリア</string>
+    <string name="moonpiercer">ムーンピアサー</string>
+    <string name="kings_squire">王の近侍</string>
+    <string name="trawler">竭沢</string>
+    <string name="hunters_path">狩人の道</string>
+    <string name="fruit_of_fulfillment">満悦の実</string>
+    <string name="skill_level">スキルレベル</string>
+    <string name="lunar_lotus">サウマラタ蓮</string>
+    <string name="fungal_spores">キノコンの胞子</string>
+    <string name="luminescent_pollen">蛍光花粉</string>
+    <string name="crystalline_cyst_dust">胞子嚢の塵</string>
+    <string name="thunderclap_fruitcore">隠雷荒実</string>
+    <string name="kalpalata">カルパラタ蓮</string>
+    <string name="faded_red_satin">色褪せた赤い絹</string>
+    <string name="trimmed_red_silk">縁飾の赤い絹</string>
+    <string name="rich_red_brocade">金織の赤い絹</string>
+    <string name="majestic_hooked_beak">蕈王の鉤状のくちばし</string>
+    <string name="rukkhashava_mushrooms">ルッカデヴァタダケ</string>
 </resources>
 
 

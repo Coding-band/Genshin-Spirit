@@ -1,5 +1,7 @@
 package com.voc.genshin_helper.ui;
 
+import static android.app.PendingIntent.FLAG_IMMUTABLE;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -433,7 +435,7 @@ public class AlarmUI extends AppCompatActivity {
                     intent.putExtra("info",new_alarm_info);
                     intent.putExtra("type",new_choose_type);
 
-                    PendingIntent pendingIntent = PendingIntent.getBroadcast(context,0,intent,0);
+                    PendingIntent pendingIntent = PendingIntent.getBroadcast(context,0,intent,FLAG_IMMUTABLE);
 
                     AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 

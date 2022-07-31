@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        app:cardBackgroundColor="@color/spinner_bg_siptik"
+        app:cardBackgroundColor="@color/ui_bg_siptik"
         app:cardCornerRadius="20dp"
         app:cardElevation="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -30,7 +30,7 @@
 
             <LinearLayout
                 android:id="@+id/linearLayout8"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="16dp"
@@ -62,7 +62,7 @@
                 </FrameLayout>
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="4dp"
@@ -107,7 +107,7 @@
                 android:layout_marginBottom="8dp">
 
                 <TableRow
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent">
 
                     <FrameLayout
@@ -210,6 +210,12 @@
                             app:srcCompat="@drawable/ic_2048_need_tick" />
                     </FrameLayout>
 
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
                     <FrameLayout
                         android:id="@+id/asc_char_ll5"
                         android:layout_width="match_parent"
@@ -234,11 +240,6 @@
                             android:visibility="gone"
                             app:srcCompat="@drawable/ic_2048_need_tick" />
                     </FrameLayout>
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
 
                     <FrameLayout
                         android:id="@+id/asc_char_ll6"
@@ -315,6 +316,12 @@
                             app:srcCompat="@drawable/ic_2048_need_tick" />
                     </FrameLayout>
 
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
                     <FrameLayout
                         android:id="@+id/asc_char_ll9"
                         android:layout_width="match_parent"
@@ -364,11 +371,6 @@
                             android:visibility="gone"
                             app:srcCompat="@drawable/ic_2048_need_tick" />
                     </FrameLayout>
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
 
                     <FrameLayout
                         android:id="@+id/asc_char_ll11"
@@ -419,6 +421,12 @@
                             android:visibility="gone"
                             app:srcCompat="@drawable/ic_2048_need_tick" />
                     </FrameLayout>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
 
                     <FrameLayout
                         android:id="@+id/asc_char_ll13"
@@ -494,11 +502,6 @@
                             android:visibility="gone"
                             app:srcCompat="@drawable/ic_2048_need_tick" />
                     </FrameLayout>
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
 
                     <FrameLayout
                         android:id="@+id/asc_char_ll16"
@@ -524,6 +527,12 @@
                             android:visibility="gone"
                             app:srcCompat="@drawable/ic_2048_need_tick" />
                     </FrameLayout>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
 
                     <FrameLayout
                         android:id="@+id/asc_char_ll17"
@@ -624,10 +633,11 @@
                             android:visibility="gone"
                             app:srcCompat="@drawable/ic_2048_need_tick" />
                     </FrameLayout>
+
                 </TableRow>
 
                 <TableRow
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent">
 
                     <FrameLayout
@@ -730,6 +740,12 @@
                             app:srcCompat="@drawable/ic_2048_need_tick" />
                     </FrameLayout>
 
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
                     <FrameLayout
                         android:id="@+id/asc_char_ll25"
                         android:layout_width="match_parent"
@@ -754,12 +770,6 @@
                             android:visibility="gone"
                             app:srcCompat="@drawable/ic_2048_need_tick" />
                     </FrameLayout>
-
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
 
                     <FrameLayout
                         android:id="@+id/asc_char_ll26"
@@ -836,6 +846,12 @@
                             app:srcCompat="@drawable/ic_2048_need_tick" />
                     </FrameLayout>
 
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
                     <FrameLayout
                         android:id="@+id/asc_char_ll29"
                         android:layout_width="match_parent"
@@ -886,12 +902,6 @@
                             app:srcCompat="@drawable/ic_2048_need_tick" />
                     </FrameLayout>
 
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
                     <FrameLayout
                         android:id="@+id/asc_char_ll31"
                         android:layout_width="match_parent"
@@ -941,6 +951,12 @@
                             android:visibility="gone"
                             app:srcCompat="@drawable/ic_2048_need_tick" />
                     </FrameLayout>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
 
                     <FrameLayout
                         android:id="@+id/asc_char_ll33"
@@ -1017,12 +1033,6 @@
                             app:srcCompat="@drawable/ic_2048_need_tick" />
                     </FrameLayout>
 
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
                     <FrameLayout
                         android:id="@+id/asc_char_ll36"
                         android:layout_width="match_parent"
@@ -1047,6 +1057,12 @@
                             android:visibility="gone"
                             app:srcCompat="@drawable/ic_2048_need_tick" />
                     </FrameLayout>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
 
                     <FrameLayout
                         android:id="@+id/asc_char_ll37"
@@ -1147,11 +1163,10 @@
                             android:visibility="gone"
                             app:srcCompat="@drawable/ic_2048_need_tick" />
                     </FrameLayout>
-
                 </TableRow>
 
                 <TableRow
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent">
 
                     <FrameLayout
@@ -1253,6 +1268,13 @@
                             android:visibility="gone"
                             app:srcCompat="@drawable/ic_2048_need_tick" />
                     </FrameLayout>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:visibility="gone">
 
                     <FrameLayout
                         android:id="@+id/asc_char_ll45"

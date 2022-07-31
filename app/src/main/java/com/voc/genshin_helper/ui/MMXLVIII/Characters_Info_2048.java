@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.content.res.ColorStateList;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -39,6 +40,7 @@ import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
@@ -48,9 +50,11 @@ import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.CustomToast;
+import com.voc.genshin_helper.util.CustomViewPager;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.MyViewPagerAdapter;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
+import com.voc.genshin_helper.util.VerticalViewPager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -200,7 +204,7 @@ public class Characters_Info_2048 {
     String[] 元素爆發_baseName ;
     double[][] 元素爆發_value; //[ITEM, VALUE]
 
-    private ViewPager viewPager;
+    private CustomViewPager viewPager;
     private ArrayList<View> viewPager_List;
     View charDescPage, charSkillPage, charSofPage, charAdvicePage;
 
@@ -476,8 +480,8 @@ public class Characters_Info_2048 {
         TabLayout info_tablelayout = view.findViewById(R.id.info_tablelayout);
         ImageView info_back_btn = view.findViewById(R.id.info_back_btn);
         ImageView info_header_bg = view.findViewById(R.id.info_header_bg);
-        viewPager = (ViewPager) view.findViewById(R.id.vp);
 
+        viewPager = view.findViewById(R.id.vp);
         final LayoutInflater mInflater = activity.getLayoutInflater().from(context);
         charDescPage = mInflater.inflate(R.layout.fragment_char_info_desc_2048, null,false);
         charSkillPage = mInflater.inflate(R.layout.fragment_char_info_skill_2048, null,false);
@@ -490,6 +494,10 @@ public class Characters_Info_2048 {
         viewPager_List.add(charSofPage);
         viewPager_List.add(charAdvicePage);
         viewPager.setAdapter(new MyViewPagerAdapter(viewPager_List));
+
+        if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            viewPager.setLand(true);
+        }
 
         BackgroundReload.BackgroundReload(context,view);
 
@@ -1243,7 +1251,7 @@ public class Characters_Info_2048 {
                             TextView[] item_title_tv = new TextView[]{menu_part_title_tv1,menu_part_title_tv2,menu_part_title_tv3,menu_part_title_tv4,menu_part_title_tv5,menu_part_title_tv6,menu_part_title_tv7,menu_part_title_tv8,menu_part_title_tv9,menu_part_title_tv10,menu_part_title_tv11,menu_part_title_tv12,menu_part_title_tv13,menu_part_title_tv14,menu_part_title_tv15,menu_part_title_tv16};
                             TextView[] item_value_tv = new TextView[]{menu_part_value_tv1,menu_part_value_tv2,menu_part_value_tv3,menu_part_value_tv4,menu_part_value_tv5,menu_part_value_tv6,menu_part_value_tv7,menu_part_value_tv8,menu_part_value_tv9,menu_part_value_tv10,menu_part_value_tv11,menu_part_value_tv12,menu_part_value_tv13,menu_part_value_tv14,menu_part_value_tv15,menu_part_value_tv16};
                             double[] item_name_value = new double[]{角色基礎生命值,角色基礎攻擊力,角色基礎防禦力,角色生命值加成,角色攻擊力加成,角色防禦力加成,角色暴擊率,角色暴擊傷害,角色元素充能,角色元素精通,角色治療加成,角色火元素傷害加成,角色水元素傷害加成,角色風元素傷害加成,角色雷元素傷害加成,角色草元素傷害加成,角色冰元素傷害加成,角色岩元素傷害加成,角色物理傷害加成};
-                            String[] item_name = new String[]{context.getString(R.string.weapon_stat_HP),context.getString(R.string.weapon_stat_atk),context.getString(R.string.weapon_stat_DEF),context.getString(R.string.weapon_stat_HPP),context.getString(R.string.weapon_stat_atkP),context.getString(R.string.weapon_stat_DEFP),context.getString(R.string.weapon_stat_CritRateP),context.getString(R.string.weapon_stat_EnRechP),context.getString(R.string.weapon_stat_EleMas),context.getString(R.string.weapon_stat_HealingP),context.getString(R.string.weapon_stat_EleDMGP_Pyro),context.getString(R.string.weapon_stat_EleDMGP_Hydro),context.getString(R.string.weapon_stat_EleDMGP_Anemo),context.getString(R.string.weapon_stat_EleDMGP_Electro),context.getString(R.string.weapon_stat_EleDMGP_Dendor),context.getString(R.string.weapon_stat_EleDMGP_Cryo),context.getString(R.string.weapon_stat_EleDMGP_Geo),context.getString(R.string.weapon_stat_PhyDMGP)};
+                            String[] item_name = new String[]{context.getString(R.string.weapon_stat_HP),context.getString(R.string.weapon_stat_atk),context.getString(R.string.weapon_stat_DEF),context.getString(R.string.weapon_stat_HPP),context.getString(R.string.weapon_stat_atkP),context.getString(R.string.weapon_stat_DEFP),context.getString(R.string.weapon_stat_CritRateP),context.getString(R.string.weapon_stat_CritDMGP),context.getString(R.string.weapon_stat_EnRechP),context.getString(R.string.weapon_stat_EleMas),context.getString(R.string.weapon_stat_HealingP),context.getString(R.string.weapon_stat_EleDMGP_Pyro),context.getString(R.string.weapon_stat_EleDMGP_Hydro),context.getString(R.string.weapon_stat_EleDMGP_Anemo),context.getString(R.string.weapon_stat_EleDMGP_Electro),context.getString(R.string.weapon_stat_EleDMGP_Dendor),context.getString(R.string.weapon_stat_EleDMGP_Cryo),context.getString(R.string.weapon_stat_EleDMGP_Geo),context.getString(R.string.weapon_stat_PhyDMGP)};
 
                             for (int x = 0 ; x < item_title_tv.length ; x++){
                                 item_title_tv[x].setVisibility(View.GONE);
@@ -1299,8 +1307,17 @@ public class Characters_Info_2048 {
         char_name.setText(item_rss.getCharByName(name,context)[1]);
         char_title.setText(nick);
         //Picasso.get().load(FileLoader.loadIMG(item_rss.getCharByName(name,context)[0],context)).centerCrop().into(char_img);
-        char_img.setImageDrawable(FileLoader.loadIMG2Drawable(item_rss.getCharByName(name,context)[0],context));
-        char_img.getLayoutParams().width = width;
+
+
+        if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            ImageView char_imgL = view.findViewById(R.id.info_char_img);
+            char_imgL.setAnimation(animImgLTR);
+            char_imgL.setImageDrawable(FileLoader.loadIMG2Drawable(item_rss.getCharByName(name,context)[0],context));
+            char_imgL.getLayoutParams().width = width;
+        }else{
+            char_img.setImageDrawable(FileLoader.loadIMG2Drawable(item_rss.getCharByName(name,context)[0],context));
+            char_img.getLayoutParams().width = width;
+        }
 
         displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);

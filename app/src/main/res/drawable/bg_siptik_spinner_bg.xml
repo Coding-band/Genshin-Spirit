@@ -10,10 +10,10 @@
     android:viewportWidth="154"
     android:viewportHeight="310">
     <path
-        android:fillColor="@color/spinner_bg_siptik"
+        android:fillColor="@color/ui_bg_siptik"
         android:pathData="M2 17c0-8.28 6.72-15 15-15h120c8.28 0 15 6.72 15 15v276c0 8.28-6.72 15-15 15h-120c-8.28 0-15-6.72-15-15z"/>
     <path
-        android:strokeColor="@color/spinner_stroke_siptik"
+        android:strokeColor="@color/ui_bg_siptik"
         android:strokeWidth="2"
         android:pathData="M1 17c0-8.84 7.16-16 16-16h120c8.84 0 16 7.16 16 16v276c0 8.84-7.16 16-16 16h-120c-8.84 0-16-7.16-16-16z"/>
 </vector>

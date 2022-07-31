@@ -13,7 +13,7 @@
     <corners
         android:radius="24dp"/>
     <solid
-        android:color="@color/spinner_bg_siptik">
+        android:color="@color/ui_bg_siptik">
 
     </solid>
 </shape>

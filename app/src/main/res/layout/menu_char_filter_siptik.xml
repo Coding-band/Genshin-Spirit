@@ -22,11 +22,12 @@
             android:layout_height="48dp"
             android:layout_weight="0"
             android:background="@drawable/bg_dialog_header_edge"
+            android:backgroundTint="@color/ui_bg_siptik"
             android:fontFamily="@font/genshin_font"
             android:gravity="center"
             android:padding="8dp"
             android:text="@string/filters"
-            android:textColor="@color/tv_spinner_color_anti_2048"
+            android:textColor="@color/ui_tv_siptik"
             android:textSize="20sp" />
 
     </FrameLayout>
@@ -42,6 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_dialog_body_edge"
+        android:backgroundTint="@color/ui_bg_siptik"
         android:orientation="vertical">
 
         <TextView
@@ -52,7 +54,7 @@
             android:gravity="center|left"
             android:paddingLeft="12dp"
             android:text="@string/elements"
-            android:textColor="@color/tv_spinner_color_2048"
+            android:textColor="@color/ui_tv_siptik"
             android:textSize="18sp" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -373,7 +375,7 @@
             android:gravity="center|left"
             android:paddingLeft="12dp"
             android:text="@string/title_weapons"
-            android:textColor="@color/tv_spinner_color_2048"
+            android:textColor="@color/ui_tv_siptik"
             android:textSize="18sp" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -471,7 +473,7 @@
             android:gravity="center|left"
             android:paddingLeft="12dp"
             android:text="@string/other_title"
-            android:textColor="@color/tv_spinner_color_2048"
+            android:textColor="@color/ui_tv_siptik"
             android:textSize="18sp" />
 
         <LinearLayout
@@ -499,7 +501,7 @@
                     android:fontFamily="@font/genshin_font"
                     android:gravity="center|left"
                     android:text="@string/char_role"
-                    android:textColor="@color/tv_spinner_color_2048"
+                    android:textColor="@color/ui_tv_siptik"
                     android:textSize="18sp" />
 
                 <FrameLayout
@@ -570,7 +572,7 @@
                     android:fontFamily="@font/genshin_font"
                     android:gravity="center|left"
                     android:text="@string/rarity"
-                    android:textColor="@color/tv_spinner_color_2048"
+                    android:textColor="@color/ui_tv_siptik"
                     android:textSize="18sp" />
 
                 <FrameLayout
@@ -636,7 +638,7 @@
             android:gravity="center|left"
             android:paddingLeft="12dp"
             android:text="@string/release_state"
-            android:textColor="@color/tv_spinner_color_2048"
+            android:textColor="@color/ui_tv_siptik"
             android:textSize="18sp" />
 
         <LinearLayout
@@ -669,7 +671,7 @@
                 android:singleLine="true"
                 android:text="@string/released"
                 android:textAlignment="viewEnd"
-                android:textColor="@color/tv_spinner_color_2048"
+                android:textColor="@color/ui_tv_siptik"
                 android:textSize="16sp" />
 
             <CheckBox
@@ -694,7 +696,7 @@
                 android:singleLine="true"
                 android:text="@string/unreleased"
                 android:textAlignment="viewEnd"
-                android:textColor="@color/tv_spinner_color_2048"
+                android:textColor="@color/ui_tv_siptik"
                 android:textSize="16sp" />
 
         </LinearLayout>

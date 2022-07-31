@@ -113,6 +113,9 @@
     <color name="tab_stroke_siptik">#99FFFFFF</color>
     <color name="spinner_bg_siptik">#FF495366</color>
     <color name="spinner_stroke_siptik">#33707070</color>
+    <color name="ui_bg_siptik">#CC000000</color>
+    <color name="ui_tv_siptik">#ABABAB</color>
+    <color name="detail_bg">#000000</color>
 
     <color name="tab_selected_obj_siptik">#4D5668</color>
     <color name="tab_unselected_obj_siptik">#ECE5D8</color>

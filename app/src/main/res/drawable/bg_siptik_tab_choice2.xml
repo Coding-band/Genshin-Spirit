@@ -10,6 +10,6 @@
     android:shape="rectangle">
 
     <solid
-        android:color="@color/tab_bar_siptik"/>
+        android:color="@color/ui_bg_siptik"/>
 
 </shape>

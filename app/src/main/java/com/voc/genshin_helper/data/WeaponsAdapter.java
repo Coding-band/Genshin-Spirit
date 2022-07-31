@@ -481,8 +481,6 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                 viewHolder.weapon_card.getLayoutParams().width = width-16;
                 viewHolder.weapon_card.getLayoutParams().height = height-16;
             }
-
-
         }
         int one_curr = height;
         if(height > width){

@@ -15,10 +15,10 @@ android {
     def verN
     defaultConfig {
         applicationId "com.voc.genshin_helper"
-        minSdkVersion 23
+        minSdkVersion 26
         targetSdkVersion 32
         versionCode 1
-        versionName "2.7.0"
+        versionName "2.8.0"
 
         renderscriptTargetApi 21
         renderscriptSupportModeEnabled true
@@ -126,22 +126,25 @@ android {
 
 dependencies {
 
-    implementation 'androidx.appcompat:appcompat:1.4.0'
-    implementation 'com.google.android.material:material:1.5.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
-    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.4.0'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0'
-    implementation 'androidx.navigation:navigation-fragment:2.3.5'
-    implementation 'androidx.navigation:navigation-ui:2.3.5'
+    implementation 'androidx.appcompat:appcompat:1.4.2'
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.5.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0'
+    implementation 'androidx.navigation:navigation-fragment:2.5.0'
+    implementation 'androidx.navigation:navigation-ui:2.5.0'
     implementation 'com.squareup.picasso:picasso:2.71828'
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
-    implementation 'com.google.android.play:core:1.10.2'
+    implementation 'com.google.android.play:core:1.10.3'
     implementation 'com.github.getActivity:XXPermissions:12.6'
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.22'
     implementation 'org.commonjava.googlecode.markdown4j:markdown4j:2.2-cj-1.1'
     implementation 'com.github.amikoj:ShadowView:1.0.1'
     implementation 'jp.wasabeef:blurry:4.0.1'
     implementation 'com.github.hackware1993:MagicIndicator:1.7.0' // for androidx
+    implementation 'com.github.lzyzsd:circleprogress:1.2.1'
+    implementation 'com.mikhaellopez:circularprogressbar:3.1.0'
+
 
     implementation("androidx.recyclerview:recyclerview:1.2.1")
     testImplementation 'junit:junit:4.13.2'

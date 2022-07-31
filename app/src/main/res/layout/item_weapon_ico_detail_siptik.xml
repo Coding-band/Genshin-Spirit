@@ -19,7 +19,7 @@
         android:layout_margin="8dp"
         android:background="@drawable/bg_alpha_siptik"
         android:visibility="visible"
-        app:cardBackgroundColor="#808080"
+        app:cardBackgroundColor="@color/detail_bg"
         app:cardCornerRadius="30dp"
         app:cardElevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -69,7 +69,7 @@
                         android:singleLine="false"
                         android:text="@string/deathmatch"
                         android:textAlignment="center"
-                        android:textColor="@color/white"
+                        android:textColor="@color/tv_siptik_color"
                         android:textSize="16sp" />
 
                     <ImageView
@@ -218,7 +218,7 @@
                             android:shadowDy="2"
                             android:shadowRadius="5"
                             android:text="@string/weapon_stat"
-                            android:textColor="@color/white"
+                            android:textColor="@color/tv_siptik_color"
                             android:textSize="14sp" />
 
                         <TextView
@@ -252,7 +252,7 @@
                             android:singleLine="true"
                             android:text="@string/weapon_stat_CritRateP"
                             android:textAlignment="center"
-                            android:textColor="@color/white"
+                            android:textColor="@color/tv_siptik_color"
                             android:textSize="14sp"
                             android:visibility="visible" />
 

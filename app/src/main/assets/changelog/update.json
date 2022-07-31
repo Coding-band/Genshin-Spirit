@@ -1,5 +1,9 @@
 [
   {
+    "version": "8850",
+    "verName": "2.8.0-gp (8850)",
+    "description": "Changelog - 2022-07-19<br><br><b>UI</b><br>1. Some of the UI have already suitable for landscape device<br>2. Fixed display error of characters status<br>3. Fixed choice error of weapon status<br>4. Support Android 13 Themed icon<br>5. Fixed error of unable to open app if failed to check update.<br>6. Fixed layout problem of weapons ascending materials.<br><br><b>Characters and weapons</b><br>1. Added Collei, Dori and Taghniari info<br>2. Added weapons' info<br>3. Added Diluc and Fischl event suit.<br><br><b>Voc-夜芷冰 Birthday Special Version</b><br>Btw, there will not have any extra function appear since Voc didn't have enough idea of it. QAQ"
+  },{
     "version": "8566",
     "verName": "2.7.0-gp (8566)",
     "description": "Changelog - 2022-05-17<br><br><b>UI</b><br>1. Added new List Style [Card],[Details], thx for @SipTik#1171 's help<br>2. Background filter's transparent has been changed to higher <br>3. Added 2 new UI style , user can choose which they want when first open the app (after update), there have quite much things re-newed, we wish enjoy these nice UI style.<br>4. Added different new functions in 2 new UI style<br>5. Improved the user experience at Home page<br>6. Add tutorial<br>7. Fixed Calculator laggy problem"
