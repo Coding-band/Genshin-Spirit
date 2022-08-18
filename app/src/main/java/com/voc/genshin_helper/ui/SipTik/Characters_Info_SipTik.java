@@ -51,6 +51,9 @@ import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
+import com.voc.genshin_helper.ui.MMXLVIII.Artifact_Info_2048;
+import com.voc.genshin_helper.ui.MMXLVIII.Characters_Info_2048;
+import com.voc.genshin_helper.ui.MMXLVIII.Weapon_Info_2048;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.FileLoader;
@@ -1577,6 +1580,14 @@ public class Characters_Info_SipTik {
                             .resize((width_curr-32-16)/4-16,(width_curr-32-16)/4-16)
                             .into(item_img);
 
+                    int finalX = x;
+                    item_img.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Characters_Info_2048 characters_info_2048 = new Characters_Info_2048();
+                            characters_info_2048.setup(team1[finalX].replace("XPR"," "),context,activity);
+                        }
+                    });
                     item_img.getLayoutParams().width=WRAP_CONTENT;
                     item_img.getLayoutParams().height=WRAP_CONTENT;
 
@@ -1614,6 +1625,14 @@ public class Characters_Info_SipTik {
                     View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team_2048, advice_team_ll2, false);
                     ImageView item_img = char_view.findViewById(R.id.advice_item_img);
 
+                    int finalX = x;
+                    item_img.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Characters_Info_2048 characters_info_2048 = new Characters_Info_2048();
+                            characters_info_2048.setup(team2[finalX].replace("XPR"," "),context,activity);
+                        }
+                    });
 
                     final int radius_circ = 360;
                     final int margin_circ = 0;
@@ -1673,6 +1692,14 @@ public class Characters_Info_SipTik {
                             .resize((width_curr-32-16)/4-16,(width_curr-32-16)/4-16)
                             .into(item_img);
 
+                    int finalX = x;
+                    item_img.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Characters_Info_2048 characters_info_2048 = new Characters_Info_2048();
+                            characters_info_2048.setup(team3[finalX].replace("XPR"," "),context,activity);
+                        }
+                    });
                     item_img.getLayoutParams().width=WRAP_CONTENT;
                     item_img.getLayoutParams().height=WRAP_CONTENT;
 
@@ -1721,6 +1748,14 @@ public class Characters_Info_SipTik {
                             .resize((width_curr-32-16)/4-16,(width_curr-32-16)/4-16)
                             .into(item_img);
 
+                    int finalX = x;
+                    item_img.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Characters_Info_2048 characters_info_2048 = new Characters_Info_2048();
+                            characters_info_2048.setup(team4[finalX].replace("XPR"," "),context,activity);
+                        }
+                    });
                     item_img.getLayoutParams().width=WRAP_CONTENT;
                     item_img.getLayoutParams().height=WRAP_CONTENT;
 
@@ -1769,6 +1804,14 @@ public class Characters_Info_SipTik {
                             .resize((width_curr-32-16)/4-16,(width_curr-32-16)/4-16)
                             .into(item_img);
 
+                    int finalX = x;
+                    item_img.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Characters_Info_2048 characters_info_2048 = new Characters_Info_2048();
+                            characters_info_2048.setup(team5[finalX].replace("XPR"," "),context,activity);
+                        }
+                    });
                     item_img.getLayoutParams().width=WRAP_CONTENT;
                     item_img.getLayoutParams().height=WRAP_CONTENT;
 
@@ -2356,6 +2399,16 @@ public class Characters_Info_SipTik {
                     .into(img_img);
             img_img.getLayoutParams().width = min_width;
             img_img.getLayoutParams().height = min_width;
+
+            int finalX = x;
+            img_img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Weapon_Info_2048 weapon_info_2048 = new Weapon_Info_2048();
+                    weapon_info_2048.setup(item_rss.getWeaponNameByFileName(advice[finalX]),context,activity);
+                }
+            });
+
             img_bg.getLayoutParams().width = min_width;
             img_bg.getLayoutParams().height = (int)(min_width*10/8);
             advice_sc.addView(char_view);
@@ -2445,6 +2498,16 @@ public class Characters_Info_SipTik {
                     .fit().transform(roundedCornersTransformation)
                     .error(R.drawable.paimon_lost)
                     .into(img_img);
+
+            int finalX = x;
+            img_img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Artifact_Info_2048 artifact_info_2048 = new Artifact_Info_2048();
+                    artifact_info_2048.setup(advice[finalX],context,activity);
+                }
+            });
+
             img_tv.setText(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(advice[x]),context)[0]);
             img_tv.setTextSize(10);
             img_tv.setVisibility(View.GONE);

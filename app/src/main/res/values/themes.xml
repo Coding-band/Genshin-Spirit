@@ -43,7 +43,7 @@
         <item name="color">@color/white</item>
     </style>
 
-    <style name="NoTheme" parent="Theme.Material3.Light.NoActionBar">
+    <style name="NoTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/theme_color</item>
         <item name="colorPrimaryDark">@color/theme_color</item>
         <item name="colorAccent">#05BBA9</item>

@@ -168,6 +168,7 @@ public class ItemRss {
         if(str.equals("Mondstadt")){return R.drawable.mondstadt_ico;}
         else if(str.equals("Liyue")){return R.drawable.liyue_ico;}
         else if(str.equals("Inazuma")){return R.drawable.inazuma_ico;}
+        else if(str.equals("Sumeru")){return R.drawable.sumeru_ico;}
         else {return R.drawable.unknown;}
     }
 
@@ -1045,10 +1046,10 @@ public class ItemRss {
             case "Martial Artist" : return new String[] {context.getString(R.string.martial_artist),"/drawable/martial_artist_1.png","/drawable/martial_artist_2.png","/drawable/martial_artist_3.png","/drawable/martial_artist_4.png","/drawable/martial_artist_5.png"};
             case "Noblesse Oblige" : return new String[] {context.getString(R.string.noblesse_oblige),"/drawable/noblesse_oblige_1.png","/drawable/noblesse_oblige_2.png","/drawable/noblesse_oblige_3.png","/drawable/noblesse_oblige_4.png","/drawable/noblesse_oblige_5.png"};
             case "Pale Flame" : return new String[] {context.getString(R.string.pale_flame),"/drawable/pale_flame_1.png","/drawable/pale_flame_2.png","/drawable/pale_flame_3.png","/drawable/pale_flame_4.png","/drawable/pale_flame_5.png"};
-            case "Prayers of Destiny" : return new String[] {context.getString(R.string.prayers_of_destiny),"/drawable/prayers_of_destiny_4.png"};
-            case "Prayers of Illumination" : return new String[] {context.getString(R.string.prayers_of_illumination),"/drawable/prayers_of_illumination_4.png"};
-            case "Prayers of Wisdom" : return new String[] {context.getString(R.string.prayers_of_wisdom),"/drawable/prayers_of_wisdom_4.png"};
-            case "Prayers of Springtime" : return new String[] {context.getString(R.string.prayers_of_springtime),"/drawable/prayers_of_springtime_4.png"};
+            case "Prayers of Destiny" : return new String[] {context.getString(R.string.prayers_of_destiny),"/drawable/prayers_of_destiny_4.png","/drawable/prayers_of_destiny_4.png","/drawable/prayers_of_destiny_4.png","/drawable/prayers_of_destiny_4.png","/drawable/prayers_of_destiny_4.png"};
+            case "Prayers of Illumination" : return new String[] {context.getString(R.string.prayers_of_illumination),"/drawable/prayers_of_illumination_4.png","/drawable/prayers_of_illumination_4.png","/drawable/prayers_of_illumination_4.png","/drawable/prayers_of_illumination_4.png","/drawable/prayers_of_illumination_4.png"};
+            case "Prayers of Wisdom" : return new String[] {context.getString(R.string.prayers_of_wisdom),"/drawable/prayers_of_wisdom_4.png","/drawable/prayers_of_wisdom_4.png","/drawable/prayers_of_wisdom_4.png","/drawable/prayers_of_wisdom_4.png","/drawable/prayers_of_wisdom_4.png"};
+            case "Prayers of Springtime" : return new String[] {context.getString(R.string.prayers_of_springtime),"/drawable/prayers_of_springtime_4.png","/drawable/prayers_of_springtime_4.png","/drawable/prayers_of_springtime_4.png","/drawable/prayers_of_springtime_4.png","/drawable/prayers_of_springtime_4.png"};
             case "Resolution of Sojourner" : return new String[] {context.getString(R.string.resolution_of_sojourner),"/drawable/resolution_of_sojourner_1.png","/drawable/resolution_of_sojourner_2.png","/drawable/resolution_of_sojourner_3.png","/drawable/resolution_of_sojourner_4.png","/drawable/resolution_of_sojourner_5.png"};
             case "Retracing Bolide" : return new String[] {context.getString(R.string.retracing_bolide),"/drawable/retracing_bolide_1.png","/drawable/retracing_bolide_2.png","/drawable/retracing_bolide_3.png","/drawable/retracing_bolide_4.png","/drawable/retracing_bolide_5.png"};
             case "Scholar" : return new String[] {context.getString(R.string.scholar),"/drawable/scholar_1.png","/drawable/scholar_2.png","/drawable/scholar_3.png","/drawable/scholar_4.png","/drawable/scholar_5.png"};
@@ -1306,6 +1307,7 @@ public class ItemRss {
         else if(name.equals("Traveler-Geo") || name.equals("旅行者(雷)") || name.equals("旅行者(雷)") || name.equals("旅人 (雷)") || name.equals("Путешественник(Электро)")){ return "Traveler-Geo";}
         else if(name.equals("Traveler-Dendro") || name.equals("旅行者(草)") || name.equals("旅行者(草)") || name.equals("旅人 (草)") || name.equals("Путешественник(Элементы)")){ return "Traveler-Dendro";}
         else if(name.equals("Thoma") || name.equals("托馬") || name.equals("托马") || name.equals("トーマ") || name.equals("Тома")){ return "Thoma";}
+        else if(name.equals("N/A")){ return "N/A";}
 
 
         else return context.getString(R.string.unknown);
@@ -1910,6 +1912,15 @@ public class ItemRss {
         int month = Integer.parseInt(date[0]);
         int day = Integer.parseInt(date[1]);
 
+        sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
+        if(sharedPreferences.getString("curr_lang","en-US").equals("zh-HK") ||sharedPreferences.getString("curr_lang","en-US").equals("zh-CN") ){
+            String monthS = String.valueOf(month);
+            String dayS = String.valueOf(day);
+            if(month < 10){monthS = "0"+String.valueOf(month);}
+            if(day < 10){dayS = "0"+String.valueOf(day);}
+            return monthS+"-"+dayS;
+        }
+
         String returns = "Jan 1st";
         if(month == 1){returns = context.getString(R.string.date_jan);}
         else if(month == 2){returns = context.getString(R.string.date_feb);}
@@ -1955,6 +1966,7 @@ public class ItemRss {
         else if(day == 29){returns = returns + context.getString(R.string.date_29th);}
         else if(day == 30){returns = returns + context.getString(R.string.date_30th);}
         else if(day == 31){returns = returns + context.getString(R.string.date_31st);}
+
 
 
         return returns;

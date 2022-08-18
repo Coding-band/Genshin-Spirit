@@ -450,7 +450,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
                         android:layout_marginRight="4dp"
-                        android:layout_weight="4">
+                        android:layout_weight="1">
 
                         <ImageView
                             android:id="@+id/paimon_bg4"
@@ -493,7 +493,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
                         android:layout_marginRight="4dp"
-                        android:layout_weight="4">
+                        android:layout_weight="1">
 
                         <ImageView
                             android:id="@+id/paimon_bg5"
@@ -536,7 +536,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
                         android:layout_marginRight="4dp"
-                        android:layout_weight="4">
+                        android:layout_weight="1">
 
                         <ImageView
                             android:id="@+id/paimon_bg6"

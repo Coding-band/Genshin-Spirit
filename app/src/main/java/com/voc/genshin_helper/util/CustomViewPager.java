@@ -16,6 +16,7 @@ import androidx.viewpager.widget.ViewPager;
 //https://stackoverflow.com/questions/7814017/is-it-possible-to-disable-scrolling-on-a-viewpager
 public class CustomViewPager extends ViewPager {
     boolean isLand = false;
+    boolean scrollable = true;
 
     private boolean isPagingEnabled = true;
 
@@ -36,19 +37,23 @@ public class CustomViewPager extends ViewPager {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if(isLand){
+        if(isLand && scrollable){
             return super.onTouchEvent(swapXY(event));
-        }else{
+        }else if(scrollable == false){
+            return false;
+        }else {
             return this.isPagingEnabled && super.onTouchEvent(event);
         }
     }
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
-        if(isLand){
+        if(isLand && scrollable){
             boolean intercepted = super.onInterceptTouchEvent(swapXY(event));
             swapXY(event); // return touch coordinates to original reference frame for any child views
             return intercepted;
+        }else if(scrollable == false){
+            return false;
         }else{
             return this.isPagingEnabled && super.onInterceptTouchEvent(event);
         }
@@ -56,6 +61,10 @@ public class CustomViewPager extends ViewPager {
 
     public void setPagingEnabled(boolean b) {
         this.isPagingEnabled = b;
+    }
+
+    public void setScrollable(boolean scrollable) {
+        this.scrollable = scrollable;
     }
 
     public static class VerticalPageTransformer implements ViewPager.PageTransformer {

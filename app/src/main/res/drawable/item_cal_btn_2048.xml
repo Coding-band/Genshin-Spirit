@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2022 Xectorda 版權所有
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="160dp"
+    android:height="50dp"
+    android:viewportWidth="160"
+    android:viewportHeight="50">
+    <path
+        android:fillColor="@color/tab_bg_2048_always_deep"
+        android:pathData="M0 25c0-13.81 11.19-25 25-25h110c13.81 0 25 11.19 25 25v0c0 13.81-11.19 25-25 25h-110c-13.81 0-25-11.19-25-25z"/>
+</vector>

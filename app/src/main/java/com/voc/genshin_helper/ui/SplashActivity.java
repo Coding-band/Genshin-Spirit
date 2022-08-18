@@ -13,6 +13,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ProgressDialog;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
@@ -111,7 +112,32 @@ public class SplashActivity extends AppCompatActivity {
         }
         ((TextView) findViewById(R.id.version_tv)).setText(BuildConfig.VERSION_NAME);
 
-        String[] checkList = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.EXPAND_STATUS_BAR};
+        PackageManager manager=getPackageManager();
+
+        if(BuildConfig.DEBUG == true){
+            manager.setComponentEnabledSetting(new ComponentName(SplashActivity.this,"com.voc.genshin_helper.ui.SplashActivity")
+                    ,PackageManager.COMPONENT_ENABLED_STATE_ENABLED,PackageManager.DONT_KILL_APP);
+
+            // disable new icon
+            manager.setComponentEnabledSetting(new ComponentName(SplashActivity.this,"com.voc.genshin_helper.ui.SplashActivityAlias")
+                    ,PackageManager.COMPONENT_ENABLED_STATE_DISABLED,PackageManager.DONT_KILL_APP);
+        }else if (sharedPreferences.getBoolean("isAppIconChange", false) == false) {
+            manager.setComponentEnabledSetting(new ComponentName(SplashActivity.this,"com.voc.genshin_helper.ui.SplashActivity")
+                    ,PackageManager.COMPONENT_ENABLED_STATE_DISABLED,PackageManager.DONT_KILL_APP);
+
+            // disable new icon
+            manager.setComponentEnabledSetting(new ComponentName(SplashActivity.this,"com.voc.genshin_helper.ui.SplashActivityAlias")
+                    ,PackageManager.COMPONENT_ENABLED_STATE_ENABLED,PackageManager.DONT_KILL_APP);
+        }else{
+            manager.setComponentEnabledSetting(new ComponentName(SplashActivity.this,"com.voc.genshin_helper.ui.SplashActivity")
+                    ,PackageManager.COMPONENT_ENABLED_STATE_ENABLED,PackageManager.DONT_KILL_APP);
+
+            // disable new icon
+            manager.setComponentEnabledSetting(new ComponentName(SplashActivity.this,"com.voc.genshin_helper.ui.SplashActivityAlias")
+                    ,PackageManager.COMPONENT_ENABLED_STATE_DISABLED,PackageManager.DONT_KILL_APP);
+        }
+
+        String[] checkList = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE, Manifest.permission.EXPAND_STATUS_BAR};
         List<String> needRequestList = checkPermission(activity, checkList);
         if (!needRequestList.isEmpty()) {
             requestPermission(activity, needRequestList.toArray(new String[needRequestList.size()]));
@@ -187,6 +213,16 @@ public class SplashActivity extends AppCompatActivity {
                     } else {
                         Log.w("存儲許可權", "申請失敗");
                         finish();
+                    }
+                }
+
+                if (permissions[i].equals(WRITE_EXTERNAL_STORAGE)) {
+                    if (grantResults[i] == PackageManager.PERMISSION_GRANTED) {
+                        Log.w("寫錄許可權", "申請成功");
+                        goMain();
+                    } else {
+                        Log.w("寫錄許可權", "申請失敗");
+                        goMain();
                     }
                 }
             }

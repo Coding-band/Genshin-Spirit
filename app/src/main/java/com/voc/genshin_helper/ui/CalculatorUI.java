@@ -1521,7 +1521,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
                         for (int x = 0 ; x < weaponChoosedNameList.size() ; x++){
                             if(weaponChoosedNameList.get(x).equals(name_del)){
-                                weaponChoosedFollowList.set(x,"NaN");
+                                weaponChoosedFollowList.set(x,"N/A");
                             }
                         }
 
@@ -1762,7 +1762,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                follow_char_tmp = "NaN";
+                follow_char_tmp = "N/A";
             }
         });
 
@@ -2660,7 +2660,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                follow_char_tmp = "NaN";
+                follow_char_tmp = "N/A";
                 position_tmp = -1;
             }
         });

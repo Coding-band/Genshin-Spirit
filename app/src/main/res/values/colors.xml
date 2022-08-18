@@ -88,6 +88,9 @@
     <color name="tab_stroke_2048">#99FFFFFF</color>
     <color name="spinner_bg_2048">#FF495366</color>
     <color name="spinner_stroke_2048">#CC495366</color>
+    <color name="lvl_stroke_2048">#D3BC8E</color>
+    <color name="lvl_bg_2048">#99FFFFFF</color>
+    <color name="tab_bg_2048_always_deep">#4D5668</color>
 
     <color name="tab_selected_obj_2048">#4D5668</color>
     <color name="tab_unselected_obj_2048">#ECE5D8</color>

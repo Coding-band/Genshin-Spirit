@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2022 Xectorda 版權所有
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:hedgehog="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_2048_talent_card"
+        android:visibility="visible"
+        app:cardBackgroundColor="@color/colorWhiteAlpha"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/menu_title_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_weight="0"
+                    android:background="@drawable/bg_dialog_header_edge"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/cal_enter_name"
+                    android:textColor="@color/dialog_title_tv_color_2048"
+                    android:textSize="20sp" />
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_dialog_body_edge"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/header_search_bar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/item_2048_search_bar_bg">
+
+                        <EditText
+                            android:id="@+id/header_search_et"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginEnd="36dp"
+                            android:layout_weight="0"
+                            android:background="@null"
+                            android:fontFamily="@font/genshin_font"
+                            android:hint="@string/cal_enter_name"
+                            android:paddingLeft="8dp"
+                            android:singleLine="true"
+                            android:textColor="@color/tv_spinner_color_2048"
+                            android:textColorHint="@color/tv_spinner_color_2048"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/header_search_reset"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center|right"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toEndOf="@+id/header_search_et"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/item_2048_search_bar_cancel" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+                            android:id="@+id/db_cancel"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_dialog_btn"
+                            android:text="@string/cal_reset">
+
+                            <ImageView
+                                android:id="@+id/imageView14"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_gravity="center|left"
+                                android:layout_marginLeft="8dp"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/ic_2048_cancel_btn_ico" />
+
+                            <TextView
+                                android:id="@+id/db_cancel_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:fontFamily="@font/genshin_font"
+                                android:gravity="center|left"
+                                android:text="@android:string/cancel"
+                                android:textColor="@color/tv_anti_color_2048"
+                                android:textSize="18sp" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:id="@+id/db_ok"
+                            android:layout_width="match_parent"
+                            android:layout_height="48dp"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_dialog_btn"
+                            android:text="@android:string/ok">
+
+                            <ImageView
+                                android:id="@+id/imageView15"
+                                android:layout_width="32dp"
+                                android:layout_height="32dp"
+                                android:layout_gravity="center|left"
+                                android:layout_marginLeft="8dp"
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/ic_2048_ok_btn_ico" />
+
+                            <TextView
+                                android:id="@+id/db_ok_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:fontFamily="@font/genshin_font"
+                                android:gravity="center|left"
+                                android:text="@android:string/ok"
+                                android:textColor="@color/tv_anti_color_2048"
+                                android:textSize="18sp" />
+                        </FrameLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

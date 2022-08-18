@@ -18,14 +18,17 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -36,6 +39,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
+import android.provider.BaseColumns;
 import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -78,6 +82,8 @@ import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.data.Today_Material;
 import com.voc.genshin_helper.data.Weapons;
 import com.voc.genshin_helper.data.WeaponsAdapter;
+import com.voc.genshin_helper.database.DataBaseContract;
+import com.voc.genshin_helper.database.DataBaseHelper;
 import com.voc.genshin_helper.kidding.GoSleep;
 import com.voc.genshin_helper.tutorial.TutorialUI;
 import com.voc.genshin_helper.ui.AlarmUI;
@@ -196,6 +202,8 @@ public class Desk2048 extends AppCompatActivity {
     public List<Characters> charactersList = new ArrayList<>();
     public List<Weapons> weaponsList = new ArrayList();
     public List<Artifacts> artifactsList = new ArrayList();
+    public List<String> dbIsCalCharName = new ArrayList();
+    public List<String> dbIsCalWeaponName = new ArrayList();
 
     boolean first = true;
 
@@ -206,6 +214,7 @@ public class Desk2048 extends AppCompatActivity {
     RadioButton theme_default;
 
     Switch other_exit_confirm ;
+    Switch other_app_ico_use_default ;
 
     RadioButton style_Voc_rb;
     RadioButton style_2O48_rb;
@@ -306,6 +315,7 @@ public class Desk2048 extends AppCompatActivity {
         getDOW();
         bday_reload();
         cbg();
+        dbChar_reload();
         char_reload(dow);
         weapon_reload(dow);
         setup_home();
@@ -474,6 +484,69 @@ public class Desk2048 extends AppCompatActivity {
         tutorialUI.setup(context,activity,viewPager0,viewPager1,viewPager2,viewPager3,viewPager4,desk_tablayout,null);
     }
 
+    private void dbChar_reload() {
+        dbIsCalCharName.clear();
+        dbIsCalWeaponName.clear();
+        DataBaseHelper dbHelper = new DataBaseHelper(context);
+        SQLiteDatabase db = dbHelper.getReadableDatabase();
+
+        // Level 0
+
+        String[] projection = {
+                BaseColumns._ID,
+                DataBaseContract.DataBase.COLUMN_NAME_NAME
+        };
+        String sortOrder =
+                DataBaseContract.DataBase.COLUMN_NAME_CREATE_UNIX + " DESC";
+
+        Cursor cursor = db.query(
+                DataBaseContract.DataBase.TABLE_NAME,   // The table to query
+                projection,             // The array of columns to return (pass null to get all)
+                null,              // The columns for the WHERE clause
+                null,          // The values for the WHERE clause
+                null,                   // don't group the rows
+                null,                   // don't filter by row groups
+                sortOrder               // The sort order
+        );
+
+        while(cursor.moveToNext()) {
+            // Level 1
+            String[] projectionX = {"charName","charIsCal"};
+
+            Cursor cursorX = db.query(
+                    cursor.getString(cursor.getColumnIndexOrThrow("name"))+"_char",   // The table to query
+                    projectionX,             // The array of columns to return (pass null to get all)
+                    null,              // The columns for the WHERE clause
+                    null,          // The values for the WHERE clause
+                    null,                   // don't group the rows
+                    null,                   // don't filter by row groups
+                    null               // The sort order
+            );
+            while (cursorX.moveToNext()){
+                if(getBooleanByInt(cursorX.getInt(cursorX.getColumnIndexOrThrow("charIsCal"))) == true  && !dbIsCalWeaponName.contains(cursorX.getString(cursorX.getColumnIndexOrThrow("charName")))){
+                    dbIsCalCharName.add(cursorX.getString(cursorX.getColumnIndexOrThrow("charName")));
+                }
+            }
+
+            String[] projectionY = {"weaponName","weaponIsCal"};
+
+            Cursor cursorY = db.query(
+                    cursor.getString(cursor.getColumnIndexOrThrow("name"))+"_weapon",   // The table to query
+                    projectionY,             // The array of columns to return (pass null to get all)
+                    null,              // The columns for the WHERE clause
+                    null,          // The values for the WHERE clause
+                    null,                   // don't group the rows
+                    null,                   // don't filter by row groups
+                    null               // The sort order
+            );
+            while (cursorY.moveToNext()){
+                if(getBooleanByInt(cursorY.getInt(cursorY.getColumnIndexOrThrow("weaponIsCal"))) == true && !dbIsCalWeaponName.contains(cursorY.getString(cursorY.getColumnIndexOrThrow("weaponName")))){
+                    dbIsCalWeaponName.add(cursorY.getString(cursorY.getColumnIndexOrThrow("weaponName")));
+                }
+            }
+        }
+    }
+
     private void setup_paimon() {
         ConstraintLayout paimon_cal = viewPager4.findViewById(R.id.paimon_cal);
         ConstraintLayout paimon_daily = viewPager4.findViewById(R.id.paimon_daily);
@@ -485,7 +558,7 @@ public class Desk2048 extends AppCompatActivity {
         paimon_cal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Desk2048.this, CalculatorDBActivity.class);
+                Intent i = new Intent(Desk2048.this, CalculatorDB_2048.class);
                 startActivity(i);
             }
         });
@@ -1898,6 +1971,24 @@ public class Desk2048 extends AppCompatActivity {
             }
         });
 
+        // App Icon
+        other_app_ico_use_default = viewPager4.findViewById(R.id.other_app_ico_use_default);
+        sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
+        boolean isAppIconChange = sharedPreferences.getBoolean("isAppIconChange",true);
+        other_app_ico_use_default.setChecked(isAppIconChange);
+        other_app_ico_use_default.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(other_app_ico_use_default.isChecked() == false){
+                    editor.putBoolean("isAppIconChange",false);
+                    editor.apply();
+                }else if(other_app_ico_use_default.isChecked() == true){
+                    editor.putBoolean("isAppIconChange",true);
+                    editor.apply();
+                }
+            }
+        });
+
         // Background
         Button bg_setting_btn = viewPager4.findViewById(R.id.bg_setting_btn);
         bg_setting_btn.setOnClickListener(new View.OnClickListener() {
@@ -2877,7 +2968,15 @@ public class Desk2048 extends AppCompatActivity {
                         Picasso.get().load(FileLoader.loadIMG(css.getCharByName(name,context)[3],context)).fit().transform(roundedCornersTransformation).into(img);
                         tmp_cnt = tmp_cnt +1;
                         // if character is exist in list
-                        //tick.setVisibility(View.VISIBLE);
+
+                        System.out.println("dbIsCalCharName : "+dbIsCalCharName);
+                        System.out.println("dbIsCalWeaponName : "+dbIsCalWeaponName);
+
+                        if (dbIsCalCharName.contains(name)){
+                            tick.setVisibility(View.VISIBLE);
+                        }
+
+
                         String finalReal_name = real_name;
                         String finalName = name;
                         img.setOnClickListener(new View.OnClickListener() {
@@ -2967,8 +3066,13 @@ public class Desk2048 extends AppCompatActivity {
                                 wif.setup(finalName,context,activity);
                             }
                         });
-                        // if weaponacter is exist in list
-                        //asc_weapon_tick.setVisibility(View.VISIBLE);
+
+                        System.out.println("dbIsCalCharName : "+dbIsCalCharName);
+                        System.out.println("dbIsCalWeaponName : "+dbIsCalWeaponName);
+
+                        if (dbIsCalWeaponName.contains(name)){
+                            tick.setVisibility(View.VISIBLE);
+                        }
 
                         ll.setVisibility(View.VISIBLE);
 
@@ -3704,6 +3808,17 @@ public class Desk2048 extends AppCompatActivity {
         editor.putBoolean("show_sub_dps",show_sub_dps);
         editor.putBoolean("show_util",show_util);
         editor.apply();
+    }
+
+    private boolean getBooleanByInt (int x){
+        if(x == 0){
+            return false;
+        }else if(x == 1){
+            return true;
+        }else{
+            return false;
+        }
+
     }
 }
 

@@ -2760,7 +2760,7 @@ public class CalculatorProcess {
                         "artifactRare = "+String.valueOf(ArtifactRareList.get(x))+","+
                         "artifactIsCal = "+String.valueOf((ArtifactIsCal.get(x)) ? 1 : 0 )+
 
-                        " WHERE artifactName = \""+ArtifactNameList.get(x)+"\";");
+                        " WHERE artifactName = \""+ArtifactNameList.get(x)+"\" AND artifactFollow = \""+ArtifactFollowList.get(x)+"\" AND artifactType = \""+artifactType.get(x)+"\";");
             }else {
                 // DEMO -> INSERT INTO demo (ID,Name) VALUES (-3,"SSS");
                 db = dbHelper.getWritableDatabase();

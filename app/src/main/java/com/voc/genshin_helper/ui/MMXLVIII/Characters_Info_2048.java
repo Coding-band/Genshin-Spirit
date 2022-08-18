@@ -497,6 +497,7 @@ public class Characters_Info_2048 {
 
         if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
             viewPager.setLand(true);
+            viewPager.setScrollable(false);
         }
 
         BackgroundReload.BackgroundReload(context,view);
@@ -1545,6 +1546,15 @@ public class Characters_Info_2048 {
                     item_img.getLayoutParams().height=WRAP_CONTENT;
 
                     item_img.setAdjustViewBounds(true);
+
+                    int finalX = x;
+                    item_img.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Characters_Info_2048 characters_info_2048 = new Characters_Info_2048();
+                            characters_info_2048.setup(team1[finalX].replace("XPR"," "),context,activity);
+                        }
+                    });
                     String json_base = LoadData("db/char/char_list.json");
                     String name ;
                     int rare;
@@ -1589,6 +1599,14 @@ public class Characters_Info_2048 {
                             .resize((width_curr-32-16)/4-16,(width_curr-32-16)/4-16)
                             .into(item_img);
 
+                    int finalX = x;
+                    item_img.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Characters_Info_2048 characters_info_2048 = new Characters_Info_2048();
+                            characters_info_2048.setup(team2[finalX].replace("XPR"," "),context,activity);
+                        }
+                    });
                     item_img.getLayoutParams().width=WRAP_CONTENT;
                     item_img.getLayoutParams().height=WRAP_CONTENT;
 
@@ -1637,6 +1655,14 @@ public class Characters_Info_2048 {
                             .resize((width_curr-32-16)/4-16,(width_curr-32-16)/4-16)
                             .into(item_img);
 
+                    int finalX = x;
+                    item_img.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Characters_Info_2048 characters_info_2048 = new Characters_Info_2048();
+                            characters_info_2048.setup(team3[finalX].replace("XPR"," "),context,activity);
+                        }
+                    });
                     item_img.getLayoutParams().width=WRAP_CONTENT;
                     item_img.getLayoutParams().height=WRAP_CONTENT;
 
@@ -1688,6 +1714,14 @@ public class Characters_Info_2048 {
                     item_img.getLayoutParams().width=WRAP_CONTENT;
                     item_img.getLayoutParams().height=WRAP_CONTENT;
 
+                    int finalX = x;
+                    item_img.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Characters_Info_2048 characters_info_2048 = new Characters_Info_2048();
+                            characters_info_2048.setup(team4[finalX].replace("XPR"," "),context,activity);
+                        }
+                    });
                     item_img.setAdjustViewBounds(true);
                     String json_base = LoadData("db/char/char_list.json");
                     String name ;
@@ -1733,6 +1767,14 @@ public class Characters_Info_2048 {
                             .resize((width_curr-32-16)/4-16,(width_curr-32-16)/4-16)
                             .into(item_img);
 
+                    int finalX = x;
+                    item_img.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Characters_Info_2048 characters_info_2048 = new Characters_Info_2048();
+                            characters_info_2048.setup(team5[finalX].replace("XPR"," "),context,activity);
+                        }
+                    });
                     item_img.getLayoutParams().width=WRAP_CONTENT;
                     item_img.getLayoutParams().height=WRAP_CONTENT;
 
@@ -2317,6 +2359,17 @@ public class Characters_Info_2048 {
                     .resize(min_width,min_width).transform(roundedCornersTransformation)
                     .error(R.drawable.paimon_lost)
                     .into(img_img);
+
+
+            int finalX = x;
+            img_img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Weapon_Info_2048 weapon_info_2048 = new Weapon_Info_2048();
+                    weapon_info_2048.setup(item_rss.getWeaponNameByFileName(advice[finalX]),context,activity);
+                }
+            });
+
             img_img.getLayoutParams().width = min_width;
             img_img.getLayoutParams().height = min_width;
             img_bg.getLayoutParams().width = min_width;
@@ -2408,6 +2461,16 @@ public class Characters_Info_2048 {
                     .fit().transform(roundedCornersTransformation)
                     .error(R.drawable.paimon_lost)
                     .into(img_img);
+
+            int finalX = x;
+            img_img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Artifact_Info_2048 artifact_info_2048 = new Artifact_Info_2048();
+                    artifact_info_2048.setup(advice[finalX],context,activity);
+                }
+            });
+
             img_tv.setText(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(advice[x]),context)[0]);
             img_tv.setTextSize(10);
             img_tv.setVisibility(View.GONE);
