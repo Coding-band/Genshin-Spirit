@@ -111,7 +111,6 @@ public class CalculatorDB_2048 extends AppCompatActivity {
         db_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 finish();
             }
         });

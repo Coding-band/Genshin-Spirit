@@ -287,6 +287,7 @@
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_char_skill_dmg_2048.xml" value="0.5" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_choose_item.xml" value="0.33177083333333335" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_choose_style_ui.xml" value="0.5" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_delete_confirm.xml" value="0.4779116465863454" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_enemy_choose.xml" value="0.22" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_home.xml" value="0.5" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/fragment_home_2048.xml" value="0.5" />
@@ -332,6 +333,7 @@
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_asc_require_card.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_asc_require_card_2048.xml" value="0.67" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_asc_require_card_siptik.xml" value="0.67" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_blank_72.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_buff_artifact.xml" value="0.67" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_buff_card.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/item_buff_display.xml" value="0.5" />
@@ -414,6 +416,7 @@
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/menu_char_filter_siptik.xml" value="0.25" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/menu_db_add.xml" value="0.25" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/menu_db_add_2048.xml" value="0.5" />
+        <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/menu_edit_2048.xml" value="0.13766566908935443" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/menu_edit_delete.xml" value="0.33" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/menu_edit_delete_2048.xml" value="0.5" />
         <entry key="..\:/GenshinSpirit/GenshinSpirit/app/src/main/res/layout/menu_enemy_filter.xml" value="0.5" />

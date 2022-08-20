@@ -1,35 +1,24 @@
 package com.voc.genshin_helper.ui.MMXLVIII;
 
-import android.Manifest;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
-import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
-import android.content.res.AssetManager;
-import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
 import android.graphics.Color;
-import android.graphics.drawable.Drawable;
-import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,27 +28,16 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
-import android.widget.ScrollView;
-import android.widget.SeekBar;
 import android.widget.Spinner;
-import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
@@ -68,46 +46,29 @@ import androidx.viewpager.widget.ViewPager;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.R;
-import com.voc.genshin_helper.buff.CalculatorBuff;
 import com.voc.genshin_helper.data.Artifacts;
 import com.voc.genshin_helper.data.ArtifactsAdapter;
 import com.voc.genshin_helper.data.Characters;
 import com.voc.genshin_helper.data.CharactersAdapter;
 import com.voc.genshin_helper.data.ItemRss;
-import com.voc.genshin_helper.data.ScreenSizeUtils;
 import com.voc.genshin_helper.data.Weapons;
 import com.voc.genshin_helper.data.WeaponsAdapter;
 import com.voc.genshin_helper.database.DataBaseHelper;
-import com.voc.genshin_helper.databinding.ActivityMainBinding;
-import com.voc.genshin_helper.ui.SipTik.DeskSipTik;
 import com.voc.genshin_helper.util.BackgroundReload;
-import com.voc.genshin_helper.util.CalculatorProcess;
-import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.LangUtils;
-import com.voc.genshin_helper.util.NumberPickerDialog;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
-import com.voc.genshin_helper.util.Spinner2048;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.Console;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
-import java.util.Map;
-import java.util.Objects;
-import java.util.UUID;
 
 
 /*
@@ -130,9 +91,15 @@ public class Calculator2048 extends AppCompatActivity{
     SharedPreferences calShared; // Only record CalculatorUI's vars, user can get last time data when restart this page (ALSO CAN USE RESET BTN)
     SharedPreferences.Editor editor;
 
-    static String[] lvlListChar = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "20+", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "40+", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "50+", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "60+", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "70+", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "80+", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90"};
-    static String[] lvlListSkill = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15"};
-    static String[] lvlListArt = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"};
+    public static String[] lvlListChar = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "20+", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "40+", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "50+", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "60+", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "70+", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "80+", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90"};
+    public static String[] lvlListWeapon70 = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "20+", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "40+", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "50+", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "60+", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70"};
+    public static String[] lvlListWeapon90 = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "20+", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "40+", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "50+", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "60+", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "70+", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "80+", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90"};
+    public static String[] lvlListSkill = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+    public static String[] lvlListArt4 = new String[]{"1", "2", "3", "4"};
+    public static String[] lvlListArt8 = new String[]{"1", "2", "3", "4", "5", "6", "7", "8"};
+    public static String[] lvlListArt12 = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"};
+    public static String[] lvlListArt16 = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"};
+    public static String[] lvlListArt20 = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"};
 
     // Char Page
     RecyclerView mCharacterList;
@@ -433,41 +400,6 @@ public class Calculator2048 extends AppCompatActivity{
             artifactChoosedType.add(cursor.getString(cursor.getColumnIndexOrThrow("artifactType")));
         }
         cursor.close();
-
-        /*
-        for (int x = 0; x < choosedNameList.size(); x++) {
-            charHasFlower.add(false);
-            charHasPlume.add(false);
-            charHasSand.add(false);
-            charHasGoblet.add(false);
-            charHasCirclet.add(false);
-            charHasWeapon.add(false);
-        }
-
-        for (int x = 0; x < choosedNameList.size(); x++) {
-            for (int y = 0; y < artifactChoosedFollowList.size(); y++) {
-                if (choosedNameList.get(x).equals(artifactChoosedFollowList.get(y))) {
-                    switch (artifactChoosedType.get(y)) {
-                        case "Flower":
-                            charHasFlower.set(x, true);
-                            break;
-                        case "Plume":
-                            charHasPlume.set(x, true);
-                            break;
-                        case "Sand":
-                            charHasSand.set(x, true);
-                            break;
-                        case "Goblet":
-                            charHasGoblet.set(x, true);
-                            break;
-                        case "Circlet":
-                            charHasCirclet.set(x, true);
-                            break;
-                    }
-                }
-            }
-        }
-        */
 
         /**
          * INIT (UI)
@@ -1636,35 +1568,67 @@ public class Calculator2048 extends AppCompatActivity{
             char_delete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    DataBaseHelper dbHelper = new DataBaseHelper(context);
-                    SQLiteDatabase db = dbHelper.getReadableDatabase();
-                    // Define 'where' part of query.
-                    String selection = "charName" + " LIKE ?";
-                    // Specify arguments in placeholder order.
-                    String[] selectionArgs = { choosedNameList.get(finalX) };
-                    // Issue SQL statement.
-                    db.delete(dataSheetName+"_char", selection, selectionArgs);
+                    final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+                    View view = View.inflate(context, R.layout.fragment_delete_confirm, null);
 
-                    choosedNameList.remove(finalX);
-                    choosedBeforeLvlList.remove(finalX);
-                    choosedAfterLvlList.remove(finalX);
-                    choosedBeforeBreakLvlList.remove(finalX);
-                    choosedAfterBreakLvlList.remove(finalX);
-                    choosedBeforeSkill1LvlList.remove(finalX);
-                    choosedAfterSkill1LvlList.remove(finalX);
-                    choosedBeforeSkill2LvlList.remove(finalX);
-                    choosedAfterSkill2LvlList.remove(finalX);
-                    choosedBeforeSkill3LvlList.remove(finalX);
-                    choosedAfterSkill3LvlList.remove(finalX);
-                    choosedIsCal.remove(finalX);
-                    choosedBeforeBreakUPLvlList.remove(finalX);
-                    choosedAfterBreakUPLvlList.remove(finalX);
+                    FrameLayout db_ok = view.findViewById(R.id.db_ok);
+                    FrameLayout db_cancel = view.findViewById(R.id.db_cancel);
 
-                    saveToDB();
-                    initCharWeaponType(context);
-                    displayCharData();
-                    displayWeaponData();
-                    displayArtifactData();
+                    db_ok.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            DataBaseHelper dbHelper = new DataBaseHelper(context);
+                            SQLiteDatabase db = dbHelper.getReadableDatabase();
+                            // Define 'where' part of query.
+                            String selection = "charName" + " LIKE ?";
+                            // Specify arguments in placeholder order.
+                            String[] selectionArgs = { choosedNameList.get(finalX) };
+                            // Issue SQL statement.
+                            db.delete(dataSheetName+"_char", selection, selectionArgs);
+
+                            choosedNameList.remove(finalX);
+                            choosedBeforeLvlList.remove(finalX);
+                            choosedAfterLvlList.remove(finalX);
+                            choosedBeforeBreakLvlList.remove(finalX);
+                            choosedAfterBreakLvlList.remove(finalX);
+                            choosedBeforeSkill1LvlList.remove(finalX);
+                            choosedAfterSkill1LvlList.remove(finalX);
+                            choosedBeforeSkill2LvlList.remove(finalX);
+                            choosedAfterSkill2LvlList.remove(finalX);
+                            choosedBeforeSkill3LvlList.remove(finalX);
+                            choosedAfterSkill3LvlList.remove(finalX);
+                            choosedIsCal.remove(finalX);
+                            choosedBeforeBreakUPLvlList.remove(finalX);
+                            choosedAfterBreakUPLvlList.remove(finalX);
+
+                            saveToDB();
+                            initCharWeaponType(context);
+                            displayCharData();
+                            displayWeaponData();
+                            displayArtifactData();
+                            dialog.dismiss();
+                        }
+                    });
+
+                    db_cancel.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            dialog.dismiss();
+                        }
+                    });
+
+                    dialog.setContentView(view);
+                    dialog.setCanceledOnTouchOutside(true);
+                    Window dialogWindow = dialog.getWindow();
+                    WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+                    // 2O48 DESIGN
+                    dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+                    dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
+                    lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+                    lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                    lp.gravity = Gravity.CENTER;
+                    dialogWindow.setAttributes(lp);
+                    dialog.show();
                 }
             });
 
@@ -1840,8 +1804,8 @@ public class Calculator2048 extends AppCompatActivity{
         //long afterRun = System.currentTimeMillis();
         //System.out.println("Read CHAR Total Cost "+(afterRun-beforeRun)+"ms");
 
-
-        saveToDB();
+        View blankView = LayoutInflater.from(context).inflate(R.layout.item_blank_72, cal_choosed_list, false);
+        cal_choosed_list.addView(blankView);
         //beforeRun = System.currentTimeMillis();
         //afterRun = System.currentTimeMillis();
         //System.out.println("SAVE DB Total Cost "+(afterRun-beforeRun)+"ms");
@@ -1869,30 +1833,62 @@ public class Calculator2048 extends AppCompatActivity{
             weapon_delete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    DataBaseHelper dbHelper = new DataBaseHelper(context);
-                    SQLiteDatabase db = dbHelper.getReadableDatabase();
-                    // Define 'where' part of query.
-                    String selection = "weaponId = ?";
-                    // Specify arguments in placeholder order.
-                    String[] selectionArgs = {String.valueOf(weaponChoosedIdList.get(finalX))};
-                    // Issue SQL statement.
-                    db.delete(dataSheetName+"_weapon", selection, selectionArgs);
+                    final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+                    View view = View.inflate(context, R.layout.fragment_delete_confirm, null);
 
-                    weaponChoosedNameList.remove(finalX);
-                    weaponChoosedBeforeLvlList.remove(finalX);
-                    weaponChoosedAfterLvlList.remove(finalX);
-                    weaponChoosedBeforeBreakLvlList.remove(finalX);
-                    weaponChoosedAfterBreakLvlList.remove(finalX);
-                    weaponChoosedBeforeBreakUPLvlList.remove(finalX);
-                    weaponChoosedAfterBreakUPLvlList.remove(finalX);
-                    weaponChoosedRare.remove(finalX);
-                    weaponChoosedIsCal.remove(finalX);
-                    weaponChoosedFollowList.remove(finalX);
+                    FrameLayout db_ok = view.findViewById(R.id.db_ok);
+                    FrameLayout db_cancel = view.findViewById(R.id.db_cancel);
 
-                    saveToDB();
-                    cursorWeaponIds();
-                    initCharWeaponType(context);
-                    displayWeaponData();
+                    db_ok.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            DataBaseHelper dbHelper = new DataBaseHelper(context);
+                            SQLiteDatabase db = dbHelper.getReadableDatabase();
+                            // Define 'where' part of query.
+                            String selection = "weaponId = ?";
+                            // Specify arguments in placeholder order.
+                            String[] selectionArgs = {String.valueOf(weaponChoosedIdList.get(finalX))};
+                            // Issue SQL statement.
+                            db.delete(dataSheetName+"_weapon", selection, selectionArgs);
+
+                            weaponChoosedNameList.remove(finalX);
+                            weaponChoosedBeforeLvlList.remove(finalX);
+                            weaponChoosedAfterLvlList.remove(finalX);
+                            weaponChoosedBeforeBreakLvlList.remove(finalX);
+                            weaponChoosedAfterBreakLvlList.remove(finalX);
+                            weaponChoosedBeforeBreakUPLvlList.remove(finalX);
+                            weaponChoosedAfterBreakUPLvlList.remove(finalX);
+                            weaponChoosedRare.remove(finalX);
+                            weaponChoosedIsCal.remove(finalX);
+                            weaponChoosedFollowList.remove(finalX);
+
+                            saveToDB();
+                            cursorWeaponIds();
+                            initCharWeaponType(context);
+                            displayWeaponData();
+                            dialog.dismiss();
+                        }
+                    });
+
+                    db_cancel.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            dialog.dismiss();
+                        }
+                    });
+
+                    dialog.setContentView(view);
+                    dialog.setCanceledOnTouchOutside(true);
+                    Window dialogWindow = dialog.getWindow();
+                    WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+                    // 2O48 DESIGN
+                    dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+                    dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
+                    lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+                    lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                    lp.gravity = Gravity.CENTER;
+                    dialogWindow.setAttributes(lp);
+                    dialog.show();
                 }
             });
 
@@ -1905,7 +1901,14 @@ public class Calculator2048 extends AppCompatActivity{
             weapon_name.setText(item_rss.getWeaponByName(weaponChoosedNameList.get(x), context)[0]);
             weapon_lvl.setText("Lv." + weaponChoosedBeforeLvlList.get(x) + checkLvlPlus(weaponChoosedBeforeBreakUPLvlList.get(x)));
 
-            ArrayAdapter lvl_weapon = new ArrayAdapter(context, R.layout.spinner_item_cal_2048, lvlListChar);
+            ArrayAdapter lvl_weapon = new ArrayAdapter(context, R.layout.spinner_item_cal_2048, lvlListWeapon70);
+            switch (weaponChoosedRare.get(x)){
+                case 1 :
+                case 2 : lvl_weapon = new ArrayAdapter(context, R.layout.spinner_item_cal_2048, lvlListWeapon70);break;
+                case 3 :
+                case 4 :
+                case 5 : lvl_weapon = new ArrayAdapter(context, R.layout.spinner_item_cal_2048, lvlListWeapon90);break;
+            }
             lvl_weapon.setDropDownViewResource(R.layout.spinner_dropdown_item_cal_2048);
             weapon_beforeLvl.setAdapter(lvl_weapon);
             weapon_afterLvl.setAdapter(lvl_weapon);
@@ -2161,8 +2164,9 @@ public class Calculator2048 extends AppCompatActivity{
 
             cal_choosed_list.addView(char_view);
         }
+        View blankView = LayoutInflater.from(context).inflate(R.layout.item_blank_72, cal_choosed_list, false);
+        cal_choosed_list.addView(blankView);
 
-        saveToDB();
         //long afterRun = System.currentTimeMillis();
         //System.out.println("READ Weapon Total Cost "+(afterRun-beforeRun)+"ms");
     }
@@ -2196,26 +2200,59 @@ public class Calculator2048 extends AppCompatActivity{
             art_delete.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    DataBaseHelper dbHelper = new DataBaseHelper(context);
-                    SQLiteDatabase db = dbHelper.getReadableDatabase();
-                    // Define 'where' part of query.
-                    String selection = "artifactId" + " LIKE ?";
-                    // Specify arguments in placeholder order.
-                    String[] selectionArgs = {String.valueOf(artifactChoosedIdList.get(finalX))};
-                    // Issue SQL statement.
-                    db.delete(dataSheetName+"_artifact", selection, selectionArgs);
+                    final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+                    View view = View.inflate(context, R.layout.fragment_delete_confirm, null);
 
-                    artifactChoosedNameList.remove(finalX);
-                    artifactChoosedBeforeLvlList.remove(finalX);
-                    artifactChoosedAfterLvlList.remove(finalX);
-                    artifactChoosedRare.remove(finalX);
-                    artifactChoosedIsCal.remove(finalX);
-                    artifactChoosedFollowList.remove(finalX);
-                    artifactChoosedType.remove(finalX);
+                    FrameLayout db_ok = view.findViewById(R.id.db_ok);
+                    FrameLayout db_cancel = view.findViewById(R.id.db_cancel);
 
-                    cursorArtifactIds();
-                    initCharWeaponType(context);
-                    displayArtifactData();
+                    db_ok.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            DataBaseHelper dbHelper = new DataBaseHelper(context);
+                            SQLiteDatabase db = dbHelper.getReadableDatabase();
+                            // Define 'where' part of query.
+                            String selection = "artifactId" + " LIKE ?";
+                            // Specify arguments in placeholder order.
+                            String[] selectionArgs = {String.valueOf(artifactChoosedIdList.get(finalX))};
+                            // Issue SQL statement.
+                            db.delete(dataSheetName+"_artifact", selection, selectionArgs);
+
+                            artifactChoosedNameList.remove(finalX);
+                            artifactChoosedBeforeLvlList.remove(finalX);
+                            artifactChoosedAfterLvlList.remove(finalX);
+                            artifactChoosedRare.remove(finalX);
+                            artifactChoosedIsCal.remove(finalX);
+                            artifactChoosedFollowList.remove(finalX);
+                            artifactChoosedType.remove(finalX);
+
+                            saveToDB();
+                            cursorArtifactIds();
+                            initCharWeaponType(context);
+                            displayArtifactData();
+                            dialog.dismiss();
+                        }
+                    });
+
+                    db_cancel.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            dialog.dismiss();
+                        }
+                    });
+
+                    dialog.setContentView(view);
+                    dialog.setCanceledOnTouchOutside(true);
+                    Window dialogWindow = dialog.getWindow();
+                    WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+                    // 2O48 DESIGN
+                    dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+                    dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
+                    lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+                    lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                    lp.gravity = Gravity.CENTER;
+                    dialogWindow.setAttributes(lp);
+                    dialog.show();
                 }
             });
 
@@ -2260,7 +2297,14 @@ public class Calculator2048 extends AppCompatActivity{
             art_name.setText(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(artifactChoosedNameList.get(x)), context)[0]);
             art_lvl.setText("Lv." + artifactChoosedBeforeLvlList.get(x));
 
-            ArrayAdapter lvl_art = new ArrayAdapter(context, R.layout.spinner_item_cal_2048, lvlListArt);
+            ArrayAdapter lvl_art = new ArrayAdapter(context, R.layout.spinner_item_cal_2048, lvlListArt20);
+            switch (artifactChoosedRare.get(x)){
+                case 1 : lvl_art = new ArrayAdapter(context, R.layout.spinner_item_cal_2048, lvlListArt4);break;
+                case 2 : lvl_art = new ArrayAdapter(context, R.layout.spinner_item_cal_2048, lvlListArt8);break;
+                case 3 : lvl_art = new ArrayAdapter(context, R.layout.spinner_item_cal_2048, lvlListArt12);break;
+                case 4 : lvl_art = new ArrayAdapter(context, R.layout.spinner_item_cal_2048, lvlListArt16);break;
+                case 5 : lvl_art = new ArrayAdapter(context, R.layout.spinner_item_cal_2048, lvlListArt20);break;
+            }
             lvl_art.setDropDownViewResource(R.layout.spinner_dropdown_item_cal_2048);
             art_beforeLvl.setAdapter(lvl_art);
             art_afterLvl.setAdapter(lvl_art);
@@ -2383,7 +2427,8 @@ public class Calculator2048 extends AppCompatActivity{
             cal_choosed_list.addView(char_view);
         }
 
-        saveToDB();
+        View blankView = LayoutInflater.from(context).inflate(R.layout.item_blank_72, cal_choosed_list, false);
+        cal_choosed_list.addView(blankView);
         //long afterRun = System.currentTimeMillis();
         //System.out.println("READ Artifact Total Cost "+(afterRun-beforeRun)+"ms");
     }
@@ -2726,11 +2771,19 @@ public class Calculator2048 extends AppCompatActivity{
     public void addWeapon(String charName_base, int rare){
         DataBaseHelper dbHelper = new DataBaseHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
+        int maxLvl = 70;
+        switch (rare){
+            case 1:
+            case 2: maxLvl = 70;break;
+            case 3:
+            case 4:
+            case 5: maxLvl = 90;break;
+        }
 
         ContentValues values = new ContentValues();
         values.put("weaponName", charName_base);
         values.put("weaponBeforeLvl", 1);
-        values.put("weaponAfterLvl", 90);
+        values.put("weaponAfterLvl", maxLvl);
         values.put("weaponBeforeBreakLvl", 0);
         values.put("weaponAfterBreakLvl", 6);
         values.put("weaponBeforeBreakUpLvl", 0);
@@ -2745,7 +2798,7 @@ public class Calculator2048 extends AppCompatActivity{
 
         weaponChoosedNameList.add(charName_base);
         weaponChoosedBeforeLvlList.add(1);
-        weaponChoosedAfterLvlList.add(90);
+        weaponChoosedAfterLvlList.add(maxLvl);
         weaponChoosedBeforeBreakLvlList.add(0);
         weaponChoosedAfterBreakLvlList.add(6);
         weaponChoosedIsCal.add(true);
@@ -2838,10 +2891,19 @@ public class Calculator2048 extends AppCompatActivity{
                 DataBaseHelper dbHelper = new DataBaseHelper(context);
                 SQLiteDatabase db = dbHelper.getWritableDatabase();
 
+                int maxLvl = 20;
+                switch (rare){
+                    case 1: maxLvl = 4;break;
+                    case 2: maxLvl = 8;break;
+                    case 3: maxLvl = 12;break;
+                    case 4: maxLvl = 16;break;
+                    case 5: maxLvl = 20;break;
+                }
+
                 ContentValues values = new ContentValues();
                 values.put("artifactName", charName_base);
-                values.put("artifactBeforeLvl", before_lvl);
-                values.put("artifactAfterLvl", after_lvl);
+                values.put("artifactBeforeLvl", 1);
+                values.put("artifactAfterLvl", maxLvl);
                 values.put("artifactRare", rare);
                 values.put("artifactFollow", "N/A");
                 values.put("artifactType", type);
@@ -2849,9 +2911,11 @@ public class Calculator2048 extends AppCompatActivity{
 
                 db.insert(dataSheetName+"_artifact", null, values);
 
+                cursorArtifactIds();
+
                 artifactChoosedNameList.add(charName_base);
                 artifactChoosedBeforeLvlList.add(1);
-                artifactChoosedAfterLvlList.add(20);
+                artifactChoosedAfterLvlList.add(maxLvl);
                 artifactChoosedIsCal.add(true);
                 artifactChoosedRare.add(rare);
                 artifactChoosedFollowList.add("N/A");
@@ -2861,8 +2925,6 @@ public class Calculator2048 extends AppCompatActivity{
                     dialogX.dismiss();
                 }
 
-                cursorArtifactIds();
-                saveToDB();
                 initCharWeaponType(context);
                 displayArtifactData();
             }
@@ -3016,7 +3078,7 @@ public class Calculator2048 extends AppCompatActivity{
                         "weaponRare = "+String.valueOf(weaponChoosedRare.get(x))+","+
                         "weaponIsCal = "+String.valueOf((weaponChoosedIsCal.get(x)) ? 1 : 0 )+
 
-                        " WHERE weaponName = \""+weaponChoosedNameList.get(x)+"\";");
+                        " WHERE weaponName = \""+weaponChoosedNameList.get(x)+"\" AND weaponId = \""+weaponChoosedIdList.get(x)+"\";");
             }else {
                 // DEMO -> INSERT INTO demo (ID,Name) VALUES (-3,"SSS");
                 db = dbHelper.getWritableDatabase();
@@ -3055,16 +3117,7 @@ public class Calculator2048 extends AppCompatActivity{
             );
             // DEMO -> UPDATE demo SET ID = 1,Name = "SPP",Hint = "OK" WHERE Name = "Twitter";
 
-            ArrayList<String> tmp_art_name = new ArrayList<String>();
-            ArrayList<String> tmp_art_type = new ArrayList<String>();
-            ArrayList<String> tmp_art_follow = new ArrayList<String>();
-            while(cursor.moveToNext()) {
-                tmp_art_name.add(cursor.getString(cursor.getColumnIndexOrThrow("artifactName")));
-                tmp_art_type.add(cursor.getString(cursor.getColumnIndexOrThrow("artifactType")));
-                tmp_art_follow.add(cursor.getString(cursor.getColumnIndexOrThrow("artifactFollow")));
-            }
-
-            if(cursor.getCount()>0 && tmp_art_name.contains(artifactChoosedNameList.get(x)) && tmp_art_type.contains(artifactChoosedType.get(x)) && tmp_art_follow.contains(artifactChoosedFollowList.get(x))){
+            if(cursor.getCount()>0){
                 db.execSQL("UPDATE "+dataSheetName+"_artifact"+" SET "+
                         "artifactBeforeLvl = "+String.valueOf(artifactChoosedBeforeLvlList.get(x))+","+
                         "artifactAfterLvl = "+String.valueOf(artifactChoosedAfterLvlList.get(x))+","+
@@ -3073,7 +3126,7 @@ public class Calculator2048 extends AppCompatActivity{
                         "artifactRare = "+String.valueOf(artifactChoosedRare.get(x))+","+
                         "artifactIsCal = "+String.valueOf((artifactChoosedIsCal.get(x)) ? 1 : 0 )+
 
-                        " WHERE artifactName = \""+artifactChoosedNameList.get(x)+"\" AND artifactFollow = \""+artifactChoosedFollowList.get(x)+"\" AND artifactType = \""+artifactChoosedType.get(x)+"\";");
+                        " WHERE artifactName = \""+artifactChoosedNameList.get(x)+"\" AND artifactId = \""+artifactChoosedIdList.get(x)+"\";");
             }else {
                 db = dbHelper.getWritableDatabase();
 
@@ -3780,6 +3833,14 @@ public class Calculator2048 extends AppCompatActivity{
         while(cursor.moveToNext()) {
             artifactChoosedIdList.add(cursor.getInt(cursor.getColumnIndexOrThrow("artifactId")));
         }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_HOME) {
+            saveToDB();
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
     @Override

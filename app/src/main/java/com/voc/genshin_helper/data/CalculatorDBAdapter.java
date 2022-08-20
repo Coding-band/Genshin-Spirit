@@ -4,8 +4,10 @@ import static android.content.Context.MODE_PRIVATE;
 import static com.voc.genshin_helper.util.RoundedCornersTransformation.CornerType.TOP;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
@@ -48,7 +50,9 @@ import com.voc.genshin_helper.ui.MMXLVIII.Characters_Info_2048;
 import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
 import com.voc.genshin_helper.ui.MMXLVIII.Weapon_Info_2048;
 import com.voc.genshin_helper.ui.MainActivity;
+import com.voc.genshin_helper.ui.SplashActivity;
 import com.voc.genshin_helper.util.CustomToast;
+import com.voc.genshin_helper.util.DownloadTask;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
@@ -509,17 +513,84 @@ public class CalculatorDBAdapter extends RecyclerView.Adapter<CalculatorDBAdapte
                 db_delete.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        DataBaseHelper dbHelper = new DataBaseHelper(context);
-                        SQLiteDatabase db = dbHelper.getWritableDatabase();
-                        String oldName = db_name.getText().toString();
-                        db.execSQL("DROP TABLE "+oldName+"_char");
-                        db.execSQL("DROP TABLE "+oldName+"_weapon");
-                        db.execSQL("DROP TABLE "+oldName+"_artifact");
-                        // DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
-                        db.execSQL("DELETE FROM IndexDB WHERE name = \""+oldName+"\"");
-                        if (context instanceof CalculatorDB_2048){
-                            (((CalculatorDB_2048) context)).readIndexRecord();
-                        }
+                        final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+                        View view = View.inflate(context, R.layout.fragment_delete_confirm, null);
+
+                        FrameLayout db_ok = view.findViewById(R.id.db_ok);
+                        FrameLayout db_cancel = view.findViewById(R.id.db_cancel);
+
+                        db_ok.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                DataBaseHelper dbHelper = new DataBaseHelper(context);
+                                SQLiteDatabase db = dbHelper.getWritableDatabase();
+                                String oldName = db_name.getText().toString();
+                                db.execSQL("DROP TABLE "+oldName+"_char");
+                                db.execSQL("DROP TABLE "+oldName+"_weapon");
+                                db.execSQL("DROP TABLE "+oldName+"_artifact");
+                                // DELETE FROM Customers WHERE CustomerName='Alfreds Futterkiste';
+                                db.execSQL("DELETE FROM IndexDB WHERE name = \""+oldName+"\"");
+                                if (context instanceof CalculatorDB_2048){
+                                    (((CalculatorDB_2048) context)).readIndexRecord();
+                                }
+                                dialog.dismiss();
+                            }
+                        });
+
+                        db_cancel.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                dialog.dismiss();
+                            }
+                        });
+
+                        dialog.setContentView(view);
+                        dialog.setCanceledOnTouchOutside(true);
+                        Window dialogWindow = dialog.getWindow();
+                        WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+                        // 2O48 DESIGN
+                        dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+                        dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
+                        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+                        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                        lp.gravity = Gravity.CENTER;
+                        dialogWindow.setAttributes(lp);
+                        dialog.show();
+
+                        /*
+                        final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+                        View view = View.inflate(context, R.layout.fragment_delete_confirm, null);
+
+                        FrameLayout db_ok = view.findViewById(R.id.db_ok);
+                        FrameLayout db_cancel = view.findViewById(R.id.db_cancel);
+
+                        db_ok.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+                            }
+                        });
+
+                        db_cancel.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                dialog.dismiss();
+                            }
+                        });
+
+                        dialog.setContentView(view);
+                        dialog.setCanceledOnTouchOutside(true);
+                        Window dialogWindow = dialog.getWindow();
+                        WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+                        // 2O48 DESIGN
+                        dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+                        dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
+                        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+                        lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                        lp.gravity = Gravity.CENTER;
+                        dialogWindow.setAttributes(lp);
+                        dialog.show();
+                         */
                     }
                 });
 

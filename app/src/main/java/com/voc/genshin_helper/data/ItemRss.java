@@ -1912,14 +1912,12 @@ public class ItemRss {
         int month = Integer.parseInt(date[0]);
         int day = Integer.parseInt(date[1]);
 
-        sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
-        if(sharedPreferences.getString("curr_lang","en-US").equals("zh-HK") ||sharedPreferences.getString("curr_lang","en-US").equals("zh-CN") ){
-            String monthS = String.valueOf(month);
-            String dayS = String.valueOf(day);
-            if(month < 10){monthS = "0"+String.valueOf(month);}
-            if(day < 10){dayS = "0"+String.valueOf(day);}
-            return monthS+"-"+dayS;
-        }
+        String monthS = String.valueOf(month);
+        String dayS = String.valueOf(day);
+        if(month < 10){monthS = "0"+String.valueOf(month);}
+        if(day < 10){dayS = "0"+String.valueOf(day);}
+        return monthS+"-"+dayS;
+            /*
 
         String returns = "Jan 1st";
         if(month == 1){returns = context.getString(R.string.date_jan);}
@@ -1966,10 +1964,8 @@ public class ItemRss {
         else if(day == 29){returns = returns + context.getString(R.string.date_29th);}
         else if(day == 30){returns = returns + context.getString(R.string.date_30th);}
         else if(day == 31){returns = returns + context.getString(R.string.date_31st);}
+             */
 
-
-
-        return returns;
         }else if(str.equals("SET_BY_PLAYER")){
             return context.getString(R.string.set_by_player);
         }else if(str.equals("N/A")){

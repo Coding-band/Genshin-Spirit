@@ -109,7 +109,7 @@
 
                         <HorizontalScrollView
                             android:id="@+id/db_char_sc"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fadingEdge="horizontal"
                             android:fadingEdgeLength="40dp"
@@ -145,7 +145,7 @@
 
                         <HorizontalScrollView
                             android:id="@+id/db_weapon_sc"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:fadingEdge="horizontal"
                             android:fadingEdgeLength="40dp"
@@ -182,7 +182,7 @@
 
                         <HorizontalScrollView
                             android:id="@+id/db_art_sc"
-                            android:layout_width="match_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="0"
                             android:fadingEdge="horizontal"

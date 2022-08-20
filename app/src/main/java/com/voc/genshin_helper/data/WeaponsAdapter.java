@@ -1187,7 +1187,6 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
 
     public void filterList(List<Weapons> list) {
         this.weaponsList = list;
-        Log.wtf("HOLY","SHEET");
         notifyDataSetChanged();
     }
 
