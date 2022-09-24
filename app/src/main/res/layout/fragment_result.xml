@@ -11,7 +11,7 @@
     android:layout_height="match_parent">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/result_list"
+        android:id="@+id/siptik_result_ll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="gone"

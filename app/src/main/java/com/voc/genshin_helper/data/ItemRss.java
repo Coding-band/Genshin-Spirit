@@ -696,7 +696,13 @@ public class ItemRss {
             case "Trawler" : return new String[] {context.getString(R.string.trawler),"/drawable/trawler.png"};
             case "Hunter's Path" : return new String[] {context.getString(R.string.hunters_path),"/drawable/hunters_path.png"};
             case "Fruit of Fulfillment" : return new String[] {context.getString(R.string.fruit_of_fulfillment),"/drawable/fruit_of_fulfillment.png"};
-
+            //add in 20220924
+            case "Xiphos' Moonlight" : return new String[] {context.getString(R.string.xiphos_moonlight),"/drawable/xiphos_moonlight.png"};
+            case "Key of Khaj-Nisut" : return new String[] {context.getString(R.string.key_of_khaj_nisut),"/drawable/key_of_khaj_nisut.png"};
+            case "Makhaira Aquamarine" : return new String[] {context.getString(R.string.makhaira_aquamarine),"/drawable/makhaira_aquamarine.png"};
+            case "Missive Windspear" : return new String[] {context.getString(R.string.missive_windspear),"/drawable/missive_windspear.png"};
+            case "Staff of the Scarlet Sands" : return new String[] {context.getString(R.string.staff_of_the_scarlet_sands),"/drawable/staff_of_the_scarlet_sands.png"};
+            case "Wandering Evenstar" : return new String[] {context.getString(R.string.wandering_evenstar),"/drawable/wandering_evenstar.png"};
 
             default :
                 System.out.println("WEAPON+ NAME ERROR : "+str);return new String[] {context.getString(R.string.unknown),"/drawable/paimon_lost.png"};
@@ -858,6 +864,13 @@ public class ItemRss {
             case "Trawler" : return new String[] {context.getString(R.string.trawler),"/drawable/trawler_gacha.png"};
             case "Hunter's Path" : return new String[] {context.getString(R.string.hunters_path),"/drawable/hunters_path_gacha.png"};
             case "Fruit of Fulfillment" : return new String[] {context.getString(R.string.fruit_of_fulfillment),"/drawable/fruit_of_fulfillment_gacha.png"};
+            //add in 20220924
+            case "Xiphos' Moonlight" : return new String[] {context.getString(R.string.xiphos_moonlight),"/drawable/xiphos_moonlight_gacha.png"};
+            case "Key of Khaj-Nisut" : return new String[] {context.getString(R.string.key_of_khaj_nisut),"/drawable/key_of_khaj_nisut_gacha.png"};
+            case "Makhaira Aquamarine" : return new String[] {context.getString(R.string.makhaira_aquamarine),"/drawable/makhaira_aquamarine_gacha.png"};
+            case "Missive Windspear" : return new String[] {context.getString(R.string.missive_windspear),"/drawable/missive_windspear_gacha.png"};
+            case "Staff of the Scarlet Sands" : return new String[] {context.getString(R.string.staff_of_the_scarlet_sands),"/drawable/staff_of_the_scarlet_sands_gacha.png"};
+            case "Wandering Evenstar" : return new String[] {context.getString(R.string.wandering_evenstar),"/drawable/wandering_evenstar_gacha.png"};
 
             default :
                 System.out.println("WEAPON+ NAME ERROR : "+str);return new String[] {context.getString(R.string.unknown),"/drawable/paimon_lost_gacha.png"};
@@ -1021,6 +1034,13 @@ public class ItemRss {
             case "trawler" : return "Trawler";
             case "hunters_path" : return "Hunter's Path";
             case "fruit_of_fulfillment" : return "Fruit of Fulfillment" ;
+            //add in 20220924
+            case "xiphos_moonlight" : return "Xiphos' Moonlight" ;
+            case "key_of_khaj_nisut" : return "Key of Khaj-Nisut" ;
+            case "makhaira_aquamarine" : return "Makhaira Aquamarine" ;
+            case "missive_windspear" : return "Missive Windspear" ;
+            case "staff_of_the_scarlet_sands" : return "Staff of the Scarlet Sands" ;
+            case "wandering_evenstar" : return "Wandering Evenstar" ;
             default: return  "PAIMON_ATE";
         }
     }
@@ -1069,6 +1089,8 @@ public class ItemRss {
             // add in 20220329
             case "Echoes of an Offering" : return new String[] {context.getString(R.string.echoes_of_an_offering),"/drawable/echoes_of_an_offering_1.png","/drawable/echoes_of_an_offering_2.png","/drawable/echoes_of_an_offering_3.png","/drawable/echoes_of_an_offering_4.png","/drawable/echoes_of_an_offering_5.png"};
             case "Vermillion Hereafter" : return new String[] {context.getString(R.string.vermillion_hereafter),"/drawable/vermillion_hereafter_1.png","/drawable/vermillion_hereafter_2.png","/drawable/vermillion_hereafter_3.png","/drawable/vermillion_hereafter_4.png","/drawable/vermillion_hereafter_5.png"};
+            case "Deepwood Memories" : return new String[] {context.getString(R.string.deepwood_memories),"/drawable/deepwood_memories_1.png","/drawable/deepwood_memories_2.png","/drawable/deepwood_memories_3.png","/drawable/deepwood_memories_4.png","/drawable/deepwood_memories_5.png"};
+            case "Gilded Dreams" : return new String[] {context.getString(R.string.gilded_dreams),"/drawable/gilded_dreams_1.png","/drawable/gilded_dreams_2.png","/drawable/gilded_dreams_3.png","/drawable/gilded_dreams_4.png","/drawable/gilded_dreams_5.png"};
 
             default: return new String[] {context.getString(R.string.unknown),"/drawable/paimon_lost.png","/drawable/paimon_lost.png","/drawable/paimon_lost.png","/drawable/paimon_lost.png","/drawable/paimon_lost.png"};
 
@@ -1119,6 +1141,57 @@ public class ItemRss {
             // add in 20220329
             case "echoes_of_an_offering" : return "Echoes of an Offering";
             case "vermillion_hereafter" : return "Vermillion Hereafter";
+            // add in 20220821
+            case "deepwood_memories" : return "Deepwood Memories";
+            case "gilded_dreams" : return "Gilded Dreams";
+
+            default: return  "PAIMON_ATE";
+        }
+    }
+
+    public String getArtifactNameByFileNameAnti (String str){
+        switch (str){
+            case "Adventurer" : return" adventurer";
+            case "Archaic Petra" : return" archaic_petra";
+            case "Berserker" : return" berserker";
+            case "Blizzard Strayer" : return" blizzard_strayer";
+            case "Bloodstained Chivalry" : return" bloodstained_chivalry";
+            case "Brave Heart" : return" brave_heart";
+            case "Crimson Witch of Flames" : return" crimson_witch_of_flames";
+            case "Defender's Will" : return" defenders_will";
+            case "Emblem of Severed Fate" : return" emblem_of_severed_fate";
+            case "Gambler" : return" gambler";
+            case "Gladiator's Finale" : return" gladiators_finale";
+            case "Heart of Depth" : return" heart_of_depth";
+            case "Instructor" : return" instructor";
+            case "Lavawalker" : return" lavawalker";
+            case "Lucky Dog" : return" lucky_dog";
+            case "Maiden Beloved" : return" maiden_beloved";
+            case "Martial Artist" : return" martial_artist";
+            case "Noblesse Oblige" : return" noblesse_oblige";
+            case "Pale Flame" : return" pale_flame";
+            case "Prayers of Destiny" : return" prayers_of_destiny";
+            case "Prayers of Illumination" : return" prayers_of_illumination";
+            case "Prayers of Wisdom" : return" prayers_of_wisdom";
+            case "Prayers of Springtime" : return" prayers_of_springtime";
+            case "Resolution of Sojourner" : return" resolution_of_sojourner";
+            case "Retracing Bolide" : return" retracing_bolide";
+            case "Scholar" : return" scholar";
+            case "Shimenawa's Reminiscence" : return" shimenawas_reminiscence";
+            case "Tenacity of the Millelith" : return" tenacity_of_the_millelith";
+            case "The Exile" : return" the_exile";
+            case "Thundering Fury" : return" thundering_fury";
+            case "Thunder-soother" : return" thundersoother";
+            case "Tiny Miracle" : return" tiny_miracle";
+            case "Traveling Doctor" : return" traveling_doctor";
+            case "Viridescent Venerer" : return" viridescent_venerer";
+            case "Wanderer's Troupe" : return" wanderers_troupe";
+            case "Husk of Opulent Dreams" : return" husk_of_opulent_dreams";
+            case "Ocean-Hued Clam" : return" ocean_hued_clam";
+            case "Echoes of an Offering" : return" echoes_of_an_offering";
+            case "Vermillion Hereafter" : return" vermillion_hereafter";
+            case "Deepwood Memories" : return" deepwood_memories";
+            case "Gilded Dreams" : return" gilded_dreams";
 
             default: return  "PAIMON_ATE";
         }
@@ -1131,119 +1204,125 @@ public class ItemRss {
     /**EDIT WHEN ADD NEW ITEMS*/
     public String[] getCharByName(String name, Context context){
         if(context.getSharedPreferences("user_info",MODE_PRIVATE).getBoolean("isCharChangeEventSuit",false) == true){
-            if (name.equals("Ningguang")){return new String[] {"/drawable/ningguang_suit1_gacha_splash.png",context.getString(R.string.ningguang),"/drawable/ningguang_suit1_gacha_splash.png","/drawable/ningguang_suit1_ico.png","/drawable/ningguang_card.png"};}
-            else if (name.equals("Barbara")){return new String[] {"/drawable/barbara_suit1_gacha_splash.png",context.getString(R.string.barbara),"/drawable/barbara_suit1_gacha_splash.png","/drawable/barbara_suit1_ico.png","/drawable/barbara_card.png"};}
-            else if (name.equals("Jean")){return new String[] {"/drawable/jean_suit2_gacha_splash.png",context.getString(R.string.jean),"/drawable/jean_suit2_gacha_splash.png","/drawable/jean_suit2_ico.png","/drawable/jean_card.png"};}
-            else if (name.equals("Keqing")){return new String[] {"/drawable/keqing_suit1_gacha_splash.png",context.getString(R.string.keqing),"/drawable/keqing_suit1_gacha_splash.png","/drawable/keqing_suit1_ico.png","/drawable/keqing_card.png"};}
-            else if (name.equals("Diluc")){return new String[] {"/drawable/diluc_suit1_gacha_splash.png",context.getString(R.string.diluc),"/drawable/diluc_suit1_gacha_splash.png","/drawable/diluc_suit1_ico.png","/drawable/diluc_card.png"};}
-            else if (name.equals("Fischl")){return new String[] {"/drawable/fischl_suit1_gacha_splash.png",context.getString(R.string.fischl),"/drawable/fischl_suit1_gacha_splash.png","/drawable/fischl_suit1_ico.png","/drawable/fischl_card.png"};}
-            else {
-                return getCharByName_BASE(name,context);}
+            switch (name) {
+                case "Ningguang": return new String[]{"/drawable/ningguang_suit1_gacha_splash.png", context.getString(R.string.ningguang), "/drawable/ningguang_suit1_gacha_splash.png", "/drawable/ningguang_suit1_ico.png", "/drawable/ningguang_card.png"};
+                case "Barbara": return new String[]{"/drawable/barbara_suit1_gacha_splash.png", context.getString(R.string.barbara), "/drawable/barbara_suit1_gacha_splash.png", "/drawable/barbara_suit1_ico.png", "/drawable/barbara_card.png"};
+                case "Jean": return new String[]{"/drawable/jean_suit2_gacha_splash.png", context.getString(R.string.jean), "/drawable/jean_suit2_gacha_splash.png", "/drawable/jean_suit2_ico.png", "/drawable/jean_card.png"};
+                case "Keqing": return new String[]{"/drawable/keqing_suit1_gacha_splash.png", context.getString(R.string.keqing), "/drawable/keqing_suit1_gacha_splash.png", "/drawable/keqing_suit1_ico.png", "/drawable/keqing_card.png"};
+                case "Diluc": return new String[]{"/drawable/diluc_suit1_gacha_splash.png", context.getString(R.string.diluc), "/drawable/diluc_suit1_gacha_splash.png", "/drawable/diluc_suit1_ico.png", "/drawable/diluc_card.png"};
+                case "Fischl": return new String[]{"/drawable/fischl_suit1_gacha_splash.png", context.getString(R.string.fischl), "/drawable/fischl_suit1_gacha_splash.png", "/drawable/fischl_suit1_ico.png", "/drawable/fischl_card.png"};
+                default: return getCharByName_BASE(name, context);
+            }
         }else{
             return getCharByName_BASE(name,context);
         }
     }
 
     public String[] getCharByName_BASE(String name, Context context){
-        if(name.equals("Collei")){return new String[] {"/drawable/collei_full.png",context.getString(R.string.collei),"/drawable/collei_gacha_splash.png","/drawable/collei_ico.png","/drawable/collei_card.png"};}
-        else if(name.equals("Dori")){return new String[] {"/drawable/dori_full.png",context.getString(R.string.dori),"/drawable/dori_gacha_splash.png","/drawable/dori_ico.png","/drawable/dori_card.png"};}
-        else if(name.equals("Tighnari")){return new String[] {"/drawable/tighnari_full.png",context.getString(R.string.tighnari),"/drawable/tighnari_gacha_splash.png","/drawable/tighnari_ico.png","/drawable/tighnari_card.png"};}
-        else if(name.equals("Shikanoin Heizou")){return new String[] {"/drawable/shikanoin_heizou_full.png",context.getString(R.string.shikanoin_heizou),"/drawable/shikanoin_heizou_gacha_splash.png","/drawable/shikanoin_heizou_ico.png","/drawable/shikanoin_heizou_card.png"};}
-        else if(name.equals("Kuki Shinobu")){return new String[] {"/drawable/kuki_shinobu_full.png",context.getString(R.string.kuki_shinobu),"/drawable/kuki_shinobu_gacha_splash.png","/drawable/kuki_shinobu_ico.png","/drawable/kuki_shinobu_card.png"};}
-        else if(name.equals("Yelan")){return new String[] {"/drawable/yelan_full.png",context.getString(R.string.yelan),"/drawable/yelan_gacha_splash.png","/drawable/yelan_ico.png","/drawable/yelan_card.png"};}
-        else if(name.equals("Kamisato Ayato")){return new String[] {"/drawable/kamisato_ayato_full.png",context.getString(R.string.kamisato_ayato),"/drawable/kamisato_ayato_gacha_splash.png","/drawable/kamisato_ayato_ico.png","/drawable/kamisato_ayato_card.png"};}
-        else if(name.equals("Yae Miko")){return new String[] {"/drawable/yae_miko_full.png",context.getString(R.string.yae_miko),"/drawable/yae_miko_gacha_splash.png","/drawable/yae_miko_ico.png","/drawable/yae_miko_card.png"};}
-        else if(name.equals("Shenhe")){return new String[] {"/drawable/shenhe_full.png",context.getString(R.string.shenhe),"/drawable/shenhe_gacha_splash.png","/drawable/shenhe_ico.png","/drawable/shenhe_card.png"};}
-        else if(name.equals("Yun Jin")){return new String[] {"/drawable/yun_jin_full.png",context.getString(R.string.yun_jin),"/drawable/yun_jin_gacha_splash.png","/drawable/yun_jin_ico.png","/drawable/yun_jin_card.png"};}
-        else if(name.equals("Gorou")){return new String[] {"/drawable/gorou_full.png",context.getString(R.string.gorou),"/drawable/gorou_gacha_splash.png","/drawable/gorou_ico.png","/drawable/gorou_card.png"};}
-        else if(name.equals("Arataki Itto")){return new String[] {"/drawable/arataki_itto_full.png",context.getString(R.string.arataki_itto),"/drawable/arataki_itto_gacha_splash.png","/drawable/arataki_itto_ico.png","/drawable/arataki_itto_card.png"};}
-        else if(name.equals("Thoma")){return new String[] {"/drawable/thoma_full.png",context.getString(R.string.thoma),"/drawable/thoma_gacha_splash.png","/drawable/thoma_ico.png","/drawable/thoma_card.png"};}
-        else if(name.equals("Sangonomiya Kokomi")){return new String[] {"/drawable/sangonomiya_kokomi_full.png",context.getString(R.string.sangonomiya_kokomi),"/drawable/sangonomiya_kokomi_gacha_splash.png","/drawable/sangonomiya_kokomi_ico.png","/drawable/sangonomiya_kokomi_card.png"};}
-        else if(name.equals("Aloy")){return new String[] {"/drawable/aloy_full.png",context.getString(R.string.aloy),"/drawable/aloy_gacha_splash.png","/drawable/aloy_ico.png","/drawable/aloy_card.png"};}
-        else if(name.equals("Kujou Sara")){return new String[] {"/drawable/kujou_sara_full.png",context.getString(R.string.kujou_sara),"/drawable/kujor_sara_gacha_splash.png","/drawable/kujou_sara_ico.png","/drawable/kujor_sara_card.png"};}
-        else if(name.equals("Raiden Shogun")){return new String[] {"/drawable/raiden_shogun_full.png",context.getString(R.string.raiden_shogun),"/drawable/raiden_shogun_gacha_splash.png","/drawable/raiden_shogun_ico.png","/drawable/raiden_shogun_card.png"};}
-        else if(name.equals("Sayu")){return new String[] {"/drawable/sayu_full.png",context.getString(R.string.sayu),"/drawable/sayu_gacha_splash.png","/drawable/sayu_ico.png","/drawable/sayu_card.png"};}
-        else if(name.equals("Yoimiya")){return new String[] {"/drawable/yoimiya_full.png",context.getString(R.string.yoimiya),"/drawable/yoimiya_gacha_splash.png","/drawable/yoimiya_ico.png","/drawable/yoimiya_card.png"};}
-        else if(name.equals("Kamisato Ayaka")){return new String[] {"/drawable/ayaka_full.png",context.getString(R.string.kamisato_ayaka),"/drawable/kamisato_ayaka_gacha_splash.png","/drawable/ayaka_ico.png","/drawable/kamisato_ayaka_card.png"};}
-        else if(name.equals("Kaedehara Kazuha")){return new String[] {"/drawable/kazuha_full.png",context.getString(R.string.kaedehara_kazuha),"/drawable/kaedehara_kazuha_gacha_splash.png","/drawable/kazuha_ico.png","/drawable/kaedehara_kazuha_card.png"};}
-        else if(name.equals("Yanfei")){return new String[] {"/drawable/yanfei_full.png",context.getString(R.string.yanfei),"/drawable/yanfei_gacha_splash.png","/drawable/yanfei_ico.png","/drawable/yanfei_card.png"};}
-        else if(name.equals("Eula")){return new String[] {"/drawable/eula_full.png",context.getString(R.string.eula),"/drawable/eula_gacha_splash.png","/drawable/eula_ico.png","/drawable/eula_card.png"};}
-        else if(name.equals("Rosaria")){return new String[] {"/drawable/rosaria_full.png",context.getString(R.string.rosaria),"/drawable/rosaria_gacha_splash.png","/drawable/rosaria_ico.png","/drawable/rosaria_card.png"};}
-        else if(name.equals("Xiao")){return new String[] {"/drawable/xiao_full.png",context.getString(R.string.xiao),"/drawable/xiao_gacha_splash.png","/drawable/xiao_ico.png","/drawable/xiao_card.png"};}
-        else if(name.equals("Hu Tao")){return new String[] {"/drawable/hu_tao_full.png",context.getString(R.string.hu_tao),"/drawable/hu_tao_gacha_splash.png","/drawable/hu_tao_ico.png","/drawable/hu_tao_card.png"};}
-        else if(name.equals("Ganyu")){return new String[] {"/drawable/ganyu_full.png",context.getString(R.string.ganyu),"/drawable/ganyu_gacha_splash.png","/drawable/ganyu_ico.png","/drawable/ganyu_card.png"};}
-        else if(name.equals("Albedo")){return new String[] {"/drawable/albedo_full.png",context.getString(R.string.albedo),"/drawable/albedo_gacha_splash.png","/drawable/albedo_ico.png","/drawable/albedo_card.png"};}
-        else if(name.equals("Zhongli")){return new String[] {"/drawable/zhongli_full.png",context.getString(R.string.zhongli),"/drawable/zhongli_gacha_splash.png","/drawable/zhongli_ico.png","/drawable/zhongli_card.png"};}
-        else if(name.equals("Xinyan")){return new String[] {"/drawable/xinyan_full.png",context.getString(R.string.xinyan),"/drawable/xinyan_gacha_splash.png","/drawable/xinyan_ico.png","/drawable/xinyan_card.png"};}
-        else if(name.equals("Tartaglia")){return new String[] {"/drawable/tartaglia_full.png",context.getString(R.string.tartaglia),"/drawable/tartaglia_gacha_splash.png","/drawable/tartaglia_ico.png","/drawable/tartaglia_card.png"};}
-        else if(name.equals("Diona")){return new String[] {"/drawable/diona_full.png",context.getString(R.string.diona),"/drawable/diona_gacha_splash.png","/drawable/diona_ico.png","/drawable/diona_card.png"};}
-        else if(name.equals("Xingqiu")){return new String[] {"/drawable/xingqiu_full.png",context.getString(R.string.xingqiu),"/drawable/xingqiu_gacha_splash.png","/drawable/xingqiu_ico.png","/drawable/xingqiu_card.png"};}
-        else if(name.equals("Xiangling")){return new String[] {"/drawable/xiangling_full.png",context.getString(R.string.xiangling),"/drawable/xiangling_gacha_splash.png","/drawable/xiangling_ico.png","/drawable/xiangling_card.png"};}
-        else if(name.equals("Venti")){return new String[] {"/drawable/venti_full.png",context.getString(R.string.venti),"/drawable/venti_gacha_splash.png","/drawable/venti_ico.png","/drawable/venti_card.png"};}
-        else if(name.equals("Sucrose")){return new String[] {"/drawable/sucrose_full.png",context.getString(R.string.sucrose),"/drawable/sucrose_gacha_splash.png","/drawable/sucrose_ico.png","/drawable/sucrose_card.png"};}
-        else if(name.equals("Razor")){return new String[] {"/drawable/razor_full.png",context.getString(R.string.razor),"/drawable/razor_gacha_splash.png","/drawable/razor_ico.png","/drawable/razor_card.png"};}
-        else if(name.equals("Qiqi")){return new String[] {"/drawable/qiqi_full.png",context.getString(R.string.qiqi),"/drawable/qiqi_gacha_splash.png","/drawable/qiqi_ico.png","/drawable/qiqi_card.png"};}
-        else if(name.equals("Noelle")){return new String[] {"/drawable/noelle_full.png",context.getString(R.string.noelle),"/drawable/noelle_gacha_splash.png","/drawable/noelle_ico.png","/drawable/noelle_card.png"};}
-        else if(name.equals("Ningguang")){return new String[] {"/drawable/ningguang_full.png",context.getString(R.string.ningguang),"/drawable/ningguang_gacha_splash.png","/drawable/ningguang_ico.png","/drawable/ningguang_card.png"};}
-        else if(name.equals("Mona")){return new String[] {"/drawable/mona_full.png",context.getString(R.string.mona),"/drawable/mona_gacha_splash.png","/drawable/mona_ico.png","/drawable/mona_card.png"};}
-        else if(name.equals("Lisa")){return new String[] {"/drawable/lisa_full.png",context.getString(R.string.lisa),"/drawable/lisa_gacha_splash.png","/drawable/lisa_ico.png","/drawable/lisa_card.png"};}
-        else if(name.equals("Klee")){return new String[] {"/drawable/klee_full.png",context.getString(R.string.klee),"/drawable/klee_gacha_splash.png","/drawable/klee_ico.png","/drawable/klee_card.png"};}
-        else if(name.equals("Keqing")){return new String[] {"/drawable/keqing_full.png",context.getString(R.string.keqing),"/drawable/keqing_gacha_splash.png","/drawable/keqing_ico.png","/drawable/keqing_card.png"};}
-        else if(name.equals("Kaeya")){return new String[] {"/drawable/kaeya_full.png",context.getString(R.string.kaeya),"/drawable/kaeya_gacha_splash.png","/drawable/kaeya_ico.png","/drawable/kaeya_card.png"};}
-        else if(name.equals("Jean")){return new String[] {"/drawable/jean_full.png",context.getString(R.string.jean),"/drawable/jean_gacha_splash.png","/drawable/jean_ico.png","/drawable/jean_card.png"};}
-        else if(name.equals("Fischl")){return new String[] {"/drawable/fischl_full.png",context.getString(R.string.fischl),"/drawable/fischl_gacha_splash.png","/drawable/fischl_ico.png","/drawable/fischl_card.png"};}
-        else if(name.equals("Diluc")){return new String[] {"/drawable/diluc_full.png",context.getString(R.string.diluc),"/drawable/diluc_gacha_splash.png","/drawable/diluc_ico.png","/drawable/diluc_card.png"};}
-        else if(name.equals("Chongyun")){return new String[] {"/drawable/chongyun_full.png",context.getString(R.string.chongyun),"/drawable/chongyun_gacha_splash.png","/drawable/chongyun_ico.png","/drawable/chongyun_card.png"};}
-        else if(name.equals("Bennett")){return new String[] {"/drawable/bennett_full.png",context.getString(R.string.bennett),"/drawable/bennett_gacha_splash.png","/drawable/bennett_ico.png","/drawable/bennett_card.png"};}
-        else if(name.equals("Beidou")){return new String[] {"/drawable/beidou_full.png",context.getString(R.string.beidou),"/drawable/beidou_gacha_splash.png","/drawable/beidou_ico.png","/drawable/beidou_card.png"};}
-        else if(name.equals("Barbara")){return new String[] {"/drawable/barbara_full.png",context.getString(R.string.barbara),"/drawable/barbara_gacha_splash.png","/drawable/barbara_ico.png","/drawable/barbara_card.png"};}
-        else if(name.equals("Amber")){return new String[] {"/drawable/amber_full.png",context.getString(R.string.amber),"/drawable/amber_gacha_splash.png","/drawable/amber_ico.png","/drawable/amber_card.png"};}
-        //Add at 20210820, update at 20220109, add CARD at 20220411
-        else if(name.equals("Traveler-Anemo")){
-            sharedPreferences = context.getSharedPreferences("user_info", MODE_PRIVATE);
-            String traveler_sex = sharedPreferences.getString("traveler_sex","F");
+        switch (name) {
+            case "Nilou": return new String[]{"/drawable/nilou_full.png", context.getString(R.string.nilou), "/drawable/nilou_gacha_splash.png", "/drawable/nilou_ico.png", "/drawable/nilou_card.png"};
+            case "Cyno": return new String[]{"/drawable/cyno_full.png", context.getString(R.string.cyno), "/drawable/cyno_gacha_splash.png", "/drawable/cyno_ico.png", "/drawable/cyno_card.png"};
+            case "Candace": return new String[]{"/drawable/candace_full.png", context.getString(R.string.candace), "/drawable/candace_gacha_splash.png", "/drawable/candace_ico.png", "/drawable/candace_card.png"};
 
-            if(traveler_sex.equals("M")){
-                return new String[] {"/drawable/aether_full.png",context.getString(R.string.traveler_anemo),"/drawable/aether_full.png","/drawable/aether_ico.png","/drawable/traveler_card.png"};
-            }else{
-                return new String[] {"/drawable/lumine_full.png",context.getString(R.string.traveler_anemo),"/drawable/lumine_full.png","/drawable/lumine_ico.png","/drawable/traveler_card.png"};
-            }
-        }
-        //Add at 20210820, update at 20220109, add CARD at 20220411
-        else if(name.equals("Traveler-Geo")){
-            sharedPreferences = context.getSharedPreferences("user_info", MODE_PRIVATE);
-            String traveler_sex = sharedPreferences.getString("traveler_sex","F");
+            case "Collei": return new String[]{"/drawable/collei_full.png", context.getString(R.string.collei), "/drawable/collei_gacha_splash.png", "/drawable/collei_ico.png", "/drawable/collei_card.png"};
+            case "Dori": return new String[]{"/drawable/dori_full.png", context.getString(R.string.dori), "/drawable/dori_gacha_splash.png", "/drawable/dori_ico.png", "/drawable/dori_card.png"};
+            case "Tighnari": return new String[]{"/drawable/tighnari_full.png", context.getString(R.string.tighnari), "/drawable/tighnari_gacha_splash.png", "/drawable/tighnari_ico.png", "/drawable/tighnari_card.png"};
+            case "Shikanoin Heizou": return new String[]{"/drawable/shikanoin_heizou_full.png", context.getString(R.string.shikanoin_heizou), "/drawable/shikanoin_heizou_gacha_splash.png", "/drawable/shikanoin_heizou_ico.png", "/drawable/shikanoin_heizou_card.png"};
+            case "Kuki Shinobu": return new String[]{"/drawable/kuki_shinobu_full.png", context.getString(R.string.kuki_shinobu), "/drawable/kuki_shinobu_gacha_splash.png", "/drawable/kuki_shinobu_ico.png", "/drawable/kuki_shinobu_card.png"};
+            case "Yelan": return new String[]{"/drawable/yelan_full.png", context.getString(R.string.yelan), "/drawable/yelan_gacha_splash.png", "/drawable/yelan_ico.png", "/drawable/yelan_card.png"};
+            case "Kamisato Ayato": return new String[]{"/drawable/kamisato_ayato_full.png", context.getString(R.string.kamisato_ayato), "/drawable/kamisato_ayato_gacha_splash.png", "/drawable/kamisato_ayato_ico.png", "/drawable/kamisato_ayato_card.png"};
+            case "Yae Miko": return new String[]{"/drawable/yae_miko_full.png", context.getString(R.string.yae_miko), "/drawable/yae_miko_gacha_splash.png", "/drawable/yae_miko_ico.png", "/drawable/yae_miko_card.png"};
+            case "Shenhe": return new String[]{"/drawable/shenhe_full.png", context.getString(R.string.shenhe), "/drawable/shenhe_gacha_splash.png", "/drawable/shenhe_ico.png", "/drawable/shenhe_card.png"};
+            case "Yun Jin": return new String[]{"/drawable/yun_jin_full.png", context.getString(R.string.yun_jin), "/drawable/yun_jin_gacha_splash.png", "/drawable/yun_jin_ico.png", "/drawable/yun_jin_card.png"};
+            case "Gorou": return new String[]{"/drawable/gorou_full.png", context.getString(R.string.gorou), "/drawable/gorou_gacha_splash.png", "/drawable/gorou_ico.png", "/drawable/gorou_card.png"};
+            case "Arataki Itto": return new String[]{"/drawable/arataki_itto_full.png", context.getString(R.string.arataki_itto), "/drawable/arataki_itto_gacha_splash.png", "/drawable/arataki_itto_ico.png", "/drawable/arataki_itto_card.png"};
+            case "Thoma": return new String[]{"/drawable/thoma_full.png", context.getString(R.string.thoma), "/drawable/thoma_gacha_splash.png", "/drawable/thoma_ico.png", "/drawable/thoma_card.png"};
+            case "Sangonomiya Kokomi": return new String[]{"/drawable/sangonomiya_kokomi_full.png", context.getString(R.string.sangonomiya_kokomi), "/drawable/sangonomiya_kokomi_gacha_splash.png", "/drawable/sangonomiya_kokomi_ico.png", "/drawable/sangonomiya_kokomi_card.png"};
+            case "Aloy": return new String[]{"/drawable/aloy_full.png", context.getString(R.string.aloy), "/drawable/aloy_gacha_splash.png", "/drawable/aloy_ico.png", "/drawable/aloy_card.png"};
+            case "Kujou Sara": return new String[]{"/drawable/kujou_sara_full.png", context.getString(R.string.kujou_sara), "/drawable/kujor_sara_gacha_splash.png", "/drawable/kujou_sara_ico.png", "/drawable/kujor_sara_card.png"};
+            case "Raiden Shogun": return new String[]{"/drawable/raiden_shogun_full.png", context.getString(R.string.raiden_shogun), "/drawable/raiden_shogun_gacha_splash.png", "/drawable/raiden_shogun_ico.png", "/drawable/raiden_shogun_card.png"};
+            case "Sayu": return new String[]{"/drawable/sayu_full.png", context.getString(R.string.sayu), "/drawable/sayu_gacha_splash.png", "/drawable/sayu_ico.png", "/drawable/sayu_card.png"};
+            case "Yoimiya": return new String[]{"/drawable/yoimiya_full.png", context.getString(R.string.yoimiya), "/drawable/yoimiya_gacha_splash.png", "/drawable/yoimiya_ico.png", "/drawable/yoimiya_card.png"};
+            case "Kamisato Ayaka": return new String[]{"/drawable/ayaka_full.png", context.getString(R.string.kamisato_ayaka), "/drawable/kamisato_ayaka_gacha_splash.png", "/drawable/ayaka_ico.png", "/drawable/kamisato_ayaka_card.png"};
+            case "Kaedehara Kazuha": return new String[]{"/drawable/kazuha_full.png", context.getString(R.string.kaedehara_kazuha), "/drawable/kaedehara_kazuha_gacha_splash.png", "/drawable/kazuha_ico.png", "/drawable/kaedehara_kazuha_card.png"};
+            case "Yanfei": return new String[]{"/drawable/yanfei_full.png", context.getString(R.string.yanfei), "/drawable/yanfei_gacha_splash.png", "/drawable/yanfei_ico.png", "/drawable/yanfei_card.png"};
+            case "Eula": return new String[]{"/drawable/eula_full.png", context.getString(R.string.eula), "/drawable/eula_gacha_splash.png", "/drawable/eula_ico.png", "/drawable/eula_card.png"};
+            case "Rosaria": return new String[]{"/drawable/rosaria_full.png", context.getString(R.string.rosaria), "/drawable/rosaria_gacha_splash.png", "/drawable/rosaria_ico.png", "/drawable/rosaria_card.png"};
+            case "Xiao": return new String[]{"/drawable/xiao_full.png", context.getString(R.string.xiao), "/drawable/xiao_gacha_splash.png", "/drawable/xiao_ico.png", "/drawable/xiao_card.png"};
+            case "Hu Tao": return new String[]{"/drawable/hu_tao_full.png", context.getString(R.string.hu_tao), "/drawable/hu_tao_gacha_splash.png", "/drawable/hu_tao_ico.png", "/drawable/hu_tao_card.png"};
+            case "Ganyu": return new String[]{"/drawable/ganyu_full.png", context.getString(R.string.ganyu), "/drawable/ganyu_gacha_splash.png", "/drawable/ganyu_ico.png", "/drawable/ganyu_card.png"};
+            case "Albedo": return new String[]{"/drawable/albedo_full.png", context.getString(R.string.albedo), "/drawable/albedo_gacha_splash.png", "/drawable/albedo_ico.png", "/drawable/albedo_card.png"};
+            case "Zhongli": return new String[]{"/drawable/zhongli_full.png", context.getString(R.string.zhongli), "/drawable/zhongli_gacha_splash.png", "/drawable/zhongli_ico.png", "/drawable/zhongli_card.png"};
+            case "Xinyan": return new String[]{"/drawable/xinyan_full.png", context.getString(R.string.xinyan), "/drawable/xinyan_gacha_splash.png", "/drawable/xinyan_ico.png", "/drawable/xinyan_card.png"};
+            case "Tartaglia": return new String[]{"/drawable/tartaglia_full.png", context.getString(R.string.tartaglia), "/drawable/tartaglia_gacha_splash.png", "/drawable/tartaglia_ico.png", "/drawable/tartaglia_card.png"};
+            case "Diona": return new String[]{"/drawable/diona_full.png", context.getString(R.string.diona), "/drawable/diona_gacha_splash.png", "/drawable/diona_ico.png", "/drawable/diona_card.png"};
+            case "Xingqiu": return new String[]{"/drawable/xingqiu_full.png", context.getString(R.string.xingqiu), "/drawable/xingqiu_gacha_splash.png", "/drawable/xingqiu_ico.png", "/drawable/xingqiu_card.png"};
+            case "Xiangling": return new String[]{"/drawable/xiangling_full.png", context.getString(R.string.xiangling), "/drawable/xiangling_gacha_splash.png", "/drawable/xiangling_ico.png", "/drawable/xiangling_card.png"};
+            case "Venti": return new String[]{"/drawable/venti_full.png", context.getString(R.string.venti), "/drawable/venti_gacha_splash.png", "/drawable/venti_ico.png", "/drawable/venti_card.png"};
+            case "Sucrose": return new String[]{"/drawable/sucrose_full.png", context.getString(R.string.sucrose), "/drawable/sucrose_gacha_splash.png", "/drawable/sucrose_ico.png", "/drawable/sucrose_card.png"};
+            case "Razor": return new String[]{"/drawable/razor_full.png", context.getString(R.string.razor), "/drawable/razor_gacha_splash.png", "/drawable/razor_ico.png", "/drawable/razor_card.png"};
+            case "Qiqi": return new String[]{"/drawable/qiqi_full.png", context.getString(R.string.qiqi), "/drawable/qiqi_gacha_splash.png", "/drawable/qiqi_ico.png", "/drawable/qiqi_card.png"};
+            case "Noelle": return new String[]{"/drawable/noelle_full.png", context.getString(R.string.noelle), "/drawable/noelle_gacha_splash.png", "/drawable/noelle_ico.png", "/drawable/noelle_card.png"};
+            case "Ningguang": return new String[]{"/drawable/ningguang_full.png", context.getString(R.string.ningguang), "/drawable/ningguang_gacha_splash.png", "/drawable/ningguang_ico.png", "/drawable/ningguang_card.png"};
+            case "Mona": return new String[]{"/drawable/mona_full.png", context.getString(R.string.mona), "/drawable/mona_gacha_splash.png", "/drawable/mona_ico.png", "/drawable/mona_card.png"};
+            case "Lisa": return new String[]{"/drawable/lisa_full.png", context.getString(R.string.lisa), "/drawable/lisa_gacha_splash.png", "/drawable/lisa_ico.png", "/drawable/lisa_card.png"};
+            case "Klee": return new String[]{"/drawable/klee_full.png", context.getString(R.string.klee), "/drawable/klee_gacha_splash.png", "/drawable/klee_ico.png", "/drawable/klee_card.png"};
+            case "Keqing": return new String[]{"/drawable/keqing_full.png", context.getString(R.string.keqing), "/drawable/keqing_gacha_splash.png", "/drawable/keqing_ico.png", "/drawable/keqing_card.png"};
+            case "Kaeya": return new String[]{"/drawable/kaeya_full.png", context.getString(R.string.kaeya), "/drawable/kaeya_gacha_splash.png", "/drawable/kaeya_ico.png", "/drawable/kaeya_card.png"};
+            case "Jean": return new String[]{"/drawable/jean_full.png", context.getString(R.string.jean), "/drawable/jean_gacha_splash.png", "/drawable/jean_ico.png", "/drawable/jean_card.png"};
+            case "Fischl": return new String[]{"/drawable/fischl_full.png", context.getString(R.string.fischl), "/drawable/fischl_gacha_splash.png", "/drawable/fischl_ico.png", "/drawable/fischl_card.png"};
+            case "Diluc": return new String[]{"/drawable/diluc_full.png", context.getString(R.string.diluc), "/drawable/diluc_gacha_splash.png", "/drawable/diluc_ico.png", "/drawable/diluc_card.png"};
+            case "Chongyun": return new String[]{"/drawable/chongyun_full.png", context.getString(R.string.chongyun), "/drawable/chongyun_gacha_splash.png", "/drawable/chongyun_ico.png", "/drawable/chongyun_card.png"};
+            case "Bennett": return new String[]{"/drawable/bennett_full.png", context.getString(R.string.bennett), "/drawable/bennett_gacha_splash.png", "/drawable/bennett_ico.png", "/drawable/bennett_card.png"};
+            case "Beidou": return new String[]{"/drawable/beidou_full.png", context.getString(R.string.beidou), "/drawable/beidou_gacha_splash.png", "/drawable/beidou_ico.png", "/drawable/beidou_card.png"};
+            case "Barbara": return new String[]{"/drawable/barbara_full.png", context.getString(R.string.barbara), "/drawable/barbara_gacha_splash.png", "/drawable/barbara_ico.png", "/drawable/barbara_card.png"};
+            case "Amber": return new String[]{"/drawable/amber_full.png", context.getString(R.string.amber), "/drawable/amber_gacha_splash.png", "/drawable/amber_ico.png", "/drawable/amber_card.png"};
+            //Add at 20210820, update at 20220109, add CARD at 20220411
+            case "Traveler-Anemo": {
+                sharedPreferences = context.getSharedPreferences("user_info", MODE_PRIVATE);
+                String traveler_sex = sharedPreferences.getString("traveler_sex", "F");
 
-            if(traveler_sex.equals("M")){
-                return new String[] {"/drawable/aether_full.png",context.getString(R.string.traveler_geo),"/drawable/aether_full.png","/drawable/aether_ico.png","/drawable/traveler_card.png"};
-            }else{
-                return new String[] {"/drawable/lumine_full.png",context.getString(R.string.traveler_geo),"/drawable/lumine_full.png","/drawable/lumine_ico.png","/drawable/traveler_card.png"};
+                if (traveler_sex.equals("M")) {	return new String[]{"/drawable/aether_full.png", context.getString(R.string.traveler_anemo), "/drawable/aether_full.png", "/drawable/aether_ico.png", "/drawable/traveler_card.png"};
+                } else {
+                    return new String[]{"/drawable/lumine_full.png", context.getString(R.string.traveler_anemo), "/drawable/lumine_full.png", "/drawable/lumine_ico.png", "/drawable/traveler_card.png"};
+                }
             }
-        }
-        //Add at 20210820, update at 20220109, add CARD at 20220411
-        else if(name.equals("Traveler-Electro")){
-            sharedPreferences = context.getSharedPreferences("user_info", MODE_PRIVATE);
-            String traveler_sex = sharedPreferences.getString("traveler_sex","F");
+            //Add at 20210820, update at 20220109, add CARD at 20220411
+            case "Traveler-Geo": {
+                sharedPreferences = context.getSharedPreferences("user_info", MODE_PRIVATE);
+                String traveler_sex = sharedPreferences.getString("traveler_sex", "F");
 
-            if(traveler_sex.equals("M")){
-                return new String[] {"/drawable/aether_full.png",context.getString(R.string.traveler_electro),"/drawable/aether_full.png","/drawable/aether_ico.png","/drawable/traveler_card.png"};
-            }else{
-                return new String[] {"/drawable/lumine_full.png",context.getString(R.string.traveler_electro),"/drawable/lumine_full.png","/drawable/lumine_ico.png","/drawable/traveler_card.png"};
+                if (traveler_sex.equals("M")) {
+                    return new String[]{"/drawable/aether_full.png", context.getString(R.string.traveler_geo), "/drawable/aether_full.png", "/drawable/aether_ico.png", "/drawable/traveler_card.png"};
+                } else {
+                    return new String[]{"/drawable/lumine_full.png", context.getString(R.string.traveler_geo), "/drawable/lumine_full.png", "/drawable/lumine_ico.png", "/drawable/traveler_card.png"};
+                }
             }
-        }
-        //Add at 20220714
-        else if(name.equals("Traveler-Dendro")){
-            sharedPreferences = context.getSharedPreferences("user_info", MODE_PRIVATE);
-            String traveler_sex = sharedPreferences.getString("traveler_sex","F");
+            //Add at 20210820, update at 20220109, add CARD at 20220411
+            case "Traveler-Electro": {
+                sharedPreferences = context.getSharedPreferences("user_info", MODE_PRIVATE);
+                String traveler_sex = sharedPreferences.getString("traveler_sex", "F");
 
-            if(traveler_sex.equals("M")){
-                return new String[] {"/drawable/aether_full.png",context.getString(R.string.traveler_dendor),"/drawable/aether_full.png","/drawable/aether_ico.png","/drawable/traveler_card.png"};
-            }else{
-                return new String[] {"/drawable/lumine_full.png",context.getString(R.string.traveler_dendor),"/drawable/lumine_full.png","/drawable/lumine_ico.png","/drawable/traveler_card.png"};
+                if (traveler_sex.equals("M")) {
+                    return new String[]{"/drawable/aether_full.png", context.getString(R.string.traveler_electro), "/drawable/aether_full.png", "/drawable/aether_ico.png", "/drawable/traveler_card.png"};
+                } else {
+                    return new String[]{"/drawable/lumine_full.png", context.getString(R.string.traveler_electro), "/drawable/lumine_full.png", "/drawable/lumine_ico.png", "/drawable/traveler_card.png"};
+                }
             }
+            //Add at 20220714
+            case "Traveler-Dendro": {
+                sharedPreferences = context.getSharedPreferences("user_info", MODE_PRIVATE);
+                String traveler_sex = sharedPreferences.getString("traveler_sex", "F");
+
+                if (traveler_sex.equals("M")) {
+                    return new String[]{"/drawable/aether_full.png", context.getString(R.string.traveler_dendor), "/drawable/aether_full.png", "/drawable/aether_ico.png", "/drawable/traveler_card.png"};
+                } else {
+                    return new String[]{"/drawable/lumine_full.png", context.getString(R.string.traveler_dendor), "/drawable/lumine_full.png", "/drawable/lumine_ico.png", "/drawable/traveler_card.png"};
+                }
+            }
+            // ???
+            case "Voc-夜芷冰": return new String[]{"/drawable/mascot.png", context.getString(R.string.voc), "/drawable/mascot.png", "/drawable/mascot_head.png", "/drawable/mascot_card.png"};
         }
-        // ???
-        else if(name.equals("Voc-夜芷冰")){return new String[] {"/drawable/mascot.png",context.getString(R.string.voc),"/drawable/mascot.png","/drawable/mascot_head.png","/drawable/mascot_card.png"};}
 
         System.out.println("CHARACTER NAME ERROR : "+name);
         return new String[] {"/drawable/paimon_lost.png",context.getString(R.string.unknown),"/drawable/paimon_lost.png","/drawable/paimon_lost.png","/drawable/unknown.png"};
@@ -1589,7 +1668,35 @@ public class ItemRss {
                 return "/drawable/dark_statuette.png";
             case "幽邃刻像":
                 return "/drawable/deathly_statuette.png";
+
             // P.S. There still have Sumeru items not added yet since the name are undefinded or unable to define in there. => 20220716
+            // ♪ Added Sumeru items
+            //add in 20220823
+            case "謐林涓露的銅符":
+                return "/drawable/copper_talisman_of_the_forest_dew.png";
+            case "謐林涓露的鐵符":
+                return "/drawable/iron_talisman_of_the_forest_dew.png";
+            case "謐林涓露的銀符":
+                return "/drawable/silver_talisman_of_the_forest_dew.png";
+            case "謐林涓露的金符":
+                return "/drawable/golden_talisman_of_the_forest_dew.png";
+            case "綠洲花園的追憶":
+                return "/drawable/oasis_gardens_reminiscence.png";
+            case "綠洲花園的恩惠":
+                return "/drawable/oasis_gardens_kindness.png";
+            case "綠洲花園的哀思":
+                return "/drawable/oasis_gardens_mourning.png";
+            case "綠洲花園的真諦":
+                return "/drawable/oasis_gardens_truth.png";
+            case "烈日威權的殘響":
+                return "/drawable/echo_of_scorching_might.png";
+            case "烈日威權的餘光":
+                return "/drawable/remnant_glow_of_scorching_might.png";
+            case "烈日威權的夢想":
+                return "/drawable/dream_of_scorching_might.png";
+            case "烈日威權的舊日":
+                return "/drawable/olden_days_of_scorching_might.png";
+
             //add in 20211024 (RE)
             case "漆黑隕鐵的一粒":
                 return "/drawable/grain_of_aerosiderite.png";
@@ -1717,6 +1824,26 @@ public class ItemRss {
                 return "/drawable/concealed_unguis.png";
             case "隱獸鬼爪":
                 return "/drawable/concealed_talon.png";
+            //add in 20220823
+            case "失活菌核":
+                return "/drawable/inactivated_fungal_nucleus.png";
+            case "休眠菌核":
+                return "/drawable/dormant_fungal_nucleus.png";
+            case "茁壯菌核":
+                return "/drawable/robust_fungal_nucleus.png";
+            case "混沌容器":
+                return "/drawable/chaos_storage.png";
+            case "混沌模組":
+                return "/drawable/chaos_module.png";
+            case "混沌錨栓":
+                return "/drawable/chaos_bolt.png";
+            //add in 20220924
+            case "破缺稜晶":
+                return "/drawable/damaged_prism.png";
+            case "混濁稜晶":
+                return "/drawable/turbid_prism.png";
+            case "輝光稜晶":
+                return "/drawable/radiant_prism.png";
 
 
             /** T-Book*/
@@ -1774,8 +1901,25 @@ public class ItemRss {
                 return "/drawable/philosophies_of_transience.png";
             case "「天光」的哲學":
                 return "/drawable/philosophies_of_light.png";
-            //add in 20220716
-
+            //add in 20220823
+            case "「篤行」的教導":
+                return "/drawable/teachings_of_admonition.png";
+            case "「巧思」的教導":
+                return "/drawable/teachings_of_ingenuity.png";
+            case "「諍言」的教導":
+                return "/drawable/teachings_of_praxis.png";
+            case "「篤行」的指引":
+                return "/drawable/guide_to_admonition.png";
+            case "「巧思」的指引":
+                return "/drawable/guide_to_ingenuity.png";
+            case "「諍言」的指引":
+                return "/drawable/guide_to_praxis.png";
+            case "「篤行」的哲學":
+                return "/drawable/philosophies_of_admonition.png";
+            case "「巧思」的哲學":
+                return "/drawable/philosophies_of_ingenuity.png";
+            case "「諍言」的哲學":
+                return "/drawable/philosophies_of_praxis.png";
 
             /** Crystal*/
             case "燃願瑪瑙碎屑":
@@ -1871,6 +2015,7 @@ public class ItemRss {
     }
 
     // TMP notice : Collei => 「未知1」的哲學 || Dori => 「未知2」的哲學 || Tighnari => 「未知3」的哲學
+    // Ok get it and added. (From Voc in 20220823)
     public String getLocaleTeaches (String name, Context context){
         if(name.equals("「自由」的教導")){return context.getString(R.string.teaching_of_freedom);}
         else if(name.equals("「黃金」的教導")){return context.getString(R.string.teaching_of_gold);}
@@ -1881,6 +2026,9 @@ public class ItemRss {
         else if(name.equals("「風雅」的教導")){return context.getString(R.string.teachings_of_elegance);}
         else if(name.equals("「浮世」的教導")){return context.getString(R.string.teachings_of_transience);}
         else if(name.equals("「天光」的教導")){return context.getString(R.string.teachings_of_light);}
+        else if(name.equals("「諍言」的教導")){return context.getString(R.string.teachings_of_admonition);}
+        else if(name.equals("「巧思」的教導")){return context.getString(R.string.teachings_of_ingenuity);}
+        else if(name.equals("「篤行」的教導")){return context.getString(R.string.teachings_of_praxis);}
 
         else if(name.equals("「自由」的指引")){return context.getString(R.string.guide_of_freedom);}
         else if(name.equals("「黃金」的指引")){return context.getString(R.string.guide_of_gold);}
@@ -1891,6 +2039,9 @@ public class ItemRss {
         else if(name.equals("「風雅」的指引")){return context.getString(R.string.guides_of_elegance);}
         else if(name.equals("「浮世」的指引")){return context.getString(R.string.guides_of_transience);}
         else if(name.equals("「天光」的指引")){return context.getString(R.string.guides_of_light);}
+        else if(name.equals("「諍言」的指引")){return context.getString(R.string.guides_of_admonition);}
+        else if(name.equals("「巧思」的指引")){return context.getString(R.string.guides_of_ingenuity);}
+        else if(name.equals("「篤行」的指引")){return context.getString(R.string.guides_of_praxis);}
 
         else if(name.equals("「自由」的哲學")){return context.getString(R.string.philosophies_of_freedom);}
         else if(name.equals("「黃金」的哲學")){return context.getString(R.string.philosophies_of_gold);}
@@ -1901,77 +2052,79 @@ public class ItemRss {
         else if(name.equals("「風雅」的哲學")){return context.getString(R.string.philosophiess_of_elegance);}
         else if(name.equals("「浮世」的哲學")){return context.getString(R.string.philosophiess_of_transience);}
         else if(name.equals("「天光」的哲學")){return context.getString(R.string.philosophiess_of_light);}
+        else if(name.equals("「諍言」的哲學")){return context.getString(R.string.philosophies_of_admonition);}
+        else if(name.equals("「巧思」的哲學")){return context.getString(R.string.philosophies_of_ingenuity);}
+        else if(name.equals("「篤行」的哲學")){return context.getString(R.string.philosophies_of_praxis);}
 
         else {return context.getString(R.string.unknown);}
 
     }
 
-    public String getLocaleBirth (String str,Context context) {
+    public String getLocaleBirth (String str,Context context,boolean isThinSize) {
         if(!str.equals("SET_BY_PLAYER") && !str.equals("N/A")){
-        String[] date = str.split("/");
-        int month = Integer.parseInt(date[0]);
-        int day = Integer.parseInt(date[1]);
+            String[] date = str.split("/");
+            int month = Integer.parseInt(date[0]);
+            int day = Integer.parseInt(date[1]);
 
-        String monthS = String.valueOf(month);
-        String dayS = String.valueOf(day);
-        if(month < 10){monthS = "0"+String.valueOf(month);}
-        if(day < 10){dayS = "0"+String.valueOf(day);}
-        return monthS+"-"+dayS;
-            /*
+            if(isThinSize){
+                String monthS = String.valueOf(month);
+                String dayS = String.valueOf(day);
+                if(month < 10){monthS = "0"+String.valueOf(month);}
+                if(day < 10){dayS = "0"+String.valueOf(day);}
+                return monthS+"-"+dayS;
+            }else{
+                String returns = "Jan 1st";
+                if(month == 1){returns = context.getString(R.string.date_jan);}
+                else if(month == 2){returns = context.getString(R.string.date_feb);}
+                else if(month == 3){returns = context.getString(R.string.date_mar);}
+                else if(month == 4){returns = context.getString(R.string.date_apr);}
+                else if(month == 5){returns = context.getString(R.string.date_may);}
+                else if(month == 6){returns = context.getString(R.string.date_jun);}
+                else if(month == 7){returns = context.getString(R.string.date_jul);}
+                else if(month == 8){returns = context.getString(R.string.date_aug);}
+                else if(month == 9){returns = context.getString(R.string.date_sep);}
+                else if(month == 10){returns = context.getString(R.string.date_oct);}
+                else if(month == 11){returns = context.getString(R.string.date_nov);}
+                else if(month == 12){returns = context.getString(R.string.date_dec);}
 
-        String returns = "Jan 1st";
-        if(month == 1){returns = context.getString(R.string.date_jan);}
-        else if(month == 2){returns = context.getString(R.string.date_feb);}
-        else if(month == 3){returns = context.getString(R.string.date_mar);}
-        else if(month == 4){returns = context.getString(R.string.date_apr);}
-        else if(month == 5){returns = context.getString(R.string.date_may);}
-        else if(month == 6){returns = context.getString(R.string.date_jun);}
-        else if(month == 7){returns = context.getString(R.string.date_jul);}
-        else if(month == 8){returns = context.getString(R.string.date_aug);}
-        else if(month == 9){returns = context.getString(R.string.date_sep);}
-        else if(month == 10){returns = context.getString(R.string.date_oct);}
-        else if(month == 11){returns = context.getString(R.string.date_nov);}
-        else if(month == 12){returns = context.getString(R.string.date_dec);}
-
-        if(day == 1){returns = returns + context.getString(R.string.date_1st);}
-        else if(day == 2){returns = returns + context.getString(R.string.date_2nd);}
-        else if(day == 3){returns = returns + context.getString(R.string.date_3rd);}
-        else if(day == 4){returns = returns + context.getString(R.string.date_4th);}
-        else if(day == 5){returns = returns + context.getString(R.string.date_5th);}
-        else if(day == 6){returns = returns + context.getString(R.string.date_6th);}
-        else if(day == 7){returns = returns + context.getString(R.string.date_7th);}
-        else if(day == 8){returns = returns + context.getString(R.string.date_8th);}
-        else if(day == 9){returns = returns + context.getString(R.string.date_9th);}
-        else if(day == 10){returns = returns + context.getString(R.string.date_10th);}
-        else if(day == 11){returns = returns + context.getString(R.string.date_11th);}
-        else if(day == 12){returns = returns + context.getString(R.string.date_12th);}
-        else if(day == 13){returns = returns + context.getString(R.string.date_13th);}
-        else if(day == 14){returns = returns + context.getString(R.string.date_14th);}
-        else if(day == 15){returns = returns + context.getString(R.string.date_15th);}
-        else if(day == 16){returns = returns + context.getString(R.string.date_16th);}
-        else if(day == 17){returns = returns + context.getString(R.string.date_17th);}
-        else if(day == 18){returns = returns + context.getString(R.string.date_18th);}
-        else if(day == 19){returns = returns + context.getString(R.string.date_19th);}
-        else if(day == 20){returns = returns + context.getString(R.string.date_20th);}
-        else if(day == 21){returns = returns + context.getString(R.string.date_21st);}
-        else if(day == 22){returns = returns + context.getString(R.string.date_22nd);}
-        else if(day == 23){returns = returns + context.getString(R.string.date_23rd);}
-        else if(day == 24){returns = returns + context.getString(R.string.date_24th);}
-        else if(day == 25){returns = returns + context.getString(R.string.date_25th);}
-        else if(day == 26){returns = returns + context.getString(R.string.date_26th);}
-        else if(day == 27){returns = returns + context.getString(R.string.date_27th);}
-        else if(day == 28){returns = returns + context.getString(R.string.date_28th);}
-        else if(day == 29){returns = returns + context.getString(R.string.date_29th);}
-        else if(day == 30){returns = returns + context.getString(R.string.date_30th);}
-        else if(day == 31){returns = returns + context.getString(R.string.date_31st);}
-             */
-
+                if(day == 1){returns = returns + context.getString(R.string.date_1st);}
+                else if(day == 2){returns = returns + context.getString(R.string.date_2nd);}
+                else if(day == 3){returns = returns + context.getString(R.string.date_3rd);}
+                else if(day == 4){returns = returns + context.getString(R.string.date_4th);}
+                else if(day == 5){returns = returns + context.getString(R.string.date_5th);}
+                else if(day == 6){returns = returns + context.getString(R.string.date_6th);}
+                else if(day == 7){returns = returns + context.getString(R.string.date_7th);}
+                else if(day == 8){returns = returns + context.getString(R.string.date_8th);}
+                else if(day == 9){returns = returns + context.getString(R.string.date_9th);}
+                else if(day == 10){returns = returns + context.getString(R.string.date_10th);}
+                else if(day == 11){returns = returns + context.getString(R.string.date_11th);}
+                else if(day == 12){returns = returns + context.getString(R.string.date_12th);}
+                else if(day == 13){returns = returns + context.getString(R.string.date_13th);}
+                else if(day == 14){returns = returns + context.getString(R.string.date_14th);}
+                else if(day == 15){returns = returns + context.getString(R.string.date_15th);}
+                else if(day == 16){returns = returns + context.getString(R.string.date_16th);}
+                else if(day == 17){returns = returns + context.getString(R.string.date_17th);}
+                else if(day == 18){returns = returns + context.getString(R.string.date_18th);}
+                else if(day == 19){returns = returns + context.getString(R.string.date_19th);}
+                else if(day == 20){returns = returns + context.getString(R.string.date_20th);}
+                else if(day == 21){returns = returns + context.getString(R.string.date_21st);}
+                else if(day == 22){returns = returns + context.getString(R.string.date_22nd);}
+                else if(day == 23){returns = returns + context.getString(R.string.date_23rd);}
+                else if(day == 24){returns = returns + context.getString(R.string.date_24th);}
+                else if(day == 25){returns = returns + context.getString(R.string.date_25th);}
+                else if(day == 26){returns = returns + context.getString(R.string.date_26th);}
+                else if(day == 27){returns = returns + context.getString(R.string.date_27th);}
+                else if(day == 28){returns = returns + context.getString(R.string.date_28th);}
+                else if(day == 29){returns = returns + context.getString(R.string.date_29th);}
+                else if(day == 30){returns = returns + context.getString(R.string.date_30th);}
+                else if(day == 31){returns = returns + context.getString(R.string.date_31st);}
+                return returns;
+            }
         }else if(str.equals("SET_BY_PLAYER")){
             return context.getString(R.string.set_by_player);
         }else if(str.equals("N/A")){
             return context.getString(R.string.obtain_no);
         }else {return context.getString(R.string.obtain_no);}
-
     }
 
 

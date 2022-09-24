@@ -15,53 +15,53 @@ import org.apache.commons.lang3.ArrayUtils;
  */
 public class Today_Material {
 
-    int[] Mon_char_IMG =  {R.drawable.teaching_of_freedom,R.drawable.teaching_of_prosperity,R.drawable.teachings_of_transience};
-    int[] Tue_char_IMG =  {R.drawable.teaching_of_resistance,R.drawable.teaching_of_diligence,R.drawable.teachings_of_elegance};
-    int[] Wed_char_IMG =  {R.drawable.teaching_of_ballad,R.drawable.teaching_of_gold,R.drawable.teachings_of_light};
-    int[] Thur_char_IMG =  {R.drawable.teaching_of_freedom,R.drawable.teaching_of_prosperity,R.drawable.teachings_of_transience};
-    int[] Fri_char_IMG =  {R.drawable.teaching_of_resistance,R.drawable.teaching_of_diligence,R.drawable.teachings_of_elegance};
-    int[] Sat_char_IMG =  {R.drawable.teaching_of_ballad,R.drawable.teaching_of_gold,R.drawable.teachings_of_light};
-    int[] Sun_char_IMG =  {R.drawable.teaching_of_freedom,R.drawable.teaching_of_prosperity,R.drawable.teachings_of_transience,R.drawable.teaching_of_resistance,R.drawable.teaching_of_diligence,R.drawable.teachings_of_elegance,R.drawable.teaching_of_ballad,R.drawable.teaching_of_gold,R.drawable.teachings_of_light};
+    int[] Mon_char_IMG =  {R.drawable.teaching_of_freedom,R.drawable.teaching_of_prosperity,R.drawable.teachings_of_transience,R.drawable.teachings_of_admonition};
+    int[] Tue_char_IMG =  {R.drawable.teaching_of_resistance,R.drawable.teaching_of_diligence,R.drawable.teachings_of_elegance,R.drawable.teachings_of_ingenuity};
+    int[] Wed_char_IMG =  {R.drawable.teaching_of_ballad,R.drawable.teaching_of_gold,R.drawable.teachings_of_light,R.drawable.teachings_of_praxis};
+    int[] Thur_char_IMG =  {R.drawable.teaching_of_freedom,R.drawable.teaching_of_prosperity,R.drawable.teachings_of_transience,R.drawable.teachings_of_admonition};
+    int[] Fri_char_IMG =  {R.drawable.teaching_of_resistance,R.drawable.teaching_of_diligence,R.drawable.teachings_of_elegance,R.drawable.teachings_of_ingenuity};
+    int[] Sat_char_IMG =  {R.drawable.teaching_of_ballad,R.drawable.teaching_of_gold,R.drawable.teachings_of_light,R.drawable.teachings_of_praxis};
+    int[] Sun_char_IMG =  {R.drawable.teaching_of_freedom,R.drawable.teaching_of_prosperity,R.drawable.teachings_of_transience,R.drawable.teaching_of_resistance,R.drawable.teaching_of_diligence,R.drawable.teachings_of_elegance,R.drawable.teaching_of_ballad,R.drawable.teaching_of_gold,R.drawable.teachings_of_light,R.drawable.teachings_of_admonition,R.drawable.teachings_of_ingenuity,R.drawable.teachings_of_praxis};
 
-    int[] Mon_char_TV =  {R.string.teaching_of_freedom,R.string.teaching_of_prosperity,R.string.teachings_of_transience};
-    int[] Tue_char_TV =  {R.string.teaching_of_resistance,R.string.teaching_of_diligence,R.string.teachings_of_elegance};
-    int[] Wed_char_TV =  {R.string.teaching_of_ballad,R.string.teaching_of_gold,R.string.teachings_of_light};
-    int[] Thur_char_TV =  {R.string.teaching_of_freedom,R.string.teaching_of_prosperity,R.string.teachings_of_transience};
-    int[] Fri_char_TV =  {R.string.teaching_of_resistance,R.string.teaching_of_diligence,R.string.teachings_of_elegance};
-    int[] Sat_char_TV =  {R.string.teaching_of_ballad,R.string.teaching_of_gold,R.string.teachings_of_light};
-    int[] Sun_char_TV =  {R.string.teaching_of_freedom,R.string.teaching_of_prosperity,R.string.teachings_of_transience,R.string.teaching_of_resistance,R.string.teaching_of_diligence,R.string.teachings_of_elegance,R.string.teaching_of_ballad,R.string.teaching_of_gold,R.string.teachings_of_light};
+    int[] Mon_char_TV =  {R.string.teaching_of_freedom,R.string.teaching_of_prosperity,R.string.teachings_of_transience,R.string.teachings_of_admonition};
+    int[] Tue_char_TV =  {R.string.teaching_of_resistance,R.string.teaching_of_diligence,R.string.teachings_of_elegance,R.string.teachings_of_ingenuity};
+    int[] Wed_char_TV =  {R.string.teaching_of_ballad,R.string.teaching_of_gold,R.string.teachings_of_light,R.string.teachings_of_praxis};
+    int[] Thur_char_TV =  {R.string.teaching_of_freedom,R.string.teaching_of_prosperity,R.string.teachings_of_transience,R.string.teachings_of_admonition};
+    int[] Fri_char_TV =  {R.string.teaching_of_resistance,R.string.teaching_of_diligence,R.string.teachings_of_elegance,R.string.teachings_of_ingenuity};
+    int[] Sat_char_TV =  {R.string.teaching_of_ballad,R.string.teaching_of_gold,R.string.teachings_of_light,R.string.teachings_of_praxis};
+    int[] Sun_char_TV =  {R.string.teaching_of_freedom,R.string.teaching_of_prosperity,R.string.teachings_of_transience,R.string.teaching_of_resistance,R.string.teaching_of_diligence,R.string.teachings_of_elegance,R.string.teaching_of_ballad,R.string.teaching_of_gold,R.string.teachings_of_light,R.string.teachings_of_admonition,R.string.teachings_of_ingenuity,R.string.teachings_of_praxis};
 
-    int[] Sun_char_Location =  {R.string.forsaken_rift,R.string.taishan_mansion,R.string.violet_court,R.string.forsaken_rift,R.string.taishan_mansion,R.string.violet_court,R.string.forsaken_rift,R.string.taishan_mansion,R.string.violet_court};
-    int[] Weekday_char_Location =  {R.string.forsaken_rift,R.string.taishan_mansion,R.string.violet_court};
+    int[] Sun_char_Location =  {R.string.forsaken_rift,R.string.taishan_mansion,R.string.violet_court,R.string.steeple_of_ignorance,R.string.forsaken_rift,R.string.taishan_mansion,R.string.violet_court,R.string.steeple_of_ignorance,R.string.forsaken_rift,R.string.taishan_mansion,R.string.violet_court,R.string.steeple_of_ignorance};
+    int[] Weekday_char_Location =  {R.string.forsaken_rift,R.string.taishan_mansion,R.string.violet_court,R.string.steeple_of_ignorance};
 
     int[] NullX = {1,2,3,4,5,6,7,8,9};
 
     //https://webstatic-sea.hoyolab.com/ys/app/interactive-map/index.html?lang=zh-tw#/map/2?shown_types=3,154&center={X,Y}&zoom=0.50
-    String[] Sun_char_Location_URL = {"656.47,94.08","1665.33,-1944.69","5532.32,3176.36","656.47,94.08","1665.33,-1944.69","5532.32,3176.36","656.47,94.08","1665.33,-1944.69","5532.32,3176.36"};
-    String[] Weekday_char_Location_URL = {"656.47,94.08","1665.33,-1944.69","5532.32,3176.36"};
+    String[] Sun_char_Location_URL = {"656.47,94.08","1665.33,-1944.69","5532.32,3176.36","0,0","656.47,94.08","1665.33,-1944.69","0,0","5532.32,3176.36","656.47,94.08","1665.33,-1944.69","5532.32,3176.36","0,0"};
+    String[] Weekday_char_Location_URL = {"656.47,94.08","1665.33,-1944.69","5532.32,3176.36","0,0"};
 
-    int[] Mon_weapon_IMG =  {R.drawable.tile_of_decarabians_tower,R.drawable.luminous_sands_from_guyun,R.drawable.coral_branch_of_a_distant_sea};
-    int[] Tue_weapon_IMG =  {R.drawable.mist_veiled_lead_elixir,R.drawable.boreal_wolfs_milk_tooth,R.drawable.narukamis_wisdom};
-    int[] Wed_weapon_IMG =  {R.drawable.grain_of_aerosiderite,R.drawable.fetters_of_the_dandelion_gladiator,R.drawable.mask_of_the_wicked_lieutenant};
-    int[] Thur_weapon_IMG = {R.drawable.tile_of_decarabians_tower,R.drawable.luminous_sands_from_guyun,R.drawable.coral_branch_of_a_distant_sea};
-    int[] Fri_weapon_IMG =  {R.drawable.mist_veiled_lead_elixir,R.drawable.boreal_wolfs_milk_tooth,R.drawable.narukamis_wisdom};
-    int[] Sat_weapon_IMG =  {R.drawable.grain_of_aerosiderite,R.drawable.fetters_of_the_dandelion_gladiator,R.drawable.mask_of_the_wicked_lieutenant};
-    int[] Sun_weapon_IMG =  {R.drawable.tile_of_decarabians_tower,R.drawable.luminous_sands_from_guyun,R.drawable.coral_branch_of_a_distant_sea,R.drawable.mist_veiled_lead_elixir,R.drawable.boreal_wolfs_milk_tooth,R.drawable.narukamis_wisdom,R.drawable.grain_of_aerosiderite,R.drawable.fetters_of_the_dandelion_gladiator,R.drawable.mask_of_the_wicked_lieutenant};
+    int[] Mon_weapon_IMG =  {R.drawable.tile_of_decarabians_tower,R.drawable.luminous_sands_from_guyun,R.drawable.coral_branch_of_a_distant_sea,R.drawable.copper_talisman_of_the_forest_dew};
+    int[] Tue_weapon_IMG =  {R.drawable.mist_veiled_lead_elixir,R.drawable.boreal_wolfs_milk_tooth,R.drawable.narukamis_wisdom,R.drawable.oasis_gardens_reminiscence};
+    int[] Wed_weapon_IMG =  {R.drawable.grain_of_aerosiderite,R.drawable.fetters_of_the_dandelion_gladiator,R.drawable.mask_of_the_wicked_lieutenant,R.drawable.echo_of_scorching_might};
+    int[] Thur_weapon_IMG = {R.drawable.tile_of_decarabians_tower,R.drawable.luminous_sands_from_guyun,R.drawable.coral_branch_of_a_distant_sea,R.drawable.copper_talisman_of_the_forest_dew};
+    int[] Fri_weapon_IMG =  {R.drawable.mist_veiled_lead_elixir,R.drawable.boreal_wolfs_milk_tooth,R.drawable.narukamis_wisdom,R.drawable.oasis_gardens_reminiscence};
+    int[] Sat_weapon_IMG =  {R.drawable.grain_of_aerosiderite,R.drawable.fetters_of_the_dandelion_gladiator,R.drawable.mask_of_the_wicked_lieutenant,R.drawable.echo_of_scorching_might};
+    int[] Sun_weapon_IMG =  {R.drawable.tile_of_decarabians_tower,R.drawable.luminous_sands_from_guyun,R.drawable.coral_branch_of_a_distant_sea,R.drawable.mist_veiled_lead_elixir,R.drawable.boreal_wolfs_milk_tooth,R.drawable.narukamis_wisdom,R.drawable.grain_of_aerosiderite,R.drawable.fetters_of_the_dandelion_gladiator,R.drawable.mask_of_the_wicked_lieutenant,R.drawable.copper_talisman_of_the_forest_dew,R.drawable.oasis_gardens_reminiscence,R.drawable.echo_of_scorching_might};
 
-    int[] Mon_weapon_TV =  {R.string.tile_of_decarabians_tower,R.string.luminous_sands_from_guyun,R.string.coral_branch_of_a_distant_sea};
-    int[] Tue_weapon_TV =  {R.string.mist_veiled_lead_elixir,R.string.boreal_wolfs_milk_tooth,R.string.narukamis_wisdom};
-    int[] Wed_weapon_TV =  {R.string.grain_of_aerosiderite,R.string.fetters_of_the_dandelion_gladiator,R.string.mask_of_the_wicked_lieutenant};
-    int[] Thur_weapon_TV = {R.string.tile_of_decarabians_tower,R.string.luminous_sands_from_guyun,R.string.coral_branch_of_a_distant_sea};
-    int[] Fri_weapon_TV =  {R.string.mist_veiled_lead_elixir,R.string.boreal_wolfs_milk_tooth,R.string.narukamis_wisdom};
-    int[] Sat_weapon_TV =  {R.string.grain_of_aerosiderite,R.string.fetters_of_the_dandelion_gladiator,R.string.mask_of_the_wicked_lieutenant};
-    int[] Sun_weapon_TV =  {R.string.tile_of_decarabians_tower,R.string.luminous_sands_from_guyun,R.string.coral_branch_of_a_distant_sea,R.string.mist_veiled_lead_elixir,R.string.boreal_wolfs_milk_tooth,R.string.narukamis_wisdom,R.string.grain_of_aerosiderite,R.string.fetters_of_the_dandelion_gladiator,R.string.mask_of_the_wicked_lieutenant};
+    int[] Mon_weapon_TV =  {R.string.tile_of_decarabians_tower,R.string.luminous_sands_from_guyun,R.string.coral_branch_of_a_distant_sea,R.string.copper_talisman_of_the_forest_dew};
+    int[] Tue_weapon_TV =  {R.string.mist_veiled_lead_elixir,R.string.boreal_wolfs_milk_tooth,R.string.narukamis_wisdom,R.string.oasis_gardens_reminiscence};
+    int[] Wed_weapon_TV =  {R.string.grain_of_aerosiderite,R.string.fetters_of_the_dandelion_gladiator,R.string.mask_of_the_wicked_lieutenant,R.string.echo_of_scorching_might};
+    int[] Thur_weapon_TV = {R.string.tile_of_decarabians_tower,R.string.luminous_sands_from_guyun,R.string.coral_branch_of_a_distant_sea,R.string.copper_talisman_of_the_forest_dew};
+    int[] Fri_weapon_TV =  {R.string.mist_veiled_lead_elixir,R.string.boreal_wolfs_milk_tooth,R.string.narukamis_wisdom,R.string.oasis_gardens_reminiscence};
+    int[] Sat_weapon_TV =  {R.string.grain_of_aerosiderite,R.string.fetters_of_the_dandelion_gladiator,R.string.mask_of_the_wicked_lieutenant,R.string.echo_of_scorching_might};
+    int[] Sun_weapon_TV =  {R.string.tile_of_decarabians_tower,R.string.luminous_sands_from_guyun,R.string.coral_branch_of_a_distant_sea,R.string.mist_veiled_lead_elixir,R.string.boreal_wolfs_milk_tooth,R.string.narukamis_wisdom,R.string.grain_of_aerosiderite,R.string.fetters_of_the_dandelion_gladiator,R.string.mask_of_the_wicked_lieutenant,R.string.copper_talisman_of_the_forest_dew,R.string.oasis_gardens_reminiscence,R.string.echo_of_scorching_might};
 
-    int[] Sun_weapon_Location =  {R.string.cecilia_garden,R.string.hidden_palace_of_lianshan_formula,R.string.court_of_flowing_sand,R.string.cecilia_garden,R.string.hidden_palace_of_lianshan_formula,R.string.court_of_flowing_sand,R.string.cecilia_garden,R.string.hidden_palace_of_lianshan_formula,R.string.court_of_flowing_sand};
-    int[] Weekday_weapon_Location =  {R.string.cecilia_garden,R.string.hidden_palace_of_lianshan_formula,R.string.court_of_flowing_sand};
+    int[] Sun_weapon_Location =  {R.string.cecilia_garden,R.string.hidden_palace_of_lianshan_formula,R.string.court_of_flowing_sand,R.string.tower_of_abject_pride,R.string.cecilia_garden,R.string.hidden_palace_of_lianshan_formula,R.string.court_of_flowing_sand,R.string.tower_of_abject_pride,R.string.cecilia_garden,R.string.hidden_palace_of_lianshan_formula,R.string.court_of_flowing_sand,R.string.tower_of_abject_pride};
+    int[] Weekday_weapon_Location =  {R.string.cecilia_garden,R.string.hidden_palace_of_lianshan_formula,R.string.court_of_flowing_sand,R.string.tower_of_abject_pride};
 
     //https://webstatic-sea.hoyolab.com/ys/app/interactive-map/index.html?lang=zh-tw#/map/2?shown_types=3,154&center={X,Y}&zoom=0.50
-    String[] Sun_weapon_Location_URL = {"47.65,-564.24","1582.07,-432.71","4714.55,3606.99","47.65,-564.24","1582.07,-432.71","4714.55,3606.99","47.65,-564.24","1582.07,-432.71","4714.55,3606.99"};
-    String[] Weekday_weapon_Location_URL = {"47.65,-564.24","1582.07,-432.71","4714.55,3606.99"};
+    String[] Sun_weapon_Location_URL = {"47.65,-564.24","1582.07,-432.71","4714.55,3606.99","0,0","47.65,-564.24","1582.07,-432.71","4714.55,3606.99","0,0","47.65,-564.24","1582.07,-432.71","4714.55,3606.99","0,0"};
+    String[] Weekday_weapon_Location_URL = {"47.65,-564.24","1582.07,-432.71","4714.55,3606.99","0,0"};
 
     public int[] today_char_IMG (int dow){
         if(dow == 2){return Mon_char_IMG;}
@@ -150,6 +150,9 @@ public class Today_Material {
             case "「風雅」的哲學" : return R.string.teachings_of_elegance;
             case "「天光」的哲學" : return R.string.teachings_of_light;
             case "「浮世」的哲學" : return R.string.teachings_of_transience;
+            case "「諍言」的哲學" : return R.string.teachings_of_admonition;
+            case "「巧思」的哲學" : return R.string.teachings_of_ingenuity;
+            case "「篤行」的哲學" : return R.string.teachings_of_praxis;
             default: return R.string.unknown;
         }
     }
@@ -165,6 +168,9 @@ public class Today_Material {
             case "漆黑隕鐵的一塊" : return R.string.grain_of_aerosiderite;
             case "獅牙鬥士的理想" : return R.string.fetters_of_the_dandelion_gladiator;
             case "今昔劇畫的鬼人" : return R.string.mask_of_the_wicked_lieutenant;
+            case "謐林涓露的金符" : return R.string.copper_talisman_of_the_forest_dew;
+            case "綠洲花園的真諦" : return R.string.oasis_gardens_reminiscence;
+            case "烈日威權的舊日" : return R.string.echo_of_scorching_might;
             default: return R.string.unknown;
         }
     }

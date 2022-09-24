@@ -36,6 +36,7 @@ import android.graphics.LinearGradient;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
@@ -53,6 +54,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -85,6 +87,7 @@ import com.voc.genshin_helper.data.WeaponsAdapter;
 import com.voc.genshin_helper.database.DataBaseContract;
 import com.voc.genshin_helper.database.DataBaseHelper;
 import com.voc.genshin_helper.kidding.GoSleep;
+import com.voc.genshin_helper.kidding.RandomClsNo;
 import com.voc.genshin_helper.tutorial.TutorialUI;
 import com.voc.genshin_helper.ui.AlarmUI;
 import com.voc.genshin_helper.ui.BackgroundConfirmActivity;
@@ -214,6 +217,7 @@ public class Desk2048 extends AppCompatActivity {
     RadioButton theme_default;
 
     Switch other_exit_confirm ;
+    Switch other_item_eng_name ;
     Switch other_app_ico_use_default ;
 
     RadioButton style_Voc_rb;
@@ -230,6 +234,8 @@ public class Desk2048 extends AppCompatActivity {
     RadioButton grid_3_rb;
     RadioButton grid_4_rb;
     RadioButton grid_5_rb;
+
+    WebView webView;
 
     String[] weekdayList ;
     String[] langList ;
@@ -2116,10 +2122,28 @@ public class Desk2048 extends AppCompatActivity {
             }
         });
 
+        //Other -> Exit Confirm
+        other_item_eng_name = viewPager4.findViewById(R.id.other_item_eng_name);
+        boolean isBaseNameDisplay = sharedPreferences.getBoolean("isBaseNameDisplay",false);
+        other_item_eng_name.setChecked(isBaseNameDisplay);
+        other_item_eng_name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(other_item_eng_name.isChecked() == false){
+                    editor.putBoolean("isBaseNameDisplay",false);
+                    editor.apply();
+                }else if(other_item_eng_name.isChecked() == true){
+                    editor.putBoolean("isBaseNameDisplay",true);
+                    editor.apply();
+                }
+            }
+        });
+
         //Other -> Style
         style_Voc_rb = viewPager4.findViewById(R.id.ui_Voc_rb);
         style_2O48_rb = viewPager4.findViewById(R.id.ui_2O48_rb);
         style_SipTik_rb = viewPager4.findViewById(R.id.ui_SipTik_rb);
+        webView = viewPager4.findViewById(R.id.webView);
         String styleUI = sharedPreferences.getString("styleUI","Voc");
         // StyleCode : "Voc" , "2O48" , "SipTik"
 
@@ -2145,6 +2169,7 @@ public class Desk2048 extends AppCompatActivity {
                 style_Voc_rb.setChecked(true);
                 style_2O48_rb.setChecked(false);
                 style_SipTik_rb.setChecked(false);
+
                 startActivity(new Intent(context,MainActivity.class));
                 finish();
                 //CustomToast.toast(context,activity,context.getString(R.string.pls_restart_app));
@@ -2159,6 +2184,7 @@ public class Desk2048 extends AppCompatActivity {
                 style_Voc_rb.setChecked(false);
                 style_2O48_rb.setChecked(true);
                 style_SipTik_rb.setChecked(false);
+
                 startActivity(new Intent(context,Desk2048.class));
                 finish();
                 //CustomToast.toast(context,activity,context.getString(R.string.pls_restart_app));
@@ -2173,6 +2199,7 @@ public class Desk2048 extends AppCompatActivity {
                 style_Voc_rb.setChecked(false);
                 style_2O48_rb.setChecked(false);
                 style_SipTik_rb.setChecked(true);
+
                 startActivity(new Intent(context,DeskSipTik.class));
                 finish();
                 //CustomToast.toast(context,activity,context.getString(R.string.pls_restart_app));
@@ -2849,7 +2876,7 @@ public class Desk2048 extends AppCompatActivity {
                     .error (R.drawable.paimon_lost)
                     .into (birth_char);
             birth_char_tv.setText(css.getCharByName(char_name,context)[1]);
-            birth_char_date.setText(css.getLocaleBirth(String.valueOf(moy+1)+"/"+String.valueOf(dom),context));
+            birth_char_date.setText(css.getLocaleBirth(String.valueOf(moy+1)+"/"+String.valueOf(dom),context,true));
 
             birth_celebrate.setVisibility(View.VISIBLE);
         }else{
@@ -2887,7 +2914,7 @@ public class Desk2048 extends AppCompatActivity {
                     .error (R.drawable.paimon_lost)
                     .into (img);
 
-            tv.setText(css.getLocaleBirth(String.valueOf(nextBirthCharMonth+1)+"/"+String.valueOf(nextBirthCharDay),context));
+            tv.setText(css.getLocaleBirth(String.valueOf(nextBirthCharMonth+1)+"/"+String.valueOf(nextBirthCharDay),context,true));
 
             img.getLayoutParams().width = pix;
             img.getLayoutParams().height = pix;
@@ -2968,9 +2995,6 @@ public class Desk2048 extends AppCompatActivity {
                         Picasso.get().load(FileLoader.loadIMG(css.getCharByName(name,context)[3],context)).fit().transform(roundedCornersTransformation).into(img);
                         tmp_cnt = tmp_cnt +1;
                         // if character is exist in list
-
-                        System.out.println("dbIsCalCharName : "+dbIsCalCharName);
-                        System.out.println("dbIsCalWeaponName : "+dbIsCalWeaponName);
 
                         if (dbIsCalCharName.contains(name)){
                             tick.setVisibility(View.VISIBLE);
@@ -3066,9 +3090,6 @@ public class Desk2048 extends AppCompatActivity {
                                 wif.setup(finalName,context,activity);
                             }
                         });
-
-                        System.out.println("dbIsCalCharName : "+dbIsCalCharName);
-                        System.out.println("dbIsCalWeaponName : "+dbIsCalWeaponName);
 
                         if (dbIsCalWeaponName.contains(name)){
                             tick.setVisibility(View.VISIBLE);

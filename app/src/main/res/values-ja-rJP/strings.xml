@@ -1085,6 +1085,35 @@
     <string name="rich_red_brocade">金織の赤い絹</string>
     <string name="majestic_hooked_beak">蕈王の鉤状のくちばし</string>
     <string name="rukkhashava_mushrooms">ルッカデヴァタダケ</string>
+    <string name="gilded_dreams">金メッキの夢</string>
+    <string name="deepwood_memories">深林の記憶</string>
+
+
+    <!-- add in 20220823 -->
+    <string name="philosophies_of_praxis">「篤行」の哲学</string>
+    <string name="guides_of_praxis">「篤行」の導き</string>
+    <string name="teachings_of_praxis">「篤行」の教え</string>
+    <string name="teachings_of_admonition">「忠言」の教え</string>
+    <string name="guides_of_admonition">「忠言」の導き</string>
+    <string name="philosophies_of_admonition">「忠言」の哲学</string>
+    <string name="philosophies_of_ingenuity">「創意」の哲学</string>
+    <string name="teachings_of_ingenuity">「創意」の教え</string>
+    <string name="guides_of_ingenuity">「創意」の導き</string>
+    <string name="steeple_of_ignorance">無学の塔</string>
+    <string name="tower_of_abject_pride">有頂の塔</string>
+    <string name="copper_talisman_of_the_forest_dew">静謐な森のしずくの銅符</string>
+    <string name="oasis_gardens_reminiscence">オアシスガーデンの追憶</string>
+    <string name="echo_of_scorching_might">烈日権威の残響</string>
+    <string name="nilou">ニィロウ</string>
+    <string name="cyno">セノ</string>
+    <string name="candace">キャンディス</string>
+    <string name="xiphos_moonlight">サイフォスの月明かり</string>
+    <string name="key_of_khaj_nisut">ヒエロファニーの鍵</string>
+    <string name="makhaira_aquamarine">マカイラの水色</string>
+    <string name="missive_windspear">風信の矛</string>
+    <string name="staff_of_the_scarlet_sands">赤砂の杖</string>
+    <string name="wandering_evenstar">彷徨える星</string>
+
 </resources>
 
 

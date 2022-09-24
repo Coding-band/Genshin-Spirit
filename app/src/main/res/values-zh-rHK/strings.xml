@@ -1071,4 +1071,31 @@
     <string name="rich_red_brocade">織金紅綢</string>
     <string name="majestic_hooked_beak">蕈王鉤喙</string>
     <string name="rukkhashava_mushrooms">樹王聖體菇</string>
+    <string name="deepwood_memories">深林的記憶</string>
+    <string name="gilded_dreams">飾金之夢</string>
+
+    <!-- add in 20220823 -->
+    <string name="philosophies_of_admonition">「諍言」的哲學</string>
+    <string name="guides_of_admonition">「諍言」的指引</string>
+    <string name="teachings_of_admonition">「諍言」的教導</string>
+    <string name="philosophies_of_ingenuity">「巧思」的哲學</string>
+    <string name="guides_of_ingenuity">「巧思」的指引</string>
+    <string name="teachings_of_ingenuity">「巧思」的教導</string>
+    <string name="philosophies_of_praxis">「篤行」的哲學</string>
+    <string name="guides_of_praxis">「篤行」的指引</string>
+    <string name="teachings_of_praxis">「篤行」的教導</string>
+    <string name="steeple_of_ignorance">昏識塔</string>
+    <string name="tower_of_abject_pride">有頂塔</string>
+    <string name="copper_talisman_of_the_forest_dew">謐林涓露的銅符</string>
+    <string name="oasis_gardens_reminiscence">綠洲花園的追憶</string>
+    <string name="echo_of_scorching_might">烈日威權的殘響</string>
+    <string name="nilou">妮露</string>
+    <string name="cyno">賽諾</string>
+    <string name="candace">坎蒂絲</string>
+    <string name="xiphos_moonlight">西福斯的月光</string>
+    <string name="key_of_khaj_nisut">聖顯之鑰</string>
+    <string name="makhaira_aquamarine">瑪海菈的水色</string>
+    <string name="wandering_evenstar">流浪的晚星</string>
+    <string name="staff_of_the_scarlet_sands">赤沙之杖</string>
+    <string name="missive_windspear">風信之鋒</string>
 </resources>

@@ -69,7 +69,6 @@
                 android:layout_gravity="center|right"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/header_search_et"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/item_2048_search_bar_cancel" />

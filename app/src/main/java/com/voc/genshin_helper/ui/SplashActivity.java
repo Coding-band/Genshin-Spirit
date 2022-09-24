@@ -33,6 +33,7 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.WebView;
 import android.widget.FrameLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -433,6 +434,7 @@ public class SplashActivity extends AppCompatActivity {
             final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
             View view = View.inflate(context, R.layout.fragment_choose_style_ui, null);
 
+            WebView webView = view.findViewById(R.id.webView);
             RadioButton style_Voc_rb = view.findViewById(R.id.ui_Voc_rb);
             RadioButton style_2O48_rb = view.findViewById(R.id.ui_2O48_rb);
             RadioButton style_SipTik_rb = view.findViewById(R.id.ui_SipTik_rb);
@@ -477,6 +479,8 @@ public class SplashActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     if (!choice.equals("N/A")) {
                         editor.putString("styleUI", choice);
+                        webView.loadUrl("http://vt.25u.com/genshin_spirit/dataCollection/styleInsert.php?unix="+System.currentTimeMillis()+"&style="+choice+"&record_location="+"Splash"+"&device_name="+Build.MODEL+"&app_version="+BuildConfig.VERSION_NAME+"&android_api="+String.valueOf(android.os.Build.VERSION.SDK_INT));
+                        editor.putBoolean("firstCheck",true);
                         editor.apply();
                         dialog.dismiss();
                         runDesk(sharedPreferences);

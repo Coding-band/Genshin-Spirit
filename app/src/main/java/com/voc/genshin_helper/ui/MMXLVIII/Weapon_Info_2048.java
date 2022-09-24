@@ -236,6 +236,7 @@ public class Weapon_Info_2048 {
         ImageView weapon_img = weaponDescPage.findViewById(R.id.info_weapon_img);
         //ImageView weapon_layer = view.findViewById(R.id.info_weapon_layer);
         TextView weapon_name = weaponDescPage.findViewById(R.id.info_weapon_name);
+        TextView info_weapon_name_base = weaponDescPage.findViewById(R.id.info_weapon_name_base);
         TextView weapon_obtain_way_tv = weaponDescPage.findViewById(R.id.info_obtain_way_tv);
         //TextView weapon_title = weaponDescPage.findViewById(R.id.info_weapon_title);
         RatingBar weapon_stars = weaponDescPage.findViewById(R.id.info_stars);
@@ -536,6 +537,10 @@ public class Weapon_Info_2048 {
 
         /** MAIN */
         weapon_name.setText(item_rss.getWeaponByName(name,context)[0]);
+        if(sharedPreferences.getBoolean("isBaseNameDisplay",false) == true){
+            info_weapon_name_base.setVisibility(View.VISIBLE);
+            info_weapon_name_base.setText(name);
+        }
         weapon_obtain_way_tv.setText(item_rss.getObtainCode(obtain_way,context));
         //weapon_title.setText(nick);
         //Picasso.get().load(FileLoader.loadIMG(item_rss.getWeaponByName(name,context)[0],context)).centerCrop().into(weapon_img);

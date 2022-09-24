@@ -38,6 +38,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -82,7 +83,6 @@ import com.voc.genshin_helper.ui.BackgroundConfirmActivity;
 import com.voc.genshin_helper.ui.CalculatorDBActivity;
 import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
 import com.voc.genshin_helper.ui.MainActivity;
-import com.voc.genshin_helper.ui.NotificationActivity;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.ChangeLog;
 import com.voc.genshin_helper.util.CustomToast;
@@ -222,6 +222,8 @@ public class DeskSipTik extends AppCompatActivity {
     String[] langList ;
     String[] serverList ;
     String[] gridList ;
+
+    WebView webView;
 
     private ViewPager viewPager;
     private ArrayList<View> viewPager_List;
@@ -2180,6 +2182,7 @@ public class DeskSipTik extends AppCompatActivity {
         style_Voc_rb = viewPager4.findViewById(R.id.ui_Voc_rb);
         style_2O48_rb = viewPager4.findViewById(R.id.ui_2O48_rb);
         style_SipTik_rb = viewPager4.findViewById(R.id.ui_SipTik_rb);
+        webView = viewPager4.findViewById(R.id.webView);
         String styleUI = sharedPreferences.getString("styleUI","Voc");
         // StyleCode : "Voc" , "2O48" , "SipTik"
 
@@ -2590,7 +2593,7 @@ public class DeskSipTik extends AppCompatActivity {
         calculator_ll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(DeskSipTik.this, CalculatorDBActivity.class);
+                Intent i = new Intent(DeskSipTik.this, CalculatorDB_SipTik.class);
                 startActivity(i);
             }
         });
@@ -2882,7 +2885,7 @@ public class DeskSipTik extends AppCompatActivity {
                     .error (R.drawable.paimon_lost)
                     .into (img);
 
-            tv.setText(css.getLocaleBirth(String.valueOf(nextBirthCharMonth+1)+"/"+String.valueOf(nextBirthCharDay),context));
+            tv.setText(css.getLocaleBirth(String.valueOf(nextBirthCharMonth+1)+"/"+String.valueOf(nextBirthCharDay),context,true));
 
             img.getLayoutParams().width = pix;
             img.getLayoutParams().height = pix;
@@ -3030,7 +3033,7 @@ public class DeskSipTik extends AppCompatActivity {
                         img.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View view) {
-                                Weapon_Info_Siptik wif = new Weapon_Info_Siptik();
+                                Weapon_Info_SipTik wif = new Weapon_Info_SipTik();
                                 wif.setup(finalName,context,activity);
                             }
                         });
@@ -3070,7 +3073,7 @@ public class DeskSipTik extends AppCompatActivity {
         cif.setup(String.valueOf(name),context,activity);
     }
     public void startWeaponInfo (String name, Activity activity){
-        Weapon_Info_Siptik cif = new Weapon_Info_Siptik();
+        Weapon_Info_SipTik cif = new Weapon_Info_SipTik();
         cif.setup(String.valueOf(name),context,activity);
     }
     public void startArtifactInfo (String name, Activity activity){

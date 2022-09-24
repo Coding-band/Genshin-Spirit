@@ -22,6 +22,7 @@ import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
@@ -39,6 +40,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -224,6 +226,8 @@ public class MainActivity extends AppCompatActivity {
     String[] langList ;
     String[] serverList ;
     String[] gridList ;
+
+    WebView webView;
 
     private ViewPager viewPager;
     private ArrayList<View> viewPager_List;
@@ -1610,6 +1614,7 @@ public class MainActivity extends AppCompatActivity {
         style_Voc_rb = viewPager4.findViewById(R.id.ui_Voc_rb);
         style_2O48_rb = viewPager4.findViewById(R.id.ui_2O48_rb);
         style_SipTik_rb = viewPager4.findViewById(R.id.ui_SipTik_rb);
+        webView = viewPager4.findViewById(R.id.webView);
         String styleUI = sharedPreferences.getString("styleUI","Voc");
         // StyleCode : "Voc" , "2O48" , "SipTik"
 
@@ -2354,7 +2359,7 @@ public class MainActivity extends AppCompatActivity {
                     .error (R.drawable.paimon_lost)
                     .into (birth_char);
             birth_char_tv.setText(css.getCharByName(char_name,context)[1]);
-            birth_char_date.setText(css.getLocaleBirth(String.valueOf(moy+1)+"/"+String.valueOf(dom),context));
+            birth_char_date.setText(css.getLocaleBirth(String.valueOf(moy+1)+"/"+String.valueOf(dom),context,true));
             birth_celebrate.setVisibility(View.VISIBLE);
 
         }else{
@@ -2392,7 +2397,7 @@ public class MainActivity extends AppCompatActivity {
                     .error (R.drawable.paimon_lost)
                     .into (img);
 
-            tv.setText(css.getLocaleBirth(String.valueOf(nextBirthCharMonth+1)+"/"+String.valueOf(nextBirthCharDay),context));
+            tv.setText(css.getLocaleBirth(String.valueOf(nextBirthCharMonth+1)+"/"+String.valueOf(nextBirthCharDay),context,true));
 
             img.getLayoutParams().width = pix;
             img.getLayoutParams().height = pix;

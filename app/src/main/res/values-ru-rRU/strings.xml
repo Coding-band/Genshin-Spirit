@@ -1059,4 +1059,31 @@
     <string name="rich_red_brocade">Красный шёлк, расшитый золотом</string>
     <string name="majestic_hooked_beak">Клюв короля плесенников</string>
     <string name="rukkhashava_mushrooms">Грибы руккхашава</string>
+    <string name="deepwood_memories">Воспоминания дремучего леса</string>
+    <string name="gilded_dreams">Позолоченные сны</string>
+
+    <!-- add in 20220823 -->
+    <string name="philosophies_of_ingenuity">Философия о «Остроумии»</string>
+    <string name="guides_of_ingenuity">Указания о «Остроумии»</string>
+    <string name="teachings_of_ingenuity">Учения о «Остроумии»</string>
+    <string name="teachings_of_admonition">Учения о «Наставлениях»</string>
+    <string name="guides_of_admonition">Указания о «Наставлениях»</string>
+    <string name="philosophies_of_admonition">Философия о «Наставлениях»</string>
+    <string name="teachings_of_praxis">Учения о «Честности»</string>
+    <string name="guides_of_praxis">Указания о «Честности»</string>
+    <string name="philosophies_of_praxis">Философия о «Честности»</string>
+    <string name="steeple_of_ignorance">Башня невежества</string>
+    <string name="tower_of_abject_pride">Башня презренной гордости</string>
+    <string name="copper_talisman_of_the_forest_dew">Медный амулет лесной росы</string>
+    <string name="oasis_gardens_reminiscence">Воспоминания цветущего оазиса</string>
+    <string name="echo_of_scorching_might">Эхо пылающей мощи</string>
+    <string name="nilou">Нилу</string>
+    <string name="cyno">Сайно</string>
+    <string name="candace">Кандакия</string>
+    <string name="xiphos_moonlight">Лунное сияние ксифоса</string>
+    <string name="key_of_khaj_nisut">Ключ Хадж-нисут</string>
+    <string name="makhaira_aquamarine">Аквамарин махайры</string>
+    <string name="missive_windspear">Копьё послания ветров</string>
+    <string name="staff_of_the_scarlet_sands">Посох алых песков</string>
+    <string name="wandering_evenstar">Скитающаяся звезда</string>
 </resources>

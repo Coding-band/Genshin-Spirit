@@ -205,6 +205,7 @@ public class Artifact_Info_2048 {
         ImageView artifact_img4 = artifactDescPage.findViewById(R.id.info_artifact_img4);
         ImageView artifact_img5 = artifactDescPage.findViewById(R.id.info_artifact_img5);
         TextView artifact_name = artifactDescPage.findViewById(R.id.info_artifact_name);
+        TextView artifact_name_base = artifactDescPage.findViewById(R.id.info_artifact_name_base);
         TextView artifact_obtain_way_tv = artifactDescPage.findViewById(R.id.info_obtain_way_tv);
         RatingBar artifact_stars = artifactDescPage.findViewById(R.id.info_stars);
 
@@ -407,6 +408,10 @@ public class Artifact_Info_2048 {
         /** MAIN */
 
         artifact_name.setText(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[0]);
+        if(sharedPreferences.getBoolean("isBaseNameDisplay",false) == true){
+            artifact_name_base.setVisibility(View.VISIBLE);
+            artifact_name_base.setText(name);
+        }
         artifact_obtain_way_tv.setText(item_rss.getObtainCode(obtain_way,context));
         //artifact_title.setText(nick);
         //Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(name,context)[0],context)).centerCrop().into(artifact_img);

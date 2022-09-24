@@ -1341,7 +1341,7 @@ public class Characters_Info_2048 {
         char_weapon.setImageResource(item_rss.getWeaponTypeIMG(weapon));
         char_role.setText(item_rss.getLocaleName(role,context));
         //char_sex.setText(item_rss.getLocaleName(sex,context));
-        char_birth.setText(item_rss.getLocaleBirth(birth,context)); // -> If necessary will change to Month | Day -> E.g. July 24th
+        char_birth.setText(item_rss.getLocaleBirth(birth,context,false)); // -> If necessary will change to Month | Day -> E.g. July 24th
         //info_intro.setText(desc);
 
         ForegroundColorSpan mSpan = new ForegroundColorSpan(context.getResources().getColor(R.color.pyro));

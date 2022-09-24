@@ -118,6 +118,12 @@
             android:overScrollMode="never"
             android:scrollbars="none">
 
+            <WebView
+                android:id="@+id/webView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -1355,6 +1361,18 @@
                         android:checked="false"
                         android:fontFamily="@font/genshin_font"
                         android:text="Change app icon in different Styles"
+                        android:textColor="@color/tv_color" />
+
+                    <Switch
+                        android:id="@+id/other_item_eng_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="8dp"
+                        android:checked="false"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="Display Item Base Name"
                         android:textColor="@color/tv_color" />
 
                     <TextView

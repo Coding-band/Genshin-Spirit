@@ -1,5 +1,9 @@
 [
   {
+    "version": "9990",
+    "verName": "3.0.0-gp (9990)",
+    "description": "Changelog - 2022-08-23<br><br><b>Calculator</b><br>1. New Material Calculator (Only available in Game Style)<br>   - Re-designed UI layout <br>   - Improved User Experience of Calculating Characters, Weapons, Artifacts<br>   - Added new ascension materials for new characters<br>   - Full-List Screenshot (Press the camera button in Result Page and the material list will export as png)<br>   - Bugs from old version's calculator were FIXED !<br><br><b>UI</b><br>1. Replace the display format of character's birthday (This version will be MM-DD)<br><br><b>Characters, weapons and artifacts</b><br>1. Added advice and status of :<br>    - Aloy<br>    - Arataki_Itto<br>    - Gorou<br>    - Kamisato_Ayato<br>    - Kujou_Sara<br>    - Kuki_Shinobu<br>    - Shikanoin_Heizou<br>    - Yelan<br>2. Fixed bugs/ detail mistakes in :<br>    - Eula<br>    - Raiden_Shogun<br>3. Added two new artifact sets (Including ico, info)"
+  },{
     "version": "8850",
     "verName": "2.8.0-gp (8850)",
     "description": "Changelog - 2022-07-19<br><br><b>UI</b><br>1. Some of the UI have already suitable for landscape device<br>2. Fixed display error of characters status<br>3. Fixed choice error of weapon status<br>4. Support Android 13 Themed icon<br>5. Fixed error of unable to open app if failed to check update.<br>6. Fixed layout problem of weapons ascending materials.<br><br><b>Characters and weapons</b><br>1. Added Collei, Dori and Taghniari info<br>2. Added weapons' info<br>3. Added Diluc and Fischl event suit.<br><br><b>Voc-夜芷冰 Birthday Special Version</b><br>Btw, there will not have any extra function appear since Voc didn't have enough idea of it. QAQ"

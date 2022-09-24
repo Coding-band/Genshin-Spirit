@@ -1105,6 +1105,33 @@
     <string name="rich_red_brocade">Rich Red Brocade</string>
     <string name="majestic_hooked_beak">Majestic Hooked Beak</string>
     <string name="rukkhashava_mushrooms">Rukkhashava Mushrooms</string>
+    <string name="deepwood_memories">Deepwood Memories</string>
+    <string name="gilded_dreams">Gilded Dreams</string>
+
+    <!-- add in 20220823 -->
+    <string name="guides_of_admonition">Guide of Admonition</string>
+    <string name="guides_of_ingenuity">Guide of Ingenuity</string>
+    <string name="guides_of_praxis">Guide of Praxis</string>
+    <string name="philosophies_of_admonition">Philosophies of Admonition</string>
+    <string name="philosophies_of_ingenuity">Philosophies of Ingenuity</string>
+    <string name="philosophies_of_praxis">Philosophies of Praxis</string>
+    <string name="teachings_of_admonition">Teachings of Admonition</string>
+    <string name="teachings_of_ingenuity">Teachings of Ingenuity</string>
+    <string name="teachings_of_praxis">Teachings of Praxis</string>
+    <string name="steeple_of_ignorance">Steeple of Ignorance</string>
+    <string name="tower_of_abject_pride">Tower of Abject Pride</string>
+    <string name="copper_talisman_of_the_forest_dew">Copper Talisman of the Forest Dew</string>
+    <string name="oasis_gardens_reminiscence">Oasis Garden’s Reminiscence</string>
+    <string name="echo_of_scorching_might">Echo of Scorching Might</string>
+    <string name="nilou">Nilou</string>
+    <string name="cyno">Cyno</string>
+    <string name="candace">Candace</string>
+    <string name="xiphos_moonlight">Xiphos\' Moonlight</string>
+    <string name="key_of_khaj_nisut">Key of Khaj-Nisut</string>
+    <string name="makhaira_aquamarine">Makhaira Aquamarine</string>
+    <string name="missive_windspear">Missive Windspear</string>
+    <string name="staff_of_the_scarlet_sands">Staff of the Scarlet Sands</string>
+    <string name="wandering_evenstar">Wandering Evenstar</string>
 
 </resources>
 

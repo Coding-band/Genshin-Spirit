@@ -69,7 +69,7 @@ import java.util.ArrayList;
  * Copyright © 2022 Xectorda 版權所有
  */
 
-public class Weapon_Info_Siptik {
+public class Weapon_Info_SipTik {
     /** Method of requirements */
     Context context;
     Activity activity;

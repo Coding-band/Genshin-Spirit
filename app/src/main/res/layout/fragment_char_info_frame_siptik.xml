@@ -3023,7 +3023,7 @@
             app:cardElevation="4dp">
 
             <ImageView
-                android:id="@+id/director_char"
+                android:id="@+id/db_char"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:layout_weight="0"
@@ -3049,7 +3049,7 @@
             app:cardElevation="4dp">
 
             <ImageView
-                android:id="@+id/director_menu"
+                android:id="@+id/db_add"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="0"

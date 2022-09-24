@@ -45,7 +45,7 @@
                 app:srcCompat="@drawable/ic_2048_star_bg" />
 
             <LinearLayout
-                android:id="@+id/linearLayout9"
+                android:id="@+id/siptik_item_ll"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"

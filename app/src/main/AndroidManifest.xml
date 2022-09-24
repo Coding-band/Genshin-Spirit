@@ -57,6 +57,10 @@
             android:label="@string/app_name"
             android:windowSoftInputMode="stateHidden" />
         <activity
+            android:name=".ui.SipTik.CalculatorDB_SipTik"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateHidden" />
+        <activity
             android:name=".ui.MainActivity"
             android:label="@string/app_name"
             android:windowSoftInputMode="stateHidden" />
@@ -102,6 +106,7 @@
             android:label="@string/app_name"
             android:theme="@style/NoTheme"
             android:windowSoftInputMode="stateHidden" />
+
         <activity
             android:name=".buff.SipTikCal"
             android:label="@string/app_name"

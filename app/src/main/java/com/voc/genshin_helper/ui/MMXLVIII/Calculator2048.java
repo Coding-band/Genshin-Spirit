@@ -2772,12 +2772,13 @@ public class Calculator2048 extends AppCompatActivity{
         DataBaseHelper dbHelper = new DataBaseHelper(context);
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         int maxLvl = 70;
+        int maxBreakLvl = 4;
         switch (rare){
             case 1:
-            case 2: maxLvl = 70;break;
+            case 2: maxLvl = 70;maxBreakLvl = 4;break;
             case 3:
             case 4:
-            case 5: maxLvl = 90;break;
+            case 5: maxLvl = 90;maxBreakLvl = 6;break;
         }
 
         ContentValues values = new ContentValues();

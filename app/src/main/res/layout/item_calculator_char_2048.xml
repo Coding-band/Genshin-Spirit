@@ -45,7 +45,7 @@
                 app:srcCompat="@drawable/ic_2048_star_bg" />
 
             <LinearLayout
-                android:id="@+id/linearLayout9"
+                android:id="@+id/siptik_item_ll"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
@@ -203,7 +203,7 @@
                             android:layout_width="56dp"
                             android:layout_height="56dp"
                             android:layout_margin="4dp"
-                            android:background="@drawable/bg_skill_round"
+                            android:background="@drawable/bg_skill_round_2048"
                             android:padding="4dp"
                             app:srcCompat="@drawable/ic_2048_tab_toolbox" />
 
@@ -288,7 +288,7 @@
                             android:layout_width="56dp"
                             android:layout_height="56dp"
                             android:layout_margin="4dp"
-                            android:background="@drawable/bg_skill_round"
+                            android:background="@drawable/bg_skill_round_2048"
                             android:padding="4dp"
                             app:srcCompat="@drawable/ic_2048_tab_toolbox" />
 
@@ -371,7 +371,7 @@
                             android:layout_width="56dp"
                             android:layout_height="56dp"
                             android:layout_margin="4dp"
-                            android:background="@drawable/bg_skill_round"
+                            android:background="@drawable/bg_skill_round_2048"
                             android:padding="4dp"
                             app:srcCompat="@drawable/ic_2048_tab_toolbox" />
 

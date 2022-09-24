@@ -48,6 +48,7 @@ import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
+import com.voc.genshin_helper.data.Material;
 import com.voc.genshin_helper.data.material.Materials;
 import com.voc.genshin_helper.data.material.BossAdapter;
 import com.voc.genshin_helper.data.material.CharWeaponAdapter;
@@ -91,157 +92,6 @@ import java.util.Objects;
  * Copyright © 2022 Xectorda 版權所有
  */
 public class CalculatorExtend2048 {
-    /** Crystal*/ /**[碎屑,斷片,塊,原顆]*/
-    ArrayList<Integer> 燃願瑪瑙 = new ArrayList<Integer>(Collections.nCopies(4, 0));
-    ArrayList<Integer> 滌淨青金 = new ArrayList<Integer>(Collections.nCopies(4, 0));
-    ArrayList<Integer> 最勝紫晶 = new ArrayList<Integer>(Collections.nCopies(4, 0));
-    ArrayList<Integer> 哀敘冰玉 = new ArrayList<Integer>(Collections.nCopies(4, 0));
-    ArrayList<Integer> 自在松石 = new ArrayList<Integer>(Collections.nCopies(4, 0));
-    ArrayList<Integer> 堅牢黃玉 = new ArrayList<Integer>(Collections.nCopies(4, 0));
-    ArrayList<Integer> 生長碧翡 = new ArrayList<Integer>(Collections.nCopies(4, 0));
-    ArrayList<Integer> 璀璨原鑽 = new ArrayList<Integer>(Collections.nCopies(4, 0));
-
-    /** UNKNOWN BOSS ITEM*/
-    int 未知常駐BOSS跌落物1 = 0;
-    int 未知常駐BOSS跌落物2 = 0;
-    int 未知常駐BOSS跌落物3 = 0;
-    int 未知周本BOSS跌落物1 = 0;
-    int 未知周本BOSS跌落物2 = 0;
-    int 未知周本BOSS跌落物3 = 0;
-
-    /** BOSS ASC*/
-    int  常燃火種  = 0 ;
-    int  淨水之心  = 0 ;
-    int  雷光棱鏡  = 0 ;
-    int  極寒之核  = 0 ;
-    int  颶風之種  = 0 ;
-    int  玄岩之塔  = 0 ;
-    int  未熟之玉  = 0 ;
-    int  晶凝之華  = 0 ;
-    int  魔偶機心  = 0 ;
-    int  恒常機關之心  = 0 ;
-    int  陰燃之珠  = 0 ;
-    //add in 20210910
-    int  雷霆數珠 = 0;
-    int  排異之露 = 0;
-    //add in 20220105
-    int 獸境王器 = 0;
-    int 龍嗣偽鰭 = 0;
-    //add in 20220331
-    int 符紋之齒 = 0;
-    //add in 20220716
-    int 蕈王鉤喙 = 0;
-    int 藏雷野實 = 0;
-
-    /** LOCAL */
-    int  小燈草  = 0 ;
-    int  慕風蘑菇  = 0 ;
-    int  夜泊石  = 0 ;
-    int  風車菊  = 0 ;
-    int  石珀  = 0 ;
-    int  蒲公英籽  = 0 ;
-    int  嘟嘟蓮  = 0 ;
-    int  落落莓  = 0 ;
-    int  琉璃百合  = 0 ;
-    int  琉璃袋  = 0 ;
-    int  鉤鉤果  = 0 ;
-    int  塞西莉亞花  = 0 ;
-    int  絕雲椒椒  = 0 ;
-    int  霓裳花  = 0 ;
-    int  星螺  = 0 ;
-    int  清心  = 0 ;
-    int  海靈芝  = 0 ;
-    int  緋櫻繡球  = 0 ;
-    int  鳴草  = 0 ;
-    int  晶化骨髓  = 0 ;
-    //add in 20210910
-    int  天雲草實  = 0 ;
-    int  血斛  = 0 ;
-    int  幽燈蕈  = 0 ;
-    int  珊瑚真珠  = 0 ;
-    int  鬼兜蟲  = 0 ;
-    //add in 20220716
-    int  樹王聖體菇 = 0;
-    int  劫波蓮 = 0;
-    int  月蓮 = 0;
-
-    /** T-BOSS ASC*/
-
-    int 智識之冕 = 0;
-    int  東風的吐息  = 0 ;
-    int  北風之環  = 0 ;
-    int  東風之翎  = 0 ;
-    int  北風的魂匣  = 0 ;
-    int  東風之爪  = 0 ;
-    int  北風之尾  = 0 ;
-    int  魔王之刃_殘片  = 0 ;
-    int  吞天之鯨_只角  = 0 ;
-    int  武煉之魂_孤影  = 0 ;
-    int  龍王之冕  = 0 ;
-    int  血玉之枝  = 0 ;
-    int  鎏金之鱗  = 0 ;
-    //add in 20210910
-    int  熔毀之刻  = 0 ;
-    int  灰燼之心  = 0 ;
-    int  獄火之蝶  = 0 ;
-    //add in 20220106
-    int  萬劫之真意  = 0 ; // Raiden Shogun Weekly Boss
-    int  凶將之手眼  = 0 ; // Raiden Shogun Weekly Boss
-    int  禍神之禊淚  = 0 ; // Raiden Shogun Weekly Boss
-
-
-    /** COMMON */ /**[牢固的箭簇,銳利的箭簇,歷戰的箭簇]*/
-    ArrayList<Integer> 歷戰的箭簇 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 禁咒繪卷 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 攫金鴉印 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 不祥的面具 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 尉官的徽記 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 原素花蜜 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 史萊姆原漿 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 名刀鐔 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    //add in 20210910
-    ArrayList<Integer> 浮游晶化核 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    //add in 20220716
-    ArrayList<Integer> 織金紅綢 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 孢囊晶塵 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 幽邃刻像 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-
-
-    /** T-COMMON*/
-
-    ArrayList<Integer> 未知1_的哲學 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 未知2_的哲學 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 未知3_的哲學 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 自由_的哲學 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 黃金_的哲學 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 抗爭_的哲學 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 勤勞_的哲學 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 詩文_的哲學 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 繁榮_的哲學 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 風雅_的哲學 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 浮世_的哲學 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 天光_的哲學 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-
-    /** W-COMMON*/
-    ArrayList<Integer> 	漆黑隕鐵的一塊	 = new ArrayList<Integer>(Collections.nCopies(4, 0));
-    ArrayList<Integer> 	獅牙鬥士的理想	 = new ArrayList<Integer>(Collections.nCopies(4, 0));
-    ArrayList<Integer> 	孤雲寒林的神體	 = new ArrayList<Integer>(Collections.nCopies(4, 0));
-    ArrayList<Integer> 	霧海雲間的轉還	 = new ArrayList<Integer>(Collections.nCopies(4, 0));
-    ArrayList<Integer> 	今昔劇畫的鬼人	 = new ArrayList<Integer>(Collections.nCopies(4, 0));
-    ArrayList<Integer> 	鳴神御靈的勇武	 = new ArrayList<Integer>(Collections.nCopies(4, 0));
-    ArrayList<Integer> 	高塔孤王的碎夢	 = new ArrayList<Integer>(Collections.nCopies(4, 0));
-    ArrayList<Integer> 	遠海夷地的金枝	 = new ArrayList<Integer>(Collections.nCopies(4, 0));
-    ArrayList<Integer> 	凜風奔狼的懷鄉	 = new ArrayList<Integer>(Collections.nCopies(4, 0));
-
-    ArrayList<Integer> 	混沌真眼	 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 	混沌爐心	 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 	石化的骨片	 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 	霧虛燈芯	 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 	督察長祭刀	 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 	黑晶號角	 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 	地脈的新芽	 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 	偏光棱鏡	 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    ArrayList<Integer> 	隱獸鬼爪	 = new ArrayList<Integer>(Collections.nCopies(3, 0));
 
     /** [TRANSFER] CHARACTER VAR FROM CalculatorUI*/
     public ArrayList<String> NameList = new ArrayList<String>();
@@ -461,11 +311,14 @@ public class CalculatorExtend2048 {
     private boolean isWritePermissionGranted = false;
     private static final int CAMERA = 100;
 
+    Material material;
+
     public void setup(Context context, Activity activity, View viewPager, String dataSheetName) {
         this.context = context;
         this.activity = activity;
         this.viewPager = viewPager;
         this.dataSheetName = dataSheetName;
+        material = new Material();
         // Background of item
         if (context.getResources().getString(R.string.mode).equals("Night")) {
             isNight = true;
@@ -646,7 +499,7 @@ public class CalculatorExtend2048 {
                     morax = morax + moraASCList.get(y);
 
                 }
-                FindItemByName(asc_temp_item,asc_temp_count);
+                material.FindItemByName(asc_temp_item,asc_temp_count);
 
 
                 /** CAL SKILL1 */
@@ -667,12 +520,12 @@ public class CalculatorExtend2048 {
                     skill1_temp_count.set(5,skill1_temp_count.get(5) + com3SKILLList.get(y));
                     skill1_temp_count.set(6,skill1_temp_count.get(6) + bossSKILLList.get(y));
 
-                    if(y == 9) {智識之冕 = 智識之冕 + 1;}
+                    if(y == 9) {material.智識之冕 = material.智識之冕 + 1;}
 
                     // mora.add(moraSkillList.get(y));
                     morax = morax + moraSkillList.get(y);
                 }
-                FindItemByName(skill1_temp_item,skill1_temp_count);
+                material.FindItemByName(skill1_temp_item,skill1_temp_count);
 
                 z = getCharRealPosByName(NameList.get(x));
                 skill2_temp_item.add(nameREQUIREList.get(z));
@@ -690,11 +543,11 @@ public class CalculatorExtend2048 {
                     skill2_temp_count.set(5,skill2_temp_count.get(5) + com3SKILLList.get(y));
                     skill2_temp_count.set(6,skill2_temp_count.get(6) + bossSKILLList.get(y));
 
-                    if(y == 9) {智識之冕 = 智識之冕 + 1;}
+                    if(y == 9) {material.智識之冕 = material.智識之冕 + 1;}
                     //mora.add(moraSkillList.get(y));
                     morax = morax + moraSkillList.get(y);
                 }
-                FindItemByName(skill2_temp_item,skill2_temp_count);
+                material.FindItemByName(skill2_temp_item,skill2_temp_count);
 
                 z = getCharRealPosByName(NameList.get(x));
                 skill3_temp_item.add(nameREQUIREList.get(z));
@@ -712,11 +565,11 @@ public class CalculatorExtend2048 {
                     skill3_temp_count.set(5,skill3_temp_count.get(5) + com3SKILLList.get(y));
                     skill3_temp_count.set(6,skill3_temp_count.get(6) + bossSKILLList.get(y));
 
-                    if(y ==9) {智識之冕 = 智識之冕 + 1;}
+                    if(y == 9) {material.智識之冕 = material.智識之冕 + 1;}
                     // mora.add(moraSkillList.get(y));
                     morax = morax + moraSkillList.get(y);
                 }
-                FindItemByName(skill3_temp_item,skill3_temp_count);
+                material.FindItemByName(skill3_temp_item,skill3_temp_count);
 
             }
         }
@@ -881,7 +734,7 @@ public class CalculatorExtend2048 {
                     }
                 }
 
-                FindWeaponItemByName(weapon_asc_temp_item,weapon_asc_temp_count);
+                material.FindWeaponItemByName(weapon_asc_temp_item,weapon_asc_temp_count);
 
             }
         }
@@ -1118,111 +971,87 @@ public class CalculatorExtend2048 {
 
 
         /** CRYSTAL*/
-        String[] crystal_temp = new String[]{"璀璨原鑽碎屑","璀璨原鑽斷片","璀璨原鑽塊","璀璨原鑽","燃願瑪瑙碎屑","燃願瑪瑙斷片","燃願瑪瑙塊","燃願瑪瑙","滌淨青金碎屑","滌淨青金斷片","滌淨青金塊","滌淨青金","最勝紫晶碎屑","最勝紫晶斷片","最勝紫晶塊","最勝紫晶","哀敘冰玉碎屑","哀敘冰玉斷片","哀敘冰玉塊","哀敘冰玉","自在松石碎屑","自在松石斷片","自在松石塊","自在松石","堅牢黃玉碎屑","堅牢黃玉斷片","堅牢黃玉塊","堅牢黃玉","生長碧翡碎屑","生長碧翡斷片","生長碧翡塊","生長碧翡"};
-        int[] crystal_temp_cnt = new int[]{璀璨原鑽.get(0),璀璨原鑽.get(1),璀璨原鑽.get(2),璀璨原鑽.get(3),燃願瑪瑙.get(0),燃願瑪瑙.get(1),燃願瑪瑙.get(2),燃願瑪瑙.get(3),滌淨青金.get(0),滌淨青金.get(1),滌淨青金.get(2),滌淨青金.get(3),最勝紫晶.get(0),最勝紫晶.get(1),最勝紫晶.get(2),最勝紫晶.get(3),哀敘冰玉.get(0),哀敘冰玉.get(1),哀敘冰玉.get(2),哀敘冰玉.get(3),自在松石.get(0),自在松石.get(1),自在松石.get(2),自在松石.get(3),堅牢黃玉.get(0),堅牢黃玉.get(1),堅牢黃玉.get(2),堅牢黃玉.get(3),生長碧翡.get(0),生長碧翡.get(1),生長碧翡.get(2),生長碧翡.get(3)};
-        int[] crystal_rare = new int[]{2,3,4,5,2,3,4,5,2,3,4,5,2,3,4,5,2,3,4,5,2,3,4,5,2,3,4,5,2,3,4,5};
         gridLayout = viewPager.findViewById(R.id.result_crystal_gl);
         gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
-        for (int x = 0, c = 0, r = 0; isZero(crystal_temp_cnt) == false && x < crystal_temp.length; x++) {
+        for (int x = 0, c = 0, r = 0; isZero(material.crystalCountList()) == false && x < material.crystalNameList().length; x++) {
             if(c == column) { c = 0;r++; }
-            c = itemAdd(size,crystal_temp[x],crystal_temp_cnt[x],crystal_rare[x],gridLayout,result_crystal_title,c,r);
+            c = itemAdd(size,material.crystalNameList()[x],material.crystalCountList()[x],material.crystalRareList()[x],gridLayout,result_crystal_title,c,r);
         }
 
         /** BOSS */
-        String[] boss_temp = new String[]{"未知常駐BOSS跌落物1","未知常駐BOSS跌落物2","未知常駐BOSS跌落物3","常燃火種","淨水之心","雷光棱鏡","極寒之核","颶風之種","玄岩之塔","未熟之玉","晶凝之華","魔偶機心","恒常機關之心","陰燃之珠","雷霆數珠","排異之露","獸境王器","龍嗣偽鰭","符紋之齒"};
-        int[] boss_temp_cnt = new int[]{未知常駐BOSS跌落物1,未知常駐BOSS跌落物2,未知常駐BOSS跌落物3,常燃火種,淨水之心,雷光棱鏡,極寒之核,颶風之種,玄岩之塔,未熟之玉,晶凝之華,魔偶機心,恒常機關之心,陰燃之珠,雷霆數珠,排異之露,獸境王器,龍嗣偽鰭,符紋之齒};
-        int[] boss_rare = new int[]{1,1,1,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4};
         gridLayout = viewPager.findViewById(R.id.result_boss_gl);
         gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
-        for (int x = 0, c = 0, r = 0; isZero(boss_temp_cnt) == false && x < boss_temp.length; x++) {
+        for (int x = 0, c = 0, r = 0; isZero(material.bossCountList()) == false && x < material.bossNameList().length; x++) {
             if(c == column) { c = 0;r++; }
-            c = itemAdd(size,boss_temp[x],boss_temp_cnt[x],boss_rare[x],gridLayout,result_boss_title,c,r);
+            c = itemAdd(size,material.bossNameList()[x],material.bossCountList()[x],material.bossRareList()[x],gridLayout,result_boss_title,c,r);
         }
 
         /** WEEK-BOSS */
-        String[] week_boss_temp = new String[]{"未知周本BOSS跌落物1","未知周本BOSS跌落物2","未知周本BOSS跌落物3","北風之環","東風的吐息","東風之翎","北風的魂匣","東風之爪","北風之尾","魔王之刃·殘片","吞天之鯨·只角","武煉之魂·孤影","龍王之冕","血玉之枝","鎏金之鱗","熔毀之刻","灰燼之心","獄火之蝶","萬劫之真意","凶將之手眼","禍神之禊淚"};
-        int[] week_boss_temp_cnt = new int[]{未知周本BOSS跌落物1,未知周本BOSS跌落物2,未知周本BOSS跌落物3,北風之環,東風的吐息,東風之翎,北風的魂匣,東風之爪,北風之尾,魔王之刃_殘片,吞天之鯨_只角,武煉之魂_孤影,龍王之冕,血玉之枝,鎏金之鱗,熔毀之刻,灰燼之心,獄火之蝶,萬劫之真意,凶將之手眼,禍神之禊淚};
-        int[] week_boss_rare = new int[]{1,1,1,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5,5};
         gridLayout = viewPager.findViewById(R.id.result_weekboss_gl);
         gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
-        for (int x = 0, c = 0, r = 0; isZero(week_boss_temp_cnt) == false && x < week_boss_temp.length; x++) {
+        for (int x = 0, c = 0, r = 0; isZero(material.weekBossCountList()) == false && x < material.weekBossNameList().length; x++) {
             if(c == column) { c = 0;r++; }
-            c = itemAdd(size,week_boss_temp[x],week_boss_temp_cnt[x],week_boss_rare[x],gridLayout,result_weekboss_title,c,r);
+            c = itemAdd(size,material.weekBossNameList()[x],material.weekBossCountList()[x],material.weekBossRareList()[x],gridLayout,result_weekboss_title,c,r);
         }
 
         /** LOCAL */
-        String[] local_temp = new String[]{"小燈草","慕風蘑菇","夜泊石","風車菊","石珀","蒲公英籽","嘟嘟蓮","落落莓","琉璃百合","琉璃袋","鉤鉤果","塞西莉亞花","絕雲椒椒","霓裳花","星螺","清心","海靈芝","緋櫻繡球","鳴草","晶化骨髓","天雲草實","血斛","幽燈蕈","珊瑚真珠","鬼兜蟲","樹王聖體菇","月蓮","劫波蓮"};
-        int[] local_temp_cnt = new int[]{小燈草,慕風蘑菇,夜泊石,風車菊,石珀,蒲公英籽,嘟嘟蓮,落落莓,琉璃百合,琉璃袋,鉤鉤果,塞西莉亞花,絕雲椒椒,霓裳花,星螺,清心,海靈芝,緋櫻繡球,鳴草,晶化骨髓,天雲草實,血斛,幽燈蕈,珊瑚真珠,鬼兜蟲,樹王聖體菇,月蓮,劫波蓮};
-        int[] local_rare = new int[]{1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1};
         gridLayout = viewPager.findViewById(R.id.result_local_gl);
         gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
-        for (int x = 0, c = 0, r = 0; isZero(local_temp_cnt) == false && x < local_temp.length; x++) {
+        for (int x = 0, c = 0, r = 0; isZero(material.localCountList()) == false && x < material.localNameList().length; x++) {
             if(c == column) { c = 0;r++; }
-            c = itemAdd(size,local_temp[x],local_temp_cnt[x],local_rare[x],gridLayout,result_local_title,c,r);
+            c = itemAdd(size,material.localNameList()[x],material.localCountList()[x],material.localRareList()[x],gridLayout,result_local_title,c,r);
         }
 
         /** COMMON */
-        String[] common_temp = new String[]{"牢固的箭簇","銳利的箭簇","歷戰的箭簇","導能繪卷","封魔繪卷","禁咒繪卷","尋寶鴉印","藏銀鴉印","攫金鴉印","破損的面具","污穢的面具","不祥的面具","新兵的徽記","士官的徽記","尉官的徽記","騙騙花蜜","微光花蜜","原素花蜜","史萊姆凝液","史萊姆清","史萊姆原漿","破舊的刀鐔","影打刀鐔","名刀鐔","浮游乾核","浮游幽核","浮游晶化核", "混沌機關", "混沌樞紐", "混沌真眼", "混沌裝置", "混沌迴路", "混沌爐心", "脆弱的骨片", "結實的骨片", "石化的骨片", "霧虛花粉", "霧虛草囊", "霧虛燈芯", "獵兵祭刀", "特工祭刀", "督察長祭刀", "沉重號角", "黑銅號角", "黑晶號角", "地脈的舊枝", "地脈的枯葉", "地脈的新芽", "黯淡棱鏡", "水晶棱鏡", "偏光棱鏡","隱獸指爪","隱獸利爪","隱獸鬼爪","蕈獸孢子","螢光孢粉","孢囊晶塵","褪色紅綢","鑲邊紅綢","織金紅綢","晦暗刻像","夤夜刻像","幽邃刻像"};
-        int[] common_temp_cnt = new int[]{歷戰的箭簇.get(0),歷戰的箭簇.get(1),歷戰的箭簇.get(2),禁咒繪卷.get(0),禁咒繪卷.get(1),禁咒繪卷.get(2),攫金鴉印.get(0),攫金鴉印.get(1),攫金鴉印.get(2),不祥的面具.get(0),不祥的面具.get(1),不祥的面具.get(2),尉官的徽記.get(0),尉官的徽記.get(1),尉官的徽記.get(2),原素花蜜.get(0),原素花蜜.get(1),原素花蜜.get(2),史萊姆原漿.get(0),史萊姆原漿.get(1),史萊姆原漿.get(2),名刀鐔.get(0),名刀鐔.get(1),名刀鐔.get(2),浮游晶化核.get(0),浮游晶化核.get(1),浮游晶化核.get(2),混沌真眼.get(0),混沌真眼.get(1),混沌真眼.get(2),混沌爐心.get(0),混沌爐心.get(1),混沌爐心.get(2),石化的骨片.get(0),石化的骨片.get(1),石化的骨片.get(2),霧虛燈芯.get(0),霧虛燈芯.get(1),霧虛燈芯.get(2),督察長祭刀.get(0),督察長祭刀.get(1),督察長祭刀.get(2),黑晶號角.get(0),黑晶號角.get(1),黑晶號角.get(2),地脈的新芽.get(0),地脈的新芽.get(1),地脈的新芽.get(2),偏光棱鏡.get(0),偏光棱鏡.get(1),偏光棱鏡.get(2),隱獸鬼爪.get(0),隱獸鬼爪.get(1),隱獸鬼爪.get(2),孢囊晶塵.get(0),孢囊晶塵.get(1),孢囊晶塵.get(2),織金紅綢.get(0),織金紅綢.get(1),織金紅綢.get(2),幽邃刻像.get(0),幽邃刻像.get(1),幽邃刻像.get(2)};
-        int[] common_rare = new int[]{1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,1,2,3,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,2,3,4};
         gridLayout = viewPager.findViewById(R.id.result_common_gl);
         gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
-        for (int x = 0, c = 0, r = 0; isZero(common_temp_cnt) == false && x < common_temp.length; x++) {
+        for (int x = 0, c = 0, r = 0; isZero(material.commonCountList()) == false && x < material.commonNameList().length; x++) {
             if(c == column) { c = 0;r++; }
-            c = itemAdd(size,common_temp[x],common_temp_cnt[x],common_rare[x],gridLayout,result_common_title,c,r);
+            c = itemAdd(size,material.commonNameList()[x],material.commonCountList()[x],material.commonRareList()[x],gridLayout,result_common_title,c,r);
         }
 
         /** WEEKLY-MON-THUR-SUN */
-        String[] weeklybk1_temp = new String[]{"「未知1」的教導","「未知1」的指引","「未知1」的哲學","「自由」的教導","「自由」的指引","「自由」的哲學","「繁榮」的教導","「繁榮」的指引","「繁榮」的哲學","「浮世」的教導","「浮世」的指引","「浮世」的哲學","高塔孤王的破瓦", "高塔孤王的殘垣", "高塔孤王的斷片", "高塔孤王的碎夢", "孤雲寒林的光砂", "孤雲寒林的輝岩", "孤雲寒林的聖骸", "孤雲寒林的神體", "遠海夷地的瑚枝", "遠海夷地的玉枝", "遠海夷地的瓊枝", "遠海夷地的金枝"};
-        int[] weeklybk1_temp_cnt = new int[]{未知1_的哲學.get(0),未知1_的哲學.get(1),未知1_的哲學.get(2),自由_的哲學.get(0),自由_的哲學.get(1),自由_的哲學.get(2),繁榮_的哲學.get(0),繁榮_的哲學.get(1),繁榮_的哲學.get(2),浮世_的哲學.get(0),浮世_的哲學.get(1),浮世_的哲學.get(2),高塔孤王的碎夢.get(0),高塔孤王的碎夢.get(1),高塔孤王的碎夢.get(2),高塔孤王的碎夢.get(3),孤雲寒林的神體.get(0),孤雲寒林的神體.get(1),孤雲寒林的神體.get(2),孤雲寒林的神體.get(3),遠海夷地的金枝.get(0),遠海夷地的金枝.get(1),遠海夷地的金枝.get(2),遠海夷地的金枝.get(3)};
-        int[] weeklybk1_rare = new int[]{2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,5,2,3,4,5,2,3,4,5,2,3,4,5};
         gridLayout = viewPager.findViewById(R.id.result_weeklybk1_gl);
         gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
-        for (int x = 0, c = 0, r = 0; isZero(weeklybk1_temp_cnt) == false && x < weeklybk1_temp.length; x++) {
+        for (int x = 0, c = 0, r = 0; isZero(material.weekly1CountList()) == false && x < material.weekly1NameList().length; x++) {
             if(c == column) { c = 0;r++; }
-            c = itemAdd(size,weeklybk1_temp[x],weeklybk1_temp_cnt[x],weeklybk1_rare[x],gridLayout,result_weeklybk1_title,c,r);
+            c = itemAdd(size,material.weekly1NameList()[x],material.weekly1CountList()[x],material.weekly1RareList()[x],gridLayout,result_weeklybk1_title,c,r);
         }
 
         /** WEEKLY-TUE-FRI-SUN */
-        String[] weeklybk2_temp = new String[]{"「未知2」的教導","「未知2」的指引","「未知2」的哲學","「抗爭」的教導","「抗爭」的指引","「抗爭」的哲學","「勤勞」的教導","「勤勞」的指引","「勤勞」的哲學","「風雅」的教導","「風雅」的指引","「風雅」的哲學" , "凜風奔狼的始齔", "凜風奔狼的裂齒", "凜風奔狼的斷牙", "凜風奔狼的懷鄉", "霧海雲間的鉛丹", "霧海雲間的汞丹", "霧海雲間的金丹", "霧海雲間的轉還", "鳴神御靈的明惠", "鳴神御靈的歡喜", "鳴神御靈的親愛", "鳴神御靈的勇武"};
-        int[] weeklybk2_temp_cnt = new int[]{未知2_的哲學.get(0),未知2_的哲學.get(1),未知2_的哲學.get(2),抗爭_的哲學.get(0),抗爭_的哲學.get(1),抗爭_的哲學.get(2),勤勞_的哲學.get(0),勤勞_的哲學.get(1),勤勞_的哲學.get(2),風雅_的哲學.get(0),風雅_的哲學.get(1),風雅_的哲學.get(2),凜風奔狼的懷鄉.get(0),凜風奔狼的懷鄉.get(1),凜風奔狼的懷鄉.get(2),凜風奔狼的懷鄉.get(3),霧海雲間的轉還.get(0),霧海雲間的轉還.get(1),霧海雲間的轉還.get(2),霧海雲間的轉還.get(3),鳴神御靈的勇武.get(0),鳴神御靈的勇武.get(1),鳴神御靈的勇武.get(2),鳴神御靈的勇武.get(3)};
-        int[] weeklybk2_rare = new int[]{2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,5,2,3,4,5,2,3,4,5,2,3,4,5};
-        gridLayout = viewPager.findViewById(R.id.result_weeklybk2_gl);
+       gridLayout = viewPager.findViewById(R.id.result_weeklybk2_gl);
         gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
-        for (int x = 0, c = 0, r = 0; isZero(weeklybk2_temp_cnt) == false && x < weeklybk2_temp.length; x++) {
+        for (int x = 0, c = 0, r = 0; isZero(material.weekly2CountList()) == false && x < material.weekly2NameList().length; x++) {
             if(c == column) { c = 0;r++; }
-            c = itemAdd(size,weeklybk2_temp[x],weeklybk2_temp_cnt[x],weeklybk2_rare[x],gridLayout,result_weeklybk2_title,c,r);
+            c = itemAdd(size,material.weekly2NameList()[x],material.weekly2CountList()[x],material.weekly2RareList()[x],gridLayout,result_weeklybk2_title,c,r);
         }
 
         /** WEEKLY-WED-SAT-SUN */
-        String[] weeklybk3_temp = new String[]{"「未知3」的教導","「未知3」的指引","「未知3」的哲學","「黃金」的教導","「黃金」的指引","「黃金」的哲學","「詩文」的教導","「詩文」的指引","「詩文」的哲學","「天光」的教導","「天光」的指引","「天光」的哲學", "獅牙鬥士的枷鎖", "獅牙鬥士的鐵鍊", "獅牙鬥士的鐐銬", "獅牙鬥士的理想", "漆黑隕鐵的一粒", "漆黑隕鐵的一片", "漆黑隕鐵的一角", "漆黑隕鐵的一塊", "今昔劇畫的惡尉", "今昔劇畫的虎囓", "今昔劇畫的一角", "今昔劇畫的鬼人"};
-        int[] weeklybk3_temp_cnt = new int[]{未知3_的哲學.get(0),未知3_的哲學.get(1),未知3_的哲學.get(2),黃金_的哲學.get(0),黃金_的哲學.get(1),黃金_的哲學.get(2),詩文_的哲學.get(0),詩文_的哲學.get(1),詩文_的哲學.get(2),天光_的哲學.get(0),天光_的哲學.get(1),天光_的哲學.get(2),獅牙鬥士的理想.get(0),獅牙鬥士的理想.get(1),獅牙鬥士的理想.get(2),獅牙鬥士的理想.get(3),漆黑隕鐵的一塊.get(0),漆黑隕鐵的一塊.get(1),漆黑隕鐵的一塊.get(2),漆黑隕鐵的一塊.get(3),今昔劇畫的鬼人.get(0),今昔劇畫的鬼人.get(1),今昔劇畫的鬼人.get(2),今昔劇畫的鬼人.get(3)};
-        int[] weeklybk3_rare = new int[]{2,3,4,2,3,4,2,3,4,2,3,4,2,3,4,5,2,3,4,5,2,3,4,5,2,3,4,5};
         gridLayout = viewPager.findViewById(R.id.result_weeklybk3_gl);
         gridLayout.removeAllViewsInLayout();
         gridLayout.setAlignmentMode(GridLayout.ALIGN_BOUNDS);
 
-        for (int x = 0, c = 0, r = 0; isZero(weeklybk3_temp_cnt) == false && x < weeklybk3_temp.length; x++) {
+        for (int x = 0, c = 0, r = 0; isZero(material.weekly3CountList()) == false && x < material.weekly3NameList().length; x++) {
             if(c == column) { c = 0;r++; }
-            c = itemAdd(size,weeklybk3_temp[x],weeklybk3_temp_cnt[x],weeklybk3_rare[x],gridLayout,result_weeklybk3_title,c,r);
+            c = itemAdd(size,material.weekly3NameList()[x],material.weekly3CountList()[x],material.weekly3RareList()[x],gridLayout,result_weeklybk3_title,c,r);
         }
 
         String[] other_temp = new String[]{"流浪者的經驗", "冒險家的經驗", "大英雄的經驗", "精鍛用雜礦", "精鍛用良礦", "精鍛用魔礦","祝聖油膏","祝聖精華","摩拉", "智識之冕"};
-        int[] other_temp_cnt = new int[]{exp_small,exp_mid,exp_big,weapon_small,weapon_mid,weapon_big,artifact_mid,artifact_big,morax,智識之冕};
+        int[] other_temp_cnt = new int[]{exp_small,exp_mid,exp_big,weapon_small,weapon_mid,weapon_big,artifact_mid,artifact_big,morax,material.智識之冕};
         int[] other_rare = new int[]{2,3,4,1,2,3,3,4,3,5};
         gridLayout = viewPager.findViewById(R.id.result_other_gl);
         gridLayout.removeAllViewsInLayout();
@@ -1279,275 +1108,6 @@ public class CalculatorExtend2048 {
         this.artifact_big = this.artifact_big + exp_big;
         this.artifact_mid = this.artifact_mid + exp_mid;
     }
-
-
-    /**EDIT WHEN ADD NEW ITEMS*/
-    public void FindItemByName(ArrayList<String> temp_item, ArrayList<Integer> temp_count){
-        if(temp_item.size() >= 5){
-            /** CRYSTAL -> USING temp_count's pos 0-3*/
-
-            if(temp_item.get(1).equals("燃願瑪瑙")) {addCountIntoVar(燃願瑪瑙, temp_count, "CRYSTAL");}
-            if(temp_item.get(1).equals("滌淨青金")){addCountIntoVar(滌淨青金,temp_count,"CRYSTAL");}
-            if(temp_item.get(1).equals("最勝紫晶")){addCountIntoVar(最勝紫晶,temp_count,"CRYSTAL");}
-            if(temp_item.get(1).equals("哀敘冰玉")){addCountIntoVar(哀敘冰玉,temp_count,"CRYSTAL");}
-            if(temp_item.get(1).equals("自在松石")){addCountIntoVar(自在松石,temp_count,"CRYSTAL");}
-            if(temp_item.get(1).equals("堅牢黃玉")){addCountIntoVar(堅牢黃玉,temp_count,"CRYSTAL");}
-            if(temp_item.get(1).equals("生長碧翡")){addCountIntoVar(生長碧翡,temp_count,"CRYSTAL");}
-            if(temp_item.get(1).equals("璀璨原鑽")){addCountIntoVar(璀璨原鑽,temp_count,"CRYSTAL");}
-
-            /** COMMON -> USING temp_count's pos 7-9*/
-            if(temp_item.get(4).equals("歷戰的箭簇")){addCountIntoVar(歷戰的箭簇,temp_count,"COMMON");}
-            if(temp_item.get(4).equals("禁咒繪卷")){addCountIntoVar(禁咒繪卷,temp_count,"COMMON");}
-            if(temp_item.get(4).equals("攫金鴉印")){addCountIntoVar(攫金鴉印,temp_count,"COMMON");}
-            if(temp_item.get(4).equals("不祥的面具")){addCountIntoVar(不祥的面具,temp_count,"COMMON");}
-            if(temp_item.get(4).equals("尉官的徽記")){addCountIntoVar(尉官的徽記,temp_count,"COMMON");}
-            if(temp_item.get(4).equals("原素花蜜")){addCountIntoVar(原素花蜜,temp_count,"COMMON");}
-            if(temp_item.get(4).equals("史萊姆原漿")){addCountIntoVar(史萊姆原漿,temp_count,"COMMON");}
-            if(temp_item.get(4).equals("名刀鐔")){addCountIntoVar(名刀鐔,temp_count,"COMMON");}
-            //add in 20210910
-            if(temp_item.get(4).equals("浮游晶化核")){addCountIntoVar(浮游晶化核,temp_count,"COMMON");}
-            //add in 20220716
-            if(temp_item.get(4).equals("孢囊晶塵")){addCountIntoVar(孢囊晶塵,temp_count,"COMMON");}
-            if(temp_item.get(4).equals("織金紅綢")){addCountIntoVar(織金紅綢,temp_count,"COMMON");}
-
-            /** BOSS -> USING temp_count's pos 8 */
-            // SPECIAL CASE ONLY
-            if(temp_item.get(2).equals("未知常駐BOSS跌落物1")){未知常駐BOSS跌落物1 = addCountIntoVar(未知常駐BOSS跌落物1,temp_count,"BOSS");}
-            if(temp_item.get(2).equals("未知常駐BOSS跌落物2")){未知常駐BOSS跌落物2 = addCountIntoVar(未知常駐BOSS跌落物2,temp_count,"BOSS");}
-            if(temp_item.get(2).equals("未知常駐BOSS跌落物3")){未知常駐BOSS跌落物3 = addCountIntoVar(未知常駐BOSS跌落物3,temp_count,"BOSS");}
-            // NORMAL
-            if(temp_item.get(2).equals("常燃火種")){常燃火種 = addCountIntoVar(常燃火種,temp_count,"BOSS");}
-            if(temp_item.get(2).equals("淨水之心")){淨水之心 = addCountIntoVar(淨水之心,temp_count,"BOSS");}
-            if(temp_item.get(2).equals("雷光棱鏡")){雷光棱鏡 = addCountIntoVar(雷光棱鏡,temp_count,"BOSS");}
-            if(temp_item.get(2).equals("極寒之核")){極寒之核 = addCountIntoVar(極寒之核,temp_count,"BOSS");}
-            if(temp_item.get(2).equals("颶風之種")){颶風之種 = addCountIntoVar(颶風之種,temp_count,"BOSS");}
-            if(temp_item.get(2).equals("玄岩之塔")){玄岩之塔 = addCountIntoVar(玄岩之塔,temp_count,"BOSS");}
-            if(temp_item.get(2).equals("未熟之玉")){未熟之玉 = addCountIntoVar(未熟之玉,temp_count,"BOSS");}
-            if(temp_item.get(2).equals("晶凝之華")){晶凝之華 = addCountIntoVar(晶凝之華,temp_count,"BOSS");}
-            if(temp_item.get(2).equals("魔偶機心")){魔偶機心 = addCountIntoVar(魔偶機心,temp_count,"BOSS");}
-            if(temp_item.get(2).equals("恒常機關之心")){恒常機關之心 = addCountIntoVar(恒常機關之心,temp_count,"BOSS");}
-            if(temp_item.get(2).equals("陰燃之珠")){陰燃之珠 = addCountIntoVar(陰燃之珠,temp_count,"BOSS");}
-            //add in 20210910
-            if(temp_item.get(2).equals("雷霆數珠")){雷霆數珠 = addCountIntoVar(雷霆數珠,temp_count,"BOSS");}
-            if(temp_item.get(2).equals("排異之露")){排異之露 = addCountIntoVar(排異之露,temp_count,"BOSS");}
-            //add in 20220105
-            if(temp_item.get(2).equals("獸境王器")){ 獸境王器 = addCountIntoVar(獸境王器,temp_count,"BOSS");}
-            if(temp_item.get(2).equals("龍嗣偽鰭")){龍嗣偽鰭 = addCountIntoVar(龍嗣偽鰭,temp_count,"BOSS");}
-            //add in 20220331
-            if(temp_item.get(2).equals("符紋之齒")){符紋之齒 = addCountIntoVar(符紋之齒,temp_count,"BOSS");}
-            //add in 20220716
-            if(temp_item.get(2).equals("蕈王鉤喙")){蕈王鉤喙 = addCountIntoVar(蕈王鉤喙,temp_count,"BOSS");}
-            if(temp_item.get(2).equals("藏雷野實")){藏雷野實 = addCountIntoVar(藏雷野實,temp_count,"BOSS");}
-
-            /** LOCAL */
-            if(temp_item.get(3).equals("小燈草")){小燈草 = addCountIntoVar(小燈草,temp_count,"LOCAL");}
-            else if(temp_item.get(3).equals("慕風蘑菇")){慕風蘑菇 = addCountIntoVar(慕風蘑菇,temp_count,"LOCAL");}
-            else if(temp_item.get(3).equals("夜泊石")){夜泊石 = addCountIntoVar(夜泊石,temp_count,"LOCAL");}
-            else if(temp_item.get(3).equals("風車菊")){風車菊 = addCountIntoVar(風車菊,temp_count,"LOCAL");}
-            else if(temp_item.get(3).equals("石珀")){石珀 = addCountIntoVar(石珀,temp_count,"LOCAL");}
-            else if(temp_item.get(3).equals("蒲公英籽")){蒲公英籽 = addCountIntoVar(蒲公英籽,temp_count,"LOCAL");}
-            else if(temp_item.get(3).equals("嘟嘟蓮")){嘟嘟蓮 = addCountIntoVar(嘟嘟蓮,temp_count,"LOCAL");}
-            else if(temp_item.get(3).equals("落落莓")){落落莓 = addCountIntoVar(落落莓,temp_count,"LOCAL");}
-            else if(temp_item.get(3).equals("琉璃百合")){琉璃百合 = addCountIntoVar(琉璃百合,temp_count,"LOCAL");}
-            else if(temp_item.get(3).equals("琉璃袋")){琉璃袋 = addCountIntoVar(琉璃袋,temp_count,"LOCAL");}
-            else if(temp_item.get(3).equals("鉤鉤果")){鉤鉤果 = addCountIntoVar(鉤鉤果,temp_count,"LOCAL");}
-            else if(temp_item.get(3).equals("塞西莉亞花")){塞西莉亞花 = addCountIntoVar(塞西莉亞花,temp_count,"LOCAL");}
-            else if(temp_item.get(3).equals("絕雲椒椒")){絕雲椒椒 = addCountIntoVar(絕雲椒椒,temp_count,"LOCAL");}
-            else if(temp_item.get(3).equals("霓裳花")){霓裳花 = addCountIntoVar(霓裳花,temp_count,"LOCAL");}
-            else if(temp_item.get(3).equals("星螺")){星螺 = addCountIntoVar(星螺,temp_count,"LOCAL");}
-            else if(temp_item.get(3).equals("清心")){清心 = addCountIntoVar(清心,temp_count,"LOCAL");}
-            else if(temp_item.get(3).equals("海靈芝")){海靈芝 = addCountIntoVar(海靈芝,temp_count,"LOCAL");}
-            else if(temp_item.get(3).equals("緋櫻繡球")){緋櫻繡球 = addCountIntoVar(緋櫻繡球,temp_count,"LOCAL");}
-            else if(temp_item.get(3).equals("鳴草")){鳴草 = addCountIntoVar(鳴草,temp_count,"LOCAL");}
-            else if(temp_item.get(3).equals("晶化骨髓")){晶化骨髓 = addCountIntoVar(晶化骨髓,temp_count,"LOCAL");}
-            //add in 20210910
-            else if(temp_item.get(3).equals("天雲草實")){天雲草實 = addCountIntoVar(天雲草實,temp_count,"LOCAL");}
-            else if(temp_item.get(3).equals("血斛")){血斛 = addCountIntoVar(血斛,temp_count,"LOCAL");}
-            else if(temp_item.get(3).equals("幽燈蕈")){幽燈蕈 = addCountIntoVar(幽燈蕈,temp_count,"LOCAL");}
-            else if(temp_item.get(3).equals("珊瑚真珠")){珊瑚真珠 = addCountIntoVar(珊瑚真珠,temp_count,"LOCAL");}
-            else if(temp_item.get(3).equals("鬼兜蟲")){鬼兜蟲 = addCountIntoVar(鬼兜蟲,temp_count,"LOCAL");}
-            //add in 20220716
-            else if(temp_item.get(3).equals("樹王聖體菇")){樹王聖體菇 = addCountIntoVar(樹王聖體菇,temp_count,"LOCAL");}
-            else if(temp_item.get(3).equals("劫波蓮")){劫波蓮 = addCountIntoVar(劫波蓮,temp_count,"LOCAL");}
-            else if(temp_item.get(3).equals("月蓮")){月蓮 = addCountIntoVar(月蓮,temp_count,"LOCAL");}
-
-        }
-
-        if(temp_item.size() > 3){
-            /** T-COMMON -> USING temp_count's pos 1-3*/
-            if(temp_item.get(2).equals("歷戰的箭簇")){addCountIntoVar(歷戰的箭簇,temp_count,"T-COMMON");}
-            if(temp_item.get(2).equals("禁咒繪卷")){addCountIntoVar(禁咒繪卷,temp_count,"T-COMMON");}
-            if(temp_item.get(2).equals("攫金鴉印")){addCountIntoVar(攫金鴉印,temp_count,"T-COMMON");}
-            if(temp_item.get(2).equals("不祥的面具")){addCountIntoVar(不祥的面具,temp_count,"T-COMMON");}
-            if(temp_item.get(2).equals("尉官的徽記")){addCountIntoVar(尉官的徽記,temp_count,"T-COMMON");}
-            if(temp_item.get(2).equals("原素花蜜")){addCountIntoVar(原素花蜜,temp_count,"T-COMMON");}
-            if(temp_item.get(2).equals("史萊姆原漿")){addCountIntoVar(史萊姆原漿,temp_count,"T-COMMON");}
-            if(temp_item.get(2).equals("名刀鐔")){addCountIntoVar(名刀鐔,temp_count,"T-COMMON");}
-            //add in 20210910
-            if(temp_item.get(2).equals("浮游晶化核")){addCountIntoVar(浮游晶化核,temp_count,"T-COMMON");}
-            //add in 20220716
-            if(temp_item.get(2).equals("孢囊晶塵")){addCountIntoVar(孢囊晶塵,temp_count,"T-COMMON");}
-            if(temp_item.get(2).equals("織金紅綢")){addCountIntoVar(織金紅綢,temp_count,"T-COMMON");}
-
-            /** T-BOOK -> USING temp_count's pos 0-2 */
-            if(temp_item.get(1).equals("「自由」的哲學")){addCountIntoVar(自由_的哲學,temp_count,"T-BOOK");}
-            if(temp_item.get(1).equals("「黃金」的哲學")){addCountIntoVar(黃金_的哲學,temp_count,"T-BOOK");}
-            if(temp_item.get(1).equals("「抗爭」的哲學")){addCountIntoVar(抗爭_的哲學,temp_count,"T-BOOK");}
-            if(temp_item.get(1).equals("「勤勞」的哲學")){addCountIntoVar(勤勞_的哲學,temp_count,"T-BOOK");}
-            if(temp_item.get(1).equals("「詩文」的哲學")){addCountIntoVar(詩文_的哲學,temp_count,"T-BOOK");}
-            if(temp_item.get(1).equals("「繁榮」的哲學")){addCountIntoVar(繁榮_的哲學,temp_count,"T-BOOK");}
-            if(temp_item.get(1).equals("「風雅」的哲學")){addCountIntoVar(風雅_的哲學,temp_count,"T-BOOK");}
-            if(temp_item.get(1).equals("「浮世」的哲學")){addCountIntoVar(浮世_的哲學,temp_count,"T-BOOK");}
-            if(temp_item.get(1).equals("「天光」的哲學")){addCountIntoVar(天光_的哲學,temp_count,"T-BOOK");}
-            if(temp_item.get(1).equals("「未知1」的哲學")){addCountIntoVar(未知1_的哲學,temp_count,"T-BOOK");}
-            if(temp_item.get(1).equals("「未知2」的哲學")){addCountIntoVar(未知2_的哲學,temp_count,"T-BOOK");}
-            if(temp_item.get(1).equals("「未知3」的哲學")){addCountIntoVar(未知3_的哲學,temp_count,"T-BOOK");}
-
-            /** T-BOSS -> USING temp_count's pos 3 */
-            // SPECIAL CASE ONLY
-            if(temp_item.get(3).equals("未知周本BOSS跌落物1")){未知周本BOSS跌落物1 = addCountIntoVar(未知周本BOSS跌落物1,temp_count,"T-BOSS");}
-            if(temp_item.get(3).equals("未知周本BOSS跌落物2")){未知周本BOSS跌落物2 = addCountIntoVar(未知周本BOSS跌落物2,temp_count,"T-BOSS");}
-            if(temp_item.get(3).equals("未知周本BOSS跌落物3")){未知周本BOSS跌落物3 = addCountIntoVar(未知周本BOSS跌落物3,temp_count,"T-BOSS");}
-
-            // NORMAL
-            if(temp_item.get(3).equals("北風之環")){北風之環 = addCountIntoVar(北風之環,temp_count,"T-BOSS");}
-            if(temp_item.get(3).equals("東風的吐息")){東風的吐息 = addCountIntoVar(東風的吐息,temp_count,"T-BOSS");}
-            if(temp_item.get(3).equals("東風之翎")){東風之翎 = addCountIntoVar(東風之翎,temp_count,"T-BOSS");}
-            if(temp_item.get(3).equals("北風的魂匣")){北風的魂匣 = addCountIntoVar(北風的魂匣,temp_count,"T-BOSS");}
-            if(temp_item.get(3).equals("東風之爪")){東風之爪 = addCountIntoVar(東風之爪,temp_count,"T-BOSS");}
-            if(temp_item.get(3).equals("北風之尾")){北風之尾 = addCountIntoVar(北風之尾,temp_count,"T-BOSS");}
-            if(temp_item.get(3).equals("魔王之刃·殘片")){魔王之刃_殘片 = addCountIntoVar(魔王之刃_殘片,temp_count,"T-BOSS");}
-            if(temp_item.get(3).equals("吞天之鯨·只角")){吞天之鯨_只角 = addCountIntoVar(吞天之鯨_只角,temp_count,"T-BOSS");}
-            if(temp_item.get(3).equals("武煉之魂·孤影")){武煉之魂_孤影 = addCountIntoVar(武煉之魂_孤影,temp_count,"T-BOSS");}
-            if(temp_item.get(3).equals("龍王之冕")){龍王之冕 = addCountIntoVar(龍王之冕,temp_count,"T-BOSS");}
-            if(temp_item.get(3).equals("血玉之枝")){血玉之枝 = addCountIntoVar(血玉之枝,temp_count,"T-BOSS");}
-            if(temp_item.get(3).equals("鎏金之鱗")){鎏金之鱗 = addCountIntoVar(鎏金之鱗,temp_count,"T-BOSS");}
-            //add in 20210910
-            if(temp_item.get(3).equals("熔毀之刻")){熔毀之刻 = addCountIntoVar(熔毀之刻,temp_count,"T-BOSS");}
-            if(temp_item.get(3).equals("灰燼之心")){灰燼之心 = addCountIntoVar(灰燼之心,temp_count,"T-BOSS");}
-            if(temp_item.get(3).equals("獄火之蝶")){獄火之蝶 = addCountIntoVar(獄火之蝶,temp_count,"T-BOSS");}
-            //add in 20220106
-            if(temp_item.get(3).equals("萬劫之真意")){萬劫之真意 = addCountIntoVar(萬劫之真意,temp_count,"T-BOSS");}
-            if(temp_item.get(3).equals("凶將之手眼")){凶將之手眼 = addCountIntoVar(凶將之手眼,temp_count,"T-BOSS");}
-            if(temp_item.get(3).equals("禍神之禊淚")){禍神之禊淚 = addCountIntoVar(禍神之禊淚,temp_count,"T-BOSS");}
-
-        }
-
-    }
-
-
-    /**EDIT WHEN ADD NEW ITEMS*/
-    public void FindWeaponItemByName(ArrayList<String> temp_item, ArrayList<Integer> temp_count){
-
-        //Log.wtf("Procedure","FindWeaponItemByName1"+" || "+System.currentTimeMillis());
-
-        /** COPY1 -> */
-        if(temp_item.get(1).equals("漆黑隕鐵的一塊")){addCountIntoVar(漆黑隕鐵的一塊,temp_count,"COPY1");}
-        if(temp_item.get(1).equals("鳴神御靈的勇武")){addCountIntoVar(鳴神御靈的勇武,temp_count,"COPY1");}
-        if(temp_item.get(1).equals("遠海夷地的金枝")){addCountIntoVar(遠海夷地的金枝,temp_count,"COPY1");}
-        if(temp_item.get(1).equals("凜風奔狼的懷鄉")){addCountIntoVar(凜風奔狼的懷鄉,temp_count,"COPY1");}
-        if(temp_item.get(1).equals("高塔孤王的碎夢")){addCountIntoVar(高塔孤王的碎夢,temp_count,"COPY1");}
-        if(temp_item.get(1).equals("霧海雲間的轉還")){addCountIntoVar(霧海雲間的轉還,temp_count,"COPY1");}
-        if(temp_item.get(1).equals("獅牙鬥士的理想")){addCountIntoVar(獅牙鬥士的理想,temp_count,"COPY1");}
-        if(temp_item.get(1).equals("孤雲寒林的神體")){addCountIntoVar(孤雲寒林的神體,temp_count,"COPY1");}
-        if(temp_item.get(1).equals("今昔劇畫的鬼人")){addCountIntoVar(今昔劇畫的鬼人,temp_count,"COPY1");}
-
-        /** COPY2 -> */
-        if(temp_item.get(2).equals("混沌真眼")){addCountIntoVar(混沌真眼,temp_count,"COPY2");}
-        if(temp_item.get(2).equals("混沌爐心")){addCountIntoVar(混沌爐心,temp_count,"COPY2");}
-        if(temp_item.get(2).equals("石化的骨片")){addCountIntoVar(石化的骨片,temp_count,"COPY2");}
-        if(temp_item.get(2).equals("霧虛燈芯")){addCountIntoVar(霧虛燈芯,temp_count,"COPY2");}
-        if(temp_item.get(2).equals("督察長祭刀")){addCountIntoVar(督察長祭刀,temp_count,"COPY2");}
-        if(temp_item.get(2).equals("黑晶號角")){addCountIntoVar(黑晶號角,temp_count,"COPY2");}
-        if(temp_item.get(2).equals("地脈的新芽")){addCountIntoVar(地脈的新芽,temp_count,"COPY2");}
-        if(temp_item.get(2).equals("偏光棱鏡")){addCountIntoVar(偏光棱鏡,temp_count,"COPY2");}
-        //add in 20211030
-        if(temp_item.get(2).equals("隱獸鬼爪")){addCountIntoVar(隱獸鬼爪,temp_count,"COPY2");}
-
-
-        /** COMMON -> */
-        if(temp_item.get(3).equals("歷戰的箭簇")){addCountIntoVar(歷戰的箭簇,temp_count,"W-COMMON");}
-        if(temp_item.get(3).equals("禁咒繪卷")){addCountIntoVar(禁咒繪卷,temp_count,"W-COMMON");}
-        if(temp_item.get(3).equals("攫金鴉印")){addCountIntoVar(攫金鴉印,temp_count,"W-COMMON");}
-        if(temp_item.get(3).equals("不祥的面具")){addCountIntoVar(不祥的面具,temp_count,"W-COMMON");}
-        if(temp_item.get(3).equals("尉官的徽記")){addCountIntoVar(尉官的徽記,temp_count,"W-COMMON");}
-        if(temp_item.get(3).equals("原素花蜜")){addCountIntoVar(原素花蜜,temp_count,"W-COMMON");}
-        if(temp_item.get(3).equals("史萊姆原漿")){addCountIntoVar(史萊姆原漿,temp_count,"W-COMMON");}
-        if(temp_item.get(3).equals("名刀鐔")){addCountIntoVar(名刀鐔,temp_count,"W-COMMON");}
-        //add in 20210910
-        if(temp_item.get(3).equals("浮游晶化核")){addCountIntoVar(浮游晶化核,temp_count,"W-COMMON");}
-
-        //Log.wtf("Procedure","FindWeaponItemByName2"+" || "+System.currentTimeMillis());
-    }
-
-    /**
-     * @param ITEM -> ArrayList of item STORE VAR
-     * @param temp_count -> ArrayList
-     * @param XPR -> TYPE -> TELL FUN Total pos have in the ITEM
-     */
-    public void addCountIntoVar(ArrayList<Integer> ITEM, ArrayList<Integer> temp_count, String XPR){
-
-        //Log.wtf("Procedure","addCountIntoVar1"+" || "+System.currentTimeMillis());
-        if(XPR.equals("CRYSTAL")) {
-            for (int x = 0; x < 4; x++) {
-                ITEM.set(x, ITEM.get(x)+temp_count.get(x));
-            }
-        }else if(XPR.equals("COMMON")){
-            for (int x = 0 ; x < 3 ; x++){
-                ITEM.set(x,ITEM.get(x)+temp_count.get(x+5));
-            }
-        }else if(XPR.equals("T-BOOK")){
-            for (int x = 0 ; x < 3 ; x++){
-                ITEM.set(x,ITEM.get(x)+temp_count.get(x));
-            }
-        }else if(XPR.equals("T-COMMON")){
-            for (int x = 0 ; x < 3 ; x++){
-                ITEM.set(x,ITEM.get(x)+temp_count.get(x+3));
-            }
-        }else if(XPR.equals("COPY1")){
-            for (int x = 0 ; x < 4 ; x++){
-                ITEM.set(x,ITEM.get(x)+temp_count.get(x));
-            }
-        }else if(XPR.equals("COPY2")){
-            for (int x = 0 ; x < 3 ; x++){
-                ITEM.set(x,ITEM.get(x)+temp_count.get(x+4));
-            }
-        }else if(XPR.equals("W-COMMON")){
-            for (int x = 0 ; x < 3 ; x++){
-                ITEM.set(x,ITEM.get(x)+temp_count.get(x+7));
-            }
-        }
-
-        //Log.wtf("Procedure","addCountIntoVar2"+" || "+System.currentTimeMillis());
-    }
-
-    /**
-     *
-     * @param ITEM -> Integer of item STORE VAR
-     * @param temp_count -> ArrayList
-     * @param XPR -> TYPE -> TELL FUN Total pos have in the ITEM
-     */
-    public int addCountIntoVar(int ITEM, ArrayList<Integer> temp_count, String XPR){
-
-        //Log.wtf("Procedure","addCountIntoVarX1"+" || "+System.currentTimeMillis());
-        if(XPR.equals("BOSS")) {
-            ITEM = ITEM + temp_count.get(8);
-            return ITEM;
-        }else if(XPR.equals("T-BOSS")) {
-            ITEM = ITEM + temp_count.get(6);
-            return ITEM;
-        }else if(XPR.equals("LOCAL")) {
-            ITEM = ITEM + temp_count.get(4);
-            return ITEM;
-        }else if(XPR.equals("COMMON")) {
-            ITEM = ITEM + temp_count.get(5);
-            return ITEM;
-        }
-
-        //Log.wtf("Procedure","addCountIntoVarX2"+" || "+System.currentTimeMillis());
-        return ITEM;
-    }
-
 
     public void char_readJSON () {
         String char_lvl_exp = LoadData("db/char/char_lvl_exp.json");

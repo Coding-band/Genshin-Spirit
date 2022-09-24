@@ -130,6 +130,7 @@
     <color name="spinner_bg_siptik">#B3FFFFFF</color>
     <color name="spinner_stroke_siptik">#B3FFFFFF</color>
     <color name="ui_bg_siptik">#B3FFFFFF</color>
+    <color name="ui_bg_siptik_always">#CC000000</color>
     <color name="ui_tv_siptik">#3B4255</color>
 
     <color name="tab_selected_obj_siptik">#4D5668</color>
@@ -170,6 +171,7 @@
     <color name="app_ico_item_fill">#FFDBCB9C</color>
     <color name="app_ico_item_stroke">#FFFFEDAB</color>
     <color name="app_ico_bg">#FF54B7A5</color>
+
 
 
 </resources>

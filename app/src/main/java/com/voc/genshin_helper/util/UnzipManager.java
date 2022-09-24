@@ -26,6 +26,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
@@ -107,7 +108,7 @@ public class UnzipManager {
                 int count;
                 byte[] buffer = new byte[8192];
 
-                ZipFile zipFile1 = new ZipFile(zipFile);
+                ZipFile zipFile1 = new ZipFile(zipFile, Charset.forName("CP866"));
                 pDialog.setMax( zipFile1.size());
 
                 while ((ze = zis.getNextEntry()) != null) {
