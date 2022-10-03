@@ -587,7 +587,8 @@
                             android:layout_margin="8dp"
                             android:layout_weight="1"
                             android:background="@drawable/item_selected_circle_effect"
-                            android:orientation="vertical">
+                            android:orientation="vertical"
+                            android:visibility="gone">
 
                             <ImageView
                                 android:id="@+id/alarm"

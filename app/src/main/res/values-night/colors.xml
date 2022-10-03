@@ -88,6 +88,8 @@
     <color name="tab_selected_char_2048">#3B4255</color>
     <color name="tab_unselected_char_2048">#4D5668</color>
     <color name="tab_unselected_2048">#3B4255</color>
+    <color name="navi_bg_2048">#4A4842</color>
+    <color name="navi_bg_2048_alpha">#CC4A4842</color>
 
     <color name="tab_no_circ_unselected_bg_2048">#99ECE5D8</color>
     <color name="tab_no_circ_unselected_inline_2048">#FF59554F</color>
@@ -119,6 +121,7 @@
     <color name="ui_bg_siptik_always">#CC000000</color>
     <color name="ui_tv_siptik">#ABABAB</color>
     <color name="detail_bg">#000000</color>
+    <color name="detail_bg_alpha">#CC000000</color>
 
     <color name="tab_selected_obj_siptik">#4D5668</color>
     <color name="tab_unselected_obj_siptik">#ECE5D8</color>

@@ -292,8 +292,8 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                 viewHolder.weapon_card_bg.getLayoutParams().height = height;
                 viewHolder.weapon_card_mask.getLayoutParams().width = width;
                 viewHolder.weapon_card_mask.getLayoutParams().height = height;
-                viewHolder.weapon_card.getLayoutParams().width = width-16;
-                viewHolder.weapon_card.getLayoutParams().height = height-16;
+                viewHolder.weapon_cbg.getLayoutParams().width = width-16;
+                viewHolder.weapon_cbg.getLayoutParams().height = height-16;
             }
 
 
@@ -345,8 +345,8 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                 viewHolder.weapon_card_bg.getLayoutParams().height = height;
                 viewHolder.weapon_card_mask.getLayoutParams().width = width;
                 viewHolder.weapon_card_mask.getLayoutParams().height = height;
-                viewHolder.weapon_card.getLayoutParams().width = width-16;
-                viewHolder.weapon_card.getLayoutParams().height = height-16;
+                viewHolder.weapon_cbg.getLayoutParams().width = width-16;
+                viewHolder.weapon_cbg.getLayoutParams().height = height-16;
             }
 
 
@@ -398,8 +398,8 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                 viewHolder.weapon_card_bg.getLayoutParams().height = height;
                 viewHolder.weapon_card_mask.getLayoutParams().width = width;
                 viewHolder.weapon_card_mask.getLayoutParams().height = height;
-                viewHolder.weapon_card.getLayoutParams().width = width-16;
-                viewHolder.weapon_card.getLayoutParams().height = height-16;
+                viewHolder.weapon_cbg.getLayoutParams().width = width-16;
+                viewHolder.weapon_cbg.getLayoutParams().height = height-16;
             }
 
 
@@ -451,8 +451,8 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                 viewHolder.weapon_card_bg.getLayoutParams().height = height;
                 viewHolder.weapon_card_mask.getLayoutParams().width = width;
                 viewHolder.weapon_card_mask.getLayoutParams().height = height;
-                viewHolder.weapon_card.getLayoutParams().width = width-16;
-                viewHolder.weapon_card.getLayoutParams().height = height-16;
+                viewHolder.weapon_cbg.getLayoutParams().width = width-16;
+                viewHolder.weapon_cbg.getLayoutParams().height = height-16;
             }
 
 
@@ -504,8 +504,8 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                 viewHolder.weapon_card_bg.getLayoutParams().height = height;
                 viewHolder.weapon_card_mask.getLayoutParams().width = width;
                 viewHolder.weapon_card_mask.getLayoutParams().height = height;
-                viewHolder.weapon_card.getLayoutParams().width = width-16;
-                viewHolder.weapon_card.getLayoutParams().height = height-16;
+                viewHolder.weapon_cbg.getLayoutParams().width = width-16;
+                viewHolder.weapon_cbg.getLayoutParams().height = height-16;
             }
 
 
@@ -557,8 +557,8 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                 viewHolder.weapon_card_bg.getLayoutParams().height = height;
                 viewHolder.weapon_card_mask.getLayoutParams().width = width;
                 viewHolder.weapon_card_mask.getLayoutParams().height = height;
-                viewHolder.weapon_card.getLayoutParams().width = width-16;
-                viewHolder.weapon_card.getLayoutParams().height = height-16;
+                viewHolder.weapon_cbg.getLayoutParams().width = width-16;
+                viewHolder.weapon_cbg.getLayoutParams().height = height-16;
             }
 
 
@@ -610,8 +610,8 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                 viewHolder.weapon_card_bg.getLayoutParams().height = height;
                 viewHolder.weapon_card_mask.getLayoutParams().width = width;
                 viewHolder.weapon_card_mask.getLayoutParams().height = height;
-                viewHolder.weapon_card.getLayoutParams().width = width-16;
-                viewHolder.weapon_card.getLayoutParams().height = height-16;
+                viewHolder.weapon_cbg.getLayoutParams().width = width-16;
+                viewHolder.weapon_cbg.getLayoutParams().height = height-16;
             }
         }
         int one_curr = height;
@@ -766,6 +766,18 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                 }
             }
 
+            if (context.getSharedPreferences("user_info",MODE_PRIVATE).getString("curr_ui_grid", "2").equals("5")){
+                switch (weapons.getRare()){
+                    case 1 : viewHolder.weapon_icon.setBackgroundResource(R.drawable.bg_rare1_char_siptik);break;
+                    case 2 : viewHolder.weapon_icon.setBackgroundResource(R.drawable.bg_rare2_char_siptik);break;
+                    case 3 : viewHolder.weapon_icon.setBackgroundResource(R.drawable.bg_rare3_char_siptik);break;
+                    case 4 : viewHolder.weapon_icon.setBackgroundResource(R.drawable.bg_rare4_char_siptik);break;
+                    case 5 : viewHolder.weapon_icon.setBackgroundResource(R.drawable.bg_rare5_char_siptik);break;
+                    default:  viewHolder.weapon_icon.setBackgroundResource(R.drawable.bg_rare1_char_siptik);break;
+                }
+                viewHolder.weapon_star.setVisibility(View.GONE);
+            }
+
 
             viewHolder.weapon_card_bg.getLayoutParams().width = width+32;
             viewHolder.weapon_card_bg.getLayoutParams().height = height+32;
@@ -793,7 +805,7 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
             //viewHolder.weapon_card_bg.setPadding(8,8,8,8);
             viewHolder.weapon_card_mask.setPadding(8,8,8,8);
             viewHolder.weapon_card_ico_deco.setPadding(8,8,8,8);
-            viewHolder.weapon_card.setPadding(8,8,8,8);
+            viewHolder.weapon_cbg.setPadding(8,8,8,8);
 
             viewHolder.weapon_card_ico_deco.setEdgeLength(100);
             viewHolder.weapon_card_ico_deco.setFadeDirection(FadingImageView.FadeSide.RIGHT_SIDE);
@@ -1128,6 +1140,7 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
         public ImageView weapon_card_mask;
         public FadingImageView weapon_card_ico_deco;
         public CardView weapon_card;
+        public LinearLayout weapon_cbg;
 
         public ViewHolder(View view, OnItemClickListener onItemClickListener) {
             super(view);
@@ -1142,6 +1155,7 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
             this.weapon_stat = (TextView) view.findViewById(R.id.weapon_stat);
             this.weapon_press_mask = (ImageView) view.findViewById(R.id.weapon_press_mask);
             this.weapon_main = (ConstraintLayout) view.findViewById(R.id.weapon_main);
+            this.weapon_cbg = view.findViewById(R.id.weapon_cbg);
 
             this.weapon_weapon = view.findViewById(R.id.weapon_weapon);
             this.weapon_card_bg = view.findViewById(R.id.weapon_card_bg);

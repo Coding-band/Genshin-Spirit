@@ -276,6 +276,12 @@ public class Calculator2048 extends AppCompatActivity{
         item_rss = new ItemRss();
         context = this;
         activity = this;
+
+        Window dialogWindowX = activity.getWindow();
+        // 2O48 DESIGN
+        dialogWindowX.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+        dialogWindowX.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
+
         DataBaseHelper dbHelper = new DataBaseHelper(context);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
         // Background of item

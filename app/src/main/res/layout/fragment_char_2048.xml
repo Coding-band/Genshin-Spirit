@@ -16,8 +16,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
+        android:clipToPadding="false"
         android:overScrollMode="always"
         android:paddingTop="60dp"
+        android:paddingBottom="60dp"
         android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,7 +31,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@drawable/filter_desk_head_2048"
+        android:background="@drawable/mask_head_bg"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,19 +45,6 @@
             android:layout_height="60dp"
             android:animateLayoutChanges="true"
             android:visibility="visible">
-
-            <ImageView
-                android:id="@+id/char_header_bg"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="false"
-                android:scaleType="centerCrop"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/filter_desk_head_2048" />
 
             <ImageView
                 android:id="@+id/char_search"

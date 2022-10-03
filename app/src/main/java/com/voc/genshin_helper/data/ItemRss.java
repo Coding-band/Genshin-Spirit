@@ -31,46 +31,48 @@ public class ItemRss {
     public int[] char_names = {R.string.yae_miko,R.string.shenhe,R.string.yun_jin,R.string.gorou, R.string.arataki_itto, R.string.thoma, R.string.sangonomiya_kokomi, R.string.aloy, R.string.kujou_sara, R.string.raiden_shogun, R.string.sayu, R.string.yoimiya, R.string.kamisato_ayaka, R.string.kaedehara_kazuha, R.string.yanfei, R.string.eula, R.string.rosaria, R.string.xiao, R.string.hu_tao, R.string.ganyu, R.string.albedo, R.string.zhongli, R.string.xinyan, R.string.tartaglia, R.string.diona, R.string.xingqiu, R.string.xiangling, R.string.venti, R.string.sucrose, R.string.razor, R.string.qiqi, R.string.noelle, R.string.ningguang, R.string.mona, R.string.lisa, R.string.klee, R.string.keqing, R.string.kaeya, R.string.jean, R.string.fischl, R.string.diluc, R.string.chongyun, R.string.bennett, R.string.beidou, R.string.barbara, R.string.amber, R.string.traveler_anemo, R.string.traveler_geo, R.string.traveler_electro};
     public int[] weapons_name = {R.string.calamity_queller,R.string.redhorn_stonethresher,R.string.akuoumaru,R.string.akuoumaru,R.string.mouuns_moon,R.string.wavebreakers_fin,R.string.amenoma_kageuchi, R.string.aquila_favonia, R.string.blackcliff_longsword, R.string.cool_steel, R.string.dark_iron_sword, R.string.dull_blade, R.string.favonius_sword, R.string.festering_desire, R.string.fillet_blade, R.string.freedom_sworn, R.string.harbinger_of_dawn, R.string.iron_sting, R.string.lions_roar, R.string.mistsplitter_reforged, R.string.primordial_jade_cutter, R.string.prototype_rancour, R.string.royal_longsword, R.string.sacrificial_sword, R.string.silver_sword, R.string.skyrider_sword, R.string.skyward_blade, R.string.summit_shaper, R.string.sword_of_descension, R.string.the_alley_flash, R.string.the_black_sword, R.string.the_flute, R.string.travelers_handy_sword, R.string.waster_greatsword, R.string.old_mercs_pal, R.string.bloodtainted_greatsword, R.string.debate_club, R.string.quartz, R.string.ferrous_shadow, R.string.skyrider_greatsword, R.string.white_iron_greatsword, R.string.blackcliff_slasher, R.string.favonius_greatsword, R.string.katsuragikiri_nagamasa, R.string.lithic_blade, R.string.luxurious_sea_lord, R.string.prototype_archaic, R.string.rainslasher, R.string.royal_greatsword, R.string.sacrificial_greatsword, R.string.serpent_spine, R.string.snow_tombed_starsilver, R.string.the_bell, R.string.whiteblind, R.string.skyward_pride, R.string.song_of_broken_pines, R.string.the_unforged, R.string.wolfs_gravestone, R.string.beginners_protector, R.string.iron_point, R.string.black_tassel, R.string.halberd, R.string.white_tassel, R.string.blackcliff_pole, R.string.crescent_pike, R.string.deathmatch, R.string.dragons_bane, R.string.dragonspine_spear, R.string.favonius_lance, R.string.kitain_cross_spear, R.string.lithic_spear, R.string.prototype_starglitter, R.string.royal_spear, R.string.the_catch, R.string.engulfing_lightning, R.string.primordial_jade_winged_spear, R.string.skyward_spine, R.string.staff_of_homa, R.string.vortex_vanquisher, R.string.apprentices_notes, R.string.pocket_grimoire, R.string.amber_catalyst, R.string.emerald_orb, R.string.magic_guide, R.string.otherworldly_story, R.string.thrilling_tales_of_dragon_slayers, R.string.twin_nephrite, R.string.blackcliff_agate, R.string.dodoco_tales, R.string.eye_of_perception, R.string.favonius_codex, R.string.frostbearer, R.string.hakushin_ring, R.string.mappa_mare, R.string.prototype_amber, R.string.royal_grimoire, R.string.sacrificial_fragments, R.string.solar_pearl, R.string.the_widsith, R.string.wine_and_song, R.string.everlasting_moonglow, R.string.lost_prayer_to_the_sacred_winds, R.string.memory_of_dust, R.string.skyward_atlas, R.string.hunters_bow, R.string.seasoned_hunters_bow, R.string.ebony_bow, R.string.messenger, R.string.raven_bow, R.string.recurve_bow, R.string.sharpshooters_oath, R.string.slingshot, R.string.alley_hunter, R.string.blackcliff_warbow, R.string.compound_bow, R.string.favonius_warbow, R.string.hamayumi, R.string.mitternachts_waltz, R.string.predator, R.string.prototype_crescent, R.string.royal_bow, R.string.rust, R.string.sacrificial_bow, R.string.the_stringless, R.string.the_viridescent_hunt, R.string.windblume_ode, R.string.amos_bow, R.string.elegy_for_the_end, R.string.skyward_harp, R.string.thundering_pulse, R.string.cinnabar_spindle};
     public int[] artifact_name = {R.string.adventurer, R.string.archaic_petra, R.string.berserker, R.string.blizzard_strayer, R.string.bloodstained_chivalry, R.string.brave_heart, R.string.crimson_witch_of_flames, R.string.defenders_will, R.string.emblem_of_severed_fate, R.string.gambler, R.string.gladiators_finale, R.string.heart_of_depth, R.string.instructor, R.string.lavawalker, R.string.lucky_dog, R.string.maiden_beloved, R.string.martial_artist, R.string.noblesse_oblige, R.string.pale_flame, R.string.prayers_of_destiny, R.string.prayers_of_illumination, R.string.prayers_of_wisdom, R.string.prayers_of_springtime, R.string.resolution_of_sojourner, R.string.retracing_bolide, R.string.scholar, R.string.shimenawas_reminiscence, R.string.tenacity_of_the_millelith, R.string.the_exile, R.string.thundering_fury, R.string.thundersoother, R.string.tiny_miracle, R.string.traveling_doctor, R.string.viridescent_venerer, R.string.wanderers_troupe,R.string.husk_of_opulent_dreams,R.string.ocean_hued_clam};
-    // NOT INCLUDED 3.0 CHAR. => 20220714
+    // INCLUDED 3.0 CHAR. => 20221003
+    // INCLUDED 3.1 CHAR. => 20221003
+    // NOT INCLUDED 3.2 CHAR. => 20221003
     public String[] charBirthName = {
             "Thoma","Diona","Rosaria",
             "Beidou","Sangonomiya Kokomi","Bennett",
             "Qiqi","Shenhe","Jean","Noelle","Kamisato Ayato",
             "Aloy","Xiao","Yelan","Diluc",
-            "Gorou","Yun Jin","Fischl",
-            "Arataki Itto","Lisa","Venti","Yoimiya","Raiden Shogun","Yae Miko","Kuki Shinobu",
+            "Candace","Collei","Gorou","Yun Jin","Fischl",
+            "Arataki Itto","Lisa","Venti","Yoimiya","Cyno","Raiden Shogun","Yae Miko","Kuki Shinobu",
             "Barbara","Kujou Sara","Hu Tao","Voc-夜芷冰","Tartaglia","Shikanoin Heizou","Klee","Yanfei",
             "Amber","Ningguang","Mona",
             "Diona","Razor","Albedo","Kamisato Ayaka",
             "Xingqiu","Xinyan","Sayu","Eula","Kaedehara Kazuha",
             "Xiangling","Xingqiu","Sucrose","Kaeya",
-            "Ganyu","Zhongli"};
+            "Ganyu","Nilou","Dori","Tighnari","Zhongli"};
     public int[] charBirthDay = {
             9,18,24,
             14,22,29,
             3,10,14,21,26,
             4,17,20,30,
-            18,21,27,
-            1,6,9,21,26,27,28,
+            3,8,18,21,27,
+            1,6,9,21,23,26,27,28,
             5,14,15,19,20,24,27,28,
             10,26,31,
             7,9,13,28,
             9,16,19,25,29,
             2,20,26,30,
-            2,31};
+            2,3,21,29,31};
     public int[] charBirthMonth = {
             0,0,0,
             1,1,1,
             2,2,2,2,2,
             3,3,3,3,
-            4,4,4,
-            5,5,5,5,5,5,5,
+            4,4,4,4,4,
+            5,5,5,5,5,5,5,5,
             6,6,6,6,6,6,6,6,
             7,7,7,
             8,8,8,8,
             9,9,9,9,9,
             10,10,10,10,
-            11,11};
+            11,11,11,11,11};
 
 
     public String getLocaleName (String str,Context context) {
@@ -689,11 +691,11 @@ public class ItemRss {
             case "Kagotsurube Isshin" : return new String[] {context.getString(R.string.kagotsurube_isshin),"/drawable/kagotsurube_isshin.png"};
             case "Fading Twilight" : return new String[] {context.getString(R.string.fading_twilight),"/drawable/fading_twilight.png"};
             //add in 20220714
-            case "Timber Blade" : return new String[] {context.getString(R.string.timber_blade),"/drawable/timber_blade.png"};
+            case "Sapwood Blade" : return new String[] {context.getString(R.string.sapwood_blade),"/drawable/timber_blade.png"};
             case "Forest Regalia" : return new String[] {context.getString(R.string.forest_regalia),"/drawable/forest_regalia.png"};
             case "Moonpiercer" : return new String[] {context.getString(R.string.moonpiercer),"/drawable/moonpiercer.png"};
             case "King's Squire" : return new String[] {context.getString(R.string.kings_squire),"/drawable/kings_squire.png"};
-            case "Trawler" : return new String[] {context.getString(R.string.trawler),"/drawable/trawler.png"};
+            case "End of the Line" : return new String[] {context.getString(R.string.end_of_the_line),"/drawable/trawler.png"};
             case "Hunter's Path" : return new String[] {context.getString(R.string.hunters_path),"/drawable/hunters_path.png"};
             case "Fruit of Fulfillment" : return new String[] {context.getString(R.string.fruit_of_fulfillment),"/drawable/fruit_of_fulfillment.png"};
             //add in 20220924
@@ -703,6 +705,8 @@ public class ItemRss {
             case "Missive Windspear" : return new String[] {context.getString(R.string.missive_windspear),"/drawable/missive_windspear.png"};
             case "Staff of the Scarlet Sands" : return new String[] {context.getString(R.string.staff_of_the_scarlet_sands),"/drawable/staff_of_the_scarlet_sands.png"};
             case "Wandering Evenstar" : return new String[] {context.getString(R.string.wandering_evenstar),"/drawable/wandering_evenstar.png"};
+            //add in 20221001
+            case "A Thousand Floating Dreams" : return new String[] {context.getString(R.string.a_thousand_floating_dreams),"/drawable/a_thousand_floating_dreams.png"};
 
             default :
                 System.out.println("WEAPON+ NAME ERROR : "+str);return new String[] {context.getString(R.string.unknown),"/drawable/paimon_lost.png"};
@@ -857,11 +861,11 @@ public class ItemRss {
             case "Kagotsurube Isshin" : return new String[] {context.getString(R.string.kagotsurube_isshin),"/drawable/kagotsurube_isshin_gacha.png"};
             case "Fading Twilight" : return new String[] {context.getString(R.string.fading_twilight),"/drawable/fading_twilight_gacha.png"};
             //add in 20220714
-            case "Timber Blade" : return new String[] {context.getString(R.string.timber_blade),"/drawable/timber_blade_gacha.png"};
+            case "Sapwood Blade" : return new String[] {context.getString(R.string.sapwood_blade),"/drawable/timber_blade_gacha.png"};
             case "Forest Regalia" : return new String[] {context.getString(R.string.forest_regalia),"/drawable/forest_regalia_gacha.png"};
             case "Moonpiercer" : return new String[] {context.getString(R.string.moonpiercer),"/drawable/moonpiercer_gacha.png"};
             case "King's Squire" : return new String[] {context.getString(R.string.kings_squire),"/drawable/kings_squire_gacha.png"};
-            case "Trawler" : return new String[] {context.getString(R.string.trawler),"/drawable/trawler_gacha.png"};
+            case "End of the Line" : return new String[] {context.getString(R.string.end_of_the_line),"/drawable/trawler_gacha.png"};
             case "Hunter's Path" : return new String[] {context.getString(R.string.hunters_path),"/drawable/hunters_path_gacha.png"};
             case "Fruit of Fulfillment" : return new String[] {context.getString(R.string.fruit_of_fulfillment),"/drawable/fruit_of_fulfillment_gacha.png"};
             //add in 20220924
@@ -871,6 +875,8 @@ public class ItemRss {
             case "Missive Windspear" : return new String[] {context.getString(R.string.missive_windspear),"/drawable/missive_windspear_gacha.png"};
             case "Staff of the Scarlet Sands" : return new String[] {context.getString(R.string.staff_of_the_scarlet_sands),"/drawable/staff_of_the_scarlet_sands_gacha.png"};
             case "Wandering Evenstar" : return new String[] {context.getString(R.string.wandering_evenstar),"/drawable/wandering_evenstar_gacha.png"};
+            //add in 20221003
+            case "A Thousand Floating Dreams" : return new String[] {context.getString(R.string.a_thousand_floating_dreams),"/drawable/a_thousand_floating_dreams_gacha.png"};
 
             default :
                 System.out.println("WEAPON+ NAME ERROR : "+str);return new String[] {context.getString(R.string.unknown),"/drawable/paimon_lost_gacha.png"};
@@ -1027,11 +1033,11 @@ public class ItemRss {
             case "kagotsurube_isshin" : return "Kagotsurube Iisshin";
             case "fading_twilight" : return "Fading Twilight";
             //add in 20220714
-            case "timber_blade" : return "Timber Blade";
+            case "sapwood_blade" : return "Sapwood Blade";
             case "forest_regalia" : return "Forest Regalia";
             case "moonpiercer" : return "Moonpiercer";
             case "kings_squire" : return "King's Squire";
-            case "trawler" : return "Trawler";
+            case "end_of_the_line" : return "End of the Line";
             case "hunters_path" : return "Hunter's Path";
             case "fruit_of_fulfillment" : return "Fruit of Fulfillment" ;
             //add in 20220924
@@ -1041,6 +1047,8 @@ public class ItemRss {
             case "missive_windspear" : return "Missive Windspear" ;
             case "staff_of_the_scarlet_sands" : return "Staff of the Scarlet Sands" ;
             case "wandering_evenstar" : return "Wandering Evenstar" ;
+            case "a_thousand_floating_dreams" : return "A Thousand Floating Dreams";
+
             default: return  "PAIMON_ATE";
         }
     }
@@ -1220,6 +1228,9 @@ public class ItemRss {
 
     public String[] getCharByName_BASE(String name, Context context){
         switch (name) {
+            case "Nahida": return new String[]{"/drawable/nahida_full.png", context.getString(R.string.nahida), "/drawable/nahida_gacha_splash.png", "/drawable/nahida_ico.png", "/drawable/nahida_card.png"};
+            case "Layla": return new String[]{"/drawable/layla_full.png", context.getString(R.string.layla), "/drawable/layla_gacha_splash.png", "/drawable/layla_ico.png", "/drawable/layla_card.png"};
+
             case "Nilou": return new String[]{"/drawable/nilou_full.png", context.getString(R.string.nilou), "/drawable/nilou_gacha_splash.png", "/drawable/nilou_ico.png", "/drawable/nilou_card.png"};
             case "Cyno": return new String[]{"/drawable/cyno_full.png", context.getString(R.string.cyno), "/drawable/cyno_gacha_splash.png", "/drawable/cyno_ico.png", "/drawable/cyno_card.png"};
             case "Candace": return new String[]{"/drawable/candace_full.png", context.getString(R.string.candace), "/drawable/candace_gacha_splash.png", "/drawable/candace_ico.png", "/drawable/candace_card.png"};
@@ -1374,6 +1385,7 @@ public class ItemRss {
         else if(name.equals("Yun Jin") || name.equals("雲菫") || name.equals("云菫") || name.equals("雲菫") || name.equals("Юнь Цзинь")){ return "Yun Jin";}
         else if(name.equals("Shenhe") || name.equals("申鶴") || name.equals("申鹤") || name.equals("申鶴") || name.equals("Шэнь Хэ")){ return "Shenhe";}
         else if(name.equals("Yae Miko") || name.equals("八重神子") || name.equals("八重神子") || name.equals("八重神子") || name.equals("Яэ Мико")){ return "Yae Miko";}
+        else if(name.equals("Thoma") || name.equals("托馬") || name.equals("托马") || name.equals("トーマ") || name.equals("Тома")){ return "Thoma";}
         else if(name.equals("Kamisato Ayato") || name.equals("神里綾人") || name.equals("神里绫人") || name.equals("神里綾人") || name.equals("Камисато Аято")){ return "Kamisato Ayato";}
         else if(name.equals("Kuki Shinobu") || name.equals("久岐忍") || name.equals("久岐忍") || name.equals("久岐忍") || name.equals("Куки Синобу")){ return "Kuki Shinobu";}
         else if(name.equals("Yelan") || name.equals("夜蘭") || name.equals("夜兰") || name.equals("夜蘭") || name.equals("Е Лань")){ return "Yelan";}
@@ -1381,11 +1393,16 @@ public class ItemRss {
         else if(name.equals("Collei") || name.equals("柯萊") || name.equals("柯莱") || name.equals("コレイ") || name.equals("Коллеи")){ return "Collei";}
         else if(name.equals("Dori") || name.equals("多莉") || name.equals("多莉") || name.equals("ドリー") || name.equals("Дори")){ return "Dori";}
         else if(name.equals("Tighnari") || name.equals("提納里") || name.equals("提纳里") || name.equals("ティナリ") || name.equals("Тигнари")){ return "Tighnari";}
+        else if(name.equals("Cyno") || name.equals("赛诺") || name.equals("賽諾") || name.equals("セノ") || name.equals("Сайно")){ return "Cyno";}
+        else if(name.equals("Nilou") || name.equals("坎蒂丝") || name.equals("坎蒂絲") || name.equals("ニィロウ") || name.equals("Нилу")){ return "Nilou";}
+        else if(name.equals("Candace") || name.equals("提納里") || name.equals("提纳里") || name.equals("キャンディス") || name.equals("Кандакия")){ return "Candace";}
+        else if(name.equals("Nahida") || name.equals("纳西妲") || name.equals("納西妲") || name.equals("ナヒーダ") || name.equals("Нахида")){ return "Nahida";}
+        else if(name.equals("Layla") || name.equals("莱依拉") || name.equals("萊依拉") || name.equals("レイラ") || name.equals("Лайла")){ return "Layla";}
+
         else if(name.equals("Traveler-Anemo") || name.equals("旅行者(風)") || name.equals("旅行者(风)") || name.equals("旅人 (風)") || name.equals("Путешественник(Анемо)")){ return "Traveler-Anemo";}
         else if(name.equals("Traveler-Electro") || name.equals("旅行者(岩)") || name.equals("旅行者(岩)") || name.equals("旅人 (岩)") || name.equals("Путешественник(Гео)")){ return "Traveler-Electro";}
         else if(name.equals("Traveler-Geo") || name.equals("旅行者(雷)") || name.equals("旅行者(雷)") || name.equals("旅人 (雷)") || name.equals("Путешественник(Электро)")){ return "Traveler-Geo";}
         else if(name.equals("Traveler-Dendro") || name.equals("旅行者(草)") || name.equals("旅行者(草)") || name.equals("旅人 (草)") || name.equals("Путешественник(Элементы)")){ return "Traveler-Dendro";}
-        else if(name.equals("Thoma") || name.equals("托馬") || name.equals("托马") || name.equals("トーマ") || name.equals("Тома")){ return "Thoma";}
         else if(name.equals("N/A")){ return "N/A";}
 
 
@@ -1491,6 +1508,13 @@ public class ItemRss {
                 return "/drawable/majestic_hooked_beak.png";
             case "藏雷野實":
                 return "/drawable/thunderclap_fruitcore.png";
+            //add in 20221001
+            case "永續機芯":
+                return "/drawable/perpetual_caliber.png";
+            case "導光四面體":
+                return "/drawable/light_guiding_tetrahedron.png";
+            case "滅諍草蔓":
+                return "/drawable/quelled_creeper.png";
 
             /** Local*/
             case "小燈草":
@@ -2009,6 +2033,24 @@ public class ItemRss {
                 return "/drawable/sanctifying_unction.png";
             case "祝聖精華":
                 return "/drawable/sanctifying_essence.png";
+
+            /** Un-released*/
+            case "「未知1」的教導":
+            case "「未知1」的指引":
+            case "「未知1」的哲學":
+            case "「未知2」的教導":
+            case "「未知2」的指引":
+            case "「未知2」的哲學":
+            case "「未知3」的教導":
+            case "「未知3」的指引":
+            case "「未知3」的哲學":
+            case "未知周本BOSS跌落物1":
+            case "未知周本BOSS跌落物2":
+            case "未知周本BOSS跌落物3":
+            case "未知常駐BOSS跌落物1":
+            case "未知常駐BOSS跌落物2":
+            case "未知常駐BOSS跌落物3":
+                return "/drawable/hu_tao_unknown.png";
             default:
                 return "/drawable/paimon_lost.png";
         }
@@ -2168,6 +2210,8 @@ public class ItemRss {
             }
             case Calendar.MAY: {
                 switch (dom) {
+                    case 3 : char_name = "Candace"; break;
+                    case 8 : char_name = "Collei"; break;
                     case 18 : char_name = "Gorou"; break;
                     case 21 : char_name = "Yun Jin"; break;
                     case 27 : char_name = "Fischl"; break;
@@ -2180,6 +2224,7 @@ public class ItemRss {
                     case 6 : char_name = "Lisa"; break;
                     case 9 : char_name = "Venti"; break;
                     case 21 : char_name = "Yoimiya"; break;
+                    case 23 : char_name = "Cyno"; break;
                     case 26 : char_name = "Raiden Shogun"; break;
                     case 27 : char_name = "Yae Miko"; break;
                     case 28 : char_name = "Kuki Shinobu"; break;
@@ -2238,10 +2283,16 @@ public class ItemRss {
             case Calendar.DECEMBER: {
                 switch (dom) {
                     case 2 : char_name = "Ganyu"; break;
+                    case 3 : char_name = "Nilou"; break;
+                    case 21 : char_name = "Dori"; break;
+                    case 29 : char_name = "Tighnari"; break;
                     case 31 : char_name = "Zhongli"; break;
                 }
                 break;
             }
+
+            // 3.2
+            // 納西妲 , 萊依拉
 
         }
         return char_name;

@@ -2,7 +2,6 @@ package com.voc.genshin_helper.ui.MMXLVIII;
 
 import static com.voc.genshin_helper.util.RoundedCornersTransformation.CornerType.ALL;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
@@ -18,12 +17,10 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -34,9 +31,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
 import android.net.Uri;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
@@ -87,15 +82,12 @@ import com.voc.genshin_helper.data.WeaponsAdapter;
 import com.voc.genshin_helper.database.DataBaseContract;
 import com.voc.genshin_helper.database.DataBaseHelper;
 import com.voc.genshin_helper.kidding.GoSleep;
-import com.voc.genshin_helper.kidding.RandomClsNo;
 import com.voc.genshin_helper.tutorial.TutorialUI;
 import com.voc.genshin_helper.ui.AlarmUI;
 import com.voc.genshin_helper.ui.BackgroundConfirmActivity;
-import com.voc.genshin_helper.ui.CalculatorDBActivity;
 import com.voc.genshin_helper.ui.MainActivity;
 import com.voc.genshin_helper.ui.SipTik.DeskSipTik;
 import com.voc.genshin_helper.util.BackgroundReload;
-import com.voc.genshin_helper.util.BitmapToRGB565;
 import com.voc.genshin_helper.util.ChangeLog;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.DownloadTask;
@@ -112,8 +104,11 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
@@ -124,7 +119,6 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
-import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -146,6 +140,7 @@ public class Desk2048 extends AppCompatActivity {
     LinearLayout char_ll;
     LinearLayout weapon_ll;
     TabLayout desk_tablayout;
+    ImageView desk_tablayout_bg;
     Today_Material tm;
     ItemRss css;
     //Char Page
@@ -284,6 +279,14 @@ public class Desk2048 extends AppCompatActivity {
 
         viewPager = (ViewPager) findViewById(R.id.vp);
         desk_tablayout = findViewById(R.id.desk_tablayout);
+        desk_tablayout_bg = findViewById(R.id.desk_tablayout_bg);
+
+        if (context.getString(R.string.mode).equals("Night")){
+            desk_tablayout_bg.setImageResource(R.drawable.mask_navi_bg_night);
+        }else{
+            desk_tablayout_bg.setImageResource(R.drawable.mask_navi_bg_day);
+        }
+
         npd = new NumberPickerDialog(this);
 
         // Check Is First Time Open
@@ -670,6 +673,7 @@ public class Desk2048 extends AppCompatActivity {
         int height_w = displayMetrics_w.heightPixels;
         int width_w = displayMetrics_w.widthPixels;
         mWeaponAdapter = new WeaponsAdapter(context,weaponsList,activity);
+
 
         if (sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
             if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
@@ -1995,6 +1999,11 @@ public class Desk2048 extends AppCompatActivity {
             }
         });
 
+        if(other_app_ico_use_default.isChecked() == true) {
+            editor.putBoolean("isAppIconChange", false);
+            editor.apply();
+        }
+
         // Background
         Button bg_setting_btn = viewPager4.findViewById(R.id.bg_setting_btn);
         bg_setting_btn.setOnClickListener(new View.OnClickListener() {
@@ -2122,8 +2131,11 @@ public class Desk2048 extends AppCompatActivity {
             }
         });
 
-        //Other -> Exit Confirm
+        //Other -> Item Base Name -> DEBUG ONLY
         other_item_eng_name = viewPager4.findViewById(R.id.other_item_eng_name);
+        if (BuildConfig.FLAVOR.equals("dev") || BuildConfig.FLAVOR.equals("beta")){
+            other_item_eng_name.setVisibility(View.VISIBLE);
+        }
         boolean isBaseNameDisplay = sharedPreferences.getBoolean("isBaseNameDisplay",false);
         other_item_eng_name.setChecked(isBaseNameDisplay);
         other_item_eng_name.setOnClickListener(new View.OnClickListener() {
@@ -3366,8 +3378,25 @@ public class Desk2048 extends AppCompatActivity {
                 case "jpeg" : editor.putString("tmp_gif_png","jpeg");break;
                 case "gif" : editor.putString("tmp_gif_png","gif");break;
             }
+
             editor.apply();
             c.close();
+
+            File file = new File(imagePath);
+            try (InputStream in = new FileInputStream(file)) {
+                try (OutputStream out = new FileOutputStream(context.getFilesDir()+"/tmp_background."+sharedPreferences.getString("tmp_gif_png","png"))) {
+                    // Transfer bytes from in to out
+                    byte[] buf = new byte[1024];
+                    int len;
+                    while ((len = in.read(buf)) > 0) {
+                        out.write(buf, 0, len);
+                    }
+                }
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             startActivity(new Intent(Desk2048.this, BackgroundConfirmActivity.class));
         }
 

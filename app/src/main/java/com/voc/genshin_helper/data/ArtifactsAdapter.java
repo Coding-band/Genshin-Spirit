@@ -286,6 +286,19 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
             viewHolder.artifact_star.setNumStars(artifacts.getRare());
             viewHolder.artifact_star.setRating((float) artifacts.getRare());
         }
+
+        if (context.getSharedPreferences("user_info",MODE_PRIVATE).getString("curr_ui_grid", "2").equals("5")){
+            switch (artifacts.getRare()){
+                case 1 : viewHolder.artifact_icon.setBackgroundResource(R.drawable.bg_rare1_char_siptik);break;
+                case 2 : viewHolder.artifact_icon.setBackgroundResource(R.drawable.bg_rare2_char_siptik);break;
+                case 3 : viewHolder.artifact_icon.setBackgroundResource(R.drawable.bg_rare3_char_siptik);break;
+                case 4 : viewHolder.artifact_icon.setBackgroundResource(R.drawable.bg_rare4_char_siptik);break;
+                case 5 : viewHolder.artifact_icon.setBackgroundResource(R.drawable.bg_rare5_char_siptik);break;
+                default:  viewHolder.artifact_icon.setBackgroundResource(R.drawable.bg_rare1_char_siptik);break;
+            }
+            viewHolder.artifact_star.setVisibility(View.GONE);
+        }
+
         Context context = this.context;
         DisplayMetrics displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
@@ -350,8 +363,8 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                 viewHolder.artifact_card_bg.getLayoutParams().height = height;
                 viewHolder.artifact_card_mask.getLayoutParams().width = width;
                 viewHolder.artifact_card_mask.getLayoutParams().height = height;
-                viewHolder.artifact_card.getLayoutParams().width = width-16;
-                viewHolder.artifact_card.getLayoutParams().height = height-16;
+                viewHolder.artifact_cbg.getLayoutParams().width = width-16;
+                viewHolder.artifact_cbg.getLayoutParams().height = height-16;
             }
 
 
@@ -403,8 +416,8 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                 viewHolder.artifact_card_bg.getLayoutParams().height = WRAP_CONTENT;
                 viewHolder.artifact_card_mask.getLayoutParams().width = width;
                 viewHolder.artifact_card_mask.getLayoutParams().height = WRAP_CONTENT;
-                viewHolder.artifact_card.getLayoutParams().width = width-16;
-                viewHolder.artifact_card.getLayoutParams().height = WRAP_CONTENT;
+                viewHolder.artifact_cbg.getLayoutParams().width = width-16;
+                viewHolder.artifact_cbg.getLayoutParams().height = WRAP_CONTENT;
             }
 
 
@@ -456,8 +469,8 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                 viewHolder.artifact_card_bg.getLayoutParams().height = WRAP_CONTENT;
                 viewHolder.artifact_card_mask.getLayoutParams().width = width;
                 viewHolder.artifact_card_mask.getLayoutParams().height = WRAP_CONTENT;
-                viewHolder.artifact_card.getLayoutParams().width = width-16;
-                viewHolder.artifact_card.getLayoutParams().height = WRAP_CONTENT;
+                viewHolder.artifact_cbg.getLayoutParams().width = width-16;
+                viewHolder.artifact_cbg.getLayoutParams().height = WRAP_CONTENT;
             }
 
 
@@ -509,8 +522,8 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                 viewHolder.artifact_card_bg.getLayoutParams().height = WRAP_CONTENT;
                 viewHolder.artifact_card_mask.getLayoutParams().width = width;
                 viewHolder.artifact_card_mask.getLayoutParams().height = WRAP_CONTENT;
-                viewHolder.artifact_card.getLayoutParams().width = width-16;
-                viewHolder.artifact_card.getLayoutParams().height = WRAP_CONTENT;
+                viewHolder.artifact_cbg.getLayoutParams().width = width-16;
+                viewHolder.artifact_cbg.getLayoutParams().height = WRAP_CONTENT;
             }
 
 
@@ -562,8 +575,8 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                 viewHolder.artifact_card_bg.getLayoutParams().height = WRAP_CONTENT;
                 viewHolder.artifact_card_mask.getLayoutParams().width = width;
                 viewHolder.artifact_card_mask.getLayoutParams().height = WRAP_CONTENT;
-                viewHolder.artifact_card.getLayoutParams().width = width-16;
-                viewHolder.artifact_card.getLayoutParams().height = WRAP_CONTENT;
+                viewHolder.artifact_cbg.getLayoutParams().width = width-16;
+                viewHolder.artifact_cbg.getLayoutParams().height = WRAP_CONTENT;
             }
 
 
@@ -615,8 +628,8 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                 viewHolder.artifact_card_bg.getLayoutParams().height = WRAP_CONTENT;
                 viewHolder.artifact_card_mask.getLayoutParams().width = width;
                 viewHolder.artifact_card_mask.getLayoutParams().height = WRAP_CONTENT;
-                viewHolder.artifact_card.getLayoutParams().width = width-16;
-                viewHolder.artifact_card.getLayoutParams().height = WRAP_CONTENT;
+                viewHolder.artifact_cbg.getLayoutParams().width = width-16;
+                viewHolder.artifact_cbg.getLayoutParams().height = WRAP_CONTENT;
             }
 
 
@@ -864,7 +877,7 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
             //viewHolder.artifact_card_bg.setPadding(8,8,8,8);
             viewHolder.artifact_card_mask.setPadding(8,8,8,8);
             viewHolder.artifact_card_ico_deco.setPadding(8,8,8,8);
-            viewHolder.artifact_card.setPadding(8,8,8,8);
+            viewHolder.artifact_cbg.setPadding(8,8,8,8);
 
             viewHolder.artifact_card_ico_deco.setEdgeLength(100);
             viewHolder.artifact_card_ico_deco.setFadeDirection(FadingImageView.FadeSide.RIGHT_SIDE);
@@ -1107,6 +1120,7 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
         public TextView artifact_desc_4;
         public TextView artifact_desc_4_title;
         public CardView artifact_card;
+        public LinearLayout artifact_cbg;
 
 
         public ViewHolder(View view, OnItemClickListener onItemClickListener) {
@@ -1131,6 +1145,7 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
             this.artifact_desc_4_title = view.findViewById(R.id.artifact_desc_4_title);
 
             this.artifact_card = view.findViewById(R.id.artifact_card);
+            this.artifact_cbg = view.findViewById(R.id.artifact_cbg);
 
             artifact_press_mask.startAnimation(buttonClick);
 

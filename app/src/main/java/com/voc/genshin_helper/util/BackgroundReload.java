@@ -46,7 +46,7 @@ public class BackgroundReload {
     public static void BackgroundReload (Context context, Activity activity){
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_info", Context.MODE_PRIVATE);
         String gif_png = sharedPreferences.getString("gif/png", "png");
-        String pathName = sharedPreferences.getString("pathName","N/A");
+        String pathName = context.getFilesDir()+"/background."+gif_png;
         GifImageView gifImageView1 = (GifImageView) activity.findViewById(R.id.global_bg);
 
         Resources res = context.getResources();
@@ -74,6 +74,74 @@ public class BackgroundReload {
     }
 
     public static void BackgroundReload (Context context, View view){
+        SharedPreferences sharedPreferences = context.getSharedPreferences("user_info", Context.MODE_PRIVATE);
+        String gif_png = sharedPreferences.getString("gif/png", "png");
+        String pathName = context.getFilesDir()+"/background."+gif_png;
+        GifImageView gifImageView1 = (GifImageView) view.findViewById(R.id.global_bg);
+
+        Resources res = context.getResources();
+
+        if(!pathName.equals("N/A")){
+            File file = new File(pathName);
+            if(file.isFile() && file.exists()){
+                Bitmap bitmap = BitmapFactory.decodeFile(pathName);
+                BitmapDrawable bd = new BitmapDrawable(res, bitmap);
+
+                Bitmap bitmap2 = BitmapFactory.decodeFile(pathName);
+                BitmapDrawable bd2 = new BitmapDrawable(res, bitmap2);
+
+                File gifFile = new File(pathName);
+                GifDrawable gifFromFile = null;
+                try { gifFromFile = new GifDrawable(gifFile);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                if (gif_png.matches("gif")){gifImageView1.setImageDrawable(gifFromFile);}
+                if (gif_png.matches("png")){gifImageView1.setImageDrawable(bd);}
+                if (gif_png.matches("jpg")||gif_png.matches("jpeg")){gifImageView1.setImageDrawable(bd2);}
+            }
+            else{
+                gifImageView1.setImageResource(R.color.base_page_bg);
+            }
+        }else{
+            gifImageView1.setImageResource(R.color.base_page_bg);
+        }
+
+    }
+
+    // OLD
+
+    public static void BackgroundReload_OLD (Context context, Activity activity){
+        SharedPreferences sharedPreferences = context.getSharedPreferences("user_info", Context.MODE_PRIVATE);
+        String gif_png = sharedPreferences.getString("gif/png", "png");
+        String pathName = sharedPreferences.getString("pathName","N/A");
+        GifImageView gifImageView1 = (GifImageView) activity.findViewById(R.id.global_bg);
+
+        Resources res = context.getResources();
+
+        if(!pathName.equals("N/A")){
+            Bitmap bitmap = BitmapFactory.decodeFile(pathName);
+            BitmapDrawable bd = new BitmapDrawable(res, bitmap);
+
+            Bitmap bitmap2 = BitmapFactory.decodeFile(pathName);
+            BitmapDrawable bd2 = new BitmapDrawable(res, bitmap2);
+
+            File gifFile = new File(pathName);
+            GifDrawable gifFromFile = null;
+            try { gifFromFile = new GifDrawable(gifFile);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            if (gif_png.matches("gif")){gifImageView1.setImageDrawable(gifFromFile);}
+            if (gif_png.matches("png")){gifImageView1.setImageDrawable(bd);}
+            if (gif_png.matches("jpg")||gif_png.matches("jpeg")){gifImageView1.setImageDrawable(bd2);}
+        }else{
+            gifImageView1.setImageResource(R.color.base_page_bg);
+        }
+
+    }
+
+    public static void BackgroundReload_OLD (Context context, View view){
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_info", Context.MODE_PRIVATE);
         String gif_png = sharedPreferences.getString("gif/png", "png");
         String pathName = sharedPreferences.getString("pathName","N/A");

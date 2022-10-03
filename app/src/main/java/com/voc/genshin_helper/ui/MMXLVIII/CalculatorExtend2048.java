@@ -353,10 +353,10 @@ public class CalculatorExtend2048 {
                 requestPermission();
                 if (isWritePermissionGranted){
                     if (saveImageToExternalStorage(dataSheetName+"_"+prettyTime(),bitmap)){
-                        CustomToast.toast(context,activity,"Image Saved Successfully");
+                        CustomToast.toast(context,activity,context.getString(R.string.screenshot_saved));
                     }
                 }else {
-                    CustomToast.toast(context,activity,"Permission Not Granted");
+                    CustomToast.toast(context,activity,context.getString(R.string.screenshot_not_saved_permission));
                 }
             }
         });
@@ -987,7 +987,7 @@ public class CalculatorExtend2048 {
 
         for (int x = 0, c = 0, r = 0; isZero(material.bossCountList()) == false && x < material.bossNameList().length; x++) {
             if(c == column) { c = 0;r++; }
-            c = itemAdd(size,material.bossNameList()[x],material.bossCountList()[x],material.bossRareList()[x],gridLayout,result_boss_title,c,r);
+            c = itemAdd(size,material.bossNameList()[x],material.bossCountList()[x],4,gridLayout,result_boss_title,c,r);
         }
 
         /** WEEK-BOSS */
@@ -997,7 +997,7 @@ public class CalculatorExtend2048 {
 
         for (int x = 0, c = 0, r = 0; isZero(material.weekBossCountList()) == false && x < material.weekBossNameList().length; x++) {
             if(c == column) { c = 0;r++; }
-            c = itemAdd(size,material.weekBossNameList()[x],material.weekBossCountList()[x],material.weekBossRareList()[x],gridLayout,result_weekboss_title,c,r);
+            c = itemAdd(size,material.weekBossNameList()[x],material.weekBossCountList()[x],5,gridLayout,result_weekboss_title,c,r);
         }
 
         /** LOCAL */
@@ -1007,7 +1007,7 @@ public class CalculatorExtend2048 {
 
         for (int x = 0, c = 0, r = 0; isZero(material.localCountList()) == false && x < material.localNameList().length; x++) {
             if(c == column) { c = 0;r++; }
-            c = itemAdd(size,material.localNameList()[x],material.localCountList()[x],material.localRareList()[x],gridLayout,result_local_title,c,r);
+            c = itemAdd(size,material.localNameList()[x],material.localCountList()[x],1,gridLayout,result_local_title,c,r);
         }
 
         /** COMMON */
@@ -1589,7 +1589,7 @@ public class CalculatorExtend2048 {
             return true;
         }
         catch (Exception e){
-            CustomToast.toast(context,activity,"Image No Saved");
+            CustomToast.toast(context,activity,context.getString(R.string.screenshot_not_saved));
             e.printStackTrace();
         }
         return false;

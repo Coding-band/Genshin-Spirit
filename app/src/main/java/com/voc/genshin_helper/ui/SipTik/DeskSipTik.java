@@ -100,8 +100,11 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
@@ -3323,6 +3326,21 @@ public class DeskSipTik extends AppCompatActivity {
             }
             editor.apply();
             c.close();
+
+            File file = new File(imagePath);
+            try (InputStream in = new FileInputStream(file)) {
+                try (OutputStream out = new FileOutputStream(context.getFilesDir()+"/tmp_background."+sharedPreferences.getString("tmp_gif_png","png"))) {
+                    // Transfer bytes from in to out
+                    byte[] buf = new byte[1024];
+                    int len;
+                    while ((len = in.read(buf)) > 0) {
+                        out.write(buf, 0, len);
+                    }
+                    System.out.println("OK LA");
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
             startActivity(new Intent(DeskSipTik.this, BackgroundConfirmActivity.class));
         }
 

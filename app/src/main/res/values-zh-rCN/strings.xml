@@ -1049,11 +1049,11 @@
     <string name="tighnari">提纳里</string>
     <string name="dori">多莉</string>
     <string name="collei">柯莱</string>
-    <string name="timber_blade">原木刀</string>
+    <string name="sapwood_blade">原木刀</string>
     <string name="forest_regalia">森林王器</string>
     <string name="moonpiercer">贯月矢</string>
     <string name="kings_squire">王下近侍</string>
-    <string name="trawler">竭泽</string>
+    <string name="end_of_the_line">竭泽</string>
     <string name="hunters_path">猎人之径</string>
     <string name="fruit_of_fulfillment">盈满之实</string>
     <string name="skill_level">技能等级</string>
@@ -1095,7 +1095,13 @@
     <string name="wandering_evenstar">流浪的晚星</string>
     <string name="staff_of_the_scarlet_sands">赤沙之杖</string>
     <string name="missive_windspear">风信之锋</string>
-
+    <string name="nahida">纳西妲</string>
+    <string name="layla">莱依拉</string>
+    <string name="a_thousand_floating_dreams">千夜浮梦</string>
+    <string name="screenshot_saved">截图储存成功</string>
+    <string name="screenshot_not_saved_permission">请同意读取权限</string>
+    <string name="screenshot_not_saved">截图储存失敗</string>
+    <string name="talent_lvl">"天赋等级 : "</string>
 
 
 </resources>

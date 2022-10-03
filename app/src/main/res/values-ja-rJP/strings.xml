@@ -1066,11 +1066,11 @@
     <string name="tighnari">ティナリ</string>
     <string name="dori">ドリー</string>
     <string name="collei">コレイ</string>
-    <string name="timber_blade">原木刀</string>
+    <string name="sapwood_blade">原木刀</string>
     <string name="forest_regalia">森林のレガリア</string>
     <string name="moonpiercer">ムーンピアサー</string>
     <string name="kings_squire">王の近侍</string>
-    <string name="trawler">竭沢</string>
+    <string name="end_of_the_line">竭沢</string>
     <string name="hunters_path">狩人の道</string>
     <string name="fruit_of_fulfillment">満悦の実</string>
     <string name="skill_level">スキルレベル</string>
@@ -1113,6 +1113,13 @@
     <string name="missive_windspear">風信の矛</string>
     <string name="staff_of_the_scarlet_sands">赤砂の杖</string>
     <string name="wandering_evenstar">彷徨える星</string>
+    <string name="a_thousand_floating_dreams">千夜浮夢</string>
+    <string name="layla">レイラ</string>
+    <string name="nahida">ナヒーダ</string>
+    <string name="screenshot_saved">スクリーンショットが正常に保存されました</string>
+    <string name="screenshot_not_saved_permission">閲覧許可に同意してください</string>
+    <string name="screenshot_not_saved">スクリーンショットを保存できませんでした</string>
+    <string name="talent_lvl">"スキルレベル : "</string>
 
 </resources>
 

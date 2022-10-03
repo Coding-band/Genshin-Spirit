@@ -500,7 +500,8 @@
                 android:layout_gravity="center"
                 android:layout_margin="8dp"
                 android:background="@drawable/bg_item_bg_siptik"
-                android:orientation="vertical"></LinearLayout>
+                android:orientation="vertical"
+                android:paddingTop="8dp"></LinearLayout>
 
         </LinearLayout>
     </ScrollView>

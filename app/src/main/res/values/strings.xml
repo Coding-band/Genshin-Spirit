@@ -1086,11 +1086,11 @@
     <string name="tighnari">Tighnari</string>
     <string name="dori">Dori</string>
     <string name="collei">Collei</string>
-    <string name="timber_blade">Timber Blade</string>
+    <string name="sapwood_blade">Sapwood Blade</string>
     <string name="forest_regalia">Forest Regalia</string>
     <string name="moonpiercer">Moonpiercer</string>
     <string name="kings_squire">King\'s Squire</string>
-    <string name="trawler">Trawler</string>
+    <string name="end_of_the_line">End of the Line</string>
     <string name="hunters_path">Hunter\'s Path</string>
     <string name="fruit_of_fulfillment">Fruit of Fulfillment</string>
     <string name="skill_level">Skill Level</string>
@@ -1123,6 +1123,8 @@
     <string name="copper_talisman_of_the_forest_dew">Copper Talisman of the Forest Dew</string>
     <string name="oasis_gardens_reminiscence">Oasis Garden’s Reminiscence</string>
     <string name="echo_of_scorching_might">Echo of Scorching Might</string>
+
+    <!-- add in 20220923 -->
     <string name="nilou">Nilou</string>
     <string name="cyno">Cyno</string>
     <string name="candace">Candace</string>
@@ -1132,6 +1134,15 @@
     <string name="missive_windspear">Missive Windspear</string>
     <string name="staff_of_the_scarlet_sands">Staff of the Scarlet Sands</string>
     <string name="wandering_evenstar">Wandering Evenstar</string>
+
+    <!-- add in 20221001 -->
+    <string name="nahida">Nahida</string>
+    <string name="layla">Layla</string>
+    <string name="a_thousand_floating_dreams">A Thousand Floating Dreams</string>
+    <string name="screenshot_not_saved">Screenshot unable to save</string>
+    <string name="screenshot_not_saved_permission">Please accept the write permission</string>
+    <string name="screenshot_saved">"Screenshot saved "</string>
+    <string name="talent_lvl">"Talent Lvl : "</string>
 
 </resources>
 

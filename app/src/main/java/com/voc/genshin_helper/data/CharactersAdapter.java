@@ -515,7 +515,15 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
             holder.char_card.setPadding(8,8,8,8);
 
         }else if(context.getSharedPreferences("user_info",MODE_PRIVATE).getString("curr_ui_grid", "2").equals("5") ){
-
+            switch (Characters.getRare()){
+                case 1 : holder.char_icon.setBackgroundResource(R.drawable.bg_rare1_char_siptik);break;
+                case 2 : holder.char_icon.setBackgroundResource(R.drawable.bg_rare2_char_siptik);break;
+                case 3 : holder.char_icon.setBackgroundResource(R.drawable.bg_rare3_char_siptik);break;
+                case 4 : holder.char_icon.setBackgroundResource(R.drawable.bg_rare4_char_siptik);break;
+                case 5 : holder.char_icon.setBackgroundResource(R.drawable.bg_rare5_char_siptik);break;
+                default:  holder.char_icon.setBackgroundResource(R.drawable.bg_rare1_char_siptik);break;
+            }
+            holder.char_star.setVisibility(View.GONE);
             switch (Characters.getElement()){
                 case "Anemo" : {
                     holder.char_element.setImageResource(R.drawable.anemo_ico);
@@ -572,7 +580,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
             //holder.char_card_bg.setPadding(8,8,8,8);
             //holder.char_card_mask.setPadding(8,8,8,8);
             holder.char_press_mask.setPadding(8,8,8,8);
-            holder.char_card.setPadding(8,8,8,8);
+            holder.char_cbg.setPadding(8,8,8,8);
 
         }else{
             switch (Characters.getElement()){
@@ -681,7 +689,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
             size_per_img = 480;
             size_per_img_sq = 400;
-            size_per_img_siptik = 960;
+            size_per_img_siptik = 640;
         }
 
         if(context instanceof MainActivity){
@@ -737,8 +745,8 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                 holder.char_card_bg.getLayoutParams().height = height;
                 holder.char_card_mask.getLayoutParams().width = width;
                 holder.char_card_mask.getLayoutParams().height = height;
-                holder.char_card.getLayoutParams().width = width-16;
-                holder.char_card.getLayoutParams().height = height-16;
+                holder.char_cbg.getLayoutParams().width = width-16;
+                holder.char_cbg.getLayoutParams().height = height-16;
             }
 
 
@@ -795,8 +803,8 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                 holder.char_card_bg.getLayoutParams().height = height;
                 holder.char_card_mask.getLayoutParams().width = width;
                 holder.char_card_mask.getLayoutParams().height = height;
-                holder.char_card.getLayoutParams().width = width-16;
-                holder.char_card.getLayoutParams().height = height-16;
+                holder.char_cbg.getLayoutParams().width = width-16;
+                holder.char_cbg.getLayoutParams().height = height-16;
             }
 
 
@@ -853,8 +861,8 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                 holder.char_card_bg.getLayoutParams().height = height;
                 holder.char_card_mask.getLayoutParams().width = width;
                 holder.char_card_mask.getLayoutParams().height = height;
-                holder.char_card.getLayoutParams().width = width-16;
-                holder.char_card.getLayoutParams().height = height-16;
+                holder.char_cbg.getLayoutParams().width = width-16;
+                holder.char_cbg.getLayoutParams().height = height-16;
             }
 
 
@@ -911,8 +919,8 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                 holder.char_card_bg.getLayoutParams().height = height;
                 holder.char_card_mask.getLayoutParams().width = width;
                 holder.char_card_mask.getLayoutParams().height = height;
-                holder.char_card.getLayoutParams().width = width-16;
-                holder.char_card.getLayoutParams().height = height-16;
+                holder.char_cbg.getLayoutParams().width = width-16;
+                holder.char_cbg.getLayoutParams().height = height-16;
             }
 
 
@@ -969,8 +977,8 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                 holder.char_card_bg.getLayoutParams().height = height;
                 holder.char_card_mask.getLayoutParams().width = width;
                 holder.char_card_mask.getLayoutParams().height = height;
-                holder.char_card.getLayoutParams().width = width-16;
-                holder.char_card.getLayoutParams().height = height-16;
+                holder.char_cbg.getLayoutParams().width = width-16;
+                holder.char_cbg.getLayoutParams().height = height-16;
             }
 
 
@@ -1027,8 +1035,8 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                 holder.char_card_bg.getLayoutParams().height = height;
                 holder.char_card_mask.getLayoutParams().width = width;
                 holder.char_card_mask.getLayoutParams().height = height;
-                holder.char_card.getLayoutParams().width = width-16;
-                holder.char_card.getLayoutParams().height = height-16;
+                holder.char_cbg.getLayoutParams().width = width-16;
+                holder.char_cbg.getLayoutParams().height = height-16;
             }
 
 
@@ -1319,6 +1327,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         public CardView char_card;
         public ImageView char_region_img ;
         public TextView char_region ;
+        public LinearLayout char_cbg;
 
         public ViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
@@ -1332,6 +1341,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
             char_base_name = itemView.findViewById(R.id.char_base_name);
             //char_nl = itemView.findViewById(R.id.char_nl);
             char_bg = itemView.findViewById(R.id.char_bg);
+            char_cbg = itemView.findViewById(R.id.char_cbg);
 
             if (itemView.findViewById(R.id.char_region) != null && itemView.findViewById(R.id.char_region_img) != null){
                 char_region = itemView.findViewById(R.id.char_region);

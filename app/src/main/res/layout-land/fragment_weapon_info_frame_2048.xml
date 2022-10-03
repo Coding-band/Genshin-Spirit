@@ -25,8 +25,8 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@drawable/bg_2048_char_info"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -35,22 +35,25 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/info_char_img"
+            android:id="@+id/info_weapon_img"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="72dp"
             android:layout_weight="5"
-            android:adjustViewBounds="true"
             android:fadingEdgeLength="32dp"
-            android:requiresFadingEdge="horizontal|vertical" />
+            android:requiresFadingEdge="horizontal|vertical"
+            android:rotation="35"
+            app:layout_constraintBottom_toTopOf="@+id/info_detail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <com.voc.genshin_helper.util.CustomViewPager
             android:id="@+id/vp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:fadingEdge="horizontal"
-            android:visibility="visible">
+            android:fadingEdge="horizontal">
 
         </com.voc.genshin_helper.util.CustomViewPager>
     </LinearLayout>
@@ -129,6 +132,5 @@
             app:tabPaddingTop="12dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

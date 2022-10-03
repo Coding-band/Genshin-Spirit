@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
@@ -15,12 +16,14 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.provider.BaseColumns;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -56,6 +59,7 @@ import com.voc.genshin_helper.data.ScreenSizeUtils;
 import com.voc.genshin_helper.data.Weapons;
 import com.voc.genshin_helper.data.WeaponsAdapter;
 import com.voc.genshin_helper.database.DataBaseContract;
+import com.voc.genshin_helper.database.DataBaseHelper;
 import com.voc.genshin_helper.ui.SipTik.DataBaseHelper_SipTik;
 import com.voc.genshin_helper.ui.MMXLVIII.Calculator2048;
 import com.voc.genshin_helper.util.BackgroundReload;
@@ -101,6 +105,7 @@ public class CalculatorDB_SipTik extends AppCompatActivity {
     ImageView db_char;
     CardView director_weapon_card;
     boolean isMenuDisplay = false;
+    boolean isResultDisplay = false;
     Dialog dialog;
     Dialog dialogChoose;
 
@@ -1653,6 +1658,13 @@ public class CalculatorDB_SipTik extends AppCompatActivity {
         CalculatorExtendSipTik ces = new CalculatorExtendSipTik();
         ces.setup(context,activity,view);
 
+        dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialog) {
+                saveToDB();
+            }
+        });
+
         BackgroundReload.BackgroundReload(context,view);
 
         TextView item_name = view.findViewById(R.id.siptik_item_name);
@@ -1691,7 +1703,7 @@ public class CalculatorDB_SipTik extends AppCompatActivity {
         lvl_char.setDropDownViewResource(R.layout.spinner_dropdown_item_cal_2048);
         lvl_weapon.setDropDownViewResource(R.layout.spinner_dropdown_item_cal_2048);
 
-        final Transformation transformation = new RoundedCornersTransformation(8, 0);
+        final Transformation transformation = new RoundedCornersTransformation(64, 0);
 
 
         switch (type){
@@ -1887,6 +1899,7 @@ public class CalculatorDB_SipTik extends AppCompatActivity {
                 if (sa2Init == true){
                     sa2Init = false;
                     ces.cal_setup(id,type,name,beforeLvl,afterLvl,beforeBreakLvl,afterBreakLvl,beforeBreakUpLvl,afterBreakUpLvl,beforeSkill1Lvl,afterSkill1Lvl,beforeSkill2Lvl,afterSkill2Lvl,beforeSkill3Lvl,afterSkill3Lvl,follow,rare,isCal);
+
                 }else if (sa2Init == false){
                     ces.cal_setup(id,type,name,beforeLvl,afterLvl,beforeBreakLvl,afterBreakLvl,beforeBreakUpLvl,afterBreakUpLvl,beforeSkill1Lvl,afterSkill1Lvl,beforeSkill2Lvl,afterSkill2Lvl,beforeSkill3Lvl,afterSkill3Lvl,follow,rare,isCal);
                 }
@@ -1950,6 +1963,8 @@ public class CalculatorDB_SipTik extends AppCompatActivity {
         lp.gravity = Gravity.CENTER_VERTICAL;
         dialogWindow.setAttributes(lp);
         dialog.show();
+
+        isResultDisplay = true;
 
         ces.cal_setup(id,type,name,beforeLvl,afterLvl,beforeBreakLvl,afterBreakLvl,beforeBreakUpLvl,afterBreakUpLvl,beforeSkill1Lvl,afterSkill1Lvl,beforeSkill2Lvl,afterSkill2Lvl,beforeSkill3Lvl,afterSkill3Lvl,follow,rare,isCal);
 
@@ -2076,11 +2091,66 @@ public class CalculatorDB_SipTik extends AppCompatActivity {
     }
 
 
+    public void saveToDB() {
+        DataBaseHelper_SipTik dbHelper = new DataBaseHelper_SipTik(context);
+        SQLiteDatabase db ;
+
+        /**
+         * Database Char Part
+         */
+
+        db = dbHelper.getReadableDatabase();
+        String[] projection = {"name"};
+        String selection = "_id = ?";
+        String[] selectionArgs = {String.valueOf(id)};
+        Cursor cursor = db.query(
+                "SipTik",   // The table to query
+                projection,             // The array of columns to return (pass null to get all)
+                selection,              // The columns for the WHERE clause
+                selectionArgs,          // The values for the WHERE clause
+                null,                   // don't group the rows
+                null,                   // don't filter by row groups
+                null               // The sort order
+        );
+        // DEMO -> UPDATE demo SET ID = 1,Name = "SPP",Hint = "OK" WHERE Name = "Twitter";
+        if(cursor.getCount()>0){
+            db.execSQL("UPDATE "+"SipTik"+" SET "+
+                    "beforeLvl = "+String.valueOf(beforeLvl)+","+
+                    "afterLvl = "+String.valueOf(afterLvl)+","+
+
+                    "beforeBreakLvl = "+String.valueOf(beforeBreakLvl)+","+
+                    "afterBreakLvl = "+String.valueOf(afterBreakLvl)+","+
+
+                    "beforeBreakUpLvl = "+String.valueOf((beforeBreakUpLvl) ? 1 : 0 )+","+
+                    "afterBreakUpLvl = "+String.valueOf((afterBreakUpLvl) ? 1 : 0 )+","+
+
+                    "beforeSkill1Lvl = "+String.valueOf(beforeSkill1Lvl)+","+
+                    "afterSkill1Lvl = "+String.valueOf(afterSkill1Lvl)+","+
+
+                    "beforeSkill2Lvl = "+String.valueOf(beforeSkill2Lvl)+","+
+                    "afterSkill2Lvl = "+String.valueOf(afterSkill2Lvl)+","+
+
+                    "beforeSkill3Lvl = "+String.valueOf(beforeSkill3Lvl)+","+
+                    "afterSkill3Lvl = "+String.valueOf(afterSkill3Lvl)+","+
+
+                    "follow = "+String.valueOf("\""+follow+"\"")+","+
+                    "rare = "+String.valueOf(rare)+","+
+
+                    "isCal = "+String.valueOf((isCal) ? 1 : 0 )+
+
+                    " WHERE _id = \""+id+"\";");
+
+
+            readIndexRecord();
+        }
+        cursor.close();
+    }
+
+
     @Override
     protected void onRestart() {
         super.onRestart();
         readIndexRecord();
     }
-
 
 }

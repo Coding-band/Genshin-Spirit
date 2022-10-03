@@ -1040,11 +1040,11 @@
     <string name="tighnari">Тигнари</string>
     <string name="dori">Дори</string>
     <string name="collei">Коллеи</string>
-    <string name="timber_blade">Деревянный клинок</string>
+    <string name="sapwood_blade">Деревянный клинок</string>
     <string name="forest_regalia">Регалия леса</string>
     <string name="moonpiercer">Пронзающий луну</string>
     <string name="kings_squire">Приближённый короля</string>
-    <string name="trawler">Иссушитель</string>
+    <string name="end_of_the_line">Иссушитель</string>
     <string name="hunters_path">Охотничья тропа</string>
     <string name="fruit_of_fulfillment">Плод восполнения</string>
     <string name="skill_level">Уровень квалификации</string>
@@ -1086,4 +1086,11 @@
     <string name="missive_windspear">Копьё послания ветров</string>
     <string name="staff_of_the_scarlet_sands">Посох алых песков</string>
     <string name="wandering_evenstar">Скитающаяся звезда</string>
+    <string name="a_thousand_floating_dreams">Сновидения тысячи ночей</string>
+    <string name="layla">Лайла</string>
+    <string name="nahida">Нахида</string>
+    <string name="screenshot_not_saved">Скриншот не удалось сохранить</string>
+    <string name="screenshot_not_saved_permission">Пожалуйста, примите разрешение на запись</string>
+    <string name="screenshot_saved">Скриншот сохранен</string>
+    <string name="talent_lvl">"Уровень таланта : "</string>
 </resources>

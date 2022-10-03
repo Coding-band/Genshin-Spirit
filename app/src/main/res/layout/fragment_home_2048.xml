@@ -11,114 +11,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <ImageView
-            android:id="@+id/home_header_bg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="false"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/filter_desk_head_2048" />
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/home_switch_btn"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_gravity="center|left"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_2048_switch" />
-
-            <TextView
-                android:id="@+id/home_asc_tv"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:fontFamily="@font/genshin_font"
-                android:singleLine="false"
-                android:text="@string/char_asc_mater"
-                android:textAlignment="viewStart"
-                android:textColor="@color/tv_spinner_color_2048"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/linearLayout6"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/home_switch_btn"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <FrameLayout
-                android:id="@+id/linearLayout6"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center|right"
-                android:layout_marginLeft="32dp"
-                android:layout_marginRight="16dp"
-                android:layout_weight="1"
-                android:fadingEdge="horizontal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/home_asc_tv"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <ImageView
-                    android:id="@+id/imageView18"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fadingEdgeLength="64dp"
-                    android:requiresFadingEdge="horizontal|vertical"
-                    app:shapeAppearanceOverlay="@style/roundImageView"
-                    app:srcCompat="@drawable/bg_2048_spinner" />
-
-                <Spinner
-                    android:id="@+id/home_weekday_spinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center|right|end"
-                    android:layout_weight="1"
-                    android:background="@null"
-                    android:popupBackground="@drawable/bg_2048_spinner_bg"
-                    android:requiresFadingEdge="none"
-                    android:spinnerMode="dropdown"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="1.0"
-                    app:layout_constraintStart_toEndOf="@+id/char_tv"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/home_weekday_spinner_btn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center|right"
-                    android:layout_marginRight="4dp"
-                    app:srcCompat="@drawable/ic_baseline_arrow_drop_down_24" />
-            </FrameLayout>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </FrameLayout>
-
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -127,13 +19,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:id="@+id/home_asc_card_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingTop="60dp"
+            android:paddingBottom="60dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -495,12 +389,120 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
                 android:orientation="vertical"
-                android:visibility="gone" >
+                android:visibility="gone">
 
             </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/home_header_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="false"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/mask_head_bg" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/home_switch_btn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center|left"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_2048_switch" />
+
+            <TextView
+                android:id="@+id/home_asc_tv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:fontFamily="@font/genshin_font"
+                android:singleLine="false"
+                android:text="@string/char_asc_mater"
+                android:textAlignment="viewStart"
+                android:textColor="@color/tv_spinner_color_2048"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/linearLayout6"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/home_switch_btn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <FrameLayout
+                android:id="@+id/linearLayout6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|right"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                android:fadingEdge="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/home_asc_tv"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fadingEdgeLength="64dp"
+                    android:requiresFadingEdge="horizontal|vertical"
+                    app:shapeAppearanceOverlay="@style/roundImageView"
+                    app:srcCompat="@drawable/bg_2048_spinner" />
+
+                <Spinner
+                    android:id="@+id/home_weekday_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center|right|end"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:popupBackground="@drawable/bg_2048_spinner_bg"
+                    android:requiresFadingEdge="none"
+                    android:spinnerMode="dropdown"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/char_tv"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/home_weekday_spinner_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center|right"
+                    android:layout_marginRight="4dp"
+                    app:srcCompat="@drawable/ic_baseline_arrow_drop_down_24" />
+            </FrameLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/tut_char_card"

@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.content.res.ColorStateList;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -178,6 +179,12 @@ public class Artifact_Info_2048 {
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int height = displayMetrics.heightPixels;
         int width = displayMetrics.widthPixels;
+
+        Window dialogWindowX = activity.getWindow();
+        // 2O48 DESIGN
+        dialog.getWindow().addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        dialogWindowX.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+        dialogWindowX.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
 
         /** Method of header */
         TabLayout info_tablelayout = view.findViewById(R.id.info_tablelayout);
@@ -415,15 +422,6 @@ public class Artifact_Info_2048 {
         artifact_obtain_way_tv.setText(item_rss.getObtainCode(obtain_way,context));
         //artifact_title.setText(nick);
         //Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(name,context)[0],context)).centerCrop().into(artifact_img);
-        if (!artifactSet1PC.equals("XPR")){
-            Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[1],context)).into(artifact_img);
-        }else if (!artifactSet2PC.equals("XPR") && !artifactSet4PC.equals("XPR")){
-            Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[1],context)).into(artifact_img1);
-            Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[2],context)).into(artifact_img2);
-            Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[3],context)).into(artifact_img3);
-            Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[4],context)).into(artifact_img4);
-            Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[5],context)).into(artifact_img5);
-        }
 
         displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
@@ -436,6 +434,38 @@ public class Artifact_Info_2048 {
         art_con.setAnimation(animImgLTR);
         LinearLayout info_detail = artifactDescPage.findViewById(R.id.info_detail);
         info_detail.setAnimation(animImgRTL);
+
+        if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            ConstraintLayout art_imgL = view.findViewById(R.id.art_con);
+            art_imgL.setAnimation(animImgLTR);
+            ImageView artifact_imgL = view.findViewById(R.id.info_artifact_img);
+            ImageView artifact_img1L = view.findViewById(R.id.info_artifact_img1);
+            ImageView artifact_img2L = view.findViewById(R.id.info_artifact_img2);
+            ImageView artifact_img3L = view.findViewById(R.id.info_artifact_img3);
+            ImageView artifact_img4L = view.findViewById(R.id.info_artifact_img4);
+            ImageView artifact_img5L = view.findViewById(R.id.info_artifact_img5);
+            if (!artifactSet1PC.equals("XPR")){
+                Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[1],context)).into(artifact_imgL);
+            }else if (!artifactSet2PC.equals("XPR") && !artifactSet4PC.equals("XPR")){
+                Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[1],context)).into(artifact_img1L);
+                Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[2],context)).into(artifact_img2L);
+                Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[3],context)).into(artifact_img3L);
+                Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[4],context)).into(artifact_img4L);
+                Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[5],context)).into(artifact_img5L);
+            }
+            art_imgL.getLayoutParams().width = width;
+        }else{
+            if (!artifactSet1PC.equals("XPR")){
+                Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[1],context)).into(artifact_img);
+            }else if (!artifactSet2PC.equals("XPR") && !artifactSet4PC.equals("XPR")){
+                Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[1],context)).into(artifact_img1);
+                Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[2],context)).into(artifact_img2);
+                Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[3],context)).into(artifact_img3);
+                Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[4],context)).into(artifact_img4);
+                Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[5],context)).into(artifact_img5);
+            }
+            art_con.getLayoutParams().width = width;
+        }
 
         //artifact_img.setBackgroundResource(item_rss.getElementByName(element)[2]);
 

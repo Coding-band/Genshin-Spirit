@@ -5,6 +5,8 @@ package com.voc.genshin_helper.ui;/*
  */
 
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.READ_MEDIA_IMAGES;
+import static android.Manifest.permission.TRANSMIT_IR;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 import static android.os.Build.VERSION.SDK_INT;
 
@@ -39,6 +41,8 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -70,6 +74,7 @@ import java.net.URLConnection;
 import java.net.UnknownHostException;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
@@ -115,35 +120,18 @@ public class SplashActivity extends AppCompatActivity {
 
         PackageManager manager=getPackageManager();
 
-        if(BuildConfig.DEBUG == true){
-            manager.setComponentEnabledSetting(new ComponentName(SplashActivity.this,"com.voc.genshin_helper.ui.SplashActivity")
-                    ,PackageManager.COMPONENT_ENABLED_STATE_ENABLED,PackageManager.DONT_KILL_APP);
-
-            // disable new icon
-            manager.setComponentEnabledSetting(new ComponentName(SplashActivity.this,"com.voc.genshin_helper.ui.SplashActivityAlias")
-                    ,PackageManager.COMPONENT_ENABLED_STATE_DISABLED,PackageManager.DONT_KILL_APP);
-        }else if (sharedPreferences.getBoolean("isAppIconChange", false) == false) {
-            manager.setComponentEnabledSetting(new ComponentName(SplashActivity.this,"com.voc.genshin_helper.ui.SplashActivity")
-                    ,PackageManager.COMPONENT_ENABLED_STATE_DISABLED,PackageManager.DONT_KILL_APP);
-
-            // disable new icon
-            manager.setComponentEnabledSetting(new ComponentName(SplashActivity.this,"com.voc.genshin_helper.ui.SplashActivityAlias")
-                    ,PackageManager.COMPONENT_ENABLED_STATE_ENABLED,PackageManager.DONT_KILL_APP);
-        }else{
-            manager.setComponentEnabledSetting(new ComponentName(SplashActivity.this,"com.voc.genshin_helper.ui.SplashActivity")
-                    ,PackageManager.COMPONENT_ENABLED_STATE_ENABLED,PackageManager.DONT_KILL_APP);
-
-            // disable new icon
-            manager.setComponentEnabledSetting(new ComponentName(SplashActivity.this,"com.voc.genshin_helper.ui.SplashActivityAlias")
-                    ,PackageManager.COMPONENT_ENABLED_STATE_DISABLED,PackageManager.DONT_KILL_APP);
-        }
 
         String[] checkList = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE, Manifest.permission.EXPAND_STATUS_BAR};
         List<String> needRequestList = checkPermission(activity, checkList);
-        if (!needRequestList.isEmpty()) {
-            requestPermission(activity, needRequestList.toArray(new String[needRequestList.size()]));
-        } else {
-            goMain();
+
+        if (SDK_INT >= Build.VERSION_CODES.TIRAMISU){
+            requestPermissionLauncher.launch(READ_MEDIA_IMAGES);
+        }else{
+            if (!needRequestList.isEmpty()) {
+                requestPermission(activity, needRequestList.toArray(new String[needRequestList.size()]));
+            } else {
+                goMain();
+            }
         }
 
     }
@@ -201,11 +189,26 @@ public class SplashActivity extends AppCompatActivity {
         ActivityCompat.requestPermissions(activity, requestPermissionList, 100);
     }
 
+    private ActivityResultLauncher<String> requestPermissionLauncher =
+            registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
+                if (isGranted) {
+                    Log.w("存儲許可權", "申請成功X");
+                    Log.w("寫錄許可權", "申請成功X");
+                    goMain();
+                } else {
+                    Log.w("存儲許可權", "申請失敗X");
+                    Log.w("寫錄許可權", "申請失敗X");
+                    finish();
+
+                }
+            });
+
     //用戶作出選擇後，返回申請的結果
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 100) {
+            System.out.println(Arrays.asList(permissions));
             for (int i = 0; i < permissions.length; i++) {
                 if (permissions[i].equals(READ_EXTERNAL_STORAGE)) {
                     if (grantResults[i] == PackageManager.PERMISSION_GRANTED) {
@@ -479,8 +482,6 @@ public class SplashActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     if (!choice.equals("N/A")) {
                         editor.putString("styleUI", choice);
-                        webView.loadUrl("http://vt.25u.com/genshin_spirit/dataCollection/styleInsert.php?unix="+System.currentTimeMillis()+"&style="+choice+"&record_location="+"Splash"+"&device_name="+Build.MODEL+"&app_version="+BuildConfig.VERSION_NAME+"&android_api="+String.valueOf(android.os.Build.VERSION.SDK_INT));
-                        editor.putBoolean("firstCheck",true);
                         editor.apply();
                         dialog.dismiss();
                         runDesk(sharedPreferences);

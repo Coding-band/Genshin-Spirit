@@ -60,6 +60,8 @@ public class Material {
     //add in 20220829
     public int 永續機芯 = 0;
     public int 導光四面體 = 0;
+    //add in 20220829
+    public int 滅諍草蔓 = 0;
 
     /** LOCAL */
     public int  小燈草  = 0 ;
@@ -238,7 +240,7 @@ public class Material {
                 "恒常機關之心","陰燃之珠","雷霆數珠",
                 "排異之露","獸境王器","龍嗣偽鰭",
                 "符紋之齒","蕈王鉤喙","藏雷野實",
-                "永續機芯","導光四面體"
+                "永續機芯","導光四面體","滅諍草蔓"
         };
     }
     public int[] bossCountList (){
@@ -250,19 +252,7 @@ public class Material {
                 恒常機關之心,陰燃之珠,雷霆數珠,
                 排異之露,獸境王器,龍嗣偽鰭,
                 符紋之齒,蕈王鉤喙,藏雷野實,
-                永續機芯,導光四面體
-        };
-    }
-    public int[] bossRareList (){
-        return new int[]{
-                4,4,4,
-                4,4,4,
-                4,4,4,
-                4,4,4,
-                4,4,4,
-                4,4,4,
-                4,4,4,
-                4,4
+                永續機芯,導光四面體,滅諍草蔓
         };
     }
 
@@ -287,17 +277,6 @@ public class Material {
                 龍王之冕,血玉之枝,鎏金之鱗,
                 熔毀之刻,灰燼之心,獄火之蝶,
                 萬劫之真意,凶將之手眼,禍神之禊淚
-        };
-    }
-    public int[] weekBossRareList (){
-        return new int[]{
-                1,1,1,
-                5,5,5,
-                5,5,5,
-                5,5,5,
-                5,5,5,
-                5,5,5,
-                5,5,5
         };
     }
 
@@ -344,6 +323,7 @@ public class Material {
                 1,1,1,
                 1,1,1,
                 1,1,1,
+                1,1,1,
                 1
         };
     }
@@ -374,7 +354,7 @@ public class Material {
                 "晦暗刻像","夤夜刻像","幽邃刻像",
                 "失活菌核","休眠菌核","茁壯菌核",
                 "混沌容器","混沌模組","混沌錨栓",
-                "輝光稜晶",
+                "破缺稜晶","混濁稜晶","輝光稜晶",
 
         };
     }
@@ -434,6 +414,7 @@ public class Material {
                 2,3,4,
                 2,3,4,
                 2,3,4,
+                2,3,4,
                 2,3,4
         };
     }
@@ -442,6 +423,8 @@ public class Material {
     public String[] weekly1NameList (){
         return new String[]{
                 "「未知1」的教導","「未知1」的指引","「未知1」的哲學",
+                "「未知2」的教導","「未知2」的指引","「未知2」的哲學",
+                "「未知3」的教導","「未知3」的指引","「未知3」的哲學",
                 "「自由」的教導","「自由」的指引","「自由」的哲學",
                 "「繁榮」的教導","「繁榮」的指引","「繁榮」的哲學",
                 "「浮世」的教導","「浮世」的指引","「浮世」的哲學",
@@ -456,6 +439,8 @@ public class Material {
     public int[] weekly1CountList (){
         return new int[]{
                 未知1_的哲學.get(0),未知1_的哲學.get(1),未知1_的哲學.get(2),
+                未知2_的哲學.get(0),未知2_的哲學.get(1),未知2_的哲學.get(2),
+                未知3_的哲學.get(0),未知3_的哲學.get(1),未知3_的哲學.get(2),
                 自由_的哲學.get(0),自由_的哲學.get(1),自由_的哲學.get(2),
                 繁榮_的哲學.get(0),繁榮_的哲學.get(1),繁榮_的哲學.get(2),
                 浮世_的哲學.get(0),浮世_的哲學.get(1),浮世_的哲學.get(2),
@@ -469,6 +454,9 @@ public class Material {
     }
     public int[] weekly1RareList (){
         return new int[]{
+                2,3,4,
+                2,3,4,
+                2,3,4,
                 2,3,4,
                 2,3,4,
                 2,3,4,
@@ -639,6 +627,8 @@ public class Material {
                 //add in 20220831
                 case "永續機芯": 永續機芯 = addCountIntoVar(永續機芯, temp_count, "BOSS"); break;
                 case "導光四面體": 導光四面體 = addCountIntoVar(導光四面體, temp_count, "BOSS"); break;
+                //add in 20221001
+                case "滅諍草蔓": 滅諍草蔓 = addCountIntoVar(滅諍草蔓, temp_count, "BOSS"); break;
             }
 
             /** LOCAL */

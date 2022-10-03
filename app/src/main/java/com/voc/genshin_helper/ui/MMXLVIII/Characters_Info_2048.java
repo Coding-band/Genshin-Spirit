@@ -16,6 +16,7 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
 import android.text.Html;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -475,6 +476,13 @@ public class Characters_Info_2048 {
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int height = displayMetrics.heightPixels;
         int width = displayMetrics.widthPixels;
+
+        Window dialogWindowX = activity.getWindow();
+        dialogWindowX.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        // 2O48 DESIGN
+        dialogWindowX.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        dialogWindowX.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+        dialogWindowX.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
 
         /** Method of header */
         TabLayout info_tablelayout = view.findViewById(R.id.info_tablelayout);

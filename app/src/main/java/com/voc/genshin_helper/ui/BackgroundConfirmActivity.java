@@ -20,10 +20,16 @@ import com.voc.genshin_helper.ui.CalculatorUI;
 import com.voc.genshin_helper.ui.MainActivity;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.CustomToast;
+import com.voc.genshin_helper.util.FileUtils;
 import com.voc.genshin_helper.util.LangUtils;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 import pl.droidsonroids.gif.GifDrawable;
 import pl.droidsonroids.gif.GifImageView;
@@ -68,7 +74,24 @@ public class BackgroundConfirmActivity extends AppCompatActivity {
                     case "jpeg" : editor.putString("gif/png","jpeg");break;
                     case "gif" : editor.putString("gif/png","gif");break;
                 }
+
                 editor.apply();
+
+                try (InputStream in = new FileInputStream(context.getFilesDir()+"/tmp_background."+sharedPreferences.getString("gif/png","png"))) {
+                    try (OutputStream out = new FileOutputStream(context.getFilesDir()+"/background."+sharedPreferences.getString("gif/png","png"))) {
+                        // Transfer bytes from in to out
+                        byte[] buf = new byte[1024];
+                        int len;
+                        while ((len = in.read(buf)) > 0) {
+                            out.write(buf, 0, len);
+                        }
+                    }
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
                 finish();
                 //startActivity(new Intent(BackgroundConfirmActivity.this, MainActivity.class));
             }
@@ -98,7 +121,7 @@ public class BackgroundConfirmActivity extends AppCompatActivity {
         this.context = context;
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_info", Context.MODE_PRIVATE);
         String gif_png = sharedPreferences.getString("tmp_gif_png", "png");
-        String pathName = sharedPreferences.getString("tmp_pathName","N/A");
+        String pathName = context.getFilesDir()+"/tmp_background."+gif_png;
         GifImageView gifImageView1 = (GifImageView) activity.findViewById(R.id.global_bg);
 
         Resources res = context.getResources();

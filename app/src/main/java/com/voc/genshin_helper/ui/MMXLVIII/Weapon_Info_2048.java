@@ -10,6 +10,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.AssetManager;
 import android.content.res.ColorStateList;
+import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -210,6 +211,13 @@ public class Weapon_Info_2048 {
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int height = displayMetrics.heightPixels;
         int width = displayMetrics.widthPixels;
+
+        Window dialogWindowX = activity.getWindow();
+        dialogWindowX.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        // 2O48 DESIGN
+        dialogWindowX.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        dialogWindowX.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+        dialogWindowX.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
 
         /** Method of header */
         TabLayout info_tablelayout = view.findViewById(R.id.info_tablelayout);
@@ -516,7 +524,7 @@ public class Weapon_Info_2048 {
                 /** Method of dialog */
                 dialog.setContentView(view);
                 dialog.setCanceledOnTouchOutside(true);
-                Window dialogWindow = dialog.getWindow();
+                Window dialogWindow = activity.getWindow();
                 WindowManager.LayoutParams lp = dialogWindow.getAttributes();
                 // 2O48 DESIGN
                 dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
@@ -541,10 +549,24 @@ public class Weapon_Info_2048 {
             info_weapon_name_base.setVisibility(View.VISIBLE);
             info_weapon_name_base.setText(name);
         }
+
+        Animation animImgLTR = AnimationUtils.loadAnimation(context,R.anim.img_ltr);
+        Animation animImgRTL = AnimationUtils.loadAnimation(context,R.anim.img_rtl);
+        weapon_img.setAnimation(animImgLTR);
+        LinearLayout info_detail = weaponDescPage.findViewById(R.id.info_detail);
+        info_detail.setAnimation(animImgRTL);
+
+        if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            ImageView weapon_imgL = view.findViewById(R.id.info_weapon_img);
+            weapon_imgL.setAnimation(animImgLTR);
+            weapon_imgL.setImageDrawable(FileLoader.loadIMG2Drawable(item_rss.getWeaponGachaByName(name,context)[1],context));
+        }else{
+            weapon_img.setImageDrawable(FileLoader.loadIMG2Drawable(item_rss.getWeaponGachaByName(name,context)[1],context));
+        }
+
         weapon_obtain_way_tv.setText(item_rss.getObtainCode(obtain_way,context));
         //weapon_title.setText(nick);
         //Picasso.get().load(FileLoader.loadIMG(item_rss.getWeaponByName(name,context)[0],context)).centerCrop().into(weapon_img);
-        weapon_img.setImageDrawable(FileLoader.loadIMG2Drawable(item_rss.getWeaponGachaByName(name,context)[1],context));
 
         switch (weapon){
             case "Sword" :
@@ -553,12 +575,6 @@ public class Weapon_Info_2048 {
             case "Bow" :
             case "Catalyst" : {weapon_img.setRotation(0);break;}
         }
-
-        Animation animImgLTR = AnimationUtils.loadAnimation(context,R.anim.img_ltr);
-        Animation animImgRTL = AnimationUtils.loadAnimation(context,R.anim.img_rtl);
-        weapon_img.setAnimation(animImgLTR);
-        LinearLayout info_detail = weaponDescPage.findViewById(R.id.info_detail);
-        info_detail.setAnimation(animImgRTL);
 
         displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);

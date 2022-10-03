@@ -146,7 +146,8 @@ public class CalculatorItemAdapter extends RecyclerView.Adapter<CalculatorItemAd
             }
 
 
-            RoundedCornersTransformation roundedCornersTransformation = new RoundedCornersTransformation(360, 0, RoundedCornersTransformation.CornerType.ALL);
+            //RoundedCornersTransformation roundedCornersTransformation = new RoundedCornersTransformation(360, 0, RoundedCornersTransformation.CornerType.ALL);
+            Transformation roundedCornersTransformation = new RoundedCornersTransformation(64, 0);
 
             if (db.getType().equals("CHAR")){
                 Picasso.get().load(FileLoader.loadIMG(item_rss.getCharByName(db.getName(),context)[3],context)).fit().transform(roundedCornersTransformation).into(holder.db_ico);
@@ -155,12 +156,12 @@ public class CalculatorItemAdapter extends RecyclerView.Adapter<CalculatorItemAd
             }
 
             switch (db.getRare()){
-                case 1 : holder.db_ico.setBackgroundResource(R.drawable.item_char_list_bg_circ_1s);break;
-                case 2 : holder.db_ico.setBackgroundResource(R.drawable.item_char_list_bg_circ_2s);break;
-                case 3 : holder.db_ico.setBackgroundResource(R.drawable.item_char_list_bg_circ_3s);break;
-                case 4 : holder.db_ico.setBackgroundResource(R.drawable.item_char_list_bg_circ_4s);break;
-                case 5 : holder.db_ico.setBackgroundResource(R.drawable.item_char_list_bg_circ_5s);break;
-                default:  holder.db_ico.setBackgroundResource(R.drawable.item_char_list_bg_circ_1s);break;
+                case 1 : holder.db_ico.setBackgroundResource(R.drawable.bg_rare1_char_siptik);break;
+                case 2 : holder.db_ico.setBackgroundResource(R.drawable.bg_rare2_char_siptik);break;
+                case 3 : holder.db_ico.setBackgroundResource(R.drawable.bg_rare3_char_siptik);break;
+                case 4 : holder.db_ico.setBackgroundResource(R.drawable.bg_rare4_char_siptik);break;
+                case 5 : holder.db_ico.setBackgroundResource(R.drawable.bg_rare5_char_siptik);break;
+                default:  holder.db_ico.setBackgroundResource(R.drawable.bg_rare1_char_siptik);break;
             }
 
         }

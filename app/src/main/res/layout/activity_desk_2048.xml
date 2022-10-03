@@ -28,30 +28,50 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:fadingEdge="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/desk_tablayout"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
     </com.voc.genshin_helper.util.CustomViewPager>
 
-    <com.google.android.material.tabs.TabLayout
-        android:id="@+id/desk_tablayout"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/tab_bg_2048"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:tabGravity="fill"
-        app:tabIndicator="@drawable/tab_underline"
-        app:tabIndicatorColor="@color/tab_selected_2048"
-        app:tabIndicatorFullWidth="false"
-        app:tabIndicatorHeight="5dp"
-        app:tabInlineLabel="false"
-        app:tabMode="fixed"
-        app:tabPaddingBottom="4dp"
-        app:tabPaddingTop="4dp" />
+        app:layout_constraintVertical_bias="1.0">
+
+        <ImageView
+            android:id="@+id/desk_tablayout_bg"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/desk_tablayout"
+            app:layout_constraintTop_toTopOf="@id/desk_tablayout"
+            app:srcCompat="@drawable/mask_navi_bg_day" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/desk_tablayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            app:tabGravity="fill"
+            app:tabIndicator="@drawable/tab_underline"
+            app:tabIndicatorColor="@color/tab_selected_2048"
+            app:tabIndicatorFullWidth="false"
+            app:tabIndicatorHeight="5dp"
+            app:tabInlineLabel="false"
+            app:tabMode="fixed"
+            app:tabPaddingBottom="4dp"
+            app:tabPaddingTop="4dp" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

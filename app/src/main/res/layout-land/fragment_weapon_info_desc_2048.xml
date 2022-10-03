@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-~ Project Genshin Spirit (原神小幫手) was
-~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
-~ Copyright © 2022 Xectorda 版權所有
--->
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2022 Xectorda 版權所有
+  -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -28,10 +28,13 @@
             android:fadingEdgeLength="32dp"
             android:requiresFadingEdge="horizontal|vertical"
             android:rotation="35"
+            android:visibility="gone"
             app:layout_constraintBottom_toTopOf="@+id/info_detail"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"

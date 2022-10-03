@@ -165,7 +165,7 @@
                         android:layout_height="match_parent"
                         android:fontFamily="@font/genshin_font"
                         android:gravity="center"
-                        android:text="Talent Level : "
+                        android:text="@string/talent_lvl"
                         android:textAlignment="viewStart"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"

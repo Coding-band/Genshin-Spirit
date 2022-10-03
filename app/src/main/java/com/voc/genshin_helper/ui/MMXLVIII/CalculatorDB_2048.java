@@ -92,6 +92,14 @@ public class CalculatorDB_2048 extends AppCompatActivity {
         mList.setAdapter(mAdapter);
         mList.removeAllViewsInLayout();
 
+
+        Window dialogWindowX = activity.getWindow();
+        dialogWindowX.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        // 2O48 DESIGN
+        dialogWindowX.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        dialogWindowX.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+        dialogWindowX.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
+
         //UI
         SharedPreferences sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
         String color_hex = sharedPreferences.getString("theme_color_hex","#FF5A5A"); // Must include #

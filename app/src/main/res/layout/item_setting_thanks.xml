@@ -299,6 +299,18 @@
                     android:text="★ Loliness#0599" />
 
                 <TextView
+                    android:id="@+id/textView89"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="12dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/genshin_font"
+                    android:text="★ Hung Jai#1706" />
+
+                <TextView
                     android:id="@+id/helper_aldi_title"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

@@ -11,39 +11,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <ImageView
-            android:id="@+id/paimon_header_bg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="false"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/filter_desk_head_2048" />
-
-        <TextView
-            android:id="@+id/paimon_asc_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/genshin_font"
-            android:singleLine="false"
-            android:text="@string/paimon"
-            android:textAlignment="viewStart"
-            android:textColor="@color/tv_spinner_color_2048"
-            android:textSize="16sp" />
-
-    </FrameLayout>
-
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -52,12 +19,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingTop="60dp"
+            android:paddingBottom="60dp">
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/birth_card"
@@ -445,49 +414,6 @@
                     android:orientation="horizontal">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/paimon_alarm"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:layout_marginRight="4dp"
-                        android:layout_weight="1">
-
-                        <ImageView
-                            android:id="@+id/paimon_bg4"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:adjustViewBounds="true"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/bg_2048_item_btn" />
-
-                        <ImageView
-                            android:id="@+id/paimon_ico4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:layout_constraintBottom_toBottomOf="@+id/paimon_bg4"
-                            app:layout_constraintEnd_toEndOf="@+id/paimon_bg4"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="@+id/paimon_bg4"
-                            app:layout_constraintVertical_bias="0.4"
-                            app:srcCompat="@drawable/ic_2048_alarm" />
-
-                        <TextView
-                            android:id="@+id/paimon_tv4"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/genshin_font"
-                            android:text="@string/alarm"
-                            android:textColor="#ECE5D8"
-                            app:layout_constraintBottom_toBottomOf="@+id/paimon_bg4"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/paimon_ico4" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/paimon_setting"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -573,6 +499,50 @@
                             app:layout_constraintTop_toBottomOf="@+id/paimon_ico6" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/paimon_alarm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:layout_weight="1"
+                        android:visibility="invisible">
+
+                        <ImageView
+                            android:id="@+id/paimon_bg4"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/bg_2048_item_btn" />
+
+                        <ImageView
+                            android:id="@+id/paimon_ico4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@+id/paimon_bg4"
+                            app:layout_constraintEnd_toEndOf="@+id/paimon_bg4"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/paimon_bg4"
+                            app:layout_constraintVertical_bias="0.4"
+                            app:srcCompat="@drawable/ic_2048_alarm" />
+
+                        <TextView
+                            android:id="@+id/paimon_tv4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="@string/alarm"
+                            android:textColor="#ECE5D8"
+                            app:layout_constraintBottom_toBottomOf="@+id/paimon_bg4"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/paimon_ico4" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
                 </LinearLayout>
             </LinearLayout>
 
@@ -651,5 +621,38 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/paimon_header_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="false"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/mask_head_bg" />
+
+        <TextView
+            android:id="@+id/paimon_asc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/genshin_font"
+            android:singleLine="false"
+            android:text="@string/paimon"
+            android:textAlignment="viewStart"
+            android:textColor="@color/tv_spinner_color_2048"
+            android:textSize="16sp" />
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

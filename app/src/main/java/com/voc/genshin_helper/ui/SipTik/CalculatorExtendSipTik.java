@@ -263,10 +263,10 @@ public class CalculatorExtendSipTik {
                 requestPermission();
                 if (isWritePermissionGranted){
                     if (saveImageToExternalStorage("SipTikCal"+"_"+prettyTime(),bitmap)){
-                        CustomToast.toast(context,activity,"Image Saved Successfully");
+                        CustomToast.toast(context,activity,context.getString(R.string.screenshot_saved));
                     }
                 }else {
-                    CustomToast.toast(context,activity,"Permission Not Granted");
+                    CustomToast.toast(context,activity,context.getString(R.string.screenshot_not_saved_permission));
                 }
             }
         });
@@ -795,17 +795,17 @@ public class CalculatorExtendSipTik {
 
         /** BOSS */
         for (int x = 0; isZero(material.bossCountList()) == false && x < material.bossNameList().length; x++) {
-            itemAdd(column,size,material.bossNameList()[x],material.bossCountList()[x],material.bossRareList()[x],siptik_result_ll);
+            itemAdd(column,size,material.bossNameList()[x],material.bossCountList()[x],4,siptik_result_ll);
         }
 
         /** WEEK-BOSS */
         for (int x = 0; isZero(material.weekBossCountList()) == false && x < material.weekBossNameList().length; x++) {
-            itemAdd(column,size,material.weekBossNameList()[x],material.weekBossCountList()[x],material.weekBossRareList()[x],siptik_result_ll);
+            itemAdd(column,size,material.weekBossNameList()[x],material.weekBossCountList()[x],5,siptik_result_ll);
         }
 
         /** LOCAL */
         for (int x = 0; isZero(material.localCountList()) == false && x < material.localNameList().length; x++) {
-            itemAdd(column,size,material.localNameList()[x],material.localCountList()[x],material.localRareList()[x],siptik_result_ll);
+            itemAdd(column,size,material.localNameList()[x],material.localCountList()[x],1,siptik_result_ll);
         }
 
         /** COMMON */
@@ -1290,7 +1290,7 @@ public class CalculatorExtendSipTik {
             return true;
         }
         catch (Exception e){
-            CustomToast.toast(context,activity,"Image No Saved");
+            CustomToast.toast(context,activity,context.getString(R.string.screenshot_not_saved));
             e.printStackTrace();
         }
         return false;

@@ -36,70 +36,6 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/acquaint_fate" />
 
-    <FrameLayout
-        android:id="@+id/frameLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-        <ImageView
-            android:id="@+id/paimon_header_bg"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="false"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/filter_desk_head_2048" />
-
-        <TextView
-            android:id="@+id/paimon_asc_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:fontFamily="@font/genshin_font"
-            android:singleLine="false"
-            android:text="@string/title_settings"
-            android:textAlignment="viewStart"
-            android:textColor="@color/tv_spinner_color_2048"
-            android:textSize="16sp" />
-
-        <ImageView
-            android:id="@+id/info_back_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_weight="0"
-            android:paddingTop="12dp"
-            android:paddingBottom="12dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_2048_back_btn" />
-
-        <ImageView
-            android:id="@+id/discord_ico"
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:layout_gravity="center|right"
-            android:layout_marginRight="8dp"
-            android:padding="12dp"
-            android:visibility="visible"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
-            app:srcCompat="@drawable/discord_ico" />
-
-    </FrameLayout>
-
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -109,13 +45,14 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:overScrollMode="never"
+            android:paddingTop="72dp"
             android:scrollbars="none">
 
             <WebView
@@ -1361,7 +1298,8 @@
                         android:checked="false"
                         android:fontFamily="@font/genshin_font"
                         android:text="Change app icon in different Styles"
-                        android:textColor="@color/tv_color" />
+                        android:textColor="@color/tv_color"
+                        android:visibility="gone" />
 
                     <Switch
                         android:id="@+id/other_item_eng_name"
@@ -1373,7 +1311,8 @@
                         android:checked="false"
                         android:fontFamily="@font/genshin_font"
                         android:text="Display Item Base Name"
-                        android:textColor="@color/tv_color" />
+                        android:textColor="@color/tv_color"
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/textView16"
@@ -1508,5 +1447,69 @@
         app:layout_constraintTop_toBottomOf="@+id/frameLayout"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/discord_ico" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="72dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/paimon_header_bg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="false"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/mask_head_bg" />
+
+        <TextView
+            android:id="@+id/paimon_asc_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/genshin_font"
+            android:singleLine="false"
+            android:text="@string/title_settings"
+            android:textAlignment="viewStart"
+            android:textColor="@color/tv_spinner_color_2048"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/info_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_weight="0"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_2048_back_btn" />
+
+        <ImageView
+            android:id="@+id/discord_ico"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="center|right"
+            android:layout_marginRight="8dp"
+            android:padding="12dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/discord_ico" />
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
