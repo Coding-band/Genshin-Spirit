@@ -399,7 +399,7 @@
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="72dp"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -410,14 +410,14 @@
         <ImageView
             android:id="@+id/home_header_bg"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="72dp"
             android:adjustViewBounds="false"
             android:scaleType="centerCrop"
             app:srcCompat="@drawable/mask_head_bg" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="64dp">
 
             <ImageView
                 android:id="@+id/home_switch_btn"

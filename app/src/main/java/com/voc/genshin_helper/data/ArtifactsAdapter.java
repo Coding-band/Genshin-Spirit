@@ -297,6 +297,7 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                 default:  viewHolder.artifact_icon.setBackgroundResource(R.drawable.bg_rare1_char_siptik);break;
             }
             viewHolder.artifact_star.setVisibility(View.GONE);
+            viewHolder.artifact_star_ll.setVisibility(View.GONE);
         }
 
         Context context = this.context;
@@ -1106,6 +1107,7 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
         public TextView artifact_name;
         public LinearLayout artifact_nl;
         public RatingBar artifact_star;
+        public LinearLayout artifact_star_ll;
         public TextView artifact_stat1;
         public TextView artifact_stat2;
         public String str;
@@ -1128,6 +1130,7 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
             this.artifact_icon = (ImageView) view.findViewById(R.id.artifact_img);
             this.artifact_name = (TextView) view.findViewById(R.id.artifact_name);
             this.artifact_star = (RatingBar) view.findViewById(R.id.artifact_star);
+            this.artifact_star_ll = view.findViewById(R.id.artifact_star_ll);
             this.artifact_isComing = (ImageView) view.findViewById(R.id.artifact_is_coming);
             this.artifact_base_name = (TextView) view.findViewById(R.id.artifact_base_name);
             this.artifact_nl = (LinearLayout) view.findViewById(R.id.artifact_nl);

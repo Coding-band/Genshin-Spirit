@@ -524,6 +524,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                 default:  holder.char_icon.setBackgroundResource(R.drawable.bg_rare1_char_siptik);break;
             }
             holder.char_star.setVisibility(View.GONE);
+            holder.char_star_ll.setVisibility(View.GONE);
             switch (Characters.getElement()){
                 case "Anemo" : {
                     holder.char_element.setImageResource(R.drawable.anemo_ico);
@@ -1320,6 +1321,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         public ImageView char_icon,char_small_ico,char_isComing,char_element,char_press_mask,char_weapon;
         //public LinearLayout char_nl;
         public RatingBar char_star;
+        public LinearLayout char_star_ll;
         public ConstraintLayout char_bg;
         public ImageView char_card_bg;
         public ImageView char_card_mask;
@@ -1341,6 +1343,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
             char_base_name = itemView.findViewById(R.id.char_base_name);
             //char_nl = itemView.findViewById(R.id.char_nl);
             char_bg = itemView.findViewById(R.id.char_bg);
+            char_star_ll = itemView.findViewById(R.id.char_star_ll);
             char_cbg = itemView.findViewById(R.id.char_cbg);
 
             if (itemView.findViewById(R.id.char_region) != null && itemView.findViewById(R.id.char_region_img) != null){

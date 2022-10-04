@@ -776,6 +776,7 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                     default:  viewHolder.weapon_icon.setBackgroundResource(R.drawable.bg_rare1_char_siptik);break;
                 }
                 viewHolder.weapon_star.setVisibility(View.GONE);
+                viewHolder.weapon_star_ll.setVisibility(View.GONE);
             }
 
 
@@ -1133,6 +1134,7 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
         public ConstraintLayout weapon_main;
         public LinearLayout weapon_name_ll;
         public RatingBar weapon_star;
+        public LinearLayout weapon_star_ll;
         public TextView weapon_stat;
         public ImageView weapon_press_mask;
         public ImageView weapon_weapon;
@@ -1147,6 +1149,7 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
             this.weapon_icon = (ImageView) view.findViewById(R.id.weapon_img);
             this.weapon_name = (TextView) view.findViewById(R.id.weapon_name);
             this.weapon_star = (RatingBar) view.findViewById(R.id.weapon_star);
+            this.weapon_star_ll = view.findViewById(R.id.weapon_star_ll);
             this.weapon_isComing = (ImageView) view.findViewById(R.id.weapon_is_coming);
             this.weapon_base_name = (TextView) view.findViewById(R.id.weapon_base_name);
             this.weapon_nl = (LinearLayout) view.findViewById(R.id.weapon_nl);

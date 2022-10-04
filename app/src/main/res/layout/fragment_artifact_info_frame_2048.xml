@@ -30,7 +30,6 @@
         android:layout_height="0dp"
         android:background="@drawable/bg_2048_char_info"
         android:fadingEdge="horizontal"
-        android:paddingTop="72dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +40,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/info_header"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="72dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,65 +50,75 @@
         <ImageView
             android:id="@+id/info_header_bg"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="72dp"
             android:adjustViewBounds="false"
-            android:scaleType="centerCrop"
+            android:scaleType="fitXY"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/mask_head_bg" />
 
-        <ImageView
-            android:id="@+id/info_back_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="16dp"
-            android:layout_weight="0"
-            android:paddingTop="12dp"
-            android:paddingBottom="12dp"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_2048_back_btn" />
+            app:layout_constraintVertical_bias="0.0">
 
-        <ImageView
-            android:id="@+id/info_blank"
-            android:layout_width="3dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_weight="0"
-            android:adjustViewBounds="true"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/info_back_btn"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/item_2048_blank" />
+            <ImageView
+                android:id="@+id/info_back_btn"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginBottom="4dp"
+                android:layout_weight="0"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_2048_back_btn" />
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/info_tablelayout"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_marginStart="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toEndOf="@+id/info_blank"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.5"
-            app:tabGravity="fill"
-            app:tabIndicator="@drawable/bg_kwang_filled"
-            app:tabIndicatorAnimationDuration="500"
-            app:tabIndicatorColor="@color/tab_selected_2048"
-            app:tabIndicatorFullWidth="false"
-            app:tabIndicatorHeight="5dp"
-            app:tabInlineLabel="false"
-            app:tabMode="fixed"
-            app:tabPaddingBottom="12dp"
-            app:tabPaddingTop="12dp" />
+            <ImageView
+                android:id="@+id/info_blank"
+                android:layout_width="3dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="0"
+                android:adjustViewBounds="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/info_back_btn"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/item_2048_blank" />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/info_tablelayout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/info_blank"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5"
+                app:tabGravity="fill"
+                app:tabIndicator="@drawable/bg_kwang_filled"
+                app:tabIndicatorAnimationDuration="500"
+                app:tabIndicatorColor="@color/tab_selected_2048"
+                app:tabIndicatorFullWidth="false"
+                app:tabIndicatorHeight="5dp"
+                app:tabInlineLabel="false"
+                app:tabMode="fixed"
+                app:tabPaddingBottom="8dp"
+                app:tabPaddingTop="8dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

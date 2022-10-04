@@ -37,7 +37,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="72dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,18 +47,18 @@
         <ImageView
             android:id="@+id/desk_tablayout_bg"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="72dp"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/desk_tablayout"
-            app:layout_constraintTop_toTopOf="@id/desk_tablayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/mask_navi_bg_day" />
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/desk_tablayout"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_height="60dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

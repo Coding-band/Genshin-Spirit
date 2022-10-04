@@ -42,7 +42,7 @@
     <LinearLayout
         android:id="@+id/linearLayout10"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="72dp"
         android:animateLayoutChanges="true"
         android:background="@drawable/mask_head_bg"
         android:orientation="horizontal"
@@ -55,7 +55,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/header_con"
             android:layout_width="match_parent"
-            android:layout_height="60dp">
+            android:layout_height="64dp">
 
             <ImageView
                 android:id="@+id/artifact_header_bg"
