@@ -128,6 +128,12 @@ public class CalculatorItemAdapter extends RecyclerView.Adapter<CalculatorItemAd
         holder.rare = db.getRare();
         holder.isCal = db.isCal();
 
+        CalculatorExtendSipTik ces = new CalculatorExtendSipTik();
+        ces.setPreview(true);
+        ces.setup(context,activity,holder.itemViewX);
+        ces.cal_setup(holder.id,holder.type,holder.name,holder.beforeLvl,holder.afterLvl,holder.beforeBreakLvl,holder.afterBreakLvl,holder.beforeBreakUpLvl,holder.afterBreakUpLvl,holder.beforeSkill1Lvl,holder.afterSkill1Lvl,holder.beforeSkill2Lvl,holder.afterSkill2Lvl,holder.beforeSkill3Lvl,holder.afterSkill3Lvl,holder.follow,holder.rare,holder.isCal);
+
+
 
         if(context instanceof CalculatorDB_SipTik){
             ItemRss item_rss = new ItemRss();
@@ -177,6 +183,7 @@ public class CalculatorItemAdapter extends RecyclerView.Adapter<CalculatorItemAd
         public ImageView db_ico, db_delete;
         public LinearLayout db_material_ll ;
         public ConstraintLayout db_talent_ll;
+        public View itemViewX;
 
         int id ;
         String type ;
@@ -211,6 +218,7 @@ public class CalculatorItemAdapter extends RecyclerView.Adapter<CalculatorItemAd
                 db_delete = itemView.findViewById(R.id.db_delete);
                 db_material_ll = itemView.findViewById(R.id.db_material_ll);
                 db_talent_ll = itemView.findViewById(R.id.talent_ll);
+                itemViewX = itemView;
 
                 db_press_detail.setOnClickListener(new View.OnClickListener() {
                     @Override

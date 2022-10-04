@@ -1380,7 +1380,7 @@ public class CalculatorProcess {
         int exp_mid = (int) exp / 5000;
         exp = exp % 5000;
         int exp_small = (int) exp / 1000;
-        if (exp % 1000 < 1000){
+        if (exp % 1000 < 1000 && exp != 0){
             exp_small = exp_small + 1;
         }
 
@@ -1397,7 +1397,7 @@ public class CalculatorProcess {
         int exp_mid = (int) exp / 2000;
         exp = exp % 2000;
         int exp_small = (int) exp / 400;
-        if (exp % 400 < 400){
+        if (exp % 400 < 400 && exp != 0){
             exp_small = exp_small + 1;
         }
 
@@ -1412,7 +1412,7 @@ public class CalculatorProcess {
         int exp_big = (int) exp / 10000;
         exp = exp % 10000;
         int exp_mid = (int) exp / 2500;
-        if (exp % 2500 < 2500){
+        if (exp % 2500 < 2500 && exp != 0){
             exp_mid = exp_mid + 1;
         }
         this.artifact_big = this.artifact_big + exp_big;

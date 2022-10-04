@@ -204,14 +204,17 @@
 
         <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="72dp"
-            android:visibility="gone">
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            android:visibility="visible">
 
             <LinearLayout
                 android:id="@+id/db_material_ll"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:orientation="horizontal" />
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:overScrollMode="never" />
         </HorizontalScrollView>
 
         <View

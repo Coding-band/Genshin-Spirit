@@ -240,6 +240,11 @@ public class CalculatorExtendSipTik {
     private static final int CAMERA = 100;
 
     Material material;
+    boolean isInPreview = false;
+
+    public void setPreview(boolean isInPreview){
+        this.isInPreview = isInPreview;
+    }
 
     public void setup(Context context, Activity activity, View viewPager) {
         this.context = context;
@@ -253,27 +258,30 @@ public class CalculatorExtendSipTik {
 
         item_rss = new ItemRss();
 
-        ImageView result_camera = viewPager.findViewById(R.id.result_camera);
-        result_camera.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ScrollView scrollview = viewPager.findViewById(R.id.siptik_sc);
+        if (!isInPreview){
+            ImageView result_camera = viewPager.findViewById(R.id.result_camera);
+            result_camera.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    ScrollView scrollview = viewPager.findViewById(R.id.siptik_sc);
 
-                Bitmap bitmap = getBitmapFromView(scrollview, scrollview.getChildAt(0).getHeight(), scrollview.getChildAt(0).getWidth());
-                requestPermission();
-                if (isWritePermissionGranted){
-                    if (saveImageToExternalStorage("SipTikCal"+"_"+prettyTime(),bitmap)){
-                        CustomToast.toast(context,activity,context.getString(R.string.screenshot_saved));
+                    Bitmap bitmap = getBitmapFromView(scrollview, scrollview.getChildAt(0).getHeight(), scrollview.getChildAt(0).getWidth());
+                    requestPermission();
+                    if (isWritePermissionGranted){
+                        if (saveImageToExternalStorage("SipTikCal"+"_"+prettyTime(),bitmap)){
+                            CustomToast.toast(context,activity,context.getString(R.string.screenshot_saved));
+                        }
+                    }else {
+                        CustomToast.toast(context,activity,context.getString(R.string.screenshot_not_saved_permission));
                     }
-                }else {
-                    CustomToast.toast(context,activity,context.getString(R.string.screenshot_not_saved_permission));
                 }
-            }
-        });
+            });
+        }
 
         char_readJSON();
         weapon_readJSON();
     }
+
     public void cal_setup(
             int id_T, String type_T, String name_T,
             int beforeLvl_T, int afterLvl_T,
@@ -361,6 +369,7 @@ public class CalculatorExtendSipTik {
             }
 
             part0_exp = exp_grade0;
+            System.out.println("exp_grade0 : "+exp_grade0);
             part1_exp = exp_grade1 ;
             part2_exp = exp_grade2 ;
             part3_exp = exp_grade3 ;
@@ -722,11 +731,21 @@ public class CalculatorExtendSipTik {
 
             }
 
-            Picasso.get()
-                    .load (bg_rare_rss)
-                    .resize(size, (int) (size*1.25))
-                    .error (R.drawable.paimon_lost)
-                    .into (item_bg);
+            if (isInPreview){
+                DisplayMetrics displayMetrics_w = new DisplayMetrics();
+                activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics_w);
+                Picasso.get()
+                        .load (bg_rare_rss)
+                        .resize((int) (72*displayMetrics_w.density), (int) (72*1.25*displayMetrics_w.density))
+                        .error (R.drawable.paimon_lost)
+                        .into (item_bg);
+            }else{
+                Picasso.get()
+                        .load (bg_rare_rss)
+                        .resize(size, (int) (size*1.25))
+                        .error (R.drawable.paimon_lost)
+                        .into (item_bg);
+            }
             item_bg.setAdjustViewBounds(true);
 
             /**
@@ -737,7 +756,7 @@ public class CalculatorExtendSipTik {
              item_weekly_tv.setVisibility(View.VISIBLE);
              }
              */
-            if (rowNum > rowMax){
+            if (rowNum > rowMax && isInPreview == false){
                 LinearLayout linearLayout = new LinearLayout(context);
                 linearLayout.setGravity(Gravity.CENTER);
                 siptik_result_ll.addView(linearLayout);
@@ -763,7 +782,7 @@ public class CalculatorExtendSipTik {
         int width_w = (int) (displayMetrics_w.widthPixels-((32+16)*displayMetrics_w.density));
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
 
-        LinearLayout siptik_result_ll = viewPager.findViewById(R.id.siptik_result_ll);
+        LinearLayout siptik_result_ll = null;
         ImageView item_img;
         TextView tv;
         final int radius = 180;
@@ -781,6 +800,12 @@ public class CalculatorExtendSipTik {
 
         rowNum = 1;
         colNum = 1;
+
+        if (isInPreview){
+            siptik_result_ll = viewPager.findViewById(R.id.db_material_ll);
+        }else{
+            siptik_result_ll = viewPager.findViewById(R.id.siptik_result_ll);
+        }
 
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setGravity(Gravity.CENTER);
@@ -844,7 +869,7 @@ public class CalculatorExtendSipTik {
         int exp_mid = (int) exp / 5000;
         exp = exp % 5000;
         int exp_small = (int) exp / 1000;
-        if (exp % 1000 < 1000){
+        if (exp % 1000 < 1000 && exp != 0){
             exp_small = exp_small + 1;
         }
 
@@ -861,7 +886,7 @@ public class CalculatorExtendSipTik {
         int exp_mid = (int) exp / 2000;
         exp = exp % 2000;
         int exp_small = (int) exp / 400;
-        if (exp % 400 < 400){
+        if (exp % 400 < 400 && exp != 0){
             exp_small = exp_small + 1;
         }
 
@@ -876,7 +901,7 @@ public class CalculatorExtendSipTik {
         int exp_big = (int) exp / 10000;
         exp = exp % 10000;
         int exp_mid = (int) exp / 2500;
-        if (exp % 2500 < 2500){
+        if (exp % 2500 < 2500 && exp != 0){
             exp_mid = exp_mid + 1;
         }
         this.artifact_big = this.artifact_big + exp_big;
