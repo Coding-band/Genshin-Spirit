@@ -1307,7 +1307,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                 }
         );
 
-        System.out.println("ITEM WIDTH * HEIGH = " + width +"*" + height +" || SCREEN WIDTH * HEIGH = "+ width_curr +"*" + height_curr+" || MASK WIDTH * HEIGH = "+ holder.char_bg.getWidth() +"*" + holder.char_bg.getHeight());
+        //System.out.println("ITEM WIDTH * HEIGH = " + width +"*" + height +" || SCREEN WIDTH * HEIGH = "+ width_curr +"*" + height_curr+" || MASK WIDTH * HEIGH = "+ holder.char_bg.getWidth() +"*" + holder.char_bg.getHeight());
 
     }
 

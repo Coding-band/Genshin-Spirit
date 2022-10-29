@@ -1120,6 +1120,10 @@
     <string name="screenshot_not_saved_permission">閲覧許可に同意してください</string>
     <string name="screenshot_not_saved">スクリーンショットを保存できませんでした</string>
     <string name="talent_lvl">"スキルレベル : "</string>
+    <string name="today">本日</string>
+    <string name="unclaimed">未請求</string>
+    <string name="claimed">請求すでに</string>
+    <string name="idle">休眠</string>
 
 </resources>
 

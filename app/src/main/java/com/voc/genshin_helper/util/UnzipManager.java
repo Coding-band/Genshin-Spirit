@@ -29,6 +29,7 @@ import java.net.URLConnection;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.zip.ZipEntry;
+import java.util.zip.ZipException;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipInputStream;
 
@@ -39,7 +40,6 @@ import java.util.zip.ZipInputStream;
  */
 public class UnzipManager {
 
-    ProgressDialog pDialog;
     Context context;
     Activity activity;
     String path;
@@ -50,6 +50,7 @@ public class UnzipManager {
     boolean runStyleUI = false;
 
     ZipInputStream zis = null;
+    Dialog2048 dialog2048 ;
 
     public void pbShow(String path, String zipname, Context context,Activity activity){
         this.context = context;
@@ -87,12 +88,10 @@ public class UnzipManager {
             super.onPreExecute();
             System.out.println("Starting download");
 
-            pDialog = new ProgressDialog(context, R.style.AlertDialogCustom);
-            pDialog.setMessage(context.getString(R.string.update_download_unzipping));
-            pDialog.setIndeterminate(false);
-            pDialog.setCancelable(false);
-            pDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-            pDialog.show();
+            dialog2048 = new Dialog2048();
+            dialog2048.setup(context,activity);
+            dialog2048.mode(Dialog2048.MODE_PROGRESS_UNZIP);
+            dialog2048.show();
         }
 
         /**
@@ -108,8 +107,7 @@ public class UnzipManager {
                 int count;
                 byte[] buffer = new byte[8192];
 
-                ZipFile zipFile1 = new ZipFile(zipFile, Charset.forName("CP866"));
-                pDialog.setMax( zipFile1.size());
+                dialog2048.updateMax(new ZipFile(zipFile).size());
 
                 while ((ze = zis.getNextEntry()) != null) {
                     File file = new File(path, ze.getName());
@@ -127,7 +125,7 @@ public class UnzipManager {
                         fout.close();
                     }
                     curr = curr +1;
-                    pDialog.setProgress(curr);
+                    dialog2048.updateProgress(curr);
                 }
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
@@ -150,7 +148,7 @@ public class UnzipManager {
                     e.printStackTrace();
                 }
             }
-            pDialog.dismiss();
+            dialog2048.dismiss();
             File file = new File(path+"/"+zipname);
             if (file.exists()){
                 file.delete();
@@ -186,12 +184,10 @@ public class UnzipManager {
             super.onPreExecute();
             System.out.println("Starting download");
 
-            pDialog = new ProgressDialog(context, R.style.AlertDialogCustom);
-            pDialog.setMessage(context.getString(R.string.update_download_unzipping)+" (" + String.valueOf(1) + "/" + String.valueOf(zipnames.size())+")");
-            pDialog.setIndeterminate(false);
-            pDialog.setCancelable(false);
-            pDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-            pDialog.show();
+            dialog2048 = new Dialog2048();
+            dialog2048.setup(context,activity);
+            dialog2048.mode(Dialog2048.MODE_PROGRESS_UNZIP);
+            dialog2048.show();
         }
 
         /**
@@ -200,16 +196,23 @@ public class UnzipManager {
         @Override
         protected String doInBackground(String... f_url) {
 
+            long zipSize = 0;
+            for (int x = 0 ; x < zipnames.size() ; x++){
+                File zipFile = new File(path+"/"+zipnames.get(x));
+                try {
+                    zipSize += new ZipFile(zipFile).size();
+
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            dialog2048.updateMax(zipSize);
+
             for (int x = 0 ; x < zipnames.size() ; x++){
                 File zipFile = new File(path+"/"+zipnames.get(x));
                 ZipFile zipFile1 = null;
                 try {
                     zipFile1 = new ZipFile(zipFile);
-                    System.out.println(pDialog.getProgress());
-                    pDialog.setMessage("Unzipping  Please wait... (" + String.valueOf(x+1) + "/" + String.valueOf(zipnames.size())+")");
-                    pDialog.setMax( zipFile1.size());
-                    pDialog.setProgress(0);
-                    pDialog.create();
                     zis = new ZipInputStream(new BufferedInputStream(new FileInputStream(zipFile)));
                     System.out.println("RIVER");
                     ZipEntry ze;
@@ -233,7 +236,7 @@ public class UnzipManager {
                             fout.close();
                         }
                         curr = curr +1;
-                        pDialog.setProgress(curr);
+                        dialog2048.updateProgress(curr);
                     }
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
@@ -255,14 +258,14 @@ public class UnzipManager {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            pDialog.dismiss();
+            dialog2048.dismiss();
             for(int x = 0 ; x< zipnames.size() ; x++){
                 File file = new File(path+"/"+zipnames.get(x));
                 if (file.exists()){
                     file.delete();
                 }
             }
-            CustomToast.toast(context,activity,context.getString(R.string.update_download_done));
+            //CustomToast.toast(context,activity,context.getString(R.string.update_download_done));
             if (runStyleUI){
                 ((SplashActivity) context).checkStyleUI();
             }

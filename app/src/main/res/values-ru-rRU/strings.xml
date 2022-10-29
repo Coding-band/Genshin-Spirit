@@ -1093,4 +1093,8 @@
     <string name="screenshot_not_saved_permission">Пожалуйста, примите разрешение на запись</string>
     <string name="screenshot_saved">Скриншот сохранен</string>
     <string name="talent_lvl">"Уровень таланта : "</string>
+    <string name="today">Cегодня</string>
+    <string name="unclaimed">Невостребованный</string>
+    <string name="claimed">Получил</string>
+    <string name="idle">Праздный</string>
 </resources>

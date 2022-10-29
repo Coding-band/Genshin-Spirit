@@ -167,7 +167,7 @@
                                 app:srcCompat="@drawable/cake" />
 
                             <TextView
-                                android:id="@+id/birth_title"
+                                android:id="@+id/birth_title_special"
                                 android:layout_width="match_parent"
                                 android:layout_height="24dp"
                                 android:layout_weight="0"

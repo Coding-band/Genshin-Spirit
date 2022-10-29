@@ -321,7 +321,7 @@ public class CalculatorDBAdapter extends RecyclerView.Adapter<CalculatorDBAdapte
         public ImageView db_sheet_ico;
         public LinearLayout db_sheet_bg ;
 
-        public CardView db_card;
+        public LinearLayout db_card;
         public TextView db_name, db_info, db_date;
         public ImageView db_edit, db_char, db_weapon, db_art, db_delete;
         public LinearLayout db_char_ll, db_weapon_ll, db_art_ll;

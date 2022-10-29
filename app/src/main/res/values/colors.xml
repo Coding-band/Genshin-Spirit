@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Project Genshin Spirit (原神小幫手) was
   ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
   ~ Copyright © 2022 Xectorda 版權所有
@@ -20,6 +19,8 @@
     <color name="page_bg_solid">#B3B3B3</color>
     <color name="base_page_bg">#E0E0E0</color>
     <color name="tv_color">#4B4B4B</color>
+    <color name="tv_color_ex">#262626</color>
+    <color name="tv_color_less">#878787</color>
     <color name="tv_anti_color">#FFFFFF</color>
     <color name="tv_siptik_color">#3D3D3D</color>
     <color name="card_bg_less">#CCE0E0E0</color>
@@ -79,6 +80,7 @@
 
     <!-- 2O48 -->
     <color name="tv_color_2048">#ECE5D8</color>
+    <color name="tv_color_2048_always">#ECE5D8</color>
     <color name="tv_spinner_color_2048">#ECE5D8</color>
     <color name="tv_spinner_color_anti_2048">#ECE5D8</color>
     <color name="tv_anti_color_2048">#3B4255</color>
@@ -115,12 +117,26 @@
     <color name="dialog_subtitle_tv_color_2048">#8F5923</color>
     <color name="dialog_desc_title_tv_color_2048">#A84D5668</color>
     <color name="card_char_info_bg_kwang_2048">#FFD3BC8E</color>
+    <color name="card_bg_kwang_2048">#FFD3BC8E</color>
     <color name="card_char_info_bg_start_2048">#FFECE5D8</color>
     <color name="card_char_info_bg_end_2048">#CCECE5D8</color>
     <color name="card_header_bg_start_2048">#FF4D5668</color>
     <color name="card_header_bg_end_2048">#804D5668</color>
     <color name="detail_bg">#E1E1E1</color>
     <color name="detail_bg_alpha">#B3FFFFFF</color>
+
+    <color name="memo_item_deep_bg">#80D3BC8E</color>
+    <color name="memo_item_deep_item">#695453</color>
+    <color name="memo_card_bg">#ECE5D8</color>
+    <color name="memo_card_sub_title">#A79777</color>
+    <color name="memo_card_ext_bg">#E4D8C1</color>
+
+    <color name="rand_theme_bg_color">#FFFFFFFF</color>
+    <color name="rand_theme_title_color">#FF667289</color>
+    <color name="rand_theme_subtitle_color">#FF8599A8</color>
+    <color name="rand_theme_app_name_color">#FF495366</color>
+    <color name="rand_theme_by_line_color">#99667289</color>
+
 
     <!-- SIPTIK -->
     <color name="tv_color_siptik">#ECE5D8</color>
@@ -174,7 +190,10 @@
     <color name="app_ico_item_fill">#FFDBCB9C</color>
     <color name="app_ico_item_stroke">#FFFFEDAB</color>
     <color name="app_ico_bg">#FF54B7A5</color>
-
+    <color name="light_blue_50">#FFE1F5FE</color>
+    <color name="light_blue_200">#FF81D4FA</color>
+    <color name="light_blue_600">#FF039BE5</color>
+    <color name="light_blue_900">#FF01579B</color>
 
 
 </resources>

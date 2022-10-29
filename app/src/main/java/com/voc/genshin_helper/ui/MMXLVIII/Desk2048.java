@@ -5,7 +5,6 @@ import static com.voc.genshin_helper.util.RoundedCornersTransformation.CornerTyp
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -90,6 +89,8 @@ import com.voc.genshin_helper.ui.SipTik.DeskSipTik;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.ChangeLog;
 import com.voc.genshin_helper.util.CustomToast;
+import com.voc.genshin_helper.util.DailyMemo;
+import com.voc.genshin_helper.util.Dialog2048;
 import com.voc.genshin_helper.util.DownloadTask;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.LangUtils;
@@ -102,6 +103,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -109,7 +111,9 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
+import java.net.ProtocolException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.text.DecimalFormat;
@@ -213,6 +217,7 @@ public class Desk2048 extends AppCompatActivity {
 
     Switch other_exit_confirm ;
     Switch other_item_eng_name ;
+    Switch other_random_theme_confirm ;
     Switch other_app_ico_use_default ;
 
     RadioButton style_Voc_rb;
@@ -255,13 +260,11 @@ public class Desk2048 extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
         sharedPreferences_version = getSharedPreferences("changelog_version",MODE_PRIVATE);
         editor = sharedPreferences.edit();
-        if (sharedPreferences.getBoolean("theme_light",true) == true){
+        if (sharedPreferences.getBoolean("theme_light", true) == true) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        }
-        if (sharedPreferences.getBoolean("theme_night",false) == true){
+        }else if (sharedPreferences.getBoolean("theme_night", false) == true) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        }
-        if (sharedPreferences.getBoolean("theme_default",false) == true){
+        }else if (sharedPreferences.getBoolean("theme_default", false) == true) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
         }
 
@@ -314,6 +317,9 @@ public class Desk2048 extends AppCompatActivity {
 
         check_spinner = 0;
 
+        DailyMemo dailyMemo = new DailyMemo();
+        dailyMemo.setup(context,activity,viewPager0);
+
         //忘憂喵
         //gs = new GoSleep();
         //gs.sleep(context);
@@ -332,6 +338,7 @@ public class Desk2048 extends AppCompatActivity {
         setup_weapon();
         setup_art();
         setup_paimon();
+
 
         BackgroundReload.BackgroundReload(context,activity);
 
@@ -564,6 +571,7 @@ public class Desk2048 extends AppCompatActivity {
         ConstraintLayout paimon_setting = viewPager4.findViewById(R.id.paimon_setting);
         ConstraintLayout paimon_about = viewPager4.findViewById(R.id.paimon_about);
 
+        // Btn of paimon page
         paimon_cal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -2042,28 +2050,27 @@ public class Desk2048 extends AppCompatActivity {
             public void onClick(View view) {
                 StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
                 StrictMode.setThreadPolicy(policy);
-                AlertDialog.Builder dialog = new AlertDialog.Builder(Desk2048.this,R.style.AlertDialogCustom);
-                dialog.setCancelable(false);
-                dialog.setTitle(context.getString(R.string.update_download_update_base));
-                dialog.setMessage(context.getString(R.string.update_download_advice)+"\n"+context.getString(R.string.update_download_base_file_size)+" "+prettyByteCount(getRemoteFileSize("http://113.254.213.196/genshin_spirit/base.zip")));
-                dialog.setNegativeButton(context.getString(R.string.update_download_later),new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface arg0, int arg1) {
-                        // TODO Auto-generated method stub
-                        Log.wtf("NOTHING","NOTHING");
-                    }
 
-                });
-                dialog.setPositiveButton(context.getString(R.string.update_download_now),new DialogInterface.OnClickListener() {
+                Dialog2048 dialog2048 = new Dialog2048();
+                dialog2048.setup(context,activity);
+                dialog2048.updateMax(getRemoteFileSize("http://113.254.213.196/genshin_spirit/base.zip"));
+                dialog2048.mode(Dialog2048.MODE_DOWNLOAD_BASE_DESK);
+                dialog2048.show();
+
+                dialog2048.getPositiveBtn().setOnClickListener(new View.OnClickListener() {
                     @Override
-                    public void onClick(DialogInterface arg0, int arg1) {
-                        // TODO Auto-generated method stub
+                    public void onClick(View v) {
                         DownloadTask downloadTask = new DownloadTask();
                         downloadTask.start("http://113.254.213.196/genshin_spirit/base.zip","base.zip","/base.zip",context,activity);
                     }
-
                 });
-                dialog.show();
+
+                dialog2048.getNegativeBtn().setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog2048.dismiss();
+                    }
+                });
             }
         });
 
@@ -2126,6 +2133,23 @@ public class Desk2048 extends AppCompatActivity {
                     editor.apply();
                 }else if(other_exit_confirm.isChecked() == true){
                     editor.putBoolean("isExitConfirmEnable",true);
+                    editor.apply();
+                }
+            }
+        });
+
+        //Other -> Exit Confirm
+        other_random_theme_confirm = viewPager4.findViewById(R.id.other_random_theme_confirm);
+        boolean other_random_theme = sharedPreferences.getBoolean("isRandomTheme",true);
+        other_random_theme_confirm.setChecked(other_random_theme);
+        other_random_theme_confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(other_random_theme_confirm.isChecked() == false){
+                    editor.putBoolean("isRandomTheme",false);
+                    editor.apply();
+                }else if(other_random_theme_confirm.isChecked() == true){
+                    editor.putBoolean("isRandomTheme",true);
                     editor.apply();
                 }
             }
@@ -2865,11 +2889,12 @@ public class Desk2048 extends AppCompatActivity {
         char_name = css.char_birth(moy,dom);
 
         // Setting
-        CardView birth_card = viewPager0.findViewById(R.id.birth_card);
-        ConstraintLayout birth_celebrate = viewPager0.findViewById(R.id.birth_celebrate);
-        ImageView birth_char = viewPager0.findViewById(R.id.birth_char);
-        TextView birth_char_tv = viewPager0.findViewById(R.id.birth_char_tv);
-        TextView birth_char_date = viewPager0.findViewById(R.id.birth_char_date);
+        //ConstraintLayout birth_celebrate = viewPager0.findViewById(R.id.birth_celebrate);
+        //ImageView birth_char = viewPager0.findViewById(R.id.birth_char);
+        //TextView birth_char_tv = viewPager0.findViewById(R.id.birth_char_tv);
+        //TextView birth_char_date = viewPager0.findViewById(R.id.birth_char_date);
+        TextView birth_title_normal = viewPager0.findViewById(R.id.birth_title_normal);
+        TextView birth_title_special = viewPager0.findViewById(R.id.birth_title_special);
 
         // Big Icon
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -2881,18 +2906,12 @@ public class Desk2048 extends AppCompatActivity {
         final Transformation transformation = new RoundedCornersTransformation(radius, margin);
 
         if(!char_name.equals("EMPTY")){
-            birth_card.setVisibility(View.VISIBLE);
-            Picasso.get()
-                    .load (FileLoader.loadIMG(css.getCharByName(char_name,context)[3],context))
-                    .transform(transformation)
-                    .error (R.drawable.paimon_lost)
-                    .into (birth_char);
-            birth_char_tv.setText(css.getCharByName(char_name,context)[1]);
-            birth_char_date.setText(css.getLocaleBirth(String.valueOf(moy+1)+"/"+String.valueOf(dom),context,true));
-
-            birth_celebrate.setVisibility(View.VISIBLE);
+            birth_title_normal.setVisibility(View.GONE);
+            birth_title_special.setVisibility(View.VISIBLE);
+            birth_title_special.setText(context.getString(R.string.happy_birthday)+" "+css.getCharByName(char_name,context)[1]);
         }else{
-            birth_celebrate.setVisibility(View.GONE);
+            birth_title_special.setVisibility(View.GONE);
+            birth_title_normal.setVisibility(View.VISIBLE);
         }
         // List
 
@@ -2913,6 +2932,7 @@ public class Desk2048 extends AppCompatActivity {
             if (index >= css.charBirthName.length){
                 index = 0;
             }
+
             String nextBirthCharName = css.charBirthName[index];
             int nextBirthCharMonth =  css.charBirthMonth[index];
             int nextBirthCharDay = css.charBirthDay[index];
@@ -2926,8 +2946,11 @@ public class Desk2048 extends AppCompatActivity {
                     .error (R.drawable.paimon_lost)
                     .into (img);
 
-            tv.setText(css.getLocaleBirth(String.valueOf(nextBirthCharMonth+1)+"/"+String.valueOf(nextBirthCharDay),context,true));
-
+            if ((moy == nextBirthCharMonth) && (dom == nextBirthCharDay)){
+                tv.setText(context.getString(R.string.today));
+            }else{
+                tv.setText(css.getLocaleBirth(String.valueOf(nextBirthCharMonth+1)+"/"+String.valueOf(nextBirthCharDay),context,true));
+            }
             img.getLayoutParams().width = pix;
             img.getLayoutParams().height = pix;
         }
@@ -3504,31 +3527,30 @@ public class Desk2048 extends AppCompatActivity {
                     }
                 }
                 if(array_download.size()>0){
-                    AlertDialog.Builder dialog = new AlertDialog.Builder(Desk2048.this,R.style.AlertDialogCustom);
-                    dialog.setCancelable(false);
-                    dialog.setTitle(context.getString(R.string.update_download_update_curr));
-                    dialog.setMessage(context.getString(R.string.update_download_found_update)+context.getString(R.string.update_download_advice)+"\n"+context.getString(R.string.update_download_base_file_size)+" "+prettyByteCount(getRemoteFileSizeA(array_download)));
-                    dialog.setNegativeButton(context.getString(R.string.update_download_later),new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface arg0, int arg1) {
-                            // TODO Auto-generated method stub
-                            Log.wtf("NOTHING","NOTHING");
-                        }
+                    Dialog2048 dialog2048 = new Dialog2048();
+                    dialog2048.setup(context,activity);
+                    dialog2048.updateMax(getRemoteFileSizeA(array_download));
+                    dialog2048.mode(Dialog2048.MODE_DOWNLOAD_UPDATE);
+                    dialog2048.show();
 
-                    });
                     long finalLastUnix = lastUnix;
-                    dialog.setPositiveButton(context.getString(R.string.update_download_now),new DialogInterface.OnClickListener() {
+                    dialog2048.getPositiveBtn().setOnClickListener(new View.OnClickListener() {
                         @Override
-                        public void onClick(DialogInterface arg0, int arg1) {
-                            // TODO Auto-generated method stub
+                        public void onClick(View v) {
                             DownloadTask downloadTask = new DownloadTask();
                             downloadTask.startA(array_download,array_fileName,array_SfileName,context,activity);
                             editor.putLong("lastUpdateUnix", finalLastUnix);
                             editor.apply();
                         }
-
                     });
-                    dialog.show();
+
+                    dialog2048.getNegativeBtn().setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            dialog2048.dismiss();
+                        }
+                    });
+
                 }else{
                     CustomToast.toast(context,this,context.getString(R.string.update_download_not_found_update));
                 }

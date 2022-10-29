@@ -777,6 +777,7 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                 }
                 viewHolder.weapon_star.setVisibility(View.GONE);
                 viewHolder.weapon_star_ll.setVisibility(View.GONE);
+                viewHolder.weapon_cbg.setPadding(8,8,8,8);
             }
 
 
@@ -806,7 +807,6 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
             //viewHolder.weapon_card_bg.setPadding(8,8,8,8);
             viewHolder.weapon_card_mask.setPadding(8,8,8,8);
             viewHolder.weapon_card_ico_deco.setPadding(8,8,8,8);
-            viewHolder.weapon_cbg.setPadding(8,8,8,8);
 
             viewHolder.weapon_card_ico_deco.setEdgeLength(100);
             viewHolder.weapon_card_ico_deco.setFadeDirection(FadingImageView.FadeSide.RIGHT_SIDE);

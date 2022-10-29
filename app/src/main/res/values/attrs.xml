@@ -6,19 +6,24 @@
 
 <resources>
     <declare-styleable name="PxBlurringView">
-        <attr name="blurRadiusX" format="integer"/>
-        <attr name="downsampleFactor" format="integer"/>
-        <attr name="overlayColor" format="color"/>
+        <attr name="blurRadiusX" format="integer" />
+        <attr name="downsampleFactor" format="integer" />
+        <attr name="overlayColor" format="color" />
     </declare-styleable>
 
     <declare-styleable name="CircleProgress">
-        <attr name="circle_progress" format="integer"/>
-        <attr name="circle_max" format="integer"/>
-        <attr name="circle_unfinished_color" format="color"/>
-        <attr name="circle_finished_color" format="color"/>
-        <attr name="circle_text_size" format="dimension"/>
-        <attr name="circle_text_color" format="color"/>
-        <attr name="circle_prefix_text" format="string"/>
-        <attr name="circle_suffix_text" format="string"/>
+        <attr name="circle_progress" format="integer" />
+        <attr name="circle_max" format="integer" />
+        <attr name="circle_unfinished_color" format="color" />
+        <attr name="circle_finished_color" format="color" />
+        <attr name="circle_text_size" format="dimension" />
+        <attr name="circle_text_color" format="color" />
+        <attr name="circle_prefix_text" format="string" />
+        <attr name="circle_suffix_text" format="string" />
+    </declare-styleable>
+    <declare-styleable name="AppWidgetAttrs">
+        <attr name="appWidgetPadding" format="dimension" />
+        <attr name="appWidgetInnerRadius" format="dimension" />
+        <attr name="appWidgetRadius" format="dimension" />
     </declare-styleable>
 </resources>

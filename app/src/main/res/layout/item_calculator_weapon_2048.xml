@@ -13,12 +13,13 @@
     android:background="@drawable/item_selected_circle_effect"
     android:orientation="horizontal">
 
-    <androidx.cardview.widget.CardView
+    <LinearLayout
         android:id="@+id/weapon_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
-        android:background="@drawable/bg_alpha_siptik"
+        android:background="@drawable/bg_card_kwang_2048"
+        android:orientation="vertical"
         app:cardBackgroundColor="@color/tab_bg_2048"
         app:cardCornerRadius="15dp"
         app:cardElevation="4dp"
@@ -256,5 +257,5 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.cardview.widget.CardView>
+    </LinearLayout>
 </LinearLayout>

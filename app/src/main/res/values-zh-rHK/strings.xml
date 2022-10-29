@@ -1105,4 +1105,8 @@
     <string name="screenshot_not_saved_permission">請同意讀取權限</string>
     <string name="screenshot_not_saved">截圖儲存失敗</string>
     <string name="talent_lvl">"天賦等級 : "</string>
+    <string name="today">今天</string>
+    <string name="unclaimed">未領取</string>
+    <string name="claimed">已領取</string>
+    <string name="idle">閒置中</string>
 </resources>

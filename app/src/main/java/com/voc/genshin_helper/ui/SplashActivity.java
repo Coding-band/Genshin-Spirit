@@ -6,7 +6,6 @@ package com.voc.genshin_helper.ui;/*
 
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.READ_MEDIA_IMAGES;
-import static android.Manifest.permission.TRANSMIT_IR;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 import static android.os.Build.VERSION.SDK_INT;
 
@@ -14,21 +13,18 @@ import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
-import android.app.ProgressDialog;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
-import android.net.Uri;
+import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.StrictMode;
-import android.provider.Settings;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
@@ -37,36 +33,36 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.WebView;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
-import com.google.android.play.core.splitinstall.SplitInstallRequest;
-import com.hjq.permissions.OnPermissionCallback;
-import com.hjq.permissions.Permission;
-import com.hjq.permissions.XXPermissions;
+import com.squareup.picasso.Picasso;
 import com.voc.genshin_helper.BuildConfig;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
 import com.voc.genshin_helper.ui.SipTik.DeskSipTik;
-import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.CustomToast;
+import com.voc.genshin_helper.util.Dialog2048;
 import com.voc.genshin_helper.util.DownloadTask;
+import com.voc.genshin_helper.util.FileLoader;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.InetAddress;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -76,7 +72,6 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -96,27 +91,86 @@ public class SplashActivity extends AppCompatActivity {
     String choice = "N/A";
     SharedPreferences sharedPreferences;
 
+    int randNum = 0;
+    int randMax = 0;
+    ArrayList<String> randBgTitleZH = new ArrayList<>();
+    ArrayList<String> randBgTitleEN = new ArrayList<>();
+    ArrayList<String> randBgAuthor = new ArrayList<>();
+    ArrayList<String> randBgFileName = new ArrayList<>();
+
+
     @Override
     public void onCreate(Bundle bundle) {
         super.onCreate(bundle);
         setTheme(R.style.SplashTheme);
-        setContentView(R.layout.activity_splash);
+        setContentView(R.layout.activity_splash_new);
 
         context = this;
         activity = this;
-        BackgroundReload.BackgroundReload(context, activity);
 
         sharedPreferences = getSharedPreferences("user_info", 0);
         if (sharedPreferences.getBoolean("theme_light", true) == true) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        }
-        if (sharedPreferences.getBoolean("theme_night", false) == true) {
+        }else if (sharedPreferences.getBoolean("theme_night", false) == true) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        }
-        if (sharedPreferences.getBoolean("theme_default", false) == true) {
+        }else if (sharedPreferences.getBoolean("theme_default", false) == true) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
         }
-        ((TextView) findViewById(R.id.version_tv)).setText(BuildConfig.VERSION_NAME);
+        ((TextView) findViewById(R.id.splash_version)).setText(BuildConfig.VERSION_NAME);
+
+        if (sharedPreferences.getBoolean("isRandomTheme",true) == true && sharedPreferences.getBoolean("downloadBase", false) == true){
+            ((ConstraintLayout) findViewById(R.id.splash_rand_cons)).setVisibility(View.VISIBLE);
+            ((ImageView) findViewById(R.id.splash_random_bg)).setVisibility(View.VISIBLE);
+            ((ConstraintLayout) findViewById(R.id.splash_base_cons)).setVisibility(View.GONE);
+
+            String suffix = ".png";
+
+            if (activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+                suffix = "_crop.png";
+            }
+
+            String json_base = LoadData("randomScenery/rss_bg.json");
+            //Get data from JSON
+            try {
+                JSONArray array = new JSONArray(json_base);
+                randNum = (int) (Math.random()*array.length()) ;
+                JSONObject object = array.getJSONObject(randNum);
+
+                System.out.println("randNum : "+randNum);
+
+                System.out.println("IMG NAME : "+"/randomScenery/"+object.getString("img_name")+suffix);
+
+                Picasso.get()
+                        .load (FileLoader.loadIMG("/randomScenery/"+object.getString("img_name")+suffix,context))
+                        .fit()
+                        .error (R.drawable.demo_random_sencery)
+                        .into ((ImageView) findViewById(R.id.splash_random_bg));
+
+                ((TextView) findViewById(R.id.splash_rand_title)).setText(object.getString("title_en"));
+                switch (sharedPreferences.getString("curr_lang","en-US")){
+                    case "zh-HK" :
+                    case "zh-tw" :
+                    case "zh-cn" :
+                        ((TextView) findViewById(R.id.splash_rand_title)).setText(object.getString("title_zh"));
+                        break;
+                    default:
+                        ((TextView) findViewById(R.id.splash_rand_title)).setText(object.getString("title_en"));
+                        break;
+                }
+
+                ((TextView) findViewById(R.id.splash_rand_author)).setText(object.getString("author"));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }else{
+            ((ConstraintLayout) findViewById(R.id.splash_rand_cons)).setVisibility(View.GONE);
+            ((ConstraintLayout) findViewById(R.id.splash_base_cons)).setVisibility(View.VISIBLE);
+            ((ImageView) findViewById(R.id.splash_random_bg)).setVisibility(View.GONE);
+
+            //((TextView) findViewById(R.id.splash_base_title)).setText("");
+            //((TextView) findViewById(R.id.splash_base_subtitle)).setText("");
+        }
+
 
         PackageManager manager=getPackageManager();
         manager.setComponentEnabledSetting(new ComponentName(SplashActivity.this,"com.voc.genshin_helper.ui.SplashActivity")
@@ -144,22 +198,20 @@ public class SplashActivity extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         if (sharedPreferences.getBoolean("downloadBase", false) == false) {
-            AlertDialog.Builder dialog = new AlertDialog.Builder(SplashActivity.this, R.style.AlertDialogCustom);
-            dialog.setCancelable(false);
-            dialog.setTitle(context.getString(R.string.update_download_update_base));
-            dialog.setMessage(context.getString(R.string.update_download_advice) + "\n" + context.getString(R.string.update_download_base_file_size) + prettyByteCount(getRemoteFileSize("http://113.254.213.196/genshin_spirit/base.zip")));
-            dialog.setNegativeButton(context.getString(R.string.update_download_later), new DialogInterface.OnClickListener() {
-                @Override
-                public void onClick(DialogInterface arg0, int arg1) {
-                    // TODO Auto-generated method stub
-                    finish();
-                }
+            /**
+             * Build a class in util -> Dialog2048
+             */
 
-            });
-            dialog.setPositiveButton(context.getString(R.string.update_download_now), new DialogInterface.OnClickListener() {
+            Dialog2048 dialog2048 = new Dialog2048();
+            dialog2048.setup(context,activity);
+            dialog2048.updateMax(getRemoteFileSize("http://113.254.213.196/genshin_spirit/base.zip"));
+            dialog2048.mode(Dialog2048.MODE_DOWNLOAD_BASE);
+            dialog2048.show();
+
+            dialog2048.getPositiveBtn().setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(DialogInterface arg0, int arg1) {
-                    // TODO Auto-generated method stub
+                public void onClick(View v) {
+                    dialog2048.dismiss();
                     DownloadTask downloadTask = new DownloadTask();
                     downloadTask.start("http://113.254.213.196/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
 
@@ -169,7 +221,15 @@ public class SplashActivity extends AppCompatActivity {
                     editor.apply();
                 }
             });
-            dialog.show();
+
+            dialog2048.getNegativeBtn().setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog2048.dismiss();
+                    finish();
+                }
+            });
+
         } else {
             check_updates();
         }
@@ -211,27 +271,33 @@ public class SplashActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == 100) {
+            boolean isREADABLE = false;
+            boolean isWRITEABLE = false;
             System.out.println(Arrays.asList(permissions));
             for (int i = 0; i < permissions.length; i++) {
                 if (permissions[i].equals(READ_EXTERNAL_STORAGE)) {
                     if (grantResults[i] == PackageManager.PERMISSION_GRANTED) {
                         Log.w("存儲許可權", "申請成功");
-                        goMain();
+                        isREADABLE = true;
                     } else {
                         Log.w("存儲許可權", "申請失敗");
-                        finish();
+                        isREADABLE = false;
                     }
-                }
-
-                if (permissions[i].equals(WRITE_EXTERNAL_STORAGE)) {
+                }else if (permissions[i].equals(WRITE_EXTERNAL_STORAGE)) {
                     if (grantResults[i] == PackageManager.PERMISSION_GRANTED) {
                         Log.w("寫錄許可權", "申請成功");
-                        goMain();
+                        isWRITEABLE = true;
                     } else {
                         Log.w("寫錄許可權", "申請失敗");
-                        goMain();
+                        isWRITEABLE = false;
                     }
                 }
+            }
+
+            if (isREADABLE && isWRITEABLE){
+                goMain();
+            }else{
+                finish();
             }
 
         }
@@ -316,48 +382,41 @@ public class SplashActivity extends AppCompatActivity {
                     }
                     if (array_download.size() > 0) {
                         if (getRemoteFileSize("http://113.254.213.196/genshin_spirit/base.zip") > getRemoteFileSizeA(array_download)) {
-                            androidx.appcompat.app.AlertDialog.Builder dialog = new androidx.appcompat.app.AlertDialog.Builder(SplashActivity.this, R.style.AlertDialogCustom);
-                            dialog.setCancelable(false);
-                            dialog.setTitle(context.getString(R.string.update_download_update_curr));
-                            dialog.setMessage(context.getString(R.string.update_download_found_update) + context.getString(R.string.update_download_advice) + "\n" + context.getString(R.string.update_download_base_file_size) + " " + prettyByteCount(getRemoteFileSizeA(array_download)));
-                            dialog.setNegativeButton(context.getString(R.string.update_download_later), new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface arg0, int arg1) {
-                                    // TODO Auto-generated method stub
-                                    runDesk(sharedPreferences);
-                                }
 
-                            });
+                            Dialog2048 dialog2048 = new Dialog2048();
+                            dialog2048.setup(context,activity);
+                            dialog2048.updateMax(getRemoteFileSizeA(array_download));
+                            dialog2048.mode(Dialog2048.MODE_DOWNLOAD_UPDATE);
+                            dialog2048.show();
+
                             long finalLastUnix = lastUnix;
-                            dialog.setPositiveButton(context.getString(R.string.update_download_now), new DialogInterface.OnClickListener() {
+                            dialog2048.getPositiveBtn().setOnClickListener(new View.OnClickListener() {
                                 @Override
-                                public void onClick(DialogInterface arg0, int arg1) {
-                                    // TODO Auto-generated method stub
+                                public void onClick(View v) {
                                     DownloadTask downloadTask = new DownloadTask();
                                     downloadTask.startAWithRun(array_download, array_fileName, array_SfileName, context, activity, true);
                                     editor.putLong("lastUpdateUnix", finalLastUnix);
                                     editor.apply();
                                 }
-
                             });
-                            dialog.show();
-                        } else {
-                            AlertDialog.Builder dialog = new AlertDialog.Builder(SplashActivity.this, R.style.AlertDialogCustom);
-                            dialog.setCancelable(false);
-                            dialog.setTitle(context.getString(R.string.update_download_update_base));
-                            dialog.setMessage(context.getString(R.string.update_download_advice) + "\n" + context.getString(R.string.update_download_base_file_size) + prettyByteCount(getRemoteFileSize("http://113.254.213.196/genshin_spirit/base.zip")));
-                            dialog.setNegativeButton(context.getString(R.string.update_download_later), new DialogInterface.OnClickListener() {
+                            dialog2048.getNegativeBtn().setOnClickListener(new View.OnClickListener() {
                                 @Override
-                                public void onClick(DialogInterface arg0, int arg1) {
-                                    // TODO Auto-generated method stub
+                                public void onClick(View v) {
                                     runDesk(sharedPreferences);
                                 }
-
                             });
-                            dialog.setPositiveButton(context.getString(R.string.update_download_now), new DialogInterface.OnClickListener() {
+
+
+                        } else {
+                            Dialog2048 dialog2048 = new Dialog2048();
+                            dialog2048.setup(context,activity);
+                            dialog2048.updateMax(getRemoteFileSize("http://113.254.213.196/genshin_spirit/base.zip"));
+                            dialog2048.mode(Dialog2048.MODE_DOWNLOAD_BASE);
+                            dialog2048.show();
+
+                            dialog2048.getPositiveBtn().setOnClickListener(new View.OnClickListener() {
                                 @Override
-                                public void onClick(DialogInterface arg0, int arg1) {
-                                    // TODO Auto-generated method stub
+                                public void onClick(View v) {
                                     DownloadTask downloadTask = new DownloadTask();
                                     downloadTask.start("http://113.254.213.196/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
 
@@ -367,11 +426,16 @@ public class SplashActivity extends AppCompatActivity {
                                     editor.apply();
                                 }
                             });
-                            dialog.show();
+                            dialog2048.getNegativeBtn().setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    runDesk(sharedPreferences);
+                                }
+                            });
                         }
 
                     } else {
-                        CustomToast.toast(context, this, context.getString(R.string.update_download_not_found_update));
+                        //CustomToast.toast(context, this, context.getString(R.string.update_download_not_found_update));
 
                         checkStyleUI();
                     }
@@ -396,6 +460,11 @@ public class SplashActivity extends AppCompatActivity {
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
+
+                Intent intent = new Intent();
+                intent.setAction("android.appwidget.action.APPWIDGET_UPDATE");
+                sendBroadcast(intent);
+
                 if (sharedPreferences.getString("styleUI", "N/A").equals("2O48")) {
                     SplashActivity.this.startActivity(new Intent(SplashActivity.this, Desk2048.class));
                 } else if (sharedPreferences.getString("styleUI", "N/A").equals("SipTik")) {
@@ -510,6 +579,25 @@ public class SplashActivity extends AppCompatActivity {
         } else {
             runDesk(sharedPreferences);
         }
+    }
+
+    public String LoadData(String inFile) {
+        String tContents = "";
+        try {
+            File file = new File(context.getFilesDir()+"/"+inFile);
+            InputStream stream = new FileInputStream(file);
+
+            int size = stream.available();
+            byte[] buffer = new byte[size];
+            stream.read(buffer);
+            stream.close();
+            tContents = new String(buffer);
+        } catch (IOException e) {
+            // Handle exceptions here
+        }
+
+        return tContents;
+
     }
 }
 

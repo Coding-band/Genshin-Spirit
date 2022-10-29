@@ -11,6 +11,7 @@ import com.voc.genshin_helper.R;
 
 import java.io.BufferedInputStream;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.URL;
@@ -29,7 +30,8 @@ public class DownloadTask {
     String urlS,fileName,savePath;
     Context context;
     Activity activity;
-    ProgressDialog pDialog;
+    //ProgressDialog pDialog;
+    Dialog2048 dialog2048;
     boolean runStyleUI = false;
 
 
@@ -54,12 +56,19 @@ public class DownloadTask {
             super.onPreExecute();
             System.out.println("Starting download");
 
+            /*
             pDialog = new ProgressDialog(context, R.style.AlertDialogCustom);
             pDialog.setMessage(context.getString(R.string.update_download_downloading));
             pDialog.setIndeterminate(false);
             pDialog.setCancelable(false);
             pDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
             pDialog.show();
+             */
+
+            dialog2048 = new Dialog2048();
+            dialog2048.setup(context,activity);
+            dialog2048.mode(Dialog2048.MODE_PROGRESS_DOWNLOAD);
+            dialog2048.show();
         }
 
         /**
@@ -77,7 +86,7 @@ public class DownloadTask {
                 URLConnection conection = url.openConnection();
                 conection.connect();
                 // getting file length
-                int lenghtOfFile = conection.getContentLength();
+                long lenghtOfFile = conection.getContentLengthLong();
 
                 // input stream to read file - with 8k buffer
                 InputStream input = new BufferedInputStream(url.openStream(), 8192);
@@ -86,12 +95,14 @@ public class DownloadTask {
 
                 OutputStream output = new FileOutputStream(context.getFilesDir()+savePath);
                 byte data[] = new byte[1024];
-                pDialog.setMax(lenghtOfFile);
+                //pDialog.setMax(lenghtOfFile);
+                dialog2048.updateMax(lenghtOfFile);
                 long total = 0;
                 while ((count = input.read(data)) != -1) {
                     total += count;
 
-                    pDialog.setProgress((int) total);
+                    //pDialog.setProgress((int) total);
+                    dialog2048.updateProgress(total);
                     // writing data to file
                     output.write(data, 0, count);
 
@@ -117,7 +128,8 @@ public class DownloadTask {
         @Override
         protected void onPostExecute(String file_url) {
             System.out.println("Downloaded");
-            pDialog.dismiss();
+            //pDialog.dismiss();
+            dialog2048.dismiss();
             UnzipManager unzipManager = new UnzipManager();
             unzipManager.pbShow(String.valueOf(context.getFilesDir()),fileName,context,activity);
         }
@@ -154,12 +166,11 @@ public class DownloadTask {
             super.onPreExecute();
             System.out.println("Starting download");
 
-            pDialog = new ProgressDialog(context, R.style.AlertDialogCustom);
-            pDialog.setMessage(context.getString(R.string.update_download_downloading) + String.valueOf(1) + "/" + String.valueOf(urls.size()));
-            pDialog.setIndeterminate(false);
-            pDialog.setCancelable(false);
-            pDialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-            pDialog.show();
+
+            dialog2048 = new Dialog2048();
+            dialog2048.setup(context,activity);
+            dialog2048.mode(Dialog2048.MODE_PROGRESS_DOWNLOAD);
+            dialog2048.show();
         }
 
         /**
@@ -168,11 +179,27 @@ public class DownloadTask {
         @Override
         protected String doInBackground(String... f_url) {
             int count;
+            int countProgress = 0;
             try {
                 String root = Environment.getExternalStorageDirectory().toString();
 
+                long countMax = 0;
                 for(int x = 0 ; x < urls.size() ; x++){
-                    pDialog.setMessage(context.getString(R.string.update_download_downloading)+" (" + String.valueOf(x+1) + "/" + String.valueOf(urls.size())+")");
+                    try {
+                        URL url = new URL(urls.get(x));
+                        URLConnection conection = url.openConnection();
+                        conection.connect();
+                        countMax += conection.getContentLength();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                    // getting file length
+                }
+
+                dialog2048.updateMax(countMax);
+
+                for(int x = 0 ; x < urls.size() ; x++){
+                    //pDialog.setMessage(context.getString(R.string.update_download_downloading)+" (" + String.valueOf(x+1) + "/" + String.valueOf(urls.size())+")");
                     System.out.println("Downloading");
                     URL url = new URL(urls.get(x));
 
@@ -189,13 +216,11 @@ public class DownloadTask {
                     OutputStream output = new FileOutputStream(context.getFilesDir()+savePaths.get(x));
                     byte data[] = new byte[1024];
 
-                    pDialog.setProgress(0);
-                    pDialog.setMax(lenghtOfFile);
                     long total = 0;
                     while ((count = input.read(data)) != -1) {
-                        total += count;
+                        countProgress += count;
 
-                        pDialog.setProgress((int) total);
+                        dialog2048.updateProgress(countProgress);
                         // writing data to file
                         output.write(data, 0, count);
 
@@ -223,7 +248,7 @@ public class DownloadTask {
         @Override
         protected void onPostExecute(String file_url) {
             System.out.println("Downloaded");
-            pDialog.dismiss();
+            dialog2048.dismiss();
             UnzipManager unzipManager = new UnzipManager();
             if (runStyleUI){
                 unzipManager.pbShowAWithRun(String.valueOf(context.getFilesDir()),fileNames,context,activity,runStyleUI);

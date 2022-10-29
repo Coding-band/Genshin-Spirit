@@ -7,14 +7,18 @@
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/rand_theme_bg_color">
 
     <ImageView
         android:id="@+id/splash_random_bg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="center"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="#FF1C1C22"
+        android:scaleType="centerCrop"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,11 +29,12 @@
         android:id="@+id/splash_version"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
         android:fontFamily="@font/genshin_font"
         android:text="3.2.0 (10256)"
         android:textAlignment="viewEnd"
-        android:textColor="#EBE4D7"
+        android:textColor="@color/rand_theme_title_color"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,8 +44,97 @@
         app:layout_constraintVertical_bias="0" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/splash_base_cons"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/splash_base_ico"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/app_ico" />
+
+        <TextView
+            android:id="@+id/splash_base_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/genshin_font"
+            android:text="胡桃"
+            android:textColor="@color/rand_theme_title_color"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/splash_base_ico"
+            app:layout_constraintVertical_bias="0.35" />
+
+        <TextView
+            android:id="@+id/splash_base_subtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="64dp"
+            android:fontFamily="@font/genshin_font"
+            android:text="「往生堂」七十七代堂主，年紀輕輕就已主掌璃月的葬儀事務"
+            android:textAlignment="center"
+            android:textColor="@color/rand_theme_subtitle_color"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/splash_base_title"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/splash_base_app_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/genshin_font"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textColor="@color/rand_theme_app_name_color"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/splash_base_by_line"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/splash_base_subtitle"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <TextView
+            android:id="@+id/splash_base_by_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/genshin_font"
+            android:text="By Voc-夜芷冰"
+            android:textAlignment="center"
+            android:textColor="@color/rand_theme_by_line_color"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/splash_base_subtitle"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/splash_rand_cons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -89,10 +183,11 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
-            android:id="@+id/splash_ico"
+            android:id="@+id/splash_rand_ico"
             android:layout_width="48dp"
             android:layout_height="48dp"
-            app:layout_constraintBottom_toTopOf="@+id/splash_app_name"
+            android:visibility="visible"
+            app:layout_constraintBottom_toTopOf="@+id/splash_rand_app_name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -100,7 +195,7 @@
             app:srcCompat="@drawable/app_ico" />
 
         <TextView
-            android:id="@+id/splash_app_name"
+            android:id="@+id/splash_rand_app_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/genshin_font"

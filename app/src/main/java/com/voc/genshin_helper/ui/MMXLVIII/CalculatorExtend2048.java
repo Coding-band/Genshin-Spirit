@@ -918,7 +918,7 @@ public class CalculatorExtend2048 {
     public void resultShow () {
         //Log.wtf("Procedure","resultShowBegin"+" || "+System.currentTimeMillis());
         /** INIT of UI GONE*/
-        CardView result_card = viewPager.findViewById(R.id.result_card);
+        LinearLayout result_card = viewPager.findViewById(R.id.result_card);
         TextView result_crystal_title = viewPager.findViewById(R.id.result_crystal_title);
         TextView result_boss_title = viewPager.findViewById(R.id.result_boss_title);
         TextView result_weekboss_title = viewPager.findViewById(R.id.result_weekboss_title);

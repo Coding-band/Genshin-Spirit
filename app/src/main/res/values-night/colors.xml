@@ -17,7 +17,9 @@
     <color name="page_bg">#A0424242</color>
     <color name="page_bg_solid">#424242</color>
     <color name="base_page_bg">#313131</color>
-    <color name="tv_color">#FFFFFF</color>
+    <color name="tv_color">#C7C7C7</color>
+    <color name="tv_color_ex">#FFFFFF</color>
+    <color name="tv_color_less">#878787</color>
     <color name="tv_anti_color">#000000</color>
     <color name="card_bg_less">#CC313131</color>
     <color name="item_bg_square">#444444</color>
@@ -102,6 +104,7 @@
     <color name="dialog_subtitle_tv_color_2048">#D3BC8E</color>
     <color name="dialog_desc_title_tv_color_2048">#A8ECE5D8</color>
     <color name="card_char_info_bg_kwang_2048">#FF564F49</color>
+    <color name="card_bg_kwang_2048">#47433F</color>
     <color name="card_char_info_bg_start_2048">#FF555048</color>
     <color name="card_char_info_bg_end_2048">#CC595347</color>
     <color name="card_header_bg_start_2048">#FF4D5668</color>
@@ -122,6 +125,20 @@
     <color name="ui_tv_siptik">#ABABAB</color>
     <color name="detail_bg">#000000</color>
     <color name="detail_bg_alpha">#CC000000</color>
+
+    <color name="memo_item_deep_bg">#80757575</color>
+    <color name="memo_item_deep_item">#BBBBBB</color>
+    <color name="memo_card_bg">#555048</color>
+    <color name="memo_card_ext_bg">#665F52</color>
+    <color name="memo_card_sub_title">#A79777</color>
+
+    <color name="rand_theme_bg_color">#FF1C1C22</color>
+    <color name="rand_theme_title_color">#FFDBA960</color>
+    <color name="rand_theme_subtitle_color">#FFD3BC8E</color>
+    <color name="rand_theme_app_name_color">#FFEBE4D7</color>
+    <color name="rand_theme_by_line_color">#99ECE5D8</color>
+
+    <!-- SipTik -->
 
     <color name="tab_selected_obj_siptik">#4D5668</color>
     <color name="tab_unselected_obj_siptik">#ECE5D8</color>

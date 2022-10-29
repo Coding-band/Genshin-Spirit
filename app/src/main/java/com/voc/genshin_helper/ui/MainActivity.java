@@ -247,11 +247,9 @@ public class MainActivity extends AppCompatActivity {
         editor = sharedPreferences.edit();
         if (sharedPreferences.getBoolean("theme_light",true) == true){
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        }
-        if (sharedPreferences.getBoolean("theme_night",false) == true){
+        }else if (sharedPreferences.getBoolean("theme_night",false) == true){
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        }
-        if (sharedPreferences.getBoolean("theme_default",false) == true){
+        }else if (sharedPreferences.getBoolean("theme_default",false) == true){
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
         }
 

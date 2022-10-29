@@ -1102,6 +1102,10 @@
     <string name="screenshot_not_saved_permission">请同意读取权限</string>
     <string name="screenshot_not_saved">截图储存失敗</string>
     <string name="talent_lvl">"天赋等级 : "</string>
+    <string name="today">今天</string>
+    <string name="unclaimed">未领取</string>
+    <string name="claimed">已领取</string>
+    <string name="idle">闲置中</string>
 
 
 </resources>

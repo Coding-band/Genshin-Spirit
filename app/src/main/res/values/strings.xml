@@ -1143,6 +1143,13 @@
     <string name="screenshot_not_saved_permission">Please accept the write permission</string>
     <string name="screenshot_saved">"Screenshot saved "</string>
     <string name="talent_lvl">"Talent Lvl : "</string>
+    <string name="today">Today</string>
+    <string name="unclaimed">Unclaimed</string>
+    <string name="claimed">Claimed</string>
+    <string name="idle">Idle</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">This is an app widget description</string>
 
 </resources>
 
