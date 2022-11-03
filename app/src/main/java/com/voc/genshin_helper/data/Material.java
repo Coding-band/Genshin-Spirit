@@ -122,6 +122,10 @@ public class Material {
     public int  萬劫之真意  = 0 ; // Raiden Shogun Weekly Boss
     public int  凶將之手眼  = 0 ; // Raiden Shogun Weekly Boss
     public int  禍神之禊淚  = 0 ; // Raiden Shogun Weekly Boss
+    //add in 20220106
+    public int  傀儡的懸絲  = 0 ; // 散兵 Weekly Boss
+    public int  無心的淵鏡  = 0 ; // 散兵 Weekly Boss
+    public int  空行的虛鈴  = 0 ; // 散兵 Weekly Boss
 
 
     /** COMMON */ /**[牢固的箭簇,銳利的箭簇,歷戰的箭簇]*/
@@ -265,7 +269,9 @@ public class Material {
                 "魔王之刃·殘片","吞天之鯨·只角","武煉之魂·孤影",
                 "龍王之冕","血玉之枝","鎏金之鱗",
                 "熔毀之刻","灰燼之心","獄火之蝶",
-                "萬劫之真意","凶將之手眼","禍神之禊淚"
+                "萬劫之真意","凶將之手眼","禍神之禊淚",
+                "傀儡的懸絲","無心的淵鏡","空行的虛鈴"
+
         };
     }
     public int[] weekBossCountList (){
@@ -276,7 +282,8 @@ public class Material {
                 魔王之刃_殘片,吞天之鯨_只角,武煉之魂_孤影,
                 龍王之冕,血玉之枝,鎏金之鱗,
                 熔毀之刻,灰燼之心,獄火之蝶,
-                萬劫之真意,凶將之手眼,禍神之禊淚
+                萬劫之真意,凶將之手眼,禍神之禊淚,
+                傀儡的懸絲,無心的淵鏡,空行的虛鈴
         };
     }
 
@@ -737,6 +744,10 @@ public class Material {
                 case "萬劫之真意": 萬劫之真意 = addCountIntoVar(萬劫之真意, temp_count, "T-BOSS"); break;
                 case "凶將之手眼": 凶將之手眼 = addCountIntoVar(凶將之手眼, temp_count, "T-BOSS"); break;
                 case "禍神之禊淚": 禍神之禊淚 = addCountIntoVar(禍神之禊淚, temp_count, "T-BOSS"); break;
+                // add in 20221112
+                case "傀儡的懸絲": 傀儡的懸絲 = addCountIntoVar(傀儡的懸絲, temp_count, "T-BOSS"); break;
+                case "無心的淵鏡": 無心的淵鏡 = addCountIntoVar(無心的淵鏡, temp_count, "T-BOSS"); break;
+                case "空行的虛鈴": 空行的虛鈴 = addCountIntoVar(空行的虛鈴, temp_count, "T-BOSS"); break;
             }
 
         }

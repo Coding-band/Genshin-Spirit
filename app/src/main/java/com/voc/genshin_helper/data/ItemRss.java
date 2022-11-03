@@ -44,9 +44,9 @@ public class ItemRss {
             "Barbara","Kujou Sara","Hu Tao","Voc-夜芷冰","Tartaglia","Shikanoin Heizou","Klee","Yanfei",
             "Amber","Ningguang","Mona",
             "Diona","Razor","Albedo","Kamisato Ayaka",
-            "Xingqiu","Xinyan","Sayu","Eula","Kaedehara Kazuha",
-            "Xiangling","Xingqiu","Sucrose","Kaeya",
-            "Ganyu","Nilou","Dori","Tighnari","Zhongli"};
+            "Xingqiu","Xinyan","Sayu","Eula","Nahida","Kaedehara Kazuha",
+            "Xiangling","Keqing","Sucrose","Kaeya",
+            "Ganyu","Nilou","Layla","Dori","Tighnari","Zhongli"};
     public int[] charBirthDay = {
             9,18,24,
             14,22,29,
@@ -57,9 +57,9 @@ public class ItemRss {
             5,14,15,19,20,24,27,28,
             10,26,31,
             7,9,13,28,
-            9,16,19,25,29,
+            9,16,19,25,27,29,
             2,20,26,30,
-            2,3,21,29,31};
+            2,3,19,21,29,31};
     public int[] charBirthMonth = {
             0,0,0,
             1,1,1,
@@ -70,9 +70,9 @@ public class ItemRss {
             6,6,6,6,6,6,6,6,
             7,7,7,
             8,8,8,8,
-            9,9,9,9,9,
+            9,9,9,9,9,9,
             10,10,10,10,
-            11,11,11,11,11};
+            11,11,11,11,11,11};
 
 
     public String getLocaleName (String str,Context context) {
@@ -153,7 +153,7 @@ public class ItemRss {
             case 3 : return new int[]{R.drawable.bg_rare3_bg, R.drawable.bg_rare3_char, R.color.rare3,R.drawable.rare3_800x800};
             case 4 : return new int[]{R.drawable.bg_rare4_bg, R.drawable.bg_rare4_char, R.color.rare4,R.drawable.rare4_800x800};
             case 5 : return new int[]{R.drawable.bg_rare5_bg, R.drawable.bg_rare5_char, R.color.rare5,R.drawable.rare5_800x800};
-            default: return new int[]{R.drawable.paimon_lost, R.drawable.paimon_lost, R.color.rare1,R.drawable.rare1_800x800};
+            default: return new int[]{R.drawable.hu_tao_unknown, R.drawable.hu_tao_unknown, R.color.rare1,R.drawable.rare1_800x800};
         }
     }
 
@@ -164,7 +164,7 @@ public class ItemRss {
         else if(str.equals("Claymore")){return R.drawable.ico_claymore;}
         else if(str.equals("Polearm")){return R.drawable.ico_polearm;}
         else if(str.equals("Sword")){return R.drawable.ico_sword;}
-        else {return R.drawable.paimon_lost;}
+        else {return R.drawable.hu_tao_unknown;}
     }
     public int getDistrictIMG (String str){
         if(str.equals("Mondstadt")){return R.drawable.mondstadt_ico;}
@@ -355,7 +355,7 @@ public class ItemRss {
             case "Maguu Kenki: Mask of Terror" : return new String[]{context.getString(R.string.maguu_kenki_mask_of_terror),"/drawable/maguu_kenki_mask_of_terror.png"};
             case "The Great Snowboar King" : return new String[]{context.getString(R.string.the_great_snowboar_king),"/drawable/the_great_snowboar_king.png"};
 
-            default : return new String[] {context.getString(R.string.unknown),"/drawable/paimon_lost.png"};
+            default : return new String[] {context.getString(R.string.unknown),"/drawable/hu_tao_unknown.png"};
         }
     }
 
@@ -709,7 +709,7 @@ public class ItemRss {
             case "A Thousand Floating Dreams" : return new String[] {context.getString(R.string.a_thousand_floating_dreams),"/drawable/a_thousand_floating_dreams.png"};
 
             default :
-                System.out.println("WEAPON+ NAME ERROR : "+str);return new String[] {context.getString(R.string.unknown),"/drawable/paimon_lost.png"};
+                System.out.println("WEAPON+ NAME ERROR : "+str);return new String[] {context.getString(R.string.unknown),"/drawable/hu_tao_unknown.png"};
         }
     }
 
@@ -879,7 +879,7 @@ public class ItemRss {
             case "A Thousand Floating Dreams" : return new String[] {context.getString(R.string.a_thousand_floating_dreams),"/drawable/a_thousand_floating_dreams_gacha.png"};
 
             default :
-                System.out.println("WEAPON+ NAME ERROR : "+str);return new String[] {context.getString(R.string.unknown),"/drawable/paimon_lost_gacha.png"};
+                System.out.println("WEAPON+ NAME ERROR : "+str);return new String[] {context.getString(R.string.unknown),"/drawable/hu_tao_unknown.png"};
         }
     }
 
@@ -1100,7 +1100,7 @@ public class ItemRss {
             case "Deepwood Memories" : return new String[] {context.getString(R.string.deepwood_memories),"/drawable/deepwood_memories_1.png","/drawable/deepwood_memories_2.png","/drawable/deepwood_memories_3.png","/drawable/deepwood_memories_4.png","/drawable/deepwood_memories_5.png"};
             case "Gilded Dreams" : return new String[] {context.getString(R.string.gilded_dreams),"/drawable/gilded_dreams_1.png","/drawable/gilded_dreams_2.png","/drawable/gilded_dreams_3.png","/drawable/gilded_dreams_4.png","/drawable/gilded_dreams_5.png"};
 
-            default: return new String[] {context.getString(R.string.unknown),"/drawable/paimon_lost.png","/drawable/paimon_lost.png","/drawable/paimon_lost.png","/drawable/paimon_lost.png","/drawable/paimon_lost.png"};
+            default: return new String[] {context.getString(R.string.unknown),"/drawable/hu_tao_unknown.png","/drawable/hu_tao_unknown.png","/drawable/hu_tao_unknown.png","/drawable/hu_tao_unknown.png","/drawable/hu_tao_unknown.png"};
 
         }
     }
@@ -1336,7 +1336,7 @@ public class ItemRss {
         }
 
         System.out.println("CHARACTER NAME ERROR : "+name);
-        return new String[] {"/drawable/paimon_lost.png",context.getString(R.string.unknown),"/drawable/paimon_lost.png","/drawable/paimon_lost.png","/drawable/unknown.png"};
+        return new String[] {"/drawable/hu_tao_unknown.png",context.getString(R.string.unknown),"/drawable/hu_tao_unknown.png","/drawable/hu_tao_unknown.png","/drawable/unknown.png"};
     }
 
     public String getCharNameByTranslatedName(String name, Context context){
@@ -1430,7 +1430,7 @@ public class ItemRss {
             case "Pyro":
                 return new int[]{R.drawable.siptik_pyro_ico, R.drawable.bg_pyro_char, R.color.pyro};
             default:
-                return new int[]{R.drawable.paimon_lost, R.drawable.paimon_lost, R.color.anemo};
+                return new int[]{R.drawable.hu_tao_unknown, R.drawable.hu_tao_unknown, R.color.anemo};
         }
     }
 
@@ -1445,7 +1445,7 @@ public class ItemRss {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Drawable myIcon = context.getResources().getDrawable( R.drawable.paimon_lost );
+        Drawable myIcon = context.getResources().getDrawable( R.drawable.hu_tao_unknown );
         return myIcon;
     }
 
@@ -1616,6 +1616,13 @@ public class ItemRss {
                 return "/drawable/mudra_of_the_malefic_general.png";
             case "禍神之禊淚":
                 return "/drawable/tears_of_the_calamitous_god.png";
+            //add in 20221102
+            case "傀儡的懸絲":
+                return "/drawable/puppet_strings.png";
+            case "無心的淵鏡":
+                return "/drawable/miirror_of_mushin.png";
+            case "空行的虛鈴":
+                return "/drawable/dakas_bell.png";
 
             /** Common*/
             case "牢固的箭簇":
@@ -2052,7 +2059,7 @@ public class ItemRss {
             case "未知常駐BOSS跌落物3":
                 return "/drawable/hu_tao_unknown.png";
             default:
-                return "/drawable/paimon_lost.png";
+                return "/drawable/hu_tao_unknown.png";
         }
     }
 

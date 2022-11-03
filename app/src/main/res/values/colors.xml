@@ -33,13 +33,13 @@
     <color name="colorWhiteAlpha">#00000000</color>
     <color name="colorWhiteAlpha1">#10000000</color>
 
-    <color name="anemo">#81FFBE</color>
-    <color name="cryo">#81F9FF</color>
-    <color name="dendor">#92FF81</color>
-    <color name="electro">#F481FF</color>
-    <color name="geo">#BE9F04</color>
-    <color name="hydro">#03A9F4</color>
-    <color name="pyro">#FC6363</color>
+    <color name="anemo">#00D6A1</color>
+    <color name="cryo">#58CFD4</color>
+    <color name="dendor">#8DE329</color>
+    <color name="electro">#B573E5</color>
+    <color name="geo">#E6B639</color>
+    <color name="hydro">#009DFE</color>
+    <color name="pyro">#DD2B2C</color>
 
     <color name="color_theme_1">#FF5A5A</color>
     <color name="color_theme_2">#FF396A</color>
@@ -194,6 +194,8 @@
     <color name="light_blue_200">#FF81D4FA</color>
     <color name="light_blue_600">#FF039BE5</color>
     <color name="light_blue_900">#FF01579B</color>
+
+    <color name="setting_ico_color">#000000</color>
 
 
 </resources>

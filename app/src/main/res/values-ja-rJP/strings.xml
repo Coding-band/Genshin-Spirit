@@ -1124,6 +1124,18 @@
     <string name="unclaimed">未請求</string>
     <string name="claimed">請求すでに</string>
     <string name="idle">休眠</string>
+    <string name="is_random_scenery">ランダムな風景の抜粋を有効にする</string>
+    <string name="dakas_bell">空行の虚鈴</string>
+    <string name="puppet_strings">傀儡の糸</string>
+    <string name="mirror_of_mushin">無心の淵鏡</string>
+    <string name="global_server">国際サーバー</string>
+    <string name="mainland_server">中国本土サーバー</string>
+    <string name="memo_step1">資格情報を取得する</string>
+    <string name="memo_step2">サーバーを選択</string>
+    <string name="memo_step1_1">サーバーの種類を選択してください</string>
+    <string name="memo_web">← ログイン後に押してください</string>
+    <string name="setting_account">アカウント</string>
+    <string name="setting_personal">パーソナライズ</string>
 
 </resources>
 

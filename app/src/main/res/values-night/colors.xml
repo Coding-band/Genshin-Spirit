@@ -29,13 +29,13 @@
 
     <color name="page_bg_negative">#FFFFFF</color>
 
-    <color name="anemo">#40805F</color>
-    <color name="cryo">#407D80</color>
-    <color name="dendor">#498040</color>
-    <color name="electro">#7A4080</color>
-    <color name="geo">#807540</color>
-    <color name="hydro">#015575</color>
-    <color name="pyro">#7E3232</color>
+    <color name="anemo">#00D6A1</color>
+    <color name="cryo">#58CFD4</color>
+    <color name="dendor">#8DE329</color>
+    <color name="electro">#B573E5</color>
+    <color name="geo">#E6B639</color>
+    <color name="hydro">#009DFE</color>
+    <color name="pyro">#DD2B2C</color>
 
     <color name="color_theme_1">#FF5A5A</color>
     <color name="color_theme_2">#FF396A</color>
@@ -176,4 +176,6 @@
     <color name="app_ico_item_fill">#616161</color>
     <color name="app_ico_item_stroke">#C7C7C7</color>
     <color name="app_ico_bg">#616161</color>
+
+    <color name="setting_ico_color">#FFFFFF</color>
 </resources>

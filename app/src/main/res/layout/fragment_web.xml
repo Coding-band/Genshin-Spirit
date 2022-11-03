@@ -20,6 +20,19 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout9" >
+
+    </WebView>
+
+    <WebView
+        android:id="@+id/webView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/page_bg"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout9" />
 
     <LinearLayout
@@ -50,10 +63,10 @@
             android:layout_gravity="center"
             android:layout_weight="1"
             android:fontFamily="@font/genshin_font"
-            android:text="Please login to get token"
-            android:textAlignment="center"
+            android:text="@string/memo_web"
+            android:textAlignment="viewStart"
             android:textColor="@color/tv_anti_color_2048"
-            android:textSize="16sp" />
+            android:textSize="18sp" />
 
         <ImageView
             android:id="@+id/back_btn2"

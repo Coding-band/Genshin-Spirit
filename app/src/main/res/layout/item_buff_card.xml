@@ -55,7 +55,7 @@
                             android:layout_height="48dp"
                             android:adjustViewBounds="true"
                             android:padding="8dp"
-                            app:srcCompat="@drawable/paimon_lost" />
+                            app:srcCompat="@drawable/hu_tao_unknown" />
 
                         <TextView
                             android:id="@+id/buff_ui_char_name"

@@ -2279,8 +2279,30 @@ public class Characters_Info_2048 {
 
     public SpannableString setSpanAndTv(ForegroundColorSpan mColor, String str, String mWord){
         SpannableString mSpannavleString = new SpannableString(str);
-        for (int i = -1; (i = str.indexOf(mWord, i + 1)) != -1; i++) {
-            mSpannavleString.setSpan(mColor,str.indexOf(mWord),str.indexOf(mWord)+mWord.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+        String[] keywords = {
+                context.getString(R.string.element_Anemo),
+                context.getString(R.string.element_Cryo),
+                context.getString(R.string.element_Dendor),
+                context.getString(R.string.element_Electro),
+                context.getString(R.string.element_Geo),
+                context.getString(R.string.element_Hydro),
+                context.getString(R.string.element_Pyro)
+        };
+
+        int[] keywordsColor = {
+                R.color.anemo,
+                R.color.cryo,
+                R.color.dendor,
+                R.color.electro,
+                R.color.geo,
+                R.color.hydro,
+                R.color.pyro
+        };
+
+        for (int x = 0 ; x < keywords.length ; x++){
+            for (int i = -1; (i = str.indexOf(keywords[x], i + 1)) != -1; i++) {
+                mSpannavleString.setSpan(new ForegroundColorSpan(context.getResources().getColor(keywordsColor[x])),str.indexOf(keywords[x]),str.indexOf(keywords[x])+keywords[x].length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            }
         }
         return mSpannavleString;
     }

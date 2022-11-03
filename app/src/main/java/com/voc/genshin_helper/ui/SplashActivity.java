@@ -351,9 +351,13 @@ public class SplashActivity extends AppCompatActivity {
             System.out.println("Sending Ping Request to " + ipAddress);
             System.out.println(inet.isReachable(2000) ? "Host is reachable" : "Host is NOT reachable");
 
+
             if(inet.isReachable(2000) == true){
                 OkHttpClient client = new OkHttpClient();
                 String url = "http://113.254.213.196/genshin_spirit/update.json";
+                if (BuildConfig.FLAVOR.equals("dev")){
+                    url = "http://113.254.213.196/genshin_spirit/update_dev.json";
+                }
                 Request request = new Request.Builder().url(url).build();
 
                 long lastUnix = System.currentTimeMillis();

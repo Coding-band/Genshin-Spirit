@@ -1097,4 +1097,16 @@
     <string name="unclaimed">Невостребованный</string>
     <string name="claimed">Получил</string>
     <string name="idle">Праздный</string>
+    <string name="puppet_strings">Нити марионетки</string>
+    <string name="mirror_of_mushin">Зеркало Мусин</string>
+    <string name="dakas_bell">Пустой колокольчик</string>
+    <string name="is_random_scenery">Включить функцию случайного отрывка пейзажа</string>
+    <string name="global_server">Международный сервер</string>
+    <string name="mainland_server">Cервер материкового китая</string>
+    <string name="memo_step1">Получить токен</string>
+    <string name="memo_step2">Выберите сервер</string>
+    <string name="memo_step1_1">Пожалуйста, выберите типы серверов</string>
+    <string name="memo_web">⬅ Нажмите ее, когда закончите вход</string>
+    <string name="setting_account">учетная запись</string>
+    <string name="setting_personal">Личный</string>
 </resources>

@@ -1107,6 +1107,19 @@
     <string name="claimed">已领取</string>
     <string name="idle">闲置中</string>
 
+    <string name="puppet_strings">傀儡的悬丝</string>
+    <string name="mirror_of_mushin">无心的渊镜</string>
+    <string name="dakas_bell">空行的虚铃</string>
+    <string name="is_random_scenery">启用随机风景节录功能</string>
+    <string name="global_server">国际伺服器</string>
+    <string name="mainland_server">中国大陆伺服器</string>
+    <string name="memo_step1">獲取憑證</string>
+    <string name="memo_step2">選擇伺服器</string>
+    <string name="memo_step1_1">请选择伺服器类别</string>
+    <string name="memo_web">← 请在登入后按下</string>
+    <string name="setting_account">帐号</string>
+    <string name="setting_personal">个性化</string>
+
 
 </resources>
 

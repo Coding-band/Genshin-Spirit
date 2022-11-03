@@ -432,8 +432,7 @@ public class Weapon_Info_2048 {
                 final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
                 View view = View.inflate(context, R.layout.fragment_char_skill_dmg_2048, null);
 
-                String[] lvList = new String[]{"LV1","LV20","LV20+","LV40","LV40+","LV50","LV50+","LV60","LV60+","LV70","LV70+","LV80","LV80+","LV90"};
-
+                String[] lvList = new String[]{"LV1","LV5","LV10","LV15","LV20","LV20+","LV25","LV30","LV35","LV40","LV40+","LV45","LV50","LV50+","LV55","LV60","LV60+","LV65","LV70","LV70+","LV75","LV80","LV80+","LV85","LV90"};
                 Spinner menu_lv_sp = view.findViewById(R.id.menu_lv_spinner);
                 FrameLayout menu_ok = view.findViewById(R.id.menu_ok);
 
@@ -524,7 +523,7 @@ public class Weapon_Info_2048 {
                 /** Method of dialog */
                 dialog.setContentView(view);
                 dialog.setCanceledOnTouchOutside(true);
-                Window dialogWindow = activity.getWindow();
+                Window dialogWindow = dialog.getWindow();
                 WindowManager.LayoutParams lp = dialogWindow.getAttributes();
                 // 2O48 DESIGN
                 dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));

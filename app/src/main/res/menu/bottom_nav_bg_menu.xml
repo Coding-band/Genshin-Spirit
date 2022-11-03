@@ -10,5 +10,5 @@
     <item android:icon="@drawable/ayaka_ico" android:id="@+id/navigation_ayaka" android:title="@string/kamisato_ayaka"/>
     <item android:icon="@drawable/hu_tao_ico" android:id="@+id/navigation_hu_tao" android:title="@string/hu_tao"/>
     <item android:icon="@drawable/yae_miko_ico" android:id="@+id/navigation_yae_miko" android:title="@string/yae_miko"/>
-    <item android:icon="@drawable/paimon_lost" android:id="@+id/navigation_paimon_lost" android:title="@string/unknown"/>
+    <item android:icon="@drawable/hu_tao_unknown" android:id="@+id/navigation_paimon_lost" android:title="@string/unknown"/>
 </menu>

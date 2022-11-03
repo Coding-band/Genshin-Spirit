@@ -16,7 +16,7 @@
     <item android:icon="@drawable/wanderers_advice" android:id="@+id/nav_result" android:title="@string/result"/>
     <item
         android:id="@+id/nav_buff"
-        android:icon="@drawable/paimon_lost"
+        android:icon="@drawable/hu_tao_writing"
         android:title="@string/buff"
         android:visible="true" />
 </menu>

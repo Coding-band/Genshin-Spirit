@@ -804,31 +804,31 @@
                     android:id="@+id/buff_artifact_tab_flower"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:icon="@drawable/paimon_lost" />
+                    android:icon="@drawable/hu_tao_unknown" />
 
                 <com.google.android.material.tabs.TabItem
                     android:id="@+id/buff_artifact_tab_plume"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:icon="@drawable/paimon_lost" />
+                    android:icon="@drawable/hu_tao_unknown" />
 
                 <com.google.android.material.tabs.TabItem
                     android:id="@+id/buff_artifact_tab_sand"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:icon="@drawable/paimon_lost" />
+                    android:icon="@drawable/hu_tao_unknown" />
 
                 <com.google.android.material.tabs.TabItem
                     android:id="@+id/buff_artifact_tab_goblet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:icon="@drawable/paimon_lost" />
+                    android:icon="@drawable/hu_tao_unknown" />
 
                 <com.google.android.material.tabs.TabItem
                     android:id="@+id/buff_artifact_tab_circlet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:icon="@drawable/paimon_lost" />
+                    android:icon="@drawable/hu_tao_unknown" />
             </com.google.android.material.tabs.TabLayout>
 
             <include

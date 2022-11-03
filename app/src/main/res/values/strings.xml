@@ -1151,5 +1151,19 @@
     <string name="add_widget">Add widget</string>
     <string name="app_widget_description">This is an app widget description</string>
 
+    <!-- add in 20221102-->
+    <string name="puppet_strings">Puppet Strings</string>
+    <string name="mirror_of_mushin">Mirror of Mushin</string>
+    <string name="dakas_bell">Daka\'s Bell</string>
+    <string name="is_random_scenery">Enable Random Scenery Excerpt Function</string>
+    <string name="global_server">Global Server</string>
+    <string name="mainland_server">Mainland China Server</string>
+    <string name="memo_step1">Get Token</string>
+    <string name="memo_step2">Choose the Server</string>
+    <string name="memo_step1_1">Please choose the types of server</string>
+    <string name="memo_web">← Press it when you finish login</string>
+    <string name="setting_account">Account</string>
+    <string name="setting_personal">Personal</string>
+
 </resources>
 

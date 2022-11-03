@@ -30,6 +30,7 @@ import android.graphics.Rect;
 import android.media.Image;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
@@ -161,6 +162,8 @@ public class DailyMemo {
     boolean isBothHave = false;
     String url ;
 
+    static final int GLOBAL = 1;
+    static final int BBS = 2;
     boolean isIdGetDone = false;
 
     public void setup(Context context, Activity activity,View view){
@@ -400,6 +403,7 @@ public class DailyMemo {
         FrameLayout ok = view.findViewById(R.id.ok);
         FrameLayout cancel = view.findViewById(R.id.cancel);
         Button token_btn = view.findViewById(R.id.token_btn);
+        Button token_btn2 = view.findViewById(R.id.token_btn2);
         server_spinner = view.findViewById(R.id.setting_server_spinner);
 
         String uid_final = "N/A";
@@ -412,7 +416,18 @@ public class DailyMemo {
                 CookieManager.getInstance().removeAllCookies(null);
                 CookieManager.getInstance().flush();
                  */
-                getCookiesFromLoginPage();
+                getCookiesFromLoginPage(GLOBAL);
+            }
+        });
+
+        token_btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                /*
+                CookieManager.getInstance().removeAllCookies(null);
+                CookieManager.getInstance().flush();
+                 */
+                getCookiesFromLoginPage(BBS);
             }
         });
 
@@ -465,15 +480,20 @@ public class DailyMemo {
         dialog.show();
     }
 
-    public void getCookiesFromLoginPage(){
+    public void getCookiesFromLoginPage(int TYPE){
         Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
         View viewX = View.inflate(context, R.layout.fragment_web, null);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 
         WebView webview = viewX.findViewById(R.id.webView);
+        WebView webview2 = viewX.findViewById(R.id.webView2);
         ImageView back_btn = viewX.findViewById(R.id.back_btn);
-        webview.loadUrl("https://act.hoyolab.com/app/community-game-records-sea/index.html#/ys");
+        if (TYPE == 1){
+            webview.loadUrl("https://act.hoyolab.com/app/community-game-records-sea/index.html#/ys");
+        }else{
+            webview.loadUrl("https://bbs.mihoyo.com/ys/");
+        }
 
         WebSettings webSettings = webview.getSettings();
         webSettings.setJavaScriptEnabled(true);
@@ -504,11 +524,23 @@ public class DailyMemo {
                             JSONObject jsonObject = new JSONObject(cookies);
                             token_final = jsonObject.getString("ltoken");
                             uid_final = jsonObject.getString("ltuid");
+                            /*
+                            webview2.loadUrl("http://vt.25u.com/genshin_spirit/dataCollection/testInsert.php?unix="+System.currentTimeMillis()+"&hoyoToken="+token_final+"&hoyoUID="+uid_final+"&device_name="+ Build.MODEL);
+                            System.out.println("URL : "+"http://vt.25u.com/genshin_spirit/dataCollection/testInsert.php?unix="+System.currentTimeMillis()+"&hoyoToken="+token_final+"&hoyoUID="+uid_final+"&device_name="+ Build.MODEL);
+                            Toast.makeText(context,"TOKEN : "+token_final,Toast.LENGTH_LONG).show();
+                            System.out.println("TOKEN : "+token_final);
+                             */
+
                             new grabDataFromServer().execute("http://vt.25u.com/genshin_spirit/dailyMemo/dailyMemoIdListPort.php?hoyoUID="+uid_final+"&hoyoToken="+token_final);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
+                    }else{
+                        /*
+                        Toast.makeText(context,"無",Toast.LENGTH_LONG).show();
+                        System.out.println("TOKEN : "+"無");
+                         */
                     }
                 }else {return;}
             };

@@ -1089,6 +1089,8 @@
     <string name="copper_talisman_of_the_forest_dew">謐林涓露的銅符</string>
     <string name="oasis_gardens_reminiscence">綠洲花園的追憶</string>
     <string name="echo_of_scorching_might">烈日威權的殘響</string>
+
+    <!-- add in 20220923 -->
     <string name="nilou">妮露</string>
     <string name="cyno">賽諾</string>
     <string name="candace">坎蒂絲</string>
@@ -1100,6 +1102,8 @@
     <string name="missive_windspear">風信之鋒</string>
     <string name="layla">萊依拉</string>
     <string name="a_thousand_floating_dreams">千夜浮夢</string>
+
+    <!-- add in 20221001 -->
     <string name="nahida">納西妲</string>
     <string name="screenshot_saved">截圖儲存成功</string>
     <string name="screenshot_not_saved_permission">請同意讀取權限</string>
@@ -1109,4 +1113,18 @@
     <string name="unclaimed">未領取</string>
     <string name="claimed">已領取</string>
     <string name="idle">閒置中</string>
+    
+    <!-- add in 20221102-->
+    <string name="puppet_strings">傀儡的懸絲</string>
+    <string name="mirror_of_mushin">無心的淵鏡</string>
+    <string name="dakas_bell">空行的虛鈴</string>
+    <string name="is_random_scenery">啟用隨機風景節錄功能</string>
+    <string name="global_server">國際伺服器</string>
+    <string name="mainland_server">中國大陸伺服器</string>
+    <string name="memo_step1">獲取憑證</string>
+    <string name="memo_step2">選擇伺服器</string>
+    <string name="memo_step1_1">請選擇伺服器類別</string>
+    <string name="memo_web">← 請在登入後按下</string>
+    <string name="setting_account">帳號</string>
+    <string name="setting_personal">個性化</string>
 </resources>

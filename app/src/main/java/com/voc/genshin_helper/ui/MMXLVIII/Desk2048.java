@@ -6,20 +6,25 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
+import android.Manifest;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.content.res.Resources;
@@ -27,10 +32,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.StrictMode;
@@ -59,6 +67,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RatingBar;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -117,11 +126,15 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.text.DecimalFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.TimeZone;
 
 import okhttp3.OkHttpClient;
@@ -137,6 +150,10 @@ import okhttp3.Response;
 public class Desk2048 extends AppCompatActivity {
 
     public static int IMAGE = 1;
+
+    private boolean isReadPermissionGranted = false;
+    private boolean isWritePermissionGranted = false;
+    private static final int CAMERA = 100;
 
     boolean isCharLLShow = true;
     boolean isWeaponLLShow = false;
@@ -317,13 +334,9 @@ public class Desk2048 extends AppCompatActivity {
 
         check_spinner = 0;
 
-        DailyMemo dailyMemo = new DailyMemo();
-        dailyMemo.setup(context,activity,viewPager0);
-
-        //忘憂喵
-        //gs = new GoSleep();
-        //gs.sleep(context);
-        //gs.psw();
+        //DailyMemo dailyMemo = new DailyMemo();
+        //dailyMemo.setup(context,activity,viewPager0);
+        viewPager0.findViewById(R.id.home_dailymemo).setVisibility(View.GONE);
 
         lang_setup();
         home();
@@ -341,8 +354,6 @@ public class Desk2048 extends AppCompatActivity {
 
 
         BackgroundReload.BackgroundReload(context,activity);
-
-        //BitmapToRGB565.order(context);
 
         LinearLayout char_ll = viewPager0.findViewById(R.id.char_ll);
         LinearLayout weapon_ll = viewPager0.findViewById(R.id.weapon_ll);
@@ -612,6 +623,7 @@ public class Desk2048 extends AppCompatActivity {
             }
         });
 
+
         paimon_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -642,6 +654,57 @@ public class Desk2048 extends AppCompatActivity {
                 dialog.show();
             }
         });
+
+        /*
+        paimon_setting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+                View view = View.inflate(context, R.layout.fragment_setting_2048_new, null);
+                dialog.setContentView(view);
+                dialog.setCanceledOnTouchOutside(true);
+                //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
+                Window dialogWindow = dialog.getWindow();
+                WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+                // 2O48 DESIGN
+                dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+                dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
+
+                DisplayMetrics displayMetrics = new DisplayMetrics();
+                getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+                int height = displayMetrics.heightPixels;
+                int width = displayMetrics.widthPixels;
+
+                //setup_setting(view,dialog);
+                //setColorBk(view);
+
+                ImageView result_camera = view.findViewById(R.id.discord_ico);
+                result_camera.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        ScrollView scrollview = view.findViewById(R.id.setting_sc);
+
+                        Bitmap bitmap = getBitmapFromView(scrollview, scrollview.getChildAt(0).getHeight(), scrollview.getChildAt(0).getWidth());
+                        requestPermission();
+                        if (isWritePermissionGranted){
+                            if (saveImageToExternalStorage("Voc_Setting_Page",bitmap)){
+                                CustomToast.toast(context,activity,context.getString(R.string.screenshot_saved));
+                            }
+                        }else {
+                            CustomToast.toast(context,activity,context.getString(R.string.screenshot_not_saved_permission));
+                        }
+                    }
+                });
+
+                lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+                lp.height = WindowManager.LayoutParams.MATCH_PARENT;
+                lp.gravity = Gravity.CENTER;
+                dialogWindow.setAttributes(lp);
+                dialog.show();
+            }
+        });
+         */
         paimon_about.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -670,6 +733,59 @@ public class Desk2048 extends AppCompatActivity {
                 dialog.show();
             }
         });
+    }
+
+    private Bitmap getBitmapFromView(View view, int height, int width) {
+        Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        Drawable bgDrawable = view.getBackground();
+        if (bgDrawable != null)
+            bgDrawable.draw(canvas);
+        else
+            canvas.drawColor(Color.TRANSPARENT);
+        view.draw(canvas);
+        return bitmap;
+    }
+
+    private boolean saveImageToExternalStorage(String imgName, Bitmap bmp){
+        Uri ImageCollection = null;
+        ContentResolver resolver = context.getContentResolver();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q){
+            ImageCollection = MediaStore.Images.Media.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY);
+        }else {
+            ImageCollection = MediaStore.Images.Media.EXTERNAL_CONTENT_URI;
+        }
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(MediaStore.Images.Media.DISPLAY_NAME, imgName + ".png");
+        contentValues.put(MediaStore.Images.Media.DATE_ADDED, new Date().getTime());
+        contentValues.put(MediaStore.Images.Media.MIME_TYPE,"image/png");
+        Uri imageUri = resolver.insert(ImageCollection, contentValues);
+        System.out.println("imageUri "+imageUri);
+        try {
+            OutputStream outputStream = resolver.openOutputStream(Objects.requireNonNull(imageUri));
+            bmp.compress(Bitmap.CompressFormat.PNG,100,outputStream);
+            Objects.requireNonNull(outputStream);
+            return true;
+        }
+        catch (Exception e){
+            CustomToast.toast(context,activity,context.getString(R.string.screenshot_not_saved));
+            e.printStackTrace();
+        }
+        return false;
+
+    }
+
+    private void requestPermission() {
+        boolean minSDK = Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q;
+        isReadPermissionGranted = ContextCompat.checkSelfPermission(
+                context,
+                Manifest.permission.READ_EXTERNAL_STORAGE
+        ) == PackageManager.PERMISSION_GRANTED;
+        isWritePermissionGranted = ContextCompat.checkSelfPermission(
+                context,
+                Manifest.permission.WRITE_EXTERNAL_STORAGE
+        ) == PackageManager.PERMISSION_GRANTED;
+        isWritePermissionGranted = isWritePermissionGranted || minSDK;
     }
 
     private void setup_weapon() {
@@ -2047,7 +2163,7 @@ public class Desk2048 extends AppCompatActivity {
 
         bg_download_base.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
                 StrictMode.setThreadPolicy(policy);
 
@@ -2915,14 +3031,20 @@ public class Desk2048 extends AppCompatActivity {
         }
         // List
 
+        //System.out.println("XPR1 char_name : "+char_name);
+
         int dom_TMP = dom;
         int moy_TMP = moy;
-        while (char_name.equals("EMPTY")){
+        while (char_name.equals("EMPTY") || !Arrays.asList(css.charBirthName).contains(char_name)){
             dom_TMP++;
+            if (dom_TMP > 32){dom_TMP = 1;moy_TMP++;}
             if (moy_TMP > 13){moy_TMP = 0;}
-            if (dom_TMP > 32){dom_TMP = 0;dom_TMP++;}
             char_name = css.char_birth(moy_TMP,dom_TMP);
+
+            //System.out.println("XPR2 char_name : "+char_name);
         }
+
+        //System.out.println("XPR3 char_name : "+char_name);
 
         int index = Arrays.asList(css.charBirthName).indexOf(char_name);
         int[] imageArray = {R.id.bday_next1,R.id.bday_next2,R.id.bday_next3,R.id.bday_next4,R.id.bday_next5,R.id.bday_next6};
