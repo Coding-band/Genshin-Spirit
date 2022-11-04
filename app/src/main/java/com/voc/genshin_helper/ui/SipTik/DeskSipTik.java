@@ -2087,9 +2087,9 @@ public class DeskSipTik extends AppCompatActivity {
             public void onClick(View v) {
                 Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
                         "mailto","voc.app.programmer@gmail.com", null));
-                emailIntent.putExtra(Intent.EXTRA_TITLE, "Advice of Genshin Helper");
+                emailIntent.putExtra(Intent.EXTRA_TITLE, "Advice of Genshin Spirit");
                 emailIntent.putExtra(Intent.EXTRA_TEXT, "Hi, ");
-                startActivity(Intent.createChooser(emailIntent, "Advice of Genshin Helper"));
+                startActivity(Intent.createChooser(emailIntent, "Advice of Genshin Spirit"));
                 //voc.app.programmer@gmail.com
             }
         });

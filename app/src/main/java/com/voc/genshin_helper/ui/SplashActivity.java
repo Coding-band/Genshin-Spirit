@@ -397,6 +397,8 @@ public class SplashActivity extends AppCompatActivity {
                             dialog2048.getPositiveBtn().setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
+
+                                    dialog2048.dismiss();
                                     DownloadTask downloadTask = new DownloadTask();
                                     downloadTask.startAWithRun(array_download, array_fileName, array_SfileName, context, activity, true);
                                     editor.putLong("lastUpdateUnix", finalLastUnix);
@@ -406,6 +408,8 @@ public class SplashActivity extends AppCompatActivity {
                             dialog2048.getNegativeBtn().setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
+
+                                    dialog2048.dismiss();
                                     runDesk(sharedPreferences);
                                 }
                             });

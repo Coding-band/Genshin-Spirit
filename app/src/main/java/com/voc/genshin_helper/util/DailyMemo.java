@@ -515,6 +515,7 @@ public class DailyMemo {
                 String cookies = CookieManager.getInstance().getCookie(url);
                 //System.out.println("cookies BASE : "+cookies);
                 if (!isBothHave){
+                    if (cookies == null) return;
                     if (cookies.contains("ltoken") && cookies.contains("ltuid")){
                         isBothHave = true;
                         cookies = "{\""+cookies+"\"}";

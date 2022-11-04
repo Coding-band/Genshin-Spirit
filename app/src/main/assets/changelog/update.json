@@ -1,5 +1,9 @@
 [
   {
+    "version": "10695",
+    "verName": "3.1.0-gp (10695)",
+    "description": "Changelog - 2022-11-04<br><br>This is an urgent update of fixing serious crash bug by birthday function"
+  },{
     "version": "10293",
     "verName": "3.1.0-gp (10293)",
     "description": "Changelog - 2022-10-04<br><br><b>Calculator</b><br>1. New Material Calculator (Only available in Material Style)<br><br>   - New UI design<br>   - New algorithm & display result in real-time<br>2. Replaced saving translation<br><br><b>UI</b><br>1. Removed Alarm Button<br>2. Fixed Style-Exchange crash bug<br>3. Fixed App Icon display issue<br>4. Fixed Crash bug in Splash page<br>5. Little improve of Game Style's UI<br><br>Characters, weapons and artifacts<br>1. Added characters info :<br>    - Candace<br>    - Cyno<br>    - Nilou<br>    - Layla<br>    - Nahida<br>2. Fixed detail mistakes in :<br>    - Arataki_Itto<br>    - Beidou<br>    - Shikanoin_Heizou<br>3. Added weapons in 3.1 & 3.2<br>4. Updated new Character's birthday"

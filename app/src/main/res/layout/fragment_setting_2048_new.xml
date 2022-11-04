@@ -124,97 +124,22 @@
                         android:layout_weight="0"
                         android:fontFamily="@font/genshin_font"
                         android:gravity="center|left"
-                        android:text="@string/memo_step1"
+                        android:text="Clean All Cookies"
                         android:textColor="@color/tv_color"
                         android:textSize="16sp" />
                 </LinearLayout>
 
-                <LinearLayout
+
+                <Button
+                    android:id="@+id/custom_cookie_btn"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="8dp"
-                    android:layout_weight="0"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/textView98"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0"
-                        android:fontFamily="@font/genshin_font"
-                        android:text="@string/memo_step1_1"
-                        android:textAlignment="center"
-                        android:textColor="@color/tv_color"
-                        android:textSize="18sp"
-                        android:textStyle="italic" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0"
-                        android:orientation="horizontal">
-
-                        <Button
-                            android:id="@+id/token_btn"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_margin="8dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/bg_dialog_btn"
-                            android:fontFamily="@font/genshin_font"
-                            android:text="@string/global_server"
-                            android:textColor="@color/tv_anti_color_2048" />
-
-                        <Button
-                            android:id="@+id/token_btn2"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_margin="8dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/bg_dialog_btn"
-                            android:fontFamily="@font/genshin_font"
-                            android:text="@string/mainland_server"
-                            android:textColor="@color/tv_anti_color_2048" />
-                    </LinearLayout>
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginTop="8dp"
-                    android:orientation="horizontal"
-                    android:padding="8dp"
-                    android:visibility="visible">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="24dp"
-                        android:layout_weight="0"
-                        app:srcCompat="@drawable/ic_baseline_change_circle_24" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="24dp"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
-                        android:layout_weight="0"
-                        android:fontFamily="@font/genshin_font"
-                        android:gravity="center|left"
-                        android:text="@string/memo_step2"
-                        android:textColor="@color/tv_color"
-                        android:textSize="16sp" />
-                </LinearLayout>
-
-                <Spinner
-                    android:id="@+id/setting_server_spinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:layout_margin="8dp"
-                    android:layout_weight="0"
-                    android:popupBackground="@drawable/bg_2048_spinner_bg" />
-
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_dialog_btn"
+                    android:fontFamily="@font/genshin_font"
+                    android:text="Clean all cookies"
+                    android:textColor="@color/tv_anti_color_2048" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -245,9 +170,16 @@
                         android:textSize="16sp" />
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                <Button
+                    android:id="@+id/custom_ico_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_dialog_btn"
+                    android:fontFamily="@font/genshin_font"
+                    android:text="自定義頭像"
+                    android:textColor="@color/tv_anti_color_2048" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -278,9 +210,16 @@
                         android:textSize="16sp" />
                 </LinearLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                <Button
+                    android:id="@+id/custom_card_btn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/bg_dialog_btn"
+                    android:fontFamily="@font/genshin_font"
+                    android:text="自定義名片"
+                    android:textColor="@color/tv_anti_color_2048" />
 
             </LinearLayout>
 

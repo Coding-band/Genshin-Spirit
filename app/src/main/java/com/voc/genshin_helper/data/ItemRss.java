@@ -157,6 +157,17 @@ public class ItemRss {
         }
     }
 
+    public int getRare2048ByInt(int i){
+        switch (i){
+            case 1 : return R.drawable.item_char_list_bg_circ_1s;
+            case 2 : return R.drawable.item_char_list_bg_circ_2s;
+            case 3 : return R.drawable.item_char_list_bg_circ_3s;
+            case 4 : return R.drawable.item_char_list_bg_circ_4s;
+            case 5 : return R.drawable.item_char_list_bg_circ_5s;
+            default : return R.drawable.item_char_list_bg_circ_1s;
+        }
+    }
+
 
     public int getWeaponTypeIMG (String str){
         if(str.equals("Bow")){return R.drawable.ico_bow;}
