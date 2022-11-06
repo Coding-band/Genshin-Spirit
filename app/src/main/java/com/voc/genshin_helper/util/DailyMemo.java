@@ -65,6 +65,7 @@ import com.squareup.picasso.Picasso;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.ui.MMXLVIII.DailyMemoService;
+import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
 import com.voc.genshin_helper.ui.SplashActivity;
 
 import java.io.BufferedReader;
@@ -241,6 +242,28 @@ public class DailyMemo {
         memo_card_ext.startAnimation(ani);
     }
 
+    public String getNickname(Context context){
+        if (nickname != null){
+            return nickname;
+        }else {return context.getString(R.string.unknown);}
+    }
+    public String getServer(Context context){
+        switch (server){
+            case "cn_gf01" : return (context.getString(R.string.sky_land_ser));
+            case "cn_qd01" : return(context.getString(R.string.world_tree));
+            case "os_asia" : return(context.getString(R.string.asia_ser));
+            case "os_euro" : return(context.getString(R.string.europe_ser));
+            case "os_usa" : return(context.getString(R.string.america_ser));
+            case "os_cht" : return(context.getString(R.string.hk_tw_mo_ser));
+            default: return (context.getString(R.string.unknown));
+        }
+    }
+    public String getLevel(Context context){
+        if (level != 0){
+            return String.valueOf(level);
+        }else {return context.getString(R.string.unknown);}
+    }
+
     public void updateData(){
         final int radius_circ_siptik_ico = 120;
         final int margin_circ_siptik_ico = 0;
@@ -391,6 +414,10 @@ public class DailyMemo {
                 setting();
             }
         });
+
+        if (context instanceof Desk2048){
+            ((Desk2048) context).refreshPaimon();
+        }
 
     }
 

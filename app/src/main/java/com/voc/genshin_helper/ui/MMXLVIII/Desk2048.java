@@ -41,6 +41,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.StrictMode;
 import android.provider.BaseColumns;
 import android.provider.MediaStore;
 import android.text.Editable;
@@ -95,6 +96,7 @@ import com.voc.genshin_helper.tutorial.TutorialUI;
 import com.voc.genshin_helper.ui.AlarmUI;
 import com.voc.genshin_helper.ui.BackgroundConfirmActivity;
 import com.voc.genshin_helper.ui.MainActivity;
+import com.voc.genshin_helper.ui.SipTik.DeskSipTik;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.ChangeLog;
 import com.voc.genshin_helper.util.CustomToast;
@@ -267,6 +269,8 @@ public class Desk2048 extends AppCompatActivity {
     String[] serverList ;
     String[] gridList ;
 
+    DailyMemo dailyMemo;
+
     private ViewPager viewPager;
     private ArrayList<View> viewPager_List;
     GoSleep gs;
@@ -350,7 +354,7 @@ public class Desk2048 extends AppCompatActivity {
 
         check_spinner = 0;
 
-        DailyMemo dailyMemo = new DailyMemo();
+        dailyMemo = new DailyMemo();
         dailyMemo.setup(context,activity,viewPager0);
         viewPager0.findViewById(R.id.home_dailymemo).setVisibility(View.VISIBLE);
 
@@ -592,6 +596,15 @@ public class Desk2048 extends AppCompatActivity {
         }
     }
 
+    public void refreshPaimon(){
+        TextView card_userstat = viewPager4.findViewById(R.id.card_userstat);
+        TextView card_username = viewPager4.findViewById(R.id.card_username);
+
+        card_username.setText(dailyMemo.getNickname(context));
+        card_userstat.setText(dailyMemo.getServer(context)+" - "+sharedPreferences.getString("genshin_uid","-1") + " - Lv."+dailyMemo.getLevel(context));
+
+    }
+
     private void setup_paimon() {
         ConstraintLayout paimon_cal = viewPager4.findViewById(R.id.paimon_cal);
         ConstraintLayout paimon_daily = viewPager4.findViewById(R.id.paimon_daily);
@@ -609,7 +622,6 @@ public class Desk2048 extends AppCompatActivity {
         int width_curr = displayMetrics.widthPixels;
 
         int height = (int) (width_curr/2.1);
-
 
         if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
             height = (int) height/4;
@@ -1927,13 +1939,22 @@ public class Desk2048 extends AppCompatActivity {
         // Top Bar
         check_spinner = 0;
         BackgroundReload.BackgroundReload(context,view);
-        DailyMemo dailyMemo = new DailyMemo();
 
         ImageView info_back_btn = view.findViewById(R.id.info_back_btn);
         info_back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
+            }
+        });
+
+        ImageView discord_ico = view.findViewById(R.id.discord_ico);
+        discord_ico.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Uri uri = Uri.parse("https://discord.gg/uXatcbWKv2"); // missing 'http://' will cause crashed
+                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                startActivity(intent);
             }
         });
 
@@ -1967,6 +1988,518 @@ public class Desk2048 extends AppCompatActivity {
                 memo_setting(ICON);
             }
         });
+
+        theme_light = view.findViewById(R.id.theme_light);
+        theme_night = view.findViewById(R.id.theme_dark);
+        theme_default = view.findViewById(R.id.theme_default);
+
+        other_exit_confirm = view.findViewById(R.id.other_exit_confirm);
+
+        if (sharedPreferences.getBoolean("theme_light",true) == true){
+            theme_light.setChecked(true);
+            theme_night.setChecked(false);
+            theme_default.setChecked(false);
+        }
+        if (sharedPreferences.getBoolean("theme_night",false) == true){
+            theme_night.setChecked(true);
+            theme_light.setChecked(false);
+            theme_default.setChecked(false);
+        }
+        if (sharedPreferences.getBoolean("theme_default",false) == true){
+            theme_default.setChecked(true);
+            theme_night.setChecked(false);
+            theme_light.setChecked(false);
+        }
+
+        theme_light.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                theme_light.setChecked(true);
+                theme_night.setChecked(false);
+                theme_default.setChecked(false);
+
+                editor.putBoolean("theme_light",true);
+                editor.putBoolean("theme_night",false);
+                editor.putBoolean("theme_default",false);
+                editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
+                editor.apply();
+
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+            }
+        });
+        theme_night.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                theme_light.setChecked(false);
+                theme_night.setChecked(true);
+                theme_default.setChecked(false);
+
+                editor.putBoolean("theme_light",false);
+                editor.putBoolean("theme_night",true);
+                editor.putBoolean("theme_default",false);
+                editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
+                editor.apply();
+
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+            }
+        });
+        theme_default.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                theme_light.setChecked(false);
+                theme_night.setChecked(false);
+                theme_default.setChecked(true);
+
+                editor.putBoolean("theme_light",false);
+                editor.putBoolean("theme_night",false);
+                editor.putBoolean("theme_default",true);
+                editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
+                editor.apply();
+
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+            }
+        });
+
+        //Other -> List_Grid
+        grid_2_rb = view.findViewById(R.id.grid_2);
+        grid_3_rb = view.findViewById(R.id.grid_3);
+        grid_4_rb = view.findViewById(R.id.grid_4);
+        grid_5_rb = view.findViewById(R.id.grid_5);
+        String currUiGrid = sharedPreferences.getString("curr_ui_grid","2");
+
+        if (currUiGrid.equals("2")){
+            grid_2_rb.setChecked(true);
+            grid_3_rb.setChecked(false);
+            grid_4_rb.setChecked(false);
+            grid_5_rb.setChecked(false);
+        }else if(currUiGrid.equals("3")){
+            grid_2_rb.setChecked(false);
+            grid_3_rb.setChecked(true);
+            grid_4_rb.setChecked(false);
+            grid_5_rb.setChecked(false);
+        }else if(currUiGrid.equals("4")){
+            grid_2_rb.setChecked(false);
+            grid_3_rb.setChecked(false);
+            grid_4_rb.setChecked(true);
+            grid_5_rb.setChecked(false);
+        }else if(currUiGrid.equals("5")){
+            grid_2_rb.setChecked(false);
+            grid_3_rb.setChecked(false);
+            grid_4_rb.setChecked(false);
+            grid_5_rb.setChecked(true);
+        }else{
+            grid_2_rb.setChecked(true);
+            grid_3_rb.setChecked(false);
+            grid_4_rb.setChecked(false);
+            grid_5_rb.setChecked(false);
+        }
+
+        grid_2_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("curr_ui_grid","2");
+                editor.apply();
+                grid_2_rb.setChecked(true);
+                grid_3_rb.setChecked(false);
+                grid_4_rb.setChecked(false);
+                grid_5_rb.setChecked(false);
+
+                setup_home();
+                setup_char();
+                setup_weapon();
+                setup_art();
+            }
+        });
+        grid_3_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("curr_ui_grid","3");
+                editor.apply();
+                grid_2_rb.setChecked(false);
+                grid_3_rb.setChecked(true);
+                grid_4_rb.setChecked(false);
+                grid_5_rb.setChecked(false);
+
+                setup_home();
+                setup_char();
+                setup_weapon();
+                setup_art();
+            }
+        });
+        grid_4_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("curr_ui_grid","4");
+                editor.apply();
+                grid_2_rb.setChecked(false);
+                grid_3_rb.setChecked(false);
+                grid_4_rb.setChecked(true);
+                grid_5_rb.setChecked(false);
+
+                setup_home();
+                setup_char();
+                setup_weapon();
+                setup_art();
+            }
+        });
+        grid_5_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("curr_ui_grid","5");
+                editor.apply();
+                grid_2_rb.setChecked(false);
+                grid_3_rb.setChecked(false);
+                grid_4_rb.setChecked(false);
+                grid_5_rb.setChecked(true);
+
+                setup_home();
+                setup_char();
+                setup_weapon();
+                setup_art();
+            }
+        });
+        grid_5_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("curr_ui_grid","5");
+                editor.apply();
+                grid_2_rb.setChecked(false);
+                grid_3_rb.setChecked(false);
+                grid_4_rb.setChecked(false);
+                grid_5_rb.setChecked(true);
+
+                setup_home();
+                setup_char();
+                setup_weapon();
+                setup_art();
+            }
+        });
+
+        //Other -> Style
+        style_Voc_rb = view.findViewById(R.id.ui_Voc_rb);
+        style_2O48_rb = view.findViewById(R.id.ui_2O48_rb);
+        style_SipTik_rb = view.findViewById(R.id.ui_SipTik_rb);
+        webView = view.findViewById(R.id.webView);
+        String styleUI = sharedPreferences.getString("styleUI","Voc");
+        // StyleCode : "Voc" , "2O48" , "SipTik"
+
+        if (styleUI.equals("Voc")){
+            style_Voc_rb.setChecked(true);
+            style_2O48_rb.setChecked(false);
+            style_SipTik_rb.setChecked(false);
+        }else if (styleUI.equals("2O48")){
+            style_Voc_rb.setChecked(false);
+            style_2O48_rb.setChecked(true);
+            style_SipTik_rb.setChecked(false);
+        }else if (styleUI.equals("SipTik")) {
+            style_Voc_rb.setChecked(false);
+            style_2O48_rb.setChecked(false);
+            style_SipTik_rb.setChecked(true);
+        }
+
+        style_Voc_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("styleUI","Voc");
+                editor.apply();
+                style_Voc_rb.setChecked(true);
+                style_2O48_rb.setChecked(false);
+                style_SipTik_rb.setChecked(false);
+
+                startActivity(new Intent(context,MainActivity.class));
+                finish();
+                //CustomToast.toast(context,activity,context.getString(R.string.pls_restart_app));
+            }
+        });
+
+        style_2O48_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("styleUI","2O48");
+                editor.apply();
+                style_Voc_rb.setChecked(false);
+                style_2O48_rb.setChecked(true);
+                style_SipTik_rb.setChecked(false);
+
+                startActivity(new Intent(context,Desk2048.class));
+                finish();
+                //CustomToast.toast(context,activity,context.getString(R.string.pls_restart_app));
+            }
+        });
+
+        style_SipTik_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("styleUI","SipTik");
+                editor.apply();
+                style_Voc_rb.setChecked(false);
+                style_2O48_rb.setChecked(false);
+                style_SipTik_rb.setChecked(true);
+
+                startActivity(new Intent(context, DeskSipTik.class));
+                finish();
+                //CustomToast.toast(context,activity,context.getString(R.string.pls_restart_app));
+            }
+        });
+
+        //Other -> Traveler Sex
+        traveler_female_rb = view.findViewById(R.id.traveler_female_rb);
+        traveler_male_rb = view.findViewById(R.id.traveler_male_rb);
+        String travelerSex = sharedPreferences.getString("traveler_sex","F");
+
+        if (travelerSex.equals("F")){
+            traveler_female_rb.setChecked(true);
+            traveler_male_rb.setChecked(false);
+        }else{
+            traveler_female_rb.setChecked(false);
+            traveler_male_rb.setChecked(true);
+        }
+
+        traveler_male_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("traveler_sex","M");
+                editor.apply();
+                traveler_female_rb.setChecked(false);
+                traveler_male_rb.setChecked(true);
+                setup_char();
+            }
+        });
+
+        traveler_female_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("traveler_sex","F");
+                editor.apply();
+                traveler_female_rb.setChecked(true);
+                traveler_male_rb.setChecked(false);
+                setup_char();
+            }
+        });
+
+        //Other -> Change Suits
+        outfit_standard_rb = view.findViewById(R.id.outfit_standard_rb);
+        outfit_event_rb = view.findViewById(R.id.outfit_event_rb);
+        boolean isCharChangeEventSuit = sharedPreferences.getBoolean("isCharChangeEventSuit",false);
+
+        if (isCharChangeEventSuit){
+            outfit_event_rb.setChecked(true);
+            outfit_standard_rb.setChecked(false);
+        }else{
+            outfit_event_rb.setChecked(false);
+            outfit_standard_rb.setChecked(true);
+        }
+
+        outfit_standard_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putBoolean("isCharChangeEventSuit",false);
+                editor.apply();
+                outfit_event_rb.setChecked(false);
+                outfit_standard_rb.setChecked(true);
+                setup_char();
+            }
+        });
+
+        outfit_event_rb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putBoolean("isCharChangeEventSuit",true);
+                editor.apply();
+                outfit_event_rb.setChecked(true);
+                outfit_standard_rb.setChecked(false);
+                setup_char();
+            }
+        });
+
+        // Background
+        Button bg_setting_btn = view.findViewById(R.id.bg_setting_btn);
+        bg_setting_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_PICK,
+                        MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intent, IMAGE);
+            }
+        });
+        Button bg_setting_btn_reset = view.findViewById(R.id.bg_setting_btn_reset);
+        bg_setting_btn_reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                editor.putString("pathName","N/A");
+                editor.apply();
+                CustomToast.toast(context,activity,context.getString(R.string.img_reset_finish));
+                BackgroundReload.BackgroundReload(context,activity);
+                BackgroundReload.BackgroundReload(context,view);
+            }
+        });
+
+        // Translate -- U MUST NOT DELETE ANYTHING
+        langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp),getString(R.string.fr_fr),getString(R.string.uk_ua)};
+        ArrayAdapter lang_aa = new ArrayAdapter(context,R.layout.spinner_item,langList);
+        lang_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_2048);
+
+        Spinner lang_sp = view.findViewById(R.id.lang_spinner);
+        lang_sp.setAdapter(lang_aa);
+        lang_sp.setSelection(sharedPreferences.getInt("curr_lang_pos",2));
+        lang_sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                // https://blog.csdn.net/pigdreams/article/details/81277110
+                // https://stackoverflow.com/questions/13397933/android-spinner-avoid-onitemselected-calls-during-initialization
+                if(check_spinner >0){
+                    if(position == 0){
+                        editor.putString("curr_lang","zh-HK");
+                        editor.putInt("curr_lang_pos",position);
+                        editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
+                        editor.apply();
+                        LangUtils.getAttachBaseContext(context,position);
+                        recreate();
+                    }else if(position == 1){
+                        editor.putString("curr_lang","zh-CN");
+                        editor.putInt("curr_lang_pos",position);
+                        editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
+                        editor.apply();
+                        LangUtils.getAttachBaseContext(context,position);
+                        recreate();
+                    }else if(position == 2){
+                        editor.putString("curr_lang","en-US");
+                        editor.putInt("curr_lang_pos",position);
+                        editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
+                        editor.apply();
+                        LangUtils.getAttachBaseContext(context,position);
+                        recreate();
+                    }else if(position == 3){
+                        editor.putString("curr_lang","ru-RU");
+                        editor.putInt("curr_lang_pos",position);
+                        editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
+                        editor.apply();
+                        LangUtils.getAttachBaseContext(context,position);
+                        recreate();
+                    }else if(position == 4){
+                        editor.putString("curr_lang","ja-JP");
+                        editor.putInt("curr_lang_pos",position);
+                        editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
+                        editor.apply();
+                        LangUtils.getAttachBaseContext(context,position);
+                        recreate();
+                    }else if(position == 5){
+                        editor.putString("curr_lang","fr-FR");
+                        editor.putInt("curr_lang_pos",position);
+                        editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
+                        editor.apply();
+                        LangUtils.getAttachBaseContext(context,position);
+                        recreate();
+                    }else if(position == 6){
+                        editor.putString("curr_lang","uk-UA");
+                        editor.putInt("curr_lang_pos",position);
+                        editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
+                        editor.apply();
+                        LangUtils.getAttachBaseContext(context,position);
+                        recreate();
+                    }
+                }
+                check_spinner = check_spinner +1;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        other_exit_confirm = view.findViewById(R.id.other_exit_confirm);
+        other_exit_confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(other_exit_confirm.isChecked() == false){
+                    editor.putBoolean("isExitConfirmEnable",false);
+                    editor.apply();
+                }else if(other_exit_confirm.isChecked() == true){
+                    editor.putBoolean("isExitConfirmEnable",true);
+                    editor.apply();
+                }
+            }
+        });
+
+        //Other -> Exit Confirm
+        other_random_theme_confirm = view.findViewById(R.id.other_random_theme_confirm);
+        boolean other_random_theme = sharedPreferences.getBoolean("isRandomTheme",true);
+        other_random_theme_confirm.setChecked(other_random_theme);
+        other_random_theme_confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(other_random_theme_confirm.isChecked() == false){
+                    editor.putBoolean("isRandomTheme",false);
+                    editor.apply();
+                }else if(other_random_theme_confirm.isChecked() == true){
+                    editor.putBoolean("isRandomTheme",true);
+                    editor.apply();
+                }
+            }
+        });
+
+        //Other -> Item Base Name -> DEBUG ONLY
+        other_item_eng_name = view.findViewById(R.id.other_item_eng_name);
+        if (BuildConfig.FLAVOR.equals("dev") || BuildConfig.FLAVOR.equals("beta")){
+            other_item_eng_name.setVisibility(View.VISIBLE);
+        }
+        boolean isBaseNameDisplay = sharedPreferences.getBoolean("isBaseNameDisplay",false);
+        other_item_eng_name.setChecked(isBaseNameDisplay);
+        other_item_eng_name.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(other_item_eng_name.isChecked() == false){
+                    editor.putBoolean("isBaseNameDisplay",false);
+                    editor.apply();
+                }else if(other_item_eng_name.isChecked() == true){
+                    editor.putBoolean("isBaseNameDisplay",true);
+                    editor.apply();
+                }
+            }
+        });
+
+        // Resource Download
+        Button bg_download_base = view.findViewById(R.id.bg_download_base);
+        Button bg_download_update = view.findViewById(R.id.bg_download_update);
+
+        bg_download_update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                check_updates();
+            }
+        });
+
+        bg_download_base.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+                StrictMode.setThreadPolicy(policy);
+
+                Dialog2048 dialog2048 = new Dialog2048();
+                dialog2048.setup(context,activity);
+                dialog2048.updateMax(getRemoteFileSize("http://113.254.213.196/genshin_spirit/base.zip"));
+                dialog2048.mode(Dialog2048.MODE_DOWNLOAD_BASE_DESK);
+                dialog2048.show();
+
+                dialog2048.getPositiveBtn().setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog2048.dismiss();
+                        DownloadTask downloadTask = new DownloadTask();
+                        downloadTask.start("http://113.254.213.196/genshin_spirit/base.zip","base.zip","/base.zip",context,activity);
+                    }
+                });
+
+                dialog2048.getNegativeBtn().setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog2048.dismiss();
+                    }
+                });
+            }
+        });
+
     }
 
     public void memo_setting(int TYPE){
@@ -2019,6 +2552,11 @@ public class Desk2048 extends AppCompatActivity {
 
         int height = (int) (width_curr/2.1);
 
+        TextView card_userstat = viewX.findViewById(R.id.card_userstat);
+        TextView card_username = viewX.findViewById(R.id.card_username);
+
+        card_username.setText(dailyMemo.getNickname(context));
+        card_userstat.setText(dailyMemo.getServer(context)+" - "+sharedPreferences.getString("genshin_uid","-1") + " - Lv."+dailyMemo.getLevel(context));
 
         if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
             height = (int) height/4;
@@ -2040,6 +2578,9 @@ public class Desk2048 extends AppCompatActivity {
 
         ImageView card_char_bg = viewX.findViewById(R.id.card_char_bg);
         card_char_bg.setImageResource(item_rss.getRare2048ByInt(sharedPreferences.getInt("icon_rare",5)));
+
+        ConstraintLayout card_cl = viewX.findViewById(R.id.card_cl);
+        card_cl.setMinHeight(height);
 
         if (TYPE == CARD){
             if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
