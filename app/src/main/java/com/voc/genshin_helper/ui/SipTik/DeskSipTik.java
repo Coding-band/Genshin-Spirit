@@ -86,6 +86,7 @@ import com.voc.genshin_helper.ui.MainActivity;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.ChangeLog;
 import com.voc.genshin_helper.util.CustomToast;
+import com.voc.genshin_helper.util.DailyMemo;
 import com.voc.genshin_helper.util.DownloadTask;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.LangUtils;
@@ -233,6 +234,7 @@ public class DeskSipTik extends AppCompatActivity {
     GoSleep gs;
 
     Activity activity;
+    DailyMemo dailyMemo;
 
     View viewPager0, viewPager1, viewPager2, viewPager3, viewPager4;
 
@@ -296,6 +298,9 @@ public class DeskSipTik extends AppCompatActivity {
         viewPager_List.add(viewPager4);
 
         check_spinner = 0;
+
+        dailyMemo = new DailyMemo();
+        dailyMemo.setup(context,activity,viewPager0,DailyMemo.MATERIAL);
 
         lang_setup();
         home();

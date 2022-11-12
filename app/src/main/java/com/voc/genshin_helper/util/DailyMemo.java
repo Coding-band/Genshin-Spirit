@@ -6,36 +6,14 @@ package com.voc.genshin_helper.util;
  */
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
-import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
-import android.app.ActivityManager;
-import android.app.AlertDialog;
 import android.app.Dialog;
-import android.content.ComponentName;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.ServiceConnection;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.PorterDuffXfermode;
-import android.graphics.Rect;
-import android.media.Image;
-import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
 import android.os.Handler;
-import android.os.IBinder;
-import android.os.Looper;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,44 +35,22 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import androidx.cardview.widget.CardView;
 
 import com.squareup.picasso.Picasso;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
-import com.voc.genshin_helper.ui.MMXLVIII.DailyMemoService;
+import com.voc.genshin_helper.ui.MMXLVIII.DailyMemo2048Service;
 import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
-import com.voc.genshin_helper.ui.SplashActivity;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.net.HttpURLConnection;
-import java.net.InetAddress;
-import java.net.MalformedURLException;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.net.URLEncoder;
-import java.net.UnknownHostException;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.List;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import okhttp3.Call;
-import okhttp3.Credentials;
-import okhttp3.Headers;
-import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
-import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class DailyMemo {
@@ -158,6 +114,7 @@ public class DailyMemo {
 
     String uid_final = "N/A";
     String token_final = "N/A";
+    String hoyoServer = "global";
     String genshin_uid_final = "-1";
     boolean haveRunLa = false;
     boolean isBothHave = false;
@@ -167,7 +124,10 @@ public class DailyMemo {
     static final int BBS = 2;
     boolean isIdGetDone = false;
 
-    public void setup(Context context, Activity activity,View view){
+    public static final int GAME = 2048;
+    public static final int MATERIAL = 2022;
+
+    public void setup(Context context, Activity activity,View view, int STYLE){
         this.context = context;
         this.activity = activity;
         sharedPreferences = context.getSharedPreferences("user_info",Context.MODE_PRIVATE);
@@ -187,11 +147,9 @@ public class DailyMemo {
         }
 
         memo_card = view.findViewById(R.id.memo_card);
-        memo_card_ext = view.findViewById(R.id.memo_card_ext);
         memo_user_name = view.findViewById(R.id.memo_user_name);
         memo_user_server = view.findViewById(R.id.memo_user_server);
         memo_user_icon = view.findViewById(R.id.memo_user_icon);
-        memo_ext_btn = view.findViewById(R.id.memo_ext_btn);
         memo_setting_btn = view.findViewById(R.id.memo_setting_btn);
         memo_item1_ico = view.findViewById(R.id.memo_item1_ico);
         memo_item2_ico = view.findViewById(R.id.memo_item2_ico);
@@ -201,8 +159,6 @@ public class DailyMemo {
         memo_item2_time = view.findViewById(R.id.memo_item2_time);
         memo_item3_time = view.findViewById(R.id.memo_item3_time);
         memo_item4_time = view.findViewById(R.id.memo_item4_time);
-        memo_item5_time = view.findViewById(R.id.memo_item5_time);
-        memo_item6_time = view.findViewById(R.id.memo_item6_time);
         memo_item1_curr = view.findViewById(R.id.memo_item1_curr);
         memo_item2_curr = view.findViewById(R.id.memo_item2_curr);
         memo_item3_curr = view.findViewById(R.id.memo_item3_curr);
@@ -226,20 +182,29 @@ public class DailyMemo {
         memo_expe3_tick = view.findViewById(R.id.memo_expe3_tick);
         memo_expe4_tick = view.findViewById(R.id.memo_expe4_tick);
         memo_expe5_tick = view.findViewById(R.id.memo_expe5_tick);
-        memo_expe1_tick = view.findViewById(R.id.memo_expe1_tick);
-        memo_expe2_tick = view.findViewById(R.id.memo_expe2_tick);
-        memo_expe3_tick = view.findViewById(R.id.memo_expe3_tick);
-        memo_expe4_tick = view.findViewById(R.id.memo_expe4_tick);
-        memo_expe5_tick = view.findViewById(R.id.memo_expe5_tick);
-        memo_expe1_pb = view.findViewById(R.id.memo_expe1_pb);
-        memo_expe2_pb = view.findViewById(R.id.memo_expe2_pb);
-        memo_expe3_pb = view.findViewById(R.id.memo_expe3_pb);
-        memo_expe4_pb = view.findViewById(R.id.memo_expe4_pb);
-        memo_expe5_pb = view.findViewById(R.id.memo_expe5_pb);
 
-        Animation ani = new ShowAnim(memo_card_ext,-112,false);
-        ani.setDuration(100);
-        memo_card_ext.startAnimation(ani);
+        if (memo_card_ext != null){
+            Animation ani = new ShowAnim(memo_card_ext,-112,false);
+            ani.setDuration(100);
+            memo_card_ext.startAnimation(ani);
+        }
+
+        if(STYLE == GAME){
+
+            memo_card_ext = view.findViewById(R.id.memo_card_ext);
+
+            memo_ext_btn = view.findViewById(R.id.memo_ext_btn);
+            memo_item5_time = view.findViewById(R.id.memo_item5_time);
+            memo_item6_time = view.findViewById(R.id.memo_item6_time);
+
+            memo_expe1_pb = view.findViewById(R.id.memo_expe1_pb);
+            memo_expe2_pb = view.findViewById(R.id.memo_expe2_pb);
+            memo_expe3_pb = view.findViewById(R.id.memo_expe3_pb);
+            memo_expe4_pb = view.findViewById(R.id.memo_expe4_pb);
+            memo_expe5_pb = view.findViewById(R.id.memo_expe5_pb);
+        }else if(STYLE == MATERIAL){
+            memo_item6_time = memo_item3_time;
+        }
     }
 
     public String getNickname(Context context){
@@ -287,8 +252,12 @@ public class DailyMemo {
             case "os_cht" : memo_user_server.setText(context.getString(R.string.hk_tw_mo_ser)+" - Lv."+String.valueOf(level));break;
         }
 
+        if (!sharedPreferences.getString("icon_name", "N/A").equals("N/A")){
+            icon = sharedPreferences.getString("icon_name", "N/A");
+        }
+
         Picasso.get()
-                .load (FileLoader.loadIMG(item_rss.getCharByName(icon,context)[3],context)).resize((int) (40*displayMetrics.density),(int) (40*displayMetrics.density)).transform(transformation_circ_siptik_ico)
+                .load (FileLoader.loadIMG(item_rss.getCharByName(item_rss.getCharNameByTranslatedName(icon,context),context)[3],context)).resize((int) (40*displayMetrics.density),(int) (40*displayMetrics.density)).transform(transformation_circ_siptik_ico)
                 .error (R.drawable.paimon_full)
                 .into (memo_user_icon);
 
@@ -304,8 +273,10 @@ public class DailyMemo {
         memo_item2_time.setText(prettyTime(currency_remain_time));
         //memo_item3_time.setText(prettyTime(mission_remain_time));
         //memo_item4_time.setText(prettyTime(weekboss_remain_time));
-        memo_item5_time.setText(prettyTime(transformer_recovery_time));
-        if (mission_claim == true){
+        if (memo_item5_time != null){
+            memo_item5_time.setText(prettyTime(transformer_recovery_time));
+        }
+        if (mission_claim == true && memo_item6_time != null){
             memo_item6_time.setText(context.getString(R.string.claimed));
         }else{
             memo_item6_time.setText(context.getString(R.string.unclaimed));
@@ -337,11 +308,13 @@ public class DailyMemo {
                 .error (R.drawable.paimon_full)
                 .into (memo_expe5_ico);
 
-        memo_expe1_pb.setProgress(expedition1_remain_time);
-        memo_expe2_pb.setProgress(expedition2_remain_time);
-        memo_expe3_pb.setProgress(expedition3_remain_time);
-        memo_expe4_pb.setProgress(expedition4_remain_time);
-        memo_expe5_pb.setProgress(expedition5_remain_time);
+        if (memo_expe1_pb != null){
+            memo_expe1_pb.setProgress(expedition1_remain_time);
+            memo_expe2_pb.setProgress(expedition2_remain_time);
+            memo_expe3_pb.setProgress(expedition3_remain_time);
+            memo_expe4_pb.setProgress(expedition4_remain_time);
+            memo_expe5_pb.setProgress(expedition5_remain_time);
+        }
 
         memo_expe1_time.setText(prettyTime(expedition1_remain_time));
         memo_expe2_time.setText(prettyTime(expedition2_remain_time));
@@ -389,24 +362,26 @@ public class DailyMemo {
             memo_expe5_tick.setVisibility(View.GONE);
         }
 
-        memo_ext_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (isExtOut){
-                    Animation ani = new ShowAnim(memo_card_ext,-112,false);
-                    ani.setDuration(250);
-                    memo_card_ext.startAnimation(ani);
-                    ImageViewAnimatedChange(context,memo_ext_btn,R.drawable.item_expand_down_2048);
-                    isExtOut = false;
-                }else{
-                    Animation ani = new ShowAnim(memo_card_ext,-112,true);
-                    ani.setDuration(250);
-                    memo_card_ext.startAnimation(ani);
-                    ImageViewAnimatedChange(context,memo_ext_btn,R.drawable.item_expand_up_2048);
-                    isExtOut = true;
+        if (memo_ext_btn != null){
+            memo_ext_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (isExtOut){
+                        Animation ani = new ShowAnim(memo_card_ext,-112,false);
+                        ani.setDuration(250);
+                        memo_card_ext.startAnimation(ani);
+                        ImageViewAnimatedChange(context,memo_ext_btn,R.drawable.item_expand_down_2048);
+                        isExtOut = false;
+                    }else{
+                        Animation ani = new ShowAnim(memo_card_ext,-112,true);
+                        ani.setDuration(250);
+                        memo_card_ext.startAnimation(ani);
+                        ImageViewAnimatedChange(context,memo_ext_btn,R.drawable.item_expand_up_2048);
+                        isExtOut = true;
+                    }
                 }
-            }
-        });
+            });
+        }
 
         memo_setting_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -518,8 +493,10 @@ public class DailyMemo {
         ImageView back_btn = viewX.findViewById(R.id.back_btn);
         if (TYPE == 1){
             webview.loadUrl("https://act.hoyolab.com/app/community-game-records-sea/index.html#/ys");
+            hoyoServer = "global";
         }else{
             webview.loadUrl("https://bbs.mihoyo.com/ys/");
+            hoyoServer = "mainland";
         }
 
         WebSettings webSettings = webview.getSettings();
@@ -535,18 +512,25 @@ public class DailyMemo {
 
         haveRunLa = false;
         isBothHave = false;
+        String newUA= "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.4) Gecko/20100101 Firefox/4.0";
+        webview.getSettings().setUserAgentString(newUA);
         webview.setWebViewClient(new WebViewClient() {
             @Override
             public void onPageFinished(WebView view, String url)
             {
-                String cookies = CookieManager.getInstance().getCookie(url);
+
+                CookieManager cookieManager = CookieManager.getInstance();
+                String cookies = cookieManager.getCookie(url);
+
                 //System.out.println("cookies BASE : "+cookies);
                 if (!isBothHave){
                     if (cookies == null) return;
                     if (cookies.contains("ltoken") && cookies.contains("ltuid")){
+
+                        //System.out.println("HEY YOU ! WE SUCCESSED");
                         isBothHave = true;
                         cookies = "{\""+cookies+"\"}";
-                        cookies = cookies.replace(" "," \"").replace("=","\":\"").replace(";","\",");
+                        cookies = cookies.replace(" "," \"").replace("=","\":\"").replace(";","\",").replace(".","_");
                         //System.out.println("cookies DONE : "+cookies);
                         try {
                             JSONObject jsonObject = new JSONObject(cookies);
@@ -559,7 +543,7 @@ public class DailyMemo {
                             System.out.println("TOKEN : "+token_final);
                              */
 
-                            new grabDataFromServer().execute("http://vt.25u.com/genshin_spirit/dailyMemo/dailyMemoIdListPort.php?hoyoUID="+uid_final+"&hoyoToken="+token_final);
+                            new grabDataFromServer().execute("http://vt.25u.com/genshin_spirit/dailyMemo/dailyMemoIdListPort.php?hoyoUID="+uid_final+"&hoyoToken="+token_final+"&server="+hoyoServer);
 
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -613,6 +597,8 @@ public class DailyMemo {
             try {
                 Response sponse = client.newCall(request).execute();
                 String str = sponse.body().string();
+                //System.out.println("WTH : "+str);
+
                 JSONArray jsonArray = new JSONArray(str);
 
                 //System.out.println("jsonArray : "+jsonArray.toString());
@@ -627,20 +613,27 @@ public class DailyMemo {
                 serverList.add(context.getString(R.string.choosed));
                 serverUIDList.add("-1");
 
+                System.out.println("FOOK : "+jsonArray);
+
                 for (int x = 0 ; x< jsonArray.length() ; x++){
                     String server = jsonArray.getJSONObject(x).getString("server");
                     long uid = jsonArray.getJSONObject(x).getLong("uid");
                     int level = jsonArray.getJSONObject(x).getInt("level");
-
-                    serverUIDList.add(String.valueOf(uid));
-                    switch (server){
-                        case "cn_gf01" : serverList.add(context.getString(R.string.sky_land_ser)+" - "+uid+" - Lv."+String.valueOf(level));break;
-                        case "cn_qd01" : serverList.add(context.getString(R.string.world_tree)+" - "+uid+" - Lv."+String.valueOf(level));break;
-                        case "os_asia" : serverList.add(context.getString(R.string.asia_ser)+" - "+uid+" - Lv."+String.valueOf(level));break;
-                        case "os_euro" : serverList.add(context.getString(R.string.europe_ser)+" - "+uid+" - Lv."+String.valueOf(level));break;
-                        case "os_usa" : serverList.add(context.getString(R.string.america_ser)+" - "+uid+" - Lv."+String.valueOf(level));break;
-                        case "os_cht" : serverList.add(context.getString(R.string.hk_tw_mo_ser)+" - "+uid+" - Lv."+String.valueOf(level));break;
+                    String game_biz = jsonArray.getJSONObject(x).getString("game_biz");
+                    if (game_biz.contains("hk4e")){
+                        serverUIDList.add(String.valueOf(uid));
+                        switch (server){
+                            case "cn_gf01" : serverList.add(context.getString(R.string.sky_land_ser)+" - "+uid+" - Lv."+String.valueOf(level));break;
+                            case "cn_qd01" : serverList.add(context.getString(R.string.world_tree)+" - "+uid+" - Lv."+String.valueOf(level));break;
+                            case "os_asia" : serverList.add(context.getString(R.string.asia_ser)+" - "+uid+" - Lv."+String.valueOf(level));break;
+                            case "os_euro" : serverList.add(context.getString(R.string.europe_ser)+" - "+uid+" - Lv."+String.valueOf(level));break;
+                            case "os_usa" : serverList.add(context.getString(R.string.america_ser)+" - "+uid+" - Lv."+String.valueOf(level));break;
+                            case "os_cht" : serverList.add(context.getString(R.string.hk_tw_mo_ser)+" - "+uid+" - Lv."+String.valueOf(level));break;
+                            case "天空岛" : serverList.add(context.getString(R.string.sky_land_ser)+" - "+uid+" - Lv."+String.valueOf(level));break;
+                            case "世界树" : serverList.add(context.getString(R.string.world_tree)+" - "+uid+" - Lv."+String.valueOf(level));break;
+                        }
                     }
+
                 }
             } catch (JSONException | IOException e) {
                 e.printStackTrace();
@@ -756,8 +749,8 @@ public class DailyMemo {
             if (isIdGetDone == false){
                 updateData();
 
-                if (DailyMemoService.dailyMemoService != null){
-                    DailyMemoService.dailyMemoService.refresh(str);
+                if (DailyMemo2048Service.dailyMemo2048Service != null){
+                    DailyMemo2048Service.dailyMemo2048Service.refresh(str);
                 }
                 isIdGetDone = true;
             }

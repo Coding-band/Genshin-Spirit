@@ -32,13 +32,13 @@
         <LinearLayout
             android:id="@+id/memo_base_ll"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="12dp"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="100px"
                 android:layout_marginLeft="4dp"
                 android:layout_marginRight="4dp"
                 android:orientation="horizontal">
@@ -46,7 +46,7 @@
                 <ImageView
                     android:id="@+id/memo_user_icon"
                     android:layout_width="40dp"
-                    android:layout_height="40dp"
+                    android:layout_height="100px"
                     app:srcCompat="@drawable/hu_tao_unknown" />
 
                 <LinearLayout
@@ -59,7 +59,7 @@
                     <TextView
                         android:id="@+id/memo_user_name"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="56px"
                         android:layout_weight="1"
                         android:fontFamily="@font/genshin_font"
                         android:text="@string/unknown"
@@ -69,7 +69,7 @@
                     <TextView
                         android:id="@+id/memo_user_server"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="44px"
                         android:layout_weight="1"
                         android:fontFamily="@font/genshin_font"
                         android:text="@string/unknown"
@@ -129,7 +129,7 @@
                 <ImageView
                     android:id="@+id/memo_ico_btn"
                     android:layout_width="36dp"
-                    android:layout_height="36dp"
+                    android:layout_height="100px"
                     android:layout_gravity="center"
                     android:adjustViewBounds="true"
                     app:srcCompat="@drawable/app_ico" />
@@ -161,7 +161,7 @@
                         <ImageView
                             android:id="@+id/memo_item1_ico"
                             android:layout_width="match_parent"
-                            android:layout_height="72dp"
+                            android:layout_height="144px"
                             app:srcCompat="@drawable/fragile_resin" />
 
                         <LinearLayout
@@ -173,7 +173,8 @@
                             <TextView
                                 android:id="@+id/memo_item1_curr"
                                 android:layout_width="wrap_content"
-                                android:layout_height="28dp"
+                                android:layout_height="56px"
+                                android:layout_gravity="center"
                                 android:layout_marginLeft="1dp"
                                 android:layout_marginRight="1dp"
                                 android:fontFamily="@font/genshin_font"
@@ -185,7 +186,8 @@
                             <TextView
                                 android:id="@+id/memo_item1_max"
                                 android:layout_width="wrap_content"
-                                android:layout_height="28dp"
+                                android:layout_height="56px"
+                                android:layout_gravity="center"
                                 android:layout_marginLeft="1dp"
                                 android:layout_marginRight="1dp"
                                 android:fontFamily="@font/genshin_font"
@@ -198,7 +200,8 @@
                         <TextView
                             android:id="@+id/memo_item1_time"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="36px"
+                            android:layout_gravity="center"
                             android:layout_marginLeft="1dp"
                             android:layout_marginRight="1dp"
                             android:fontFamily="@font/genshin_font"
@@ -235,7 +238,7 @@
                         <ImageView
                             android:id="@+id/memo_item2_ico"
                             android:layout_width="match_parent"
-                            android:layout_height="72dp"
+                            android:layout_height="144px"
                             app:srcCompat="@drawable/realm_currency" />
 
                         <LinearLayout
@@ -247,7 +250,8 @@
                             <TextView
                                 android:id="@+id/memo_item2_curr"
                                 android:layout_width="wrap_content"
-                                android:layout_height="28dp"
+                                android:layout_height="56px"
+                                android:layout_gravity="center"
                                 android:layout_marginLeft="1dp"
                                 android:layout_marginRight="1dp"
                                 android:fontFamily="@font/genshin_font"
@@ -259,7 +263,8 @@
                             <TextView
                                 android:id="@+id/memo_item2_max"
                                 android:layout_width="wrap_content"
-                                android:layout_height="28dp"
+                                android:layout_height="56px"
+                                android:layout_gravity="center"
                                 android:layout_marginLeft="1dp"
                                 android:layout_marginRight="1dp"
                                 android:fontFamily="@font/genshin_font"
@@ -272,7 +277,8 @@
                         <TextView
                             android:id="@+id/memo_item2_time"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
+                            android:layout_height="36px"
+                            android:layout_gravity="center"
                             android:layout_marginLeft="1dp"
                             android:layout_marginRight="1dp"
                             android:fontFamily="@font/genshin_font"
@@ -309,7 +315,7 @@
                         <ImageView
                             android:id="@+id/memo_item3_ico"
                             android:layout_width="match_parent"
-                            android:layout_height="72dp"
+                            android:layout_height="144px"
                             app:srcCompat="@drawable/ico_mission" />
 
                         <LinearLayout
@@ -321,7 +327,8 @@
                             <TextView
                                 android:id="@+id/memo_item3_curr"
                                 android:layout_width="wrap_content"
-                                android:layout_height="28dp"
+                                android:layout_height="56px"
+                                android:layout_gravity="center"
                                 android:layout_marginLeft="1dp"
                                 android:layout_marginRight="1dp"
                                 android:fontFamily="@font/genshin_font"
@@ -333,7 +340,8 @@
                             <TextView
                                 android:id="@+id/memo_item3_max"
                                 android:layout_width="wrap_content"
-                                android:layout_height="28dp"
+                                android:layout_height="56px"
+                                android:layout_gravity="center"
                                 android:layout_marginLeft="1dp"
                                 android:layout_marginRight="1dp"
                                 android:fontFamily="@font/genshin_font"
@@ -374,7 +382,7 @@
                         <ImageView
                             android:id="@+id/memo_item4_ico"
                             android:layout_width="match_parent"
-                            android:layout_height="72dp"
+                            android:layout_height="144px"
                             app:srcCompat="@drawable/ico_weekboss" />
 
                         <LinearLayout
@@ -386,7 +394,8 @@
                             <TextView
                                 android:id="@+id/memo_item4_curr"
                                 android:layout_width="wrap_content"
-                                android:layout_height="28dp"
+                                android:layout_height="56px"
+                                android:layout_gravity="center"
                                 android:layout_marginLeft="1dp"
                                 android:layout_marginRight="1dp"
                                 android:fontFamily="@font/genshin_font"
@@ -398,7 +407,8 @@
                             <TextView
                                 android:id="@+id/memo_item4_max"
                                 android:layout_width="wrap_content"
-                                android:layout_height="28dp"
+                                android:layout_height="56px"
+                                android:layout_gravity="center"
                                 android:layout_marginLeft="1dp"
                                 android:layout_marginRight="1dp"
                                 android:fontFamily="@font/genshin_font"
@@ -449,7 +459,7 @@
                         <ImageView
                             android:id="@+id/memo_item5_ico"
                             android:layout_width="match_parent"
-                            android:layout_height="72dp"
+                            android:layout_height="144px"
                             app:srcCompat="@drawable/parametric_transformer" />
 
                         <LinearLayout
@@ -487,7 +497,8 @@
                         <TextView
                             android:id="@+id/memo_item5_time"
                             android:layout_width="match_parent"
-                            android:layout_height="28dp"
+                            android:layout_height="56px"
+                            android:layout_gravity="center"
                             android:layout_marginLeft="1dp"
                             android:layout_marginRight="1dp"
                             android:fontFamily="@font/genshin_font"
@@ -526,7 +537,7 @@
                         <ImageView
                             android:id="@+id/memo_item6_ico"
                             android:layout_width="match_parent"
-                            android:layout_height="72dp"
+                            android:layout_height="144px"
                             app:srcCompat="@drawable/adventurers_guild" />
 
                         <LinearLayout
@@ -553,7 +564,8 @@
                         <TextView
                             android:id="@+id/memo_item6_time"
                             android:layout_width="match_parent"
-                            android:layout_height="28dp"
+                            android:layout_height="56px"
+                            android:layout_gravity="center"
                             android:layout_marginLeft="1dp"
                             android:layout_marginRight="1dp"
                             android:fontFamily="@font/genshin_font"
@@ -608,8 +620,8 @@
 
                     <ImageView
                         android:id="@+id/memo_expe1_ico"
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
+                        android:layout_width="144px"
+                        android:layout_height="144px"
                         android:layout_gravity="center"
                         android:padding="6dp"
                         android:visibility="visible"
@@ -618,8 +630,8 @@
                     <ProgressBar
                         android:id="@+id/memo_expe1_pb"
                         style="?android:attr/progressBarStyleHorizontal"
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
+                        android:layout_width="144px"
+                        android:layout_height="144px"
                         android:indeterminate="false"
                         android:max="72000"
                         android:progress="54000"
@@ -631,7 +643,7 @@
                 <TextView
                     android:id="@+id/memo_expe1_time"
                     android:layout_width="match_parent"
-                    android:layout_height="24dp"
+                    android:layout_height="56px"
                     android:layout_gravity="center"
                     android:fontFamily="@font/genshin_font"
                     android:gravity="center"
@@ -661,8 +673,8 @@
 
                     <ImageView
                         android:id="@+id/memo_expe2_ico"
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
+                        android:layout_width="144px"
+                        android:layout_height="144px"
                         android:layout_gravity="center"
                         android:padding="6dp"
                         android:visibility="visible"
@@ -671,8 +683,8 @@
                     <ProgressBar
                         android:id="@+id/memo_expe2_pb"
                         style="?android:attr/progressBarStyleHorizontal"
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
+                        android:layout_width="144px"
+                        android:layout_height="144px"
                         android:indeterminate="false"
                         android:max="72000"
                         android:progress="54000"
@@ -684,7 +696,7 @@
                 <TextView
                     android:id="@+id/memo_expe2_time"
                     android:layout_width="match_parent"
-                    android:layout_height="24dp"
+                    android:layout_height="56px"
                     android:layout_gravity="center"
                     android:fontFamily="@font/genshin_font"
                     android:gravity="center"
@@ -714,8 +726,8 @@
 
                     <ImageView
                         android:id="@+id/memo_expe3_ico"
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
+                        android:layout_width="144px"
+                        android:layout_height="144px"
                         android:layout_gravity="center"
                         android:padding="6dp"
                         android:visibility="visible"
@@ -724,8 +736,8 @@
                     <ProgressBar
                         android:id="@+id/memo_expe3_pb"
                         style="?android:attr/progressBarStyleHorizontal"
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
+                        android:layout_width="144px"
+                        android:layout_height="144px"
                         android:indeterminate="false"
                         android:max="72000"
                         android:progress="54000"
@@ -737,7 +749,7 @@
                 <TextView
                     android:id="@+id/memo_expe3_time"
                     android:layout_width="match_parent"
-                    android:layout_height="24dp"
+                    android:layout_height="56px"
                     android:layout_gravity="center"
                     android:fontFamily="@font/genshin_font"
                     android:gravity="center"
@@ -767,8 +779,8 @@
 
                     <ImageView
                         android:id="@+id/memo_expe4_ico"
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
+                        android:layout_width="144px"
+                        android:layout_height="144px"
                         android:layout_gravity="center"
                         android:padding="6dp"
                         android:visibility="visible"
@@ -777,8 +789,8 @@
                     <ProgressBar
                         android:id="@+id/memo_expe4_pb"
                         style="?android:attr/progressBarStyleHorizontal"
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
+                        android:layout_width="144px"
+                        android:layout_height="144px"
                         android:indeterminate="false"
                         android:max="72000"
                         android:progress="54000"
@@ -790,7 +802,7 @@
                 <TextView
                     android:id="@+id/memo_expe4_time"
                     android:layout_width="match_parent"
-                    android:layout_height="24dp"
+                    android:layout_height="56px"
                     android:layout_gravity="center"
                     android:fontFamily="@font/genshin_font"
                     android:gravity="center"
@@ -820,8 +832,8 @@
 
                     <ImageView
                         android:id="@+id/memo_expe5_ico"
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
+                        android:layout_width="144px"
+                        android:layout_height="144px"
                         android:layout_gravity="center"
                         android:padding="6dp"
                         android:visibility="visible"
@@ -830,8 +842,8 @@
                     <ProgressBar
                         android:id="@+id/memo_expe5_pb"
                         style="?android:attr/progressBarStyleHorizontal"
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
+                        android:layout_width="144px"
+                        android:layout_height="144px"
                         android:indeterminate="false"
                         android:max="72000"
                         android:progress="54000"
@@ -843,7 +855,7 @@
                 <TextView
                     android:id="@+id/memo_expe5_time"
                     android:layout_width="match_parent"
-                    android:layout_height="24dp"
+                    android:layout_height="56px"
                     android:layout_gravity="center"
                     android:fontFamily="@font/genshin_font"
                     android:gravity="center"

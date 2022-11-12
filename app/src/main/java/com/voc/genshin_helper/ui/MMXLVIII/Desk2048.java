@@ -355,7 +355,7 @@ public class Desk2048 extends AppCompatActivity {
         check_spinner = 0;
 
         dailyMemo = new DailyMemo();
-        dailyMemo.setup(context,activity,viewPager0);
+        dailyMemo.setup(context,activity,viewPager0,DailyMemo.GAME);
         viewPager0.findViewById(R.id.home_dailymemo).setVisibility(View.VISIBLE);
 
         lang_setup();
@@ -1963,8 +1963,8 @@ public class Desk2048 extends AppCompatActivity {
         Button custom_ico_btn = view.findViewById(R.id.custom_ico_btn);
         Button custom_card_btn = view.findViewById(R.id.custom_card_btn);
 
-        icon_name_final = sharedPreferences.getString("icon_name","Klee");
-        card_name_final = sharedPreferences.getString("card_name","Klee");
+        icon_name_final = sharedPreferences.getString("icon_name","N/A");
+        card_name_final = sharedPreferences.getString("card_name","Traveler");
         icon_rare_final = sharedPreferences.getInt("icon_rare",5);
 
         custom_cookie_btn.setOnClickListener(new View.OnClickListener() {
@@ -2533,6 +2533,18 @@ public class Desk2048 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 dialog.dismiss();
+                RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 2);
+                DisplayMetrics displayMetrics = new DisplayMetrics();
+                getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+
+                final int radius_circ = 360;
+                final int margin_circ = 0;
+                final Transformation transformation_circ = new RoundedCornersTransformation(radius_circ, margin_circ);
+
+                Picasso.get()
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(icon_name_final,context)[3],context)).resize((int) (40*displayMetrics.density),(int) (40*displayMetrics.density)).transform(transformation_circ)
+                        .error (R.drawable.paimon_full)
+                        .into ((ImageView) viewPager0.findViewById(R.id.memo_user_icon));
             }
         });
 

@@ -7,11 +7,12 @@
 
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     android:description="@string/app_widget_description"
-    android:initialKeyguardLayout="@layout/daily_memo_widget"
-    android:initialLayout="@layout/daily_memo_widget"
+    android:initialKeyguardLayout="@layout/daily_memo_2048_widget"
+    android:initialLayout="@layout/daily_memo_2048_widget"
     android:minWidth="300dp"
+    android:minHeight="200dp"
     android:previewImage="@drawable/example_appwidget_preview"
-    android:previewLayout="@layout/daily_memo_widget"
+    android:previewLayout="@layout/daily_memo_2048_widget"
     android:resizeMode="horizontal|vertical"
     android:updatePeriodMillis="1000"
     android:widgetCategory="home_screen" />

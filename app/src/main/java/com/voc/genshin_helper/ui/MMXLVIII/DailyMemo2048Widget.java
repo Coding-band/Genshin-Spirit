@@ -1,22 +1,12 @@
 package com.voc.genshin_helper.ui.MMXLVIII;
 
-import android.annotation.SuppressLint;
 import android.app.ActivityManager;
-import android.appwidget.AppWidgetManager;
 import android.appwidget.AppWidgetProvider;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.Transformation;
-import android.widget.RemoteViews;
-
-import com.voc.genshin_helper.R;
 
 import java.util.List;
 
@@ -29,8 +19,8 @@ import java.util.List;
 /**
  * Implementation of App Widget functionality.
  */
-public class DailyMemoWidget extends AppWidgetProvider {
-    public static final String TAG = "DailyMemoWidget";
+public class DailyMemo2048Widget extends AppWidgetProvider {
+    public static final String TAG = "DailyMemo2048Widget";
 
     DisplayMetrics displayMetrics;
 
@@ -50,7 +40,7 @@ public class DailyMemoWidget extends AppWidgetProvider {
                 displayMetrics = context.getResources().getDisplayMetrics();
 
                 RemoteViews remoteViews = new RemoteViews(context.getPackageName(),R.layout.daily_memo_widget);
-                ComponentName thisWidget = new ComponentName(context, DailyMemoWidget.class);
+                ComponentName thisWidget = new ComponentName(context, DailyMemo2048Widget.class);
                 remoteViews.setViewLayoutMargin();
                 AppWidgetManager manager = AppWidgetManager.getInstance(context);
                 manager.updateAppWidget(thisWidget, remoteViews);
@@ -66,11 +56,11 @@ public class DailyMemoWidget extends AppWidgetProvider {
     /**當小工具被刪除時*/
     @Override
     public void onDisabled(Context context) {
-        context.stopService(new Intent(context,DailyMemoService.class));
+        context.stopService(new Intent(context, DailyMemo2048Service.class));
     }
     /**啟動Service*/
     private void startRunService(Context context) {
-        Intent intent = new Intent(context,DailyMemoService.class);
+        Intent intent = new Intent(context, DailyMemo2048Service.class);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             context.startForegroundService(intent);
         }
@@ -81,46 +71,10 @@ public class DailyMemoWidget extends AppWidgetProvider {
         ActivityManager manager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
         List<ActivityManager.RunningServiceInfo> list =  manager.getRunningServices(Integer.MAX_VALUE);
         for (ActivityManager.RunningServiceInfo info : list){
-            if (DailyMemoService.class.getName().equals(info.service.getClassName()))return true;
+            if (DailyMemo2048Service.class.getName().equals(info.service.getClassName()))return true;
         }
         return false;
     }
 
 
-    public class ShowAnim extends Animation {
-        int targetTop;
-        View view;
-        boolean isPushDownAnim;
-
-        public ShowAnim(View view, int targetTop, boolean isPushDownAnim) {
-            this.view = view;
-            this.targetTop = targetTop;
-            this.isPushDownAnim = isPushDownAnim;
-        }
-
-        @Override
-        protected void applyTransformation(float interpolatedTime, Transformation t) {
-
-            float interpolatedTime_auth = interpolatedTime;
-            if (isPushDownAnim){
-                interpolatedTime_auth = (1-interpolatedTime);
-            }
-
-            ViewGroup.MarginLayoutParams layoutParams =
-                    (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-            layoutParams.setMargins((int) (16*displayMetrics.density), (int) (targetTop*interpolatedTime_auth*displayMetrics.density-16*displayMetrics.density), (int) (16*displayMetrics.density), (int) (8*displayMetrics.density));
-            view.setLayoutParams(layoutParams);
-        }
-
-        @Override
-        public void initialize(int width, int height, int parentWidth,
-                               int parentHeight) {
-            super.initialize(width, height, parentWidth, parentHeight);
-        }
-
-        @Override
-        public boolean willChangeBounds() {
-            return true;
-        }
-    }
 }

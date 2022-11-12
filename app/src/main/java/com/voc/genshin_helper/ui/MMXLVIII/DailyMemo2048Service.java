@@ -24,20 +24,15 @@ import android.graphics.RectF;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.os.IBinder;
-import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.Animation;
 import android.widget.RemoteViews;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.squareup.picasso.Picasso;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
-import com.voc.genshin_helper.util.DailyMemo;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
@@ -45,19 +40,17 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class DailyMemoService extends Service {
-    public static final String TAG = "DailyMemoService";
+public class DailyMemo2048Service extends Service {
+    public static final String TAG = "DailyMemo2048Service";
     public static final String CLICK_EVENT = "android.appwidget.action.Click";
     private static final String PRESS_EXT = "PRESS_EXT";
 
-    public static DailyMemoService dailyMemoService;
+    public static DailyMemo2048Service dailyMemo2048Service;
 
     String nickname = "N/A";
     int level = 1;
@@ -106,7 +99,7 @@ public class DailyMemoService extends Service {
     public void onCreate() {
         super.onCreate();
         Log.d(TAG, "onCreate:(Service) ");
-        dailyMemoService = this;
+        dailyMemo2048Service = this;
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -148,7 +141,7 @@ public class DailyMemoService extends Service {
     }
 
     private void updateData(){
-        RemoteViews views = new RemoteViews(getPackageName(),R.layout.daily_memo_widget);
+        RemoteViews views = new RemoteViews(getPackageName(),R.layout.daily_memo_2048_widget);
 
         final int radius_circ_siptik_ico = 120;
         final int margin_circ_siptik_ico = 0;
@@ -283,7 +276,7 @@ public class DailyMemoService extends Service {
         }
 
         AppWidgetManager manager = AppWidgetManager.getInstance(getApplicationContext());
-        ComponentName componentName = new ComponentName(getApplicationContext(),DailyMemoWidget.class);
+        ComponentName componentName = new ComponentName(getApplicationContext(), DailyMemo2048Widget.class);
         manager.updateAppWidget(componentName,views);
     }
 

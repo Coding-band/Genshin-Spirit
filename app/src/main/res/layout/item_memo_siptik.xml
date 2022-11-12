@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2022 Xectorda 版權所有
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/memo_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/gone_background"
+        android:orientation="vertical"
+        android:visibility="visible"
+        app:cardBackgroundColor="@color/colorWhiteAlpha"
+        app:cardCornerRadius="15dp"
+        app:cardElevation="5dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_card_round_siptik"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/memo_user_icon"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:srcCompat="@drawable/hu_tao_unknown" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:paddingLeft="8dp">
+
+                        <TextView
+                            android:id="@+id/memo_user_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="@string/unknown"
+                            android:textColor="@color/tv_color"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/memo_user_server"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="@string/unknown"
+                            android:textColor="@color/memo_card_sub_title"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="8dp">
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        app:srcCompat="@drawable/item_expand_bg_2048"
+                        app:tint="@color/detail_bg_alpha" />
+
+                    <ImageView
+                        android:id="@+id/memo_setting_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:padding="4dp"
+                        app:srcCompat="@drawable/ic_baseline_settings_24" />
+                </FrameLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/memo_item1_ico"
+                                android:layout_width="72dp"
+                                android:layout_height="72dp"
+                                app:srcCompat="@drawable/fragile_resin" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:gravity="bottom"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/memo_item1_curr"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="28dp"
+                                        android:layout_marginLeft="1dp"
+                                        android:layout_marginRight="1dp"
+                                        android:fontFamily="@font/genshin_font"
+                                        android:gravity="center"
+                                        android:text="0"
+                                        android:textColor="@color/tv_color_ex"
+                                        android:textSize="14sp" />
+
+                                    <TextView
+                                        android:id="@+id/memo_item1_max"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="28dp"
+                                        android:layout_marginLeft="1dp"
+                                        android:layout_marginRight="1dp"
+                                        android:fontFamily="@font/genshin_font"
+                                        android:gravity="center"
+                                        android:text="/160"
+                                        android:textColor="@color/tv_color_less"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/memo_item1_time"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="12dp"
+                                    android:layout_marginRight="1dp"
+                                    android:fontFamily="@font/genshin_font"
+                                    android:text="@string/unknown"
+                                    android:textColor="@color/memo_card_sub_title"
+                                    android:textSize="10dp" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/tv_anti_color"
+                            android:gravity="center"
+                            android:orientation="vertical" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/memo_item2_ico"
+                                android:layout_width="72dp"
+                                android:layout_height="72dp"
+                                app:srcCompat="@drawable/realm_currency" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="bottom"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/memo_item2_curr"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="28dp"
+                                        android:layout_marginLeft="1dp"
+                                        android:layout_marginRight="1dp"
+                                        android:fontFamily="@font/genshin_font"
+                                        android:gravity="center"
+                                        android:text="0"
+                                        android:textColor="@color/tv_color_ex"
+                                        android:textSize="14sp" />
+
+                                    <TextView
+                                        android:id="@+id/memo_item2_max"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="28dp"
+                                        android:layout_marginLeft="1dp"
+                                        android:layout_marginRight="1dp"
+                                        android:fontFamily="@font/genshin_font"
+                                        android:gravity="center"
+                                        android:text="/2400"
+                                        android:textColor="@color/tv_color_less"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/memo_item2_time"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="12dp"
+                                    android:layout_marginRight="1dp"
+                                    android:fontFamily="@font/genshin_font"
+                                    android:gravity="center"
+                                    android:text="@string/unknown"
+                                    android:textAlignment="viewStart"
+                                    android:textColor="@color/memo_card_sub_title"
+                                    android:textSize="10dp" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/tv_anti_color"
+                        android:orientation="vertical"></LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/memo_item3_ico"
+                                android:layout_width="72dp"
+                                android:layout_height="72dp"
+                                app:srcCompat="@drawable/ico_mission" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="bottom"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/memo_item3_curr"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="28dp"
+                                        android:layout_marginLeft="1dp"
+                                        android:layout_marginRight="1dp"
+                                        android:fontFamily="@font/genshin_font"
+                                        android:gravity="center"
+                                        android:text="0"
+                                        android:textColor="@color/tv_color_ex"
+                                        android:textSize="14sp" />
+
+                                    <TextView
+                                        android:id="@+id/memo_item3_max"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="28dp"
+                                        android:layout_marginLeft="1dp"
+                                        android:layout_marginRight="1dp"
+                                        android:fontFamily="@font/genshin_font"
+                                        android:gravity="center"
+                                        android:text="/4"
+                                        android:textColor="@color/tv_color_less"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/memo_item3_time"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="12dp"
+                                    android:layout_marginRight="1dp"
+                                    android:fontFamily="@font/genshin_font"
+                                    android:gravity="center"
+                                    android:text="@string/unclaimed"
+                                    android:textAlignment="viewStart"
+                                    android:textColor="@color/memo_card_sub_title"
+                                    android:textSize="10dp"
+                                    android:visibility="visible" />
+
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="2dp"
+                            android:layout_height="match_parent"
+                            android:background="@color/tv_anti_color"
+                            android:gravity="center"
+                            android:orientation="vertical" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/memo_item4_ico"
+                                android:layout_width="72dp"
+                                android:layout_height="72dp"
+                                app:srcCompat="@drawable/ico_weekboss" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="bottom"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/memo_item4_curr"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="28dp"
+                                        android:layout_marginLeft="1dp"
+                                        android:layout_marginRight="1dp"
+                                        android:fontFamily="@font/genshin_font"
+                                        android:gravity="center"
+                                        android:text="0"
+                                        android:textColor="@color/tv_color_ex"
+                                        android:textSize="14sp" />
+
+                                    <TextView
+                                        android:id="@+id/memo_item4_max"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="28dp"
+                                        android:layout_marginLeft="1dp"
+                                        android:layout_marginRight="1dp"
+                                        android:fontFamily="@font/genshin_font"
+                                        android:gravity="center"
+                                        android:text="/3"
+                                        android:textColor="@color/tv_color_less"
+                                        android:textSize="12sp" />
+                                </LinearLayout>
+
+                                <TextView
+                                    android:id="@+id/memo_item4_time"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="12dp"
+                                    android:layout_marginRight="1dp"
+                                    android:fontFamily="@font/genshin_font"
+                                    android:gravity="center"
+                                    android:text="01:01"
+                                    android:textAlignment="viewStart"
+                                    android:textColor="@color/memo_card_sub_title"
+                                    android:textSize="10dp"
+                                    android:visibility="invisible" />
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/tv_anti_color"
+                android:orientation="vertical"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/memo_expe1_ico"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_gravity="center"
+                            android:padding="6dp"
+                            android:visibility="visible"
+                            app:srcCompat="@drawable/hu_tao_unknown" />
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/memo_expe1_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="@string/unknown"
+                        android:textColor="@color/tv_color_less"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/memo_expe1_tick"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/ic_2048_need_tick" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/memo_expe2_ico"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_gravity="center"
+                            android:padding="6dp"
+                            android:visibility="visible"
+                            app:srcCompat="@drawable/hu_tao_unknown" />
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/memo_expe2_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="@string/unknown"
+                        android:textColor="@color/tv_color_less"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/memo_expe2_tick"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/ic_2048_need_tick" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/memo_expe3_ico"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_gravity="center"
+                            android:padding="6dp"
+                            android:visibility="visible"
+                            app:srcCompat="@drawable/hu_tao_unknown" />
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/memo_expe3_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="@string/unknown"
+                        android:textColor="@color/tv_color_less"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/memo_expe3_tick"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/ic_2048_need_tick" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/memo_expe4_ico"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_gravity="center"
+                            android:padding="6dp"
+                            android:visibility="visible"
+                            app:srcCompat="@drawable/hu_tao_unknown" />
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/memo_expe4_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="@string/unknown"
+                        android:textColor="@color/tv_color_less"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/memo_expe4_tick"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/ic_2048_need_tick" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center">
+
+                        <ImageView
+                            android:id="@+id/memo_expe5_ico"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_gravity="center"
+                            android:padding="6dp"
+                            android:visibility="visible"
+                            app:srcCompat="@drawable/hu_tao_unknown" />
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/memo_expe5_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/genshin_font"
+                        android:gravity="center"
+                        android:text="@string/unknown"
+                        android:textColor="@color/tv_color_less"
+                        android:textSize="14sp" />
+
+                    <ImageView
+                        android:id="@+id/memo_expe5_tick"
+                        android:layout_width="match_parent"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        app:srcCompat="@drawable/ic_2048_need_tick" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
