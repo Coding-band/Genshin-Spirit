@@ -159,12 +159,13 @@ public class ItemRss {
 
     public int getRare2048ByInt(int i){
         switch (i){
+            case 0 : return R.drawable.item_char_list_bg_circ_0s;
             case 1 : return R.drawable.item_char_list_bg_circ_1s;
             case 2 : return R.drawable.item_char_list_bg_circ_2s;
             case 3 : return R.drawable.item_char_list_bg_circ_3s;
             case 4 : return R.drawable.item_char_list_bg_circ_4s;
             case 5 : return R.drawable.item_char_list_bg_circ_5s;
-            default : return R.drawable.item_char_list_bg_circ_1s;
+            default : return R.drawable.item_char_list_bg_circ_0s;
         }
     }
 
@@ -1239,6 +1240,9 @@ public class ItemRss {
 
     public String[] getCharByName_BASE(String name, Context context){
         switch (name) {
+            case "Faruzan": return new String[]{"/drawable/faruzan_full.png", context.getString(R.string.faruzan), "/drawable/faruzan_gacha_splash.png", "/drawable/faruzan_ico.png", "/drawable/faruzan_card.png"};
+            case "Wanderer": return new String[]{"/drawable/wanderer_full.png", context.getString(R.string.wanderer), "/drawable/wanderer_gacha_splash.png", "/drawable/wanderer_ico.png", "/drawable/wanderer_card.png"};
+
             case "Nahida": return new String[]{"/drawable/nahida_full.png", context.getString(R.string.nahida), "/drawable/nahida_gacha_splash.png", "/drawable/nahida_ico.png", "/drawable/nahida_card.png"};
             case "Layla": return new String[]{"/drawable/layla_full.png", context.getString(R.string.layla), "/drawable/layla_gacha_splash.png", "/drawable/layla_ico.png", "/drawable/layla_card.png"};
 
@@ -1409,6 +1413,8 @@ public class ItemRss {
         else if(name.equals("Candace") || name.equals("提納里") || name.equals("提纳里") || name.equals("キャンディス") || name.equals("Кандакия")){ return "Candace";}
         else if(name.equals("Nahida") || name.equals("纳西妲") || name.equals("納西妲") || name.equals("ナヒーダ") || name.equals("Нахида")){ return "Nahida";}
         else if(name.equals("Layla") || name.equals("莱依拉") || name.equals("萊依拉") || name.equals("レイラ") || name.equals("Лайла")){ return "Layla";}
+        else if(name.equals("Faruzan") || name.equals("珐露珊") || name.equals("琺露珊") || name.equals("ファルザン") || name.equals("Фарузан")){ return "Faruzan";}
+        else if(name.equals("Wanderer") || name.equals("流浪者") || name.equals("流浪者") || name.equals("放浪者") || name.equals("Странник")){ return "Wanderer";}
 
         else if(name.equals("Traveler-Anemo") || name.equals("旅行者(風)") || name.equals("旅行者(风)") || name.equals("旅人 (風)") || name.equals("Путешественник(Анемо)")){ return "Traveler-Anemo";}
         else if(name.equals("Traveler-Electro") || name.equals("旅行者(岩)") || name.equals("旅行者(岩)") || name.equals("旅人 (岩)") || name.equals("Путешественник(Гео)")){ return "Traveler-Electro";}

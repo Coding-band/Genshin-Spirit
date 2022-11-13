@@ -1136,6 +1136,13 @@
     <string name="memo_web">← ログイン後に押してください</string>
     <string name="setting_account">アカウント</string>
     <string name="setting_personal">パーソナライズ</string>
+    <string name="clean_cookies">すべての Cookies を削除する</string>
+    <string name="clean_cookies_already">すべての Cookies を消去済み</string>
+    <string name="display_beta_data">ベータデータを表示</string>
+    <string name="wanderer">放浪者</string>
+    <string name="faruzan">ファルザン</string>
+    <string name="custom_card">カスタム名刺</string>
+    <string name="custom_icon">カスタムアバター</string>
 
 </resources>
 

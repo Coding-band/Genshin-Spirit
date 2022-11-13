@@ -51,9 +51,6 @@ import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
-import com.voc.genshin_helper.ui.MMXLVIII.Artifact_Info_2048;
-import com.voc.genshin_helper.ui.MMXLVIII.Characters_Info_2048;
-import com.voc.genshin_helper.ui.MMXLVIII.Weapon_Info_2048;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.FileLoader;
@@ -1584,8 +1581,8 @@ public class Characters_Info_SipTik {
                     item_img.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Characters_Info_2048 characters_info_2048 = new Characters_Info_2048();
-                            characters_info_2048.setup(team1[finalX].replace("XPR"," "),context,activity);
+                            Characters_Info_SipTik characters_info_sipTik = new Characters_Info_SipTik();
+                            characters_info_sipTik.setup(team1[finalX].replace("XPR"," "),context,activity);
                         }
                     });
                     item_img.getLayoutParams().width=WRAP_CONTENT;
@@ -1629,8 +1626,8 @@ public class Characters_Info_SipTik {
                     item_img.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Characters_Info_2048 characters_info_2048 = new Characters_Info_2048();
-                            characters_info_2048.setup(team2[finalX].replace("XPR"," "),context,activity);
+                            Characters_Info_SipTik characters_info_sipTik = new Characters_Info_SipTik();
+                            characters_info_sipTik.setup(team2[finalX].replace("XPR"," "),context,activity);
                         }
                     });
 
@@ -1696,8 +1693,8 @@ public class Characters_Info_SipTik {
                     item_img.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Characters_Info_2048 characters_info_2048 = new Characters_Info_2048();
-                            characters_info_2048.setup(team3[finalX].replace("XPR"," "),context,activity);
+                            Characters_Info_SipTik characters_info_sipTik = new Characters_Info_SipTik();
+                            characters_info_sipTik.setup(team3[finalX].replace("XPR"," "),context,activity);
                         }
                     });
                     item_img.getLayoutParams().width=WRAP_CONTENT;
@@ -1752,8 +1749,8 @@ public class Characters_Info_SipTik {
                     item_img.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Characters_Info_2048 characters_info_2048 = new Characters_Info_2048();
-                            characters_info_2048.setup(team4[finalX].replace("XPR"," "),context,activity);
+                            Characters_Info_SipTik characters_info_sipTik = new Characters_Info_SipTik();
+                            characters_info_sipTik.setup(team4[finalX].replace("XPR"," "),context,activity);
                         }
                     });
                     item_img.getLayoutParams().width=WRAP_CONTENT;
@@ -1808,8 +1805,8 @@ public class Characters_Info_SipTik {
                     item_img.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                            Characters_Info_2048 characters_info_2048 = new Characters_Info_2048();
-                            characters_info_2048.setup(team5[finalX].replace("XPR"," "),context,activity);
+                            Characters_Info_SipTik characters_info_sipTik = new Characters_Info_SipTik();
+                            characters_info_sipTik.setup(team5[finalX].replace("XPR"," "),context,activity);
                         }
                     });
                     item_img.getLayoutParams().width=WRAP_CONTENT;
@@ -2427,8 +2424,8 @@ public class Characters_Info_SipTik {
             img_img.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Weapon_Info_2048 weapon_info_2048 = new Weapon_Info_2048();
-                    weapon_info_2048.setup(item_rss.getWeaponNameByFileName(advice[finalX]),context,activity);
+                    Weapon_Info_SipTik weapon_info_sipTik = new Weapon_Info_SipTik();
+                    weapon_info_sipTik.setup(item_rss.getWeaponNameByFileName(advice[finalX]),context,activity);
                 }
             });
 
@@ -2526,8 +2523,8 @@ public class Characters_Info_SipTik {
             img_img.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Artifact_Info_2048 artifact_info_2048 = new Artifact_Info_2048();
-                    artifact_info_2048.setup(advice[finalX],context,activity);
+                    Artifact_Info_SipTik artifact_info_sipTik = new Artifact_Info_SipTik();
+                    artifact_info_sipTik.setup(advice[finalX],context,activity);
                 }
             });
 

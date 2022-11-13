@@ -221,8 +221,10 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
         if(Characters.getRare() == 4){
             holder.char_small_ico.setBackgroundResource(R.drawable.item_char_list_bg_circ_4s);
-        }else{
+        }else if (Characters.getRare() == 5){
             holder.char_small_ico.setBackgroundResource(R.drawable.item_char_list_bg_circ_5s);
+        }else{
+            holder.char_small_ico.setBackgroundResource(R.drawable.item_char_list_bg_circ_0s);
         }
 
         if(Characters.getIsComing() == 0){holder.char_isComing.setVisibility(View.GONE);}

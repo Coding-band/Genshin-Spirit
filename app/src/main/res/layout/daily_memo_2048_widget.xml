@@ -8,7 +8,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="860px"
     android:orientation="vertical">
 
     <LinearLayout
@@ -33,7 +33,11 @@
             android:id="@+id/memo_base_ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="12dp"
+            android:layout_marginLeft="36px"
+            android:layout_marginTop="36px"
+            android:layout_marginRight="36px"
+            android:layout_marginBottom="12px"
+            android:gravity="center"
             android:orientation="vertical">
 
             <LinearLayout
@@ -588,11 +592,11 @@
         android:id="@+id/memo_ext_ll"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="24px"
         android:background="@drawable/bg_memo_widget_ext"
         android:gravity="center"
         android:orientation="vertical"
-        android:padding="8dp"
+        android:padding="4dp"
         android:translationZ="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -603,8 +607,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_marginLeft="24px"
+            android:layout_marginRight="24px"
+            android:gravity="center"
             android:orientation="horizontal">
 
             <LinearLayout
@@ -649,12 +654,13 @@
                     android:gravity="center"
                     android:text="@string/unknown"
                     android:textColor="@color/tv_color_ex"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:visibility="visible" />
 
                 <ImageView
                     android:id="@+id/memo_expe1_tick"
                     android:layout_width="match_parent"
-                    android:layout_height="24dp"
+                    android:layout_height="56px"
                     android:layout_gravity="center"
                     android:visibility="gone"
                     app:srcCompat="@drawable/ic_2048_need_tick" />
@@ -702,12 +708,13 @@
                     android:gravity="center"
                     android:text="@string/unknown"
                     android:textColor="@color/tv_color_ex"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:visibility="visible" />
 
                 <ImageView
                     android:id="@+id/memo_expe2_tick"
                     android:layout_width="match_parent"
-                    android:layout_height="24dp"
+                    android:layout_height="56px"
                     android:layout_gravity="center"
                     android:visibility="gone"
                     app:srcCompat="@drawable/ic_2048_need_tick" />
@@ -755,12 +762,13 @@
                     android:gravity="center"
                     android:text="@string/unknown"
                     android:textColor="@color/tv_color_ex"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:visibility="visible" />
 
                 <ImageView
                     android:id="@+id/memo_expe3_tick"
                     android:layout_width="match_parent"
-                    android:layout_height="24dp"
+                    android:layout_height="56px"
                     android:layout_gravity="center"
                     android:visibility="gone"
                     app:srcCompat="@drawable/ic_2048_need_tick" />
@@ -808,12 +816,13 @@
                     android:gravity="center"
                     android:text="@string/unknown"
                     android:textColor="@color/tv_color_ex"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:visibility="visible" />
 
                 <ImageView
                     android:id="@+id/memo_expe4_tick"
                     android:layout_width="match_parent"
-                    android:layout_height="24dp"
+                    android:layout_height="56px"
                     android:layout_gravity="center"
                     android:visibility="gone"
                     app:srcCompat="@drawable/ic_2048_need_tick" />
@@ -861,12 +870,13 @@
                     android:gravity="center"
                     android:text="@string/unknown"
                     android:textColor="@color/tv_color_ex"
-                    android:textSize="14sp" />
+                    android:textSize="14sp"
+                    android:visibility="visible" />
 
                 <ImageView
                     android:id="@+id/memo_expe5_tick"
                     android:layout_width="match_parent"
-                    android:layout_height="24dp"
+                    android:layout_height="56px"
                     android:layout_gravity="center"
                     android:visibility="gone"
                     app:srcCompat="@drawable/ic_2048_need_tick" />

@@ -1164,6 +1164,13 @@
     <string name="memo_web">← Press it when you finish login</string>
     <string name="setting_account">Account</string>
     <string name="setting_personal">Personal</string>
+    <string name="clean_cookies">Clean all cookies</string>
+    <string name="clean_cookies_already">Already Cleaned all cookies</string>
+    <string name="display_beta_data">Display Beta Data</string>
+    <string name="faruzan">Faruzan</string>
+    <string name="wanderer">Wanderer</string>
+    <string name="custom_icon">Customize Icon</string>
+    <string name="custom_card">Customize Card</string>
 
 </resources>
 

@@ -79,6 +79,7 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
     private AlphaAnimation buttonClick = new AlphaAnimation(1F, 0.8F);
     private ArrayList<Artifacts> artifactsA = new ArrayList<Artifacts>();
     private int pos = 1;
+    SharedPreferences sharedPreferences;
 
     /* loaded from: classes.dex */
     public interface OnItemClickListener {
@@ -101,80 +102,37 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         Context context = this.context;
         if (context instanceof MainActivity) {
-            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_rectangle_2048, viewGroup, false);
-            if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_rectangle_2048, viewGroup, false);
-            } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_square_2048, viewGroup, false);
-            } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
-                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_card_siptik, viewGroup, false);
-            } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
-                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_detail_siptik, viewGroup, false);
-            }
-            return new ViewHolder(inflate, (OnItemClickListener) this.mListener);
+            sharedPreferences = ((MainActivity) this.context).sharedPreferences;
         }else if (context instanceof Desk2048) {
-            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_rectangle_2048, viewGroup, false);
-            if (((Desk2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_rectangle_2048, viewGroup, false);
-            } else if (((Desk2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_square_2048, viewGroup, false);
-            } else if (((Desk2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
-                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_card_siptik, viewGroup, false);
-            }else if (((Desk2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
-                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_detail_siptik, viewGroup, false);
-            }
-            return new ViewHolder(inflate, (OnItemClickListener) this.mListener);
+            sharedPreferences = ((Desk2048) this.context).sharedPreferences;
         } else if (context instanceof DeskSipTik) {
-            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_rectangle_2048, viewGroup, false);
-            if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_rectangle_2048, viewGroup, false);
-            } else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_square_2048, viewGroup, false);
-            } else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
-                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_card_siptik, viewGroup, false);
-            } else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
-                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_detail_siptik, viewGroup, false);
-            }
-            return new ViewHolder(inflate, (OnItemClickListener) this.mListener);
+            sharedPreferences = ((DeskSipTik) this.context).sharedPreferences;
         } else if (context instanceof CalculatorUI) {
-            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_rectangle_2048, viewGroup, false);
-            if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_rectangle_2048, viewGroup, false);
-            } else if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_square_2048, viewGroup, false);
-            } else if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
-                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_card_siptik, viewGroup, false);
-            }else if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
-                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_detail_siptik, viewGroup, false);
-            }
-            return new ViewHolder(inflate, (OnItemClickListener) this.mListener);
+            sharedPreferences = ((CalculatorUI) this.context).sharedPreferences;
         } else if (context instanceof Calculator2048) {
-            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_rectangle_2048, viewGroup, false);
-            if (((Calculator2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_rectangle_2048, viewGroup, false);
-            } else if (((Calculator2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_square_2048, viewGroup, false);
-            } else if (((Calculator2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
-                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_card_siptik, viewGroup, false);
-            }else if (((Calculator2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
-                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_detail_siptik, viewGroup, false);
-            }
-            return new ViewHolder(inflate, (OnItemClickListener) this.mListener);
+            sharedPreferences = ((Calculator2048) this.context).sharedPreferences;
         } else if (context instanceof SipTikCal) {
-            View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_rectangle_2048, viewGroup, false);
-            if (((SipTikCal) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_rectangle_2048, viewGroup, false);
-            } else if (((SipTikCal) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_square_2048, viewGroup, false);
-            } else if (((SipTikCal) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
-                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_card_siptik, viewGroup, false);
-            }else if (((SipTikCal) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
-                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_detail_siptik, viewGroup, false);
-            }
-            return new ViewHolder(inflate, (OnItemClickListener) this.mListener);
+            sharedPreferences = ((SipTikCal) this.context).sharedPreferences;
         } else {
-            return null;
+            sharedPreferences = context.getSharedPreferences("user_name",MODE_PRIVATE);
         }
+
+        View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_rectangle_2048, viewGroup, false);
+        switch (sharedPreferences.getString("curr_ui_grid", "2")) {
+            case "2":
+                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_rectangle_2048, viewGroup, false);
+                break;
+            case "3":
+                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_square_2048, viewGroup, false);
+                break;
+            case "4":
+                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_card_siptik, viewGroup, false);
+                break;
+            case "5":
+                inflate = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_artifact_ico_detail_siptik, viewGroup, false);
+                break;
+        }
+        return new ViewHolder(inflate, (OnItemClickListener) this.mListener);
     }
 
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
@@ -183,7 +141,6 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
         ItemRss itemRss = new ItemRss();
 
         artifactsA.add(artifacts);
-
 
         boolean isNight = false;
         // Background of item

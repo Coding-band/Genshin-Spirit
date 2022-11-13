@@ -415,12 +415,12 @@
     <!-- Weapon-Bow -->
     <string name="hunters_bow">獵弓</string>
     <string name="seasoned_hunters_bow">歷練的獵弓</string>
-    <string name="ebony_bow">彈弓</string>
+    <string name="ebony_bow">黑檀弓</string>
     <string name="messenger">信使</string>
     <string name="raven_bow">鴉羽弓</string>
     <string name="recurve_bow">反曲弓</string>
     <string name="sharpshooters_oath">神射手之誓</string>
-    <string name="slingshot">黑檀弓</string>
+    <string name="slingshot">彈弓</string>
     <string name="alley_hunter">暗巷獵手</string>
     <string name="blackcliff_warbow">黑岩戰弓</string>
     <string name="compound_bow">鋼輪弓</string>
@@ -487,7 +487,7 @@
 
     <!-- artifacts -->
     <string name="adventurer">冒險家</string>
-    <string name="archaic_petra">千巖牢固</string>
+    <string name="archaic_petra">悠古的磐岩</string>
     <string name="berserker">戰狂</string>
     <string name="blizzard_strayer">冰風迷途的勇士</string>
     <string name="bloodstained_chivalry">染血的騎士道</string>
@@ -513,7 +513,7 @@
     <string name="retracing_bolide">逆飛的流星</string>
     <string name="scholar">學士</string>
     <string name="shimenawas_reminiscence">追憶之注連</string>
-    <string name="tenacity_of_the_millelith">悠古的磐岩</string>
+    <string name="tenacity_of_the_millelith">千岩牢固</string>
     <string name="the_exile">流放者</string>
     <string name="thundering_fury">如雷的盛怒</string>
     <string name="thundersoother">平息鳴雷的尊者</string>
@@ -1127,4 +1127,11 @@
     <string name="memo_web">← 請在登入後按下</string>
     <string name="setting_account">帳號</string>
     <string name="setting_personal">個性化</string>
+    <string name="clean_cookies">清除所有Cookies</string>
+    <string name="clean_cookies_already">已清除所有Cookies</string>
+    <string name="display_beta_data">顯示Beta版數據</string>
+    <string name="wanderer">流浪者</string>
+    <string name="faruzan">琺露珊</string>
+    <string name="custom_icon">自定義頭像</string>
+    <string name="custom_card">自定義名片</string>
 </resources>

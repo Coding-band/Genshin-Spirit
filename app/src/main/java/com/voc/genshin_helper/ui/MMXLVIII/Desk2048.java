@@ -1970,9 +1970,8 @@ public class Desk2048 extends AppCompatActivity {
         custom_cookie_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CookieManager.getInstance().removeAllCookies(null);
-                CookieManager.getInstance().flush();
-                CustomToast.toast(context,view,"Already clean all cookies");
+                CookieManager cookieManager = CookieManager.getInstance();
+                dailyMemo.cleanCookies(cookieManager, view);
             }
         });
 

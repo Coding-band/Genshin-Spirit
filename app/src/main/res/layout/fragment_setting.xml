@@ -1554,6 +1554,14 @@
                             android:fontFamily="@font/genshin_font"
                             android:text="@string/about_info4"
                             android:textColor="@color/tv_color" />
+
+                        <TextView
+                            android:id="@+id/info_hy_tv4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="© All rights reserved by miHoYo. Other properties belong to their respective owners."
+                            android:textColor="@color/tv_color" />
                     </LinearLayout>
 
 

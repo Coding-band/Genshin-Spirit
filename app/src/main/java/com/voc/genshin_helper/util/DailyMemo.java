@@ -30,6 +30,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
@@ -98,6 +99,8 @@ public class DailyMemo {
     ImageView memo_expe1_tick,memo_expe2_tick,memo_expe3_tick,memo_expe4_tick,memo_expe5_tick;
     ProgressBar memo_expe1_pb,memo_expe2_pb,memo_expe3_pb,memo_expe4_pb,memo_expe5_pb;
     Spinner server_spinner;
+
+    ImageButton memo_logoff_btn, memo_noti_btn;
 
     /**
      * Method
@@ -204,6 +207,15 @@ public class DailyMemo {
             memo_expe5_pb = view.findViewById(R.id.memo_expe5_pb);
         }else if(STYLE == MATERIAL){
             memo_item6_time = memo_item3_time;
+            memo_noti_btn = view.findViewById(R.id.memo_noti_btn);
+            memo_logoff_btn = view.findViewById(R.id.memo_logoff_btn);
+            memo_logoff_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    CookieManager cookieManager = CookieManager.getInstance();
+                    cleanCookies(cookieManager, view);
+                }
+            });
         }
     }
 
@@ -276,6 +288,7 @@ public class DailyMemo {
         if (memo_item5_time != null){
             memo_item5_time.setText(prettyTime(transformer_recovery_time));
         }
+
         if (mission_claim == true && memo_item6_time != null){
             memo_item6_time.setText(context.getString(R.string.claimed));
         }else{
@@ -578,6 +591,12 @@ public class DailyMemo {
         lp.gravity = Gravity.CENTER;
         dialogWindow.setAttributes(lp);
         dialog.show();
+    }
+
+    public void cleanCookies(CookieManager cookieManager, View view) {
+        cookieManager.removeAllCookies(null);
+        cookieManager.flush();
+        CustomToast.toast(context,view,context.getString(R.string.clean_cookies_already));
     }
 
     class grabDataFromServer extends AsyncTask<String,Integer,String>{

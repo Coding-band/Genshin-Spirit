@@ -31,6 +31,7 @@ import android.widget.RemoteViews;
 
 import androidx.annotation.NonNull;
 
+import com.squareup.picasso.Picasso;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.util.FileLoader;
@@ -168,6 +169,7 @@ public class DailyMemo2048Service extends Service {
         //Europe = "os_euro"
         //America = "os_usa"
         //TW,HK,MO = "os_cht"
+
         switch (server){
             case "cn_gf01" : views.setTextViewText(R.id.memo_user_server,context.getString(R.string.sky_land_ser)+" - Lv."+String.valueOf(level));break;
             case "cn_qd01" : views.setTextViewText(R.id.memo_user_server,context.getString(R.string.world_tree)+" - Lv."+String.valueOf(level));break;
@@ -186,6 +188,11 @@ public class DailyMemo2048Service extends Service {
             views.setImageViewBitmap(R.id.memo_expe5_ico,getRoundedCornerBitmap(BitmapFactory.decodeResource(context.getResources(),R.drawable.paimon_suprise),120));
 
         }else{
+            if (!sharedPreferences.getString("icon_name", "N/A").equals("N/A")){
+                icon = sharedPreferences.getString("icon_name", "N/A");
+            }else{
+                icon = item_rss.getCharNameByTranslatedName(icon, context);
+            }
             views.setImageViewBitmap(R.id.memo_user_icon,getRoundedCornerBitmap(FileLoader.loadIMG2Bitmap(item_rss.getCharByName(icon,context)[3],context),120));
             views.setImageViewBitmap(R.id.memo_expe1_ico,getRoundedCornerBitmap(FileLoader.loadIMG2Bitmap(item_rss.getCharByName(expedition1_name,context)[3],context),120));
             views.setImageViewBitmap(R.id.memo_expe2_ico,getRoundedCornerBitmap(FileLoader.loadIMG2Bitmap(item_rss.getCharByName(expedition2_name,context)[3],context),120));

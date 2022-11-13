@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Project Genshin Spirit (原神小帮手) was
   ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
-  ~ Copyright © 2022 Xectorda 版權所有
+  ~ Copyright © 2022 Xectorda 版权所有
   -->
 
 <resources>
@@ -50,6 +50,7 @@
     <string name="guides_of_elegance">「风雅」的指引</string>
     <string name="guides_of_transience">「浮世」的指引</string>
     <string name="guides_of_light">「天光」的指引</string>
+
     <string name="philosophies_of_freedom">「自由」的哲学</string>
     <string name="philosophies_of_gold">「黄金」的哲学</string>
     <string name="philosophies_of_resistance">「抗争」的哲学</string>
@@ -74,7 +75,7 @@
     <!-- char_name -->
     <string name="kamisato_ayato">神里绫人</string>
     <string name="aloy">亚萝伊</string>
-    <string name="kujou_sara">九条裟罗</string>
+    <string name="kujou_sara">九条娑罗</string>
     <string name="sangonomiya_kokomi">珊瑚宫心海</string>
     <string name="raiden_shogun">雷电将军</string>
     <string name="sayu">早柚</string>
@@ -104,7 +105,7 @@
     <string name="noelle">诺艾尔</string>
     <string name="ningguang">凝光</string>
     <string name="mona">莫娜</string>
-    <string name="lisa">丽莎</string>
+    <string name="lisa">莉萨</string>
     <string name="klee">可莉</string>
     <string name="keqing">刻晴</string>
     <string name="kaeya">凯亚</string>
@@ -302,6 +303,7 @@
     <string name="thanks_title">鸣谢</string>
     <string name="translator_title">翻译员</string>
     <string name="beta_tester_title">测试人员</string>
+    <string name="alds_helper_title">算法及数据整合</string>
     <string name="thanks_intro">因为有你们的帮忙，原神小帮手才得以更完善</string>
 
     <!-- Weapon-Sword -->
@@ -319,7 +321,7 @@
     <string name="iron_sting">铁蜂刺</string>
     <string name="lions_roar">匣里龙吟</string>
     <string name="mistsplitter_reforged">雾切之回光</string>
-    <string name="primordial_jade_cutter">磐岩结绿</string>
+    <string name="primordial_jade_cutter">盘岩结绿</string>
     <string name="prototype_rancour">试作斩岩</string>
     <string name="royal_longsword">宗室长剑</string>
     <string name="sacrificial_sword">祭礼剑</string>
@@ -413,12 +415,12 @@
     <!-- Weapon-Bow -->
     <string name="hunters_bow">猎弓</string>
     <string name="seasoned_hunters_bow">历练的猎弓</string>
-    <string name="ebony_bow">弹弓</string>
+    <string name="ebony_bow">黑檀弓</string>
     <string name="messenger">信使</string>
     <string name="raven_bow">鸦羽弓</string>
     <string name="recurve_bow">反曲弓</string>
     <string name="sharpshooters_oath">神射手之誓</string>
-    <string name="slingshot">黑檀弓</string>
+    <string name="slingshot">弹弓</string>
     <string name="alley_hunter">暗巷猎手</string>
     <string name="blackcliff_warbow">黑岩战弓</string>
     <string name="compound_bow">钢轮弓</string>
@@ -478,14 +480,14 @@
     <string name="weapon_stat_HPP">生命值%</string>
     <string name="weapon_stat_PhyDMGP">物理伤害%</string>
     <string name="weapon_stat_atk">攻击力</string>
-    <string name="weapon_stat_HP">生命值</string>
     <string name="weapon_stat_DEF">防御力</string>
+    <string name="weapon_stat_HP">生命值</string>
     <string name="weapon_stat_atkP">攻击力%</string>
     <string name="weapon_stat_no">无</string>
 
     <!-- artifacts -->
     <string name="adventurer">冒险家</string>
-    <string name="archaic_petra">千岩牢固</string>
+    <string name="archaic_petra">悠古的盘岩</string>
     <string name="berserker">战狂</string>
     <string name="blizzard_strayer">冰风迷途的勇士</string>
     <string name="bloodstained_chivalry">染血的骑士道</string>
@@ -511,7 +513,7 @@
     <string name="retracing_bolide">逆飞的流星</string>
     <string name="scholar">学士</string>
     <string name="shimenawas_reminiscence">追忆之注连</string>
-    <string name="tenacity_of_the_millelith">悠古的盘岩</string>
+    <string name="tenacity_of_the_millelith">千岩牢固</string>
     <string name="the_exile">流放者</string>
     <string name="thundering_fury">如雷的盛怒</string>
     <string name="thundersoother">平息鸣雷的尊者</string>
@@ -520,13 +522,13 @@
     <string name="viridescent_venerer">翠绿之影</string>
     <string name="wanderers_troupe">流浪大地的乐团</string>
 
+
     <!-- add in 20211127 -->
     <string name="cinnabar_spindle">辰砂之纺锤</string>
     <string name="shenhe">申鹤</string>
-    <string name="yun_jin">云堇</string>
+    <string name="yun_jin">云菫</string>
     <string name="husk_of_opulent_dreams">华馆梦醒形骸记</string>
     <string name="ocean_hued_clam">海染砗磲</string>
-
 
     <!-- add in 20211226 -->
     <string name="weapon_stat_EleDMGP_Electro">雷元素伤害加成</string>
@@ -541,7 +543,6 @@
     <string name="redhorn_stonethresher">赤角石溃杵</string>
     <string name="yae_miko">八重神子</string>
 
-
     <!-- add in 20220108 -->
     <string name="background_setting">背景设定</string>
     <string name="background_accept_list">仅接受JPG,JPEG,PNG,GIF</string>
@@ -551,15 +552,15 @@
     <string name="voc">Voc-夜芷冰</string>
 
     <!-- add in 20220110-->
-    <string name="traveler_sex_setting">"你选择旅行者的性别是？"</string>
-    <string name="name_start_with_num_err">"数字及特殊符号不能是名称第一个字元"</string>
+    <string name="traveler_sex_setting">你选择旅行者的性别是？</string>
+    <string name="name_start_with_num_err">数字及特殊符号不能是名称第一个字符</string>
     <string name="cal_create_set">"创建一个新的计算组别"</string>
     <string name="cal_enter_name">"请输入名称"</string>
     <string name="kaguras_verity">神乐之真意</string>
     <string name="oathsworn_eye">证誓之明瞳</string>
 
     <!-- add in 20220130-->
-    <string name="press_see_details">按下以查看更多詳情</string>
+    <string name="press_see_details">按下以查看更多详情</string>
 
     <!-- add in 20220201-->
     <string name="update_download_update_curr">下载更新档</string>
@@ -923,18 +924,17 @@
     <string name="sesshou_sakura_dmg_level_3">杀生樱伤害·参阶</string>
     <string name="sesshou_sakura_dmg_level_4">杀生樱伤害·肆阶</string>
     <string name="tenko_thunderbolt_dmg">天狐霆雷伤害</string>
+
     <string name="name_used">这个名字已经被使用了，请输入另一个名字。</string>
-    <string name="alds_helper_title">算法及数据整合</string>
-    <string name="these_is_rss_source">以下是原神小帮手资料，数据，图片来源</string>
+    <string name="these_is_rss_source">以下是原神小帮手数据，数据，图片来源</string>
     <string name="press_open_link">按下即可开启对应连结</string>
     <string name="developer">开发者</string>
-
     <string name="buff_cal_thx">✧ 特此感谢dfsly\n✧ 允许以内嵌功能方式延续Genshin Calculator</string>
-    <string name="buff_calcluator">增益计算机</string>
+    <string name="buff_calcluator">增益计算器</string>
     <string name="ui_design">UI设计</string>
 
     <!-- add in 20220304 -->
-    <string name="rectangle" >長方形</string>
+    <string name="rectangle" >长方形</string>
     <string name="square" >正方形</string>
     <string name="char_suit_on" >换上活动衣装</string>
     <string name="goblet">空之杯：</string>
@@ -952,6 +952,7 @@
     <string name="advance_stat">突破属性</string>
     <string name="card">卡片</string>
 
+    <!-- add in 20220419 -->
     <string name="element_Electro">雷元素</string>
     <string name="element_Pyro">火元素</string>
     <string name="element_Hydro">水元素</string>
@@ -962,10 +963,12 @@
     <string name="forsaken_rift">忘却之峡</string>
     <string name="taishan_mansion">太山府</string>
     <string name="violet_court">菫色之庭</string>
-    <string name="cecilia_garden">塞西莉亚苗圃</string>
-    <string name="hidden_palace_of_lianshan_formula">震雷连山密宫</string>
     <string name="court_of_flowing_sand">砂流之庭</string>
-    <string name="img_reset_finish">背景已重設</string>
+    <string name="hidden_palace_of_lianshan_formula">震雷连山密宫</string>
+    <string name="cecilia_garden">塞西莉亚苗圃</string>
+
+    <!-- add in 20220421 -->
+    <string name="img_reset_finish">背景已重设</string>
 
     <!-- add in 20220423 -->
     <string name="obtain_no">无</string>
@@ -1057,7 +1060,7 @@
     <string name="hunters_path">猎人之径</string>
     <string name="fruit_of_fulfillment">盈满之实</string>
     <string name="skill_level">技能等级</string>
-    <string name="luminescent_pollen">萤光孢粉</string>
+    <string name="luminescent_pollen">荧光孢粉</string>
     <string name="lunar_lotus">月莲</string>
     <string name="fungal_spores">蕈兽孢子</string>
     <string name="crystalline_cyst_dust">孢囊晶尘</string>
@@ -1068,8 +1071,8 @@
     <string name="rich_red_brocade">织金红绸</string>
     <string name="majestic_hooked_beak">蕈王钩喙</string>
     <string name="rukkhashava_mushrooms">树王圣体菇</string>
-    <string name="gilded_dreams">饰金之梦</string>
     <string name="deepwood_memories">深林的记忆</string>
+    <string name="gilded_dreams">饰金之梦</string>
 
     <!-- add in 20220823 -->
     <string name="philosophies_of_admonition">「诤言」的哲学</string>
@@ -1086,6 +1089,8 @@
     <string name="copper_talisman_of_the_forest_dew">谧林涓露的铜符</string>
     <string name="oasis_gardens_reminiscence">绿洲花园的追忆</string>
     <string name="echo_of_scorching_might">烈日威权的残响</string>
+
+    <!-- add in 20220923 -->
     <string name="nilou">妮露</string>
     <string name="cyno">赛诺</string>
     <string name="candace">坎蒂丝</string>
@@ -1095,31 +1100,38 @@
     <string name="wandering_evenstar">流浪的晚星</string>
     <string name="staff_of_the_scarlet_sands">赤沙之杖</string>
     <string name="missive_windspear">风信之锋</string>
-    <string name="nahida">纳西妲</string>
     <string name="layla">莱依拉</string>
     <string name="a_thousand_floating_dreams">千夜浮梦</string>
+
+    <!-- add in 20221001 -->
+    <string name="nahida">纳西妲</string>
     <string name="screenshot_saved">截图储存成功</string>
     <string name="screenshot_not_saved_permission">请同意读取权限</string>
-    <string name="screenshot_not_saved">截图储存失敗</string>
+    <string name="screenshot_not_saved">截图储存失败</string>
     <string name="talent_lvl">"天赋等级 : "</string>
     <string name="today">今天</string>
     <string name="unclaimed">未领取</string>
     <string name="claimed">已领取</string>
     <string name="idle">闲置中</string>
 
+    <!-- add in 20221102-->
     <string name="puppet_strings">傀儡的悬丝</string>
     <string name="mirror_of_mushin">无心的渊镜</string>
     <string name="dakas_bell">空行的虚铃</string>
     <string name="is_random_scenery">启用随机风景节录功能</string>
-    <string name="global_server">国际伺服器</string>
-    <string name="mainland_server">中国大陆伺服器</string>
-    <string name="memo_step1">獲取憑證</string>
-    <string name="memo_step2">選擇伺服器</string>
-    <string name="memo_step1_1">请选择伺服器类别</string>
+    <string name="global_server">国际服务器</string>
+    <string name="mainland_server">中国大陆服务器</string>
+    <string name="memo_step1">获取凭证</string>
+    <string name="memo_step2">选择服务器</string>
+    <string name="memo_step1_1">请选择服务器类别</string>
     <string name="memo_web">← 请在登入后按下</string>
-    <string name="setting_account">帐号</string>
+    <string name="setting_account">账号</string>
     <string name="setting_personal">个性化</string>
-
-
+    <string name="clean_cookies">清除所有Cookies</string>
+    <string name="clean_cookies_already">已清除所有Cookies</string>
+    <string name="display_beta_data">显示Beta版数据</string>
+    <string name="wanderer">流浪者</string>
+    <string name="faruzan">珐露珊</string>
+    <string name="custom_icon">自定义头像</string>
+    <string name="custom_card">自定义名片</string>
 </resources>
-
