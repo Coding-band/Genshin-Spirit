@@ -248,9 +248,11 @@
     <string name="about_title2">私隱收集聲明</string>
     <string name="about_info2">本應用程式並不會收集任何有關個人私隱的數據及可能用於識別，跟蹤使用者等信息。 若有需要，本應用程式僅會收集已告知之數據，如程式崩潰堆棧。上述數據僅用作與修復應用程式漏洞及提升使用者體驗。</string>
     <string name="about_title3">資源使用聲明</string>
-    <string name="about_info3">本應用程式基於而開發，旨在向Shiori for Genshin及其協作者致敬，惟目前仍未獲其協作者認可。本應用程式部分圖片，資料取自開源專案，將於下文附上連結。 故此，本應用程式的一部分介面，排版或於GenshinDb極為相似，惟本應用程式是以Java而非Dart作編程語言，亦只會於Android或／及任何支援.apk，.aab檔案格式之裝置中安裝及運行。</string>
+    <string name="about_info3">本應用程式基於Shiori for Genshin而開發，旨在向Shiori for Genshin及其協作者致敬，惟目前仍未獲其協作者認可。本應用程式部分圖片，資料取自開源專案，將於下文附上連結。 故此，本應用程式的一部分介面，排版或於Shiori for Genshin極為相似，惟本應用程式是以Java而非Dart作編程語言，亦只會於Android或／及任何支援.apk，.aab檔案格式之裝置中安裝及運行。</string>
     <string name="about_title4">專案開源聲明</string>
     <string name="about_info4">本應用程式因旨在向Shiori for Genshin及其協作者致敬，故將於Github上開源，任何人均可以查閱，提供意見，甚至協作，本人亦十分歡迎閣下對本應用程式的任何建議，協作申請。本應用程式亦會上架至Google Play。若你希望為此專案提出意見，漏洞，新功能等等，亦歡迎以E-mail或Discord (中國大陸則可使用QQ)方式聯繫。最後，謝謝你的諒解及支持。</string>
+    <string name="about_title5">第三方分發及編譯聲明</string>
+    <string name="about_info5">本專案（原神小幫手 Genshin Spirit）並不反對任何人對其作出功能新增，除錯，編譯測試及用作學習用途，唯本專案不允許第三方於未經專案開發者Voc-夜芷冰書面允許下，隨意分發（不論私人或公開）非官方版本【註1】及故意冒充為本專案的開發員【註2】。Voc-夜芷冰保留於版本3.2.0 (10825)後對違反上述情況的個人／機構提出下架要求的權利。\n【註1】非官方版本包括第三方自行編譯，於合作平台下載應用程式安裝檔後分發。\n【註2】Discord 機器人 【原神小幫手】與本專案無關（本專案早於2021年九月於Github上載，2021年十一月與Google Play 上發佈正式版）</string>
     <string name="list_grid">列表網格</string>
 
     <!-- dom -->

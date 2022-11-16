@@ -299,6 +299,8 @@
     <string name="about_info3">This application is developed based on Shiori for Genshin and aims to pay tribute to Shiori for Genshin and its collaborators, but it has not yet been recognized by its collaborators. Some pictures of this application, data are taken from open source projects, and links will be attached below. Therefore, part of the interface and layout of this application is very similar to Shiori for Genshin. However, this application uses Java instead of Dart as the programming language, and it will only work on Android or/and any supporting .apk and .aab file formats. Installation and operation in the device.</string>
     <string name="about_title4">Project open source statement</string>
     <string name="about_info4">Since this application is intended to pay tribute to Shiori for Genshin and its collaborators, it will be open sourced on Github. Anyone can view, provide comments, and even collaborate. I also welcome any suggestions and applications for this application. This application will also be available on Google Play. If you want to comment on this project, bugs, new features, etc., you are also welcome to contact by E-mail or Discord (QQ is available for mainland China). Finally, thank you for your understanding and support.</string>
+    <string name="about_title5">Third-Party Distribution and Compilation Statement</string>
+    <string name="about_info5">This project (原神小幫手 Genshin Spirit) does not object to anyone adding functions, debugging, compiling and testing, and using it for learning purposes, but this project does not allow third parties to distribute freely (whether private or public) the unofficial version [Note 1] without written permission from Voc-夜芷冰, and deliberately pretend to be the developer of this project [Note 2]. Voc-夜芷冰 reserves the right to ask individuals/institutions who violate the above conditions to be removed from the shelves after version 3.2.0 (10825).\n[Note 1] The unofficial version includes third-party self-compilation and distribution after downloading the application installation file on the cooperative platform.\n[Note 2] Discord Bot [原神小幫手] has nothing to do with this project (this project was uploaded on Github as early as September 2021, and the official version will be released on Google Play in November 2021)</string>
     <!-- add in 20210918-->
     <string name="thanks_title">Special Thanks</string>
     <string name="translator_title">Translator</string>
@@ -1169,7 +1171,7 @@
     <string name="display_beta_data">Display Beta Data</string>
     <string name="faruzan">Faruzan</string>
     <string name="wanderer">Wanderer</string>
-    <string name="custom_icon">Customize Icon</string>
+    <string name="custom_icon">Customize Profile</string>
     <string name="custom_card">Customize Card</string>
 
 </resources>

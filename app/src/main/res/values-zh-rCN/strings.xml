@@ -251,6 +251,8 @@
     <string name="about_info3">本应用程序基于而开发，旨在向Shiori for Genshin及其协作者致敬，惟目前仍未获其协作者认可。本应用程序部分图片，数据取自开源项目，将于下文附上连结。 故此，本应用程序的一部分接口，排版或于GenshinDb极为相似，惟本应用程序是以Java而非Dart作编程语言，亦只会于Android或／及任何支援.apk，.aab文件格式之装置中安装及运行。</string>
     <string name="about_title4">项目开源声明</string>
     <string name="about_info4">本应用程序因旨在向Shiori for Genshin及其协作者致敬，故将于Github上开源，任何人均可以查阅，提供意见，甚至协作，本人亦十分欢迎阁下对本应用程序的任何建议，协作申请。本应用程序亦会上架至Google Play。若你希望为此项目提出意见，漏洞，新功能等等，亦欢迎以E-mail或Discord (中国大陆则可使用QQ)方式联系。最后，谢谢你的谅解及支持。</string>
+    <string name="about_title5">第三方分发及编译声明</string>
+    <string name="about_info5">本项目（原神小帮手 Genshin Spirit）并不反对任何人对其作出功能新增，除错，编译测试及用作学习用途，唯本项目不允许第三方于未经项目开发者Voc-夜芷冰书面允许下，随意分发（不论私人或公开）非官方版本【注1】及故意冒充为本项目的开发员【注2】。Voc-夜芷冰保留于版本3.2.0 (10825)后对违反上述情况的个人／机构提出下架要求的权利。\n【注1】非官方版本包括第三方自行编译，于合作平台下载应用程序安装文件后分发。\n【注2】Discord 机器人 【原神小帮手】与本专案无关（本专案早于2021年九月于Github上载，2021年十一月与Google Play 上发布正式版）</string>
     <string name="list_grid">列表网格</string>
 
     <!-- dom -->
