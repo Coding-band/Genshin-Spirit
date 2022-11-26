@@ -165,7 +165,7 @@
     <string name="weapon_advice">Weapon Advice</string>
     <string name="art_advice">Artifacts Advice</string>
     <!-- added in 20211001 -->
-    <string name="none_info">There is no relevant information about him/her/it at the moment</string>
+    <string name="none_info">There is no relevant information about them at the moment</string>
     <string name="weapon_stat">"Sub. attr : "</string>
     <string name="weapon_stat_atk">"ATK"</string>
     <string name="weapon_stat_DEF">"DEF"</string>
