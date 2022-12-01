@@ -901,7 +901,7 @@ public class DeskSipTik extends AppCompatActivity {
         check_spinner = 0;
 
         mList = viewPager1.findViewById(R.id.main_list);
-        mAdapter = new CharactersAdapter(context,charactersList,activity);
+        mAdapter = new CharactersAdapter(context,charactersList,activity,sharedPreferences);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 2);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);

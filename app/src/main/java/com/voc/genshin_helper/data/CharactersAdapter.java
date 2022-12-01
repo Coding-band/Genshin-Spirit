@@ -65,11 +65,13 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
     private Activity activity ;
     private Characters Characters ;
     private ArrayList<Characters> charactersA = new ArrayList<Characters>();
+    private SharedPreferences sharedPreferences;
 
-    public CharactersAdapter(Context context, List<Characters> charactersList,Activity activity) {
+    public CharactersAdapter(Context context, List<Characters> charactersList,Activity activity, SharedPreferences sharedPreferences) {
         this.context = context;
         this.charactersList = charactersList;
         this.activity = activity;
+        this.sharedPreferences = sharedPreferences;
     }
 
     public interface OnItemClickListener {
@@ -83,111 +85,21 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         // 1) MainActivity's char_list
         // 2) CalculatorUI's char_list
 
-        if(context instanceof MainActivity){
-            if(((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_rectangle_2048, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }else if(((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }else if(((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_card_siptik, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }else if(((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_detail_siptik, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }else{
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }
-
-        }else if(context instanceof Desk2048){
-            if(((Desk2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_rectangle_2048, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }else if(((Desk2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }else if(((Desk2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_card_siptik, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }else if(((Desk2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_detail_siptik, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }else{
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }
-
-        }else if(context instanceof DeskSipTik){
-            if(((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_rectangle_2048, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }else if(((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }else if(((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_card_siptik, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }else if(((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_detail_siptik, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }else{
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }
-
-        }else if(context instanceof CalculatorUI){
-            if(((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_rectangle_2048, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }else if(((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }else if(((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_card_siptik, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }else if(((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_detail_siptik, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }else{
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }
-        }else if(context instanceof Calculator2048){
-            if(((Calculator2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_rectangle_2048, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }else if(((Calculator2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }else if(((Calculator2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_card_siptik, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }else if(((Calculator2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_detail_siptik, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }else{
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }
-        }else if(context instanceof CalculatorDB_SipTik){
-            if(((CalculatorDB_SipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_rectangle_2048, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }else if(((CalculatorDB_SipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }else if(((CalculatorDB_SipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_card_siptik, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }else if(((CalculatorDB_SipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")){
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_detail_siptik, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }else{
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
-                evh = new ViewHolder(v, (OnItemClickListener) mListener);
-            }
+        if(sharedPreferences.getString("curr_ui_grid", "2").equals("2")){
+            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_rectangle_2048, parent, false);
+            evh = new ViewHolder(v, (OnItemClickListener) mListener);
+        }else if(sharedPreferences.getString("curr_ui_grid", "2").equals("3")){
+            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
+            evh = new ViewHolder(v, (OnItemClickListener) mListener);
+        }else if(sharedPreferences.getString("curr_ui_grid", "2").equals("4")){
+            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_card_siptik, parent, false);
+            evh = new ViewHolder(v, (OnItemClickListener) mListener);
+        }else if(sharedPreferences.getString("curr_ui_grid", "2").equals("5")){
+            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_detail_siptik, parent, false);
+            evh = new ViewHolder(v, (OnItemClickListener) mListener);
+        }else{
+            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
+            evh = new ViewHolder(v, (OnItemClickListener) mListener);
         }
 
         return evh;
@@ -241,9 +153,6 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
             isNight = true;
         }
 
-
-
-
         DisplayMetrics displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int height_curr = displayMetrics.heightPixels;
@@ -254,440 +163,342 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         int size_per_img_sq = width_curr/3;
         int size_per_img_siptik = width_curr;
 
-        if(context.getSharedPreferences("user_info",MODE_PRIVATE).getString("curr_ui_grid", "2").equals("2") ){
-            switch (Characters.getElement()){
-                case "Anemo" : {
-                    holder.char_element.setImageResource(R.drawable.anemo_ico);
-                    if(isNight == true){
-                        holder.char_bg.setBackgroundResource(R.drawable.anemo_800x1600_dark);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.anemo_800x1600_dark_mask);
-                        holder.char_bg.setForeground(drawable);
-                    }else{
-                        holder.char_bg.setBackgroundResource(R.drawable.anemo_800x1600_light);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.anemo_800x1600_light_mask);
-                        holder.char_bg.setForeground(drawable);
+        switch (context.getSharedPreferences("user_info",MODE_PRIVATE).getString("curr_ui_grid", "2")){
+            default:
+            case "2":{
+                switch (Characters.getElement()){
+                    case "Anemo" : {
+                        holder.char_element.setImageResource(R.drawable.anemo_ico);
+                        if(isNight == true){
+                            holder.char_bg.setBackgroundResource(R.drawable.anemo_800x1600_dark);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.anemo_800x1600_dark_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }else{
+                            holder.char_bg.setBackgroundResource(R.drawable.anemo_800x1600_light);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.anemo_800x1600_light_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }
+                        break;
                     }
-                    break;
-                }
 
-                case "Cryo" : {
-                    holder.char_element.setImageResource(R.drawable.cryo_ico);
-                    if(isNight == true){
-                        holder.char_bg.setBackgroundResource(R.drawable.cryo_800x1600_dark);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.cryo_800x1600_dark_mask);
-                        holder.char_bg.setForeground(drawable);
-                    }else{
-                        holder.char_bg.setBackgroundResource(R.drawable.cryo_800x1600_light);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.cryo_800x1600_light_mask);
-                        holder.char_bg.setForeground(drawable);
+                    case "Cryo" : {
+                        holder.char_element.setImageResource(R.drawable.cryo_ico);
+                        if(isNight == true){
+                            holder.char_bg.setBackgroundResource(R.drawable.cryo_800x1600_dark);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.cryo_800x1600_dark_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }else{
+                            holder.char_bg.setBackgroundResource(R.drawable.cryo_800x1600_light);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.cryo_800x1600_light_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }
+                        break;
                     }
-                    break;
-                }
 
-                case "Dendro" : {
-                    holder.char_element.setImageResource(R.drawable.dendro_ico);
-                    if(isNight == true){
-                        holder.char_bg.setBackgroundResource(R.drawable.dendro_800x1600_dark);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.dendro_800x1600_dark_mask);
-                        holder.char_bg.setForeground(drawable);
-                    }else{
-                        holder.char_bg.setBackgroundResource(R.drawable.dendro_800x1600_light);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.dendro_800x1600_light_mask);
-                        holder.char_bg.setForeground(drawable);
+                    case "Dendro" : {
+                        holder.char_element.setImageResource(R.drawable.dendro_ico);
+                        if(isNight == true){
+                            holder.char_bg.setBackgroundResource(R.drawable.dendro_800x1600_dark);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.dendro_800x1600_dark_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }else{
+                            holder.char_bg.setBackgroundResource(R.drawable.dendro_800x1600_light);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.dendro_800x1600_light_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }
+                        break;
                     }
-                    break;
-                }
 
-                case "Electro" : {
-                    holder.char_element.setImageResource(R.drawable.electro_ico);
-                    if(isNight == true){
-                        holder.char_bg.setBackgroundResource(R.drawable.electro_800x1600_dark);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.electro_800x1600_dark_mask);
-                        holder.char_bg.setForeground(drawable);
-                    }else{
-                        holder.char_bg.setBackgroundResource(R.drawable.electro_800x1600_light);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.electro_800x1600_light_mask);
-                        holder.char_bg.setForeground(drawable);
+                    case "Electro" : {
+                        holder.char_element.setImageResource(R.drawable.electro_ico);
+                        if(isNight == true){
+                            holder.char_bg.setBackgroundResource(R.drawable.electro_800x1600_dark);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.electro_800x1600_dark_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }else{
+                            holder.char_bg.setBackgroundResource(R.drawable.electro_800x1600_light);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.electro_800x1600_light_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }
+                        break;
                     }
-                    break;
-                }
 
-                case "Geo" : {
-                    holder.char_element.setImageResource(R.drawable.geo_ico);
-                    if(isNight == true){
-                        holder.char_bg.setBackgroundResource(R.drawable.geo_800x1600_dark);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.geo_800x1600_dark_mask);
-                        holder.char_bg.setForeground(drawable);
-                    }else{
-                        holder.char_bg.setBackgroundResource(R.drawable.geo_800x1600_light);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.geo_800x1600_light_mask);
-                        holder.char_bg.setForeground(drawable);
+                    case "Geo" : {
+                        holder.char_element.setImageResource(R.drawable.geo_ico);
+                        if(isNight == true){
+                            holder.char_bg.setBackgroundResource(R.drawable.geo_800x1600_dark);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.geo_800x1600_dark_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }else{
+                            holder.char_bg.setBackgroundResource(R.drawable.geo_800x1600_light);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.geo_800x1600_light_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }
+                        break;
                     }
-                    break;
-                }
 
-                case "Hydro" : {
-                    holder.char_element.setImageResource(R.drawable.hydro_ico);
-                    if(isNight == true){
-                        holder.char_bg.setBackgroundResource(R.drawable.hydro_800x1600_dark);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.hydro_800x1600_dark_mask);
-                        holder.char_bg.setForeground(drawable);
-                    }else{
-                        holder.char_bg.setBackgroundResource(R.drawable.hydro_800x1600_light);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.hydro_800x1600_light_mask);
-                        holder.char_bg.setForeground(drawable);
+                    case "Hydro" : {
+                        holder.char_element.setImageResource(R.drawable.hydro_ico);
+                        if(isNight == true){
+                            holder.char_bg.setBackgroundResource(R.drawable.hydro_800x1600_dark);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.hydro_800x1600_dark_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }else{
+                            holder.char_bg.setBackgroundResource(R.drawable.hydro_800x1600_light);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.hydro_800x1600_light_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }
+                        break;
                     }
-                    break;
-                }
 
-                case "Pyro" : {
-                    holder.char_element.setImageResource(R.drawable.pyro_ico);
-                    if(isNight == true){
-                        holder.char_bg.setBackgroundResource(R.drawable.pyro_800x1600_dark);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.pyro_800x1600_dark_mask);
-                        holder.char_bg.setForeground(drawable);
-                    }else{
-                        holder.char_bg.setBackgroundResource(R.drawable.pyro_800x1600_light);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.pyro_800x1600_light_mask);
-                        holder.char_bg.setForeground(drawable);
+                    case "Pyro" : {
+                        holder.char_element.setImageResource(R.drawable.pyro_ico);
+                        if(isNight == true){
+                            holder.char_bg.setBackgroundResource(R.drawable.pyro_800x1600_dark);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.pyro_800x1600_dark_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }else{
+                            holder.char_bg.setBackgroundResource(R.drawable.pyro_800x1600_light);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.pyro_800x1600_light_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }
+                        break;
                     }
-                    break;
                 }
-
-
+                break;
             }
-        }else if(context.getSharedPreferences("user_info",MODE_PRIVATE).getString("curr_ui_grid", "2").equals("3") ){
-            switch (Characters.getElement()){
-                case "Anemo" : {
-                    holder.char_element.setImageResource(R.drawable.anemo_ico);
-                    if(isNight == true){
-                        holder.char_bg.setBackgroundResource(R.drawable.anemo_800x1000_dark);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.anemo_800x1000_dark_mask);
-                        holder.char_bg.setForeground(drawable);
-                    }else{
-                        holder.char_bg.setBackgroundResource(R.drawable.anemo_800x1000_light);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.anemo_800x1000_light_mask);
-                        holder.char_bg.setForeground(drawable);
+            case "3":{
+                switch (Characters.getElement()){
+                    case "Anemo" : {
+                        holder.char_element.setImageResource(R.drawable.anemo_ico);
+                        if(isNight == true){
+                            holder.char_bg.setBackgroundResource(R.drawable.anemo_800x1000_dark);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.anemo_800x1000_dark_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }else{
+                            holder.char_bg.setBackgroundResource(R.drawable.anemo_800x1000_light);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.anemo_800x1000_light_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }
+                        break;
                     }
-                    break;
-                }
 
-                case "Cryo" : {
-                    holder.char_element.setImageResource(R.drawable.cryo_ico);
-                    if(isNight == true){
-                        holder.char_bg.setBackgroundResource(R.drawable.cryo_800x1000_dark);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.cryo_800x1000_dark_mask);
-                        holder.char_bg.setForeground(drawable);
-                    }else{
-                        holder.char_bg.setBackgroundResource(R.drawable.cryo_800x1000_light);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.cryo_800x1000_light_mask);
-                        holder.char_bg.setForeground(drawable);
+                    case "Cryo" : {
+                        holder.char_element.setImageResource(R.drawable.cryo_ico);
+                        if(isNight == true){
+                            holder.char_bg.setBackgroundResource(R.drawable.cryo_800x1000_dark);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.cryo_800x1000_dark_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }else{
+                            holder.char_bg.setBackgroundResource(R.drawable.cryo_800x1000_light);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.cryo_800x1000_light_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }
+                        break;
                     }
-                    break;
-                }
 
-                case "Dendro" : {
-                    holder.char_element.setImageResource(R.drawable.dendro_ico);
-                    if(isNight == true){
-                        holder.char_bg.setBackgroundResource(R.drawable.dendro_800x1000_dark);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.dendro_800x1000_dark_mask);
-                        holder.char_bg.setForeground(drawable);
-                    }else{
-                        holder.char_bg.setBackgroundResource(R.drawable.dendro_800x1000_light);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.dendro_800x1000_light_mask);
-                        holder.char_bg.setForeground(drawable);
+                    case "Dendro" : {
+                        holder.char_element.setImageResource(R.drawable.dendro_ico);
+                        if(isNight == true){
+                            holder.char_bg.setBackgroundResource(R.drawable.dendro_800x1000_dark);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.dendro_800x1000_dark_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }else{
+                            holder.char_bg.setBackgroundResource(R.drawable.dendro_800x1000_light);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.dendro_800x1000_light_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }
+                        break;
                     }
-                    break;
-                }
 
-                case "Electro" : {
-                    holder.char_element.setImageResource(R.drawable.electro_ico);
-                    if(isNight == true){
-                        holder.char_bg.setBackgroundResource(R.drawable.electro_800x1000_dark);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.electro_800x1000_dark_mask);
-                        holder.char_bg.setForeground(drawable);
-                    }else{
-                        holder.char_bg.setBackgroundResource(R.drawable.electro_800x1000_light);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.electro_800x1000_light_mask);
-                        holder.char_bg.setForeground(drawable);
+                    case "Electro" : {
+                        holder.char_element.setImageResource(R.drawable.electro_ico);
+                        if(isNight == true){
+                            holder.char_bg.setBackgroundResource(R.drawable.electro_800x1000_dark);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.electro_800x1000_dark_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }else{
+                            holder.char_bg.setBackgroundResource(R.drawable.electro_800x1000_light);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.electro_800x1000_light_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }
+                        break;
                     }
-                    break;
-                }
 
-                case "Geo" : {
-                    holder.char_element.setImageResource(R.drawable.geo_ico);
-                    if(isNight == true){
-                        holder.char_bg.setBackgroundResource(R.drawable.geo_800x1000_dark);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.geo_800x1000_dark_mask);
-                        holder.char_bg.setForeground(drawable);
-                    }else{
-                        holder.char_bg.setBackgroundResource(R.drawable.geo_800x1000_light);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.geo_800x1000_light_mask);
-                        holder.char_bg.setForeground(drawable);
+                    case "Geo" : {
+                        holder.char_element.setImageResource(R.drawable.geo_ico);
+                        if(isNight == true){
+                            holder.char_bg.setBackgroundResource(R.drawable.geo_800x1000_dark);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.geo_800x1000_dark_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }else{
+                            holder.char_bg.setBackgroundResource(R.drawable.geo_800x1000_light);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.geo_800x1000_light_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }
+                        break;
                     }
-                    break;
-                }
 
-                case "Hydro" : {
-                    holder.char_element.setImageResource(R.drawable.hydro_ico);
-                    if(isNight == true){
-                        holder.char_bg.setBackgroundResource(R.drawable.hydro_800x1000_dark);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.hydro_800x1000_dark_mask);
-                        holder.char_bg.setForeground(drawable);
-                    }else{
-                        holder.char_bg.setBackgroundResource(R.drawable.hydro_800x1000_light);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.hydro_800x1000_light_mask);
-                        holder.char_bg.setForeground(drawable);
+                    case "Hydro" : {
+                        holder.char_element.setImageResource(R.drawable.hydro_ico);
+                        if(isNight == true){
+                            holder.char_bg.setBackgroundResource(R.drawable.hydro_800x1000_dark);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.hydro_800x1000_dark_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }else{
+                            holder.char_bg.setBackgroundResource(R.drawable.hydro_800x1000_light);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.hydro_800x1000_light_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }
+                        break;
                     }
-                    break;
-                }
-
-                case "Pyro" : {
-                    holder.char_element.setImageResource(R.drawable.pyro_ico);
-                    if(isNight == true){
-                        holder.char_bg.setBackgroundResource(R.drawable.pyro_800x1000_dark);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.pyro_800x1000_dark_mask);
-                        holder.char_bg.setForeground(drawable);
-                    }else{
-                        holder.char_bg.setBackgroundResource(R.drawable.pyro_800x1000_light);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.pyro_800x1000_light_mask);
-                        holder.char_bg.setForeground(drawable);
+                    //<clip-path
+                    //                    android:pathData="M800 1520c0 44.18-35.82 80-80 80V0c44.18 0 80 35.82 80 80v1440Z"/>
+                    //
+                    case "Pyro" : {
+                        holder.char_element.setImageResource(R.drawable.pyro_ico);
+                        if(isNight == true){
+                            holder.char_bg.setBackgroundResource(R.drawable.pyro_800x1000_dark);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.pyro_800x1000_dark_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }else{
+                            holder.char_bg.setBackgroundResource(R.drawable.pyro_800x1000_light);
+                            Drawable drawable = context.getResources().getDrawable(R.drawable.pyro_800x1000_light_mask);
+                            holder.char_bg.setForeground(drawable);
+                        }
+                        break;
                     }
-                    break;
+
+
                 }
-
-
+                break;
             }
-        }else if(context.getSharedPreferences("user_info",MODE_PRIVATE).getString("curr_ui_grid", "2").equals("4") ){
+            case "4":{
+                switch (Characters.getElement()){
+                    case "Anemo" : {
+                        holder.char_element.setImageResource(R.drawable.anemo_ico);
+                        break;
+                    }
 
-            switch (Characters.getElement()){
-                case "Anemo" : {
-                    holder.char_element.setImageResource(R.drawable.anemo_ico);
-                    break;
+                    case "Cryo" : {
+                        holder.char_element.setImageResource(R.drawable.cryo_ico);
+                        break;
+                    }
+
+                    case "Dendro" : {
+                        holder.char_element.setImageResource(R.drawable.dendro_ico);
+                        break;
+                    }
+
+                    case "Electro" : {
+                        holder.char_element.setImageResource(R.drawable.electro_ico);
+                        break;
+                    }
+
+                    case "Geo" : {
+                        holder.char_element.setImageResource(R.drawable.geo_ico);
+                        break;
+                    }
+
+                    case "Hydro" : {
+                        holder.char_element.setImageResource(R.drawable.hydro_ico);
+                        break;
+                    }
+
+                    case "Pyro" : {
+                        holder.char_element.setImageResource(R.drawable.pyro_ico);
+                        break;
+                    }
                 }
 
-                case "Cryo" : {
-                    holder.char_element.setImageResource(R.drawable.cryo_ico);
-                    break;
+                Picasso.get()
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[4],context)).resize((int) (width_curr),(int) ((width_curr)/2.1))//.transform(transformation_circ_siptik)
+                        .error (R.drawable.paimon_lost)
+                        .into(holder.char_card_bg);
+
+                int frame = R.drawable.bg_day_frame;
+
+                if (isNight){
+                    frame = R.drawable.bg_night_frame;
                 }
 
-                case "Dendro" : {
-                    holder.char_element.setImageResource(R.drawable.dendro_ico);
-                    break;
-                }
-
-                case "Electro" : {
-                    holder.char_element.setImageResource(R.drawable.electro_ico);
-                    break;
-                }
-
-                case "Geo" : {
-                    holder.char_element.setImageResource(R.drawable.geo_ico);
-                    break;
-                }
-
-                case "Hydro" : {
-                    holder.char_element.setImageResource(R.drawable.hydro_ico);
-                    break;
-                }
-
-                case "Pyro" : {
-                    holder.char_element.setImageResource(R.drawable.pyro_ico);
-                    break;
-                }
+                Picasso.get()
+                        .load (frame).resize((int) (width_curr),(int) ((width_curr)/2.1))//.transform(transformation_circ_siptik)
+                        .error (frame)
+                        .into (holder.char_card_mask);
+                holder.char_press_mask.setPadding(8,8,8,8);
+                holder.char_card.setPadding(8,8,8,8);
+                break;
             }
-
-            Picasso.get()
-                    .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[4],context)).resize((int) (width_curr),(int) ((width_curr)/2.1))//.transform(transformation_circ_siptik)
-                    .error (R.drawable.paimon_lost)
-                    .into(holder.char_card_bg);
-
-            int frame = R.drawable.bg_day_frame;
-
-            if (isNight){
-                frame = R.drawable.bg_night_frame;
-            }
-
-            Picasso.get()
-                    .load (frame).resize((int) (width_curr),(int) ((width_curr)/2.1))//.transform(transformation_circ_siptik)
-                    .error (frame)
-                    .into (holder.char_card_mask);
-
-            //holder.char_card_bg.setPadding(8,8,8,8);
-            //holder.char_card_mask.setPadding(8,8,8,8);
-            holder.char_press_mask.setPadding(8,8,8,8);
-            holder.char_card.setPadding(8,8,8,8);
-
-        }else if(context.getSharedPreferences("user_info",MODE_PRIVATE).getString("curr_ui_grid", "2").equals("5") ){
-            switch (Characters.getRare()){
-                case 1 : holder.char_icon.setBackgroundResource(R.drawable.bg_rare1_char_siptik);break;
-                case 2 : holder.char_icon.setBackgroundResource(R.drawable.bg_rare2_char_siptik);break;
-                case 3 : holder.char_icon.setBackgroundResource(R.drawable.bg_rare3_char_siptik);break;
-                case 4 : holder.char_icon.setBackgroundResource(R.drawable.bg_rare4_char_siptik);break;
-                case 5 : holder.char_icon.setBackgroundResource(R.drawable.bg_rare5_char_siptik);break;
-                default:  holder.char_icon.setBackgroundResource(R.drawable.bg_rare1_char_siptik);break;
-            }
-            holder.char_star.setVisibility(View.GONE);
-            holder.char_star_ll.setVisibility(View.GONE);
-            switch (Characters.getElement()){
-                case "Anemo" : {
-                    holder.char_element.setImageResource(R.drawable.anemo_ico);
-                    break;
+            case "5":{
+                switch (Characters.getRare()){
+                    case 1 : holder.char_icon.setBackgroundResource(R.drawable.bg_rare1_char_siptik);break;
+                    case 2 : holder.char_icon.setBackgroundResource(R.drawable.bg_rare2_char_siptik);break;
+                    case 3 : holder.char_icon.setBackgroundResource(R.drawable.bg_rare3_char_siptik);break;
+                    case 4 : holder.char_icon.setBackgroundResource(R.drawable.bg_rare4_char_siptik);break;
+                    case 5 : holder.char_icon.setBackgroundResource(R.drawable.bg_rare5_char_siptik);break;
+                    default:  holder.char_icon.setBackgroundResource(R.drawable.bg_rare1_char_siptik);break;
                 }
-
-                case "Cryo" : {
-                    holder.char_element.setImageResource(R.drawable.cryo_ico);
-                    break;
-                }
-
-                case "Dendro" : {
-                    holder.char_element.setImageResource(R.drawable.dendro_ico);
-                    break;
-                }
-
-                case "Electro" : {
-                    holder.char_element.setImageResource(R.drawable.electro_ico);
-                    break;
-                }
-
-                case "Geo" : {
-                    holder.char_element.setImageResource(R.drawable.geo_ico);
-                    break;
-                }
-
-                case "Hydro" : {
-                    holder.char_element.setImageResource(R.drawable.hydro_ico);
-                    break;
-                }
-
-                case "Pyro" : {
-                    holder.char_element.setImageResource(R.drawable.pyro_ico);
-                    break;
-                }
-            }
-
-            Picasso.get()
-                    .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[4],context)).resize((int) (width_curr),(int) ((width_curr)/2.1))//.transform(transformation_circ_siptik)
-                    .error (R.drawable.paimon_lost)
-                    .into(holder.char_card_bg);
-
-            int frame = R.drawable.bg_day_frame;
-
-            if (isNight){
-                frame = R.drawable.bg_night_frame;
-            }
-
-            Picasso.get()
-                    .load (frame).resize((int) (width_curr),(int) ((width_curr)/2.1))//.transform(transformation_circ_siptik)
-                    .error (frame)
-                    .into (holder.char_card_mask);
-
-            //holder.char_card_bg.setPadding(8,8,8,8);
-            //holder.char_card_mask.setPadding(8,8,8,8);
-            holder.char_press_mask.setPadding(8,8,8,8);
-            holder.char_cbg.setPadding(8,8,8,8);
-
-        }else{
-            switch (Characters.getElement()){
-                case "Anemo" : {
-                    holder.char_element.setImageResource(R.drawable.anemo_ico);
-                    if(isNight == true){
-                        holder.char_bg.setBackgroundResource(R.drawable.anemo_800x1000_dark);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.anemo_800x1000_dark_mask);
-                        holder.char_bg.setForeground(drawable);
-                    }else{
-                        holder.char_bg.setBackgroundResource(R.drawable.anemo_800x1000_light);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.anemo_800x1000_light_mask);
-                        holder.char_bg.setForeground(drawable);
+                holder.char_star.setVisibility(View.GONE);
+                holder.char_star_ll.setVisibility(View.GONE);
+                switch (Characters.getElement()){
+                    case "Anemo" : {
+                        holder.char_element.setImageResource(R.drawable.anemo_ico);
+                        break;
                     }
-                    break;
-                }
 
-                case "Cryo" : {
-                    holder.char_element.setImageResource(R.drawable.cryo_ico);
-                    if(isNight == true){
-                        holder.char_bg.setBackgroundResource(R.drawable.cryo_800x1000_dark);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.cryo_800x1000_dark_mask);
-                        holder.char_bg.setForeground(drawable);
-                    }else{
-                        holder.char_bg.setBackgroundResource(R.drawable.cryo_800x1000_light);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.cryo_800x1000_light_mask);
-                        holder.char_bg.setForeground(drawable);
+                    case "Cryo" : {
+                        holder.char_element.setImageResource(R.drawable.cryo_ico);
+                        break;
                     }
-                    break;
-                }
 
-                case "Dendro" : {
-                    holder.char_element.setImageResource(R.drawable.dendro_ico);
-                    if(isNight == true){
-                        holder.char_bg.setBackgroundResource(R.drawable.dendro_800x1000_dark);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.dendro_800x1000_dark_mask);
-                        holder.char_bg.setForeground(drawable);
-                    }else{
-                        holder.char_bg.setBackgroundResource(R.drawable.dendro_800x1000_light);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.dendro_800x1000_light_mask);
-                        holder.char_bg.setForeground(drawable);
+                    case "Dendro" : {
+                        holder.char_element.setImageResource(R.drawable.dendro_ico);
+                        break;
                     }
-                    break;
-                }
 
-                case "Electro" : {
-                    holder.char_element.setImageResource(R.drawable.electro_ico);
-                    if(isNight == true){
-                        holder.char_bg.setBackgroundResource(R.drawable.electro_800x1000_dark);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.electro_800x1000_dark_mask);
-                        holder.char_bg.setForeground(drawable);
-                    }else{
-                        holder.char_bg.setBackgroundResource(R.drawable.electro_800x1000_light);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.electro_800x1000_light_mask);
-                        holder.char_bg.setForeground(drawable);
+                    case "Electro" : {
+                        holder.char_element.setImageResource(R.drawable.electro_ico);
+                        break;
                     }
-                    break;
-                }
 
-                case "Geo" : {
-                    holder.char_element.setImageResource(R.drawable.geo_ico);
-                    if(isNight == true){
-                        holder.char_bg.setBackgroundResource(R.drawable.geo_800x1000_dark);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.geo_800x1000_dark_mask);
-                        holder.char_bg.setForeground(drawable);
-                    }else{
-                        holder.char_bg.setBackgroundResource(R.drawable.geo_800x1000_light);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.geo_800x1000_light_mask);
-                        holder.char_bg.setForeground(drawable);
+                    case "Geo" : {
+                        holder.char_element.setImageResource(R.drawable.geo_ico);
+                        break;
                     }
-                    break;
-                }
 
-                case "Hydro" : {
-                    holder.char_element.setImageResource(R.drawable.hydro_ico);
-                    if(isNight == true){
-                        holder.char_bg.setBackgroundResource(R.drawable.hydro_800x1000_dark);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.hydro_800x1000_dark_mask);
-                        holder.char_bg.setForeground(drawable);
-                    }else{
-                        holder.char_bg.setBackgroundResource(R.drawable.hydro_800x1000_light);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.hydro_800x1000_light_mask);
-                        holder.char_bg.setForeground(drawable);
+                    case "Hydro" : {
+                        holder.char_element.setImageResource(R.drawable.hydro_ico);
+                        break;
                     }
-                    break;
-                }
 
-                case "Pyro" : {
-                    holder.char_element.setImageResource(R.drawable.pyro_ico);
-                    if(isNight == true){
-                        holder.char_bg.setBackgroundResource(R.drawable.pyro_800x1000_dark);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.pyro_800x1000_dark_mask);
-                        holder.char_bg.setForeground(drawable);
-                    }else{
-                        holder.char_bg.setBackgroundResource(R.drawable.pyro_800x1000_light);
-                        Drawable drawable = context.getResources().getDrawable(R.drawable.pyro_800x1000_light_mask);
-                        holder.char_bg.setForeground(drawable);
+                    case "Pyro" : {
+                        holder.char_element.setImageResource(R.drawable.pyro_ico);
+                        break;
                     }
-                    break;
                 }
 
+                Picasso.get()
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[4],context)).resize((int) (width_curr),(int) ((width_curr)/2.1))//.transform(transformation_circ_siptik)
+                        .error (R.drawable.paimon_lost)
+                        .into(holder.char_card_bg);
 
+                int frame = R.drawable.bg_day_frame;
+
+                if (isNight){
+                    frame = R.drawable.bg_night_frame;
+                }
+
+                Picasso.get()
+                        .load (frame).resize((int) (width_curr),(int) ((width_curr)/2.1))//.transform(transformation_circ_siptik)
+                        .error (frame)
+                        .into (holder.char_card_mask);
+
+                //holder.char_card_bg.setPadding(8,8,8,8);
+                //holder.char_card_mask.setPadding(8,8,8,8);
+                holder.char_press_mask.setPadding(8,8,8,8);
+                holder.char_cbg.setPadding(8,8,8,8);
+                break;
             }
         }
 
@@ -697,8 +508,9 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
             size_per_img_siptik = 640;
         }
 
-        if(context instanceof MainActivity){
-            if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
+        switch (sharedPreferences.getString("curr_ui_grid", "2")){
+            default:
+            case "2":{
                 if(width_curr / ((int)width_curr/size_per_img+1) > size_per_img){
                     width = (width_curr) / ((int)width_curr/size_per_img+1);
                     height = (width * 14) / 8;
@@ -710,7 +522,21 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                     holder.char_name_ll.getLayoutParams().width = size_per_img;
                     holder.char_name_ll.getLayoutParams().height = (width * 2) / 8;
                 }
-            } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
+
+                holder.char_small_ico.setVisibility(View.VISIBLE);
+                Picasso.get()
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize((int) (width/3.25),(int) (width/3.25)).transform(transformation_circ)
+                        .error (R.drawable.paimon_lost)
+                        .into (holder.char_small_ico);
+                Picasso.get()
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[0],context)).resize((int)(width/1.5),(int)(height/1.5)).centerCrop().transform(transformation)
+                        .error (R.drawable.paimon_full)
+                        .into (holder.char_icon);
+                holder.char_icon.getLayoutParams().width = width;
+                holder.char_icon.getLayoutParams().height = height;
+                break;
+            }
+            case "3":{
                 if(width_curr / ((int)width_curr/size_per_img_sq+1) > size_per_img_sq){
                     width = (width_curr) / ((int)width_curr/size_per_img_sq+1);
                     height = (width_curr) / ((int)width_curr/size_per_img_sq+1);
@@ -720,7 +546,14 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                     height = size_per_img_sq;
                     holder.char_name_ll.getLayoutParams().height = (width * 2) / 5;
                 }
-            } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
+
+                Picasso.get()
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize((int) (width/1),(int) (width/1)).transform(transformation_circ)
+                        .error (R.drawable.paimon_full)
+                        .into (holder.char_icon);
+                break;
+            }
+            case "4":{
                 if(width_curr / ((int)width_curr/size_per_img_siptik+1) > size_per_img_siptik){
                     width = (width_curr) / ((int)width_curr/size_per_img_siptik+1);
                     height = (int) ((width) / 2.1);
@@ -736,11 +569,19 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                 holder.char_card_mask.getLayoutParams().height = height;
                 holder.char_card.getLayoutParams().width = width-16;
                 holder.char_card.getLayoutParams().height = height-16;
-            } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
+
+                holder.char_icon.getLayoutParams().width = 96*width/315;
+                holder.char_icon.getLayoutParams().height = 96*width/315;
+                Picasso.get()
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(96*width/315,96*width/315).transform(transformation_circ_siptik_ico)
+                        .error (R.drawable.paimon_full)
+                        .into (holder.char_icon);
+                break;
+            }
+            case "5":{
                 if(width_curr / ((int)width_curr/size_per_img_siptik+1) > size_per_img_siptik){
                     width = (width_curr) / ((int)width_curr/size_per_img_siptik+1);
                     height = (int) ((width) / 2.1);
-
                 }else{
                     width = (width_curr) / (int) (width_curr/size_per_img_siptik);
                     height = (int) ((width) / 2.1);
@@ -752,312 +593,16 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                 holder.char_card_mask.getLayoutParams().height = height;
                 holder.char_cbg.getLayoutParams().width = width-16;
                 holder.char_cbg.getLayoutParams().height = height-16;
+
+                holder.char_icon.getLayoutParams().width = 96*width/315;
+                holder.char_icon.getLayoutParams().height = 96*width/315;
+                Picasso.get()
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(96*width/315,96*width/315).transform(transformation_circ_siptik_ico)
+                        .error (R.drawable.paimon_full)
+                        .into (holder.char_icon);
+                break;
             }
-
-
-        }else if(context instanceof Desk2048){
-            if (((Desk2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                if(width_curr / ((int)width_curr/size_per_img+1) > size_per_img){
-                    width = (width_curr) / ((int)width_curr/size_per_img+1);
-                    height = (width * 14) / 8;
-                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 8;
-
-                }else{
-                    width = size_per_img;
-                    height = (width * 14) / 8;
-                    holder.char_name_ll.getLayoutParams().width = size_per_img;
-                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 8;
-                }
-            } else if (((Desk2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                if(width_curr / ((int)width_curr/size_per_img_sq+1) > size_per_img_sq){
-                    width = (width_curr) / ((int)width_curr/size_per_img_sq+1);
-                    height = (width_curr) / ((int)width_curr/size_per_img_sq+1);
-                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 5;
-                }else{
-                    width = size_per_img_sq;
-                    height = size_per_img_sq;
-                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 5;
-                }
-            } else if (((Desk2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
-                if(width_curr / ((int)width_curr/size_per_img_siptik+1) > size_per_img_siptik){
-                    width = (width_curr) / ((int)width_curr/size_per_img_siptik+1);
-                    height = (int) ((width) / 2.1);
-
-                }else{
-                    width = (width_curr) / (int) (width_curr/size_per_img_siptik);
-                    height = (int) ((width) / 2.1);
-                }
-
-                holder.char_card_bg.getLayoutParams().width = width;
-                holder.char_card_bg.getLayoutParams().height = height;
-                holder.char_card_mask.getLayoutParams().width = width;
-                holder.char_card_mask.getLayoutParams().height = height;
-                holder.char_card.getLayoutParams().width = width-16;
-                holder.char_card.getLayoutParams().height = height-16;
-            } else if (((Desk2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
-                if(width_curr / ((int)width_curr/size_per_img_siptik+1) > size_per_img_siptik){
-                    width = (width_curr) / ((int)width_curr/size_per_img_siptik+1);
-                    height = (int) ((width) / 2.1);
-
-                }else{
-                    width = (width_curr) / (int) (width_curr/size_per_img_siptik);
-                    height = (int) ((width) / 2.1);
-                }
-
-                holder.char_card_bg.getLayoutParams().width = width;
-                holder.char_card_bg.getLayoutParams().height = height;
-                holder.char_card_mask.getLayoutParams().width = width;
-                holder.char_card_mask.getLayoutParams().height = height;
-                holder.char_cbg.getLayoutParams().width = width-16;
-                holder.char_cbg.getLayoutParams().height = height-16;
-            }
-
-
-        }else if(context instanceof DeskSipTik){
-            if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                if(width_curr / ((int)width_curr/size_per_img+1) > size_per_img){
-                    width = (width_curr) / ((int)width_curr/size_per_img+1);
-                    height = (width * 14) / 8;
-                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 8;
-
-                }else{
-                    width = size_per_img;
-                    height = (width * 14) / 8;
-                    holder.char_name_ll.getLayoutParams().width = size_per_img;
-                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 8;
-                }
-            } else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                if(width_curr / ((int)width_curr/size_per_img_sq+1) > size_per_img_sq){
-                    width = (width_curr) / ((int)width_curr/size_per_img_sq+1);
-                    height = (width_curr) / ((int)width_curr/size_per_img_sq+1);
-                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 5;
-                }else{
-                    width = size_per_img_sq;
-                    height = size_per_img_sq;
-                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 5;
-                }
-            } else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
-                if(width_curr / ((int)width_curr/size_per_img_siptik+1) > size_per_img_siptik){
-                    width = (width_curr) / ((int)width_curr/size_per_img_siptik+1);
-                    height = (int) ((width) / 2.1);
-
-                }else{
-                    width = (width_curr) / (int) (width_curr/size_per_img_siptik);
-                    height = (int) ((width) / 2.1);
-                }
-
-                holder.char_card_bg.getLayoutParams().width = width;
-                holder.char_card_bg.getLayoutParams().height = height;
-                holder.char_card_mask.getLayoutParams().width = width;
-                holder.char_card_mask.getLayoutParams().height = height;
-                holder.char_card.getLayoutParams().width = width-16;
-                holder.char_card.getLayoutParams().height = height-16;
-            } else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
-                if(width_curr / ((int)width_curr/size_per_img_siptik+1) > size_per_img_siptik){
-                    width = (width_curr) / ((int)width_curr/size_per_img_siptik+1);
-                    height = (int) ((width) / 2.1);
-
-                }else{
-                    width = (width_curr) / (int) (width_curr/size_per_img_siptik);
-                    height = (int) ((width) / 2.1);
-                }
-
-                holder.char_card_bg.getLayoutParams().width = width;
-                holder.char_card_bg.getLayoutParams().height = height;
-                holder.char_card_mask.getLayoutParams().width = width;
-                holder.char_card_mask.getLayoutParams().height = height;
-                holder.char_cbg.getLayoutParams().width = width-16;
-                holder.char_cbg.getLayoutParams().height = height-16;
-            }
-
-
-        }else if(context instanceof CalculatorUI){
-            if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                if(width_curr / ((int)width_curr/size_per_img+1) > size_per_img){
-                    width = (width_curr) / ((int)width_curr/size_per_img+1);
-                    height = (width * 14) / 8;
-                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 8;
-
-                }else{
-                    width = size_per_img;
-                    height = (width * 14) / 8;
-                    holder.char_name_ll.getLayoutParams().width = size_per_img;
-                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 8;
-                }
-            } else if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                if(width_curr / ((int)width_curr/size_per_img_sq+1) > size_per_img_sq){
-                    width = (width_curr) / ((int)width_curr/size_per_img_sq+1);
-                    height = (width_curr) / ((int)width_curr/size_per_img_sq+1);
-                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 5;
-                }else{
-                    width = size_per_img_sq;
-                    height = size_per_img_sq;
-                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 5;
-                }
-            } else if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
-                if(width_curr / ((int)width_curr/size_per_img_siptik+1) > size_per_img_siptik){
-                    width = (width_curr) / ((int)width_curr/size_per_img_siptik+1);
-                    height = (int) ((width) / 2.1);
-
-                }else{
-                    width = (width_curr) / (int) (width_curr/size_per_img_siptik);
-                    height = (int) ((width) / 2.1);
-                }
-
-                holder.char_card_bg.getLayoutParams().width = width;
-                holder.char_card_bg.getLayoutParams().height = height;
-                holder.char_card_mask.getLayoutParams().width = width;
-                holder.char_card_mask.getLayoutParams().height = height;
-                holder.char_card.getLayoutParams().width = width-16;
-                holder.char_card.getLayoutParams().height = height-16;
-            } else if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
-                if(width_curr / ((int)width_curr/size_per_img_siptik+1) > size_per_img_siptik){
-                    width = (width_curr) / ((int)width_curr/size_per_img_siptik+1);
-                    height = (int) ((width) / 2.1);
-
-                }else{
-                    width = (width_curr) / (int) (width_curr/size_per_img_siptik);
-                    height = (int) ((width) / 2.1);
-                }
-
-                holder.char_card_bg.getLayoutParams().width = width;
-                holder.char_card_bg.getLayoutParams().height = height;
-                holder.char_card_mask.getLayoutParams().width = width;
-                holder.char_card_mask.getLayoutParams().height = height;
-                holder.char_cbg.getLayoutParams().width = width-16;
-                holder.char_cbg.getLayoutParams().height = height-16;
-            }
-
-
-        }else if(context instanceof Calculator2048){
-            if (((Calculator2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                if(width_curr / ((int)width_curr/size_per_img+1) > size_per_img){
-                    width = (width_curr) / ((int)width_curr/size_per_img+1);
-                    height = (width * 14) / 8;
-                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 8;
-
-                }else{
-                    width = size_per_img;
-                    height = (width * 14) / 8;
-                    holder.char_name_ll.getLayoutParams().width = size_per_img;
-                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 8;
-                }
-            } else if (((Calculator2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                if(width_curr / ((int)width_curr/size_per_img_sq+1) > size_per_img_sq){
-                    width = (width_curr) / ((int)width_curr/size_per_img_sq+1);
-                    height = (width_curr) / ((int)width_curr/size_per_img_sq+1);
-                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 5;
-                }else{
-                    width = size_per_img_sq;
-                    height = size_per_img_sq;
-                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 5;
-                }
-            } else if (((Calculator2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
-                if(width_curr / ((int)width_curr/size_per_img_siptik+1) > size_per_img_siptik){
-                    width = (width_curr) / ((int)width_curr/size_per_img_siptik+1);
-                    height = (int) ((width) / 2.1);
-
-                }else{
-                    width = (width_curr) / (int) (width_curr/size_per_img_siptik);
-                    height = (int) ((width) / 2.1);
-                }
-
-                holder.char_card_bg.getLayoutParams().width = width;
-                holder.char_card_bg.getLayoutParams().height = height;
-                holder.char_card_mask.getLayoutParams().width = width;
-                holder.char_card_mask.getLayoutParams().height = height;
-                holder.char_card.getLayoutParams().width = width-16;
-                holder.char_card.getLayoutParams().height = height-16;
-            } else if (((Calculator2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
-                if(width_curr / ((int)width_curr/size_per_img_siptik+1) > size_per_img_siptik){
-                    width = (width_curr) / ((int)width_curr/size_per_img_siptik+1);
-                    height = (int) ((width) / 2.1);
-
-                }else{
-                    width = (width_curr) / (int) (width_curr/size_per_img_siptik);
-                    height = (int) ((width) / 2.1);
-                }
-
-                holder.char_card_bg.getLayoutParams().width = width;
-                holder.char_card_bg.getLayoutParams().height = height;
-                holder.char_card_mask.getLayoutParams().width = width;
-                holder.char_card_mask.getLayoutParams().height = height;
-                holder.char_cbg.getLayoutParams().width = width-16;
-                holder.char_cbg.getLayoutParams().height = height-16;
-            }
-
-
-        }else if(context instanceof CalculatorDB_SipTik){
-            if (((CalculatorDB_SipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                if(width_curr / ((int)width_curr/size_per_img+1) > size_per_img){
-                    width = (width_curr) / ((int)width_curr/size_per_img+1);
-                    height = (width * 14) / 8;
-                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 8;
-
-                }else{
-                    width = size_per_img;
-                    height = (width * 14) / 8;
-                    holder.char_name_ll.getLayoutParams().width = size_per_img;
-                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 8;
-                }
-            } else if (((CalculatorDB_SipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                if(width_curr / ((int)width_curr/size_per_img_sq+1) > size_per_img_sq){
-                    width = (width_curr) / ((int)width_curr/size_per_img_sq+1);
-                    height = (width_curr) / ((int)width_curr/size_per_img_sq+1);
-                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 5;
-                }else{
-                    width = size_per_img_sq;
-                    height = size_per_img_sq;
-                    holder.char_name_ll.getLayoutParams().height = (width * 2) / 5;
-                }
-            } else if (((CalculatorDB_SipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
-                if(width_curr / ((int)width_curr/size_per_img_siptik+1) > size_per_img_siptik){
-                    width = (width_curr) / ((int)width_curr/size_per_img_siptik+1);
-                    height = (int) ((width) / 2.1);
-
-                }else{
-                    width = (width_curr) / (int) (width_curr/size_per_img_siptik);
-                    height = (int) ((width) / 2.1);
-                }
-
-                holder.char_card_bg.getLayoutParams().width = width;
-                holder.char_card_bg.getLayoutParams().height = height;
-                holder.char_card_mask.getLayoutParams().width = width;
-                holder.char_card_mask.getLayoutParams().height = height;
-                holder.char_card.getLayoutParams().width = width-16;
-                holder.char_card.getLayoutParams().height = height-16;
-            } else if (((CalculatorDB_SipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
-                if(width_curr / ((int)width_curr/size_per_img_siptik+1) > size_per_img_siptik){
-                    width = (width_curr) / ((int)width_curr/size_per_img_siptik+1);
-                    height = (int) ((width) / 2.1);
-
-                }else{
-                    width = (width_curr) / (int) (width_curr/size_per_img_siptik);
-                    height = (int) ((width) / 2.1);
-                }
-
-                holder.char_card_bg.getLayoutParams().width = width;
-                holder.char_card_bg.getLayoutParams().height = height;
-                holder.char_card_mask.getLayoutParams().width = width;
-                holder.char_card_mask.getLayoutParams().height = height;
-                holder.char_cbg.getLayoutParams().width = width-16;
-                holder.char_cbg.getLayoutParams().height = height-16;
-            }
-
-
         }
-
-
-        /*
-        if(Characters.getElement().equals("Anemo")){holder.char_element.setImageResource(R.drawable.anemo);holder.char_bg.setBackgroundResource(R.drawable.bg_anemo_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_anemo_char);}
-        if(Characters.getElement().equals("Cryo")){holder.char_element.setImageResource(R.drawable.cryo);holder.char_bg.setBackgroundResource(R.drawable.bg_cryo_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_cryo_char);}
-        if(Characters.getElement().equals("Electro")){holder.char_element.setImageResource(R.drawable.electro);holder.char_bg.setBackgroundResource(R.drawable.bg_electro_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_electro_char);}
-        if(Characters.getElement().equals("Geo")){holder.char_element.setImageResource(R.drawable.geo);holder.char_bg.setBackgroundResource(R.drawable.bg_geo_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_geo_char);}
-        if(Characters.getElement().equals("Hydro")){holder.char_element.setImageResource(R.drawable.hydro);holder.char_bg.setBackgroundResource(R.drawable.bg_hydro_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_hydro_char);}
-        if(Characters.getElement().equals("Pyro")){holder.char_element.setImageResource(R.drawable.pyro);holder.char_bg.setBackgroundResource(R.drawable.bg_pyro_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_pyro_char);}
-        if(Characters.getElement().equals("Dendro")){holder.char_element.setImageResource(R.drawable.dendro);holder.char_bg.setBackgroundResource(R.drawable.bg_dendro_bg);holder.char_nl.setBackgroundResource(R.drawable.bg_dendro_char);}
-
-         */
 
         holder.char_icon.getLayoutParams().width = width;
         holder.char_icon.getLayoutParams().height = height;
@@ -1080,210 +625,6 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
         holder.char_small_ico.setVisibility(View.GONE);
 
-        if(context instanceof MainActivity){
-            if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                holder.char_small_ico.setVisibility(View.VISIBLE);
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize((int) (width/3.25),(int) (width/3.25)).transform(transformation_circ)
-                        .error (R.drawable.paimon_lost)
-                        .into (holder.char_small_ico);
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[0],context)).resize((int)(width/1.5),(int)(height/1.5)).centerCrop().transform(transformation)
-                        .error (R.drawable.paimon_full)
-                        .into (holder.char_icon);
-                holder.char_icon.getLayoutParams().width = width;
-                holder.char_icon.getLayoutParams().height = height;
-            } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize((int) (width/1),(int) (width/1)).transform(transformation_circ)
-                        .error (R.drawable.paimon_full)
-                        .into (holder.char_icon);
-            } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
-                holder.char_icon.getLayoutParams().width = 96*width/315;
-                holder.char_icon.getLayoutParams().height = 96*width/315;
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(96*width/315,96*width/315).transform(transformation_circ_siptik_ico)
-                        .error (R.drawable.paimon_full)
-                        .into (holder.char_icon);
-            } else if (((MainActivity) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
-                holder.char_icon.getLayoutParams().width = 96*width/315;
-                holder.char_icon.getLayoutParams().height = 96*width/315;
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(96*width/315,96*width/315).transform(transformation_circ_siptik_ico)
-                        .error (R.drawable.paimon_full)
-                        .into (holder.char_icon);
-            }
-        }else if(context instanceof Desk2048){
-
-            if (((Desk2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                holder.char_small_ico.setVisibility(View.VISIBLE);
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize((int) (width/3.25),(int) (width/3.25)).transform(transformation_circ)
-                        .error (R.drawable.paimon_lost)
-                        .into (holder.char_small_ico);
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[0],context)).resize((int)(width/1.5),(int)(height/1.5)).centerCrop().transform(transformation)
-                        .error (R.drawable.paimon_full)
-                        .into (holder.char_icon);
-                holder.char_icon.getLayoutParams().width = width;
-                holder.char_icon.getLayoutParams().height = height;
-            } else if (((Desk2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize((int) (width/1),(int) (width/1)).transform(transformation_circ)
-                        .error (R.drawable.paimon_full)
-                        .into (holder.char_icon);
-            } else if (((Desk2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
-                holder.char_icon.getLayoutParams().width = 96*width/315;
-                holder.char_icon.getLayoutParams().height = 96*width/315;
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(96*width/315,96*width/315).transform(transformation_circ_siptik_ico)
-                        .error (R.drawable.paimon_full)
-                        .into (holder.char_icon);
-            } else if (((Desk2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
-                holder.char_icon.getLayoutParams().width = 96*width/315;
-                holder.char_icon.getLayoutParams().height = 96*width/315;
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(96*width/315,96*width/315).transform(transformation_circ_siptik_ico)
-                        .error (R.drawable.paimon_full)
-                        .into (holder.char_icon);
-            }
-        }else if(context instanceof DeskSipTik){
-
-            if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                holder.char_small_ico.setVisibility(View.VISIBLE);
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize((int) (width/3.25),(int) (width/3.25)).transform(transformation_circ)
-                        .error (R.drawable.paimon_lost)
-                        .into (holder.char_small_ico);
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[0],context)).resize((int)(width/1.5),(int)(height/1.5)).centerCrop().transform(transformation)
-                        .error (R.drawable.paimon_full)
-                        .into (holder.char_icon);
-                holder.char_icon.getLayoutParams().width = width;
-                holder.char_icon.getLayoutParams().height = height;
-            } else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize((int) (width/1),(int) (width/1)).transform(transformation_circ)
-                        .error (R.drawable.paimon_full)
-                        .into (holder.char_icon);
-            } else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
-                holder.char_icon.getLayoutParams().width = 96*width/315;
-                holder.char_icon.getLayoutParams().height = 96*width/315;
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(96*width/315,96*width/315).transform(transformation_circ_siptik_ico)
-                        .error (R.drawable.paimon_full)
-                        .into (holder.char_icon);
-            } else if (((DeskSipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
-                holder.char_icon.getLayoutParams().width = 96*width/315;
-                holder.char_icon.getLayoutParams().height = 96*width/315;
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(96*width/315,96*width/315).transform(transformation_circ_siptik_ico)
-                        .error (R.drawable.paimon_full)
-                        .into (holder.char_icon);
-            }
-        }else if(context instanceof CalculatorUI){
-
-            if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                holder.char_small_ico.setVisibility(View.VISIBLE);
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize((int) (width/3.25),(int) (width/3.25)).transform(transformation_circ)
-                        .error (R.drawable.paimon_lost)
-                        .into (holder.char_small_ico);
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[0],context)).resize((int)(width/1.5),(int)(height/1.5)).centerCrop().transform(transformation)
-                        .error (R.drawable.paimon_full)
-                        .into (holder.char_icon);
-                holder.char_icon.getLayoutParams().width = width;
-                holder.char_icon.getLayoutParams().height = height;
-            } else if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize((int) (width/1),(int) (width/1)).transform(transformation_circ)
-                        .error (R.drawable.paimon_full)
-                        .into (holder.char_icon);
-            } else if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
-                holder.char_icon.getLayoutParams().width = 96*width/315;
-                holder.char_icon.getLayoutParams().height = 96*width/315;
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(96*width/315,96*width/315).transform(transformation_circ_siptik_ico)
-                        .error (R.drawable.paimon_full)
-                        .into (holder.char_icon);
-            }else if (((CalculatorUI) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
-                holder.char_icon.getLayoutParams().width = 96*width/315;
-                holder.char_icon.getLayoutParams().height = 96*width/315;
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(96*width/315,96*width/315).transform(transformation_circ_siptik_ico)
-                        .error (R.drawable.paimon_full)
-                        .into (holder.char_icon);
-            }
-        }else if(context instanceof Calculator2048){
-
-            if (((Calculator2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                holder.char_small_ico.setVisibility(View.VISIBLE);
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize((int) (width/3.25),(int) (width/3.25)).transform(transformation_circ)
-                        .error (R.drawable.paimon_lost)
-                        .into (holder.char_small_ico);
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[0],context)).resize((int)(width/1.5),(int)(height/1.5)).centerCrop().transform(transformation)
-                        .error (R.drawable.paimon_full)
-                        .into (holder.char_icon);
-                holder.char_icon.getLayoutParams().width = width;
-                holder.char_icon.getLayoutParams().height = height;
-            } else if (((Calculator2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize((int) (width/1),(int) (width/1)).transform(transformation_circ)
-                        .error (R.drawable.paimon_full)
-                        .into (holder.char_icon);
-            } else if (((Calculator2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
-                holder.char_icon.getLayoutParams().width = 96*width/315;
-                holder.char_icon.getLayoutParams().height = 96*width/315;
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(96*width/315,96*width/315).transform(transformation_circ_siptik_ico)
-                        .error (R.drawable.paimon_full)
-                        .into (holder.char_icon);
-            }else if (((Calculator2048) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
-                holder.char_icon.getLayoutParams().width = 96*width/315;
-                holder.char_icon.getLayoutParams().height = 96*width/315;
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(96*width/315,96*width/315).transform(transformation_circ_siptik_ico)
-                        .error (R.drawable.paimon_full)
-                        .into (holder.char_icon);
-            }
-        }else if(context instanceof CalculatorDB_SipTik){
-
-            if (((CalculatorDB_SipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-                holder.char_small_ico.setVisibility(View.VISIBLE);
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize((int) (width/3.25),(int) (width/3.25)).transform(transformation_circ)
-                        .error (R.drawable.paimon_lost)
-                        .into (holder.char_small_ico);
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[0],context)).resize((int)(width/1.5),(int)(height/1.5)).centerCrop().transform(transformation)
-                        .error (R.drawable.paimon_full)
-                        .into (holder.char_icon);
-                holder.char_icon.getLayoutParams().width = width;
-                holder.char_icon.getLayoutParams().height = height;
-            } else if (((CalculatorDB_SipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize((int) (width/1),(int) (width/1)).transform(transformation_circ)
-                        .error (R.drawable.paimon_full)
-                        .into (holder.char_icon);
-            } else if (((CalculatorDB_SipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
-                holder.char_icon.getLayoutParams().width = 96*width/315;
-                holder.char_icon.getLayoutParams().height = 96*width/315;
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(96*width/315,96*width/315).transform(transformation_circ_siptik_ico)
-                        .error (R.drawable.paimon_full)
-                        .into (holder.char_icon);
-            }else if (((CalculatorDB_SipTik) this.context).sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
-                holder.char_icon.getLayoutParams().width = 96*width/315;
-                holder.char_icon.getLayoutParams().height = 96*width/315;
-                Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(96*width/315,96*width/315).transform(transformation_circ_siptik_ico)
-                        .error (R.drawable.paimon_full)
-                        .into (holder.char_icon);
-            }
-        }
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
         String color_hex = sharedPreferences.getString("theme_color_hex","#FF5A5A"); // Must include #
 
@@ -1296,7 +637,6 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
             holder.char_region.setText(item_rss.getLocaleName(Characters.getNation(),context));
             holder.char_region_img.setImageResource(item_rss.getDistrictIMG(Characters.getNation()));
         }
-
 
         ColorStateList myList = new ColorStateList(
                 new int[][]{
@@ -1368,15 +708,13 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
             char_press_mask.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Log.wtf("is context instanceof MainActivity ?",context.getPackageName());
-                    if (context instanceof MainActivity){Log.wtf("YES","IT's");
+                    if (context instanceof MainActivity){
                         (((MainActivity) context)).startInfo(String.valueOf(char_base_name.getText()),activity);
-
-                    }else if (context instanceof Desk2048){Log.wtf("YES","IT's");
+                    }else if (context instanceof Desk2048){
                         (((Desk2048) context)).startCharInfo(String.valueOf(char_base_name.getText()),activity);
-                    }else if (context instanceof DeskSipTik){Log.wtf("YES","IT's");
+                    }else if (context instanceof DeskSipTik){
                         (((DeskSipTik) context)).startCharInfo(String.valueOf(char_base_name.getText()),activity);
-                    }else if (context instanceof Calculator2048){Log.wtf("YES","IT's");
+                    }else if (context instanceof Calculator2048){
                         ArrayList<String> nameList = (((Calculator2048) context)).choosedNameList;
                         boolean have = false;
                         String name = String.valueOf(char_base_name.getText());
@@ -1390,7 +728,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                         } else {
                             CustomToast.toast(context,view,context.getString(R.string.cal_choosed_already));
                         }
-                    }else if (context instanceof CalculatorDB_SipTik){Log.wtf("YES","IT's");
+                    }else if (context instanceof CalculatorDB_SipTik){
                         ArrayList<String> nameList = (((CalculatorDB_SipTik) context)).choosedNameList;
                         boolean have = false;
                         String name = String.valueOf(char_base_name.getText());
@@ -1405,7 +743,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                             CustomToast.toast(context,view,context.getString(R.string.cal_choosed_already));
                         }
                     }
-                    else if (context instanceof CalculatorUI){Log.wtf("YES","IT's");
+                    else if (context instanceof CalculatorUI){
                         ArrayList<String> nameList = (((CalculatorUI) context)).checkNameList();
                         boolean have = false;
                         String name = String.valueOf(char_base_name.getText());
@@ -1413,40 +751,6 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                         if(nameList.contains(name.replace("_"," "))){
                             have = true;
                         }
-
-                        /*
-                            if (context instanceof MainActivity){Log.wtf("YES","IT's");
-                        if(char_isComing.getVisibility() == View.GONE){
-                            (((MainActivity) context)).startInfo(String.valueOf(char_base_name.getText()),activity);
-                        }else{
-                            CustomToast.toast(context,view,context.getString(R.string.unreleased));
-                        }
-                    }else if (context instanceof Desk2048){Log.wtf("YES","IT's");
-                        if(char_isComing.getVisibility() == View.GONE){
-                            (((Desk2048) context)).startCharInfo(String.valueOf(char_base_name.getText()),activity);
-                        }else{
-                            CustomToast.toast(context,view,context.getString(R.string.unreleased));
-                        }
-                    }else if (context instanceof DeskSipTik){Log.wtf("YES","IT's");
-                        if(char_isComing.getVisibility() == View.GONE){
-                            (((DeskSipTik) context)).startCharInfo(String.valueOf(char_base_name.getText()),activity);
-                        }else{
-                            CustomToast.toast(context,view,context.getString(R.string.unreleased));
-                        }
-                    }
-                         */
-                        /*
-                        if(char_isComing.getVisibility() == View.GONE) {
-                            if (have == false) {
-                                (((CalculatorUI) context)).charQuestion(String.valueOf(char_base_name.getText()), "ADD", 0);
-                            } else {
-                                Toast.makeText(((CalculatorUI) context), "You have already set this character !", Toast.LENGTH_SHORT).show();
-                            }
-                        }else {
-                            Toast.makeText(((CalculatorUI) context), "暫時沒有他/她的相關資料,無法計算", Toast.LENGTH_SHORT).show();
-                        }
-
-                         */
 
                         if (have == false) {
                             (((CalculatorUI) context)).charQuestion(String.valueOf(char_base_name.getText()), "ADD", 0);

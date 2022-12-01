@@ -520,7 +520,7 @@ public class Calculator2048 extends AppCompatActivity{
                 final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
                 View view = View.inflate(context, R.layout.fragment_cal_choose_2048, null);
                 dialogX = dialog;
-                mCharAdapter = new CharactersAdapter(context,charactersList,activity);
+                mCharAdapter = new CharactersAdapter(context,charactersList,activity,sharedPreferences);
                 mWeaponAdapter = new WeaponsAdapter(context,weaponsList,activity);
                 mArtifactAdapter = new ArtifactsAdapter(context,artifactsList,activity);
 

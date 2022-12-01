@@ -725,7 +725,7 @@ public class MainActivity extends AppCompatActivity {
     private void setup_char() {
         check_spinner = 0;
         mList = viewPager0.findViewById(R.id.main_list);
-        mAdapter = new CharactersAdapter(context,charactersList,activity);
+        mAdapter = new CharactersAdapter(context,charactersList,activity,sharedPreferences);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 2);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);

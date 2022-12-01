@@ -479,7 +479,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
     private void char_setup() {
         viewPager.setCurrentItem(0);
         mList_char = viewPager0.findViewById(R.id.main_list);
-        mCharAdapter = new CharactersAdapter(context, charactersList,activity);
+        mCharAdapter = new CharactersAdapter(context, charactersList,activity, sharedPreferences);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 3);
         DisplayMetrics displayMetrics_a = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics_a);
