@@ -379,7 +379,7 @@ public class SipTikCal extends AppCompatActivity {
                 getWindowManager().getDefaultDisplay().getMetrics(displayMetrics_w);
                 int height_w = displayMetrics_w.heightPixels;
                 int width_w = displayMetrics_w.widthPixels;
-                mWeaponAdapter = new WeaponsAdapter(context,weaponsList,activity);
+                mWeaponAdapter = new WeaponsAdapter(context,weaponsList,activity,sharedPreferences);
                 LinearLayout linearLayout2 = view1.findViewById(R.id.linearLayout2);
                 linearLayout2.setVisibility(View.GONE);
                 mWeaponList.setPadding(0,0,0,0);
@@ -433,7 +433,7 @@ public class SipTikCal extends AppCompatActivity {
                 activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics_w);
                 int height_w = displayMetrics_w.heightPixels;
                 int width_w = displayMetrics_w.widthPixels;
-                mArtifactAdapter = new ArtifactsAdapter(context,artifactsList,activity,1);
+                mArtifactAdapter = new ArtifactsAdapter(context,artifactsList,activity,1,sharedPreferences);
                 LinearLayout linearLayout2 = view1.findViewById(R.id.linearLayout2);
                 linearLayout2.setVisibility(View.GONE);
                 mArtifactList.setPadding(0,0,0,0);
@@ -478,7 +478,7 @@ public class SipTikCal extends AppCompatActivity {
                 getWindowManager().getDefaultDisplay().getMetrics(displayMetrics_w);
                 int height_w = displayMetrics_w.heightPixels;
                 int width_w = displayMetrics_w.widthPixels;
-                mArtifactAdapter = new ArtifactsAdapter(context,artifactsList,activity,2);
+                mArtifactAdapter = new ArtifactsAdapter(context,artifactsList,activity,2,sharedPreferences);
                 LinearLayout linearLayout2 = view1.findViewById(R.id.linearLayout2);
                 linearLayout2.setVisibility(View.GONE);
                 mArtifactList.setPadding(0,0,0,0);

@@ -521,8 +521,8 @@ public class Calculator2048 extends AppCompatActivity{
                 View view = View.inflate(context, R.layout.fragment_cal_choose_2048, null);
                 dialogX = dialog;
                 mCharAdapter = new CharactersAdapter(context,charactersList,activity,sharedPreferences);
-                mWeaponAdapter = new WeaponsAdapter(context,weaponsList,activity);
-                mArtifactAdapter = new ArtifactsAdapter(context,artifactsList,activity);
+                mWeaponAdapter = new WeaponsAdapter(context,weaponsList,activity,sharedPreferences);
+                mArtifactAdapter = new ArtifactsAdapter(context,artifactsList,activity,sharedPreferences);
 
                 switch (viewPager.getCurrentItem()){
                     case 0 : addSetup(view,"char");break;

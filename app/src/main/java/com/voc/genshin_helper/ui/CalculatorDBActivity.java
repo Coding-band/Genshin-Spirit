@@ -85,6 +85,7 @@ public class CalculatorDBActivity extends AppCompatActivity {
     private static SQLiteDatabase db;
     DataBaseHelper dbHelper = null;
     FloatingActionButton db_add_btn;
+    SharedPreferences sharedPreferences;
 
     Activity activity;
 
@@ -99,11 +100,12 @@ public class CalculatorDBActivity extends AppCompatActivity {
         context = this;
         dbHelper = new DataBaseHelper(this);
         activity = this;
+        sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
 
         BackgroundReload.BackgroundReload(context,activity);
 
         mList = findViewById(R.id.main_list);
-        mAdapter = new CalculatorDBAdapter(this, calculatorDBList,activity);
+        mAdapter = new CalculatorDBAdapter(this, calculatorDBList,activity,sharedPreferences);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 1);
         mList.setLayoutManager(mLayoutManager);
         mList.setAdapter(mAdapter);

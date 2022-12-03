@@ -860,7 +860,7 @@ public class Desk2048 extends AppCompatActivity {
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics_w);
         int height_w = displayMetrics_w.heightPixels;
         int width_w = displayMetrics_w.widthPixels;
-        mWeaponAdapter = new WeaponsAdapter(context,weaponsList,activity);
+        mWeaponAdapter = new WeaponsAdapter(context,weaponsList,activity,sharedPreferences);
 
 
         if (sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
@@ -1586,7 +1586,7 @@ public class Desk2048 extends AppCompatActivity {
 
     private void setup_art(){
         mArtifactList = viewPager3.findViewById(R.id.artifact_list);
-        mArtifactAdapter = new ArtifactsAdapter(context,artifactsList,activity);
+        mArtifactAdapter = new ArtifactsAdapter(context,artifactsList,activity,sharedPreferences);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 2);
 
         DisplayMetrics displayMetrics_a = new DisplayMetrics();

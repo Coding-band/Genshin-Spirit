@@ -756,7 +756,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
     private void weapon_setup() {
         mList_weapon = viewPager1.findViewById(R.id.main_list);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 3);
-        mWeaponAdapter = new WeaponsAdapter(context,weaponsList,activity);
+        mWeaponAdapter = new WeaponsAdapter(context,weaponsList,activity,sharedPreferences);
         DisplayMetrics displayMetrics_a = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics_a);
         int height_a = displayMetrics_a.heightPixels;
@@ -994,7 +994,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
     private void artifact_setup() {
         mList_artifact = viewPager2.findViewById(R.id.main_list);
-        mArtifactAdapter = new ArtifactsAdapter(context, artifactsList,activity);
+        mArtifactAdapter = new ArtifactsAdapter(context, artifactsList,activity, sharedPreferences);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 3);
         DisplayMetrics displayMetrics_a = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics_a);

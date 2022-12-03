@@ -98,14 +98,19 @@ public class CalculatorDBAdapter extends RecyclerView.Adapter<CalculatorDBAdapte
     public ArrayList<Integer> artifactChoosedRare = new ArrayList<>();
     public ArrayList<String> artifactChoosedType = new ArrayList<>();
 
+    private SharedPreferences sharedPreferences;
+
     String[] rules = new String[]{
             "0","1","2","3","4","5","6","7","8","9",
             "&","*","@","\"","{","}","^",":",",","#","$","\"","!","/","<",">","-","%",".","+","?",";","'"," ","~","_","|","="};
 
-    public CalculatorDBAdapter(Context context, List<CalculatorDB> dbList, Activity activity) {
+    public CalculatorDBAdapter(Context context, List<CalculatorDB> dbList, Activity activity, SharedPreferences sharedPreferences) {
         this.context = context;
         this.activity = activity;
         this.dbList = dbList;
+        this.sharedPreferences = sharedPreferences;
+
+
     }
 
     public interface OnItemClickListener {

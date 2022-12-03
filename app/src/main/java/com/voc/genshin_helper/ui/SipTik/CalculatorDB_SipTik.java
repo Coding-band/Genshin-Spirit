@@ -237,7 +237,7 @@ public class CalculatorDB_SipTik extends AppCompatActivity {
         mMainList.removeAllViewsInLayout();
 
         charactersAdapter = new CharactersAdapter(context,charactersList,activity,sharedPreferences);
-        weaponsAdapter = new WeaponsAdapter(context,weaponsList,activity);
+        weaponsAdapter = new WeaponsAdapter(context,weaponsList,activity,sharedPreferences);
 
         readIndexRecord();
 

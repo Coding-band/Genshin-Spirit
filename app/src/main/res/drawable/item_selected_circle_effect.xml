@@ -6,12 +6,11 @@
 
 <ripple xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:color="@color/page_bg"
-    tools:targetApi="lollipop">
+    android:color="@color/page_bg">
     <item android:id="@android:id/mask">
         <shape android:shape="rectangle">
             <solid android:color="@color/page_bg" />
-            <corners android:radius="100px"/>
+            <corners android:radius="60px"/>
         </shape>
     </item>
 

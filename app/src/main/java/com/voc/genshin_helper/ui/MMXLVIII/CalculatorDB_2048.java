@@ -65,6 +65,7 @@ public class CalculatorDB_2048 extends AppCompatActivity {
     ImageView db_add, db_back ;
 
     Dialog dialog;
+    SharedPreferences sharedPreferences;
 
     Activity activity;
 
@@ -83,10 +84,12 @@ public class CalculatorDB_2048 extends AppCompatActivity {
         dbHelper = new DataBaseHelper(this);
         activity = this;
 
+        sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
+
         BackgroundReload.BackgroundReload(context,activity);
 
         mList = findViewById(R.id.main_list);
-        mAdapter = new CalculatorDBAdapter(this, calculatorDBList,activity);
+        mAdapter = new CalculatorDBAdapter(this, calculatorDBList,activity,sharedPreferences);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 1);
         mList.setLayoutManager(mLayoutManager);
         mList.setAdapter(mAdapter);
