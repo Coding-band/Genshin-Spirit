@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2022 Xectorda 版權所有
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="800dp"
+    android:height="1000dp"
+    android:viewportWidth="800"
+    android:viewportHeight="1000">
+    <group>
+        <group>
+            <path
+                android:pathData="M0 100C0 44.77 44.77 0 100 0h600c55.23 0 100 44.77 100 100v700H0V100Z">
+                <aapt:attr name="android:fillColor">
+                    <gradient
+                        android:type="linear"
+                        android:startX="400"
+                        android:startY="0"
+                        android:endX="400"
+                        android:endY="800">
+                        <item
+                            android:color="#FF48575C"
+                            android:offset="0"/>
+                        <item
+                            android:color="#FF66957A"
+                            android:offset="1"/>
+                    </gradient>
+                </aapt:attr>
+            </path>
+        </group>
+        <path
+            android:fillColor="#FF826F4F"
+            android:pathData="M0 800h800v100c0 55.23-44.77 100-100 100H100C44.77 1000 0 955.23 0 900V800Z"/>
+        <path
+            android:strokeColor="#1A000000"
+            android:strokeWidth="20"
+            android:pathData="M0 790h-10v10 100c0 60.75 49.25 110 110 110h600c60.75 0 110-49.25 110-110V800v-10h-10H0Z"/>
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:fillAlpha="0.03"
+            android:pathData="M60.43 98.85C8.48 24.8-14.34-59.21-19-92.25c75.94-43 242.6-88.64 391.67-23.4C508.05-56.4 550.52 40.05 569 109.19c0 0-15.49 15.79-35.47 28.85-19.98 13.07-51.96 23.96-51.96 23.96-9.49-33.76-28.97-131.2-140.88-193.27-91.9-50.97-191.5-23.59-225.8-10.34 0 0 0.25 34.84 29.97 79.48 23.3 34.99 50.96 60.98 50.96 60.98s-8.46 32.16-11.5 58.25c-3.2 27.63-3.49 62.6-3.49 62.6-46.96-34.84-76.08-57.7-120.4-120.85Z"/>
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:fillAlpha="0.03"
+            android:pathData="M519.5 418.87c-32 44.1-80 92.58-128.5 121.99-72.2-50.18-201-167.2-201-305.53C190 82.3 244.76 10.7 290.5-41.33c0 0 25.76 8.32 46.5 19.6C356-11.36 379 6.6 379 6.6c-23.55 30.5-81.5 77.33-81.5 222.2 0 112.42 65.8 170.84 93.5 196.6 0 0 32-29.95 48.5-57.18 21.87-36.1 33-68.08 33-68.08s39.3-8.33 61.57-18.51c31.43-14.38 62.93-31.6 62.93-31.6-4.21 61.77-45.5 124.72-77.5 168.84Z"/>
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:fillAlpha="0.03"
+            android:pathData="M609-148.62c63 10.03 138.87 28.86 186.5 59.9-3.8 93.21-61.5 192.25-165.5 293-104 100.76-253.26 90.26-317.5 73.13 0 0-4.02-26.68-4.02-55.69 0-23.14 4.02-44.51 4.02-44.51 72.02 18.51 152.5 27.62 239-36.64S664.87 0.41 671.5-38.61c0 0-43.5-23.41-91-27.23-47.5-3.8-91.5 9.8-91.5 9.8s-15-15.24-37.5-29.95c-21.93-14.33-47-26.14-47-26.14 51.21-26.9 141.5-46.51 204.5-36.49Z"/>
+        <path
+            android:fillColor="#FFFFFFFF"
+            android:fillAlpha="0.03"
+            android:pathData="M388 66A50 50 0 1 0 388 166 50 50 0 1 0 388 66z"/>
+    </group>
+</vector>

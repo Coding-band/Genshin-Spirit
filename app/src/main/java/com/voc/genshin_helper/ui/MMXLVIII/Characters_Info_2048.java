@@ -49,6 +49,7 @@ import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
+import com.voc.genshin_helper.data.Material;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.CustomViewPager;
@@ -83,6 +84,7 @@ public class Characters_Info_2048 {
     SharedPreferences sharedPreferences ;
     ItemRss item_rss;
     BackgroundReload backgroundReload;
+    Material material;
 
     /** Method of Char's details' container */
     /** Since String can't be null, so there will have "XPR" for identify is result correct */
@@ -450,6 +452,7 @@ public class Characters_Info_2048 {
         this.context = context;
         this.activity = activity;
         item_rss = new ItemRss();
+        material = new Material();
 
 
         String lang = sharedPreferences.getString("curr_lang","zh-HK");
@@ -2336,49 +2339,61 @@ public class Characters_Info_2048 {
             switch (getWeaponRareFromListJson(item_rss.getWeaponNameByFileName(advice[x]))){
                 case 1 : {
                     if(isNight){
-                        Picasso.get().load(R.drawable.rare1_800x1000_dark).resize(min_width,(int)(min_width*10/8)).into(img_bg);
+                        img_bg.setBackgroundResource(R.drawable.rare1_800x1000_dark);
+                        //Picasso.get().load(R.drawable.rare1_800x1000_dark).resize(min_width,(int)(min_width*10/8)).into(img_bg);
                     }else{
-                        Picasso.get().load(R.drawable.rare1_800x1000_light).resize(min_width,(int)(min_width*10/8)).into(img_bg);
+                        img_bg.setBackgroundResource(R.drawable.rare1_800x1000_light);
+                        //Picasso.get().load(R.drawable.rare1_800x1000_light).resize(min_width,(int)(min_width*10/8)).into(img_bg);
                     }
                     break;
                 }
                 case 2 : {
                     if(isNight){
-                        Picasso.get().load(R.drawable.rare2_800x1000_dark).resize(min_width,(int)(min_width*10/8)).into(img_bg);
+                        img_bg.setBackgroundResource(R.drawable.rare2_800x1000_dark);
+                        //Picasso.get().load(R.drawable.rare2_800x1000_dark).resize(min_width,(int)(min_width*10/8)).into(img_bg);
                     }else{
-                        Picasso.get().load(R.drawable.rare2_800x1000_light).resize(min_width,(int)(min_width*10/8)).into(img_bg);
+                        img_bg.setBackgroundResource(R.drawable.rare2_800x1000_light);
+                        //Picasso.get().load(R.drawable.rare2_800x1000_light).resize(min_width,(int)(min_width*10/8)).into(img_bg);
                     }
                     break;
                 }
                 case 3 : {
                     if(isNight){
-                        Picasso.get().load(R.drawable.rare3_800x1000_dark).resize(min_width,(int)(min_width*10/8)).into(img_bg);
+                        img_bg.setBackgroundResource(R.drawable.rare3_800x1000_dark);
+                        //Picasso.get().load(R.drawable.rare3_800x1000_dark).resize(min_width,(int)(min_width*10/8)).into(img_bg);
                     }else{
-                        Picasso.get().load(R.drawable.rare3_800x1000_light).resize(min_width,(int)(min_width*10/8)).into(img_bg);
+                        img_bg.setBackgroundResource(R.drawable.rare3_800x1000_light);
+                        //Picasso.get().load(R.drawable.rare3_800x1000_light).resize(min_width,(int)(min_width*10/8)).into(img_bg);
                     }
                     break;
                 }
                 case 4 : {
                     if(isNight){
-                        Picasso.get().load(R.drawable.rare4_800x1000_dark).resize(min_width,(int)(min_width*10/8)).into(img_bg);
+                        img_bg.setBackgroundResource(R.drawable.rare4_800x1000_dark);
+                        //Picasso.get().load(R.drawable.rare4_800x1000_dark).resize(min_width,(int)(min_width*10/8)).into(img_bg);
                     }else{
-                        Picasso.get().load(R.drawable.rare4_800x1000_light).resize(min_width,(int)(min_width*10/8)).into(img_bg);
+                        img_bg.setBackgroundResource(R.drawable.rare4_800x1000_light);
+                        //Picasso.get().load(R.drawable.rare4_800x1000_light).resize(min_width,(int)(min_width*10/8)).into(img_bg);
                     }
                     break;
                 }
                 case 5 : {
                     if(isNight){
-                        Picasso.get().load(R.drawable.rare5_800x1000_dark).resize(min_width,(int)(min_width*10/8)).into(img_bg);
+                        img_bg.setBackgroundResource(R.drawable.rare5_800x1000_dark);
+                        //Picasso.get().load(R.drawable.rare5_800x1000_dark).resize(min_width,(int)(min_width*10/8)).into(img_bg);
                     }else{
-                        Picasso.get().load(R.drawable.rare5_800x1000_light).resize(min_width,(int)(min_width*10/8)).into(img_bg);
+                        img_bg.setBackgroundResource(R.drawable.rare5_800x1000_light);
+                        //Picasso.get().load(R.drawable.rare5_800x1000_light).resize(min_width,(int)(min_width*10/8)).into(img_bg);
                     }
                     break;
                 }
                 default: {
                     if(isNight){
-                        Picasso.get().load(R.drawable.rare1_800x1000_dark).resize(min_width,(int)(min_width*10/8)).into(img_bg);
+                        img_bg.setBackgroundResource(R.drawable.rare1_800x1000_dark);
+                        //Picasso.get().load(R.drawable.rare1_800x1000_dark).resize(min_width,(int)(min_width*10/8)).into(img_bg);
                     }else{
-                        Picasso.get().load(R.drawable.rare1_800x1000_light).resize(min_width,(int)(min_width*10/8)).into(img_bg);
+                        img_bg.setBackgroundResource(R.drawable.rare1_800x1000_light);
+                        //Picasso.get().load(R.drawable.rare1_800x1000_light).resize(min_width,(int)(min_width*10/8)).into(img_bg);
                     }
                     break;
                 }
@@ -2437,51 +2452,27 @@ public class Characters_Info_2048 {
 
             switch (getArtifactRareFromListJson(item_rss.getArtifactNameByFileName(advice[x]))){
                 case 1 : {
-                    if(isNight){
-                        Picasso.get().load(R.drawable.rare1_800x800).resize(min_width,min_width).into(img_bg);
-                    }else{
-                        Picasso.get().load(R.drawable.rare1_800x800).resize(min_width,min_width).into(img_bg);
-                    }
+                    img_bg.setBackgroundResource(R.drawable.rare1_800x800_round);
                     break;
                 }
                 case 2 : {
-                    if(isNight){
-                        Picasso.get().load(R.drawable.rare2_800x800).resize(min_width,min_width).into(img_bg);
-                    }else{
-                        Picasso.get().load(R.drawable.rare2_800x800).resize(min_width,min_width).into(img_bg);
-                    }
+                    img_bg.setBackgroundResource(R.drawable.rare2_800x800_round);
                     break;
                 }
                 case 3 : {
-                    if(isNight){
-                        Picasso.get().load(R.drawable.rare3_800x800).resize(min_width,min_width).into(img_bg);
-                    }else{
-                        Picasso.get().load(R.drawable.rare3_800x800).resize(min_width,min_width).into(img_bg);
-                    }
+                    img_bg.setBackgroundResource(R.drawable.rare3_800x800_round);
                     break;
                 }
                 case 4 : {
-                    if(isNight){
-                        Picasso.get().load(R.drawable.rare4_800x800).resize(min_width,min_width).into(img_bg);
-                    }else{
-                        Picasso.get().load(R.drawable.rare4_800x800).resize(min_width,min_width).into(img_bg);
-                    }
+                    img_bg.setBackgroundResource(R.drawable.rare4_800x800_round);
                     break;
                 }
                 case 5 : {
-                    if(isNight){
-                        Picasso.get().load(R.drawable.rare5_800x800).resize(min_width,min_width).into(img_bg);
-                    }else{
-                        Picasso.get().load(R.drawable.rare5_800x800).resize(min_width,min_width).into(img_bg);
-                    }
+                    img_bg.setBackgroundResource(R.drawable.rare5_800x800_round);
                     break;
                 }
                 default: {
-                    if(isNight){
-                        Picasso.get().load(R.drawable.rare1_800x800).resize(min_width,min_width).into(img_bg);
-                    }else{
-                        Picasso.get().load(R.drawable.rare1_800x800).resize(min_width,min_width).into(img_bg);
-                    }
+                    img_bg.setBackgroundResource(R.drawable.rare1_800x800_round);
                     break;
                 }
             }
@@ -2730,15 +2721,16 @@ public class Characters_Info_2048 {
                 ImageView img_img = char_view.findViewById(R.id.base_lvl_img);
                 TextView img_tv = char_view.findViewById(R.id.base_lvl_tv);
 
-                Picasso.get().load(getRssByRare(itemRareListBASE[x])).resize(150,180).into(img_bg);
+                img_bg.setBackgroundResource(getRssByRare(itemRareListBASE[x]));
+                //Picasso.get().load(getRssByRare(itemRareListBASE[x])).resize(144,180).into(img_bg);
                 Picasso.get().load(FileLoader.loadIMG(item_rss.getItemIcoByName(itemNameListBASE[x],context),context)).resize(144,144).into(img_img);
                 img_tv.setText(prettyCount(itemValueListBASE[x],0));
 
-                img_bg.getLayoutParams().width = 150;
+                img_bg.getLayoutParams().width = 144;
                 img_bg.getLayoutParams().height = 180;
                 img_img.getLayoutParams().width = 144;
                 img_img.getLayoutParams().height = 144;
-                img_tv.getLayoutParams().width = 150;
+                img_tv.getLayoutParams().width = 144;
                 img_tv.getLayoutParams().height = 36;
                 base_lvl_ll.addView(char_view);
             }
@@ -2746,15 +2738,15 @@ public class Characters_Info_2048 {
 
         if (pos != 0){
             String[] itemNameList = new String[]{
-                    getCharCrystalListByItemName(crystalREQUIRE)[0],
-                    getCharCrystalListByItemName(crystalREQUIRE)[1],
-                    getCharCrystalListByItemName(crystalREQUIRE)[2],
-                    getCharCrystalListByItemName(crystalREQUIRE)[3],
+                    material.getCharCrystalListByItemName(crystalREQUIRE)[0],
+                    material.getCharCrystalListByItemName(crystalREQUIRE)[1],
+                    material.getCharCrystalListByItemName(crystalREQUIRE)[2],
+                    material.getCharCrystalListByItemName(crystalREQUIRE)[3],
                     bossREQUIRE,
                     localREQUIRE,
-                    getCharCommonListByItemName(commonREQUIRE)[0],
-                    getCharCommonListByItemName(commonREQUIRE)[1],
-                    getCharCommonListByItemName(commonREQUIRE)[2]
+                    material.getCharCommonListByItemName(commonREQUIRE)[0],
+                    material.getCharCommonListByItemName(commonREQUIRE)[1],
+                    material.getCharCommonListByItemName(commonREQUIRE)[2]
             };
 
             int[] itemValueList = new int[]{
@@ -2776,15 +2768,17 @@ public class Characters_Info_2048 {
                     ImageView img_bg  = char_view.findViewById(R.id.base_lvl_bg);
                     ImageView img_img = char_view.findViewById(R.id.base_lvl_img);
                     TextView img_tv = char_view.findViewById(R.id.base_lvl_tv);
-                    Picasso.get().load(getRssByRare(itemRareList[x])).resize(150,180).into(img_bg);
+
+                    img_bg.setBackgroundResource(getRssByRare(itemRareList[x]));
+                    //Picasso.get().load(getRssByRare(itemRareList[x])).resize(144,180).into(img_bg);
                     Picasso.get().load(FileLoader.loadIMG(item_rss.getItemIcoByName(itemNameList[x],context),context)).resize(144,144).into(img_img);
                     img_tv.setText(prettyCount(itemValueList[x],0));
 
-                    img_bg.getLayoutParams().width = 150;
+                    img_bg.getLayoutParams().width = 144;
                     img_bg.getLayoutParams().height = 180;
                     img_img.getLayoutParams().width = 144;
                     img_img.getLayoutParams().height = 144;
-                    img_tv.getLayoutParams().width = 150;
+                    img_tv.getLayoutParams().width = 144;
                     img_tv.getLayoutParams().height = 36;
                     base_lvl_ll.addView(char_view);
                 }
@@ -2794,18 +2788,17 @@ public class Characters_Info_2048 {
 
     public void addItemInLLT(int pos, LinearLayout talent_lvl_ll){
         int mora = 0;
-
         mora = mora + moraSkillList.get(pos);
 
         if (pos != 0){
             String[] itemNameList = new String[]{
                     "摩拉",
-                    getBookListByItemName(bookREQUIRE)[0],
-                    getBookListByItemName(bookREQUIRE)[1],
-                    getBookListByItemName(bookREQUIRE)[2],
-                    getCharCommonListByItemName(commonREQUIRE)[0],
-                    getCharCommonListByItemName(commonREQUIRE)[1],
-                    getCharCommonListByItemName(commonREQUIRE)[2],
+                    material.getBookListByItemName(bookREQUIRE)[0],
+                    material.getBookListByItemName(bookREQUIRE)[1],
+                    material.getBookListByItemName(bookREQUIRE)[2],
+                    material.getCharCommonListByItemName(commonREQUIRE)[0],
+                    material.getCharCommonListByItemName(commonREQUIRE)[1],
+                    material.getCharCommonListByItemName(commonREQUIRE)[2],
                     t_bossREQUIRE
             };
 
@@ -2827,15 +2820,17 @@ public class Characters_Info_2048 {
                     ImageView img_bg  = char_view.findViewById(R.id.base_lvl_bg);
                     ImageView img_img = char_view.findViewById(R.id.base_lvl_img);
                     TextView img_tv = char_view.findViewById(R.id.base_lvl_tv);
-                    Picasso.get().load(getRssByRare(itemRareList[x])).resize(150,180).into(img_bg);
+
+                    img_bg.setBackgroundResource(getRssByRare(itemRareList[x]));
+                    //Picasso.get().load(getRssByRare(itemRareList[x])).resize(144,180).into(img_bg);
                     Picasso.get().load(FileLoader.loadIMG(item_rss.getItemIcoByName(itemNameList[x],context),context)).resize(144,144).into(img_img);
                     img_tv.setText(prettyCount(itemValueList[x],0));
 
-                    img_bg.getLayoutParams().width = 150;
+                    img_bg.getLayoutParams().width = 144;
                     img_bg.getLayoutParams().height = 180;
                     img_img.getLayoutParams().width = 144;
                     img_img.getLayoutParams().height = 144;
-                    img_tv.getLayoutParams().width = 150;
+                    img_tv.getLayoutParams().width = 144;
                     img_tv.getLayoutParams().height = 36;
                     talent_lvl_ll.addView(char_view);
                 }
@@ -2845,63 +2840,23 @@ public class Characters_Info_2048 {
                 ImageView img_bg  = char_view.findViewById(R.id.base_lvl_bg);
                 ImageView img_img = char_view.findViewById(R.id.base_lvl_img);
                 TextView img_tv = char_view.findViewById(R.id.base_lvl_tv);
-                Picasso.get().load(getRssByRare(5)).resize(150,180).into(img_bg);
+
+                img_bg.setBackgroundResource(getRssByRare(5));
+                //Picasso.get().load(getRssByRare(5)).resize(144,180).into(img_bg);
                 Picasso.get().load(FileLoader.loadIMG(item_rss.getItemIcoByName("智識之冕",context),context)).resize(144,144).into(img_img);
                 img_tv.setText(prettyCount(1,0));
 
-                img_bg.getLayoutParams().width = 150;
+                img_bg.getLayoutParams().width = 144;
                 img_bg.getLayoutParams().height = 180;
                 img_img.getLayoutParams().width = 144;
                 img_img.getLayoutParams().height = 144;
-                img_tv.getLayoutParams().width = 150;
+                img_tv.getLayoutParams().width = 144;
                 img_tv.getLayoutParams().height = 36;
                 talent_lvl_ll.addView(char_view);
             }
         }
     }
 
-    public String[] getCharCrystalListByItemName (String str){
-        switch (str){
-            case "燃願瑪瑙" : return new String[]{"燃願瑪瑙碎屑","燃願瑪瑙斷片","燃願瑪瑙塊","燃願瑪瑙"};
-            case "滌淨青金" : return new String[]{"滌淨青金碎屑","滌淨青金斷片","滌淨青金塊","滌淨青金"};
-            case "最勝紫晶" : return new String[]{"最勝紫晶碎屑","最勝紫晶斷片","最勝紫晶塊","最勝紫晶"};
-            case "哀敘冰玉" : return new String[]{"哀敘冰玉碎屑","哀敘冰玉斷片","哀敘冰玉塊","哀敘冰玉"};
-            case "自在松石" : return new String[]{"自在松石碎屑","自在松石斷片","自在松石塊","自在松石"};
-            case "堅牢黃玉" : return new String[]{"堅牢黃玉碎屑","堅牢黃玉斷片","堅牢黃玉塊","堅牢黃玉"};
-
-            default: return new String[]{"N/A","N/A","N/A","N/A"};
-        }
-    }
-    public String[] getCharCommonListByItemName (String str){
-        switch (str){
-            case "歷戰的箭簇" : return new String[]{"牢固的箭簇","銳利的箭簇","歷戰的箭簇"};
-            case "禁咒繪卷" : return new String[]{"導能繪卷","封魔繪卷","禁咒繪卷"};
-            case "攫金鴉印" : return new String[]{"尋寶鴉印","藏銀鴉印","攫金鴉印"};
-            case "不祥的面具" : return new String[]{"破損的面具","污穢的面具","不祥的面具"};
-            case "尉官的徽記" : return new String[]{"新兵的徽記","士官的徽記","尉官的徽記"};
-            case "原素花蜜" : return new String[]{"騙騙花蜜","微光花蜜","原素花蜜"};
-            case "史萊姆原漿" : return new String[]{"史萊姆凝液","史萊姆清","史萊姆原漿"};
-            case "名刀鐔" : return new String[]{"破舊的刀鐔","影打刀鐔","名刀鐔"};
-            case "浮游晶化核" : return new String[]{"浮游乾核","浮游幽核","浮游晶化核"};
-
-            default: return new String[]{"N/A","N/A","N/A"};
-        }
-    }
-    public String[] getBookListByItemName (String str){
-        switch (str){
-            case "「自由」的哲學" : return new String[]{"「自由」的教導","「自由」的指引","「自由」的哲學"};
-            case "「黃金」的哲學" : return new String[]{"「黃金」的教導","「黃金」的指引","「黃金」的哲學"};
-            case "「抗爭」的哲學" : return new String[]{"「抗爭」的教導","「抗爭」的指引","「抗爭」的哲學"};
-            case "「繁榮」的哲學" : return new String[]{"「繁榮」的教導","「繁榮」的指引","「繁榮」的哲學"};
-            case "「詩文」的哲學" : return new String[]{"「詩文」的教導","「詩文」的指引","「詩文」的哲學"};
-            case "「勤勞」的哲學" : return new String[]{"「勤勞」的教導","「勤勞」的指引","「勤勞」的哲學"};
-            case "「風雅」的哲學" : return new String[]{"「風雅」的教導","「風雅」的指引","「風雅」的哲學"};
-            case "「浮世」的哲學" : return new String[]{"「浮世」的教導","「浮世」的指引","「浮世」的哲學"};
-            case "「天光」的哲學" : return new String[]{"「天光」的教導","「天光」的指引","「天光」的哲學"};
-
-            default: return new String[]{"N/A","N/A","N/A"};
-        }
-    }
     public int getRssByRare (int lvl){
         switch (lvl){
             case 1: return R.drawable.rare1_800x1000_light;
@@ -2909,8 +2864,8 @@ public class Characters_Info_2048 {
             case 3: return R.drawable.rare3_800x1000_light;
             case 4: return R.drawable.rare4_800x1000_light;
             case 5: return R.drawable.rare5_800x1000_light;
-            default: return R.drawable.rare1_800x1000_light;
         }
+        return R.drawable.rare5_800x1000_light;
     }
 
     public int[] expReturn(int exp){

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2022 Xectorda 版權所有
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="800dp"
+    android:height="800dp"
+    android:viewportWidth="800"
+    android:viewportHeight="800">
+    <path
+        android:pathData="M0 100c0-55.23 44.77-100 100-100h600c55.23 0 100 44.77 100 100v600c0 55.23-44.77 100-100 100h-600c-55.23 0-100-44.77-100-100z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="400"
+                android:startY="0"
+                android:endX="400"
+                android:endY="800">
+                <item
+                    android:color="#FFE0C7F1"
+                    android:offset="0"/>
+                <item
+                    android:color="#FFFCFFFE"
+                    android:offset="1"/>
+                <item
+                    android:color="#FFF8EFFF"
+                    android:offset="1"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+    <group>
+        <path
+            android:fillColor="#FFB573E5"
+            android:fillAlpha="0.08"
+            android:pathData="M100 391.53c0-116.98 77.63-204.32 117.4-233.24 0 0-52.36 71.73-52.36 128.72 43.83-52.55 105.56-78.12 147.45-78.12 41.9 0 86 25.3 100.05 39.75-20.67 3.62-59.53 8.9-59.53 56.71 0 54.77 57.6 78.95 90.12 78.95S550.07 362.06 550.07 262c0-80.07-99.96-143.73-149.66-165.97 37.3-0.65 130.04 12.84 200.37 75.34 70.34 62.5 94.81 153.73 99.22 190.7-7.17-16.95-24.25-52.81-44.1-75.89-20.24-23.53-33.35-32.25-39.13-35.3 5.5 11.95 11.85 42.25 11.85 85.9 0 91.62-68.35 137.98-103.9 149.56 3.12-8.25 9.36-24.74 9.36-43.1 0-18.34-23.7-47.8-60.63-47.8-36.93 0-93.98 35.86-93.98 100.9 0 57.55 47.68 116.49 126.5 116.49 57.33 0 126.6-40.78 156-61.16C624.76 619.2 534.08 704 402.34 704c-57.32 0-101.42-15.94-116.3-23.9 9 0.92 31.97 3.6 66.14 1.38 34.18-2.22 62.56-13.53 69.18-18.62-23.52-4.73-83.56-25.47-123.47-67.28-39.91-41.8-39.05-106.2-33.63-131.5 12.68 16.41 28.12 34.48 54.57 34.48 29.77 0 60.64-34.47 60.64-73.95 0-54.48-33.54-105.63-115.2-105.63-93.16 0-136.98 113.14-123.48 232.68-9.92-18.07-40.79-65.33-40.79-160.13Z"/>
+    </group>
+</vector>

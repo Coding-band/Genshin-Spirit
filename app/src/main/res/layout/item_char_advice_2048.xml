@@ -18,11 +18,11 @@
         android:id="@+id/img_bg"
         android:layout_width="160dp"
         android:layout_height="200dp"
+        android:background="@drawable/rare5_800x1000_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/rare5_800x1000_light" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/img_weapon"

@@ -13,14 +13,14 @@
 
     <ImageView
         android:id="@+id/base_lvl_bg"
-        android:layout_width="150dp"
+        android:layout_width="144dp"
         android:layout_height="180dp"
         android:adjustViewBounds="true"
+        android:background="@drawable/rare1_800x1000_light"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/rare1_800x1000_light" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/base_lvl_img"

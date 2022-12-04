@@ -887,6 +887,9 @@ public class CalculatorExtend2048 {
                     .resize(size, (int) (size*1.25))
                     .error (R.drawable.paimon_lost)
                     .into (item_bg);
+            item_bg.setBackgroundResource(bg_rare_rss);
+            item_bg.getLayoutParams().width = size;
+            item_bg.getLayoutParams().height = (int) (size*1.25);
             item_bg.setAdjustViewBounds(true);
 
             /**

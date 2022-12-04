@@ -2364,49 +2364,61 @@ public class Characters_Info_SipTik {
             switch (getWeaponRareFromListJson(item_rss.getWeaponNameByFileName(advice[x]))){
                 case 1 : {
                     if(isNight){
-                        Picasso.get().load(R.drawable.rare1_800x1000_dark).resize(min_width,(int)(min_width*10/8)).into(img_bg);
+                        img_bg.setBackgroundResource(R.drawable.rare1_800x1000_dark);
+                        //Picasso.get().load(R.drawable.rare1_800x1000_dark).resize(min_width,(int)(min_width*10/8)).into(img_bg);
                     }else{
-                        Picasso.get().load(R.drawable.rare1_800x1000_light).resize(min_width,(int)(min_width*10/8)).into(img_bg);
+                        img_bg.setBackgroundResource(R.drawable.rare1_800x1000_light);
+                        //Picasso.get().load(R.drawable.rare1_800x1000_light).resize(min_width,(int)(min_width*10/8)).into(img_bg);
                     }
                     break;
                 }
                 case 2 : {
                     if(isNight){
-                        Picasso.get().load(R.drawable.rare2_800x1000_dark).resize(min_width,(int)(min_width*10/8)).into(img_bg);
+                        img_bg.setBackgroundResource(R.drawable.rare2_800x1000_dark);
+                        //Picasso.get().load(R.drawable.rare2_800x1000_dark).resize(min_width,(int)(min_width*10/8)).into(img_bg);
                     }else{
-                        Picasso.get().load(R.drawable.rare2_800x1000_light).resize(min_width,(int)(min_width*10/8)).into(img_bg);
+                        img_bg.setBackgroundResource(R.drawable.rare2_800x1000_light);
+                        //Picasso.get().load(R.drawable.rare2_800x1000_light).resize(min_width,(int)(min_width*10/8)).into(img_bg);
                     }
                     break;
                 }
                 case 3 : {
                     if(isNight){
-                        Picasso.get().load(R.drawable.rare3_800x1000_dark).resize(min_width,(int)(min_width*10/8)).into(img_bg);
+                        img_bg.setBackgroundResource(R.drawable.rare3_800x1000_dark);
+                        //Picasso.get().load(R.drawable.rare3_800x1000_dark).resize(min_width,(int)(min_width*10/8)).into(img_bg);
                     }else{
-                        Picasso.get().load(R.drawable.rare3_800x1000_light).resize(min_width,(int)(min_width*10/8)).into(img_bg);
+                        img_bg.setBackgroundResource(R.drawable.rare3_800x1000_light);
+                        //Picasso.get().load(R.drawable.rare3_800x1000_light).resize(min_width,(int)(min_width*10/8)).into(img_bg);
                     }
                     break;
                 }
                 case 4 : {
                     if(isNight){
-                        Picasso.get().load(R.drawable.rare4_800x1000_dark).resize(min_width,(int)(min_width*10/8)).into(img_bg);
+                        img_bg.setBackgroundResource(R.drawable.rare4_800x1000_dark);
+                        //Picasso.get().load(R.drawable.rare4_800x1000_dark).resize(min_width,(int)(min_width*10/8)).into(img_bg);
                     }else{
-                        Picasso.get().load(R.drawable.rare4_800x1000_light).resize(min_width,(int)(min_width*10/8)).into(img_bg);
+                        img_bg.setBackgroundResource(R.drawable.rare4_800x1000_light);
+                        //Picasso.get().load(R.drawable.rare4_800x1000_light).resize(min_width,(int)(min_width*10/8)).into(img_bg);
                     }
                     break;
                 }
                 case 5 : {
                     if(isNight){
-                        Picasso.get().load(R.drawable.rare5_800x1000_dark).resize(min_width,(int)(min_width*10/8)).into(img_bg);
+                        img_bg.setBackgroundResource(R.drawable.rare5_800x1000_dark);
+                        //Picasso.get().load(R.drawable.rare5_800x1000_dark).resize(min_width,(int)(min_width*10/8)).into(img_bg);
                     }else{
-                        Picasso.get().load(R.drawable.rare5_800x1000_light).resize(min_width,(int)(min_width*10/8)).into(img_bg);
+                        img_bg.setBackgroundResource(R.drawable.rare5_800x1000_light);
+                        //Picasso.get().load(R.drawable.rare5_800x1000_light).resize(min_width,(int)(min_width*10/8)).into(img_bg);
                     }
                     break;
                 }
                 default: {
                     if(isNight){
-                        Picasso.get().load(R.drawable.rare1_800x1000_dark).resize(min_width,(int)(min_width*10/8)).into(img_bg);
+                        img_bg.setBackgroundResource(R.drawable.rare1_800x1000_dark);
+                        //Picasso.get().load(R.drawable.rare1_800x1000_dark).resize(min_width,(int)(min_width*10/8)).into(img_bg);
                     }else{
-                        Picasso.get().load(R.drawable.rare1_800x1000_light).resize(min_width,(int)(min_width*10/8)).into(img_bg);
+                        img_bg.setBackgroundResource(R.drawable.rare1_800x1000_light);
+                        //Picasso.get().load(R.drawable.rare1_800x1000_light).resize(min_width,(int)(min_width*10/8)).into(img_bg);
                     }
                     break;
                 }
@@ -2464,51 +2476,27 @@ public class Characters_Info_SipTik {
 
             switch (getArtifactRareFromListJson(item_rss.getArtifactNameByFileName(advice[x]))){
                 case 1 : {
-                    if(isNight){
-                        Picasso.get().load(R.drawable.rare1_800x800).resize(min_width,min_width).into(img_bg);
-                    }else{
-                        Picasso.get().load(R.drawable.rare1_800x800).resize(min_width,min_width).into(img_bg);
-                    }
+                    img_bg.setBackgroundResource(R.drawable.rare1_800x800_round);
                     break;
                 }
                 case 2 : {
-                    if(isNight){
-                        Picasso.get().load(R.drawable.rare2_800x800).resize(min_width,min_width).into(img_bg);
-                    }else{
-                        Picasso.get().load(R.drawable.rare2_800x800).resize(min_width,min_width).into(img_bg);
-                    }
+                    img_bg.setBackgroundResource(R.drawable.rare2_800x800_round);
                     break;
                 }
                 case 3 : {
-                    if(isNight){
-                        Picasso.get().load(R.drawable.rare3_800x800).resize(min_width,min_width).into(img_bg);
-                    }else{
-                        Picasso.get().load(R.drawable.rare3_800x800).resize(min_width,min_width).into(img_bg);
-                    }
+                    img_bg.setBackgroundResource(R.drawable.rare3_800x800_round);
                     break;
                 }
                 case 4 : {
-                    if(isNight){
-                        Picasso.get().load(R.drawable.rare4_800x800).resize(min_width,min_width).into(img_bg);
-                    }else{
-                        Picasso.get().load(R.drawable.rare4_800x800).resize(min_width,min_width).into(img_bg);
-                    }
+                    img_bg.setBackgroundResource(R.drawable.rare4_800x800_round);
                     break;
                 }
                 case 5 : {
-                    if(isNight){
-                        Picasso.get().load(R.drawable.rare5_800x800).resize(min_width,min_width).into(img_bg);
-                    }else{
-                        Picasso.get().load(R.drawable.rare5_800x800).resize(min_width,min_width).into(img_bg);
-                    }
+                    img_bg.setBackgroundResource(R.drawable.rare5_800x800_round);
                     break;
                 }
                 default: {
-                    if(isNight){
-                        Picasso.get().load(R.drawable.rare1_800x800).resize(min_width,min_width).into(img_bg);
-                    }else{
-                        Picasso.get().load(R.drawable.rare1_800x800).resize(min_width,min_width).into(img_bg);
-                    }
+                    img_bg.setBackgroundResource(R.drawable.rare1_800x800_round);
                     break;
                 }
             }
@@ -2757,15 +2745,16 @@ public class Characters_Info_SipTik {
                 ImageView img_img = char_view.findViewById(R.id.base_lvl_img);
                 TextView img_tv = char_view.findViewById(R.id.base_lvl_tv);
 
-                Picasso.get().load(getRssByRare(itemRareListBASE[x])).resize(150,180).into(img_bg);
+                img_bg.setBackgroundResource(getRssByRare(itemRareListBASE[x]));
+                //Picasso.get().load(getRssByRare(itemRareListBASE[x])).resize(144,180).into(img_bg);
                 Picasso.get().load(FileLoader.loadIMG(item_rss.getItemIcoByName(itemNameListBASE[x],context),context)).resize(144,144).into(img_img);
                 img_tv.setText(prettyCount(itemValueListBASE[x],0));
 
-                img_bg.getLayoutParams().width = 150;
+                img_bg.getLayoutParams().width = 144;
                 img_bg.getLayoutParams().height = 180;
                 img_img.getLayoutParams().width = 144;
                 img_img.getLayoutParams().height = 144;
-                img_tv.getLayoutParams().width = 150;
+                img_tv.getLayoutParams().width = 144;
                 img_tv.getLayoutParams().height = 36;
                 base_lvl_ll.addView(char_view);
             }
@@ -2803,15 +2792,17 @@ public class Characters_Info_SipTik {
                     ImageView img_bg  = char_view.findViewById(R.id.base_lvl_bg);
                     ImageView img_img = char_view.findViewById(R.id.base_lvl_img);
                     TextView img_tv = char_view.findViewById(R.id.base_lvl_tv);
-                    Picasso.get().load(getRssByRare(itemRareList[x])).resize(150,180).into(img_bg);
+
+                    img_bg.setBackgroundResource(getRssByRare(itemRareList[x]));
+                    //Picasso.get().load(getRssByRare(itemRareList[x])).resize(144,180).into(img_bg);
                     Picasso.get().load(FileLoader.loadIMG(item_rss.getItemIcoByName(itemNameList[x],context),context)).resize(144,144).into(img_img);
                     img_tv.setText(prettyCount(itemValueList[x],0));
 
-                    img_bg.getLayoutParams().width = 150;
+                    img_bg.getLayoutParams().width = 144;
                     img_bg.getLayoutParams().height = 180;
                     img_img.getLayoutParams().width = 144;
                     img_img.getLayoutParams().height = 144;
-                    img_tv.getLayoutParams().width = 150;
+                    img_tv.getLayoutParams().width = 144;
                     img_tv.getLayoutParams().height = 36;
                     base_lvl_ll.addView(char_view);
                 }
@@ -2854,15 +2845,17 @@ public class Characters_Info_SipTik {
                     ImageView img_bg  = char_view.findViewById(R.id.base_lvl_bg);
                     ImageView img_img = char_view.findViewById(R.id.base_lvl_img);
                     TextView img_tv = char_view.findViewById(R.id.base_lvl_tv);
-                    Picasso.get().load(getRssByRare(itemRareList[x])).resize(150,180).into(img_bg);
+
+                    img_bg.setBackgroundResource(getRssByRare(itemRareList[x]));
+                    //Picasso.get().load(getRssByRare(itemRareList[x])).resize(144,180).into(img_bg);
                     Picasso.get().load(FileLoader.loadIMG(item_rss.getItemIcoByName(itemNameList[x],context),context)).resize(144,144).into(img_img);
                     img_tv.setText(prettyCount(itemValueList[x],0));
 
-                    img_bg.getLayoutParams().width = 150;
+                    img_bg.getLayoutParams().width = 144;
                     img_bg.getLayoutParams().height = 180;
                     img_img.getLayoutParams().width = 144;
                     img_img.getLayoutParams().height = 144;
-                    img_tv.getLayoutParams().width = 150;
+                    img_tv.getLayoutParams().width = 144;
                     img_tv.getLayoutParams().height = 36;
                     talent_lvl_ll.addView(char_view);
                 }
@@ -2872,15 +2865,18 @@ public class Characters_Info_SipTik {
                 ImageView img_bg  = char_view.findViewById(R.id.base_lvl_bg);
                 ImageView img_img = char_view.findViewById(R.id.base_lvl_img);
                 TextView img_tv = char_view.findViewById(R.id.base_lvl_tv);
-                Picasso.get().load(getRssByRare(5)).resize(150,180).into(img_bg);
+
+
+                img_bg.setBackgroundResource(getRssByRare(5));
+                //Picasso.get().load(getRssByRare(5)).resize(144,180).into(img_bg);
                 Picasso.get().load(FileLoader.loadIMG(item_rss.getItemIcoByName("智識之冕",context),context)).resize(144,144).into(img_img);
                 img_tv.setText(prettyCount(1,0));
 
-                img_bg.getLayoutParams().width = 150;
+                img_bg.getLayoutParams().width = 144;
                 img_bg.getLayoutParams().height = 180;
                 img_img.getLayoutParams().width = 144;
                 img_img.getLayoutParams().height = 144;
-                img_tv.getLayoutParams().width = 150;
+                img_tv.getLayoutParams().width = 144;
                 img_tv.getLayoutParams().height = 36;
                 talent_lvl_ll.addView(char_view);
             }

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2022 Xectorda 版權所有
+  -->
+
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="800dp"
+    android:height="800dp"
+    android:viewportWidth="800"
+    android:viewportHeight="800">
+    <path
+        android:pathData="M0 100c0-55.23 44.77-100 100-100h600c55.23 0 100 44.77 100 100v600c0 55.23-44.77 100-100 100h-600c-55.23 0-100-44.77-100-100z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="400"
+                android:startY="0"
+                android:endX="400"
+                android:endY="800">
+                <item
+                    android:color="#FFBCE6FF"
+                    android:offset="0"/>
+                <item
+                    android:color="#FFFCFFFE"
+                    android:offset="1"/>
+                <item
+                    android:color="#FFF7FCFF"
+                    android:offset="1"/>
+            </gradient>
+        </aapt:attr>
+    </path>
+    <path
+        android:fillColor="#FF009DFE"
+        android:fillAlpha="0.06"
+        android:fillType="evenOdd"
+        android:pathData="M401.35 206.39c126.2 0 228.51 101.93 228.51 227.67 0 87.55-45.1 163.2-117.83 201.29 51.53-35.69 89.5-92.34 89.5-162.51 0-112.12-90.64-200.5-200.18-200.5-27.94 0-51.63 3.9-78.11 15.04-7.8 3.28-26.37 17.46-19.6 46.17 6.78 28.7 32.43 30.73 43.96 27.17 17.48-5.4 35.5-8.18 54.02-8.18 83.94 0 151.99 67.8 151.99 151.43 0 83.63-71.23 152.22-155.17 152.22-116.77 0-166.02-45.64-166.02-45.64s36 75.45 166.02 75.45C557.25 686 686 557.73 686 399.5S557.25 113 398.44 113c-110 0-202.93 58.38-251.28 148.79-6.08 13.45-6.78 31.23 10.59 44.32s46.62 9.5 52.96 0c40.93-61.38 111.14-99.72 190.64-99.72Zm-206.8 197.33c0 22.44-18.25 40.63-40.77 40.63-22.52 0-40.78-18.2-40.78-40.63 0-22.44 18.26-40.63 40.78-40.63s40.78 18.2 40.78 40.63ZM297.3 535.89c0 56.39 45.88 102.1 102.48 102.1 38.3 0 70.1-19.26 87.9-50.13 1.07-1.85 0-6.33-3.97-1.85-15.88 17.94-41.56 37.2-77.84 37.2-35.54 0-75.2-29.23-75.2-64.63 0-35.4 24.04-60.68 59.57-60.68 19.86 0 27.96 14.48 35.48 41.68 11.4 41.16 92.42 19 67.15-46.43-14.25-36.87-51.81-59.35-93.1-59.35-56.59 0-102.47 45.7-102.47 102.09Zm-91.61 21.9c16.08 0 29.12-13 29.12-29.02 0-16.03-13.04-29.02-29.12-29.02-16.09 0-29.13 13-29.13 29.02s13.04 29.02 29.13 29.02Z"/>
+</vector>

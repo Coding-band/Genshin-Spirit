@@ -486,6 +486,7 @@ public class Material {
                 "「勤勞」的教導","「勤勞」的指引","「勤勞」的哲學",
                 "「風雅」的教導","「風雅」的指引","「風雅」的哲學",
                 "「巧思」的教導","「巧思」的指引","「巧思」的哲學",
+
                 "凜風奔狼的始齔", "凜風奔狼的裂齒", "凜風奔狼的斷牙", "凜風奔狼的懷鄉",
                 "霧海雲間的鉛丹", "霧海雲間的汞丹", "霧海雲間的金丹", "霧海雲間的轉還",
                 "鳴神御靈的明惠", "鳴神御靈的歡喜", "鳴神御靈的親愛", "鳴神御靈的勇武",
@@ -805,6 +806,9 @@ public class Material {
             case "名刀鐔": addCountIntoVar(名刀鐔, temp_count, "W-COMMON"); break;
             //add in 20210910
             case "浮游晶化核": addCountIntoVar(浮游晶化核, temp_count, "W-COMMON"); break;
+            //add in 20220716
+            case "孢囊晶塵": addCountIntoVar(孢囊晶塵, temp_count, "W-COMMON"); break;
+            case "織金紅綢": addCountIntoVar(織金紅綢, temp_count, "W-COMMON"); break;
         }
     }
 
@@ -847,5 +851,60 @@ public class Material {
         }
 
         return ITEM;
+    }
+
+
+    /**
+     * For Character Info
+     *
+     */
+    public String[] getCharCrystalListByItemName (String str){
+        switch (str){
+            case "燃願瑪瑙" : return new String[]{"燃願瑪瑙碎屑","燃願瑪瑙斷片","燃願瑪瑙塊","燃願瑪瑙"};
+            case "滌淨青金" : return new String[]{"滌淨青金碎屑","滌淨青金斷片","滌淨青金塊","滌淨青金"};
+            case "最勝紫晶" : return new String[]{"最勝紫晶碎屑","最勝紫晶斷片","最勝紫晶塊","最勝紫晶"};
+            case "哀敘冰玉" : return new String[]{"哀敘冰玉碎屑","哀敘冰玉斷片","哀敘冰玉塊","哀敘冰玉"};
+            case "自在松石" : return new String[]{"自在松石碎屑","自在松石斷片","自在松石塊","自在松石"};
+            case "堅牢黃玉" : return new String[]{"堅牢黃玉碎屑","堅牢黃玉斷片","堅牢黃玉塊","堅牢黃玉"};
+            case "生長碧翡" : return new String[]{"生長碧翡碎屑","生長碧翡斷片","生長碧翡塊","生長碧翡"};
+            case "璀璨原鑽" : return new String[]{"璀璨原鑽碎屑","璀璨原鑽斷片","璀璨原鑽塊","璀璨原鑽"};
+
+            default: return new String[]{"N/A","N/A","N/A","N/A"};
+        }
+    }
+    public String[] getCharCommonListByItemName (String str){
+        switch (str){
+            case "歷戰的箭簇" : return new String[]{"牢固的箭簇","銳利的箭簇","歷戰的箭簇"};
+            case "禁咒繪卷" : return new String[]{"導能繪卷","封魔繪卷","禁咒繪卷"};
+            case "攫金鴉印" : return new String[]{"尋寶鴉印","藏銀鴉印","攫金鴉印"};
+            case "不祥的面具" : return new String[]{"破損的面具","污穢的面具","不祥的面具"};
+            case "尉官的徽記" : return new String[]{"新兵的徽記","士官的徽記","尉官的徽記"};
+            case "原素花蜜" : return new String[]{"騙騙花蜜","微光花蜜","原素花蜜"};
+            case "史萊姆原漿" : return new String[]{"史萊姆凝液","史萊姆清","史萊姆原漿"};
+            case "名刀鐔" : return new String[]{"破舊的刀鐔","影打刀鐔","名刀鐔"};
+            case "浮游晶化核" : return new String[]{"浮游乾核","浮游幽核","浮游晶化核"};
+            case "孢囊晶塵" : return new String[]{"蕈獸孢子","螢光孢粉","孢囊晶塵"};
+            case "織金紅綢" : return new String[]{"褪色紅綢","鑲邊紅綢","織金紅綢"};
+
+            default: return new String[]{"N/A","N/A","N/A"};
+        }
+    }
+    public String[] getBookListByItemName (String str){
+        switch (str){
+            case "「自由」的哲學" : return new String[]{"「自由」的教導","「自由」的指引","「自由」的哲學"};
+            case "「黃金」的哲學" : return new String[]{"「黃金」的教導","「黃金」的指引","「黃金」的哲學"};
+            case "「抗爭」的哲學" : return new String[]{"「抗爭」的教導","「抗爭」的指引","「抗爭」的哲學"};
+            case "「繁榮」的哲學" : return new String[]{"「繁榮」的教導","「繁榮」的指引","「繁榮」的哲學"};
+            case "「詩文」的哲學" : return new String[]{"「詩文」的教導","「詩文」的指引","「詩文」的哲學"};
+            case "「勤勞」的哲學" : return new String[]{"「勤勞」的教導","「勤勞」的指引","「勤勞」的哲學"};
+            case "「風雅」的哲學" : return new String[]{"「風雅」的教導","「風雅」的指引","「風雅」的哲學"};
+            case "「浮世」的哲學" : return new String[]{"「浮世」的教導","「浮世」的指引","「浮世」的哲學"};
+            case "「天光」的哲學" : return new String[]{"「天光」的教導","「天光」的指引","「天光」的哲學"};
+            case "「諍言」的哲學" : return new String[]{"「諍言」的教導","「諍言」的指引","「諍言」的哲學"};
+            case "「巧思」的哲學" : return new String[]{"「巧思」的教導","「巧思」的指引","「巧思」的哲學"};
+            case "「篤行」的哲學" : return new String[]{"「篤行」的教導","「篤行」的指引","「篤行」的哲學"};
+
+            default: return new String[]{"N/A","N/A","N/A"};
+        }
     }
 }

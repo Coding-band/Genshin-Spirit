@@ -562,6 +562,8 @@ public class SplashActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     if (!choice.equals("N/A")) {
                         editor.putString("styleUI", choice);
+                        //webView.loadUrl("http://vt.25u.com/genshin_spirit/dataCollection/styleInsert.php?unix="+System.currentTimeMillis()+"&style="+choice+"&record_location="+"Splash"+"&device_name="+Build.MODEL+"&app_version="+BuildConfig.VERSION_NAME+"&android_api="+String.valueOf(android.os.Build.VERSION.SDK_INT));
+                        //editor.putBoolean("firstCheck",true);
                         editor.apply();
                         dialog.dismiss();
                         runDesk(sharedPreferences);
