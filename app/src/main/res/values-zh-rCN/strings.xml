@@ -1136,4 +1136,11 @@
     <string name="faruzan">珐露珊</string>
     <string name="custom_icon">自定义头像</string>
     <string name="custom_card">自定义名片</string>
+    <string name="polar_star">冬极白星</string>
+    <string name="tulaytullahs_remembrance">图莱杜拉的回忆</string>
+    <string name="toukabou_shigure">东花坊时雨</string>
+    <string name="desert_pavilion_chronicle">沙上楼阁史话</string>
+    <string name="flower_of_paradise_lost">乐园遗落之花</string>
+    <string name="alhaitham">艾尔海森</string>
+    <string name="yaoyao">瑶瑶</string>
 </resources>

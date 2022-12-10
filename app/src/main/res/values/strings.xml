@@ -1173,6 +1173,13 @@
     <string name="wanderer">Wanderer</string>
     <string name="custom_icon">Customize Profile</string>
     <string name="custom_card">Customize Card</string>
+    <string name="polar_star">Polar Star</string>
+    <string name="tulaytullahs_remembrance">Tulaytullah\'s Remembrance</string>
+    <string name="toukabou_shigure">Toukabou Shigure</string>
+    <string name="flower_of_paradise_lost">Flower of Paradise Lost</string>
+    <string name="desert_pavilion_chronicle">Desert Pavilion Chronicle</string>
+    <string name="yaoyao">Yaoyao</string>
+    <string name="alhaitham">Alhaitham</string>
 
 </resources>
 

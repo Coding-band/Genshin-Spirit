@@ -907,4 +907,60 @@ public class Material {
             default: return new String[]{"N/A","N/A","N/A"};
         }
     }
+
+    /**
+     * For Weapon Info
+     */
+    public String[] getWeaponLocal1ListByItemName (String str){
+        switch (str){
+            case "漆黑隕鐵的一塊" : return new String[]{"漆黑隕鐵的一粒","漆黑隕鐵的一片","漆黑隕鐵的一角","漆黑隕鐵的一塊"};
+            case "鳴神御靈的勇武" : return new String[]{"鳴神御靈的明惠","鳴神御靈的歡喜","鳴神御靈的親愛","鳴神御靈的勇武"};
+            case "遠海夷地的金枝" : return new String[]{"遠海夷地的瑚枝","遠海夷地的玉枝","遠海夷地的瓊枝","遠海夷地的金枝"};
+            case "凜風奔狼的懷鄉" : return new String[]{"凜風奔狼的始齔","凜風奔狼的裂齒","凜風奔狼的斷牙","凜風奔狼的懷鄉"};
+            case "高塔孤王的碎夢" : return new String[]{"高塔孤王的破瓦","高塔孤王的殘垣","高塔孤王的斷片","高塔孤王的碎夢"};
+            case "霧海雲間的轉還" : return new String[]{"霧海雲間的鉛丹","霧海雲間的汞丹","霧海雲間的金丹","霧海雲間的轉還"};
+            case "獅牙鬥士的理想" : return new String[]{"獅牙鬥士的枷鎖","獅牙鬥士的鐵鍊","獅牙鬥士的鐐銬","獅牙鬥士的理想"};
+            case "孤雲寒林的神體" : return new String[]{"孤雲寒林的光砂","孤雲寒林的輝岩","孤雲寒林的聖骸","孤雲寒林的神體"};
+            case "今昔劇畫的鬼人" : return new String[]{"今昔劇畫的惡尉","今昔劇畫的虎囓","今昔劇畫的一角","今昔劇畫的鬼人"};
+            case "謐林涓露的金符" : return new String[]{"謐林涓露的銅符", "謐林涓露的鐵符", "謐林涓露的銀符", "謐林涓露的金符"};
+            case "綠洲花園的真諦" : return new String[]{"綠洲花園的追憶","綠洲花園的恩惠","綠洲花園的哀思","綠洲花園的真諦"};
+            case "烈日威權的舊日" : return new String[]{"烈日威權的殘響","烈日威權的餘光","烈日威權的夢想","烈日威權的舊日"};
+
+            default: return new String[]{"N/A","N/A","N/A","N/A"};
+        }
+    }
+    public String[] getWeaponLocal2ListByItemName (String str){
+        switch (str){
+            case "混沌真眼" : return new String[]{"混沌機關","混沌樞紐","混沌真眼"};
+            case "混沌爐心" : return new String[]{"混沌裝置","混沌迴路","混沌爐心"};
+            case "石化的骨片" : return new String[]{"脆弱的骨片","結實的骨片","石化的骨片"};
+            case "霧虛燈芯" : return new String[]{"霧虛草囊","霧虛草囊","霧虛燈芯"};
+            case "督察長祭刀" : return new String[]{"獵兵祭刀","特工祭刀","督察長祭刀"};
+            case "黑晶號角" : return new String[]{"沉重號角","黑銅號角","黑晶號角"};
+            case "地脈的新芽" : return new String[]{"地脈的舊枝","地脈的枯葉","地脈的新芽"};
+            case "偏光棱鏡" : return new String[]{"黯淡棱鏡","水晶棱鏡","偏光棱鏡"};
+            case "隱獸鬼爪" : return new String[]{"隱獸指爪","隱獸利爪","隱獸鬼爪"};
+            case "茁壯菌核" : return new String[]{"失活菌核","休眠菌核","茁壯菌核"};
+            case "混沌錨栓" : return new String[]{"混沌容器","混沌模組","混沌錨栓"};
+            case "輝光稜晶" : return new String[]{"破缺稜晶","混濁稜晶","輝光稜晶"};
+            default: return new String[]{"N/A","N/A","N/A"};
+        }
+    }
+    public String[] getWeaponCommonListByItemName (String str){
+        switch (str){
+            case "歷戰的箭簇" : return new String[]{"牢固的箭簇","銳利的箭簇","歷戰的箭簇"};
+            case "禁咒繪卷" : return new String[]{"導能繪卷","封魔繪卷","禁咒繪卷"};
+            case "攫金鴉印" : return new String[]{"尋寶鴉印","藏銀鴉印","攫金鴉印"};
+            case "不祥的面具" : return new String[]{"破損的面具","污穢的面具","不祥的面具"};
+            case "尉官的徽記" : return new String[]{"新兵的徽記","士官的徽記","尉官的徽記"};
+            case "原素花蜜" : return new String[]{"騙騙花蜜","微光花蜜","原素花蜜"};
+            case "史萊姆原漿" : return new String[]{"史萊姆凝液","史萊姆清","史萊姆原漿"};
+            case "名刀鐔" : return new String[]{"破舊的刀鐔","影打刀鐔","名刀鐔"};
+            case "浮游晶化核" : return new String[]{"浮游乾核","浮游幽核","浮游晶化核"};
+            case "孢囊晶塵" : return new String[]{"蕈獸孢子","螢光孢粉","孢囊晶塵"};
+            case "織金紅綢" : return new String[]{"褪色紅綢","鑲邊紅綢","織金紅綢"};
+
+            default: return new String[]{"N/A","N/A","N/A"};
+        }
+    }
 }

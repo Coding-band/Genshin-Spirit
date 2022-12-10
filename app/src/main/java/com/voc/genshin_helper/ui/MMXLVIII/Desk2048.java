@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatDelegate;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
@@ -68,6 +69,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RatingBar;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -160,6 +162,11 @@ public class Desk2048 extends AppCompatActivity {
 
     boolean isCharLLShow = true;
     boolean isWeaponLLShow = false;
+
+    boolean firstSelect = false;
+    int id = 0;
+    long period = 0;
+
 
     LinearLayout char_ll;
     LinearLayout weapon_ll;
@@ -481,8 +488,6 @@ public class Desk2048 extends AppCompatActivity {
             desk_tablayout.selectTab(desk_tablayout.getTabAt(0));
             viewPager.setCurrentItem(0);
 
-
-
             View view1 = desk_tablayout.getTabAt(0).getCustomView();
             ImageView tab_icon = (ImageView) view1.findViewById(R.id.icon);
             tab_icon.setImageResource(tabItemImageSelectedArray[0]);
@@ -495,6 +500,14 @@ public class Desk2048 extends AppCompatActivity {
                 ImageView tab_icon = (ImageView) view1.findViewById(R.id.icon);
                 tab_icon.setImageResource(tabItemImageSelectedArray[tab.getPosition()]);
                 viewPager.setCurrentItem(tab.getPosition());
+
+                if (!firstSelect || (System.currentTimeMillis() - period > 3000)){
+                    id = tab.getId();
+                    period = System.currentTimeMillis();
+                    firstSelect = true;
+                }else if(firstSelect && tab.getId() != id){
+                    firstSelect = false;
+                }
             }
 
             @Override
@@ -506,7 +519,27 @@ public class Desk2048 extends AppCompatActivity {
 
             @Override
             public void onTabReselected(TabLayout.Tab tab) {
-
+                if (!firstSelect || (System.currentTimeMillis() - period > 3000)){
+                    id = tab.getId();
+                    period = System.currentTimeMillis();
+                    firstSelect = true;
+                }else if(firstSelect && tab.getId() != id){
+                    firstSelect = false;
+                }else if (firstSelect && (tab.getId() == id) && (System.currentTimeMillis() - period < 3000)){
+                    RecyclerView.SmoothScroller smoothScroller = new LinearSmoothScroller(context) {
+                        @Override protected int getVerticalSnapPreference() {
+                            return LinearSmoothScroller.SNAP_TO_START;
+                        }
+                    };
+                    smoothScroller.setTargetPosition(0);
+                    switch (tab.getPosition()){
+                        case 0 : ((ScrollView) viewPager0.findViewById(R.id.sc_root)).smoothScrollTo(0,0);break;
+                        case 1 : ((RecyclerView) viewPager1.findViewById(R.id.main_list)).getLayoutManager().startSmoothScroll(smoothScroller);break;
+                        case 2 : ((RecyclerView) viewPager2.findViewById(R.id.weapon_list)).getLayoutManager().startSmoothScroll(smoothScroller);break;
+                        case 3 : ((RecyclerView) viewPager3.findViewById(R.id.artifact_list)).getLayoutManager().startSmoothScroll(smoothScroller);break;
+                    }
+                    firstSelect = false;
+                }
             }
         });
 
@@ -3777,6 +3810,9 @@ public class Desk2048 extends AppCompatActivity {
         {
             OkHttpClient client = new OkHttpClient();
             String url = "http://113.254.213.196/genshin_spirit/update.json";
+            if (BuildConfig.FLAVOR.equals("dev")){
+                url = "http://113.254.213.196/genshin_spirit/update_dev.json";
+            }
             Request request = new Request.Builder().url(url).build();
 
             long lastUnix = System.currentTimeMillis();

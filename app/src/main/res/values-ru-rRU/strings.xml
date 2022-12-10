@@ -1116,4 +1116,11 @@
     <string name="faruzan">Фарузан</string>
     <string name="custom_icon">Настроить значок</string>
     <string name="custom_card">Настроить открытка</string>
+    <string name="polar_star">Полярная звезда</string>
+    <string name="tulaytullahs_remembrance">Воспоминания Тулайтуллы</string>
+    <string name="toukabou_shigure">Токабо сигурэ</string>
+    <string name="flower_of_paradise_lost">Цветок потерянного рая</string>
+    <string name="desert_pavilion_chronicle">Хроники Чертогов в пустыне</string>
+    <string name="alhaitham">Аль-Хайтам</string>
+    <string name="yaoyao">Яо Яо</string>
 </resources>

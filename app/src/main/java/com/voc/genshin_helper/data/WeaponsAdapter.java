@@ -304,7 +304,6 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
 
                 }
 
-
                 viewHolder.weapon_name_ll.getLayoutParams().width = width;
                 viewHolder.weapon_name_ll.getLayoutParams().height = width*4/8;
                 viewHolder.weapon_main.getLayoutParams().width = width;
@@ -700,7 +699,7 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                         Log.wtf("YES", "IT's");
                         Log.w("WEAPON_BASE", (String) ViewHolder.this.weapon_base_name.getText());
                         ((CalculatorUI) WeaponsAdapter.this.context).weaponQuestion(String.valueOf(weapon_base_name.getText()), "ADD", 0, (int) weapon_star.getRating());
-                    } else if (context instanceof Desk2048){Log.wtf("YES","IT's");
+                    } else if (context instanceof Desk2048){Log.wtf("YES","IT's "+String.valueOf(weapon_base_name.getText()));
                         (((Desk2048) context)).startWeaponInfo(String.valueOf(weapon_base_name.getText()),activity);
 
                     } else if (context instanceof DeskSipTik){Log.wtf("YES","IT's");

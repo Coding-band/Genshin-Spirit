@@ -12,6 +12,7 @@
     android:layout_height="match_parent">
 
     <ScrollView
+        android:id="@+id/sc_root"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:overScrollMode="always"
