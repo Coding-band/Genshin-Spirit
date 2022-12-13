@@ -1434,8 +1434,9 @@ public class MainActivity extends AppCompatActivity {
         bg_setting_btn_reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editor.putString("pathName","N/A");
-                editor.apply();
+                String gif_png = sharedPreferences.getString("gif/png", "png");
+                File file = new File(context.getFilesDir()+"/background."+gif_png);
+                file.delete();
                 CustomToast.toast(context,activity,context.getString(R.string.img_reset_finish));
                 BackgroundReload.BackgroundReload(context,activity);
             }

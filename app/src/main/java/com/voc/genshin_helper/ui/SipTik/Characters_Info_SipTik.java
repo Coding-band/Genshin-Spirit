@@ -51,6 +51,7 @@ import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
+import com.voc.genshin_helper.data.Material;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.FileLoader;
@@ -82,6 +83,7 @@ public class Characters_Info_SipTik {
     Activity activity;
     SharedPreferences sharedPreferences ;
     ItemRss item_rss;
+    Material material;
     BackgroundReload backgroundReload;
     boolean isMenuDisplay = false;
     int tmp_cnt_dis = 0;
@@ -453,6 +455,7 @@ public class Characters_Info_SipTik {
         this.context = context;
         this.activity = activity;
         item_rss = new ItemRss();
+        material = new Material();
 
 
         String lang = sharedPreferences.getString("curr_lang","zh-HK");
@@ -2762,15 +2765,15 @@ public class Characters_Info_SipTik {
 
         if (pos != 0){
             String[] itemNameList = new String[]{
-                    getCharCrystalListByItemName(crystalREQUIRE)[0],
-                    getCharCrystalListByItemName(crystalREQUIRE)[1],
-                    getCharCrystalListByItemName(crystalREQUIRE)[2],
-                    getCharCrystalListByItemName(crystalREQUIRE)[3],
+                    material.getCharCrystalListByItemName(crystalREQUIRE)[0],
+                    material.getCharCrystalListByItemName(crystalREQUIRE)[1],
+                    material.getCharCrystalListByItemName(crystalREQUIRE)[2],
+                    material.getCharCrystalListByItemName(crystalREQUIRE)[3],
                     bossREQUIRE,
                     localREQUIRE,
-                    getCharCommonListByItemName(commonREQUIRE)[0],
-                    getCharCommonListByItemName(commonREQUIRE)[1],
-                    getCharCommonListByItemName(commonREQUIRE)[2]
+                    material.getCharCommonListByItemName(commonREQUIRE)[0],
+                    material.getCharCommonListByItemName(commonREQUIRE)[1],
+                    material.getCharCommonListByItemName(commonREQUIRE)[2]
             };
 
             int[] itemValueList = new int[]{
@@ -2818,12 +2821,12 @@ public class Characters_Info_SipTik {
         if (pos != 0){
             String[] itemNameList = new String[]{
                     "摩拉",
-                    getBookListByItemName(bookREQUIRE)[0],
-                    getBookListByItemName(bookREQUIRE)[1],
-                    getBookListByItemName(bookREQUIRE)[2],
-                    getCharCommonListByItemName(commonREQUIRE)[0],
-                    getCharCommonListByItemName(commonREQUIRE)[1],
-                    getCharCommonListByItemName(commonREQUIRE)[2],
+                    material.getBookListByItemName(bookREQUIRE)[0],
+                    material.getBookListByItemName(bookREQUIRE)[1],
+                    material.getBookListByItemName(bookREQUIRE)[2],
+                    material.getCharCommonListByItemName(commonREQUIRE)[0],
+                    material.getCharCommonListByItemName(commonREQUIRE)[1],
+                    material.getCharCommonListByItemName(commonREQUIRE)[2],
                     t_bossREQUIRE
             };
 
@@ -2883,48 +2886,6 @@ public class Characters_Info_SipTik {
         }
     }
 
-    public String[] getCharCrystalListByItemName (String str){
-        switch (str){
-            case "燃願瑪瑙" : return new String[]{"燃願瑪瑙碎屑","燃願瑪瑙斷片","燃願瑪瑙塊","燃願瑪瑙"};
-            case "滌淨青金" : return new String[]{"滌淨青金碎屑","滌淨青金斷片","滌淨青金塊","滌淨青金"};
-            case "最勝紫晶" : return new String[]{"最勝紫晶碎屑","最勝紫晶斷片","最勝紫晶塊","最勝紫晶"};
-            case "哀敘冰玉" : return new String[]{"哀敘冰玉碎屑","哀敘冰玉斷片","哀敘冰玉塊","哀敘冰玉"};
-            case "自在松石" : return new String[]{"自在松石碎屑","自在松石斷片","自在松石塊","自在松石"};
-            case "堅牢黃玉" : return new String[]{"堅牢黃玉碎屑","堅牢黃玉斷片","堅牢黃玉塊","堅牢黃玉"};
-
-            default: return new String[]{"N/A","N/A","N/A","N/A"};
-        }
-    }
-    public String[] getCharCommonListByItemName (String str){
-        switch (str){
-            case "歷戰的箭簇" : return new String[]{"牢固的箭簇","銳利的箭簇","歷戰的箭簇"};
-            case "禁咒繪卷" : return new String[]{"導能繪卷","封魔繪卷","禁咒繪卷"};
-            case "攫金鴉印" : return new String[]{"尋寶鴉印","藏銀鴉印","攫金鴉印"};
-            case "不祥的面具" : return new String[]{"破損的面具","污穢的面具","不祥的面具"};
-            case "尉官的徽記" : return new String[]{"新兵的徽記","士官的徽記","尉官的徽記"};
-            case "原素花蜜" : return new String[]{"騙騙花蜜","微光花蜜","原素花蜜"};
-            case "史萊姆原漿" : return new String[]{"史萊姆凝液","史萊姆清","史萊姆原漿"};
-            case "名刀鐔" : return new String[]{"破舊的刀鐔","影打刀鐔","名刀鐔"};
-            case "浮游晶化核" : return new String[]{"浮游乾核","浮游幽核","浮游晶化核"};
-
-            default: return new String[]{"N/A","N/A","N/A"};
-        }
-    }
-    public String[] getBookListByItemName (String str){
-        switch (str){
-            case "「自由」的哲學" : return new String[]{"「自由」的教導","「自由」的指引","「自由」的哲學"};
-            case "「黃金」的哲學" : return new String[]{"「黃金」的教導","「黃金」的指引","「黃金」的哲學"};
-            case "「抗爭」的哲學" : return new String[]{"「抗爭」的教導","「抗爭」的指引","「抗爭」的哲學"};
-            case "「繁榮」的哲學" : return new String[]{"「繁榮」的教導","「繁榮」的指引","「繁榮」的哲學"};
-            case "「詩文」的哲學" : return new String[]{"「詩文」的教導","「詩文」的指引","「詩文」的哲學"};
-            case "「勤勞」的哲學" : return new String[]{"「勤勞」的教導","「勤勞」的指引","「勤勞」的哲學"};
-            case "「風雅」的哲學" : return new String[]{"「風雅」的教導","「風雅」的指引","「風雅」的哲學"};
-            case "「浮世」的哲學" : return new String[]{"「浮世」的教導","「浮世」的指引","「浮世」的哲學"};
-            case "「天光」的哲學" : return new String[]{"「天光」的教導","「天光」的指引","「天光」的哲學"};
-
-            default: return new String[]{"N/A","N/A","N/A"};
-        }
-    }
     public int getRssByRare (int lvl){
         switch (lvl){
             case 1: return R.drawable.rare1_800x1000_light;

@@ -2005,8 +2005,9 @@ public class DeskSipTik extends AppCompatActivity {
         bg_setting_btn_reset.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                editor.putString("pathName","N/A");
-                editor.apply();
+                String gif_png = sharedPreferences.getString("gif/png", "png");
+                File file = new File(context.getFilesDir()+"/background."+gif_png);
+                file.delete();
                 CustomToast.toast(context,activity,context.getString(R.string.img_reset_finish));
                 BackgroundReload.BackgroundReload(context,activity);
             }
@@ -3174,10 +3175,42 @@ public class DeskSipTik extends AppCompatActivity {
         RadioButton theme_default = viewPager4.findViewById(R.id.theme_default);
         Button bg_changelog_btn = viewPager4.findViewById(R.id.bg_changelog_btn);
 
+        RadioButton style_Voc_rb = viewPager4.findViewById(R.id.ui_Voc_rb);
+        RadioButton style_2O48_rb = viewPager4.findViewById(R.id.ui_2O48_rb);
+        RadioButton style_SipTik_rb = viewPager4.findViewById(R.id.ui_SipTik_rb);
+
+        RadioButton outfit_standard_rb= viewPager4.findViewById(R.id.outfit_standard_rb);
+        RadioButton outfit_event_rb= viewPager4.findViewById(R.id.outfit_event_rb);
+
+        RadioButton traveler_female_rb= viewPager4.findViewById(R.id.traveler_female_rb);
+        RadioButton traveler_male_rb= viewPager4.findViewById(R.id.traveler_male_rb);
+
+        RadioButton grid_2_rb= viewPager4.findViewById(R.id.grid_2);
+        RadioButton grid_3_rb= viewPager4.findViewById(R.id.grid_3);
+        RadioButton grid_4_rb= viewPager4.findViewById(R.id.grid_4);
+        RadioButton grid_5_rb= viewPager4.findViewById(R.id.grid_5);
+        RadioButton navigation_hover= viewPager4.findViewById(R.id.navigation_hover);
+        RadioButton navigation_solid= viewPager4.findViewById(R.id.navigation_solid);
+
         theme_light.setButtonTintList(myList);
         theme_dark.setButtonTintList(myList);
         theme_default.setButtonTintList(myList);
+        style_2O48_rb.setButtonTintList(myList);
+        style_SipTik_rb.setButtonTintList(myList);
+        style_Voc_rb.setButtonTintList(myList);
+        outfit_standard_rb.setButtonTintList(myList);
+        outfit_event_rb.setButtonTintList(myList);
+        traveler_female_rb.setButtonTintList(myList);
+        traveler_male_rb.setButtonTintList(myList);
+        grid_2_rb.setButtonTintList(myList);
+        grid_3_rb.setButtonTintList(myList);
+        grid_4_rb.setButtonTintList(myList);
+        grid_5_rb.setButtonTintList(myList);
+        navigation_hover.setButtonTintList(myList);
+        navigation_solid.setButtonTintList(myList);
+
         Switch other_exit_confirm = viewPager4.findViewById(R.id.other_exit_confirm);
+        other_exit_confirm.setThumbTintList(myList);
 
         bg_changelog_btn.setOnClickListener(new View.OnClickListener() {
             @Override
