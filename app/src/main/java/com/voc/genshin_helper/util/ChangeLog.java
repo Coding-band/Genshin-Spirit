@@ -53,7 +53,6 @@ public class ChangeLog {
         BackgroundReload.BackgroundReload(context,activity);
 
         VersionAdapter mAdapter;
-        System.out.println("THX "+jsonJXDate(LoadData("changelog/update.json",context)));
         ArrayList<Version> versionList = jsonJXDate(LoadData("changelog/update.json",context));
         RecyclerView mList;
         LinearLayoutManager linearLayoutManager;

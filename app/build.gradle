@@ -18,7 +18,7 @@ android {
         minSdkVersion 26
         targetSdkVersion 33
         versionCode 1
-        versionName "3.3.0"
+        versionName "3.4.0"
 
         renderscriptTargetApi 21
         renderscriptSupportModeEnabled true
@@ -145,7 +145,7 @@ dependencies {
     implementation 'com.github.hackware1993:MagicIndicator:1.7.0' // for androidx
     implementation 'com.github.lzyzsd:circleprogress:1.2.1'
     implementation 'com.mikhaellopez:circularprogressbar:3.1.0'
-
+    implementation "androidx.tonyodev.fetch2:xfetch2:3.1.6"
 
     implementation("androidx.recyclerview:recyclerview:1.2.1")
     testImplementation 'junit:junit:4.13.2'

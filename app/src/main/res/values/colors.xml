@@ -137,6 +137,11 @@
     <color name="rand_theme_app_name_color">#FF495366</color>
     <color name="rand_theme_by_line_color">#99667289</color>
 
+    <color name="tab_tcg_unselected">#FFECE5D8</color>
+    <color name="tab_tcg_unselected_dot">#CF667289</color>
+    <color name="tab_tcg_selected">#3B4255</color>
+    <color name="tab_tcg_selected_dot">#D3BC8E</color>
+
 
     <!-- SIPTIK -->
     <color name="tv_color_siptik">#ECE5D8</color>

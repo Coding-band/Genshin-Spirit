@@ -115,9 +115,7 @@ public class DailyMemo2048Service extends Service {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                autoLoop();
                 update(2);
-
             }
         }, 60000);
     }
@@ -138,6 +136,9 @@ public class DailyMemo2048Service extends Service {
         System.out.println("LOGS : "+url);
         if (!sharedPreferences.getString("genshin_uid","-1").equals("-1")){
             new grabIdFromServer().execute(url);
+        }
+        if (location == 2){
+            autoLoop();
         }
     }
 

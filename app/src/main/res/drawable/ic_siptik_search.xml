@@ -1,32 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?><!--
-  ~ Project Genshin Spirit (原神小幫手) was
-  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
-  ~ Copyright © 2022 Xectorda 版權所有
-  -->
-
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="46dp"
-    android:height="46dp"
-    android:viewportWidth="46"
-    android:viewportHeight="46">
-    <path
-        android:fillColor="@color/tab_unselected_bg_2048"
-        android:pathData="M23 3a20 20 0 1 0 0 40 20 20 0 1 0 0-40z"/>
-    <path
-        android:strokeColor="@color/tab_stroke_edge_2048"
-        android:strokeWidth="3"
-        android:pathData="M23 1.5a21.5 21.5 0 1 0 0 43 21.5 21.5 0 1 0 0-43z"/>
-    <path
-        android:strokeColor="@color/tab_unselected_obj_2048"
-        android:strokeWidth="1.5"
-        android:pathData="M13.98 13.48a7.25 7.25 0 1 0 10.26 10.26 7.25 7.25 0 1 0-10.26-10.26z"/>
-    <path
-        android:fillColor="#FF949598"
-        android:pathData="M15.57 15.08a5 5 0 1 0 7.08 7.07 5 5 0 1 0-7.08-7.07z"/>
-    <path
-        android:fillColor="@color/tab_unselected_obj_2048"
-        android:pathData="M24.06 24.98l1.42-1.42 1.41 1.42-1.41 1.41z"/>
-    <path
-        android:fillColor="@color/tab_unselected_obj_2048"
-        android:pathData="M25.47 27.8l2.83-2.82 5.65 5.65-2.82 2.83z"/>
+    android:width="43.189dp"
+    android:height="43.189dp"
+    android:viewportWidth="43.189"
+    android:viewportHeight="43.189">
+  <path
+      android:pathData="M21.595,0A21.595,21.595 0,1 1,0 21.595,21.595 21.595,0 0,1 21.595,0Z"
+      android:fillColor="#f0f0f0"/>
+  <path
+      android:pathData="M26.559,24.526h-1.1l-0.389,-0.382a9.234,9.234 0,0 0,2.182 -5.977A9.11,9.11 0,0 0,18.22 8.982,9.11 9.11,0 0,0 9.186,18.167a9.11,9.11 0,0 0,9.034 9.185,8.908 8.908,0 0,0 5.879,-2.218l0.375,0.4v1.116l6.949,7.051 2.071,-2.105ZM18.22,24.526a6.36,6.36 0,1 1,6.254 -6.359A6.3,6.3 0,0 1,18.22 24.526Z"
+      android:fillColor="#363636"/>
 </vector>

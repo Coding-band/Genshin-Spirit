@@ -61,9 +61,6 @@ public class DailyMemo2048Widget extends AppWidgetProvider {
     /**啟動Service*/
     private void startRunService(Context context) {
         Intent intent = new Intent(context, DailyMemo2048Service.class);
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            context.startForegroundService(intent);
-        }
         context.startService(intent);
     }
     /**判斷此是否已有我的Service再跑*/

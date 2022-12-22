@@ -879,7 +879,7 @@
                     android:layout_height="24dp"
                     android:layout_weight="0"
                     app:srcCompat="@drawable/new_icon"
-                    app:tint="@color/tv_color" />
+                    app:tint="#4B4B4B" />
 
                 <TextView
                     android:layout_width="wrap_content"

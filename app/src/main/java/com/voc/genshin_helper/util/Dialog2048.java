@@ -52,6 +52,7 @@ public class Dialog2048 {
     public static final int MODE_DOWNLOAD_UPDATE = 5;
 
     long size_max = 0;
+    int countX = 0;
 
     public void setup(Context context, Activity activity){
         this.context = context;
@@ -113,14 +114,20 @@ public class Dialog2048 {
         dialog.show();
     }
     public void updateProgress(long size_progress){
-        double progress = ((double) (size_progress*100/size_max));
-        dialog_progress_bar.setProgress((int) progress);
-        dialog_progress_tv.setText(prettyCount(progress)+"%");
-        if (isUnzip){
-            dialog_progress_detail.setText(prettyCount(size_progress)+" / "+prettyCount(size_max));
+        if (countX < 50){
+            countX++;
         }else{
-            dialog_progress_detail.setText(prettyByteCount(size_progress)+" / "+prettyByteCount(size_max));
+            countX = 0;
+            double progress = ((double) (size_progress*100/size_max));
+            dialog_progress_bar.setProgress((int) progress);
+            dialog_progress_tv.setText(prettyCount(progress)+"%");
+            if (isUnzip){
+                dialog_progress_detail.setText(prettyCount(size_progress)+" / "+prettyCount(size_max));
+            }else{
+                dialog_progress_detail.setText(prettyByteCount(size_progress)+" / "+prettyByteCount(size_max));
+            }
         }
+
     }
 
     public void updateMax(long size_max){

@@ -94,8 +94,7 @@ public class DownloadTask {
                 // Output stream to write file
 
                 OutputStream output = new FileOutputStream(context.getFilesDir()+savePath);
-                byte data[] = new byte[1024];
-                //pDialog.setMax(lenghtOfFile);
+                byte data[] = new byte[8192];
                 dialog2048.updateMax(lenghtOfFile);
                 long total = 0;
                 while ((count = input.read(data)) != -1) {
@@ -214,7 +213,7 @@ public class DownloadTask {
                     // Output stream to write file
 
                     OutputStream output = new FileOutputStream(context.getFilesDir()+savePaths.get(x));
-                    byte data[] = new byte[1024];
+                    byte data[] = new byte[8192];
 
                     long total = 0;
                     while ((count = input.read(data)) != -1) {

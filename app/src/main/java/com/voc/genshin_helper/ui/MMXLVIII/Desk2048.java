@@ -171,6 +171,7 @@ public class Desk2048 extends AppCompatActivity {
     LinearLayout char_ll;
     LinearLayout weapon_ll;
     TabLayout desk_tablayout;
+    TabLayout tcg_tablayout;
     ImageView desk_tablayout_bg;
     Today_Material tm;
     ItemRss css;
@@ -283,6 +284,8 @@ public class Desk2048 extends AppCompatActivity {
     GoSleep gs;
     ColorStateList myList;
 
+    TCG2048 tcg2048;
+
     final int radius_circ = 360;
     final int margin_circ = 0;
     final Transformation transformation_circ = new RoundedCornersTransformation(radius_circ, margin_circ);
@@ -293,10 +296,14 @@ public class Desk2048 extends AppCompatActivity {
 
     Activity activity;
 
-    View viewPager0, viewPager1, viewPager2, viewPager3, viewPager4;
+    View viewPager0, viewPager1, viewPager2, viewPager3, viewPager4, viewPager5;
 
-    int[] tabItemImageArray = new int[]{R.drawable.ic_2048_tab_desk,R.drawable.ic_2048_tab_char,R.drawable.ic_2048_tab_weapon,R.drawable.ic_2048_tab_art,R.drawable.ic_2048_tab_toolbox};
-    int[] tabItemImageSelectedArray = new int[]{R.drawable.ic_2048_tab_desk_selected,R.drawable.ic_2048_tab_char_selected,R.drawable.ic_2048_tab_weapon_selected,R.drawable.ic_2048_tab_art_selected,R.drawable.ic_2048_tab_toolbox_selected};
+    int[] tabItemImageArray = new int[]{R.drawable.ic_2048_tab_desk,R.drawable.ic_2048_tab_char,R.drawable.ic_2048_tab_weapon,R.drawable.ic_2048_tab_art,R.drawable.ic_2048_tab_toolbox,R.drawable.ic_2048_tab_tcg};
+    int[] tabItemImageSelectedArray = new int[]{R.drawable.ic_2048_tab_desk_selected,R.drawable.ic_2048_tab_char_selected,R.drawable.ic_2048_tab_weapon_selected,R.drawable.ic_2048_tab_art_selected,R.drawable.ic_2048_tab_toolbox_selected,R.drawable.ic_2048_tab_tcg_selected};
+
+    int[] tabTCGItemImageArray = new int[]{R.drawable.ic_2048_tcg_char,R.drawable.ic_2048_tcg_equip,R.drawable.ic_2048_tcg_support,R.drawable.ic_2048_tcg_event};
+    int[] tabTCGItemImageSelectedArray = new int[]{R.drawable.ic_2048_tcg_char_selected,R.drawable.ic_2048_tcg_equip_selected,R.drawable.ic_2048_tcg_support_selected,R.drawable.ic_2048_tcg_event_selected};
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -351,6 +358,7 @@ public class Desk2048 extends AppCompatActivity {
         viewPager2 = mInflater.inflate(R.layout.fragment_weapon_2048, null,false);
         viewPager3 = mInflater.inflate(R.layout.fragment_art_2048, null,false);
         viewPager4 = mInflater.inflate(R.layout.fragment_paimon_2048, null,false);
+        viewPager5 = mInflater.inflate(R.layout.fragment_tcg_2048, null,false);
 
         viewPager_List = new ArrayList<View>();
         viewPager_List.add(viewPager0);
@@ -358,12 +366,15 @@ public class Desk2048 extends AppCompatActivity {
         viewPager_List.add(viewPager2);
         viewPager_List.add(viewPager3);
         viewPager_List.add(viewPager4);
+        viewPager_List.add(viewPager5);
 
         check_spinner = 0;
 
         dailyMemo = new DailyMemo();
         dailyMemo.setup(context,activity,viewPager0,DailyMemo.GAME);
         viewPager0.findViewById(R.id.home_dailymemo).setVisibility(View.VISIBLE);
+
+        tcg2048 = new TCG2048();
 
         lang_setup();
         home();
@@ -378,6 +389,7 @@ public class Desk2048 extends AppCompatActivity {
         setup_weapon();
         setup_art();
         setup_paimon();
+        tcg2048.setup(viewPager5,context,activity,sharedPreferences);
 
         //viewPager4.findViewById(R.id.card_char_bg)
 
@@ -412,7 +424,7 @@ public class Desk2048 extends AppCompatActivity {
         });
         viewPager.setAdapter(new MyViewPagerAdapter(viewPager_List));
 
-        for (int x = 0 ; x < 5 ; x++){
+        for (int x = 0 ; x < 6 ; x++){
             View view1 = getLayoutInflater().inflate(R.layout.item_custom_tab, null);
             ImageView ico_img = view1.findViewById(R.id.icon);
             ico_img.setImageResource(tabItemImageArray[x]);
