@@ -3493,6 +3493,10 @@ public class Desk2048 extends AppCompatActivity {
         Artifact_Info_2048 aif = new Artifact_Info_2048();
         aif.setup(String.valueOf(name),context,activity);
     }
+    public void startTCGInfo (String name, Activity activity){
+        Artifact_Info_2048 aif = new Artifact_Info_2048();
+        aif.setup(String.valueOf(name),context,activity);
+    }
     public void runSipTikCal (Characters characters, Activity activity){
         Intent intent = new Intent(this, SipTikCal.class);
         intent.putExtra("characters",characters);

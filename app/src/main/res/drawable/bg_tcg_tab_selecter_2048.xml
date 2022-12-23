@@ -4,7 +4,9 @@
   ~ Copyright © 2022 Xectorda 版權所有
   -->
 
-<selector xmlns:android="http://schemas.android.com/apk/res/android">
+<selector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:enterFadeDuration="1000"
+    android:exitFadeDuration="1000">
     <item android:drawable="@drawable/bg_tcg_tab_selected_round_2048" android:state_selected="true"/>
     <item android:drawable="@drawable/bg_tcg_tab_unselected_round_2048" android:state_selected="false"/>
 </selector>

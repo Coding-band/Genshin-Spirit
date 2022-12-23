@@ -72,6 +72,7 @@
             app:tabInlineLabel="false"
             app:tabMode="fixed"
             app:tabPaddingBottom="4dp"
-            app:tabPaddingTop="4dp" />
+            app:tabPaddingTop="4dp"
+            app:tabRippleColor="@null" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

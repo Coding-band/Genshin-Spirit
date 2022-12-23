@@ -49,6 +49,7 @@ android {
                 versionNameSuffix "-dev" + " ("+code+")"
                 applicationId "com.voc.genshin_spirit"
 
+
             }
             // For Google Play Store
             gp{
@@ -73,6 +74,9 @@ android {
 
 
     buildTypes {
+        debug{
+            ext.enableBugsnag = false
+        }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'

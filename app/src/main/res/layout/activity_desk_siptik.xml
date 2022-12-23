@@ -55,7 +55,8 @@
         app:tabInlineLabel="true"
         app:tabMode="fixed"
         app:tabPaddingBottom="4dp"
-        app:tabPaddingTop="4dp" />
+        app:tabPaddingTop="4dp"
+        app:tabRippleColor="@null" />
 
     <!-- Case from SipTik 2nd choice, must add it into Setting selection. Thx.
     <com.google.android.material.tabs.TabLayout

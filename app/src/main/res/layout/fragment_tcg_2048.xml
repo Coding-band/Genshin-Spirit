@@ -23,18 +23,8 @@
 
     </com.voc.genshin_helper.util.CustomViewPager>
 
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/global_bg"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:foreground="@color/page_bg"
-        android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <LinearLayout
+        android:id="@+id/linearLayout14"
         android:layout_width="match_parent"
         android:layout_height="72dp"
         android:background="@drawable/mask_head_bg"
@@ -65,7 +55,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_2048_search" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
+            <FrameLayout
 
                 android:layout_width="wrap_content"
                 android:layout_height="52dp"
@@ -78,8 +68,8 @@
 
                 <ImageView
                     android:id="@+id/imageView20"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:paddingLeft="2dp"
                     android:paddingTop="4dp"
                     android:paddingRight="2dp"
@@ -90,6 +80,12 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/bg_tcg_tab_bg" />
 
+                <View
+                    android:id="@+id/indicator"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:background="@drawable/bg_tcg_tab_selected_round_2048" />
+
                 <com.google.android.material.tabs.TabLayout
                     android:id="@+id/tcg_tablayout"
                     android:layout_width="208dp"
@@ -98,18 +94,17 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:tabBackground="@drawable/bg_tcg_tab_selecter_2048"
                     app:tabGravity="fill"
-                    app:tabIndicatorColor="#00FFFFFF"
-                    app:tabIndicatorFullWidth="false"
-                    app:tabIndicatorHeight="5dp"
+                    app:tabIndicator="@drawable/bg_tcg_tab_selecter_2048"
+                    app:tabIndicatorColor="@null"
+                    app:tabIndicatorHeight="52dp"
                     app:tabInlineLabel="false"
                     app:tabMode="fixed"
-                    app:tabRippleColor="@null"
                     app:tabPaddingBottom="4dp"
-                    app:tabPaddingTop="4dp" />
+                    app:tabPaddingTop="4dp"
+                    app:tabRippleColor="@null" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            </FrameLayout>
 
             <ImageView
                 android:id="@+id/tcg_filter"
