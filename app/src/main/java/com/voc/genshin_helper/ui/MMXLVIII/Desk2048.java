@@ -298,8 +298,8 @@ public class Desk2048 extends AppCompatActivity {
 
     View viewPager0, viewPager1, viewPager2, viewPager3, viewPager4, viewPager5;
 
-    int[] tabItemImageArray = new int[]{R.drawable.ic_2048_tab_desk,R.drawable.ic_2048_tab_char,R.drawable.ic_2048_tab_weapon,R.drawable.ic_2048_tab_art,R.drawable.ic_2048_tab_toolbox,R.drawable.ic_2048_tab_tcg};
-    int[] tabItemImageSelectedArray = new int[]{R.drawable.ic_2048_tab_desk_selected,R.drawable.ic_2048_tab_char_selected,R.drawable.ic_2048_tab_weapon_selected,R.drawable.ic_2048_tab_art_selected,R.drawable.ic_2048_tab_toolbox_selected,R.drawable.ic_2048_tab_tcg_selected};
+    int[] tabItemImageArray = new int[]{R.drawable.ic_2048_tab_desk,R.drawable.ic_2048_tab_char,R.drawable.ic_2048_tab_weapon,R.drawable.ic_2048_tab_art,R.drawable.ic_2048_tab_tcg,R.drawable.ic_2048_tab_toolbox};
+    int[] tabItemImageSelectedArray = new int[]{R.drawable.ic_2048_tab_desk_selected,R.drawable.ic_2048_tab_char_selected,R.drawable.ic_2048_tab_weapon_selected,R.drawable.ic_2048_tab_art_selected,R.drawable.ic_2048_tab_tcg_selected,R.drawable.ic_2048_tab_toolbox_selected};
 
     int[] tabTCGItemImageArray = new int[]{R.drawable.ic_2048_tcg_char,R.drawable.ic_2048_tcg_equip,R.drawable.ic_2048_tcg_support,R.drawable.ic_2048_tcg_event};
     int[] tabTCGItemImageSelectedArray = new int[]{R.drawable.ic_2048_tcg_char_selected,R.drawable.ic_2048_tcg_equip_selected,R.drawable.ic_2048_tcg_support_selected,R.drawable.ic_2048_tcg_event_selected};
@@ -365,8 +365,8 @@ public class Desk2048 extends AppCompatActivity {
         viewPager_List.add(viewPager1);
         viewPager_List.add(viewPager2);
         viewPager_List.add(viewPager3);
-        viewPager_List.add(viewPager4);
         viewPager_List.add(viewPager5);
+        viewPager_List.add(viewPager4);
 
         check_spinner = 0;
 
@@ -576,6 +576,14 @@ public class Desk2048 extends AppCompatActivity {
         TutorialUI tutorialUI = new TutorialUI();
         tutorialUI.deskSetPosArray(0,1,2,3,4);
         tutorialUI.setup(context,activity,viewPager0,viewPager1,viewPager2,viewPager3,viewPager4,desk_tablayout,null);
+    }
+
+    public void setCheckSpinner(int check_spinner){
+        this.check_spinner = check_spinner;
+    }
+
+    public int getCheckSpinner(){
+        return check_spinner;
     }
 
     private void dbChar_reload() {

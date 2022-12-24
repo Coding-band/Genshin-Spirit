@@ -1,0 +1,739 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2022 Xectorda 版權所有
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:orientation="vertical"
+            android:paddingTop="60dp"
+            android:paddingBottom="60dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <include
+                    layout="@layout/item_tcg_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="8dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/bg_card_kwang_full_2048"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tcg_normal_name2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="36dp"
+                            android:fontFamily="@font/genshin_font"
+                            android:gravity="center|left"
+                            android:text="@string/yoimiya"
+                            android:textColor="@color/tv_anti_color_2048"
+                            android:textSize="24sp" />
+
+                        <ImageView
+                            android:id="@+id/imageView25"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_marginLeft="4dp"
+                            android:adjustViewBounds="true"
+                            app:srcCompat="@drawable/pyro_ico" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/textView109"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="角色牌"
+                        android:textColor="#A9B8CE"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/textView111"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="貓尾酒館邀請獲得"
+                        android:textColor="@color/tv_color_less"
+                        android:textSize="14sp" />
+
+                    <View
+                        android:id="@+id/view4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="2dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/bg_line" />
+
+                    <TextView
+                        android:id="@+id/textView113"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="@string/inazuma"
+                        android:textColor="#A9B8CE"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView21"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="4dp"
+                        app:srcCompat="@drawable/ico_bow" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tcg_normal_ll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_card_kwang_full_2048"
+                android:orientation="vertical"
+                android:outlineProvider="none"
+                android:padding="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/tcg_normal_ico"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_skill_round_2048"
+                        android:padding="4dp"
+                        app:srcCompat="@drawable/ico_sword" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tcg_normal_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="煙火打揚"
+                            android:textColor="@color/tv_anti_color_2048"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="@string/noraml_atk"
+                            android:textColor="@color/rand_theme_subtitle_color"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+                            android:id="@+id/tcg_normal_element"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp">
+
+                            <ImageView
+                                android:id="@+id/tcg_normal_element_ico"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/bg_tcg_dice_pyro" />
+
+                            <com.voc.genshin_helper.util.CustomTextView
+                                android:id="@+id/tcg_normal_element_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/genshin_font"
+                                android:text="1"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:strokeColor="@color/black"
+                                app:strokeJoinStyle="miter"
+                                app:strokeWidth="0.75dp" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:id="@+id/tcg_normal_spec"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/bg_tcg_dice_specific" />
+
+                            <com.voc.genshin_helper.util.CustomTextView
+                                android:id="@+id/tcg_normal_spec_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/genshin_font"
+                                android:text="1"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:strokeColor="@color/black"
+                                app:strokeJoinStyle="miter"
+                                app:strokeWidth="0.75dp" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:id="@+id/tcg_normal_rand"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/bg_tcg_dice_random" />
+
+                            <com.voc.genshin_helper.util.CustomTextView
+                                android:id="@+id/tcg_normal_rand_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/genshin_font"
+                                android:text="2"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:strokeColor="@color/black"
+                                app:strokeJoinStyle="miter"
+                                app:strokeWidth="0.75dp" />
+                        </FrameLayout>
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tcg_normal_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="56dp"
+                    android:fontFamily="@font/genshin_font"
+                    android:text="造成2點物理傷害。"
+                    android:textColor="@color/tv_color_less"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/tcg_element_ll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_card_kwang_full_2048"
+                android:orientation="vertical"
+                android:outlineProvider="none"
+                android:padding="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/tcg_element_ico"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_skill_round_2048"
+                        android:padding="4dp"
+                        app:srcCompat="@drawable/ico_sword" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tcg_element_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="焰硝庭火舞"
+                            android:textColor="@color/tv_anti_color_2048"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="@string/element_atk"
+                            android:textColor="@color/rand_theme_subtitle_color"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+                            android:id="@+id/tcg_element_element"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp">
+
+                            <ImageView
+                                android:id="@+id/tcg_element_element_ico"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/bg_tcg_dice_pyro" />
+
+                            <com.voc.genshin_helper.util.CustomTextView
+                                android:id="@+id/tcg_element_element_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/genshin_font"
+                                android:text="1"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:strokeColor="@color/black"
+                                app:strokeJoinStyle="miter"
+                                app:strokeWidth="0.75dp" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:id="@+id/tcg_element_spec"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/bg_tcg_dice_specific" />
+
+                            <com.voc.genshin_helper.util.CustomTextView
+                                android:id="@+id/tcg_element_spec_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/genshin_font"
+                                android:text="1"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:strokeColor="@color/black"
+                                app:strokeJoinStyle="miter"
+                                app:strokeWidth="0.75dp" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:id="@+id/tcg_element_rand"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/bg_tcg_dice_random" />
+
+                            <com.voc.genshin_helper.util.CustomTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/genshin_font"
+                                android:text="1"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:strokeColor="@color/black"
+                                app:strokeJoinStyle="miter"
+                                app:strokeWidth="0.75dp" />
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tcg_element_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="56dp"
+                    android:fontFamily="@font/genshin_font"
+                    android:text="本角色附屬庭火焰硝。（此技能不產生充能）"
+                    android:textColor="@color/tv_color_less"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/tcg_final_ll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_card_kwang_full_2048"
+                android:orientation="vertical"
+                android:outlineProvider="none"
+                android:padding="8dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_skill_round_2048"
+                        android:padding="4dp"
+                        app:srcCompat="@drawable/ico_sword" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tcg_final_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="琉金雲間草"
+                            android:textColor="@color/tv_anti_color_2048"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="@string/element_atk"
+                            android:textColor="@color/rand_theme_subtitle_color"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+                            android:id="@+id/tcg_final_element"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp">
+
+                            <ImageView
+                                android:id="@+id/tcg_final_element_ico"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/bg_tcg_dice_pyro" />
+
+                            <com.voc.genshin_helper.util.CustomTextView
+                                android:id="@+id/tcg_final_element_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/genshin_font"
+                                android:text="3"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:strokeColor="@color/black"
+                                app:strokeJoinStyle="miter"
+                                app:strokeWidth="0.75dp" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:id="@+id/tcg_final_spec"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/bg_tcg_dice_specific" />
+
+                            <com.voc.genshin_helper.util.CustomTextView
+                                android:id="@+id/tcg_final_spec_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/genshin_font"
+                                android:text="1"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:strokeColor="@color/black"
+                                app:strokeJoinStyle="miter"
+                                app:strokeWidth="0.75dp" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:id="@+id/tcg_final_rand"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/bg_tcg_dice_random" />
+
+                            <com.voc.genshin_helper.util.CustomTextView
+                                android:id="@+id/tcg_final_rand_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/genshin_font"
+                                android:text="1"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:strokeColor="@color/black"
+                                app:strokeJoinStyle="miter"
+                                app:strokeWidth="0.75dp" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:id="@+id/tcg_final_recharge"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/bg_tcg_recharge" />
+
+                            <com.voc.genshin_helper.util.CustomTextView
+                                android:id="@+id/tcg_final_recharge_tv"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/genshin_font"
+                                android:text="2"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:strokeColor="@color/black"
+                                app:strokeJoinStyle="miter"
+                                app:strokeWidth="0.75dp" />
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/tcg_final_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="56dp"
+                    android:fontFamily="@font/genshin_font"
+                    android:text="造成3點火元素傷害，生成琉金火光。"
+                    android:textColor="@color/tv_color_less"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/tcg_other_ll"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="4dp"
+                android:background="@drawable/bg_card_kwang_full_2048"
+                android:orientation="vertical"
+                android:outlineProvider="none"
+                android:padding="8dp"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:background="@drawable/bg_skill_round_2048"
+                        android:padding="4dp"
+                        app:srcCompat="@drawable/ico_sword" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="神里流·霰步"
+                            android:textColor="@color/tv_anti_color_2048"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="@string/other_title"
+                            android:textColor="@color/rand_theme_subtitle_color"
+                            android:textSize="14sp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/bg_tcg_dice_pyro" />
+
+                            <com.voc.genshin_helper.util.CustomTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/genshin_font"
+                                android:text="1"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:strokeColor="@color/black"
+                                app:strokeJoinStyle="miter"
+                                app:strokeWidth="0.75dp" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/bg_tcg_dice_specific" />
+
+                            <com.voc.genshin_helper.util.CustomTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/genshin_font"
+                                android:text="1"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:strokeColor="@color/black"
+                                app:strokeJoinStyle="miter"
+                                app:strokeWidth="0.75dp" />
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:visibility="gone">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:srcCompat="@drawable/bg_tcg_dice_random" />
+
+                            <com.voc.genshin_helper.util.CustomTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:fontFamily="@font/genshin_font"
+                                android:text="1"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold"
+                                app:strokeColor="@color/black"
+                                app:strokeJoinStyle="miter"
+                                app:strokeWidth="0.75dp" />
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="56dp"
+                    android:fontFamily="@font/genshin_font"
+                    android:text="【被動】此角色被切換為「出戰角色」時，附屬冰元素附魔。"
+                    android:textColor="@color/tv_color_less"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

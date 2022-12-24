@@ -10,27 +10,50 @@
     android:layout_height="wrap_content">
 
     <FrameLayout
-        android:id="@+id/tcg_card"
-        android:layout_width="wrap_content"
+        android:id="@+id/tcg_card_item"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
+        android:layout_marginLeft="12dp"
         android:layout_marginTop="20dp"
         android:layout_marginRight="4dp"
         android:layout_marginBottom="4dp">
 
         <ImageView
             android:id="@+id/tcg_card_img"
-            android:layout_width="160dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/test_card" />
 
         <ImageView
             android:id="@+id/tcg_card_kwang"
-            android:layout_width="160dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:adjustViewBounds="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/bg_tcg_card" />
+
+        <ImageView
+            android:id="@+id/tcg_press_mask"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:clickable="true"
+            android:focusable="true"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/item_selected_circle_effect" />
 
     </FrameLayout>
 
@@ -38,7 +61,9 @@
         android:id="@+id/tcg_card_hp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp">
+        android:layout_marginLeft="-4dp"
+        android:layout_marginTop="4dp"
+        android:visibility="visible">
 
         <ImageView
             android:id="@+id/tcg_hp_bg"
@@ -55,6 +80,34 @@
             android:text="10"
             android:textColor="@color/white"
             android:textSize="24sp"
+            android:textStyle="bold"
+            app:strokeColor="@color/black"
+            app:strokeJoinStyle="miter"
+            app:strokeWidth="0.75dp" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/tcg_card_dice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/tcg_dice_bg"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:srcCompat="@drawable/bg_tcg_dice_pyro" />
+
+        <com.voc.genshin_helper.util.CustomTextView
+            android:id="@+id/tcg_dice_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/genshin_font"
+            android:text="1"
+            android:textColor="@color/white"
+            android:textSize="24sp"
             app:strokeColor="@color/black"
             app:strokeJoinStyle="miter"
             app:strokeWidth="1dp" />
@@ -67,6 +120,7 @@
         android:layout_gravity="bottom|center"
         android:layout_marginBottom="16dp"
         android:text="@string/yoimiya"
+        android:textStyle="bold"
         android:visibility="gone" />
 
     <TextView
@@ -78,18 +132,4 @@
         android:text="@string/yoimiya"
         android:visibility="gone" />
 
-    <ImageView
-        android:id="@+id/tcg_press_mask"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:adjustViewBounds="true"
-        android:clickable="true"
-        android:focusable="true"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/item_selected_circle_effect" />
 </FrameLayout>

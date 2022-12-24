@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.view.animation.AlphaAnimation;
 import android.webkit.WebView;
 import android.widget.AdapterView;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
@@ -22,6 +23,7 @@ import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
@@ -65,6 +67,8 @@ public class TCGAdapter extends RecyclerView.Adapter<TCGAdapter.ViewHolder> {
     private TCG tcg ;
     private ArrayList<TCG> tcgA = new ArrayList<TCG>();
     private SharedPreferences sharedPreferences;
+
+
 
     public TCGAdapter(Context context, List<TCG> tcgList, Activity activity, SharedPreferences sharedPreferences) {
         this.context = context;
@@ -110,14 +114,71 @@ public class TCGAdapter extends RecyclerView.Adapter<TCGAdapter.ViewHolder> {
         final int margin_circ_siptik_ico = 0;
         final Transformation transformation_circ_siptik_ico = new RoundedCornersTransformation(radius_circ_siptik_ico, margin_circ_siptik_ico);
 
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height_curr = displayMetrics.heightPixels;
+        int width_curr = displayMetrics.widthPixels;
+        int curr = width_curr;
+
+        int img_width = 320;
+        int width_a = (int) (width_curr - displayMetrics.density*(4+4));
+
+        if ((width_a/img_width - (int)(width_a/img_width)) > 0){
+            img_width = img_width + ((width_a/img_width - (int)(width_a/img_width)) / (int)(width_a/img_width));
+        }
+
         // Weird
-        tcgA.add(tcg);
+        //tcgA.add(tcg);
 
         Picasso.get()
                 .load (FileLoader.loadIMG(item_rss.getTCGByName(tcg.getName(),context)[0],context))
-                .fit()
-                .error (R.drawable.hu_tao_unknown)
+                .resize(img_width,(int) (img_width*12/7))
+                .error (R.drawable.tcg_card_unknown)
                 .into (holder.tcg_card_img);
+
+        holder.tcg_card_item.getLayoutParams().width = img_width;
+        holder.tcg_card_item.getLayoutParams().height = (int) (img_width*12/7);
+        //holder.tcg_card_item.setPadding(0,0, (int) (displayMetrics.density*8),0);
+
+
+        holder.tcg_card_name.setText(item_rss.getTCGByName(tcg.getName(),context)[1]);
+        holder.tcg_card_name_base.setText(tcg.getName());
+        holder.tcg_press_mask.getLayoutParams().width = (int) (img_width);
+        holder.tcg_press_mask.getLayoutParams().height = (int) (img_width*12/7);
+
+        switch (tcg.getType()){
+            case TCG.CHAR:{
+                holder.tcg_card_hp.setVisibility(View.VISIBLE);
+                holder.tcg_card_dice.setVisibility(View.GONE);
+
+                holder.tcg_hp_tv.setText(String.valueOf(tcg.getHP()));
+                break;
+            }
+            case TCG.EQUIP:
+            case TCG.SUPPORT:
+            case TCG.EVENT:
+            case TCG.BACKSIDE:{
+                holder.tcg_card_hp.setVisibility(View.GONE);
+                holder.tcg_card_dice.setVisibility(View.VISIBLE);
+                int diceType = R.drawable.bg_tcg_dice_specific;
+
+                switch (tcg.getDiceType()){
+                    case TCG.Anemo: diceType = R.drawable.bg_tcg_dice_anemo;break;
+                    case TCG.Cryo: diceType = R.drawable.bg_tcg_dice_cryo;break;
+                    case TCG.Dendro: diceType = R.drawable.bg_tcg_dice_dendro;break;
+                    case TCG.Electro: diceType = R.drawable.bg_tcg_dice_electro;break;
+                    case TCG.Geo: diceType = R.drawable.bg_tcg_dice_geo;break;
+                    case TCG.Hydro: diceType = R.drawable.bg_tcg_dice_hydro;break;
+                    case TCG.Pyro: diceType = R.drawable.bg_tcg_dice_pyro;break;
+                    case TCG.SPEC: diceType = R.drawable.bg_tcg_dice_specific;break;
+                    case TCG.RAND: diceType = R.drawable.bg_tcg_dice_random;break;
+                }
+
+                holder.tcg_dice_bg.setImageResource(diceType);
+                holder.tcg_dice_tv.setText(String.valueOf(tcg.getDiceCost()));
+                break;
+            }
+        }
 
     }
 
@@ -130,18 +191,24 @@ public class TCGAdapter extends RecyclerView.Adapter<TCGAdapter.ViewHolder> {
         ImageView tcg_press_mask ;
         TextView tcg_card_name, tcg_card_name_base;
         ImageView tcg_card_img, tcg_card_kwang;
-        ImageView tcg_hp_bg;
-        CustomTextView tcg_hp_tv;
+        ImageView tcg_hp_bg, tcg_dice_bg;
+        CustomTextView tcg_hp_tv, tcg_dice_tv;
+        FrameLayout tcg_card_item, tcg_card_hp, tcg_card_dice;
 
         public ViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
 
             tcg_hp_bg = itemView.findViewById(R.id.tcg_hp_bg);
+            tcg_dice_bg = itemView.findViewById(R.id.tcg_dice_bg);
             tcg_card_name = itemView.findViewById(R.id.tcg_card_name);
             tcg_card_name_base = itemView.findViewById(R.id.tcg_card_name_base);
             tcg_card_img = itemView.findViewById(R.id.tcg_card_img);
             tcg_card_kwang = itemView.findViewById(R.id.tcg_card_kwang);
             tcg_hp_tv = itemView.findViewById(R.id.tcg_hp_tv);
+            tcg_dice_tv = itemView.findViewById(R.id.tcg_dice_tv);
+            tcg_card_item = itemView.findViewById(R.id.tcg_card_item);
+            tcg_card_hp = itemView.findViewById(R.id.tcg_card_hp);
+            tcg_card_dice = itemView.findViewById(R.id.tcg_card_dice);
             tcg_press_mask = itemView.findViewById(R.id.tcg_press_mask);
             tcg_press_mask.startAnimation(buttonClick);
 
@@ -149,7 +216,8 @@ public class TCGAdapter extends RecyclerView.Adapter<TCGAdapter.ViewHolder> {
                 @Override
                 public void onClick(View view) {
                     if (context instanceof Desk2048) {
-                        (((Desk2048) context)).startCharInfo(String.valueOf(tcg_card_name_base.getText()), activity);
+                        CustomToast.toast(context,activity,"This is "+tcg_card_name.getText().toString());
+                        //(((Desk2048) context)).startCharInfo(String.valueOf(tcg_card_name_base.getText()), activity);
                     }
                 }
             });

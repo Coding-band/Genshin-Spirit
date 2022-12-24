@@ -2,9 +2,12 @@ package com.voc.genshin_helper.ui.MMXLVIII;
 
 import android.app.ActivityManager;
 import android.appwidget.AppWidgetProvider;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.os.Build;
+import android.os.IBinder;
 import android.util.DisplayMetrics;
 import android.util.Log;
 
@@ -61,7 +64,9 @@ public class DailyMemo2048Widget extends AppWidgetProvider {
     /**啟動Service*/
     private void startRunService(Context context) {
         Intent intent = new Intent(context, DailyMemo2048Service.class);
-        context.startService(intent);
+        if(!isServiceRun(context)){
+            context.startService(intent);
+        }
     }
     /**判斷此是否已有我的Service再跑*/
     private Boolean isServiceRun(Context context){
