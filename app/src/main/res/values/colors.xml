@@ -137,10 +137,14 @@
     <color name="rand_theme_app_name_color">#FF495366</color>
     <color name="rand_theme_by_line_color">#99667289</color>
 
+    <!-- TCG -->
     <color name="tab_tcg_unselected">#FFECE5D8</color>
     <color name="tab_tcg_unselected_dot">#CF667289</color>
     <color name="tab_tcg_selected">#3B4255</color>
     <color name="tab_tcg_selected_dot">#D3BC8E</color>
+    <color name="tcg_card_bg">#2D363F</color>
+    <color name="tcg_title_tv">#A9B8CE</color>
+    <color name="tcg_card_stroke">#434D59</color>
 
 
     <!-- SIPTIK -->
@@ -184,6 +188,7 @@
     <color name="card_header_bg_end_siptik">#804D5668</color>
 
     <color name="status_bar_2048">#4D5668</color>
+    <color name="status_bar_2048_less">#004D5668</color>
     <color name="tab_bar_2048">#FFECE5D8</color>
     <color name="search_bar_alpha">#1AFFFFFF</color>
     <color name="tab_bar_siptik">#D9FFFFFF</color>

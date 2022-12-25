@@ -88,6 +88,7 @@ import com.voc.genshin_helper.data.CharactersAdapter;
 import com.voc.genshin_helper.data.IconCard;
 import com.voc.genshin_helper.data.IconCardAdapter;
 import com.voc.genshin_helper.data.ItemRss;
+import com.voc.genshin_helper.data.TCG;
 import com.voc.genshin_helper.data.Today_Material;
 import com.voc.genshin_helper.data.Weapons;
 import com.voc.genshin_helper.data.WeaponsAdapter;
@@ -3501,9 +3502,9 @@ public class Desk2048 extends AppCompatActivity {
         Artifact_Info_2048 aif = new Artifact_Info_2048();
         aif.setup(String.valueOf(name),context,activity);
     }
-    public void startTCGInfo (String name, Activity activity){
-        Artifact_Info_2048 aif = new Artifact_Info_2048();
-        aif.setup(String.valueOf(name),context,activity);
+    public void startTCGInfo(String name, TCG tcg, Activity activity, int[] screenPos, int width, int height, FrameLayout tcg_card){
+        TCG_Info_2048 tcgI = new TCG_Info_2048();
+        tcgI.setup(String.valueOf(name),tcg,context,activity,sharedPreferences,editor, screenPos, width, height, tcg_card);
     }
     public void runSipTikCal (Characters characters, Activity activity){
         Intent intent = new Intent(this, SipTikCal.class);
@@ -3620,6 +3621,7 @@ public class Desk2048 extends AppCompatActivity {
     public boolean onKeyDown(int keyCode, KeyEvent event)
     {
         if(keyCode==KeyEvent.KEYCODE_BACK) {
+
             SharedPreferences sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
             boolean isExitConfirmEnable = sharedPreferences.getBoolean("isExitConfirmEnable",true);
             if(exit == 0 && isExitConfirmEnable == true){

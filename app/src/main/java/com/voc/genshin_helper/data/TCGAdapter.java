@@ -129,6 +129,7 @@ public class TCGAdapter extends RecyclerView.Adapter<TCGAdapter.ViewHolder> {
 
         // Weird
         //tcgA.add(tcg);
+        holder.tcg_final = tcg;
 
         Picasso.get()
                 .load (FileLoader.loadIMG(item_rss.getTCGByName(tcg.getName(),context)[0],context))
@@ -193,11 +194,13 @@ public class TCGAdapter extends RecyclerView.Adapter<TCGAdapter.ViewHolder> {
         ImageView tcg_card_img, tcg_card_kwang;
         ImageView tcg_hp_bg, tcg_dice_bg;
         CustomTextView tcg_hp_tv, tcg_dice_tv;
-        FrameLayout tcg_card_item, tcg_card_hp, tcg_card_dice;
+        FrameLayout tcg_card_item, tcg_card_hp, tcg_card_dice, tcg_card;
+        TCG tcg_final;
 
         public ViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
 
+            tcg_card = itemView.findViewById(R.id.tcg_card);
             tcg_hp_bg = itemView.findViewById(R.id.tcg_hp_bg);
             tcg_dice_bg = itemView.findViewById(R.id.tcg_dice_bg);
             tcg_card_name = itemView.findViewById(R.id.tcg_card_name);
@@ -216,8 +219,14 @@ public class TCGAdapter extends RecyclerView.Adapter<TCGAdapter.ViewHolder> {
                 @Override
                 public void onClick(View view) {
                     if (context instanceof Desk2048) {
-                        CustomToast.toast(context,activity,"This is "+tcg_card_name.getText().toString());
-                        //(((Desk2048) context)).startCharInfo(String.valueOf(tcg_card_name_base.getText()), activity);
+                        //CustomToast.toast(context,activity,"This is "+tcg_card_name.getText().toString());
+                        int[] screenPos = new int[2];
+                        //tcg_card.getLocationInWindow(originalPos);
+                        tcg_card.getLocationOnScreen(screenPos);
+
+                        System.out.println("Item `"+tcg_card_name_base.getText()+"` (x,y) SCREEN = ("+tcg_card.getMeasuredWidth()+","+tcg_card.getMeasuredHeight()+")");
+                        tcg_card.setVisibility(View.INVISIBLE);
+                        (((Desk2048) context)).startTCGInfo(String.valueOf(tcg_card_name_base.getText()),tcg_final, activity, screenPos, tcg_card.getMeasuredWidth(), tcg_card.getMeasuredHeight(),tcg_card);
                     }
                 }
             });

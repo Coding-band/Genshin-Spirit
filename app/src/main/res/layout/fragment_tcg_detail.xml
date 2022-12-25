@@ -44,7 +44,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="8dp"
                     android:layout_marginTop="20dp"
-                    android:background="@drawable/bg_card_kwang_full_2048"
+                    android:background="@drawable/bg_card_tcg"
                     android:orientation="vertical"
                     android:padding="16dp">
 
@@ -60,7 +60,7 @@
                             android:fontFamily="@font/genshin_font"
                             android:gravity="center|left"
                             android:text="@string/yoimiya"
-                            android:textColor="@color/tv_anti_color_2048"
+                            android:textColor="@color/white"
                             android:textSize="24sp" />
 
                         <ImageView
@@ -79,7 +79,7 @@
                         android:layout_marginTop="8dp"
                         android:fontFamily="@font/genshin_font"
                         android:text="角色牌"
-                        android:textColor="#A9B8CE"
+                        android:textColor="@color/tcg_title_tv"
                         android:textSize="16sp" />
 
                     <TextView
@@ -87,9 +87,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
+                        android:alpha="0.6"
                         android:fontFamily="@font/genshin_font"
                         android:text="貓尾酒館邀請獲得"
-                        android:textColor="@color/tv_color_less"
+                        android:textColor="@color/tcg_title_tv"
                         android:textSize="14sp" />
 
                     <View
@@ -106,7 +107,7 @@
                         android:layout_marginTop="4dp"
                         android:fontFamily="@font/genshin_font"
                         android:text="@string/inazuma"
-                        android:textColor="#A9B8CE"
+                        android:textColor="@color/tcg_title_tv"
                         android:textSize="16sp" />
 
                     <ImageView
@@ -124,7 +125,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
-                android:background="@drawable/bg_card_kwang_full_2048"
+                android:background="@drawable/bg_card_tcg"
                 android:orientation="vertical"
                 android:outlineProvider="none"
                 android:padding="8dp">
@@ -155,7 +156,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/genshin_font"
                             android:text="煙火打揚"
-                            android:textColor="@color/tv_anti_color_2048"
+                            android:textColor="@color/white"
                             android:textSize="20sp" />
 
                         <TextView
@@ -163,7 +164,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/genshin_font"
                             android:text="@string/noraml_atk"
-                            android:textColor="@color/rand_theme_subtitle_color"
+                            android:textColor="@color/tab_tcg_selected_dot"
                             android:textSize="14sp" />
 
                     </LinearLayout>
@@ -273,7 +274,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
-                android:background="@drawable/bg_card_kwang_full_2048"
+                android:background="@drawable/bg_card_tcg"
                 android:orientation="vertical"
                 android:outlineProvider="none"
                 android:padding="8dp">
@@ -304,7 +305,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/genshin_font"
                             android:text="焰硝庭火舞"
-                            android:textColor="@color/tv_anti_color_2048"
+                            android:textColor="@color/white"
                             android:textSize="20sp" />
 
                         <TextView
@@ -312,7 +313,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/genshin_font"
                             android:text="@string/element_atk"
-                            android:textColor="@color/rand_theme_subtitle_color"
+                            android:textColor="@color/tab_tcg_selected_dot"
                             android:textSize="14sp" />
 
                     </LinearLayout>
@@ -422,7 +423,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
-                android:background="@drawable/bg_card_kwang_full_2048"
+                android:background="@drawable/bg_card_tcg"
                 android:orientation="vertical"
                 android:outlineProvider="none"
                 android:padding="8dp">
@@ -452,7 +453,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/genshin_font"
                             android:text="琉金雲間草"
-                            android:textColor="@color/tv_anti_color_2048"
+                            android:textColor="@color/white"
                             android:textSize="20sp" />
 
                         <TextView
@@ -460,7 +461,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/genshin_font"
                             android:text="@string/element_atk"
-                            android:textColor="@color/rand_theme_subtitle_color"
+                            android:textColor="@color/tab_tcg_selected_dot"
                             android:textSize="14sp" />
 
                     </LinearLayout>
@@ -597,7 +598,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="4dp"
-                android:background="@drawable/bg_card_kwang_full_2048"
+                android:background="@drawable/bg_card_tcg"
                 android:orientation="vertical"
                 android:outlineProvider="none"
                 android:padding="8dp"
@@ -627,7 +628,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/genshin_font"
                             android:text="神里流·霰步"
-                            android:textColor="@color/tv_anti_color_2048"
+                            android:textColor="@color/white"
                             android:textSize="20sp" />
 
                         <TextView
@@ -635,7 +636,7 @@
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/genshin_font"
                             android:text="@string/other_title"
-                            android:textColor="@color/rand_theme_subtitle_color"
+                            android:textColor="@color/tab_tcg_selected_dot"
                             android:textSize="14sp" />
 
                     </LinearLayout>
