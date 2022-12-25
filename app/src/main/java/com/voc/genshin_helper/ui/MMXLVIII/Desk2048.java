@@ -3502,9 +3502,9 @@ public class Desk2048 extends AppCompatActivity {
         Artifact_Info_2048 aif = new Artifact_Info_2048();
         aif.setup(String.valueOf(name),context,activity);
     }
-    public void startTCGInfo(String name, TCG tcg, Activity activity, int[] screenPos, int width, int height, FrameLayout tcg_card){
+    public void startTCGInfo(FrameLayout tcg_card,TCG tcg, int tcg_width, Activity activity, int[] screenPos){
         TCG_Info_2048 tcgI = new TCG_Info_2048();
-        tcgI.setup(String.valueOf(name),tcg,context,activity,sharedPreferences,editor, screenPos, width, height, tcg_card);
+        tcgI.setup(tcg_card,tcg,tcg_width,context,activity,sharedPreferences,editor, screenPos);
     }
     public void runSipTikCal (Characters characters, Activity activity){
         Intent intent = new Intent(this, SipTikCal.class);

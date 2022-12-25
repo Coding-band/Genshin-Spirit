@@ -129,7 +129,8 @@ public class TCGAdapter extends RecyclerView.Adapter<TCGAdapter.ViewHolder> {
 
         // Weird
         //tcgA.add(tcg);
-        holder.tcg_final = tcg;
+        holder.tcg_data = tcg;
+        holder.tcg_width = (int) (img_width+displayMetrics.density*(24));
 
         Picasso.get()
                 .load (FileLoader.loadIMG(item_rss.getTCGByName(tcg.getName(),context)[0],context))
@@ -195,7 +196,8 @@ public class TCGAdapter extends RecyclerView.Adapter<TCGAdapter.ViewHolder> {
         ImageView tcg_hp_bg, tcg_dice_bg;
         CustomTextView tcg_hp_tv, tcg_dice_tv;
         FrameLayout tcg_card_item, tcg_card_hp, tcg_card_dice, tcg_card;
-        TCG tcg_final;
+        TCG tcg_data;
+        int tcg_width;
 
         public ViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
@@ -225,8 +227,12 @@ public class TCGAdapter extends RecyclerView.Adapter<TCGAdapter.ViewHolder> {
                         tcg_card.getLocationOnScreen(screenPos);
 
                         System.out.println("Item `"+tcg_card_name_base.getText()+"` (x,y) SCREEN = ("+tcg_card.getMeasuredWidth()+","+tcg_card.getMeasuredHeight()+")");
-                        tcg_card.setVisibility(View.INVISIBLE);
-                        (((Desk2048) context)).startTCGInfo(String.valueOf(tcg_card_name_base.getText()),tcg_final, activity, screenPos, tcg_card.getMeasuredWidth(), tcg_card.getMeasuredHeight(),tcg_card);
+                        (((Desk2048) context)).startTCGInfo(
+                                tcg_card,
+                                tcg_data,
+                                tcg_width,
+                                activity,
+                                screenPos);
                     }
                 }
             });

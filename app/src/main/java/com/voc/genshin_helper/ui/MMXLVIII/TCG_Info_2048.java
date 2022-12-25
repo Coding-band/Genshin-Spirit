@@ -4,6 +4,8 @@ package com.voc.genshin_helper.ui.MMXLVIII;/*
  * Copyright © 2022 Xectorda 版權所有
  */
 
+import android.animation.Animator;
+import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -20,13 +22,15 @@ import android.view.animation.Animation;
 import android.view.animation.Transformation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.data.TCG;
 import com.voc.genshin_helper.util.CustomTextView;
-import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.FileLoader;
 
 public class TCG_Info_2048 {
@@ -46,28 +50,29 @@ public class TCG_Info_2048 {
     ImageView tcg_card_img, tcg_card_kwang;
     ImageView tcg_hp_bg, tcg_dice_bg;
     CustomTextView tcg_hp_tv, tcg_dice_tv;
-    FrameLayout tcg_card_item, tcg_card_hp, tcg_card_dice, tcg_card;
+    FrameLayout tcg_card_item, tcg_card_hp, tcg_card_dice;
+    View tcg_card_include;
+    LinearLayout tcg_detail_ll;
+    LinearLayout tcg_intro_ll;
+    ConstraintLayout tcg_scroll_sc;
 
-    int img_width_base = 1;
+    int tcg_width = 1;
     int split = 1;
     DisplayMetrics displayMetrics;
 
-    int width, height = 1;
     FrameLayout tcg_card_from_adapter;
 
     boolean isCardAdapterGONE = false;
 
-    public void setup(String itemName, TCG tcg, Context context, Activity activity, SharedPreferences sharedPreferences, SharedPreferences.Editor editor, int[] screenPos, int width, int height, FrameLayout tcg_card) {
-        this.itemName = itemName;
+    public void setup(FrameLayout tcg_card,TCG tcg,int tcg_width,Context context,Activity activity,SharedPreferences sharedPreferences,SharedPreferences.Editor editor, int[] screenPos) {
         this.context = context;
         this.activity = activity;
         this.sharedPreferences = sharedPreferences;
         this.editor = editor;
         this.screenPos = screenPos;
         this.tcg = tcg;
-        this.width = width;
-        this.height = height;
         this.tcg_card_from_adapter = tcg_card;
+        this.tcg_width = tcg_width;
         show();
     }
 
@@ -80,11 +85,13 @@ public class TCG_Info_2048 {
         int width_curr = displayMetrics.widthPixels;
         item_rss = new ItemRss();
 
-        isCardAdapterGONE = true;
-        tcg_card_from_adapter.setVisibility(View.INVISIBLE);
+        /** Method of tcg_detail*/
+        tcg_card_include = view.findViewById(R.id.tcg_card_include);
+        tcg_detail_ll = view.findViewById(R.id.tcg_detail_ll);
+        tcg_intro_ll = view.findViewById(R.id.tcg_intro_ll);
+        tcg_scroll_sc = view.findViewById(R.id.tcg_scroll_sc);
 
         /** Method of tcg_card*/
-        tcg_card = view.findViewById(R.id.tcg_card);
         tcg_hp_bg = view.findViewById(R.id.tcg_hp_bg);
         tcg_dice_bg = view.findViewById(R.id.tcg_dice_bg);
         tcg_card_name = view.findViewById(R.id.tcg_card_name);
@@ -99,44 +106,155 @@ public class TCG_Info_2048 {
         tcg_press_mask = view.findViewById(R.id.tcg_press_mask);
 
 
-        int curr = width_curr;
 
-        int img_width = 320;
-        int width_a = (int) (width_curr - displayMetrics.density*(4+4));
-
-        if ((width_a/img_width - (int)(width_a/img_width)) > 0){
-            img_width = img_width + ((width_a/img_width - (int)(width_a/img_width)) / (int)(width_a/img_width));
-        }
-
-        img_width_base = img_width;
+        // init tcg_card
         split = 0;
+        isCardAdapterGONE = true;
         tcg_card_change();
+
+        tcg_detail_ll.setY(displayMetrics.widthPixels - displayMetrics.density*(120) - ((displayMetrics.widthPixels - displayMetrics.density*(32))/2));
+        tcg_intro_ll.setAlpha(0f);
+        tcg_detail_ll.setAlpha(0f);
+        // init tcg_detail -> ANIMATION
+        tcg_card_include.setX(screenPos[0]);
+        tcg_card_include.setY(screenPos[1]);
+        Animation ani = new ZoomAnimation(
+                tcg_card_include,
+                (int) (screenPos[0]),
+                (int) (screenPos[1]),
+                (int) ((displayMetrics.widthPixels - displayMetrics.density*(32))/2),
+                false);
+        ani.setDuration(500);
+        ani.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+                tcg_card_from_adapter.animate()
+                        .alpha(0.0f)
+                        .setDuration(100)
+                        .setListener(new AnimatorListenerAdapter() {
+                            @Override
+                            public void onAnimationEnd(Animator animation) {
+                                super.onAnimationEnd(animation);
+                                tcg_card_from_adapter.setVisibility(View.INVISIBLE);
+                                tcg_card_from_adapter.setAlpha(1.0f);
+                            }
+                        });
+
+                tcg_detail_ll.animate()
+                        .alpha(1.0f)
+                        .translationY(0)
+                        .setDuration(500)
+                        .setListener(new AnimatorListenerAdapter() {
+                            @Override
+                            public void onAnimationEnd(Animator animation) {
+                                super.onAnimationEnd(animation);
+                            }
+                        });
+                tcg_intro_ll.animate()
+                        .alpha(1.0f)
+                        .setDuration(500)
+                        .setListener(new AnimatorListenerAdapter() {
+                            @Override
+                            public void onAnimationEnd(Animator animation) {
+                                super.onAnimationEnd(animation);
+                            }
+                        });
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+
+            }
+        });
+        tcg_card_include.startAnimation(ani);
         tcg_card_dx();
 
-        if (tcg_card != null){
-            Animation ani = new ZoomAnimation(tcg_card,width,height,(int) (displayMetrics.density*(175)), (int) (displayMetrics.density*(300)), false);
-            ani.setDuration(500);
-            tcg_card.startAnimation(ani);
-        }
+        // init tcg_detail -> INFORMATION
 
-        DialogInterface.OnKeyListener keylistener = new DialogInterface.OnKeyListener() {
+
+
+        /** Method of dialog */
+        DialogInterface.OnKeyListener keyListener = new DialogInterface.OnKeyListener() {
             @Override
             public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
-                if(keyCode==KeyEvent.KEYCODE_BACK) {
-                    if (isCardAdapterGONE && tcg_card_from_adapter != null){
-                        tcg_card_from_adapter.setVisibility(View.VISIBLE);
-                        isCardAdapterGONE = false;
-                    }
+                if (isCardAdapterGONE && tcg_card_from_adapter != null){
+                    isCardAdapterGONE = false;
+
+                    tcg_card_change();
+                    Animation ani = new ZoomAnimation(
+                            tcg_card_include,
+                            (int) (screenPos[0]),
+                            (int) (screenPos[1]),
+                            (int) ((displayMetrics.widthPixels - displayMetrics.density*(32))/2),
+                            true);
+                    ani.setDuration(500);
+                    ani.setAnimationListener(new Animation.AnimationListener() {
+                        @Override
+                        public void onAnimationStart(Animation animation) {
+                            Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    tcg_card_from_adapter.animate()
+                                            .alpha(1.0f)
+                                            .setDuration(100)
+                                            .setListener(new AnimatorListenerAdapter() {
+                                                @Override
+                                                public void onAnimationEnd(Animator animation) {
+                                                    super.onAnimationEnd(animation);
+                                                    tcg_card_from_adapter.setVisibility(View.VISIBLE);
+                                                    if (dialog != null){
+                                                        dialog.dismiss();
+                                                    }
+                                                }
+                                            });
+                                }
+                            },300);
+                            tcg_detail_ll.animate()
+                                    .alpha(0.0f)
+                                    .translationY(displayMetrics.widthPixels - displayMetrics.density*(120) - ((displayMetrics.widthPixels - displayMetrics.density*(32))/2))
+                                    .setDuration(500)
+                                    .setListener(new AnimatorListenerAdapter() {
+                                        @Override
+                                        public void onAnimationEnd(Animator animation) {
+                                            super.onAnimationEnd(animation);
+                                        }
+                                    });
+                            tcg_intro_ll.animate()
+                                    .alpha(0.0f)
+                                    .setDuration(500)
+                                    .setListener(new AnimatorListenerAdapter() {
+                                        @Override
+                                        public void onAnimationEnd(Animator animation) {
+                                            super.onAnimationEnd(animation);
+                                        }
+                                    });
+                        }
+
+                        @Override
+                        public void onAnimationEnd(Animation animation) {
+
+                        }
+
+                        @Override
+                        public void onAnimationRepeat(Animation animation) {
+
+                        }
+                    });
+                    tcg_card_include.startAnimation(ani);
+                    tcg_card_dx();
+                    return true;
                 }
                 return false;
             }
         };
-
-
-        /** Method of dialog */
-        dialog.setOnKeyListener(keylistener );
+        dialog.setOnKeyListener(keyListener);
         dialog.setContentView(view);
-        dialog.setCanceledOnTouchOutside(true);
         //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
         Window dialogWindow = dialog.getWindow();
         WindowManager.LayoutParams lp = dialogWindow.getAttributes();
@@ -155,7 +273,7 @@ public class TCG_Info_2048 {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (split < 200){
+                if (split < 100){
                     tcg_card_change();
                     tcg_card_dx();
                     split++;
@@ -209,17 +327,15 @@ public class TCG_Info_2048 {
     public class ZoomAnimation extends Animation {
         int fromX;
         int fromY;
-        int toX;
-        int toY;
+        int widthNew;
         View view;
         boolean isZoomOutAnim = false;
 
-        public ZoomAnimation(View view, int fromX, int fromY, int toX, int toY, boolean isZoomOutAnim) {
+        public ZoomAnimation(View view, int fromX, int fromY, int widthNew, boolean isZoomOutAnim) {
             this.view = view;
             this.fromX = fromX;
             this.fromY = fromY;
-            this.toX = toX;
-            this.toY = toY;
+            this.widthNew = widthNew;
             this.isZoomOutAnim = isZoomOutAnim;
         }
 
@@ -233,8 +349,12 @@ public class TCG_Info_2048 {
 
             ViewGroup.MarginLayoutParams layoutParams =
                     (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-            layoutParams.height = (int) (fromY + (toY - fromY)*interpolatedTime_auth);
-            layoutParams.width = (int) (fromX + (toX - fromX)*interpolatedTime_auth);
+            view.setY ((fromY - displayMetrics.density*(60))*(1-interpolatedTime_auth)+ displayMetrics.density*(60));
+            view.setX ((fromX - 0)*(1-interpolatedTime_auth));
+            layoutParams.height = (int) (tcg_width*12/7 + (widthNew-tcg_width)*12/7*interpolatedTime_auth);
+            layoutParams.width = (int) (tcg_width + (widthNew-tcg_width)*interpolatedTime_auth);
+            System.out.println("(fromX, fromY, widthNew) : ("+fromX+", "+fromY+", "+widthNew+")");
+
             view.setLayoutParams(layoutParams);
         }
 
