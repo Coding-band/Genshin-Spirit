@@ -11,6 +11,7 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 public class TCG implements Serializable {
     public String name; //名稱
+    public String fileName; //檔案名稱
     public String type; //卡牌類型
     public String subType; //卡牌類型--EXT
     public int recharge; //充能
@@ -61,6 +62,14 @@ public class TCG implements Serializable {
 
 
     public TCG(){}
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
 
     public int getHP() {
         return HP;

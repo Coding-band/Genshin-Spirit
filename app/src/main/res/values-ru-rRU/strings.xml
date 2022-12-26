@@ -1286,4 +1286,14 @@
     <string name="tcg_cecilia">Цветок сесилии</string>
     <string name="tcg_glaze_lily">Глазурная лилия</string>
     <string name="tcg_dendrobium">Кровоцвет</string>
+    <string name="tcg_type_backside">Обратная Сторона Карты</string>
+    <string name="tcg_type_char">Карты персонажей</string>
+    <string name="tcg_type_equip">Карты экипировки</string>
+    <string name="tcg_type_support">Карты поддержки</string>
+    <string name="tcg_type_event">Карты событий</string>
+    <string name="sword">Одноручное</string>
+    <string name="bow">Стрелковое</string>
+    <string name="catalyst">Катализатор</string>
+    <string name="claymore">Двуручное</string>
+    <string name="polearm">Древковое</string>
 </resources>

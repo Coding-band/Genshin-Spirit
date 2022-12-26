@@ -10,141 +10,167 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tcg_scroll_sc"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="false"
-        android:scrollbars="none"
+        android:layout_height="0dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/tcg_scroll_sc"
+        <FrameLayout
+            android:id="@+id/frameLayout6"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:orientation="vertical"
-            android:paddingTop="60dp">
+            android:layout_height="0dp"
+            android:layout_marginTop="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <FrameLayout
-                android:id="@+id/frameLayout6"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
                     <LinearLayout
+                        android:id="@+id/tcg_card_sample"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
+                        android:layout_height="310dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical"></LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/tcg_intro_ll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_card_tcg"
+                        android:orientation="vertical"
+                        android:padding="16dp">
 
                         <LinearLayout
-                            android:id="@+id/tcg_card_sample"
-                            android:layout_width="match_parent"
-                            android:layout_height="310dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical"></LinearLayout>
-
-                        <LinearLayout
-                            android:id="@+id/tcg_intro_ll"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="8dp"
-                            android:layout_marginTop="20dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/bg_card_tcg"
-                            android:orientation="vertical"
-                            android:padding="16dp">
-
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:id="@+id/tcg_normal_name2"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="36dp"
-                                    android:fontFamily="@font/genshin_font"
-                                    android:gravity="center|left"
-                                    android:text="@string/yoimiya"
-                                    android:textColor="@color/white"
-                                    android:textSize="24sp" />
-
-                                <ImageView
-                                    android:id="@+id/imageView25"
-                                    android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginLeft="4dp"
-                                    android:adjustViewBounds="true"
-                                    app:srcCompat="@drawable/pyro_ico" />
-                            </LinearLayout>
+                            android:orientation="horizontal">
 
                             <TextView
-                                android:id="@+id/textView109"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="8dp"
-                                android:fontFamily="@font/genshin_font"
-                                android:text="角色牌"
-                                android:textColor="@color/tcg_title_tv"
-                                android:textSize="16sp" />
-
-                            <TextView
-                                android:id="@+id/textView111"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="2dp"
-                                android:alpha="0.6"
-                                android:fontFamily="@font/genshin_font"
-                                android:text="貓尾酒館邀請獲得"
-                                android:textColor="@color/tcg_title_tv"
-                                android:textSize="14sp" />
-
-                            <View
-                                android:id="@+id/view4"
+                                android:id="@+id/tcg_intro_tv"
                                 android:layout_width="wrap_content"
-                                android:layout_height="2dp"
-                                android:layout_marginTop="4dp"
-                                android:background="@drawable/bg_line" />
-
-                            <TextView
-                                android:id="@+id/textView113"
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_marginTop="4dp"
+                                android:layout_height="36dp"
                                 android:fontFamily="@font/genshin_font"
-                                android:text="@string/inazuma"
-                                android:textColor="@color/tcg_title_tv"
-                                android:textSize="16sp" />
+                                android:gravity="center|left"
+                                android:text="@string/yoimiya"
+                                android:textColor="@color/white"
+                                android:textSize="24sp" />
 
                             <ImageView
-                                android:id="@+id/imageView21"
-                                android:layout_width="24dp"
-                                android:layout_height="24dp"
-                                android:layout_marginTop="4dp"
-                                app:srcCompat="@drawable/ico_bow" />
-
+                                android:id="@+id/tcg_intro_element"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"
+                                android:layout_marginLeft="4dp"
+                                android:adjustViewBounds="true"
+                                android:visibility="visible"
+                                app:srcCompat="@drawable/pyro_ico" />
                         </LinearLayout>
+
+                        <TextView
+                            android:id="@+id/tcg_intro_type"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="角色牌"
+                            android:textColor="@color/tcg_title_tv"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/tcg_intro_source"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:alpha="0.6"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="貓尾酒館邀請獲得"
+                            android:textColor="@color/tcg_title_tv"
+                            android:textSize="14sp" />
+
+                        <View
+                            android:id="@+id/view4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="4dp"
+                            android:background="@drawable/bg_line"
+                            android:visibility="visible" />
+
+                        <TextView
+                            android:id="@+id/tcg_intro_location"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="@string/inazuma"
+                            android:textColor="@color/tcg_title_tv"
+                            android:textSize="16sp"
+                            android:visibility="visible" />
+
+                        <ImageView
+                            android:id="@+id/tcg_intro_weapon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_marginTop="4dp"
+                            android:visibility="visible"
+                            app:srcCompat="@drawable/ico_bow" />
+
                     </LinearLayout>
+                </LinearLayout>
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fillViewport="false"
+                    android:scrollbars="none">
 
                     <LinearLayout
                         android:id="@+id/tcg_detail_ll"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="vertical">
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginRight="8dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <LinearLayout
+                            android:id="@+id/tcg_nonchar_ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="4dp"
+                            android:background="@drawable/bg_card_tcg"
+                            android:orientation="vertical"
+                            android:outlineProvider="none"
+                            android:padding="8dp"
+                            android:visibility="gone">
+
+                            <TextView
+                                android:id="@+id/tcg_nonchar_info"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:fontFamily="@font/genshin_font"
+                                android:text="我方執行「切換角色」行動時：少花費1個元素骰。（每回合1次）"
+                                android:textColor="@color/tv_color_less"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
 
                         <LinearLayout
                             android:id="@+id/tcg_normal_ll"
@@ -295,6 +321,155 @@
                         </LinearLayout>
 
                         <LinearLayout
+                            android:id="@+id/tcg_normal2_ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="4dp"
+                            android:background="@drawable/bg_card_tcg"
+                            android:orientation="vertical"
+                            android:outlineProvider="none"
+                            android:padding="8dp"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/tcg_normal2_ico"
+                                    android:layout_width="48dp"
+                                    android:layout_height="48dp"
+                                    android:background="@drawable/bg_skill_round_2048"
+                                    android:padding="4dp"
+                                    app:srcCompat="@drawable/ico_sword" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:id="@+id/tcg_normal2_name"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/genshin_font"
+                                        android:text="煙火打揚"
+                                        android:textColor="@color/white"
+                                        android:textSize="20sp" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:fontFamily="@font/genshin_font"
+                                        android:text="@string/noraml_atk"
+                                        android:textColor="@color/tab_tcg_selected_dot"
+                                        android:textSize="14sp" />
+
+                                </LinearLayout>
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:gravity="right"
+                                    android:orientation="horizontal">
+
+                                    <FrameLayout
+                                        android:id="@+id/tcg_normal2_element"
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp">
+
+                                        <ImageView
+                                            android:id="@+id/tcg_normal2_element_ico"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            app:srcCompat="@drawable/bg_tcg_dice_pyro" />
+
+                                        <com.voc.genshin_helper.util.CustomTextView
+                                            android:id="@+id/tcg_normal2_element_tv"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:fontFamily="@font/genshin_font"
+                                            android:text="1"
+                                            android:textColor="@color/white"
+                                            android:textSize="20sp"
+                                            android:textStyle="bold"
+                                            app:strokeColor="@color/black"
+                                            app:strokeJoinStyle="miter"
+                                            app:strokeWidth="0.75dp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:id="@+id/tcg_normal2_spec"
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp"
+                                        android:visibility="gone">
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            app:srcCompat="@drawable/bg_tcg_dice_specific" />
+
+                                        <com.voc.genshin_helper.util.CustomTextView
+                                            android:id="@+id/tcg_normal2_spec_tv"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:fontFamily="@font/genshin_font"
+                                            android:text="1"
+                                            android:textColor="@color/white"
+                                            android:textSize="20sp"
+                                            android:textStyle="bold"
+                                            app:strokeColor="@color/black"
+                                            app:strokeJoinStyle="miter"
+                                            app:strokeWidth="0.75dp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:id="@+id/tcg_normal2_rand"
+                                        android:layout_width="36dp"
+                                        android:layout_height="36dp">
+
+                                        <ImageView
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            app:srcCompat="@drawable/bg_tcg_dice_random" />
+
+                                        <com.voc.genshin_helper.util.CustomTextView
+                                            android:id="@+id/tcg_normal2_rand_tv"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:fontFamily="@font/genshin_font"
+                                            android:text="2"
+                                            android:textColor="@color/white"
+                                            android:textSize="20sp"
+                                            android:textStyle="bold"
+                                            app:strokeColor="@color/black"
+                                            app:strokeJoinStyle="miter"
+                                            app:strokeWidth="0.75dp" />
+                                    </FrameLayout>
+
+                                </LinearLayout>
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/tcg_normal2_info"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="56dp"
+                                android:fontFamily="@font/genshin_font"
+                                android:text="造成2點物理傷害。"
+                                android:textColor="@color/tv_color_less"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
                             android:id="@+id/tcg_element_ll"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -414,6 +589,7 @@
                                             app:srcCompat="@drawable/bg_tcg_dice_random" />
 
                                         <com.voc.genshin_helper.util.CustomTextView
+                                            android:id="@+id/tcg_element_rand_tv"
                                             android:layout_width="wrap_content"
                                             android:layout_height="wrap_content"
                                             android:layout_gravity="center"
@@ -459,6 +635,7 @@
                                 android:orientation="horizontal">
 
                                 <ImageView
+                                    android:id="@+id/tcg_final_ico"
                                     android:layout_width="48dp"
                                     android:layout_height="48dp"
                                     android:background="@drawable/bg_skill_round_2048"
@@ -634,6 +811,7 @@
                                 android:orientation="horizontal">
 
                                 <ImageView
+                                    android:id="@+id/tcg_other_ico"
                                     android:layout_width="48dp"
                                     android:layout_height="48dp"
                                     android:background="@drawable/bg_skill_round_2048"
@@ -648,6 +826,7 @@
                                     android:orientation="vertical">
 
                                     <TextView
+                                        android:id="@+id/tcg_other_name"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:fontFamily="@font/genshin_font"
@@ -749,6 +928,7 @@
                             </LinearLayout>
 
                             <TextView
+                                android:id="@+id/tcg_other_info"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="56dp"
@@ -759,23 +939,24 @@
 
                         </LinearLayout>
                     </LinearLayout>
+                </ScrollView>
 
-                </LinearLayout>
-            </FrameLayout>
+            </LinearLayout>
+        </FrameLayout>
 
-            <include
-                android:id="@+id/tcg_card_include"
-                layout="@layout/item_tcg_card"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/frameLayout6"
-                app:layout_constraintVertical_bias="0.0" />
+        <include
+            android:id="@+id/tcg_card_include"
+            layout="@layout/item_tcg_card"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

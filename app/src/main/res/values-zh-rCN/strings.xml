@@ -1306,4 +1306,14 @@
     <string name="tcg_cecilia">塞西莉亚花</string>
     <string name="tcg_glaze_lily">琉璃百合</string>
     <string name="tcg_dendrobium">血斛</string>
+    <string name="tcg_type_backside">卡背</string>
+    <string name="tcg_type_char">角色牌</string>
+    <string name="tcg_type_equip">装备牌</string>
+    <string name="tcg_type_support">支援牌</string>
+    <string name="tcg_type_event">事件牌</string>
+    <string name="bow">弓</string>
+    <string name="sword">单手剑</string>
+    <string name="catalyst">法器</string>
+    <string name="polearm">长柄武器</string>
+    <string name="claymore">双手剑</string>
 </resources>

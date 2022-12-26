@@ -159,11 +159,11 @@ public class ItemRss {
 
 
     public int getWeaponTypeIMG (String str){
-        if(str.equals("Bow")){return R.drawable.ico_bow;}
-        else if(str.equals("Catalyst")){return R.drawable.ico_catalyst;}
-        else if(str.equals("Claymore")){return R.drawable.ico_claymore;}
-        else if(str.equals("Polearm")){return R.drawable.ico_polearm;}
-        else if(str.equals("Sword")){return R.drawable.ico_sword;}
+        if(str.equals("Bow") || str.equals(R.string.bow)){return R.drawable.ico_bow;}
+        else if(str.equals("Catalyst") || str.equals(R.string.catalyst)){return R.drawable.ico_catalyst;}
+        else if(str.equals("Claymore") || str.equals(R.string.claymore)){return R.drawable.ico_claymore;}
+        else if(str.equals("Polearm") || str.equals(R.string.polearm)){return R.drawable.ico_polearm;}
+        else if(str.equals("Sword") || str.equals(R.string.sword)){return R.drawable.ico_sword;}
         else {return R.drawable.hu_tao_unknown;}
     }
     public int getDistrictIMG (String str){
@@ -1528,6 +1528,17 @@ public class ItemRss {
         }
     }
 
+    public String getTypeLocaleByName(String type, Context context){
+        switch (type){
+            case TCG.CHAR : return context.getString(R.string.tcg_type_char);
+            case TCG.EQUIP: return context.getString(R.string.tcg_type_equip);
+            case TCG.SUPPORT: return context.getString(R.string.tcg_type_support);
+            case TCG.EVENT: return context.getString(R.string.tcg_type_event);
+            case TCG.BACKSIDE: return context.getString(R.string.tcg_type_backside);
+            default: return context.getString(R.string.unknown);
+        }
+    }
+
     /**
          * @param name is Char's Identify Name -> JSON
          * @return IMG_ID , NAME_LOCAL , FULL_IMG_ID , ICO_IMG_ID , CARD_ID
@@ -1767,6 +1778,25 @@ public class ItemRss {
             default:
                 return new int[]{R.drawable.hu_tao_unknown, R.drawable.hu_tao_unknown, R.color.anemo};
         }
+    }
+
+    public int[] getElementByName (String element, Context context) {
+        if (context.getString(R.string.element_Anemo).equals(element)) {
+            return new int[]{R.drawable.anemo_ico, R.drawable.bg_anemo_char, R.color.anemo};
+        } else if (context.getString(R.string.element_Cryo).equals(element)) {
+            return new int[]{R.drawable.cryo_ico, R.drawable.bg_cryo_char, R.color.cryo};
+        } else if (context.getString(R.string.element_Dendor).equals(element)) {
+            return new int[]{R.drawable.dendro_ico, R.drawable.bg_dendro_char, R.color.dendor};
+        } else if (context.getString(R.string.element_Electro).equals(element)) {
+            return new int[]{R.drawable.electro_ico, R.drawable.bg_electro_char, R.color.electro};
+        } else if (context.getString(R.string.element_Geo).equals(element)) {
+            return new int[]{R.drawable.geo_ico, R.drawable.bg_geo_char, R.color.geo};
+        } else if (context.getString(R.string.element_Hydro).equals(element)) {
+            return new int[]{R.drawable.hydro_ico, R.drawable.bg_hydro_char, R.color.hydro};
+        } else if (context.getString(R.string.element_Pyro).equals(element)) {
+            return new int[]{R.drawable.pyro_ico, R.drawable.bg_pyro_char, R.color.pyro};
+        }
+        return new int[]{R.drawable.hu_tao_unknown, R.drawable.hu_tao_unknown, R.color.anemo};
     }
 
     public Drawable getTalentIcoByName (String name, Context context){

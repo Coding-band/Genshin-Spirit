@@ -419,7 +419,7 @@ public class TCG2048 {
     }
 
     private void tcg_list_reload() {
-        String name ,type,subType,diceType;
+        String name,fileName ,type,subType,diceType;
         int HP,recharge,diceCost;
         charList.clear();
         supportList.clear();
@@ -434,6 +434,7 @@ public class TCG2048 {
             for (int i = 0; i < array.length(); i++) {
                 JSONObject object = array.getJSONObject(i);
                 name = object.getString("name");
+                fileName = object.getString("fileName");
                 type = object.getString("type");
                 subType = object.getString("subType");
                 diceType = object.getString("diceType");
@@ -449,6 +450,7 @@ public class TCG2048 {
                 tcg.setDiceType(diceType);
                 tcg.setDiceCost(diceCost);
                 tcg.setHP(HP);
+                tcg.setFileName(fileName);
 
                 switch (type){
                     case TCG.CHAR:charList.add(tcg);break;

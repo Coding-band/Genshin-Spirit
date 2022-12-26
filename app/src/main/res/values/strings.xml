@@ -1345,6 +1345,16 @@
     <string name="tcg_cecilia">"Cecilia"</string>
     <string name="tcg_glaze_lily">"Glaze Lily"</string>
     <string name="tcg_dendrobium">"Dendrobium"</string>
+    <string name="tcg_type_char">Character Card</string>
+    <string name="tcg_type_equip">Equipment Card</string>
+    <string name="tcg_type_support">Support Card</string>
+    <string name="tcg_type_event">Event Card</string>
+    <string name="tcg_type_backside">Card Backside</string>
+    <string name="bow">Bow</string>
+    <string name="sword">Sword</string>
+    <string name="catalyst">Catalyst</string>
+    <string name="polearm">Polearm</string>
+    <string name="claymore">Claymore</string>
 
 
 </resources>

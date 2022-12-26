@@ -1313,6 +1313,16 @@
     <string name="tcg_cecilia">セシリアの花</string>
     <string name="tcg_glaze_lily">琉璃百合</string>
     <string name="tcg_dendrobium">血石華</string>
+    <string name="tcg_type_backside">カードバック</string>
+    <string name="tcg_type_char">アクションカード</string>
+    <string name="tcg_type_equip">装備カード</string>
+    <string name="tcg_type_support">支援カード</string>
+    <string name="tcg_type_event">イベントカード</string>
+    <string name="sword">片手剣</string>
+    <string name="catalyst">法器</string>
+    <string name="bow">弓</string>
+    <string name="polearm">長柄武器</string>
+    <string name="claymore">両手剣</string>
 
 </resources>
 
