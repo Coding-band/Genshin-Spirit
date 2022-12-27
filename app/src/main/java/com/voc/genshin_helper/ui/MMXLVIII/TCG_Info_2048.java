@@ -31,6 +31,7 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.alibaba.fastjson2.JSON;
+import com.squareup.picasso.Picasso;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.data.TCG;
@@ -72,7 +73,7 @@ public class TCG_Info_2048 {
 
     TextView tcg_intro_tv, tcg_intro_type, tcg_intro_source, tcg_intro_location;
     ImageView tcg_intro_element, tcg_intro_weapon;
-    LinearLayout tcg_nonchar_ll, tcg_normal_ll, tcg_normal2_ll, tcg_element_ll, tcg_final_ll, tcg_other_ll;
+    LinearLayout tcg_nonchar_ll, tcg_normal_ll, tcg_normal2_ll, tcg_element_ll, tcg_element2_ll, tcg_final_ll, tcg_other_ll;
     View view4;
 
     FrameLayout tcg_normal_element, tcg_normal_spec, tcg_normal_rand, tcg_normal_recharge;
@@ -84,6 +85,9 @@ public class TCG_Info_2048 {
     FrameLayout tcg_element_element, tcg_element_spec, tcg_element_rand, tcg_element_recharge;
     ImageView tcg_element_ico, tcg_element_element_ico;
     TextView tcg_element_name, tcg_element_info, tcg_element_element_tv, tcg_element_spec_tv, tcg_element_rand_tv, tcg_element_recharge_tv;
+    FrameLayout tcg_element2_element, tcg_element2_spec, tcg_element2_rand, tcg_element2_recharge;
+    ImageView tcg_element2_ico, tcg_element2_element_ico;
+    TextView tcg_element2_name, tcg_element2_info, tcg_element2_element_tv, tcg_element2_spec_tv, tcg_element2_rand_tv, tcg_element2_recharge_tv;
     FrameLayout tcg_final_element, tcg_final_spec, tcg_final_rand, tcg_final_recharge;
     ImageView tcg_final_ico, tcg_final_element_ico;
     TextView tcg_final_name, tcg_final_info, tcg_final_element_tv, tcg_final_spec_tv, tcg_final_rand_tv, tcg_final_recharge_tv;
@@ -145,6 +149,7 @@ public class TCG_Info_2048 {
         tcg_normal_ll = view.findViewById(R.id.tcg_normal_ll);
         tcg_normal2_ll = view.findViewById(R.id.tcg_normal2_ll);
         tcg_element_ll = view.findViewById(R.id.tcg_element_ll);
+        tcg_element2_ll = view.findViewById(R.id.tcg_element2_ll);
         tcg_final_ll = view.findViewById(R.id.tcg_final_ll);
         tcg_other_ll = view.findViewById(R.id.tcg_other_ll);
         tcg_nonchar_ll = view.findViewById(R.id.tcg_nonchar_ll);
@@ -197,6 +202,19 @@ public class TCG_Info_2048 {
         tcg_element_rand_tv = view.findViewById(R.id.tcg_element_rand_tv);
         tcg_element_recharge = view.findViewById(R.id.tcg_element_recharge);
         tcg_element_recharge_tv = view.findViewById(R.id.tcg_element_recharge_tv);
+
+        tcg_element2_element = view.findViewById(R.id.tcg_element2_element);
+        tcg_element2_spec = view.findViewById(R.id.tcg_element2_spec);
+        tcg_element2_rand = view.findViewById(R.id.tcg_element2_rand);
+        tcg_element2_ico = view.findViewById(R.id.tcg_element2_ico);
+        tcg_element2_element_ico = view.findViewById(R.id.tcg_element2_element_ico);
+        tcg_element2_name = view.findViewById(R.id.tcg_element2_name);
+        tcg_element2_info = view.findViewById(R.id.tcg_element2_info);
+        tcg_element2_element_tv = view.findViewById(R.id.tcg_element2_element_tv);
+        tcg_element2_spec_tv = view.findViewById(R.id.tcg_element2_spec_tv);
+        tcg_element2_rand_tv = view.findViewById(R.id.tcg_element2_rand_tv);
+        tcg_element2_recharge = view.findViewById(R.id.tcg_element2_recharge);
+        tcg_element2_recharge_tv = view.findViewById(R.id.tcg_element2_recharge_tv);
 
         tcg_final_element = view.findViewById(R.id.tcg_final_element);
         tcg_final_spec = view.findViewById(R.id.tcg_final_spec);
@@ -256,7 +274,7 @@ public class TCG_Info_2048 {
                 (int) tcg_width,
                 (int) ((displayMetrics.widthPixels - displayMetrics.density*(32))/2),
                 false);
-        ani.setDuration(250);
+        ani.setDuration(300);
         ani.setAnimationListener(new Animation.AnimationListener() {
             @Override
             public void onAnimationStart(Animation animation) {
@@ -275,7 +293,7 @@ public class TCG_Info_2048 {
                 tcg_detail_ll.animate()
                         .alpha(1.0f)
                         .translationY(0)
-                        .setDuration(400)
+                        .setDuration(250)
                         .setListener(new AnimatorListenerAdapter() {
                             @Override
                             public void onAnimationEnd(Animator animation) {
@@ -284,7 +302,7 @@ public class TCG_Info_2048 {
                         });
                 tcg_intro_ll.animate()
                         .alpha(1.0f)
-                        .setDuration(400)
+                        .setDuration(250)
                         .setListener(new AnimatorListenerAdapter() {
                             @Override
                             public void onAnimationEnd(Animator animation) {
@@ -323,7 +341,7 @@ public class TCG_Info_2048 {
                             (int) tcg_width,
                             (int) ((displayMetrics.widthPixels - displayMetrics.density*(32))/2),
                             true);
-                    ani.setDuration(250);
+                    ani.setDuration(300);
                     ani.setAnimationListener(new Animation.AnimationListener() {
                         @Override
                         public void onAnimationStart(Animation animation) {
@@ -345,11 +363,11 @@ public class TCG_Info_2048 {
                                                 }
                                             });
                                 }
-                            },200);
+                            },250);
                             tcg_detail_ll.animate()
                                     .alpha(0.0f)
                                     .translationY(displayMetrics.widthPixels - displayMetrics.density*(120) - ((displayMetrics.widthPixels - displayMetrics.density*(32))/2))
-                                    .setDuration(400)
+                                    .setDuration(250)
                                     .setListener(new AnimatorListenerAdapter() {
                                         @Override
                                         public void onAnimationEnd(Animator animation) {
@@ -358,7 +376,7 @@ public class TCG_Info_2048 {
                                     });
                             tcg_intro_ll.animate()
                                     .alpha(0.0f)
-                                    .setDuration(400)
+                                    .setDuration(250)
                                     .setListener(new AnimatorListenerAdapter() {
                                         @Override
                                         public void onAnimationEnd(Animator animation) {
@@ -419,21 +437,25 @@ public class TCG_Info_2048 {
         tcg_intro_element.setVisibility(View.GONE);
         tcg_intro_location.setVisibility(View.GONE);
         tcg_intro_weapon.setVisibility(View.GONE);
+        tcg_intro_source.setVisibility(View.GONE);
 
         tcg_normal_ll.setVisibility(View.GONE);
         tcg_normal2_ll.setVisibility(View.GONE);
         tcg_element_ll.setVisibility(View.GONE);
+        tcg_element2_ll.setVisibility(View.GONE);
         tcg_final_ll.setVisibility(View.GONE);
         tcg_other_ll.setVisibility(View.GONE);
 
         view4.setVisibility(View.GONE);
         tcg_intro_type.setText(item_rss.getTypeLocaleByName(tcg.getType(),context));
+
         if (jsonObject.has("source")){
             tcg_intro_source.setVisibility(View.VISIBLE);
             tcg_intro_source.setText(jsonObject.getString("source"));
         }
 
         if(jsonObject.has("description")){
+            tcg_detail_ll.setVisibility(View.VISIBLE);
             tcg_nonchar_ll.setVisibility(View.VISIBLE);
             tcg_nonchar_info.setText(jsonObject.getString("description"));
         }
@@ -451,7 +473,7 @@ public class TCG_Info_2048 {
             view4.setVisibility(View.VISIBLE);
 
             tcg_intro_element.setImageResource(item_rss.getElementByNameTCG(tagstext.get(0).toString(),context)[0]);
-            tcg_intro_weapon.setImageResource(item_rss.getWeaponTypeIMG(tagstext.get(1).toString()));
+            tcg_intro_weapon.setImageResource(item_rss.getWeaponTypeIMG(tagstext.get(1).toString(),context));
             tcg_intro_location.setText(tagstext.get(2).toString());
 
             tcg_ll_setup(0,0,tcg_normal_ll,tcg_normal_ico,tcg_normal_name,tcg_normal_info,tcg_normal_element,tcg_normal_element_tv,tcg_normal_element_ico,tcg_normal_spec,tcg_normal_spec_tv,tcg_normal_rand,tcg_normal_rand_tv,tcg_normal_recharge,tcg_normal_recharge_tv);
@@ -460,29 +482,20 @@ public class TCG_Info_2048 {
                 if (battleTalent.getJSONObject(2).getString("type").equals(context.getString(R.string.noraml_atk))){
                     tcg_ll_setup(2,0,tcg_normal2_ll,tcg_normal2_ico,tcg_normal2_name,tcg_normal2_info,tcg_normal2_element,tcg_normal2_element_tv,tcg_normal2_element_ico,tcg_normal2_spec,tcg_normal2_spec_tv,tcg_normal2_rand,tcg_normal2_rand_tv,tcg_normal2_recharge,tcg_normal2_recharge_tv);
                     tcg_ll_setup(3,2,tcg_final_ll,tcg_final_ico,tcg_final_name,tcg_final_info,tcg_final_element,tcg_final_element_tv,tcg_final_element_ico,tcg_final_spec,tcg_final_spec_tv,tcg_final_rand,tcg_final_rand_tv,tcg_final_recharge,tcg_final_recharge_tv);
-                    System.out.println("TRUE 1");
                 }else if (battleTalent.getJSONObject(2).getString("type").equals(context.getString(R.string.final_atk))){
                     tcg_ll_setup(2,2,tcg_final_ll,tcg_final_ico,tcg_final_name,tcg_final_info,tcg_final_element,tcg_final_element_tv,tcg_final_element_ico,tcg_final_spec,tcg_final_spec_tv,tcg_final_rand,tcg_final_rand_tv,tcg_final_recharge,tcg_final_recharge_tv);
-                    System.out.println("TRUE 2");
+                }else if (battleTalent.getJSONObject(2).getString("type").equals(context.getString(R.string.element_atk))){
+                    tcg_ll_setup(2,1,tcg_element2_ll,tcg_element2_ico,tcg_element2_name,tcg_element2_info,tcg_element2_element,tcg_element2_element_tv,tcg_element2_element_ico,tcg_element2_spec,tcg_element2_spec_tv,tcg_element2_rand,tcg_element2_rand_tv,tcg_element2_recharge,tcg_element2_recharge_tv);
+                    tcg_ll_setup(3,2,tcg_final_ll,tcg_final_ico,tcg_final_name,tcg_final_info,tcg_final_element,tcg_final_element_tv,tcg_final_element_ico,tcg_final_spec,tcg_final_spec_tv,tcg_final_rand,tcg_final_rand_tv,tcg_final_recharge,tcg_final_recharge_tv);
                 }
+
 
                 if (battleTalent.getJSONObject(2).getString("type").equals(context.getString(R.string.passive_atk))){
-                    tcg_ll_setup(3,3, tcg_final_ll, tcg_final_ico, tcg_final_name, tcg_final_info, tcg_final_element, tcg_final_element_tv, tcg_final_element_ico, tcg_final_spec, tcg_final_spec_tv, tcg_final_rand, tcg_final_rand_tv, tcg_final_recharge, tcg_final_recharge_tv);
+                    tcg_ll_setup_other(3,3, tcg_other_ll, tcg_other_ico, tcg_other_name, tcg_other_info);
                 }else if (battleTalent.getJSONObject(3).getString("type").equals(context.getString(R.string.passive_atk))){
-                    tcg_ll_setup(3,3, tcg_final_ll, tcg_final_ico, tcg_final_name, tcg_final_info, tcg_final_element, tcg_final_element_tv, tcg_final_element_ico, tcg_final_spec, tcg_final_spec_tv, tcg_final_rand, tcg_final_rand_tv, tcg_final_recharge, tcg_final_recharge_tv);
+                    tcg_ll_setup_other(3,3, tcg_other_ll, tcg_other_ico, tcg_other_name, tcg_other_info);
                 }
-                System.out.println("TRUE 3");
             }
-
-
-            tcg_element_ll.setVisibility(View.VISIBLE);
-
-            tcg_final_ll.setVisibility(View.VISIBLE);
-
-            if (jsonObject.getJSONArray("skills").length() == 4){
-                tcg_other_ll.setVisibility(View.VISIBLE);
-            }
-
         }
     }
 
@@ -526,6 +539,19 @@ public class TCG_Info_2048 {
             tcg_item_recharge.setVisibility(View.VISIBLE);
             tcg_item_recharge_tv.setText(String.valueOf(normalDice[3]));
         }
+    }
+
+    public void tcg_ll_setup_other(int index,int talentIndex,
+                                   LinearLayout tcg_item_ll,
+                                   ImageView tcg_item_ico,
+                                   TextView tcg_item_name,
+                                   TextView tcg_item_info) throws JSONException {
+        JSONArray battleTalent = jsonObject.getJSONArray("skills");
+        tcg_item_ll.setVisibility(View.VISIBLE);
+        tcg_item_ico.setImageDrawable(item_rss.getTalentIcoByName(getTalentFromCharFile(tcg.getName())[talentIndex],context));
+        tcg_item_name.setText(battleTalent.getJSONObject(index).getString("name"));
+        // Word Color replacement will do later
+        tcg_item_info.setText(battleTalent.getJSONObject(index).getString("description"));
     }
 
     public int[] getDiceNumFromData(JSONArray playcost) throws JSONException {
@@ -617,17 +643,22 @@ public class TCG_Info_2048 {
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                if (split < 25){
+                if (split < 15){
                     tcg_card_change();
                     tcg_card_dx();
                     split++;
                 }
             }
-        },10);
+        },20);
     }
 
     public void tcg_card_change(){
-        tcg_card_img.setImageDrawable(FileLoader.loadIMG2Drawable(item_rss.getTCGByName(tcg.getName(),context)[0],context));
+        int widthNew = (int) ((displayMetrics.widthPixels - displayMetrics.density*(32))/2);
+        Picasso.get()
+                .load (FileLoader.loadIMG(item_rss.getTCGByName(tcg.getName(),context)[0],context))
+                .resize(widthNew,(int) (widthNew*12/7))
+                .error (R.drawable.paimon_lost)
+                .into(tcg_card_img);
         tcg_card_name.setText(item_rss.getTCGByName(tcg.getName(),context)[1]);
         tcg_card_name_base.setText(tcg.getName());
         tcg_press_mask.getLayoutParams().width = (int) (0);

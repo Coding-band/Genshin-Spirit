@@ -620,7 +620,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         }
 
         holder.char_name.setText(item_rss.getCharByName(Characters.getName(),context)[1]);
-        holder.char_weapon.setImageResource(item_rss.getWeaponTypeIMG(Characters.getWeapon()));
+        holder.char_weapon.setImageResource(item_rss.getWeaponTypeIMG(Characters.getWeapon(),context));
         holder.char_role.setText(item_rss.getLocaleName(Characters.getRole(),context));
         holder.char_main_stat.setText(item_rss.getArtifactBuffName(Characters.getMainStat(),context));
     }

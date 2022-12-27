@@ -253,7 +253,7 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
 
         viewHolder.weapon_stat.setText(this.context.getString(itemRss.getSecAttr(weapons.stat_1)));
         viewHolder.weapon_name.setText(itemRss.getWeaponByName(weapons.getName(),context)[0]);
-        viewHolder.weapon_weapon.setImageResource(itemRss.getWeaponTypeIMG(weapons.getWeapon()));
+        viewHolder.weapon_weapon.setImageResource(itemRss.getWeaponTypeIMG(weapons.getWeapon(),context));
         //viewHolder.weapon_icon.setBackgroundResource(itemRss.getRareColorByName(weapons.getRare())[0]);
         //viewHolder.weapon_bg.setBackgroundResource(itemRss.getRareColorByName(weapons.getRare())[0]);
         //viewHolder.weapon_nl.setBackgroundResource(itemRss.getRareColorByName(weapons.getRare())[1]);
@@ -659,7 +659,7 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                                 item_star.setNumStars(rare);
                                 item_star.setRating(rare);
 
-                                ((ImageView) inflate.findViewById(R.id.item_weapon)).setImageResource(itemRss.getWeaponTypeIMG(weapon));
+                                ((ImageView) inflate.findViewById(R.id.item_weapon)).setImageResource(itemRss.getWeaponTypeIMG(weapon,context));
                                 item_img.setBackgroundResource(itemRss.getRareColorByName(rare)[0]);
                                 item_nl.setBackgroundResource(itemRss.getRareColorByName(rare)[1]);
                                 item_talent.setVisibility(View.GONE);

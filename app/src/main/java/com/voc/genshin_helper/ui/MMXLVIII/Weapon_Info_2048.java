@@ -596,8 +596,7 @@ public class Weapon_Info_2048 {
         //weapon_element.setImageResource(item_rss.getElementByName(element)[0]);
         //weapon_area.setText(item_rss.getLocaleName(area,context));
         //weapon_area_ico.setImageResource(item_rss.getDistrictIMG(area));
-        weapon_weapon.setImageResource(item_rss.getWeaponTypeIMG(weapon));
-        weapon_weapon.setImageResource(item_rss.getWeaponTypeIMG(weapon));
+        weapon_weapon.setImageResource(item_rss.getWeaponTypeIMG(weapon,context));
         //weapon_role.setText(item_rss.getLocaleName(role,context));
         //weapon_sex.setText(item_rss.getLocaleName(sex,context));
         //weapon_birth.setText(item_rss.getLocaleBirth(birth,context)); // -> If necessary will change to Month | Day -> E.g. July 24th

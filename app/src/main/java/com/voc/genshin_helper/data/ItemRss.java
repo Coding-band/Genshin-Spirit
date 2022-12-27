@@ -158,12 +158,12 @@ public class ItemRss {
     }
 
 
-    public int getWeaponTypeIMG (String str){
-        if(str.equals("Bow") || str.equals(R.string.bow)){return R.drawable.ico_bow;}
-        else if(str.equals("Catalyst") || str.equals(R.string.catalyst)){return R.drawable.ico_catalyst;}
-        else if(str.equals("Claymore") || str.equals(R.string.claymore)){return R.drawable.ico_claymore;}
-        else if(str.equals("Polearm") || str.equals(R.string.polearm)){return R.drawable.ico_polearm;}
-        else if(str.equals("Sword") || str.equals(R.string.sword)){return R.drawable.ico_sword;}
+    public int getWeaponTypeIMG (String str, Context context){
+        if(str.equals("Bow") || str.equals(context.getString(R.string.bow))){return R.drawable.ico_bow;}
+        else if(str.equals("Catalyst") || str.equals(context.getString(R.string.catalyst))){return R.drawable.ico_catalyst;}
+        else if(str.equals("Claymore") || str.equals(context.getString(R.string.claymore))){return R.drawable.ico_claymore;}
+        else if(str.equals("Polearm") || str.equals(context.getString(R.string.polearm))){return R.drawable.ico_polearm;}
+        else if(str.equals("Sword") || str.equals(context.getString(R.string.sword))){return R.drawable.ico_sword;}
         else {return R.drawable.hu_tao_unknown;}
     }
     public int getDistrictIMG (String str){
@@ -1180,7 +1180,7 @@ public class ItemRss {
         }
     }
 
-
+    // In Fact, we still haven't made enemy card.
     public String[] getTCGByName(String name, Context context){
         switch (name){
             case "Ganyu" : return new String[]{"/drawable/tcg_ganyu.png", context.getString(R.string.tcg_ganyu)};

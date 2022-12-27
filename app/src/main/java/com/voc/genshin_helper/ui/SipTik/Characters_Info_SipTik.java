@@ -1376,7 +1376,7 @@ public class Characters_Info_SipTik {
         char_element.setImageResource(item_rss.getElementByName(element)[0]);
         char_area.setText(item_rss.getLocaleName(area,context));
         char_area_ico.setImageResource(item_rss.getDistrictIMG(area));
-        char_weapon.setImageResource(item_rss.getWeaponTypeIMG(weapon));
+        char_weapon.setImageResource(item_rss.getWeaponTypeIMG(weapon,context));
         char_role.setText(item_rss.getLocaleName(role,context));
         //char_sex.setText(item_rss.getLocaleName(sex,context));
         char_birth.setText(item_rss.getLocaleBirth(birth,context,false)); // -> If necessary will change to Month | Day -> E.g. July 24th

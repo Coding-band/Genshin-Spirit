@@ -471,7 +471,7 @@ public class Weapon_Info_SipTik {
         //weapon_element.setImageResource(item_rss.getElementByName(element)[0]);
         //weapon_area.setText(item_rss.getLocaleName(area,context));
         //weapon_area_ico.setImageResource(item_rss.getDistrictIMG(area));
-        weapon_weapon.setImageResource(item_rss.getWeaponTypeIMG(weapon));
+        weapon_weapon.setImageResource(item_rss.getWeaponTypeIMG(weapon,context));
         weapon_img.setMaxHeight((int) (height_curr*0.4));
         //weapon_role.setText(item_rss.getLocaleName(role,context));
         //weapon_sex.setText(item_rss.getLocaleName(sex,context));
