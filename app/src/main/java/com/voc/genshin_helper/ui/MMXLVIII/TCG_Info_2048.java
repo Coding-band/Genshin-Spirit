@@ -30,6 +30,7 @@ import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+import com.alibaba.fastjson2.JSON;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.data.TCG;
@@ -37,6 +38,7 @@ import com.voc.genshin_helper.util.CustomTextView;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.FileLoader;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -73,18 +75,18 @@ public class TCG_Info_2048 {
     LinearLayout tcg_nonchar_ll, tcg_normal_ll, tcg_normal2_ll, tcg_element_ll, tcg_final_ll, tcg_other_ll;
     View view4;
 
-    FrameLayout tcg_normal_element, tcg_normal_spec, tcg_normal_rand;
+    FrameLayout tcg_normal_element, tcg_normal_spec, tcg_normal_rand, tcg_normal_recharge;
     ImageView tcg_normal_ico, tcg_normal_element_ico;
-    TextView tcg_normal_name, tcg_normal_info, tcg_normal_element_tv, tcg_normal_spec_tv, tcg_normal_rand_tv;
-    FrameLayout tcg_normal2_element, tcg_normal2_spec, tcg_normal2_rand;
+    TextView tcg_normal_name, tcg_normal_info, tcg_normal_element_tv, tcg_normal_spec_tv, tcg_normal_rand_tv, tcg_normal_recharge_tv;
+    FrameLayout tcg_normal2_element, tcg_normal2_spec, tcg_normal2_rand, tcg_normal2_recharge;
     ImageView tcg_normal2_ico, tcg_normal2_element_ico;
-    TextView tcg_normal2_name, tcg_normal2_info, tcg_normal2_element_tv, tcg_normal2_spec_tv, tcg_normal2_rand_tv;
-    FrameLayout tcg_element_element, tcg_element_spec, tcg_element_rand;
+    TextView tcg_normal2_name, tcg_normal2_info, tcg_normal2_element_tv, tcg_normal2_spec_tv, tcg_normal2_rand_tv, tcg_normal2_recharge_tv;
+    FrameLayout tcg_element_element, tcg_element_spec, tcg_element_rand, tcg_element_recharge;
     ImageView tcg_element_ico, tcg_element_element_ico;
-    TextView tcg_element_name, tcg_element_info, tcg_element_element_tv, tcg_element_spec_tv, tcg_element_rand_tv;
-    FrameLayout tcg_final_element, tcg_final_spec, tcg_final_rand;
+    TextView tcg_element_name, tcg_element_info, tcg_element_element_tv, tcg_element_spec_tv, tcg_element_rand_tv, tcg_element_recharge_tv;
+    FrameLayout tcg_final_element, tcg_final_spec, tcg_final_rand, tcg_final_recharge;
     ImageView tcg_final_ico, tcg_final_element_ico;
-    TextView tcg_final_name, tcg_final_info, tcg_final_element_tv, tcg_final_spec_tv, tcg_final_rand_tv;
+    TextView tcg_final_name, tcg_final_info, tcg_final_element_tv, tcg_final_spec_tv, tcg_final_rand_tv, tcg_final_recharge_tv;
     ImageView tcg_other_ico;
     TextView tcg_other_name, tcg_other_info;
     TextView tcg_nonchar_info;
@@ -167,6 +169,8 @@ public class TCG_Info_2048 {
         tcg_normal_element_tv = view.findViewById(R.id.tcg_normal_element_tv);
         tcg_normal_spec_tv = view.findViewById(R.id.tcg_normal_spec_tv);
         tcg_normal_rand_tv = view.findViewById(R.id.tcg_normal_rand_tv);
+        tcg_normal_recharge = view.findViewById(R.id.tcg_normal_recharge);
+        tcg_normal_recharge_tv = view.findViewById(R.id.tcg_normal_recharge_tv);
 
         tcg_normal2_element = view.findViewById(R.id.tcg_normal2_element);
         tcg_normal2_spec = view.findViewById(R.id.tcg_normal2_spec);
@@ -178,6 +182,8 @@ public class TCG_Info_2048 {
         tcg_normal2_element_tv = view.findViewById(R.id.tcg_normal2_element_tv);
         tcg_normal2_spec_tv = view.findViewById(R.id.tcg_normal2_spec_tv);
         tcg_normal2_rand_tv = view.findViewById(R.id.tcg_normal2_rand_tv);
+        tcg_normal2_recharge = view.findViewById(R.id.tcg_normal2_recharge);
+        tcg_normal2_recharge_tv = view.findViewById(R.id.tcg_normal2_recharge_tv);
 
         tcg_element_element = view.findViewById(R.id.tcg_element_element);
         tcg_element_spec = view.findViewById(R.id.tcg_element_spec);
@@ -189,6 +195,8 @@ public class TCG_Info_2048 {
         tcg_element_element_tv = view.findViewById(R.id.tcg_element_element_tv);
         tcg_element_spec_tv = view.findViewById(R.id.tcg_element_spec_tv);
         tcg_element_rand_tv = view.findViewById(R.id.tcg_element_rand_tv);
+        tcg_element_recharge = view.findViewById(R.id.tcg_element_recharge);
+        tcg_element_recharge_tv = view.findViewById(R.id.tcg_element_recharge_tv);
 
         tcg_final_element = view.findViewById(R.id.tcg_final_element);
         tcg_final_spec = view.findViewById(R.id.tcg_final_spec);
@@ -200,10 +208,19 @@ public class TCG_Info_2048 {
         tcg_final_element_tv = view.findViewById(R.id.tcg_final_element_tv);
         tcg_final_spec_tv = view.findViewById(R.id.tcg_final_spec_tv);
         tcg_final_rand_tv = view.findViewById(R.id.tcg_final_rand_tv);
+        tcg_final_recharge = view.findViewById(R.id.tcg_final_recharge);
+        tcg_final_recharge_tv = view.findViewById(R.id.tcg_final_recharge_tv);
 
         tcg_other_ico = view.findViewById(R.id.tcg_other_ico);
         tcg_other_name = view.findViewById(R.id.tcg_other_name);
         tcg_other_info = view.findViewById(R.id.tcg_other_info);
+
+        try {
+            tcg_info_setup();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
 
         /** Method of tcg_card*/
         tcg_hp_bg = view.findViewById(R.id.tcg_hp_bg);
@@ -386,34 +403,6 @@ public class TCG_Info_2048 {
         if(!str.equals("")){
             try {
                 jsonObject = new JSONObject(str);
-                //Common
-                tcg_intro_tv.setText(tcg.getName());
-                tcg_intro_element.setVisibility(View.GONE);
-                tcg_intro_location.setVisibility(View.GONE);
-                tcg_intro_weapon.setVisibility(View.GONE);
-                view4.setVisibility(View.GONE);
-                tcg_intro_type.setText(item_rss.getTypeLocaleByName(tcg.getType(),context));
-                tcg_intro_source.setText(jsonObject.getString("source"));
-
-                tcg_nonchar_ll.setVisibility(View.VISIBLE);
-                tcg_nonchar_info.setText(jsonObject.getString("description"));
-
-                if (tcg.getType().equals(TCG.CHAR)){
-                    tcg_detail_ll.setVisibility(View.VISIBLE);
-                    tcg_intro_element.setVisibility(View.VISIBLE);
-                    tcg_intro_location.setVisibility(View.VISIBLE);
-                    tcg_intro_weapon.setVisibility(View.VISIBLE);
-                    view4.setVisibility(View.VISIBLE);
-
-                    tcg_intro_element.setImageResource(item_rss.getElementByName(jsonObject.getJSONArray("tagstext").get(0).toString())[1]);
-                    tcg_intro_weapon.setImageResource(item_rss.getWeaponTypeIMG(jsonObject.getJSONArray("tagstext").get(1).toString()));
-                    tcg_intro_location.setText(jsonObject.getJSONArray("tagstext").get(2).toString());
-
-                    tcg_normal_ll.setVisibility(View.VISIBLE);
-
-                }
-
-
                 show();
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -421,6 +410,171 @@ public class TCG_Info_2048 {
         }else{
             CustomToast.toast(context,activity,context.getString(R.string.none_info));
         }
+    }
+
+    public void tcg_info_setup() throws JSONException {
+        //Common
+        tcg_detail_ll.setVisibility(View.GONE);
+        tcg_intro_tv.setText(item_rss.getTCGByName(tcg.getName(),context)[1]);
+        tcg_intro_element.setVisibility(View.GONE);
+        tcg_intro_location.setVisibility(View.GONE);
+        tcg_intro_weapon.setVisibility(View.GONE);
+
+        tcg_normal_ll.setVisibility(View.GONE);
+        tcg_normal2_ll.setVisibility(View.GONE);
+        tcg_element_ll.setVisibility(View.GONE);
+        tcg_final_ll.setVisibility(View.GONE);
+        tcg_other_ll.setVisibility(View.GONE);
+
+        view4.setVisibility(View.GONE);
+        tcg_intro_type.setText(item_rss.getTypeLocaleByName(tcg.getType(),context));
+        if (jsonObject.has("source")){
+            tcg_intro_source.setVisibility(View.VISIBLE);
+            tcg_intro_source.setText(jsonObject.getString("source"));
+        }
+
+        if(jsonObject.has("description")){
+            tcg_nonchar_ll.setVisibility(View.VISIBLE);
+            tcg_nonchar_info.setText(jsonObject.getString("description"));
+        }
+
+        System.out.println("tcg.getType() : "+tcg.getType());
+
+        if (tcg.getType().equals(TCG.CHAR)){
+            tcg_nonchar_ll.setVisibility(View.GONE);
+            JSONArray tagstext = jsonObject.getJSONArray("tagstext");
+            JSONArray battleTalent = jsonObject.getJSONArray("skills");
+            tcg_detail_ll.setVisibility(View.VISIBLE);
+            tcg_intro_element.setVisibility(View.VISIBLE);
+            tcg_intro_location.setVisibility(View.VISIBLE);
+            tcg_intro_weapon.setVisibility(View.VISIBLE);
+            view4.setVisibility(View.VISIBLE);
+
+            tcg_intro_element.setImageResource(item_rss.getElementByNameTCG(tagstext.get(0).toString(),context)[0]);
+            tcg_intro_weapon.setImageResource(item_rss.getWeaponTypeIMG(tagstext.get(1).toString()));
+            tcg_intro_location.setText(tagstext.get(2).toString());
+
+            tcg_ll_setup(0,0,tcg_normal_ll,tcg_normal_ico,tcg_normal_name,tcg_normal_info,tcg_normal_element,tcg_normal_element_tv,tcg_normal_element_ico,tcg_normal_spec,tcg_normal_spec_tv,tcg_normal_rand,tcg_normal_rand_tv,tcg_normal_recharge,tcg_normal_recharge_tv);
+            tcg_ll_setup(1,1,tcg_element_ll,tcg_element_ico,tcg_element_name,tcg_element_info,tcg_element_element,tcg_element_element_tv,tcg_element_element_ico,tcg_element_spec,tcg_element_spec_tv,tcg_element_rand,tcg_element_rand_tv,tcg_element_recharge,tcg_element_recharge_tv);
+            if (battleTalent.length() > 2){
+                if (battleTalent.getJSONObject(2).getString("type").equals(context.getString(R.string.noraml_atk))){
+                    tcg_ll_setup(2,0,tcg_normal2_ll,tcg_normal2_ico,tcg_normal2_name,tcg_normal2_info,tcg_normal2_element,tcg_normal2_element_tv,tcg_normal2_element_ico,tcg_normal2_spec,tcg_normal2_spec_tv,tcg_normal2_rand,tcg_normal2_rand_tv,tcg_normal2_recharge,tcg_normal2_recharge_tv);
+                    tcg_ll_setup(3,2,tcg_final_ll,tcg_final_ico,tcg_final_name,tcg_final_info,tcg_final_element,tcg_final_element_tv,tcg_final_element_ico,tcg_final_spec,tcg_final_spec_tv,tcg_final_rand,tcg_final_rand_tv,tcg_final_recharge,tcg_final_recharge_tv);
+                    System.out.println("TRUE 1");
+                }else if (battleTalent.getJSONObject(2).getString("type").equals(context.getString(R.string.final_atk))){
+                    tcg_ll_setup(2,2,tcg_final_ll,tcg_final_ico,tcg_final_name,tcg_final_info,tcg_final_element,tcg_final_element_tv,tcg_final_element_ico,tcg_final_spec,tcg_final_spec_tv,tcg_final_rand,tcg_final_rand_tv,tcg_final_recharge,tcg_final_recharge_tv);
+                    System.out.println("TRUE 2");
+                }
+
+                if (battleTalent.getJSONObject(2).getString("type").equals(context.getString(R.string.passive_atk))){
+                    tcg_ll_setup(3,3, tcg_final_ll, tcg_final_ico, tcg_final_name, tcg_final_info, tcg_final_element, tcg_final_element_tv, tcg_final_element_ico, tcg_final_spec, tcg_final_spec_tv, tcg_final_rand, tcg_final_rand_tv, tcg_final_recharge, tcg_final_recharge_tv);
+                }else if (battleTalent.getJSONObject(3).getString("type").equals(context.getString(R.string.passive_atk))){
+                    tcg_ll_setup(3,3, tcg_final_ll, tcg_final_ico, tcg_final_name, tcg_final_info, tcg_final_element, tcg_final_element_tv, tcg_final_element_ico, tcg_final_spec, tcg_final_spec_tv, tcg_final_rand, tcg_final_rand_tv, tcg_final_recharge, tcg_final_recharge_tv);
+                }
+                System.out.println("TRUE 3");
+            }
+
+
+            tcg_element_ll.setVisibility(View.VISIBLE);
+
+            tcg_final_ll.setVisibility(View.VISIBLE);
+
+            if (jsonObject.getJSONArray("skills").length() == 4){
+                tcg_other_ll.setVisibility(View.VISIBLE);
+            }
+
+        }
+    }
+
+    public void tcg_ll_setup(int index,int talentIndex,
+                             LinearLayout tcg_item_ll,
+                             ImageView tcg_item_ico,
+                             TextView tcg_item_name,
+                             TextView tcg_item_info,
+                             FrameLayout tcg_item_element,
+                             TextView tcg_item_element_tv,
+                             ImageView tcg_item_element_ico,
+                             FrameLayout tcg_item_spec,
+                             TextView tcg_item_spec_tv,
+                             FrameLayout tcg_item_rand,
+                             TextView tcg_item_rand_tv,
+                             FrameLayout tcg_item_recharge,
+                             TextView tcg_item_recharge_tv) throws JSONException {
+        JSONArray battleTalent = jsonObject.getJSONArray("skills");
+        JSONArray tagstext = jsonObject.getJSONArray("tagstext");
+        tcg_item_ll.setVisibility(View.VISIBLE);
+        tcg_item_ico.setImageDrawable(item_rss.getTalentIcoByName(getTalentFromCharFile(tcg.getName())[talentIndex],context));
+        tcg_item_name.setText(battleTalent.getJSONObject(index).getString("name"));
+        // Word Color replacement will do later
+        tcg_item_info.setText(battleTalent.getJSONObject(index).getString("description"));
+        // {ELEMENT, SPEC, RAND, ENERGY}
+        int[] normalDice = getDiceNumFromData(battleTalent.getJSONObject(index).getJSONArray("playcost"));
+        if (normalDice[0] != -1){
+            tcg_item_element.setVisibility(View.VISIBLE);
+            tcg_item_element_tv.setText(String.valueOf(normalDice[0]));
+            tcg_item_element_ico.setImageResource(item_rss.getElementByNameTCG(tagstext.get(0).toString(),context)[1]);
+        }
+        if (normalDice[1] != -1){
+            tcg_item_spec.setVisibility(View.VISIBLE);
+            tcg_item_spec_tv.setText(String.valueOf(normalDice[1]));
+        }
+        if (normalDice[2] != -1){
+            tcg_item_rand.setVisibility(View.VISIBLE);
+            tcg_item_rand_tv.setText(String.valueOf(normalDice[2]));
+        }
+        if (normalDice[3] != -1){
+            tcg_item_recharge.setVisibility(View.VISIBLE);
+            tcg_item_recharge_tv.setText(String.valueOf(normalDice[3]));
+        }
+    }
+
+    public int[] getDiceNumFromData(JSONArray playcost) throws JSONException {
+        int[] diceNum = {-1,-1,-1,-1};
+
+        if (playcost == null) return diceNum;
+
+        for (int x = 0 ; x < playcost.length() ; x++){
+            switch (playcost.getJSONObject(x).getString("costtype")){
+                case "GCG_COST_DICE_ANEMO":
+                case "GCG_COST_DICE_CRYO":
+                case "GCG_COST_DICE_DENDRO":
+                case "GCG_COST_DICE_ELECTRO":
+                case "GCG_COST_DICE_HYDRO":
+                case "GCG_COST_DICE_GEO":
+                case "GCG_COST_DICE_PYRO":
+                    diceNum[0] = playcost.getJSONObject(x).getInt("count");break;
+
+                case "GCG_COST_DICE_SAME":
+                    diceNum[1] = playcost.getJSONObject(x).getInt("count");break;
+
+                case "GCG_COST_DICE_VOID":
+                    diceNum[2] = playcost.getJSONObject(x).getInt("count");break;
+
+                case "GCG_COST_ENERGY":
+                    diceNum[3] = playcost.getJSONObject(x).getInt("count");break;
+            }
+        }
+
+        return diceNum;
+    }
+
+    public String[] getTalentFromCharFile(String name){
+        String json = LoadData("db/char/"+"en-US"+"/"+this.tcg.getName().replace(" ","_")+".json");
+        if (json == null){return new String[]{"N/A","N/A","N/A","N/A"};}
+        try {
+            JSONObject jsonObject = new JSONObject(json);
+            JSONObject battle_talent = jsonObject.getJSONObject("battle_talent");
+            String other_talent = "N/A";
+            if (battle_talent.has("other_img")){
+                other_talent = battle_talent.getString("other_img");
+            }
+            return new String[]{battle_talent.getString("normal_img"), battle_talent.getString("element_img"), battle_talent.getString("final_img"), other_talent};
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return new String[]{"N/A","N/A","N/A","N/A"};
     }
 
     public void smallZoom(){

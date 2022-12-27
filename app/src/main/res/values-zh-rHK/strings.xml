@@ -146,6 +146,7 @@
     <string name="plunging_atk">俯衝攻擊</string>
     <string name="element_atk">元素戰技</string>
     <string name="final_atk">元素爆發</string>
+    <string name="passive_atk">被動技能</string>
     <string name="basic_talent">固有天賦</string>
     <string name="asc0_unlock">自動解鎖</string>
     <string name="asc1_unlock">突破等級1解鎖</string>

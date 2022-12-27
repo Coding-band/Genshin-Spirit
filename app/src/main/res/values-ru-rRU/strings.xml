@@ -1296,4 +1296,5 @@
     <string name="catalyst">Катализатор</string>
     <string name="claymore">Двуручное</string>
     <string name="polearm">Древковое</string>
+    <string name="passive_atk">Пассивный навык</string>
 </resources>

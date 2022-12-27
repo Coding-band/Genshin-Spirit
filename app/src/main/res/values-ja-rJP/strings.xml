@@ -1323,6 +1323,7 @@
     <string name="bow">弓</string>
     <string name="polearm">長柄武器</string>
     <string name="claymore">両手剣</string>
+    <string name="passive_atk">固有スキル</string>
 
 </resources>
 

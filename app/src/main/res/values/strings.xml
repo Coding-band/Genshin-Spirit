@@ -1355,6 +1355,7 @@
     <string name="catalyst">Catalyst</string>
     <string name="polearm">Polearm</string>
     <string name="claymore">Claymore</string>
+    <string name="passive_atk">Passive Skill</string>
 
 
 </resources>

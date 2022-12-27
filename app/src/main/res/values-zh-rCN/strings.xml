@@ -1316,4 +1316,5 @@
     <string name="catalyst">法器</string>
     <string name="polearm">长柄武器</string>
     <string name="claymore">双手剑</string>
+    <string name="passive_atk">被动技能</string>
 </resources>
