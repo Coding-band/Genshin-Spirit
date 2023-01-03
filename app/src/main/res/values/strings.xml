@@ -1357,6 +1357,45 @@
     <string name="claymore">Claymore</string>
     <string name="passive_atk">Passive Skill</string>
 
+    <!-- add in 20221228 -->
+    <string name="tcg_keyword_anemo">Anemo</string>
+    <string name="tcg_keyword_anemodmg">Anemo DMG</string>
+    <string name="tcg_keyword_combataction">Combat Action</string>
+    <string name="tcg_keyword_cryo">Cryo</string>
+    <string name="tcg_keyword_cryoapplication">Cryo Application</string>
+    <string name="tcg_keyword_cryodmg">Cryo DMG</string>
+    <string name="tcg_keyword_dendro">Dendro</string>
+    <string name="tcg_keyword_dendroapplication">Dendro Application</string>
+    <string name="tcg_keyword_dendrodmg">Dendro DMG</string>
+    <string name="tcg_keyword_dendrorelatedreactions">Dendro-Related Reactions</string>
+    <string name="tcg_keyword_durationrounds">Duration (Rounds)</string>
+    <string name="tcg_keyword_electro">Electro</string>
+    <string name="tcg_keyword_electroapplication">Electro Application</string>
+    <string name="tcg_keyword_electrodmg">Electro DMG</string>
+    <string name="tcg_keyword_electroinfusion">Electro Infusion</string>
+    <string name="tcg_keyword_elementalburst">Elemental Burst</string>
+    <string name="tcg_keyword_energy">Energy</string>
+    <string name="tcg_keyword_fastaction">Fast Action</string>
+    <string name="tcg_keyword_geo">Geo</string>
+    <string name="tcg_keyword_geodmg">Geo DMG</string>
+    <string name="tcg_keyword_hydro">Hydro</string>
+    <string name="tcg_keyword_hydroapplication">Hydro Application</string>
+    <string name="tcg_keyword_hydrodmg">Hydro DMG</string>
+    <string name="tcg_keyword_hydrorelatedreactions">Hydro-Related Reactions</string>
+    <string name="tcg_keyword_matchingelement">Matching Element</string>
+    <string name="tcg_keyword_omnielement">Omni Element</string>
+    <string name="tcg_keyword_passiveskill">Passive Skill</string>
+    <string name="tcg_keyword_physicaldmg">Physical DMG</string>
+    <string name="tcg_keyword_piercingdmg">Piercing DMG</string>
+    <string name="tcg_keyword_pyro">Pyro</string>
+    <string name="tcg_keyword_pyroapplication">Pyro Application</string>
+    <string name="tcg_keyword_pyrodmg">Pyro DMG</string>
+    <string name="tcg_keyword_pyrorelatedreactions">Pyro-Related Reactions</string>
+    <string name="tcg_keyword_randomhilichurlsummon">Random Hilichurl Summon</string>
+    <string name="tcg_keyword_shield">Shield</string>
+    <string name="tcg_keyword_unalignedelement">Unaligned Element</string>
+    <string name="tcg_keyword_usages">Usage(s)</string>
+
 
 </resources>
 

@@ -103,6 +103,7 @@
             app:layout_constraintVertical_bias="0.5"
             app:tabGravity="fill"
             app:tabIndicator="@drawable/bg_kwang_filled"
+            android:background="#00000000"
             app:tabIndicatorAnimationDuration="500"
             app:tabIndicatorColor="@color/tab_selected_2048"
             app:tabIndicatorFullWidth="false"

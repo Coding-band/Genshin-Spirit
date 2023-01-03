@@ -90,6 +90,7 @@
                     android:id="@+id/tcg_tablayout"
                     android:layout_width="260dp"
                     android:layout_height="match_parent"
+                    android:background="#00000000"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

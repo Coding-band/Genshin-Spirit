@@ -15,7 +15,6 @@ import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,7 +28,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -40,12 +38,10 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 import com.voc.genshin_helper.R;
-import com.voc.genshin_helper.data.ArtifactsAdapter;
-import com.voc.genshin_helper.data.Characters;
-import com.voc.genshin_helper.data.CharactersAdapter;
-import com.voc.genshin_helper.data.IconCard;
+import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.data.TCG;
 import com.voc.genshin_helper.data.TCGAdapter;
+import com.voc.genshin_helper.data.Weapons;
 import com.voc.genshin_helper.util.MyViewPagerAdapter;
 
 import org.json.JSONArray;
@@ -69,11 +65,11 @@ public class TCG2048 {
     Activity activity;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
-    public List<TCG> charList = new ArrayList<>();
-    public List<TCG> supportList = new ArrayList<>();
-    public List<TCG> equipList = new ArrayList<>();
-    public List<TCG> eventList = new ArrayList<>();
-    public List<TCG> backsideList = new ArrayList<>();
+    public ArrayList<TCG> charList = new ArrayList<>();
+    public ArrayList<TCG> supportList = new ArrayList<>();
+    public ArrayList<TCG> equipList = new ArrayList<>();
+    public ArrayList<TCG> eventList = new ArrayList<>();
+    public ArrayList<TCG> backsideList = new ArrayList<>();
     TCGAdapter mCharAdapter;
     TCGAdapter mSupportAdapter;
     TCGAdapter mEquipAdapter;
@@ -84,6 +80,7 @@ public class TCG2048 {
     RecyclerView mEquipList;
     RecyclerView mEventList;
     RecyclerView mBackSideList;
+    ImageView tcg_search, tcg_filter;
 
     boolean firstSelect = false;
     int id = 0;
@@ -97,6 +94,7 @@ public class TCG2048 {
     int[] tabTCGItemImageArray = new int[]{R.drawable.ic_2048_tcg_char,R.drawable.ic_2048_tcg_equip,R.drawable.ic_2048_tcg_support,R.drawable.ic_2048_tcg_event,R.drawable.ic_2048_tcg_backside};
     int[] tabTCGItemImageSelectedArray = new int[]{R.drawable.ic_2048_tcg_char_selected,R.drawable.ic_2048_tcg_equip_selected,R.drawable.ic_2048_tcg_support_selected,R.drawable.ic_2048_tcg_event_selected,R.drawable.ic_2048_tcg_backside_selected};
     DisplayMetrics displayMetrics;
+    ItemRss item_rss;
 
     public void setup(View rootView, Context context, Activity activity, SharedPreferences sharedPreferences){
         this.rootView = rootView;
@@ -104,6 +102,7 @@ public class TCG2048 {
         this.activity = activity;
         this.sharedPreferences = sharedPreferences;
         editor = sharedPreferences.edit();
+        item_rss = new ItemRss();
 
         tcg_tablayout = rootView.findViewById(R.id.tcg_tablayout);
         mIndicator = rootView.findViewById(R.id.indicator);
@@ -241,6 +240,124 @@ public class TCG2048 {
 
             }
         });
+
+        tcg_search = rootView.findViewById(R.id.tcg_search);
+        tcg_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ConstraintLayout header_con = rootView.findViewById(R.id.header_con);
+                View header_search = rootView.findViewById(R.id.header_search);
+                EditText header_search_et = rootView.findViewById(R.id.header_search_et);
+                Button menu_search_cancel = rootView.findViewById(R.id.menu_search_cancel);
+                ImageView header_search_reset = rootView.findViewById(R.id.header_search_reset);
+
+                header_con.animate()
+                        .alpha(0.0f)
+                        .setDuration(300)
+                        .setListener(new AnimatorListenerAdapter() {
+                            @Override
+                            public void onAnimationEnd(Animator animation) {
+                                super.onAnimationEnd(animation);
+                                header_con.setVisibility(View.GONE);
+                            }
+                        });
+
+                header_search.animate()
+                        .alpha(1.0f)
+                        .setDuration(300)
+                        .setListener(new AnimatorListenerAdapter() {
+                            @Override
+                            public void onAnimationEnd(Animator animation) {
+                                super.onAnimationEnd(animation);
+                                header_search.setVisibility(View.VISIBLE);
+                            }
+                        });
+
+                header_search_et.addTextChangedListener(new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
+                        ArrayList<TCG> tempList = charList;
+                        TCGAdapter mTempAdapter = mCharAdapter;
+
+                        switch (viewPager.getCurrentItem()){
+                            case 0 : {tempList = charList; mTempAdapter = mCharAdapter;break;}
+                            case 1 : {tempList = equipList; mTempAdapter = mEquipAdapter;break;}
+                            case 2 : {tempList = supportList; mTempAdapter = mSupportAdapter;break;}
+                            case 3 : {tempList = eventList; mTempAdapter = mEventAdapter;break;}
+                            case 4 : {tempList = backsideList; mTempAdapter = mBackSideAdapter;break;}
+                        }
+
+                        if (header_search_et.getText() != null){
+                            String request = header_search_et.getText().toString();
+                            if (!request.equals("")){
+                                ArrayList<TCG> filteredList = new ArrayList<>();
+                                int x = 0;
+                                for (TCG item : tempList) {
+                                    String str = request.toLowerCase();
+                                    if (item_rss.getTCGByName(item.getName(),context)[0].contains(str)||item_rss.getTCGByName(item.getName(),context)[0].toLowerCase().contains(str)||item_rss.getTCGByName(item.getName(),context)[0].toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)||item.getLocaleName().toLowerCase().contains(str)){ // EN -> ZH
+                                        filteredList.add(item);
+                                    }
+                                    x = x +1;
+                                }
+                                mTempAdapter.filterList(filteredList);
+                            }else{
+                                mTempAdapter.filterList(tempList);
+                            }
+                        }else{
+                            mTempAdapter.filterList(tempList);
+                        }
+                    }
+                });
+
+                menu_search_cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        header_search_et.setText("");
+                        header_search.animate()
+                                .alpha(0.0f)
+                                .setDuration(300)
+                                .setListener(new AnimatorListenerAdapter() {
+                                    @Override
+                                    public void onAnimationEnd(Animator animation) {
+                                        super.onAnimationEnd(animation);
+                                        header_search.setVisibility(View.GONE);
+                                    }
+                                });
+                        header_con.animate()
+                                .alpha(1.0f)
+                                .setDuration(300)
+                                .setListener(new AnimatorListenerAdapter() {
+                                    @Override
+                                    public void onAnimationEnd(Animator animation) {
+                                        super.onAnimationEnd(animation);
+                                        header_con.setVisibility(View.VISIBLE);
+                                    }
+                                });
+                    }
+                });
+
+                header_search_reset.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        header_search_et.setText("");
+                    }
+                });
+
+            };
+        });
+
+
+
     }
 
 
@@ -248,33 +365,27 @@ public class TCG2048 {
         if (context instanceof Desk2048){
             ((Desk2048) context).setCheckSpinner(0);
         }
-
-        mCharList = viewPager0.findViewById(R.id.tcg_char_list);
-        mCharAdapter = new TCGAdapter(context,charList,activity,sharedPreferences);
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 3);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int height = displayMetrics.heightPixels;
         int width = displayMetrics.widthPixels;
+        int itemWidth = (int) (320+displayMetrics.density*(20));
+
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 3);
 
         if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-            int img_width = 320;
-            int width_a = (int) (width - displayMetrics.density*(4+4));
-            if ((width_a/img_width - (int)(width_a/img_width)) > 0){
-                img_width = img_width + ((width_a/img_width - (int)(width_a/img_width)) / (int)(width_a/img_width));
+            if (width > itemWidth*5){
+                mLayoutManager = new GridLayoutManager(context,  5);
+            }else{
+                mLayoutManager = new GridLayoutManager(context,  (int) (width/itemWidth));
             }
-
-            System.out.println("width_a : "+width_a);
-            System.out.println("img_width : "+img_width);
-            mLayoutManager = new GridLayoutManager(context,  (int) (width_a/(img_width + displayMetrics.density*(12+4))));
         }else{
             mLayoutManager = new GridLayoutManager(context,  3);
         }
 
-        LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
-        paramsMsg.gravity = Gravity.CENTER;
+        mCharList = viewPager0.findViewById(R.id.tcg_char_list);
+        mCharAdapter = new TCGAdapter(context,charList,activity,sharedPreferences);
         mCharList.setLayoutManager(mLayoutManager);
-        mCharList.setLayoutParams(paramsMsg);
         mCharList.setAdapter(mCharAdapter);
         mCharList.removeAllViewsInLayout();
     }
@@ -282,33 +393,27 @@ public class TCG2048 {
         if (context instanceof Desk2048){
             ((Desk2048) context).setCheckSpinner(0);
         }
-
-        mEquipList = viewPager1.findViewById(R.id.tcg_equip_list);
-        mEquipAdapter = new TCGAdapter(context,equipList,activity,sharedPreferences);
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 3);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int height = displayMetrics.heightPixels;
         int width = displayMetrics.widthPixels;
+        int itemWidth = (int) (320+displayMetrics.density*(20));
+
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 3);
 
         if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-            int img_width = 320;
-            int width_a = (int) (width - displayMetrics.density*(4+4));
-            if ((width_a/img_width - (int)(width_a/img_width)) > 0){
-                img_width = img_width + ((width_a/img_width - (int)(width_a/img_width)) / (int)(width_a/img_width));
+            if (width > itemWidth*5){
+                mLayoutManager = new GridLayoutManager(context,  5);
+            }else{
+                mLayoutManager = new GridLayoutManager(context,  (int) (width/itemWidth));
             }
-
-            System.out.println("width_a : "+width_a);
-            System.out.println("img_width : "+img_width);
-            mLayoutManager = new GridLayoutManager(context,  (int) (width_a/(img_width + displayMetrics.density*(12+4))));
         }else{
             mLayoutManager = new GridLayoutManager(context,  3);
         }
 
-        LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
-        paramsMsg.gravity = Gravity.CENTER;
+        mEquipList = viewPager1.findViewById(R.id.tcg_equip_list);
+        mEquipAdapter = new TCGAdapter(context,equipList,activity,sharedPreferences);
         mEquipList.setLayoutManager(mLayoutManager);
-        mEquipList.setLayoutParams(paramsMsg);
         mEquipList.setAdapter(mEquipAdapter);
         mEquipList.removeAllViewsInLayout();
     }
@@ -317,33 +422,26 @@ public class TCG2048 {
         if (context instanceof Desk2048){
             ((Desk2048) context).setCheckSpinner(0);
         }
-
-        mSupportList = viewPager2.findViewById(R.id.tcg_support_list);
-        mSupportAdapter = new TCGAdapter(context,supportList,activity,sharedPreferences);
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 3);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int height = displayMetrics.heightPixels;
         int width = displayMetrics.widthPixels;
+        int itemWidth = (int) (320+displayMetrics.density*(20));
+
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 3);
 
         if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-            int img_width = 320;
-            int width_a = (int) (width - displayMetrics.density*(4+4));
-            if ((width_a/img_width - (int)(width_a/img_width)) > 0){
-                img_width = img_width + ((width_a/img_width - (int)(width_a/img_width)) / (int)(width_a/img_width));
+            if (width > itemWidth*5){
+                mLayoutManager = new GridLayoutManager(context,  5);
+            }else{
+                mLayoutManager = new GridLayoutManager(context,  (int) (width/itemWidth));
             }
-
-            System.out.println("width_a : "+width_a);
-            System.out.println("img_width : "+img_width);
-            mLayoutManager = new GridLayoutManager(context,  (int) (width_a/(img_width + displayMetrics.density*(12+4))));
         }else{
             mLayoutManager = new GridLayoutManager(context,  3);
         }
-
-        LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
-        paramsMsg.gravity = Gravity.CENTER;
+        mSupportList = viewPager2.findViewById(R.id.tcg_support_list);
+        mSupportAdapter = new TCGAdapter(context,supportList,activity,sharedPreferences);
         mSupportList.setLayoutManager(mLayoutManager);
-        mSupportList.setLayoutParams(paramsMsg);
         mSupportList.setAdapter(mSupportAdapter);
         mSupportList.removeAllViewsInLayout();
     }
@@ -352,33 +450,27 @@ public class TCG2048 {
         if (context instanceof Desk2048){
             ((Desk2048) context).setCheckSpinner(0);
         }
-
-        mEventList = viewPager3.findViewById(R.id.tcg_event_list);
-        mEventAdapter = new TCGAdapter(context,eventList,activity,sharedPreferences);
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 3);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int height = displayMetrics.heightPixels;
         int width = displayMetrics.widthPixels;
+        int itemWidth = (int) (320+displayMetrics.density*(20));
+
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 3);
 
         if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-            int img_width = 320;
-            int width_a = (int) (width - displayMetrics.density*(4+4));
-            if ((width_a/img_width - (int)(width_a/img_width)) > 0){
-                img_width = img_width + ((width_a/img_width - (int)(width_a/img_width)) / (int)(width_a/img_width));
+            if (width > itemWidth*5){
+                mLayoutManager = new GridLayoutManager(context,  5);
+            }else{
+                mLayoutManager = new GridLayoutManager(context,  (int) (width/itemWidth));
             }
-
-            System.out.println("width_a : "+width_a);
-            System.out.println("img_width : "+img_width);
-            mLayoutManager = new GridLayoutManager(context,  (int) (width_a/(img_width + displayMetrics.density*(12+4))));
         }else{
             mLayoutManager = new GridLayoutManager(context,  3);
         }
 
-        LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
-        paramsMsg.gravity = Gravity.CENTER;
+        mEventList = viewPager3.findViewById(R.id.tcg_event_list);
+        mEventAdapter = new TCGAdapter(context,eventList,activity,sharedPreferences);
         mEventList.setLayoutManager(mLayoutManager);
-        mEventList.setLayoutParams(paramsMsg);
         mEventList.setAdapter(mEventAdapter);
         mEventList.removeAllViewsInLayout();
     }
@@ -387,33 +479,26 @@ public class TCG2048 {
         if (context instanceof Desk2048){
             ((Desk2048) context).setCheckSpinner(0);
         }
-
-        mBackSideList = viewPager4.findViewById(R.id.tcg_backside_list);
-        mBackSideAdapter = new TCGAdapter(context,backsideList,activity,sharedPreferences);
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 3);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int height = displayMetrics.heightPixels;
         int width = displayMetrics.widthPixels;
+        int itemWidth = (int) (320+displayMetrics.density*(20));
+
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 3);
 
         if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-            int img_width = 320;
-            int width_a = (int) (width - displayMetrics.density*(4+4));
-            if ((width_a/img_width - (int)(width_a/img_width)) > 0){
-                img_width = img_width + ((width_a/img_width - (int)(width_a/img_width)) / (int)(width_a/img_width));
+            if (width > itemWidth*5){
+                mLayoutManager = new GridLayoutManager(context,  5);
+            }else{
+                mLayoutManager = new GridLayoutManager(context,  (int) (width/itemWidth));
             }
-
-            System.out.println("width_a : "+width_a);
-            System.out.println("img_width : "+img_width);
-            mLayoutManager = new GridLayoutManager(context,  (int) (width_a/(img_width + displayMetrics.density*(12+4))));
         }else{
             mLayoutManager = new GridLayoutManager(context,  3);
         }
-
-        LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
-        paramsMsg.gravity = Gravity.CENTER;
+        mBackSideList = viewPager4.findViewById(R.id.tcg_backside_list);
+        mBackSideAdapter = new TCGAdapter(context,backsideList,activity,sharedPreferences);
         mBackSideList.setLayoutManager(mLayoutManager);
-        mBackSideList.setLayoutParams(paramsMsg);
         mBackSideList.setAdapter(mBackSideAdapter);
         mBackSideList.removeAllViewsInLayout();
     }
@@ -451,6 +536,7 @@ public class TCG2048 {
                 tcg.setDiceCost(diceCost);
                 tcg.setHP(HP);
                 tcg.setFileName(fileName);
+                tcg.setLocaleName(item_rss.getTCGByName(name,context)[1]);
 
                 switch (type){
                     case TCG.CHAR:charList.add(tcg);break;

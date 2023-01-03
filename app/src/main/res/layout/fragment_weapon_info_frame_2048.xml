@@ -110,6 +110,7 @@
                 app:tabGravity="fill"
                 app:tabIndicator="@drawable/bg_kwang_filled"
                 app:tabIndicatorAnimationDuration="500"
+                android:background="#00000000"
                 app:tabIndicatorColor="@color/tab_selected_2048"
                 app:tabIndicatorFullWidth="false"
                 app:tabIndicatorHeight="5dp"

@@ -15,6 +15,9 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Handler;
+import android.text.SpannableString;
+import android.text.Spanned;
+import android.text.style.ForegroundColorSpan;
 import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.View;
@@ -49,6 +52,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
+import pl.droidsonroids.gif.GifDrawable;
+import pl.droidsonroids.gif.GifImageView;
+
 public class TCG_Info_2048 {
 
     Context context;
@@ -62,7 +68,8 @@ public class TCG_Info_2048 {
 
     ImageView tcg_press_mask ;
     TextView tcg_card_name, tcg_card_name_base;
-    ImageView tcg_card_img, tcg_card_kwang;
+    ImageView tcg_card_kwang;
+    GifImageView tcg_card_img;
     ImageView tcg_hp_bg, tcg_dice_bg;
     CustomTextView tcg_hp_tv, tcg_dice_tv;
     FrameLayout tcg_card_item, tcg_card_hp, tcg_card_dice;
@@ -95,6 +102,8 @@ public class TCG_Info_2048 {
     TextView tcg_other_name, tcg_other_info;
     TextView tcg_nonchar_info;
 
+    LinearLayout tcg_card_sample;
+
     //Information
     JSONObject jsonObject;
 
@@ -103,6 +112,8 @@ public class TCG_Info_2048 {
     DisplayMetrics displayMetrics;
 
     FrameLayout tcg_card_from_adapter;
+
+    ArrayList<String> talentName = new ArrayList<>();
 
     boolean isCardAdapterGONE = false;
 
@@ -115,7 +126,7 @@ public class TCG_Info_2048 {
         this.tcg = tcg;
         this.tcg_card_from_adapter = tcg_card;
         this.tcg_width = tcg_width;
-
+        talentName.clear();
         String lang = sharedPreferences.getString("curr_lang","zh-HK");
         String is = null;
         String is_dps = null;
@@ -143,6 +154,7 @@ public class TCG_Info_2048 {
 
         /** Method of tcg_detail*/
         tcg_card_include = view.findViewById(R.id.tcg_card_include);
+        tcg_card_sample = view.findViewById(R.id.tcg_card_sample);
         tcg_detail_ll = view.findViewById(R.id.tcg_detail_ll);
         tcg_intro_ll = view.findViewById(R.id.tcg_intro_ll);
         tcg_scroll_sc = view.findViewById(R.id.tcg_scroll_sc);
@@ -262,6 +274,7 @@ public class TCG_Info_2048 {
         tcg_detail_ll.setY(displayMetrics.widthPixels - displayMetrics.density*(120) - ((displayMetrics.widthPixels - displayMetrics.density*(32))/2));
         tcg_intro_ll.setAlpha(0f);
         tcg_detail_ll.setAlpha(0f);
+        tcg_card_sample.getLayoutParams().height = (int) (((displayMetrics.widthPixels - displayMetrics.density*(32))/2)*12/7);
         // init tcg_detail -> ANIMATION
         tcg_card_include.setX(screenPos[0]);
         tcg_card_include.setY(screenPos[1]-displayMetrics.density*(84));
@@ -404,6 +417,7 @@ public class TCG_Info_2048 {
         };
         dialog.setOnKeyListener(keyListener);
         dialog.setContentView(view);
+        dialog.setCanceledOnTouchOutside(true);
         //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
         Window dialogWindow = dialog.getWindow();
         WindowManager.LayoutParams lp = dialogWindow.getAttributes();
@@ -457,10 +471,8 @@ public class TCG_Info_2048 {
         if(jsonObject.has("description")){
             tcg_detail_ll.setVisibility(View.VISIBLE);
             tcg_nonchar_ll.setVisibility(View.VISIBLE);
-            tcg_nonchar_info.setText(jsonObject.getString("description"));
+            tcg_nonchar_info.setText(setSpanAndTv(jsonObject.getString("description")), TextView.BufferType.SPANNABLE);
         }
-
-        System.out.println("tcg.getType() : "+tcg.getType());
 
         if (tcg.getType().equals(TCG.CHAR)){
             tcg_nonchar_ll.setVisibility(View.GONE);
@@ -518,8 +530,7 @@ public class TCG_Info_2048 {
         tcg_item_ll.setVisibility(View.VISIBLE);
         tcg_item_ico.setImageDrawable(item_rss.getTalentIcoByName(getTalentFromCharFile(tcg.getName())[talentIndex],context));
         tcg_item_name.setText(battleTalent.getJSONObject(index).getString("name"));
-        // Word Color replacement will do later
-        tcg_item_info.setText(battleTalent.getJSONObject(index).getString("description"));
+        tcg_item_info.setText(setSpanAndTv(battleTalent.getJSONObject(index).getString("description")), TextView.BufferType.SPANNABLE);
         // {ELEMENT, SPEC, RAND, ENERGY}
         int[] normalDice = getDiceNumFromData(battleTalent.getJSONObject(index).getJSONArray("playcost"));
         if (normalDice[0] != -1){
@@ -653,12 +664,37 @@ public class TCG_Info_2048 {
     }
 
     public void tcg_card_change(){
+        int oneDP = (int) (displayMetrics.density*4);
         int widthNew = (int) ((displayMetrics.widthPixels - displayMetrics.density*(32))/2);
-        Picasso.get()
-                .load (FileLoader.loadIMG(item_rss.getTCGByName(tcg.getName(),context)[0],context))
-                .resize(widthNew,(int) (widthNew*12/7))
-                .error (R.drawable.paimon_lost)
-                .into(tcg_card_img);
+
+        if (tcg.getType().equals(TCG.CHAR)){
+            File gifFile = FileLoader.loadIMG(item_rss.getTCGByName(tcg.getName(),context)[0],context);
+            GifDrawable gifFromFile = null;
+            try { gifFromFile = new GifDrawable(gifFile);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            if (gifFile != null){
+                tcg_card_img.setImageDrawable(gifFromFile);
+                tcg_card_img.getLayoutParams().width = MATCH_PARENT;
+                tcg_card_img.getLayoutParams().height = MATCH_PARENT;
+                tcg_card_kwang.setVisibility(View.GONE);
+            }else{
+                Picasso.get()
+                        .load (FileLoader.loadIMG(item_rss.getTCGByName(tcg.getName(),context)[0],context))
+                        .resize(widthNew-oneDP,(int) ((widthNew-oneDP)*12/7))
+                        .error (R.drawable.paimon_lost)
+                        .into(tcg_card_img);
+            }
+        }else{
+            Picasso.get()
+                    .load (FileLoader.loadIMG(item_rss.getTCGByName(tcg.getName(),context)[0],context))
+                    .resize(widthNew-oneDP,(int) ((widthNew-oneDP)*12/7))
+                    .error (R.drawable.paimon_lost)
+                    .into(tcg_card_img);
+        }
+
+
         tcg_card_name.setText(item_rss.getTCGByName(tcg.getName(),context)[1]);
         tcg_card_name_base.setText(tcg.getName());
         tcg_press_mask.getLayoutParams().width = (int) (0);
@@ -803,5 +839,95 @@ public class TCG_Info_2048 {
 
         return tContents;
 
+    }
+
+    public SpannableString setSpanAndTv(String str){
+        SpannableString mSpannavleString = new SpannableString(str);
+        int[] keywords = {
+                R.string.tcg_keyword_anemo,
+                R.string.tcg_keyword_anemodmg,
+                R.string.tcg_keyword_combataction,
+                R.string.tcg_keyword_cryo,
+                R.string.tcg_keyword_cryoapplication,
+                R.string.tcg_keyword_cryodmg,
+                R.string.tcg_keyword_dendro,
+                R.string.tcg_keyword_dendroapplication,
+                R.string.tcg_keyword_dendrodmg,
+                R.string.tcg_keyword_dendrorelatedreactions,
+                R.string.tcg_keyword_durationrounds,
+                R.string.tcg_keyword_electro,
+                R.string.tcg_keyword_electroapplication,
+                R.string.tcg_keyword_electrodmg,
+                R.string.tcg_keyword_electroinfusion,
+                R.string.tcg_keyword_elementalburst,
+                R.string.tcg_keyword_energy,
+                R.string.tcg_keyword_fastaction,
+                R.string.tcg_keyword_geo,
+                R.string.tcg_keyword_geodmg,
+                R.string.tcg_keyword_hydro,
+                R.string.tcg_keyword_hydroapplication,
+                R.string.tcg_keyword_hydrodmg,
+                R.string.tcg_keyword_hydrorelatedreactions,
+                R.string.tcg_keyword_matchingelement,
+                R.string.tcg_keyword_omnielement,
+                R.string.tcg_keyword_passiveskill,
+                R.string.tcg_keyword_physicaldmg,
+                R.string.tcg_keyword_piercingdmg,
+                R.string.tcg_keyword_pyro,
+                R.string.tcg_keyword_pyroapplication,
+                R.string.tcg_keyword_pyrodmg,
+                R.string.tcg_keyword_pyrorelatedreactions,
+                R.string.tcg_keyword_randomhilichurlsummon,
+                R.string.tcg_keyword_shield,
+                R.string.tcg_keyword_unalignedelement,
+                R.string.tcg_keyword_usages
+        };
+
+        int[] keywordsColor = {
+                R.color.anemo,
+                R.color.anemo,
+                R.color.tcg_other,
+                R.color.cryo,
+                R.color.cryo,
+                R.color.cryo,
+                R.color.dendor,
+                R.color.dendor,
+                R.color.dendor,
+                R.color.dendor,
+                R.color.tcg_other,
+                R.color.electro,
+                R.color.electro,
+                R.color.electro,
+                R.color.electro,
+                R.color.tcg_other,
+                R.color.tcg_energy,
+                R.color.tcg_other,
+                R.color.geo,
+                R.color.geo,
+                R.color.hydro,
+                R.color.hydro,
+                R.color.hydro,
+                R.color.hydro,
+                R.color.tcg_spec,
+                R.color.tcg_white,
+                R.color.tcg_other,
+                R.color.tcg_white,
+                R.color.tcg_other,
+                R.color.pyro,
+                R.color.pyro,
+                R.color.pyro,
+                R.color.pyro,
+                R.color.tcg_other,
+                R.color.tcg_other,
+                R.color.tcg_rand,
+                R.color.tcg_other
+        };
+
+        for (int x = 0 ; x < keywords.length ; x++){
+            for (int i = -1; (i = str.indexOf(context.getString(keywords[x]), i + 1)) != -1; i++) {
+                mSpannavleString.setSpan(new ForegroundColorSpan(context.getResources().getColor(keywordsColor[x])),str.indexOf(context.getString(keywords[x])),str.indexOf(context.getString(keywords[x]))+context.getString(keywords[x]).length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            }
+        }
+        return mSpannavleString;
     }
 }

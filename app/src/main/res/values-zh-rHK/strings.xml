@@ -1317,4 +1317,43 @@
     <string name="catalyst">法器</string>
     <string name="polearm">長柄武器</string>
     <string name="claymore">雙手劍</string>
+    <string name="tcg_keyword_anemo">風元素</string>
+    <string name="tcg_keyword_anemodmg">風元素傷害</string>
+    <string name="tcg_keyword_combataction">戰鬥行動</string>
+    <string name="tcg_keyword_cryo">冰元素</string>
+    <string name="tcg_keyword_cryoapplication">附著冰元素</string>
+    <string name="tcg_keyword_cryodmg">冰元素傷害</string>
+    <string name="tcg_keyword_dendro">草元素</string>
+    <string name="tcg_keyword_dendroapplication">附著草元素</string>
+    <string name="tcg_keyword_dendrodmg">草元素傷害</string>
+    <string name="tcg_keyword_dendrorelatedreactions">草元素相關反應</string>
+    <string name="tcg_keyword_durationrounds">持續回合</string>
+    <string name="tcg_keyword_electro">雷元素</string>
+    <string name="tcg_keyword_electroapplication">附著雷元素</string>
+    <string name="tcg_keyword_electrodmg">雷元素傷害</string>
+    <string name="tcg_keyword_electroinfusion">雷元素附魔</string>
+    <string name="tcg_keyword_elementalburst">元素爆發</string>
+    <string name="tcg_keyword_energy">充能</string>
+    <string name="tcg_keyword_fastaction">快速行動</string>
+    <string name="tcg_keyword_geo">岩元素</string>
+    <string name="tcg_keyword_geodmg">岩元素傷害</string>
+    <string name="tcg_keyword_hydro">水元素</string>
+    <string name="tcg_keyword_hydroapplication">附著水元素</string>
+    <string name="tcg_keyword_hydrodmg">水元素傷害</string>
+    <string name="tcg_keyword_hydrorelatedreactions">水元素相關反應</string>
+    <string name="tcg_keyword_matchingelement">相同元素</string>
+    <string name="tcg_keyword_omnielement">萬能元素</string>
+    <string name="tcg_keyword_passiveskill">被動技能</string>
+    <string name="tcg_keyword_physicaldmg">物理傷害</string>
+    <string name="tcg_keyword_piercingdmg">穿透傷害</string>
+    <string name="tcg_keyword_pyro">火元素</string>
+    <string name="tcg_keyword_pyroapplication">附著火元素</string>
+    <string name="tcg_keyword_pyrodmg">火元素傷害</string>
+    <string name="tcg_keyword_pyrorelatedreactions">火元素相關反應</string>
+    <string name="tcg_keyword_randomhilichurlsummon">隨機「丘丘人」召喚物</string>
+    <string name="tcg_keyword_shield">護盾</string>
+    <string name="tcg_keyword_unalignedelement">無色元素</string>
+    <string name="tcg_keyword_usages">可用次數</string>
+
+
 </resources>

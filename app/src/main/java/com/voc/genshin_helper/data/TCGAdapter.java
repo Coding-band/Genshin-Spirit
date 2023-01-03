@@ -1,13 +1,12 @@
 package com.voc.genshin_helper.data;
 
 import static android.content.Context.MODE_PRIVATE;
+import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.graphics.drawable.Drawable;
-import android.media.Image;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,33 +16,26 @@ import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
-import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.R;
-import com.voc.genshin_helper.ui.CalculatorUI;
-import com.voc.genshin_helper.ui.MMXLVIII.Calculator2048;
 import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
-import com.voc.genshin_helper.ui.MainActivity;
-import com.voc.genshin_helper.ui.SipTik.CalculatorDB_SipTik;
-import com.voc.genshin_helper.ui.SipTik.DeskSipTik;
 import com.voc.genshin_helper.util.CustomTextView;
-import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
-import org.w3c.dom.Text;
-
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
+import pl.droidsonroids.gif.GifDrawable;
+import pl.droidsonroids.gif.GifImageView;
 
 /*
  * Project Genshin Spirit (原神小幫手) was
@@ -67,7 +59,6 @@ public class TCGAdapter extends RecyclerView.Adapter<TCGAdapter.ViewHolder> {
     private TCG tcg ;
     private ArrayList<TCG> tcgA = new ArrayList<TCG>();
     private SharedPreferences sharedPreferences;
-
 
 
     public TCGAdapter(Context context, List<TCG> tcgList, Activity activity, SharedPreferences sharedPreferences) {
@@ -116,24 +107,20 @@ public class TCGAdapter extends RecyclerView.Adapter<TCGAdapter.ViewHolder> {
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        int height_curr = displayMetrics.heightPixels;
         int width_curr = displayMetrics.widthPixels;
-        int curr = width_curr;
-
         int img_width = 320;
-        int width_a = (int) (width_curr - displayMetrics.density*(4+4));
 
-        if ((width_a/img_width - (int)(width_a/img_width)) > 0){
-            img_width = img_width + ((width_a/img_width - (int)(width_a/img_width)) / (int)(width_a/img_width));
+        if (width_curr < (img_width+displayMetrics.density*20)*3){
+            img_width = (int) ((width_curr-displayMetrics.density*20*3)/3);
         }
 
         // Weird
         //tcgA.add(tcg);
         holder.tcg_data = tcg;
-        holder.tcg_width = (int) (img_width+displayMetrics.density*(24));
+        holder.tcg_width = (int) (img_width+displayMetrics.density*(20));
 
         Picasso.get()
-                .load (FileLoader.loadIMG(item_rss.getTCGByName(tcg.getName(),context)[0],context))
+                .load (FileLoader.loadIMG(item_rss.getTCGByNameBase(tcg.getName(),context)[0],context))
                 .resize(img_width,(int) (img_width*12/7))
                 .error (R.drawable.tcg_card_unknown)
                 .into (holder.tcg_card_img);
@@ -192,7 +179,8 @@ public class TCGAdapter extends RecyclerView.Adapter<TCGAdapter.ViewHolder> {
     public class ViewHolder extends RecyclerView.ViewHolder {
         ImageView tcg_press_mask ;
         TextView tcg_card_name, tcg_card_name_base;
-        ImageView tcg_card_img, tcg_card_kwang;
+        ImageView tcg_card_kwang;
+        GifImageView tcg_card_img;
         ImageView tcg_hp_bg, tcg_dice_bg;
         CustomTextView tcg_hp_tv, tcg_dice_tv;
         FrameLayout tcg_card_item, tcg_card_hp, tcg_card_dice, tcg_card;

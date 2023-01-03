@@ -11,6 +11,7 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 public class TCG implements Serializable {
     public String name; //名稱
+    public String localeName; //名稱
     public String fileName; //檔案名稱
     public String type; //卡牌類型
     public String subType; //卡牌類型--EXT
@@ -44,7 +45,7 @@ public class TCG implements Serializable {
     public static final String Environment = "場地";
     public static final String Partner = "夥伴";
     public static final String Tool = "道具";
-    public static final String Element = "元素共鳴";
+    public static final String ElementalResonance = "元素共鳴";
     public static final String Special = "特殊牌";
     public static final String Food = "料理";
     public static final String CardBack = "卡背";
@@ -62,6 +63,14 @@ public class TCG implements Serializable {
 
 
     public TCG(){}
+
+    public String getLocaleName() {
+        return localeName;
+    }
+
+    public void setLocaleName(String localeName) {
+        this.localeName = localeName;
+    }
 
     public String getFileName() {
         return fileName;

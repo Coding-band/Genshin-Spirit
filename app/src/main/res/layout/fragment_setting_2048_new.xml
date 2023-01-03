@@ -139,6 +139,7 @@
                     android:background="@drawable/bg_dialog_btn"
                     android:fontFamily="@font/genshin_font"
                     android:text="@string/clean_cookies"
+                    app:backgroundTint="@color/tab_bg_2048"
                     android:textColor="@color/tv_anti_color_2048" />
 
                 <LinearLayout
@@ -180,6 +181,7 @@
                     android:background="@drawable/bg_dialog_btn"
                     android:fontFamily="@font/genshin_font"
                     android:text="@string/custom_icon"
+                    app:backgroundTint="@color/tab_bg_2048"
                     android:textColor="@color/tv_anti_color_2048" />
 
                 <LinearLayout
@@ -221,6 +223,7 @@
                     android:background="@drawable/bg_dialog_btn"
                     android:fontFamily="@font/genshin_font"
                     android:text="@string/custom_card"
+                    app:backgroundTint="@color/tab_bg_2048"
                     android:textColor="@color/tv_anti_color_2048" />
 
             </LinearLayout>
@@ -317,7 +320,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
-                        android:buttonTint="@color/tv_anti_color_2048"
+                        app:buttonTint="@color/tv_anti_color_2048"
                         android:checked="false"
                         android:fontFamily="@font/genshin_font"
                         android:text="@string/light_theme"
@@ -328,7 +331,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
-                        android:buttonTint="@color/tv_anti_color_2048"
+                        app:buttonTint="@color/tv_anti_color_2048"
                         android:checked="false"
                         android:fontFamily="@font/genshin_font"
                         android:text="@string/dark_theme"
@@ -339,7 +342,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
-                        android:buttonTint="@color/tv_anti_color_2048"
+                        app:buttonTint="@color/tv_anti_color_2048"
                         android:checked="false"
                         android:fontFamily="@font/genshin_font"
                         android:text="@string/sys_theme"
@@ -402,7 +405,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
-                        android:buttonTint="@color/tv_anti_color_2048"
+                        app:buttonTint="@color/tv_anti_color_2048"
                         android:checked="false"
                         android:fontFamily="@font/genshin_font"
                         android:text="@string/rectangle"
@@ -413,7 +416,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
-                        android:buttonTint="@color/tv_anti_color_2048"
+                        app:buttonTint="@color/tv_anti_color_2048"
                         android:checked="false"
                         android:fontFamily="@font/genshin_font"
                         android:text="@string/square"
@@ -424,7 +427,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
-                        android:buttonTint="@color/tv_anti_color_2048"
+                        app:buttonTint="@color/tv_anti_color_2048"
                         android:checked="false"
                         android:fontFamily="@font/genshin_font"
                         android:text="@string/card"
@@ -435,7 +438,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
-                        android:buttonTint="@color/tv_anti_color_2048"
+                        app:buttonTint="@color/tv_anti_color_2048"
                         android:checked="false"
                         android:fontFamily="@font/genshin_font"
                         android:text="@string/detail"
@@ -521,7 +524,7 @@
                                 android:id="@+id/ui_2O48_rb"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:buttonTint="@color/tv_anti_color_2048"
+                                app:buttonTint="@color/tv_anti_color_2048"
                                 android:checked="false"
                                 android:fontFamily="@font/genshin_font"
                                 android:paddingLeft="4dp"
@@ -556,7 +559,7 @@
                                 android:id="@+id/ui_SipTik_rb"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:buttonTint="@color/tv_anti_color_2048"
+                                app:buttonTint="@color/tv_anti_color_2048"
                                 android:checked="false"
                                 android:fontFamily="@font/genshin_font"
                                 android:paddingLeft="4dp"
@@ -591,7 +594,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:buttonTint="@color/tv_anti_color_2048"
+                                app:buttonTint="@color/tv_anti_color_2048"
                                 android:checked="false"
                                 android:fontFamily="@font/genshin_font"
                                 android:paddingLeft="4dp"
@@ -686,7 +689,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="24dp"
                                 android:layout_marginRight="24dp"
-                                android:buttonTint="@color/tv_anti_color_2048"
+                                app:buttonTint="@color/tv_anti_color_2048"
                                 android:checked="false"
                                 android:fontFamily="@font/genshin_font"
                                 android:paddingLeft="4dp"
@@ -721,7 +724,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="24dp"
                                 android:layout_marginRight="24dp"
-                                android:buttonTint="@color/tv_anti_color_2048"
+                                app:buttonTint="@color/tv_anti_color_2048"
                                 android:checked="false"
                                 android:fontFamily="@font/genshin_font"
                                 android:paddingLeft="4dp"
@@ -815,7 +818,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="24dp"
                                 android:layout_marginRight="24dp"
-                                android:buttonTint="@color/tv_anti_color_2048"
+                                app:buttonTint="@color/tv_anti_color_2048"
                                 android:checked="false"
                                 android:fontFamily="@font/genshin_font"
                                 android:paddingLeft="4dp"
@@ -850,7 +853,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="24dp"
                                 android:layout_marginRight="24dp"
-                                android:buttonTint="@color/tv_anti_color_2048"
+                                app:buttonTint="@color/tv_anti_color_2048"
                                 android:checked="false"
                                 android:fontFamily="@font/genshin_font"
                                 android:paddingLeft="4dp"
@@ -921,6 +924,7 @@
                     android:layout_marginBottom="8dp"
                     android:layout_weight="1"
                     android:background="@drawable/bg_dialog_btn"
+                    app:backgroundTint="@color/tab_bg_2048"
                     android:fontFamily="@font/genshin_font"
                     android:text="@string/background_press_set"
                     android:visibility="visible" />
@@ -937,6 +941,7 @@
                     android:layout_marginBottom="8dp"
                     android:layout_weight="1"
                     android:background="@drawable/bg_dialog_btn"
+                    app:backgroundTint="@color/tab_bg_2048"
                     android:fontFamily="@font/genshin_font"
                     android:text="@string/cal_reset"
                     android:visibility="visible" />
@@ -1181,6 +1186,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/bg_dialog_btn"
+                app:backgroundTint="@color/tab_bg_2048"
                 android:fontFamily="@font/genshin_font"
                 android:text="@string/update_download_check" />
 
@@ -1203,6 +1209,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/bg_dialog_btn"
+                app:backgroundTint="@color/tab_bg_2048"
                 android:fontFamily="@font/genshin_font"
                 android:text="@string/update_download_update_base" />
 

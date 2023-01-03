@@ -22,7 +22,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -171,7 +171,7 @@
                                     android:layout_marginLeft="8dp"
                                     android:fontFamily="@font/genshin_font"
                                     android:text="我方執行「切換角色」行動時：少花費1個元素骰。（每回合1次）"
-                                    android:textColor="@color/tcg_info_tv"
+                                    android:textColor="@color/tv_color_less"
                                     android:textSize="14sp" />
 
                             </LinearLayout>

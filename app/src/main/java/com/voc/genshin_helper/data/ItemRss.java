@@ -1180,8 +1180,42 @@ public class ItemRss {
         }
     }
 
-    // In Fact, we still haven't made enemy card.
     public String[] getTCGByName(String name, Context context){
+        switch (name){
+            case "Barbara" : return new String[]{"/anim/tcg_anim_barbara.gif", context.getString(R.string.tcg_barbara)};
+            case "Bennett" : return new String[]{"/anim/tcg_anim_bennett.gif", context.getString(R.string.tcg_bennett)};
+            case "Chongyun" : return new String[]{"/anim/tcg_anim_chongyun.gif", context.getString(R.string.tcg_chongyun)};
+            case "Collei" : return new String[]{"/anim/tcg_anim_collei.gif", context.getString(R.string.tcg_collei)};
+            case "Cyno" : return new String[]{"/anim/tcg_anim_cyno.gif", context.getString(R.string.tcg_cyno)};
+            case "Diluc" : return new String[]{"/anim/tcg_anim_diluc.gif", context.getString(R.string.tcg_diluc)};
+            case "Diona" : return new String[]{"/anim/tcg_anim_diona.gif", context.getString(R.string.tcg_diona)};
+            case "Fatui Pyro Agent" : return new String[]{"/anim/tcg_anim_fatui_pyro_agent.gif", context.getString(R.string.tcg_fatui_pyro_agent)};
+            case "Fischl" : return new String[]{"/anim/tcg_anim_fischl.gif", context.getString(R.string.tcg_fischl)};
+            case "Ganyu" : return new String[]{"/anim/tcg_anim_ganyu.gif", context.getString(R.string.tcg_ganyu)};
+            case "Jadeplume Terrorshroom" : return new String[]{"/anim/tcg_anim_jadeplume_terrorshroom.gif", context.getString(R.string.tcg_jadeplume_terrorshroom)};
+            case "Jean" : return new String[]{"/anim/tcg_anim_jean.gif", context.getString(R.string.tcg_jean)};
+            case "Kaeya" : return new String[]{"/anim/tcg_anim_kaeya.gif", context.getString(R.string.tcg_kaeya)};
+            case "Kamisato Ayaka" : return new String[]{"/anim/tcg_anim_kamisato_ayaka.gif", context.getString(R.string.tcg_kamisato_ayaka)};
+            case "Keqing" : return new String[]{"/anim/tcg_anim_keqing.gif", context.getString(R.string.tcg_keqing)};
+            case "Maguu Kenki" : return new String[]{"/anim/tcg_anim_maguu_kenki.gif", context.getString(R.string.tcg_maguu_kenki)};
+            case "Mirror Maiden" : return new String[]{"/anim/tcg_anim_mirror_maiden.gif", context.getString(R.string.tcg_mirror_maiden)};
+            case "Mona" : return new String[]{"/anim/tcg_anim_mona.gif", context.getString(R.string.tcg_mona)};
+            case "Ningguang" : return new String[]{"/anim/tcg_anim_ningguang.gif", context.getString(R.string.tcg_ningguang)};
+            case "Noelle" : return new String[]{"/anim/tcg_anim_noelle.gif", context.getString(R.string.tcg_noelle)};
+            case "Razor" : return new String[]{"/anim/tcg_anim_razor.gif", context.getString(R.string.tcg_razor)};
+            case "Rhodeia of Loch" : return new String[]{"/anim/tcg_anim_rhodeia_of_loch.gif", context.getString(R.string.tcg_rhodeia_of_loch)};
+            case "Stonehide Lawachurl" : return new String[]{"/anim/tcg_anim_stonehide_lawachurl.gif", context.getString(R.string.tcg_stonehide_lawachurl)};
+            case "Sucrose" : return new String[]{"/anim/tcg_anim_sucrose.gif", context.getString(R.string.tcg_sucrose)};
+            case "Xiangling" : return new String[]{"/anim/tcg_anim_xiangling.gif", context.getString(R.string.tcg_xiangling)};
+            case "Xingqiu" : return new String[]{"/anim/tcg_anim_xingqiu.gif", context.getString(R.string.tcg_xingqiu)};
+            case "Yoimiya" : return new String[]{"/anim/tcg_anim_yoimiya.gif", context.getString(R.string.tcg_yoimiya)};
+
+            default: return getTCGByNameBase(name,context);
+        }
+    }
+
+    // In Fact, we still haven't made enemy card.
+    public String[] getTCGByNameBase(String name, Context context){
         switch (name){
             case "Ganyu" : return new String[]{"/drawable/tcg_ganyu.png", context.getString(R.string.tcg_ganyu)};
             case "Kaeya" : return new String[]{"/drawable/tcg_kaeya.png", context.getString(R.string.tcg_kaeya)};

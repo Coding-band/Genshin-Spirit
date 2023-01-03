@@ -144,6 +144,7 @@
     <color name="tab_tcg_selected_dot">#D3BC8E</color>
     <color name="tcg_card_bg">#2D363F</color>
     <color name="tcg_title_tv">#A9B8CE</color>
+    <color name="tcg_info_tv">#C4C4C4</color>
     <color name="tcg_card_stroke">#434D59</color>
 
 
@@ -206,6 +207,12 @@
     <color name="light_blue_900">#FF01579B</color>
 
     <color name="setting_ico_color">#000000</color>
+
+    <color name="tcg_energy">#CC8824</color>
+    <color name="tcg_spec">#CAB18D</color>
+    <color name="tcg_rand">#1F1F1F</color>
+    <color name="tcg_white">#FFFFFF</color>
+    <color name="tcg_other">#A2A2A2</color>
 
 
 </resources>

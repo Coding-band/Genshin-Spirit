@@ -1324,6 +1324,43 @@
     <string name="polearm">長柄武器</string>
     <string name="claymore">両手剣</string>
     <string name="passive_atk">固有スキル</string>
+    <string name="tcg_keyword_anemo">風元素</string>
+    <string name="tcg_keyword_anemodmg">風元素ダメージ</string>
+    <string name="tcg_keyword_combataction">戦闘アクション</string>
+    <string name="tcg_keyword_cryo">氷元素</string>
+    <string name="tcg_keyword_cryoapplication">氷元素付着</string>
+    <string name="tcg_keyword_cryodmg">氷元素ダメージ</string>
+    <string name="tcg_keyword_dendro">草元素</string>
+    <string name="tcg_keyword_dendroapplication">草元素付着</string>
+    <string name="tcg_keyword_dendrodmg">草元素ダメージ</string>
+    <string name="tcg_keyword_dendrorelatedreactions">草元素関連反応</string>
+    <string name="tcg_keyword_durationrounds">継続ラウンド数</string>
+    <string name="tcg_keyword_electro">雷元素</string>
+    <string name="tcg_keyword_electroapplication">雷元素付着</string>
+    <string name="tcg_keyword_electrodmg">雷元素ダメージ</string>
+    <string name="tcg_keyword_electroinfusion">雷元素付与</string>
+    <string name="tcg_keyword_elementalburst">元素爆発</string>
+    <string name="tcg_keyword_energy">チャージ</string>
+    <string name="tcg_keyword_fastaction">クイックアクション</string>
+    <string name="tcg_keyword_geo">岩元素</string>
+    <string name="tcg_keyword_geodmg">岩元素ダメージ</string>
+    <string name="tcg_keyword_hydro">水元素</string>
+    <string name="tcg_keyword_hydroapplication">水元素付着</string>
+    <string name="tcg_keyword_hydrodmg">水元素ダメージ</string>
+    <string name="tcg_keyword_hydrorelatedreactions">水元素関連反応</string>
+    <string name="tcg_keyword_matchingelement">同一元素</string>
+    <string name="tcg_keyword_omnielement">万能元素</string>
+    <string name="tcg_keyword_passiveskill">固有スキル</string>
+    <string name="tcg_keyword_physicaldmg">物理ダメージ</string>
+    <string name="tcg_keyword_piercingdmg">貫通ダメージ</string>
+    <string name="tcg_keyword_pyro">炎元素</string>
+    <string name="tcg_keyword_pyroapplication">炎元素付着</string>
+    <string name="tcg_keyword_pyrodmg">炎元素ダメージ</string>
+    <string name="tcg_keyword_pyrorelatedreactions">炎元素関連反応</string>
+    <string name="tcg_keyword_randomhilichurlsummon">ランダム召喚物「ヒルチャール」</string>
+    <string name="tcg_keyword_shield">シールド</string>
+    <string name="tcg_keyword_unalignedelement">無色元素</string>
+    <string name="tcg_keyword_usages">使用可能回数</string>
 
 </resources>
 

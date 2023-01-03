@@ -95,6 +95,7 @@ import com.voc.genshin_helper.data.WeaponsAdapter;
 import com.voc.genshin_helper.database.DataBaseContract;
 import com.voc.genshin_helper.database.DataBaseHelper;
 import com.voc.genshin_helper.kidding.GoSleep;
+import com.voc.genshin_helper.kidding.TellMeWhy;
 import com.voc.genshin_helper.tutorial.TutorialUI;
 import com.voc.genshin_helper.ui.AlarmUI;
 import com.voc.genshin_helper.ui.BackgroundConfirmActivity;
@@ -3837,7 +3838,7 @@ public class Desk2048 extends AppCompatActivity {
         {
             OkHttpClient client = new OkHttpClient();
             String url = "http://113.254.213.196/genshin_spirit/update.json";
-            if (BuildConfig.FLAVOR.equals("dev")){
+            if (BuildConfig.FLAVOR.equals("dev") || BuildConfig.FLAVOR.equals("beta")){
                 url = "http://113.254.213.196/genshin_spirit/update_dev.json";
             }
             Request request = new Request.Builder().url(url).build();
