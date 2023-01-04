@@ -88,6 +88,33 @@ public class TCG2048 {
     int indicatorWidth;
     final int itemNum = 4;
 
+    boolean show_dice_pyro = false;
+    boolean show_dice_hydro = false;
+    boolean show_dice_anemo = false;
+    boolean show_dice_electro = false;
+    boolean show_dice_dendro = false;
+    boolean show_dice_cryo = false;
+    boolean show_dice_geo = false;
+    boolean show_dice_spec = false;
+    boolean show_dice_rand = false;
+
+    boolean show_tcg_Mondstadt = false;
+    boolean show_tcg_Liyue = false;
+    boolean show_tcg_Inazuma = false;
+    boolean show_tcg_Sumeru = false;
+    boolean show_tcg_Fatui = false;
+    boolean show_tcg_Monster = false;
+    boolean show_tcg_Talent = false;
+    boolean show_tcg_Weapon = false;
+    boolean show_tcg_Artifact = false;
+    boolean show_tcg_Environment = false;
+    boolean show_tcg_Partner = false;
+    boolean show_tcg_Tool = false;
+    boolean show_tcg_ElementalResonance = false;
+    boolean show_tcg_Special = false;
+    boolean show_tcg_Food = false;
+    boolean show_tcg_CardBack = false;
+
     View viewPager0, viewPager1, viewPager2, viewPager3, viewPager4;
     View mIndicator;
 
@@ -356,8 +383,246 @@ public class TCG2048 {
             };
         });
 
+        tcg_filter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+                View view = View.inflate(context, R.layout.menu_tcg_filter_2048, null);
+                // Element
+                TextView menu_elements_title_tv = view.findViewById(R.id.menu_elements_title_tv);
+                LinearLayout menu_elements_ll = view.findViewById(R.id.menu_elements_ll);
+                menu_elements_title_tv.setVisibility(View.GONE);
+                menu_elements_ll.setVisibility(View.GONE);
+
+                // Weapons
+                ImageView ico_sword = view.findViewById(R.id.ico_sword);
+                ImageView ico_claymore = view.findViewById(R.id.ico_claymore);
+                ImageView ico_polearm = view.findViewById(R.id.ico_polearm);
+                ImageView ico_bow = view.findViewById(R.id.ico_bow);
+                ImageView ico_catalyst = view.findViewById(R.id.ico_catalyst);
+                // Rarity
+                CheckBox menu_rare4 = view.findViewById(R.id.menu_rare4);
+                CheckBox menu_rare5 = view.findViewById(R.id.menu_rare5);
+                RatingBar menu_rating = view.findViewById(R.id.menu_rating);
+
+                menu_rare4.setVisibility(View.GONE);
+                menu_rare5.setVisibility(View.GONE);
+                menu_rating.setVisibility(View.VISIBLE);
+
+                // Release
+                CheckBox menu_release_0 = view.findViewById(R.id.menu_release_0);
+                CheckBox menu_release_1 = view.findViewById(R.id.menu_release_1);
+
+                // Role
+                TextView menu_role_title_tv = view.findViewById(R.id.menu_role_title_tv);
+                LinearLayout menu_role_ll = view.findViewById(R.id.menu_role_ll);
+                menu_role_title_tv.setVisibility(View.GONE);
+                menu_role_ll.setVisibility(View.GONE);
+
+                // Function Buttons
+                ImageView cancel = view.findViewById(R.id.menu_cancel);
+                FrameLayout reset = view.findViewById(R.id.menu_reset);
+                FrameLayout ok = view.findViewById(R.id.menu_ok);
+
+                show_dice_pyro = sharedPreferences.getBoolean("show_dice_pyro",false);
+                show_dice_hydro = sharedPreferences.getBoolean("show_dice_hydro",false);
+                show_dice_anemo = sharedPreferences.getBoolean("show_dice_anemo",false);
+                show_dice_electro = sharedPreferences.getBoolean("show_dice_electro",false);
+                show_dice_dendro = sharedPreferences.getBoolean("show_dice_dendro",false);
+                show_dice_cryo = sharedPreferences.getBoolean("show_dice_cryo",false);
+                show_dice_geo = sharedPreferences.getBoolean("show_dice_geo",false);
+                show_dice_spec = sharedPreferences.getBoolean("show_dice_spec",false);
+                show_dice_rand = sharedPreferences.getBoolean("show_dice_rand",false);
+
+                show_tcg_Mondstadt = sharedPreferences.getBoolean("show_tcg_Mondstadt",false);
+                show_tcg_Liyue = sharedPreferences.getBoolean("show_tcg_Liyue",false);
+                show_tcg_Inazuma = sharedPreferences.getBoolean("show_tcg_Inazuma",false);
+                show_tcg_Sumeru = sharedPreferences.getBoolean("show_tcg_Sumeru",false);
+                show_tcg_Fatui = sharedPreferences.getBoolean("show_tcg_Fatui",false);
+                show_tcg_Monster = sharedPreferences.getBoolean("show_tcg_Monster",false);
+                show_tcg_Talent = sharedPreferences.getBoolean("show_tcg_Talent",false);
+                show_tcg_Weapon = sharedPreferences.getBoolean("show_tcg_Weapon",false);
+                show_tcg_Artifact = sharedPreferences.getBoolean("show_tcg_Artifact",false);
+                show_tcg_Environment = sharedPreferences.getBoolean("show_tcg_Environment",false);
+                show_tcg_Partner = sharedPreferences.getBoolean("show_tcg_Partner",false);
+                show_tcg_Tool = sharedPreferences.getBoolean("show_tcg_Tool",false);
+                show_tcg_ElementalResonance = sharedPreferences.getBoolean("show_tcg_ElementalResonance",false);
+                show_tcg_Special = sharedPreferences.getBoolean("show_tcg_Special",false);
+                show_tcg_Food = sharedPreferences.getBoolean("show_tcg_Food",false);
+                show_tcg_CardBack = sharedPreferences.getBoolean("show_tcg_CardBack",false);
+
+                cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
+
+                reset.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        show_dice_pyro = false;
+                        show_dice_hydro = false;
+                        show_dice_anemo = false;
+                        show_dice_electro = false;
+                        show_dice_dendro = false;
+                        show_dice_cryo = false;
+                        show_dice_geo = false;
+                        show_dice_spec = false;
+                        show_dice_rand = false;
+
+                        show_tcg_Mondstadt = false;
+                        show_tcg_Liyue = false;
+                        show_tcg_Inazuma = false;
+                        show_tcg_Sumeru = false;
+                        show_tcg_Fatui = false;
+                        show_tcg_Monster = false;
+                        show_tcg_Talent = false;
+                        show_tcg_Weapon = false;
+                        show_tcg_Artifact = false;
+                        show_tcg_Environment = false;
+                        show_tcg_Partner = false;
+                        show_tcg_Tool = false;
+                        show_tcg_ElementalResonance = false;
+                        show_tcg_Special = false;
+                        show_tcg_Food = false;
+                        show_tcg_CardBack = false;
+
+                        editor.putBoolean("show_dice_pyro",show_dice_pyro);
+                        editor.putBoolean("show_dice_hydro",show_dice_hydro);
+                        editor.putBoolean("show_dice_anemo",show_dice_anemo);
+                        editor.putBoolean("show_dice_electro",show_dice_electro);
+                        editor.putBoolean("show_dice_dendro",show_dice_dendro);
+                        editor.putBoolean("show_dice_cryo",show_dice_cryo);
+                        editor.putBoolean("show_dice_geo",show_dice_geo);
+                        editor.putBoolean("show_dice_spec",show_dice_spec);
+                        editor.putBoolean("show_dice_rand",show_dice_rand);
+                        editor.putBoolean("show_tcg_Mondstadt",show_tcg_Mondstadt);
+                        editor.putBoolean("show_tcg_Liyue",show_tcg_Liyue);
+                        editor.putBoolean("show_tcg_Inazuma",show_tcg_Inazuma);
+                        editor.putBoolean("show_tcg_Sumeru",show_tcg_Sumeru);
+                        editor.putBoolean("show_tcg_Fatui",show_tcg_Fatui);
+                        editor.putBoolean("show_tcg_Monster",show_tcg_Monster);
+                        editor.putBoolean("show_tcg_Talent",show_tcg_Talent);
+                        editor.putBoolean("show_tcg_Weapon",show_tcg_Weapon);
+                        editor.putBoolean("show_tcg_Artifact",show_tcg_Artifact);
+                        editor.putBoolean("show_tcg_Environment",show_tcg_Environment);
+                        editor.putBoolean("show_tcg_Partner",show_tcg_Partner);
+                        editor.putBoolean("show_tcg_Tool",show_tcg_Tool);
+                        editor.putBoolean("show_tcg_ElementalResonance",show_tcg_ElementalResonance);
+                        editor.putBoolean("show_tcg_Special",show_tcg_Special);
+                        editor.putBoolean("show_tcg_Food",show_tcg_Food);
+                        editor.putBoolean("show_tcg_CardBack",show_tcg_CardBack);
+
+                        editor.apply();
+                        dialog.dismiss();
 
 
+                        ArrayList<TCG> tempList = charList;
+                        TCGAdapter mTempAdapter = mCharAdapter;
+                        switch (viewPager.getCurrentItem()){
+                            case 0 : {tempList = charList; mTempAdapter = mCharAdapter;break;}
+                            case 1 : {tempList = equipList; mTempAdapter = mEquipAdapter;break;}
+                            case 2 : {tempList = supportList; mTempAdapter = mSupportAdapter;break;}
+                            case 3 : {tempList = eventList; mTempAdapter = mEventAdapter;break;}
+                            case 4 : {tempList = backsideList; mTempAdapter = mBackSideAdapter;break;}
+                        }
+
+                        mTempAdapter.filterList(tempList);
+
+                    }
+                });
+
+                ok.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        filterTCGAlgothm();
+                        dialog.dismiss();
+                    }
+                });
+
+                dialog.setContentView(view);
+                dialog.setCanceledOnTouchOutside(true);
+                //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
+                Window dialogWindow = dialog.getWindow();
+                WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+                // 2O48 DESIGN
+                dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+                dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
+
+                DisplayMetrics displayMetrics = new DisplayMetrics();
+                activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+                int height = displayMetrics.heightPixels;
+                int width = displayMetrics.widthPixels;
+
+                lp.width = width;
+                lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                lp.gravity = Gravity.BOTTOM;
+                dialogWindow.setAttributes(lp);
+                dialog.show();
+            }
+        });
+
+
+    }
+
+    private void filterTCGAlgothm() {
+        ArrayList<TCG> tempList = charList;
+        TCGAdapter mTempAdapter = mCharAdapter;
+        switch (viewPager.getCurrentItem()){
+            case 0 : {tempList = charList; mTempAdapter = mCharAdapter;break;}
+            case 1 : {tempList = equipList; mTempAdapter = mEquipAdapter;break;}
+            case 2 : {tempList = supportList; mTempAdapter = mSupportAdapter;break;}
+            case 3 : {tempList = eventList; mTempAdapter = mEventAdapter;break;}
+            case 4 : {tempList = backsideList; mTempAdapter = mBackSideAdapter;break;}
+        }
+
+        ArrayList<TCG> filteredList = new ArrayList<>();
+        for (TCG item : tempList) {
+            // DEFAULT
+            if((show_dice_pyro == false && show_dice_hydro == false && show_dice_anemo == false && show_dice_electro == false && show_dice_dendro == false && show_dice_cryo == false && show_dice_geo == false && show_dice_spec == false && show_dice_rand == false ) &&
+                    (show_tcg_Mondstadt == false && show_tcg_Liyue == false && show_tcg_Inazuma == false && show_tcg_Sumeru == false && show_tcg_Fatui == false && show_tcg_Monster == false ) &&
+                    (show_tcg_Talent == false && show_tcg_Weapon == false && show_tcg_Artifact == false) &&
+                    (show_tcg_Environment == false && show_tcg_Partner == false && show_tcg_Tool == false) &&
+                    (show_tcg_ElementalResonance == false && show_tcg_Special == false && show_tcg_Food == false) &&
+                    (show_tcg_CardBack == false )) {
+                filteredList.add(item);
+            }else{
+                boolean isAllTrue = true;
+
+
+                if (isAllTrue == true){
+                    filteredList.add(item);
+                }
+            }
+        }
+        mWeaponList.removeAllViews();
+        mWeaponAdapter.filterList(filteredList);
+        editor.putBoolean("show_pyro",show_pyro);
+        editor.putBoolean("show_hydro",show_hydro);
+        editor.putBoolean("show_anemo",show_anemo);
+        editor.putBoolean("show_electro",show_electro);
+        editor.putBoolean("show_dendor",show_dendor);
+        editor.putBoolean("show_cryo",show_cryo);
+        editor.putBoolean("show_geo",show_geo);
+        editor.putBoolean("show_sword",show_sword);
+        editor.putBoolean("show_claymore",show_claymore);
+        editor.putBoolean("show_polearm",show_polearm);
+        editor.putBoolean("show_bow",show_bow);
+        editor.putBoolean("show_catalyst",show_catalyst);
+        editor.putBoolean("show_rare1",show_rare1);
+        editor.putBoolean("show_rare2",show_rare2);
+        editor.putBoolean("show_rare3",show_rare3);
+        editor.putBoolean("show_rare4",show_rare4);
+        editor.putBoolean("show_rare5",show_rare5);
+        editor.putBoolean("show_released",show_released);
+        editor.putBoolean("show_unreleased",show_unreleased);
+        editor.putBoolean("show_dps",show_dps);
+        editor.putBoolean("show_sub_dps",show_sub_dps);
+        editor.putBoolean("show_util",show_util);
+        editor.apply();
+
+        mTempAdapter.filterList(tempList);
     }
 
 

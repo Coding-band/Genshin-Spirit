@@ -72,7 +72,7 @@
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
                         android:layout_margin="4dp"
@@ -82,6 +82,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:orientation="horizontal">
@@ -98,6 +100,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:orientation="horizontal">
@@ -114,6 +118,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:orientation="horizontal">
@@ -130,6 +136,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:orientation="horizontal">
@@ -146,13 +154,16 @@
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:orientation="horizontal">
 
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:orientation="horizontal">
@@ -169,6 +180,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:orientation="horizontal">
@@ -185,6 +198,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:orientation="horizontal">
@@ -201,6 +216,8 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:orientation="horizontal">
@@ -218,6 +235,8 @@
                             android:id="@+id/rand_ico"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginRight="4dp"
                             android:layout_weight="1"
                             android:gravity="center"
                             android:orientation="horizontal">
@@ -252,144 +271,587 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="4dp"
                     android:gravity="center"
-                    android:orientation="horizontal">
+                    android:orientation="vertical" >
 
-                    <com.google.android.material.chip.ChipGroup
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:id="@+id/menu_tag_char"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_gravity="center">
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Filter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/genshin_font"
-                            android:gravity="center"
-                            android:text="蒙德" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
 
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Filter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:checkable="true"
-                            android:checked="true"
-                            android:fontFamily="@font/genshin_font"
-                            android:gravity="center"
-                            android:text="璃月" />
+                            <CheckBox
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/item_2048_checkbox_bg"
+                                android:button="@drawable/item_2048_checkbox"
+                                android:checked="false"
+                                android:clickable="true"
+                                android:fontFamily="@font/genshin_font"
+                                android:gravity="center"
+                                android:layoutDirection="rtl"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="12dp"
+                                android:paddingBottom="12dp"
+                                android:singleLine="true"
+                                android:text="蒙德"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/tv_spinner_color_2048"
+                                android:textSize="16sp"
+                                app:buttonTint="@null"
+                                app:useMaterialThemeColors="false" />
 
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Filter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/genshin_font"
-                            android:gravity="center"
-                            android:text="稻妻" />
+                            <CheckBox
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/item_2048_checkbox_bg"
+                                android:button="@drawable/item_2048_checkbox"
+                                android:checked="false"
+                                android:clickable="true"
+                                android:fontFamily="@font/genshin_font"
+                                android:gravity="center"
+                                android:layoutDirection="rtl"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="12dp"
+                                android:paddingBottom="12dp"
+                                android:singleLine="true"
+                                android:text="璃月"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/tv_spinner_color_2048"
+                                android:textSize="16sp"
+                                app:buttonTint="@null"
+                                app:useMaterialThemeColors="false" />
+                        </LinearLayout>
 
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Filter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/genshin_font"
-                            android:gravity="center"
-                            android:text="須彌" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
 
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Filter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/genshin_font"
-                            android:gravity="center"
-                            android:text="愚人眾" />
+                            <CheckBox
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/item_2048_checkbox_bg"
+                                android:button="@drawable/item_2048_checkbox"
+                                android:checked="false"
+                                android:clickable="true"
+                                android:fontFamily="@font/genshin_font"
+                                android:gravity="center"
+                                android:layoutDirection="rtl"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="12dp"
+                                android:paddingBottom="12dp"
+                                android:singleLine="true"
+                                android:text="稻妻"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/tv_spinner_color_2048"
+                                android:textSize="16sp"
+                                app:buttonTint="@null"
+                                app:useMaterialThemeColors="false" />
 
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Filter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/genshin_font"
-                            android:gravity="center"
-                            android:text="魔物" />
+                            <CheckBox
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/item_2048_checkbox_bg"
+                                android:button="@drawable/item_2048_checkbox"
+                                android:checked="false"
+                                android:clickable="true"
+                                android:fontFamily="@font/genshin_font"
+                                android:gravity="center"
+                                android:layoutDirection="rtl"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="12dp"
+                                android:paddingBottom="12dp"
+                                android:singleLine="true"
+                                android:text="須彌"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/tv_spinner_color_2048"
+                                android:textSize="16sp"
+                                app:buttonTint="@null"
+                                app:useMaterialThemeColors="false" />
+                        </LinearLayout>
 
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Filter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/genshin_font"
-                            android:gravity="center"
-                            android:text="天賦" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
 
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Filter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/genshin_font"
-                            android:gravity="center"
-                            android:text="武器" />
+                            <CheckBox
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/item_2048_checkbox_bg"
+                                android:button="@drawable/item_2048_checkbox"
+                                android:checked="false"
+                                android:clickable="true"
+                                android:fontFamily="@font/genshin_font"
+                                android:gravity="center"
+                                android:layoutDirection="rtl"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="12dp"
+                                android:paddingBottom="12dp"
+                                android:singleLine="true"
+                                android:text="愚人眾"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/tv_spinner_color_2048"
+                                android:textSize="16sp"
+                                app:buttonTint="@null"
+                                app:useMaterialThemeColors="false" />
 
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Filter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/genshin_font"
-                            android:gravity="center"
-                            android:text="聖遺物" />
+                            <CheckBox
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/item_2048_checkbox_bg"
+                                android:button="@drawable/item_2048_checkbox"
+                                android:checked="false"
+                                android:clickable="true"
+                                android:fontFamily="@font/genshin_font"
+                                android:gravity="center"
+                                android:layoutDirection="rtl"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="12dp"
+                                android:paddingBottom="12dp"
+                                android:singleLine="true"
+                                android:text="魔物"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/tv_spinner_color_2048"
+                                android:textSize="16sp"
+                                app:buttonTint="@null"
+                                app:useMaterialThemeColors="false" />
+                        </LinearLayout>
 
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Filter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/genshin_font"
-                            android:gravity="center"
-                            android:text="場地" />
+                    </LinearLayout>
 
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Filter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/genshin_font"
-                            android:gravity="center"
-                            android:text="夥伴" />
+                    <LinearLayout
+                        android:id="@+id/menu_tag_equip"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
 
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Filter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/genshin_font"
-                            android:gravity="center"
-                            android:text="道具" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
 
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Filter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/genshin_font"
-                            android:gravity="center"
-                            android:text="元素共鳴" />
+                            <CheckBox
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/item_2048_checkbox_bg"
+                                android:button="@drawable/item_2048_checkbox"
+                                android:checked="false"
+                                android:clickable="true"
+                                android:fontFamily="@font/genshin_font"
+                                android:gravity="center"
+                                android:layoutDirection="rtl"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="12dp"
+                                android:paddingBottom="12dp"
+                                android:singleLine="true"
+                                android:text="天賦"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/tv_spinner_color_2048"
+                                android:textSize="16sp"
+                                app:buttonTint="@null"
+                                app:useMaterialThemeColors="false" />
 
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Filter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/genshin_font"
-                            android:gravity="center"
-                            android:text="特殊牌" />
+                            <CheckBox
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/item_2048_checkbox_bg"
+                                android:button="@drawable/item_2048_checkbox"
+                                android:checked="false"
+                                android:clickable="true"
+                                android:fontFamily="@font/genshin_font"
+                                android:gravity="center"
+                                android:layoutDirection="rtl"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="12dp"
+                                android:paddingBottom="12dp"
+                                android:singleLine="true"
+                                android:text="武器"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/tv_spinner_color_2048"
+                                android:textSize="16sp"
+                                app:buttonTint="@null"
+                                app:useMaterialThemeColors="false" />
+                        </LinearLayout>
 
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Filter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/genshin_font"
-                            android:gravity="center"
-                            android:text="料理" />
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
 
-                        <com.google.android.material.chip.Chip
-                            style="@style/Widget.MaterialComponents.Chip.Filter"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/genshin_font"
-                            android:gravity="center"
-                            android:text="卡背" />
+                            <CheckBox
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/item_2048_checkbox_bg"
+                                android:button="@drawable/item_2048_checkbox"
+                                android:checked="false"
+                                android:clickable="true"
+                                android:fontFamily="@font/genshin_font"
+                                android:gravity="center"
+                                android:layoutDirection="rtl"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="12dp"
+                                android:paddingBottom="12dp"
+                                android:singleLine="true"
+                                android:text="聖遺物"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/tv_spinner_color_2048"
+                                android:textSize="16sp"
+                                app:buttonTint="@null"
+                                app:useMaterialThemeColors="false" />
 
-                    </com.google.android.material.chip.ChipGroup>
+                            <CheckBox
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/item_2048_checkbox_bg"
+                                android:button="@drawable/item_2048_checkbox"
+                                android:checked="false"
+                                android:clickable="true"
+                                android:fontFamily="@font/genshin_font"
+                                android:gravity="center"
+                                android:layoutDirection="rtl"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="12dp"
+                                android:paddingBottom="12dp"
+                                android:singleLine="true"
+                                android:text="@string/unknown"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/tv_spinner_color_2048"
+                                android:textSize="16sp"
+                                android:visibility="invisible"
+                                app:buttonTint="@null"
+                                app:useMaterialThemeColors="false" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/menu_tag_support"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/item_2048_checkbox_bg"
+                                android:button="@drawable/item_2048_checkbox"
+                                android:checked="false"
+                                android:clickable="true"
+                                android:fontFamily="@font/genshin_font"
+                                android:gravity="center"
+                                android:layoutDirection="rtl"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="12dp"
+                                android:paddingBottom="12dp"
+                                android:singleLine="true"
+                                android:text="場地"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/tv_spinner_color_2048"
+                                android:textSize="16sp"
+                                app:buttonTint="@null"
+                                app:useMaterialThemeColors="false" />
+
+                            <CheckBox
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/item_2048_checkbox_bg"
+                                android:button="@drawable/item_2048_checkbox"
+                                android:checked="false"
+                                android:clickable="true"
+                                android:fontFamily="@font/genshin_font"
+                                android:gravity="center"
+                                android:layoutDirection="rtl"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="12dp"
+                                android:paddingBottom="12dp"
+                                android:singleLine="true"
+                                android:text="夥伴"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/tv_spinner_color_2048"
+                                android:textSize="16sp"
+                                app:buttonTint="@null"
+                                app:useMaterialThemeColors="false" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/item_2048_checkbox_bg"
+                                android:button="@drawable/item_2048_checkbox"
+                                android:checked="false"
+                                android:clickable="true"
+                                android:fontFamily="@font/genshin_font"
+                                android:gravity="center"
+                                android:layoutDirection="rtl"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="12dp"
+                                android:paddingBottom="12dp"
+                                android:singleLine="true"
+                                android:text="道具"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/tv_spinner_color_2048"
+                                android:textSize="16sp"
+                                app:buttonTint="@null"
+                                app:useMaterialThemeColors="false" />
+
+                            <CheckBox
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/item_2048_checkbox_bg"
+                                android:button="@drawable/item_2048_checkbox"
+                                android:checked="false"
+                                android:clickable="true"
+                                android:fontFamily="@font/genshin_font"
+                                android:gravity="center"
+                                android:layoutDirection="rtl"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="12dp"
+                                android:paddingBottom="12dp"
+                                android:singleLine="true"
+                                android:text="@string/unknown"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/tv_spinner_color_2048"
+                                android:textSize="16sp"
+                                android:visibility="invisible"
+                                app:buttonTint="@null"
+                                app:useMaterialThemeColors="false" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/menu_tag_event"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/item_2048_checkbox_bg"
+                                android:button="@drawable/item_2048_checkbox"
+                                android:checked="false"
+                                android:clickable="true"
+                                android:fontFamily="@font/genshin_font"
+                                android:gravity="center"
+                                android:layoutDirection="rtl"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="12dp"
+                                android:paddingBottom="12dp"
+                                android:singleLine="true"
+                                android:text="元素共鳴"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/tv_spinner_color_2048"
+                                android:textSize="16sp"
+                                app:buttonTint="@null"
+                                app:useMaterialThemeColors="false" />
+
+                            <CheckBox
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/item_2048_checkbox_bg"
+                                android:button="@drawable/item_2048_checkbox"
+                                android:checked="false"
+                                android:clickable="true"
+                                android:fontFamily="@font/genshin_font"
+                                android:gravity="center"
+                                android:layoutDirection="rtl"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="12dp"
+                                android:paddingBottom="12dp"
+                                android:singleLine="true"
+                                android:text="特殊牌"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/tv_spinner_color_2048"
+                                android:textSize="16sp"
+                                app:buttonTint="@null"
+                                app:useMaterialThemeColors="false" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="4dp"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <CheckBox
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/item_2048_checkbox_bg"
+                                android:button="@drawable/item_2048_checkbox"
+                                android:checked="false"
+                                android:clickable="true"
+                                android:fontFamily="@font/genshin_font"
+                                android:gravity="center"
+                                android:layoutDirection="rtl"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="12dp"
+                                android:paddingBottom="12dp"
+                                android:singleLine="true"
+                                android:text="料理"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/tv_spinner_color_2048"
+                                android:textSize="16sp"
+                                app:buttonTint="@null"
+                                app:useMaterialThemeColors="false" />
+
+                            <CheckBox
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:layout_marginRight="8dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/item_2048_checkbox_bg"
+                                android:button="@drawable/item_2048_checkbox"
+                                android:checked="false"
+                                android:clickable="true"
+                                android:fontFamily="@font/genshin_font"
+                                android:gravity="center"
+                                android:layoutDirection="rtl"
+                                android:paddingLeft="16dp"
+                                android:paddingTop="12dp"
+                                android:paddingRight="12dp"
+                                android:paddingBottom="12dp"
+                                android:singleLine="true"
+                                android:text="夥伴"
+                                android:textAlignment="viewEnd"
+                                android:textColor="@color/tv_spinner_color_2048"
+                                android:textSize="16sp"
+                                android:visibility="invisible"
+                                app:buttonTint="@null"
+                                app:useMaterialThemeColors="false" />
+
+                        </LinearLayout>
+                    </LinearLayout>
 
                 </LinearLayout>
 
