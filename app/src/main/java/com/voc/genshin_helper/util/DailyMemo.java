@@ -7,6 +7,8 @@ package com.voc.genshin_helper.util;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
+import static com.voc.genshin_helper.util.LogExport.DAILYMEMO;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -49,6 +51,7 @@ import java.util.ArrayList;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONTokener;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -130,24 +133,14 @@ public class DailyMemo {
     public static final int GAME = 2048;
     public static final int MATERIAL = 2022;
 
+    public static final int SEC_OF_CHECK_PEIROD = 60000;
+
     public void setup(Context context, Activity activity,View view, int STYLE){
         this.context = context;
         this.activity = activity;
         sharedPreferences = context.getSharedPreferences("user_info",Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
         item_rss = new ItemRss();
-        url = "http://vt.25u.com/genshin_spirit/dailyMemo/dailyMemoPort.php?"+
-                "hoyoUID="+sharedPreferences.getString("hoyolab_ltuid","N/A")+
-                "&hoyoToken="+sharedPreferences.getString("hoyolab_ltoken","N/A")+
-                "&uid="+sharedPreferences.getString("genshin_uid","-1");
-
-        //System.out.println("URL : "+url);
-        new grabIdFromServer().execute(url);
-
-        displayMetrics = new DisplayMetrics();
-        if (activity != null){
-            activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        }
 
         memo_card = view.findViewById(R.id.memo_card);
         memo_user_name = view.findViewById(R.id.memo_user_name);
@@ -217,6 +210,30 @@ public class DailyMemo {
                 }
             });
         }
+
+        url = "http://vt.25u.com/genshin_spirit/dailyMemo/dailyMemoPort.php?"+
+                "hoyoUID="+sharedPreferences.getString("hoyolab_ltuid","N/A")+
+                "&hoyoToken="+sharedPreferences.getString("hoyolab_ltoken","N/A")+
+                "&uid="+sharedPreferences.getString("genshin_uid","-1");
+
+        displayMetrics = new DisplayMetrics();
+        if (activity != null){
+            activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        }
+
+        //System.out.println("URL : "+url);
+        if (!sharedPreferences.getString("genshin_uid","-1").equals("-1")){
+            if (System.currentTimeMillis() - sharedPreferences.getLong("dailyMemoUnix",0) >= SEC_OF_CHECK_PEIROD){
+                sharedPreferences.edit().putLong("dailyMemoUnix",System.currentTimeMillis()).apply();
+                new grabIdFromServer().execute(url);
+            }else{
+                refreshData(sharedPreferences.getString("dailyMemoDataTMP","{\"nickname\": \"N/A\", \"level\": 1, \"server\": \"os_asia\", \"icon\": \"Klee\", \"resin_curr\": 0, \"resin_remain_time\": 1, \"currency_curr\": 0, \"currency_max\": 300, \"currency_remain_time\": -1, \"mission_done\": 0, \"mission_claim\": \"false\", \"transformer_recovery_time\": -1, \"weekboss_30\": 3, \"expedition1_name\": \"N/A\", \"expedition1_remain_time\": -1, \"expedition2_name\": \"N/A\", \"expedition2_remain_time\": -1, \"expedition3_name\": \"N/A\", \"expedition3_remain_time\": -1, \"expedition4_name\": \"N/A\", \"expedition4_remain_time\": -1, \"expedition5_name\": \"N/A\", \"expedition5_remain_time\": -1}"));
+            }
+        }else{
+            refreshData(sharedPreferences.getString("dailyMemoDataTMP","{\"nickname\": \"N/A\", \"level\": 1, \"server\": \"os_asia\", \"icon\": \"Klee\", \"resin_curr\": 0, \"resin_remain_time\": 1, \"currency_curr\": 0, \"currency_max\": 300, \"currency_remain_time\": -1, \"mission_done\": 0, \"mission_claim\": \"false\", \"transformer_recovery_time\": -1, \"weekboss_30\": 3, \"expedition1_name\": \"N/A\", \"expedition1_remain_time\": -1, \"expedition2_name\": \"N/A\", \"expedition2_remain_time\": -1, \"expedition3_name\": \"N/A\", \"expedition3_remain_time\": -1, \"expedition4_name\": \"N/A\", \"expedition4_remain_time\": -1, \"expedition5_name\": \"N/A\", \"expedition5_remain_time\": -1}"));
+        }
+
+
     }
 
     public String getNickname(Context context){
@@ -456,12 +473,12 @@ public class DailyMemo {
                     editor.apply();
                 }
                 dialog.dismiss();
-
-                new grabIdFromServer().execute("http://vt.25u.com/genshin_spirit/dailyMemo/dailyMemoPort.php?"+
-                        "hoyoUID="+sharedPreferences.getString("hoyolab_ltuid","N/A")+
-                        "&hoyoToken="+sharedPreferences.getString("hoyolab_ltoken","N/A")+
-                        "&uid="+sharedPreferences.getString("genshin_uid","-1"));
-
+                if (!sharedPreferences.getString("genshin_uid","-1").equals("-1")){
+                    new grabIdFromServer().execute("http://vt.25u.com/genshin_spirit/dailyMemo/dailyMemoPort.php?"+
+                            "hoyoUID="+sharedPreferences.getString("hoyolab_ltuid","N/A")+
+                            "&hoyoToken="+sharedPreferences.getString("hoyolab_ltoken","N/A")+
+                            "&uid="+sharedPreferences.getString("genshin_uid","-1"));
+                }
 
             }
         });
@@ -559,7 +576,7 @@ public class DailyMemo {
                             new grabDataFromServer().execute("http://vt.25u.com/genshin_spirit/dailyMemo/dailyMemoIdListPort.php?hoyoUID="+uid_final+"&hoyoToken="+token_final+"&server="+hoyoServer);
 
                         } catch (JSONException e) {
-                            e.printStackTrace();
+                            LogExport.export("DailyMemo","getCookiesFromLoginPage -> webview.setWebViewClient.onPageFinished", e.getMessage(), context, DAILYMEMO);
                         }
                     }else{
                         /*
@@ -633,6 +650,7 @@ public class DailyMemo {
                 serverUIDList.add("-1");
 
                 System.out.println("FOOK : "+jsonArray);
+                LogExport.export("DailyMemo","grabDataFromServer.[REGULAR]", jsonArray.toString(), context, DAILYMEMO);
 
                 for (int x = 0 ; x< jsonArray.length() ; x++){
                     String server = jsonArray.getJSONObject(x).getString("server");
@@ -655,7 +673,7 @@ public class DailyMemo {
 
                 }
             } catch (JSONException | IOException e) {
-                e.printStackTrace();
+                LogExport.export("DailyMemo","grabDataFromServer.doInBackground", e.getMessage(), context, DAILYMEMO);
             }
             return "DONE";
         }
@@ -717,45 +735,17 @@ public class DailyMemo {
             try {
                 Response sponse = client.newCall(request).execute();
                 str = sponse.body().string();
-                JSONObject jsonObject = new JSONObject(str);
+                Object json = new JSONTokener(str).nextValue();
+                if (json instanceof JSONObject){
+                    sharedPreferences.edit().putString("dailyMemoDataTMP",str).apply();
+                }else{
+                    str = sharedPreferences.getString("dailyMemoDataTMP","{\"nickname\": \"N/A\", \"level\": 1, \"server\": \"os_asia\", \"icon\": \"Klee\", \"resin_curr\": 0, \"resin_remain_time\": 1, \"currency_curr\": 0, \"currency_max\": 300, \"currency_remain_time\": -1, \"mission_done\": 0, \"mission_claim\": \"false\", \"transformer_recovery_time\": -1, \"weekboss_30\": 3, \"expedition1_name\": \"N/A\", \"expedition1_remain_time\": -1, \"expedition2_name\": \"N/A\", \"expedition2_remain_time\": -1, \"expedition3_name\": \"N/A\", \"expedition3_remain_time\": -1, \"expedition4_name\": \"N/A\", \"expedition4_remain_time\": -1, \"expedition5_name\": \"N/A\", \"expedition5_remain_time\": -1}");
+                }
+                refreshData(sharedPreferences.getString("dailyMemoDataTMP","{\"nickname\": \"N/A\", \"level\": 1, \"server\": \"os_asia\", \"icon\": \"Klee\", \"resin_curr\": 0, \"resin_remain_time\": 1, \"currency_curr\": 0, \"currency_max\": 300, \"currency_remain_time\": -1, \"mission_done\": 0, \"mission_claim\": \"false\", \"transformer_recovery_time\": -1, \"weekboss_30\": 3, \"expedition1_name\": \"N/A\", \"expedition1_remain_time\": -1, \"expedition2_name\": \"N/A\", \"expedition2_remain_time\": -1, \"expedition3_name\": \"N/A\", \"expedition3_remain_time\": -1, \"expedition4_name\": \"N/A\", \"expedition4_remain_time\": -1, \"expedition5_name\": \"N/A\", \"expedition5_remain_time\": -1}"));
 
-                //System.out.println("jsonObject : "+jsonObject.toString());
-
-                //官服[天空島服] = "cn_gf01"
-                //B服[世界樹服] = "cn_qd01"
-                //Asia = "os_asia"
-                //Europe = "os_euro"
-                //America = "os_usa"
-                //TW,HK,MO = "os_cht"
-
-                /** 即時便簽 */
-                nickname = jsonObject.getString("nickname");
-                level = jsonObject.getInt("level");
-                server = jsonObject.getString("server");
-                icon = jsonObject.getString("icon");
-                resin_curr = jsonObject.getInt("resin_curr");
-                resin_remain_time = jsonObject.getInt("resin_remain_time");
-                currency_curr = jsonObject.getInt("currency_curr");
-                currency_max = jsonObject.getInt("currency_max");
-                currency_remain_time = jsonObject.getInt("currency_remain_time");
-                mission_done = jsonObject.getInt("mission_done");
-                mission_claim = jsonObject.getBoolean("mission_claim");
-                transformer_recovery_time = jsonObject.getInt("transformer_recovery_time");
-                weekboss_30 = jsonObject.getInt("weekboss_30");
-                expedition1_name = jsonObject.getString("expedition1_name");
-                expedition2_name = jsonObject.getString("expedition2_name");
-                expedition3_name = jsonObject.getString("expedition3_name");
-                expedition4_name = jsonObject.getString("expedition4_name");
-                expedition5_name = jsonObject.getString("expedition5_name");
-                expedition1_remain_time = jsonObject.getInt("expedition1_remain_time");
-                expedition2_remain_time = jsonObject.getInt("expedition2_remain_time");
-                expedition3_remain_time = jsonObject.getInt("expedition3_remain_time");
-                expedition4_remain_time = jsonObject.getInt("expedition4_remain_time");
-                expedition5_remain_time = jsonObject.getInt("expedition5_remain_time");
-
-
-            } catch (JSONException | IOException e) {
-                e.printStackTrace();
+            } catch (IOException | JSONException e) {
+                LogExport.export("DailyMemo","grabIdFromServer.doInBackground", e.getMessage(), context, DAILYMEMO);
+                refreshData(sharedPreferences.getString("dailyMemoDataTMP","{\"nickname\": \"N/A\", \"level\": 1, \"server\": \"os_asia\", \"icon\": \"Klee\", \"resin_curr\": 0, \"resin_remain_time\": 1, \"currency_curr\": 0, \"currency_max\": 300, \"currency_remain_time\": -1, \"mission_done\": 0, \"mission_claim\": \"false\", \"transformer_recovery_time\": -1, \"weekboss_30\": 3, \"expedition1_name\": \"N/A\", \"expedition1_remain_time\": -1, \"expedition2_name\": \"N/A\", \"expedition2_remain_time\": -1, \"expedition3_name\": \"N/A\", \"expedition3_remain_time\": -1, \"expedition4_name\": \"N/A\", \"expedition4_remain_time\": -1, \"expedition5_name\": \"N/A\", \"expedition5_remain_time\": -1}"));
             }
             return "DONE";
         }
@@ -770,6 +760,7 @@ public class DailyMemo {
 
                 if (DailyMemo2048Service.dailyMemo2048Service != null){
                     DailyMemo2048Service.dailyMemo2048Service.refresh(str);
+                    LogExport.export("DailyMemo","grabIdFromServer.onPostExecute", "Refresh now", context, DAILYMEMO);
                 }
                 isIdGetDone = true;
             }
@@ -780,6 +771,51 @@ public class DailyMemo {
             // TODO Auto-generated method stub
             super.onProgressUpdate(values);
 
+        }
+    }
+
+
+    private void refreshData(String str) {
+        try {
+            JSONObject jsonObject = new JSONObject(str);
+
+            LogExport.export("DailyMemo2048Service","grabIdFromServer.[REGULAR]", jsonObject.toString(), context, DAILYMEMO);
+            //System.out.println("jsonObject : "+jsonObject.toString());
+
+            //官服[天空島服] = "cn_gf01"
+            //B服[世界樹服] = "cn_qd01"
+            //Asia = "os_asia"
+            //Europe = "os_euro"
+            //America = "os_usa"
+            //TW,HK,MO = "os_cht"
+
+            /** 即時便簽 */
+            nickname = jsonObject.getString("nickname");
+            level = jsonObject.getInt("level");
+            server = jsonObject.getString("server");
+            icon = jsonObject.getString("icon");
+            resin_curr = jsonObject.getInt("resin_curr");
+            resin_remain_time = jsonObject.getInt("resin_remain_time");
+            currency_curr = jsonObject.getInt("currency_curr");
+            currency_max = jsonObject.getInt("currency_max");
+            currency_remain_time = jsonObject.getInt("currency_remain_time");
+            mission_done = jsonObject.getInt("mission_done");
+            mission_claim = jsonObject.getBoolean("mission_claim");
+            transformer_recovery_time = jsonObject.getInt("transformer_recovery_time");
+            weekboss_30 = jsonObject.getInt("weekboss_30");
+            expedition1_name = jsonObject.getString("expedition1_name");
+            expedition2_name = jsonObject.getString("expedition2_name");
+            expedition3_name = jsonObject.getString("expedition3_name");
+            expedition4_name = jsonObject.getString("expedition4_name");
+            expedition5_name = jsonObject.getString("expedition5_name");
+            expedition1_remain_time = jsonObject.getInt("expedition1_remain_time");
+            expedition2_remain_time = jsonObject.getInt("expedition2_remain_time");
+            expedition3_remain_time = jsonObject.getInt("expedition3_remain_time");
+            expedition4_remain_time = jsonObject.getInt("expedition4_remain_time");
+            expedition5_remain_time = jsonObject.getInt("expedition5_remain_time");
+            updateData();
+        }catch (JSONException e) {
+            LogExport.export("DailyMemo2048Service","grabIdFromServer.doInBackground => refreshData()", e.getMessage(), context, DAILYMEMO);
         }
     }
 

@@ -1,5 +1,8 @@
 package com.voc.genshin_helper.util;
 
+import static com.voc.genshin_helper.util.LogExport.DAILYMEMO;
+import static com.voc.genshin_helper.util.LogExport.DOWNLOADTASK;
+
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -116,6 +119,7 @@ public class DownloadTask {
 
             } catch (Exception e) {
                 Log.e("Error: ", e.getMessage());
+                LogExport.export("DownloadTask","DownloadFileFromURL.doInBackground", e.getMessage(), context, DOWNLOADTASK);
             }
 
             return null;
@@ -236,6 +240,7 @@ public class DownloadTask {
 
             } catch (Exception e) {
                 Log.e("Error: ", e.getMessage());
+                LogExport.export("DownloadTask","DownloadFileFromURLArray.doInBackground", e.getMessage(), context, DOWNLOADTASK);
             }
 
             return null;

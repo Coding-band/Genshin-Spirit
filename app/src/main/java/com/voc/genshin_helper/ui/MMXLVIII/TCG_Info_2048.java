@@ -14,6 +14,7 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.os.Handler;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -22,6 +23,7 @@ import android.util.DisplayMetrics;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
@@ -29,6 +31,7 @@ import android.view.animation.Transformation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -101,6 +104,7 @@ public class TCG_Info_2048 {
     ImageView tcg_other_ico;
     TextView tcg_other_name, tcg_other_info;
     TextView tcg_nonchar_info;
+    LinearLayout tcg_sc_ll;
 
     LinearLayout tcg_card_sample;
 
@@ -251,6 +255,19 @@ public class TCG_Info_2048 {
             e.printStackTrace();
         }
 
+        ViewTreeObserver viewTreeObserver = tcg_scroll_sc.getViewTreeObserver();
+        if (viewTreeObserver.isAlive()) {
+            viewTreeObserver.addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                @Override
+                public void onGlobalLayout() {
+                    tcg_scroll_sc.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                    if (tcg_scroll_sc.getHeight() < displayMetrics.heightPixels){
+                        tcg_scroll_sc.getLayoutParams().height = displayMetrics.heightPixels;
+                    }
+                }
+            });
+        }
+
 
         /** Method of tcg_card*/
         tcg_hp_bg = view.findViewById(R.id.tcg_hp_bg);
@@ -342,79 +359,18 @@ public class TCG_Info_2048 {
         /** Method of dialog */
         DialogInterface.OnKeyListener keyListener = new DialogInterface.OnKeyListener() {
             @Override
-            public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event) {
-                if (isCardAdapterGONE && tcg_card_from_adapter != null){
-                    isCardAdapterGONE = false;
-
-                    tcg_card_change();
-                    Animation ani = new ZoomAnimation(
-                            tcg_card_include,
-                            (int) (screenPos[0]),
-                            (int) (screenPos[1]-displayMetrics.density*(24)),
-                            (int) tcg_width,
-                            (int) ((displayMetrics.widthPixels - displayMetrics.density*(32))/2),
-                            true);
-                    ani.setDuration(300);
-                    ani.setAnimationListener(new Animation.AnimationListener() {
-                        @Override
-                        public void onAnimationStart(Animation animation) {
-                            Handler handler = new Handler();
-                            handler.postDelayed(new Runnable() {
-                                @Override
-                                public void run() {
-                                    tcg_card_from_adapter.animate()
-                                            .alpha(1.0f)
-                                            .setDuration(50)
-                                            .setListener(new AnimatorListenerAdapter() {
-                                                @Override
-                                                public void onAnimationEnd(Animator animation) {
-                                                    super.onAnimationEnd(animation);
-                                                    tcg_card_from_adapter.setVisibility(View.VISIBLE);
-                                                    if (dialog != null){
-                                                        dialog.dismiss();
-                                                    }
-                                                }
-                                            });
-                                }
-                            },250);
-                            tcg_detail_ll.animate()
-                                    .alpha(0.0f)
-                                    .translationY(displayMetrics.widthPixels - displayMetrics.density*(120) - ((displayMetrics.widthPixels - displayMetrics.density*(32))/2))
-                                    .setDuration(250)
-                                    .setListener(new AnimatorListenerAdapter() {
-                                        @Override
-                                        public void onAnimationEnd(Animator animation) {
-                                            super.onAnimationEnd(animation);
-                                        }
-                                    });
-                            tcg_intro_ll.animate()
-                                    .alpha(0.0f)
-                                    .setDuration(250)
-                                    .setListener(new AnimatorListenerAdapter() {
-                                        @Override
-                                        public void onAnimationEnd(Animator animation) {
-                                            super.onAnimationEnd(animation);
-                                        }
-                                    });
-                        }
-
-                        @Override
-                        public void onAnimationEnd(Animation animation) {
-                            //smallZoom();
-                        }
-
-                        @Override
-                        public void onAnimationRepeat(Animation animation) {
-
-                        }
-                    });
-                    tcg_card_include.startAnimation(ani);
-                    tcg_card_dx();
-                    return true;
-                }
-                return false;
+            public boolean onKey(DialogInterface dialogX, int keyCode, KeyEvent event) {
+                return dialogDismiss(dialog);
             }
         };
+
+        tcg_scroll_sc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialogDismiss(dialog);
+            }
+        });
+
         dialog.setOnKeyListener(keyListener);
         dialog.setContentView(view);
         dialog.setCanceledOnTouchOutside(true);
@@ -429,6 +385,82 @@ public class TCG_Info_2048 {
         lp.height = WindowManager.LayoutParams.MATCH_PARENT;
         dialogWindow.setAttributes(lp);
         dialog.show();
+    }
+
+    private boolean dialogDismiss(Dialog dialog) {
+        if (dialog != null){
+            if (isCardAdapterGONE && tcg_card_from_adapter != null){
+                isCardAdapterGONE = false;
+
+                tcg_card_change();
+                Animation ani = new ZoomAnimation(
+                        tcg_card_include,
+                        (int) (screenPos[0]),
+                        (int) (screenPos[1]-displayMetrics.density*(24)),
+                        (int) tcg_width,
+                        (int) ((displayMetrics.widthPixels - displayMetrics.density*(32))/2),
+                        true);
+                ani.setDuration(300);
+                ani.setAnimationListener(new Animation.AnimationListener() {
+                    @Override
+                    public void onAnimationStart(Animation animation) {
+                        Handler handler = new Handler();
+                        handler.postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                tcg_card_from_adapter.animate()
+                                        .alpha(1.0f)
+                                        .setDuration(50)
+                                        .setListener(new AnimatorListenerAdapter() {
+                                            @Override
+                                            public void onAnimationEnd(Animator animation) {
+                                                super.onAnimationEnd(animation);
+                                                tcg_card_from_adapter.setVisibility(View.VISIBLE);
+                                                if (dialog != null){
+                                                    dialog.dismiss();
+                                                }
+                                            }
+                                        });
+                            }
+                        },250);
+                        tcg_detail_ll.animate()
+                                .alpha(0.0f)
+                                .translationY(displayMetrics.widthPixels - displayMetrics.density*(120) - ((displayMetrics.widthPixels - displayMetrics.density*(32))/2))
+                                .setDuration(250)
+                                .setListener(new AnimatorListenerAdapter() {
+                                    @Override
+                                    public void onAnimationEnd(Animator animation) {
+                                        super.onAnimationEnd(animation);
+                                    }
+                                });
+                        tcg_intro_ll.animate()
+                                .alpha(0.0f)
+                                .setDuration(250)
+                                .setListener(new AnimatorListenerAdapter() {
+                                    @Override
+                                    public void onAnimationEnd(Animator animation) {
+                                        super.onAnimationEnd(animation);
+                                    }
+                                });
+                    }
+
+                    @Override
+                    public void onAnimationEnd(Animation animation) {
+                        //smallZoom();
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(Animation animation) {
+
+                    }
+                });
+                tcg_card_include.startAnimation(ani);
+                tcg_card_dx();
+
+                return true;
+            }
+        }
+        return false;
     }
 
     public void JsonToStr (String str, TCG tcg){
@@ -674,24 +706,28 @@ public class TCG_Info_2048 {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            if (gifFile != null){
+            if (gifFile.exists() && gifFile.isFile()){
                 tcg_card_img.setImageDrawable(gifFromFile);
                 tcg_card_img.getLayoutParams().width = MATCH_PARENT;
                 tcg_card_img.getLayoutParams().height = MATCH_PARENT;
                 tcg_card_kwang.setVisibility(View.GONE);
             }else{
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getTCGByName(tcg.getName(),context)[0],context))
-                        .resize(widthNew-oneDP,(int) ((widthNew-oneDP)*12/7))
+                        .load (FileLoader.loadIMG(item_rss.getTCGByNameBase(tcg.getName(),context)[0],context))
+                        .resize(widthNew,(int) ((widthNew)*12/7))
                         .error (R.drawable.paimon_lost)
                         .into(tcg_card_img);
+                tcg_card_kwang.getLayoutParams().width = widthNew;
+                tcg_card_kwang.getLayoutParams().height =(int) ((widthNew)*12/7);
             }
         }else{
             Picasso.get()
                     .load (FileLoader.loadIMG(item_rss.getTCGByName(tcg.getName(),context)[0],context))
-                    .resize(widthNew-oneDP,(int) ((widthNew-oneDP)*12/7))
+                    .resize(widthNew,(int) ((widthNew)*12/7))
                     .error (R.drawable.paimon_lost)
                     .into(tcg_card_img);
+            tcg_card_kwang.getLayoutParams().width = widthNew;
+            tcg_card_kwang.getLayoutParams().height =(int) ((widthNew)*12/7);
         }
 
 

@@ -1708,7 +1708,7 @@ public class ItemRss {
             }
             // ???
             case "Voc-夜芷冰": return new String[]{"/drawable/voc_full.png", context.getString(R.string.voc), "/drawable/voc_full.png", "/drawable/voc_ico.png", "/drawable/mascot_card.png"};
-
+            case "N/A" : return new String[]{"/drawable/paimon_full.png", context.getString(R.string.unknown), "/drawable/paimon_full.png","/drawable/paimon_lost.png", "/drawable/unknown_card.png"};
         }
         // Suitable for display upcoming characters
         String upcoming = name.toLowerCase().replace(" ","_");

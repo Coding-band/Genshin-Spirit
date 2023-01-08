@@ -1,5 +1,8 @@
 package com.voc.genshin_helper.util;
 
+import static com.voc.genshin_helper.util.LogExport.DOWNLOADTASK;
+import static com.voc.genshin_helper.util.LogExport.UNZIPMANAGER;
+
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -127,10 +130,9 @@ public class UnzipManager {
                     curr = curr +1;
                     dialog2048.updateProgress(curr);
                 }
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
+                LogExport.export("DownloadTask","DownloadFileFromURLArray.doInBackground", e.getMessage(), context, UNZIPMANAGER);
             }
             return null;
         }
@@ -238,10 +240,9 @@ public class UnzipManager {
                         curr = curr +1;
                         dialog2048.updateProgress(curr);
                     }
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
                 } catch (IOException e) {
                     e.printStackTrace();
+                    LogExport.export("DownloadTask","DownloadFileFromURLArray.doInBackground", e.getMessage(), context, UNZIPMANAGER);
                 }
             }
             return null;

@@ -1,5 +1,8 @@
 package com.voc.genshin_helper.ui.MMXLVIII;
 
+import static com.voc.genshin_helper.util.LogExport.DAILYMEMO;
+import static com.voc.genshin_helper.util.LogExport.DOWNLOADTASK;
+import static com.voc.genshin_helper.util.LogExport.UNZIPMANAGER;
 import static com.voc.genshin_helper.util.RoundedCornersTransformation.CornerType.ALL;
 
 import androidx.appcompat.app.AlertDialog;
@@ -110,6 +113,7 @@ import com.voc.genshin_helper.util.DownloadTask;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.LangUtils;
 import com.voc.genshin_helper.util.LocaleHelper;
+import com.voc.genshin_helper.util.LogExport;
 import com.voc.genshin_helper.util.MyViewPagerAdapter;
 import com.voc.genshin_helper.util.NumberPickerDialog;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
@@ -746,7 +750,6 @@ public class Desk2048 extends AppCompatActivity {
         paimon_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
                 View view = View.inflate(context, R.layout.fragment_setting_2048_new, null);
                 dialog.setContentView(view);

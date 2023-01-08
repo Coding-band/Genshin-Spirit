@@ -12,6 +12,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Color;
+import android.media.Image;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
@@ -269,6 +270,7 @@ public class TCG2048 {
         });
 
         tcg_search = rootView.findViewById(R.id.tcg_search);
+        tcg_filter = rootView.findViewById(R.id.tcg_filter);
         tcg_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -388,41 +390,58 @@ public class TCG2048 {
             public void onClick(View v) {
                 final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
                 View view = View.inflate(context, R.layout.menu_tcg_filter_2048, null);
-                // Element
-                TextView menu_elements_title_tv = view.findViewById(R.id.menu_elements_title_tv);
-                LinearLayout menu_elements_ll = view.findViewById(R.id.menu_elements_ll);
-                menu_elements_title_tv.setVisibility(View.GONE);
-                menu_elements_ll.setVisibility(View.GONE);
 
-                // Weapons
-                ImageView ico_sword = view.findViewById(R.id.ico_sword);
-                ImageView ico_claymore = view.findViewById(R.id.ico_claymore);
-                ImageView ico_polearm = view.findViewById(R.id.ico_polearm);
-                ImageView ico_bow = view.findViewById(R.id.ico_bow);
-                ImageView ico_catalyst = view.findViewById(R.id.ico_catalyst);
-                // Rarity
-                CheckBox menu_rare4 = view.findViewById(R.id.menu_rare4);
-                CheckBox menu_rare5 = view.findViewById(R.id.menu_rare5);
-                RatingBar menu_rating = view.findViewById(R.id.menu_rating);
+                ImageView pyro_ico = view.findViewById(R.id.pyro_ico);
+                ImageView hydro_ico = view.findViewById(R.id.hydro_ico);
+                ImageView anemo_ico = view.findViewById(R.id.anemo_ico);
+                ImageView electro_ico = view.findViewById(R.id.electro_ico);
+                ImageView dendro_ico = view.findViewById(R.id.dendro_ico);
+                ImageView cryo_ico = view.findViewById(R.id.cryo_ico);
+                ImageView geo_ico = view.findViewById(R.id.geo_ico);
+                ImageView spec_ico = view.findViewById(R.id.spec_ico);
+                ImageView rand_ico = view.findViewById(R.id.rand_ico);
 
-                menu_rare4.setVisibility(View.GONE);
-                menu_rare5.setVisibility(View.GONE);
-                menu_rating.setVisibility(View.VISIBLE);
+                CheckBox mondstadt_cb = view.findViewById(R.id.mondstadt_cb);
+                CheckBox liyue_cb = view.findViewById(R.id.liyue_cb);
+                CheckBox inazuma_cb = view.findViewById(R.id.inazuma_cb);
+                CheckBox sumeru_cb = view.findViewById(R.id.sumeru_cb);
+                CheckBox fatui_cb = view.findViewById(R.id.fatui_cb);
+                CheckBox monster_cb = view.findViewById(R.id.monster_cb);
+                CheckBox talent_cb = view.findViewById(R.id.talent_cb);
+                CheckBox weapon_cb = view.findViewById(R.id.weapon_cb);
+                CheckBox artifact_cb = view.findViewById(R.id.artifact_cb);
+                CheckBox environment_cb = view.findViewById(R.id.environment_cb);
+                CheckBox partner_cb = view.findViewById(R.id.partner_cb);
+                CheckBox tool_cb = view.findViewById(R.id.tool_cb);
+                CheckBox elementalresonance_cb = view.findViewById(R.id.elementalresonance_cb);
+                CheckBox special_cb = view.findViewById(R.id.special_cb);
+                CheckBox food_cb = view.findViewById(R.id.food_cb);
 
-                // Release
-                CheckBox menu_release_0 = view.findViewById(R.id.menu_release_0);
-                CheckBox menu_release_1 = view.findViewById(R.id.menu_release_1);
+                LinearLayout menu_tag_char = view.findViewById(R.id.menu_tag_char);
+                LinearLayout menu_tag_equip = view.findViewById(R.id.menu_tag_equip);
+                LinearLayout menu_tag_support = view.findViewById(R.id.menu_tag_support);
+                LinearLayout menu_tag_event = view.findViewById(R.id.menu_tag_event);
 
-                // Role
-                TextView menu_role_title_tv = view.findViewById(R.id.menu_role_title_tv);
-                LinearLayout menu_role_ll = view.findViewById(R.id.menu_role_ll);
-                menu_role_title_tv.setVisibility(View.GONE);
-                menu_role_ll.setVisibility(View.GONE);
+                menu_tag_char.setVisibility(View.GONE);
+                menu_tag_equip.setVisibility(View.GONE);
+                menu_tag_support.setVisibility(View.GONE);
+                menu_tag_event.setVisibility(View.GONE);
 
                 // Function Buttons
                 ImageView cancel = view.findViewById(R.id.menu_cancel);
                 FrameLayout reset = view.findViewById(R.id.menu_reset);
                 FrameLayout ok = view.findViewById(R.id.menu_ok);
+
+                ArrayList<TCG> tempList = charList;
+                TCGAdapter mTempAdapter = mCharAdapter;
+                RecyclerView mTempRecycle = mCharList;
+                switch (viewPager.getCurrentItem()){
+                    case 0 : {tempList = charList; mTempAdapter = mCharAdapter;mTempRecycle = mCharList;menu_tag_char.setVisibility(View.VISIBLE);break;}
+                    case 1 : {tempList = equipList; mTempAdapter = mEquipAdapter;mTempRecycle = mEquipList;menu_tag_equip.setVisibility(View.VISIBLE);break;}
+                    case 2 : {tempList = supportList; mTempAdapter = mSupportAdapter;mTempRecycle = mSupportList;menu_tag_support.setVisibility(View.VISIBLE);break;}
+                    case 3 : {tempList = eventList; mTempAdapter = mEventAdapter;mTempRecycle = mEventList;menu_tag_event.setVisibility(View.VISIBLE);break;}
+                    case 4 : {tempList = backsideList; mTempAdapter = mBackSideAdapter;mTempRecycle = mBackSideList;break;}
+                }
 
                 show_dice_pyro = sharedPreferences.getBoolean("show_dice_pyro",false);
                 show_dice_hydro = sharedPreferences.getBoolean("show_dice_hydro",false);
@@ -450,6 +469,43 @@ public class TCG2048 {
                 show_tcg_Special = sharedPreferences.getBoolean("show_tcg_Special",false);
                 show_tcg_Food = sharedPreferences.getBoolean("show_tcg_Food",false);
                 show_tcg_CardBack = sharedPreferences.getBoolean("show_tcg_CardBack",false);
+
+                if(show_dice_pyro){pyro_ico.setColorFilter(Color.parseColor("#00000000"));}else{pyro_ico.setColorFilter(Color.parseColor("#66313131"));}
+                if(show_dice_hydro){hydro_ico.setColorFilter(Color.parseColor("#00000000"));}else{hydro_ico.setColorFilter(Color.parseColor("#66313131"));}
+                if(show_dice_anemo){anemo_ico.setColorFilter(Color.parseColor("#00000000"));}else{anemo_ico.setColorFilter(Color.parseColor("#66313131"));}
+                if(show_dice_electro){electro_ico.setColorFilter(Color.parseColor("#00000000"));}else{electro_ico.setColorFilter(Color.parseColor("#66313131"));}
+                if(show_dice_dendro){dendro_ico.setColorFilter(Color.parseColor("#00000000"));}else{dendro_ico.setColorFilter(Color.parseColor("#66313131"));}
+                if(show_dice_cryo){cryo_ico.setColorFilter(Color.parseColor("#00000000"));}else{cryo_ico.setColorFilter(Color.parseColor("#66313131"));}
+                if(show_dice_geo){geo_ico.setColorFilter(Color.parseColor("#00000000"));}else{geo_ico.setColorFilter(Color.parseColor("#66313131"));}
+                if(show_dice_spec){spec_ico.setColorFilter(Color.parseColor("#00000000"));}else{spec_ico.setColorFilter(Color.parseColor("#66313131"));}
+                if(show_dice_rand){rand_ico.setColorFilter(Color.parseColor("#00000000"));}else{rand_ico.setColorFilter(Color.parseColor("#66313131"));}
+
+                if (show_tcg_Mondstadt){ mondstadt_cb.setChecked(true); }
+                if (show_tcg_Liyue){ liyue_cb.setChecked(true); }
+                if (show_tcg_Inazuma){ inazuma_cb.setChecked(true); }
+                if (show_tcg_Sumeru){ sumeru_cb.setChecked(true); }
+                if (show_tcg_Fatui){ fatui_cb.setChecked(true); }
+                if (show_tcg_Monster){ monster_cb.setChecked(true); }
+                if (show_tcg_Talent){ talent_cb.setChecked(true); }
+                if (show_tcg_Weapon){ weapon_cb.setChecked(true); }
+                if (show_tcg_Artifact){ artifact_cb.setChecked(true); }
+                if (show_tcg_Environment){ environment_cb.setChecked(true); }
+                if (show_tcg_Partner){ partner_cb.setChecked(true); }
+                if (show_tcg_Tool){ tool_cb.setChecked(true); }
+                if (show_tcg_ElementalResonance){ elementalresonance_cb.setChecked(true); }
+                if (show_tcg_Special){ special_cb.setChecked(true); }
+                if (show_tcg_Food){ food_cb.setChecked(true); }
+                //if (show_tcg_CardBack){ mondstadt_cb.setChecked(true); }
+
+                pyro_ico.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_dice_pyro){show_dice_pyro = false;pyro_ico.setColorFilter(Color.parseColor("#66313131"));}else{show_dice_pyro = true;pyro_ico.setColorFilter(Color.parseColor("#00000000"));}}});
+                hydro_ico.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_dice_hydro){show_dice_hydro = false;hydro_ico.setColorFilter(Color.parseColor("#66313131"));}else{show_dice_hydro = true;hydro_ico.setColorFilter(Color.parseColor("#00000000"));}}});
+                anemo_ico.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_dice_anemo){show_dice_anemo = false;anemo_ico.setColorFilter(Color.parseColor("#66313131"));}else{show_dice_anemo = true;anemo_ico.setColorFilter(Color.parseColor("#00000000"));}}});
+                electro_ico.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_dice_electro){show_dice_electro = false;electro_ico.setColorFilter(Color.parseColor("#66313131"));}else{show_dice_electro = true;electro_ico.setColorFilter(Color.parseColor("#00000000"));}}});
+                dendro_ico.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_dice_dendro){show_dice_dendro = false;dendro_ico.setColorFilter(Color.parseColor("#66313131"));}else{show_dice_dendro = true;dendro_ico.setColorFilter(Color.parseColor("#00000000"));}}});
+                cryo_ico.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_dice_cryo){show_dice_cryo = false;cryo_ico.setColorFilter(Color.parseColor("#66313131"));}else{show_dice_cryo = true;cryo_ico.setColorFilter(Color.parseColor("#00000000"));}}});
+                geo_ico.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_dice_geo){show_dice_geo = false;geo_ico.setColorFilter(Color.parseColor("#66313131"));}else{show_dice_geo = true;geo_ico.setColorFilter(Color.parseColor("#00000000"));}}});
+                spec_ico.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_dice_spec){show_dice_spec = false;spec_ico.setColorFilter(Color.parseColor("#66313131"));}else{show_dice_spec = true;spec_ico.setColorFilter(Color.parseColor("#00000000"));}}});
+                rand_ico.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_dice_rand){show_dice_rand = false;rand_ico.setColorFilter(Color.parseColor("#66313131"));}else{show_dice_rand = true;rand_ico.setColorFilter(Color.parseColor("#00000000"));}}});
 
                 cancel.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -517,25 +573,42 @@ public class TCG2048 {
                         editor.apply();
                         dialog.dismiss();
 
-
                         ArrayList<TCG> tempList = charList;
                         TCGAdapter mTempAdapter = mCharAdapter;
+                        String currMajorType = TCG.CHAR;
+                        RecyclerView mTempRecycle = mCharList;
                         switch (viewPager.getCurrentItem()){
-                            case 0 : {tempList = charList; mTempAdapter = mCharAdapter;break;}
-                            case 1 : {tempList = equipList; mTempAdapter = mEquipAdapter;break;}
-                            case 2 : {tempList = supportList; mTempAdapter = mSupportAdapter;break;}
-                            case 3 : {tempList = eventList; mTempAdapter = mEventAdapter;break;}
-                            case 4 : {tempList = backsideList; mTempAdapter = mBackSideAdapter;break;}
+                            case 0 : {tempList = charList; mTempAdapter = mCharAdapter;mTempRecycle = mCharList; currMajorType = TCG.CHAR; break;}
+                            case 1 : {tempList = equipList; mTempAdapter = mEquipAdapter;mTempRecycle = mEquipList; currMajorType = TCG.EQUIP;break;}
+                            case 2 : {tempList = supportList; mTempAdapter = mSupportAdapter;mTempRecycle = mSupportList; currMajorType = TCG.SUPPORT;break;}
+                            case 3 : {tempList = eventList; mTempAdapter = mEventAdapter; mTempRecycle = mEventList;currMajorType = TCG.EVENT;break;}
+                            case 4 : {tempList = backsideList; mTempAdapter = mBackSideAdapter;mTempRecycle = mBackSideList; currMajorType = TCG.BACKSIDE;break;}
                         }
 
+                        mTempRecycle.removeAllViews();
                         mTempAdapter.filterList(tempList);
-
                     }
                 });
 
                 ok.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
+                        show_tcg_Mondstadt = mondstadt_cb.isChecked();
+                        show_tcg_Liyue = liyue_cb.isChecked();
+                        show_tcg_Inazuma = inazuma_cb.isChecked();
+                        show_tcg_Sumeru = sumeru_cb.isChecked();
+                        show_tcg_Fatui = fatui_cb.isChecked();
+                        show_tcg_Monster = monster_cb.isChecked();
+                        show_tcg_Talent = talent_cb.isChecked();
+                        show_tcg_Weapon = weapon_cb.isChecked();
+                        show_tcg_Artifact = artifact_cb.isChecked();
+                        show_tcg_Environment = environment_cb.isChecked();
+                        show_tcg_Partner = partner_cb.isChecked();
+                        show_tcg_Tool = tool_cb.isChecked();
+                        show_tcg_ElementalResonance = elementalresonance_cb.isChecked();
+                        show_tcg_Special = special_cb.isChecked();
+                        show_tcg_Food = food_cb.isChecked();
+
                         filterTCGAlgothm();
                         dialog.dismiss();
                     }
@@ -569,12 +642,14 @@ public class TCG2048 {
     private void filterTCGAlgothm() {
         ArrayList<TCG> tempList = charList;
         TCGAdapter mTempAdapter = mCharAdapter;
+        String currMajorType = TCG.CHAR;
+        RecyclerView mTempRecycle = mCharList;
         switch (viewPager.getCurrentItem()){
-            case 0 : {tempList = charList; mTempAdapter = mCharAdapter;break;}
-            case 1 : {tempList = equipList; mTempAdapter = mEquipAdapter;break;}
-            case 2 : {tempList = supportList; mTempAdapter = mSupportAdapter;break;}
-            case 3 : {tempList = eventList; mTempAdapter = mEventAdapter;break;}
-            case 4 : {tempList = backsideList; mTempAdapter = mBackSideAdapter;break;}
+            case 0 : {tempList = charList; mTempAdapter = mCharAdapter;mTempRecycle = mCharList; currMajorType = TCG.CHAR; break;}
+            case 1 : {tempList = equipList; mTempAdapter = mEquipAdapter;mTempRecycle = mEquipList; currMajorType = TCG.EQUIP;break;}
+            case 2 : {tempList = supportList; mTempAdapter = mSupportAdapter;mTempRecycle = mSupportList; currMajorType = TCG.SUPPORT;break;}
+            case 3 : {tempList = eventList; mTempAdapter = mEventAdapter; mTempRecycle = mEventList;currMajorType = TCG.EVENT;break;}
+            case 4 : {tempList = backsideList; mTempAdapter = mBackSideAdapter;mTempRecycle = mBackSideList; currMajorType = TCG.BACKSIDE;break;}
         }
 
         ArrayList<TCG> filteredList = new ArrayList<>();
@@ -589,40 +664,155 @@ public class TCG2048 {
                 filteredList.add(item);
             }else{
                 boolean isAllTrue = true;
+                int isSingleCHAR = 0;
+                int isSingleEQUIP = 0;
+                int isSingleSUPPORT = 0;
+                int isSingleEVENT = 0;
+                int isSingleElementX = 0;
 
+                if(show_dice_pyro){isSingleElementX++;}
+                if(show_dice_hydro){isSingleElementX++;}
+                if(show_dice_anemo){isSingleElementX++;}
+                if(show_dice_electro){isSingleElementX++;}
+                if(show_dice_dendro){isSingleElementX++;}
+                if(show_dice_cryo){isSingleElementX++;}
+                if(show_dice_geo){isSingleElementX++;}
+                if(show_dice_spec){isSingleElementX++;}
+                if(show_dice_rand){isSingleElementX++;}
 
-                if (isAllTrue == true){
+                if(show_tcg_Mondstadt){isSingleCHAR++;}
+                if(show_tcg_Liyue){isSingleCHAR++;}
+                if(show_tcg_Inazuma){isSingleCHAR++;}
+                if(show_tcg_Sumeru){isSingleCHAR++;}
+                if(show_tcg_Fatui){isSingleCHAR++;}
+                if(show_tcg_Monster){isSingleCHAR++;}
+
+                if(show_tcg_Talent){isSingleEQUIP++;}
+                if(show_tcg_Weapon){isSingleEQUIP++;}
+                if(show_tcg_Artifact){isSingleEQUIP++;}
+
+                if(show_tcg_Environment){isSingleSUPPORT++;}
+                if(show_tcg_Partner){isSingleSUPPORT++;}
+                if(show_tcg_Tool){isSingleSUPPORT++;}
+
+                if(show_tcg_ElementalResonance){isSingleEVENT++;}
+                if(show_tcg_Special){isSingleEVENT++;}
+                if(show_tcg_Food){isSingleEVENT++;}
+
+                if(isSingleElementX > 1){
+                    if (!show_dice_pyro  && item.getDiceType().equals(TCG.Pyro)){isAllTrue = false;}
+                    if (!show_dice_hydro  && item.getDiceType().equals(TCG.Hydro)){isAllTrue = false;}
+                    if (!show_dice_anemo  && item.getDiceType().equals(TCG.Anemo)){isAllTrue = false;}
+                    if (!show_dice_electro  && item.getDiceType().equals(TCG.Electro)){isAllTrue = false;}
+                    if (!show_dice_dendro  && item.getDiceType().equals(TCG.Dendro)){isAllTrue = false;}
+                    if (!show_dice_cryo  && item.getDiceType().equals(TCG.Cryo)){isAllTrue = false;}
+                    if (!show_dice_geo  && item.getDiceType().equals(TCG.Geo)){isAllTrue = false;}
+                    if (!show_dice_spec  && item.getDiceType().equals(TCG.SPEC)){isAllTrue = false;}
+                    if (!show_dice_rand  && item.getDiceType().equals(TCG.RAND)){isAllTrue = false;}
+                }else{
+                    if (show_dice_pyro  && !item.getDiceType().equals(TCG.Pyro)){isAllTrue = false;}
+                    if (show_dice_hydro  && !item.getDiceType().equals(TCG.Hydro)){isAllTrue = false;}
+                    if (show_dice_anemo  && !item.getDiceType().equals(TCG.Anemo)){isAllTrue = false;}
+                    if (show_dice_electro  && !item.getDiceType().equals(TCG.Electro)){isAllTrue = false;}
+                    if (show_dice_dendro  && !item.getDiceType().equals(TCG.Dendro)){isAllTrue = false;}
+                    if (show_dice_cryo  && !item.getDiceType().equals(TCG.Cryo)){isAllTrue = false;}
+                    if (show_dice_geo  && !item.getDiceType().equals(TCG.Geo)){isAllTrue = false;}
+                    if (show_dice_spec  && !item.getDiceType().equals(TCG.SPEC)){isAllTrue = false;}
+                    if (show_dice_rand  && !item.getDiceType().equals(TCG.RAND)){isAllTrue = false;}
+                }
+
+                // Logic redesign
+                switch (currMajorType){
+                    case TCG.CHAR: {
+                        if(isSingleCHAR > 1){
+                            if (!show_tcg_Mondstadt  && item.getSubType().equals(TCG.Mondstadt)){isAllTrue = false;}
+                            if (!show_tcg_Liyue  && item.getSubType().equals(TCG.Liyue)){isAllTrue = false;}
+                            if (!show_tcg_Inazuma  && item.getSubType().equals(TCG.Inazuma)){isAllTrue = false;}
+                            if (!show_tcg_Sumeru  && item.getSubType().equals(TCG.Sumeru)){isAllTrue = false;}
+                            if (!show_tcg_Fatui  && item.getSubType().equals(TCG.Fatui)){isAllTrue = false;}
+                            if (!show_tcg_Monster  && item.getSubType().equals(TCG.Monster)){isAllTrue = false;}
+                        }else{
+                            if (show_tcg_Mondstadt  && !item.getSubType().equals(TCG.Mondstadt)){isAllTrue = false;}
+                            if (show_tcg_Liyue  && !item.getSubType().equals(TCG.Liyue)){isAllTrue = false;}
+                            if (show_tcg_Inazuma  && !item.getSubType().equals(TCG.Inazuma)){isAllTrue = false;}
+                            if (show_tcg_Sumeru  && !item.getSubType().equals(TCG.Sumeru)){isAllTrue = false;}
+                            if (show_tcg_Fatui  && !item.getSubType().equals(TCG.Fatui)){isAllTrue = false;}
+                            if (show_tcg_Monster  && !item.getSubType().equals(TCG.Monster)){isAllTrue = false;}
+                        }
+                        break;
+                    }
+                    case TCG.EQUIP: {
+                        if (isSingleEQUIP > 1){
+                            if (!show_tcg_Talent  && item.getSubType().equals(TCG.Talent)){isAllTrue = false;}
+                            else if (!show_tcg_Weapon  && item.getSubType().equals(TCG.Weapon)){isAllTrue = false;}
+                            else if (!show_tcg_Artifact  && item.getSubType().equals(TCG.Artifact)){isAllTrue = false;}
+                        }else{
+                            if (show_tcg_Talent  && !item.getSubType().equals(TCG.Talent)){isAllTrue = false;}
+                            else if (show_tcg_Weapon  && !item.getSubType().equals(TCG.Weapon)){isAllTrue = false;}
+                            else if (show_tcg_Artifact  && !item.getSubType().equals(TCG.Artifact)){isAllTrue = false;}
+                        }
+                        break;
+                    }
+                    case TCG.SUPPORT: {
+                        if (isSingleSUPPORT > 1){
+                            if (!show_tcg_Environment  && item.getSubType().equals(TCG.Environment)){isAllTrue = false;}
+                            else if (!show_tcg_Partner  && item.getSubType().equals(TCG.Partner)){isAllTrue = false;}
+                            else if (!show_tcg_Tool  && item.getSubType().equals(TCG.Tool)){isAllTrue = false;}
+                        }else{
+                            if (show_tcg_Environment  && !item.getSubType().equals(TCG.Environment)){isAllTrue = false;}
+                            else if (show_tcg_Partner  && !item.getSubType().equals(TCG.Partner)){isAllTrue = false;}
+                            else if (show_tcg_Tool  && !item.getSubType().equals(TCG.Tool)){isAllTrue = false;}
+                        }
+                        break;
+                    }
+                    case TCG.EVENT: {
+                        if (isSingleEVENT > 1){
+                            if (!show_tcg_ElementalResonance  && item.getSubType().equals(TCG.ElementalResonance)){isAllTrue = true;}
+                            else if (!show_tcg_Special  && item.getSubType().equals(TCG.Special)){isAllTrue = true;}
+                            else if (!show_tcg_Food  && item.getSubType().equals(TCG.Food)){isAllTrue = true;}
+                        }else{
+                            if (show_tcg_ElementalResonance  && !item.getSubType().equals(TCG.ElementalResonance)){isAllTrue = false;}
+                            else if (show_tcg_Special  && !item.getSubType().equals(TCG.Special)){isAllTrue = false;}
+                            else if (show_tcg_Food  && !item.getSubType().equals(TCG.Food)){isAllTrue = false;}
+                        }
+                        break;
+                    }
+                }
+
+                if (isAllTrue){
                     filteredList.add(item);
                 }
             }
         }
-        mWeaponList.removeAllViews();
-        mWeaponAdapter.filterList(filteredList);
-        editor.putBoolean("show_pyro",show_pyro);
-        editor.putBoolean("show_hydro",show_hydro);
-        editor.putBoolean("show_anemo",show_anemo);
-        editor.putBoolean("show_electro",show_electro);
-        editor.putBoolean("show_dendor",show_dendor);
-        editor.putBoolean("show_cryo",show_cryo);
-        editor.putBoolean("show_geo",show_geo);
-        editor.putBoolean("show_sword",show_sword);
-        editor.putBoolean("show_claymore",show_claymore);
-        editor.putBoolean("show_polearm",show_polearm);
-        editor.putBoolean("show_bow",show_bow);
-        editor.putBoolean("show_catalyst",show_catalyst);
-        editor.putBoolean("show_rare1",show_rare1);
-        editor.putBoolean("show_rare2",show_rare2);
-        editor.putBoolean("show_rare3",show_rare3);
-        editor.putBoolean("show_rare4",show_rare4);
-        editor.putBoolean("show_rare5",show_rare5);
-        editor.putBoolean("show_released",show_released);
-        editor.putBoolean("show_unreleased",show_unreleased);
-        editor.putBoolean("show_dps",show_dps);
-        editor.putBoolean("show_sub_dps",show_sub_dps);
-        editor.putBoolean("show_util",show_util);
-        editor.apply();
+        mTempRecycle.removeAllViews();
+        mTempAdapter.filterList(filteredList);
+        editor.putBoolean("show_dice_pyro",show_dice_pyro);
+        editor.putBoolean("show_dice_hydro",show_dice_hydro);
+        editor.putBoolean("show_dice_anemo",show_dice_anemo);
+        editor.putBoolean("show_dice_electro",show_dice_electro);
+        editor.putBoolean("show_dice_dendro",show_dice_dendro);
+        editor.putBoolean("show_dice_cryo",show_dice_cryo);
+        editor.putBoolean("show_dice_geo",show_dice_geo);
+        editor.putBoolean("show_dice_spec",show_dice_spec);
+        editor.putBoolean("show_dice_rand",show_dice_rand);
+        editor.putBoolean("show_tcg_Mondstadt",show_tcg_Mondstadt);
+        editor.putBoolean("show_tcg_Liyue",show_tcg_Liyue);
+        editor.putBoolean("show_tcg_Inazuma",show_tcg_Inazuma);
+        editor.putBoolean("show_tcg_Sumeru",show_tcg_Sumeru);
+        editor.putBoolean("show_tcg_Fatui",show_tcg_Fatui);
+        editor.putBoolean("show_tcg_Monster",show_tcg_Monster);
+        editor.putBoolean("show_tcg_Talent",show_tcg_Talent);
+        editor.putBoolean("show_tcg_Weapon",show_tcg_Weapon);
+        editor.putBoolean("show_tcg_Artifact",show_tcg_Artifact);
+        editor.putBoolean("show_tcg_Environment",show_tcg_Environment);
+        editor.putBoolean("show_tcg_Partner",show_tcg_Partner);
+        editor.putBoolean("show_tcg_Tool",show_tcg_Tool);
+        editor.putBoolean("show_tcg_ElementalResonance",show_tcg_ElementalResonance);
+        editor.putBoolean("show_tcg_Special",show_tcg_Special);
+        editor.putBoolean("show_tcg_Food",show_tcg_Food);
+        editor.putBoolean("show_tcg_CardBack",show_tcg_CardBack);
 
-        mTempAdapter.filterList(tempList);
+        editor.apply();
     }
 
 

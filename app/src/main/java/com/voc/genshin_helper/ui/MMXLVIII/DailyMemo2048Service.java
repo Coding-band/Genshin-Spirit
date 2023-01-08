@@ -5,7 +5,13 @@ package com.voc.genshin_helper.ui.MMXLVIII;
  * Copyright © 2022 Xectorda 版權所有
  */
 
+import static com.voc.genshin_helper.util.DailyMemo.SEC_OF_CHECK_PEIROD;
+import static com.voc.genshin_helper.util.LogExport.DAILYMEMO;
+
 import android.annotation.SuppressLint;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.appwidget.AppWidgetManager;
@@ -16,12 +22,14 @@ import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
@@ -30,15 +38,18 @@ import android.view.View;
 import android.widget.RemoteViews;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.NotificationCompat;
 
 import com.squareup.picasso.Picasso;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.util.FileLoader;
+import com.voc.genshin_helper.util.LogExport;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONTokener;
 
 import java.io.IOException;
 
@@ -101,6 +112,22 @@ public class DailyMemo2048Service extends Service {
         super.onCreate();
         Log.d(TAG, "onCreate:(Service) ");
         dailyMemo2048Service = this;
+        context = getApplicationContext();
+
+        String channelId = null;
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            channelId = createNotificationChannel("dailyMemo","DailyMemo");
+        }else{
+            channelId = "";
+        }
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channelId);
+        Notification notification = builder.setOngoing(true)
+                .setSmallIcon(R.drawable.app_ico)
+                .setPriority(NotificationCompat.PRIORITY_MIN)
+                .setCategory(Notification.CATEGORY_SERVICE)
+                .build();
+        startForeground(2, notification);
+
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -117,7 +144,7 @@ public class DailyMemo2048Service extends Service {
             public void run() {
                 update(2);
             }
-        }, 60000);
+        }, SEC_OF_CHECK_PEIROD);
     }
 
     /**更新時間*/
@@ -135,15 +162,21 @@ public class DailyMemo2048Service extends Service {
         //System.out.println("URL : "+url);
         System.out.println("LOGS : "+url);
         if (!sharedPreferences.getString("genshin_uid","-1").equals("-1")){
-            new grabIdFromServer().execute(url);
-        }
-        if (location == 2){
-            autoLoop();
+            if (System.currentTimeMillis() - sharedPreferences.getLong("dailyMemoUnix",0) >= SEC_OF_CHECK_PEIROD){
+                sharedPreferences.edit().putLong("dailyMemoUnix",System.currentTimeMillis()).apply();
+                new grabIdFromServer().execute(url);
+                if (location == 2 || location == 3){
+                    autoLoop();
+                }
+            }
         }
     }
 
     private void updateData(){
         RemoteViews views = new RemoteViews(getPackageName(),R.layout.daily_memo_2048_widget);
+        context = getApplicationContext();
+        item_rss = new ItemRss();
+        sharedPreferences = context.getSharedPreferences("user_info", Context.MODE_PRIVATE);
 
         final int radius_circ_siptik_ico = 120;
         final int margin_circ_siptik_ico = 0;
@@ -181,12 +214,12 @@ public class DailyMemo2048Service extends Service {
         }
 
         if (icon.equals("N/A")){
-            views.setImageViewBitmap(R.id.memo_user_icon,getRoundedCornerBitmap(BitmapFactory.decodeResource(context.getResources(),R.drawable.paimon_suprise),120));
-            views.setImageViewBitmap(R.id.memo_expe1_ico,getRoundedCornerBitmap(BitmapFactory.decodeResource(context.getResources(),R.drawable.paimon_suprise),120));
-            views.setImageViewBitmap(R.id.memo_expe2_ico,getRoundedCornerBitmap(BitmapFactory.decodeResource(context.getResources(),R.drawable.paimon_suprise),120));
-            views.setImageViewBitmap(R.id.memo_expe3_ico,getRoundedCornerBitmap(BitmapFactory.decodeResource(context.getResources(),R.drawable.paimon_suprise),120));
-            views.setImageViewBitmap(R.id.memo_expe4_ico,getRoundedCornerBitmap(BitmapFactory.decodeResource(context.getResources(),R.drawable.paimon_suprise),120));
-            views.setImageViewBitmap(R.id.memo_expe5_ico,getRoundedCornerBitmap(BitmapFactory.decodeResource(context.getResources(),R.drawable.paimon_suprise),120));
+            views.setImageViewBitmap(R.id.memo_user_icon,getRoundedCornerBitmap(BitmapFactory.decodeResource(context.getResources(),R.drawable.paimon_suprise),120, context));
+            views.setImageViewBitmap(R.id.memo_expe1_ico,getRoundedCornerBitmap(BitmapFactory.decodeResource(context.getResources(),R.drawable.paimon_suprise),120, context));
+            views.setImageViewBitmap(R.id.memo_expe2_ico,getRoundedCornerBitmap(BitmapFactory.decodeResource(context.getResources(),R.drawable.paimon_suprise),120, context));
+            views.setImageViewBitmap(R.id.memo_expe3_ico,getRoundedCornerBitmap(BitmapFactory.decodeResource(context.getResources(),R.drawable.paimon_suprise),120, context));
+            views.setImageViewBitmap(R.id.memo_expe4_ico,getRoundedCornerBitmap(BitmapFactory.decodeResource(context.getResources(),R.drawable.paimon_suprise),120, context));
+            views.setImageViewBitmap(R.id.memo_expe5_ico,getRoundedCornerBitmap(BitmapFactory.decodeResource(context.getResources(),R.drawable.paimon_suprise),120, context));
 
         }else{
             if (!sharedPreferences.getString("icon_name", "N/A").equals("N/A")){
@@ -194,12 +227,12 @@ public class DailyMemo2048Service extends Service {
             }else{
                 icon = item_rss.getCharNameByTranslatedName(icon, context);
             }
-            views.setImageViewBitmap(R.id.memo_user_icon,getRoundedCornerBitmap(FileLoader.loadIMG2Bitmap(item_rss.getCharByName(icon,context)[3],context),120));
-            views.setImageViewBitmap(R.id.memo_expe1_ico,getRoundedCornerBitmap(FileLoader.loadIMG2Bitmap(item_rss.getCharByName(expedition1_name,context)[3],context),120));
-            views.setImageViewBitmap(R.id.memo_expe2_ico,getRoundedCornerBitmap(FileLoader.loadIMG2Bitmap(item_rss.getCharByName(expedition2_name,context)[3],context),120));
-            views.setImageViewBitmap(R.id.memo_expe3_ico,getRoundedCornerBitmap(FileLoader.loadIMG2Bitmap(item_rss.getCharByName(expedition3_name,context)[3],context),120));
-            views.setImageViewBitmap(R.id.memo_expe4_ico,getRoundedCornerBitmap(FileLoader.loadIMG2Bitmap(item_rss.getCharByName(expedition4_name,context)[3],context),120));
-            views.setImageViewBitmap(R.id.memo_expe5_ico,getRoundedCornerBitmap(FileLoader.loadIMG2Bitmap(item_rss.getCharByName(expedition5_name,context)[3],context),120));
+            views.setImageViewBitmap(R.id.memo_user_icon,getRoundedCornerBitmap(FileLoader.loadIMG2Bitmap(item_rss.getCharByName(icon,context)[3],context),120, context));
+            views.setImageViewBitmap(R.id.memo_expe1_ico,getRoundedCornerBitmap(FileLoader.loadIMG2Bitmap(item_rss.getCharByName(expedition1_name,context)[3],context),120, context));
+            views.setImageViewBitmap(R.id.memo_expe2_ico,getRoundedCornerBitmap(FileLoader.loadIMG2Bitmap(item_rss.getCharByName(expedition2_name,context)[3],context),120, context));
+            views.setImageViewBitmap(R.id.memo_expe3_ico,getRoundedCornerBitmap(FileLoader.loadIMG2Bitmap(item_rss.getCharByName(expedition3_name,context)[3],context),120, context));
+            views.setImageViewBitmap(R.id.memo_expe4_ico,getRoundedCornerBitmap(FileLoader.loadIMG2Bitmap(item_rss.getCharByName(expedition4_name,context)[3],context),120, context));
+            views.setImageViewBitmap(R.id.memo_expe5_ico,getRoundedCornerBitmap(FileLoader.loadIMG2Bitmap(item_rss.getCharByName(expedition5_name,context)[3],context),120, context));
 
         }
 
@@ -328,7 +361,7 @@ public class DailyMemo2048Service extends Service {
 
             updateData();
         } catch (JSONException e) {
-            e.printStackTrace();
+            LogExport.export("DailyMemo2048Service","refresh", e.getMessage(), context, DAILYMEMO);
         }
     }
 
@@ -353,8 +386,32 @@ public class DailyMemo2048Service extends Service {
             try {
                 Response sponse = client.newCall(request).execute();
                 String str = sponse.body().string();
+                Object json = new JSONTokener(str).nextValue();
+                if (json instanceof JSONObject){
+                    sharedPreferences.edit().putString("dailyMemoDataTMP",str).apply();
+                }else{
+                    str = sharedPreferences.getString("dailyMemoDataTMP","{\"nickname\": \"N/A\", \"level\": 1, \"server\": \"os_asia\", \"icon\": \"Klee\", \"resin_curr\": 0, \"resin_remain_time\": 1, \"currency_curr\": 0, \"currency_max\": 300, \"currency_remain_time\": -1, \"mission_done\": 0, \"mission_claim\": \"false\", \"transformer_recovery_time\": -1, \"weekboss_30\": 3, \"expedition1_name\": \"N/A\", \"expedition1_remain_time\": -1, \"expedition2_name\": \"N/A\", \"expedition2_remain_time\": -1, \"expedition3_name\": \"N/A\", \"expedition3_remain_time\": -1, \"expedition4_name\": \"N/A\", \"expedition4_remain_time\": -1, \"expedition5_name\": \"N/A\", \"expedition5_remain_time\": -1}");
+                }
+                refreshData(str);
+
+            } catch (IOException | JSONException e) {
+                LogExport.export("DailyMemo2048Service","grabIdFromServer.doInBackground => strFromInternet", e.getMessage(), context, DAILYMEMO);
+                refreshData(sharedPreferences.getString("dailyMemoDataTMP","{\"nickname\": \"N/A\", \"level\": 1, \"server\": \"os_asia\", \"icon\": \"Klee\", \"resin_curr\": 0, \"resin_remain_time\": 1, \"currency_curr\": 0, \"currency_max\": 300, \"currency_remain_time\": -1, \"mission_done\": 0, \"mission_claim\": \"false\", \"transformer_recovery_time\": -1, \"weekboss_30\": 3, \"expedition1_name\": \"N/A\", \"expedition1_remain_time\": -1, \"expedition2_name\": \"N/A\", \"expedition2_remain_time\": -1, \"expedition3_name\": \"N/A\", \"expedition3_remain_time\": -1, \"expedition4_name\": \"N/A\", \"expedition4_remain_time\": -1, \"expedition5_name\": \"N/A\", \"expedition5_remain_time\": -1}"));
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        update(3);
+                    }
+                }, SEC_OF_CHECK_PEIROD);
+            }
+            return "DONE";
+        }
+
+        private void refreshData(String str) {
+            try {
                 JSONObject jsonObject = new JSONObject(str);
 
+                LogExport.export("DailyMemo2048Service","grabIdFromServer.[REGULAR]", jsonObject.toString(), context, DAILYMEMO);
                 //System.out.println("jsonObject : "+jsonObject.toString());
 
                 //官服[天空島服] = "cn_gf01"
@@ -388,14 +445,10 @@ public class DailyMemo2048Service extends Service {
                 expedition3_remain_time = jsonObject.getInt("expedition3_remain_time");
                 expedition4_remain_time = jsonObject.getInt("expedition4_remain_time");
                 expedition5_remain_time = jsonObject.getInt("expedition5_remain_time");
-
-
-            } catch (JSONException | IOException e) {
-                e.printStackTrace();
+            }catch (JSONException e) {
+                LogExport.export("DailyMemo2048Service","grabIdFromServer.doInBackground => refreshData()", e.getMessage(), context, DAILYMEMO);
             }
-            return "DONE";
         }
-
 
 
         public void onPostExecute(String result )
@@ -432,7 +485,10 @@ public class DailyMemo2048Service extends Service {
         }
     }
 
-    public static Bitmap getRoundedCornerBitmap(Bitmap bitmap, int pixels) {
+    public static Bitmap getRoundedCornerBitmap(Bitmap bitmap, int pixels, Context context) {
+        if (bitmap == null){
+            bitmap = BitmapFactory.decodeResource(context.getResources(),R.drawable.paimon_suprise);
+        }
         Bitmap output = Bitmap.createBitmap(bitmap.getWidth(), bitmap
                 .getHeight(), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(output);
@@ -452,5 +508,14 @@ public class DailyMemo2048Service extends Service {
         canvas.drawBitmap(bitmap, rect, rect, paint);
 
         return output;
+    }
+
+    private String createNotificationChannel(String channelId, String channelName){
+        NotificationChannel channel = new NotificationChannel(channelId,channelName, NotificationManager.IMPORTANCE_NONE);
+        channel.setLightColor(Color.CYAN);
+        channel.setLockscreenVisibility(Notification.VISIBILITY_PRIVATE);
+        NotificationManager service = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        service.createNotificationChannel(channel);
+        return channelId;
     }
 }

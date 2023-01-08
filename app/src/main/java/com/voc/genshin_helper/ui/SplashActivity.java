@@ -9,6 +9,10 @@ import static android.Manifest.permission.READ_MEDIA_IMAGES;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 import static android.os.Build.VERSION.SDK_INT;
 
+import static com.voc.genshin_helper.util.LogExport.DAILYMEMO;
+import static com.voc.genshin_helper.util.LogExport.DOWNLOADTASK;
+import static com.voc.genshin_helper.util.LogExport.UNZIPMANAGER;
+
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -54,6 +58,7 @@ import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.Dialog2048;
 import com.voc.genshin_helper.util.DownloadTask;
 import com.voc.genshin_helper.util.FileLoader;
+import com.voc.genshin_helper.util.LogExport;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -116,7 +121,8 @@ public class SplashActivity extends AppCompatActivity {
         }else if (sharedPreferences.getBoolean("theme_default", false) == true) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
         }
-        ((TextView) findViewById(R.id.splash_version)).setText(BuildConfig.VERSION_NAME);
+        LogExport.init(context);
+       ((TextView) findViewById(R.id.splash_version)).setText(BuildConfig.VERSION_NAME);
 
         if (sharedPreferences.getBoolean("isRandomTheme",true) == true && sharedPreferences.getBoolean("downloadBase", false) == true){
             ((ConstraintLayout) findViewById(R.id.splash_rand_cons)).setVisibility(View.VISIBLE);
@@ -349,7 +355,7 @@ public class SplashActivity extends AppCompatActivity {
             InetAddress inet = InetAddress.getByName(ipAddress);
 
             System.out.println("Sending Ping Request to " + ipAddress);
-            System.out.println(inet.isReachable(2000) ? "Host is reachable" : "Host is NOT reachable");
+            System.out.println(inet.isReachable(500) ? "Host is reachable" : "Host is NOT reachable");
 
 
             if(inet.isReachable(2000) == true){
