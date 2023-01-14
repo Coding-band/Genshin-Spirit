@@ -25,6 +25,12 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
+/*
+ * Project Genshin Spirit (原神小幫手) was
+ * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2023 Xectorda 版權所有
+ */
+
 public class LogExport {
 
     public static String DAILYMEMO = "dailyMemo.txt";

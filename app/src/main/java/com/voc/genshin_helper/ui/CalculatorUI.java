@@ -84,7 +84,7 @@ import com.voc.genshin_helper.buff.CalculatorBuff;
 /*
  * Project Genshin Spirit (原神小幫手) was
  * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2022 Xectorda 版權所有
+ * Copyright © 2023 Xectorda 版權所有
  */
 
 public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnValueChangeListener {

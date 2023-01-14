@@ -36,10 +36,10 @@ import java.util.zip.ZipException;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipInputStream;
 
-/**
- * Project "Genshin Spirit" (原神小幫手) was
+/*
+ * Project Genshin Spirit (原神小幫手) was
  * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2022 Xectorda 版權所有
+ * Copyright © 2023 Xectorda 版權所有
  */
 public class UnzipManager {
 
@@ -162,7 +162,9 @@ public class UnzipManager {
                     SharedPreferences sharedPreferences = context.getSharedPreferences("user_info", 0);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     editor.putBoolean("downloadBase",true);
+                    editor.putLong("lastUpdateUnix", System.currentTimeMillis());
                     editor.apply();
+
                     if(context instanceof SplashActivity){
                         /*
                         ((SplashActivity) context).startActivity(new Intent(context, MainActivity.class));
@@ -266,10 +268,27 @@ public class UnzipManager {
                     file.delete();
                 }
             }
+            new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
+                @Override
+                public void run() {
+
+                    SharedPreferences sharedPreferences = context.getSharedPreferences("user_info", 0);
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putBoolean("downloadBase",true);
+                    editor.putLong("lastUpdateUnix", System.currentTimeMillis());
+                    editor.apply();
+
+                    if(context instanceof SplashActivity && runStyleUI){
+                        /*
+                        ((SplashActivity) context).startActivity(new Intent(context, MainActivity.class));
+                        ((SplashActivity) context).finish();
+                         */
+                        ((SplashActivity)context).checkStyleUI();
+                    }
+                }
+            }, 10);
             //CustomToast.toast(context,activity,context.getString(R.string.update_download_done));
-            if (runStyleUI){
-                ((SplashActivity) context).checkStyleUI();
-            }
+
         }
 
     }

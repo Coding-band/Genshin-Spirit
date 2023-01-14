@@ -56,6 +56,12 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * Project Genshin Spirit (原神小幫手) was
+ * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2023 Xectorda 版權所有
+ */
+
 public class TCG2048 {
 
     private ViewPager viewPager;
@@ -150,6 +156,8 @@ public class TCG2048 {
         viewPager_List.add(viewPager3);
         //viewPager_List.add(viewPager4);
         viewPager.setAdapter(new MyViewPagerAdapter(viewPager_List));
+
+
 
         setup_char();
         setup_equip();

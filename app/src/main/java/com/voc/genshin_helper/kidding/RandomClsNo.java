@@ -10,6 +10,12 @@ import java.util.ArrayList;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
+/*
+ * Project Genshin Spirit (原神小幫手) was
+ * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2023 Xectorda 版權所有
+ */
+
 public class RandomClsNo {
     ArrayList<Integer> askArray = new ArrayList<>();
     int randNum = 0;

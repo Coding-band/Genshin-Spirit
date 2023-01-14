@@ -1,9 +1,4 @@
 package com.voc.genshin_helper.ui.MMXLVIII;
-/*
- * Project Genshin Spirit (原神小幫手) was
- * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2022 Xectorda 版權所有
- */
 
 import static com.voc.genshin_helper.util.DailyMemo.SEC_OF_CHECK_PEIROD;
 import static com.voc.genshin_helper.util.LogExport.DAILYMEMO;
@@ -56,6 +51,12 @@ import java.io.IOException;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+
+/*
+ * Project Genshin Spirit (原神小幫手) was
+ * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2023 Xectorda 版權所有
+ */
 
 public class DailyMemo2048Service extends Service {
     public static final String TAG = "DailyMemo2048Service";
@@ -123,19 +124,24 @@ public class DailyMemo2048Service extends Service {
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, channelId);
         Notification notification = builder.setOngoing(true)
                 .setSmallIcon(R.drawable.app_ico)
+                .setContentTitle("DailyMemo is running...")
+                .setContentInfo("Data will refresh every minutes")
                 .setPriority(NotificationCompat.PRIORITY_MIN)
                 .setCategory(Notification.CATEGORY_SERVICE)
                 .build();
-        startForeground(2, notification);
 
-        handler.postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                update(1);
-            }
-        }, 100);
+        if (context.getSharedPreferences("user_info", Context.MODE_PRIVATE).getBoolean("isDailyMemoEnabled", true)) {
+            startForeground(2, notification);
 
-        autoLoop();
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    update(1);
+                }
+            }, 100);
+
+            autoLoop();
+        }
     }
 
     public void autoLoop(){

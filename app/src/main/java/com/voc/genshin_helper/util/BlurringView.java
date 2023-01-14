@@ -20,6 +20,12 @@ import android.view.View;
 
 import com.voc.genshin_helper.R;
 
+/*
+ * Project Genshin Spirit (原神小幫手) was
+ * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2023 Xectorda 版權所有
+ */
+
 /**
  * A custom view for presenting a dynamically blurred version of another view's content.
  * <p/>

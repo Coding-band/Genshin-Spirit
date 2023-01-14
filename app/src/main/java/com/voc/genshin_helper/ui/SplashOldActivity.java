@@ -72,7 +72,7 @@ import okhttp3.Response;
 /*
  * Project Genshin Spirit (原神小幫手) was
  * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2022 Xectorda 版權所有
+ * Copyright © 2023 Xectorda 版權所有
  */
 
 public class SplashOldActivity extends AppCompatActivity {
@@ -134,7 +134,7 @@ public class SplashOldActivity extends AppCompatActivity {
             AlertDialog.Builder dialog = new AlertDialog.Builder(SplashOldActivity.this, R.style.AlertDialogCustom);
             dialog.setCancelable(false);
             dialog.setTitle(context.getString(R.string.update_download_update_base));
-            dialog.setMessage(context.getString(R.string.update_download_advice) + "\n" + context.getString(R.string.update_download_base_file_size) + prettyByteCount(getRemoteFileSize("http://113.254.213.196/genshin_spirit/base.zip")));
+            dialog.setMessage(context.getString(R.string.update_download_advice) + "\n" + context.getString(R.string.update_download_base_file_size) + prettyByteCount(getRemoteFileSize("http://vt.25u.com/genshin_spirit/base.zip")));
             dialog.setNegativeButton(context.getString(R.string.update_download_later), new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface arg0, int arg1) {
@@ -148,7 +148,7 @@ public class SplashOldActivity extends AppCompatActivity {
                 public void onClick(DialogInterface arg0, int arg1) {
                     // TODO Auto-generated method stub
                     DownloadTask downloadTask = new DownloadTask();
-                    downloadTask.start("http://113.254.213.196/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
+                    downloadTask.start("http://vt.25u.com/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
 
                     sharedPreferences = getSharedPreferences("user_info", 0);
                     SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -266,7 +266,7 @@ public class SplashOldActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
         try {
-            String ipAddress = "113.254.213.196";
+            String ipAddress = "vt.25u.com";
             InetAddress inet = InetAddress.getByName(ipAddress);
 
             System.out.println("Sending Ping Request to " + ipAddress);
@@ -274,7 +274,7 @@ public class SplashOldActivity extends AppCompatActivity {
 
             if(inet.isReachable(2000) == true){
                 OkHttpClient client = new OkHttpClient();
-                String url = "http://113.254.213.196/genshin_spirit/update.json";
+                String url = "http://vt.25u.com/genshin_spirit/update.json";
                 Request request = new Request.Builder().url(url).build();
 
                 long lastUnix = System.currentTimeMillis();
@@ -296,13 +296,13 @@ public class SplashOldActivity extends AppCompatActivity {
                         }
 
                         if (release_unix > sharedPreferences.getLong("lastUpdateUnix", 1)) {
-                            array_download.add("http://113.254.213.196/genshin_spirit/" + fileName);
+                            array_download.add("http://vt.25u.com/genshin_spirit/" + fileName);
                             array_fileName.add(fileName);
                             array_SfileName.add("/" + fileName);
                         }
                     }
                     if (array_download.size() > 0) {
-                        if (getRemoteFileSize("http://113.254.213.196/genshin_spirit/base.zip") > getRemoteFileSizeA(array_download)) {
+                        if (getRemoteFileSize("http://vt.25u.com/genshin_spirit/base.zip") > getRemoteFileSizeA(array_download)) {
                             androidx.appcompat.app.AlertDialog.Builder dialog = new androidx.appcompat.app.AlertDialog.Builder(SplashOldActivity.this, R.style.AlertDialogCustom);
                             dialog.setCancelable(false);
                             dialog.setTitle(context.getString(R.string.update_download_update_curr));
@@ -332,7 +332,7 @@ public class SplashOldActivity extends AppCompatActivity {
                             AlertDialog.Builder dialog = new AlertDialog.Builder(SplashOldActivity.this, R.style.AlertDialogCustom);
                             dialog.setCancelable(false);
                             dialog.setTitle(context.getString(R.string.update_download_update_base));
-                            dialog.setMessage(context.getString(R.string.update_download_advice) + "\n" + context.getString(R.string.update_download_base_file_size) + prettyByteCount(getRemoteFileSize("http://113.254.213.196/genshin_spirit/base.zip")));
+                            dialog.setMessage(context.getString(R.string.update_download_advice) + "\n" + context.getString(R.string.update_download_base_file_size) + prettyByteCount(getRemoteFileSize("http://vt.25u.com/genshin_spirit/base.zip")));
                             dialog.setNegativeButton(context.getString(R.string.update_download_later), new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface arg0, int arg1) {
@@ -346,7 +346,7 @@ public class SplashOldActivity extends AppCompatActivity {
                                 public void onClick(DialogInterface arg0, int arg1) {
                                     // TODO Auto-generated method stub
                                     DownloadTask downloadTask = new DownloadTask();
-                                    downloadTask.start("http://113.254.213.196/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
+                                    downloadTask.start("http://vt.25u.com/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
 
                                     sharedPreferences = getSharedPreferences("user_info", 0);
                                     SharedPreferences.Editor editor = sharedPreferences.edit();

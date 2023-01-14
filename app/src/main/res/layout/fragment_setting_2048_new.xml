@@ -2,7 +2,7 @@
 <!--
   ~ Project Genshin Spirit (原神小幫手) was
   ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
-  ~ Copyright © 2022 Xectorda 版權所有
+  ~ Copyright © 2023 Xectorda 版權所有
   -->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -1132,6 +1132,20 @@
                 android:checked="true"
                 android:fontFamily="@font/genshin_font"
                 android:text="@string/is_random_scenery"
+                android:textColor="@color/tv_color"
+                android:thumbTint="@color/tv_anti_color_2048"
+                android:trackTint="@color/tv_anti_color_2048" />
+
+            <Switch
+                android:id="@+id/other_dailymemo_enabled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:checked="true"
+                android:fontFamily="@font/genshin_font"
+                android:text="Is dailyMemo enabled ?"
                 android:textColor="@color/tv_color"
                 android:thumbTint="@color/tv_anti_color_2048"
                 android:trackTint="@color/tv_anti_color_2048" />

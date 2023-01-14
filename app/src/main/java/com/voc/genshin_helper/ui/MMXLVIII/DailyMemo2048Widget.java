@@ -16,7 +16,7 @@ import java.util.List;
 /*
  * Project Genshin Spirit (原神小幫手) was
  * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2022 Xectorda 版權所有
+ * Copyright © 2023 Xectorda 版權所有
  */
 
 /**
@@ -65,12 +65,13 @@ public class DailyMemo2048Widget extends AppWidgetProvider {
     private void startRunService(Context context) {
         Intent intent = new Intent(context, DailyMemo2048Service.class);
         if(!isServiceRun(context)){
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                context.startForegroundService(intent);
-            } else {
-                context.startService(intent);
+            if (context.getSharedPreferences("user_info", Context.MODE_PRIVATE).getBoolean("isDailyMemoEnabled", true)) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                    context.startForegroundService(intent);
+                } else {
+                    context.startService(intent);
+                }
             }
-
         }
     }
     /**判斷此是否已有我的Service再跑*/

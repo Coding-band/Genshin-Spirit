@@ -85,7 +85,7 @@ import okhttp3.Response;
 /*
  * Project Genshin Spirit (原神小幫手) was
  * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2022 Xectorda 版權所有
+ * Copyright © 2023 Xectorda 版權所有
  */
 
 public class SplashActivity extends AppCompatActivity {
@@ -210,7 +210,7 @@ public class SplashActivity extends AppCompatActivity {
 
             Dialog2048 dialog2048 = new Dialog2048();
             dialog2048.setup(context,activity);
-            dialog2048.updateMax(getRemoteFileSize("http://113.254.213.196/genshin_spirit/base.zip"));
+            dialog2048.updateMax(getRemoteFileSize("http://vt.25u.com/genshin_spirit/base.zip"));
             dialog2048.mode(Dialog2048.MODE_DOWNLOAD_BASE);
             dialog2048.show();
 
@@ -219,12 +219,7 @@ public class SplashActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     dialog2048.dismiss();
                     DownloadTask downloadTask = new DownloadTask();
-                    downloadTask.start("http://113.254.213.196/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
-
-                    sharedPreferences = getSharedPreferences("user_info", 0);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putLong("lastUpdateUnix", System.currentTimeMillis());
-                    editor.apply();
+                    downloadTask.start("http://vt.25u.com/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
                 }
             });
 
@@ -351,7 +346,7 @@ public class SplashActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
         try {
-            String ipAddress = "113.254.213.196";
+            String ipAddress = "vt.25u.com";
             InetAddress inet = InetAddress.getByName(ipAddress);
 
             System.out.println("Sending Ping Request to " + ipAddress);
@@ -360,9 +355,9 @@ public class SplashActivity extends AppCompatActivity {
 
             if(inet.isReachable(2000) == true){
                 OkHttpClient client = new OkHttpClient();
-                String url = "http://113.254.213.196/genshin_spirit/update.json";
+                String url = "http://vt.25u.com/genshin_spirit/update.json";
                 if (BuildConfig.FLAVOR.equals("dev")){
-                    url = "http://113.254.213.196/genshin_spirit/update_dev.json";
+                    url = "http://vt.25u.com/genshin_spirit/update_dev.json";
                 }
                 Request request = new Request.Builder().url(url).build();
 
@@ -385,13 +380,13 @@ public class SplashActivity extends AppCompatActivity {
                         }
 
                         if (release_unix > sharedPreferences.getLong("lastUpdateUnix", 1)) {
-                            array_download.add("http://113.254.213.196/genshin_spirit/" + fileName);
+                            array_download.add("http://vt.25u.com/genshin_spirit/" + fileName);
                             array_fileName.add(fileName);
                             array_SfileName.add("/" + fileName);
                         }
                     }
                     if (array_download.size() > 0) {
-                        if (getRemoteFileSize("http://113.254.213.196/genshin_spirit/base.zip") > getRemoteFileSizeA(array_download)) {
+                        if (getRemoteFileSize("http://vt.25u.com/genshin_spirit/base.zip") > getRemoteFileSizeA(array_download)) {
 
                             Dialog2048 dialog2048 = new Dialog2048();
                             dialog2048.setup(context,activity);
@@ -407,7 +402,6 @@ public class SplashActivity extends AppCompatActivity {
                                     dialog2048.dismiss();
                                     DownloadTask downloadTask = new DownloadTask();
                                     downloadTask.startAWithRun(array_download, array_fileName, array_SfileName, context, activity, true);
-                                    editor.putLong("lastUpdateUnix", finalLastUnix);
                                     editor.apply();
                                 }
                             });
@@ -424,7 +418,7 @@ public class SplashActivity extends AppCompatActivity {
                         } else {
                             Dialog2048 dialog2048 = new Dialog2048();
                             dialog2048.setup(context,activity);
-                            dialog2048.updateMax(getRemoteFileSize("http://113.254.213.196/genshin_spirit/base.zip"));
+                            dialog2048.updateMax(getRemoteFileSize("http://vt.25u.com/genshin_spirit/base.zip"));
                             dialog2048.mode(Dialog2048.MODE_DOWNLOAD_BASE);
                             dialog2048.show();
 
@@ -432,12 +426,7 @@ public class SplashActivity extends AppCompatActivity {
                                 @Override
                                 public void onClick(View v) {
                                     DownloadTask downloadTask = new DownloadTask();
-                                    downloadTask.start("http://113.254.213.196/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
-
-                                    sharedPreferences = getSharedPreferences("user_info", 0);
-                                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                                    editor.putLong("lastUpdateUnix", System.currentTimeMillis());
-                                    editor.apply();
+                                    downloadTask.start("http://vt.25u.com/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
                                 }
                             });
                             dialog2048.getNegativeBtn().setOnClickListener(new View.OnClickListener() {

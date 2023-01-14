@@ -10,6 +10,12 @@ import android.view.ViewGroup;
 import androidx.viewpager.widget.PagerAdapter;
 
 import java.util.List;
+/*
+ * Project Genshin Spirit (原神小幫手) was
+ * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2023 Xectorda 版權所有
+ */
+
 public class MyViewPagerAdapter extends PagerAdapter
 {
     private List<View> mListViews;

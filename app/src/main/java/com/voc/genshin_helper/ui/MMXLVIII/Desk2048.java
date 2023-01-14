@@ -22,6 +22,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.ClipData;
 import android.content.ClipboardManager;
+import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
@@ -149,7 +150,7 @@ import okhttp3.Response;
 /*
  * Project Genshin Spirit (原神小幫手) was
  * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2022 Xectorda 版權所有
+ * Copyright © 2023 Xectorda 版權所有
  */
 
 public class Desk2048 extends AppCompatActivity {
@@ -182,12 +183,12 @@ public class Desk2048 extends AppCompatActivity {
     Today_Material tm;
     ItemRss css;
     //Char Page
-    CharactersAdapter mAdapter;
-    ArtifactsAdapter mArtifactAdapter;
-    RecyclerView mArtifactList;
-    RecyclerView mList;
-    WeaponsAdapter mWeaponAdapter;
-    RecyclerView mWeaponList;
+    //CharactersAdapter mAdapter;
+    //ArtifactsAdapter mArtifactAdapter;
+    //RecyclerView mArtifactList;
+    //RecyclerView mList;
+    //WeaponsAdapter mWeaponAdapter;
+    //RecyclerView mWeaponList;
     IconCardAdapter mIconCardAdapter;
     RecyclerView mIconCardList;
 
@@ -240,9 +241,9 @@ public class Desk2048 extends AppCompatActivity {
     public SharedPreferences.Editor editor;
     public SharedPreferences.Editor editor2;
 
-    public List<Characters> charactersList = new ArrayList<>();
-    public List<Weapons> weaponsList = new ArrayList();
-    public List<Artifacts> artifactsList = new ArrayList();
+    //public List<Characters> charactersList = new ArrayList<>();
+    //public List<Weapons> weaponsList = new ArrayList();
+    //public List<Artifacts> artifactsList = new ArrayList();
     public List<IconCard> iconCardList_ICON = new ArrayList();
     public List<IconCard> iconCardList_CARD = new ArrayList();
     public List<String> dbIsCalCharName = new ArrayList();
@@ -260,6 +261,7 @@ public class Desk2048 extends AppCompatActivity {
     Switch other_item_eng_name ;
     Switch other_random_theme_confirm ;
     Switch other_app_ico_use_default ;
+    Switch other_dailymemo_enabled ;
 
     RadioButton style_Voc_rb;
     RadioButton style_2O48_rb;
@@ -291,6 +293,7 @@ public class Desk2048 extends AppCompatActivity {
     ColorStateList myList;
 
     TCG2048 tcg2048;
+    Team2048 team2048;
 
     final int radius_circ = 360;
     final int margin_circ = 0;
@@ -302,10 +305,15 @@ public class Desk2048 extends AppCompatActivity {
 
     Activity activity;
 
-    View viewPager0, viewPager1, viewPager2, viewPager3, viewPager4, viewPager5;
+    View viewPager1, viewPager2, viewPager3;
+    View viewPager0, viewPager4, viewPager5, viewPager6;
 
-    int[] tabItemImageArray = new int[]{R.drawable.ic_2048_tab_desk,R.drawable.ic_2048_tab_char,R.drawable.ic_2048_tab_weapon,R.drawable.ic_2048_tab_art,R.drawable.ic_2048_tab_tcg,R.drawable.ic_2048_tab_toolbox};
-    int[] tabItemImageSelectedArray = new int[]{R.drawable.ic_2048_tab_desk_selected,R.drawable.ic_2048_tab_char_selected,R.drawable.ic_2048_tab_weapon_selected,R.drawable.ic_2048_tab_art_selected,R.drawable.ic_2048_tab_tcg_selected,R.drawable.ic_2048_tab_toolbox_selected};
+    int[] tabItemImageArray = new int[]{R.drawable.ic_2048_tab_desk,R.drawable.ic_2048_tab_team,R.drawable.ic_2048_tab_tcg,R.drawable.ic_2048_tab_toolbox};
+    int[] tabItemImageSelectedArray = new int[]{R.drawable.ic_2048_tab_desk_selected,R.drawable.ic_2048_tab_team_selected,R.drawable.ic_2048_tab_tcg_selected,R.drawable.ic_2048_tab_toolbox_selected};
+
+
+    //int[] tabItemImageArray = new int[]{R.drawable.ic_2048_tab_desk,R.drawable.ic_2048_tab_char,R.drawable.ic_2048_tab_weapon,R.drawable.ic_2048_tab_art,R.drawable.ic_2048_tab_tcg,R.drawable.ic_2048_tab_toolbox};
+    //int[] tabItemImageSelectedArray = new int[]{R.drawable.ic_2048_tab_desk_selected,R.drawable.ic_2048_tab_char_selected,R.drawable.ic_2048_tab_weapon_selected,R.drawable.ic_2048_tab_art_selected,R.drawable.ic_2048_tab_tcg_selected,R.drawable.ic_2048_tab_toolbox_selected};
 
     int[] tabTCGItemImageArray = new int[]{R.drawable.ic_2048_tcg_char,R.drawable.ic_2048_tcg_equip,R.drawable.ic_2048_tcg_support,R.drawable.ic_2048_tcg_event};
     int[] tabTCGItemImageSelectedArray = new int[]{R.drawable.ic_2048_tcg_char_selected,R.drawable.ic_2048_tcg_equip_selected,R.drawable.ic_2048_tcg_support_selected,R.drawable.ic_2048_tcg_event_selected};
@@ -360,17 +368,19 @@ public class Desk2048 extends AppCompatActivity {
 
         final LayoutInflater mInflater = getLayoutInflater().from(this);
         viewPager0 = mInflater.inflate(R.layout.fragment_home_2048, null,false);
-        viewPager1 = mInflater.inflate(R.layout.fragment_char_2048, null,false);
-        viewPager2 = mInflater.inflate(R.layout.fragment_weapon_2048, null,false);
-        viewPager3 = mInflater.inflate(R.layout.fragment_art_2048, null,false);
+        //viewPager1 = mInflater.inflate(R.layout.fragment_char_2048, null,false);
+        //viewPager2 = mInflater.inflate(R.layout.fragment_weapon_2048, null,false);
+        //viewPager3 = mInflater.inflate(R.layout.fragment_art_2048, null,false);
         viewPager4 = mInflater.inflate(R.layout.fragment_paimon_2048, null,false);
         viewPager5 = mInflater.inflate(R.layout.fragment_tcg_2048, null,false);
+        viewPager6 = mInflater.inflate(R.layout.fragment_team_2048, null,false);
 
         viewPager_List = new ArrayList<View>();
         viewPager_List.add(viewPager0);
-        viewPager_List.add(viewPager1);
-        viewPager_List.add(viewPager2);
-        viewPager_List.add(viewPager3);
+        //viewPager_List.add(viewPager1);
+        //viewPager_List.add(viewPager2);
+        //viewPager_List.add(viewPager3);
+        viewPager_List.add(viewPager6);
         viewPager_List.add(viewPager5);
         viewPager_List.add(viewPager4);
 
@@ -381,6 +391,7 @@ public class Desk2048 extends AppCompatActivity {
         viewPager0.findViewById(R.id.home_dailymemo).setVisibility(View.VISIBLE);
 
         tcg2048 = new TCG2048();
+        team2048 = new Team2048();
 
         lang_setup();
         home();
@@ -391,11 +402,18 @@ public class Desk2048 extends AppCompatActivity {
         char_reload(dow);
         weapon_reload(dow);
         setup_home();
-        setup_char();
-        setup_weapon();
-        setup_art();
+        setup_team();
+        //setup_char();
+        //setup_weapon();
+        //setup_art();
         setup_paimon();
         tcg2048.setup(viewPager5,context,activity,sharedPreferences);
+        team2048.setup(viewPager6,context,activity,sharedPreferences);
+
+        /*
+        Necessery
+         */
+        char_list_reload();
 
         //viewPager4.findViewById(R.id.card_char_bg)
 
@@ -430,7 +448,8 @@ public class Desk2048 extends AppCompatActivity {
         });
         viewPager.setAdapter(new MyViewPagerAdapter(viewPager_List));
 
-        for (int x = 0 ; x < 6 ; x++){
+        //for (int x = 0 ; x < 6 ; x++){
+        for (int x = 0 ; x < 4 ; x++){
             View view1 = getLayoutInflater().inflate(R.layout.item_custom_tab, null);
             ImageView ico_img = view1.findViewById(R.id.icon);
             ico_img.setImageResource(tabItemImageArray[x]);
@@ -579,9 +598,13 @@ public class Desk2048 extends AppCompatActivity {
         });
 
 
+        viewPager0.findViewById(R.id.tut_char_card).setVisibility(View.GONE);
+        viewPager4.findViewById(R.id.tut_char_card).setVisibility(View.GONE);
+        viewPager6.findViewById(R.id.tut_char_card).setVisibility(View.GONE);
+
         TutorialUI tutorialUI = new TutorialUI();
-        tutorialUI.deskSetPosArray(0,1,2,3,4);
-        tutorialUI.setup(context,activity,viewPager0,viewPager1,viewPager2,viewPager3,viewPager4,desk_tablayout,null);
+        //tutorialUI.deskSetPosArray(0,1,2,3,4);
+        //tutorialUI.setup(context,activity,viewPager0,viewPager1,viewPager2,viewPager3,viewPager4,desk_tablayout,null);
     }
 
     public void setCheckSpinner(int check_spinner){
@@ -910,370 +933,6 @@ public class Desk2048 extends AppCompatActivity {
         isWritePermissionGranted = isWritePermissionGranted || minSDK;
     }
 
-    private void setup_weapon() {
-        check_spinner = 0;
-        mWeaponList = viewPager2.findViewById(R.id.weapon_list);
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 2);
-        DisplayMetrics displayMetrics_w = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics_w);
-        int height_w = displayMetrics_w.heightPixels;
-        int width_w = displayMetrics_w.widthPixels;
-        mWeaponAdapter = new WeaponsAdapter(context,weaponsList,activity,sharedPreferences);
-
-
-        if (sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-                mLayoutManager = new GridLayoutManager(context,  width_w/480+1);
-            }else{
-                mLayoutManager = new GridLayoutManager(context,  2);
-            }
-        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-                mLayoutManager = new GridLayoutManager(context,  width_w/400+1);
-            }else{
-                mLayoutManager = new GridLayoutManager(context,  3);
-            }
-        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
-            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-                int tmp_cnt = (int) width_w/960;
-                if (tmp_cnt < 1){tmp_cnt = 1;}
-                mLayoutManager = new GridLayoutManager(context,  tmp_cnt);
-            }else{
-                mLayoutManager = new GridLayoutManager(context,  1);
-            }
-        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
-            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-                int tmp_cnt = (int) width_w/960;
-                if (tmp_cnt < 1){tmp_cnt = 1;}
-                mLayoutManager = new GridLayoutManager(context,  tmp_cnt);
-            }else{
-                mLayoutManager = new GridLayoutManager(context,  1);
-            }
-        }
-        LinearLayout.LayoutParams  paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
-        paramsMsg.gravity = Gravity.CENTER;
-        mWeaponList.setLayoutManager(mLayoutManager);
-        mWeaponList.setLayoutParams(paramsMsg);
-        mWeaponList.setAdapter(mWeaponAdapter);
-        mWeaponList.removeAllViewsInLayout();
-        weapon_list_reload();
-
-
-                        /*
-                        EditText weapon_et = viewPager2.findViewById(R.id.char_et);
-                        weapon_et.addTextChangedListener(new TextWatcher() {
-                            @Override
-                            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                            }
-
-                            @Override
-                            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                            }
-
-                            @Override
-                            public void afterTextChanged(Editable s) {
-                                ArrayList<Weapons> filteredList = new ArrayList<>();
-                                int x = 0;
-                                for (Weapons item : weaponsList) {
-                                    String str = String.valueOf(s).toLowerCase();
-                                    if (css.getWeaponByName(item.getName(),context)[0].contains(str)||css.getWeaponByName(item.getName(),context)[0].toLowerCase().contains(str)||css.getWeaponByName(item.getName(),context)[0].toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
-                                        filteredList.add(item);
-                                    }
-                                    x = x +1;
-                                }
-                                mWeaponAdapter.filterList(filteredList);
-                            }
-                        });
-                         */
-
-        ImageView weapon_search = viewPager2.findViewById(R.id.weapon_search);
-        weapon_search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ConstraintLayout header_con = viewPager2.findViewById(R.id.header_con);
-                View header_search = viewPager2.findViewById(R.id.header_search);
-                EditText header_search_et = viewPager2.findViewById(R.id.header_search_et);
-                Button menu_search_cancel = viewPager2.findViewById(R.id.menu_search_cancel);
-                ImageView header_search_reset = viewPager2.findViewById(R.id.header_search_reset);
-
-                header_con.animate()
-                        .alpha(0.0f)
-                        .setDuration(300)
-                        .setListener(new AnimatorListenerAdapter() {
-                            @Override
-                            public void onAnimationEnd(Animator animation) {
-                                super.onAnimationEnd(animation);
-                                header_con.setVisibility(View.GONE);
-                            }
-                        });
-
-                header_search.animate()
-                        .alpha(1.0f)
-                        .setDuration(300)
-                        .setListener(new AnimatorListenerAdapter() {
-                            @Override
-                            public void onAnimationEnd(Animator animation) {
-                                super.onAnimationEnd(animation);
-                                header_search.setVisibility(View.VISIBLE);
-                            }
-                        });
-
-                header_search_et.addTextChangedListener(new TextWatcher() {
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable s) {
-                        if (header_search_et.getText() != null){
-                            String request = header_search_et.getText().toString();
-                            if (!request.equals("")){
-                                ArrayList<Weapons> filteredList = new ArrayList<>();
-                                int x = 0;
-                                for (Weapons item : weaponsList) {
-                                    String str = request.toLowerCase();
-                                    if (css.getWeaponByName(item.getName(),context)[0].contains(str)||css.getWeaponByName(item.getName(),context)[0].toLowerCase().contains(str)||css.getWeaponByName(item.getName(),context)[0].toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
-                                        filteredList.add(item);
-                                    }
-                                    x = x +1;
-                                }
-                                mWeaponAdapter.filterList(filteredList);
-                            }else{
-                                mWeaponAdapter.filterList(weaponsList);
-                            }
-                        }else{
-                            mWeaponAdapter.filterList(weaponsList);
-                        }
-                    }
-                });
-
-                menu_search_cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        header_search_et.setText("");
-                        header_search.animate()
-                                .alpha(0.0f)
-                                .setDuration(300)
-                                .setListener(new AnimatorListenerAdapter() {
-                                    @Override
-                                    public void onAnimationEnd(Animator animation) {
-                                        super.onAnimationEnd(animation);
-                                        header_search.setVisibility(View.GONE);
-                                    }
-                                });
-                        header_con.animate()
-                                .alpha(1.0f)
-                                .setDuration(300)
-                                .setListener(new AnimatorListenerAdapter() {
-                                    @Override
-                                    public void onAnimationEnd(Animator animation) {
-                                        super.onAnimationEnd(animation);
-                                        header_con.setVisibility(View.VISIBLE);
-                                    }
-                                });
-                    }
-                });
-
-                header_search_reset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        header_search_et.setText("");
-                    }
-                });
-
-            };
-        });
-
-        ImageView weapon_filter = viewPager2.findViewById(R.id.weapon_filter);
-        weapon_filter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
-                View view = View.inflate(context, R.layout.menu_char_filter_2048, null);
-                // Element
-                TextView menu_elements_title_tv = view.findViewById(R.id.menu_elements_title_tv);
-                LinearLayout menu_elements_ll = view.findViewById(R.id.menu_elements_ll);
-                menu_elements_title_tv.setVisibility(View.GONE);
-                menu_elements_ll.setVisibility(View.GONE);
-
-                // Weapons
-                ImageView ico_sword = view.findViewById(R.id.ico_sword);
-                ImageView ico_claymore = view.findViewById(R.id.ico_claymore);
-                ImageView ico_polearm = view.findViewById(R.id.ico_polearm);
-                ImageView ico_bow = view.findViewById(R.id.ico_bow);
-                ImageView ico_catalyst = view.findViewById(R.id.ico_catalyst);
-                // Rarity
-                CheckBox menu_rare4 = view.findViewById(R.id.menu_rare4);
-                CheckBox menu_rare5 = view.findViewById(R.id.menu_rare5);
-                RatingBar menu_rating = view.findViewById(R.id.menu_rating);
-
-                menu_rare4.setVisibility(View.GONE);
-                menu_rare5.setVisibility(View.GONE);
-                menu_rating.setVisibility(View.VISIBLE);
-
-                // Release
-                CheckBox menu_release_0 = view.findViewById(R.id.menu_release_0);
-                CheckBox menu_release_1 = view.findViewById(R.id.menu_release_1);
-
-                // Role
-                TextView menu_role_title_tv = view.findViewById(R.id.menu_role_title_tv);
-                LinearLayout menu_role_ll = view.findViewById(R.id.menu_role_ll);
-                menu_role_title_tv.setVisibility(View.GONE);
-                menu_role_ll.setVisibility(View.GONE);
-
-                // Function Buttons
-                ImageView cancel = view.findViewById(R.id.menu_cancel);
-                FrameLayout reset = view.findViewById(R.id.menu_reset);
-                FrameLayout ok = view.findViewById(R.id.menu_ok);
-
-                show_pyro = sharedPreferences.getBoolean("show_pyro",false);
-                show_hydro = sharedPreferences.getBoolean("show_hydro",false);
-                show_anemo = sharedPreferences.getBoolean("show_anemo",false);
-                show_electro = sharedPreferences.getBoolean("show_electro",false);
-                show_dendor = sharedPreferences.getBoolean("show_dendor",false);
-                show_cryo = sharedPreferences.getBoolean("show_cryo",false);
-                show_geo = sharedPreferences.getBoolean("show_geo",false);
-                show_sword = sharedPreferences.getBoolean("show_sword",false);
-                show_claymore = sharedPreferences.getBoolean("show_claymore",false);
-                show_polearm = sharedPreferences.getBoolean("show_polearm",false);
-                show_bow = sharedPreferences.getBoolean("show_bow",false);
-                show_catalyst = sharedPreferences.getBoolean("show_catalyst",false);
-                show_rare1  = sharedPreferences.getBoolean("show_rare1",false);
-                show_rare2 = sharedPreferences.getBoolean("show_rare2",false);
-                show_rare3 = sharedPreferences.getBoolean("show_rare3",false);
-                show_rare4 = sharedPreferences.getBoolean("show_rare4",false);
-                show_rare5 = sharedPreferences.getBoolean("show_rare5",false);
-                show_released = sharedPreferences.getBoolean("show_released",false);
-                show_unreleased = sharedPreferences.getBoolean("show_unreleased",false);
-                show_dps = sharedPreferences.getBoolean("show_dps",false);
-                show_sub_dps = sharedPreferences.getBoolean("show_sub_dps",false);
-                show_util = sharedPreferences.getBoolean("show_util",false);
-
-                if (show_rare1){ menu_rating.setRating(1); }
-                if (show_rare2){ menu_rating.setRating(2); }
-                if (show_rare3){ menu_rating.setRating(3); }
-                if (show_rare4){ menu_rating.setRating(4); }
-                if (show_rare5){ menu_rating.setRating(5); }
-                if (show_released){ menu_release_0.setChecked(true); }
-                if (show_unreleased){ menu_release_1.setChecked(true); }
-
-                if(show_sword){show_sword = true;ico_sword.setColorFilter(Color.parseColor("#00000000"));}else{show_sword = false;ico_sword.setColorFilter(Color.parseColor("#66313131"));}
-                if(show_claymore){show_claymore = true;ico_claymore.setColorFilter(Color.parseColor("#00000000"));}else{show_claymore = false;ico_claymore.setColorFilter(Color.parseColor("#66313131"));}
-                if(show_polearm){show_polearm = true;ico_polearm.setColorFilter(Color.parseColor("#00000000"));}else{show_polearm = false;ico_polearm.setColorFilter(Color.parseColor("#66313131"));}
-                if(show_bow){show_bow = true;ico_bow.setColorFilter(Color.parseColor("#00000000"));}else{show_bow = false;ico_bow.setColorFilter(Color.parseColor("#66313131"));}
-                if(show_catalyst){show_catalyst = true;ico_catalyst.setColorFilter(Color.parseColor("#00000000"));}else{show_catalyst = false;ico_catalyst.setColorFilter(Color.parseColor("#66313131"));}
-
-
-                ico_sword.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_sword){show_sword = false;ico_sword.setColorFilter(Color.parseColor("#66313131"));}else{show_sword = true;ico_sword.setColorFilter(Color.parseColor("#00000000"));}}});
-                ico_claymore.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_claymore){show_claymore = false;ico_claymore.setColorFilter(Color.parseColor("#66313131"));}else{show_claymore = true;ico_claymore.setColorFilter(Color.parseColor("#00000000"));}}});
-                ico_polearm.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_polearm){show_polearm = false;ico_polearm.setColorFilter(Color.parseColor("#66313131"));}else{show_polearm = true;ico_polearm.setColorFilter(Color.parseColor("#00000000"));}}});
-                ico_bow.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_bow){show_bow = false;ico_bow.setColorFilter(Color.parseColor("#66313131"));}else{show_bow = true;ico_bow.setColorFilter(Color.parseColor("#00000000"));}}});
-                ico_catalyst.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_catalyst){show_catalyst = false;ico_catalyst.setColorFilter(Color.parseColor("#66313131"));}else{show_catalyst = true;ico_catalyst.setColorFilter(Color.parseColor("#00000000"));}}});
-                ico_catalyst.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_catalyst){show_catalyst = false;ico_catalyst.setColorFilter(Color.parseColor("#66313131"));}else{show_catalyst = true;ico_catalyst.setColorFilter(Color.parseColor("#00000000"));}}});
-
-                cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        dialog.dismiss();
-                    }
-                });
-
-                reset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        show_pyro = false;
-                        show_hydro = false;
-                        show_anemo = false;
-                        show_dendor = false;
-                        show_electro = false;
-                        show_cryo = false;
-                        show_geo = false;
-
-                        show_sword = false;
-                        show_claymore = false;
-                        show_polearm = false;
-                        show_bow = false;
-                        show_catalyst = false;
-
-                        show_rare1 = false;
-                        show_rare2 = false;
-                        show_rare3 = false;
-                        show_rare4 = false;
-                        show_rare5 = false;
-                        show_released = false;
-                        show_unreleased = false;
-                        show_dps = false;
-                        show_sub_dps = false;
-                        show_util = false;
-
-                        editor.putBoolean("show_pyro",show_pyro);
-                        editor.putBoolean("show_hydro",show_hydro);
-                        editor.putBoolean("show_anemo",show_anemo);
-                        editor.putBoolean("show_electro",show_electro);
-                        editor.putBoolean("show_dendor",show_dendor);
-                        editor.putBoolean("show_cryo",show_cryo);
-                        editor.putBoolean("show_geo",show_geo);
-                        editor.putBoolean("show_sword",show_sword);
-                        editor.putBoolean("show_claymore",show_claymore);
-                        editor.putBoolean("show_polearm",show_polearm);
-                        editor.putBoolean("show_bow",show_bow);
-                        editor.putBoolean("show_catalyst",show_catalyst);
-                        editor.putBoolean("show_rare1",show_rare1);
-                        editor.putBoolean("show_rare2",show_rare2);
-                        editor.putBoolean("show_rare3",show_rare3);
-                        editor.putBoolean("show_rare4",show_rare4);
-                        editor.putBoolean("show_rare5",show_rare5);
-                        editor.putBoolean("show_released",show_released);
-                        editor.putBoolean("show_unreleased",show_unreleased);
-                        editor.putBoolean("show_dps",show_dps);
-                        editor.putBoolean("show_sub_dps",show_sub_dps);
-                        editor.putBoolean("show_util",show_util);
-                        editor.apply();
-                        dialog.dismiss();
-
-                        mWeaponAdapter.filterList(weaponsList);
-
-                    }
-                });
-
-                ok.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if (menu_release_0.isChecked()){show_released = true;}else{show_released = false;}
-                        if (menu_release_1.isChecked()){show_unreleased = true;}else{show_unreleased = false;}
-                        filterWeaponAlgothm((int) menu_rating.getRating());
-                        dialog.dismiss();
-                    }
-                });
-
-                dialog.setContentView(view);
-                dialog.setCanceledOnTouchOutside(true);
-                //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
-                Window dialogWindow = dialog.getWindow();
-                WindowManager.LayoutParams lp = dialogWindow.getAttributes();
-                // 2O48 DESIGN
-                dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
-                dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
-
-                DisplayMetrics displayMetrics = new DisplayMetrics();
-                getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-                int height = displayMetrics.heightPixels;
-                int width = displayMetrics.widthPixels;
-
-                lp.width = width;
-                lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
-                lp.gravity = Gravity.BOTTOM;
-                dialogWindow.setAttributes(lp);
-                dialog.show();
-            }
-        });
-    }
 
     private void setup_home() {
         check_spinner = 0;
@@ -1294,703 +953,8 @@ public class Desk2048 extends AppCompatActivity {
             }}, 60000);
     }
 
-    private void setup_char() {
+    private void setup_team(){
         check_spinner = 0;
-
-        mList = viewPager1.findViewById(R.id.main_list);
-        mAdapter = new CharactersAdapter(context,charactersList,activity,sharedPreferences);
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 2);
-        DisplayMetrics displayMetrics = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-        int height = displayMetrics.heightPixels;
-        int width = displayMetrics.widthPixels;
-
-        if (sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-                mLayoutManager = new GridLayoutManager(context,  width/480+1);
-            }else{
-                mLayoutManager = new GridLayoutManager(context,  2);
-            }
-        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-                mLayoutManager = new GridLayoutManager(context,  width/400+1);
-            }else{
-                mLayoutManager = new GridLayoutManager(context,  3);
-            }
-        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
-            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-                int tmp_cnt = (int) width/960;
-                if (tmp_cnt < 1){tmp_cnt = 1;}
-                mLayoutManager = new GridLayoutManager(context,  tmp_cnt);
-            }else{
-                mLayoutManager = new GridLayoutManager(context,  1);
-            }
-        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
-            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-                int tmp_cnt = (int) width/960;
-                if (tmp_cnt < 1){tmp_cnt = 1;}
-                mLayoutManager = new GridLayoutManager(context,  tmp_cnt);
-            }else{
-                mLayoutManager = new GridLayoutManager(context,  1);
-            }
-        }
-        LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
-        paramsMsg.gravity = Gravity.CENTER;
-        mList.setLayoutManager(mLayoutManager);
-        mList.setLayoutParams(paramsMsg);
-        mList.setAdapter(mAdapter);
-        mList.removeAllViewsInLayout();
-        char_list_reload();
-
-        ImageView char_search = viewPager1.findViewById(R.id.char_search);
-        char_search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ConstraintLayout header_con = viewPager1.findViewById(R.id.header_con);
-                View header_search = viewPager1.findViewById(R.id.header_search);
-                EditText header_search_et = viewPager1.findViewById(R.id.header_search_et);
-                Button menu_search_cancel = viewPager1.findViewById(R.id.menu_search_cancel);
-                ImageView header_search_reset = viewPager1.findViewById(R.id.header_search_reset);
-
-                header_con.animate()
-                        .alpha(0.0f)
-                        .setDuration(300)
-                        .setListener(new AnimatorListenerAdapter() {
-                            @Override
-                            public void onAnimationEnd(Animator animation) {
-                                super.onAnimationEnd(animation);
-                                header_con.setVisibility(View.GONE);
-                            }
-                        });
-
-                header_search.animate()
-                        .alpha(1.0f)
-                        .setDuration(300)
-                        .setListener(new AnimatorListenerAdapter() {
-                            @Override
-                            public void onAnimationEnd(Animator animation) {
-                                super.onAnimationEnd(animation);
-                                header_search.setVisibility(View.VISIBLE);
-                            }
-                        });
-
-                header_search_et.addTextChangedListener(new TextWatcher() {
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable s) {
-                        if (header_search_et.getText() != null){
-                            String request = header_search_et.getText().toString();
-                            if (!request.equals("")){
-                                ArrayList<Characters> filteredList = new ArrayList<>();
-                                int x = 0;
-                                for (Characters item : charactersList) {
-                                    String str = request.toLowerCase();
-                                    if (css.getCharByName(item.getName(),context)[1].contains(str)||css.getCharByName(item.getName(),context)[1].toLowerCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
-                                        filteredList.add(item);
-                                    }
-                                    x = x +1;
-                                }
-                                mAdapter.filterList(filteredList);
-                            }else{
-                                mAdapter.filterList(charactersList);
-                            }
-                        }else{
-                            mAdapter.filterList(charactersList);
-                        }
-                    }
-                });
-
-                menu_search_cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        header_search_et.setText("");
-                        header_search.animate()
-                                .alpha(0.0f)
-                                .setDuration(300)
-                                .setListener(new AnimatorListenerAdapter() {
-                                    @Override
-                                    public void onAnimationEnd(Animator animation) {
-                                        super.onAnimationEnd(animation);
-                                        header_search.setVisibility(View.GONE);
-                                    }
-                                });
-                        header_con.animate()
-                                .alpha(1.0f)
-                                .setDuration(300)
-                                .setListener(new AnimatorListenerAdapter() {
-                                    @Override
-                                    public void onAnimationEnd(Animator animation) {
-                                        super.onAnimationEnd(animation);
-                                        header_con.setVisibility(View.VISIBLE);
-                                    }
-                                });
-                    }
-                });
-
-                header_search_reset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        header_search_et.setText("");
-                    }
-                });
-
-            };
-        });
-
-
-        ImageView char_filter = viewPager1.findViewById(R.id.char_filter);
-        char_filter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
-                View view = View.inflate(context, R.layout.menu_char_filter_2048, null);
-                // Elements
-                ImageView pyro = view.findViewById(R.id.pyro_ico);
-                ImageView hydro = view.findViewById(R.id.hydro_ico);
-                ImageView anemo = view.findViewById(R.id.anemo_ico);
-                ImageView electro = view.findViewById(R.id.electro_ico);
-                ImageView dendor = view.findViewById(R.id.dendor_ico);
-                ImageView cryo = view.findViewById(R.id.cryo_ico);
-                ImageView geo = view.findViewById(R.id.geo_ico);
-                // Weapons
-                ImageView ico_sword = view.findViewById(R.id.ico_sword);
-                ImageView ico_claymore = view.findViewById(R.id.ico_claymore);
-                ImageView ico_polearm = view.findViewById(R.id.ico_polearm);
-                ImageView ico_bow = view.findViewById(R.id.ico_bow);
-                ImageView ico_catalyst = view.findViewById(R.id.ico_catalyst);
-                // Rarity
-                CheckBox menu_rare4 = view.findViewById(R.id.menu_rare4);
-                CheckBox menu_rare5 = view.findViewById(R.id.menu_rare5);
-                RatingBar menu_rating = view.findViewById(R.id.menu_rating);
-                menu_rating.setVisibility(View.GONE);
-                // Release
-                CheckBox menu_release_0 = view.findViewById(R.id.menu_release_0);
-                CheckBox menu_release_1 = view.findViewById(R.id.menu_release_1);
-                // Role
-                CheckBox menu_role_dps = view.findViewById(R.id.menu_role_dps);
-                CheckBox menu_role_sub_dps = view.findViewById(R.id.menu_role_sub_dps);
-                CheckBox menu_role_utility = view.findViewById(R.id.menu_role_utility);
-                // Function Buttons
-                ImageView cancel = view.findViewById(R.id.menu_cancel);
-                FrameLayout reset = view.findViewById(R.id.menu_reset);
-                FrameLayout ok = view.findViewById(R.id.menu_ok);
-
-                show_pyro = sharedPreferences.getBoolean("show_pyro",false);
-                show_hydro = sharedPreferences.getBoolean("show_hydro",false);
-                show_anemo = sharedPreferences.getBoolean("show_anemo",false);
-                show_electro = sharedPreferences.getBoolean("show_electro",false);
-                show_dendor = sharedPreferences.getBoolean("show_dendor",false);
-                show_cryo = sharedPreferences.getBoolean("show_cryo",false);
-                show_geo = sharedPreferences.getBoolean("show_geo",false);
-                show_sword = sharedPreferences.getBoolean("show_sword",false);
-                show_claymore = sharedPreferences.getBoolean("show_claymore",false);
-                show_polearm = sharedPreferences.getBoolean("show_polearm",false);
-                show_bow = sharedPreferences.getBoolean("show_bow",false);
-                show_catalyst = sharedPreferences.getBoolean("show_catalyst",false);
-                show_rare4 = sharedPreferences.getBoolean("show_rare4",false);
-                show_rare5 = sharedPreferences.getBoolean("show_rare5",false);
-                show_released = sharedPreferences.getBoolean("show_released",false);
-                show_unreleased = sharedPreferences.getBoolean("show_unreleased",false);
-                show_dps = sharedPreferences.getBoolean("show_dps",false);
-                show_sub_dps = sharedPreferences.getBoolean("show_sub_dps",false);
-                show_util = sharedPreferences.getBoolean("show_util",false);
-
-                if(show_pyro){show_pyro = true;pyro.setColorFilter(Color.parseColor("#00000000"));}else{show_pyro = false;pyro.setColorFilter(Color.parseColor("#66313131"));}
-                if(show_hydro){show_hydro = true;hydro.setColorFilter(Color.parseColor("#00000000"));}else{show_hydro = false;hydro.setColorFilter(Color.parseColor("#66313131"));}
-                if(show_anemo){show_anemo = true;anemo.setColorFilter(Color.parseColor("#00000000"));}else{show_anemo = false;anemo.setColorFilter(Color.parseColor("#66313131"));}
-                if(show_electro){show_electro = true;electro.setColorFilter(Color.parseColor("#00000000"));}else{show_electro = false;electro.setColorFilter(Color.parseColor("#66313131"));}
-                if(show_dendor){show_dendor = true;dendor.setColorFilter(Color.parseColor("#00000000"));}else{show_dendor = false;dendor.setColorFilter(Color.parseColor("#66313131"));}
-                if(show_cryo){show_cryo = true;cryo.setColorFilter(Color.parseColor("#00000000"));}else{show_cryo = false;cryo.setColorFilter(Color.parseColor("#66313131"));}
-                if(show_geo){show_geo = true;geo.setColorFilter(Color.parseColor("#00000000"));}else{show_geo = false;geo.setColorFilter(Color.parseColor("#66313131"));}
-                if(show_sword){show_sword = true;ico_sword.setColorFilter(Color.parseColor("#00000000"));}else{show_sword = false;ico_sword.setColorFilter(Color.parseColor("#66313131"));}
-                if(show_claymore){show_claymore = true;ico_claymore.setColorFilter(Color.parseColor("#00000000"));}else{show_claymore = false;ico_claymore.setColorFilter(Color.parseColor("#66313131"));}
-                if(show_polearm){show_polearm = true;ico_polearm.setColorFilter(Color.parseColor("#00000000"));}else{show_polearm = false;ico_polearm.setColorFilter(Color.parseColor("#66313131"));}
-                if(show_bow){show_bow = true;ico_bow.setColorFilter(Color.parseColor("#00000000"));}else{show_bow = false;ico_bow.setColorFilter(Color.parseColor("#66313131"));}
-                if(show_catalyst){show_catalyst = true;ico_catalyst.setColorFilter(Color.parseColor("#00000000"));}else{show_catalyst = false;ico_catalyst.setColorFilter(Color.parseColor("#66313131"));}
-
-                if (show_rare4){ menu_rare4.setChecked(true); }
-                if (show_rare5){ menu_rare5.setChecked(true); }
-                if (show_released){ menu_release_0.setChecked(true); }
-                if (show_unreleased){ menu_release_1.setChecked(true); }
-                if (show_dps){ menu_role_dps.setChecked(true); }
-                if (show_sub_dps){ menu_role_sub_dps.setChecked(true); }
-                if (show_util){ menu_role_utility.setChecked(true); }
-
-                pyro.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_pyro){show_pyro = false;pyro.setColorFilter(Color.parseColor("#66313131"));}else{show_pyro = true;pyro.setColorFilter(Color.parseColor("#00000000"));}}});
-                hydro.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_hydro){show_hydro = false;hydro.setColorFilter(Color.parseColor("#66313131"));}else{show_hydro = true;hydro.setColorFilter(Color.parseColor("#00000000"));}}});
-                anemo.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_anemo){show_anemo = false;anemo.setColorFilter(Color.parseColor("#66313131"));}else{show_anemo = true;anemo.setColorFilter(Color.parseColor("#00000000"));}}});
-                electro.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_electro){show_electro = false;electro.setColorFilter(Color.parseColor("#66313131"));}else{show_electro = true;electro.setColorFilter(Color.parseColor("#00000000"));}}});
-                dendor.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_dendor){show_dendor = false;dendor.setColorFilter(Color.parseColor("#66313131"));}else{show_dendor = true;dendor.setColorFilter(Color.parseColor("#00000000"));}}});
-                cryo.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_cryo){show_cryo = false;cryo.setColorFilter(Color.parseColor("#66313131"));}else{show_cryo = true;cryo.setColorFilter(Color.parseColor("#00000000"));}}});
-                geo.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_geo){show_geo = false;geo.setColorFilter(Color.parseColor("#66313131"));}else{show_geo = true;geo.setColorFilter(Color.parseColor("#00000000"));}}});
-                ico_sword.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_sword){show_sword = false;ico_sword.setColorFilter(Color.parseColor("#66313131"));}else{show_sword = true;ico_sword.setColorFilter(Color.parseColor("#00000000"));}}});
-                ico_claymore.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_claymore){show_claymore = false;ico_claymore.setColorFilter(Color.parseColor("#66313131"));}else{show_claymore = true;ico_claymore.setColorFilter(Color.parseColor("#00000000"));}}});
-                ico_polearm.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_polearm){show_polearm = false;ico_polearm.setColorFilter(Color.parseColor("#66313131"));}else{show_polearm = true;ico_polearm.setColorFilter(Color.parseColor("#00000000"));}}});
-                ico_bow.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_bow){show_bow = false;ico_bow.setColorFilter(Color.parseColor("#66313131"));}else{show_bow = true;ico_bow.setColorFilter(Color.parseColor("#00000000"));}}});
-                ico_catalyst.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_catalyst){show_catalyst = false;ico_catalyst.setColorFilter(Color.parseColor("#66313131"));}else{show_catalyst = true;ico_catalyst.setColorFilter(Color.parseColor("#00000000"));}}});
-                ico_catalyst.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_catalyst){show_catalyst = false;ico_catalyst.setColorFilter(Color.parseColor("#66313131"));}else{show_catalyst = true;ico_catalyst.setColorFilter(Color.parseColor("#00000000"));}}});
-
-                cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        dialog.dismiss();
-                    }
-                });
-
-                reset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        show_pyro = false;
-                        show_hydro = false;
-                        show_anemo = false;
-                        show_dendor = false;
-                        show_electro = false;
-                        show_cryo = false;
-                        show_geo = false;
-
-                        show_sword = false;
-                        show_claymore = false;
-                        show_polearm = false;
-                        show_bow = false;
-                        show_catalyst = false;
-
-                        show_rare1 = false;
-                        show_rare2 = false;
-                        show_rare3 = false;
-                        show_rare4 = false;
-                        show_rare5 = false;
-                        show_released = false;
-                        show_unreleased = false;
-                        show_dps = false;
-                        show_sub_dps = false;
-                        show_util = false;
-
-                        editor.putBoolean("show_pyro",show_pyro);
-                        editor.putBoolean("show_hydro",show_hydro);
-                        editor.putBoolean("show_anemo",show_anemo);
-                        editor.putBoolean("show_electro",show_electro);
-                        editor.putBoolean("show_dendor",show_dendor);
-                        editor.putBoolean("show_cryo",show_cryo);
-                        editor.putBoolean("show_geo",show_geo);
-                        editor.putBoolean("show_sword",show_sword);
-                        editor.putBoolean("show_claymore",show_claymore);
-                        editor.putBoolean("show_polearm",show_polearm);
-                        editor.putBoolean("show_bow",show_bow);
-                        editor.putBoolean("show_catalyst",show_catalyst);
-                        editor.putBoolean("show_rare1",show_rare1);
-                        editor.putBoolean("show_rare2",show_rare2);
-                        editor.putBoolean("show_rare3",show_rare3);
-                        editor.putBoolean("show_rare4",show_rare4);
-                        editor.putBoolean("show_rare5",show_rare5);
-                        editor.putBoolean("show_released",show_released);
-                        editor.putBoolean("show_unreleased",show_unreleased);
-                        editor.putBoolean("show_dps",show_dps);
-                        editor.putBoolean("show_sub_dps",show_sub_dps);
-                        editor.putBoolean("show_util",show_util);
-                        editor.apply();
-                        dialog.dismiss();
-
-                        mAdapter.filterList(charactersList);
-
-                    }
-                });
-
-                ok.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if (menu_rare4.isChecked()){show_rare4 = true;}else{show_rare4 = false;}
-                        if (menu_rare5.isChecked()){show_rare5 = true;}else{show_rare5 = false;}
-                        if (menu_release_0.isChecked()){show_released = true;}else{show_released = false;}
-                        if (menu_release_1.isChecked()){show_unreleased = true;}else{show_unreleased = false;}
-                        if (menu_role_dps.isChecked()){show_dps = true;}else{show_dps = false;}
-                        if (menu_role_sub_dps.isChecked()){show_sub_dps = true;}else{show_sub_dps = false;}
-                        if (menu_role_utility.isChecked()){show_util = true;}else{show_util = false;}
-                        filterCharAlgothm();
-                        dialog.dismiss();
-                    }
-                });
-
-                dialog.setContentView(view);
-                dialog.setCanceledOnTouchOutside(true);
-                //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
-                Window dialogWindow = dialog.getWindow();
-                WindowManager.LayoutParams lp = dialogWindow.getAttributes();
-                // 2O48 DESIGN
-                dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
-                dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
-
-                DisplayMetrics displayMetrics = new DisplayMetrics();
-                getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-                int height = displayMetrics.heightPixels;
-                int width = displayMetrics.widthPixels;
-
-                lp.width = width;
-                lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
-                lp.gravity = Gravity.BOTTOM;
-                dialogWindow.setAttributes(lp);
-                dialog.show();
-            }
-        });
-    }
-
-    private void setup_art(){
-        mArtifactList = viewPager3.findViewById(R.id.artifact_list);
-        mArtifactAdapter = new ArtifactsAdapter(context,artifactsList,activity,sharedPreferences);
-        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context, 2);
-
-        DisplayMetrics displayMetrics_a = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics_a);
-        int height_a = displayMetrics_a.heightPixels;
-        int width_a = displayMetrics_a.widthPixels;
-
-        if (sharedPreferences.getString("curr_ui_grid", "2").equals("2")) {
-            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-                mLayoutManager = new GridLayoutManager(context,  width_a/480+1);
-            }else{
-                mLayoutManager = new GridLayoutManager(context,  2);
-            }
-        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("3")) {
-            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-                mLayoutManager = new GridLayoutManager(context,  width_a/400+1);
-            }else{
-                mLayoutManager = new GridLayoutManager(context,  3);
-            }
-        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("4")) {
-            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-                int tmp_cnt = (int) width_a/960;
-                if (tmp_cnt < 1){tmp_cnt = 1;}
-                mLayoutManager = new GridLayoutManager(context,  tmp_cnt);
-            }else{
-                mLayoutManager = new GridLayoutManager(context,  1);
-            }
-        }else if (sharedPreferences.getString("curr_ui_grid", "2").equals("5")) {
-            if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
-                int tmp_cnt = (int) width_a/960;
-                if (tmp_cnt < 1){tmp_cnt = 1;}
-                mLayoutManager = new GridLayoutManager(context,  tmp_cnt);
-            }else{
-                mLayoutManager = new GridLayoutManager(context,  1);
-            }
-        }
-        LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT);
-        paramsMsg.gravity = Gravity.CENTER;
-        mArtifactList.setLayoutManager(mLayoutManager);
-        mArtifactList.setLayoutParams(paramsMsg);
-        mArtifactList.setAdapter(mArtifactAdapter);
-        mArtifactList.removeAllViewsInLayout();
-        artifact_list_reload();
-
-
-                        /*
-                        EditText artifacts_et = viewPager3.findViewById(R.id.char_et);
-                        artifacts_et.addTextChangedListener(new TextWatcher() {
-                            @Override
-                            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                            }
-
-                            @Override
-                            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                            }
-
-                            @Override
-                            public void afterTextChanged(Editable s) {
-                                ArrayList<Artifacts> filteredList = new ArrayList<>();
-                                int x = 0;
-                                for (Artifacts item : artifactsList) {
-                                    String str = String.valueOf(s).toLowerCase();
-                                    if (css.getArtifactByName(item.getName(),context)[0].contains(str)||css.getArtifactByName(item.getName(),context)[0].toLowerCase().contains(str)||css.getArtifactByName(item.getName(),context)[0].toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
-                                        filteredList.add(item);
-                                    }
-                                    x = x +1;
-                                }
-                                mArtifactAdapter.filterList(filteredList);
-                            }
-                        });
-
-                         */
-
-        ImageView artifact_search = viewPager3.findViewById(R.id.artifact_search);
-        artifact_search.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                ConstraintLayout header_con = viewPager3.findViewById(R.id.header_con);
-                View header_search = viewPager3.findViewById(R.id.header_search);
-                EditText header_search_et = viewPager3.findViewById(R.id.header_search_et);
-                Button menu_search_cancel = viewPager3.findViewById(R.id.menu_search_cancel);
-                ImageView header_search_reset = viewPager3.findViewById(R.id.header_search_reset);
-
-                header_con.animate()
-                        .alpha(0.0f)
-                        .setDuration(300)
-                        .setListener(new AnimatorListenerAdapter() {
-                            @Override
-                            public void onAnimationEnd(Animator animation) {
-                                super.onAnimationEnd(animation);
-                                header_con.setVisibility(View.GONE);
-                            }
-                        });
-
-                header_search.animate()
-                        .alpha(1.0f)
-                        .setDuration(300)
-                        .setListener(new AnimatorListenerAdapter() {
-                            @Override
-                            public void onAnimationEnd(Animator animation) {
-                                super.onAnimationEnd(animation);
-                                header_search.setVisibility(View.VISIBLE);
-                            }
-                        });
-
-                header_search_et.addTextChangedListener(new TextWatcher() {
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable s) {
-                        if (header_search_et.getText() != null){
-                            String request = header_search_et.getText().toString();
-                            if (!request.equals("")){
-                                ArrayList<Artifacts> filteredList = new ArrayList<>();
-                                int x = 0;
-                                for (Artifacts item : artifactsList) {
-                                    String str = request.toLowerCase();
-                                    if (css.getArtifactByName(item.getName(),context)[0].contains(str)||css.getArtifactByName(item.getName(),context)[0].toLowerCase().contains(str)||css.getArtifactByName(item.getName(),context)[0].toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
-                                        filteredList.add(item);
-                                    }
-                                    x = x +1;
-                                }
-                                mArtifactAdapter.filterList(filteredList);
-                            }else{
-                                mArtifactAdapter.filterList(artifactsList);
-                            }
-                        }else{
-                            mArtifactAdapter.filterList(artifactsList);
-                        }
-                    }
-                });
-
-                menu_search_cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        header_search_et.setText("");
-                        header_search.animate()
-                                .alpha(0.0f)
-                                .setDuration(300)
-                                .setListener(new AnimatorListenerAdapter() {
-                                    @Override
-                                    public void onAnimationEnd(Animator animation) {
-                                        super.onAnimationEnd(animation);
-                                        header_search.setVisibility(View.GONE);
-                                    }
-                                });
-                        header_con.animate()
-                                .alpha(1.0f)
-                                .setDuration(300)
-                                .setListener(new AnimatorListenerAdapter() {
-                                    @Override
-                                    public void onAnimationEnd(Animator animation) {
-                                        super.onAnimationEnd(animation);
-                                        header_con.setVisibility(View.VISIBLE);
-                                    }
-                                });
-                    }
-                });
-
-                header_search_reset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        header_search_et.setText("");
-                    }
-                });
-
-            };
-        });
-
-        ImageView artifact_filter = viewPager3.findViewById(R.id.artifact_filter);
-        artifact_filter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
-                View view = View.inflate(context, R.layout.menu_char_filter_2048, null);
-                // Element
-                TextView menu_elements_title_tv = view.findViewById(R.id.menu_elements_title_tv);
-                LinearLayout menu_elements_ll = view.findViewById(R.id.menu_elements_ll);
-                menu_elements_title_tv.setVisibility(View.GONE);
-                menu_elements_ll.setVisibility(View.GONE);
-
-                // Weapons
-                TextView menu_weapons_title_tv = view.findViewById(R.id.menu_weapons_title_tv);
-                LinearLayout menu_weapons_ll = view.findViewById(R.id.menu_weapons_ll);
-                menu_weapons_title_tv.setVisibility(View.GONE);
-                menu_weapons_ll.setVisibility(View.GONE);
-
-                // Rarity
-                CheckBox menu_rare4 = view.findViewById(R.id.menu_rare4);
-                CheckBox menu_rare5 = view.findViewById(R.id.menu_rare5);
-                RatingBar menu_rating = view.findViewById(R.id.menu_rating);
-
-                menu_rare4.setVisibility(View.GONE);
-                menu_rare5.setVisibility(View.GONE);
-                menu_rating.setVisibility(View.VISIBLE);
-
-                // Release
-                CheckBox menu_release_0 = view.findViewById(R.id.menu_release_0);
-                CheckBox menu_release_1 = view.findViewById(R.id.menu_release_1);
-
-                // Role
-                TextView menu_role_title_tv = view.findViewById(R.id.menu_role_title_tv);
-                LinearLayout menu_role_ll = view.findViewById(R.id.menu_role_ll);
-                menu_role_title_tv.setVisibility(View.GONE);
-                menu_role_ll.setVisibility(View.GONE);
-
-                // Function Buttons
-                ImageView cancel = view.findViewById(R.id.menu_cancel);
-                FrameLayout reset = view.findViewById(R.id.menu_reset);
-                FrameLayout ok = view.findViewById(R.id.menu_ok);
-
-                show_pyro = sharedPreferences.getBoolean("show_pyro",false);
-                show_hydro = sharedPreferences.getBoolean("show_hydro",false);
-                show_anemo = sharedPreferences.getBoolean("show_anemo",false);
-                show_electro = sharedPreferences.getBoolean("show_electro",false);
-                show_dendor = sharedPreferences.getBoolean("show_dendor",false);
-                show_cryo = sharedPreferences.getBoolean("show_cryo",false);
-                show_geo = sharedPreferences.getBoolean("show_geo",false);
-                show_sword = sharedPreferences.getBoolean("show_sword",false);
-                show_claymore = sharedPreferences.getBoolean("show_claymore",false);
-                show_polearm = sharedPreferences.getBoolean("show_polearm",false);
-                show_bow = sharedPreferences.getBoolean("show_bow",false);
-                show_catalyst = sharedPreferences.getBoolean("show_catalyst",false);
-                show_rare1  = sharedPreferences.getBoolean("show_rare1",false);
-                show_rare2 = sharedPreferences.getBoolean("show_rare2",false);
-                show_rare3 = sharedPreferences.getBoolean("show_rare3",false);
-                show_rare4 = sharedPreferences.getBoolean("show_rare4",false);
-                show_rare5 = sharedPreferences.getBoolean("show_rare5",false);
-                show_released = sharedPreferences.getBoolean("show_released",false);
-                show_unreleased = sharedPreferences.getBoolean("show_unreleased",false);
-                show_dps = sharedPreferences.getBoolean("show_dps",false);
-                show_sub_dps = sharedPreferences.getBoolean("show_sub_dps",false);
-                show_util = sharedPreferences.getBoolean("show_util",false);
-
-                if (show_rare1){ menu_rating.setRating(1); }
-                if (show_rare2){ menu_rating.setRating(2); }
-                if (show_rare3){ menu_rating.setRating(3); }
-                if (show_rare4){ menu_rating.setRating(4); }
-                if (show_rare5){ menu_rating.setRating(5); }
-                if (show_released){ menu_release_0.setChecked(true); }
-                if (show_unreleased){ menu_release_1.setChecked(true); }
-
-                cancel.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        dialog.dismiss();
-                    }
-                });
-
-                reset.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        show_pyro = false;
-                        show_hydro = false;
-                        show_anemo = false;
-                        show_dendor = false;
-                        show_electro = false;
-                        show_cryo = false;
-                        show_geo = false;
-
-                        show_sword = false;
-                        show_claymore = false;
-                        show_polearm = false;
-                        show_bow = false;
-                        show_catalyst = false;
-
-                        show_rare1 = false;
-                        show_rare2 = false;
-                        show_rare3 = false;
-                        show_rare4 = false;
-                        show_rare5 = false;
-                        show_released = false;
-                        show_unreleased = false;
-                        show_dps = false;
-                        show_sub_dps = false;
-                        show_util = false;
-
-                        editor.putBoolean("show_pyro",show_pyro);
-                        editor.putBoolean("show_hydro",show_hydro);
-                        editor.putBoolean("show_anemo",show_anemo);
-                        editor.putBoolean("show_electro",show_electro);
-                        editor.putBoolean("show_dendor",show_dendor);
-                        editor.putBoolean("show_cryo",show_cryo);
-                        editor.putBoolean("show_geo",show_geo);
-                        editor.putBoolean("show_sword",show_sword);
-                        editor.putBoolean("show_claymore",show_claymore);
-                        editor.putBoolean("show_polearm",show_polearm);
-                        editor.putBoolean("show_bow",show_bow);
-                        editor.putBoolean("show_catalyst",show_catalyst);
-                        editor.putBoolean("show_rare1",show_rare1);
-                        editor.putBoolean("show_rare2",show_rare2);
-                        editor.putBoolean("show_rare3",show_rare3);
-                        editor.putBoolean("show_rare4",show_rare4);
-                        editor.putBoolean("show_rare5",show_rare5);
-                        editor.putBoolean("show_released",show_released);
-                        editor.putBoolean("show_unreleased",show_unreleased);
-                        editor.putBoolean("show_dps",show_dps);
-                        editor.putBoolean("show_sub_dps",show_sub_dps);
-                        editor.putBoolean("show_util",show_util);
-                        editor.apply();
-                        dialog.dismiss();
-
-                        mArtifactAdapter.filterList(artifactsList);
-
-                    }
-                });
-
-                ok.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        if (menu_release_0.isChecked()){show_released = true;}else{show_released = false;}
-                        if (menu_release_1.isChecked()){show_unreleased = true;}else{show_unreleased = false;}
-                        filterArtifactAlgothm((int) menu_rating.getRating());
-                        dialog.dismiss();
-                    }
-                });
-
-                dialog.setContentView(view);
-                dialog.setCanceledOnTouchOutside(true);
-                //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
-                Window dialogWindow = dialog.getWindow();
-                WindowManager.LayoutParams lp = dialogWindow.getAttributes();
-                // 2O48 DESIGN
-                dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
-                dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
-
-                DisplayMetrics displayMetrics = new DisplayMetrics();
-                getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-                int height = displayMetrics.heightPixels;
-                int width = displayMetrics.widthPixels;
-
-                lp.width = width;
-                lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
-                lp.gravity = Gravity.BOTTOM;
-                dialogWindow.setAttributes(lp);
-                dialog.show();
-            }
-        });
     }
 
     public void setup_setting(View view, Dialog dialog) {
@@ -2162,9 +1126,11 @@ public class Desk2048 extends AppCompatActivity {
                 grid_5_rb.setChecked(false);
 
                 setup_home();
-                setup_char();
-                setup_weapon();
-                setup_art();
+                //setup_char();
+                //setup_weapon();
+                //setup_art();
+                tcg2048.setup(viewPager5, context, activity, sharedPreferences);
+                team2048.setup(viewPager6, context, activity,sharedPreferences);
             }
         });
         grid_3_rb.setOnClickListener(new View.OnClickListener() {
@@ -2178,9 +1144,11 @@ public class Desk2048 extends AppCompatActivity {
                 grid_5_rb.setChecked(false);
 
                 setup_home();
-                setup_char();
-                setup_weapon();
-                setup_art();
+                //setup_char();
+                //setup_weapon();
+                //setup_art();
+                tcg2048.setup(viewPager5, context, activity, sharedPreferences);
+                team2048.setup(viewPager6, context, activity,sharedPreferences);
             }
         });
         grid_4_rb.setOnClickListener(new View.OnClickListener() {
@@ -2194,9 +1162,11 @@ public class Desk2048 extends AppCompatActivity {
                 grid_5_rb.setChecked(false);
 
                 setup_home();
-                setup_char();
-                setup_weapon();
-                setup_art();
+                //setup_char();
+                //setup_weapon();
+                //setup_art();
+                tcg2048.setup(viewPager5, context, activity, sharedPreferences);
+                team2048.setup(viewPager6, context, activity,sharedPreferences);
             }
         });
         grid_5_rb.setOnClickListener(new View.OnClickListener() {
@@ -2210,9 +1180,10 @@ public class Desk2048 extends AppCompatActivity {
                 grid_5_rb.setChecked(true);
 
                 setup_home();
-                setup_char();
-                setup_weapon();
-                setup_art();
+                //setup_char();
+                //setup_weapon();
+                //setup_art();
+                tcg2048.setup(viewPager5, context, activity, sharedPreferences);
             }
         });
         grid_5_rb.setOnClickListener(new View.OnClickListener() {
@@ -2226,9 +1197,10 @@ public class Desk2048 extends AppCompatActivity {
                 grid_5_rb.setChecked(true);
 
                 setup_home();
-                setup_char();
-                setup_weapon();
-                setup_art();
+                //setup_char();
+                //setup_weapon();
+                //setup_art();
+                tcg2048.setup(viewPager5, context, activity, sharedPreferences);
             }
         });
 
@@ -2319,7 +1291,9 @@ public class Desk2048 extends AppCompatActivity {
                 editor.apply();
                 traveler_female_rb.setChecked(false);
                 traveler_male_rb.setChecked(true);
-                setup_char();
+                //setup_char();
+                tcg2048.setup(viewPager5, context, activity, sharedPreferences);
+                team2048.setup(viewPager6, context, activity,sharedPreferences);
             }
         });
 
@@ -2330,7 +1304,9 @@ public class Desk2048 extends AppCompatActivity {
                 editor.apply();
                 traveler_female_rb.setChecked(true);
                 traveler_male_rb.setChecked(false);
-                setup_char();
+                //setup_char();
+                tcg2048.setup(viewPager5, context, activity, sharedPreferences);
+                team2048.setup(viewPager6, context, activity,sharedPreferences);
             }
         });
 
@@ -2354,7 +1330,9 @@ public class Desk2048 extends AppCompatActivity {
                 editor.apply();
                 outfit_event_rb.setChecked(false);
                 outfit_standard_rb.setChecked(true);
-                setup_char();
+                //setup_char();
+                tcg2048.setup(viewPager5, context, activity, sharedPreferences);
+                team2048.setup(viewPager6, context, activity,sharedPreferences);
             }
         });
 
@@ -2365,7 +1343,9 @@ public class Desk2048 extends AppCompatActivity {
                 editor.apply();
                 outfit_event_rb.setChecked(true);
                 outfit_standard_rb.setChecked(false);
-                setup_char();
+                //setup_char();
+                tcg2048.setup(viewPager5, context, activity, sharedPreferences);
+                team2048.setup(viewPager6, context, activity,sharedPreferences);
             }
         });
 
@@ -2497,6 +1477,23 @@ public class Desk2048 extends AppCompatActivity {
             }
         });
 
+        other_dailymemo_enabled = view.findViewById(R.id.other_dailymemo_enabled);
+        other_dailymemo_enabled.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DailyMemo2048Widget dailyMemo2048Widget = new DailyMemo2048Widget();
+                if(other_dailymemo_enabled.isChecked() == false){
+                    editor.putBoolean("isDailyMemoEnabled",false);
+                    editor.apply();
+                    dailyMemo2048Widget.onDisabled(context);
+                }else if(other_dailymemo_enabled.isChecked() == true){
+                    editor.putBoolean("isDailyMemoEnabled",true);
+                    editor.apply();
+                    dailyMemo2048Widget.onEnabled(context);
+                }
+            }
+        });
+
         //Other -> Item Base Name -> DEBUG ONLY
         other_item_eng_name = view.findViewById(R.id.other_item_eng_name);
         if (BuildConfig.FLAVOR.equals("dev") || BuildConfig.FLAVOR.equals("beta")){
@@ -2536,7 +1533,7 @@ public class Desk2048 extends AppCompatActivity {
 
                 Dialog2048 dialog2048 = new Dialog2048();
                 dialog2048.setup(context,activity);
-                dialog2048.updateMax(getRemoteFileSize("http://113.254.213.196/genshin_spirit/base.zip"));
+                dialog2048.updateMax(getRemoteFileSize("http://vt.25u.com/genshin_spirit/base.zip"));
                 dialog2048.mode(Dialog2048.MODE_DOWNLOAD_BASE_DESK);
                 dialog2048.show();
 
@@ -2545,7 +1542,7 @@ public class Desk2048 extends AppCompatActivity {
                     public void onClick(View v) {
                         dialog2048.dismiss();
                         DownloadTask downloadTask = new DownloadTask();
-                        downloadTask.start("http://113.254.213.196/genshin_spirit/base.zip","base.zip","/base.zip",context,activity);
+                        downloadTask.start("http://vt.25u.com/genshin_spirit/base.zip","base.zip","/base.zip",context,activity);
                     }
                 });
 
@@ -3040,7 +2037,7 @@ public class Desk2048 extends AppCompatActivity {
         Log.wtf("DAAM","YEE");
         String name ,element,weapon,nation,sex,mainStat,role;
         int rare,isComing;
-        charactersList.clear();
+        //charactersList.clear();
 
         String json_base = LoadData("db/char/char_list.json");
         //Get data from JSON
@@ -3068,7 +2065,7 @@ public class Desk2048 extends AppCompatActivity {
                 characters.setRare(rare);
                 characters.setMainStat(mainStat);
                 characters.setIsComing(isComing);
-                charactersList.add(characters);
+                //charactersList.add(characters);
 
                 IconCard iconCard = new IconCard();
                 iconCard.setItemName(name);
@@ -3077,7 +2074,7 @@ public class Desk2048 extends AppCompatActivity {
                 iconCardList_ICON.add(iconCard);
                 iconCardList_CARD.add(iconCard);
             }
-            mAdapter.filterList(charactersList);
+            //mAdapter.filterList(charactersList);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -3085,7 +2082,7 @@ public class Desk2048 extends AppCompatActivity {
 
     public void weapon_list_reload() {
         Log.wtf("DAAM", "YEE");
-        weaponsList.clear();
+        //weaponsList.clear();
         String name,weapon,stat_1;
         int rare,isComing;
 
@@ -3107,9 +2104,9 @@ public class Desk2048 extends AppCompatActivity {
                 weapons.setRare(rare);
                 weapons.setStat_1(stat_1);
                 weapons.setIsComing(isComing);
-                weaponsList.add(weapons);
+                //weaponsList.add(weapons);
             }
-            mWeaponAdapter.filterList(weaponsList);
+            //mWeaponAdapter.filterList(weaponsList);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -3117,7 +2114,7 @@ public class Desk2048 extends AppCompatActivity {
 
     public void artifact_list_reload() {
         Log.wtf("DAAM", "YEE");
-        artifactsList.clear();
+        //artifactsList.clear();
         String name ,img;
         int rare,isComing;
 
@@ -3137,9 +2134,9 @@ public class Desk2048 extends AppCompatActivity {
                 artifacts.setBaseName(img);
                 artifacts.setRare(rare);
                 artifacts.setIsComing(isComing);
-                artifactsList.add(artifacts);
+                //artifactsList.add(artifacts);
             }
-            mArtifactAdapter.filterList(artifactsList);
+            //mArtifactAdapter.filterList(artifactsList);
         } catch (JSONException e) {
             e.printStackTrace();
         }
@@ -3838,394 +2835,72 @@ public class Desk2048 extends AppCompatActivity {
     }
 
     public void check_updates(){
-        {
-            OkHttpClient client = new OkHttpClient();
-            String url = "http://113.254.213.196/genshin_spirit/update.json";
-            if (BuildConfig.FLAVOR.equals("dev") || BuildConfig.FLAVOR.equals("beta")){
-                url = "http://113.254.213.196/genshin_spirit/update_dev.json";
+        OkHttpClient client = new OkHttpClient();
+        String url = "http://vt.25u.com/genshin_spirit/update.json";
+        if (BuildConfig.FLAVOR.equals("dev")){
+            //if (BuildConfig.FLAVOR.equals("dev") || BuildConfig.FLAVOR.equals("beta")){
+            url = "http://vt.25u.com/genshin_spirit/update_dev.json";
+        }
+        Request request = new Request.Builder().url(url).build();
+
+        long lastUnix = System.currentTimeMillis();
+
+        try {
+            Response sponse = client.newCall(request).execute();
+            String str = sponse.body().string();
+            JSONArray array = new JSONArray(str);
+            ArrayList<String> array_download = new ArrayList<String>();
+            ArrayList<String> array_fileName = new ArrayList<String>();
+            ArrayList<String> array_SfileName = new ArrayList<String>();
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject object = array.getJSONObject(i);
+                long release_unix = object.getLong("release_unix");
+                String fileName = object.getString("fileName");
+
+                if (i == 0) {
+                    lastUnix = release_unix;
+                }
+
+                if (release_unix > sharedPreferences.getLong("lastUpdateUnix", 1)) {
+                    array_download.add("http://vt.25u.com/genshin_spirit/" + fileName);
+                    array_fileName.add(fileName);
+                    array_SfileName.add("/" + fileName);
+                }
             }
-            Request request = new Request.Builder().url(url).build();
+            if(array_download.size()>0){
+                Dialog2048 dialog2048 = new Dialog2048();
+                dialog2048.setup(context,activity);
+                dialog2048.updateMax(getRemoteFileSizeA(array_download));
+                dialog2048.mode(Dialog2048.MODE_DOWNLOAD_UPDATE);
+                dialog2048.show();
 
-            long lastUnix = System.currentTimeMillis();
+                dialog2048.getPositiveBtn().setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
 
-            try {
-                Response sponse = client.newCall(request).execute();
-                String str = sponse.body().string();
-                JSONArray array = new JSONArray(str);
-                ArrayList<String> array_download = new ArrayList<String>();
-                ArrayList<String> array_fileName = new ArrayList<String>();
-                ArrayList<String> array_SfileName = new ArrayList<String>();
-                for (int i = 0; i < array.length(); i++) {
-                    JSONObject object = array.getJSONObject(i);
-                    long release_unix = object.getLong("release_unix");
-                    String fileName = object.getString("fileName");
-
-                    if (i == 0) {
-                        lastUnix = release_unix;
+                        dialog2048.dismiss();
+                        DownloadTask downloadTask = new DownloadTask();
+                        downloadTask.startA(array_download,array_fileName,array_SfileName,context,activity);
+                        editor.apply();
                     }
+                });
 
-                    if (release_unix > sharedPreferences.getLong("lastUpdateUnix", 1)) {
-                        array_download.add("http://113.254.213.196/genshin_spirit/" + fileName);
-                        array_fileName.add(fileName);
-                        array_SfileName.add("/" + fileName);
+                dialog2048.getNegativeBtn().setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog2048.dismiss();
                     }
-                }
-                if(array_download.size()>0){
-                    Dialog2048 dialog2048 = new Dialog2048();
-                    dialog2048.setup(context,activity);
-                    dialog2048.updateMax(getRemoteFileSizeA(array_download));
-                    dialog2048.mode(Dialog2048.MODE_DOWNLOAD_UPDATE);
-                    dialog2048.show();
+                });
 
-                    long finalLastUnix = lastUnix;
-                    dialog2048.getPositiveBtn().setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-
-                            dialog2048.dismiss();
-                            DownloadTask downloadTask = new DownloadTask();
-                            downloadTask.startA(array_download,array_fileName,array_SfileName,context,activity);
-                            editor.putLong("lastUpdateUnix", finalLastUnix);
-                            editor.apply();
-                        }
-                    });
-
-                    dialog2048.getNegativeBtn().setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            dialog2048.dismiss();
-                        }
-                    });
-
-                }else{
-                    CustomToast.toast(context,this,context.getString(R.string.update_download_not_found_update));
-                }
-
-            } catch (JSONException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-    public void filterCharAlgothm(){
-        ArrayList<Characters> filteredList = new ArrayList<>();
-        for (Characters item : charactersList) {
-            // DEFAULT
-            if((show_sword == false && show_claymore == false && show_catalyst == false && show_bow == false && show_polearm == false) &&
-                    (show_anemo == false  && show_cryo == false && show_dendor == false && show_electro == false && show_hydro == false && show_geo == false && show_pyro == false) &&
-                    (show_released == false  && show_unreleased == false) &&
-                    (show_rare1 == false && show_rare2 == false && show_rare3 == false && show_rare4 == false && show_rare5 == false) &&
-                    (show_dps == false && show_sub_dps == false && show_util == false)) {
-                filteredList.add(item);
             }else{
-                boolean isAllTrue = true;
-                int isSingleElement = 0;
-                int isSingleWeapon = 0;
-                int isSingleRare = 0;
-                int isSingleRelease = 0;
-                int isSingleRole = 0;
-
-                if (show_pyro){isSingleElement = isSingleElement+1;}
-                if (show_hydro){isSingleElement = isSingleElement+1;}
-                if (show_anemo){isSingleElement = isSingleElement+1;}
-                if (show_dendor){isSingleElement = isSingleElement+1;}
-                if (show_electro){isSingleElement = isSingleElement+1;}
-                if (show_cryo){isSingleElement = isSingleElement+1;}
-                if (show_geo){isSingleElement = isSingleElement+1;}
-
-                if (show_sword){isSingleWeapon = isSingleWeapon+1;}
-                if (show_claymore){isSingleWeapon = isSingleWeapon+1;}
-                if (show_polearm){isSingleWeapon = isSingleWeapon+1;}
-                if (show_bow){isSingleWeapon = isSingleWeapon+1;}
-                if (show_catalyst){isSingleWeapon = isSingleWeapon+1;}
-
-                if (show_rare4){isSingleRare = isSingleRare+1;}
-                if (show_rare5){isSingleRare = isSingleRare+1;}
-                if (show_released){isSingleRelease = isSingleRelease+1;}
-                if (show_unreleased){isSingleRelease = isSingleRelease+1;}
-                if (show_dps){isSingleRelease = isSingleRelease+1;}
-                if (show_sub_dps){isSingleRelease = isSingleRelease+1;}
-                if (show_util){isSingleRelease = isSingleRelease+1;}
-
-                if (isSingleElement == 1){
-                    if(show_pyro && !item.getElement().toLowerCase().equals("pyro") ){isAllTrue = false;}
-                    if(show_hydro && !item.getElement().toLowerCase().equals("hydro") ){isAllTrue = false;}
-                    if(show_anemo && !item.getElement().toLowerCase().equals("anemo") ){isAllTrue = false;}
-                    if(show_dendor && !item.getElement().toLowerCase().equals("dendro")){isAllTrue = false;}
-                    if(show_electro && !item.getElement().toLowerCase().equals("electro")){isAllTrue = false;}
-                    if(show_cryo && !item.getElement().toLowerCase().equals("cryo")){isAllTrue = false;}
-                    if(show_geo && !item.getElement().toLowerCase().equals("geo") ){isAllTrue = false;}
-                }else if ((show_anemo == false  && show_cryo == false && show_dendor == false && show_electro == false && show_hydro == false && show_geo == false && show_pyro == false) == false){
-                    if(!show_pyro && item.getElement().toLowerCase().equals("pyro") ){isAllTrue = false;}
-                    if(!show_hydro && item.getElement().toLowerCase().equals("hydro") ){isAllTrue = false;}
-                    if(!show_anemo && item.getElement().toLowerCase().equals("anemo") ){isAllTrue = false;}
-                    if(!show_dendor && item.getElement().toLowerCase().equals("dendro")){isAllTrue = false;}
-                    if(!show_electro && item.getElement().toLowerCase().equals("electro")){isAllTrue = false;}
-                    if(!show_cryo && item.getElement().toLowerCase().equals("cryo")){isAllTrue = false;}
-                    if(!show_geo && item.getElement().toLowerCase().equals("geo") ){isAllTrue = false;}
-                }
-
-                if(isSingleWeapon == 1){
-                    if(show_sword && !item.getWeapon().toLowerCase().equals("sword")){isAllTrue = false;}
-                    if(show_claymore && !item.getWeapon().toLowerCase().equals("claymore")){isAllTrue = false;}
-                    if(show_polearm && !item.getWeapon().toLowerCase().equals("polearm")){isAllTrue = false;}
-                    if(show_bow && !item.getWeapon().toLowerCase().equals("bow") ){isAllTrue = false;}
-                    if(show_catalyst && !item.getWeapon().toLowerCase().equals("catalyst") ){isAllTrue = false;}
-                }else if ((show_sword == false && show_claymore == false && show_catalyst == false && show_bow == false && show_polearm == false) == false){
-                    if(!show_sword && item.getWeapon().toLowerCase().equals("sword")){isAllTrue = false;}
-                    if(!show_claymore && item.getWeapon().toLowerCase().equals("claymore")){isAllTrue = false;}
-                    if(!show_polearm && item.getWeapon().toLowerCase().equals("polearm")){isAllTrue = false;}
-                    if(!show_bow && item.getWeapon().toLowerCase().equals("bow") ){isAllTrue = false;}
-                    if(!show_catalyst && item.getWeapon().toLowerCase().equals("catalyst") ){isAllTrue = false;}
-                }
-
-                if(isSingleRare == 1){
-                    if(show_rare4 && item.getRare() !=4 ){isAllTrue = false;}
-                    if(show_rare5 && item.getRare() !=5 ){isAllTrue = false;}
-                }else if ((show_rare4 == false && show_rare5 == false ) == false){
-                    if(!show_rare4 && item.getRare() ==4 ){isAllTrue = false;}
-                    if(!show_rare5 && item.getRare() ==5 ){isAllTrue = false;}
-                }
-
-                if (isSingleRelease == 1){
-                    if(show_released && item.getIsComing() !=0){isAllTrue = false;}
-                    if(show_unreleased && item.getIsComing() !=1 ){isAllTrue = false;}
-                }else if ((show_released == false && show_unreleased == false ) == false){
-                    if(!show_released && item.getIsComing() ==0){isAllTrue = false;}
-                    if(!show_unreleased && item.getIsComing() ==1 ){isAllTrue = false;}
-                }
-
-                if (isSingleRole == 1){
-                    if(show_dps && !item.getRole().equals("Main_DPS") ){isAllTrue = false;}
-                    if(show_sub_dps && !item.getRole().equals("Support_DPS") ){isAllTrue = false;}
-                    if(show_util && !item.getRole().equals("Utility")){isAllTrue = false;}
-                }else if ((show_dps == false && show_sub_dps == false && show_util == false) == false){
-                    if(!show_dps && item.getRole().equals("Main_DPS") ){isAllTrue = false;}
-                    if(!show_sub_dps && item.getRole().equals("Support_DPS") ){isAllTrue = false;}
-                    if(!show_util && item.getRole().equals("Utility")){isAllTrue = false;}
-                }
-
-                if (isAllTrue == true){
-                    filteredList.add(item);
-                }
+                CustomToast.toast(context,this,context.getString(R.string.update_download_not_found_update));
             }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-
-        mList.removeAllViews();
-        mAdapter.filterList(filteredList);
-        editor.putBoolean("show_pyro",show_pyro);
-        editor.putBoolean("show_hydro",show_hydro);
-        editor.putBoolean("show_anemo",show_anemo);
-        editor.putBoolean("show_electro",show_electro);
-        editor.putBoolean("show_dendor",show_dendor);
-        editor.putBoolean("show_cryo",show_cryo);
-        editor.putBoolean("show_geo",show_geo);
-        editor.putBoolean("show_sword",show_sword);
-        editor.putBoolean("show_claymore",show_claymore);
-        editor.putBoolean("show_polearm",show_polearm);
-        editor.putBoolean("show_bow",show_bow);
-        editor.putBoolean("show_catalyst",show_catalyst);
-        editor.putBoolean("show_rare1",show_rare1);
-        editor.putBoolean("show_rare2",show_rare2);
-        editor.putBoolean("show_rare3",show_rare3);
-        editor.putBoolean("show_rare4",show_rare4);
-        editor.putBoolean("show_rare5",show_rare5);
-        editor.putBoolean("show_released",show_released);
-        editor.putBoolean("show_unreleased",show_unreleased);
-        editor.putBoolean("show_dps",show_dps);
-        editor.putBoolean("show_sub_dps",show_sub_dps);
-        editor.putBoolean("show_util",show_util);
-        editor.apply();
-    }
-
-    public void filterWeaponAlgothm(int star){
-        switch (star){
-            case 0: show_rare1 = false; show_rare2 = false ; show_rare3 = false;show_rare4 = false ; show_rare5 = false;break;
-            case 1: show_rare1 = true; show_rare2 = false ; show_rare3 = false;show_rare4 = false ; show_rare5 = false;break;
-            case 2: show_rare2 = true; show_rare1 = false ; show_rare3 = false;show_rare4 = false ; show_rare5 = false;break;
-            case 3: show_rare3 = true;show_rare1 = false; show_rare2 = false ;show_rare4 = false ; show_rare5 = false;break;
-            case 4: show_rare4 = true;show_rare1 = false; show_rare2 = false ; show_rare3 = false ; show_rare5 = false;break;
-            case 5: show_rare5 = true;show_rare1 = false; show_rare2 = false ; show_rare3 = false;show_rare4 = false ;break;
-        }
-
-        ArrayList<Weapons> filteredList = new ArrayList<>();
-        for (Weapons item : weaponsList) {
-            // DEFAULT
-            if((show_sword == false && show_claymore == false && show_catalyst == false && show_bow == false && show_polearm == false) &&
-                   (show_released == false  && show_unreleased == false) &&
-                    (show_rare1 == false && show_rare2 == false && show_rare3 == false && show_rare4 == false && show_rare5 == false)) {
-                filteredList.add(item);
-            }else{
-                boolean isAllTrue = true;
-                int isSingleWeapon = 0;
-                int isSingleRare = 0;
-                int isSingleRelease = 0;
-
-                if (show_sword){isSingleWeapon = isSingleWeapon+1;}
-                if (show_claymore){isSingleWeapon = isSingleWeapon+1;}
-                if (show_polearm){isSingleWeapon = isSingleWeapon+1;}
-                if (show_bow){isSingleWeapon = isSingleWeapon+1;}
-                if (show_catalyst){isSingleWeapon = isSingleWeapon+1;}
-
-                if (show_rare1){isSingleRare = isSingleRare+1;}
-                if (show_rare2){isSingleRare = isSingleRare+1;}
-                if (show_rare3){isSingleRare = isSingleRare+1;}
-                if (show_rare4){isSingleRare = isSingleRare+1;}
-                if (show_rare5){isSingleRare = isSingleRare+1;}
-                if (show_released){isSingleRelease = isSingleRelease+1;}
-                if (show_unreleased){isSingleRelease = isSingleRelease+1;}
-
-                if(isSingleWeapon == 1){
-                    if(show_sword && !item.getWeapon().toLowerCase().equals("sword")){isAllTrue = false;}
-                    if(show_claymore && !item.getWeapon().toLowerCase().equals("claymore")){isAllTrue = false;}
-                    if(show_polearm && !item.getWeapon().toLowerCase().equals("polearm")){isAllTrue = false;}
-                    if(show_bow && !item.getWeapon().toLowerCase().equals("bow") ){isAllTrue = false;}
-                    if(show_catalyst && !item.getWeapon().toLowerCase().equals("catalyst") ){isAllTrue = false;}
-                }else if ((show_sword == false && show_claymore == false && show_catalyst == false && show_bow == false && show_polearm == false) == false){
-                    if(!show_sword && item.getWeapon().toLowerCase().equals("sword")){isAllTrue = false;}
-                    if(!show_claymore && item.getWeapon().toLowerCase().equals("claymore")){isAllTrue = false;}
-                    if(!show_polearm && item.getWeapon().toLowerCase().equals("polearm")){isAllTrue = false;}
-                    if(!show_bow && item.getWeapon().toLowerCase().equals("bow") ){isAllTrue = false;}
-                    if(!show_catalyst && item.getWeapon().toLowerCase().equals("catalyst") ){isAllTrue = false;}
-                }
-
-                if(isSingleRare == 1){
-                    if(show_rare1 && item.getRare() !=1 ){isAllTrue = false;}
-                    if(show_rare2 && item.getRare() !=2 ){isAllTrue = false;}
-                    if(show_rare3 && item.getRare() !=3 ){isAllTrue = false;}
-                    if(show_rare4 && item.getRare() !=4 ){isAllTrue = false;}
-                    if(show_rare5 && item.getRare() !=5 ){isAllTrue = false;}
-                }else if ((show_rare1 == false &&show_rare2 == false &&show_rare3 == false &&show_rare4 == false && show_rare5 == false ) == false){
-                    if(!show_rare1 && item.getRare() ==1 ){isAllTrue = false;}
-                    if(!show_rare2 && item.getRare() ==2 ){isAllTrue = false;}
-                    if(!show_rare3 && item.getRare() ==3 ){isAllTrue = false;}
-                    if(!show_rare4 && item.getRare() ==4 ){isAllTrue = false;}
-                    if(!show_rare5 && item.getRare() ==5 ){isAllTrue = false;}
-                }
-
-                if (isSingleRelease == 1){
-                    if(show_released && item.getIsComing() !=0){isAllTrue = false;}
-                    if(show_unreleased && item.getIsComing() !=1 ){isAllTrue = false;}
-                }else if ((show_released == false && show_unreleased == false ) == false){
-                    if(!show_released && item.getIsComing() ==0){isAllTrue = false;}
-                    if(!show_unreleased && item.getIsComing() ==1 ){isAllTrue = false;}
-                }
-
-                if (isAllTrue == true){
-                    filteredList.add(item);
-                }
-            }
-        }
-        mWeaponList.removeAllViews();
-        mWeaponAdapter.filterList(filteredList);
-        editor.putBoolean("show_pyro",show_pyro);
-        editor.putBoolean("show_hydro",show_hydro);
-        editor.putBoolean("show_anemo",show_anemo);
-        editor.putBoolean("show_electro",show_electro);
-        editor.putBoolean("show_dendor",show_dendor);
-        editor.putBoolean("show_cryo",show_cryo);
-        editor.putBoolean("show_geo",show_geo);
-        editor.putBoolean("show_sword",show_sword);
-        editor.putBoolean("show_claymore",show_claymore);
-        editor.putBoolean("show_polearm",show_polearm);
-        editor.putBoolean("show_bow",show_bow);
-        editor.putBoolean("show_catalyst",show_catalyst);
-        editor.putBoolean("show_rare1",show_rare1);
-        editor.putBoolean("show_rare2",show_rare2);
-        editor.putBoolean("show_rare3",show_rare3);
-        editor.putBoolean("show_rare4",show_rare4);
-        editor.putBoolean("show_rare5",show_rare5);
-        editor.putBoolean("show_released",show_released);
-        editor.putBoolean("show_unreleased",show_unreleased);
-        editor.putBoolean("show_dps",show_dps);
-        editor.putBoolean("show_sub_dps",show_sub_dps);
-        editor.putBoolean("show_util",show_util);
-        editor.apply();
-    }
-
-    public void filterArtifactAlgothm(int star){
-        switch (star){
-
-            case 0: show_rare1 = false; show_rare2 = false ; show_rare3 = false;show_rare4 = false ; show_rare5 = false;break;
-            case 1: show_rare1 = true; show_rare2 = false ; show_rare3 = false;show_rare4 = false ; show_rare5 = false;break;
-            case 2: show_rare2 = true; show_rare1 = false ; show_rare3 = false;show_rare4 = false ; show_rare5 = false;break;
-            case 3: show_rare3 = true;show_rare1 = false; show_rare2 = false ;show_rare4 = false ; show_rare5 = false;break;
-            case 4: show_rare4 = true;show_rare1 = false; show_rare2 = false ; show_rare3 = false ; show_rare5 = false;break;
-            case 5: show_rare5 = true;show_rare1 = false; show_rare2 = false ; show_rare3 = false;show_rare4 = false ;break;
-        }
-        ArrayList<Artifacts> filteredList = new ArrayList<>();
-        for (Artifacts item : artifactsList) {
-            // DEFAULT
-            if((show_released == false  && show_unreleased == false) &&
-                    (show_rare1 == false && show_rare2 == false && show_rare3 == false && show_rare4 == false && show_rare5 == false)) {
-                filteredList.add(item);
-            }else{
-                boolean isAllTrue = true;
-                int isSingleRare = 0;
-                int isSingleRelease = 0;
-
-                if (show_rare1){isSingleRare = isSingleRare+1;}
-                if (show_rare2){isSingleRare = isSingleRare+1;}
-                if (show_rare3){isSingleRare = isSingleRare+1;}
-                if (show_rare4){isSingleRare = isSingleRare+1;}
-                if (show_rare5){isSingleRare = isSingleRare+1;}
-                if (show_released){isSingleRelease = isSingleRelease+1;}
-                if (show_unreleased){isSingleRelease = isSingleRelease+1;}
-
-
-                if(isSingleRare == 1){
-                    if(show_rare1 && item.getRare() !=1 ){isAllTrue = false;}
-                    if(show_rare2 && item.getRare() !=2 ){isAllTrue = false;}
-                    if(show_rare3 && item.getRare() !=3 ){isAllTrue = false;}
-                    if(show_rare4 && item.getRare() !=4 ){isAllTrue = false;}
-                    if(show_rare5 && item.getRare() !=5 ){isAllTrue = false;}
-                }else if ((show_rare1 == false &&show_rare2 == false &&show_rare3 == false &&show_rare4 == false && show_rare5 == false ) == false){
-                    if(!show_rare1 && item.getRare() ==1 ){isAllTrue = false;}
-                    if(!show_rare2 && item.getRare() ==2 ){isAllTrue = false;}
-                    if(!show_rare3 && item.getRare() ==3 ){isAllTrue = false;}
-                    if(!show_rare4 && item.getRare() ==4 ){isAllTrue = false;}
-                    if(!show_rare5 && item.getRare() ==5 ){isAllTrue = false;}
-                }
-
-                if (isSingleRelease == 1){
-                    if(show_released && item.getIsComing() !=0){isAllTrue = false;}
-                    if(show_unreleased && item.getIsComing() !=1 ){isAllTrue = false;}
-                }else if ((show_released == false && show_unreleased == false ) == false){
-                    if(!show_released && item.getIsComing() ==0){isAllTrue = false;}
-                    if(!show_unreleased && item.getIsComing() ==1 ){isAllTrue = false;}
-                }
-
-                if (isAllTrue == true){
-                    filteredList.add(item);
-                }
-            }
-        }
-        mArtifactList.removeAllViews();
-        mArtifactAdapter.filterList(filteredList);
-        editor.putBoolean("show_pyro",show_pyro);
-        editor.putBoolean("show_hydro",show_hydro);
-        editor.putBoolean("show_anemo",show_anemo);
-        editor.putBoolean("show_electro",show_electro);
-        editor.putBoolean("show_dendor",show_dendor);
-        editor.putBoolean("show_cryo",show_cryo);
-        editor.putBoolean("show_geo",show_geo);
-        editor.putBoolean("show_sword",show_sword);
-        editor.putBoolean("show_claymore",show_claymore);
-        editor.putBoolean("show_polearm",show_polearm);
-        editor.putBoolean("show_bow",show_bow);
-        editor.putBoolean("show_catalyst",show_catalyst);
-        editor.putBoolean("show_rare1",show_rare1);
-        editor.putBoolean("show_rare2",show_rare2);
-        editor.putBoolean("show_rare3",show_rare3);
-        editor.putBoolean("show_rare4",show_rare4);
-        editor.putBoolean("show_rare5",show_rare5);
-        editor.putBoolean("show_released",show_released);
-        editor.putBoolean("show_unreleased",show_unreleased);
-        editor.putBoolean("show_dps",show_dps);
-        editor.putBoolean("show_sub_dps",show_sub_dps);
-        editor.putBoolean("show_util",show_util);
-        editor.apply();
     }
 
     private boolean getBooleanByInt (int x){

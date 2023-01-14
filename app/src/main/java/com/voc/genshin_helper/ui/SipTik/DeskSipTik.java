@@ -87,6 +87,7 @@ import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.ChangeLog;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.DailyMemo;
+import com.voc.genshin_helper.util.Dialog2048;
 import com.voc.genshin_helper.util.DownloadTask;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.LangUtils;
@@ -124,7 +125,7 @@ import okhttp3.Response;
 /*
  * Project Genshin Spirit (原神小幫手) was
  * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
- * Copyright © 2022 Xectorda 版權所有
+ * Copyright © 2023 Xectorda 版權所有
  */
 
 public class DeskSipTik extends AppCompatActivity {
@@ -2032,7 +2033,7 @@ public class DeskSipTik extends AppCompatActivity {
                 AlertDialog.Builder dialog = new AlertDialog.Builder(DeskSipTik.this,R.style.AlertDialogCustom);
                 dialog.setCancelable(false);
                 dialog.setTitle(context.getString(R.string.update_download_update_base));
-                dialog.setMessage(context.getString(R.string.update_download_advice)+"\n"+context.getString(R.string.update_download_base_file_size)+" "+prettyByteCount(getRemoteFileSize("http://113.254.213.196/genshin_spirit/base.zip")));
+                dialog.setMessage(context.getString(R.string.update_download_advice)+"\n"+context.getString(R.string.update_download_base_file_size)+" "+prettyByteCount(getRemoteFileSize("http://vt.25u.com/genshin_spirit/base.zip")));
                 dialog.setNegativeButton(context.getString(R.string.update_download_later),new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface arg0, int arg1) {
@@ -2046,7 +2047,7 @@ public class DeskSipTik extends AppCompatActivity {
                     public void onClick(DialogInterface arg0, int arg1) {
                         // TODO Auto-generated method stub
                         DownloadTask downloadTask = new DownloadTask();
-                        downloadTask.start("http://113.254.213.196/genshin_spirit/base.zip","base.zip","/base.zip",context,activity);
+                        downloadTask.start("http://vt.25u.com/genshin_spirit/base.zip","base.zip","/base.zip",context,activity);
                     }
 
                 });
@@ -3456,72 +3457,74 @@ public class DeskSipTik extends AppCompatActivity {
     }
 
     public void check_updates(){
-        {
-            OkHttpClient client = new OkHttpClient();
-            String url = "http://113.254.213.196/genshin_spirit/update.json";
-            Request request = new Request.Builder().url(url).build();
+        OkHttpClient client = new OkHttpClient();
+        String url = "http://vt.25u.com/genshin_spirit/update.json";
+        if (BuildConfig.FLAVOR.equals("dev")){
+            //if (BuildConfig.FLAVOR.equals("dev") || BuildConfig.FLAVOR.equals("beta")){
+            url = "http://vt.25u.com/genshin_spirit/update_dev.json";
+        }
+        Request request = new Request.Builder().url(url).build();
 
-            long lastUnix = System.currentTimeMillis();
+        long lastUnix = System.currentTimeMillis();
 
-            try {
-                Response sponse = client.newCall(request).execute();
-                String str = sponse.body().string();
-                JSONArray array = new JSONArray(str);
-                ArrayList<String> array_download = new ArrayList<String>();
-                ArrayList<String> array_fileName = new ArrayList<String>();
-                ArrayList<String> array_SfileName = new ArrayList<String>();
-                for (int i = 0; i < array.length(); i++) {
-                    JSONObject object = array.getJSONObject(i);
-                    long release_unix = object.getLong("release_unix");
-                    String fileName = object.getString("fileName");
+        try {
+            Response sponse = client.newCall(request).execute();
+            String str = sponse.body().string();
+            JSONArray array = new JSONArray(str);
+            ArrayList<String> array_download = new ArrayList<String>();
+            ArrayList<String> array_fileName = new ArrayList<String>();
+            ArrayList<String> array_SfileName = new ArrayList<String>();
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject object = array.getJSONObject(i);
+                long release_unix = object.getLong("release_unix");
+                String fileName = object.getString("fileName");
 
-                    if (i == 0) {
-                        lastUnix = release_unix;
-                    }
-
-                    if (release_unix > sharedPreferences.getLong("lastUpdateUnix", 1)) {
-                        array_download.add("http://113.254.213.196/genshin_spirit/" + fileName);
-                        array_fileName.add(fileName);
-                        array_SfileName.add("/" + fileName);
-                    }
-                }
-                if(array_download.size()>0){
-                    AlertDialog.Builder dialog = new AlertDialog.Builder(DeskSipTik.this,R.style.AlertDialogCustom);
-                    dialog.setCancelable(false);
-                    dialog.setTitle(context.getString(R.string.update_download_update_curr));
-                    dialog.setMessage(context.getString(R.string.update_download_found_update)+context.getString(R.string.update_download_advice)+"\n"+context.getString(R.string.update_download_base_file_size)+" "+prettyByteCount(getRemoteFileSizeA(array_download)));
-                    dialog.setNegativeButton(context.getString(R.string.update_download_later),new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface arg0, int arg1) {
-                            // TODO Auto-generated method stub
-                            Log.wtf("NOTHING","NOTHING");
-                        }
-
-                    });
-                    long finalLastUnix = lastUnix;
-                    dialog.setPositiveButton(context.getString(R.string.update_download_now),new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface arg0, int arg1) {
-                            // TODO Auto-generated method stub
-                            DownloadTask downloadTask = new DownloadTask();
-                            downloadTask.startA(array_download,array_fileName,array_SfileName,context,activity);
-                            editor.putLong("lastUpdateUnix", finalLastUnix);
-                            editor.apply();
-                        }
-
-                    });
-                    dialog.show();
-                }else{
-                    CustomToast.toast(context,this,context.getString(R.string.update_download_not_found_update));
+                if (i == 0) {
+                    lastUnix = release_unix;
                 }
 
-            } catch (JSONException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
+                if (release_unix > sharedPreferences.getLong("lastUpdateUnix", 1)) {
+                    array_download.add("http://vt.25u.com/genshin_spirit/" + fileName);
+                    array_fileName.add(fileName);
+                    array_SfileName.add("/" + fileName);
+                }
             }
+            if(array_download.size()>0){
+                Dialog2048 dialog2048 = new Dialog2048();
+                dialog2048.setup(context,activity);
+                dialog2048.updateMax(getRemoteFileSizeA(array_download));
+                dialog2048.mode(Dialog2048.MODE_DOWNLOAD_UPDATE);
+                dialog2048.show();
+
+                dialog2048.getPositiveBtn().setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+
+                        dialog2048.dismiss();
+                        DownloadTask downloadTask = new DownloadTask();
+                        downloadTask.startA(array_download,array_fileName,array_SfileName,context,activity);
+                        editor.apply();
+                    }
+                });
+
+                dialog2048.getNegativeBtn().setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog2048.dismiss();
+                    }
+                });
+
+            }else{
+                CustomToast.toast(context,this,context.getString(R.string.update_download_not_found_update));
+            }
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
+
     public void filterCharAlgothm(){
         ArrayList<Characters> filteredList = new ArrayList<>();
         for (Characters item : charactersList) {
