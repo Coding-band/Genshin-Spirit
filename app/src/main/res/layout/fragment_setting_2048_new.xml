@@ -1150,6 +1150,38 @@
                 android:thumbTint="@color/tv_anti_color_2048"
                 android:trackTint="@color/tv_anti_color_2048" />
 
+            <Button
+                android:id="@+id/bg_download_reset"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/bg_dialog_btn"
+                android:fontFamily="@font/genshin_font"
+                android:text="Clean Download Unix Timestamp"
+                android:visibility="gone"
+                app:backgroundTint="@color/tab_bg_2048" />
+
+            <Button
+                android:id="@+id/bg_download_delete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/bg_dialog_btn"
+                android:fontFamily="@font/genshin_font"
+                android:text="Delete all resources"
+                android:visibility="gone"
+                app:backgroundTint="@color/tab_bg_2048" />
+
             <Switch
                 android:id="@+id/other_app_ico_use_default"
                 android:layout_width="match_parent"

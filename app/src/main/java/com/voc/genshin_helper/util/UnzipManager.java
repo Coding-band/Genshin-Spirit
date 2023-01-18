@@ -115,8 +115,10 @@ public class UnzipManager {
                 while ((ze = zis.getNextEntry()) != null) {
                     File file = new File(path, ze.getName());
                     File dir = ze.isDirectory() ? file : file.getParentFile();
-                    if (!dir.isDirectory() && !dir.mkdirs())
+                    if (!dir.isDirectory() && !dir.mkdirs()){
+                        LogExport.export("UnzipManager","unzip.doInBackground", "Failed to ensure directory: " +dir.getAbsolutePath(), context, UNZIPMANAGER);
                         throw new FileNotFoundException("Failed to ensure directory: " +dir.getAbsolutePath());
+                    }
                     if (ze.isDirectory())
                         continue;
                     FileOutputStream fout = new FileOutputStream(file);
@@ -132,7 +134,7 @@ public class UnzipManager {
                 }
             } catch (IOException e) {
                 e.printStackTrace();
-                LogExport.export("DownloadTask","DownloadFileFromURLArray.doInBackground", e.getMessage(), context, UNZIPMANAGER);
+                LogExport.export("UnzipManager","unzip.doInBackground", e.getMessage(), context, UNZIPMANAGER);
             }
             return null;
         }
@@ -227,8 +229,10 @@ public class UnzipManager {
                     while ((ze = zis.getNextEntry()) != null) {
                         File file = new File(path, ze.getName());
                         File dir = ze.isDirectory() ? file : file.getParentFile();
-                        if (!dir.isDirectory() && !dir.mkdirs())
+                        if (!dir.isDirectory() && !dir.mkdirs()){
+                            LogExport.export("UnzipManager","unzip.doInBackground", "Failed to ensure directory: " +dir.getAbsolutePath(), context, DOWNLOADTASK);
                             throw new FileNotFoundException("Failed to ensure directory: " +dir.getAbsolutePath());
+                        }
                         if (ze.isDirectory())
                             continue;
                         FileOutputStream fout = new FileOutputStream(file);

@@ -1361,6 +1361,11 @@
     <string name="tcg_keyword_shield">シールド</string>
     <string name="tcg_keyword_unalignedelement">無色元素</string>
     <string name="tcg_keyword_usages">使用可能回数</string>
+    <string name="light_of_foliar_incision">萃光の裁葉</string>
+    <string name="tcg_klee">クレー</string>
+    <string name="tcg_beidou">北斗</string>
+    <string name="tcg_lightning_storm">満天の霹靂</string>
+    <string name="tcg_pounding_surprise">こんこんプレゼント</string>
 
 </resources>
 

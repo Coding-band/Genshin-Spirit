@@ -7,6 +7,8 @@ package com.voc.genshin_helper.util;/*
 import static android.content.Context.MODE_PRIVATE;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 
+import static com.voc.genshin_helper.util.LogExport.DOWNLOADTASK;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
@@ -127,6 +129,8 @@ public class Dialog2048 {
             double progress = ((double) (size_progress*100/size_max));
             dialog_progress_bar.setProgress((int) progress);
             dialog_progress_tv.setText(prettyCount(progress)+"%");
+            //LogExport.export("DownloadTask","DownloadFileFromURL.doInBackground => updateProgress", "Progress : "+prettyCount(progress), context, DOWNLOADTASK);
+
             if (isUnzip){
                 dialog_progress_detail.setText(prettyCount(size_progress)+" / "+prettyCount(size_max));
             }else{

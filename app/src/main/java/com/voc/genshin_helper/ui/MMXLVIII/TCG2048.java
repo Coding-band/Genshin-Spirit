@@ -823,6 +823,16 @@ public class TCG2048 {
         editor.apply();
     }
 
+    public RecyclerView getCurrList(){
+        switch (viewPager.getCurrentItem()){
+            case 0 : return mCharList;
+            case 1 : return mEquipList;
+            case 2 : return mSupportList;
+            case 3 : return mEventList;
+            case 4 : return mBackSideList;
+        }
+        return mCharList;
+    }
 
     private void setup_char() {
         if (context instanceof Desk2048){

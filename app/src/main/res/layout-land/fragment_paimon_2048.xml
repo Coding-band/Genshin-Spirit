@@ -37,7 +37,6 @@
                     android:id="@+id/card_bg"
                     android:layout_width="0dp"
                     android:layout_height="240dp"
-                    android:adjustViewBounds="true"
                     android:scaleType="centerCrop"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"

@@ -1172,11 +1172,11 @@ public class DeskSipTik extends AppCompatActivity {
                 dendor_bg.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_dendor){show_dendor = false;dendor_kwang.setVisibility(View.GONE);dendor_bg.setAlpha(0.5f);}else{show_dendor = true;dendor_kwang.setVisibility(View.VISIBLE);dendor_bg.setAlpha(1);}}});
                 cryo_bg.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_cryo){show_cryo = false;cryo_kwang.setVisibility(View.GONE);cryo_bg.setAlpha(0.5f);}else{show_cryo = true;cryo_kwang.setVisibility(View.VISIBLE);cryo_bg.setAlpha(1);}}});
                 geo_bg.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_geo){show_geo = false;geo_kwang.setVisibility(View.GONE);geo_bg.setAlpha(0.5f);}else{show_geo = true;geo_kwang.setVisibility(View.VISIBLE);geo_bg.setAlpha(1);}}});
-                    ico_sword.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_sword){show_sword = false;ico_sword.setAlpha(0.5f);}else{show_sword = true;ico_sword.setAlpha(1f);}}});
-                    ico_claymore.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_claymore){show_claymore = false;ico_claymore.setAlpha(0.5f);}else{show_claymore = true;ico_claymore.setAlpha(1f);}}});
-                    ico_polearm.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_polearm){show_polearm = false;ico_polearm.setAlpha(0.5f);}else{show_polearm = true;ico_polearm.setAlpha(1f);}}});
-                    ico_bow.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_bow){show_bow = false;ico_bow.setAlpha(0.5f);}else{show_bow = true;ico_bow.setAlpha(1f);}}});
-                    ico_catalyst.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_catalyst){show_catalyst = false;ico_catalyst.setAlpha(0.5f);}else{show_catalyst = true;ico_catalyst.setAlpha(1f);}}});
+                ico_sword.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_sword){show_sword = false;ico_sword.setAlpha(0.5f);}else{show_sword = true;ico_sword.setAlpha(1f);}}});
+                ico_claymore.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_claymore){show_claymore = false;ico_claymore.setAlpha(0.5f);}else{show_claymore = true;ico_claymore.setAlpha(1f);}}});
+                ico_polearm.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_polearm){show_polearm = false;ico_polearm.setAlpha(0.5f);}else{show_polearm = true;ico_polearm.setAlpha(1f);}}});
+                ico_bow.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_bow){show_bow = false;ico_bow.setAlpha(0.5f);}else{show_bow = true;ico_bow.setAlpha(1f);}}});
+                ico_catalyst.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_catalyst){show_catalyst = false;ico_catalyst.setAlpha(0.5f);}else{show_catalyst = true;ico_catalyst.setAlpha(1f);}}});
 
                 cancel.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -1809,7 +1809,7 @@ public class DeskSipTik extends AppCompatActivity {
         discord_ico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("https://discord.gg/uXatcbWKv2"); // missing 'http://' will cause crashed
+                Uri uri = Uri.parse("https://discord.gg/uXatcbWKv2"); // missing 'https://' will cause crashed
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
@@ -2033,7 +2033,7 @@ public class DeskSipTik extends AppCompatActivity {
                 AlertDialog.Builder dialog = new AlertDialog.Builder(DeskSipTik.this,R.style.AlertDialogCustom);
                 dialog.setCancelable(false);
                 dialog.setTitle(context.getString(R.string.update_download_update_base));
-                dialog.setMessage(context.getString(R.string.update_download_advice)+"\n"+context.getString(R.string.update_download_base_file_size)+" "+prettyByteCount(getRemoteFileSize("http://vt.25u.com/genshin_spirit/base.zip")));
+                dialog.setMessage(context.getString(R.string.update_download_advice)+"\n"+context.getString(R.string.update_download_base_file_size)+" "+prettyByteCount(getRemoteFileSize("https://vt.25u.com/genshin_spirit/base.zip")));
                 dialog.setNegativeButton(context.getString(R.string.update_download_later),new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface arg0, int arg1) {
@@ -2047,7 +2047,7 @@ public class DeskSipTik extends AppCompatActivity {
                     public void onClick(DialogInterface arg0, int arg1) {
                         // TODO Auto-generated method stub
                         DownloadTask downloadTask = new DownloadTask();
-                        downloadTask.start("http://vt.25u.com/genshin_spirit/base.zip","base.zip","/base.zip",context,activity);
+                        downloadTask.start("https://vt.25u.com/genshin_spirit/base.zip","base.zip","/base.zip",context,activity);
                     }
 
                 });
@@ -3420,7 +3420,7 @@ public class DeskSipTik extends AppCompatActivity {
     public static long getRemoteFileSize(String urlSTR) {
         URL url = null;
         try {
-            url = new URL(urlSTR);
+            url = new URL(urlSTR.replace("http://vt.25u.com","https://vt.25u.com"));
             URLConnection urlConnection = url.openConnection();
             urlConnection.connect();
             return urlConnection.getContentLength();
@@ -3458,10 +3458,10 @@ public class DeskSipTik extends AppCompatActivity {
 
     public void check_updates(){
         OkHttpClient client = new OkHttpClient();
-        String url = "http://vt.25u.com/genshin_spirit/update.json";
+        String url = "https://vt.25u.com/genshin_spirit/update.json";
         if (BuildConfig.FLAVOR.equals("dev")){
             //if (BuildConfig.FLAVOR.equals("dev") || BuildConfig.FLAVOR.equals("beta")){
-            url = "http://vt.25u.com/genshin_spirit/update_dev.json";
+            url = "https://vt.25u.com/genshin_spirit/update_dev.json";
         }
         Request request = new Request.Builder().url(url).build();
 
@@ -3484,7 +3484,7 @@ public class DeskSipTik extends AppCompatActivity {
                 }
 
                 if (release_unix > sharedPreferences.getLong("lastUpdateUnix", 1)) {
-                    array_download.add("http://vt.25u.com/genshin_spirit/" + fileName);
+                    array_download.add("https://vt.25u.com/genshin_spirit/" + fileName);
                     array_fileName.add(fileName);
                     array_SfileName.add("/" + fileName);
                 }

@@ -1334,4 +1334,9 @@
     <string name="tcg_keyword_shield">Щит</string>
     <string name="tcg_keyword_unalignedelement">Неопределённый элемент</string>
     <string name="tcg_keyword_usages">Кол-во применений</string>
+    <string name="light_of_foliar_incision">Свет лиственного разреза</string>
+    <string name="tcg_klee">Кли</string>
+    <string name="tcg_beidou">Бэй Доу</string>
+    <string name="tcg_lightning_storm">Гром и молния</string>
+    <string name="tcg_pounding_surprise">Тук-тук, кто там?</string>
 </resources>

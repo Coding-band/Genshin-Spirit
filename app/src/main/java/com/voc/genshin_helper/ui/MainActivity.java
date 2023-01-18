@@ -1462,7 +1462,7 @@ public class MainActivity extends AppCompatActivity {
                 AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this,R.style.AlertDialogCustom);
                 dialog.setCancelable(false);
                 dialog.setTitle(context.getString(R.string.update_download_update_base));
-                dialog.setMessage(context.getString(R.string.update_download_advice)+"\n"+context.getString(R.string.update_download_base_file_size)+" "+prettyByteCount(getRemoteFileSize("http://vt.25u.com/genshin_spirit/base.zip")));
+                dialog.setMessage(context.getString(R.string.update_download_advice)+"\n"+context.getString(R.string.update_download_base_file_size)+" "+prettyByteCount(getRemoteFileSize("https://vt.25u.com/genshin_spirit/base.zip")));
                 dialog.setNegativeButton(context.getString(R.string.update_download_later),new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface arg0, int arg1) {
@@ -1476,7 +1476,7 @@ public class MainActivity extends AppCompatActivity {
                     public void onClick(DialogInterface arg0, int arg1) {
                         // TODO Auto-generated method stub
                         DownloadTask downloadTask = new DownloadTask();
-                        downloadTask.start("http://vt.25u.com/genshin_spirit/base.zip","base.zip","/base.zip",context,activity);
+                        downloadTask.start("https://vt.25u.com/genshin_spirit/base.zip","base.zip","/base.zip",context,activity);
                     }
 
                 });
@@ -1543,7 +1543,7 @@ public class MainActivity extends AppCompatActivity {
         discord_ico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("https://discord.gg/uXatcbWKv2"); // missing 'http://' will cause crashed
+                Uri uri = Uri.parse("https://discord.gg/uXatcbWKv2"); // missing 'https://' will cause crashed
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
@@ -2704,7 +2704,7 @@ public class MainActivity extends AppCompatActivity {
     private void shortcutDel(String name) {
         // Intent to be send, when shortcut is pressed by user ("launched")
         Intent shortcutIntent = new Intent(getApplicationContext(), MainActivity.class);
-       // shortcutIntent.setAction(Constants.ACTION_PLAY);
+        // shortcutIntent.setAction(Constants.ACTION_PLAY);
 
         // Decorate the shortcut
         Intent delIntent = new Intent();
@@ -2832,7 +2832,7 @@ public class MainActivity extends AppCompatActivity {
     public static long getRemoteFileSize(String urlSTR) {
         URL url = null;
         try {
-            url = new URL(urlSTR);
+            url = new URL(urlSTR.replace("http://vt.25u.com","https://vt.25u.com"));
             URLConnection urlConnection = url.openConnection();
             urlConnection.connect();
             return urlConnection.getContentLength();
@@ -2870,10 +2870,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void check_updates(){
         OkHttpClient client = new OkHttpClient();
-        String url = "http://vt.25u.com/genshin_spirit/update.json";
+        String url = "https://vt.25u.com/genshin_spirit/update.json";
         if (BuildConfig.FLAVOR.equals("dev")){
             //if (BuildConfig.FLAVOR.equals("dev") || BuildConfig.FLAVOR.equals("beta")){
-            url = "http://vt.25u.com/genshin_spirit/update_dev.json";
+            url = "https://vt.25u.com/genshin_spirit/update_dev.json";
         }
         Request request = new Request.Builder().url(url).build();
 
@@ -2896,7 +2896,7 @@ public class MainActivity extends AppCompatActivity {
                 }
 
                 if (release_unix > sharedPreferences.getLong("lastUpdateUnix", 1)) {
-                    array_download.add("http://vt.25u.com/genshin_spirit/" + fileName);
+                    array_download.add("https://vt.25u.com/genshin_spirit/" + fileName);
                     array_fileName.add(fileName);
                     array_SfileName.add("/" + fileName);
                 }

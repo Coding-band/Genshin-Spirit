@@ -1395,6 +1395,13 @@
     <string name="tcg_keyword_shield">Shield</string>
     <string name="tcg_keyword_unalignedelement">Unaligned Element</string>
     <string name="tcg_keyword_usages">Usage(s)</string>
+    
+    <!--add in 20230118-->
+    <string name="light_of_foliar_incision">Light of Foliar Incision</string>
+    <string name="tcg_klee">Klee</string>
+    <string name="tcg_beidou">Beidou</string>
+    <string name="tcg_lightning_storm">Lightning Storm</string>
+    <string name="tcg_pounding_surprise">Pounding Surprise</string>
 
 
 </resources>

@@ -270,17 +270,17 @@ public class Team2048 {
             }
         });
 
-        team_search = rootView.findViewById(R.id.team_search);
+        team_search = rootView.findViewById(R.id.team_searchX);
         team_filter = rootView.findViewById(R.id.team_filter);
 
         team_search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ConstraintLayout header_con = rootView.findViewById(R.id.header_con);
-                View header_search = rootView.findViewById(R.id.header_search);
-                EditText header_search_et = rootView.findViewById(R.id.header_search_et);
-                Button menu_search_cancel = rootView.findViewById(R.id.menu_search_cancel);
-                ImageView header_search_reset = rootView.findViewById(R.id.header_search_reset);
+                ConstraintLayout header_con = rootView.findViewById(R.id.header_conX);
+                View header_search = rootView.findViewById(R.id.header_searchX);
+                EditText header_search_et = rootView.findViewById(R.id.header_search_etX);
+                Button menu_search_cancel = rootView.findViewById(R.id.menu_search_cancelX);
+                ImageView header_search_reset = rootView.findViewById(R.id.header_search_resetX);
 
                 header_con.animate()
                         .alpha(0.0f)
@@ -660,6 +660,16 @@ public class Team2048 {
                 dialog.show();
             }
         });
+    }
+
+
+    public RecyclerView getCurrList(){
+        switch (viewPager.getCurrentItem()){
+            case 0 : return mCharList;
+            case 1 : return mWeaponList;
+            case 2 : return mArtifactList;
+        }
+        return mCharList;
     }
 
     private void setup_char() {

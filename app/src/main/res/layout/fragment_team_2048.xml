@@ -36,14 +36,14 @@
         app:layout_constraintVertical_bias="0.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/header_con"
+            android:id="@+id/header_conX"
             android:layout_width="match_parent"
             android:layout_height="64dp"
             android:animateLayoutChanges="true"
             android:visibility="visible">
 
             <ImageView
-                android:id="@+id/team_search"
+                android:id="@+id/team_searchX"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_marginLeft="16dp"
@@ -63,7 +63,7 @@
                 android:layout_marginEnd="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toStartOf="@+id/team_filter"
-                app:layout_constraintStart_toEndOf="@+id/team_search"
+                app:layout_constraintStart_toEndOf="@+id/team_searchX"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
@@ -123,8 +123,8 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <include
-            android:id="@+id/header_search"
-            layout="@layout/item_search_et"
+            android:id="@+id/header_searchX"
+            layout="@layout/item_search_et_team"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_weight="1"

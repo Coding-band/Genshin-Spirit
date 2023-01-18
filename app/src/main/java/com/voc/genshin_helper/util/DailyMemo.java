@@ -742,11 +742,10 @@ public class DailyMemo {
                 }else{
                     str = sharedPreferences.getString("dailyMemoDataTMP","{\"nickname\": \"N/A\", \"level\": 1, \"server\": \"os_asia\", \"icon\": \"Klee\", \"resin_curr\": 0, \"resin_remain_time\": 1, \"currency_curr\": 0, \"currency_max\": 300, \"currency_remain_time\": -1, \"mission_done\": 0, \"mission_claim\": \"false\", \"transformer_recovery_time\": -1, \"weekboss_30\": 3, \"expedition1_name\": \"N/A\", \"expedition1_remain_time\": -1, \"expedition2_name\": \"N/A\", \"expedition2_remain_time\": -1, \"expedition3_name\": \"N/A\", \"expedition3_remain_time\": -1, \"expedition4_name\": \"N/A\", \"expedition4_remain_time\": -1, \"expedition5_name\": \"N/A\", \"expedition5_remain_time\": -1}");
                 }
-                refreshData(sharedPreferences.getString("dailyMemoDataTMP","{\"nickname\": \"N/A\", \"level\": 1, \"server\": \"os_asia\", \"icon\": \"Klee\", \"resin_curr\": 0, \"resin_remain_time\": 1, \"currency_curr\": 0, \"currency_max\": 300, \"currency_remain_time\": -1, \"mission_done\": 0, \"mission_claim\": \"false\", \"transformer_recovery_time\": -1, \"weekboss_30\": 3, \"expedition1_name\": \"N/A\", \"expedition1_remain_time\": -1, \"expedition2_name\": \"N/A\", \"expedition2_remain_time\": -1, \"expedition3_name\": \"N/A\", \"expedition3_remain_time\": -1, \"expedition4_name\": \"N/A\", \"expedition4_remain_time\": -1, \"expedition5_name\": \"N/A\", \"expedition5_remain_time\": -1}"));
 
             } catch (IOException | JSONException e) {
                 LogExport.export("DailyMemo","grabIdFromServer.doInBackground", e.getMessage(), context, DAILYMEMO);
-                refreshData(sharedPreferences.getString("dailyMemoDataTMP","{\"nickname\": \"N/A\", \"level\": 1, \"server\": \"os_asia\", \"icon\": \"Klee\", \"resin_curr\": 0, \"resin_remain_time\": 1, \"currency_curr\": 0, \"currency_max\": 300, \"currency_remain_time\": -1, \"mission_done\": 0, \"mission_claim\": \"false\", \"transformer_recovery_time\": -1, \"weekboss_30\": 3, \"expedition1_name\": \"N/A\", \"expedition1_remain_time\": -1, \"expedition2_name\": \"N/A\", \"expedition2_remain_time\": -1, \"expedition3_name\": \"N/A\", \"expedition3_remain_time\": -1, \"expedition4_name\": \"N/A\", \"expedition4_remain_time\": -1, \"expedition5_name\": \"N/A\", \"expedition5_remain_time\": -1}"));
+                //refreshData(sharedPreferences.getString("dailyMemoDataTMP","{\"nickname\": \"N/A\", \"level\": 1, \"server\": \"os_asia\", \"icon\": \"Klee\", \"resin_curr\": 0, \"resin_remain_time\": 1, \"currency_curr\": 0, \"currency_max\": 300, \"currency_remain_time\": -1, \"mission_done\": 0, \"mission_claim\": \"false\", \"transformer_recovery_time\": -1, \"weekboss_30\": 3, \"expedition1_name\": \"N/A\", \"expedition1_remain_time\": -1, \"expedition2_name\": \"N/A\", \"expedition2_remain_time\": -1, \"expedition3_name\": \"N/A\", \"expedition3_remain_time\": -1, \"expedition4_name\": \"N/A\", \"expedition4_remain_time\": -1, \"expedition5_name\": \"N/A\", \"expedition5_remain_time\": -1}"));
             }
             return "DONE";
         }
@@ -757,7 +756,9 @@ public class DailyMemo {
         { super.onPreExecute();
             // 背景工作處理完"後"需作的事
             if (isIdGetDone == false){
-                updateData();
+                refreshData(sharedPreferences.getString("dailyMemoDataTMP","{\"nickname\": \"N/A\", \"level\": 1, \"server\": \"os_asia\", \"icon\": \"Klee\", \"resin_curr\": 0, \"resin_remain_time\": 1, \"currency_curr\": 0, \"currency_max\": 300, \"currency_remain_time\": -1, \"mission_done\": 0, \"mission_claim\": \"false\", \"transformer_recovery_time\": -1, \"weekboss_30\": 3, \"expedition1_name\": \"N/A\", \"expedition1_remain_time\": -1, \"expedition2_name\": \"N/A\", \"expedition2_remain_time\": -1, \"expedition3_name\": \"N/A\", \"expedition3_remain_time\": -1, \"expedition4_name\": \"N/A\", \"expedition4_remain_time\": -1, \"expedition5_name\": \"N/A\", \"expedition5_remain_time\": -1}"));
+
+                //updateData();
 
                 if (DailyMemo2048Service.dailyMemo2048Service != null){
                     DailyMemo2048Service.dailyMemo2048Service.refresh(str);

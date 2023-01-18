@@ -35,6 +35,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.fastjson2.JSON;
 import com.squareup.picasso.Picasso;
@@ -303,12 +304,19 @@ public class TCG_Info_2048 {
         tcg_card_include.setY(screenPos[1]-displayMetrics.density*(84));
         tcg_card_include.getLayoutParams().width = (int) (tcg_width-displayMetrics.density*(10));
         tcg_card_include.getLayoutParams().height = (int)(tcg_width*12/7-displayMetrics.density*(18));
+
+        int maxWidth = (int) ((displayMetrics.widthPixels- displayMetrics.density*(32))/2);
+        if(displayMetrics.widthPixels > displayMetrics.heightPixels){
+            maxWidth = (int) (displayMetrics.heightPixels*7/12);
+            tcg_card_sample.setPadding((int) (maxWidth+displayMetrics.density*(8)), (int) (displayMetrics.density*(8)), (int) (displayMetrics.density*(8)), (int) (displayMetrics.density*(8)));
+        }
+
         Animation ani = new ZoomAnimation(
                 tcg_card_include,
                 (int) (screenPos[0]),
                 (int) (screenPos[1]-displayMetrics.density*(24)),
                 (int) tcg_width,
-                (int) ((displayMetrics.widthPixels - displayMetrics.density*(32))/2),
+                (int) (maxWidth),
                 false);
         ani.setDuration(300);
         ani.setAnimationListener(new Animation.AnimationListener() {
@@ -397,6 +405,11 @@ public class TCG_Info_2048 {
         if (dialog != null){
             if (isCardAdapterGONE && tcg_card_from_adapter != null){
                 isCardAdapterGONE = false;
+                int maxWidth = (int) ((displayMetrics.widthPixels- displayMetrics.density*(32))/2);
+                if(displayMetrics.widthPixels > displayMetrics.heightPixels){
+                    maxWidth = (int) (displayMetrics.heightPixels*7/12);
+                    tcg_card_sample.getLayoutParams().width = (int) (maxWidth + displayMetrics.density*(8));
+                }
 
                 tcg_card_change();
                 Animation ani = new ZoomAnimation(
@@ -404,7 +417,7 @@ public class TCG_Info_2048 {
                         (int) (screenPos[0]),
                         (int) (screenPos[1]-displayMetrics.density*(24)),
                         (int) tcg_width,
-                        (int) ((displayMetrics.widthPixels - displayMetrics.density*(32))/2),
+                        (int) ((maxWidth)),
                         true);
                 ani.setDuration(300);
                 ani.setAnimationListener(new Animation.AnimationListener() {
@@ -723,8 +736,6 @@ public class TCG_Info_2048 {
                         .resize(widthNew,(int) ((widthNew)*12/7))
                         .error (R.drawable.paimon_lost)
                         .into(tcg_card_img);
-                tcg_card_kwang.getLayoutParams().width = widthNew;
-                tcg_card_kwang.getLayoutParams().height =(int) ((widthNew)*12/7);
             }
         }else{
             Picasso.get()
@@ -732,8 +743,6 @@ public class TCG_Info_2048 {
                     .resize(widthNew,(int) ((widthNew)*12/7))
                     .error (R.drawable.paimon_lost)
                     .into(tcg_card_img);
-            tcg_card_kwang.getLayoutParams().width = widthNew;
-            tcg_card_kwang.getLayoutParams().height =(int) ((widthNew)*12/7);
         }
 
 

@@ -122,7 +122,7 @@ public class SplashActivity extends AppCompatActivity {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
         }
         LogExport.init(context);
-       ((TextView) findViewById(R.id.splash_version)).setText(BuildConfig.VERSION_NAME);
+        ((TextView) findViewById(R.id.splash_version)).setText(BuildConfig.VERSION_NAME);
 
         if (sharedPreferences.getBoolean("isRandomTheme",true) == true && sharedPreferences.getBoolean("downloadBase", false) == true){
             ((ConstraintLayout) findViewById(R.id.splash_rand_cons)).setVisibility(View.VISIBLE);
@@ -210,7 +210,7 @@ public class SplashActivity extends AppCompatActivity {
 
             Dialog2048 dialog2048 = new Dialog2048();
             dialog2048.setup(context,activity);
-            dialog2048.updateMax(getRemoteFileSize("http://vt.25u.com/genshin_spirit/base.zip"));
+            dialog2048.updateMax(getRemoteFileSize("https://vt.25u.com/genshin_spirit/base.zip"));
             dialog2048.mode(Dialog2048.MODE_DOWNLOAD_BASE);
             dialog2048.show();
 
@@ -219,7 +219,7 @@ public class SplashActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     dialog2048.dismiss();
                     DownloadTask downloadTask = new DownloadTask();
-                    downloadTask.start("http://vt.25u.com/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
+                    downloadTask.start("https://vt.25u.com/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
                 }
             });
 
@@ -328,7 +328,7 @@ public class SplashActivity extends AppCompatActivity {
     public static long getRemoteFileSize(String urlSTR) {
         URL url = null;
         try {
-            url = new URL(urlSTR);
+            url = new URL(urlSTR.replace("http://vt.25u.com","https://vt.25u.com"));
             URLConnection urlConnection = url.openConnection();
             urlConnection.connect();
             return urlConnection.getContentLength();
@@ -355,9 +355,9 @@ public class SplashActivity extends AppCompatActivity {
 
             if(inet.isReachable(2000) == true){
                 OkHttpClient client = new OkHttpClient();
-                String url = "http://vt.25u.com/genshin_spirit/update.json";
+                String url = "https://vt.25u.com/genshin_spirit/update.json";
                 if (BuildConfig.FLAVOR.equals("dev")){
-                    url = "http://vt.25u.com/genshin_spirit/update_dev.json";
+                    url = "https://vt.25u.com/genshin_spirit/update_dev.json";
                 }
                 Request request = new Request.Builder().url(url).build();
 
@@ -380,13 +380,13 @@ public class SplashActivity extends AppCompatActivity {
                         }
 
                         if (release_unix > sharedPreferences.getLong("lastUpdateUnix", 1)) {
-                            array_download.add("http://vt.25u.com/genshin_spirit/" + fileName);
+                            array_download.add("https://vt.25u.com/genshin_spirit/" + fileName);
                             array_fileName.add(fileName);
                             array_SfileName.add("/" + fileName);
                         }
                     }
                     if (array_download.size() > 0) {
-                        if (getRemoteFileSize("http://vt.25u.com/genshin_spirit/base.zip") > getRemoteFileSizeA(array_download)) {
+                        if (getRemoteFileSize("https://vt.25u.com/genshin_spirit/base.zip") > getRemoteFileSizeA(array_download)) {
 
                             Dialog2048 dialog2048 = new Dialog2048();
                             dialog2048.setup(context,activity);
@@ -418,7 +418,7 @@ public class SplashActivity extends AppCompatActivity {
                         } else {
                             Dialog2048 dialog2048 = new Dialog2048();
                             dialog2048.setup(context,activity);
-                            dialog2048.updateMax(getRemoteFileSize("http://vt.25u.com/genshin_spirit/base.zip"));
+                            dialog2048.updateMax(getRemoteFileSize("https://vt.25u.com/genshin_spirit/base.zip"));
                             dialog2048.mode(Dialog2048.MODE_DOWNLOAD_BASE);
                             dialog2048.show();
 
@@ -426,7 +426,7 @@ public class SplashActivity extends AppCompatActivity {
                                 @Override
                                 public void onClick(View v) {
                                     DownloadTask downloadTask = new DownloadTask();
-                                    downloadTask.start("http://vt.25u.com/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
+                                    downloadTask.start("https://vt.25u.com/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
                                 }
                             });
                             dialog2048.getNegativeBtn().setOnClickListener(new View.OnClickListener() {
@@ -557,7 +557,7 @@ public class SplashActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     if (!choice.equals("N/A")) {
                         editor.putString("styleUI", choice);
-                        //webView.loadUrl("http://vt.25u.com/genshin_spirit/dataCollection/styleInsert.php?unix="+System.currentTimeMillis()+"&style="+choice+"&record_location="+"Splash"+"&device_name="+Build.MODEL+"&app_version="+BuildConfig.VERSION_NAME+"&android_api="+String.valueOf(android.os.Build.VERSION.SDK_INT));
+                        //webView.loadUrl("https://vt.25u.com/genshin_spirit/dataCollection/styleInsert.php?unix="+System.currentTimeMillis()+"&style="+choice+"&record_location="+"Splash"+"&device_name="+Build.MODEL+"&app_version="+BuildConfig.VERSION_NAME+"&android_api="+String.valueOf(android.os.Build.VERSION.SDK_INT));
                         //editor.putBoolean("firstCheck",true);
                         editor.apply();
                         dialog.dismiss();

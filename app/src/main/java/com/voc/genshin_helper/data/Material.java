@@ -62,6 +62,8 @@ public class Material {
     public int 導光四面體 = 0;
     //add in 20220829
     public int 滅諍草蔓 = 0;
+    //add in 20230115
+    public int 蒼礫蕊羽 = 0;
 
     /** LOCAL */
     public int  小燈草  = 0 ;
@@ -98,6 +100,8 @@ public class Material {
     public int  赤念果 = 0;
     public int  聖金蟲 = 0;
     public int  帕蒂沙蘭 = 0;
+    //add in 20230115
+    public int  沙脂蛹 = 0;
 
     /** T-BOSS ASC*/
 
@@ -244,7 +248,8 @@ public class Material {
                 "恒常機關之心","陰燃之珠","雷霆數珠",
                 "排異之露","獸境王器","龍嗣偽鰭",
                 "符紋之齒","蕈王鉤喙","藏雷野實",
-                "永續機芯","導光四面體","滅諍草蔓"
+                "永續機芯","導光四面體","滅諍草蔓",
+                "蒼礫蕊羽"
         };
     }
     public int[] bossCountList (){
@@ -256,7 +261,8 @@ public class Material {
                 恒常機關之心,陰燃之珠,雷霆數珠,
                 排異之露,獸境王器,龍嗣偽鰭,
                 符紋之齒,蕈王鉤喙,藏雷野實,
-                永續機芯,導光四面體,滅諍草蔓
+                永續機芯,導光四面體,滅諍草蔓,
+                蒼礫蕊羽
         };
     }
 
@@ -300,7 +306,7 @@ public class Material {
                 "血斛","幽燈蕈","珊瑚真珠",
                 "鬼兜蟲","樹王聖體菇","月蓮",
                 "劫波蓮","赤念果","聖金蟲",
-                "帕蒂沙蘭",
+                "帕蒂沙蘭","沙脂蛹"
         };
     }
     public int[] localCountList (){
@@ -315,7 +321,7 @@ public class Material {
                 血斛,幽燈蕈,珊瑚真珠,
                 鬼兜蟲,樹王聖體菇,月蓮,
                 劫波蓮,赤念果,聖金蟲,
-                帕蒂沙蘭
+                帕蒂沙蘭,沙脂蛹
         };
     }
     public int[] localRareList (){
@@ -637,6 +643,8 @@ public class Material {
                 case "導光四面體": 導光四面體 = addCountIntoVar(導光四面體, temp_count, "BOSS"); break;
                 //add in 20221001
                 case "滅諍草蔓": 滅諍草蔓 = addCountIntoVar(滅諍草蔓, temp_count, "BOSS"); break;
+                //add in 20230115
+                case "蒼礫蕊羽": 蒼礫蕊羽 = addCountIntoVar(蒼礫蕊羽, temp_count, "BOSS"); break;
             }
 
             /** LOCAL */
@@ -675,6 +683,8 @@ public class Material {
                 case "赤念果": 赤念果 = addCountIntoVar(赤念果, temp_count, "LOCAL"); break;
                 case "聖金蟲": 聖金蟲 = addCountIntoVar(聖金蟲, temp_count, "LOCAL"); break;
                 case "帕蒂沙蘭": 帕蒂沙蘭 = addCountIntoVar(帕蒂沙蘭, temp_count, "LOCAL"); break;
+                //add in 20230115
+                case "沙脂蛹": 沙脂蛹 = addCountIntoVar(沙脂蛹, temp_count, "LOCAL"); break;
             }
 
         }
@@ -693,7 +703,7 @@ public class Material {
                 //add in 20210910
                 case "浮游晶化核": addCountIntoVar(浮游晶化核, temp_count, "T-COMMON"); break;
                 //add in 20220716
-                case "孢囊晶塵": addCountIntoVar(孢囊晶塵, temp_count, "T-COMMON"); break;
+                case "孢囊晶塵": addCountIntoVar(孢囊晶塵, temp_count, "pseudo_stamensT-COMMON"); break;
                 case "織金紅綢": addCountIntoVar(織金紅綢, temp_count, "T-COMMON"); break;
             }
 

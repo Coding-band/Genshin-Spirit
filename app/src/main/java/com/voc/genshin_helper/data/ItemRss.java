@@ -33,10 +33,11 @@ public class ItemRss {
     // INCLUDED 3.1 CHAR. => 20221003
     // INCLUDED 3.2 CHAR. => 20221210
     // INCLUDED 3.3 CHAR. => 20221210
+    // INCLUDED 3.4 CHAR. => 20230117
     public String[] charBirthName = {
             "Wanderer","Thoma","Diona","Rosaria",
-            "Beidou","Sangonomiya Kokomi","Bennett",
-            "Qiqi","Shenhe","Jean","Noelle","Kamisato Ayato",
+            "Alhaitham","Beidou","Sangonomiya Kokomi","Bennett",
+            "Qiqi","Yaoyao","Shenhe","Jean","Noelle","Kamisato Ayato",
             "Aloy","Xiao","Yelan","Diluc",
             "Candace","Collei","Gorou","Yun Jin","Fischl",
             "Arataki Itto","Lisa","Venti","Yoimiya","Cyno","Raiden Shogun","Yae Miko","Kuki Shinobu",
@@ -48,8 +49,8 @@ public class ItemRss {
             "Ganyu","Nilou","Layla","Dori","Tighnari","Zhongli"};
     public int[] charBirthDay = {
             3,9,18,24,
-            14,22,29,
-            3,10,14,21,26,
+            11,14,22,29,
+            3,6,10,14,21,26,
             4,17,20,30,
             3,8,18,21,27,
             1,6,9,21,23,26,27,28,
@@ -61,8 +62,8 @@ public class ItemRss {
             2,3,19,21,29,31};
     public int[] charBirthMonth = {
             0,0,0,0,
-            1,1,1,
-            2,2,2,2,2,
+            1,1,1,1,
+            2,2,2,2,2,2,
             3,3,3,3,
             4,4,4,4,4,
             5,5,5,5,5,5,5,5,
@@ -711,6 +712,9 @@ public class ItemRss {
             case "Polar Star" : return new String[] {context.getString(R.string.polar_star),"/drawable/polar_star.png"};
             case "Toukabou Shigure" : return new String[] {context.getString(R.string.toukabou_shigure),"/drawable/toukabou_shigure.png"};
             case "Tulaytullah's Remembrance" : return new String[] {context.getString(R.string.tulaytullahs_remembrance),"/drawable/tulaytullahs_remembrance.png"};
+            //add in 20230118
+            case "Light of Foliar Incision" : return new String[] {context.getString(R.string.light_of_foliar_incision),"/drawable/light_of_foliar_incision.png"};
+
 
             default :
                 System.out.println("WEAPON+ NAME ERROR : "+str);
@@ -886,6 +890,8 @@ public class ItemRss {
             case "Polar Star" : return new String[] {context.getString(R.string.polar_star),"/drawable/polar_star_gacha.png"};
             case "Toukabou Shigure" : return new String[] {context.getString(R.string.toukabou_shigure),"/drawable/toukabou_shigure_gacha.png"};
             case "Tulaytullah's Remembrance" : return new String[] {context.getString(R.string.tulaytullahs_remembrance),"/drawable/tulaytullahs_remembrance_gacha.png"};
+            //add in 20230118
+            case "Light of Foliar Incision" : return new String[] {context.getString(R.string.light_of_foliar_incision),"/drawable/light_of_foliar_incision_gacha.png"};
 
 
             default :
@@ -1063,6 +1069,8 @@ public class ItemRss {
             case "polar_star" : return "Polar Star" ;
             case "toukabou_shigure" : return "Toukabou Shigure" ;
             case "tulaytullahs_remembrance" : return "Tulaytullah's Remembrance";
+            //add in 20230118
+            case "light_of_foliar_incision" : return "Light of Foliar Incision";
 
             default: return str;
         }
@@ -1162,7 +1170,6 @@ public class ItemRss {
             case "traveling_doctor" : return "Traveling Doctor";
             case "viridescent_venerer" : return "Viridescent Venerer";
             case "wanderers_troupe" : return "Wanderer's Troupe";
-
             // add in 20211127
             case "husk_of_opulent_dreams" : return "Husk of Opulent Dreams";
             case "ocean_hued_clam" : return "Ocean-Hued Clam";
@@ -1209,6 +1216,9 @@ public class ItemRss {
             case "Xiangling" : return new String[]{"/anim/tcg_anim_xiangling.gif", context.getString(R.string.tcg_xiangling)};
             case "Xingqiu" : return new String[]{"/anim/tcg_anim_xingqiu.gif", context.getString(R.string.tcg_xingqiu)};
             case "Yoimiya" : return new String[]{"/anim/tcg_anim_yoimiya.gif", context.getString(R.string.tcg_yoimiya)};
+            //add in 20230118
+            case "Klee" : return new String[]{"/anim/tcg_anim_klee.gif", context.getString(R.string.tcg_klee)};
+            case "Beidou" : return new String[]{"/anim/tcg_anim_beidou.gif", context.getString(R.string.tcg_beidou)};
 
             default: return getTCGByNameBase(name,context);
         }
@@ -1380,6 +1390,11 @@ public class ItemRss {
             case "Cecilia" : return new String[]{"/drawable/tcg_cecilia.png", context.getString(R.string.tcg_cecilia)};
             case "Glaze Lily" : return new String[]{"/drawable/tcg_glaze_lily.png", context.getString(R.string.tcg_glaze_lily)};
             case "Dendrobium" : return new String[]{"/drawable/tcg_dendrobium.png", context.getString(R.string.tcg_dendrobium)};
+            //add in 20230118
+            case "Klee" : return new String[]{"/drawable/tcg_klee.png", context.getString(R.string.tcg_klee)};
+            case "Beidou" : return new String[]{"/drawable/tcg_beidou.png", context.getString(R.string.tcg_beidou)};
+            case "Lightning Storm" : return new String[]{"/drawable/tcg_lightning_storm.png", context.getString(R.string.tcg_lightning_storm)};
+            case "Pounding Surprise" : return new String[]{"/drawable/tcg_pounding_surprise.png", context.getString(R.string.tcg_pounding_surprise)};
 
             default: return new String[]{
                     "/drawable/tcg"+name.toLowerCase()
@@ -1393,6 +1408,7 @@ public class ItemRss {
         }
     }
 
+    // Since it isn't in use, so 3.4 wont update it.. 20230118
     public String getTCGByFileName(String name){
         switch (name){
             case "tcg_ganyu" : return "Ganyu";
@@ -1914,6 +1930,9 @@ public class ItemRss {
                 return "/drawable/light_guiding_tetrahedron.png";
             case "滅諍草蔓":
                 return "/drawable/quelled_creeper.png";
+            //add in 20230115
+            case "蒼礫蕊羽":
+                return "/drawable/pseudo_stamens.png";
 
             /** Local*/
             case "小燈草":
@@ -1975,6 +1994,15 @@ public class ItemRss {
                 return "/drawable/lunar_lotus.png";
             case "劫波蓮":
                 return "/drawable/kalpalata.png";
+            //add in 20230115
+            case "赤念果":
+                return "/drawable/redcrest.png";
+            case "聖金蟲":
+                return "/drawable/scarab.png";
+            case "帕蒂沙蘭":
+                return "/drawable/padisarah.png";
+            case "沙脂蛹":
+                return "/drawable/sand_grease_pupa.png";
 
             /** T-Boss*/
             case "北風之環":

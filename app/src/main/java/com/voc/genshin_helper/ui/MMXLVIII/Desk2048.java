@@ -263,6 +263,9 @@ public class Desk2048 extends AppCompatActivity {
     Switch other_app_ico_use_default ;
     Switch other_dailymemo_enabled ;
 
+    Button bg_download_delete;
+    Button bg_download_reset;
+
     RadioButton style_Voc_rb;
     RadioButton style_2O48_rb;
     RadioButton style_SipTik_rb;
@@ -305,7 +308,7 @@ public class Desk2048 extends AppCompatActivity {
 
     Activity activity;
 
-    View viewPager1, viewPager2, viewPager3;
+    //View viewPager1, viewPager2, viewPager3;
     View viewPager0, viewPager4, viewPager5, viewPager6;
 
     int[] tabItemImageArray = new int[]{R.drawable.ic_2048_tab_desk,R.drawable.ic_2048_tab_team,R.drawable.ic_2048_tab_tcg,R.drawable.ic_2048_tab_toolbox};
@@ -571,9 +574,9 @@ public class Desk2048 extends AppCompatActivity {
                     smoothScroller.setTargetPosition(0);
                     switch (tab.getPosition()){
                         case 0 : ((ScrollView) viewPager0.findViewById(R.id.sc_root)).smoothScrollTo(0,0);break;
-                        case 1 : ((RecyclerView) viewPager1.findViewById(R.id.main_list)).getLayoutManager().startSmoothScroll(smoothScroller);break;
-                        case 2 : ((RecyclerView) viewPager2.findViewById(R.id.weapon_list)).getLayoutManager().startSmoothScroll(smoothScroller);break;
-                        case 3 : ((RecyclerView) viewPager3.findViewById(R.id.artifact_list)).getLayoutManager().startSmoothScroll(smoothScroller);break;
+                        case 1 : ((RecyclerView) team2048.getCurrList()).getLayoutManager().startSmoothScroll(smoothScroller);break;
+                        case 2 : ((RecyclerView) tcg2048.getCurrList()).getLayoutManager().startSmoothScroll(smoothScroller);break;
+                        //case 3 : ((RecyclerView) viewPager4.findViewById(R.id.artifact_list)).getLayoutManager().startSmoothScroll(smoothScroller);break;
                     }
                     firstSelect = false;
                 }
@@ -709,13 +712,11 @@ public class Desk2048 extends AppCompatActivity {
             height = (int) height/4;
         }
 
-        Picasso.get()
-                .load (FileLoader.loadIMG(css.getCharByName(sharedPreferences.getString("card_name","Klee"),context)[4],context))
-                .resize(width_curr, (int) height)
-                .error (R.drawable.paimon_lost)
-                .into ((ImageView) viewPager4.findViewById(R.id.card_bg));
+        viewPager4.findViewById(R.id.card_bg).setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,(int) (displayMetrics.density*240)));
 
-        ((ImageView) viewPager4.findViewById(R.id.card_bg)).setScaleType(ImageView.ScaleType.CENTER_CROP);
+        ImageView card_bg = viewPager4.findViewById(R.id.card_bg);
+        card_bg.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        card_bg.setImageDrawable(FileLoader.loadIMG2Drawable(css.getCharByName(sharedPreferences.getString("card_name","Klee"),context)[4],context));
 
         Picasso.get()
                 .load (FileLoader.loadIMG(css.getCharByName(sharedPreferences.getString("icon_name","Klee"),context)[3],context))
@@ -974,7 +975,7 @@ public class Desk2048 extends AppCompatActivity {
         discord_ico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri uri = Uri.parse("https://discord.gg/uXatcbWKv2"); // missing 'http://' will cause crashed
+                Uri uri = Uri.parse("https://discord.gg/uXatcbWKv2"); // missing 'https://' will cause crashed
                 Intent intent = new Intent(Intent.ACTION_VIEW, uri);
                 startActivity(intent);
             }
@@ -1184,6 +1185,7 @@ public class Desk2048 extends AppCompatActivity {
                 //setup_weapon();
                 //setup_art();
                 tcg2048.setup(viewPager5, context, activity, sharedPreferences);
+                team2048.setup(viewPager6, context, activity,sharedPreferences);
             }
         });
         grid_5_rb.setOnClickListener(new View.OnClickListener() {
@@ -1201,6 +1203,7 @@ public class Desk2048 extends AppCompatActivity {
                 //setup_weapon();
                 //setup_art();
                 tcg2048.setup(viewPager5, context, activity, sharedPreferences);
+                team2048.setup(viewPager6, context, activity,sharedPreferences);
             }
         });
 
@@ -1517,6 +1520,31 @@ public class Desk2048 extends AppCompatActivity {
         // Resource Download
         Button bg_download_base = view.findViewById(R.id.bg_download_base);
         Button bg_download_update = view.findViewById(R.id.bg_download_update);
+        Button bg_download_reset = view.findViewById(R.id.bg_download_reset);
+        Button bg_download_delete = view.findViewById(R.id.bg_download_delete);
+
+        if (BuildConfig.FLAVOR.equals("dev") || BuildConfig.FLAVOR.equals("beta")){
+            bg_download_reset.setVisibility(View.VISIBLE);
+            //bg_download_delete.setVisibility(View.VISIBLE);
+        }
+        bg_download_reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sharedPreferences.edit().remove("lastUpdateUnix").apply();
+                CustomToast.toast(context,activity,"Cleaned Download Unix Timestamp");
+            }
+        });
+
+        bg_download_delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (context.getFilesDir().isDirectory()){
+                    context.getFilesDir().delete();
+                    sharedPreferences.edit().remove("downloadBase").apply();
+                    CustomToast.toast(context,activity,"Deleted All Resources");
+                }
+            }
+        });
 
         bg_download_update.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -1533,7 +1561,7 @@ public class Desk2048 extends AppCompatActivity {
 
                 Dialog2048 dialog2048 = new Dialog2048();
                 dialog2048.setup(context,activity);
-                dialog2048.updateMax(getRemoteFileSize("http://vt.25u.com/genshin_spirit/base.zip"));
+                dialog2048.updateMax(getRemoteFileSize("https://vt.25u.com/genshin_spirit/base.zip"));
                 dialog2048.mode(Dialog2048.MODE_DOWNLOAD_BASE_DESK);
                 dialog2048.show();
 
@@ -1542,7 +1570,7 @@ public class Desk2048 extends AppCompatActivity {
                     public void onClick(View v) {
                         dialog2048.dismiss();
                         DownloadTask downloadTask = new DownloadTask();
-                        downloadTask.start("http://vt.25u.com/genshin_spirit/base.zip","base.zip","/base.zip",context,activity);
+                        downloadTask.start("https://vt.25u.com/genshin_spirit/base.zip","base.zip","/base.zip",context,activity);
                     }
                 });
 
@@ -2836,10 +2864,10 @@ public class Desk2048 extends AppCompatActivity {
 
     public void check_updates(){
         OkHttpClient client = new OkHttpClient();
-        String url = "http://vt.25u.com/genshin_spirit/update.json";
+        String url = "https://vt.25u.com/genshin_spirit/update.json";
         if (BuildConfig.FLAVOR.equals("dev")){
             //if (BuildConfig.FLAVOR.equals("dev") || BuildConfig.FLAVOR.equals("beta")){
-            url = "http://vt.25u.com/genshin_spirit/update_dev.json";
+            url = "https://vt.25u.com/genshin_spirit/update_dev.json";
         }
         Request request = new Request.Builder().url(url).build();
 
@@ -2862,7 +2890,7 @@ public class Desk2048 extends AppCompatActivity {
                 }
 
                 if (release_unix > sharedPreferences.getLong("lastUpdateUnix", 1)) {
-                    array_download.add("http://vt.25u.com/genshin_spirit/" + fileName);
+                    array_download.add("https://vt.25u.com/genshin_spirit/" + fileName);
                     array_fileName.add(fileName);
                     array_SfileName.add("/" + fileName);
                 }
@@ -2914,4 +2942,3 @@ public class Desk2048 extends AppCompatActivity {
 
     }
 }
-

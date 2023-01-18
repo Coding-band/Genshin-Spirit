@@ -1354,6 +1354,11 @@
     <string name="tcg_keyword_shield">護盾</string>
     <string name="tcg_keyword_unalignedelement">無色元素</string>
     <string name="tcg_keyword_usages">可用次數</string>
+    <string name="light_of_foliar_incision">裁葉萃光</string>
+    <string name="tcg_klee">可莉</string>
+    <string name="tcg_beidou">北斗</string>
+    <string name="tcg_lightning_storm">霹靂連霄</string>
+    <string name="tcg_pounding_surprise">砰砰禮物</string>
 
 
 </resources>

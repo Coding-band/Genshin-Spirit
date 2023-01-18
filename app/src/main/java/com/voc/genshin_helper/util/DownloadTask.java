@@ -17,6 +17,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.InetAddress;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
@@ -81,6 +82,12 @@ public class DownloadTask {
         protected String doInBackground(String... f_url) {
             int count;
             try {
+                String ipAddress = "vt.25u.com";
+                InetAddress inet = InetAddress.getByName(ipAddress);
+                LogExport.export("DownloadTask","DownloadFileFromURL.doInBackground", "InetAddress : "+"Sending Ping Request to " + ipAddress+" and wait for 500ms "+(inet.isReachable(500) ? " and host is reachable" : "but host is NOT reachable"), context, DOWNLOADTASK);
+                LogExport.export("DownloadTask","DownloadFileFromURL.doInBackground", "InetAddress : "+"Sending Ping Request to " + ipAddress+" and wait for 1000ms "+(inet.isReachable(1000) ? "and host is reachable" : "but host NOT reachable"), context, DOWNLOADTASK);
+                LogExport.export("DownloadTask","DownloadFileFromURL.doInBackground", "InetAddress : "+"Sending Ping Request to " + ipAddress+" and wait for 2000ms "+(inet.isReachable(2000) ? "and host is reachable" : "but host NOT reachable"), context, DOWNLOADTASK);
+
                 String root = Environment.getExternalStorageDirectory().toString();
 
                 System.out.println("Downloading");
@@ -184,6 +191,12 @@ public class DownloadTask {
             int count;
             int countProgress = 0;
             try {
+                String ipAddress = "vt.25u.com";
+                InetAddress inet = InetAddress.getByName(ipAddress);
+                LogExport.export("DownloadTask","DownloadFileFromURL.doInBackground", "InetAddress : "+"Sending Ping Request to " + ipAddress+" and wait for 500ms "+(inet.isReachable(500) ? " and host is reachable" : "but host is NOT reachable"), context, DOWNLOADTASK);
+                LogExport.export("DownloadTask","DownloadFileFromURL.doInBackground", "InetAddress : "+"Sending Ping Request to " + ipAddress+" and wait for 1000ms "+(inet.isReachable(1000) ? "and host is reachable" : "but host NOT reachable"), context, DOWNLOADTASK);
+                LogExport.export("DownloadTask","DownloadFileFromURL.doInBackground", "InetAddress : "+"Sending Ping Request to " + ipAddress+" and wait for 2000ms "+(inet.isReachable(2000) ? "and host is reachable" : "but host NOT reachable"), context, DOWNLOADTASK);
+
                 String root = Environment.getExternalStorageDirectory().toString();
 
                 long countMax = 0;

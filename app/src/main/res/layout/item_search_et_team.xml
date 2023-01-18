@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2023 Xectorda 版權所有
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/char_header_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="false"
+        android:scaleType="centerCrop"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/filter_desk_head_2048" />
+
+    <LinearLayout
+        android:id="@+id/header_search_bar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/item_2048_search_bar_bg">
+
+            <EditText
+                android:id="@+id/header_search_etX"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="36dp"
+                android:layout_weight="0"
+                android:background="@null"
+                android:fontFamily="@font/genshin_font"
+                android:hint="@string/search"
+                android:paddingLeft="8dp"
+                android:singleLine="true"
+                android:textColor="@color/tv_spinner_color_2048"
+                android:textColorHint="@color/tv_spinner_color_2048"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/header_search_resetX"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center|right"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/header_search_etX"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/item_2048_search_bar_cancel" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/menu_search_cancelX"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:layout_margin="8dp"
+            android:layout_weight="3"
+            android:background="@drawable/item_2048_search_bar_confirm"
+            android:fontFamily="@font/genshin_font"
+            android:text="@android:string/cancel"
+            android:textColor="@color/tv_anti_color_2048"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_2048_talent_card"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/colorWhiteAlpha"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/menu_title_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_weight="0"
+                    android:background="@drawable/bg_dialog_header_edge"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:text="@string/search"
+                    android:textColor="@color/dialog_title_tv_color_2048"
+                    android:textSize="20sp" />
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_dialog_body_edge"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_weight="2" />
+
+                    <FrameLayout
+                        android:id="@+id/menu_ok"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_margin="12dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_dialog_btn"
+                        android:text="@android:string/ok"
+                        android:translationZ="8dp">
+
+                        <ImageView
+                            android:id="@+id/imageView15"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_gravity="center|left"
+                            android:layout_marginLeft="8dp"
+                            android:adjustViewBounds="true"
+                            app:srcCompat="@drawable/ic_2048_ok_btn_ico" />
+
+                        <TextView
+                            android:id="@+id/menu_ok_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/genshin_font"
+                            android:gravity="center|left"
+                            android:text="@android:string/ok"
+                            android:textColor="@color/tv_anti_color_2048"
+                            android:textSize="18sp" />
+                    </FrameLayout>
+
+                    <View
+                        android:layout_width="wrap_content"
+                        android:layout_height="48dp"
+                        android:layout_weight="2" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
