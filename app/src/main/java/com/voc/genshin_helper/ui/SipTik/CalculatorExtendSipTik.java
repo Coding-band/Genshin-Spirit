@@ -734,21 +734,11 @@ public class CalculatorExtendSipTik {
             if (isInPreview){
                 DisplayMetrics displayMetrics_w = new DisplayMetrics();
                 activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics_w);
-                Picasso.get()
-                        .load (bg_rare_rss)
-                        .resize((int) (72*displayMetrics_w.density), (int) (72*1.25*displayMetrics_w.density))
-                        .error (R.drawable.paimon_lost)
-                        .into (item_bg);
 
                 item_bg.setBackgroundResource(bg_rare_rss);
-                item_bg.getLayoutParams().width = (int) (72*displayMetrics_w.density);
-                item_bg.getLayoutParams().height = (int) (72*1.25*displayMetrics_w.density);
+                item_bg.getLayoutParams().width = size;
+                item_bg.getLayoutParams().height = (int) (size*1.25);
             }else{
-                Picasso.get()
-                        .load (bg_rare_rss)
-                        .resize(size, (int) (size*1.25))
-                        .error (R.drawable.paimon_lost)
-                        .into (item_bg);
 
                 item_bg.setBackgroundResource(bg_rare_rss);
                 item_bg.getLayoutParams().width = size;

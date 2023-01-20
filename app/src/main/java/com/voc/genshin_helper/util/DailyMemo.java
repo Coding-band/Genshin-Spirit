@@ -532,6 +532,8 @@ public class DailyMemo {
 
         WebSettings webSettings = webview.getSettings();
         webSettings.setJavaScriptEnabled(true);
+        webSettings.setSupportMultipleWindows(false);
+        webSettings.setJavaScriptCanOpenWindowsAutomatically(false);
         webSettings.setDomStorageEnabled(true);
 
         back_btn.setOnClickListener(new View.OnClickListener() {

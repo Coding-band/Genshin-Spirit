@@ -493,11 +493,11 @@ public class Desk2048 extends AppCompatActivity {
 
 
             viewPager.setCurrentItem(4);
-            desk_tablayout.selectTab(desk_tablayout.getTabAt(4));
+            desk_tablayout.selectTab(desk_tablayout.getTabAt(3));
 
-            View view1 = desk_tablayout.getTabAt(4).getCustomView();
+            View view1 = desk_tablayout.getTabAt(3).getCustomView();
             ImageView tab_icon = (ImageView) view1.findViewById(R.id.icon);
-            tab_icon.setImageResource(tabItemImageSelectedArray[4]);
+            tab_icon.setImageResource(tabItemImageSelectedArray[3]);
 
             final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
             View view = View.inflate(context, R.layout.fragment_setting_2048_new, null);

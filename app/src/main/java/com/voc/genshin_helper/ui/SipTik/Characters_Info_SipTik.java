@@ -251,6 +251,10 @@ public class Characters_Info_SipTik {
     public  String bookREQUIRE = "XPR";
     public  String t_bossREQUIRE = "XPR";
 
+    DisplayMetrics displayMetrics;
+    int rowNum = 1;
+    int colNum = 1;
+
     /** https://stackoverflow.com/questions/45247927/how-to-parse-json-object-inside-json-object-in-java */
     public void JsonToStr (String str , String str_dps){
         if(!str.equals("")){
@@ -456,6 +460,9 @@ public class Characters_Info_SipTik {
         this.activity = activity;
         item_rss = new ItemRss();
         material = new Material();
+        displayMetrics = new DisplayMetrics();
+
+        activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 
 
         String lang = sharedPreferences.getString("curr_lang","zh-HK");
@@ -688,6 +695,21 @@ public class Characters_Info_SipTik {
         boolean isColorGradient = sharedPreferences.getBoolean("theme_color_gradient",false); // Must include #
         String start_color = sharedPreferences.getString("start_color","#AEFEFF"); // Must include #
         String end_color = sharedPreferences.getString("end_color","#35858B"); // Must include #
+
+        /** SET MAX WIDTH*/
+        char_talent1_name.setMaxWidth((int) displayMetrics.widthPixels/3);
+        char_talent2_name.setMaxWidth((int) displayMetrics.widthPixels/3);
+        char_talent3_name.setMaxWidth((int) displayMetrics.widthPixels/3);
+        char_talent4_name.setMaxWidth((int) displayMetrics.widthPixels/3);
+        char_basic_talent1_name.setMaxWidth((int) displayMetrics.widthPixels/3);
+        char_basic_talent2_name.setMaxWidth((int) displayMetrics.widthPixels/3);
+        char_basic_talent3_name.setMaxWidth((int) displayMetrics.widthPixels/3);
+        char_sof1_name.setMaxWidth((int) displayMetrics.widthPixels/3);
+        char_sof2_name.setMaxWidth((int) displayMetrics.widthPixels/3);
+        char_sof3_name.setMaxWidth((int) displayMetrics.widthPixels/3);
+        char_sof4_name.setMaxWidth((int) displayMetrics.widthPixels/3);
+        char_sof5_name.setMaxWidth((int) displayMetrics.widthPixels/3);
+        char_sof6_name.setMaxWidth((int) displayMetrics.widthPixels/3);
 
         if(isColorGradient){
             color_hex = start_color;
@@ -2741,6 +2763,22 @@ public class Characters_Info_SipTik {
         String[] itemNameListBASE = new String[]{"摩拉","流浪者的經驗", "冒險家的經驗","大英雄的經驗"};
         int[] itemValueListBASE = new int[]{mora,exp_small,exp_mid,exp_big};
         int[] itemRareListBASE = new int[]{2,2,3,4};
+
+        rowNum = 1;
+        colNum = 1;
+        int width_w = displayMetrics.widthPixels;
+        int column = (int) ((width_w - displayMetrics.density*24*2) / 160);
+
+        if(width_w < 160){
+            column = 1;
+        }
+
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setGravity(Gravity.CENTER);
+        linearLayout.setPadding(0,0,0, (int) (displayMetrics.density*8));
+        base_lvl_ll.removeAllViews();
+        base_lvl_ll.addView(linearLayout);
+
         for (int x = 0 ; x < itemNameListBASE.length ; x++){
             if (itemValueListBASE[x] > 0) {
                 View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_base_lvl_material_2048, base_lvl_ll, false);
@@ -2759,7 +2797,19 @@ public class Characters_Info_SipTik {
                 img_img.getLayoutParams().height = 144;
                 img_tv.getLayoutParams().width = 144;
                 img_tv.getLayoutParams().height = 36;
-                base_lvl_ll.addView(char_view);
+
+                if (rowNum > column){
+                    linearLayout = new LinearLayout(context);
+                    linearLayout.setGravity(Gravity.CENTER);
+                    linearLayout.setPadding(0,0,0, (int) (displayMetrics.density*8));
+                    base_lvl_ll.addView(linearLayout);
+                    linearLayout.addView(char_view);
+                    rowNum = 2;
+                }else{
+                    linearLayout.addView(char_view);
+                    rowNum = rowNum+1;
+                }
+
             }
         }
 
@@ -2807,7 +2857,18 @@ public class Characters_Info_SipTik {
                     img_img.getLayoutParams().height = 144;
                     img_tv.getLayoutParams().width = 144;
                     img_tv.getLayoutParams().height = 36;
-                    base_lvl_ll.addView(char_view);
+
+                    if (rowNum > column){
+                        linearLayout = new LinearLayout(context);
+                        linearLayout.setGravity(Gravity.CENTER);
+                        linearLayout.setPadding(0,0,0, (int) (displayMetrics.density*8));
+                        base_lvl_ll.addView(linearLayout);
+                        linearLayout.addView(char_view);
+                        rowNum = 2;
+                    }else{
+                        linearLayout.addView(char_view);
+                        rowNum = rowNum+1;
+                    }
                 }
             }
         }
@@ -2817,6 +2878,21 @@ public class Characters_Info_SipTik {
         int mora = 0;
 
         mora = mora + moraSkillList.get(pos);
+
+        rowNum = 1;
+        colNum = 1;
+        int width_w = displayMetrics.widthPixels;
+        int column = (int) ((width_w - displayMetrics.density*24*2) / 160);
+
+        if(width_w < 160){
+            column = 1;
+        }
+
+        LinearLayout linearLayout = new LinearLayout(context);
+        linearLayout.setGravity(Gravity.CENTER);
+        linearLayout.setPadding(0,0,0, (int) (displayMetrics.density*8));
+        talent_lvl_ll.removeAllViews();
+        talent_lvl_ll.addView(linearLayout);
 
         if (pos != 0){
             String[] itemNameList = new String[]{
@@ -2860,7 +2936,19 @@ public class Characters_Info_SipTik {
                     img_img.getLayoutParams().height = 144;
                     img_tv.getLayoutParams().width = 144;
                     img_tv.getLayoutParams().height = 36;
-                    talent_lvl_ll.addView(char_view);
+
+                    if (rowNum > column){
+                        linearLayout = new LinearLayout(context);
+                        linearLayout.setGravity(Gravity.CENTER);
+                        linearLayout.setPadding(0,0,0, (int) (displayMetrics.density*8));
+                        talent_lvl_ll.addView(linearLayout);
+                        linearLayout.addView(char_view);
+                        rowNum = 2;
+                    }else{
+                        linearLayout.addView(char_view);
+                        rowNum = rowNum+1;
+                    }
+
                 }
             }
             if (pos == 9) {
@@ -2881,7 +2969,19 @@ public class Characters_Info_SipTik {
                 img_img.getLayoutParams().height = 144;
                 img_tv.getLayoutParams().width = 144;
                 img_tv.getLayoutParams().height = 36;
-                talent_lvl_ll.addView(char_view);
+
+
+                if (rowNum > column){
+                    linearLayout = new LinearLayout(context);
+                    linearLayout.setGravity(Gravity.CENTER);
+                    linearLayout.setPadding(0,0,0, (int) (displayMetrics.density*8));
+                    talent_lvl_ll.addView(linearLayout);
+                    linearLayout.addView(char_view);
+                    rowNum = 2;
+                }else{
+                    linearLayout.addView(char_view);
+                    rowNum = rowNum+1;
+                }
             }
         }
     }

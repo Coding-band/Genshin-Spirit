@@ -2761,21 +2761,14 @@
                             </FrameLayout>
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
-                        <HorizontalScrollView
-                            android:layout_width="match_parent"
+                        <LinearLayout
+                            android:id="@+id/base_lvl_ll"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fadingEdgeLength="30dp"
-                            android:overScrollMode="never"
-                            android:requiresFadingEdge="horizontal"
-                            android:scrollbars="none">
-
-                            <LinearLayout
-                                android:id="@+id/base_lvl_ll"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:visibility="visible" />
-                        </HorizontalScrollView>
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="visible" />
 
                     </LinearLayout>
 
@@ -2809,6 +2802,7 @@
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/genshin_font"
+                                android:singleLine="true"
                                 android:text="@string/battle_talent"
                                 android:textColor="@color/tv_siptik_color"
                                 android:textSize="20sp"
@@ -2817,8 +2811,7 @@
                                 app:layout_constraintHorizontal_bias="0.0"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
-                                app:layout_constraintVertical_bias="0.5"
-                                android:singleLine="true" />
+                                app:layout_constraintVertical_bias="0.5" />
 
                             <FrameLayout
                                 android:id="@+id/frameLayout3"
@@ -2866,21 +2859,14 @@
                             </FrameLayout>
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
-                        <HorizontalScrollView
-                            android:layout_width="match_parent"
+                        <LinearLayout
+                            android:id="@+id/talent_lvl_ll"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:fadingEdgeLength="30dp"
-                            android:overScrollMode="never"
-                            android:requiresFadingEdge="horizontal"
-                            android:scrollbars="none">
-
-                            <LinearLayout
-                                android:id="@+id/talent_lvl_ll"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:visibility="visible" />
-                        </HorizontalScrollView>
+                            android:layout_gravity="center"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:visibility="visible" />
 
                     </LinearLayout>
 

@@ -36,8 +36,7 @@
             android:pathData="M0 1000h800v300c0 55.23-44.77 100-100 100H100c-55.23 0-100-44.77-100-100v-300Z"/>
         <path
             android:strokeColor="#1A000000"
-            android:strokeWidth="20"
-            android:pathData="M0 990h-10v10 300c0 60.75 49.25 110 110 110h600c60.75 0 110-49.25 110-110v-300-10h-10H0Z"/>
+            android:pathData="M0 980H800V1000H0z"/>
         <path
             android:fillColor="#FFFFFFFF"
             android:fillAlpha="0.02"
