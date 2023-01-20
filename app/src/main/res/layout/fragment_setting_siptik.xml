@@ -94,44 +94,58 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_siptik_tv_bg"
-                    android:orientation="vertical"
-                    android:paddingTop="8dp"
-                    android:paddingBottom="8dp">
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
-                    <RadioButton
-                        android:id="@+id/theme_light"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:buttonTint="@color/theme_color"
-                        android:checked="false"
-                        android:fontFamily="@font/genshin_font"
-                        android:text="@string/light_theme"
-                        android:textColor="@color/tv_color" />
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_siptik_tv_bg"
+                        android:orientation="vertical"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
 
-                    <RadioButton
-                        android:id="@+id/theme_dark"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:buttonTint="@color/theme_color"
-                        android:checked="false"
-                        android:fontFamily="@font/genshin_font"
-                        android:text="@string/dark_theme"
-                        android:textColor="@color/tv_color" />
+                        <RadioButton
+                            android:id="@+id/theme_light"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:buttonTint="@color/theme_color"
+                            android:checked="false"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="@string/light_theme"
+                            android:textColor="@color/tv_color" />
 
-                    <RadioButton
-                        android:id="@+id/theme_default"
+                        <RadioButton
+                            android:id="@+id/theme_dark"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:buttonTint="@color/theme_color"
+                            android:checked="false"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="@string/dark_theme"
+                            android:textColor="@color/tv_color" />
+
+                        <RadioButton
+                            android:id="@+id/theme_default"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:buttonTint="@color/theme_color"
+                            android:checked="false"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="@string/sys_theme"
+                            android:textColor="@color/tv_color" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:buttonTint="@color/theme_color"
-                        android:checked="false"
-                        android:fontFamily="@font/genshin_font"
-                        android:text="@string/sys_theme"
-                        android:textColor="@color/tv_color" />
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="horizontal"></LinearLayout>
 
                 </LinearLayout>
 
@@ -732,7 +746,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="8dp"
-                android:layout_weight="0"
                 android:background="@drawable/gone_background"
                 android:visibility="visible"
                 app:cardBackgroundColor="@color/colorWhiteAlpha"
@@ -741,55 +754,69 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/bg_siptik_tv_bg"
-                    android:orientation="vertical"
-                    android:paddingTop="8dp"
-                    android:paddingBottom="8dp">
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
 
-                    <RadioButton
-                        android:id="@+id/grid_2"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:buttonTint="@color/theme_color"
-                        android:checked="false"
-                        android:fontFamily="@font/genshin_font"
-                        android:text="@string/rectangle"
-                        android:textColor="@color/tv_color" />
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_siptik_tv_bg"
+                        android:orientation="vertical"
+                        android:paddingTop="8dp"
+                        android:paddingBottom="8dp">
 
-                    <RadioButton
-                        android:id="@+id/grid_3"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:buttonTint="@color/theme_color"
-                        android:checked="false"
-                        android:fontFamily="@font/genshin_font"
-                        android:text="@string/square"
-                        android:textColor="@color/tv_color" />
+                        <RadioButton
+                            android:id="@+id/grid_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:buttonTint="@color/theme_color"
+                            android:checked="false"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="@string/rectangle"
+                            android:textColor="@color/tv_color" />
 
-                    <RadioButton
-                        android:id="@+id/grid_4"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:buttonTint="@color/theme_color"
-                        android:checked="false"
-                        android:fontFamily="@font/genshin_font"
-                        android:text="@string/card"
-                        android:textColor="@color/tv_color" />
+                        <RadioButton
+                            android:id="@+id/grid_3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:buttonTint="@color/theme_color"
+                            android:checked="false"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="@string/square"
+                            android:textColor="@color/tv_color" />
 
-                    <RadioButton
-                        android:id="@+id/grid_5"
+                        <RadioButton
+                            android:id="@+id/grid_4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:buttonTint="@color/theme_color"
+                            android:checked="false"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="@string/card"
+                            android:textColor="@color/tv_color" />
+
+                        <RadioButton
+                            android:id="@+id/grid_5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:buttonTint="@color/theme_color"
+                            android:checked="false"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="@string/detail"
+                            android:textColor="@color/tv_color" />
+                    </LinearLayout>
+
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="4dp"
-                        android:buttonTint="@color/theme_color"
-                        android:checked="false"
-                        android:fontFamily="@font/genshin_font"
-                        android:text="@string/detail"
-                        android:textColor="@color/tv_color" />
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:orientation="vertical"></LinearLayout>
+
                 </LinearLayout>
 
             </androidx.cardview.widget.CardView>
@@ -826,7 +853,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
-                android:layout_weight="0"
                 android:background="@drawable/gone_background"
                 android:visibility="visible"
                 app:cardBackgroundColor="@color/colorWhiteAlpha"
@@ -981,7 +1007,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="8dp"
-                android:layout_weight="0"
                 android:background="@drawable/gone_background"
                 android:visibility="visible"
                 app:cardBackgroundColor="@color/colorWhiteAlpha"
@@ -1145,7 +1170,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="8dp"
-                android:layout_weight="0"
                 android:background="@drawable/gone_background"
                 android:visibility="visible"
                 app:cardBackgroundColor="@color/colorWhiteAlpha"
@@ -1273,7 +1297,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="8dp"
-                android:layout_weight="0"
                 android:background="@drawable/gone_background"
                 android:visibility="visible"
                 app:cardBackgroundColor="@color/colorWhiteAlpha"
@@ -1992,16 +2015,17 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:background="@drawable/dc_bg"
-        android:paddingLeft="24dp"
-        android:paddingTop="16dp"
-        android:paddingRight="16dp"
-        android:paddingBottom="16dp"
+        android:paddingLeft="16dp"
+        android:paddingTop="8dp"
+        android:paddingRight="8dp"
+        android:paddingBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/discord_ico" />
+        app:srcCompat="@drawable/discord_ico"
+        app:tint="#000000" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

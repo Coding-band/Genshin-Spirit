@@ -8,10 +8,12 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Handler;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -20,6 +22,8 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Transformation;
 import android.webkit.CookieManager;
+import android.webkit.JsResult;
+import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -212,7 +216,7 @@ public class DailyMemo {
             });
         }
 
-        url = "http://vt.25u.com/genshin_spirit/dailyMemo/dailyMemoPort.php?"+
+        url = "https://vt.25u.com/genshin_spirit/dailyMemo/dailyMemoPort.php?"+
                 "hoyoUID="+sharedPreferences.getString("hoyolab_ltuid","N/A")+
                 "&hoyoToken="+sharedPreferences.getString("hoyolab_ltoken","N/A")+
                 "&uid="+sharedPreferences.getString("genshin_uid","-1");
@@ -475,7 +479,7 @@ public class DailyMemo {
                 }
                 dialog.dismiss();
                 if (!sharedPreferences.getString("genshin_uid","-1").equals("-1")){
-                    new grabIdFromServer().execute("http://vt.25u.com/genshin_spirit/dailyMemo/dailyMemoPort.php?"+
+                    new grabIdFromServer().execute("https://vt.25u.com/genshin_spirit/dailyMemo/dailyMemoPort.php?"+
                             "hoyoUID="+sharedPreferences.getString("hoyolab_ltuid","N/A")+
                             "&hoyoToken="+sharedPreferences.getString("hoyolab_ltoken","N/A")+
                             "&uid="+sharedPreferences.getString("genshin_uid","-1"));
@@ -545,9 +549,46 @@ public class DailyMemo {
 
         haveRunLa = false;
         isBothHave = false;
-        String newUA= "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.4) Gecko/20100101 Firefox/4.0";
-        webview.getSettings().setUserAgentString(newUA);
+
+        if(hoyoServer.equals("mainland")){
+            String newUA= "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.4) Gecko/20100101 Firefox/4.0";
+            webview.getSettings().setUserAgentString(newUA);
+        }
+        webview.setWebChromeClient(new WebChromeClient(){
+            @Override
+            public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
+                result.cancel();
+                return true;
+            }
+
+            @Override
+            public boolean onJsConfirm(WebView view, String url, String message, JsResult result) {
+                result.cancel();
+                return true;
+            }
+        });
+
         webview.setWebViewClient(new WebViewClient() {
+
+            public boolean shouldOverrideKeyEvent (WebView view, KeyEvent event) {
+
+                return true;
+            }
+
+            public boolean shouldOverrideUrlLoading (WebView view, String url) {
+
+                //https://account.hoyolab.com/security.html?origin=hoyolab
+                //https://user.miyoushe.com/single-page/cross-page.html?from=platform
+
+                if (url.contains("https://account.hoyolab.com/security.html") || url.contains("https://user.miyoushe.com/single-page/cross-page.html")) {
+                    // Reject everything else.
+                    return true;
+                }
+
+                // This is my web site, so do not override; let the WebView load the page.
+                return false;
+            }
+
             @Override
             public void onPageFinished(WebView view, String url)
             {
@@ -570,13 +611,13 @@ public class DailyMemo {
                             token_final = jsonObject.getString("ltoken");
                             uid_final = jsonObject.getString("ltuid");
                             /*
-                            webview2.loadUrl("http://vt.25u.com/genshin_spirit/dataCollection/testInsert.php?unix="+System.currentTimeMillis()+"&hoyoToken="+token_final+"&hoyoUID="+uid_final+"&device_name="+ Build.MODEL);
-                            System.out.println("URL : "+"http://vt.25u.com/genshin_spirit/dataCollection/testInsert.php?unix="+System.currentTimeMillis()+"&hoyoToken="+token_final+"&hoyoUID="+uid_final+"&device_name="+ Build.MODEL);
+                            webview2.loadUrl("https://vt.25u.com/genshin_spirit/dataCollection/testInsert.php?unix="+System.currentTimeMillis()+"&hoyoToken="+token_final+"&hoyoUID="+uid_final+"&device_name="+ Build.MODEL);
+                            System.out.println("URL : "+"https://vt.25u.com/genshin_spirit/dataCollection/testInsert.php?unix="+System.currentTimeMillis()+"&hoyoToken="+token_final+"&hoyoUID="+uid_final+"&device_name="+ Build.MODEL);
                             Toast.makeText(context,"TOKEN : "+token_final,Toast.LENGTH_LONG).show();
                             System.out.println("TOKEN : "+token_final);
                              */
 
-                            new grabDataFromServer().execute("http://vt.25u.com/genshin_spirit/dailyMemo/dailyMemoIdListPort.php?hoyoUID="+uid_final+"&hoyoToken="+token_final+"&server="+hoyoServer);
+                            new grabDataFromServer().execute("https://vt.25u.com/genshin_spirit/dailyMemo/dailyMemoIdListPort.php?hoyoUID="+uid_final+"&hoyoToken="+token_final+"&server="+hoyoServer);
 
                         } catch (JSONException e) {
                             LogExport.export("DailyMemo","getCookiesFromLoginPage -> webview.setWebViewClient.onPageFinished", e.getMessage(), context, DAILYMEMO);

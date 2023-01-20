@@ -36,7 +36,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_2048_filter" />
+        app:srcCompat="@drawable/ic_siptik_filter" />
 
     <ImageView
         android:id="@+id/artifact_search"
@@ -51,7 +51,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/ic_2048_search" />
+        app:srcCompat="@drawable/ic_siptik_search" />
 
     <include
         android:id="@+id/header_search"

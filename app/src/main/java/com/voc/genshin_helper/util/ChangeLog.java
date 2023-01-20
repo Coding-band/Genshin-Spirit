@@ -85,7 +85,9 @@ public class ChangeLog {
         lp.height = WindowManager.LayoutParams.MATCH_PARENT;
         lp.gravity = Gravity.BOTTOM;
         dialogWindow.setAttributes(lp);
-        dialog.show();
+        if (!dialog.isShowing()){
+            dialog.show();
+        }
     }
 
     private static String LoadData(String inFile, Context context) {

@@ -158,7 +158,7 @@
     <color name="tab_stroke_siptik">#99FFFFFF</color>
     <color name="spinner_bg_siptik">#B3FFFFFF</color>
     <color name="spinner_stroke_siptik">#B3FFFFFF</color>
-    <color name="ui_bg_siptik">#CCFFFFFF</color>
+    <color name="ui_bg_siptik">#FFFFFFFF</color>
     <color name="ui_bg_siptik_always">#CC000000</color>
     <color name="ui_tv_siptik">#3B4255</color>
 

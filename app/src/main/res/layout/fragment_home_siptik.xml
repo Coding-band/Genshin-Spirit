@@ -80,7 +80,7 @@
                     android:layout_gravity="center|right|end"
                     android:layout_weight="1"
                     android:background="@null"
-                    android:popupBackground="@drawable/bg_2048_spinner_bg"
+                    android:popupBackground="@drawable/bg_siptik_spinner_bg"
                     android:requiresFadingEdge="none"
                     android:spinnerMode="dropdown"
                     app:layout_constraintBottom_toBottomOf="parent"

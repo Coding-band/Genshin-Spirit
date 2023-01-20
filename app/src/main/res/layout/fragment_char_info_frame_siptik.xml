@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <!--
-  ~ Project Genshin Spirit (原神小幫手) was
-  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
-  ~ Copyright © 2023 Xectorda 版權所有
-  -->
+<!--
+~ Project Genshin Spirit (原神小幫手) was
+~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+~ Copyright © 2023 Xectorda 版權所有
+-->
 
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -60,7 +60,7 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_2048_back_btn" />
+            app:srcCompat="@drawable/ic_siptik_back_btn" />
 
         <ImageView
             android:id="@+id/info_blank"
@@ -179,7 +179,7 @@
                         android:id="@+id/info_char_base_value_btn"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/ic_2048_char_value" />
+                        app:srcCompat="@drawable/ic_siptik_char_value" />
                 </androidx.cardview.widget.CardView>
 
                 <LinearLayout
@@ -599,7 +599,7 @@
                                     android:id="@+id/info_talent1_value_btn"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    app:srcCompat="@drawable/ic_2048_char_value" />
+                                    app:srcCompat="@drawable/ic_siptik_char_value" />
                             </androidx.cardview.widget.CardView>
 
                         </LinearLayout>
@@ -772,7 +772,7 @@
                                     android:id="@+id/info_talent2_value_btn"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    app:srcCompat="@drawable/ic_2048_char_value" />
+                                    app:srcCompat="@drawable/ic_siptik_char_value" />
                             </androidx.cardview.widget.CardView>
 
                         </LinearLayout>
@@ -879,7 +879,7 @@
                                     android:id="@+id/info_talent3_value_btn"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    app:srcCompat="@drawable/ic_2048_char_value" />
+                                    app:srcCompat="@drawable/ic_siptik_char_value" />
                             </androidx.cardview.widget.CardView>
 
                         </LinearLayout>
@@ -2912,7 +2912,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0"
-                app:srcCompat="@drawable/ic_2048_char_value" />
+                app:srcCompat="@drawable/ic_siptik_char_value" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -2939,7 +2939,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0"
-                app:srcCompat="@drawable/ic_2048_advice_btn" />
+                app:srcCompat="@drawable/ic_siptik_advice_btn" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -2966,7 +2966,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0"
-                app:srcCompat="@drawable/ic_2048_constelations_btn" />
+                app:srcCompat="@drawable/ic_siptik_constelations_btn" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -2993,7 +2993,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0"
-                app:srcCompat="@drawable/ic_2048_talent_btn" />
+                app:srcCompat="@drawable/ic_siptik_talent_btn" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -3020,7 +3020,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0"
-                app:srcCompat="@drawable/ic_2048_char_intro_btn" />
+                app:srcCompat="@drawable/ic_siptik_char_intro_btn" />
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView

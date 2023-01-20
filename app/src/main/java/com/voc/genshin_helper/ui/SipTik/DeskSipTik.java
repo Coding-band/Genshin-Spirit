@@ -2642,8 +2642,8 @@ public class DeskSipTik extends AppCompatActivity {
         });
 
         weekdayList = new String[]{getString(R.string.sunday),getString(R.string.monday),getString(R.string.tuesday),getString(R.string.wednesday),getString(R.string.thursday),getString(R.string.friday),getString(R.string.saturday)};
-        ArrayAdapter lang_aa = new ArrayAdapter(context,R.layout.spinner_item_2048,weekdayList);
-        lang_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_2048);
+        ArrayAdapter lang_aa = new ArrayAdapter(context,R.layout.spinner_item_anti_siptik,weekdayList);
+        lang_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_siptik);
 
         Spinner lang_sp = viewPager0.findViewById(R.id.home_weekday_spinner);
         lang_sp.setAdapter(lang_aa);

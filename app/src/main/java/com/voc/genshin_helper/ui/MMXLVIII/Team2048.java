@@ -159,6 +159,8 @@ public class Team2048 {
         setup_weapon();
         setup_art();
 
+        team_tablayout.removeAllTabs();
+
         for (int x = 0 ; x < itemNum ; x++){
             View view1 = activity.getLayoutInflater().inflate(R.layout.item_custom_tab, null);
             ImageView ico_img = view1.findViewById(R.id.icon);
