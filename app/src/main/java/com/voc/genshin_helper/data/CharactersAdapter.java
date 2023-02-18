@@ -125,7 +125,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         final int radius_circ_siptik = 80;
         final int margin_circ_siptik = 0;
         final Transformation transformation_circ_siptik = new RoundedCornersTransformation(radius_circ_siptik, margin_circ_siptik);
-        final int radius_circ_siptik_ico = 120;
+        final int radius_circ_siptik_ico = 30;
         final int margin_circ_siptik_ico = 0;
         final Transformation transformation_circ_siptik_ico = new RoundedCornersTransformation(radius_circ_siptik_ico, margin_circ_siptik_ico);
 

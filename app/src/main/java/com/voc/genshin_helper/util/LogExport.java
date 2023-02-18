@@ -40,7 +40,7 @@ public class LogExport {
     public static String[] list = {DAILYMEMO,DOWNLOADTASK,UNZIPMANAGER};
 
     public static void export (String className, String functionName, String data, Context context, String fileName) {
-        if (BuildConfig.FLAVOR.equals("dev") || BuildConfig.FLAVOR.equals("beta")) {
+        //if (BuildConfig.FLAVOR.equals("dev") || BuildConfig.FLAVOR.equals("beta")) {
             String dataFinal =
                     "--------\n" +
                             "Class : " + className + "\n" +
@@ -56,11 +56,11 @@ public class LogExport {
             } catch (IOException e) {
                 Log.i("LogExport", e.getMessage());
             }
-        }
+        //}
     }
 
     public static void init(Context context) {
-        if (BuildConfig.FLAVOR.equals("dev") || BuildConfig.FLAVOR.equals("beta")) {
+        //if (BuildConfig.FLAVOR.equals("dev") || BuildConfig.FLAVOR.equals("beta")) {
             String fileHead = "This file was created in " + new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(Calendar.getInstance().getTime()) + "\n";
             try {
                 File ext = context.getExternalMediaDirs()[0];
@@ -79,5 +79,5 @@ public class LogExport {
                 e.printStackTrace();
             }
         }
-    }
+    //}
 }

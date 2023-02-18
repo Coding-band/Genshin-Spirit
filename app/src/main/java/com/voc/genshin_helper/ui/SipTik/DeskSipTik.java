@@ -81,6 +81,7 @@ import com.voc.genshin_helper.tutorial.TutorialUI;
 import com.voc.genshin_helper.ui.AlarmUI;
 import com.voc.genshin_helper.ui.BackgroundConfirmActivity;
 import com.voc.genshin_helper.ui.CalculatorDBActivity;
+import com.voc.genshin_helper.ui.MMXLVIII.DailyMemo2048Widget;
 import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
 import com.voc.genshin_helper.ui.MainActivity;
 import com.voc.genshin_helper.util.BackgroundReload;
@@ -3217,6 +3218,42 @@ public class DeskSipTik extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 ChangeLog.show(context,activity);
+            }
+        });
+
+        //Other -> Exit Confirm
+        Switch other_random_theme_confirm = viewPager4.findViewById(R.id.other_random_theme_confirm);
+        boolean other_random_theme = sharedPreferences.getBoolean("isRandomTheme",true);
+        other_random_theme_confirm.setChecked(other_random_theme);
+        other_random_theme_confirm.setThumbTintList(myList);
+        other_random_theme_confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(other_random_theme_confirm.isChecked() == false){
+                    editor.putBoolean("isRandomTheme",false);
+                    editor.apply();
+                }else if(other_random_theme_confirm.isChecked() == true){
+                    editor.putBoolean("isRandomTheme",true);
+                    editor.apply();
+                }
+            }
+        });
+
+        Switch other_dailymemo_enabled = viewPager4.findViewById(R.id.other_dailymemo_enabled);
+        other_dailymemo_enabled.setThumbTintList(myList);
+        other_dailymemo_enabled.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DailyMemo2048Widget dailyMemo2048Widget = new DailyMemo2048Widget();
+                if(other_dailymemo_enabled.isChecked() == false){
+                    editor.putBoolean("isDailyMemoEnabled",false);
+                    editor.apply();
+                    dailyMemo2048Widget.onDisabled(context);
+                }else if(other_dailymemo_enabled.isChecked() == true){
+                    editor.putBoolean("isDailyMemoEnabled",true);
+                    editor.apply();
+                    dailyMemo2048Widget.onEnabled(context);
+                }
             }
         });
     }

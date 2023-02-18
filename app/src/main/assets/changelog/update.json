@@ -1,5 +1,9 @@
 [
   {
+    "version": "11735",
+    "verName": "3.4.0-gp (11735)",
+    "description": "Changelog - 2023-01-20<br><br>Sorry for the inconvenience caused by the server http changes (now it have changed to https so all old version will need to do updates)<br><br><b>UI</b><br>1. Added TCG page (Game Style)<br>  TCG page have 4 catalogues now, which u can find cards u want more simply<br>2. Sum up characters, weapons, artifacts to Team page (Game Style)<br>3. Updated some icons and item rare background<br>4. Updated Material Style<br>5. DailyMemo bug fixed, Voc hope it'll not being more crash after that, really<br>6. Download function fixed, now u will being able to download updates<br><br><b>Characters, weapons and artifacts</b><br>1. Added characters info :<br>    - Alhaitham <br>    - Yaoyao<br>2. Added weapons 3.4<br>3. Updated new Character's birthday"
+  },{
     "version": "10930",
     "verName": "3.3.0-gp (10930)",
     "description": "Changelog - 2022-12-14<br><br>Sorry for the inconvenience caused by the new function 'DailyMemo' and Assets Download, Voc will do a fully debug of it in upcoming days, hope it will be done before the Christmas holiday ends.<br><br><b>UI</b><br>1. Improve assets of lists (reduced apk size)<br>2. Fixed display bugs in Material<br>3. Able user to view new character without update apk<br><br><b>Characters, weapons and artifacts </b><br>1. Added characters info :<br>    - Wanderer<br>    - Faruzan<br>2. Added Polar Star<br>3. Added weapons in 3.3<br>4. Updated new Character's birthday<br>5. Added artifacts in 3.3"

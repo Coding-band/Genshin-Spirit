@@ -1,5 +1,6 @@
 package com.voc.genshin_helper.ui.MMXLVIII;
 
+import static com.voc.genshin_helper.util.DailyMemo.CHROME_CUSTOM_TAB_REQUEST_CODE;
 import static com.voc.genshin_helper.util.LogExport.DAILYMEMO;
 import static com.voc.genshin_helper.util.LogExport.DOWNLOADTASK;
 import static com.voc.genshin_helper.util.LogExport.UNZIPMANAGER;
@@ -262,6 +263,7 @@ public class Desk2048 extends AppCompatActivity {
     Switch other_random_theme_confirm ;
     Switch other_app_ico_use_default ;
     Switch other_dailymemo_enabled ;
+    Switch supportUkraine ;
 
     Button bg_download_delete;
     Button bg_download_reset;
@@ -1512,6 +1514,22 @@ public class Desk2048 extends AppCompatActivity {
                     editor.apply();
                 }else if(other_item_eng_name.isChecked() == true){
                     editor.putBoolean("isBaseNameDisplay",true);
+                    editor.apply();
+                }
+            }
+        });
+
+        supportUkraine = view.findViewById(R.id.support_ukraine);
+        boolean isSupportUkraine = sharedPreferences.getBoolean("supportUkraine",false);
+        supportUkraine.setChecked(isSupportUkraine);
+        supportUkraine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(supportUkraine.isChecked() == false){
+                    editor.putBoolean("supportUkraine",false);
+                    editor.apply();
+                }else if(supportUkraine.isChecked() == true){
+                    editor.putBoolean("supportUkraine",true);
                     editor.apply();
                 }
             }
@@ -2788,7 +2806,6 @@ public class Desk2048 extends AppCompatActivity {
             }
             startActivity(new Intent(Desk2048.this, BackgroundConfirmActivity.class));
         }
-
     }
 
     @Override

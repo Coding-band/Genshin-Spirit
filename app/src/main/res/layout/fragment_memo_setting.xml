@@ -77,7 +77,7 @@
                             android:layout_marginLeft="8dp"
                             android:layout_weight="0"
                             android:fontFamily="@font/genshin_font"
-                            android:text="@string/memo_step1"
+                            android:text="Login"
                             android:textColor="@color/white"
                             android:textSize="18sp" />
                     </LinearLayout>
@@ -136,6 +136,124 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_weight="0"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="2."
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_weight="0"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="@string/memo_step1"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_weight="0"
+                        android:orientation="horizontal">
+
+                        <Button
+                            android:id="@+id/token_btn3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="8dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_dialog_btn"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="copy token"
+                            android:textColor="@color/tv_anti_color_2048" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_weight="0"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="3."
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_weight="0"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="Paste Token"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_weight="0"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/token_et"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:hint="Press tick when done >>" />
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/token_confirm"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/ic_2048_need_tick"
+                            android:fontFamily="@font/genshin_font"
+                            android:textColor="@color/tv_anti_color_2048" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
                         android:layout_weight="0"
                         android:orientation="horizontal">
@@ -146,7 +264,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0"
                             android:fontFamily="@font/genshin_font"
-                            android:text="2."
+                            android:text="4."
                             android:textColor="@color/white"
                             android:textSize="18sp" />
 

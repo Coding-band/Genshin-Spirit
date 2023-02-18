@@ -121,6 +121,21 @@
             </intent-filter>
         </activity-alias>
 
+        <activity-alias
+            android:name=".ui.SplashActivityUkraine"
+            android:enabled="false"
+            android:exported="true"
+            android:icon="@drawable/app_ico_ukraine"
+            android:label="@string/app_name"
+            android:roundIcon="@drawable/app_ico_ukraine"
+            android:targetActivity=".ui.SplashActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity-alias>
+
         <activity
             android:name=".ui.AlarmUI"
             android:label="@string/app_name"

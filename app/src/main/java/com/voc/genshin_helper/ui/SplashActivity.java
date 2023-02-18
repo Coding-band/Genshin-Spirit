@@ -183,6 +183,17 @@ public class SplashActivity extends AppCompatActivity {
                 ,PackageManager.COMPONENT_ENABLED_STATE_ENABLED,PackageManager.DONT_KILL_APP);
         manager.setComponentEnabledSetting(new ComponentName(SplashActivity.this,"com.voc.genshin_helper.ui.SplashActivityAlias")
                 ,PackageManager.COMPONENT_ENABLED_STATE_DISABLED,PackageManager.DONT_KILL_APP);
+        manager.setComponentEnabledSetting(new ComponentName(SplashActivity.this,"com.voc.genshin_helper.ui.SplashActivityUkraine")
+                ,PackageManager.COMPONENT_ENABLED_STATE_DISABLED,PackageManager.DONT_KILL_APP);
+
+        if(sharedPreferences.getBoolean("supportUkraine", false) == true) {
+            manager.setComponentEnabledSetting(new ComponentName(SplashActivity.this,"com.voc.genshin_helper.ui.SplashActivityUkraine")
+                    ,PackageManager.COMPONENT_ENABLED_STATE_ENABLED,PackageManager.DONT_KILL_APP);
+            manager.setComponentEnabledSetting(new ComponentName(SplashActivity.this,"com.voc.genshin_helper.ui.SplashActivity")
+                    ,PackageManager.COMPONENT_ENABLED_STATE_DISABLED,PackageManager.DONT_KILL_APP);
+            manager.setComponentEnabledSetting(new ComponentName(SplashActivity.this,"com.voc.genshin_helper.ui.SplashActivityAlias")
+                    ,PackageManager.COMPONENT_ENABLED_STATE_DISABLED,PackageManager.DONT_KILL_APP);
+        }
 
         String[] checkList = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE, Manifest.permission.EXPAND_STATUS_BAR};
         List<String> needRequestList = checkPermission(activity, checkList);
@@ -469,12 +480,16 @@ public class SplashActivity extends AppCompatActivity {
                 sendBroadcast(intent);
 
                 if (sharedPreferences.getString("styleUI", "N/A").equals("2O48")) {
+                    sharedPreferences.edit().putString("curr_ui_grid","2").apply();
                     SplashActivity.this.startActivity(new Intent(SplashActivity.this, Desk2048.class));
                 } else if (sharedPreferences.getString("styleUI", "N/A").equals("SipTik")) {
+                    sharedPreferences.edit().putString("curr_ui_grid","5").apply();
                     SplashActivity.this.startActivity(new Intent(SplashActivity.this, DeskSipTik.class));
                 } else if (sharedPreferences.getString("styleUI", "N/A").equals("Voc")) {
+                    sharedPreferences.edit().putString("curr_ui_grid","4").apply();
                     SplashActivity.this.startActivity(new Intent(SplashActivity.this, MainActivity.class));
                 } else {
+                    sharedPreferences.edit().putString("curr_ui_grid","4").apply();
                     SplashActivity.this.startActivity(new Intent(SplashActivity.this, MainActivity.class));
                 }
                 SplashActivity.this.finish();

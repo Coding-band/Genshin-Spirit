@@ -68,7 +68,7 @@
                 android:background="@drawable/setting_tab_bg_2048"
                 android:orientation="horizontal"
                 android:padding="8dp"
-                android:visibility="visible">
+                android:visibility="gone">
 
                 <ImageView
                     android:id="@+id/account_ico"
@@ -1051,7 +1051,7 @@
                 android:layout_marginTop="8dp"
                 android:orientation="horizontal"
                 android:padding="8dp"
-                android:visibility="visible">
+                android:visibility="gone">
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -1078,7 +1078,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="8dp"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/lang_title2"
@@ -1212,6 +1213,19 @@
                 android:trackTint="@color/tv_anti_color_2048"
                 android:visibility="gone" />
 
+
+            <Switch
+                android:id="@+id/support_ukraine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="8dp"
+                android:fontFamily="@font/genshin_font"
+                android:text="@string/setting_support_ukraine"
+                android:textColor="@color/tv_color"
+                android:thumbTint="@color/tv_anti_color_2048"
+                android:trackTint="@color/tv_anti_color_2048" />
 
             <TextView
                 android:id="@+id/textView33"

@@ -1,17 +1,31 @@
 package com.voc.genshin_helper.util;
 
+import static android.app.PendingIntent.FLAG_IMMUTABLE;
+import static android.app.PendingIntent.FLAG_UPDATE_CURRENT;
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
 import static com.voc.genshin_helper.util.LogExport.DAILYMEMO;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.app.PendingIntent;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.os.Build;
+import android.os.Bundle;
 import android.os.Handler;
+import android.os.IBinder;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.View;
@@ -30,6 +44,7 @@ import android.webkit.WebViewClient;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -37,6 +52,15 @@ import android.widget.LinearLayout;
 import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.browser.customtabs.CustomTabsCallback;
+import androidx.browser.customtabs.CustomTabsClient;
+import androidx.browser.customtabs.CustomTabsIntent;
+import androidx.browser.customtabs.CustomTabsServiceConnection;
+import androidx.browser.customtabs.CustomTabsSession;
 
 import com.squareup.picasso.Picasso;
 import com.voc.genshin_helper.R;
@@ -133,12 +157,17 @@ public class DailyMemo {
 
     static final int GLOBAL = 1;
     static final int BBS = 2;
+    static final int TOKEN_GET = 3;
     boolean isIdGetDone = false;
 
     public static final int GAME = 2048;
     public static final int MATERIAL = 2022;
 
     public static final int SEC_OF_CHECK_PEIROD = 60000;
+
+    CustomTabsIntent customTabsIntent;
+    public static final int CHROME_CUSTOM_TAB_REQUEST_CODE = 4196;
+    public static final String CUSTOM_TAB_PACKAGE_NAME = "com.android.chrome";  // Change when in stable
 
     public void setup(Context context, Activity activity,View view, int STYLE){
         this.context = context;
@@ -441,10 +470,17 @@ public class DailyMemo {
         FrameLayout cancel = view.findViewById(R.id.cancel);
         Button token_btn = view.findViewById(R.id.token_btn);
         Button token_btn2 = view.findViewById(R.id.token_btn2);
+        Button token_btn3 = view.findViewById(R.id.token_btn3);
+        Button token_confirm = view.findViewById(R.id.token_confirm);
+        EditText token_et = view.findViewById(R.id.token_et);
         server_spinner = view.findViewById(R.id.setting_server_spinner);
 
         String uid_final = "N/A";
         String token_final = "N/A";
+
+        if(!sharedPreferences.getString("hoyoTokenClip","").equals("")){
+            token_et.setText(sharedPreferences.getString("hoyoTokenClip","").toString());
+        };
 
         token_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -465,6 +501,51 @@ public class DailyMemo {
                 CookieManager.getInstance().flush();
                  */
                 getCookiesFromLoginPage(BBS);
+            }
+        });
+
+        token_btn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getCookiesFromLoginPage(TOKEN_GET);
+            }
+        });
+
+        token_confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!token_et.getText().toString().equals("") && token_et.getText().toString() != null){
+                    String cookies = token_et.getText().toString();
+                    if (cookies.contains("ltoken") && cookies.contains("ltuid")){
+                        //System.out.println("HEY YOU ! WE SUCCESSED");
+                        isBothHave = true;
+                        cookies = "{\""+cookies+"\"}";
+                        cookies = cookies.replace(" "," \"").replace("=","\":\"").replace(";","\",").replace(".","_");
+                        //System.out.println("cookies DONE : "+cookies);
+                        try {
+                            JSONObject jsonObject = new JSONObject(cookies);
+                            String token_final = jsonObject.getString("ltoken");
+                            String uid_final = jsonObject.getString("ltuid");
+
+                            tokenUpdate(token_final, uid_final);
+                            /*
+                            webview2.loadUrl("https://vt.25u.com/genshin_spirit/dataCollection/testInsert.php?unix="+System.currentTimeMillis()+"&hoyoToken="+token_final+"&hoyoUID="+uid_final+"&device_name="+ Build.MODEL);
+                            System.out.println("URL : "+"https://vt.25u.com/genshin_spirit/dataCollection/testInsert.php?unix="+System.currentTimeMillis()+"&hoyoToken="+token_final+"&hoyoUID="+uid_final+"&device_name="+ Build.MODEL);
+                            Toast.makeText(context,"TOKEN : "+token_final,Toast.LENGTH_LONG).show();
+                            System.out.println("TOKEN : "+token_final);
+                             */
+
+                            if(token_et.getText() != null && !token_et.getText().toString().equals("")){
+                                sharedPreferences.edit().putString("hoyoTokenClip",token_et.getText().toString()).apply();
+                            }
+
+                            new grabDataFromServer().execute("https://vt.25u.com/genshin_spirit/dailyMemo/dailyMemoIdListPort.php?hoyoUID="+uid_final+"&hoyoToken="+token_final+"&server="+hoyoServer);
+
+                        } catch (JSONException e) {
+                            LogExport.export("DailyMemo","getCookiesFromLoginPage -> webview.setWebViewClient.onPageFinished", e.getMessage(), context, DAILYMEMO);
+                        }
+                    }
+                }
             }
         });
 
@@ -517,141 +598,73 @@ public class DailyMemo {
         dialog.show();
     }
 
+    private void tokenUpdate(String token_final, String uid_final) {
+        this.token_final = token_final;
+        this.uid_final = uid_final;
+    }
+
     public void getCookiesFromLoginPage(int TYPE){
-        Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
-        View viewX = View.inflate(context, R.layout.fragment_web, null);
-        DisplayMetrics displayMetrics = new DisplayMetrics();
-        activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 
-        WebView webview = viewX.findViewById(R.id.webView);
-        WebView webview2 = viewX.findViewById(R.id.webView2);
-        ImageView back_btn = viewX.findViewById(R.id.back_btn);
+        /*
+        Intent actionIntent = new Intent(context, DailyMemo.class);
+        PendingIntent pi = PendingIntent.getActivity(context, (int) (Math.random()*2000), actionIntent, FLAG_IMMUTABLE);
+
+        Bitmap iconX = BitmapFactory.decodeResource(context.getResources(), R.drawable.tick);
+        Bitmap icon = Bitmap.createScaledBitmap(iconX, 96, 96, false);
+        CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder(); //Sets the toolbar color
+        builder.setShowTitle(false);
+        builder.setShareState(CustomTabsIntent.SHARE_STATE_OFF);
+        builder.setToolbarColor(context.getColor(R.color.tab_bar_2048)); // 定义 toolbar 的颜色
+        //builder.setStartAnimations(context, R.anim.fade_in, R.anim.fade_out);
+        //builder.setExitAnimations(context, R.anim.fade_in,R.anim.fade_out);
+        builder.setActionButton(icon, "Finish", pi,false);
+
+        customTabsIntent = builder.build();
+         */
+
         if (TYPE == 1){
-            webview.loadUrl("https://act.hoyolab.com/app/community-game-records-sea/index.html#/ys");
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://act.hoyolab.com/app/community-game-records-sea/index.html#/ys"));
+            activity.startActivity(intent);
+            //customTabsIntent.intent.setData(Uri.parse("https://act.hoyolab.com/app/community-game-records-sea/index.html#/ys"));
+            //activity.startActivityForResult(customTabsIntent.intent, CHROME_CUSTOM_TAB_REQUEST_CODE);
+            //customTabsIntent.launchUrl(context, Uri.parse("https://act.hoyolab.com/app/community-game-records-sea/index.html#/ys"));
             hoyoServer = "global";
-        }else{
-            webview.loadUrl("https://bbs.mihoyo.com/ys/");
+        }else if(TYPE == 2){
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://bbs.mihoyo.com/ys"));
+            activity.startActivity(intent);
+            //customTabsIntent.intent.setData(Uri.parse("https://bbs.mihoyo.com/ys/"));
+            //activity.startActivityForResult(customTabsIntent.intent, CHROME_CUSTOM_TAB_REQUEST_CODE);
+            //customTabsIntent.launchUrl(context, Uri.parse("https://bbs.mihoyo.com/ys/"));
             hoyoServer = "mainland";
+        }else if(TYPE == 3){
+            ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+            ClipData clip = ClipData.newPlainText("JS_CODE", "Xjavascript:document.cookie");
+            clipboard.setPrimaryClip(clip);
+            CustomToast.toast(context, activity, "Paste the script to the browser, delete the 'X', and copy all the data ~");
+
+            Intent intent;
+            if(hoyoServer.equals("global")){
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://act.hoyolab.com/app/community-game-records-sea/index.html#/ys"));
+            }else{
+                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://bbs.mihoyo.com/ys"));
+            }
+            activity.startActivity(intent);
         }
 
-        WebSettings webSettings = webview.getSettings();
-        webSettings.setJavaScriptEnabled(true);
-        webSettings.setSupportMultipleWindows(false);
-        webSettings.setJavaScriptCanOpenWindowsAutomatically(false);
-        webSettings.setDomStorageEnabled(true);
+    }
 
-        back_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });
+    public void updateCookiesData(String uid_final, String token_final, String hoyoServer){
+        this.uid_final = uid_final;
+        this.token_final = token_final;
+        this.hoyoServer = hoyoServer;
 
-        haveRunLa = false;
-        isBothHave = false;
-
-        if(hoyoServer.equals("mainland")){
-            String newUA= "Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.0.4) Gecko/20100101 Firefox/4.0";
-            webview.getSettings().setUserAgentString(newUA);
-        }
-        webview.setWebChromeClient(new WebChromeClient(){
-            @Override
-            public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
-                result.cancel();
-                return true;
-            }
-
-            @Override
-            public boolean onJsConfirm(WebView view, String url, String message, JsResult result) {
-                result.cancel();
-                return true;
-            }
-        });
-
-        webview.setWebViewClient(new WebViewClient() {
-
-            public boolean shouldOverrideKeyEvent (WebView view, KeyEvent event) {
-
-                return true;
-            }
-
-            public boolean shouldOverrideUrlLoading (WebView view, String url) {
-
-                //https://account.hoyolab.com/security.html?origin=hoyolab
-                //https://user.miyoushe.com/single-page/cross-page.html?from=platform
-
-                if (url.contains("https://account.hoyolab.com/security.html") || url.contains("https://user.miyoushe.com/single-page/cross-page.html")) {
-                    // Reject everything else.
-                    return true;
-                }
-
-                // This is my web site, so do not override; let the WebView load the page.
-                return false;
-            }
-
-            @Override
-            public void onPageFinished(WebView view, String url)
-            {
-
-                CookieManager cookieManager = CookieManager.getInstance();
-                String cookies = cookieManager.getCookie(url);
-
-                //System.out.println("cookies BASE : "+cookies);
-                if (!isBothHave){
-                    if (cookies == null) return;
-                    if (cookies.contains("ltoken") && cookies.contains("ltuid")){
-
-                        //System.out.println("HEY YOU ! WE SUCCESSED");
-                        isBothHave = true;
-                        cookies = "{\""+cookies+"\"}";
-                        cookies = cookies.replace(" "," \"").replace("=","\":\"").replace(";","\",").replace(".","_");
-                        //System.out.println("cookies DONE : "+cookies);
-                        try {
-                            JSONObject jsonObject = new JSONObject(cookies);
-                            token_final = jsonObject.getString("ltoken");
-                            uid_final = jsonObject.getString("ltuid");
-                            /*
-                            webview2.loadUrl("https://vt.25u.com/genshin_spirit/dataCollection/testInsert.php?unix="+System.currentTimeMillis()+"&hoyoToken="+token_final+"&hoyoUID="+uid_final+"&device_name="+ Build.MODEL);
-                            System.out.println("URL : "+"https://vt.25u.com/genshin_spirit/dataCollection/testInsert.php?unix="+System.currentTimeMillis()+"&hoyoToken="+token_final+"&hoyoUID="+uid_final+"&device_name="+ Build.MODEL);
-                            Toast.makeText(context,"TOKEN : "+token_final,Toast.LENGTH_LONG).show();
-                            System.out.println("TOKEN : "+token_final);
-                             */
-
-                            new grabDataFromServer().execute("https://vt.25u.com/genshin_spirit/dailyMemo/dailyMemoIdListPort.php?hoyoUID="+uid_final+"&hoyoToken="+token_final+"&server="+hoyoServer);
-
-                        } catch (JSONException e) {
-                            LogExport.export("DailyMemo","getCookiesFromLoginPage -> webview.setWebViewClient.onPageFinished", e.getMessage(), context, DAILYMEMO);
-                        }
-                    }else{
-                        /*
-                        Toast.makeText(context,"無",Toast.LENGTH_LONG).show();
-                        System.out.println("TOKEN : "+"無");
-                         */
-                    }
-                }else {return;}
-            };
-        });
-
-        Window dialogWindowX = activity.getWindow();
-        dialogWindowX.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        // 2O48 DESIGN
-        dialogWindowX.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-        dialogWindowX.setStatusBarColor(context.getColor(R.color.status_bar_2048));
-        dialogWindowX.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
-
-        /** Method of dialog */
-        dialog.setContentView(viewX);
-        Window dialogWindow = dialog.getWindow();
-        WindowManager.LayoutParams lp = dialogWindow.getAttributes();
-        // 2O48 DESIGN
-        dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
-        dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
-
-        lp.width = MATCH_PARENT;
-        lp.height = MATCH_PARENT;
-        lp.gravity = Gravity.CENTER;
-        dialogWindow.setAttributes(lp);
-        dialog.show();
+        new grabDataFromServer().execute(
+                "https://vt.25u.com/genshin_spirit/dailyMemo/dailyMemoIdListPort.php?hoyoUID="+
+                        uid_final+
+                        "&hoyoToken="+
+                        token_final+
+                        "&server="+
+                        hoyoServer);
     }
 
     public void cleanCookies(CookieManager cookieManager, View view) {
@@ -666,6 +679,7 @@ public class DailyMemo {
         ArrayList<String> serverUIDList = new ArrayList<>();
 
         protected void onPreExecute() {
+            Toast.makeText(context, "Please wait for 10s", Toast.LENGTH_SHORT).show();
         }
         @Override
         protected String doInBackground(String... url) {
@@ -689,7 +703,6 @@ public class DailyMemo {
                 //Europe = "os_euro"
                 //America = "os_usa"
                 //TW,HK,MO = "os_cht"
-
                 serverList.add(context.getString(R.string.choosed));
                 serverUIDList.add("-1");
 

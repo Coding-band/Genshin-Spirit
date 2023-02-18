@@ -1,653 +1,609 @@
-<?xml version="1.0" encoding="utf-8"?><!--
+<?xml version="1.0" encoding="utf-8"?>
+<!--
   ~ Project Genshin Spirit (原神小幫手) was
   ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
   ~ Copyright © 2023 Xectorda 版權所有
   -->
-
 <resources>
     <string name="app_name">Genshin Spirit</string>
-
     <!-- page_title_menu -->
-    <string name="title_char">Characters</string>
-    <string name="title_artifacts">Artifacts</string>
-    <string name="title_home">Home</string>
-    <string name="title_weapons">Weapons</string>
-    <string name="title_settings">Settings</string>
-
+    <string name="title_char">Персонажі</string>
+    <string name="title_artifacts">Артефакти</string>
+    <string name="title_home">Домашня</string>
+    <string name="title_weapons">Зброя</string>
+    <string name="title_settings">Налаштування</string>
     <!-- material_moment -->
-    <string name="dow_set1">Mon,Thur,Sun</string>
-    <string name="dow_set2">Tue,Fri,Sun</string>
-    <string name="dow_set3">Wed,Sat,Sun</string>
-
+    <string name="dow_set1">Пн, Чт, Нд</string>
+    <string name="dow_set2">Вт, Пт, Нд</string>
+    <string name="dow_set3">Ср, Сб, Нд</string>
     <!-- dow -->
-    <string name="monday">Mon</string>
-    <string name="tuesday">Tue</string>
-    <string name="wednesday">Wed</string>
-    <string name="thursday">Thu</string>
-    <string name="friday">Fri</string>
-    <string name="saturday">Sat</string>
-    <string name="sunday">Sun</string>
-
+    <string name="monday">Пн</string>
+    <string name="tuesday">Вт</string>
+    <string name="wednesday">Ср</string>
+    <string name="thursday">Чт</string>
+    <string name="friday">Пт</string>
+    <string name="saturday">Сб</string>
+    <string name="sunday">Нд</string>
     <!-- material_name -->
-    <string name="teaching_of_ballad">Teachings of Ballad</string>
-    <string name="teaching_of_diligence">Teachings of Diligence</string>
-    <string name="teaching_of_freedom">Teachings of Freedom</string>
-    <string name="teaching_of_gold">Teachings of Gold</string>
-    <string name="teaching_of_prosperity">Teachings of Prosperity</string>
-    <string name="teaching_of_resistance">Teachings of Resistance</string>
-    <string name="teachings_of_elegance">Teachings of Elegance</string>
-    <string name="teachings_of_light">Teachings of Light</string>
-    <string name="teachings_of_transience">Teachings of Transience</string>
+    <string name="teaching_of_ballad">Вчення про \"Поезію\"</string>
+    <string name="teaching_of_diligence">Вчення про \"Старанність\"</string>
+    <string name="teaching_of_freedom">Вчення про \"Свободу\"</string>
+    <string name="teaching_of_gold">Вчення про \"Золото\"</string>
+    <string name="teaching_of_prosperity">Вчення про \"Процвітання\"</string>
+    <string name="teaching_of_resistance">Вчення про \"Боротьбу\"</string>
+    <string name="teachings_of_elegance">Вчення про \"Витонченість\"</string>
+    <string name="teachings_of_light">Вчення про \"Світло\"</string>
+    <string name="teachings_of_transience">Вчення про \"Тлінність\"</string>
     <!-- add in 20210910 -->
-    <string name="guide_of_freedom">Guide to Freedom</string>
-    <string name="guide_of_gold">Guide to Gold</string>
-    <string name="guide_of_resistance">Guide to Resistance</string>
-    <string name="guide_of_prosperity">Guide to Prosperity</string>
-    <string name="guide_of_ballad">Guide to Ballad</string>
-    <string name="guide_of_diligence">Guide to Diligence</string>
-    <string name="guides_of_elegance">Guide to Elegance</string>
-    <string name="guides_of_transience">Guide to Transience</string>
-    <string name="guides_of_light">Guide to Light</string>
-    <string name="philosophies_of_freedom">Philosophies of Freedom</string>
-    <string name="philosophies_of_gold">Philosophies of Gold</string>
-    <string name="philosophies_of_resistance">Philosophies of Resistance</string>
-    <string name="philosophies_of_prosperity">Philosophies of Prosperity</string>
-    <string name="philosophies_of_ballad">Philosophies of Ballad</string>
-    <string name="philosophies_of_diligence">Philosophies of Diligence</string>
-    <string name="philosophiess_of_elegance">Philosophiess of Elegance</string>
-    <string name="philosophiess_of_transience">Philosophiess of Transience</string>
-    <string name="philosophiess_of_light">Philosophiess of Light</string>
-
+    <string name="guide_of_freedom">Вказівки про \"Свободу\"</string>
+    <string name="guide_of_gold">Вказівки про \"Золото\"</string>
+    <string name="guide_of_resistance">Вказівки про \"Боротьбу\"</string>
+    <string name="guide_of_prosperity">Вказівки про \"Процвітання\"</string>
+    <string name="guide_of_ballad">Вказівки про \"Поезію\"</string>
+    <string name="guide_of_diligence">Вказівки про \"Старанність\"</string>
+    <string name="guides_of_elegance">Вказівки про \"Витонченість\"</string>
+    <string name="guides_of_transience">Вказівки про \"Бренність\"</string>
+    <string name="guides_of_light">Вказівки про \"Світло\"</string>
+    <string name="philosophies_of_freedom">Філософія про \"Свободу\"</string>
+    <string name="philosophies_of_gold">Філософія про \"Золото\"</string>
+    <string name="philosophies_of_resistance">Філософія про \"Боротьбу\"</string>
+    <string name="philosophies_of_prosperity">Філософія про \"Процвітання\"</string>
+    <string name="philosophies_of_ballad">Філософія про \"Поезію\"</string>
+    <string name="philosophies_of_diligence">Філософія про \"Старанність\"</string>
+    <string name="philosophiess_of_elegance">Філософія про \"Витонченість\"</string>
+    <string name="philosophiess_of_transience">Філософія про \"Бренність\"</string>
+    <string name="philosophiess_of_light">Філософія про \"Світло\"</string>
     <!-- base -->
-    <string name="tile_of_decarabians_tower">Tile of Decarabians Tower</string>
-    <string name="luminous_sands_from_guyun">Luminous Sands from guyun</string>
-    <string name="coral_branch_of_a_distant_sea">Coral branch of a distant sea</string>
-    <string name="mist_veiled_lead_elixir">Mist veiled lead elixir</string>
-    <string name="boreal_wolfs_milk_tooth">Boreal wolfs milk tooth</string>
-    <string name="narukamis_wisdom">Narukamis wisdom</string>
-    <string name="grain_of_aerosiderite">Grain of aerosiderite</string>
-    <string name="fetters_of_the_dandelion_gladiator">Fetters of the dandelion gladiator</string>
-    <string name="mask_of_the_wicked_lieutenant">Mask of the wicked lieutenant</string>
-
+    <string name="tile_of_decarabians_tower">Плитка вежі Декарабіана</string>
+    <string name="luminous_sands_from_guyun">Сяйнисті піски з Гу юнь</string>
+    <string name="coral_branch_of_a_distant_sea">Коралове відгалуження далекого моря</string>
+    <string name="mist_veiled_lead_elixir">Свинцевий еліксир, покритий туманом</string>
+    <string name="boreal_wolfs_milk_tooth">Молочний зуб бореального вовка</string>
+    <string name="narukamis_wisdom">Мудрість Нарукамі</string>
+    <string name="grain_of_aerosiderite">Зерно аеросидериту</string>
+    <string name="fetters_of_the_dandelion_gladiator">Кайдани кульбабового гладіатора</string>
+    <string name="mask_of_the_wicked_lieutenant">Маска злого лейтенанта</string>
     <!-- char_name -->
-    <string name="kamisato_ayato">Kamisato Ayato</string>
-    <string name="aloy">Aloy</string>
-    <string name="kujou_sara">Kujou Sara</string>
-    <string name="sangonomiya_kokomi">Sangonomiya Kokomi</string>
-    <string name="raiden_shogun">Raiden Shogun</string>
-    <string name="sayu">Sayu</string>
-    <string name="yoimiya">Yoimiya</string>
-    <string name="kamisato_ayaka">Kamisato Ayaka</string>
-    <string name="kaedehara_kazuha">Kaedehara Kazuha</string>
-    <string name="yanfei">Yanfei</string>
-    <string name="eula">Eula</string>
-    <string name="rosaria">Rosaria</string>
-    <string name="xiao">Xiao</string>
-    <string name="hu_tao">Hu Tao</string>
-    <string name="ganyu">Ganyu</string>
-    <string name="albedo">Albedo</string>
-    <string name="zhongli">Zhongli</string>
-    <string name="xinyan">Xinyan</string>
-    <string name="tartaglia">Tartaglia</string>
-    <string name="diona">Diona</string>
-    <string name="xingqiu">Xingqiu</string>
-    <string name="xiangling">Xiangling</string>
-    <string name="venti">Venti</string>
-    <string name="traveler_anemo">Traveler(Anemo)</string>
-    <string name="traveler_geo">Traveler(Geo)</string>
-    <string name="traveler_electro">Traveler(Electro)</string>
-    <string name="sucrose">Sucrose</string>
-    <string name="razor">Razor</string>
-    <string name="qiqi">Qiqi</string>
-    <string name="noelle">Noelle</string>
-    <string name="ningguang">Ningguang</string>
-    <string name="mona">Mona</string>
-    <string name="lisa">Lisa</string>
-    <string name="klee">Klee</string>
-    <string name="keqing">Keqing</string>
-    <string name="kaeya">Kaeya</string>
-    <string name="jean">Jean</string>
-    <string name="fischl">Fischl</string>
-    <string name="diluc">Diluc</string>
-    <string name="chongyun">Chongyun</string>
-    <string name="bennett">Bennett</string>
-    <string name="beidou">Beidou</string>
-    <string name="barbara">Barbara</string>
-    <string name="amber">Amber</string>
-    <string name="unknown">unknown</string>
-
+    <string name="kamisato_ayato">Камісато Аято</string>
+    <string name="aloy">Елой</string>
+    <string name="kujou_sara">Кудзю Сара</string>
+    <string name="sangonomiya_kokomi">Санґономія Кокомі</string>
+    <string name="raiden_shogun">Райден Шьогун</string>
+    <string name="sayu">Саю</string>
+    <string name="yoimiya">Йоїмія</string>
+    <string name="kamisato_ayaka">Камісато Аяка</string>
+    <string name="kaedehara_kazuha">Каедехара Казуха</string>
+    <string name="yanfei">Яньфей</string>
+    <string name="eula">Еола</string>
+    <string name="rosaria">Розарія</string>
+    <string name="xiao">Сяо</string>
+    <string name="hu_tao">Ху Тао</string>
+    <string name="ganyu">Ґанью</string>
+    <string name="albedo">Альбедо</string>
+    <string name="zhongli">Чжунлі</string>
+    <string name="xinyan">Сіньянь</string>
+    <string name="tartaglia">Тарталья</string>
+    <string name="diona">Діона</string>
+    <string name="xingqiu">Сінцю</string>
+    <string name="xiangling">Сяньлін</string>
+    <string name="venti">Венті</string>
+    <string name="traveler_anemo">Мандрівник(Анемо)</string>
+    <string name="traveler_geo">Мандрівник (Гео)</string>
+    <string name="traveler_electro">Мандрівник(Електро)</string>
+    <string name="sucrose">Сахароза</string>
+    <string name="razor">Рейзор</string>
+    <string name="qiqi">Цици</string>
+    <string name="noelle">Ноель</string>
+    <string name="ningguang">Нінґуан</string>
+    <string name="mona">Мона</string>
+    <string name="lisa">Ліза</string>
+    <string name="klee">Клі</string>
+    <string name="keqing">Кецін</string>
+    <string name="kaeya">Кейя</string>
+    <string name="jean">Джин</string>
+    <string name="fischl">Фішль</string>
+    <string name="diluc">Ділюк</string>
+    <string name="chongyun">Чон’юнь</string>
+    <string name="bennett">Беннетт</string>
+    <string name="beidou">Бейдоу</string>
+    <string name="barbara">Барбара</string>
+    <string name="amber">Ембер</string>
+    <string name="unknown">невідомо</string>
     <!-- New Character in here-->
-    <string name="thoma">Thoma</string>
-    <string name="gorou">Gorou</string>
-    <string name="arataki_itto">Arataki Itto</string>
-    <string name="yae_miko">Yae Miko</string>
-
+    <string name="thoma">Тома</string>
+    <string name="gorou">Ґоро</string>
+    <string name="arataki_itto">Аратакі Ітто</string>
+    <string name="yae_miko">Яе Міко</string>
     <!-- char_info -->
-    <string name="search">Search...</string>
-    <string name="elements">Element</string>
-    <string name="rarity">Rarity</string>
-    <string name="filters">Filters</string>
-    <string name="mondstadt">Mondstadt</string>
-    <string name="liyue">Liyue</string>
-    <string name="inazuma">Inazuma</string>
-    <string name="main_dps">Main</string>
-    <string name="support_dps">Support</string>
-    <string name="utility">Utility</string>
-    <string name="female">Female</string>
-    <string name="male">Male</string>
-    <string name="set_by_player">Set by player</string>
-    <string name="another_world">Another World</string>
-    <string name="district">District</string>
-    <string name="weapon">Weapon</string>
-    <string name="char_role">Role</string>
-    <string name="sex">Sex</string>
-    <string name="birth">Birth</string>
-    <string name="intro">Intro</string>
-    <string name="battle_talent">Battle Talent</string>
-    <string name="noraml_atk">Normal ATK</string>
-    <string name="charged_atk">Charged ATK</string>
-    <string name="plunging_atk">Plunging ATK</string>
-    <string name="element_atk">Elemental Skill</string>
-    <string name="final_atk">Elemental Burst</string>
-    <string name="basic_talent">Passive Talent</string>
-    <string name="asc0_unlock">Utility Passive</string>
-    <string name="asc1_unlock">1st Ascension Passive</string>
-    <string name="asc4_unlock">4th Ascension Passive</string>
-    <string name="sof">Constellation</string>
-    <string name="sof1">Level 1</string>
-    <string name="sof2">Level 2</string>
-    <string name="sof3">Level 3</string>
-    <string name="sof4">Level 4</string>
-    <string name="sof5">Level 5</string>
-    <string name="sof6">Level 6</string>
-    <string name="advice">Advice</string>
-    <string name="team_advice">Team Advice</string>
-    <string name="weapon_advice">Weapon Advice</string>
-    <string name="art_advice">Artifacts Advice</string>
+    <string name="search">Пошук...</string>
+    <string name="elements">Елемент</string>
+    <string name="rarity">Рідкість</string>
+    <string name="filters">Фільтри</string>
+    <string name="mondstadt">Мондштадт</string>
+    <string name="liyue">Ліюе</string>
+    <string name="inazuma">Іназума</string>
+    <string name="main_dps">Головна</string>
+    <string name="support_dps">Підтримка</string>
+    <string name="utility">Корисність</string>
+    <string name="female">Жіноча</string>
+    <string name="male">Чоловіча</string>
+    <string name="set_by_player">Встановлюється гравцем</string>
+    <string name="another_world">Інший світ</string>
+    <string name="district">Округ</string>
+    <string name="weapon">Зброя</string>
+    <string name="char_role">Роль</string>
+    <string name="sex">Стать</string>
+    <string name="birth">Народження</string>
+    <string name="intro">Вступ</string>
+    <string name="battle_talent">Бойовий талант</string>
+    <string name="noraml_atk">Нормальна АТК(Атака)</string>
+    <string name="charged_atk">Заряджена ATK(Атака)</string>
+    <string name="plunging_atk">Занурювальна ATK(Атака)</string>
+    <string name="element_atk">Вміння елементалів</string>
+    <string name="final_atk">Стихійний вибух</string>
+    <string name="basic_talent">Пасивний талант</string>
+    <string name="asc0_unlock">Пасивна утиліта</string>
+    <string name="asc1_unlock">Пасив 1-го Вознесіння</string>
+    <string name="asc4_unlock">Пасив 4-го Вознесіння</string>
+    <string name="sof">Сузір\'я</string>
+    <string name="sof1">Рівень 1</string>
+    <string name="sof2">Рівень 2</string>
+    <string name="sof3">Рівень 3</string>
+    <string name="sof4">Рівень 4</string>
+    <string name="sof5">Рівень 5</string>
+    <string name="sof6">Рівень 6</string>
+    <string name="advice">Порада</string>
+    <string name="team_advice">Поради команді</string>
+    <string name="weapon_advice">Порада щодо зброї</string>
+    <string name="art_advice">Поради щодо артефактів</string>
     <!-- added in 20211001 -->
-    <string name="none_info">There is no relevant information about them at the moment</string>
-    <string name="weapon_stat">"Sub. attr : "</string>
+    <string name="none_info">Наразі про них немає актуальної інформації</string>
+    <string name="weapon_stat">"суб. атрибут : "</string>
     <string name="weapon_stat_atk">"ATK"</string>
     <string name="weapon_stat_DEF">"DEF"</string>
     <string name="weapon_stat_HP">"HP"</string>
     <string name="weapon_stat_atkP">"ATK %"</string>
-    <string name="weapon_stat_CritDMGP">"CRIT DMG %"</string>
-    <string name="weapon_stat_CritRateP">"CRIT Rate %"</string>
-    <string name="weapon_stat_PhyDMGP">"Physical DMG %"</string>
-    <string name="weapon_stat_EnRechP">"Energy Recharge %"</string>
-    <string name="weapon_stat_EleMas">"Elemental Mastery"</string>
+    <string name="weapon_stat_CritDMGP">"Критична шкода%"</string>
+    <string name="weapon_stat_CritRateP">"Імовірність крит. шкоди %"</string>
+    <string name="weapon_stat_PhyDMGP">"Фізична шкода %"</string>
+    <string name="weapon_stat_EnRechP">"Енергетична підзарядка %"</string>
+    <string name="weapon_stat_EleMas">"Майстерність стихій"</string>
     <string name="weapon_stat_DEFP">"DEF %"</string>
     <string name="weapon_stat_HPP">"HP %"</string>
-    <string name="weapon_stat_no">"N/A"</string>
+    <string name="weapon_stat_no">"Н/А"</string>
     <!-- add in 20211018-->
-    <string name="artifact_stat1">1 Piece</string>
-    <string name="artifact_stat2">2 Piece(s)</string>
-    <string name="artifact_stat4">4 Piece(s)</string>
-
+    <string name="artifact_stat1">1 Шматок</string>
+    <string name="artifact_stat2">2 Шматок(и)</string>
+    <string name="artifact_stat4">4 Шматок(и)</string>
     <!-- alarm -->
-    <string name="alarm_t1">Boss</string>
-    <string name="alarm_t2">Resin</string>
-    <string name="alarm_t3">Realm Currency</string>
-    <string name="alarm_t4">Expedition</string>
-    <string name="alarm_t5">Custom</string>
-    <string name="alarm_time1">4hrs</string>
-    <string name="alarm_time2">8hrs</string>
-    <string name="alarm_time3">12hrs</string>
-    <string name="alarm_time4">20hrs</string>
-    <string name="jb_title">[Genshin Spirit] Hi ~ It\'s time to do boss mission!</string>
-    <string name="common_info">Don\'t forget to do it before reset</string>
-    <string name="daily_mission_title">[Genshin Spirit] Hi ~ Have u finished the daily mission yet?</string>
-    <string name="dtbc_title">[Genshin Spirit] Hi ~ Your realm currency has already fulled, remember to claim them ~</string>
-    <string name="ph_title">[Genshin Spirit] Hi ~ the expedition has already finished</string>
-    <string name="ph_info">Let\'s see what he/she found ~</string>
-    <string name="dtbc_info">Ehm... If you don\'t need them, then I will take them away ~</string>
-    <string name="resin_title">[Genshin Spirit] Hi ~ Your resin has already fulled, remember to use them~</string>
-    <string name="edit_title">Edit alarm</string>
-    <string name="edit_type">Type</string>
-    <string name="edit_time">Time</string>
-    <string name="edit_ph_time">Expedition Duration</string>
-    <string name="edit_adeptal_energy">Adeptal Energy</string>
-    <string name="edit_trust_rank">Trust Rank</string>
-    <string name="edit_title_notif">Title</string>
-    <string name="edit_info_notif">Info</string>
-    <string name="edit_cd_25off">25% CD off</string>
-    <string name="edit_use_notif">Use this alarm</string>
-
+    <string name="alarm_t1">Бос</string>
+    <string name="alarm_t2">Смола</string>
+    <string name="alarm_t3">Валюта королівства</string>
+    <string name="alarm_t4">Експедиція</string>
+    <string name="alarm_t5">Користувальницькі</string>
+    <string name="alarm_time1">4 години</string>
+    <string name="alarm_time2">8 годин</string>
+    <string name="alarm_time3">12 годин</string>
+    <string name="alarm_time4">20 годин</string>
+    <string name="jb_title">[Genshin Spirit] Привіт! Настав час виконати місію боса!</string>
+    <string name="common_info">Не забудьте зробити це перед перезавантаженням</string>
+    <string name="daily_mission_title">[Genshin Spirit] Привіт! Ви вже виконали щоденну місію?</string>
+    <string name="dtbc_title">[Genshin Spirit] Привіт ~ Ваша валюта королівства вже заповнена, не забудьте забрати її ~</string>
+    <string name="ph_title">[Genshin Spirit] Привіт ~ експедиція вже завершилась</string>
+    <string name="ph_info">Подивимось, що він/вона знайшов(ла) ~</string>
+    <string name="dtbc_info">Гм... Якщо вони вам не потрібні, то я їх заберу ~</string>
+    <string name="resin_title">[Genshin Spirit] Привіт ~ Ваша смола вже заповнена, не забудьте її використати~</string>
+    <string name="edit_title">Редагування будильника</string>
+    <string name="edit_type">Тип</string>
+    <string name="edit_time">Час</string>
+    <string name="edit_ph_time">Тривалість експедиції</string>
+    <string name="edit_adeptal_energy">Енергія адептів</string>
+    <string name="edit_trust_rank">Рівень довіри</string>
+    <string name="edit_title_notif">Назва</string>
+    <string name="edit_info_notif">Інформація</string>
+    <string name="edit_cd_25off">Знижка 25% часу на експедицію</string>
+    <string name="edit_use_notif">Використовуйте цей будильник</string>
     <!-- server -->
-    <string name="america_ser">America</string>
-    <string name="europe_ser">Europe</string>
-    <string name="asia_ser">Asia</string>
+    <string name="america_ser">Америка</string>
+    <string name="europe_ser">Європа</string>
+    <string name="asia_ser">Азія</string>
     <string name="hk_tw_mo_ser">HK、TW、MO</string>
     <string name="sky_land_ser">天空岛服</string>
     <string name="world_tree">世界树服</string>
-
     <!-- inside ui -->
-    <string name="genshindb_link" translatable="false"><a href="https://github.com/Wolfteam/GenshinDb">★ Shiroi Github</a></string>
-    <string name="genshinhelper_link" translatable="false"><a href="https://github.com/Vocaloid2048/GenshinHelper">★ Genshin Spirit Github</a></string>
-    <string name="genshinhelper_dclink" translatable="false"><a href="https://discord.gg/uXatcbWKv2">★ Genshin Spirit Discord Server</a></string>
-    <string name="genshindb_dclink" translatable="false"><a href="https://discord.com/invite/rztDRXnnDj">★ Shiroi Discord Server</a></string>
-    <string name="press_exit">Press again to exit app</string>
-    <string name="vote_title">Please help for rate this app~</string>
-    <string name="vote_info">If you like Genshin Spirit, please take a moment to help comment~ Your little help will be of great help to me, and it will not take you a lot of time.</string>
-    <string name="vote_help">Help for rate</string>
-    <string name="vote_no">No</string>
-    <string name="vote_later">Later</string>
-    <string name="copied">Copied</string>
-    <string name="pls_restart_app">Please restart app</string>
-
+    <string name="press_exit">Натисніть ще раз, щоб вийти з програми</string>
+    <string name="vote_title">Будь ласка, допоможіть оцінити цей додаток~</string>
+    <string name="vote_info">Якщо Вам подобається Genshin Spirit, будь ласка, знайдіть хвилинку, щоб допомогти прокоментувати ~ Ваша невелика допомога буде дуже корисною для мене, і це не займе у Вас багато часу.</string>
+    <string name="vote_help">Довідка по ставці</string>
+    <string name="vote_no">Ні</string>
+    <string name="vote_later">Згодом</string>
+    <string name="copied">Скопійовано</string>
+    <string name="pls_restart_app">Будь ласка, перезапустіть додаток</string>
     <!-- cal_item_name -->
-    <string name="result">Result</string>
-    <string name="curr_lvl">"Curr Lvl : "</string>
-    <string name="aim_lvl">"Aim Lvl : "</string>
-    <string name="choose_lvl">Choose level</string>
-    <string name="already_dak_po">Already ascension</string>
-    <string name="cal_also">Calculate</string>
-    <string name="delete">Delete</string>
-    <string name="choosed">"Choosed : "</string>
-    <string name="caled_char_weapon_art">Calculated Characters/Weapons/Artifacts</string>
-    <string name="char_lvls">Character level</string>
+    <string name="result">Результат</string>
+    <string name="curr_lvl">"Поточний рівень : "</string>
+    <string name="aim_lvl">"Цільовий рівень : "</string>
+    <string name="choose_lvl">Оберіть рівень</string>
+    <string name="already_dak_po">Вже вознесіння</string>
+    <string name="cal_also">Розрахувати</string>
+    <string name="delete">Видалити</string>
+    <string name="choosed">"Обраний : "</string>
+    <string name="caled_char_weapon_art">Розраховані персонажі/зброя/артефакти</string>
+    <string name="char_lvls">Рівень персонажа</string>
     <!-- added in 20211001 -->
-    <string name="cal_choosed_already">You have already choosed him/her/it !</string>
+    <string name="cal_choosed_already">Ви вже вибрали його/її/це !</string>
     <!-- add in 20211003 -->
-    <string name="cal_crystal">Crystal</string>
-    <string name="cal_boss">Drop from General Boss</string>
-    <string name="cal_week_boss">Drop from Weekly Boss</string>
-    <string name="cal_local">Local Specialty</string>
-    <string name="cal_monster">Drop from Monster</string>
-    <string name="cal_weeklybk1">Drop from Mon,Thur,Sun Domain</string>
-    <string name="cal_weeklybk2">Drop from Tue,Fri,Sun Domain</string>
-    <string name="cal_weeklybk3">Drop from Wed,Sat,Sun Domain</string>
-    <string name="cal_other">Other</string>
+    <string name="cal_crystal">Кристал</string>
+    <string name="cal_boss">Лут з світового босса</string>
+    <string name="cal_week_boss">Випадає з щотижневого боса</string>
+    <string name="cal_local">Місцева спеціалізація</string>
+    <string name="cal_monster">Випадання з Монстра</string>
+    <string name="cal_weeklybk1">Лут з підземелля в Пн, Чт, Нд</string>
+    <string name="cal_weeklybk2">Лут з підземелля в Вт, Пт, Нд</string>
+    <string name="cal_weeklybk3">Лут з підземелля в Ср, Сб, Нд</string>
+    <string name="cal_other">Інше</string>
     <!-- add in 20211025 -->
-    <string name="cal_reset">Reset</string>
-
+    <string name="cal_reset">Перезавантаження</string>
     <!-- Language (Don't translate)-->
-    <string name="zh_hk" translatable="false">繁體中文</string>
-    <string name="en_us" translatable="false">English</string>
-    <string name="ru_ru" translatable="false">Русский</string>
-    <string name="zh_cn" translatable="false">简体中文</string>
-    <string name="ja_jp" translatable="false">日本語</string>
-    <string name="fr_fr" translatable="false">français</string>
-    <string name="uk_ua" translatable="false">українська</string>
-
     <!-- main_page -->
-    <string name="material_force">Material Force</string>
-    <string name="char_asc_mater">Character Ascension Materials</string>
-    <string name="weapon_asc_mater">Weapon Ascension Materials</string>
-    <string name="gaming_tools">Gaming Tools</string>
-    <string name="calculator">Calculator</string>
-    <string name="daily_login">Daily Login</string>
-    <string name="map">Map</string>
-    <string name="alarm">Alarm</string>
-
+    <string name="material_force">Матеріальна сила</string>
+    <string name="char_asc_mater">Матеріали вознесіння персонажів</string>
+    <string name="weapon_asc_mater">Матеріали для вознесіння зброї</string>
+    <string name="gaming_tools">Ігрові інструменти</string>
+    <string name="calculator">Калькулятор</string>
+    <string name="daily_login">Щоденний вхід</string>
+    <string name="map">Мапа</string>
+    <string name="alarm">Тривога</string>
     <!-- setting -->
-    <string name="bg_title">Background Theme</string>
-    <string name="light_theme">Light Theme</string>
-    <string name="dark_theme">Dark Theme</string>
-    <string name="sys_theme">System Default</string>
-    <string name="tv_title">Text Theme</string>
-    <string name="lang_title">Language</string>
-    <string name="other_title">Other</string>
-    <string name="acc_in_server">Located Server</string>
-    <string name="about">About</string>
-    <string name="link">Link</string>
-    <string name="about_title1">Disclaimer</string>
-    <string name="about_info1">This application does not belong to miHoYo Co., Ltd. and has not been approved by it. 原神小幫手(Genshin Spirit) is only an app that provides data developed by fans. The information provided in this app is for reference only. Genshin Spirit will not guarantee the accuracy and completeness of any information contained in it to any degree.</string>
-    <string name="about_title2">Privacy Collection Statement</string>
-    <string name="about_info2">This application will not collect any personal privacy data, may be used to identify and track users and other information. If necessary, the application will only collect the data notified, such as the program crash stack. The above data is only used to repair application vulnerabilities and improve user experience.</string>
-    <string name="about_title3">Resource usage statement</string>
-    <string name="about_info3">This application is developed based on Shiori for Genshin and aims to pay tribute to Shiori for Genshin and its collaborators, but it has not yet been recognized by its collaborators. Some pictures of this application, data are taken from open source projects, and links will be attached below. Therefore, part of the interface and layout of this application is very similar to Shiori for Genshin. However, this application uses Java instead of Dart as the programming language, and it will only work on Android or/and any supporting .apk and .aab file formats. Installation and operation in the device.</string>
-    <string name="about_title4">Project open source statement</string>
-    <string name="about_info4">Since this application is intended to pay tribute to Shiori for Genshin and its collaborators, it will be open sourced on Github. Anyone can view, provide comments, and even collaborate. I also welcome any suggestions and applications for this application. This application will also be available on Google Play. If you want to comment on this project, bugs, new features, etc., you are also welcome to contact by E-mail or Discord (QQ is available for mainland China). Finally, thank you for your understanding and support.</string>
-    <string name="about_title5">Third-Party Distribution and Compilation Statement</string>
-    <string name="about_info5">This project (原神小幫手 Genshin Spirit) does not object to anyone adding functions, debugging, compiling and testing, and using it for learning purposes, but this project does not allow third parties to distribute freely (whether private or public) the unofficial version [Note 1] without written permission from Voc-夜芷冰, and deliberately pretend to be the developer of this project [Note 2]. Voc-夜芷冰 reserves the right to ask individuals/institutions who violate the above conditions to be removed from the shelves after version 3.2.0 (10825).\n[Note 1] The unofficial version includes third-party self-compilation and distribution after downloading the application installation file on the cooperative platform.\n[Note 2] Discord Bot [原神小幫手] has nothing to do with this project (this project was uploaded on Github as early as September 2021, and the official version will be released on Google Play in November 2021)</string>
+    <string name="bg_title">Фонова тема</string>
+    <string name="light_theme">Світла тема</string>
+    <string name="dark_theme">Темна тема</string>
+    <string name="sys_theme">Системна тема</string>
+    <string name="tv_title">Текстова тема</string>
+    <string name="lang_title">Мова</string>
+    <string name="other_title">Інше</string>
+    <string name="acc_in_server">Розташування сервера</string>
+    <string name="about">Про додаток</string>
+    <string name="link">Посилання</string>
+    <string name="about_title1">Застереження</string>
+    <string name="about_info1">Цей додаток не належить miHoYo Co, Ltd. і не був схвалений нею. 原神小幫手 (Genshin Spirit) - це лише додаток, який надає дані, розроблені фанатами. Інформація, надана в цьому додатку, призначена лише для ознайомлення. Genshin Spirit не гарантує точність і повноту будь-якої інформації, що міститься в ньому, в будь-якій мірі.</string>
+    <string name="about_title2">Заява про конфіденційність</string>
+    <string name="about_info2">Ця програма не збирає жодних персональних даних про конфіденційність, може використовуватися для ідентифікації та відстеження користувачів та іншої інформації. У разі необхідності програма збирає лише ті дані, про які повідомляється, наприклад, стек аварійного завершення роботи програми. Ці дані використовуються лише для усунення вразливостей програми та покращення користувацького досвіду.</string>
+    <string name="about_title3">Звіт про використання ресурсів</string>
+    <string name="about_info3">Цей додаток розроблений на основі Shiori for Genshin і має на меті віддати данину поваги Shiori for Genshin та її співавторам, але він ще не визнаний її співавторами. Деякі фотографії цього додатку, дані взяті з проектів з відкритим вихідним кодом, а посилання на них будуть додані нижче. Тому частина інтерфейсу і макет цього додатку дуже схожі на Shiori for Genshin. Однак цей додаток використовує Java замість Dart як мову програмування, і він буде працювати тільки на Android і/або будь-яких підтримуваних форматах файлів .apk і .app. Встановлення та робота в пристрої.</string>
+    <string name="about_title4">Заява про відкритий код проекту</string>
+    <string name="about_info4">Оскільки ця програма призначена для того, щоб віддати належне Shiori for Genshin та її співробітникам, вона буде з відкритим вихідним кодом на Github. Будь-хто може переглядати, надавати коментарі і навіть співпрацювати. Я також вітаю будь-які пропозиції та додатки для цього додатку. Цей додаток також буде доступний на Google Play. Якщо ви хочете прокоментувати цей проект, помилки, нові функції і т.д., ви також можете зв\'язатися з нами електронною поштою або через Discord (QQ доступний для континентального Китаю). Наостанок, дякуємо вам за розуміння та підтримку.</string>
+    <string name="about_title5">Заява про розповсюдження та компіляцію третіми особами</string>
+    <string name="about_info5">Цей проект (原神小幫手 Genshin Spirit) не заперечує проти того, щоб хтось додавав функції, налагоджував, компілював і тестував, а також використовував його в навчальних цілях, але цей проект не дозволяє третім особам вільно поширювати (приватно або публічно) неофіційну версію [Примітка 1] без письмового дозволу від Voc-夜芷冰, а також навмисно видавати себе за розробника цього проекту [Примітка 2]. Voc-夜芷冰 залишає за собою право вимагати від осіб/організацій, які порушують вищезазначені умови, вилучення з полиць після версії 3.2.0 (10825).\n[Примітка 1] Неофіційна версія включає в себе самостійну компіляцію та розповсюдження сторонніми особами після завантаження інсталяційного файлу програми на кооперативній платформі. \n[Примітка 2] Discord Bot [原神小幫手] не має ніякого відношення до цього проекту (цей проект був завантажений на Github ще у вересні 2021 року, а офіційна версія буде випущена в Google Play в листопаді 2021 року)</string>
     <!-- add in 20210918-->
-    <string name="thanks_title">Special Thanks</string>
-    <string name="translator_title">Translator</string>
-    <string name="beta_tester_title">Beta Testers</string>
-    <string name="thanks_intro">Because of your help, Genshin Spirit can be more perfect</string>
+    <string name="thanks_title">Особлива подяка</string>
+    <string name="translator_title">Перекладачам</string>
+    <string name="beta_tester_title">Бета-тестувальникам</string>
+    <string name="thanks_intro">Завдяки вашій допомозі, Genshin Spirit може бути більш досконалим</string>
     <!-- add in 20211016-->
-    <string name="list_grid">List grid</string>
-
+    <string name="list_grid">Сітка списків</string>
     <!-- moy -->
-    <string name="date_jan">Jan</string>
-    <string name="date_feb">Feb</string>
-    <string name="date_mar">Mar</string>
-    <string name="date_apr">Apr</string>
-    <string name="date_may">May</string>
-    <string name="date_jun">Jun</string>
-    <string name="date_jul">Jul</string>
-    <string name="date_aug">Aug</string>
-    <string name="date_sep">Sep</string>
-    <string name="date_oct">Oct</string>
-    <string name="date_nov">Nov</string>
-    <string name="date_dec">Dec</string>
-
+    <string name="date_jan">Січень</string>
+    <string name="date_feb">Лютий</string>
+    <string name="date_mar">Березень</string>
+    <string name="date_apr">Квітень</string>
+    <string name="date_may">Травень</string>
+    <string name="date_jun">Червень</string>
+    <string name="date_jul">Липень</string>
+    <string name="date_aug">Серпень</string>
+    <string name="date_sep">Вересень</string>
+    <string name="date_oct">Жовтень</string>
+    <string name="date_nov">Листопад</string>
+    <string name="date_dec">Грудень</string>
     <!-- dom -->
-    <string name="date_1st">" 1st"</string>
-    <string name="date_2nd">" 2nd"</string>
-    <string name="date_3rd">" 3rd"</string>
-    <string name="date_4th">" 4th"</string>
-    <string name="date_5th">" 5th"</string>
-    <string name="date_6th">" 6th"</string>
-    <string name="date_7th">" 7th"</string>
-    <string name="date_8th">" 8th"</string>
-    <string name="date_9th">" 9th"</string>
-    <string name="date_10th">" 10th"</string>
-    <string name="date_11th">" 11th"</string>
-    <string name="date_12th">" 12th"</string>
-    <string name="date_13th">" 13th"</string>
-    <string name="date_14th">" 14th"</string>
-    <string name="date_15th">" 15th"</string>
-    <string name="date_16th">" 16th"</string>
-    <string name="date_17th">" 17th"</string>
-    <string name="date_18th">" 18th"</string>
-    <string name="date_19th">" 19th"</string>
-    <string name="date_20th">" 20th"</string>
-    <string name="date_21st">" 21st"</string>
-    <string name="date_22nd">" 22nd"</string>
-    <string name="date_23rd">" 23rd"</string>
-    <string name="date_24th">" 24th"</string>
-    <string name="date_25th">" 25th"</string>
-    <string name="date_26th">" 26th"</string>
-    <string name="date_27th">" 27th"</string>
-    <string name="date_28th">" 28th"</string>
-    <string name="date_29th">" 29th"</string>
-    <string name="date_30th">" 30th"</string>
-    <string name="date_31st">" 31st"</string>
-
+    <string name="date_1st">"1-й"</string>
+    <string name="date_2nd">"2-й"</string>
+    <string name="date_3rd">"3-й"</string>
+    <string name="date_4th">"4-й"</string>
+    <string name="date_5th">"5-й"</string>
+    <string name="date_6th">"6-й"</string>
+    <string name="date_7th">"7-й"</string>
+    <string name="date_8th">"8-й"</string>
+    <string name="date_9th">"9-й"</string>
+    <string name="date_10th">"10-й"</string>
+    <string name="date_11th">"11-й"</string>
+    <string name="date_12th">"12-й"</string>
+    <string name="date_13th">"13-й"</string>
+    <string name="date_14th">"14-й"</string>
+    <string name="date_15th">"15-й"</string>
+    <string name="date_16th">"16-й"</string>
+    <string name="date_17th">"17-й"</string>
+    <string name="date_18th">"18-й"</string>
+    <string name="date_19th">"19-й"</string>
+    <string name="date_20th">"20-й"</string>
+    <string name="date_21st">"21-й"</string>
+    <string name="date_22nd">"22-й"</string>
+    <string name="date_23rd">"23-й"</string>
+    <string name="date_24th">"24-й"</string>
+    <string name="date_25th">"25-й"</string>
+    <string name="date_26th">"26-й"</string>
+    <string name="date_27th">"27-й"</string>
+    <string name="date_28th">"28-й"</string>
+    <string name="date_29th">"29-й"</string>
+    <string name="date_30th">"30-й"</string>
+    <string name="date_31st">"31-й"</string>
     <!-- Weapon-Sword -->
-    <string name="amenoma_kageuchi">"Amenoma Kageuchi"</string>
-    <string name="aquila_favonia">"Aquila Favonia"</string>
-    <string name="blackcliff_longsword">"Blackcliff Longsword"</string>
-    <string name="cool_steel">"Cool Steel"</string>
-    <string name="dark_iron_sword">"Dark Iron Sword"</string>
-    <string name="dull_blade">"Dull Blade"</string>
-    <string name="favonius_sword">"Favonius Sword"</string>
-    <string name="festering_desire">"Festering Desire"</string>
-    <string name="fillet_blade">"Fillet Blade"</string>
-    <string name="freedom_sworn">"Freedom-Sworn"</string>
-    <string name="harbinger_of_dawn">"Harbinger of Dawn"</string>
-    <string name="iron_sting">"Iron Sting"</string>
-    <string name="lions_roar">"Lion's Roar"</string>
-    <string name="mistsplitter_reforged">"Mistsplitter Reforged"</string>
-    <string name="primordial_jade_cutter">"Primordial Jade Cutter"</string>
-    <string name="prototype_rancour">"Prototype Rancour"</string>
-    <string name="royal_longsword">"Royal Longsword"</string>
-    <string name="sacrificial_sword">"Sacrificial Sword"</string>
-    <string name="silver_sword">"Silver Sword"</string>
-    <string name="skyrider_sword">"Skyrider Sword"</string>
-    <string name="skyward_blade">"Skyward Blade"</string>
-    <string name="summit_shaper">"Summit Shaper"</string>
-    <string name="sword_of_descension">"Sword of Descension"</string>
-    <string name="the_alley_flash">"The Alley Flash"</string>
-    <string name="the_black_sword">"The Black Sword"</string>
-    <string name="the_flute">"The Flute"</string>
-    <string name="travelers_handy_sword">"Traveler's Handy Sword"</string>
-
+    <string name="amenoma_kageuchi">"Аменома Кагеучі"</string>
+    <string name="aquila_favonia">"Аквіла Фавонія"</string>
+    <string name="blackcliff_longsword">"Довгий меч Блеккліффа"</string>
+    <string name="cool_steel">"Холодна сталь"</string>
+    <string name="dark_iron_sword">"Темний залізний меч"</string>
+    <string name="dull_blade">"Тупий клинок"</string>
+    <string name="favonius_sword">"Меч Фавонія"</string>
+    <string name="festering_desire">"Гнійне бажання"</string>
+    <string name="fillet_blade">"Філейне лезо"</string>
+    <string name="freedom_sworn">"Присягаючи свободою"</string>
+    <string name="harbinger_of_dawn">"Передвісник світанку"</string>
+    <string name="iron_sting">"Залізне жало"</string>
+    <string name="lions_roar">"Левове ревіння"</string>
+    <string name="mistsplitter_reforged">"Відновлений розсіювач туману"</string>
+    <string name="primordial_jade_cutter">"Первісний нефритовий різець"</string>
+    <string name="prototype_rancour">"Прототип Ранкор"</string>
+    <string name="royal_longsword">"Королівський довгий меч"</string>
+    <string name="sacrificial_sword">"Жертовний меч"</string>
+    <string name="silver_sword">"Срібний меч"</string>
+    <string name="skyrider_sword">"Меч Скайрайдера"</string>
+    <string name="skyward_blade">"Небесний клинок"</string>
+    <string name="summit_shaper">"Кромсач піків"</string>
+    <string name="sword_of_descension">"Меч Сходження"</string>
+    <string name="the_alley_flash">"Спалах у темряві"</string>
+    <string name="the_black_sword">"Чорний меч"</string>
+    <string name="the_flute">"Флейта"</string>
+    <string name="travelers_handy_sword">"Зручний меч мандрівника"</string>
     <!-- Weapon-Claymore -->
-    <string name="waster_greatsword">"Waster Greatsword"</string>
-    <string name="old_mercs_pal">"Old Merc's Pal"</string>
-    <string name="bloodtainted_greatsword">"Bloodtainted Greatsword"</string>
-    <string name="debate_club">"Debate Club"</string>
-    <string name="quartz">"Quartz"</string>
-    <string name="ferrous_shadow">"Ferrous Shadow"</string>
-    <string name="skyrider_greatsword">"Skyrider Greatsword"</string>
-    <string name="white_iron_greatsword">"White Iron Greatsword"</string>
-    <string name="blackcliff_slasher">"Blackcliff Slasher"</string>
-    <string name="favonius_greatsword">"Favonius Greatsword"</string>
-    <string name="katsuragikiri_nagamasa">"Katsuragikiri Nagamasa"</string>
-    <string name="lithic_blade">"Lithic Blade"</string>
-    <string name="luxurious_sea_lord">"Luxurious Sea-Lord"</string>
-    <string name="prototype_archaic">"Prototype Archaic"</string>
-    <string name="rainslasher">"Rainslasher"</string>
-    <string name="royal_greatsword">"Royal Greatsword"</string>
-    <string name="sacrificial_greatsword">"Sacrificial Greatsword"</string>
-    <string name="serpent_spine">"Serpent Spine"</string>
-    <string name="snow_tombed_starsilver">"Snow-Tombed Starsilver"</string>
-    <string name="the_bell">"The Bell"</string>
-    <string name="whiteblind">"Whiteblind"</string>
-    <string name="skyward_pride">"Skyward Pride"</string>
-    <string name="song_of_broken_pines">"Song of Broken Pines"</string>
-    <string name="the_unforged">"The Unforged"</string>
-    <string name="wolfs_gravestone">"Wolf's Gravestone"</string>
+    <string name="waster_greatsword">"Дворучний меч богатиря"</string>
+    <string name="old_mercs_pal">"Друг найманця"</string>
+    <string name="bloodtainted_greatsword">"Меч драконячої крові"</string>
+    <string name="debate_club">"Клуб делитантів"</string>
+    <string name="quartz">"Кварц"</string>
+    <string name="ferrous_shadow">"Сталева тінь"</string>
+    <string name="skyrider_greatsword">"Меч небесного вершника"</string>
+    <string name="white_iron_greatsword">"Біле залізо"</string>
+    <string name="blackcliff_slasher">"Чорногорська бритва"</string>
+    <string name="favonius_greatsword">"Дворучний меч Фавонія"</string>
+    <string name="katsuragikiri_nagamasa">"Кацурагікірі Нагамаса"</string>
+    <string name="lithic_blade">"Кам'яний меч"</string>
+    <string name="luxurious_sea_lord">"Розкішний морський лорд"</string>
+    <string name="prototype_archaic">Прототип Архаїчний</string>
+    <string name="rainslasher">"Розбризкувач дощу"</string>
+    <string name="royal_greatsword">"Королівський меч"</string>
+    <string name="sacrificial_greatsword">"Церемоніальний дворучний меч"</string>
+    <string name="serpent_spine">"Зміїний хребет"</string>
+    <string name="snow_tombed_starsilver">"Снігове зоряне срібло"</string>
+    <string name="the_bell">"Меч Дзвін"</string>
+    <string name="whiteblind">"Біла тінь"</string>
+    <string name="skyward_pride">"Небесна велич"</string>
+    <string name="song_of_broken_pines">"Пісня зламаних сосен"</string>
+    <string name="the_unforged">"Некованый"</string>
+    <string name="wolfs_gravestone">"Вовча смерть"</string>
     <!-- add in 20211030 -->
-    <string name="wavebreakers_fin">"Wavebreaker's Fin"</string>
-
+    <string name="wavebreakers_fin">"Ріжучий хвилі плавець"</string>
     <!-- Weapon-Polearm -->
-    <string name="beginners_protector">"Beginner's Protector"</string>
-    <string name="iron_point">"Iron Point"</string>
-    <string name="black_tassel">"Black Tassel"</string>
-    <string name="halberd">"Halberd"</string>
-    <string name="white_tassel">"White Tassel"</string>
-    <string name="blackcliff_pole">"Blackcliff Pole"</string>
-    <string name="crescent_pike">"Crescent Pike"</string>
-    <string name="deathmatch">"Deathmatch"</string>
-    <string name="dragons_bane">"Dragon's Bane"</string>
-    <string name="dragonspine_spear">"Dragonspine Spear"</string>
-    <string name="favonius_lance">"Favonius Lance"</string>
-    <string name="kitain_cross_spear">"Kitain Cross Spear"</string>
-    <string name="lithic_spear">"Lithic Spear"</string>
-    <string name="prototype_starglitter">"Prototype Starglitter"</string>
-    <string name="royal_spear">"Royal Spear"</string>
-    <string name="the_catch">"The Catch"</string>
-    <string name="engulfing_lightning">"Engulfing Lightning"</string>
-    <string name="primordial_jade_winged_spear">"Primordial Jade Winged-Spear"</string>
-    <string name="skyward_spine">"Skyward Spine"</string>
-    <string name="staff_of_homa">"Staff of Homa"</string>
-    <string name="vortex_vanquisher">"Vortex Vanquisher"</string>
+    <string name="beginners_protector">"Захисник початківців"</string>
+    <string name="iron_point">"Залізний наконечник"</string>
+    <string name="black_tassel">"Чорна китиця"</string>
+    <string name="halberd">"Алебарда"</string>
+    <string name="white_tassel">"Біла китиця"</string>
+    <string name="blackcliff_pole">"Чорногорська піка"</string>
+    <string name="crescent_pike">"Півмісячна піка"</string>
+    <string name="deathmatch">"Смертельний бій"</string>
+    <string name="dragons_bane">"Прокляття дракона"</string>
+    <string name="dragonspine_spear">"Спис драконячого хребта"</string>
+    <string name="favonius_lance">"Спис Фавонія"</string>
+    <string name="kitain_cross_spear">"Хрест-спис Китаїн"</string>
+    <string name="lithic_spear">"Кам'яний спис"</string>
+    <string name="prototype_starglitter">"Прототип: Зоряний блиск"</string>
+    <string name="royal_spear">"Королівський спис"</string>
+    <string name="the_catch">"Улов"</string>
+    <string name="engulfing_lightning">"Поглинаюча блискавка"</string>
+    <string name="primordial_jade_winged_spear">"Первісний нефритовий крилатий спис"</string>
+    <string name="skyward_spine">"Небесна вісь"</string>
+    <string name="staff_of_homa">"Посох Хоми"</string>
+    <string name="vortex_vanquisher">"Переможець вихорів"</string>
     <!-- add in 20211030 -->
-    <string name="akuoumaru">"Akuoumaru"</string>
-
+    <string name="akuoumaru">"Акуумару"</string>
     <!-- Weapon-Catalyst -->
-    <string name="apprentices_notes">"Apprentice's Notes"</string>
-    <string name="pocket_grimoire">"Pocket Grimoire"</string>
-    <string name="amber_catalyst">"Amber Catalyst"</string>
-    <string name="emerald_orb">"Emerald Orb"</string>
-    <string name="magic_guide">"Magic Guide"</string>
-    <string name="otherworldly_story">"Otherworldly Story"</string>
-    <string name="thrilling_tales_of_dragon_slayers">"Thrilling Tales of Dragon Slayers"</string>
-    <string name="twin_nephrite">"Twin Nephrite"</string>
-    <string name="blackcliff_agate">"Blackcliff Agate"</string>
-    <string name="dodoco_tales">"Dodoco Tales"</string>
-    <string name="eye_of_perception">"Eye of Perception"</string>
-    <string name="favonius_codex">"Favonius Codex"</string>
-    <string name="frostbearer">"Frostbearer"</string>
-    <string name="hakushin_ring">"Hakushin Ring"</string>
-    <string name="mappa_mare">"Mappa Mare"</string>
-    <string name="prototype_amber">"Prototype Amber"</string>
-    <string name="royal_grimoire">"Royal Grimoire"</string>
-    <string name="sacrificial_fragments">"Sacrificial Fragments"</string>
-    <string name="solar_pearl">"Solar Pearl"</string>
-    <string name="the_widsith">"The Widsith"</string>
-    <string name="wine_and_song">"Wine and Song"</string>
-    <string name="everlasting_moonglow">"Everlasting Moonglow"</string>
-    <string name="lost_prayer_to_the_sacred_winds">"Lost Prayer to the Sacred Winds"</string>
-    <string name="memory_of_dust">"Memory of Dust"</string>
-    <string name="skyward_atlas">"Skyward Atlas"</string>
-
+    <string name="apprentices_notes">"Нотатки учня"</string>
+    <string name="pocket_grimoire">"Кишеньковий гримуар"</string>
+    <string name="amber_catalyst">"Янтарний каталізатор"</string>
+    <string name="emerald_orb">"Смарагдова куля"</string>
+    <string name="magic_guide">"Магічний путівник"</string>
+    <string name="otherworldly_story">"Потойбічна історія"</string>
+    <string name="thrilling_tales_of_dragon_slayers">"Епос про драконоборців"</string>
+    <string name="twin_nephrite">"Парний нефрит"</string>
+    <string name="blackcliff_agate">"Чорногорський агат"</string>
+    <string name="dodoco_tales">"Розповіді Додоко"</string>
+    <string name="eye_of_perception">"Око сприйняття"</string>
+    <string name="favonius_codex">\"Кодекс Фавонія</string>
+    <string name="frostbearer">"Морозоносець"</string>
+    <string name="hakushin_ring">"Кільце Хакусіна"</string>
+    <string name="mappa_mare">"Морська мапа"</string>
+    <string name="prototype_amber">"Прототип Янтар"</string>
+    <string name="royal_grimoire">"Королівський спис"</string>
+    <string name="sacrificial_fragments">"Жертовні фрагменти"</string>
+    <string name="solar_pearl">"Сонячна перлина"</string>
+    <string name="the_widsith">"Пісня мандрівника"</string>
+    <string name="wine_and_song">"Вино та пісня"</string>
+    <string name="everlasting_moonglow">"Вічне сяйво місяця"</string>
+    <string name="lost_prayer_to_the_sacred_winds">"Загублена молитва до священних вітрів"</string>
+    <string name="memory_of_dust">"Пам'ять пилу"</string>
+    <string name="skyward_atlas">"Небесний атлас"</string>
     <!-- Weapon-Bow -->
-    <string name="hunters_bow">"Hunter's Bow"</string>
-    <string name="seasoned_hunters_bow">"Seasoned Hunter's Bow"</string>
-    <string name="ebony_bow">"Ebony Bow"</string>
-    <string name="messenger">"Messenger"</string>
-    <string name="raven_bow">"Raven Bow"</string>
-    <string name="recurve_bow">"Recurve Bow"</string>
-    <string name="sharpshooters_oath">"Sharpshooter's Oath"</string>
-    <string name="slingshot">"Slingshot"</string>
-    <string name="alley_hunter">"Alley Hunter"</string>
-    <string name="blackcliff_warbow">"Blackcliff Warbow"</string>
-    <string name="compound_bow">"Compound Bow"</string>
-    <string name="favonius_warbow">"Favonius Warbow"</string>
-    <string name="hamayumi">"Hamayumi"</string>
-    <string name="mitternachts_waltz">"Mitternachts Waltz"</string>
-    <string name="predator">"Predator"</string>
-    <string name="prototype_crescent">"Prototype Crescent"</string>
-    <string name="royal_bow">"Royal Bow"</string>
-    <string name="rust">"Rust"</string>
-    <string name="sacrificial_bow">"Sacrificial Bow"</string>
-    <string name="the_stringless">"The Stringless"</string>
-    <string name="the_viridescent_hunt">"The Viridescent Hunt"</string>
-    <string name="windblume_ode">"Windblume Ode"</string>
-    <string name="amos_bow">"Amos' Bow"</string>
-    <string name="elegy_for_the_end">"Elegy for the End"</string>
-    <string name="skyward_harp">"Skyward Harp"</string>
-    <string name="thundering_pulse">"Thundering Pulse"</string>
+    <string name="hunters_bow">"Мисливський лук"</string>
+    <string name="seasoned_hunters_bow">"Лук досвідченого мисливця"</string>
+    <string name="ebony_bow">"Ебонітовий лук"</string>
+    <string name="messenger">"Вісник"</string>
+    <string name="raven_bow">"Воронячий лук"</string>
+    <string name="recurve_bow">"Вигнутий лук"</string>
+    <string name="sharpshooters_oath">"Присяга стрільця"</string>
+    <string name="slingshot">"Рогатка"</string>
+    <string name="alley_hunter">"Мисливець у темряві"</string>
+    <string name="blackcliff_warbow">"Чорногорський бойовий лук"</string>
+    <string name="compound_bow">"Блочний  лук"</string>
+    <string name="favonius_warbow">"Бойовий лук Фавонія"</string>
+    <string name="hamayumi">"Хамаюмі"</string>
+    <string name="mitternachts_waltz">"Опівнічний Вальс Нірвани"</string>
+    <string name="predator">"Хижак"</string>
+    <string name="prototype_crescent">"Прототип Півмісяця"</string>
+    <string name="royal_bow">"Королівський лук"</string>
+    <string name="rust">"Ржавый лук"</string>
+    <string name="sacrificial_bow">"Жертовний лук"</string>
+    <string name="the_stringless">"Безструнний"</string>
+    <string name="the_viridescent_hunt">"Зелений лук"</string>
+    <string name="windblume_ode">"Ода анемонії"</string>
+    <string name="amos_bow">"Лук Амоса"</string>
+    <string name="elegy_for_the_end">"Елегія погибелі"</string>
+    <string name="skyward_harp">"Небесна арфа"</string>
+    <string name="thundering_pulse">"Громовий імпульс"</string>
     <!-- add in 20211030 -->
-    <string name="mouuns_moon">"Mouun's Moon"</string>
-
+    <string name="mouuns_moon">"Місяць Мууна"</string>
     <!-- artifacts -->
-    <string name="adventurer">"Adventurer"</string>
-    <string name="archaic_petra">"Archaic Petra"</string>
-    <string name="berserker">"Berserker"</string>
-    <string name="blizzard_strayer">"Blizzard Strayer"</string>
-    <string name="bloodstained_chivalry">"Bloodstained Chivalry"</string>
-    <string name="brave_heart">"Brave Heart"</string>
-    <string name="crimson_witch_of_flames">"Crimson Witch of Flames"</string>
-    <string name="defenders_will">"Defender's Will"</string>
-    <string name="emblem_of_severed_fate">"Emblem of Severed Fate"</string>
-    <string name="gambler">"Gambler"</string>
-    <string name="gladiators_finale">"Gladiator's Finale"</string>
-    <string name="heart_of_depth">"Heart of Depth"</string>
-    <string name="instructor">"Instructor"</string>
-    <string name="lavawalker">"Lavawalker"</string>
-    <string name="lucky_dog">"Lucky Dog"</string>
-    <string name="maiden_beloved">"Maiden Beloved"</string>
-    <string name="martial_artist">"Martial Artist"</string>
-    <string name="noblesse_oblige">"Noblesse Oblige"</string>
-    <string name="pale_flame">"Pale Flame"</string>
-    <string name="prayers_of_destiny">"Prayers of Destiny"</string>
-    <string name="prayers_of_illumination">"Prayers of Illumination"</string>
-    <string name="prayers_of_wisdom">"Prayers of Wisdom"</string>
-    <string name="prayers_of_springtime">"Prayers of Springtime"</string>
-    <string name="resolution_of_sojourner">"Resolution of Sojourner"</string>
-    <string name="retracing_bolide">"Retracing Bolide"</string>
-    <string name="scholar">"Scholar"</string>
-    <string name="shimenawas_reminiscence">"Shimenawa's Reminiscence"</string>
-    <string name="tenacity_of_the_millelith">"Tenacity of the Millelith"</string>
-    <string name="the_exile">"The Exile"</string>
-    <string name="thundering_fury">"Thundering Fury"</string>
-    <string name="thundersoother">"ThunderSoother"</string>
-    <string name="tiny_miracle">"Tiny Miracle"</string>
-    <string name="traveling_doctor">"Traveling Doctor"</string>
-    <string name="viridescent_venerer">"Viridescent Venerer"</string>
-    <string name="wanderers_troupe">"Wanderer's Troupe"</string>
-
+    <string name="adventurer">"Шукач пригод"</string>
+    <string name="archaic_petra">"Архаїчний камінь"</string>
+    <string name="berserker">"Берсеркер"</string>
+    <string name="blizzard_strayer">"Заблукалий у хуртовині"</string>
+    <string name="bloodstained_chivalry">"Лицар крові"</string>
+    <string name="brave_heart">"Хоробре серце"</string>
+    <string name="crimson_witch_of_flames">"Палаюча червона відьма"</string>
+    <string name="defenders_will">"Заповіт захисника"</string>
+    <string name="emblem_of_severed_fate">"Емблема розсіченої долі"</string>
+    <string name="gambler">"Азартний гравець"</string>
+    <string name="gladiators_finale">"Кінець гладіатора"</string>
+    <string name="heart_of_depth">"Серце глибини"</string>
+    <string name="instructor">"Інструктор"</string>
+    <string name="lavawalker">"Той хто ступає по лаві"</string>
+    <string name="lucky_dog">"Щасливчик"</string>
+    <string name="maiden_beloved">"Улюблена юна діва"</string>
+    <string name="martial_artist">"Майстер бойових мистецтв"</string>
+    <string name="noblesse_oblige">"Церемонія стародавньої знаті"</string>
+    <string name="pale_flame">"Блідий вогонь"</string>
+    <string name="prayers_of_destiny">"Шаман води"</string>
+    <string name="prayers_of_illumination">"Шаман вогню"</string>
+    <string name="prayers_of_wisdom">"Шаман блискавки"</string>
+    <string name="prayers_of_springtime">"Шаман льоду"</string>
+    <string name="resolution_of_sojourner">"Рішучість тимчасовця"</string>
+    <string name="retracing_bolide">"Зустрічна комета"</string>
+    <string name="scholar">"Вчений"</string>
+    <string name="shimenawas_reminiscence">"Спогади Сіменави"</string>
+    <string name="tenacity_of_the_millelith">"Стійкість Міллеліту"</string>
+    <string name="the_exile">"Вигнанець"</string>
+    <string name="thundering_fury">"Гучне ревіння люті"</string>
+    <string name="thundersoother">"Грім що утихомирює"</string>
+    <string name="tiny_miracle">"Маленьке диво"</string>
+    <string name="traveling_doctor">"Цілитель"</string>
+    <string name="viridescent_venerer">"Смарагдова тінь"</string>
+    <string name="wanderers_troupe">"Мандрівний ансамбль"</string>
     <!-- add in 20211025 -->
-    <string name="buff">BUFF</string>
-
+    <string name="buff">БАФ</string>
     <!-- add in 20211027 -->
-    <string name="nora_fortis">Nora Fortis</string>
-    <string name="snezhnaya">Snezhnaya</string>
-
+    <string name="nora_fortis">Нора Фортіс</string>
+    <string name="snezhnaya">Сніжна</string>
     <!-- add in 20211028 -->
-    <string name="happy_birthday">"Happy Birthday!"</string>
-
+    <string name="happy_birthday">"З днем народження!"</string>
     <!-- add in 20211127 -->
-    <string name="cinnabar_spindle">"Cinnabar Spindle"</string>
-    <string name="shenhe">"Shenhe"</string>
-    <string name="yun_jin">"Yun Jin"</string>
-    <string name="husk_of_opulent_dreams">"Husk of Opulent Dreams"</string>
-    <string name="ocean_hued_clam">"Ocean-Hued Clam"</string>
-
+    <string name="cinnabar_spindle">"Кіноварне веретено"</string>
+    <string name="shenhe">"Шень Хе"</string>
+    <string name="yun_jin">"Юн Цзінь"</string>
+    <string name="husk_of_opulent_dreams">"Кокон солодких мрій"</string>
+    <string name="ocean_hued_clam">"Молюск морських барв"</string>
     <!-- add in 20211226 && 20220103 -->
-    <string name="weapon_stat_EleDMGP_Electro">Electro DMG Bonus</string>
-    <string name="weapon_stat_EleDMGP_Pyro">Pyro DMG Bonus</string>
-    <string name="weapon_stat_EleDMGP_Hydro">Hydro DMG Bonus</string>
-    <string name="weapon_stat_EleDMGP_Dendor">Dendor DMG Bonus</string>
-    <string name="weapon_stat_EleDMGP_Cryo">Cryo DMG Bonus</string>
-    <string name="weapon_stat_EleDMGP_Anemo">Anemo DMG Bonus</string>
-    <string name="weapon_stat_EleDMGP_Geo">Geo DMG Bonus</string>
-    <string name="weapon_stat_HealingP">Healing Bonus</string>
-    <string name="calamity_queller">Calamity Queller</string>
-    <string name="redhorn_stonethresher">Redhorn Stonethresher</string>
-
+    <string name="weapon_stat_EleDMGP_Electro">Бонус Електро ураження</string>
+    <string name="weapon_stat_EleDMGP_Pyro">Бонус Піро ураження</string>
+    <string name="weapon_stat_EleDMGP_Hydro">Бонус Гідро ураження</string>
+    <string name="weapon_stat_EleDMGP_Dendor">Бонус Дендро ураження</string>
+    <string name="weapon_stat_EleDMGP_Cryo">Бонус Кріо ураження</string>
+    <string name="weapon_stat_EleDMGP_Anemo">Бонус Анемо ураження</string>
+    <string name="weapon_stat_EleDMGP_Geo">Бонус Гео ураження</string>
+    <string name="weapon_stat_HealingP">Бонус лікування</string>
+    <string name="calamity_queller">Заклинатель лих</string>
+    <string name="redhorn_stonethresher">Червонорогий камнеруб</string>
     <!-- add in 20220108 -->
-    <string name="background_setting">Background Setting</string>
-    <string name="background_accept_list">Only accept JPG,JPEG,PNG,GIF</string>
-    <string name="background_press_set">Setting</string>
-    <string name="background_source">Source</string>
-    <string name="background_display">Display</string>
+    <string name="background_setting">Налаштування фону</string>
+    <string name="background_accept_list">Приймати лише JPG, JPEG, PNG, GIF</string>
+    <string name="background_press_set">Налаштування</string>
+    <string name="background_source">Джерело</string>
+    <string name="background_display">Відображати</string>
     <string name="voc">Voc-夜芷冰</string>
-
     <!-- add in 20220110-->
-    <string name="traveler_sex_setting">"What's your traveler's sex ?"</string>
-    <string name="name_start_with_num_err">"Number and special symbols are not allow to use a first character."</string>
-    <string name="cal_create_set">"Create a new Calculate Set"</string>
-    <string name="cal_enter_name">"Please enter a name"</string>
-    <string name="kaguras_verity">Kagura\'s Verity</string>
-    <string name="oathsworn_eye">Oathsworn Eye</string>
-
+    <string name="traveler_sex_setting">"Яка стать вашого мандрівника?"</string>
+    <string name="name_start_with_num_err">"Цифрові та спеціальні символи не допускають використання першого символу."</string>
+    <string name="cal_create_set">"Створити новий набір розрахунків"</string>
+    <string name="cal_enter_name">"Будь ласка, введіть назву"</string>
+    <string name="kaguras_verity">Істина Кагури</string>
+    <string name="oathsworn_eye">Око присяги</string>
     <!-- add in 20220130-->
-    <string name="press_see_details">Press to see more detail</string>
-
+    <string name="press_see_details">Натисніть, щоб побачити деталі</string>
     <!-- add in 20220201-->
-    <string name="update_download_update_curr">Download the update resource files</string>
-    <string name="update_download_update_base">Download all resource files</string>
-    <string name="update_download_advice">It is recommended to download after connecting to Wi-Fi</string>
-    <string name="update_download_base_file_size">All resource files size : </string>
-    <string name="update_download_update_file_size">Update resource files size : </string>
-    <string name="update_download_later">Download Later</string>
-    <string name="update_download_now">Download Now</string>
-    <string name="update_download_check">Check updates</string>
-    <string name="update_download_found_update">Found new update resource files !</string>
-    <string name="update_download_downloading">Downloading...Please wait...</string>
-    <string name="update_download_unzipping">Unzipping...Please wait...</string>
-    <string name="update_download_not_found_update">None of new updates of resource files currently ~</string>
-    <string name="update_download_done">All downloads/ updates were done</string>
-
+    <string name="update_download_update_curr">Завантажити файли оновлень</string>
+    <string name="update_download_update_base">Завантажити всі файли ресурсів</string>
+    <string name="update_download_advice">Рекомендується завантажувати після підключення до Wi-Fi</string>
+    <string name="update_download_base_file_size">Розмір усіх файлів ресурсів: </string>
+    <string name="update_download_update_file_size">Оновити розмір файлів ресурсів: </string>
+    <string name="update_download_later">Завантажити пізніше</string>
+    <string name="update_download_now">Скачати</string>
+    <string name="update_download_check">Перевірка оновлень</string>
+    <string name="update_download_found_update">Знайдено нові файли оновлень!</string>
+    <string name="update_download_downloading">Завантаження...Будь-ласка, зачекайте...</string>
+    <string name="update_download_unzipping">Вилучення...Будь ласка, зачекайте...</string>
+    <string name="update_download_not_found_update">Наразі немає жодних нових оновлень файлів ресурсів ~</string>
+    <string name="update_download_done">Всі завантаження/оновлення завершено</string>
     <!-- add in 20220206-->
-    <string name="pyro_slime">Pyro Slime</string>
-    <string name="large_pyro_slime">Large Pyro Slime</string>
-    <string name="electro_slime">Electro Slime</string>
-    <string name="large_electro_slime">Large Electro Slime</string>
-    <string name="mutant_electro_slime">Mutant Electro Slime</string>
-    <string name="cryo_slime">Cryo Slime</string>
-    <string name="large_cryo_slime">Large Cryo Slime</string>
-    <string name="hydro_slime">Hydro Slime</string>
-    <string name="large_hydro_slime">Large Hydro Slime</string>
-    <string name="anemo_slime">Anemo Slime</string>
-    <string name="large_anemo_slime">Large Anemo Slime</string>
-    <string name="geo_slime">Geo Slime</string>
-    <string name="large_geo_slime">Large Geo Slime</string>
-    <string name="dendro_slime">Dendro Slime</string>
-    <string name="large_dendro_slime">Large Dendro Slime</string>
-    <string name="eye_of_the_storm">Eye of the Storm</string>
-    <string name="pyro_hypostasis">Pyro Hypostasis</string>
-    <string name="electro_hypostasis">Electro Hypostasis</string>
-    <string name="cryo_hypostasis">Cryo Hypostasis</string>
-    <string name="hydro_hypostasis">Hydro Hypostasis</string>
-    <string name="anemo_hypostasis">Anemo Hypostasis</string>
-    <string name="geo_hypostasis">Geo Hypostasis</string>
-    <string name="oceanid">Oceanid</string>
-    <string name="hydro_specter">Hydro Specter</string>
-    <string name="geo_specter">Geo Specter</string>
-    <string name="anemo_specter">Anemo Specter</string>
-    <string name="cryo_specter">Cryo Specter</string>
-    <string name="electro_specter">Electro Specter</string>
-    <string name="pyro_specter">Pyro Specter</string>
-    <string name="thunder_manifestation">Thunder Manifestation</string>
-    <string name="hilichurl">Hilichurl</string>
-    <string name="hilichurl_fighter">Hilichurl Fighter</string>
-    <string name="wooden_shield_hilichurl_guard">Wooden Shield Hilichurl Guard</string>
-    <string name="hilichurl_shooter">Hilichurl Shooter</string>
-    <string name="pyro_hilichurl_shooter">Pyro Hilichurl Shooter</string>
-    <string name="hilichurl_grenadier">Hilichurl Grenadier</string>
-    <string name="hilichurl_berserker">Hilichurl Berserker</string>
-    <string name="cryo_hilichurl_shooter">Cryo Hilichurl Shooter</string>
-    <string name="electro_hilichurl_shooter">Electro Hilichurl Shooter</string>
-    <string name="rock_shield_hilichurl_guard">Rock Shield Hilichurl Guard</string>
-    <string name="cryo_hilichurl_grenadier">Cryo Hilichurl Grenadier</string>
-    <string name="ice_shield_hilichurl_guard">Ice Shield Hilichurl Guard</string>
-    <string name="unusual_hilichurl">Unusual Hilichurl</string>
-    <string name="electro_hilichurl_grenadier">Electro Hilichurl Grenadier</string>
-    <string name="wooden_shieldwall_mitachurl">Wooden Shieldwall Mitachurl</string>
-    <string name="blazing_axe_mitachurl">Blazing Axe Mitachurl</string>
-    <string name="rock_shieldwall_mitachurl">Rock Shieldwall Mitachurl</string>
-    <string name="frostarm_lawachurl">Frostarm Lawachurl</string>
-    <string name="stonehide_lawachurl">Stonehide Lawachurl</string>
+    <string name="pyro_slime">Піро Слайм</string>
+    <string name="large_pyro_slime">Великий Піро Слайм</string>
+    <string name="electro_slime">Електро Слайм</string>
+    <string name="large_electro_slime">Великий Електро Слайм</string>
+    <string name="mutant_electro_slime">Мутант Електро Слайм</string>
+    <string name="cryo_slime">Кріо Слайм</string>
+    <string name="large_cryo_slime">Великий Кріо Слайм</string>
+    <string name="hydro_slime">Гідро Слайм</string>
+    <string name="large_hydro_slime">Великий Гідро Слайм</string>
+    <string name="anemo_slime">Анемо Слиз </string>
+    <string name="large_anemo_slime">Великий Слиз Анемо</string>
+    <string name="geo_slime">Гео Слайм</string>
+    <string name="large_geo_slime">Великий Гео Слайм</string>
+    <string name="dendro_slime">Дендро Слайм</string>
+    <string name="large_dendro_slime">Великий Слайм Дендро</string>
+    <string name="eye_of_the_storm">Око шторму</string>
+    <string name="pyro_hypostasis">Піро гіпостазис</string>
+    <string name="electro_hypostasis">Електро гіпостазис</string>
+    <string name="cryo_hypostasis">Кріо гіпостазис</string>
+    <string name="hydro_hypostasis">Гідро гіпостазис</string>
+    <string name="anemo_hypostasis">Анемо гіпостазис</string>
+    <string name="geo_hypostasis">Гео гіпостазис</string>
+    <string name="oceanid">Океанід</string>
+    <string name="hydro_specter">Гідро примара</string>
+    <string name="geo_specter">Гео примара</string>
+    <string name="anemo_specter">Анемо примара</string>
+    <string name="cryo_specter">Кріо примара</string>
+    <string name="electro_specter">Електро примара</string>
+    <string name="pyro_specter">Піро примара</string>
+    <string name="thunder_manifestation">Маніфест грому</string>
+    <string name="hilichurl">Хілічурл</string>
+    <string name="hilichurl_fighter">Хілічурл боєць</string>
+    <string name="wooden_shield_hilichurl_guard">Хілічурл із дерев\'яним щитом</string>
+    <string name="hilichurl_shooter">Хілічурл стрілець</string>
+    <string name="pyro_hilichurl_shooter">Хілічурл піро-стрілець</string>
+    <string name="hilichurl_grenadier">Хілічурл-гренадер</string>
+    <string name="hilichurl_berserker">Хілічурл-берсерк</string>
+    <string name="cryo_hilichurl_shooter">Хіллічурл кріо-стірлець</string>
+    <string name="electro_hilichurl_shooter">Хіллічурл електро-стрілець</string>
+    <string name="rock_shield_hilichurl_guard">Хілічурл із кам\'яним щитом</string>
+    <string name="cryo_hilichurl_grenadier">Кріо хілічурл-гренадер</string>
+    <string name="ice_shield_hilichurl_guard">Хілічурл із крижаним щитом</string>
+    <string name="unusual_hilichurl">Незвичайний Хілічурл</string>
+    <string name="electro_hilichurl_grenadier">Електро хілічурл-гренадер</string>
+    <string name="wooden_shieldwall_mitachurl">Щитоносець Мітачурл</string>
+    <string name="blazing_axe_mitachurl">Мітачурл з вогненною сокирою</string>
+    <string name="rock_shieldwall_mitachurl">Кам\'яний Щитоносець Мітачурл</string>
+    <string name="frostarm_lawachurl">Лавачурл з інієвим панцирем</string>
+    <string name="stonehide_lawachurl">Лавачурл із кам\'яним панциром</string>
     <string name="thunderhelm_lawachurl">Thunderhelm Lawachurl</string>
-    <string name="ice_shieldwall_mitachurl">Ice Shieldwall Mitachurl</string>
+    <string name="ice_shieldwall_mitachurl">Крижаний Щитоносець Мітачурл</string>
     <string name="crackling_axe_mitachurl">Crackling Axe Mitachurl</string>
     <string name="hydro_samachurl">Hydro Samachurl</string>
     <string name="dendro_samachurl">Dendro Samachurl</string>
@@ -774,7 +730,6 @@
     <string name="maguu_kenki_galloping_frost">Maguu Kenki: Galloping Frost</string>
     <string name="maguu_kenki_mask_of_terror">Maguu Kenki: Mask of Terror</string>
     <string name="the_great_snowboar_king">The Great Snowboar King</string>
-
     <!-- add in 20220209-->
     <string name="element_reaction">Element Reaction</string>
     <string name="buff_normal_1_hit">1-Hit DMG</string>
@@ -784,21 +739,17 @@
     <string name="buff_normal_5_hit">5-Hit DMG</string>
     <string name="buff_normal_6_hit">6-Hit DMG</string>
     <string name="buff_normal_shoot">Aimed Shot</string>
-
     <string name="buff_charged_shoot">Fully-Charged Aimed Shot</string>
     <string name="buff_charged_dmg">Charged Attack DMG</string>
     <string name="buff_charged_spinning_dmg">Charged Attack Spinning DMG</string>
     <string name="buff_charged_final_dmg">Charged Attack Final DMG</string>
-
     <string name="buff_plunge_dmg">Plunge DMG</string>
     <string name="buff_low_plunge_dmg">Low Plunge DMG</string>
     <string name="buff_high_plunge_dmg">High Plunge DMG</string>
-
     <string name="buff_uncrit_dmg">UNCRIT DMG</string>
     <string name="buff_crited_dmg">CRITED DMG</string>
     <string name="buff_grade">Grade : </string>
     <string name="buff_upgrade_times">Upgrade Times : </string>
-
     <!-- add in 20220215-->
     <string name="skill_dmg">Skill DMG</string>
     <string name="transient_blossom_dmg">Transient Blossom DMG</string>
@@ -938,33 +889,20 @@
     <string name="pyronado_dmg">Pyronado DMG</string>
     <string name="sword_rain_dmg">Sword Rain DMG</string>
     <string name="aurous_blaze_explosion_dmg">Aurous Blaze Explosion DMG</string>
-
     <!-- add in 20220219-->
     <string name="sesshou_sakura_dmg_level_1">Sesshou Sakura DMG: Level 1</string>
     <string name="sesshou_sakura_dmg_level_2">Sesshou Sakura DMG: Level 2</string>
     <string name="sesshou_sakura_dmg_level_3">Sesshou Sakura DMG: Level 3</string>
     <string name="sesshou_sakura_dmg_level_4">Sesshou Sakura DMG: Level 4</string>
     <string name="tenko_thunderbolt_dmg">Tenko Thunderbolt DMG</string>
-
     <string name="name_used">This name is already in use, please enter another name.</string>
     <string name="alds_helper_title">Algorithms and Data Summarizing</string>
-
-    <string name="shiroi_link" translatable="false"><a href="https://github.com/Wolfteam/Shiori">★ Shiroi for Genshin </a></string>
-    <string name="honey_impact_link" translatable="false"><a href="https://genshin.honeyhunterworld.com/">★ Honey Impact</a></string>
-    <string name="bwiki_link" translatable="false"><a href="https://wiki.biligame.com/ys">★ Bilibili - 原神WIKI</a></string>
-    <string name="wiki_4399_link" translatable="false"><a href="http://news.4399.com/yssy/">★ 4399 - 原神攻略</a></string>
-    <string name="fandom_link" translatable="false"><a href="https://genshin-impact.fandom.com/wiki/">★ Fandom - Genshin Impact Wiki</a></string>
     <string name="these_is_rss_source">"These are the source of Genshin Spirit's information, data and images."</string>
     <string name="press_open_link">"Press to open the website"</string>
     <string name="developer">Deveoloper</string>
-    <string name="genshin_cal_link" translatable="false"><a href="https://play.google.com/store/apps/details?id=com.dfsly.genshin">★ Genshin Calculator By dfsly</a></string>
-
     <string name="buff_cal_thx">✧ Special thanks to dfsly\n✧ Who allow continuation Genshin Calculator as inline function</string>
     <string name="buff_calcluator">Buff Calculator</string>
     <string name="ui_design">UI Design</string>
-
-    <string name="mode" translatable="false">Day</string>
-
     <!-- add in 20220304 -->
     <string name="rectangle">Rectangle</string>
     <string name="square">Square</string>
@@ -974,7 +912,6 @@
     <string name="goblet">Goblet of Eonothem :</string>
     <string name="main_entry">Main Entry :</string>
     <string name="sub_entry">Sub Entry :</string>
-
     <!-- add in 20220329 -->
     <string name="haran_geppaku_futsu">Haran Geppaku Futsu</string>
     <string name="echoes_of_an_offering">Echoes of an Offering</string>
@@ -983,12 +920,11 @@
     <string name="yelan">Yelan</string>
     <string name="advance_stat">Adv. Stat</string>
     <string name="card">Card</string>
-
     <!-- add in 20220419 -->
     <string name="element_Electro">Electro</string>
     <string name="element_Pyro">Pyro</string>
     <string name="element_Hydro">Hydro</string>
-    <string name="element_Dendor">Dendro</string>
+    <string name="element_Dendor">Dendor</string>
     <string name="element_Cryo">Cryo</string>
     <string name="element_Anemo">Anemo</string>
     <string name="element_Geo">Geo</string>
@@ -1002,7 +938,6 @@
     <string name="title_activity_characters_info_scroll2048">Characters_Info_Scroll_2048</string>
     <string name="tab_text_1">Tab 1</string>
     <string name="tab_text_2">Tab 2</string>
-
     <!-- add in 20220423 -->
     <string name="obtain_no">N/A</string>
     <string name="obtain_forge_mission_nmdbj">Forge(The Farmer\'s Treasure)</string>
@@ -1031,14 +966,12 @@
     <string name="obtain_npc_dcdyhw">NPC shop, Inazuma Fishing Association</string>
     <string name="obtain_chesr_ly">Chest in Liyue</string>
     <string name="obtain_chest_gwk">Chest in Guyun Stone Forest</string>
-
     <!-- add in 20220512 -->
     <string name="ui_2048_name">Game</string>
     <string name="ui_siptik_name">Material</string>
     <string name="ui_voc_name">Classic</string>
     <string name="shikanoin_heizou">Shikanoin Heizou</string>
     <string name="detail">Detail</string>
-
     <!-- add in 20220521 -->
     <string name="release_state">Release State</string>
     <string name="released">Released</string>
@@ -1054,7 +987,6 @@
     <string name="aqua_simulacra">Aqua Simulacra</string>
     <string name="kagotsurube_isshin">Kagotsurube Isshin</string>
     <string name="fading_twilight">Fading Twilight</string>
-
     <!-- add in 20220529 -->
     <string name="tut_part0_1">"Hi, I'm Voc-夜芷冰, the developer of Genshin Spirit, and I'm your guide of this tutorial."</string>
     <string name="tut_part0_2">"First, please let me have a little introduction of Genshin Spirit. "</string>
@@ -1079,7 +1011,6 @@
     <string name="tut_part5_3">"If you have any questions or problems, you may directly find me in Discord"</string>
     <string name="tut_part5_4">"The invite link of our offical Discord Server has already put in the 'About' part in setting page ~"</string>
     <string name="tut_part5_5">"See ya around in Discord ~"</string>
-
     <!-- add in 20220714 -->
     <string name="sumeru">Sumeru</string>
     <string name="fontaine">Fontaine</string>
@@ -1109,7 +1040,6 @@
     <string name="rukkhashava_mushrooms">Rukkhashava Mushrooms</string>
     <string name="deepwood_memories">Deepwood Memories</string>
     <string name="gilded_dreams">Gilded Dreams</string>
-
     <!-- add in 20220823 -->
     <string name="guides_of_admonition">Guide of Admonition</string>
     <string name="guides_of_ingenuity">Guide of Ingenuity</string>
@@ -1125,7 +1055,6 @@
     <string name="copper_talisman_of_the_forest_dew">Copper Talisman of the Forest Dew</string>
     <string name="oasis_gardens_reminiscence">Oasis Garden’s Reminiscence</string>
     <string name="echo_of_scorching_might">Echo of Scorching Might</string>
-
     <!-- add in 20220923 -->
     <string name="nilou">Nilou</string>
     <string name="cyno">Cyno</string>
@@ -1136,7 +1065,6 @@
     <string name="missive_windspear">Missive Windspear</string>
     <string name="staff_of_the_scarlet_sands">Staff of the Scarlet Sands</string>
     <string name="wandering_evenstar">Wandering Evenstar</string>
-
     <!-- add in 20221001 -->
     <string name="nahida">Nahida</string>
     <string name="layla">Layla</string>
@@ -1152,7 +1080,6 @@
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
     <string name="app_widget_description">This is an app widget description</string>
-
     <!-- add in 20221102-->
     <string name="puppet_strings">Puppet Strings</string>
     <string name="mirror_of_mushin">Mirror of Mushin</string>
@@ -1180,7 +1107,6 @@
     <string name="desert_pavilion_chronicle">Desert Pavilion Chronicle</string>
     <string name="yaoyao">Yaoyao</string>
     <string name="alhaitham">Alhaitham</string>
-
     <!-- add in 20221213 -->
     <string name="tcg_ganyu">"Ganyu"</string>
     <string name="tcg_kaeya">"Kaeya"</string>
@@ -1356,7 +1282,6 @@
     <string name="polearm">Polearm</string>
     <string name="claymore">Claymore</string>
     <string name="passive_atk">Passive Skill</string>
-
     <!-- add in 20221228 -->
     <string name="tcg_keyword_anemo">Anemo</string>
     <string name="tcg_keyword_anemodmg">Anemo DMG</string>
@@ -1395,17 +1320,10 @@
     <string name="tcg_keyword_shield">Shield</string>
     <string name="tcg_keyword_unalignedelement">Unaligned Element</string>
     <string name="tcg_keyword_usages">Usage(s)</string>
-    
     <!--add in 20230118-->
     <string name="light_of_foliar_incision">Light of Foliar Incision</string>
     <string name="tcg_klee">Klee</string>
     <string name="tcg_beidou">Beidou</string>
     <string name="tcg_lightning_storm">Lightning Storm</string>
     <string name="tcg_pounding_surprise">Pounding Surprise</string>
-
-    <!--add in 20230215-->
-    <string name="setting_support_ukraine">Support Ukraine !</string>
-
-
 </resources>
-
