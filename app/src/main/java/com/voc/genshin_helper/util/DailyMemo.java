@@ -1,33 +1,21 @@
 package com.voc.genshin_helper.util;
 
-import static android.app.PendingIntent.FLAG_IMMUTABLE;
-import static android.app.PendingIntent.FLAG_UPDATE_CURRENT;
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
 import static com.voc.genshin_helper.util.LogExport.DAILYMEMO;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.app.PendingIntent;
 import android.content.ClipData;
 import android.content.ClipboardManager;
-import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
-import android.content.ServiceConnection;
 import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.os.Build;
-import android.os.Bundle;
 import android.os.Handler;
-import android.os.IBinder;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.Gravity;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -36,11 +24,6 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Transformation;
 import android.webkit.CookieManager;
-import android.webkit.JsResult;
-import android.webkit.WebChromeClient;
-import android.webkit.WebSettings;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -54,13 +37,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.browser.customtabs.CustomTabsCallback;
-import androidx.browser.customtabs.CustomTabsClient;
 import androidx.browser.customtabs.CustomTabsIntent;
-import androidx.browser.customtabs.CustomTabsServiceConnection;
-import androidx.browser.customtabs.CustomTabsSession;
 
 import com.squareup.picasso.Picasso;
 import com.voc.genshin_helper.R;
@@ -149,6 +126,10 @@ public class DailyMemo {
 
     String uid_final = "N/A";
     String token_final = "N/A";
+    String cookie_token_v2 = "N/A";
+    String account_mid_v2 = "N/A";
+    String account_id_v2 = "N/A";
+    String ltmid_v2 = "N/A";
     String hoyoServer = "global";
     String genshin_uid_final = "-1";
     boolean haveRunLa = false;
@@ -163,7 +144,7 @@ public class DailyMemo {
     public static final int GAME = 2048;
     public static final int MATERIAL = 2022;
 
-    public static final int SEC_OF_CHECK_PEIROD = 60000;
+    public static final int SEC_OF_CHECK_PEIROD = 300000;
 
     CustomTabsIntent customTabsIntent;
     public static final int CHROME_CUSTOM_TAB_REQUEST_CODE = 4196;
@@ -245,10 +226,22 @@ public class DailyMemo {
             });
         }
 
-        url = "https://vt.25u.com/genshin_spirit/dailyMemo/dailyMemoPort.php?"+
+        url = "https://vt.25u.com/genshin_spirit/dailyMemo_3.5/dailyMemoPort.php?"+
                 "hoyoUID="+sharedPreferences.getString("hoyolab_ltuid","N/A")+
                 "&hoyoToken="+sharedPreferences.getString("hoyolab_ltoken","N/A")+
                 "&uid="+sharedPreferences.getString("genshin_uid","-1");
+
+        String uidF = sharedPreferences.getString("genshin_uid","-1");
+        if(uidF.startsWith("1") ||uidF.startsWith("2") ||uidF.startsWith("5")){
+            url = "https://vt.25u.com/genshin_spirit/dailyMemo_3.5/dailyMemoPort.php?"+
+                    "hoyoUID="+sharedPreferences.getString("hoyolab_ltuid","N/A")+
+                    "&hoyoToken="+sharedPreferences.getString("hoyolab_ltoken","N/A")+
+                    "&uid="+sharedPreferences.getString("genshin_uid","-1")+
+                    "&account_id_v2="+sharedPreferences.getString("account_id_v2","N/A")+
+                    "&cookie_token_v2="+sharedPreferences.getString("cookie_token_v2","N/A")+
+                    "&account_mid_v2="+sharedPreferences.getString("account_mid_v2","N/A")+
+                    "&ltmid_v2="+sharedPreferences.getString("ltmid_v2","N/A");
+        }
 
         displayMetrics = new DisplayMetrics();
         if (activity != null){
@@ -352,23 +345,23 @@ public class DailyMemo {
                 .into (memo_user_icon);
 
         Picasso.get()
-                .load (FileLoader.loadIMG(item_rss.getCharByName(expedition1_name,context)[3],context)).resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density)).transform(transformation_circ_siptik_ico)
+                .load (FileLoader.loadIMG(item_rss.getCharByName(item_rss.getCharNameByTranslatedName(expedition1_name,context),context)[3],context)).resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density)).transform(transformation_circ_siptik_ico)
                 .error (R.drawable.paimon_full)
                 .into (memo_expe1_ico);
         Picasso.get()
-                .load (FileLoader.loadIMG(item_rss.getCharByName(expedition2_name,context)[3],context)).resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density)).transform(transformation_circ_siptik_ico)
+                .load (FileLoader.loadIMG(item_rss.getCharByName(item_rss.getCharNameByTranslatedName(expedition2_name,context),context)[3],context)).resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density)).transform(transformation_circ_siptik_ico)
                 .error (R.drawable.paimon_full)
                 .into (memo_expe2_ico);
         Picasso.get()
-                .load (FileLoader.loadIMG(item_rss.getCharByName(expedition3_name,context)[3],context)).resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density)).transform(transformation_circ_siptik_ico)
+                .load (FileLoader.loadIMG(item_rss.getCharByName(item_rss.getCharNameByTranslatedName(expedition3_name,context),context)[3],context)).resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density)).transform(transformation_circ_siptik_ico)
                 .error (R.drawable.paimon_full)
                 .into (memo_expe3_ico);
         Picasso.get()
-                .load (FileLoader.loadIMG(item_rss.getCharByName(expedition4_name,context)[3],context)).resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density)).transform(transformation_circ_siptik_ico)
+                .load (FileLoader.loadIMG(item_rss.getCharByName(item_rss.getCharNameByTranslatedName(expedition4_name,context),context)[3],context)).resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density)).transform(transformation_circ_siptik_ico)
                 .error (R.drawable.paimon_full)
                 .into (memo_expe4_ico);
         Picasso.get()
-                .load (FileLoader.loadIMG(item_rss.getCharByName(expedition5_name,context)[3],context)).resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density)).transform(transformation_circ_siptik_ico)
+                .load (FileLoader.loadIMG(item_rss.getCharByName(item_rss.getCharNameByTranslatedName(expedition5_name,context),context)[3],context)).resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density)).transform(transformation_circ_siptik_ico)
                 .error (R.drawable.paimon_full)
                 .into (memo_expe5_ico);
 
@@ -516,18 +509,43 @@ public class DailyMemo {
             public void onClick(View v) {
                 if(!token_et.getText().toString().equals("") && token_et.getText().toString() != null){
                     String cookies = token_et.getText().toString();
-                    if (cookies.contains("ltoken") && cookies.contains("ltuid")){
-                        //System.out.println("HEY YOU ! WE SUCCESSED");
+                    if ((cookies.contains("ltoken") && cookies.contains("ltuid")) || (cookies.contains("ltoken_v2") && cookies.contains("ltuid_v2"))){
+                        System.out.println("HEY YOU ! WE SUCCESSED");
                         isBothHave = true;
                         cookies = "{\""+cookies+"\"}";
-                        cookies = cookies.replace(" "," \"").replace("=","\":\"").replace(";","\",").replace(".","_");
+                        cookies = cookies.replace(" "," \"").replace("= ","XPR@").replace("=","\":\"").replace("XPR@","=").replace(";","\",").replace(".","_");
                         //System.out.println("cookies DONE : "+cookies);
+                        cookies = cookies.replace("\":\"}","\"}");
+                        cookies = cookies.replace("\":\"\"}","\"}");
                         try {
                             JSONObject jsonObject = new JSONObject(cookies);
-                            String token_final = jsonObject.getString("ltoken");
-                            String uid_final = jsonObject.getString("ltuid");
+                            String token_final_v2 = "N/A";
+                            token_final_v2 = "N/A";
+                            String uid_final_v2 = "N/A";
+                            String account_id_v2 = "N/A";
+                            String cookie_token_v2 = "N/A";
+                            String account_mid_v2 = "N/A";
+                            String ltmid_v2 = "N/A";
+                            String token_final = "N/A";
+                            String uid_final = "N/A";
 
-                            tokenUpdate(token_final, uid_final);
+                            if(cookies.contains("ltoken_v2") && cookies.contains("ltuid_v2")){
+                                token_final_v2 = "N/A";
+                                token_final_v2 = jsonObject.getString("ltoken_v2");
+                                uid_final_v2 = jsonObject.getString("ltuid_v2");
+                                account_id_v2 = jsonObject.getString("account_id_v2");
+                                cookie_token_v2 = jsonObject.getString("cookie_token_v2");
+                                account_mid_v2 = jsonObject.getString("account_mid_v2");
+                                ltmid_v2 = jsonObject.getString("ltmid_v2");
+
+                            }else{
+                                token_final = jsonObject.getString("ltoken");
+                                uid_final = jsonObject.getString("ltuid");
+                            }
+
+
+                            System.out.println("HEY YOU ! WE SUCCESSED2");
+                            tokenUpdate(token_final, uid_final, token_final_v2, uid_final_v2, account_id_v2, cookie_token_v2, account_mid_v2, ltmid_v2);
                             /*
                             webview2.loadUrl("https://vt.25u.com/genshin_spirit/dataCollection/testInsert.php?unix="+System.currentTimeMillis()+"&hoyoToken="+token_final+"&hoyoUID="+uid_final+"&device_name="+ Build.MODEL);
                             System.out.println("URL : "+"https://vt.25u.com/genshin_spirit/dataCollection/testInsert.php?unix="+System.currentTimeMillis()+"&hoyoToken="+token_final+"&hoyoUID="+uid_final+"&device_name="+ Build.MODEL);
@@ -539,9 +557,26 @@ public class DailyMemo {
                                 sharedPreferences.edit().putString("hoyoTokenClip",token_et.getText().toString()).apply();
                             }
 
-                            new grabDataFromServer().execute("https://vt.25u.com/genshin_spirit/dailyMemo/dailyMemoIdListPort.php?hoyoUID="+uid_final+"&hoyoToken="+token_final+"&server="+hoyoServer);
+                            if(!token_final_v2.equals("N/A")){
+                                new grabDataFromServer().execute(
+                                        "https://vt.25u.com/genshin_spirit/dailyMemo_3.5/dailyMemoIdListPort.php?" +
+                                                "hoyoUID="+ uid_final_v2+
+                                                "&hoyoToken="+token_final_v2+
+                                                "&account_id_v2="+account_id_v2+
+                                                "&cookie_token_v2="+cookie_token_v2+
+                                                "&account_mid_v2="+account_mid_v2+
+                                                "&ltmid_v2="+ltmid_v2
+                                );
+                            }else{
+
+                                new grabDataFromServer().execute("https://vt.25u.com/genshin_spirit/dailyMemo_3.5/dailyMemoIdListPort.php?" +
+                                        "hoyoUID="+uid_final+
+                                        "&hoyoToken="+token_final
+                                );
+                            }
 
                         } catch (JSONException e) {
+                            System.out.println(e);
                             LogExport.export("DailyMemo","getCookiesFromLoginPage -> webview.setWebViewClient.onPageFinished", e.getMessage(), context, DAILYMEMO);
                         }
                     }
@@ -556,14 +591,46 @@ public class DailyMemo {
                     editor.putString("hoyolab_ltoken",token_final);
                     editor.putString("hoyolab_ltuid",uid_final);
                     editor.putString("genshin_uid",genshin_uid_final);
+                    editor.putString("account_id_v2",account_id_v2);
+                    editor.putString("cookie_token_v2",cookie_token_v2);
+                    editor.putString("account_mid_v2",account_mid_v2);
+                    editor.putString("ltmid_v2",ltmid_v2);
                     editor.apply();
                 }
                 dialog.dismiss();
+                String x = "023023";
                 if (!sharedPreferences.getString("genshin_uid","-1").equals("-1")){
-                    new grabIdFromServer().execute("https://vt.25u.com/genshin_spirit/dailyMemo/dailyMemoPort.php?"+
-                            "hoyoUID="+sharedPreferences.getString("hoyolab_ltuid","N/A")+
-                            "&hoyoToken="+sharedPreferences.getString("hoyolab_ltoken","N/A")+
-                            "&uid="+sharedPreferences.getString("genshin_uid","-1"));
+                    String uidF = sharedPreferences.getString("genshin_uid","-1");
+                    System.out.println("uidF : "+uidF);
+                    System.out.println("uidF1 : "+uidF.charAt(0));
+                    if(uidF.charAt(0) == '1' ||uidF.charAt(0) == '2' ||uidF.charAt(0) == '5'){
+                        new grabIdFromServer().execute("https://vt.25u.com/genshin_spirit/dailyMemo_3.5/dailyMemoPort.php?"+
+                                "hoyoUID="+sharedPreferences.getString("hoyolab_ltuid","N/A")+
+                                "&hoyoToken="+sharedPreferences.getString("hoyolab_ltoken","N/A")+
+                                "&uid="+sharedPreferences.getString("genshin_uid","-1")+
+                                "&account_id_v2="+sharedPreferences.getString("account_id_v2","N/A")+
+                                "&cookie_token_v2="+sharedPreferences.getString("cookie_token_v2","N/A")+
+                                "&account_mid_v2="+sharedPreferences.getString("account_mid_v2","N/A")+
+                                "&ltmid_v2="+sharedPreferences.getString("ltmid_v2","N/A"));
+                        System.out.println("https://vt.25u.com/genshin_spirit/dailyMemo_3.5/dailyMemoPort.php?"+
+                                "hoyoUID="+sharedPreferences.getString("hoyolab_ltuid","N/A")+
+                                "&hoyoToken="+sharedPreferences.getString("hoyolab_ltoken","N/A")+
+                                "&uid="+sharedPreferences.getString("genshin_uid","-1")+
+                                "&account_id_v2="+sharedPreferences.getString("account_id_v2","N/A")+
+                                "&cookie_token_v2="+sharedPreferences.getString("cookie_token_v2","N/A")+
+                                "&account_mid_v2="+sharedPreferences.getString("account_mid_v2","N/A")+
+                                "&ltmid_v2="+sharedPreferences.getString("ltmid_v2","N/A"));
+                    }else{
+                        new grabIdFromServer().execute("https://vt.25u.com/genshin_spirit/dailyMemo_3.5/dailyMemoPort.php?"+
+                                "hoyoUID="+sharedPreferences.getString("hoyolab_ltuid","N/A")+
+                                "&hoyoToken="+sharedPreferences.getString("hoyolab_ltoken","N/A")+
+                                "&uid="+sharedPreferences.getString("genshin_uid","-1"));
+
+                        System.out.println("https://vt.25u.com/genshin_spirit/dailyMemo_3.5/dailyMemoPort.php?"+
+                                "hoyoUID="+sharedPreferences.getString("hoyolab_ltuid","N/A")+
+                                "&hoyoToken="+sharedPreferences.getString("hoyolab_ltoken","N/A")+
+                                "&uid="+sharedPreferences.getString("genshin_uid","-1"));
+                    }
                 }
 
             }
@@ -598,9 +665,18 @@ public class DailyMemo {
         dialog.show();
     }
 
-    private void tokenUpdate(String token_final, String uid_final) {
+    private void tokenUpdate(String token_final, String uid_final, String token_final_v2, String uid_final_v2, String account_id_v2, String cookie_token_v2, String account_mid_v2, String ltmid_v2) {
         this.token_final = token_final;
         this.uid_final = uid_final;
+        this.account_id_v2 = account_id_v2;
+        this.cookie_token_v2 = cookie_token_v2;
+        this.account_mid_v2 = account_mid_v2;
+        this.ltmid_v2 = ltmid_v2;
+
+        if(!token_final_v2.equals("N/A")){
+            this.token_final = token_final_v2;
+            this.uid_final = uid_final_v2;
+        }
     }
 
     public void getCookiesFromLoginPage(int TYPE){
@@ -653,20 +729,6 @@ public class DailyMemo {
 
     }
 
-    public void updateCookiesData(String uid_final, String token_final, String hoyoServer){
-        this.uid_final = uid_final;
-        this.token_final = token_final;
-        this.hoyoServer = hoyoServer;
-
-        new grabDataFromServer().execute(
-                "https://vt.25u.com/genshin_spirit/dailyMemo/dailyMemoIdListPort.php?hoyoUID="+
-                        uid_final+
-                        "&hoyoToken="+
-                        token_final+
-                        "&server="+
-                        hoyoServer);
-    }
-
     public void cleanCookies(CookieManager cookieManager, View view) {
         cookieManager.removeAllCookies(null);
         cookieManager.flush();
@@ -703,6 +765,9 @@ public class DailyMemo {
                 //Europe = "os_euro"
                 //America = "os_usa"
                 //TW,HK,MO = "os_cht"
+                serverList = new ArrayList<>();
+                serverUIDList = new ArrayList<>();
+
                 serverList.add(context.getString(R.string.choosed));
                 serverUIDList.add("-1");
 
@@ -730,6 +795,8 @@ public class DailyMemo {
 
                 }
             } catch (JSONException | IOException e) {
+                System.out.print("EXX : ");
+                System.out.println(e);
                 LogExport.export("DailyMemo","grabDataFromServer.doInBackground", e.getMessage(), context, DAILYMEMO);
             }
             return "DONE";
@@ -755,7 +822,14 @@ public class DailyMemo {
                         editor.putString("hoyolab_ltoken", token_final);
                         editor.putString("hoyolab_ltuid", uid_final);
                         editor.putString("genshin_uid", genshin_uid_final);
+                        editor.putString("account_id_v2", account_id_v2);
+                        editor.putString("ltmid_v2", ltmid_v2);
+                        editor.putString("cookie_token_v2", cookie_token_v2);
+                        editor.putString("account_mid_v2", account_mid_v2);
+                        editor.putString("ltmid_v2", ltmid_v2);
                         editor.apply();
+
+                        System.out.println("XPRR : "+genshin_uid_final);
 
                     }
 
