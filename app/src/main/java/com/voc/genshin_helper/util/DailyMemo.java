@@ -16,6 +16,7 @@ import android.os.AsyncTask;
 import android.os.Handler;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -24,6 +25,11 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Transformation;
 import android.webkit.CookieManager;
+import android.webkit.JsResult;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -698,32 +704,99 @@ public class DailyMemo {
         customTabsIntent = builder.build();
          */
 
+
         if (TYPE == 1){
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://act.hoyolab.com/app/community-game-records-sea/index.html#/ys"));
-            activity.startActivity(intent);
-            //customTabsIntent.intent.setData(Uri.parse("https://act.hoyolab.com/app/community-game-records-sea/index.html#/ys"));
-            //activity.startActivityForResult(customTabsIntent.intent, CHROME_CUSTOM_TAB_REQUEST_CODE);
-            //customTabsIntent.launchUrl(context, Uri.parse("https://act.hoyolab.com/app/community-game-records-sea/index.html#/ys"));
+            Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+            View viewX = View.inflate(context, R.layout.fragment_web, null);
+            DisplayMetrics displayMetrics = new DisplayMetrics();
+            activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+
+            WebView webview = viewX.findViewById(R.id.webView);
+            ImageView back_btn = viewX.findViewById(R.id.back_btn);
+
+            WebSettings webSettings = webview.getSettings();
+            webSettings.setJavaScriptEnabled(true);
+            webSettings.setSupportMultipleWindows(true);
+            webSettings.setJavaScriptCanOpenWindowsAutomatically(false);
+            webSettings.setDomStorageEnabled(true);
+
+
+            webview.loadUrl("https://act.hoyolab.com/app/community-game-records-sea/index.html#/ys");
             hoyoServer = "global";
+            back_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    CookieManager cookieManager = CookieManager.getInstance();
+                    String cookies = cookieManager.getCookie("https://act.hoyolab.com/app/community-game-records-sea/index.html#/ys");
+                    Toast.makeText(context, "Please wait for 10s", Toast.LENGTH_SHORT).show();
+
+                    System.out.println("cookies BASE : "+cookies);
+                    if (cookies == null) return;
+                    if (cookies.contains("ltoken") && cookies.contains("ltuid")){
+
+                        //System.out.println("HEY YOU ! WE SUCCESSED");
+                        isBothHave = true;
+                        cookies = "{\""+cookies+"\"}";
+                        cookies = cookies.replace(" "," \"").replace("=","\":\"").replace(";","\",").replace(".","_");
+                        //System.out.println("cookies DONE : "+cookies);
+                        try {
+                            JSONObject jsonObject = new JSONObject(cookies);
+                            token_final = jsonObject.getString("ltoken");
+                            uid_final = jsonObject.getString("ltuid");
+
+                            new grabDataFromServer().execute("https://vt.25u.com/genshin_spirit/dailyMemo_3.5/dailyMemoIdListPort.php?" +
+                                    "hoyoUID="+uid_final+
+                                    "&hoyoToken="+token_final
+                            );
+                        } catch (JSONException e) {
+                            LogExport.export("DailyMemo","getCookiesFromLoginPage -> webview.setWebViewClient.onPageFinished", e.getMessage(), context, DAILYMEMO);
+                        }
+                    }
+
+                    dialog.dismiss();
+                }
+            });
+
+            haveRunLa = false;
+            isBothHave = false;
+
+            Window dialogWindowX = activity.getWindow();
+            dialogWindowX.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            // 2O48 DESIGN
+            dialogWindowX.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            dialogWindowX.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+            dialogWindowX.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
+
+            /** Method of dialog */
+            dialog.setContentView(viewX);
+            Window dialogWindow = dialog.getWindow();
+            WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+            // 2O48 DESIGN
+            dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+            dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
+
+            lp.width = MATCH_PARENT;
+            lp.height = MATCH_PARENT;
+            lp.gravity = Gravity.CENTER;
+            dialogWindow.setAttributes(lp);
+            dialog.show();
         }else if(TYPE == 2){
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://bbs.mihoyo.com/ys"));
-            activity.startActivity(intent);
-            //customTabsIntent.intent.setData(Uri.parse("https://bbs.mihoyo.com/ys/"));
-            //activity.startActivityForResult(customTabsIntent.intent, CHROME_CUSTOM_TAB_REQUEST_CODE);
-            //customTabsIntent.launchUrl(context, Uri.parse("https://bbs.mihoyo.com/ys/"));
+            ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+            ClipData clip = ClipData.newPlainText("JS_CODE", "Xjavascript:document.cookie");
+            clipboard.setPrimaryClip(clip);
+            CustomToast.toast(context, activity, "Paste the script to the login-page, delete the 'X', and copy all the data ~");
+
             hoyoServer = "mainland";
+            Intent intent =  new Intent(Intent.ACTION_VIEW, Uri.parse("https://bbs.mihoyo.com/ys"));
+            activity.startActivity(intent);
         }else if(TYPE == 3){
             ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
             ClipData clip = ClipData.newPlainText("JS_CODE", "Xjavascript:document.cookie");
             clipboard.setPrimaryClip(clip);
-            CustomToast.toast(context, activity, "Paste the script to the browser, delete the 'X', and copy all the data ~");
+            CustomToast.toast(context, activity, "Paste the script to the login-page, delete the 'X', and copy all the data ~");
 
-            Intent intent;
-            if(hoyoServer.equals("global")){
-                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://act.hoyolab.com/app/community-game-records-sea/index.html#/ys"));
-            }else{
-                intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://bbs.mihoyo.com/ys"));
-            }
+            hoyoServer = "global";
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://act.hoyolab.com/app/community-game-records-sea/index.html#/ys"));
             activity.startActivity(intent);
         }
 
