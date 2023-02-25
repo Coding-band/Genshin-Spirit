@@ -1519,22 +1519,6 @@ public class Desk2048 extends AppCompatActivity {
             }
         });
 
-        supportUkraine = view.findViewById(R.id.support_ukraine);
-        boolean isSupportUkraine = sharedPreferences.getBoolean("supportUkraine",false);
-        supportUkraine.setChecked(isSupportUkraine);
-        supportUkraine.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(supportUkraine.isChecked() == false){
-                    editor.putBoolean("supportUkraine",false);
-                    editor.apply();
-                }else if(supportUkraine.isChecked() == true){
-                    editor.putBoolean("supportUkraine",true);
-                    editor.apply();
-                }
-            }
-        });
-
         // Resource Download
         Button bg_download_base = view.findViewById(R.id.bg_download_base);
         Button bg_download_update = view.findViewById(R.id.bg_download_update);

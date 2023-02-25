@@ -1359,6 +1359,10 @@
     <string name="tcg_beidou">北斗</string>
     <string name="tcg_lightning_storm">霹靂連霄</string>
     <string name="tcg_pounding_surprise">砰砰禮物</string>
+    <string name="dehya">迪希雅</string>
+    <string name="mika">米卡</string>
+    <string name="beacon_of_the_reed_sea">葦海信標</string>
+    <string name="mailed_flower">飾鐵之花</string>
 
 
 </resources>

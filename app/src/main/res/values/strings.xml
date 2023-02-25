@@ -1404,7 +1404,13 @@
     <string name="tcg_pounding_surprise">Pounding Surprise</string>
 
     <!--add in 20230215-->
-    <string name="setting_support_ukraine">Support Ukraine !</string>
+    <string name="setting_support_ukraine" translatable="false">Support Ukraine !</string>
+
+    <!--add in 20230225-->
+    <string name="dehya">Dehya</string>
+    <string name="mika">Mika</string>
+    <string name="beacon_of_the_reed_sea">Beacon of the Reed Sea</string>
+    <string name="mailed_flower">Mailed Flower</string>
 
 
 </resources>

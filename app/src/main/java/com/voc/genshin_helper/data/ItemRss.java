@@ -38,11 +38,11 @@ public class ItemRss {
             "Wanderer","Thoma","Diona","Rosaria",
             "Alhaitham","Beidou","Sangonomiya Kokomi","Bennett",
             "Qiqi","Yaoyao","Shenhe","Jean","Noelle","Kamisato Ayato",
-            "Aloy","Xiao","Yelan","Diluc",
+            "Aloy","Dehya","Xiao","Yelan","Diluc",
             "Candace","Collei","Gorou","Yun Jin","Fischl",
             "Arataki Itto","Lisa","Venti","Yoimiya","Cyno","Raiden Shogun","Yae Miko","Kuki Shinobu",
             "Barbara","Kujou Sara","Hu Tao","Voc-夜芷冰","Tartaglia","Shikanoin Heizou","Klee","Yanfei",
-            "Amber","Faruzan","Ningguang","Mona",
+            "Amber","Mika","Faruzan","Ningguang","Mona",
             "Diona","Razor","Albedo","Kamisato Ayaka",
             "Xingqiu","Xinyan","Sayu","Eula","Nahida","Kaedehara Kazuha",
             "Xiangling","Keqing","Sucrose","Kaeya",
@@ -51,11 +51,11 @@ public class ItemRss {
             3,9,18,24,
             11,14,22,29,
             3,6,10,14,21,26,
-            4,17,20,30,
+            4,7,17,20,30,
             3,8,18,21,27,
             1,6,9,21,23,26,27,28,
             5,14,15,19,20,24,27,28,
-            10,20,26,31,
+            10,11,20,26,31,
             7,9,13,28,
             9,16,19,25,27,29,
             2,20,26,30,
@@ -64,11 +64,11 @@ public class ItemRss {
             0,0,0,0,
             1,1,1,1,
             2,2,2,2,2,2,
-            3,3,3,3,
+            3,3,3,3,3,
             4,4,4,4,4,
             5,5,5,5,5,5,5,5,
             6,6,6,6,6,6,6,6,
-            7,7,7,7,
+            7,7,7,7,7,
             8,8,8,8,
             9,9,9,9,9,9,
             10,10,10,10,
@@ -714,7 +714,9 @@ public class ItemRss {
             case "Tulaytullah's Remembrance" : return new String[] {context.getString(R.string.tulaytullahs_remembrance),"/drawable/tulaytullahs_remembrance.png"};
             //add in 20230118
             case "Light of Foliar Incision" : return new String[] {context.getString(R.string.light_of_foliar_incision),"/drawable/light_of_foliar_incision.png"};
-
+            //add in 20230225
+            case "Mailed Flower" : return new String[] {context.getString(R.string.mailed_flower),"/drawable/mailed_flower.png"};
+            case "Beacon of the Reed Sea" : return new String[] {context.getString(R.string.beacon_of_the_reed_sea),"/drawable/beacon_of_the_reed_sea.png"};
 
             default :
                 System.out.println("WEAPON+ NAME ERROR : "+str);
@@ -892,6 +894,9 @@ public class ItemRss {
             case "Tulaytullah's Remembrance" : return new String[] {context.getString(R.string.tulaytullahs_remembrance),"/drawable/tulaytullahs_remembrance_gacha.png"};
             //add in 20230118
             case "Light of Foliar Incision" : return new String[] {context.getString(R.string.light_of_foliar_incision),"/drawable/light_of_foliar_incision_gacha.png"};
+            //add in 20230225
+            case "Mailed Flower" : return new String[] {context.getString(R.string.mailed_flower),"/drawable/mailed_flower_gacha.png"};
+            case "Beacon of the Reed Sea" : return new String[] {context.getString(R.string.beacon_of_the_reed_sea),"/drawable/beacon_of_the_reed_sea_gacha.png"};
 
 
             default :
@@ -1071,6 +1076,9 @@ public class ItemRss {
             case "tulaytullahs_remembrance" : return "Tulaytullah's Remembrance";
             //add in 20230118
             case "light_of_foliar_incision" : return "Light of Foliar Incision";
+            //add in 20230225
+            case "mailed_flower" : return "Mailed Flower";
+            case "beacon_of_the_reed_sea" : return "Beacon of the Reed Sea";
 
             default: return str;
         }
@@ -1604,6 +1612,8 @@ public class ItemRss {
                 case "Keqing": return new String[]{"/drawable/keqing_suit1_gacha_splash.png", context.getString(R.string.keqing), "/drawable/keqing_suit1_gacha_splash.png", "/drawable/keqing_suit1_ico.png", "/drawable/keqing_card.png"};
                 case "Diluc": return new String[]{"/drawable/diluc_suit1_gacha_splash.png", context.getString(R.string.diluc), "/drawable/diluc_suit1_gacha_splash.png", "/drawable/diluc_suit1_ico.png", "/drawable/diluc_card.png"};
                 case "Fischl": return new String[]{"/drawable/fischl_suit1_gacha_splash.png", context.getString(R.string.fischl), "/drawable/fischl_suit1_gacha_splash.png", "/drawable/fischl_suit1_ico.png", "/drawable/fischl_card.png"};
+                case "Kamisato Ayaka": return new String[]{"/drawable/kamisato_ayaka_suit1_gacha_splash.png", context.getString(R.string.kamisato_ayaka), "/drawable/kamisato_ayaka_suit1_gacha_splash.png", "/drawable/kamisato_ayaka_suit1_ico.png", "/drawable/kamisato_ayaka_card.png"};
+                case "Lisa": return new String[]{"/drawable/lisa_suit1_gacha_splash.png", context.getString(R.string.lisa), "/drawable/lisa_suit1_gacha_splash.png", "/drawable/lisa_suit1_ico.png", "/drawable/lisa_card.png"};
                 default: return getCharByName_BASE(name, context);
             }
         }else{
@@ -1613,6 +1623,9 @@ public class ItemRss {
 
     public String[] getCharByName_BASE(String name, Context context){
         switch (name) {
+            case "Dehya": return new String[]{"/drawable/dehya_full.png", context.getString(R.string.dehya), "/drawable/dehya_gacha_splash.png", "/drawable/dehya_ico.png", "/drawable/dehya_card.png"};
+            case "Mika": return new String[]{"/drawable/mika_full.png", context.getString(R.string.mika), "/drawable/mika_gacha_splash.png", "/drawable/mika_ico.png", "/drawable/mika_card.png"};
+
             case "Alhaitham": return new String[]{"/drawable/alhaitham_full.png", context.getString(R.string.alhaitham), "/drawable/alhaitham_gacha_splash.png", "/drawable/alhaitham_ico.png", "/drawable/alhaitham_card.png"};
             case "Yaoyao": return new String[]{"/drawable/yaoyao_full.png", context.getString(R.string.yaoyao), "/drawable/yaoyao_gacha_splash.png", "/drawable/yaoyao_ico.png", "/drawable/yaoyao_card.png"};
 
@@ -1794,6 +1807,8 @@ public class ItemRss {
         else if(name.equals("Wanderer") || name.equals("流浪者") || name.equals("流浪者") || name.equals("放浪者") || name.equals("Странник")){ return "Wanderer";}
         else if(name.equals("Yaoyao") || name.equals("瑤瑤") || name.equals("瑶瑶") || name.equals("ヨォーヨ") || name.equals("Яо Яо")){ return "Yaoyao";}
         else if(name.equals("Alhaitham") || name.equals("艾爾海森") || name.equals("艾尔海森") || name.equals("アルハイゼン") || name.equals("Аль-Хайтам")){ return "Alhaitham";}
+        else if(name.equals("Dehya") || name.equals("迪希雅") || name.equals("迪希雅") || name.equals("ディシア") || name.equals("Дэхья")){ return "Dehya";}
+        else if(name.equals("Mika") || name.equals("米卡") || name.equals("米卡") || name.equals("ミカ") || name.equals("Мика")){ return "Mika";}
 
         else if(name.equals("Traveler-Anemo") || name.equals("旅行者(風)") || name.equals("旅行者(风)") || name.equals("旅人 (風)") || name.equals("Путешественник(Анемо)")){ return "Traveler-Anemo";}
         else if(name.equals("Traveler-Electro") || name.equals("旅行者(岩)") || name.equals("旅行者(岩)") || name.equals("旅人 (岩)") || name.equals("Путешественник(Гео)")){ return "Traveler-Electro";}
@@ -2302,7 +2317,13 @@ public class ItemRss {
                 return "/drawable/turbid_prism.png";
             case "輝光稜晶":
                 return "/drawable/radiant_prism.png";
-
+            //add in 20230225
+            case "殘毀的橫脊":
+                return "/drawable/desiccated_shell.png";
+            case "密固的橫脊":
+                return "/drawable/sturdy_shell.png";
+            case "鍥紋的橫脊":
+                return "/drawable/marked_shell.png";
 
             /** T-Book*/
             case "「自由」的教導":

@@ -1214,19 +1214,6 @@
                 android:visibility="gone" />
 
 
-            <Switch
-                android:id="@+id/support_ukraine"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginRight="8dp"
-                android:fontFamily="@font/genshin_font"
-                android:text="@string/setting_support_ukraine"
-                android:textColor="@color/tv_color"
-                android:thumbTint="@color/tv_anti_color_2048"
-                android:trackTint="@color/tv_anti_color_2048" />
-
             <TextView
                 android:id="@+id/textView33"
                 android:layout_width="match_parent"

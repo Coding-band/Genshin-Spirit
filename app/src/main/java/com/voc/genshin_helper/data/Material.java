@@ -197,6 +197,8 @@ public class Material {
     public ArrayList<Integer> 	混沌錨栓	 = new ArrayList<Integer>(Collections.nCopies(3, 0));
     //add in 20220924
     public ArrayList<Integer> 	輝光稜晶	 = new ArrayList<Integer>(Collections.nCopies(3, 0));
+    //add in 20220924
+    public ArrayList<Integer> 	鍥紋的橫脊	 = new ArrayList<Integer>(Collections.nCopies(3, 0));
 
     //-----------↑Method↑-----------↓Return↓-----------\\
 
@@ -368,6 +370,7 @@ public class Material {
                 "失活菌核","休眠菌核","茁壯菌核",
                 "混沌容器","混沌模組","混沌錨栓",
                 "破缺稜晶","混濁稜晶","輝光稜晶",
+                "殘毀的橫脊","密固的橫脊","鍥紋的橫脊",
 
         };
     }
@@ -399,7 +402,8 @@ public class Material {
                 幽邃刻像.get(0),幽邃刻像.get(1),幽邃刻像.get(2),
                 茁壯菌核.get(0),茁壯菌核.get(1),茁壯菌核.get(2),
                 混沌錨栓.get(0),混沌錨栓.get(1),混沌錨栓.get(2),
-                輝光稜晶.get(0),輝光稜晶.get(1),輝光稜晶.get(2)
+                輝光稜晶.get(0),輝光稜晶.get(1),輝光稜晶.get(2),
+                鍥紋的橫脊.get(0),鍥紋的橫脊.get(1),鍥紋的橫脊.get(2)
         };
     }
     public int[] commonRareList (){
@@ -801,6 +805,8 @@ public class Material {
             case "茁壯菌核": addCountIntoVar(茁壯菌核, temp_count, "COPY2"); break;
             case "混沌錨栓": addCountIntoVar(混沌錨栓, temp_count, "COPY2"); break;
             case "輝光稜晶": addCountIntoVar(輝光稜晶, temp_count, "COPY2"); break;
+            //add in 20230225
+            case "鍥紋的橫脊": addCountIntoVar(鍥紋的橫脊, temp_count, "COPY2"); break;
         }
 
 
@@ -953,6 +959,7 @@ public class Material {
             case "茁壯菌核" : return new String[]{"失活菌核","休眠菌核","茁壯菌核"};
             case "混沌錨栓" : return new String[]{"混沌容器","混沌模組","混沌錨栓"};
             case "輝光稜晶" : return new String[]{"破缺稜晶","混濁稜晶","輝光稜晶"};
+            case "鍥紋的橫脊" : return new String[]{"殘毀的橫脊","密固的橫脊","鍥紋的橫脊"};
             default: return new String[]{"N/A","N/A","N/A"};
         }
     }
