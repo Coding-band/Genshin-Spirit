@@ -34,8 +34,9 @@ public class ItemRss {
     // INCLUDED 3.2 CHAR. => 20221210
     // INCLUDED 3.3 CHAR. => 20221210
     // INCLUDED 3.4 CHAR. => 20230117
+    // INCLUDED 3.5 CHAR. => 20230225
     public String[] charBirthName = {
-            "Wanderer","Thoma","Diona","Rosaria",
+            "Wanderer","Thoma","Diona","Rosaria","朝霧冰瀬",
             "Alhaitham","Beidou","Sangonomiya Kokomi","Bennett",
             "Qiqi","Yaoyao","Shenhe","Jean","Noelle","Kamisato Ayato",
             "Aloy","Dehya","Xiao","Yelan","Diluc",
@@ -48,7 +49,7 @@ public class ItemRss {
             "Xiangling","Keqing","Sucrose","Kaeya",
             "Ganyu","Nilou","Layla","Dori","Tighnari","Zhongli"};
     public int[] charBirthDay = {
-            3,9,18,24,
+            3,9,18,24,26,
             11,14,22,29,
             3,6,10,14,21,26,
             4,7,17,20,30,
@@ -1195,6 +1196,7 @@ public class ItemRss {
         }
     }
 
+    // Not continue to use anymore
     public String[] getTCGByName(String name, Context context){
         switch (name){
             case "Barbara" : return new String[]{"/anim/tcg_anim_barbara.gif", context.getString(R.string.tcg_barbara)};
@@ -1403,6 +1405,16 @@ public class ItemRss {
             case "Beidou" : return new String[]{"/drawable/tcg_beidou.png", context.getString(R.string.tcg_beidou)};
             case "Lightning Storm" : return new String[]{"/drawable/tcg_lightning_storm.png", context.getString(R.string.tcg_lightning_storm)};
             case "Pounding Surprise" : return new String[]{"/drawable/tcg_pounding_surprise.png", context.getString(R.string.tcg_pounding_surprise)};
+            //add in 20230226
+            case "Eula" : return new String[]{"/drawable/tcg_eula.png", context.getString(R.string.tcg_eula)};
+            case "Sangonomiya Kokomi" : return new String[]{"/drawable/tcg_sangonomiya_kokomi.png", context.getString(R.string.tcg_sangonomiya_kokomi)};
+            case "Kujou Sara" : return new String[]{"/drawable/tcg_kujou_sara.png", context.getString(R.string.tcg_kujou_sara)};
+            case "Wellspring of War-Lust" : return new String[]{"/drawable/tcg_wellspring_of_war_lust.png", context.getString(R.string.tcg_wellspring_of_war_lust)};
+            case "Tamanooya's Casket" : return new String[]{"/drawable/tcg_tamanooyas_casket.png", context.getString(R.string.tcg_tamanooyas_casket)};
+            case "Sin of Pride" : return new String[]{"/drawable/tcg_sin_of_pride.png", context.getString(R.string.tcg_sin_of_pride)};
+            case "Ornate Kabuto" : return new String[]{"/drawable/tcg_ornate_kabuto.png", context.getString(R.string.tcg_ornate_kabuto)};
+            case "General's Ancient Helm" : return new String[]{"/drawable/tcg_generals_ancient_helm.png", context.getString(R.string.tcg_generals_ancient_helm)};
+
 
             default: return new String[]{
                     "/drawable/tcg"+name.toLowerCase()
@@ -1737,6 +1749,7 @@ public class ItemRss {
             }
             // ???
             case "Voc-夜芷冰": return new String[]{"/drawable/voc_full.png", context.getString(R.string.voc), "/drawable/voc_full.png", "/drawable/voc_ico.png", "/drawable/mascot_card.png"};
+            case "朝霧冰瀬": return new String[]{"/drawable/asagiri_korise_full.png", context.getString(R.string.asagiri_korise), "/drawable/asagiri_korise_full.png", "/drawable/asagiri_korise_ico.png", "/drawable/mascot_card.png"};
             case "N/A" : return new String[]{"/drawable/paimon_full.png", context.getString(R.string.unknown), "/drawable/paimon_full.png","/drawable/paimon_lost.png", "/drawable/unknown_card.png"};
         }
         // Suitable for display upcoming characters
@@ -1816,6 +1829,7 @@ public class ItemRss {
         else if(name.equals("Traveler-Dendro") || name.equals("旅行者(草)") || name.equals("旅行者(草)") || name.equals("旅人 (草)") || name.equals("Путешественник(Элементы)")){ return "Traveler-Dendro";}
         else if(name.equals("N/A")){ return "N/A";}
         else if(name.equals("Voc-夜芷冰")){ return "Voc-夜芷冰";}
+        else if(name.equals("朝霧冰瀬") || name.equals("朝霧 冰瀬") || name.equals("朝雾冰瀬") || name.equals("Asagiri Korise")){ return "朝霧冰瀬";}
 
         else return context.getString(R.string.unknown);
     }
@@ -2633,6 +2647,7 @@ public class ItemRss {
                     case 9 : char_name = "Thoma"; break;
                     case 18 : char_name = "Diona"; break;
                     case 24 : char_name = "Rosaria"; break;
+                    case 26 : char_name = "朝霧冰瀬"; break;
                 }
                 break;
             }

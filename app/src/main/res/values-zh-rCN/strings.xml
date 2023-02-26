@@ -1361,4 +1361,13 @@
     <string name="tcg_pounding_surprise">砰砰礼物</string>
     <string name="dehya">迪希雅</string>
     <string name="mika">米卡</string>
+    <string name="tcg_eula">优菈</string>
+    <string name="tcg_sangonomiya_kokomi">珊瑚宫心海</string>
+    <string name="tcg_kujou_sara">九条裟罗</string>
+    <string name="tcg_tamanooyas_casket">战欲涌现</string>
+    <string name="tcg_sin_of_pride">匣中玉栉</string>
+    <string name="tcg_ornate_kabuto">我界</string>
+    <string name="tcg_generals_ancient_helm">华饰之兜</string>
+    <string name="tcg_wellspring_of_war_lust">将帅兜鍪</string>
+    <string name="asagiri_korise">朝雾冰瀬</string>
 </resources>

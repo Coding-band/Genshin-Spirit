@@ -534,7 +534,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                         .error (R.drawable.paimon_lost)
                         .into (holder.char_small_ico);
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[0],context)).resize((int)(width/1.5),(int)(height/1.5)).centerCrop().transform(transformation)
+                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[0],context)).resize((int)(width/1.1),(int)(height/1.1)).centerCrop().transform(transformation)
                         .error (R.drawable.paimon_full)
                         .into (holder.char_icon);
                 holder.char_icon.getLayoutParams().width = width;
