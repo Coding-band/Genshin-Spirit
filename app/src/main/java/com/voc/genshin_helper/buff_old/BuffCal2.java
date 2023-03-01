@@ -1,4 +1,4 @@
-package com.voc.genshin_helper.buff;/*
+package com.voc.genshin_helper.buff_old;/*
  * Package com.voc.genshin_helper.buff.BuffCal was
  * Created by Voc-夜芷冰 , Programmer of Xectorda
  * Copyright © 2021 Xectorda 版權所有
@@ -8,7 +8,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
-import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ArtifactsBuff;
 import com.voc.genshin_helper.data.ItemRss;
 
@@ -22,7 +21,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
-import java.util.Arrays;
 
 /*
  * Project Genshin Spirit (原神小幫手) was

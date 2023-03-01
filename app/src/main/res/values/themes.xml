@@ -29,6 +29,12 @@
         <item name="android:maxHeight">24dp</item>
     </style>
 
+    <style name="asc16" parent="@android:style/Widget.RatingBar">
+        <item name="android:progressDrawable">@drawable/star_16</item>
+        <item name="android:minHeight">16dp</item>
+        <item name="android:maxHeight">24dp</item>
+    </style>
+
     <style name="pb_2048" parent="android:Widget.ProgressBar.Horizontal">
         <item name="android:progressDrawable">@drawable/pb_2048</item>
     </style>

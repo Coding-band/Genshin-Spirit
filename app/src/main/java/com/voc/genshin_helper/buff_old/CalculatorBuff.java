@@ -1,4 +1,4 @@
-package com.voc.genshin_helper.buff;/*
+package com.voc.genshin_helper.buff_old;/*
  * Package com.voc.genshin_helper.buff.CalculatorBuff was
  * Created by Voc-夜芷冰 , Programmer of Xectorda
  * Copyright © 2021 Xectorda 版權所有
@@ -470,7 +470,7 @@ public class CalculatorBuff {
         charName = charChoosedNameList.get(k);
 
         final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
-        View view = View.inflate(context, R.layout.fragment_buff_page, null);
+        View view = View.inflate(context, R.layout.fragment_buff_old_page, null);
 
         BackgroundReload.BackgroundReload(context,view);
         // Char_Info

@@ -214,5 +214,15 @@
     <color name="tcg_white">#FFFFFF</color>
     <color name="tcg_other">#A2A2A2</color>
 
+    <color name="buff_ico_main_2048">#3B4255</color>
+    <color name="buff_ico_sub_2048">#803B4255</color>
+    <color name="buff_tv_sub_2048">#667289</color>
+    <color name="buff_tv_main_2048">#4D5668</color>
+    <color name="buff_tv_main_anti_2048">#FFFFFF</color>
+    <color name="buff_radio_selected_stroke_2048">#5BB74C</color>
+    <color name="buff_radio_selected_fill_2048">#408E33</color>
+    <color name="buff_radio_unselected_stroke_2048">#818999</color>
+    <color name="buff_radio_unselected_fill_2048">#00000000</color>
+
 
 </resources>

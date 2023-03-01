@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2023 Xectorda 版權所有
+  -->
+
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:name="btn_radio_to_off_mtrl"
+    android:width="32dp"
+    android:height="32dp"
+    android:viewportWidth="32"
+    android:viewportHeight="32">
+    <group
+        android:name="btn_radio_to_off_mtrl_0"
+        android:translateX="16"
+        android:translateY="16">
+        <group android:name="ring_outer">
+            <path
+                android:name="ring_outer_path"
+                android:strokeColor="@color/buff_radio_unselected_stroke_2048"
+                android:strokeWidth="2"
+                android:pathData="M 0.0,-9.0 c 4.9705627482,0.0 9.0,4.0294372518 9.0,9.0 c 0.0,4.9705627482 -4.0294372518,9.0 -9.0,9.0 c -4.9705627482,0.0 -9.0,-4.0294372518 -9.0,-9.0 c 0.0,-4.9705627482 4.0294372518,-9.0 9.0,-9.0 Z"/>
+        </group>
+        <group android:name="dot_group">
+            <path
+                android:name="dot_path"
+                android:pathData="M 0.0,-5.0 c -2.7619934082,0.0 -5.0,2.2380065918 -5.0,5.0 c 0.0,2.7619934082 2.2380065918,5.0 5.0,5.0 c 2.7619934082,0.0 5.0,-2.2380065918 5.0,-5.0 c 0.0,-2.7619934082 -2.2380065918,-5.0 -5.0,-5.0 Z"
+                android:fillColor="@color/buff_radio_unselected_fill_2048"/>
+        </group>
+    </group>
+</vector>

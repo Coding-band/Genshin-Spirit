@@ -31,7 +31,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/bg_card_round_siptik"
+            android:background="@drawable/bg_siptik_tv_bg"
             android:gravity="center"
             android:orientation="vertical">
 
