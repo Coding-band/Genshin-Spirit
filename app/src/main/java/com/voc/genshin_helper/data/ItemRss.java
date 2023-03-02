@@ -1413,7 +1413,7 @@ public class ItemRss {
             case "Tamanooya's Casket" : return new String[]{"/drawable/tcg_tamanooyas_casket.png", context.getString(R.string.tcg_tamanooyas_casket)};
             case "Sin of Pride" : return new String[]{"/drawable/tcg_sin_of_pride.png", context.getString(R.string.tcg_sin_of_pride)};
             case "Ornate Kabuto" : return new String[]{"/drawable/tcg_ornate_kabuto.png", context.getString(R.string.tcg_ornate_kabuto)};
-            case "General's Ancient Helm" : return new String[]{"/drawable/tcg_generals_ancient_helm.png", context.getString(R.string.tcg_generals_ancient_helm)};
+            case "General’s Ancient Helm" : return new String[]{"/drawable/tcg_generals_ancient_helm.png", context.getString(R.string.tcg_generals_ancient_helm)};
 
 
             default: return new String[]{

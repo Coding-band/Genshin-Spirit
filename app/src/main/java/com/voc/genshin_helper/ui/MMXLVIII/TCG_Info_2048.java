@@ -718,6 +718,7 @@ public class TCG_Info_2048 {
         int oneDP = (int) (displayMetrics.density*4);
         int widthNew = (int) ((displayMetrics.widthPixels - displayMetrics.density*(32))/2);
 
+        /*
         if (tcg.getType().equals(TCG.CHAR)){
             File gifFile = FileLoader.loadIMG(item_rss.getTCGByName(tcg.getName(),context)[0],context);
             GifDrawable gifFromFile = null;
@@ -737,13 +738,13 @@ public class TCG_Info_2048 {
                         .error (R.drawable.paimon_lost)
                         .into(tcg_card_img);
             }
-        }else{
+        }else
+         */
             Picasso.get()
                     .load (FileLoader.loadIMG(item_rss.getTCGByName(tcg.getName(),context)[0],context))
                     .resize(widthNew,(int) ((widthNew)*12/7))
                     .error (R.drawable.paimon_lost)
                     .into(tcg_card_img);
-        }
 
 
         tcg_card_name.setText(item_rss.getTCGByName(tcg.getName(),context)[1]);

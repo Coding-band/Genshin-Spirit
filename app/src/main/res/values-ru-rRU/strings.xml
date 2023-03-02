@@ -1344,9 +1344,10 @@
     <string name="tcg_eula">Эола</string>
     <string name="tcg_sangonomiya_kokomi">Сангономия Кокоми</string>
     <string name="tcg_kujou_sara">Кудзё Сара</string>
-    <string name="tcg_tamanooyas_casket">Прилив войны</string>
-    <string name="tcg_sin_of_pride">Шкатулка таманои</string>
-    <string name="tcg_ornate_kabuto">Грех гордыни</string>
-    <string name="tcg_generals_ancient_helm">Украшенный кабуто</string>
-    <string name="tcg_wellspring_of_war_lust">Древний шлем генерала</string>
+    <string name="tcg_tamanooyas_casket">Шкатулка таманои</string>
+    <string name="tcg_sin_of_pride">Грех гордыни</string>
+    <string name="tcg_ornate_kabuto">Украшенный кабуто</string>
+    <string name="tcg_generals_ancient_helm">Древний шлем генерала</string>
+    <string name="tcg_wellspring_of_war_lust">Прилив войны</string>
+    <string name="lazurite_swirl">Лазуритовый вихрь</string>
 </resources>

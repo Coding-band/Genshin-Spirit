@@ -1371,12 +1371,13 @@
     <string name="tcg_eula">エウルア</string>
     <string name="tcg_sangonomiya_kokomi">珊瑚宮心海</string>
     <string name="tcg_kujou_sara">九条裟羅</string>
-    <string name="tcg_tamanooyas_casket">戦意の表れ</string>
-    <string name="tcg_sin_of_pride">葛籠の中の玉櫛</string>
-    <string name="tcg_ornate_kabuto">我界</string>
-    <string name="tcg_generals_ancient_helm">華飾の兜</string>
-    <string name="tcg_wellspring_of_war_lust">将帥の兜</string>
+    <string name="tcg_tamanooyas_casket">葛籠の中の玉櫛</string>
+    <string name="tcg_sin_of_pride">我界</string>
+    <string name="tcg_ornate_kabuto">華飾の兜</string>
+    <string name="tcg_generals_ancient_helm">将帥の兜</string>
+    <string name="tcg_wellspring_of_war_lust">戦意の表れ</string>
     <string name="asagiri_korise">朝霧 冰瀬</string>
+    <string name="lazurite_swirl">ラピスラズリワール</string>
 
 </resources>
 

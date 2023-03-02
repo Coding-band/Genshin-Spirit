@@ -1414,12 +1414,13 @@
     <string name="tcg_eula">"Eula"</string>
     <string name="tcg_sangonomiya_kokomi">"Sangonomiya Kokomi"</string>
     <string name="tcg_kujou_sara">"Kujou Sara"</string>
-    <string name="tcg_wellspring_of_war_lust">General\'s Ancient Helm</string>
-    <string name="tcg_tamanooyas_casket">Wellspring of War-Lust</string>
-    <string name="tcg_sin_of_pride">Tamanooya\'s Casket</string>
-    <string name="tcg_ornate_kabuto">Sin of Pride</string>
-    <string name="tcg_generals_ancient_helm">Ornate Kabuto</string>
+    <string name="tcg_wellspring_of_war_lust">Wellspring of War-Lust</string>
+    <string name="tcg_tamanooyas_casket">Tamanooya\'s Casket</string>
+    <string name="tcg_sin_of_pride">Sin of Pride</string>
+    <string name="tcg_ornate_kabuto">Ornate Kabuto</string>
+    <string name="tcg_generals_ancient_helm">General\'s Ancient Helm</string>
     <string name="asagiri_korise">Asagiri Korise</string>
+    <string name="lazurite_swirl">Lazurite Swirl</string>
 
 
 

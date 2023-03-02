@@ -1366,12 +1366,13 @@
     <string name="tcg_eula">優菈</string>
     <string name="tcg_sangonomiya_kokomi">珊瑚宮心海</string>
     <string name="tcg_kujou_sara">九條裟羅</string>
-    <string name="tcg_tamanooyas_casket">戰欲湧現</string>
-    <string name="tcg_sin_of_pride">匣中玉櫛</string>
-    <string name="tcg_ornate_kabuto">我界</string>
-    <string name="tcg_generals_ancient_helm">華飾之兜</string>
-    <string name="tcg_wellspring_of_war_lust">將帥兜鍪</string>
+    <string name="tcg_tamanooyas_casket">匣中玉櫛</string>
+    <string name="tcg_sin_of_pride">我界</string>
+    <string name="tcg_ornate_kabuto">華飾之兜</string>
+    <string name="tcg_generals_ancient_helm">將帥兜鍪</string>
+    <string name="tcg_wellspring_of_war_lust">戰欲湧現</string>
     <string name="asagiri_korise">朝霧冰瀬</string>
+    <string name="lazurite_swirl">青金的流旋</string>
 
 
 </resources>
