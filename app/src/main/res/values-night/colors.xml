@@ -13,6 +13,7 @@
     <color name="theme_dark_color">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="anti_f0">#000000</color>
 
     <color name="page_bg">#A0424242</color>
     <color name="page_bg_solid">#424242</color>
@@ -183,6 +184,7 @@
     <color name="buff_ico_main_2048">#D6D6D6</color>
     <color name="buff_ico_sub_2048">#80D6D6D6</color>
     <color name="buff_tv_sub_2048">#A6ABB3</color>
+    <color name="buff_tv_data_2048">#695453</color>
     <color name="buff_tv_main_2048">#FFFFFF</color>
     <color name="buff_tv_main_anti_2048">#FFFFFF</color>
     <color name="buff_radio_unselected_stroke_2048">#818999</color>

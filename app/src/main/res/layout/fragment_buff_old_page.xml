@@ -834,7 +834,7 @@
 
             <include
                 android:id="@+id/buff_artifact_layout"
-                layout="@layout/item_buff_artifact"
+                layout="@layout/item_buff_old_artifact"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"

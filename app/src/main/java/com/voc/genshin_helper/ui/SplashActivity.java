@@ -479,7 +479,24 @@ public class SplashActivity extends AppCompatActivity {
                 intent.setAction("android.appwidget.action.APPWIDGET_UPDATE");
                 sendBroadcast(intent);
 
-                if (sharedPreferences.getString("styleUI", "N/A").equals("2O48")) {
+                final boolean isKitsuneTest = false;
+
+                if(isKitsuneTest){
+                    /**
+                     *  This is a temporate channel for Xuan to test Kitsune Project.
+                     *  Please replace "Desk2048.class" to "xxx.class", also isKitsuneTest = true when u are doing testing
+                     *
+                     *  Also, Kitsune Project will all below to package : com.voc.genshin_helper.ui.Kitsune
+                     *  Moreover, if you want to call images (E.g. character / weapon / artifact / TCG / etc... image / icon
+                     *  >> You may have a look of ItemRss.java in com.voc.genshin_helper.data
+                     *  >> Please note that : in order to reduce the app size, nearly all resource were not include in .apk
+                     *  >> Therefore, you will need to call these resource via ItemRss
+                     *  >> If you have any questions about how it run, please lemme know.
+                     *
+                     *  Voc (20230306)
+                    **/
+                    SplashActivity.this.startActivity(new Intent(SplashActivity.this, Desk2048.class));
+                }else if (sharedPreferences.getString("styleUI", "N/A").equals("2O48")) {
                     sharedPreferences.edit().putString("curr_ui_grid","2").apply();
                     SplashActivity.this.startActivity(new Intent(SplashActivity.this, Desk2048.class));
                 } else if (sharedPreferences.getString("styleUI", "N/A").equals("SipTik")) {

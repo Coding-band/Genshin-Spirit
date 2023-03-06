@@ -45,15 +45,18 @@
                 android:adjustViewBounds="true" />
 
             <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="8dp"
+                android:orientation="vertical"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_margin="8dp"
-                android:orientation="vertical">
+                app:layout_constraintVertical_bias="0.0">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -63,11 +66,10 @@
 
                     <ImageView
                         android:id="@+id/imageView21"
-                        app:srcCompat="@drawable/hu_tao_ico"
                         android:layout_width="64dp"
                         android:layout_height="64dp"
                         android:layout_gravity="center"
-                        android:layout_marginLeft="8dp" />
+                        app:srcCompat="@drawable/hu_tao_ico" />
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -88,6 +90,8 @@
 
                         <com.willy.ratingbar.ScaleRatingBar
                             android:id="@+id/simpleRatingBar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             app:srb_clickable="false"
                             app:srb_drawableEmpty="@drawable/ic_asc_star_empty"
                             app:srb_drawableFilled="@drawable/ic_asc_star_full"
@@ -97,9 +101,7 @@
                             app:srb_starHeight="16dp"
                             app:srb_starPadding="0.5dp"
                             app:srb_starWidth="16dp"
-                            app:srb_stepSize="0.5"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content">
+                            app:srb_stepSize="0.5">
 
                         </com.willy.ratingbar.ScaleRatingBar>
 
@@ -161,11 +163,11 @@
 
                                 <ImageView
                                     android:id="@+id/imageView27"
-                                    app:srcCompat="@drawable/ic_talent_tmp"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center|top"
-                                    android:adjustViewBounds="true" />
+                                    android:adjustViewBounds="true"
+                                    app:srcCompat="@drawable/ic_talent_tmp" />
 
                                 <TextView
                                     android:id="@+id/textView106"
@@ -189,11 +191,11 @@
 
                                 <ImageView
                                     android:id="@+id/imageView29"
-                                    app:srcCompat="@drawable/ic_talent_tmp"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center|top"
-                                    android:adjustViewBounds="true" />
+                                    android:adjustViewBounds="true"
+                                    app:srcCompat="@drawable/ic_talent_tmp" />
 
                                 <TextView
                                     android:id="@+id/textView105"
@@ -216,57 +218,57 @@
 
                             <ImageView
                                 android:id="@+id/imageView38"
-                                app:srcCompat="@drawable/ic_talent_tmp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center|top"
                                 android:layout_weight="1"
-                                android:adjustViewBounds="true" />
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/ic_talent_tmp" />
 
                             <ImageView
                                 android:id="@+id/imageView39"
-                                app:srcCompat="@drawable/ic_talent_tmp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center|top"
                                 android:layout_weight="1"
-                                android:adjustViewBounds="true" />
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/ic_talent_tmp" />
 
                             <ImageView
                                 android:id="@+id/imageView40"
-                                app:srcCompat="@drawable/ic_talent_tmp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center|top"
                                 android:layout_weight="1"
-                                android:adjustViewBounds="true" />
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/ic_talent_tmp" />
 
                             <ImageView
                                 android:id="@+id/imageView41"
-                                app:srcCompat="@drawable/ic_talent_tmp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center|top"
                                 android:layout_weight="1"
-                                android:adjustViewBounds="true" />
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/ic_talent_tmp" />
 
                             <ImageView
                                 android:id="@+id/imageView42"
-                                app:srcCompat="@drawable/ic_talent_tmp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center|top"
                                 android:layout_weight="1"
-                                android:adjustViewBounds="true" />
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/ic_talent_tmp" />
 
                             <ImageView
                                 android:id="@+id/imageView43"
-                                app:srcCompat="@drawable/ic_talent_tmp"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center|top"
                                 android:layout_weight="1"
-                                android:adjustViewBounds="true" />
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/ic_talent_tmp" />
                         </LinearLayout>
                     </LinearLayout>
 
@@ -287,7 +289,6 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
                         android:layout_marginRight="8dp"
                         android:layout_weight="1"
                         android:orientation="vertical">
@@ -328,11 +329,11 @@
 
                         <ImageView
                             android:id="@+id/imageView44"
-                            app:srcCompat="@drawable/weapons2"
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_gravity="center|top"
-                            android:adjustViewBounds="true" />
+                            android:adjustViewBounds="true"
+                            app:srcCompat="@drawable/weapons2" />
 
                         <TextView
                             android:id="@+id/textView110"
@@ -428,13 +429,15 @@
                     android:id="@+id/view6"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
-                    android:background="@drawable/bg_dot_line_2048" />
+                    android:background="@drawable/bg_dot_line_2048"
+                    android:visibility="gone" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="4dp"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:visibility="gone">
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -449,11 +452,11 @@
                             android:orientation="horizontal">
 
                             <ImageView
-                                app:srcCompat="@drawable/ic_buff_atk_2048"
                                 android:layout_width="16dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:adjustViewBounds="true" />
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/ic_buff_atk_2048" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -470,11 +473,11 @@
                             android:orientation="horizontal">
 
                             <ImageView
-                                app:srcCompat="@drawable/ic_buff_hp_2048"
                                 android:layout_width="16dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:adjustViewBounds="true" />
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/ic_buff_hp_2048" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -491,11 +494,11 @@
                             android:orientation="horizontal">
 
                             <ImageView
-                                app:srcCompat="@drawable/ic_buff_def_2048"
                                 android:layout_width="16dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:adjustViewBounds="true" />
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/ic_buff_def_2048" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -512,11 +515,11 @@
                             android:orientation="horizontal">
 
                             <ImageView
-                                app:srcCompat="@drawable/ic_buff_elemas_2048"
                                 android:layout_width="16dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:adjustViewBounds="true" />
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/ic_buff_elemas_2048" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -540,11 +543,11 @@
                             android:orientation="horizontal">
 
                             <ImageView
-                                app:srcCompat="@drawable/ic_buff_crit_rate_2048"
                                 android:layout_width="16dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:adjustViewBounds="true" />
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/ic_buff_crit_rate_2048" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -561,11 +564,11 @@
                             android:orientation="horizontal">
 
                             <ImageView
-                                app:srcCompat="@drawable/ic_buff_crit_dmg_2048"
                                 android:layout_width="16dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:adjustViewBounds="true" />
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/ic_buff_crit_dmg_2048" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -582,11 +585,11 @@
                             android:orientation="horizontal">
 
                             <ImageView
-                                app:srcCompat="@drawable/ic_buff_enrech_2048"
                                 android:layout_width="16dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:adjustViewBounds="true" />
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/ic_buff_enrech_2048" />
 
                             <TextView
                                 android:layout_width="match_parent"
@@ -603,11 +606,11 @@
                             android:orientation="horizontal">
 
                             <ImageView
-                                app:srcCompat="@drawable/ic_buff_pyro_2048"
                                 android:layout_width="16dp"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
-                                android:adjustViewBounds="true" />
+                                android:adjustViewBounds="true"
+                                app:srcCompat="@drawable/ic_buff_pyro_2048" />
 
                             <TextView
                                 android:layout_width="match_parent"

@@ -30,7 +30,7 @@
             <TextView
                 android:id="@+id/dialog_title_tv"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="0"
                 android:background="@drawable/bg_dialog_header_edge"
                 android:fontFamily="@font/genshin_font"
@@ -46,7 +46,8 @@
                 android:layout_height="160dp"
                 android:layout_weight="0"
                 android:background="@drawable/bg_dialog_body_edge"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="visible">
 
                 <ProgressBar
                     android:id="@+id/dialog_progress_bar"
@@ -95,9 +96,8 @@
                 <TextView
                     android:id="@+id/dialog_ask_tv"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_margin="8dp"
-                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="12dp"
                     android:fontFamily="@font/genshin_font"
                     android:gravity="center"
                     android:lineSpacingExtra="8sp"

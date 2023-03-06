@@ -334,7 +334,7 @@ public class CalculatorBuff {
         String tmp_weapon_name = "unknown";
         for (int x = 0 ; x < charChoosedNameList.size() ; x++) {
 
-            View view = View.inflate(context, R.layout.item_buff_card, null);
+            View view = View.inflate(context, R.layout.item_buff_old_card, null);
 
             ImageView buff_ui_char_icon = view.findViewById(R.id.buff_ui_char_icon);
             TextView buff_ui_char_name = view.findViewById(R.id.buff_ui_char_name);
@@ -1570,7 +1570,7 @@ public class CalculatorBuff {
 
         for (int i = 0 ; i < item_name_recongize.length ; i++){
             if(buffCal.skillPReturn(item_name_recongize[i],artifactList)*100 != 0){
-                View view = View.inflate(context, R.layout.item_buff_display, null);
+                View view = View.inflate(context, R.layout.item_buff_old_display, null);
                 TextView buff_item_name = view.findViewById(R.id.buff_item_name);
                 TextView buff_item_value = view.findViewById(R.id.buff_item_value);
                 TextView buff_uncrit_value = view.findViewById(R.id.buff_uncrit_value);
@@ -1625,7 +1625,7 @@ public class CalculatorBuff {
 
         for (int i = 0 ; i < item_name_recongize.length; i++){
             if(buffCal.skillPReturn(item_name_recongize[i],artifactList)*100 != 0){
-                View view = View.inflate(context, R.layout.item_buff_display, null);
+                View view = View.inflate(context, R.layout.item_buff_old_display, null);
                 TextView buff_item_name = view.findViewById(R.id.buff_item_name);
                 TextView buff_item_value = view.findViewById(R.id.buff_item_value);
                 TextView buff_uncrit_value = view.findViewById(R.id.buff_uncrit_value);
@@ -1667,7 +1667,7 @@ public class CalculatorBuff {
 
         for (int i = 0 ; i < item_name_recongize.length ; i++){
             if(buffCal.skillPReturn(item_name_recongize[i],artifactList)*100 != 0){
-                View view = View.inflate(context, R.layout.item_buff_display, null);
+                View view = View.inflate(context, R.layout.item_buff_old_display, null);
                 TextView buff_item_name = view.findViewById(R.id.buff_item_name);
                 TextView buff_item_value = view.findViewById(R.id.buff_item_value);
                 TextView buff_uncrit_value = view.findViewById(R.id.buff_uncrit_value);
@@ -1710,7 +1710,7 @@ public class CalculatorBuff {
 
         for (int i = 0 ; i < buffCal.returnElementATKArraySize() ; i++){
             if(buffCal.skillPReturn(item_name_recongize[i],artifactList)*100 != 0 && !buffCal.returnElementATKArray()[i].contains("_BASE")&& !buffCal.returnElementATKArray()[i].contains("治療")&& !buffCal.returnElementATKArray()[i].contains("吸收")&& !buffCal.returnElementATKArray()[i].contains("護盾")){
-                View view = View.inflate(context, R.layout.item_buff_display, null);
+                View view = View.inflate(context, R.layout.item_buff_old_display, null);
                 TextView buff_item_name = view.findViewById(R.id.buff_item_name);
                 TextView buff_item_value = view.findViewById(R.id.buff_item_value);
                 TextView buff_uncrit_value = view.findViewById(R.id.buff_uncrit_value);
@@ -1729,7 +1729,7 @@ public class CalculatorBuff {
                 buff_tab_view.addView(view);
             }else if (buffCal.returnElementATKArraySize() > (i+1)){
                 if (buffCal.returnElementATKArray()[i+1].contains("_")){
-                    View view = View.inflate(context, R.layout.item_buff_display, null);
+                    View view = View.inflate(context, R.layout.item_buff_old_display, null);
                     TextView buff_item_name = view.findViewById(R.id.buff_item_name);
                     TextView buff_crit_name = view.findViewById(R.id.buff_crit_name);
                     TextView buff_uncrit_name = view.findViewById(R.id.buff_uncrit_name);
@@ -1787,7 +1787,7 @@ public class CalculatorBuff {
 
         for (int i = 0 ; i < buffCal.returnFinalATKArraySize() ; i++){
             if(buffCal.skillPReturn(item_name_recongize[i],artifactList)*100 != 0 && !buffCal.returnFinalATKArray()[i].contains("_BASE")&& !buffCal.returnFinalATKArray()[i].contains("治療")&& !buffCal.returnFinalATKArray()[i].contains("吸收")&& !buffCal.returnFinalATKArray()[i].contains("護盾")){
-                View view = View.inflate(context, R.layout.item_buff_display, null);
+                View view = View.inflate(context, R.layout.item_buff_old_display, null);
                 TextView buff_item_name = view.findViewById(R.id.buff_item_name);
                 TextView buff_item_value = view.findViewById(R.id.buff_item_value);
                 TextView buff_uncrit_value = view.findViewById(R.id.buff_uncrit_value);
@@ -1807,7 +1807,7 @@ public class CalculatorBuff {
                 buff_tab_view.addView(view);
             }else if (buffCal.returnFinalATKArraySize() > (i+1)){
                 if(buffCal.returnFinalATKArray()[i+1].contains("_")) {
-                    View view = View.inflate(context, R.layout.item_buff_display, null);
+                    View view = View.inflate(context, R.layout.item_buff_old_display, null);
                     TextView buff_item_name = view.findViewById(R.id.buff_item_name);
                     TextView buff_crit_name = view.findViewById(R.id.buff_crit_name);
                     TextView buff_uncrit_name = view.findViewById(R.id.buff_uncrit_name);

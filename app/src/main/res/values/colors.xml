@@ -14,6 +14,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="shaderBG">#CC313131</color>
     <color name="invisible">#00FFFFFF</color>
+    <color name="anti_f0">#000000</color>
 
     <color name="page_bg">#AAB3B3B3</color>
     <color name="page_bg_solid">#B3B3B3</color>
@@ -216,6 +217,7 @@
 
     <color name="buff_ico_main_2048">#3B4255</color>
     <color name="buff_ico_sub_2048">#803B4255</color>
+    <color name="buff_tv_data_2048">#695453</color>
     <color name="buff_tv_sub_2048">#667289</color>
     <color name="buff_tv_main_2048">#4D5668</color>
     <color name="buff_tv_main_anti_2048">#FFFFFF</color>

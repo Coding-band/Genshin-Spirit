@@ -91,13 +91,13 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="4dp"
                         android:layout_weight="0"
                         android:fontFamily="@font/genshin_font"
                         android:text="34980"
                         android:textColor="@color/buff_tv_sub_2048"
                         android:textSize="16sp" />
+
                 </LinearLayout>
 
                 <LinearLayout

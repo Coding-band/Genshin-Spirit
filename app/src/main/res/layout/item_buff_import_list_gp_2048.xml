@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2023 Xectorda 版權所有
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_dialog_info_2048"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/buff_import_gp_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:background="@drawable/bg_buff_gp_kwang_2048"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/textView126"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:fontFamily="@font/genshin_font"
+                android:gravity="center|left"
+                android:text="優菈核爆流"
+                android:textColor="@color/tv_color_2048_always"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:id="@+id/imageView32"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:adjustViewBounds="true"
+                app:srcCompat="@drawable/ic_2048_no_tick" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:fadingEdgeLength="20dp"
+                android:requiresFadingEdge="horizontal|vertical"
+                android:scrollbars="none">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView34"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="0"
+                        app:srcCompat="@drawable/hu_tao_unknown" />
+
+                    <ImageView
+                        android:id="@+id/imageView36"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="0"
+                        app:srcCompat="@drawable/hu_tao_unknown" />
+
+                    <ImageView
+                        android:id="@+id/imageView35"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="0"
+                        app:srcCompat="@drawable/hu_tao_unknown" />
+
+                    <ImageView
+                        android:id="@+id/imageView33"
+                        android:layout_width="36dp"
+                        android:layout_height="36dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_weight="0"
+                        app:srcCompat="@drawable/hu_tao_unknown" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/textView127"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1.5"
+                android:fontFamily="@font/genshin_font"
+                android:gravity="bottom|center|right"
+                android:singleLine="true"
+                android:text="角色重複"
+                android:textColor="@color/tv_color_2048_always"
+                android:textSize="14sp"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -68,7 +68,7 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/genshin_font"
                         android:singleLine="true"
-                        android:text="祝你歪七七"
+                        android:text="優菈核爆流"
                         android:textSize="20sp" />
 
                     <ImageView
@@ -91,7 +91,7 @@
                 </LinearLayout>
 
                 <View
-                    android:id="@+id/view12"
+                    android:id="@+id/view8"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
                     android:layout_marginLeft="8dp"

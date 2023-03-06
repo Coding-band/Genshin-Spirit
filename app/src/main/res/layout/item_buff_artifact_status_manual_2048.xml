@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2023 Xectorda 版權所有
+  -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/item_level_choose_2048"
+            android:gravity="center"
+            android:popupBackground="@drawable/bg_2048_spinner_bg"
+            android:requiresFadingEdge="none"
+            android:spinnerMode="dropdown" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="8dp"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center|left"
+                    android:text="@string/rarity"
+                    android:textColor="@color/buff_tv_sub_2048"
+                    android:textSize="14sp" />
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/item_level_choose_2048"
+                    android:gravity="center"
+                    android:popupBackground="@drawable/bg_2048_spinner_bg"
+                    android:requiresFadingEdge="none"
+                    android:spinnerMode="dropdown" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="4dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="8dp"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center|left"
+                    android:text="等級"
+                    android:textColor="@color/buff_tv_sub_2048"
+                    android:textSize="14sp" />
+
+                <Spinner
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/item_level_choose_2048"
+                    android:gravity="center"
+                    android:popupBackground="@drawable/bg_2048_spinner_bg"
+                    android:requiresFadingEdge="none"
+                    android:spinnerMode="dropdown" />
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginLeft="8dp"
+        android:background="@drawable/item_level_choose_square_2048"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView117"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="@font/genshin_font"
+            android:gravity="center|left"
+            android:text="生命值% : 9.3%"
+            android:textColor="@color/buff_tv_data_2048"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView116"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="@font/genshin_font"
+            android:gravity="center|left"
+            android:text="暴击率% : 6.2%"
+            android:textColor="@color/buff_tv_data_2048"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView118"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="@font/genshin_font"
+            android:gravity="center|left"
+            android:text="暴击伤害% : 19.4%"
+            android:textColor="@color/buff_tv_data_2048"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/textView119"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="@font/genshin_font"
+            android:gravity="center|left"
+            android:text="元素充能效率% : 11.0%"
+            android:textColor="@color/buff_tv_data_2048"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</LinearLayout>

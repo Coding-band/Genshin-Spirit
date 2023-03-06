@@ -17,6 +17,6 @@
     <solid
         android:color="@color/ui_bg_siptik"/>
     <corners
-        android:radius="60dp"/>
+        android:radius="60px"/>
 
 </shape>

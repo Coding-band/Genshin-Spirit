@@ -68,30 +68,20 @@
                         android:layout_weight="1"
                         android:fontFamily="@font/genshin_font"
                         android:singleLine="true"
-                        android:text="祝你歪七七"
+                        android:text="優菈核爆流"
                         android:textSize="20sp" />
 
                     <ImageView
-                        android:id="@+id/db_edit"
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
-                        app:srcCompat="@drawable/ic_2048_edit" />
-
-                    <ImageView
-                        android:id="@+id/db_delete"
+                        android:id="@+id/db_refresh"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
                         android:layout_margin="8dp"
-                        app:srcCompat="@drawable/ic_2048_delete" />
+                        app:srcCompat="@drawable/ic_2048_refresh" />
 
                 </LinearLayout>
 
                 <View
-                    android:id="@+id/view12"
+                    android:id="@+id/view8"
                     android:layout_width="match_parent"
                     android:layout_height="2dp"
                     android:layout_marginLeft="8dp"
