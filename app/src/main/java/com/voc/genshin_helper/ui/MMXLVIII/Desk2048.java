@@ -74,6 +74,7 @@ import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.BuildConfig;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.buff.EnkaDataCollect;
+import com.voc.genshin_helper.buff.TMP;
 import com.voc.genshin_helper.buff_old.SipTikCal;
 import com.voc.genshin_helper.data.Artifacts;
 import com.voc.genshin_helper.data.Characters;
@@ -402,6 +403,9 @@ public class Desk2048 extends AppCompatActivity {
         EnkaDataCollect enkaDataCollect = new EnkaDataCollect();
         enkaDataCollect.init(context);
 
+        //new TMP().listChar();
+        //new TMP().listWeapon();
+        //new TMP().listArt();
         /*
         Necessery
          */
@@ -431,6 +435,10 @@ public class Desk2048 extends AppCompatActivity {
                     } catch (android.content.ActivityNotFoundException anfe) {
                         startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.voc.genshin_spirit_gp")));
                     }
+
+                    //Uri uri = Uri.parse("https://discord.gg/uXatcbWKv2"); // missing 'https://' will cause crashed
+                    //                Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                    //                startActivity(intent);
 
                 }
             });
