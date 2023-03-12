@@ -174,10 +174,6 @@
     <color name="tv_shadow_color">#3D3D3D</color>
     <color name="tv_anti_solid_color">#3B4255</color>
 
-    <color name="app_ico_item_fill">#616161</color>
-    <color name="app_ico_item_stroke">#C7C7C7</color>
-    <color name="app_ico_bg">#616161</color>
-
     <color name="setting_ico_color">#FFFFFF</color>
 
 

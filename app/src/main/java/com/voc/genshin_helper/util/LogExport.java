@@ -36,8 +36,9 @@ public class LogExport {
     public static String DAILYMEMO = "dailyMemo.txt";
     public static String DOWNLOADTASK = "downloadTask.txt";
     public static String UNZIPMANAGER = "unzipManager.txt";
+    public static String ENKADATACOLLECT = "enkaDataCollect.txt";
 
-    public static String[] list = {DAILYMEMO,DOWNLOADTASK,UNZIPMANAGER};
+    public static String[] list = {DAILYMEMO,DOWNLOADTASK,UNZIPMANAGER,ENKADATACOLLECT};
 
     public static void export (String className, String functionName, String data, Context context, String fileName) {
         //if (BuildConfig.FLAVOR.equals("dev") || BuildConfig.FLAVOR.equals("beta")) {

@@ -52,21 +52,27 @@ public class BackgroundReload {
         Resources res = context.getResources();
 
         if(!pathName.equals("N/A")){
-            Bitmap bitmap = BitmapFactory.decodeFile(pathName);
-            BitmapDrawable bd = new BitmapDrawable(res, bitmap);
+            File isExist = new File(pathName);
+            if(isExist.exists() && isExist.isFile()){
+                Bitmap bitmap = BitmapFactory.decodeFile(pathName);
+                BitmapDrawable bd = new BitmapDrawable(res, bitmap);
 
-            Bitmap bitmap2 = BitmapFactory.decodeFile(pathName);
-            BitmapDrawable bd2 = new BitmapDrawable(res, bitmap2);
+                Bitmap bitmap2 = BitmapFactory.decodeFile(pathName);
+                BitmapDrawable bd2 = new BitmapDrawable(res, bitmap2);
 
-            File gifFile = new File(pathName);
-            GifDrawable gifFromFile = null;
-            try { gifFromFile = new GifDrawable(gifFile);
-            } catch (IOException e) {
-                e.printStackTrace();
+                File gifFile = new File(pathName);
+                GifDrawable gifFromFile = null;
+                try { gifFromFile = new GifDrawable(gifFile);
+                } catch (IOException e) {
+
+                }
+                if (gif_png.matches("gif")){gifImageView1.setImageDrawable(gifFromFile);}
+                if (gif_png.matches("png")){gifImageView1.setImageDrawable(bd);}
+                if (gif_png.matches("jpg")||gif_png.matches("jpeg")){gifImageView1.setImageDrawable(bd2);}
+
+            }else{
+                gifImageView1.setImageResource(R.color.base_page_bg);
             }
-            if (gif_png.matches("gif")){gifImageView1.setImageDrawable(gifFromFile);}
-            if (gif_png.matches("png")){gifImageView1.setImageDrawable(bd);}
-            if (gif_png.matches("jpg")||gif_png.matches("jpeg")){gifImageView1.setImageDrawable(bd2);}
         }else{
             gifImageView1.setImageResource(R.color.base_page_bg);
         }

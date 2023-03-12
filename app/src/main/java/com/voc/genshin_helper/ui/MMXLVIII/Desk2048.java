@@ -73,6 +73,7 @@ import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.BuildConfig;
 import com.voc.genshin_helper.R;
+import com.voc.genshin_helper.buff.EnkaDataCollect;
 import com.voc.genshin_helper.buff_old.SipTikCal;
 import com.voc.genshin_helper.data.Artifacts;
 import com.voc.genshin_helper.data.Characters;
@@ -398,10 +399,56 @@ public class Desk2048 extends AppCompatActivity {
         tcg2048.setup(viewPager5,context,activity,sharedPreferences);
         team2048.setup(viewPager6,context,activity,sharedPreferences);
 
+        EnkaDataCollect enkaDataCollect = new EnkaDataCollect();
+        enkaDataCollect.init(context);
+
         /*
         Necessery
          */
         char_list_reload();
+
+        if(sharedPreferences.getInt("app_started",0) > 10 && sharedPreferences.getBoolean("review_given",false) == false){
+            LinearLayout review_request_ll = findViewById(R.id.review_request_ll);
+            review_request_ll.setVisibility(View.VISIBLE);
+
+            TextView desk_dismiss_tv = findViewById(R.id.desk_dismiss_tv);
+            TextView desk_yes_tv = findViewById(R.id.desk_yes_tv);
+            TextView desk_feedback_tv = findViewById(R.id.desk_feedback_tv);
+
+            desk_dismiss_tv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    review_request_ll.setVisibility(View.GONE);
+                }
+            });
+            desk_yes_tv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    editor.putBoolean("review_given", true).apply();
+                    review_request_ll.setVisibility(View.GONE);
+                    try {
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=com.voc.genshin_spirit_gp")));
+                    } catch (android.content.ActivityNotFoundException anfe) {
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=com.voc.genshin_spirit_gp")));
+                    }
+
+                }
+            });
+            desk_feedback_tv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    editor.putBoolean("review_given", true).apply();
+                    review_request_ll.setVisibility(View.GONE);
+
+                    Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                            "mailto","voc.app.programmer@gmail.com", null));
+                    emailIntent.putExtra(Intent.EXTRA_TITLE, "Advice of Genshin Helper");
+                    emailIntent.putExtra(Intent.EXTRA_TEXT, "Hi, ");
+                    startActivity(Intent.createChooser(emailIntent, "Advice of Genshin Helper"));
+
+                }
+            });
+        }
 
         //viewPager4.findViewById(R.id.card_char_bg)
 

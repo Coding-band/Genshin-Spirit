@@ -454,7 +454,7 @@
                 android:layout_weight="0"
                 android:orientation="horizontal"
                 android:padding="8dp"
-                android:visibility="visible">
+                android:visibility="gone">
 
                 <ImageView
                     android:layout_width="24dp"
@@ -483,7 +483,7 @@
                 android:layout_marginBottom="4dp"
                 android:layout_weight="0"
                 android:background="@drawable/gone_background"
-                android:visibility="visible"
+                android:visibility="gone"
                 app:cardBackgroundColor="@color/colorWhiteAlpha"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="0dp">
@@ -524,14 +524,14 @@
                                 android:id="@+id/ui_2O48_rb"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                app:buttonTint="@color/tv_anti_color_2048"
                                 android:checked="false"
                                 android:fontFamily="@font/genshin_font"
                                 android:paddingLeft="4dp"
                                 android:paddingRight="4dp"
                                 android:singleLine="true"
                                 android:text="@string/ui_2048_name"
-                                android:textColor="@color/tv_color" />
+                                android:textColor="@color/tv_color"
+                                app:buttonTint="@color/tv_anti_color_2048" />
 
                         </LinearLayout>
 
@@ -559,14 +559,14 @@
                                 android:id="@+id/ui_SipTik_rb"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                app:buttonTint="@color/tv_anti_color_2048"
                                 android:checked="false"
                                 android:fontFamily="@font/genshin_font"
                                 android:paddingLeft="4dp"
                                 android:paddingRight="4dp"
                                 android:singleLine="true"
                                 android:text="@string/ui_siptik_name"
-                                android:textColor="@color/tv_color" />
+                                android:textColor="@color/tv_color"
+                                app:buttonTint="@color/tv_anti_color_2048" />
                         </LinearLayout>
 
                         <LinearLayout
@@ -594,14 +594,14 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                app:buttonTint="@color/tv_anti_color_2048"
                                 android:checked="false"
                                 android:fontFamily="@font/genshin_font"
                                 android:paddingLeft="4dp"
                                 android:paddingRight="4dp"
                                 android:singleLine="true"
                                 android:text="@string/ui_voc_name"
-                                android:textColor="@color/tv_color" />
+                                android:textColor="@color/tv_color"
+                                app:buttonTint="@color/tv_anti_color_2048" />
                         </LinearLayout>
 
                     </LinearLayout>
