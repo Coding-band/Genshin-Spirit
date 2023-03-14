@@ -1421,8 +1421,7 @@
     <string name="tcg_generals_ancient_helm">General\'s Ancient Helm</string>
     <string name="asagiri_korise">Asagiri Korise</string>
     <string name="lazurite_swirl">Lazurite Swirl</string>
-
-
+    <string name="download_cancelled">Download Task has been cancelled, please try again</string>
 
 
 </resources>

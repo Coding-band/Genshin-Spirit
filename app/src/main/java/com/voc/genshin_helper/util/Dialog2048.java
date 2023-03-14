@@ -58,6 +58,8 @@ public class Dialog2048 {
     public static final int MODE_DOWNLOAD_BASE = 3;
     public static final int MODE_DOWNLOAD_BASE_DESK = 4;
     public static final int MODE_DOWNLOAD_UPDATE = 5;
+    public static final int MODE_DOWNLOAD_PAUSED_NETWORK = 6;
+    public static final int MODE_DOWNLOAD_PAUSED_CRASH = 7;
 
     long size_max = 0;
     int countX = 0;
@@ -140,8 +142,25 @@ public class Dialog2048 {
 
     }
 
+    public void updateProgressWaited(long size_progress){
+        double progress = ((double) (size_progress*100/size_max));
+        dialog_progress_bar.setProgress((int) progress);
+        dialog_progress_tv.setText(prettyCount(progress)+"%");
+        //LogExport.export("DownloadTask","DownloadFileFromURL.doInBackground => updateProgress", "Progress : "+prettyCount(progress), context, DOWNLOADTASK);
+
+        if (isUnzip){
+            dialog_progress_detail.setText(prettyCount(size_progress)+" / "+prettyCount(size_max));
+        }else{
+            dialog_progress_detail.setText(prettyByteCount(size_progress)+" / "+prettyByteCount(size_max));
+        }
+
+    }
+
     public void updateMax(long size_max){
         this.size_max = size_max;
+    }
+    public long getMax(){
+        return size_max;
     }
 
     public FrameLayout getPositiveBtn(){
@@ -152,6 +171,7 @@ public class Dialog2048 {
     }
 
     public void mode(int mode){
+        isUnzip = false;
         switch (mode){
             case MODE_PROGRESS_DOWNLOAD: {
                 dialog_progress.setVisibility(View.VISIBLE);
@@ -189,6 +209,12 @@ public class Dialog2048 {
                 dialog_title_tv.setText(context.getString(R.string.update_download_update_base));
                 dialog_ask_tv.setText(context.getString(R.string.update_download_base_file_size)+" "+prettyByteCount(size_max)+"\n"+context.getString(R.string.update_download_advice));
 
+                break;
+            }
+            case MODE_DOWNLOAD_PAUSED_NETWORK: {
+                dialog_progress.setVisibility(View.VISIBLE);
+                dialog_ask.setVisibility(View.GONE);
+                dialog_title_tv.setText("Retrying to connect in 30s... Please stay and wait...");
                 break;
             }
         }
@@ -260,4 +286,5 @@ public class Dialog2048 {
         }
         return plus+new DecimalFormat("###,###,###,###,###").format(numValue);
     }
+
 }

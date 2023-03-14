@@ -97,6 +97,7 @@ import com.voc.genshin_helper.util.ChangeLog;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.DailyMemo;
 import com.voc.genshin_helper.util.Dialog2048;
+import com.voc.genshin_helper.util.DownloadAndUnzipTask;
 import com.voc.genshin_helper.util.DownloadTask;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.LangUtils;
@@ -837,6 +838,7 @@ public class Desk2048 extends AppCompatActivity {
                 lp.height = WindowManager.LayoutParams.MATCH_PARENT;
                 lp.gravity = Gravity.CENTER;
                 dialogWindow.setAttributes(lp);
+
                 dialog.show();
             }
         });
@@ -1599,9 +1601,12 @@ public class Desk2048 extends AppCompatActivity {
                 StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
                 StrictMode.setThreadPolicy(policy);
 
+                ArrayList<String> downloadList = new ArrayList<>();
+                downloadList.add("https://vt.25u.com/genshin_spirit/base.zip");
+
                 Dialog2048 dialog2048 = new Dialog2048();
                 dialog2048.setup(context,activity);
-                dialog2048.updateMax(getRemoteFileSize("https://vt.25u.com/genshin_spirit/base.zip"));
+                dialog2048.updateMax(getRemoteFileSizeA(downloadList));
                 dialog2048.mode(Dialog2048.MODE_DOWNLOAD_BASE_DESK);
                 dialog2048.show();
 
@@ -1609,8 +1614,10 @@ public class Desk2048 extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         dialog2048.dismiss();
-                        DownloadTask downloadTask = new DownloadTask();
-                        downloadTask.start("https://vt.25u.com/genshin_spirit/base.zip","base.zip","/base.zip",context,activity);
+                        //DownloadTask downloadTask = new DownloadTask();
+                        //downloadTask.start("https://vt.25u.com/genshin_spirit/base.zip","base.zip","/base.zip",context,activity);
+
+                        new DownloadAndUnzipTask(context,activity,downloadList,context.getFilesDir().getAbsolutePath()).execute();
                     }
                 });
 
@@ -2821,8 +2828,6 @@ public class Desk2048 extends AppCompatActivity {
                         out.write(buf, 0, len);
                     }
                 }
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -2901,6 +2906,30 @@ public class Desk2048 extends AppCompatActivity {
         return size;
     }
 
+
+    public static long getRemoteFileSizeB (String[] urlSTR) {
+        URL url = null;
+        long size = 0;
+        for (int x = 0 ;x< urlSTR.length ; x++){
+            System.out.println(urlSTR[x]);
+            try {
+                url = new URL(urlSTR[x]);
+                URLConnection urlConnection = url.openConnection();
+                urlConnection.connect();
+                size = size+urlConnection.getContentLength();
+                System.out.println("getR : "+size);
+                System.out.println("getRX : "+urlConnection.getContentLength());
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+        return size;
+    }
+
     public void check_updates(){
         OkHttpClient client = new OkHttpClient();
         String url = "https://vt.25u.com/genshin_spirit/update.json";
@@ -2946,8 +2975,9 @@ public class Desk2048 extends AppCompatActivity {
                     public void onClick(View v) {
 
                         dialog2048.dismiss();
-                        DownloadTask downloadTask = new DownloadTask();
-                        downloadTask.startA(array_download,array_fileName,array_SfileName,context,activity);
+                        //DownloadTask downloadTask = new DownloadTask();
+                        //downloadTask.startA(array_download,array_fileName,array_SfileName,context,activity);
+                        new DownloadAndUnzipTask(context,activity,array_download,context.getFilesDir().getAbsolutePath()).execute();
                         editor.apply();
                     }
                 });
@@ -2979,5 +3009,16 @@ public class Desk2048 extends AppCompatActivity {
             return false;
         }
 
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        sharedPreferences.edit().putBoolean("appStopped",true).apply();
     }
 }

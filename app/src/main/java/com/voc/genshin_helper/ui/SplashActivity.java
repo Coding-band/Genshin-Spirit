@@ -17,6 +17,8 @@ import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -44,6 +46,7 @@ import android.widget.TextView;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -56,6 +59,7 @@ import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
 import com.voc.genshin_helper.ui.SipTik.DeskSipTik;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.Dialog2048;
+import com.voc.genshin_helper.util.DownloadAndUnzipTask;
 import com.voc.genshin_helper.util.DownloadTask;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.LogExport;
@@ -121,6 +125,10 @@ public class SplashActivity extends AppCompatActivity {
         }else if (sharedPreferences.getBoolean("theme_default", false) == true) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
         }
+
+
+        sharedPreferences.edit().putBoolean("appStopped",false).apply();
+
         LogExport.init(context);
         ((TextView) findViewById(R.id.splash_version)).setText(BuildConfig.VERSION_NAME);
 
@@ -195,6 +203,11 @@ public class SplashActivity extends AppCompatActivity {
                     ,PackageManager.COMPONENT_ENABLED_STATE_DISABLED,PackageManager.DONT_KILL_APP);
         }
 
+        NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
+        NotificationChannel channel = new NotificationChannel("download_noti", "Download Notification", NotificationManager.IMPORTANCE_DEFAULT);
+        channel.setDescription("Download Notification");
+        notificationManager.createNotificationChannel(channel);
+
         String[] checkList = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE, Manifest.permission.EXPAND_STATUS_BAR};
         List<String> needRequestList = checkPermission(activity, checkList);
 
@@ -229,8 +242,12 @@ public class SplashActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     dialog2048.dismiss();
-                    DownloadTask downloadTask = new DownloadTask();
-                    downloadTask.start("https://vt.25u.com/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
+                    //DownloadTask downloadTask = new DownloadTask();
+                    //downloadTask.start("https://vt.25u.com/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
+                    ArrayList<String> downloadList = new ArrayList<>();
+                    downloadList.add("https://vt.25u.com/genshin_spirit/base.zip");
+
+                    new DownloadAndUnzipTask(context,activity,downloadList,context.getFilesDir().getAbsolutePath()).execute();
                 }
             });
 
@@ -273,8 +290,6 @@ public class SplashActivity extends AppCompatActivity {
                 } else {
                     Log.w("存儲許可權", "申請失敗X");
                     Log.w("寫錄許可權", "申請失敗X");
-                    finish();
-
                 }
             });
 
@@ -411,8 +426,10 @@ public class SplashActivity extends AppCompatActivity {
                                 public void onClick(View v) {
 
                                     dialog2048.dismiss();
-                                    DownloadTask downloadTask = new DownloadTask();
-                                    downloadTask.startAWithRun(array_download, array_fileName, array_SfileName, context, activity, true);
+                                    //DownloadTask downloadTask = new DownloadTask();
+                                    //downloadTask.startAWithRun(array_download, array_fileName, array_SfileName, context, activity, true);
+
+                                    new DownloadAndUnzipTask(context,activity,array_download,context.getFilesDir().getAbsolutePath()).execute();
                                     editor.apply();
                                 }
                             });
@@ -436,8 +453,13 @@ public class SplashActivity extends AppCompatActivity {
                             dialog2048.getPositiveBtn().setOnClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
-                                    DownloadTask downloadTask = new DownloadTask();
-                                    downloadTask.start("https://vt.25u.com/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
+                                    //DownloadTask downloadTask = new DownloadTask();
+                                    //downloadTask.start("https://vt.25u.com/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
+
+                                    ArrayList<String> downloadList = new ArrayList<>();
+                                    downloadList.add("https://vt.25u.com/genshin_spirit/base.zip");
+
+                                    new DownloadAndUnzipTask(context,activity,downloadList,context.getFilesDir().getAbsolutePath()).execute();
                                 }
                             });
                             dialog2048.getNegativeBtn().setOnClickListener(new View.OnClickListener() {
@@ -454,17 +476,13 @@ public class SplashActivity extends AppCompatActivity {
                         checkStyleUI();
                     }
 
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
+                } catch (JSONException | IOException e) {
                     e.printStackTrace();
                 }
             }else{
                 runDesk(sharedPreferences);
             }
 
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -519,10 +537,6 @@ public class SplashActivity extends AppCompatActivity {
                 URLConnection urlConnection = url.openConnection();
                 urlConnection.connect();
                 size = size + urlConnection.getContentLength();
-                System.out.println("getR : " + size);
-                System.out.println("getRX : " + urlConnection.getContentLength());
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -534,6 +548,10 @@ public class SplashActivity extends AppCompatActivity {
 
     public void checkStyleUI() {
         if (sharedPreferences.getString("styleUI", "N/A").equals("N/A")) {
+
+            sharedPreferences.edit().putString("styleUI", choice).apply();
+            runDesk(sharedPreferences);
+            /*
             final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
             View view = View.inflate(context, R.layout.fragment_choose_style_ui, null);
 
@@ -606,6 +624,8 @@ public class SplashActivity extends AppCompatActivity {
             lp.gravity = Gravity.CENTER;
             dialogWindow.setAttributes(lp);
             dialog.show();
+
+             */
         } else {
             runDesk(sharedPreferences);
         }
@@ -628,6 +648,11 @@ public class SplashActivity extends AppCompatActivity {
 
         return tContents;
 
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
     }
 }
 

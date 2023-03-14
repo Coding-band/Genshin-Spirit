@@ -1198,6 +1198,8 @@ public class ItemRss {
 
     // Not continue to use anymore
     public String[] getTCGByName(String name, Context context){
+        return getTCGByNameBase(name,context);
+        /*
         switch (name){
             case "Barbara" : return new String[]{"/anim/tcg_anim_barbara.gif", context.getString(R.string.tcg_barbara)};
             case "Bennett" : return new String[]{"/anim/tcg_anim_bennett.gif", context.getString(R.string.tcg_bennett)};
@@ -1232,6 +1234,7 @@ public class ItemRss {
 
             default: return getTCGByNameBase(name,context);
         }
+         */
     }
 
     // In Fact, we still haven't made enemy card.

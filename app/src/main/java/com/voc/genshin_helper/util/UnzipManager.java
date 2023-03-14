@@ -225,7 +225,6 @@ public class UnzipManager {
                     int count;
                     byte[] buffer = new byte[8192];
 
-
                     while ((ze = zis.getNextEntry()) != null) {
                         File file = new File(path, ze.getName());
                         File dir = ze.isDirectory() ? file : file.getParentFile();
