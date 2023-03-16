@@ -1,14 +1,18 @@
-package com.voc.genshin_helper.buff;/*
+package com.voc.genshin_helper.buff.obj;/*
  * Project Genshin Spirit (原神小幫手) was
  * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
  * Copyright © 2023 Xectorda 版權所有
  */
 
-import android.content.Intent;
+/*
+ * Project Genshin Spirit (原神小幫手) was
+ * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2023 Xectorda 版權所有
+ */
 
-import androidx.annotation.NonNull;
+import java.io.Serializable;
 
-public class BuffObject {
+public class BuffObject implements Serializable {
     /**
      * FIGHT_PROP_BASE_ATTACK       基礎攻擊力
      * FIGHT_PROP_HP	            生命值
@@ -54,13 +58,13 @@ public class BuffObject {
     public static final String FIGHT_PROP_DENDRO_DMG = "FIGHT_PROP_GRASS_ADD_HURT";
     public static final String NONE = "N/A";
 
-    Artifact artifactFlower = new Artifact();
-    Artifact artifactPlume = new Artifact();
-    Artifact artifactSand = new Artifact();
-    Artifact artifactCirclet = new Artifact();
-    Artifact artifactGoblet = new Artifact();
-    Weapon weapon = new Weapon();
-    Character character = new Character();
+    Artifact artifactFlower = null;
+    Artifact artifactPlume = null;
+    Artifact artifactSand = null;
+    Artifact artifactCirclet = null;
+    Artifact artifactGoblet = null;
+    Weapon weapon = null;
+    Character character = null;
 
     // How about DataBase type ?
 
@@ -136,11 +140,11 @@ public class BuffObject {
         return "BuffObject@"+ Integer.toHexString(hashCode())+"\n"+
                 padding+"character"+ equal + getCharacter().toString(nextLvl)+"\n"+
                 padding+"weapon"+ equal +getWeapon().toString(nextLvl)+"\n"+
-                padding+"artifactFlower"+ equal +getArtifactFlower().toString(nextLvl)+"\n"+
-                padding+"artifactPlume"+ equal +getArtifactPlume().toString(nextLvl)+"\n"+
-                padding+"artifactSand"+ equal +getArtifactSand().toString(nextLvl)+"\n"+
-                padding+"artifactCirclet"+ equal +getArtifactCirclet().toString(nextLvl)+"\n"+
-                padding+"artifactGoblet"+ equal +getArtifactGoblet().toString(nextLvl)+"\n"
+                padding+"artifactFlower"+ equal +(getArtifactFlower() == null ? "NULL" : getArtifactFlower().toString(nextLvl))+"\n"+
+                padding+"artifactPlume"+ equal +(getArtifactPlume() == null ? "NULL" : getArtifactPlume().toString(nextLvl))+"\n"+
+                padding+"artifactSand"+ equal +(getArtifactSand() == null ? "NULL" : getArtifactSand().toString(nextLvl))+"\n"+
+                padding+"artifactCirclet"+ equal +(getArtifactCirclet() == null ? "NULL" : getArtifactCirclet().toString(nextLvl))+"\n"+
+                padding+"artifactGoblet"+ equal +(getArtifactGoblet() == null ? "NULL" : getArtifactGoblet().toString(nextLvl))+"\n"
                 +"\n"
 
                 ;

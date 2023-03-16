@@ -4,9 +4,28 @@ package com.voc.genshin_helper.buff;/*
  * Copyright © 2023 Xectorda 版權所有
  */
 
+import android.content.Context;
+import android.graphics.drawable.Drawable;
+
+import com.voc.genshin_helper.R;
+import com.voc.genshin_helper.buff.obj.BuffObject;
+import com.voc.genshin_helper.buff.obj.Character;
+import com.voc.genshin_helper.buff.obj.Weapon;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+
 public class BuffCatelogy {
 
     public static final String RESERVED = "RESERVED";
+
+    //get from https://ambr.top/cht/archive/avatar
     public String getCharNameByID(int id){
         switch (id){
             case 10000002 : return "Kamisato Ayaka";
@@ -82,6 +101,7 @@ public class BuffCatelogy {
         }
     }
 
+    //get from https://ambr.top/cht/archive/weapon
     public String getWeaponById (int id){
         switch (id){
             case 11101 : return "Dull Blade";
@@ -246,6 +266,7 @@ public class BuffCatelogy {
         }
     }
 
+    //get from https://ambr.top/cht/archive/reliquary
     public String getArtifactById (int id){
         switch (id){
             case 10010: return "Adventurer";
@@ -297,5 +318,127 @@ public class BuffCatelogy {
             default:return "unknown";
 
         }
+    }
+
+    public String getWeaponTypeByName (String name_local, Context context){
+        String name, weapon;
+        String json_base = LoadData("db/weapons/weapon_list.json",context);
+        //Get data from JSON
+        try {
+            JSONArray array = new JSONArray(json_base);
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject object = array.getJSONObject(i);
+                name = object.getString("name");
+                weapon = object.getString("weapon");
+
+                if(name_local.equals(name)){
+                    switch (weapon){
+                        case "Sword" : return Weapon.SWORD;
+                        case "Claymore" : return Weapon.CLAYMORE;
+                        case "Catalyst" : return Weapon.CATALYST;
+                        case "Bow" : return Weapon.BOW;
+                        case "Polearm" : return Weapon.POLEARM;
+                    }
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return Weapon.SWORD;
+    }
+    public int getCharRareByName(String name_local, Context context) {
+        String name;
+        int rare;
+        String json_base = LoadData("db/char/char_list.json",context);
+        //Get data from JSON
+        try {
+            JSONArray array = new JSONArray(json_base);
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject object = array.getJSONObject(i);
+                name = object.getString("name");
+                rare = object.getInt("rare");
+
+                if(name_local.equals(name)){
+                    return rare;
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return 0;
+    }
+    public String getCharElementByName(String name_local, Context context) {
+        String name;
+        String element;
+        String json_base = LoadData("db/char/char_list.json",context);
+        //Get data from JSON
+        try {
+            JSONArray array = new JSONArray(json_base);
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject object = array.getJSONObject(i);
+                name = object.getString("name");
+                element = object.getString("element");
+
+                if(name_local.equals(name)){
+                    switch (element){
+                        case "Anemo" : return Character.ANEMO;
+                        case "Cryo" : return Character.CRYO;
+                        case "Dendro" : return Character.DENDRO;
+                        case "Electro" : return Character.ELECTRO;
+                        case "Geo" : return Character.GEO;
+                        case "Hydro" : return Character.HYDRO;
+                        case "Pyro" : return Character.PYRO;
+                    }
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return Character.PYRO;
+    }
+
+    public int getStatusIcoByName(String name){
+        switch (name){
+            case BuffObject.FIGHT_PROP_BASE_ATK : return R.drawable.ic_buff_atk_2048;
+            case BuffObject.FIGHT_PROP_ATK : return R.drawable.ic_buff_atk_2048;
+            case BuffObject.FIGHT_PROP_DEF : return R.drawable.ic_buff_def_2048;
+            case BuffObject.FIGHT_PROP_HP : return R.drawable.ic_buff_hp_2048;
+            case BuffObject.FIGHT_PROP_HP_P : return R.drawable.ic_buff_hp_2048;
+            case BuffObject.FIGHT_PROP_ATK_P : return R.drawable.ic_buff_atk_2048;
+            case BuffObject.FIGHT_PROP_DEF_P : return R.drawable.ic_buff_def_2048;
+            case BuffObject.FIGHT_PROP_CRIT_RATE : return R.drawable.ic_buff_crit_rate_2048;
+            case BuffObject.FIGHT_PROP_CRIT_DMG : return R.drawable.ic_buff_crit_dmg_2048;
+            case BuffObject.FIGHT_PROP_EN_RECH : return R.drawable.ic_buff_enrech_2048;
+            case BuffObject.FIGHT_PROP_HEAL_P : return R.drawable.ic_buff_hp_2048;
+            case BuffObject.FIGHT_PROP_ELE_MAS : return R.drawable.ic_buff_elemas_2048;
+            case BuffObject.FIGHT_PROP_PHY_DMG : return R.drawable.ic_buff_atk_2048;
+            case BuffObject.FIGHT_PROP_PYRO_DMG : return R.drawable.ic_buff_pyro_2048;
+            case BuffObject.FIGHT_PROP_ELECTRO_DMG : return R.drawable.ic_buff_electro_2048;
+            case BuffObject.FIGHT_PROP_HYDRO_DMG : return R.drawable.ic_buff_hydro_2048;
+            case BuffObject.FIGHT_PROP_ANEMO_DMG : return R.drawable.ic_buff_anemo_2048;
+            case BuffObject.FIGHT_PROP_CRYO_DMG : return R.drawable.ic_buff_cryo_2048;
+            case BuffObject.FIGHT_PROP_GEO_DMG : return R.drawable.ic_buff_geo_2048;
+            case BuffObject.FIGHT_PROP_DENDRO_DMG : return R.drawable.ic_buff_dendro_2048;
+            default: return R.drawable.paimon_sleep;
+        }
+    }
+
+    public String LoadData(String inFile, Context context) {
+        String tContents = "";
+        try {
+            File file = new File(context.getFilesDir()+"/"+inFile);
+            InputStream stream = new FileInputStream(file);
+
+            int size = stream.available();
+            byte[] buffer = new byte[size];
+            stream.read(buffer);
+            stream.close();
+            tContents = new String(buffer);
+        } catch (IOException e) {
+            // Handle exceptions here
+        }
+
+        return tContents;
+
     }
 }

@@ -517,7 +517,7 @@ public class DailyMemo2048Service extends Service {
     }
 
     private String createNotificationChannel(String channelId, String channelName){
-        NotificationChannel channel = new NotificationChannel(channelId,channelName, NotificationManager.IMPORTANCE_NONE);
+        NotificationChannel channel = new NotificationChannel(channelId,channelName, NotificationManager.IMPORTANCE_LOW);
         channel.setLightColor(Color.CYAN);
         channel.setLockscreenVisibility(Notification.VISIBILITY_PRIVATE);
         NotificationManager service = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);

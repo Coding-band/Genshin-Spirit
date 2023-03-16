@@ -1422,6 +1422,11 @@
     <string name="asagiri_korise">Asagiri Korise</string>
     <string name="lazurite_swirl">Lazurite Swirl</string>
     <string name="download_cancelled">Download Task has been cancelled, please try again</string>
+    <string name="last_update">Last Update</string>
+    <string name="from_game_display">From Game Display</string>
+    <string name="pls_wait">Please wait 10s</string>
+    <string name="login_dailymemo">Please login DailyMemo first</string>
+    <string name="affix">"Affix. "</string>
 
 
 </resources>

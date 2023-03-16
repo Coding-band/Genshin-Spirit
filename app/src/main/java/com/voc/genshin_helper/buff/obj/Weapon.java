@@ -1,30 +1,40 @@
-package com.voc.genshin_helper.buff;/*
+package com.voc.genshin_helper.buff.obj;/*
  * Project Genshin Spirit (原神小幫手) was
  * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
  * Copyright © 2023 Xectorda 版權所有
  */
 
+import java.io.Serializable;
 import java.util.Arrays;
 
-public class Weapon {
+/*
+ * Project Genshin Spirit (原神小幫手) was
+ * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2023 Xectorda 版權所有
+ */
 
-    public static final int SWORD = 0;
-    public static final int CLAYMORE = 1;
-    public static final int POLEARM = 2;
-    public static final int BOW = 3;
-    public static final int CATALYST = 4;
+public class Weapon implements Serializable {
+
+    public static final String SWORD = "WEAPON_SWORD";
+    public static final String CLAYMORE = "WEAPON_CLAYMORE";
+    public static final String POLEARM = "WEAPON_POLEARM";
+    public static final String BOW = "WEAPON_BOW";
+    public static final String CATALYST = "WEAPON_CATALYST";
 
     String weaponName = "Staff of Homa";
     int weaponLvl = 90; // need to source-1
     int weaponRare = 5;
     int weaponASCLvl = 5; // 武器突破等級
-    int weaponAffixLvl = 0; // 武器精煉等級
-    int weaponType = POLEARM;
+    int weaponAffixLvl = 1; // 武器精煉等級
+    String weaponType = POLEARM;
 
     int weaponId = 13501;
 
     double[] weaponStatValue = new double[]{0,0}; // [MainStatus, SubStatus]
     String[] weaponStatStr = new String[]{"N/A","N/A"}; // [MainStatus, SubStatus]
+
+    int weaponFollowId = 0;
+    String weaponFollow = "Hu Tao";
 
     public String getWeaponName() {
         return weaponName;
@@ -66,11 +76,11 @@ public class Weapon {
         this.weaponAffixLvl = weaponAffixLvl;
     }
 
-    public int getWeaponType() {
+    public String getWeaponType() {
         return weaponType;
     }
 
-    public void setWeaponType(int weaponType) {
+    public void setWeaponType(String weaponType) {
         this.weaponType = weaponType;
     }
 
@@ -98,6 +108,21 @@ public class Weapon {
         this.weaponStatStr = weaponStatStr;
     }
 
+    public int getWeaponFollowId() {
+        return weaponFollowId;
+    }
+
+    public void setWeaponFollowId(int weaponFollowId) {
+        this.weaponFollowId = weaponFollowId;
+    }
+
+    public String getWeaponFollow() {
+        return weaponFollow;
+    }
+
+    public void setWeaponFollow(String weaponFollow) {
+        this.weaponFollow = weaponFollow;
+    }
 
     /**
      *
@@ -120,13 +145,15 @@ public class Weapon {
                 padding + "weaponASCLvl" + equal + getWeaponASCLvl()+"\n"+
                 padding + "weaponAffixLvl" + equal + getWeaponAffixLvl()+"\n"+
                 padding + "weaponType" + equal + getTypeStrByType(getWeaponType())+"\n"+
+                padding + "weaponFollow" + equal + getWeaponFollow()+"\n"+
+                padding + "weaponFollowId" + equal + getWeaponFollowId()+"\n"+
                 padding + "weaponStatStr" + equal + Arrays.toString(getWeaponStatStr())+"\n"+
                 padding + "weaponStatValue" + equal + Arrays.toString(getWeaponStatValue())
 
                 ;
     }
 
-    public String getTypeStrByType(int TYPE){
+    public String getTypeStrByType(String TYPE){
       switch (TYPE){
           case SWORD: return "SWORD"+"_"+String.valueOf(TYPE);
           case CLAYMORE: return "CLAYMORE"+"_"+String.valueOf(TYPE);

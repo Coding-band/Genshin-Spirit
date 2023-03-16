@@ -298,6 +298,7 @@ public class DailyMemo {
         int dp = 1;
 
         memo_user_name.setText(nickname);
+        sharedPreferences.edit().putString("genshin_username",nickname).apply();
 
         //官服[天空島服] = "cn_gf01"
         //B服[世界樹服] = "cn_qd01"

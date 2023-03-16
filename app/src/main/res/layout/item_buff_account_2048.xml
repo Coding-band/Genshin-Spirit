@@ -59,22 +59,40 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/db_name"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
                         android:layout_margin="16dp"
                         android:layout_weight="1"
-                        android:fontFamily="@font/genshin_font"
-                        android:singleLine="true"
-                        android:text="優菈核爆流"
-                        android:textSize="20sp" />
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/db_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/genshin_font"
+                            android:singleLine="true"
+                            android:text="夜芷冰"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/db_subname"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/genshin_font"
+                            android:singleLine="true"
+                            android:text="901465968"
+                            android:textColor="@color/buff_tv_sub_2048"
+                            android:textSize="14sp" />
+                    </LinearLayout>
 
                     <ImageView
                         android:id="@+id/db_refresh"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
+                        android:layout_gravity="center"
                         android:layout_margin="8dp"
                         app:srcCompat="@drawable/ic_2048_refresh" />
 
@@ -90,7 +108,7 @@
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical">
 
                     <LinearLayout
@@ -98,12 +116,6 @@
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
                         android:orientation="horizontal">
-
-                        <ImageView
-                            android:id="@+id/db_char"
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            app:srcCompat="@drawable/ic_2048_tab_char" />
 
                         <HorizontalScrollView
                             android:id="@+id/db_char_sc"
@@ -129,84 +141,15 @@
 
                     </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:id="@+id/db_weapon"
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            app:srcCompat="@drawable/ic_2048_tab_weapon" />
-
-                        <HorizontalScrollView
-                            android:id="@+id/db_weapon_sc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fadingEdge="horizontal"
-                            android:fadingEdgeLength="40dp"
-                            android:overScrollMode="never"
-                            android:requiresFadingEdge="horizontal"
-                            android:scrollbars="none"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/linearLayout7"
-                            app:layout_constraintVertical_bias="0.0">
-
-                            <LinearLayout
-                                android:id="@+id/db_weapon_ll"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal" />
-                        </HorizontalScrollView>
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="8dp"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:id="@+id/db_art"
-                            android:layout_width="64dp"
-                            android:layout_height="64dp"
-                            android:layout_weight="0"
-                            app:srcCompat="@drawable/ic_2048_tab_art" />
-
-                        <HorizontalScrollView
-                            android:id="@+id/db_art_sc"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0"
-                            android:fadingEdge="horizontal"
-                            android:fadingEdgeLength="40dp"
-                            android:overScrollMode="never"
-                            android:requiresFadingEdge="horizontal"
-                            android:scrollbars="none"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/linearLayout7"
-                            app:layout_constraintVertical_bias="0.0">
-
-                            <LinearLayout
-                                android:id="@+id/db_art_ll"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal" />
-                        </HorizontalScrollView>
-                    </LinearLayout>
                 </LinearLayout>
+
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginRight="8dp"
                     android:layout_marginBottom="16dp"
                     android:orientation="horizontal">
 
@@ -214,18 +157,18 @@
                         android:id="@+id/db_info"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="16dp"
+                        android:layout_marginLeft="8dp"
                         android:layout_marginRight="16dp"
                         android:layout_weight="1"
                         android:fontFamily="@font/genshin_font"
-                        android:text="0角色，0武器，0聖違物" />
+                        android:text="來自遊戲展示" />
 
                     <TextView
                         android:id="@+id/db_date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/genshin_font"
-                        android:text="2022/08/09"
+                        android:text="更新 : 2022/08/09"
                         android:textAlignment="viewEnd" />
                 </LinearLayout>
 

@@ -1,13 +1,27 @@
-package com.voc.genshin_helper.buff;/*
+package com.voc.genshin_helper.buff.obj;/*
  * Project Genshin Spirit (原神小幫手) was
  * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
  * Copyright © 2023 Xectorda 版權所有
  */
 
 
+import java.io.Serializable;
 import java.util.Arrays;
 
-public class Character {
+/*
+ * Project Genshin Spirit (原神小幫手) was
+ * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+ * Copyright © 2023 Xectorda 版權所有
+ */
+
+public class Character implements Serializable {
+    public static final String ANEMO = "CHAR_ANEMO";
+    public static final String CRYO = "CHAR_CRYO";
+    public static final String DENDRO = "CHAR_DENDRO";
+    public static final String ELECTRO = "CHAR_ELECTRO";
+    public static final String GEO = "CHAR_GEO";
+    public static final String HYDRO = "CHAR_HYDRO";
+    public static final String PYRO = "CHAR_PYRO";
     /**
      * <h3>Character Bio</h3>
      * Example : Lvl 90 C2 Hu Tao
@@ -25,7 +39,10 @@ public class Character {
     int charASC = 6;
     int charLvl = 90;
     int charCon = 2;
+    int charRare = 5;
     int[] charTalentLvl = new int[]{10,10,10};
+
+    String charElement = PYRO;
 
     /**
      * <h3>Character Value</h3>
@@ -478,6 +495,22 @@ public class Character {
         this.charMaxDEF = charMaxDEF;
     }
 
+    public int getCharRare() {
+        return charRare;
+    }
+
+    public void setCharRare(int charRare) {
+        this.charRare = charRare;
+    }
+
+    public String getCharElement() {
+        return charElement;
+    }
+
+    public void setCharElement(String charElement) {
+        this.charElement = charElement;
+    }
+
     /**
      *
      * @param level : Root is 0, subItem is 1...n
@@ -498,6 +531,8 @@ public class Character {
                 padding + "charASC" + equal + getCharASC()+"\n"+
                 padding + "charLvl" + equal + getCharLvl()+"\n"+
                 padding + "charCon" + equal + getCharCon()+"\n"+
+                padding + "charRare" + equal + getCharRare()+"\n"+
+                padding + "charElement" + equal + getCharElement()+"\n"+
                 padding + "charTalentLvl" + equal + Arrays.toString(getCharTalentLvl())+"\n"+
                 padding + "charBaseHP" + equal + getCharBaseHP()+"\n"+
                 padding + "charHP" + equal + getCharHP()+"\n"+

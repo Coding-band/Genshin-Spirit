@@ -73,8 +73,8 @@ import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.BuildConfig;
 import com.voc.genshin_helper.R;
+import com.voc.genshin_helper.buff.BuffDatabaseUI;
 import com.voc.genshin_helper.buff.EnkaDataCollect;
-import com.voc.genshin_helper.buff.TMP;
 import com.voc.genshin_helper.buff_old.SipTikCal;
 import com.voc.genshin_helper.data.Artifacts;
 import com.voc.genshin_helper.data.Characters;
@@ -98,7 +98,6 @@ import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.DailyMemo;
 import com.voc.genshin_helper.util.Dialog2048;
 import com.voc.genshin_helper.util.DownloadAndUnzipTask;
-import com.voc.genshin_helper.util.DownloadTask;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.LangUtils;
 import com.voc.genshin_helper.util.LocaleHelper;
@@ -112,7 +111,6 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -404,6 +402,7 @@ public class Desk2048 extends AppCompatActivity {
         EnkaDataCollect enkaDataCollect = new EnkaDataCollect();
         enkaDataCollect.init(context);
 
+
         //new TMP().listChar();
         //new TMP().listWeapon();
         //new TMP().listArt();
@@ -519,9 +518,9 @@ public class Desk2048 extends AppCompatActivity {
 
         app_started = sharedPreferences.getInt("app_started",1);
         boolean voted = sharedPreferences.getBoolean("voted",false);
-        if(voted == false && app_started >= 5){
-            showVoteDialog();
-        }
+        //if(!voted && app_started >= 5){
+        //    showVoteDialog();
+        //}
 
         if(sharedPreferences.getBoolean("PASS_JUST_CHANGED_THEME",false) == false){
             editor.putInt("app_started",app_started+1);
@@ -733,6 +732,7 @@ public class Desk2048 extends AppCompatActivity {
 
     private void setup_paimon() {
         ConstraintLayout paimon_cal = viewPager4.findViewById(R.id.paimon_cal);
+        ConstraintLayout paimon_buff_cal = viewPager4.findViewById(R.id.paimon_buff_cal);
         ConstraintLayout paimon_daily = viewPager4.findViewById(R.id.paimon_daily);
         ConstraintLayout paimon_map = viewPager4.findViewById(R.id.paimon_map);
         ConstraintLayout paimon_alarm = viewPager4.findViewById(R.id.paimon_alarm);
@@ -775,6 +775,13 @@ public class Desk2048 extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Desk2048.this, CalculatorDB_2048.class);
+                startActivity(i);
+            }
+        });
+        paimon_buff_cal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Desk2048.this, BuffDatabaseUI.class);
                 startActivity(i);
             }
         });

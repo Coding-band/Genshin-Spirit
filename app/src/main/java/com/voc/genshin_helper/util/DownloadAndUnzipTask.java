@@ -5,6 +5,8 @@ package com.voc.genshin_helper.util;/*
  */
 
 import static com.voc.genshin_helper.util.Dialog2048.MODE_DOWNLOAD_PAUSED_CRASH;
+import static com.voc.genshin_helper.util.LogExport.DOWNLOADTASK;
+import static com.voc.genshin_helper.util.LogExport.DOWNLOAD_UNZIP_TASK;
 
 import android.app.Activity;
 import android.app.Notification;
@@ -69,7 +71,8 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
         this.location = location;
         notificationId = 1;
         sharedPreferences = context.getSharedPreferences("user_info",Context.MODE_PRIVATE);
-        downloadAndUnzipTask = this;
+        downloadAndUnzipTask = this;LogExport.export("DownloadAndUnzipTask","DownloadFileFromURL(...)", "FINISH INIT", context, DOWNLOAD_UNZIP_TASK);
+
     }
 
     @Override
@@ -81,6 +84,7 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
         dialog2048.setup(context, activity);
         dialog2048.mode(Dialog2048.MODE_PROGRESS_DOWNLOAD);
         dialog2048.show();
+        downloadAndUnzipTask = this;LogExport.export("DownloadAndUnzipTask","onPreExecute", "Dialog display ok", context, DOWNLOAD_UNZIP_TASK);
 
         // 建立 NotificationCompat.Builder
         notificationBuilder = new NotificationCompat.Builder(context, "download_noti")
@@ -93,6 +97,7 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
         // 建立 NotificationManager 並發送通知
         notificationManager = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.notify(notificationId, notificationBuilder.build());
+        downloadAndUnzipTask = this;LogExport.export("DownloadAndUnzipTask","onPreExecute", "Notification ok", context, DOWNLOAD_UNZIP_TASK);
 
     }
 
@@ -116,6 +121,8 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
                     existingFileSize = downloadFile.length();
                 }
 
+                downloadAndUnzipTask = this;LogExport.export("DownloadAndUnzipTask","doInBackground", "existingFileSize = "+String.valueOf(existingFileSize), context, DOWNLOAD_UNZIP_TASK);
+
                 // 下載檔案
                 try {
                     URL urlT = new URL(urlStr);
@@ -125,7 +132,7 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
                     connT.setReadTimeout(10000);
                     connT.connect();
 
-                    System.out.println("connT.getContentLength() : "+connT.getContentLength()+" | existingFileSize : "+existingFileSize );
+                    downloadAndUnzipTask = this;LogExport.export("DownloadAndUnzipTask","doInBackground", "DOWNLOAD - connT.getContentLength() : "+connT.getContentLength()+" | existingFileSize : "+existingFileSize, context, DOWNLOAD_UNZIP_TASK);
 
                     if(connT.getContentLength() != existingFileSize){
                         URL url = new URL(urlStr);
@@ -135,6 +142,8 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
                         conn.setReadTimeout(10000);
                         conn.setRequestProperty("Range", "bytes=" + existingFileSize + "-");
                         conn.connect();
+
+                        downloadAndUnzipTask = this;LogExport.export("DownloadAndUnzipTask","doInBackground", "DOWNLOAD - conn.getContentLength() : "+conn.getContentLength(), context, DOWNLOAD_UNZIP_TASK);
 
                         BufferedInputStream inputStream = new BufferedInputStream(conn.getInputStream());
                         FileOutputStream outputStream = new FileOutputStream(downloadFilePath, true);
@@ -149,6 +158,7 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
                         //初始化Dialog
                         dialog2048.updateMax(fileSourceSize+existingFileSize);
                         publishProgress(0, Dialog2048.MODE_PROGRESS_DOWNLOAD);
+                        downloadAndUnzipTask = this;LogExport.export("DownloadAndUnzipTask","doInBackground", "DOWNLOAD - Dialog max & mode init : "+"MODE_PROGRESS_DOWNLOAD", context, DOWNLOAD_UNZIP_TASK);
 
                         while ((count = inputStream.read(buffer, 0, 1024)) != -1) {
                             existingFileSize += count;
@@ -162,13 +172,18 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
                                 counter++;
                             }
                         }
+                        downloadAndUnzipTask = this;LogExport.export("DownloadAndUnzipTask","doInBackground", "DOWNLOAD - Finish count++ loop", context, DOWNLOAD_UNZIP_TASK);
 
                         outputStream.flush();
                         outputStream.close();
                         inputStream.close();
+                        downloadAndUnzipTask = this;LogExport.export("DownloadAndUnzipTask","doInBackground", "DOWNLOAD - steams were closed", context, DOWNLOAD_UNZIP_TASK);
+
                     }
                 } catch (IOException e) {
+                    downloadAndUnzipTask = this;LogExport.export("DownloadAndUnzipTask","doInBackground", "DOWNLOAD - ERROR ! "+e.getMessage(), context, DOWNLOAD_UNZIP_TASK);
                     e.printStackTrace();
+
                 }
 
                 // 解壓縮檔案
@@ -180,12 +195,16 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
 
                     ZipFile zipFile = new ZipFile(downloadFilePath);
                     zipSize = zipFile.size();
+                    downloadAndUnzipTask = this;LogExport.export("DownloadAndUnzipTask","doInBackground", "UNZIP - zipSize : "+zipFile.size(), context, DOWNLOAD_UNZIP_TASK);
                     if (zipFile.size() > 0) {
                         //初始化Dialog
                         dialog2048.updateMax((zipFile.size() > 0 ? zipFile.size() : 1));
                         publishProgress(0, Dialog2048.MODE_PROGRESS_UNZIP);
+                        downloadAndUnzipTask = this;LogExport.export("DownloadAndUnzipTask","doInBackground", "UNZIP - Dialog max & mode init : "+"MODE_PROGRESS_UNZIP", context, DOWNLOAD_UNZIP_TASK);
                     }
                     int counter = 0;
+                    downloadAndUnzipTask = this;LogExport.export("DownloadAndUnzipTask","doInBackground", "UNZIP - begin unzipping", context, DOWNLOAD_UNZIP_TASK);
+
                     while ((zipEntry = zipInputStream.getNextEntry()) != null && !isCancelled()) {
                         String fileName = zipEntry.getName();
                         File outputFile = new File(location, fileName);
@@ -200,6 +219,7 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
                             }
                             outputStream.flush();
                             outputStream.close();
+
                         }
 
                         if (counter % 150 == 0) {
@@ -209,13 +229,19 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
 
                         zipInputStream.closeEntry();
                     }
+                    downloadAndUnzipTask = this;LogExport.export("DownloadAndUnzipTask","doInBackground", "UNZIP - finish unzipping", context, DOWNLOAD_UNZIP_TASK);
                     zipInputStream.close();
+                    downloadAndUnzipTask = this;LogExport.export("DownloadAndUnzipTask","doInBackground", "UNZIP - steams were closed", context, DOWNLOAD_UNZIP_TASK);
+
 
                     // 確保完全解壓縮後刪除下載的 Zip 檔案
                     if(zipSize == counter){
                         FileUtils.forceDelete(downloadFile);
                     }
+                    downloadAndUnzipTask = this;LogExport.export("DownloadAndUnzipTask","doInBackground", "UNZIP - zip file has been deleted", context, DOWNLOAD_UNZIP_TASK);
+
                 } catch (IOException e) {
+                    downloadAndUnzipTask = this;LogExport.export("DownloadAndUnzipTask","doInBackground", "UNZIP - ERROR ! "+e.getMessage(), context, DOWNLOAD_UNZIP_TASK);
                     e.printStackTrace();
                 }
             }else{

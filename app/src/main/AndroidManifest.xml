@@ -153,6 +153,16 @@
         <activity
             android:name=".buff_old.SipTikCal"
             android:label="@string/app_name"
+            android:theme="@style/NoTheme"
+            android:windowSoftInputMode="stateHidden" />
+
+        <activity android:name=".buff.BuffDatabaseUI"
+            android:label="@string/app_name"
+            android:theme="@style/NoTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".buff.BuffAccountUI"
+            android:label="@string/app_name"
+            android:theme="@style/NoTheme"
             android:windowSoftInputMode="stateHidden" />
 
         <receiver android:name=".util.ReminderBroadcast" />

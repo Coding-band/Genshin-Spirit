@@ -9,19 +9,36 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <include
-        layout="@layout/item_buff_char_equip_auto_2048"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="match_parent"
+        android:fadingEdge="horizontal|vertical"
+        android:fadingEdgeLength="30dp"
+        android:requiresFadingEdge="horizontal|vertical"
+        android:scrollbars="none">
 
-    <include
-        layout="@layout/item_buff_value_2048"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fadingEdge="vertical"
+            android:orientation="vertical"
+            android:paddingBottom="72dp">
 
-    <include
-        layout="@layout/item_buff_dmg_2048"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+            <include
+                layout="@layout/item_buff_char_equip_auto_2048"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include
+                layout="@layout/item_buff_value_2048"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <include
+                layout="@layout/item_buff_dmg_2048"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>

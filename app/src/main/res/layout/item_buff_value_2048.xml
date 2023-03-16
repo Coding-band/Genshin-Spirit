@@ -89,6 +89,7 @@
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/buff_dmg_value_hp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="4dp"
@@ -126,6 +127,7 @@
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/buff_dmg_value_atk"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
@@ -163,6 +165,7 @@
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/buff_dmg_value_def"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
@@ -200,6 +203,7 @@
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/buff_dmg_value_elemas"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
@@ -237,6 +241,7 @@
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/buff_dmg_value_crit_rate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
@@ -274,6 +279,7 @@
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/buff_dmg_value_crit_dmg"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
@@ -311,6 +317,7 @@
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/buff_dmg_value_enrech"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
@@ -330,6 +337,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
+                        android:id="@+id/buff_dmg_ico_element_dmg"
                         android:layout_width="18dp"
                         android:layout_height="18dp"
                         android:layout_gravity="center"
@@ -337,6 +345,7 @@
                         app:srcCompat="@drawable/ic_buff_pyro_2048" />
 
                     <TextView
+                        android:id="@+id/buff_dmg_str_element_dmg"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="12dp"
@@ -348,6 +357,7 @@
                         android:textSize="16sp" />
 
                     <TextView
+                        android:id="@+id/buff_dmg_value_element_dmg"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"

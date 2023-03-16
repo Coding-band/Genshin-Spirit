@@ -204,7 +204,7 @@ public class SplashActivity extends AppCompatActivity {
         }
 
         NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
-        NotificationChannel channel = new NotificationChannel("download_noti", "Download Notification", NotificationManager.IMPORTANCE_DEFAULT);
+        NotificationChannel channel = new NotificationChannel("download_noti", "Download Notification", NotificationManager.IMPORTANCE_LOW);
         channel.setDescription("Download Notification");
         notificationManager.createNotificationChannel(channel);
 
