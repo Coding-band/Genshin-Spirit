@@ -33,16 +33,18 @@ public class Character implements Serializable {
      * charCon : Character's Constellation Level
      */
 
-    String charName = "Hu Tao";
-    int charId = 46; //avatarId - 10000000
+    String charName = "N/A";
+    int charId = 0; //avatarId - 10000000
     int charEXP = 0;
-    int charASC = 6;
-    int charLvl = 90;
-    int charCon = 2;
+    int charASC = 0;
+    int charLvl = 1;
+    int charCon = 0;
     int charRare = 5;
     int[] charTalentLvl = new int[]{10,10,10};
 
     String charElement = PYRO;
+
+    Talents talents = null;
 
     /**
      * <h3>Character Value</h3>
@@ -511,6 +513,14 @@ public class Character implements Serializable {
         this.charElement = charElement;
     }
 
+    public Talents getTalents() {
+        return talents;
+    }
+
+    public void setTalents(Talents talents) {
+        this.talents = talents;
+    }
+
     /**
      *
      * @param level : Root is 0, subItem is 1...n
@@ -568,7 +578,8 @@ public class Character implements Serializable {
                 padding + "charCryoResP" + equal + getCharCryoResP()+"\n"+
                 padding + "charMaxHP" + equal + getCharMaxHP()+"\n"+
                 padding + "charMaxATK" + equal + getCharMaxATK()+"\n"+
-                padding + "charMaxDEF" + equal + getCharMaxDEF()
+                padding + "charMaxDEF" + equal + getCharMaxDEF()+"\n"+
+                padding + "Talents"+ equal +(getTalents() == null ? "NULL" : getTalents().toString(nextLvl))+"\n"
                 ;
 
 
