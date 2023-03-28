@@ -93,68 +93,59 @@
 
     </LinearLayout>
 
-    <ScrollView
-        android:layout_width="0dp"
+    <com.voc.genshin_helper.util.CustomViewPager
+        android:id="@+id/ui_vp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:fadingEdgeLength="20dp"
-        android:requiresFadingEdge="horizontal|vertical"
-        android:scrollbars="none"
+        android:layout_marginTop="8dp"
+        android:fadingEdge="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:paddingTop="52dp"
-            android:paddingBottom="64dp">
+    </com.voc.genshin_helper.util.CustomViewPager>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_buff_ui_char_kwang"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/ui_cal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout11"
+        app:layout_constraintVertical_bias="0.0">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout"
-                android:layout_width="240dp"
-                android:layout_height="52dp"
-                android:layout_gravity="center"
-                android:layout_marginTop="16dp"
-                android:background="@drawable/bg_buff_ui_char_kwang">
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/team_tablayout"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:background="#00000000"
+            android:fadingEdge="horizontal|vertical"
+            android:fadingEdgeLength="30dp"
+            android:requiresFadingEdge="horizontal|vertical"
+            android:scrollbars="none"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tabGravity="center"
+            app:tabIndicator="@drawable/bg_tcg_tab_selecter_2048"
+            app:tabIndicatorColor="@null"
+            app:tabIndicatorFullWidth="false"
+            app:tabInlineLabel="false"
+            app:tabMinWidth="52dp"
+            app:tabMode="scrollable"
+            app:tabPaddingBottom="4dp"
+            app:tabPaddingEnd="4dp"
+            app:tabPaddingStart="4dp"
+            app:tabPaddingTop="4dp"
+            app:tabRippleColor="@null" />
 
-                <com.google.android.material.tabs.TabLayout
-                    android:id="@+id/team_tablayout"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:background="#00000000"
-                    android:fadingEdgeLength="20dp"
-                    android:requiresFadingEdge="horizontal|vertical"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:tabGravity="fill"
-                    app:tabIndicator="@drawable/bg_tcg_tab_selecter_2048"
-                    app:tabIndicatorColor="@null"
-                    app:tabIndicatorHeight="52dp"
-                    app:tabInlineLabel="false"
-                    app:tabMode="fixed"
-                    app:tabPaddingBottom="4dp"
-                    app:tabPaddingTop="4dp"
-                    app:tabRippleColor="@null" />
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <com.voc.genshin_helper.util.CustomViewPager
-                android:id="@+id/ui_vp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fadingEdge="horizontal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-            </com.voc.genshin_helper.util.CustomViewPager>
-
-        </LinearLayout>
-    </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

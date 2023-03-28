@@ -121,6 +121,7 @@ public class BuffDBAdapter extends RecyclerView.Adapter<BuffDBAdapter.ViewHolder
                 holder.db_info.setText(context.getString(R.string.from_game_display));
                 holder.db_date.setText(context.getString(R.string.last_update)+" : "+(date.getYear()+1900)+"/"+(date.getMonth()+1)+"/"+date.getDate());
                 holder.db_char_ll.removeAllViews();
+                holder.isAccount = true;
 
                 holder.db_subname.setVisibility(View.VISIBLE);
                 holder.db_refresh.setVisibility(View.VISIBLE);
@@ -198,6 +199,7 @@ public class BuffDBAdapter extends RecyclerView.Adapter<BuffDBAdapter.ViewHolder
             holder.db_weapon_ll.removeAllViews();
             holder.db_art_ll.removeAllViews();
 
+            holder.set_name = "Set_"+item[0];
 
             for (int x = 0 ; x < db.getChar_cnt() ; x++){
                 View char_view = LayoutInflater.from(context).inflate(R.layout.item_img_2048, holder.db_char_ll, false);
@@ -373,7 +375,9 @@ public class BuffDBAdapter extends RecyclerView.Adapter<BuffDBAdapter.ViewHolder
         public ImageView db_edit, db_char, db_weapon, db_art, db_delete, db_refresh;
         public LinearLayout db_char_ll, db_weapon_ll, db_art_ll;
 
-        public String name = "";
+        public String set_name = "N/A";
+
+        public boolean isAccount = false;
 
         public ViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
@@ -401,7 +405,11 @@ public class BuffDBAdapter extends RecyclerView.Adapter<BuffDBAdapter.ViewHolder
                     @Override
                     public void onClick(View v) {
                         if (context instanceof BuffDatabaseUI){
-                            (((BuffDatabaseUI) context)).transferDataToAccountUI(enkaDataCollect);
+                            if(isAccount){
+                                (((BuffDatabaseUI) context)).transferDataToAccountUI(enkaDataCollect);
+                            }else{
+                                (((BuffDatabaseUI) context)).transferDataToMainUI(set_name);
+                            }
                         }
                     }
                 });

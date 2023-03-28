@@ -374,6 +374,7 @@ public class EnkaDataCollect implements Serializable {
                     contentValues.put("itemType", buffCatelogy.getWeaponTypeByName(buffObjects.get(x).getWeapon().getWeaponName(),context));
                     contentValues.put("itemLvl", buffObjects.get(x).getWeapon().getWeaponLvl());
                     contentValues.put("itemAffixLvl", buffObjects.get(x).getWeapon().getWeaponAffixLvl());
+                    contentValues.put("itemASCLvl", buffObjects.get(x).getWeapon().getWeaponASCLvl());
                     contentValues.put("itemRare", buffObjects.get(x).getWeapon().getWeaponRare());
                     contentValues.put("itemFollowChar", buffObjects.get(x).getWeapon().getWeaponFollow());
                     contentValues.put("itemFollowCharId", buffObjects.get(x).getWeapon().getWeaponFollowId());

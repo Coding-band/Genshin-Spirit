@@ -164,6 +164,10 @@
             android:label="@string/app_name"
             android:theme="@style/NoTheme"
             android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".buff.BuffMainUI"
+            android:label="@string/app_name"
+            android:theme="@style/NoTheme"
+            android:windowSoftInputMode="stateHidden" />
 
         <receiver android:name=".util.ReminderBroadcast" />
         <receiver

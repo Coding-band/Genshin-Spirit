@@ -89,6 +89,7 @@
                             android:textColor="@color/buff_tv_sub_2048"
                             android:textSize="14sp"
                             android:visibility="gone" />
+
                     </LinearLayout>
 
                     <ImageView

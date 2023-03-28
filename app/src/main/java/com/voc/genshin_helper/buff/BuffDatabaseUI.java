@@ -307,7 +307,7 @@ public class BuffDatabaseUI extends AppCompatActivity {
                 "itemSubStatus4Value"+ " REAL," +
                 "charTalent1Lvl"+ " INTEGER," +
                 "charTalent2Lvl"+ " INTEGER," +
-                "charTalent3Lv"+ " INTEGER," +
+                "charTalent3Lvl"+ " INTEGER," +
                 "charBaseHP"+ " REAL," +
                 "charHP"+ " REAL," +
                 "charHPP"+ " REAL," +
@@ -431,15 +431,15 @@ public class BuffDatabaseUI extends AppCompatActivity {
         readIndexRecord();
     }
 
-    public void transferDataToSetUI (String name){
+    public void transferDataToMainUI (String name){
         /**
          * TRANSFER DATA
          */
 
         dialogSetup();
 
-        Intent intent = new Intent(context, Calculator2048.class);
-        intent.putExtra("damageBuffLooking",name);
+        Intent intent = new Intent(context, BuffMainUI.class);
+        intent.putExtra("SetName",name);
 
         startActivityForResult(intent,DIALOG_DISMISS);
 

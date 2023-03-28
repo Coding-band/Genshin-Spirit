@@ -41,9 +41,6 @@ public class BuffCalculate {
     ItemRss itemRss;
     ArrayList<BuffObject> buffObjectArrayList = new ArrayList<>();
 
-    public static Integer[] charLvlBreak = {0,20,40,50,60,70,80,90,100}; //100 is for avoiding OutOfIndex
-    public static Integer[] weaponLvlBreak = {0,20,40,50,60,70,80,90,100}; //100 is for avoiding OutOfIndex
-
     public void initGlobalVar(Context context, Activity activity, BuffCatelogy buffCatelogy, ItemRss itemRss){
         this.context = context;
         this.activity = activity;
@@ -69,14 +66,19 @@ public class BuffCalculate {
         int[] charSkillLvl = buffObject.getCharacter().getCharTalentLvl();
 
 
-        int tmp_break = charASC*2 + (charLvl == charLvlBreak[charASC+1] ? 1 : 0);
-        int weapon_tmp_break = weaponASC*4 + (charLvl == weaponLvlBreak[charASC+1] ? 1 : 0);
+        int tmp_break = charASC*2 + (charLvl == BuffCatelogy.charLvlBreak[charASC+1] ? 1 : 0);
+        int weapon_tmp_break = (weaponLvl >= 40 ? (weaponASC + 1)*3 : weaponASC*4) + (charLvl == BuffCatelogy.weaponLvlBreak[weaponASC+1] ? 1 : (int)((charLvl - BuffCatelogy.weaponLvlBreak[weaponASC]) / 5));
+
+        System.out.println(weapon_tmp_break);
+
+        Character character = buffObject.getCharacter();
+        Talents talents = buffObject.getCharacter().getTalents();
+        Weapon weapon = buffObject.getWeapon();
 
         try {
             JSONObject jsonObject = new JSONObject(char_json_stat);
             JSONObject 角色突破 = jsonObject.getJSONObject("角色突破");
 
-            Character character = buffObject.getCharacter();
 
             character.setCharBaseHP(角色突破.getJSONArray("基礎生命值").getDouble(tmp_break));
             character.setCharBaseATK(角色突破.getJSONArray("基礎攻擊力").getDouble(tmp_break));
@@ -105,8 +107,6 @@ public class BuffCalculate {
         try {
             JSONObject jsonObject = new JSONObject(char_json_stat);
             JSONObject 普通攻擊 = jsonObject.getJSONObject("普通攻擊");
-
-            Talents talents = buffObject.getCharacter().getTalents();
 
             talents.setNorm_1_Hit(普通攻擊.getJSONArray("一段傷害").getDouble(charSkillLvl[0] - 1));
             talents.setNorm_2_Hit(普通攻擊.getJSONArray("二段傷害").getDouble(charSkillLvl[0] - 1));
@@ -173,8 +173,6 @@ public class BuffCalculate {
             // getting inner array Ingredients
             JSONArray 元素戰技STR = jsonObject.getJSONArray("元素戰技STR");
             JSONObject 元素戰技 = jsonObject.getJSONObject("元素戰技");
-
-            Talents talents = buffObject.getCharacter().getTalents();
             /*
             "T1" [0.111,...,...]
             "T2" [0.653,...,...]
@@ -206,8 +204,6 @@ public class BuffCalculate {
             JSONArray 元素爆發STR = jsonObject.getJSONArray("元素爆發STR");
             JSONObject 元素爆發 = jsonObject.getJSONObject("元素爆發");
 
-            Talents talents = buffObject.getCharacter().getTalents();
-
             /*
             "T1" [0.111,...,...]
             "T2" [0.653,...,...]
@@ -235,20 +231,21 @@ public class BuffCalculate {
          * Weapon Part
          */
 
-        Weapon weapon = buffObject.getWeapon();
         String weapon_json = LoadData("db/buff/weapons/"+weapon.getWeaponName().replace(" ","_").replace("'","").replace("-","_")+".json");
         try {
             JSONObject jsonObject = new JSONObject(weapon_json);
 
-            武器基礎攻擊力 = jsonObject.getJSONArray("基礎攻擊力").getDouble(weapon_tmp_break);
-            武器百分比生命值 = jsonObject.getJSONArray("生命值加成").getDouble(weapon_tmp_break);
-            武器百分比攻擊力 = jsonObject.getJSONArray("攻擊力加成").getDouble(weapon_tmp_break);
-            武器百分比防禦力 = jsonObject.getJSONArray("防禦力加成").getDouble(weapon_tmp_break);
-            武器百分比暴擊率 = jsonObject.getJSONArray("暴擊率").getDouble(weapon_tmp_break);
-            武器百分比暴擊傷害 = jsonObject.getJSONArray("暴擊傷害").getDouble(weapon_tmp_break);
-            武器百分比元素充能 = jsonObject.getJSONArray("元素充能").getDouble(weapon_tmp_break);
-            武器元素精通 = jsonObject.getJSONArray("元素精通").getDouble(weapon_tmp_break);
-            武器百分比物理傷害加成 = jsonObject.getJSONArray("物理傷害加成").getDouble(weapon_tmp_break);
+            String[] mainItem = {"生命值加成","攻擊力加成","防禦力加成","暴擊率","暴擊傷害","元素充能","元素精通","物理傷害加成"};
+            String[] strArr = new String[]{buffCatelogy.getStatusNameByLocaleName("基礎攻擊力"),"N/A"};
+            double[] valueArr = new double[]{jsonObject.getJSONArray("基礎攻擊力").getDouble(weapon_tmp_break),0};
+
+            for (int x = 0 ; x < strArr.length ; x++){
+                double value = jsonObject.getJSONArray(mainItem[x]).getDouble(weapon_tmp_break);
+                if(value != 0){
+                    strArr[1] = buffCatelogy.getStatusNameByLocaleName(mainItem[x]);
+                    valueArr[1] = value;
+                }
+            }
 
 
         } catch (JSONException e) {

@@ -25,6 +25,21 @@ public class BuffCatelogy {
 
     public static final String RESERVED = "RESERVED";
 
+    public static String[] lvlListChar = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "20+", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "40+", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "50+", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "60+", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "70+", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "80+", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90"};
+    public static String[] lvlListCharCon = new String[]{"0","1", "2", "3", "4", "5", "6"};
+    public static String[] lvlListWeaponAffix = new String[]{"1", "2", "3", "4", "5", "6"};
+    public static String[] lvlListWeapon70 = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "20+", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "40+", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "50+", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "60+", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70"};
+    public static String[] lvlListWeapon90 = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "20+", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "40+", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "50+", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "60+", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "70+", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "80+", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90"};
+    public static String[] lvlListSkill = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+    public static String[] lvlListArt4 = new String[]{"1", "2", "3", "4"};
+    public static String[] lvlListArt8 = new String[]{"1", "2", "3", "4", "5", "6", "7", "8"};
+    public static String[] lvlListArt12 = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"};
+    public static String[] lvlListArt16 = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"};
+    public static String[] lvlListArt20 = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"};
+
+    public static Integer[] charLvlBreak = {0,20,40,50,60,70,80,90,100}; //100 is for avoiding OutOfIndex
+    public static Integer[] weaponLvlBreak = {0,20,40,50,60,70,80,90,100}; //100 is for avoiding OutOfIndex
+
     //get from https://ambr.top/cht/archive/avatar
     public String getCharNameByID(int id){
         switch (id){
@@ -420,6 +435,32 @@ public class BuffCatelogy {
             case BuffObject.FIGHT_PROP_GEO_DMG : return R.drawable.ic_buff_geo_2048;
             case BuffObject.FIGHT_PROP_DENDRO_DMG : return R.drawable.ic_buff_dendro_2048;
             default: return R.drawable.paimon_sleep;
+        }
+    }
+
+    public String getStatusNameByLocaleName(String name){
+        switch (name){
+            case "基礎攻擊力" : return BuffObject.FIGHT_PROP_BASE_ATK;
+            case "生命值" : return BuffObject.FIGHT_PROP_HP;
+            case "攻擊力" : return BuffObject.FIGHT_PROP_ATK;
+            case "防禦力" : return BuffObject.FIGHT_PROP_DEF;
+            case "生命值百分比" : return BuffObject.FIGHT_PROP_HP_P;
+            case "攻擊力百分比" : return BuffObject.FIGHT_PROP_ATK_P;
+            case "防禦力百分比" : return BuffObject.FIGHT_PROP_DEF_P;
+            case "暴擊率" : return BuffObject.FIGHT_PROP_CRIT_RATE;
+            case "暴擊傷害" : return BuffObject.FIGHT_PROP_CRIT_DMG;
+            case "元素充能效率" : return BuffObject.FIGHT_PROP_EN_RECH;
+            case "治療加成" : return BuffObject.FIGHT_PROP_HEAL_P;
+            case "元素精通" : return BuffObject.FIGHT_PROP_ELE_MAS;
+            case "物理傷害加成" : return BuffObject.FIGHT_PROP_PHY_DMG;
+            case "火元素傷害加成" : return BuffObject.FIGHT_PROP_PYRO_DMG;
+            case "雷元素傷害加成" : return BuffObject.FIGHT_PROP_ELECTRO_DMG;
+            case "水元素傷害加成" : return BuffObject.FIGHT_PROP_HYDRO_DMG;
+            case "風元素傷害加成" : return BuffObject.FIGHT_PROP_ANEMO_DMG;
+            case "冰元素傷害加成" : return BuffObject.FIGHT_PROP_CRYO_DMG;
+            case "岩元素傷害加成" : return BuffObject.FIGHT_PROP_GEO_DMG;
+            case "草元素傷害加成" : return BuffObject.FIGHT_PROP_DENDRO_DMG;
+            default: return name;
         }
     }
 

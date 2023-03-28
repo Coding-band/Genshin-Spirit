@@ -124,6 +124,7 @@ public class Weapon implements Serializable {
         this.weaponFollow = weaponFollow;
     }
 
+
     /**
      *
      * @param level : Root is 0, subItem is 1...n
@@ -149,7 +150,6 @@ public class Weapon implements Serializable {
                 padding + "weaponFollowId" + equal + getWeaponFollowId()+"\n"+
                 padding + "weaponStatStr" + equal + Arrays.toString(getWeaponStatStr())+"\n"+
                 padding + "weaponStatValue" + equal + Arrays.toString(getWeaponStatValue())
-
                 ;
     }
 
