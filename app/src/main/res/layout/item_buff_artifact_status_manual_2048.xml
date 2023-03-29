@@ -6,17 +6,18 @@
   -->
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_weight="1"
         android:orientation="vertical">
 
         <Spinner
-            android:id="@+id/spinner"
+            android:id="@+id/buff_art_main_status"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -40,6 +41,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginRight="8dp"
+                    android:layout_weight="1"
                     android:fontFamily="@font/genshin_font"
                     android:gravity="center|left"
                     android:text="@string/rarity"
@@ -47,6 +49,7 @@
                     android:textSize="14sp" />
 
                 <Spinner
+                    android:id="@+id/buff_art_main_rare"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -66,6 +69,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_marginRight="8dp"
+                    android:layout_weight="1"
                     android:fontFamily="@font/genshin_font"
                     android:gravity="center|left"
                     android:text="等級"
@@ -73,6 +77,7 @@
                     android:textSize="14sp" />
 
                 <Spinner
+                    android:id="@+id/buff_art_main_lvl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -88,16 +93,18 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/buff_art_sub_status_ll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:layout_marginLeft="8dp"
+        android:layout_weight="0.65"
         android:background="@drawable/item_level_choose_square_2048"
         android:gravity="center"
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/textView117"
+            android:id="@+id/buff_art_sub_status_1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
@@ -110,7 +117,7 @@
             android:textSize="12sp" />
 
         <TextView
-            android:id="@+id/textView116"
+            android:id="@+id/buff_art_sub_status_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
@@ -123,7 +130,7 @@
             android:textSize="12sp" />
 
         <TextView
-            android:id="@+id/textView118"
+            android:id="@+id/buff_art_sub_status_3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"
@@ -136,7 +143,7 @@
             android:textSize="12sp" />
 
         <TextView
-            android:id="@+id/textView119"
+            android:id="@+id/buff_art_sub_status_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="8dp"

@@ -236,13 +236,13 @@ public class BuffCalculate {
             JSONObject jsonObject = new JSONObject(weapon_json);
 
             String[] mainItem = {"生命值加成","攻擊力加成","防禦力加成","暴擊率","暴擊傷害","元素充能","元素精通","物理傷害加成"};
-            String[] strArr = new String[]{buffCatelogy.getStatusNameByLocaleName("基礎攻擊力"),"N/A"};
+            String[] strArr = new String[]{buffCatelogy.getStatusNameByLocaleName("基礎攻擊力",context),"N/A"};
             double[] valueArr = new double[]{jsonObject.getJSONArray("基礎攻擊力").getDouble(weapon_tmp_break),0};
 
             for (int x = 0 ; x < strArr.length ; x++){
                 double value = jsonObject.getJSONArray(mainItem[x]).getDouble(weapon_tmp_break);
                 if(value != 0){
-                    strArr[1] = buffCatelogy.getStatusNameByLocaleName(mainItem[x]);
+                    strArr[1] = buffCatelogy.getStatusNameByLocaleName(mainItem[x],context);
                     valueArr[1] = value;
                 }
             }

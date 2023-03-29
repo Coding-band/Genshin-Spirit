@@ -1,0 +1,1031 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2023 Xectorda 版權所有
+  -->
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:background="@drawable/bg_2048_talent_card"
+        android:visibility="visible"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/dialog_title_tv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:background="@drawable/bg_dialog_header_edge"
+                android:fontFamily="@font/genshin_font"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="設置聖遺物"
+                android:textColor="@color/dialog_title_tv_color_2048"
+                android:textSize="18sp" />
+
+            <LinearLayout
+                android:id="@+id/dialog_ask"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_dialog_body_edge"
+                android:orientation="vertical"
+                android:visibility="visible">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:orientation="vertical"
+                        android:paddingBottom="16dp">
+
+                        <LinearLayout
+                            android:id="@+id/buff_set_atk_ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/buff_set_atk_tick"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center|top|left"
+                                android:adjustViewBounds="true"
+                                android:padding="2dp"
+                                app:srcCompat="@drawable/ic_2048_need_tick" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/buff_set_atk_name"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center|left"
+                                        android:layout_weight="1.3"
+                                        android:fontFamily="@font/genshin_font"
+                                        android:gravity="center|left"
+                                        android:text="@string/weapon_stat_atk"
+                                        android:textColor="@color/buff_tv_main_anti_2048"
+                                        android:textSize="16sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center|right"
+                                        android:orientation="horizontal">
+
+                                        <ImageView
+                                            android:id="@+id/buff_set_atk_reduce"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="4dp"
+                                            app:srcCompat="@drawable/ic_buff_reduce_2048" />
+
+                                        <TextView
+                                            android:id="@+id/buff_set_atk_name2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center|left"
+                                            android:layout_marginLeft="4dp"
+                                            android:background="@drawable/ic_buff_value_kwang_2048"
+                                            android:fontFamily="@font/genshin_font"
+                                            android:gravity="center"
+                                            android:text="17.6"
+                                            android:textColor="@color/buff_tv_main_anti_2048"
+                                            android:textSize="16sp" />
+
+                                        <ImageView
+                                            android:id="@+id/buff_set_atk_increase"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="4dp"
+                                            app:srcCompat="@drawable/ic_buff_increase_2048" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <SeekBar
+                                    android:id="@+id/buff_set_atk_seek"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:max="10"
+                                    android:paddingStart="0dp"
+                                    android:paddingEnd="0dp"
+                                    android:progress="5"
+                                    android:progressDrawable="@drawable/bg_seekbar_2048"
+                                    android:thumb="@drawable/bg_seekbar_dot_2048" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/buff_set_hp_ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/buff_set_hp_tick"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center|top|left"
+                                android:adjustViewBounds="true"
+                                android:padding="2dp"
+                                app:srcCompat="@drawable/ic_2048_need_tick" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/buff_set_hp_name"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center|left"
+                                        android:layout_weight="1.3"
+                                        android:fontFamily="@font/genshin_font"
+                                        android:gravity="center|left"
+                                        android:text="@string/weapon_stat_HP"
+                                        android:textColor="@color/buff_tv_main_anti_2048"
+                                        android:textSize="16sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center|right"
+                                        android:orientation="horizontal">
+
+                                        <ImageView
+                                            android:id="@+id/buff_set_hp_reduce"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="4dp"
+                                            app:srcCompat="@drawable/ic_buff_reduce_2048" />
+
+                                        <TextView
+                                            android:id="@+id/buff_set_hp_name2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center|left"
+                                            android:layout_marginLeft="4dp"
+                                            android:background="@drawable/ic_buff_value_kwang_2048"
+                                            android:fontFamily="@font/genshin_font"
+                                            android:gravity="center"
+                                            android:text="17.6"
+                                            android:textColor="@color/buff_tv_main_anti_2048"
+                                            android:textSize="16sp" />
+
+                                        <ImageView
+                                            android:id="@+id/buff_set_hp_increase"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="4dp"
+                                            app:srcCompat="@drawable/ic_buff_increase_2048" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <SeekBar
+                                    android:id="@+id/buff_set_hp_seek"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:max="10"
+                                    android:paddingStart="0dp"
+                                    android:paddingEnd="0dp"
+                                    android:progress="5"
+                                    android:progressDrawable="@drawable/bg_seekbar_2048"
+                                    android:thumb="@drawable/bg_seekbar_dot_2048" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/buff_set_def_ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/buff_set_def_tick"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center|top|left"
+                                android:adjustViewBounds="true"
+                                android:padding="2dp"
+                                app:srcCompat="@drawable/ic_2048_need_tick" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/buff_set_def_name"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center|left"
+                                        android:layout_weight="1.3"
+                                        android:fontFamily="@font/genshin_font"
+                                        android:gravity="center|left"
+                                        android:text="@string/weapon_stat_DEF"
+                                        android:textColor="@color/buff_tv_main_anti_2048"
+                                        android:textSize="16sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center|right"
+                                        android:orientation="horizontal">
+
+                                        <ImageView
+                                            android:id="@+id/buff_set_def_reduce"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="4dp"
+                                            app:srcCompat="@drawable/ic_buff_reduce_2048" />
+
+                                        <TextView
+                                            android:id="@+id/buff_set_def_name2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center|left"
+                                            android:layout_marginLeft="4dp"
+                                            android:background="@drawable/ic_buff_value_kwang_2048"
+                                            android:fontFamily="@font/genshin_font"
+                                            android:gravity="center"
+                                            android:text="17.6"
+                                            android:textColor="@color/buff_tv_main_anti_2048"
+                                            android:textSize="16sp" />
+
+                                        <ImageView
+                                            android:id="@+id/buff_set_def_increase"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="4dp"
+                                            app:srcCompat="@drawable/ic_buff_increase_2048" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <SeekBar
+                                    android:id="@+id/buff_set_def_seek"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:max="10"
+                                    android:paddingStart="0dp"
+                                    android:paddingEnd="0dp"
+                                    android:progress="5"
+                                    android:progressDrawable="@drawable/bg_seekbar_2048"
+                                    android:thumb="@drawable/bg_seekbar_dot_2048" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+
+                        <LinearLayout
+                            android:id="@+id/buff_set_atkp_ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/buff_set_atkp_tick"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center|top|left"
+                                android:adjustViewBounds="true"
+                                android:padding="2dp"
+                                app:srcCompat="@drawable/ic_2048_need_tick" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/buff_set_atkp_name"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center|left"
+                                        android:layout_weight="1.3"
+                                        android:fontFamily="@font/genshin_font"
+                                        android:gravity="center|left"
+                                        android:text="@string/weapon_stat_atkP"
+                                        android:textColor="@color/buff_tv_main_anti_2048"
+                                        android:textSize="16sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center|right"
+                                        android:orientation="horizontal">
+
+                                        <ImageView
+                                            android:id="@+id/buff_set_atkp_reduce"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="4dp"
+                                            app:srcCompat="@drawable/ic_buff_reduce_2048" />
+
+                                        <TextView
+                                            android:id="@+id/buff_set_atkp_name2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center|left"
+                                            android:layout_marginLeft="4dp"
+                                            android:background="@drawable/ic_buff_value_kwang_2048"
+                                            android:fontFamily="@font/genshin_font"
+                                            android:gravity="center"
+                                            android:text="17.6"
+                                            android:textColor="@color/buff_tv_main_anti_2048"
+                                            android:textSize="16sp" />
+
+                                        <ImageView
+                                            android:id="@+id/buff_set_atkp_increase"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="4dp"
+                                            app:srcCompat="@drawable/ic_buff_increase_2048" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <SeekBar
+                                    android:id="@+id/buff_set_atkp_seek"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:max="10"
+                                    android:paddingStart="0dp"
+                                    android:paddingEnd="0dp"
+                                    android:progress="5"
+                                    android:progressDrawable="@drawable/bg_seekbar_2048"
+                                    android:thumb="@drawable/bg_seekbar_dot_2048" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/buff_set_hpp_ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/buff_set_hpp_tick"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center|top|left"
+                                android:adjustViewBounds="true"
+                                android:padding="2dp"
+                                app:srcCompat="@drawable/ic_2048_need_tick" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/buff_set_hpp_name"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center|left"
+                                        android:layout_weight="1.3"
+                                        android:fontFamily="@font/genshin_font"
+                                        android:gravity="center|left"
+                                        android:text="@string/weapon_stat_HPP"
+                                        android:textColor="@color/buff_tv_main_anti_2048"
+                                        android:textSize="16sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center|right"
+                                        android:orientation="horizontal">
+
+                                        <ImageView
+                                            android:id="@+id/buff_set_hpp_reduce"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="4dp"
+                                            app:srcCompat="@drawable/ic_buff_reduce_2048" />
+
+                                        <TextView
+                                            android:id="@+id/buff_set_hpp_name2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center|left"
+                                            android:layout_marginLeft="4dp"
+                                            android:background="@drawable/ic_buff_value_kwang_2048"
+                                            android:fontFamily="@font/genshin_font"
+                                            android:gravity="center"
+                                            android:text="17.6"
+                                            android:textColor="@color/buff_tv_main_anti_2048"
+                                            android:textSize="16sp" />
+
+                                        <ImageView
+                                            android:id="@+id/buff_set_hpp_increase"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="4dp"
+                                            app:srcCompat="@drawable/ic_buff_increase_2048" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <SeekBar
+                                    android:id="@+id/buff_set_hpp_seek"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:max="10"
+                                    android:paddingStart="0dp"
+                                    android:paddingEnd="0dp"
+                                    android:progress="5"
+                                    android:progressDrawable="@drawable/bg_seekbar_2048"
+                                    android:thumb="@drawable/bg_seekbar_dot_2048" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/buff_set_defp_ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/buff_set_defp_tick"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center|top|left"
+                                android:adjustViewBounds="true"
+                                android:padding="2dp"
+                                app:srcCompat="@drawable/ic_2048_need_tick" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/buff_set_defp_name"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center|left"
+                                        android:layout_weight="1.3"
+                                        android:fontFamily="@font/genshin_font"
+                                        android:gravity="center|left"
+                                        android:text="@string/weapon_stat_DEFP"
+                                        android:textColor="@color/buff_tv_main_anti_2048"
+                                        android:textSize="16sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center|right"
+                                        android:orientation="horizontal">
+
+                                        <ImageView
+                                            android:id="@+id/buff_set_defp_reduce"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="4dp"
+                                            app:srcCompat="@drawable/ic_buff_reduce_2048" />
+
+                                        <TextView
+                                            android:id="@+id/buff_set_defp_name2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center|left"
+                                            android:layout_marginLeft="4dp"
+                                            android:background="@drawable/ic_buff_value_kwang_2048"
+                                            android:fontFamily="@font/genshin_font"
+                                            android:gravity="center"
+                                            android:text="17.6"
+                                            android:textColor="@color/buff_tv_main_anti_2048"
+                                            android:textSize="16sp" />
+
+                                        <ImageView
+                                            android:id="@+id/buff_set_defp_increase"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="4dp"
+                                            app:srcCompat="@drawable/ic_buff_increase_2048" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <SeekBar
+                                    android:id="@+id/buff_set_defp_seek"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:max="10"
+                                    android:paddingStart="0dp"
+                                    android:paddingEnd="0dp"
+                                    android:progress="5"
+                                    android:progressDrawable="@drawable/bg_seekbar_2048"
+                                    android:thumb="@drawable/bg_seekbar_dot_2048" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/buff_set_crit_rate_ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/buff_set_crit_rate_tick"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center|top|left"
+                                android:adjustViewBounds="true"
+                                android:padding="2dp"
+                                app:srcCompat="@drawable/ic_2048_need_tick" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/buff_set_crit_rate_name"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center|left"
+                                        android:layout_weight="1.3"
+                                        android:fontFamily="@font/genshin_font"
+                                        android:gravity="center|left"
+                                        android:text="@string/weapon_stat_CritRateP"
+                                        android:textColor="@color/buff_tv_main_anti_2048"
+                                        android:textSize="16sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center|right"
+                                        android:orientation="horizontal">
+
+                                        <ImageView
+                                            android:id="@+id/buff_set_crit_rate_reduce"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="4dp"
+                                            app:srcCompat="@drawable/ic_buff_reduce_2048" />
+
+                                        <TextView
+                                            android:id="@+id/buff_set_crit_rate_name2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center|left"
+                                            android:layout_marginLeft="4dp"
+                                            android:background="@drawable/ic_buff_value_kwang_2048"
+                                            android:fontFamily="@font/genshin_font"
+                                            android:gravity="center"
+                                            android:text="17.6"
+                                            android:textColor="@color/buff_tv_main_anti_2048"
+                                            android:textSize="16sp" />
+
+                                        <ImageView
+                                            android:id="@+id/buff_set_crit_rate_increase"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="4dp"
+                                            app:srcCompat="@drawable/ic_buff_increase_2048" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <SeekBar
+                                    android:id="@+id/buff_set_crit_rate_seek"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:max="10"
+                                    android:paddingStart="0dp"
+                                    android:paddingEnd="0dp"
+                                    android:progress="5"
+                                    android:progressDrawable="@drawable/bg_seekbar_2048"
+                                    android:thumb="@drawable/bg_seekbar_dot_2048" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/buff_set_crit_dmg_ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/buff_set_crit_dmg_tick"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center|top|left"
+                                android:adjustViewBounds="true"
+                                android:padding="2dp"
+                                app:srcCompat="@drawable/ic_2048_need_tick" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/buff_set_crit_dmg_name"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center|left"
+                                        android:layout_weight="1.3"
+                                        android:fontFamily="@font/genshin_font"
+                                        android:gravity="center|left"
+                                        android:text="@string/weapon_stat_CritDMGP"
+                                        android:textColor="@color/buff_tv_main_anti_2048"
+                                        android:textSize="16sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center|right"
+                                        android:orientation="horizontal">
+
+                                        <ImageView
+                                            android:id="@+id/buff_set_crit_dmg_reduce"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="4dp"
+                                            app:srcCompat="@drawable/ic_buff_reduce_2048" />
+
+                                        <TextView
+                                            android:id="@+id/buff_set_crit_dmg_name2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center|left"
+                                            android:layout_marginLeft="4dp"
+                                            android:background="@drawable/ic_buff_value_kwang_2048"
+                                            android:fontFamily="@font/genshin_font"
+                                            android:gravity="center"
+                                            android:text="17.6"
+                                            android:textColor="@color/buff_tv_main_anti_2048"
+                                            android:textSize="16sp" />
+
+                                        <ImageView
+                                            android:id="@+id/buff_set_crit_dmg_increase"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="4dp"
+                                            app:srcCompat="@drawable/ic_buff_increase_2048" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <SeekBar
+                                    android:id="@+id/buff_set_crit_dmg_seek"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:max="10"
+                                    android:paddingStart="0dp"
+                                    android:paddingEnd="0dp"
+                                    android:progress="5"
+                                    android:progressDrawable="@drawable/bg_seekbar_2048"
+                                    android:thumb="@drawable/bg_seekbar_dot_2048" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/buff_set_enrech_ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/buff_set_enrech_tick"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center|top|left"
+                                android:adjustViewBounds="true"
+                                android:padding="2dp"
+                                app:srcCompat="@drawable/ic_2048_need_tick" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/buff_set_enrech_name"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center|left"
+                                        android:layout_weight="1.3"
+                                        android:fontFamily="@font/genshin_font"
+                                        android:gravity="center|left"
+                                        android:text="@string/weapon_stat_EnRechP"
+                                        android:textColor="@color/buff_tv_main_anti_2048"
+                                        android:textSize="16sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center|right"
+                                        android:orientation="horizontal">
+
+                                        <ImageView
+                                            android:id="@+id/buff_set_enrech_reduce"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="4dp"
+                                            app:srcCompat="@drawable/ic_buff_reduce_2048" />
+
+                                        <TextView
+                                            android:id="@+id/buff_set_enrech_name2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center|left"
+                                            android:layout_marginLeft="4dp"
+                                            android:background="@drawable/ic_buff_value_kwang_2048"
+                                            android:fontFamily="@font/genshin_font"
+                                            android:gravity="center"
+                                            android:text="17.6"
+                                            android:textColor="@color/buff_tv_main_anti_2048"
+                                            android:textSize="16sp" />
+
+                                        <ImageView
+                                            android:id="@+id/buff_set_enrech_increase"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="4dp"
+                                            app:srcCompat="@drawable/ic_buff_increase_2048" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <SeekBar
+                                    android:id="@+id/buff_set_enrech_seek"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:max="10"
+                                    android:paddingStart="0dp"
+                                    android:paddingEnd="0dp"
+                                    android:progress="5"
+                                    android:progressDrawable="@drawable/bg_seekbar_2048"
+                                    android:thumb="@drawable/bg_seekbar_dot_2048" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/buff_set_elemas_ll"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:layout_marginBottom="4dp"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/buff_set_elemas_tick"
+                                android:layout_width="wrap_content"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center|top|left"
+                                android:adjustViewBounds="true"
+                                android:padding="2dp"
+                                app:srcCompat="@drawable/ic_2048_need_tick" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="8dp"
+                                android:orientation="vertical">
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="30dp"
+                                    android:orientation="horizontal">
+
+                                    <TextView
+                                        android:id="@+id/buff_set_elemas_name"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_gravity="center|left"
+                                        android:layout_weight="1.3"
+                                        android:fontFamily="@font/genshin_font"
+                                        android:gravity="center|left"
+                                        android:text="@string/weapon_stat_EleMas"
+                                        android:textColor="@color/buff_tv_main_anti_2048"
+                                        android:textSize="16sp" />
+
+                                    <LinearLayout
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:layout_weight="1"
+                                        android:gravity="center|right"
+                                        android:orientation="horizontal">
+
+                                        <ImageView
+                                            android:id="@+id/buff_set_elemas_reduce"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="4dp"
+                                            app:srcCompat="@drawable/ic_buff_reduce_2048" />
+
+                                        <TextView
+                                            android:id="@+id/buff_set_elemas_name2"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="match_parent"
+                                            android:layout_gravity="center|left"
+                                            android:layout_marginLeft="4dp"
+                                            android:background="@drawable/ic_buff_value_kwang_2048"
+                                            android:fontFamily="@font/genshin_font"
+                                            android:gravity="center"
+                                            android:text="17.6"
+                                            android:textColor="@color/buff_tv_main_anti_2048"
+                                            android:textSize="16sp" />
+
+                                        <ImageView
+                                            android:id="@+id/buff_set_elemas_increase"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_marginLeft="4dp"
+                                            app:srcCompat="@drawable/ic_buff_increase_2048" />
+                                    </LinearLayout>
+                                </LinearLayout>
+
+                                <SeekBar
+                                    android:id="@+id/buff_set_elemas_seek"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_marginBottom="4dp"
+                                    android:max="10"
+                                    android:paddingStart="0dp"
+                                    android:paddingEnd="0dp"
+                                    android:progress="5"
+                                    android:progressDrawable="@drawable/bg_seekbar_2048"
+                                    android:thumb="@drawable/bg_seekbar_dot_2048" />
+
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </ScrollView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <FrameLayout
+                        android:id="@+id/dialog_ok"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_margin="8dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/bg_dialog_btn"
+                        android:text="@android:string/ok">
+
+                        <ImageView
+                            android:id="@+id/imageView15"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            android:layout_gravity="center|left"
+                            android:layout_marginLeft="8dp"
+                            android:adjustViewBounds="true"
+                            app:srcCompat="@drawable/ic_2048_ok_btn_ico" />
+
+                        <TextView
+                            android:id="@+id/dialog_ok_tv"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="8dp"
+                            android:fontFamily="@font/genshin_font"
+                            android:gravity="center|left"
+                            android:text="@android:string/ok"
+                            android:textColor="@color/tv_anti_color_2048"
+                            android:textSize="16sp" />
+                    </FrameLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

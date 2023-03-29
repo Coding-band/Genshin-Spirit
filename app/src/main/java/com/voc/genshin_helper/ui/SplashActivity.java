@@ -55,6 +55,7 @@ import androidx.core.app.ActivityCompat;
 import com.squareup.picasso.Picasso;
 import com.voc.genshin_helper.BuildConfig;
 import com.voc.genshin_helper.R;
+import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
 import com.voc.genshin_helper.ui.SipTik.DeskSipTik;
 import com.voc.genshin_helper.util.CustomToast;
@@ -137,10 +138,10 @@ public class SplashActivity extends AppCompatActivity {
             ((ImageView) findViewById(R.id.splash_random_bg)).setVisibility(View.VISIBLE);
             ((ConstraintLayout) findViewById(R.id.splash_base_cons)).setVisibility(View.GONE);
 
-            String suffix = ".png";
+            String suffix = ItemRss.IMG_FORMAT;
 
             if (activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
-                suffix = "_crop.png";
+                suffix = "_crop"+ ItemRss.IMG_FORMAT;
             }
 
             String json_base = LoadData("randomScenery/rss_bg.json");

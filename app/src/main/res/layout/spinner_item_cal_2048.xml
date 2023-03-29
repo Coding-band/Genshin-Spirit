@@ -13,4 +13,5 @@
     android:fontFamily="@font/genshin_font"
     android:singleLine="true"
     android:textAlignment="inherit"
+    android:gravity="center"
     android:textColor="@color/tv_anti_color_2048" />

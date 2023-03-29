@@ -1427,6 +1427,7 @@
     <string name="pls_wait">Please wait 10s</string>
     <string name="login_dailymemo">Please login DailyMemo first</string>
     <string name="affix">"Affix. "</string>
+    <string name="weapon_stat_atk_base">Base ATK</string>
 
 
 </resources>

@@ -486,6 +486,7 @@
                     </LinearLayout>
 
                     <include
+                        android:id="@+id/buff_art_flower_include"
                         layout="@layout/item_buff_artifact_status_manual_2048"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -523,6 +524,7 @@
                     </LinearLayout>
 
                     <include
+                        android:id="@+id/buff_art_plume_include"
                         layout="@layout/item_buff_artifact_status_manual_2048"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -560,6 +562,7 @@
                     </LinearLayout>
 
                     <include
+                        android:id="@+id/buff_art_sand_include"
                         layout="@layout/item_buff_artifact_status_manual_2048"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -597,6 +600,7 @@
                     </LinearLayout>
 
                     <include
+                        android:id="@+id/buff_art_circlet_include"
                         layout="@layout/item_buff_artifact_status_manual_2048"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -634,6 +638,7 @@
                     </LinearLayout>
 
                     <include
+                        android:id="@+id/buff_art_goblet_include"
                         layout="@layout/item_buff_artifact_status_manual_2048"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

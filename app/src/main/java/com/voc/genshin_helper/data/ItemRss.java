@@ -32,7 +32,7 @@ public class ItemRss {
 
     SharedPreferences sharedPreferences;
 
-    String IMG_FORMAT = ".webp";
+    public static String IMG_FORMAT = ".webp";
 
     /**EDIT WHEN ADD NEW ITEMS*/
     // INCLUDED 3.0 CHAR. => 20221003

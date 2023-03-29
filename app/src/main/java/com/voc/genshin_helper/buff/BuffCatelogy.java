@@ -5,9 +5,13 @@ package com.voc.genshin_helper.buff;/*
  */
 
 import android.content.Context;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.graphics.drawable.Drawable;
 
 import com.voc.genshin_helper.R;
+import com.voc.genshin_helper.buff.db.BuffDBHelper;
+import com.voc.genshin_helper.buff.obj.Artifact;
 import com.voc.genshin_helper.buff.obj.BuffObject;
 import com.voc.genshin_helper.buff.obj.Character;
 import com.voc.genshin_helper.buff.obj.Weapon;
@@ -20,6 +24,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class BuffCatelogy {
 
@@ -36,6 +44,7 @@ public class BuffCatelogy {
     public static String[] lvlListArt12 = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"};
     public static String[] lvlListArt16 = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16"};
     public static String[] lvlListArt20 = new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20"};
+    public static String[] lvlListArtRare = new String[]{"1","2","3","4","5"};
 
     public static Integer[] charLvlBreak = {0,20,40,50,60,70,80,90,100}; //100 is for avoiding OutOfIndex
     public static Integer[] weaponLvlBreak = {0,20,40,50,60,70,80,90,100}; //100 is for avoiding OutOfIndex
@@ -438,31 +447,51 @@ public class BuffCatelogy {
         }
     }
 
-    public String getStatusNameByLocaleName(String name){
-        switch (name){
-            case "基礎攻擊力" : return BuffObject.FIGHT_PROP_BASE_ATK;
-            case "生命值" : return BuffObject.FIGHT_PROP_HP;
-            case "攻擊力" : return BuffObject.FIGHT_PROP_ATK;
-            case "防禦力" : return BuffObject.FIGHT_PROP_DEF;
-            case "生命值百分比" : return BuffObject.FIGHT_PROP_HP_P;
-            case "攻擊力百分比" : return BuffObject.FIGHT_PROP_ATK_P;
-            case "防禦力百分比" : return BuffObject.FIGHT_PROP_DEF_P;
-            case "暴擊率" : return BuffObject.FIGHT_PROP_CRIT_RATE;
-            case "暴擊傷害" : return BuffObject.FIGHT_PROP_CRIT_DMG;
-            case "元素充能效率" : return BuffObject.FIGHT_PROP_EN_RECH;
-            case "治療加成" : return BuffObject.FIGHT_PROP_HEAL_P;
-            case "元素精通" : return BuffObject.FIGHT_PROP_ELE_MAS;
-            case "物理傷害加成" : return BuffObject.FIGHT_PROP_PHY_DMG;
-            case "火元素傷害加成" : return BuffObject.FIGHT_PROP_PYRO_DMG;
-            case "雷元素傷害加成" : return BuffObject.FIGHT_PROP_ELECTRO_DMG;
-            case "水元素傷害加成" : return BuffObject.FIGHT_PROP_HYDRO_DMG;
-            case "風元素傷害加成" : return BuffObject.FIGHT_PROP_ANEMO_DMG;
-            case "冰元素傷害加成" : return BuffObject.FIGHT_PROP_CRYO_DMG;
-            case "岩元素傷害加成" : return BuffObject.FIGHT_PROP_GEO_DMG;
-            case "草元素傷害加成" : return BuffObject.FIGHT_PROP_DENDRO_DMG;
-            default: return name;
+    public String getStatusNameByLocaleName(String name, Context context) {
+        if ("基礎攻擊力".equals(name) || context.getString(R.string.weapon_stat_atk_base).equals(name)) {
+            return BuffObject.FIGHT_PROP_BASE_ATK;
+        } else if ("生命值".equals(name) || context.getString(R.string.weapon_stat_HP).equals(name)) {
+            return BuffObject.FIGHT_PROP_HP;
+        } else if ("攻擊力".equals(name) || context.getString(R.string.weapon_stat_atk).equals(name)) {
+            return BuffObject.FIGHT_PROP_ATK;
+        } else if ("防禦力".equals(name) || context.getString(R.string.weapon_stat_DEF).equals(name)) {
+            return BuffObject.FIGHT_PROP_DEF;
+        } else if ("生命值百分比".equals(name) || context.getString(R.string.weapon_stat_HPP).equals(name)) {
+            return BuffObject.FIGHT_PROP_HP_P;
+        } else if ("攻擊力百分比".equals(name) || context.getString(R.string.weapon_stat_atkP).equals(name)) {
+            return BuffObject.FIGHT_PROP_ATK_P;
+        } else if ("防禦力百分比".equals(name) || context.getString(R.string.weapon_stat_DEFP).equals(name)) {
+            return BuffObject.FIGHT_PROP_DEF_P;
+        } else if ("暴擊率".equals(name) || context.getString(R.string.weapon_stat_CritRateP).equals(name)) {
+            return BuffObject.FIGHT_PROP_CRIT_RATE;
+        } else if ("暴擊傷害".equals(name) || context.getString(R.string.weapon_stat_CritDMGP).equals(name)) {
+            return BuffObject.FIGHT_PROP_CRIT_DMG;
+        } else if ("元素充能效率".equals(name) || context.getString(R.string.weapon_stat_EnRechP).equals(name)) {
+            return BuffObject.FIGHT_PROP_EN_RECH;
+        } else if ("治療加成".equals(name) || context.getString(R.string.weapon_stat_HealingP).equals(name)) {
+            return BuffObject.FIGHT_PROP_HEAL_P;
+        } else if ("元素精通".equals(name) || context.getString(R.string.weapon_stat_EleMas).equals(name)) {
+            return BuffObject.FIGHT_PROP_ELE_MAS;
+        } else if ("物理傷害加成".equals(name) || context.getString(R.string.weapon_stat_PhyDMGP).equals(name)) {
+            return BuffObject.FIGHT_PROP_PHY_DMG;
+        } else if ("火元素傷害加成".equals(name) || context.getString(R.string.weapon_stat_EleDMGP_Pyro).equals(name)) {
+            return BuffObject.FIGHT_PROP_PYRO_DMG;
+        } else if ("雷元素傷害加成".equals(name) || context.getString(R.string.weapon_stat_EleDMGP_Electro).equals(name)) {
+            return BuffObject.FIGHT_PROP_ELECTRO_DMG;
+        } else if ("水元素傷害加成".equals(name) || context.getString(R.string.weapon_stat_EleDMGP_Hydro).equals(name)) {
+            return BuffObject.FIGHT_PROP_HYDRO_DMG;
+        } else if ("風元素傷害加成".equals(name) || context.getString(R.string.weapon_stat_EleDMGP_Anemo).equals(name)) {
+            return BuffObject.FIGHT_PROP_ANEMO_DMG;
+        } else if ("冰元素傷害加成".equals(name) || context.getString(R.string.weapon_stat_EleDMGP_Cryo).equals(name)) {
+            return BuffObject.FIGHT_PROP_CRYO_DMG;
+        } else if ("岩元素傷害加成".equals(name) || context.getString(R.string.weapon_stat_EleDMGP_Geo).equals(name)) {
+            return BuffObject.FIGHT_PROP_GEO_DMG;
+        } else if ("草元素傷害加成".equals(name) || context.getString(R.string.weapon_stat_EleDMGP_Dendor).equals(name)) {
+            return BuffObject.FIGHT_PROP_DENDRO_DMG;
         }
+        return name;
     }
+
 
     public String LoadData(String inFile, Context context) {
         String tContents = "";

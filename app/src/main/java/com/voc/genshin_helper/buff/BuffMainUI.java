@@ -59,6 +59,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class BuffMainUI extends AppCompatActivity {
@@ -98,7 +99,7 @@ public class BuffMainUI extends AppCompatActivity {
         displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 
-        readDataBase();
+        buffObjects = readDataBase(context,SetName);
 
         /*
         Just for checking
@@ -165,14 +166,13 @@ public class BuffMainUI extends AppCompatActivity {
 
     }
 
-    private void readDataBase() {
+
+    public ArrayList<BuffObject> readDataBase(Context context, String SetName) {
         BuffDBHelper dbHelper = new BuffDBHelper(context);
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
-        System.out.println("SetName"+" : "+SetName);
-
         Cursor cursor = db.query(SetName,null,null,null,null,null,null);
-        buffObjects = new ArrayList<>();
+        ArrayList<BuffObject> buffObjects = new ArrayList<>();
         while (cursor.moveToNext()){
             switch (cursor.getString(cursor.getColumnIndexOrThrow("itemType"))){
                 case "CHAR_ANEMO":
@@ -235,8 +235,6 @@ public class BuffMainUI extends AppCompatActivity {
                     BuffObject buffObject = new BuffObject();
                     buffObject.setCharacter(character);
                     buffObjects.add(buffObject);
-
-                    System.out.println("CHAR : "+character.getCharName());
                     break;
                 }
 
@@ -342,6 +340,8 @@ public class BuffMainUI extends AppCompatActivity {
              */
         }
         cursor.close();
+
+        return buffObjects;
     }
 
     private void list_init() {
@@ -577,6 +577,222 @@ public class BuffMainUI extends AppCompatActivity {
                 }
             });
 
+            //Artifact
+            Artifact[] artifacts = new Artifact[]{buffObject.getArtifactFlower(),buffObject.getArtifactPlume(),buffObject.getArtifactSand(),buffObject.getArtifactCirclet(),buffObject.getArtifactGoblet()};
+            int[] buff_art_include_list = new int[]{R.id.buff_art_flower_include,R.id.buff_art_plume_include,R.id.buff_art_sand_include,R.id.buff_art_circlet_include,R.id.buff_art_goblet_include};
+            String[][] art_rare_lvl_list = new String[][]{BuffCatelogy.lvlListArt4,BuffCatelogy.lvlListArt8,BuffCatelogy.lvlListArt12,BuffCatelogy.lvlListArt16,BuffCatelogy.lvlListArt20};
+            String[] art_status_mix = new String[]{
+                    context.getString(R.string.weapon_stat_HP),
+                    context.getString(R.string.weapon_stat_atk),
+                    context.getString(R.string.weapon_stat_DEF),
+                    context.getString(R.string.weapon_stat_HPP),
+                    context.getString(R.string.weapon_stat_atkP),
+                    context.getString(R.string.weapon_stat_DEFP),
+                    context.getString(R.string.weapon_stat_CritRateP),
+                    context.getString(R.string.weapon_stat_CritDMGP),
+                    context.getString(R.string.weapon_stat_EnRechP),
+                    context.getString(R.string.weapon_stat_EleMas),
+                    context.getString(R.string.weapon_stat_HealingP),
+                    context.getString(R.string.weapon_stat_EleDMGP_Anemo),
+                    context.getString(R.string.weapon_stat_EleDMGP_Cryo),
+                    context.getString(R.string.weapon_stat_EleDMGP_Dendor),
+                    context.getString(R.string.weapon_stat_EleDMGP_Electro),
+                    context.getString(R.string.weapon_stat_EleDMGP_Geo),
+                    context.getString(R.string.weapon_stat_EleDMGP_Hydro),
+                    context.getString(R.string.weapon_stat_EleDMGP_Pyro),
+                    context.getString(R.string.weapon_stat_PhyDMGP)
+            };
+            String[] art_status_mix_base = new String[]{
+                    BuffObject.FIGHT_PROP_HP,
+                    BuffObject.FIGHT_PROP_ATK,
+                    BuffObject.FIGHT_PROP_DEF,
+                    BuffObject.FIGHT_PROP_HP_P,
+                    BuffObject.FIGHT_PROP_ATK_P,
+                    BuffObject.FIGHT_PROP_DEF_P,
+                    BuffObject.FIGHT_PROP_CRIT_RATE,
+                    BuffObject.FIGHT_PROP_CRIT_DMG,
+                    BuffObject.FIGHT_PROP_EN_RECH,
+                    BuffObject.FIGHT_PROP_ELE_MAS,
+                    BuffObject.FIGHT_PROP_HEAL_P,
+                    BuffObject.FIGHT_PROP_ANEMO_DMG,
+                    BuffObject.FIGHT_PROP_CRYO_DMG,
+                    BuffObject.FIGHT_PROP_DENDRO_DMG,
+                    BuffObject.FIGHT_PROP_ELECTRO_DMG,
+                    BuffObject.FIGHT_PROP_GEO_DMG,
+                    BuffObject.FIGHT_PROP_HYDRO_DMG,
+                    BuffObject.FIGHT_PROP_PYRO_DMG,
+                    BuffObject.FIGHT_PROP_PHY_DMG
+            };
+
+            String[] art_status_sub = new String[]{
+                    context.getString(R.string.weapon_stat_HP),
+                    context.getString(R.string.weapon_stat_atk),
+                    context.getString(R.string.weapon_stat_DEF),
+                    context.getString(R.string.weapon_stat_HPP),
+                    context.getString(R.string.weapon_stat_atkP),
+                    context.getString(R.string.weapon_stat_DEFP),
+                    context.getString(R.string.weapon_stat_CritRateP),
+                    context.getString(R.string.weapon_stat_CritDMGP),
+                    context.getString(R.string.weapon_stat_EnRechP),
+                    context.getString(R.string.weapon_stat_EleMas),
+                    context.getString(R.string.weapon_stat_HealingP),
+                    context.getString(R.string.weapon_stat_EleDMGP_Anemo),
+                    context.getString(R.string.weapon_stat_EleDMGP_Cryo),
+                    context.getString(R.string.weapon_stat_EleDMGP_Dendor),
+                    context.getString(R.string.weapon_stat_EleDMGP_Electro),
+                    context.getString(R.string.weapon_stat_EleDMGP_Geo),
+                    context.getString(R.string.weapon_stat_EleDMGP_Hydro),
+                    context.getString(R.string.weapon_stat_EleDMGP_Pyro),
+                    context.getString(R.string.weapon_stat_PhyDMGP)
+            };
+            String[] art_status_sub_base = new String[]{
+                    BuffObject.FIGHT_PROP_HP,
+                    BuffObject.FIGHT_PROP_ATK,
+                    BuffObject.FIGHT_PROP_DEF,
+                    BuffObject.FIGHT_PROP_HP_P,
+                    BuffObject.FIGHT_PROP_ATK_P,
+                    BuffObject.FIGHT_PROP_DEF_P,
+                    BuffObject.FIGHT_PROP_CRIT_RATE,
+                    BuffObject.FIGHT_PROP_CRIT_DMG,
+                    BuffObject.FIGHT_PROP_EN_RECH,
+                    BuffObject.FIGHT_PROP_ELE_MAS,
+                    BuffObject.FIGHT_PROP_HEAL_P,
+                    BuffObject.FIGHT_PROP_ANEMO_DMG,
+                    BuffObject.FIGHT_PROP_CRYO_DMG,
+                    BuffObject.FIGHT_PROP_DENDRO_DMG,
+                    BuffObject.FIGHT_PROP_ELECTRO_DMG,
+                    BuffObject.FIGHT_PROP_GEO_DMG,
+                    BuffObject.FIGHT_PROP_HYDRO_DMG,
+                    BuffObject.FIGHT_PROP_PYRO_DMG,
+                    BuffObject.FIGHT_PROP_PHY_DMG
+            };
+            String[] art_status_flower = new String[]{
+                    context.getString(R.string.weapon_stat_HP)
+            };
+            String[] art_status_plume = new String[]{
+                    context.getString(R.string.weapon_stat_atk)
+            };
+            for (int y = 0 ; y < 5 ; y++){
+                if(artifacts[y] != null) {
+                    Artifact artifact = artifacts[y];
+                    View buff_art_include = view.findViewById(buff_art_include_list[y]);
+                    Spinner buff_art_main_status = buff_art_include.findViewById(R.id.buff_art_main_status);
+                    Spinner buff_art_main_rare = buff_art_include.findViewById(R.id.buff_art_main_rare);
+                    Spinner buff_art_main_lvl = buff_art_include.findViewById(R.id.buff_art_main_lvl);
+
+                    LinearLayout buff_art_sub_status_ll = buff_art_include.findViewById(R.id.buff_art_sub_status_ll);
+                    TextView buff_art_sub_status_1 = buff_art_include.findViewById(R.id.buff_art_sub_status_1);
+                    TextView buff_art_sub_status_2 = buff_art_include.findViewById(R.id.buff_art_sub_status_2);
+                    TextView buff_art_sub_status_3 = buff_art_include.findViewById(R.id.buff_art_sub_status_3);
+                    TextView buff_art_sub_status_4 = buff_art_include.findViewById(R.id.buff_art_sub_status_4);
+
+
+                    ArrayAdapter art_lvl = new ArrayAdapter(context, R.layout.spinner_item_cal_2048, art_rare_lvl_list[artifact.getArtifactRare() - 1]);
+                    art_lvl.setDropDownViewResource(R.layout.spinner_dropdown_item_cal_2048);
+                    buff_art_main_lvl.setAdapter(art_lvl);
+
+                    ArrayAdapter art_rare = new ArrayAdapter(context, R.layout.spinner_item_cal_2048, BuffCatelogy.lvlListArtRare);
+                    art_rare.setDropDownViewResource(R.layout.spinner_dropdown_item_cal_2048);
+                    buff_art_main_rare.setAdapter(art_rare);
+
+                    ArrayAdapter art_status = new ArrayAdapter(context, R.layout.spinner_item_cal_2048,
+                            (artifact.getArtifactType().equals(Artifact.FLOWER) ? art_status_flower :
+                                    artifact.getArtifactType().equals(Artifact.PLUME) ? art_status_plume : art_status_mix
+                            ));
+                    art_status.setDropDownViewResource(R.layout.spinner_dropdown_item_cal_2048);
+                    buff_art_main_status.setAdapter(art_status);
+
+                    buff_art_main_lvl.setSelection(artifact.getArtifactLvl()-1);
+                    buff_art_main_rare.setSelection(artifact.getArtifactRare()-1);
+                    buff_art_main_status.setSelection(Arrays.asList(art_status_mix_base).indexOf(artifact.getArtifactStatStr()[0]));
+
+                    buff_art_main_lvl.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            switch (artifact.getArtifactType()){
+                                case Artifact.FLOWER: buffObjects.get(finalX).getArtifactFlower().setArtifactLvl(position+1);break;
+                                case Artifact.PLUME: buffObjects.get(finalX).getArtifactPlume().setArtifactLvl(position+1);break;
+                                case Artifact.SAND: buffObjects.get(finalX).getArtifactSand().setArtifactLvl(position+1);break;
+                                case Artifact.CIRCLET: buffObjects.get(finalX).getArtifactCirclet().setArtifactLvl(position+1);break;
+                                case Artifact.GOBLET: buffObjects.get(finalX).getArtifactGoblet().setArtifactLvl(position+1);break;
+                            }
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
+                    buff_art_main_rare.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            switch (artifact.getArtifactType()){
+                                case Artifact.FLOWER: buffObjects.get(finalX).getArtifactFlower().setArtifactRare(position+1);break;
+                                case Artifact.PLUME: buffObjects.get(finalX).getArtifactPlume().setArtifactRare(position+1);break;
+                                case Artifact.SAND: buffObjects.get(finalX).getArtifactSand().setArtifactRare(position+1);break;
+                                case Artifact.CIRCLET: buffObjects.get(finalX).getArtifactCirclet().setArtifactRare(position+1);break;
+                                case Artifact.GOBLET: buffObjects.get(finalX).getArtifactGoblet().setArtifactRare(position+1);break;
+                            }
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
+                    buff_art_main_status.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                        @Override
+                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                            switch (artifact.getArtifactType()){
+                                case Artifact.FLOWER: {
+                                    String[] tmp = buffObjects.get(finalX).getArtifactFlower().getArtifactStatStr();
+                                    tmp[0] = art_status_mix_base[0];
+                                    buffObjects.get(finalX).getArtifactFlower().setArtifactStatStr(tmp);
+                                    break;
+                                }
+                                case Artifact.PLUME: {
+                                    String[] tmp = buffObjects.get(finalX).getArtifactPlume().getArtifactStatStr();
+                                    tmp[0] = art_status_mix_base[0];
+                                    buffObjects.get(finalX).getArtifactPlume().setArtifactStatStr(tmp);
+                                    break;
+                                }
+                                case Artifact.SAND: {
+                                    String[] tmp = buffObjects.get(finalX).getArtifactSand().getArtifactStatStr();
+                                    tmp[0] = art_status_mix_base[0];
+                                    buffObjects.get(finalX).getArtifactSand().setArtifactStatStr(tmp);
+                                    break;
+                                }
+                                case Artifact.CIRCLET: {
+                                    String[] tmp = buffObjects.get(finalX).getArtifactCirclet().getArtifactStatStr();
+                                    tmp[0] = art_status_mix_base[0];
+                                    buffObjects.get(finalX).getArtifactCirclet().setArtifactStatStr(tmp);
+                                    break;
+                                }
+                                case Artifact.GOBLET: {
+                                    String[] tmp = buffObjects.get(finalX).getArtifactGoblet().getArtifactStatStr();
+                                    tmp[0] = art_status_mix_base[0];
+                                    buffObjects.get(finalX).getArtifactGoblet().setArtifactStatStr(tmp);
+                                    break;
+                                }
+                            }
+                        }
+
+                        @Override
+                        public void onNothingSelected(AdapterView<?> parent) {
+
+                        }
+                    });
+
+                    buff_art_sub_status_ll.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+
+                        }
+                    });
+
+                }
+
+            }
 
 
             //TabLayout
@@ -603,7 +819,6 @@ public class BuffMainUI extends AppCompatActivity {
 
             ico_img.setPadding((int) (displayMetrics.density*4),(int) (displayMetrics.density*4),(int) (displayMetrics.density*4),(int) (displayMetrics.density*4));
             team_tablayout.addTab(team_tablayout.newTab().setCustomView(view1).setId(x));
-
 
             dynamicView.add(view);
         }
