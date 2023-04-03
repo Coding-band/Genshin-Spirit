@@ -308,6 +308,7 @@ public class Desk2048 extends AppCompatActivity {
     int[] tabTCGItemImageArray = new int[]{R.drawable.ic_2048_tcg_char,R.drawable.ic_2048_tcg_equip,R.drawable.ic_2048_tcg_support,R.drawable.ic_2048_tcg_event};
     int[] tabTCGItemImageSelectedArray = new int[]{R.drawable.ic_2048_tcg_char_selected,R.drawable.ic_2048_tcg_equip_selected,R.drawable.ic_2048_tcg_support_selected,R.drawable.ic_2048_tcg_event_selected};
 
+    ChangeLog changeLog ;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -346,10 +347,11 @@ public class Desk2048 extends AppCompatActivity {
         }
 
         npd = new NumberPickerDialog(this);
+        changeLog = new ChangeLog();
 
         // Check Is First Time Open
         if(sharedPreferences_version.getBoolean(BuildConfig.VERSION_NAME,false) == false){
-            ChangeLog.show(context,activity);
+            changeLog.show(context,activity);
 
             editor2 = sharedPreferences_version.edit();
             editor2.putBoolean(BuildConfig.VERSION_NAME,true);
@@ -1849,7 +1851,7 @@ public class Desk2048 extends AppCompatActivity {
         bg_changelog_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ChangeLog.show(context,activity);
+                changeLog.show(context,activity);
             }
         });
 
@@ -3026,7 +3028,8 @@ public class Desk2048 extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         sharedPreferences.edit().putBoolean("appStopped",true).apply();
+        changeLog.dismiss();
+        super.onDestroy();
     }
 }

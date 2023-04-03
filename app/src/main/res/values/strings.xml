@@ -1428,6 +1428,7 @@
     <string name="login_dailymemo">Please login DailyMemo first</string>
     <string name="affix">"Affix. "</string>
     <string name="weapon_stat_atk_base">Base ATK</string>
+    <string name="max_4_choice">Max 4 choices</string>
 
 
 </resources>

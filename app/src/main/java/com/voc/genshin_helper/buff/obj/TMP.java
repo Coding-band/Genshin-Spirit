@@ -64,64 +64,66 @@ public class TMP {
     }
     public void run(){
         lvl = 1;
-        runAsSilly(BuffObject.FIGHT_PROP_HP, new double[]{0,23.9,29.88});
-        runAsSilly(BuffObject.FIGHT_PROP_ATK, new double[]{0,1.56,1.95});
-        runAsSilly(BuffObject.FIGHT_PROP_DEF, new double[]{0,1.85,2.31});
-        runAsSilly(BuffObject.FIGHT_PROP_HP_P, new double[]{0,1.17,1.46});
-        runAsSilly(BuffObject.FIGHT_PROP_ATK_P, new double[]{0,1.17,1.46});
-        runAsSilly(BuffObject.FIGHT_PROP_DEF_P, new double[]{0,1.46,1.82});
-        runAsSilly(BuffObject.FIGHT_PROP_ELE_MAS, new double[]{0,4.66,5.83});
-        runAsSilly(BuffObject.FIGHT_PROP_EN_RECH, new double[]{0,1.3,1.62});
-        runAsSilly(BuffObject.FIGHT_PROP_CRIT_RATE, new double[]{0,0.78,0.97});
-        runAsSilly(BuffObject.FIGHT_PROP_CRIT_DMG, new double[]{0,1.55,1.94});
+        runAsSilly(BuffObject.FIGHT_PROP_HP, new double[]{0,23.9 ,29.9 });
+        runAsSilly(BuffObject.FIGHT_PROP_ATK, new double[]{0,1.6 ,2.0 });
+        runAsSilly(BuffObject.FIGHT_PROP_DEF, new double[]{0,1.9 ,2.3 });
+        runAsSilly(BuffObject.FIGHT_PROP_HP_P, new double[]{0,1.2 ,1.5 });
+        runAsSilly(BuffObject.FIGHT_PROP_ATK_P, new double[]{0,1.2 ,1.5 });
+        runAsSilly(BuffObject.FIGHT_PROP_DEF_P, new double[]{0,1.5 ,1.8 });
+        runAsSilly(BuffObject.FIGHT_PROP_ELE_MAS, new double[]{0,4.7 ,5.8 });
+        runAsSilly(BuffObject.FIGHT_PROP_EN_RECH, new double[]{0,1.3 ,1.6 });
+        runAsSilly(BuffObject.FIGHT_PROP_CRIT_RATE, new double[]{0,0.8 ,1.0 });
+        runAsSilly(BuffObject.FIGHT_PROP_CRIT_DMG, new double[]{0,1.6 ,1.9 });
 
         lvl = 2;
-        runAsSilly(BuffObject.FIGHT_PROP_HP, new double[]{0,50.19,60.95,71.7});
-        runAsSilly(BuffObject.FIGHT_PROP_ATK, new double[]{0,3.27,3.97,4.67});
-        runAsSilly(BuffObject.FIGHT_PROP_DEF, new double[]{0,3.89,4.72,5.56});
-        runAsSilly(BuffObject.FIGHT_PROP_HP_P, new double[]{0,1.63,1.98,2.33});
-        runAsSilly(BuffObject.FIGHT_PROP_ATK_P, new double[]{0,1.63,1.98,2.33});
-        runAsSilly(BuffObject.FIGHT_PROP_DEF_P, new double[]{0,2.04,2.48,2.91});
-        runAsSilly(BuffObject.FIGHT_PROP_ELE_MAS, new double[]{0,6.53,7.93,9.33});
-        runAsSilly(BuffObject.FIGHT_PROP_EN_RECH, new double[]{0,1.81,2.2,2.59});
-        runAsSilly(BuffObject.FIGHT_PROP_CRIT_RATE, new double[]{0,1.09,1.32,1.55});
-        runAsSilly(BuffObject.FIGHT_PROP_CRIT_DMG, new double[]{0,2.18,2.64,3.11});
+        runAsSilly(BuffObject.FIGHT_PROP_HP, new double[]{0,50.2 ,61.0 ,71.7 });
+        runAsSilly(BuffObject.FIGHT_PROP_ATK, new double[]{0,3.3 ,4.0 ,4.7 });
+        runAsSilly(BuffObject.FIGHT_PROP_DEF, new double[]{0,3.9 ,4.7 ,5.6 });
+        runAsSilly(BuffObject.FIGHT_PROP_HP_P, new double[]{0,1.6 ,2.0 ,2.3 });
+        runAsSilly(BuffObject.FIGHT_PROP_ATK_P, new double[]{0,1.6 ,2.0 ,2.3 });
+        runAsSilly(BuffObject.FIGHT_PROP_DEF_P, new double[]{0,2.0 ,2.5 ,2.9 });
+        runAsSilly(BuffObject.FIGHT_PROP_ELE_MAS, new double[]{0,6.5 ,7.9 ,9.3 });
+        runAsSilly(BuffObject.FIGHT_PROP_EN_RECH, new double[]{0,1.8 ,2.2 ,2.6 });
+        runAsSilly(BuffObject.FIGHT_PROP_CRIT_RATE, new double[]{0,1.1 ,1.3 ,1.6 });
+        runAsSilly(BuffObject.FIGHT_PROP_CRIT_DMG, new double[]{0,2.2 ,2.6 ,3.1 });
 
         lvl = 3;
-        runAsSilly(BuffObject.FIGHT_PROP_HP, new double[]{0,100.38,114.72,129.06,143.4});
-        runAsSilly(BuffObject.FIGHT_PROP_ATK, new double[]{0,6.54,7.47,8.4,9.34});
-        runAsSilly(BuffObject.FIGHT_PROP_DEF, new double[]{0,7.78,8.89,10,11.11});
-        runAsSilly(BuffObject.FIGHT_PROP_HP_P, new double[]{0,2.45,2.8,3.15,3.5});
-        runAsSilly(BuffObject.FIGHT_PROP_ATK_P, new double[]{0,2.45,2.8,3.15,3.5});
-        runAsSilly(BuffObject.FIGHT_PROP_DEF_P, new double[]{0,3.06,3.5,3.93,4.37});
-        runAsSilly(BuffObject.FIGHT_PROP_ELE_MAS, new double[]{0,9.79,11.19,12.59,13.99});
-        runAsSilly(BuffObject.FIGHT_PROP_EN_RECH, new double[]{0,2.72,3.11,3.5,3.89});
-        runAsSilly(BuffObject.FIGHT_PROP_CRIT_RATE, new double[]{0,1.63,1.86,2.1,2.33});
-        runAsSilly(BuffObject.FIGHT_PROP_CRIT_DMG, new double[]{0,3.26,3.73,4.2,4.66});
+        runAsSilly(BuffObject.FIGHT_PROP_HP, new double[]{0,100.4 ,114.7 ,129.1 ,143.4 });
+        runAsSilly(BuffObject.FIGHT_PROP_ATK, new double[]{0,6.5 ,7.5 ,8.4 ,9.3 });
+        runAsSilly(BuffObject.FIGHT_PROP_DEF, new double[]{0,7.8 ,8.9 ,10.0 ,11.1 });
+        runAsSilly(BuffObject.FIGHT_PROP_HP_P, new double[]{0,2.5 ,2.8 ,3.2 ,3.5 });
+        runAsSilly(BuffObject.FIGHT_PROP_ATK_P, new double[]{0,2.5 ,2.8 ,3.2 ,3.5 });
+        runAsSilly(BuffObject.FIGHT_PROP_DEF_P, new double[]{0,3.1 ,3.5 ,3.9 ,4.4 });
+        runAsSilly(BuffObject.FIGHT_PROP_ELE_MAS, new double[]{0,9.8 ,11.2 ,12.6 ,14.0 });
+        runAsSilly(BuffObject.FIGHT_PROP_EN_RECH, new double[]{0,2.7 ,3.1 ,3.5 ,3.9 });
+        runAsSilly(BuffObject.FIGHT_PROP_CRIT_RATE, new double[]{0,1.6 ,1.9 ,2.1 ,2.3 });
+        runAsSilly(BuffObject.FIGHT_PROP_CRIT_DMG, new double[]{0,3.3 ,3.7 ,4.2 ,4.7 });
 
         lvl = 4;
-        runAsSilly(BuffObject.FIGHT_PROP_HP, new double[]{0,167.3,191.2,215.1,239});
-        runAsSilly(BuffObject.FIGHT_PROP_ATK, new double[]{0,10.89,12.45,14,15.56});
-        runAsSilly(BuffObject.FIGHT_PROP_DEF, new double[]{0,12.96,14.82,16.67,18.52});
-        runAsSilly(BuffObject.FIGHT_PROP_HP_P, new double[]{0,3.26,3.73,4.2,4.66});
-        runAsSilly(BuffObject.FIGHT_PROP_ATK_P, new double[]{0,3.26,3.73,4.2,4.66});
-        runAsSilly(BuffObject.FIGHT_PROP_DEF_P, new double[]{0,4.08,4.66,5.25,5.83});
-        runAsSilly(BuffObject.FIGHT_PROP_ELE_MAS, new double[]{0,13.06,14.92,16.79,18.56});
-        runAsSilly(BuffObject.FIGHT_PROP_EN_RECH, new double[]{0,3.63,4.14,4.66,5.18});
-        runAsSilly(BuffObject.FIGHT_PROP_CRIT_RATE, new double[]{0,2.18,2.49,2.8,3.11});
-        runAsSilly(BuffObject.FIGHT_PROP_CRIT_DMG, new double[]{0,4.35,4.97,5.6,6.22});
+        runAsSilly(BuffObject.FIGHT_PROP_HP, new double[]{0,167.3 ,191.2 ,215.1 ,239.0 });
+        runAsSilly(BuffObject.FIGHT_PROP_ATK, new double[]{0,10.9 ,12.5 ,14.0 ,15.6 });
+        runAsSilly(BuffObject.FIGHT_PROP_DEF, new double[]{0,13.0 ,14.8 ,16.7 ,18.5 });
+        runAsSilly(BuffObject.FIGHT_PROP_HP_P, new double[]{0,3.3 ,3.7 ,4.2 ,4.7 });
+        runAsSilly(BuffObject.FIGHT_PROP_ATK_P, new double[]{0,3.3 ,3.7 ,4.2 ,4.7 });
+        runAsSilly(BuffObject.FIGHT_PROP_DEF_P, new double[]{0,4.1 ,4.7 ,5.3 ,5.8 });
+        runAsSilly(BuffObject.FIGHT_PROP_ELE_MAS, new double[]{0,13.1 ,14.9 ,16.8 ,18.6 });
+        runAsSilly(BuffObject.FIGHT_PROP_EN_RECH, new double[]{0,3.6 ,4.1 ,4.7 ,5.2 });
+        runAsSilly(BuffObject.FIGHT_PROP_CRIT_RATE, new double[]{0,2.2 ,2.5 ,2.8 ,3.1 });
+        runAsSilly(BuffObject.FIGHT_PROP_CRIT_DMG, new double[]{0,4.4 ,5.0 ,5.6 ,6.2 });
 
         lvl = 5;
-        runAsSilly(BuffObject.FIGHT_PROP_HP, new double[]{0,209.1,239.0,268.9,298.8});
-        runAsSilly(BuffObject.FIGHT_PROP_ATK, new double[]{0,13.6,15.6,17.5,19.5});
-        runAsSilly(BuffObject.FIGHT_PROP_DEF, new double[]{0,16.2,18.5,20.8,23.2});
-        runAsSilly(BuffObject.FIGHT_PROP_HP_P, new double[]{0,4.1,4.7,5.3,5.8});
-        runAsSilly(BuffObject.FIGHT_PROP_ATK_P, new double[]{0,4.1,4.7,5.3,5.8});
-        runAsSilly(BuffObject.FIGHT_PROP_DEF_P, new double[]{0,5.1,5.8,6.6,7.3});
-        runAsSilly(BuffObject.FIGHT_PROP_ELE_MAS, new double[]{0,16.3,18.7,21.0,23.3});
-        runAsSilly(BuffObject.FIGHT_PROP_EN_RECH, new double[]{0,4.5,5.2,5.8,6.5});
-        runAsSilly(BuffObject.FIGHT_PROP_CRIT_RATE, new double[]{0,2.7,3.1,3.5,3.9});
-        runAsSilly(BuffObject.FIGHT_PROP_CRIT_DMG, new double[]{0,5.4,6.2,7.0,7.8});
+        runAsSilly(BuffObject.FIGHT_PROP_HP, new double[]{0,209.1 ,239.0 ,268.9 ,298.8 });
+        runAsSilly(BuffObject.FIGHT_PROP_ATK, new double[]{0,13.6 ,15.6 ,17.5 ,19.5 });
+        runAsSilly(BuffObject.FIGHT_PROP_DEF, new double[]{0,16.2 ,18.5 ,20.8 ,23.2 });
+        runAsSilly(BuffObject.FIGHT_PROP_HP_P, new double[]{0,4.1 ,4.7 ,5.3 ,5.8 });
+        runAsSilly(BuffObject.FIGHT_PROP_ATK_P, new double[]{0,4.1 ,4.7 ,5.3 ,5.8 });
+        runAsSilly(BuffObject.FIGHT_PROP_DEF_P, new double[]{0,5.1 ,5.8 ,6.6 ,7.3 });
+        runAsSilly(BuffObject.FIGHT_PROP_ELE_MAS, new double[]{0,16.3 ,18.7 ,21.0 ,23.3 });
+        runAsSilly(BuffObject.FIGHT_PROP_EN_RECH, new double[]{0,4.5 ,5.2 ,5.8 ,6.5 });
+        runAsSilly(BuffObject.FIGHT_PROP_CRIT_RATE, new double[]{0,2.7 ,3.1 ,3.5 ,3.9 });
+        runAsSilly(BuffObject.FIGHT_PROP_CRIT_DMG, new double[]{0,5.4 ,6.2 ,7.0 ,7.8 });
+
+
 
 
     }

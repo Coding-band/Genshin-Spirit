@@ -45,9 +45,10 @@ import java.util.ArrayList;
 
 public class ChangeLog {
 
-    public static void show (Context context, Activity activity){
+    Dialog dialog = null;
+    public void show (Context context, Activity activity){
 
-        final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+        dialog = new Dialog(context, R.style.NormalDialogStyle_N);
         View view = View.inflate(context, R.layout.fragment_changelog, null);
 
         BackgroundReload.BackgroundReload(context,activity);
@@ -88,7 +89,13 @@ public class ChangeLog {
         dialog.show();
     }
 
-    private static String LoadData(String inFile, Context context) {
+    public void dismiss(){
+        if (dialog != null){
+            dialog.dismiss();
+        }
+    }
+
+    private String LoadData(String inFile, Context context) {
         String tContents = "";
 
         try {
@@ -107,7 +114,7 @@ public class ChangeLog {
 
     }
 
-    private static ArrayList<Version> jsonJXDate (String date) {
+    private ArrayList<Version> jsonJXDate (String date) {
         ArrayList<Version> versionList = new ArrayList<>();
         if (date != null) {
             try {

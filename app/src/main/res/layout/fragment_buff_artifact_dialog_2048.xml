@@ -123,7 +123,7 @@
                                             android:background="@drawable/ic_buff_value_kwang_2048"
                                             android:fontFamily="@font/genshin_font"
                                             android:gravity="center"
-                                            android:text="17.6"
+                                            android:text="0.0"
                                             android:textColor="@color/buff_tv_main_anti_2048"
                                             android:textSize="16sp" />
 
@@ -143,9 +143,9 @@
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
                                     android:max="10"
-                                    android:paddingStart="0dp"
-                                    android:paddingEnd="0dp"
-                                    android:progress="5"
+                                    android:paddingStart="8dp"
+                                    android:paddingEnd="8dp"
+                                    android:progress="0"
                                     android:progressDrawable="@drawable/bg_seekbar_2048"
                                     android:thumb="@drawable/bg_seekbar_dot_2048" />
 
@@ -215,7 +215,7 @@
                                             android:background="@drawable/ic_buff_value_kwang_2048"
                                             android:fontFamily="@font/genshin_font"
                                             android:gravity="center"
-                                            android:text="17.6"
+                                            android:text="0.0"
                                             android:textColor="@color/buff_tv_main_anti_2048"
                                             android:textSize="16sp" />
 
@@ -235,9 +235,9 @@
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
                                     android:max="10"
-                                    android:paddingStart="0dp"
-                                    android:paddingEnd="0dp"
-                                    android:progress="5"
+                                    android:paddingStart="8dp"
+                                    android:paddingEnd="8dp"
+                                    android:progress="0"
                                     android:progressDrawable="@drawable/bg_seekbar_2048"
                                     android:thumb="@drawable/bg_seekbar_dot_2048" />
 
@@ -307,7 +307,7 @@
                                             android:background="@drawable/ic_buff_value_kwang_2048"
                                             android:fontFamily="@font/genshin_font"
                                             android:gravity="center"
-                                            android:text="17.6"
+                                            android:text="0.0"
                                             android:textColor="@color/buff_tv_main_anti_2048"
                                             android:textSize="16sp" />
 
@@ -327,9 +327,9 @@
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
                                     android:max="10"
-                                    android:paddingStart="0dp"
-                                    android:paddingEnd="0dp"
-                                    android:progress="5"
+                                    android:paddingStart="8dp"
+                                    android:paddingEnd="8dp"
+                                    android:progress="0"
                                     android:progressDrawable="@drawable/bg_seekbar_2048"
                                     android:thumb="@drawable/bg_seekbar_dot_2048" />
 
@@ -400,7 +400,7 @@
                                             android:background="@drawable/ic_buff_value_kwang_2048"
                                             android:fontFamily="@font/genshin_font"
                                             android:gravity="center"
-                                            android:text="17.6"
+                                            android:text="0.0"
                                             android:textColor="@color/buff_tv_main_anti_2048"
                                             android:textSize="16sp" />
 
@@ -420,9 +420,9 @@
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
                                     android:max="10"
-                                    android:paddingStart="0dp"
-                                    android:paddingEnd="0dp"
-                                    android:progress="5"
+                                    android:paddingStart="8dp"
+                                    android:paddingEnd="8dp"
+                                    android:progress="0"
                                     android:progressDrawable="@drawable/bg_seekbar_2048"
                                     android:thumb="@drawable/bg_seekbar_dot_2048" />
 
@@ -492,7 +492,7 @@
                                             android:background="@drawable/ic_buff_value_kwang_2048"
                                             android:fontFamily="@font/genshin_font"
                                             android:gravity="center"
-                                            android:text="17.6"
+                                            android:text="0.0"
                                             android:textColor="@color/buff_tv_main_anti_2048"
                                             android:textSize="16sp" />
 
@@ -512,9 +512,9 @@
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
                                     android:max="10"
-                                    android:paddingStart="0dp"
-                                    android:paddingEnd="0dp"
-                                    android:progress="5"
+                                    android:paddingStart="8dp"
+                                    android:paddingEnd="8dp"
+                                    android:progress="0"
                                     android:progressDrawable="@drawable/bg_seekbar_2048"
                                     android:thumb="@drawable/bg_seekbar_dot_2048" />
 
@@ -584,7 +584,7 @@
                                             android:background="@drawable/ic_buff_value_kwang_2048"
                                             android:fontFamily="@font/genshin_font"
                                             android:gravity="center"
-                                            android:text="17.6"
+                                            android:text="0.0"
                                             android:textColor="@color/buff_tv_main_anti_2048"
                                             android:textSize="16sp" />
 
@@ -604,9 +604,9 @@
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
                                     android:max="10"
-                                    android:paddingStart="0dp"
-                                    android:paddingEnd="0dp"
-                                    android:progress="5"
+                                    android:paddingStart="8dp"
+                                    android:paddingEnd="8dp"
+                                    android:progress="0"
                                     android:progressDrawable="@drawable/bg_seekbar_2048"
                                     android:thumb="@drawable/bg_seekbar_dot_2048" />
 
@@ -676,7 +676,7 @@
                                             android:background="@drawable/ic_buff_value_kwang_2048"
                                             android:fontFamily="@font/genshin_font"
                                             android:gravity="center"
-                                            android:text="17.6"
+                                            android:text="0.0"
                                             android:textColor="@color/buff_tv_main_anti_2048"
                                             android:textSize="16sp" />
 
@@ -691,15 +691,14 @@
 
                                 <SeekBar
                                     android:id="@+id/buff_set_crit_rate_seek"
-                                    style="@style/Widget.AppCompat.SeekBar.Discrete"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
                                     android:max="10"
-                                    android:paddingStart="0dp"
-                                    android:paddingEnd="0dp"
-                                    android:progress="5"
+                                    android:paddingStart="8dp"
+                                    android:paddingEnd="8dp"
+                                    android:progress="0"
                                     android:progressDrawable="@drawable/bg_seekbar_2048"
                                     android:thumb="@drawable/bg_seekbar_dot_2048" />
 
@@ -769,7 +768,7 @@
                                             android:background="@drawable/ic_buff_value_kwang_2048"
                                             android:fontFamily="@font/genshin_font"
                                             android:gravity="center"
-                                            android:text="17.6"
+                                            android:text="0.0"
                                             android:textColor="@color/buff_tv_main_anti_2048"
                                             android:textSize="16sp" />
 
@@ -789,9 +788,9 @@
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
                                     android:max="10"
-                                    android:paddingStart="0dp"
-                                    android:paddingEnd="0dp"
-                                    android:progress="5"
+                                    android:paddingStart="8dp"
+                                    android:paddingEnd="8dp"
+                                    android:progress="0"
                                     android:progressDrawable="@drawable/bg_seekbar_2048"
                                     android:thumb="@drawable/bg_seekbar_dot_2048" />
 
@@ -861,7 +860,7 @@
                                             android:background="@drawable/ic_buff_value_kwang_2048"
                                             android:fontFamily="@font/genshin_font"
                                             android:gravity="center"
-                                            android:text="17.6"
+                                            android:text="0.0"
                                             android:textColor="@color/buff_tv_main_anti_2048"
                                             android:textSize="16sp" />
 
@@ -881,9 +880,9 @@
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
                                     android:max="10"
-                                    android:paddingStart="0dp"
-                                    android:paddingEnd="0dp"
-                                    android:progress="5"
+                                    android:paddingStart="8dp"
+                                    android:paddingEnd="8dp"
+                                    android:progress="0"
                                     android:progressDrawable="@drawable/bg_seekbar_2048"
                                     android:thumb="@drawable/bg_seekbar_dot_2048" />
 
@@ -953,7 +952,7 @@
                                             android:background="@drawable/ic_buff_value_kwang_2048"
                                             android:fontFamily="@font/genshin_font"
                                             android:gravity="center"
-                                            android:text="17.6"
+                                            android:text="0.0"
                                             android:textColor="@color/buff_tv_main_anti_2048"
                                             android:textSize="16sp" />
 
@@ -973,9 +972,9 @@
                                     android:layout_marginTop="4dp"
                                     android:layout_marginBottom="4dp"
                                     android:max="10"
-                                    android:paddingStart="0dp"
-                                    android:paddingEnd="0dp"
-                                    android:progress="5"
+                                    android:paddingStart="8dp"
+                                    android:paddingEnd="8dp"
+                                    android:progress="0"
                                     android:progressDrawable="@drawable/bg_seekbar_2048"
                                     android:thumb="@drawable/bg_seekbar_dot_2048" />
 

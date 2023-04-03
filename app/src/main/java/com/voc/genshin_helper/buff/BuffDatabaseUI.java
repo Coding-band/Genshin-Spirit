@@ -511,10 +511,14 @@ public class BuffDatabaseUI extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
         if (db != null){
             db.close();
         }
+
+        if (dialog != null){
+            dialog.dismiss();
+        }
+        super.onDestroy();
     }
 
     // https://stackoverflow.com/questions/1601151/how-do-i-check-in-sqlite-whether-a-table-exists?rq=1
@@ -550,7 +554,7 @@ public class BuffDatabaseUI extends AppCompatActivity {
 
     @Override
     protected void onRestart() {
-        super.onRestart();
         readIndexRecord();
+        super.onRestart();
     }
 }

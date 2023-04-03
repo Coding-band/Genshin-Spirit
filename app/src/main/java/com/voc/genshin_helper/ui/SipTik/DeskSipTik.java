@@ -241,6 +241,9 @@ public class DeskSipTik extends AppCompatActivity {
     int[] tabItemNameArray = new int[]{R.string.title_home,R.string.title_char,R.string.title_weapons,R.string.title_artifacts,R.string.title_settings};
     int[] tabItemImageArray = new int[]{R.drawable.ic_siptik_tab_desk,R.drawable.ic_siptik_tab_char,R.drawable.ic_siptik_tab_weapon,R.drawable.ic_siptik_tab_art,R.drawable.ic_siptik_tab_toolbox};
     int[] tabItemImageSelectedArray = new int[]{R.drawable.ic_siptik_tab_desk_selected,R.drawable.ic_siptik_tab_char_selected,R.drawable.ic_siptik_tab_weapon_selected,R.drawable.ic_siptik_tab_art_selected,R.drawable.ic_siptik_tab_toolbox_selected};
+
+    ChangeLog changeLog = new ChangeLog();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -274,10 +277,11 @@ public class DeskSipTik extends AppCompatActivity {
         desk_tablayout = findViewById(R.id.desk_tablayout);
         npd = new NumberPickerDialog(this);
 
+        changeLog = new ChangeLog();
 
         // Check Is First Time Open
         if(sharedPreferences_version.getBoolean(BuildConfig.VERSION_NAME,false) == false){
-            ChangeLog.show(context,activity);
+            changeLog.show(context,activity);
             editor2 = sharedPreferences_version.edit();
             editor2.putBoolean(BuildConfig.VERSION_NAME,true);
             editor2.apply();
@@ -3215,7 +3219,7 @@ public class DeskSipTik extends AppCompatActivity {
         bg_changelog_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ChangeLog.show(context,activity);
+                changeLog.show(context,activity);
             }
         });
 
@@ -3861,5 +3865,12 @@ public class DeskSipTik extends AppCompatActivity {
         editor.putBoolean("show_sub_dps",show_sub_dps);
         editor.putBoolean("show_util",show_util);
         editor.apply();
+    }
+
+
+    @Override
+    protected void onDestroy(){
+        changeLog.dismiss();
+        super.onDestroy();
     }
 }

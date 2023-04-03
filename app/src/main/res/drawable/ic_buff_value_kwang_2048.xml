@@ -4,16 +4,12 @@
   ~ Copyright © 2023 Xectorda 版權所有
   -->
 
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-    android:width="54dp"
-    android:height="30dp"
-    android:viewportWidth="54"
-    android:viewportHeight="30">
-    <path
-        android:fillColor="#1AFFFFFF"
-        android:pathData="M2 15c0-7.18 5.82-13 13-13h24c7.18 0 13 5.82 13 13v0c0 7.18-5.82 13-13 13h-24c-7.18 0-13-5.82-13-13z"/>
-    <path
-        android:strokeColor="#33FFFFFF"
-        android:strokeWidth="2"
-        android:pathData="M1 15c0-7.73 6.27-14 14-14h24c7.73 0 14 6.27 14 14v0c0 7.73-6.27 14-14 14h-24c-7.73 0-14-6.27-14-14z"/>
-</vector>
+<shape android:shape="rectangle"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <size android:width="50dp" android:height="26dp"/>
+    <solid android:color="#1AFFFFFF"/>
+    <corners android:radius="60px"/>
+    <stroke android:color="#33FFFFFF" android:width="2dp"/>
+    <padding android:left="6dp" android:right="6dp"/>
+</shape>

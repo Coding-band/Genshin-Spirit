@@ -235,6 +235,7 @@ public class MainActivity extends AppCompatActivity {
     Activity activity;
 
     View viewPager0, viewPager1, viewPager2, viewPager3, viewPager4;
+    ChangeLog changeLog = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -267,12 +268,14 @@ public class MainActivity extends AppCompatActivity {
         npd = new NumberPickerDialog(this);
 
         //忘憂喵
-        gs = new GoSleep();
-        gs.sleep(context);
+        //gs = new GoSleep();
+        //gs.sleep(context);
+
+        changeLog = new ChangeLog();
 
         // Check Is First Time Open
         if(sharedPreferences_version.getBoolean(BuildConfig.VERSION_NAME,false) == false){
-            ChangeLog.show(context,activity);
+            changeLog.show(context,activity);
             editor2 = sharedPreferences_version.edit();
             editor2.putBoolean(BuildConfig.VERSION_NAME,true);
             editor2.apply();
@@ -2584,7 +2587,7 @@ public class MainActivity extends AppCompatActivity {
         bg_changelog_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ChangeLog.show(context,activity);
+                changeLog.show(context,activity);
             }
         });
     }
@@ -3249,5 +3252,11 @@ public class MainActivity extends AppCompatActivity {
         editor.putBoolean("show_sub_dps",show_sub_dps);
         editor.putBoolean("show_util",show_util);
         editor.apply();
+    }
+
+    @Override
+    protected void onDestroy(){
+        changeLog.dismiss();
+        super.onDestroy();
     }
 }
