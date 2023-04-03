@@ -4,27 +4,28 @@ package com.voc.genshin_helper.buff;/*
  * Copyright © 2023 Xectorda 版權所有
  */
 
-import static com.voc.genshin_helper.util.LogExport.BETA_TESTING;
-import static com.voc.genshin_helper.util.LogExport.DAILYMEMO;
-
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.os.Handler;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.util.DisplayMetrics;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -44,12 +45,9 @@ import com.voc.genshin_helper.buff.obj.Character;
 import com.voc.genshin_helper.buff.obj.Weapon;
 import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.util.FileLoader;
-import com.voc.genshin_helper.util.LogExport;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
-import com.voc.genshin_helper.util.Spinner2048;
-import com.willy.ratingbar.ScaleRatingBar;
 
-import org.json.JSONArray;
+import org.apache.commons.lang3.ArrayUtils;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -672,6 +670,12 @@ public class BuffMainUI extends AppCompatActivity {
             String[] art_status_plume = new String[]{
                     context.getString(R.string.weapon_stat_atk)
             };
+            String[] art_status_flower_base = new String[]{
+                    BuffObject.FIGHT_PROP_HP
+            };
+            String[] art_status_plume_base = new String[]{
+                    BuffObject.FIGHT_PROP_ATK
+            };
             for (int y = 0 ; y < 5 ; y++){
                 if(artifacts[y] != null) {
                     Artifact artifact = artifacts[y];
@@ -704,7 +708,10 @@ public class BuffMainUI extends AppCompatActivity {
 
                     buff_art_main_lvl.setSelection(artifact.getArtifactLvl()-1);
                     buff_art_main_rare.setSelection(artifact.getArtifactRare()-1);
-                    buff_art_main_status.setSelection(Arrays.asList(art_status_mix_base).indexOf(artifact.getArtifactStatStr()[0]));
+                    buff_art_main_status.setSelection(Arrays.asList(
+                            (artifact.getArtifactType().equals(Artifact.FLOWER) ? art_status_flower_base :
+                            artifact.getArtifactType().equals(Artifact.PLUME) ? art_status_plume_base : art_status_mix_base
+                    )).indexOf(artifact.getArtifactStatStr()[0]));
 
                     buff_art_main_lvl.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                         @Override
@@ -746,31 +753,31 @@ public class BuffMainUI extends AppCompatActivity {
                             switch (artifact.getArtifactType()){
                                 case Artifact.FLOWER: {
                                     String[] tmp = buffObjects.get(finalX).getArtifactFlower().getArtifactStatStr();
-                                    tmp[0] = art_status_mix_base[0];
+                                    tmp[0] = art_status_mix_base[position];
                                     buffObjects.get(finalX).getArtifactFlower().setArtifactStatStr(tmp);
                                     break;
                                 }
                                 case Artifact.PLUME: {
                                     String[] tmp = buffObjects.get(finalX).getArtifactPlume().getArtifactStatStr();
-                                    tmp[0] = art_status_mix_base[0];
+                                    tmp[0] = art_status_mix_base[position];
                                     buffObjects.get(finalX).getArtifactPlume().setArtifactStatStr(tmp);
                                     break;
                                 }
                                 case Artifact.SAND: {
                                     String[] tmp = buffObjects.get(finalX).getArtifactSand().getArtifactStatStr();
-                                    tmp[0] = art_status_mix_base[0];
+                                    tmp[0] = art_status_mix_base[position];
                                     buffObjects.get(finalX).getArtifactSand().setArtifactStatStr(tmp);
                                     break;
                                 }
                                 case Artifact.CIRCLET: {
                                     String[] tmp = buffObjects.get(finalX).getArtifactCirclet().getArtifactStatStr();
-                                    tmp[0] = art_status_mix_base[0];
+                                    tmp[0] = art_status_mix_base[position];
                                     buffObjects.get(finalX).getArtifactCirclet().setArtifactStatStr(tmp);
                                     break;
                                 }
                                 case Artifact.GOBLET: {
                                     String[] tmp = buffObjects.get(finalX).getArtifactGoblet().getArtifactStatStr();
-                                    tmp[0] = art_status_mix_base[0];
+                                    tmp[0] = art_status_mix_base[position];
                                     buffObjects.get(finalX).getArtifactGoblet().setArtifactStatStr(tmp);
                                     break;
                                 }
@@ -786,7 +793,28 @@ public class BuffMainUI extends AppCompatActivity {
                     buff_art_sub_status_ll.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-
+                            switch (artifact.getArtifactType()){
+                                case Artifact.FLOWER: {
+                                    buffObject.setArtifactPlume(buffStatusSelectDialog(context,buffObject.getArtifactFlower(),Artifact.FLOWER, buffCatelogy));
+                                    break;
+                                }
+                                case Artifact.PLUME: {
+                                    buffObject.setArtifactPlume(buffStatusSelectDialog(context,buffObject.getArtifactPlume(),Artifact.PLUME, buffCatelogy));
+                                    break;
+                                }
+                                case Artifact.SAND: {
+                                    buffObject.setArtifactPlume(buffStatusSelectDialog(context,buffObject.getArtifactSand(),Artifact.SAND, buffCatelogy));
+                                    break;
+                                }
+                                case Artifact.CIRCLET: {
+                                    buffObject.setArtifactPlume(buffStatusSelectDialog(context,buffObject.getArtifactCirclet(),Artifact.CIRCLET, buffCatelogy));
+                                    break;
+                                }
+                                case Artifact.GOBLET: {
+                                    buffObject.setArtifactPlume(buffStatusSelectDialog(context,buffObject.getArtifactGoblet(),Artifact.GOBLET, buffCatelogy));
+                                    break;
+                                }
+                            }
                         }
                     });
 
@@ -824,6 +852,110 @@ public class BuffMainUI extends AppCompatActivity {
         }
     }
 
+    public Artifact buffStatusSelectDialog(Context context, Artifact artifact, String TYPE, BuffCatelogy buffCatelogy){
+        final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+        View view = View.inflate(context, R.layout.fragment_buff_artifact_dialog_2048, null);
+        dialog.setContentView(view);
+        dialog.setCanceledOnTouchOutside(true);
+        //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
+        Window dialogWindow = dialog.getWindow();
+        WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+        // 2O48 DESIGN
+        dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+        dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height = displayMetrics.heightPixels;
+        int width = displayMetrics.widthPixels;
+
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = (int) (width*0.8);
+        lp.gravity = Gravity.CENTER;
+        dialogWindow.setAttributes(lp);
+        dialog.show();
+
+        int[] buff_set_tick_list = new int[]{R.id.buff_set_atk_tick,R.id.buff_set_hp_tick,R.id.buff_set_def_tick,R.id.buff_set_atkp_tick,R.id.buff_set_hpp_tick,R.id.buff_set_defp_tick,R.id.buff_set_crit_rate_tick,R.id.buff_set_crit_dmg_tick,R.id.buff_set_enrech_tick,R.id.buff_set_elemas_tick};
+        int[] buff_set_increase_list = new int[]{R.id.buff_set_atk_increase,R.id.buff_set_hp_increase,R.id.buff_set_def_increase,R.id.buff_set_atkp_increase,R.id.buff_set_hpp_increase,R.id.buff_set_defp_increase,R.id.buff_set_crit_rate_increase,R.id.buff_set_crit_dmg_increase,R.id.buff_set_enrech_increase,R.id.buff_set_elemas_increase};
+        int[] buff_set_reduce_list = new int[]{R.id.buff_set_atk_reduce,R.id.buff_set_hp_reduce,R.id.buff_set_def_reduce,R.id.buff_set_atkp_reduce,R.id.buff_set_hpp_reduce,R.id.buff_set_defp_reduce,R.id.buff_set_crit_rate_reduce,R.id.buff_set_crit_dmg_reduce,R.id.buff_set_enrech_reduce,R.id.buff_set_elemas_reduce};
+        int[] buff_set_ll_list = new int[]{R.id.buff_set_atk_ll,R.id.buff_set_hp_ll,R.id.buff_set_def_ll,R.id.buff_set_atkp_ll,R.id.buff_set_hpp_ll,R.id.buff_set_defp_ll,R.id.buff_set_crit_rate_ll,R.id.buff_set_crit_dmg_ll,R.id.buff_set_enrech_ll,R.id.buff_set_elemas_ll};
+        int[] buff_set_value_list = new int[]{R.id.buff_set_atk_value,R.id.buff_set_hp_value,R.id.buff_set_def_value,R.id.buff_set_atkp_value,R.id.buff_set_hpp_value,R.id.buff_set_defp_value,R.id.buff_set_crit_rate_value,R.id.buff_set_crit_dmg_value,R.id.buff_set_enrech_value,R.id.buff_set_elemas_value};
+        int[] buff_set_seek_list = new int[]{R.id.buff_set_atk_seek,R.id.buff_set_hp_seek,R.id.buff_set_def_seek,R.id.buff_set_atkp_seek,R.id.buff_set_hpp_seek,R.id.buff_set_defp_seek,R.id.buff_set_crit_rate_seek,R.id.buff_set_crit_dmg_seek,R.id.buff_set_enrech_seek,R.id.buff_set_elemas_seek};
+
+        String[] sub_status_name_tmp = new String[]{
+            BuffObject.FIGHT_PROP_ATK, BuffObject.FIGHT_PROP_HP, BuffObject.FIGHT_PROP_DEF,
+            BuffObject.FIGHT_PROP_ATK_P, BuffObject.FIGHT_PROP_HP_P, BuffObject.FIGHT_PROP_DEF_P,
+            BuffObject.FIGHT_PROP_CRIT_RATE, BuffObject.FIGHT_PROP_CRIT_DMG, BuffObject.FIGHT_PROP_EN_RECH,BuffObject.FIGHT_PROP_ELE_MAS
+        };
+
+        ArrayList<String> sub_status_name = new ArrayList<>(Arrays.asList(sub_status_name_tmp));
+
+        double[] itemValue = artifact.getArtifactStatValue();
+        String[] itemStr = artifact.getArtifactStatStr();
+
+        for (int x = 0 ; x < buff_set_ll_list.length ; x++){
+            ImageView buff_set_tick = view.findViewById(buff_set_tick_list[x]);
+            LinearLayout buff_set_ll = view.findViewById(buff_set_ll_list[x]);
+            SeekBar buff_set_seek = view.findViewById(buff_set_seek_list[x]);
+            TextView buff_set_value = view.findViewById(buff_set_value_list[x]);
+            ImageView buff_set_increase = view.findViewById(buff_set_increase_list[x]);
+            ImageView buff_set_reduce = view.findViewById(buff_set_reduce_list[x]);
+
+            for (int y = 0 ; y < itemStr.length ; y ++){
+                if (sub_status_name.contains(itemStr[y])){
+                    buff_set_tick.setImageResource(R.drawable.ic_2048_need_tick);
+                    buff_set_value.setText(String.valueOf(itemValue[y]));
+                    double[] itemValueEnum = buffCatelogy.getArtifactStatusValue(artifact.getArtifactRare(),itemStr[y]);
+                    ArrayList<Double> itemValueEnumArray = new ArrayList<>(Arrays.asList(ArrayUtils.toObject(itemValueEnum)));
+                    for (double value : itemValueEnum){buff_set_seek.incrementProgressBy((int) (value*10));}
+                    buff_set_seek.setMax((int) (itemValueEnum[itemValueEnum.length-1]*10));
+                    buff_set_seek.setProgress((int) (itemValue[y]*10));
+
+                    int finalY = y;
+                    buff_set_seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+                        @Override
+                        public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                            buff_set_value.setText(String.valueOf(progress/10));
+                            itemValue[finalY] = (double) (progress / 10);
+                        }
+
+                        @Override
+                        public void onStartTrackingTouch(SeekBar seekBar) {
+
+                        }
+
+                        @Override
+                        public void onStopTrackingTouch(SeekBar seekBar) {
+
+                        }
+                    });
+
+                    buff_set_increase.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            int index = itemValueEnumArray.indexOf(itemValue[finalY]);
+                            if (index != -1 && index < itemValueEnumArray.size()-1){
+                                buff_set_seek.setProgress((int) (itemValueEnumArray.get(index+1)*10));
+                            }
+                        }
+                    });
+
+                    buff_set_reduce.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            int index = itemValueEnumArray.indexOf(itemValue[finalY]);
+                            if (index != -1 && index-1 >= 0){
+                                buff_set_seek.setProgress((int) (itemValueEnumArray.get(index-1)*10));
+                            }
+                        }
+                    });
+                }
+            }
+
+        }
+
+        return artifact;
+    }
 
 
     public String prettyCountY(Number number, boolean isInt) {

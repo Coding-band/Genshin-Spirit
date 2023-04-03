@@ -520,10 +520,22 @@ public class DailyMemo {
                         System.out.println("HEY YOU ! WE SUCCESSED");
                         isBothHave = true;
                         cookies = "{\""+cookies+"\"}";
-                        cookies = cookies.replace(" "," \"").replace("= ","XPR@").replace("=","\":\"").replace("XPR@","=").replace(";","\",").replace(".","_");
-                        //System.out.println("cookies DONE : "+cookies);
-                        cookies = cookies.replace("\":\"}","\"}");
-                        cookies = cookies.replace("\":\"\"}","\"}");
+                        if(cookies.endsWith(";")){cookies = cookies.substring(0, cookies.length()-1);}
+                        System.out.println("cookies DONE : "+cookies);
+                        cookies = cookies
+                                .replace(" ","")
+                                .replace("\n","")
+                                .replace("==;","XPR@2")
+                                .replace("=;","XPR@1")
+                                .replace("=","\":\"")
+                                .replace("XPR@2","==;")
+                                .replace("XPR@1","=;")
+                                .replace(";","\",\"")
+                                .replace(".","_");
+                        System.out.println("cookies DONE : "+cookies);
+                        cookies = cookies.replace("\":\"\"}","=\"}");
+                        cookies = cookies.replace(",\"\"","");
+                        System.out.println("cookies DONE : "+cookies);
                         try {
                             JSONObject jsonObject = new JSONObject(cookies);
                             String token_final_v2 = "N/A";
@@ -841,6 +853,7 @@ public class DailyMemo {
                 //TW,HK,MO = "os_cht"
                 serverList = new ArrayList<>();
                 serverUIDList = new ArrayList<>();
+                haveRunLa = false;
 
                 serverList.add(context.getString(R.string.choosed));
                 serverUIDList.add("-1");
@@ -848,7 +861,9 @@ public class DailyMemo {
                 System.out.println("FOOK : "+jsonArray);
                 LogExport.export("DailyMemo","grabDataFromServer.[REGULAR]", jsonArray.toString(), context, DAILYMEMO);
 
+                System.out.println("LENGTH : "+jsonArray.length());
                 for (int x = 0 ; x< jsonArray.length() ; x++){
+                    System.out.println("SIP "+x);
                     String server = jsonArray.getJSONObject(x).getString("server");
                     long uid = jsonArray.getJSONObject(x).getLong("uid");
                     int level = jsonArray.getJSONObject(x).getInt("level");
@@ -865,6 +880,8 @@ public class DailyMemo {
                             case "天空岛" : serverList.add(context.getString(R.string.sky_land_ser)+" - "+uid+" - Lv."+String.valueOf(level));break;
                             case "世界树" : serverList.add(context.getString(R.string.world_tree)+" - "+uid+" - Lv."+String.valueOf(level));break;
                         }
+
+                        System.out.println("SIPX : "+serverList);
                     }
 
                 }

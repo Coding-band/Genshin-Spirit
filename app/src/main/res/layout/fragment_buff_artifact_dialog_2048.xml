@@ -75,7 +75,7 @@
                                 android:layout_gravity="center|top|left"
                                 android:adjustViewBounds="true"
                                 android:padding="2dp"
-                                app:srcCompat="@drawable/ic_2048_need_tick" />
+                                app:srcCompat="@drawable/ic_2048_no_tick" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -115,7 +115,7 @@
                                             app:srcCompat="@drawable/ic_buff_reduce_2048" />
 
                                         <TextView
-                                            android:id="@+id/buff_set_atk_name2"
+                                            android:id="@+id/buff_set_atk_value"
                                             android:layout_width="wrap_content"
                                             android:layout_height="match_parent"
                                             android:layout_gravity="center|left"
@@ -167,7 +167,7 @@
                                 android:layout_gravity="center|top|left"
                                 android:adjustViewBounds="true"
                                 android:padding="2dp"
-                                app:srcCompat="@drawable/ic_2048_need_tick" />
+                                app:srcCompat="@drawable/ic_2048_no_tick" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -207,7 +207,7 @@
                                             app:srcCompat="@drawable/ic_buff_reduce_2048" />
 
                                         <TextView
-                                            android:id="@+id/buff_set_hp_name2"
+                                            android:id="@+id/buff_set_hp_value"
                                             android:layout_width="wrap_content"
                                             android:layout_height="match_parent"
                                             android:layout_gravity="center|left"
@@ -259,7 +259,7 @@
                                 android:layout_gravity="center|top|left"
                                 android:adjustViewBounds="true"
                                 android:padding="2dp"
-                                app:srcCompat="@drawable/ic_2048_need_tick" />
+                                app:srcCompat="@drawable/ic_2048_no_tick" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -299,7 +299,7 @@
                                             app:srcCompat="@drawable/ic_buff_reduce_2048" />
 
                                         <TextView
-                                            android:id="@+id/buff_set_def_name2"
+                                            android:id="@+id/buff_set_def_value"
                                             android:layout_width="wrap_content"
                                             android:layout_height="match_parent"
                                             android:layout_gravity="center|left"
@@ -352,7 +352,7 @@
                                 android:layout_gravity="center|top|left"
                                 android:adjustViewBounds="true"
                                 android:padding="2dp"
-                                app:srcCompat="@drawable/ic_2048_need_tick" />
+                                app:srcCompat="@drawable/ic_2048_no_tick" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -392,7 +392,7 @@
                                             app:srcCompat="@drawable/ic_buff_reduce_2048" />
 
                                         <TextView
-                                            android:id="@+id/buff_set_atkp_name2"
+                                            android:id="@+id/buff_set_atkp_value"
                                             android:layout_width="wrap_content"
                                             android:layout_height="match_parent"
                                             android:layout_gravity="center|left"
@@ -444,7 +444,7 @@
                                 android:layout_gravity="center|top|left"
                                 android:adjustViewBounds="true"
                                 android:padding="2dp"
-                                app:srcCompat="@drawable/ic_2048_need_tick" />
+                                app:srcCompat="@drawable/ic_2048_no_tick" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -484,7 +484,7 @@
                                             app:srcCompat="@drawable/ic_buff_reduce_2048" />
 
                                         <TextView
-                                            android:id="@+id/buff_set_hpp_name2"
+                                            android:id="@+id/buff_set_hpp_value"
                                             android:layout_width="wrap_content"
                                             android:layout_height="match_parent"
                                             android:layout_gravity="center|left"
@@ -536,7 +536,7 @@
                                 android:layout_gravity="center|top|left"
                                 android:adjustViewBounds="true"
                                 android:padding="2dp"
-                                app:srcCompat="@drawable/ic_2048_need_tick" />
+                                app:srcCompat="@drawable/ic_2048_no_tick" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -576,7 +576,7 @@
                                             app:srcCompat="@drawable/ic_buff_reduce_2048" />
 
                                         <TextView
-                                            android:id="@+id/buff_set_defp_name2"
+                                            android:id="@+id/buff_set_defp_value"
                                             android:layout_width="wrap_content"
                                             android:layout_height="match_parent"
                                             android:layout_gravity="center|left"
@@ -628,7 +628,7 @@
                                 android:layout_gravity="center|top|left"
                                 android:adjustViewBounds="true"
                                 android:padding="2dp"
-                                app:srcCompat="@drawable/ic_2048_need_tick" />
+                                app:srcCompat="@drawable/ic_2048_no_tick" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -668,7 +668,7 @@
                                             app:srcCompat="@drawable/ic_buff_reduce_2048" />
 
                                         <TextView
-                                            android:id="@+id/buff_set_crit_rate_name2"
+                                            android:id="@+id/buff_set_crit_rate_value"
                                             android:layout_width="wrap_content"
                                             android:layout_height="match_parent"
                                             android:layout_gravity="center|left"
@@ -691,6 +691,7 @@
 
                                 <SeekBar
                                     android:id="@+id/buff_set_crit_rate_seek"
+                                    style="@style/Widget.AppCompat.SeekBar.Discrete"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="4dp"
@@ -720,7 +721,7 @@
                                 android:layout_gravity="center|top|left"
                                 android:adjustViewBounds="true"
                                 android:padding="2dp"
-                                app:srcCompat="@drawable/ic_2048_need_tick" />
+                                app:srcCompat="@drawable/ic_2048_no_tick" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -760,7 +761,7 @@
                                             app:srcCompat="@drawable/ic_buff_reduce_2048" />
 
                                         <TextView
-                                            android:id="@+id/buff_set_crit_dmg_name2"
+                                            android:id="@+id/buff_set_crit_dmg_value"
                                             android:layout_width="wrap_content"
                                             android:layout_height="match_parent"
                                             android:layout_gravity="center|left"
@@ -812,7 +813,7 @@
                                 android:layout_gravity="center|top|left"
                                 android:adjustViewBounds="true"
                                 android:padding="2dp"
-                                app:srcCompat="@drawable/ic_2048_need_tick" />
+                                app:srcCompat="@drawable/ic_2048_no_tick" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -852,7 +853,7 @@
                                             app:srcCompat="@drawable/ic_buff_reduce_2048" />
 
                                         <TextView
-                                            android:id="@+id/buff_set_enrech_name2"
+                                            android:id="@+id/buff_set_enrech_value"
                                             android:layout_width="wrap_content"
                                             android:layout_height="match_parent"
                                             android:layout_gravity="center|left"
@@ -904,7 +905,7 @@
                                 android:layout_gravity="center|top|left"
                                 android:adjustViewBounds="true"
                                 android:padding="2dp"
-                                app:srcCompat="@drawable/ic_2048_need_tick" />
+                                app:srcCompat="@drawable/ic_2048_no_tick" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
@@ -944,7 +945,7 @@
                                             app:srcCompat="@drawable/ic_buff_reduce_2048" />
 
                                         <TextView
-                                            android:id="@+id/buff_set_elemas_name2"
+                                            android:id="@+id/buff_set_elemas_value"
                                             android:layout_width="wrap_content"
                                             android:layout_height="match_parent"
                                             android:layout_gravity="center|left"

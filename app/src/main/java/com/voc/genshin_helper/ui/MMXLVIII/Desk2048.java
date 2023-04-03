@@ -75,6 +75,7 @@ import com.voc.genshin_helper.BuildConfig;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.buff.BuffDatabaseUI;
 import com.voc.genshin_helper.buff.EnkaDataCollect;
+import com.voc.genshin_helper.buff.obj.TMP;
 import com.voc.genshin_helper.buff_old.SipTikCal;
 import com.voc.genshin_helper.data.Artifacts;
 import com.voc.genshin_helper.data.Characters;
@@ -402,7 +403,7 @@ public class Desk2048 extends AppCompatActivity {
         EnkaDataCollect enkaDataCollect = new EnkaDataCollect();
         enkaDataCollect.init(context);
 
-
+        //new TMP().run();
         //new TMP().listChar();
         //new TMP().listWeapon();
         //new TMP().listArt();
