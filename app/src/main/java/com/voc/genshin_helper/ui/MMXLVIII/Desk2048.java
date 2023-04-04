@@ -1,5 +1,6 @@
 package com.voc.genshin_helper.ui.MMXLVIII;
 
+import static com.voc.genshin_helper.util.DownloadAndUnzipTask.baseFileName;
 import static com.voc.genshin_helper.util.RoundedCornersTransformation.CornerType.ALL;
 
 import androidx.appcompat.app.AlertDialog;
@@ -643,7 +644,6 @@ public class Desk2048 extends AppCompatActivity {
             }
         });
 
-
         viewPager0.findViewById(R.id.tut_char_card).setVisibility(View.GONE);
         viewPager4.findViewById(R.id.tut_char_card).setVisibility(View.GONE);
         viewPager6.findViewById(R.id.tut_char_card).setVisibility(View.GONE);
@@ -651,6 +651,27 @@ public class Desk2048 extends AppCompatActivity {
         TutorialUI tutorialUI = new TutorialUI();
         //tutorialUI.deskSetPosArray(0,1,2,3,4);
         //tutorialUI.setup(context,activity,viewPager0,viewPager1,viewPager2,viewPager3,viewPager4,desk_tablayout,null);
+    }
+
+    public void refreshUI(){
+        lang_setup();
+        home();
+        getDOW();
+        bday_reload();
+        cbg();
+        dbChar_reload();
+        char_reload(dow);
+        weapon_reload(dow);
+        setup_home();
+        setup_team();
+        setup_paimon();
+        tcg2048.setup(viewPager5,context,activity,sharedPreferences);
+        team2048.setup(viewPager6,context,activity,sharedPreferences);
+
+        EnkaDataCollect enkaDataCollect = new EnkaDataCollect();
+        enkaDataCollect.init(context);
+
+        char_list_reload();
     }
 
     public void setCheckSpinner(int check_spinner){
@@ -1612,7 +1633,7 @@ public class Desk2048 extends AppCompatActivity {
                 StrictMode.setThreadPolicy(policy);
 
                 ArrayList<String> downloadList = new ArrayList<>();
-                downloadList.add("https://vt.25u.com/genshin_spirit/base.zip");
+                downloadList.add("https://vt.25u.com/genshin_spirit/"+baseFileName);
 
                 Dialog2048 dialog2048 = new Dialog2048();
                 dialog2048.setup(context,activity);

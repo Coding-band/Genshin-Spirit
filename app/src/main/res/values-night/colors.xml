@@ -180,11 +180,13 @@
     <color name="buff_ico_main_2048">#D6D6D6</color>
     <color name="buff_ico_sub_2048">#80D6D6D6</color>
     <color name="buff_tv_sub_2048">#A6ABB3</color>
-    <color name="buff_tv_data_2048">#695453</color>
+    <color name="buff_tv_data_2048">#D6D6D6</color>
     <color name="buff_tv_main_2048">#FFFFFF</color>
     <color name="buff_tv_main_anti_2048">#FFFFFF</color>
     <color name="buff_radio_unselected_stroke_2048">#818999</color>
     <color name="buff_radio_selected_stroke_2048">#5BB74C</color>
     <color name="buff_radio_selected_fill_2048">#408E33</color>
     <color name="buff_radio_unselected_fill_2048">#00000000</color>
+    <color name="buff_spinner_bg">#1AFFFFFF</color>
+    <color name="buff_spinner_kwang">#D3BC8E</color>
 </resources>

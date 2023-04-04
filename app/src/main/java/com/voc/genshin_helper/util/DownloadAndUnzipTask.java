@@ -23,6 +23,7 @@ import android.os.Looper;
 import androidx.core.app.NotificationCompat;
 
 import com.voc.genshin_helper.R;
+import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
 import com.voc.genshin_helper.ui.SplashActivity;
 
 import org.apache.commons.io.FileUtils;
@@ -62,6 +63,8 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
     private boolean mIsCancelled;
 
     boolean isBase = false;
+
+    public static final String baseFileName = "base_webp.zip";
 
     int checkIPAccessable = 0;
     public DownloadAndUnzipTask(Context context, Activity activity, ArrayList<String> urls, String location) {
@@ -112,8 +115,12 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
                 String downloadFilePath = location + File.separator + zipFileName;
                 File downloadFile = new File(downloadFilePath);
 
-                if(zipFileName.equals("base.zip")){
+                if(zipFileName.equals("base.zip") || zipFileName.equals(baseFileName)){
                     isBase = true;
+                    deletePreviousFiles(context,"db",null);
+                    deletePreviousFiles(context,"drawable",null);
+                    deletePreviousFiles(context,"randomScenery",null);
+                    deletePreviousFiles(context,"skills",null);
                 }
 
                 // 當檔案已存在，檢查檔案大小，計算已下載的比例
@@ -316,7 +323,33 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
 
         if(context instanceof SplashActivity){
             ((SplashActivity)context).checkStyleUI();
+        } else if (context instanceof Desk2048) {
+            ((Desk2048)context).refreshUI();
         }
     }
 
+    private void deletePreviousFiles(Context context,String folderName, File childx){
+        File folder = null;
+
+        if (!folderName.equals("") && !folderName.equals("NonRoot") && folderName != null){
+            folder = new File(context.getFilesDir().getAbsolutePath(),folderName);
+        }else{
+            folder = childx;
+        }
+
+        int failCount = 0;
+        int totalCount = 0;
+        if (folder.exists() && folder.isDirectory()){
+            for (File child : folder.listFiles()) {
+                totalCount ++;
+                if(child.isDirectory()){
+                    deletePreviousFiles(context, "NonRoot",child);
+                }else{
+                    if (!child.delete()){failCount++;}
+                }
+            }
+            LogExport.export("DownloadAndUnzipTask","deletePreviousFiles", "DELETE FOLDER IN "+(childx != null ? childx.getAbsolutePath() : folderName)+" SUCCESSFUL ? "+folder.delete() + " | FAILED : "+failCount+"/"+totalCount, context, DOWNLOAD_UNZIP_TASK);
+        }
+
+    }
 }

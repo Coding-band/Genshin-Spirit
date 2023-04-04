@@ -992,21 +992,28 @@
                     android:gravity="center"
                     android:orientation="horizontal">
 
+                    <View
+                        android:id="@+id/view13"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_weight="1.25" />
+
                     <FrameLayout
                         android:id="@+id/dialog_ok"
                         android:layout_width="match_parent"
-                        android:layout_height="48dp"
+                        android:layout_height="wrap_content"
                         android:layout_margin="8dp"
                         android:layout_weight="1"
                         android:background="@drawable/bg_dialog_btn"
+                        android:padding="4dp"
                         android:text="@android:string/ok">
 
                         <ImageView
                             android:id="@+id/imageView15"
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
                             android:layout_gravity="center|left"
-                            android:layout_marginLeft="8dp"
+                            android:layout_marginLeft="4dp"
                             android:adjustViewBounds="true"
                             app:srcCompat="@drawable/ic_2048_ok_btn_ico" />
 
@@ -1015,13 +1022,21 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
-                            android:layout_marginLeft="8dp"
+                            android:layout_margin="4dp"
                             android:fontFamily="@font/genshin_font"
                             android:gravity="center|left"
+                            android:paddingLeft="8dp"
                             android:text="@android:string/ok"
                             android:textColor="@color/tv_anti_color_2048"
                             android:textSize="16sp" />
                     </FrameLayout>
+
+                    <View
+                        android:id="@+id/view6"
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp"
+                        android:layout_weight="1.25" />
+
                 </LinearLayout>
 
             </LinearLayout>

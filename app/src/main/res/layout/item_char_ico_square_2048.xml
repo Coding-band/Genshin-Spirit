@@ -51,16 +51,16 @@
             android:fadingEdge="horizontal|vertical"
             android:fadingEdgeLength="30dp"
             android:visibility="gone"
-            app:shadowColor="@color/shadow_char_ico"
-            app:shadowRadius="180dp"
             app:bgColor="@color/colorWhiteAlpha"
             app:blurRadius="10dp"
-            app:xOffset="0dp"
-            app:yOffset="1dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:shadowColor="@color/shadow_char_ico"
+            app:shadowRadius="180dp"
+            app:xOffset="0dp"
+            app:yOffset="1dp" />
 
         <ImageView
             android:id="@+id/char_card_mask"
@@ -278,5 +278,17 @@
             app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/char_tick"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="bottom|center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/char_bg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_2048_need_tick" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

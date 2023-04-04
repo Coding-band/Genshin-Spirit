@@ -85,6 +85,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_marginLeft="8dp"
                         android:orientation="vertical">
 
@@ -99,38 +100,83 @@
                             android:textColor="@color/buff_tv_main_2048"
                             android:textSize="18sp" />
 
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0"
+                                android:fontFamily="@font/genshin_font"
+                                android:gravity="center|left"
+                                android:singleLine="true"
+                                android:text="@string/lvl"
+                                android:textColor="@color/buff_tv_sub_2048"
+                                android:textSize="14sp" />
+
+                            <Spinner
+                                android:id="@+id/buff_dmg_char_lvl"
+                                android:layout_width="60dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:layout_weight="0"
+                                android:background="@drawable/item_level_choose_2048"
+                                android:gravity="center"
+                                android:minWidth="60dp"
+                                android:minHeight="30dp"
+                                android:popupBackground="@drawable/bg_2048_spinner_bg"
+                                android:requiresFadingEdge="none"
+                                android:spinnerMode="dropdown" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="16dp"
+                                android:layout_weight="0"
+                                android:fontFamily="@font/genshin_font"
+                                android:gravity="center|left"
+                                android:singleLine="true"
+                                android:text="@string/sof"
+                                android:textColor="@color/buff_tv_sub_2048"
+                                android:textSize="14sp" />
+
+                            <Spinner
+                                android:id="@+id/buff_dmg_char_sof"
+                                android:layout_width="60dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:layout_weight="0"
+                                android:background="@drawable/item_level_choose_2048"
+                                android:gravity="center"
+                                android:minWidth="60dp"
+                                android:minHeight="30dp"
+                                android:popupBackground="@drawable/bg_2048_spinner_bg"
+                                android:requiresFadingEdge="none"
+                                android:spinnerMode="dropdown" />
+
+                            <View
+                                android:id="@+id/view14"
+                                android:layout_width="5dp"
+                                android:layout_height="30dp"
+                                android:layout_weight="1" />
+                        </LinearLayout>
+
                         <TableLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_weight="1"
-                            android:visibility="visible">
+                            android:visibility="gone">
 
                             <TableRow
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_marginBottom="4dp">
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginLeft="16dp"
-                                    android:fontFamily="@font/genshin_font"
-                                    android:gravity="center|left"
-                                    android:text="@string/char_lvls"
-                                    android:textColor="@color/buff_tv_sub_2048"
-                                    android:textSize="14sp" />
-
-                                <Spinner
-                                    android:id="@+id/buff_dmg_char_lvl"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginLeft="8dp"
-                                    android:background="@drawable/item_level_choose_2048"
-                                    android:gravity="center"
-                                    android:popupBackground="@drawable/bg_2048_spinner_bg"
-                                    android:requiresFadingEdge="none"
-                                    android:spinnerMode="dropdown" />
                             </TableRow>
 
                             <TableRow
@@ -138,27 +184,6 @@
                                 android:layout_height="match_parent"
                                 android:layout_marginBottom="4dp">
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginLeft="16dp"
-                                    android:fontFamily="@font/genshin_font"
-                                    android:gravity="center|left"
-                                    android:text="@string/sof"
-                                    android:textColor="@color/buff_tv_sub_2048"
-                                    android:textSize="14sp" />
-
-                                <Spinner
-                                    android:id="@+id/buff_dmg_char_sof"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginLeft="8dp"
-                                    android:background="@drawable/item_level_choose_2048"
-                                    android:gravity="center"
-                                    android:popupBackground="@drawable/bg_2048_spinner_bg"
-                                    android:requiresFadingEdge="none"
-                                    android:spinnerMode="dropdown" />
                             </TableRow>
 
                         </TableLayout>
@@ -183,6 +208,7 @@
                         android:id="@+id/buff_dmg_char_talent1_ico"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
+                        android:layout_marginLeft="8dp"
                         android:padding="4dp"
                         app:srcCompat="@drawable/ic_talent_tmp" />
 
@@ -221,6 +247,7 @@
                         android:id="@+id/buff_dmg_char_talent2_ico"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
+                        android:layout_marginLeft="8dp"
                         android:padding="4dp"
                         app:srcCompat="@drawable/ic_talent_tmp" />
 
@@ -259,6 +286,7 @@
                         android:id="@+id/buff_dmg_char_talent3_ico"
                         android:layout_width="48dp"
                         android:layout_height="48dp"
+                        android:layout_marginLeft="8dp"
                         android:padding="4dp"
                         app:srcCompat="@drawable/ic_talent_tmp" />
 
@@ -309,6 +337,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_gravity="center"
                         android:layout_marginLeft="8dp"
                         android:orientation="vertical">
 
@@ -323,37 +352,82 @@
                             android:textColor="@color/buff_tv_main_2048"
                             android:textSize="18sp" />
 
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0"
+                                android:fontFamily="@font/genshin_font"
+                                android:gravity="center|left"
+                                android:text="@string/lvl"
+                                android:textColor="@color/buff_tv_sub_2048"
+                                android:textSize="14sp" />
+
+                            <Spinner
+                                android:id="@+id/buff_dmg_weapon_lvl"
+                                android:layout_width="60dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:layout_weight="0"
+                                android:background="@drawable/item_level_choose_2048"
+                                android:gravity="center"
+                                android:minWidth="60dp"
+                                android:minHeight="30dp"
+                                android:popupBackground="@drawable/bg_2048_spinner_bg"
+                                android:requiresFadingEdge="none"
+                                android:spinnerMode="dropdown" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_marginLeft="16dp"
+                                android:layout_weight="0"
+                                android:fontFamily="@font/genshin_font"
+                                android:gravity="center|left"
+                                android:text="@string/affix"
+                                android:textColor="@color/buff_tv_sub_2048"
+                                android:textSize="14sp" />
+
+                            <Spinner
+                                android:id="@+id/buff_dmg_weapon_affix_lvl"
+                                android:layout_width="60dp"
+                                android:layout_height="30dp"
+                                android:layout_gravity="center"
+                                android:layout_marginLeft="8dp"
+                                android:layout_weight="0"
+                                android:background="@drawable/item_level_choose_2048"
+                                android:gravity="center"
+                                android:minWidth="60dp"
+                                android:minHeight="30dp"
+                                android:popupBackground="@drawable/bg_2048_spinner_bg"
+                                android:requiresFadingEdge="none"
+                                android:spinnerMode="dropdown" />
+
+                            <View
+                                android:id="@+id/view15"
+                                android:layout_width="5dp"
+                                android:layout_height="30dp"
+                                android:layout_weight="1" />
+
+                        </LinearLayout>
+
                         <TableLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1">
+                            android:layout_weight="1"
+                            android:visibility="gone">
 
                             <TableRow
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_marginBottom="4dp">
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginLeft="16dp"
-                                    android:fontFamily="@font/genshin_font"
-                                    android:gravity="center|left"
-                                    android:text="武器等級"
-                                    android:textColor="@color/buff_tv_sub_2048"
-                                    android:textSize="14sp" />
-
-                                <Spinner
-                                    android:id="@+id/buff_dmg_weapon_lvl"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginLeft="8dp"
-                                    android:background="@drawable/item_level_choose_2048"
-                                    android:gravity="center"
-                                    android:popupBackground="@drawable/bg_2048_spinner_bg"
-                                    android:requiresFadingEdge="none"
-                                    android:spinnerMode="dropdown" />
                             </TableRow>
 
                             <TableRow
@@ -361,27 +435,6 @@
                                 android:layout_height="match_parent"
                                 android:layout_marginBottom="4dp">
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="match_parent"
-                                    android:layout_marginLeft="16dp"
-                                    android:fontFamily="@font/genshin_font"
-                                    android:gravity="center|left"
-                                    android:text="精練"
-                                    android:textColor="@color/buff_tv_sub_2048"
-                                    android:textSize="14sp" />
-
-                                <Spinner
-                                    android:id="@+id/buff_dmg_weapon_affix_lvl"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_gravity="center"
-                                    android:layout_marginLeft="8dp"
-                                    android:background="@drawable/item_level_choose_2048"
-                                    android:gravity="center"
-                                    android:popupBackground="@drawable/bg_2048_spinner_bg"
-                                    android:requiresFadingEdge="none"
-                                    android:spinnerMode="dropdown" />
                             </TableRow>
 
                         </TableLayout>

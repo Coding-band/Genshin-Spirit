@@ -58,21 +58,21 @@ public class BuffCatelogy {
      */
     public static double[][][] artifactStatusValue = new double[][][]{
             {
-                    {0.0 ,23.9 ,29.9 }, //ATK
-                    {0.0 ,1.6 ,2.0 },   //HP
-                    {0.0 ,1.9 ,2.3 },   //DEF
+                    {0.0, 24.0, 30.0},  //HP
+                    {0.0, 2.0, 2.0},    //ATK
+                    {0.0, 2.0, 2.0},    //DEF
                     {0.0 ,1.2 ,1.5 },   //ATKP
                     {0.0 ,1.2 ,1.5 },   //HPP
                     {0.0 ,1.5 ,1.8 },   //DEFP
                     {0.0 ,4.7 ,5.8 },   //EnRech
                     {0.0 ,1.3 ,1.6 },   //EleMas
                     {0.0 ,0.8 ,1.0 },   //CritRate
-                    {0.0 ,1.6 ,1.9 }    //CritDMG
+                    {0.0 ,1.6 ,1.9 },    //CritDMG
             },
             {
-                    {0.0, 50.2, 61.0, 71.7},
-                    {0.0, 3.3, 4.0, 4.7},
-                    {0.0, 3.9, 4.7, 5.6},
+                    {0.0, 50.0, 61.0, 72.0},
+                    {0.0, 3.0, 4.0, 5.0},
+                    {0.0, 4.0, 5.0, 6.0},
                     {0.0, 1.6, 2.0, 2.3},
                     {0.0, 1.6, 2.0, 2.3},
                     {0.0, 2.0, 2.5, 2.9},
@@ -82,9 +82,9 @@ public class BuffCatelogy {
                     {0.0, 2.2, 2.6, 3.1}
             },
             {
-                    {0.0, 100.4, 114.7, 129.1, 143.4, 200.8, 215.1, 229.4, 229.5, 243.8, 258.1, 258.2, 272.5, 286.8},
-                    {0.0, 6.5, 7.5, 8.4, 9.3, 13.0, 14.0, 14.9, 15.0, 15.8, 15.9, 16.8, 17.7, 18.6},
-                    {0.0, 7.8, 8.9, 10.0, 11.1, 15.6, 16.7, 17.8, 18.9, 20.0, 21.1, 22.2},
+                    {0.0, 100.0, 115.0, 129.0, 143.0, 200.0, 215.0, 229.0, 230.0, 243.0, 244.0, 258.0, 272.0, 286.0},
+                    {0.0, 7.0, 7.0, 8.0, 9.0, 14.0, 15.0, 16.0, 17.0, 18.0},
+                    {0.0, 8.0, 9.0, 10.0, 11.0, 16.0, 17.0, 18.0, 19.0, 20.0, 21.0, 22.0},
                     {0.0, 2.5, 2.8, 3.2, 3.5, 5.0, 5.3, 5.6, 5.7, 6.0, 6.3, 6.4, 6.7, 7.0},
                     {0.0, 2.5, 2.8, 3.2, 3.5, 5.0, 5.3, 5.6, 5.7, 6.0, 6.3, 6.4, 6.7, 7.0},
                     {0.0, 3.1, 3.5, 3.9, 4.4, 6.2, 6.6, 7.0, 7.4, 7.5, 7.8, 7.9, 8.3, 8.8},
@@ -94,9 +94,9 @@ public class BuffCatelogy {
                     {0.0, 3.3, 3.7, 4.2, 4.7, 6.6, 7.0, 7.4, 7.5, 7.9, 8.0, 8.4, 8.9, 9.4}
             },
             {
-                    {0.0, 167.3, 191.2, 215.1, 239.0, 334.6, 358.5, 382.4, 406.3, 430.2, 454.1, 478.0, 501.9, 525.8, 549.7, 573.6, 597.5, 621.4, 645.3, 669.2, 693.1, 717.0},
-                    {0.0, 10.9, 12.5, 14.0, 15.6, 21.8, 23.4, 24.9, 25.0, 26.5, 28.0, 28.1, 29.6, 31.2, 32.7, 34.3, 35.8, 35.9, 37.4, 37.5, 38.9, 39.0, 40.5, 40.6, 42.0, 42.1, 43.6, 43.7, 45.2, 46.8},
-                    {0.0, 13.0, 14.8, 16.7, 18.5, 26.0, 27.8, 29.6, 29.7, 31.5, 33.3, 33.4, 35.2, 37.0, 39.0, 40.8, 42.6, 42.7, 44.4, 44.5, 46.3, 46.4, 48.1, 48.2, 50.0, 50.1, 51.8, 51.9, 53.7, 55.5},
+                    {0.0, 167.0, 191.0, 215.0, 239.0, 334.0, 358.0, 382.0, 406.0, 430.0, 454.0, 478.0, 501.0, 525.0, 549.0, 573.0, 597.0, 621.0, 645.0, 669.0, 693.0, 717.0},
+                    {0.0, 11.0, 12.0, 14.0, 16.0, 22.0, 23.0, 24.0, 25.0, 26.0, 27.0, 28.0, 30.0, 32.0, 33.0, 34.0, 35.0, 36.0, 37.0, 38.0, 39.0, 40.0, 41.0, 42.0, 43.0, 44.0, 46.0, 48.0},
+                    {0.0, 13.0, 15.0, 17.0, 19.0, 26.0, 28.0, 30.0, 32.0, 34.0, 36.0, 38.0, 39.0, 41.0, 43.0, 45.0, 47.0, 49.0, 51.0, 53.0, 55.0, 57.0},
                     {0.0, 3.3, 3.7, 4.2, 4.7, 6.6, 7.0, 7.4, 7.5, 7.9, 8.0, 8.4, 8.9, 9.4, 9.9, 10.3, 10.7, 10.8, 11.1, 11.2, 11.3, 11.6, 11.7, 12.1, 12.2, 12.6, 12.7, 13.1, 13.6, 14.1},
                     {0.0, 3.3, 3.7, 4.2, 4.7, 6.6, 7.0, 7.4, 7.5, 7.9, 8.0, 8.4, 8.9, 9.4, 9.9, 10.3, 10.7, 10.8, 11.1, 11.2, 11.3, 11.6, 11.7, 12.1, 12.2, 12.6, 12.7, 13.1, 13.6, 14.1},
                     {0.0, 4.1, 4.7, 5.3, 5.8, 8.2, 8.8, 9.4, 9.9, 10.0, 10.5, 10.6, 11.1, 11.6, 12.3, 12.9, 13.5, 14.0, 14.1, 14.6, 14.7, 15.2, 15.3, 15.7, 15.8, 15.9, 16.3, 16.4, 16.9, 17.4},
@@ -106,9 +106,9 @@ public class BuffCatelogy {
                     {0.0, 4.4, 5.0, 5.6, 6.2, 8.8, 9.4, 10.0, 10.6, 11.2, 11.8, 12.4, 13.2, 13.8, 14.4, 15.0, 15.6, 16.2, 16.8, 17.4, 18.0, 18.6}
             },
             {
-                    {0.0, 209.1, 239.0, 268.9, 298.8, 418.2, 448.1, 478.0, 507.9, 537.8, 567.7, 597.6, 627.3, 657.2, 687.1, 717.0, 746.9, 776.8, 806.7, 836.4, 836.6, 866.3, 866.5, 896.2, 896.4, 926.1, 956.0, 985.9, 1015.8, 1045.5, 1045.7, 1075.4, 1075.6, 1105.3, 1105.5, 1135.2, 1135.4, 1165.1, 1165.3, 1195.0, 1195.2, 1224.9, 1254.8, 1284.7, 1314.6, 1344.5, 1374.4, 1404.3, 1434.2, 1464.1, 1494.0},
-                    {0.0, 13.6, 15.6, 17.5, 19.5, 27.2, 29.2, 31.1, 31.2, 33.1, 35.0, 35.1, 37.0, 39.0, 40.8, 42.8, 44.7, 44.8, 46.7, 46.8, 48.6, 48.7, 50.6, 50.7, 52.5, 52.6, 54.4, 54.5, 54.6, 56.4, 56.5, 58.3, 58.4, 58.5, 60.3, 60.4, 62.2, 62.3, 62.4, 64.2, 64.3, 66.1, 66.2, 66.3, 68.0, 68.1, 68.2, 70.0, 70.1, 70.2, 71.9, 72.0, 72.1, 73.9, 74.0, 74.1, 75.8, 75.9, 76.0, 77.8, 77.9, 78.0, 79.7, 79.8, 79.9, 81.7, 81.8, 81.9, 83.6, 83.7, 83.8, 85.6, 85.7, 85.8, 87.5, 87.6, 87.7, 89.5, 89.6, 89.7, 91.5, 91.6, 93.5, 93.6, 95.5, 97.5},
-                    {0.0, 16.2, 18.5, 20.8, 23.2, 32.4, 34.7, 37.0, 39.3, 39.4, 41.6, 41.7, 44.0, 46.4, 48.6, 50.9, 53.2, 55.5, 55.6, 57.8, 57.9, 60.1, 60.2, 62.4, 62.5, 62.6, 64.8, 64.9, 67.1, 67.2, 69.4, 69.6, 71.7, 71.8, 74.0, 74.1, 76.3, 76.4, 78.6, 78.7, 78.8, 80.9, 81.0, 81.1, 83.2, 83.3, 83.4, 85.6, 85.7, 85.8, 87.9, 88.0, 88.1, 90.2, 90.3, 90.4, 92.5, 92.6, 92.8, 94.8, 94.9, 95.0, 97.1, 97.2, 97.3, 99.4, 99.5, 99.6, 101.7, 101.8, 101.9, 102.0, 104.0, 104.1, 104.2, 104.3, 106.4, 106.5, 106.6, 108.8, 108.9, 109.0, 111.2, 111.3, 113.6, 116.0},
+                    {0.0, 209.0, 239.0, 269.0, 299.0, 418.0, 448.0, 478.0, 508.0, 538.0, 568.0, 598.0, 627.0, 657.0, 687.0, 717.0, 747.0, 777.0, 807.0, 836.0, 837.0, 866.0, 867.0, 896.0, 897.0, 926.0, 956.0, 986.0, 1016.0, 1045.0, 1046.0, 1075.0, 1076.0, 1105.0, 1106.0, 1135.0, 1136.0, 1165.0, 1166.0, 1195.0, 1196.0, 1225.0, 1255.0, 1285.0, 1315.0, 1345.0, 1375.0, 1405.0, 1435.0, 1465.0, 1495.0},
+                    {0.0, 14.0, 16.0, 18.0, 19.0, 28.0, 30.0, 32.0, 33.0, 34.0, 35.0, 36.0, 37.0, 38.0, 42.0, 44.0, 46.0, 47.0, 48.0, 49.0, 50.0, 51.0, 52.0, 53.0, 54.0, 55.0, 56.0, 57.0, 58.0, 60.0, 61.0, 62.0, 63.0, 64.0, 65.0, 66.0, 67.0, 68.0, 69.0, 70.0, 71.0, 72.0, 73.0, 74.0, 75.0, 76.0, 77.0, 78.0, 79.0, 80.0, 81.0, 82.0, 83.0, 84.0, 85.0, 86.0, 87.0, 88.0, 89.0, 90.0, 91.0, 92.0, 93.0, 94.0, 95.0},
+                    {0.0, 16.0, 19.0, 21.0, 23.0, 32.0, 35.0, 37.0, 38.0, 39.0, 40.0, 42.0, 44.0, 46.0, 48.0, 51.0, 53.0, 54.0, 55.0, 56.0, 57.0, 58.0, 59.0, 60.0, 61.0, 62.0, 63.0, 64.0, 65.0, 67.0, 69.0, 70.0, 71.0, 72.0, 73.0, 74.0, 75.0, 76.0, 77.0, 78.0, 79.0, 80.0, 81.0, 82.0, 83.0, 84.0, 85.0, 86.0, 87.0, 88.0, 89.0, 90.0, 91.0, 92.0, 93.0, 94.0, 95.0, 96.0, 97.0, 98.0, 99.0, 100.0, 101.0, 102.0, 103.0, 104.0, 105.0, 106.0, 107.0, 108.0, 109.0, 111.0, 113.0, 115.0},
                     {0.0, 4.1, 4.7, 5.3, 5.8, 8.2, 8.8, 9.4, 9.9, 10.0, 10.5, 10.6, 11.1, 11.6, 12.3, 12.9, 13.5, 14.0, 14.1, 14.6, 14.7, 15.2, 15.3, 15.7, 15.8, 15.9, 16.3, 16.4, 16.9, 17.0, 17.4, 17.6, 18.1, 18.2, 18.7, 18.8, 19.3, 19.4, 19.8, 19.9, 20.0, 20.4, 20.5, 20.6, 21.0, 21.1, 21.2, 21.5, 21.6, 21.7, 22.1, 22.2, 22.3, 22.7, 22.8, 22.9, 23.2, 23.4, 23.5, 23.9, 24.0, 24.1, 24.5, 24.6, 24.7, 25.1, 25.2, 25.3, 25.6, 25.7, 25.8, 25.9, 26.2, 26.3, 26.4, 26.5, 26.8, 26.9, 27.0, 27.3, 27.4, 27.5, 27.9, 28.0, 28.5, 29.0},
                     {0.0, 4.1, 4.7, 5.3, 5.8, 8.2, 8.8, 9.4, 9.9, 10.0, 10.5, 10.6, 11.1, 11.6, 12.3, 12.9, 13.5, 14.0, 14.1, 14.6, 14.7, 15.2, 15.3, 15.7, 15.8, 15.9, 16.3, 16.4, 16.9, 17.0, 17.4, 17.6, 18.1, 18.2, 18.7, 18.8, 19.3, 19.4, 19.8, 19.9, 20.0, 20.4, 20.5, 20.6, 21.0, 21.1, 21.2, 21.5, 21.6, 21.7, 22.1, 22.2, 22.3, 22.7, 22.8, 22.9, 23.2, 23.4, 23.5, 23.9, 24.0, 24.1, 24.5, 24.6, 24.7, 25.1, 25.2, 25.3, 25.6, 25.7, 25.8, 25.9, 26.2, 26.3, 26.4, 26.5, 26.8, 26.9, 27.0, 27.3, 27.4, 27.5, 27.9, 28.0, 28.5, 29.0},
                     {0.0, 5.1, 5.8, 6.6, 7.3, 10.2, 10.9, 11.6, 11.7, 12.4, 13.1, 13.2, 13.9, 14.6, 15.3, 16.0, 16.7, 16.8, 17.4, 17.5, 18.2, 18.3, 18.9, 19.0, 19.7, 19.8, 20.4, 20.5, 21.1, 21.2, 21.8, 21.9, 22.5, 22.6, 23.2, 23.3, 23.4, 24.0, 24.1, 24.7, 24.8, 24.9, 25.5, 25.6, 26.2, 26.3, 26.4, 26.9, 27.0, 27.1, 27.6, 27.7, 27.8, 28.3, 28.4, 28.5, 29.0, 29.1, 29.2, 29.8, 29.9, 30.0, 30.5, 30.6, 30.7, 31.3, 31.4, 31.5, 32.0, 32.1, 32.2, 32.8, 32.9, 33.0, 33.5, 33.6, 33.7, 34.3, 34.4, 35.0, 35.1, 35.8, 36.5},
@@ -199,6 +199,81 @@ public class BuffCatelogy {
         }
     }
 
+    public int getIdByCharName(String name){
+        switch (name){
+            case "Kamisato Ayaka" : return 10000002;
+            case "Jean" : return 10000003;
+            case "Aether" : return 10000005;
+            case "Lisa" : return 10000006;
+            case "Lumine" : return 10000007;
+            case "Barbara" : return 10000014;
+            case "Kaeya" : return 10000015;
+            case "Diluc" : return 10000016;
+            case "Razor" : return 10000020;
+            case "Amber" : return 10000021;
+            case "Venti" : return 10000022;
+            case "Xiangling" : return 10000023;
+            case "Beidou" : return 10000024;
+            case "Xingqiu" : return 10000025;
+            case "Xiao" : return 10000026;
+            case "Ningguang" : return 10000027;
+            case "Klee" : return 10000029;
+            case "Zhongli" : return 10000030;
+            case "Fischl" : return 10000031;
+            case "Bennett" : return 10000032;
+            case "Tartaglia" : return 10000033;
+            case "Noelle" : return 10000034;
+            case "Qiqi" : return 10000035;
+            case "Chongyun" : return 10000036;
+            case "Ganyu" : return 10000037;
+            case "Albedo" : return 10000038;
+            case "Diona" : return 10000039;
+            case "Mona" : return 10000041;
+            case "Keqing" : return 10000042;
+            case "Sucrose" : return 10000043;
+            case "Xinyan" : return 10000044;
+            case "Rosaria" : return 10000045;
+            case "Hu Tao" : return 10000046;
+            case "Kaedehara Kazuha" : return 10000047;
+            case "Yanfei" : return 10000048;
+            case "Yoimiya" : return 10000049;
+            case "Thoma" : return 10000050;
+            case "Eula" : return 10000051;
+            case "Raiden Shogun" : return 10000052;
+            case "Sayu" : return 10000053;
+            case "Sangonomiya Kokomi" : return 10000054;
+            case "Gorou" : return 10000055;
+            case "Kujou Sara" : return 10000056;
+            case "Arataki Itto" : return 10000057;
+            case "Yae Miko" : return 10000058;
+            case "Shikanoin Heizou" : return 10000059;
+            case "Yelan" : return 10000060;
+            case "Aloy" : return 10000062;
+            case "Shenhe" : return 10000063;
+            case "Yun Jin" : return 10000064;
+            case "Kuki Shinobu" : return 10000065;
+            case "Kamisato Ayato" : return 10000066;
+            case "Collei" : return 10000067;
+            case "Dori" : return 10000068;
+            case "Tighnari" : return 10000069;
+            case "Nilou" : return 10000070;
+            case "Cyno" : return 10000071;
+            case "Candace" : return 10000072;
+            case "Nahida" : return 10000073;
+            case "Layla" : return 10000074;
+            case "Wanderer" : return 10000075;
+            case "Faruzan" : return 10000076;
+            case "Yaoyao" : return 10000077;
+            case "Alhaitham" : return 10000078;
+            case "Dehya" : return 10000079;
+            case "Mika" : return 10000080;
+            case "Kaveh" : return 10000081;
+            case "Baizhu" : return 10000082;
+
+            default: return 0;
+        }
+    }
+
     //get from https://ambr.top/cht/archive/weapon
     public String getWeaponById (int id){
         switch (id){
@@ -270,97 +345,82 @@ public class BuffCatelogy {
             case 12511 : return "Beacon of the Reed Sea";
             case 13101 : return "Beginner's Protector";
             case 13201 : return "Iron Point";
-            case 13301 : return "White Tassel";
-            case 13302 : return "Halberd";
-            case 13303 : return "Black Tassel";
-            case 13401 : return "Dragon's Bane";
-            case 13402 : return "Prototype Starglitter";
-            case 13403 : return "Crescent Pike";
-            case 13404 : return "Blackcliff Pole";
-            case 13405 : return "Deathmatch";
-            case 13406 : return "Lithic Spear";
-            case 13407 : return "Favonius Lance";
-            case 13408 : return "Royal Spear";
-            case 13409 : return "Dragonspine Spear";
-            case 13414 : return "Kitain Cross Spear";
-            case 13415 : return "The Catch";
-            case 13416 : return "Wavebreaker's Fin";
-            case 13417 : return "Moonpiercer";
-            case 13419 : return "Missive Windspear";
-            case 13501 : return "Staff of Homa";
-            case 13502 : return "Skyward Spine";
-            case 13504 : return "Vortex Vanquisher";
-            case 13505 : return "Primordial Jade Winged-Spear";
-            case 13507 : return "Calamity Queller";
-            case 13509 : return "Engulfing Lightning";
-            case 13511 : return "Staff of the Scarlet Sands";
-            case 14101 : return "Apprentice's Notes";
-            case 14201 : return "Pocket Grimoire";
-            case 14301 : return "Magic Guide";
-            case 14302 : return "Thrilling Tales of Dragon Slayers";
-            case 14303 : return "Otherworldly Story";
-            case 14304 : return "Emerald Orb";
-            case 14305 : return "Twin Nephrite";
-            case 14401 : return "Favonius Codex";
-            case 14402 : return "The Widsith";
-            case 14403 : return "Sacrificial Fragments";
-            case 14404 : return "Royal Grimoire";
-            case 14405 : return "Solar Pearl";
-            case 14406 : return "Prototype Amber";
-            case 14407 : return "Mappa Mare";
-            case 14408 : return "Blackcliff Agate";
-            case 14409 : return "Eye of Perception";
-            case 14410 : return "Wine and Song";
-            case 14412 : return "Frostbearer";
-            case 14413 : return "Dodoco Tales";
-            case 14414 : return "Hakushin Ring";
-            case 14415 : return "Oathsworn Eye";
-            case 14416 : return "Wandering Evenstar";
-            case 14417 : return "Fruit of Fulfillment";
-            case 14501 : return "Skyward Atlas";
-            case 14502 : return "Lost Prayer to the Sacred Winds";
-            case 14504 : return "Memory of Dust";
-            case 14505 : return "jadefalls_splendor";
-            case 14506 : return "Everlasting Moonglow";
-            case 14509 : return "Kagura's Verity";
-            case 14511 : return "A Thousand Floating Dreams";
-            case 14512 : return "Tulaytullah's Remembrance";
-            case 15101 : return "Hunter's Bow";
-            case 15201 : return "Seasoned Hunter's Bow";
-            case 15301 : return "Raven Bow";
-            case 15302 : return "Sharpshooter's Oath";
-            case 15303 : return "Recurve Bow";
-            case 15304 : return "Slingshot";
-            case 15305 : return "Messenger";
-            case 15401 : return "Favonius Warbow";
-            case 15402 : return "The Stringless";
-            case 15403 : return "Sacrificial Bow";
-            case 15404 : return "Royal Bow";
-            case 15405 : return "Rust";
-            case 15406 : return "Prototype Crescent";
-            case 15407 : return "Compound Bow";
-            case 15408 : return "Blackcliff Warbow";
-            case 15409 : return "The Viridescent Hunt";
-            case 15410 : return "Alley Hunter";
-            case 15411 : return "Fading Twilight";
-            case 15412 : return "Mitternachts Waltz";
-            case 15413 : return "Windblume Ode";
-            case 15414 : return "Hamayumi";
-            case 15415 : return "Predator";
-            case 15416 : return "Mouun's Moon";
-            case 15417 : return "King's Squire";
-            case 15418 : return "End of the Line";
-            case 15501 : return "Skyward Harp";
-            case 15502 : return "Amos' Bow";
-            case 15503 : return "Elegy for the End";
-            case 15504 : return "kunwus_wyrmbane";
-            case 15505 : return "primordial_jade_vista";
-            case 15507 : return "Polar Star";
-            case 15508 : return "Aqua Simulacra";
-            case 15509 : return "Thundering Pulse";
-            case 15511 : return "Hunter's Path";
 
             default: return "unknown";
+        }
+    }
+    public int getIdByWeaponName(String name){
+        switch (name){
+            case "Dull Blade" : return 11101;
+            case "Silver Sword" : return 11201;
+            case "Cool Steel" : return 11301;
+            case "Harbinger of Dawn" : return 11302;
+            case "Traveler's Handy Sword" : return 11303;
+            case "Dark Iron Sword" : return 11304;
+            case "Fillet Blade" : return 11305;
+            case "Skyrider Sword" : return 11306;
+            case "Favonius Sword" : return 11401;
+            case "The Flute" : return 11402;
+            case "Sacrificial Sword" : return 11403;
+            case "Royal Longsword" : return 11404;
+            case "Lion's Roar" : return 11405;
+            case "Prototype Rancour" : return 11406;
+            case "Iron Sting" : return 11407;
+            case "Blackcliff Longsword" : return 11408;
+            case "The Black Sword" : return 11409;
+            case "The Alley Flash" : return 11410;
+            case "Sword of Descension" : return 11412;
+            case "Festering Desire" : return 11413;
+            case "Amenoma Kageuchi" : return 11414;
+            case "Cinnabar Spindle" : return 11415;
+            case "Kagotsurube Iisshin" : return 11416;
+            case "Sapwood Blade" : return 11417;
+            case "Xiphos' Moonlight" : return 11418;
+            case "Toukabou Shigure" : return 11422;
+            case "Aquila Favonia" : return 11501;
+            case "Skyward Blade" : return 11502;
+            case "Freedom Sworn" : return 11503;
+            case "Summit Shaper" : return 11504;
+            case "Primordial Jade Cutter" : return 11505;
+            case "Mistsplitter Reforged" : return 11509;
+            case "Haran Geppaku Futsu" : return 11510;
+            case "Key of Khaj-Nisut" : return 11511;
+            case "Light of Foliar Incision" : return 11512;
+            case "Waster Greatsword" : return 12101;
+            case "Old Merc's Pal" : return 12201;
+            case "Ferrous Shadow" : return 12301;
+            case "Bloodtainted Greatsword" : return 12302;
+            case "White Iron Greatsword" : return 12303;
+            case "Debate Club" : return 12305;
+            case "Skyrider Greatsword" : return 12306;
+            case "Favonius Greatsword" : return 12401;
+            case "The Bell" : return 12402;
+            case "Sacrificial Greatsword" : return 12403;
+            case "Royal Greatsword" : return 12404;
+            case "Rainslasher" : return 12405;
+            case "Prototype Archaic" : return 12406;
+            case "Whiteblind" : return 12407;
+            case "Blackcliff Slasher" : return 12408;
+            case "Serpent Spine" : return 12409;
+            case "Lithic Blade" : return 12410;
+            case "Snow-Tombed Starsilver" : return 12411;
+            case "Luxurious Sea-Lord" : return 12412;
+            case "Katsuragikiri Nagamasa" : return 12414;
+            case "Makhaira Aquamarine" : return 12415;
+            case "Akuoumaru" : return 12416;
+            case "Forest Regalia" : return 12417;
+            case "Mailed Flower" : return 12418;
+            case "Skyward Pride" : return 12501;
+            case "Wolf's Gravestone" : return 12502;
+            case "Song of Broken Pines" : return 12503;
+            case "The Unforged" : return 12504;
+            case "primordial_jade_greatsword" : return 12505;
+            case "Redhorn Stonethresher" : return 12510;
+            case "Beacon of the Reed Sea" : return 12511;
+            case "Beginner's Protector" : return 13101;
+            case "Iron Point" : return 13201;
+
+            default: return 0;
         }
     }
 
@@ -415,6 +475,58 @@ public class BuffCatelogy {
 
             default:return "unknown";
 
+        }
+    }
+    public int getIdByArtifactName(String name){
+        switch (name){
+            case "Adventurer" : return 10010;
+            case "Lucky Dog" : return 10011;
+            case "Traveling Doctor" : return 10013;
+            case "Resolution of Sojourner" : return 10001;
+            case "Tiny Miracle" : return 10004;
+            case "Berserker" : return 10005;
+            case "Instructor" : return 10007;
+            case "The Exile" : return 10009;
+            case "Defender's Will" : return 10003;
+            case "Brave Heart" : return 10002;
+            case "Martial Artist" : return 10006;
+            case "Gambler" : return 10008;
+            case "Scholar" : return 10012;
+            case "prayers_for_illumination" : return 15009;
+            case "prayers_for_destiny" : return 15010;
+            case "prayers_for_wisdom" : return 15011;
+            case "prayers_to_springtime" : return 15013;
+            case "Blizzard Strayer" : return 14001;
+            case "Thunder-soother" : return 14002;
+            case "Lavawalker" : return 14003;
+            case "Maiden Beloved" : return 14004;
+            case "Gladiator's Finale" : return 15001;
+            case "Viridescent Venerer" : return 15002;
+            case "Wanderer's Troupe" : return 15003;
+            case "Thundering Fury" : return 15005;
+            case "Crimson Witch of Flames" : return 15006;
+            case "Noblesse Oblige" : return 15007;
+            case "Bloodstained Chivalry" : return 15008;
+            case "Archaic Petra" : return 15014;
+            case "Retracing Bolide" : return 15015;
+            case "Heart of Depth" : return 15016;
+            case "Tenacity of the Millelith" : return 15017;
+            case "Pale Flame" : return 15018;
+            case "Shimenawa's Reminiscence" : return 15019;
+            case "Emblem of Severed Fate" : return 15020;
+            case "Husk of Opulent Dreams" : return 15021;
+            case "Ocean-Hued Clam" : return 15022;
+            case "Vermillion Hereafter" : return 15023;
+            case "Echoes of an Offering" : return 15024;
+            case "Deepwood Memories" : return 15025;
+            case "Gilded Dreams" : return 15026;
+            case "Desert Pavilion Chronicle" : return 15027;
+            case "Flower of Paradise Lost" : return 15028;
+            case "RESERVED1" : return 15029;
+            case "RESERVED2" : return 15030;
+
+
+            default: return 0;
         }
     }
 
@@ -568,8 +680,8 @@ public class BuffCatelogy {
 
     public double[] getArtifactStatusValue(int rare, String statusStr){
         switch (statusStr){
-            case BuffObject.FIGHT_PROP_ATK:{return artifactStatusValue[rare-1][0];}
-            case BuffObject.FIGHT_PROP_HP:{return artifactStatusValue[rare-1][1];}
+            case BuffObject.FIGHT_PROP_HP:{return artifactStatusValue[rare-1][0];}
+            case BuffObject.FIGHT_PROP_ATK:{return artifactStatusValue[rare-1][1];}
             case BuffObject.FIGHT_PROP_DEF:{return artifactStatusValue[rare-1][2];}
             case BuffObject.FIGHT_PROP_ATK_P:{return artifactStatusValue[rare-1][3];}
             case BuffObject.FIGHT_PROP_HP_P:{return artifactStatusValue[rare-1][4];}
@@ -579,6 +691,30 @@ public class BuffCatelogy {
             case BuffObject.FIGHT_PROP_CRIT_RATE:{return artifactStatusValue[rare-1][8];}
             case BuffObject.FIGHT_PROP_CRIT_DMG:{return artifactStatusValue[rare-1][9];}
             default: return new double[]{0};
+        }
+    }
+
+    public int getLocaleNameByStatusName(String TAG){
+        switch (TAG){
+            case BuffObject.FIGHT_PROP_HP: return R.string.weapon_stat_HP;
+            case BuffObject.FIGHT_PROP_ATK: return R.string.weapon_stat_atk;
+            case BuffObject.FIGHT_PROP_DEF: return R.string.weapon_stat_DEF;
+            case BuffObject.FIGHT_PROP_HP_P: return R.string.weapon_stat_HPP;
+            case BuffObject.FIGHT_PROP_ATK_P: return R.string.weapon_stat_atkP;
+            case BuffObject.FIGHT_PROP_DEF_P: return R.string.weapon_stat_DEFP;
+            case BuffObject.FIGHT_PROP_EN_RECH: return R.string.weapon_stat_EnRechP;
+            case BuffObject.FIGHT_PROP_ELE_MAS: return R.string.weapon_stat_EleMas;
+            case BuffObject.FIGHT_PROP_CRIT_RATE: return R.string.weapon_stat_CritRateP;
+            case BuffObject.FIGHT_PROP_CRIT_DMG: return R.string.weapon_stat_CritDMGP;
+            case BuffObject.FIGHT_PROP_ANEMO_DMG: return R.string.weapon_stat_EleDMGP_Anemo;
+            case BuffObject.FIGHT_PROP_CRYO_DMG: return R.string.weapon_stat_EleDMGP_Cryo;
+            case BuffObject.FIGHT_PROP_DENDRO_DMG: return R.string.weapon_stat_EleDMGP_Dendor;
+            case BuffObject.FIGHT_PROP_ELECTRO_DMG: return R.string.weapon_stat_EleDMGP_Electro;
+            case BuffObject.FIGHT_PROP_GEO_DMG: return R.string.weapon_stat_EleDMGP_Geo;
+            case BuffObject.FIGHT_PROP_HYDRO_DMG: return R.string.weapon_stat_EleDMGP_Hydro;
+            case BuffObject.FIGHT_PROP_PYRO_DMG: return R.string.weapon_stat_EleDMGP_Pyro;
+            case BuffObject.FIGHT_PROP_PHY_DMG: return R.string.weapon_stat_PhyDMGP;
+            default:return R.string.unknown;
         }
     }
 

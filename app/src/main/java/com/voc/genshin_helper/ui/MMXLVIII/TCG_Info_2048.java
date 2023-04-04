@@ -307,8 +307,8 @@ public class TCG_Info_2048 {
 
         int maxWidth = (int) ((displayMetrics.widthPixels- displayMetrics.density*(32))/2);
         if(displayMetrics.widthPixels > displayMetrics.heightPixels){
-            maxWidth = (int) (displayMetrics.heightPixels*7/12);
-            tcg_card_sample.setPadding((int) (maxWidth+displayMetrics.density*(8)), (int) (displayMetrics.density*(8)), (int) (displayMetrics.density*(8)), (int) (displayMetrics.density*(8)));
+            maxWidth = (int) ((displayMetrics.heightPixels- displayMetrics.density*(32))/2);
+            //tcg_card_sample.setPadding((int) (maxWidth+displayMetrics.density*(8)), (int) (displayMetrics.density*(8)), (int) (displayMetrics.density*(8)), (int) (displayMetrics.density*(8)));
         }
 
         Animation ani = new ZoomAnimation(
@@ -407,8 +407,8 @@ public class TCG_Info_2048 {
                 isCardAdapterGONE = false;
                 int maxWidth = (int) ((displayMetrics.widthPixels- displayMetrics.density*(32))/2);
                 if(displayMetrics.widthPixels > displayMetrics.heightPixels){
-                    maxWidth = (int) (displayMetrics.heightPixels*7/12);
-                    tcg_card_sample.getLayoutParams().width = (int) (maxWidth + displayMetrics.density*(8));
+                    maxWidth = (int) ((displayMetrics.heightPixels- displayMetrics.density*(32))/2);
+                    //tcg_card_sample.getLayoutParams().width = (int) (maxWidth + displayMetrics.density*(8));
                 }
 
                 tcg_card_change();
@@ -553,10 +553,10 @@ public class TCG_Info_2048 {
                 }
 
 
-                if (battleTalent.getJSONObject(2).getString("type").equals(context.getString(R.string.passive_atk))){
-                    tcg_ll_setup_other(3,3, tcg_other_ll, tcg_other_ico, tcg_other_name, tcg_other_info);
-                }else if (battleTalent.getJSONObject(3).getString("type").equals(context.getString(R.string.passive_atk))){
-                    tcg_ll_setup_other(3,3, tcg_other_ll, tcg_other_ico, tcg_other_name, tcg_other_info);
+                for (int x = 0 ; x < battleTalent.length() ; x++){
+                    if (battleTalent.getJSONObject(x).getString("type").equals(context.getString(R.string.passive_atk))){
+                        tcg_ll_setup_other(3,3, tcg_other_ll, tcg_other_ico, tcg_other_name, tcg_other_info);
+                    }
                 }
             }
         }
@@ -715,9 +715,12 @@ public class TCG_Info_2048 {
     }
 
     public void tcg_card_change(){
-        int oneDP = (int) (displayMetrics.density*4);
-        int widthNew = (int) ((displayMetrics.widthPixels - displayMetrics.density*(32))/2);
+        displayMetrics = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 
+        int oneDP = (int) (displayMetrics.density*4);
+        int widthNew = (int) ((displayMetrics.widthPixels > displayMetrics.heightPixels ? displayMetrics.heightPixels  - displayMetrics.density*(32) : (displayMetrics.widthPixels  - displayMetrics.density*(32))/2));
+        boolean isLandscape  = (displayMetrics.widthPixels > displayMetrics.heightPixels);
         /*
         if (tcg.getType().equals(TCG.CHAR)){
             File gifFile = FileLoader.loadIMG(item_rss.getTCGByName(tcg.getName(),context)[0],context);
@@ -742,10 +745,14 @@ public class TCG_Info_2048 {
          */
             Picasso.get()
                     .load (FileLoader.loadIMG(item_rss.getTCGByName(tcg.getName(),context)[0],context))
-                    .resize(widthNew,(int) ((widthNew)*12/7))
+                    .resize((widthNew),((int) (widthNew * 12/7)))
                     .error (R.drawable.paimon_lost)
                     .into(tcg_card_img);
 
+            System.out.println("displayMetrics.widthPixels : "+displayMetrics.widthPixels);
+            System.out.println("displayMetrics.heightPixels : "+displayMetrics.heightPixels);
+            System.out.println("displayMetrics.density*(32) : "+displayMetrics.density*(32));
+            System.out.println("widthNew : "+widthNew);
 
         tcg_card_name.setText(item_rss.getTCGByName(tcg.getName(),context)[1]);
         tcg_card_name_base.setText(tcg.getName());

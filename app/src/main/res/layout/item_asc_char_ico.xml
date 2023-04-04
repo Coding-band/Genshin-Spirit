@@ -19,6 +19,7 @@
             android:layout_width="72dp"
             android:layout_height="72dp"
             android:layout_marginRight="4dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/item_char_list_bg_circ_5s"
             app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
@@ -26,8 +27,8 @@
             android:id="@+id/asc_char_tick"
             android:layout_width="24dp"
             android:layout_height="24dp"
-            android:layout_gravity="bottom|right"
-            android:visibility="gone"
+            android:layout_gravity="bottom|center"
+            android:visibility="visible"
             app:srcCompat="@drawable/ic_2048_need_tick" />
     </FrameLayout>
 

@@ -9,6 +9,7 @@ import static android.Manifest.permission.READ_MEDIA_IMAGES;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 import static android.os.Build.VERSION.SDK_INT;
 
+import static com.voc.genshin_helper.util.DownloadAndUnzipTask.baseFileName;
 import static com.voc.genshin_helper.util.LogExport.DAILYMEMO;
 import static com.voc.genshin_helper.util.LogExport.DOWNLOADTASK;
 import static com.voc.genshin_helper.util.LogExport.UNZIPMANAGER;
@@ -235,7 +236,7 @@ public class SplashActivity extends AppCompatActivity {
 
             Dialog2048 dialog2048 = new Dialog2048();
             dialog2048.setup(context,activity);
-            dialog2048.updateMax(getRemoteFileSize("https://vt.25u.com/genshin_spirit/base.zip"));
+            dialog2048.updateMax(getRemoteFileSize("https://vt.25u.com/genshin_spirit/"+baseFileName));
             dialog2048.mode(Dialog2048.MODE_DOWNLOAD_BASE);
             dialog2048.show();
 
@@ -246,7 +247,7 @@ public class SplashActivity extends AppCompatActivity {
                     //DownloadTask downloadTask = new DownloadTask();
                     //downloadTask.start("https://vt.25u.com/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
                     ArrayList<String> downloadList = new ArrayList<>();
-                    downloadList.add("https://vt.25u.com/genshin_spirit/base.zip");
+                    downloadList.add("https://vt.25u.com/genshin_spirit/"+baseFileName);
 
                     new DownloadAndUnzipTask(context,activity,downloadList,context.getFilesDir().getAbsolutePath()).execute();
                 }
@@ -413,7 +414,7 @@ public class SplashActivity extends AppCompatActivity {
                         }
                     }
                     if (array_download.size() > 0) {
-                        if (getRemoteFileSize("https://vt.25u.com/genshin_spirit/base.zip") > getRemoteFileSizeA(array_download)) {
+                        if (getRemoteFileSize("https://vt.25u.com/genshin_spirit/base_webp.zip") > getRemoteFileSizeA(array_download)) {
 
                             Dialog2048 dialog2048 = new Dialog2048();
                             dialog2048.setup(context,activity);
@@ -447,7 +448,7 @@ public class SplashActivity extends AppCompatActivity {
                         } else {
                             Dialog2048 dialog2048 = new Dialog2048();
                             dialog2048.setup(context,activity);
-                            dialog2048.updateMax(getRemoteFileSize("https://vt.25u.com/genshin_spirit/base.zip"));
+                            dialog2048.updateMax(getRemoteFileSize("https://vt.25u.com/genshin_spirit/"+baseFileName));
                             dialog2048.mode(Dialog2048.MODE_DOWNLOAD_BASE);
                             dialog2048.show();
 
@@ -458,7 +459,7 @@ public class SplashActivity extends AppCompatActivity {
                                     //downloadTask.start("https://vt.25u.com/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
 
                                     ArrayList<String> downloadList = new ArrayList<>();
-                                    downloadList.add("https://vt.25u.com/genshin_spirit/base.zip");
+                                    downloadList.add("https://vt.25u.com/genshin_spirit/"+baseFileName);
 
                                     new DownloadAndUnzipTask(context,activity,downloadList,context.getFilesDir().getAbsolutePath()).execute();
                                 }

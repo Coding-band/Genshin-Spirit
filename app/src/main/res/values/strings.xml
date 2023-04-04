@@ -1426,9 +1426,11 @@
     <string name="from_game_display">From Game Display</string>
     <string name="pls_wait">Please wait 10s</string>
     <string name="login_dailymemo">Please login DailyMemo first</string>
-    <string name="affix">"Affix. "</string>
+    <string name="affix">Affix</string>
     <string name="weapon_stat_atk_base">Base ATK</string>
     <string name="max_4_choice">Max 4 choices</string>
+    <string name="lvl">Lvl</string>
+    <string name="max_8_char">Max 8 Characters</string>
 
 
 </resources>

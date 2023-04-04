@@ -225,6 +225,8 @@
     <color name="buff_radio_selected_fill_2048">#408E33</color>
     <color name="buff_radio_unselected_stroke_2048">#818999</color>
     <color name="buff_radio_unselected_fill_2048">#00000000</color>
+    <color name="buff_spinner_kwang">#D3BC8E</color>
+    <color name="buff_spinner_bg">#99FFFFFF</color>
 
 
 </resources>

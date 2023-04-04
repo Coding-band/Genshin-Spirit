@@ -29,6 +29,9 @@ import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.R;
+import com.voc.genshin_helper.buff.BuffMainUI;
+import com.voc.genshin_helper.buff.obj.BuffObject;
+import com.voc.genshin_helper.buff.obj.Character;
 import com.voc.genshin_helper.ui.CalculatorUI;
 import com.voc.genshin_helper.ui.MMXLVIII.Calculator2048;
 import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
@@ -66,6 +69,8 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
     private Characters Characters ;
     private ArrayList<Characters> charactersA = new ArrayList<Characters>();
     private SharedPreferences sharedPreferences;
+    private ArrayList<BuffObject> enkaBuffObject = null;
+    private ArrayList<BuffObject> buffObject = null;
 
     public CharactersAdapter(Context context, List<Characters> charactersList,Activity activity, SharedPreferences sharedPreferences) {
         this.context = context;
@@ -78,33 +83,52 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         }
     }
 
+    public CharactersAdapter(Context context, List<Characters> charactersList,Activity activity, SharedPreferences sharedPreferences, ArrayList<BuffObject> enkaBuffObject, ArrayList<BuffObject> buffObject) {
+        this.context = context;
+        this.charactersList = charactersList;
+        this.activity = activity;
+        this.sharedPreferences = sharedPreferences;
+        this.buffObject = buffObject;
+        this.enkaBuffObject = enkaBuffObject;
+
+        if (sharedPreferences == null) {
+            sharedPreferences = context.getSharedPreferences("user_name",MODE_PRIVATE);
+        }
+    }
+
     public interface OnItemClickListener {
         void onItemClick(int position);
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_artifact_ico_rectangle_2048, parent, false);
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
         // 1) MainActivity's char_list
         // 2) CalculatorUI's char_list
 
-        switch (sharedPreferences.getString("curr_ui_grid", "2")) {
-            case "2":
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_rectangle_2048, parent, false);
-                break;
-            case "3":
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
-                break;
-            case "4":
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_card_siptik, parent, false);
-                break;
-            case "5":
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_detail_siptik, parent, false);
-                break;
-            default:
-                v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
-                break;
+        if(context instanceof BuffMainUI){
+            v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
+            return new ViewHolder(v, (OnItemClickListener) mListener);
+        }else{
+            switch (sharedPreferences.getString("curr_ui_grid", "2")) {
+                case "2":
+                    v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_rectangle_2048, parent, false);
+                    break;
+                case "3":
+                    v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
+                    break;
+                case "4":
+                    v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_card_siptik, parent, false);
+                    break;
+                case "5":
+                    v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_detail_siptik, parent, false);
+                    break;
+                default:
+                    v = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_char_ico_square_2048, parent, false);
+                    break;
+            }
         }
+
         return new ViewHolder(v, (OnItemClickListener) mListener);
     }
 
@@ -129,8 +153,9 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         final int margin_circ_siptik_ico = 0;
         final Transformation transformation_circ_siptik_ico = new RoundedCornersTransformation(radius_circ_siptik_ico, margin_circ_siptik_ico);
 
+        String gridValue = (context instanceof BuffMainUI ? "3" : sharedPreferences.getString("curr_ui_grid", "2"));
         charactersA.add(Characters);
-
+        holder.charName = Characters.getName();
         holder.char_name.setText(Characters.getName());
         holder.char_base_name.setText(Characters.getName());
 
@@ -150,6 +175,19 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
             holder.char_star.setRating(Characters.getRare());
         }
 
+        if(holder.char_tick != null){
+            for (int k = 0 ; k < 8 ; k++){
+                if(buffObject == null) break;
+                if (buffObject.size()-1 >= k){
+                    if(buffObject.get(k).getCharacter().getCharName().equals(Characters.getName())){holder.char_tick.setVisibility(View.VISIBLE);System.out.println("HIII");}
+                }
+                if (enkaBuffObject == null) break;
+                if (enkaBuffObject.size()-1 >= k){
+                    if(enkaBuffObject.get(k).getCharacter().getCharName().equals(Characters.getName())){holder.char_tick.setVisibility(View.VISIBLE);}
+                }
+            }
+        }
+
         boolean isNight = false;
         // Background of item
         if (context.getResources().getString(R.string.mode).equals("Night")) {
@@ -166,7 +204,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         int size_per_img_sq = width_curr/3;
         int size_per_img_siptik = width_curr;
 
-        switch (sharedPreferences.getString("curr_ui_grid", "2")){
+        switch (gridValue){
             default:
             case "2":{
                 switch (Characters.getElement()){
@@ -513,7 +551,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
         holder.char_small_ico.setVisibility(View.GONE);
 
-        switch (sharedPreferences.getString("curr_ui_grid", "2")){
+        switch (gridValue){
             default:
             case "2":{
                 if(width_curr / ((int)width_curr/size_per_img+1) > size_per_img){
@@ -615,7 +653,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
             }
         }
 
-        if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE && sharedPreferences.getString("curr_ui_grid", "2").equals("3")){
+        if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE && gridValue.equals("3")){
             holder.char_icon.setPadding(48,48,48,0);
         }
 
@@ -645,6 +683,11 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         public TextView char_region ;
         public LinearLayout char_cbg;
 
+        public ImageView char_tick;
+
+        public String charName = "N/A";
+        public Character characterFinal = new Character();
+
         public ViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
 
@@ -659,6 +702,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
             char_bg = itemView.findViewById(R.id.char_bg);
             char_star_ll = itemView.findViewById(R.id.char_star_ll);
             char_cbg = itemView.findViewById(R.id.char_cbg);
+            char_tick = itemView.findViewById(R.id.char_tick);
 
             if (itemView.findViewById(R.id.char_region) != null && itemView.findViewById(R.id.char_region_img) != null){
                 char_region = itemView.findViewById(R.id.char_region);
@@ -727,6 +771,12 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                         } else {
                             //Toast.makeText(((CalculatorUI) context), context.getString(R.string.cal_choosed_already), Toast.LENGTH_SHORT).show();
                             CustomToast.toast(context,view,context.getString(R.string.cal_choosed_already));
+                        }
+                    }else if (context instanceof BuffMainUI){
+                        if (buffObject.size() >= 8){
+                            CustomToast.toast(context,view,context.getString(R.string.max_8_char));
+                        }else{
+                            (((BuffMainUI) context)).addCharToLocal(charName);
                         }
                     }
 

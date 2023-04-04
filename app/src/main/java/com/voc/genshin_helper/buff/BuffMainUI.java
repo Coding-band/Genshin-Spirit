@@ -4,10 +4,13 @@ package com.voc.genshin_helper.buff;/*
  * Copyright © 2023 Xectorda 版權所有
  */
 
+import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -15,6 +18,7 @@ import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -28,10 +32,14 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.SeekBar;
 import android.widget.Spinner;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.widget.NestedScrollView;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
@@ -44,13 +52,21 @@ import com.voc.genshin_helper.buff.obj.Artifact;
 import com.voc.genshin_helper.buff.obj.BuffObject;
 import com.voc.genshin_helper.buff.obj.Character;
 import com.voc.genshin_helper.buff.obj.Weapon;
+import com.voc.genshin_helper.data.Artifacts;
+import com.voc.genshin_helper.data.ArtifactsAdapter;
+import com.voc.genshin_helper.data.Characters;
+import com.voc.genshin_helper.data.CharactersAdapter;
 import com.voc.genshin_helper.data.ItemRss;
+import com.voc.genshin_helper.data.Weapons;
+import com.voc.genshin_helper.data.WeaponsAdapter;
+import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.Dialog2048;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
 import org.apache.commons.lang3.ArrayUtils;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -83,6 +99,19 @@ public class BuffMainUI extends AppCompatActivity {
 
     String SetName = "N/A";
 
+    RecyclerView mCharList, mWeaponList, mArtifactList;
+    CharactersAdapter mCharAdapter;
+    WeaponsAdapter mWeaponsAdapter;
+    ArtifactsAdapter mArtifactAdapter;
+    ArrayList<Characters> charactersList = new ArrayList<>();
+    ArrayList<Weapons> weaponSwordList = new ArrayList<>();
+    ArrayList<Weapons> weaponCatalystList = new ArrayList<>();
+    ArrayList<Weapons> weaponClaymoreList = new ArrayList<>();
+    ArrayList<Weapons> weaponPolearmList = new ArrayList<>();
+    ArrayList<Weapons> weaponBowList = new ArrayList<>();
+    ArrayList<Artifacts> artifactsList = new ArrayList<>();
+
+    ArrayList<BuffObject> enkaBuffObject = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -104,6 +133,9 @@ public class BuffMainUI extends AppCompatActivity {
 
         buffObjects = readDataBase(context,SetName);
 
+        EnkaDataCollect enkaDataCollect = new EnkaDataCollect();
+        enkaDataCollect.init(context);
+        enkaBuffObject = enkaDataCollect.getPreLoadBuffObjectArray();
         /*
         Just for checking
         for (int x = 0 ; x < buffObjects.size() ; x++){
@@ -111,8 +143,26 @@ public class BuffMainUI extends AppCompatActivity {
         }
         */
 
+        char_list_reload();
+
         TextView ui_title = findViewById(R.id.ui_title);
         ui_title.setText(SetName.replace("Set_",""));
+
+        ImageView ui_back = findViewById(R.id.ui_back);
+        ui_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+        ImageView ui_add = findViewById(R.id.ui_add);
+        ui_add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                newCharListPage(context);
+            }
+        });
 
         list_init();
 
@@ -168,7 +218,6 @@ public class BuffMainUI extends AppCompatActivity {
         team_tablayout.selectTab(team_tablayout.getTabAt(0));
 
     }
-
 
     public ArrayList<BuffObject> readDataBase(Context context, String SetName) {
         BuffDBHelper dbHelper = new BuffDBHelper(context);
@@ -695,6 +744,19 @@ public class BuffMainUI extends AppCompatActivity {
                     TextView buff_art_sub_status_3 = buff_art_include.findViewById(R.id.buff_art_sub_status_3);
                     TextView buff_art_sub_status_4 = buff_art_include.findViewById(R.id.buff_art_sub_status_4);
 
+                    buff_art_sub_status_1.setText(
+                            context.getString(buffCatelogy.getLocaleNameByStatusName(artifact.getArtifactStatStr()[1]))+" : "+ prettyCountX(artifact.getArtifactStatValue()[1])
+                    );
+                    buff_art_sub_status_2.setText(
+                            context.getString(buffCatelogy.getLocaleNameByStatusName(artifact.getArtifactStatStr()[2]))+" : "+ prettyCountX(artifact.getArtifactStatValue()[2])
+                    );
+                    buff_art_sub_status_3.setText(
+                            context.getString(buffCatelogy.getLocaleNameByStatusName(artifact.getArtifactStatStr()[3]))+" : "+ prettyCountX(artifact.getArtifactStatValue()[3])
+                    );
+                    buff_art_sub_status_4.setText(
+                            context.getString(buffCatelogy.getLocaleNameByStatusName(artifact.getArtifactStatStr()[4]))+" : "+ prettyCountX(artifact.getArtifactStatValue()[4])
+                    );
+
 
                     ArrayAdapter art_lvl = new ArrayAdapter(context, R.layout.spinner_item_cal_2048, art_rare_lvl_list[artifact.getArtifactRare() - 1]);
                     art_lvl.setDropDownViewResource(R.layout.spinner_dropdown_item_cal_2048);
@@ -800,23 +862,23 @@ public class BuffMainUI extends AppCompatActivity {
                         public void onClick(View v) {
                             switch (artifact.getArtifactType()){
                                 case Artifact.FLOWER: {
-                                    buffStatusSelectDialog(context,buffObject.getArtifactFlower(),buffObject,Artifact.FLOWER, buffCatelogy);
+                                    buffStatusSelectDialog(context,buffObject.getArtifactFlower(),buffObject,Artifact.FLOWER, buffCatelogy, buff_art_include);
                                     break;
                                 }
                                 case Artifact.PLUME: {
-                                    buffStatusSelectDialog(context,buffObject.getArtifactPlume(),buffObject,Artifact.PLUME, buffCatelogy);
+                                    buffStatusSelectDialog(context,buffObject.getArtifactPlume(),buffObject,Artifact.PLUME, buffCatelogy, buff_art_include);
                                     break;
                                 }
                                 case Artifact.SAND: {
-                                    buffStatusSelectDialog(context,buffObject.getArtifactSand(),buffObject,Artifact.SAND, buffCatelogy);
+                                    buffStatusSelectDialog(context,buffObject.getArtifactSand(),buffObject,Artifact.SAND, buffCatelogy, buff_art_include);
                                     break;
                                 }
                                 case Artifact.CIRCLET: {
-                                    buffStatusSelectDialog(context,buffObject.getArtifactCirclet(),buffObject,Artifact.CIRCLET, buffCatelogy);
+                                    buffStatusSelectDialog(context,buffObject.getArtifactCirclet(),buffObject,Artifact.CIRCLET, buffCatelogy, buff_art_include);
                                     break;
                                 }
                                 case Artifact.GOBLET: {
-                                    buffStatusSelectDialog(context,buffObject.getArtifactGoblet(),buffObject,Artifact.GOBLET, buffCatelogy);
+                                    buffStatusSelectDialog(context,buffObject.getArtifactGoblet(),buffObject,Artifact.GOBLET, buffCatelogy, buff_art_include);
                                     break;
                                 }
                             }
@@ -857,7 +919,7 @@ public class BuffMainUI extends AppCompatActivity {
         }
     }
 
-    public void buffStatusSelectDialog(Context context, Artifact artifact, BuffObject buffObject, String TYPE, BuffCatelogy buffCatelogy){
+    public void buffStatusSelectDialog(Context context, Artifact artifact, BuffObject buffObject, String TYPE, BuffCatelogy buffCatelogy, View buff_art_include){
         final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
         View view = View.inflate(context, R.layout.fragment_buff_artifact_dialog_2048, null);
         dialog.setContentView(view);
@@ -870,6 +932,11 @@ public class BuffMainUI extends AppCompatActivity {
         dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
 
         FrameLayout dialog_ok = view.findViewById(R.id.dialog_ok);
+
+        TextView buff_art_sub_status_1 = buff_art_include.findViewById(R.id.buff_art_sub_status_1);
+        TextView buff_art_sub_status_2 = buff_art_include.findViewById(R.id.buff_art_sub_status_2);
+        TextView buff_art_sub_status_3 = buff_art_include.findViewById(R.id.buff_art_sub_status_3);
+        TextView buff_art_sub_status_4 = buff_art_include.findViewById(R.id.buff_art_sub_status_4);
 
         DisplayMetrics displayMetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
@@ -902,6 +969,27 @@ public class BuffMainUI extends AppCompatActivity {
             public void onClick(View v) {
                 artifact.setArtifactStatValue(toDoubleArr(itemValue));
                 artifact.setArtifactStatStr(itemStr.toArray(new String[0]));
+
+                if(artifact.getArtifactStatStr().length <=1){
+                    buff_art_sub_status_1.setVisibility(View.GONE);
+                }else{
+                    buff_art_sub_status_1.setText(context.getString(buffCatelogy.getLocaleNameByStatusName(artifact.getArtifactStatStr()[1]))+" : "+ prettyCountX(artifact.getArtifactStatValue()[1]));
+                }
+                if(artifact.getArtifactStatStr().length <=2){
+                    buff_art_sub_status_2.setVisibility(View.GONE);
+                }else{
+                    buff_art_sub_status_2.setText(context.getString(buffCatelogy.getLocaleNameByStatusName(artifact.getArtifactStatStr()[2]))+" : "+ prettyCountX(artifact.getArtifactStatValue()[2]));
+                }
+                if(artifact.getArtifactStatStr().length <=3){
+                    buff_art_sub_status_3.setVisibility(View.GONE);
+                }else{
+                    buff_art_sub_status_3.setText(context.getString(buffCatelogy.getLocaleNameByStatusName(artifact.getArtifactStatStr()[3]))+" : "+ prettyCountX(artifact.getArtifactStatValue()[3]));
+                }
+                if(artifact.getArtifactStatStr().length <=4){
+                    buff_art_sub_status_4.setVisibility(View.GONE);
+                }else{
+                    buff_art_sub_status_4.setText(context.getString(buffCatelogy.getLocaleNameByStatusName(artifact.getArtifactStatStr()[4]))+" : "+ prettyCountX(artifact.getArtifactStatValue()[4]));
+                }
 
                 switch (TYPE){
                     case Artifact.FLOWER : buffObject.setArtifactFlower(artifact);if(dialog != null){dialog.dismiss();}break;
@@ -969,27 +1057,19 @@ public class BuffMainUI extends AppCompatActivity {
                     }
                 }
             });
-
-            if(itemStr.contains(sub_status_name.get(x)) && (itemStr.indexOf(sub_status_name.get(x)) != 0)){
-                buff_set_tick.setImageResource(R.drawable.ic_2048_need_tick);
-                buff_set_seek.setProgress(itemValueEnumArray.indexOf(itemValue.get(itemStr.indexOf(sub_status_name.get(finalX)))));
-                isTick[x] = true;
-            }
-
-            int finalX1 = x;
             buff_set_tick.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    if(isTick[finalX1]){
-                        isTick[finalX1] = false;
+                    if(isTick[finalX]){
+                        isTick[finalX] = false;
                         buff_set_tick.setImageResource(R.drawable.ic_2048_no_tick);
                         itemValue.remove(itemStr.indexOf(sub_status_name.get(finalX)));
                         itemStr.remove(itemStr.indexOf(sub_status_name.get(finalX)));
 
-                    }else if (!isTick[finalX1] && frequency(isTick, true) <4){
-                        isTick[finalX1] = true;
+                    }else if (!isTick[finalX] && frequency(isTick, true) <4){
+                        isTick[finalX] = true;
                         buff_set_tick.setImageResource(R.drawable.ic_2048_need_tick);
-                        itemStr.add(sub_status_name.get(finalX1));
+                        itemStr.add(sub_status_name.get(finalX));
                         itemValue.add(itemValueEnum[buff_set_seek.getProgress()]);
 
                     }else{
@@ -999,6 +1079,13 @@ public class BuffMainUI extends AppCompatActivity {
 
                 }
             });
+
+
+            if((itemStr.indexOf(sub_status_name.get(x)) != 0) && (itemStr.indexOf(sub_status_name.get(x)) != -1)){
+                buff_set_tick.setImageResource(R.drawable.ic_2048_need_tick);
+                buff_set_seek.setProgress(itemValueEnumArray.indexOf(itemValue.get(itemStr.indexOf(sub_status_name.get(x)))));
+                isTick[x] = true;
+            }
         }
     }
 
@@ -1037,6 +1124,14 @@ public class BuffMainUI extends AppCompatActivity {
             return new DecimalFormat("#,###").format(number.longValue());
         }else{
             return new DecimalFormat("#,###.#").format(number.doubleValue()*100)+"%";
+        }
+    }
+    public String prettyCountX(Number number) {
+        String suffix = "";
+        if(number.longValue()*1000 == (long) (number.doubleValue()*1000)){
+            return new DecimalFormat("#,###").format(number.longValue());
+        }else{
+            return new DecimalFormat("#,###.#").format(number.doubleValue());
         }
     }
 
@@ -1165,6 +1260,176 @@ public class BuffMainUI extends AppCompatActivity {
     }
 
 
+    public void newCharListPage(Context context){
+        final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+        View view = View.inflate(context, R.layout.fragment_buff_character_add_2048, null);
+        dialog.setContentView(view);
+        dialog.setCanceledOnTouchOutside(true);
+        //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
+        Window dialogWindow = dialog.getWindow();
+        WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+        // 2O48 DESIGN
+        dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+        dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
+        BackgroundReload.BackgroundReload(context,view);
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height = displayMetrics.heightPixels;
+        int width = displayMetrics.widthPixels;
+        int width_curr = (int) (displayMetrics.widthPixels - 16*displayMetrics.density);
+
+        lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.height = WindowManager.LayoutParams.MATCH_PARENT;
+        lp.gravity = Gravity.CENTER;
+        dialogWindow.setAttributes(lp);
+        dialog.show();
+
+        TableRow tb_row1 = view.findViewById(R.id.tb_row1);
+        TableRow tb_row2 = view.findViewById(R.id.tb_row2);
+
+        mCharList = view.findViewById(R.id.buff_rv);
+        mCharAdapter = new CharactersAdapter(context,charactersList,activity,sharedPreferences,enkaBuffObject,buffObjects);
+        RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context,  3);
+        if (height > width){
+            mLayoutManager = new GridLayoutManager(context,  width_curr/400+1);
+        }
+        LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, WRAP_CONTENT);
+        paramsMsg.gravity = Gravity.CENTER;
+        mCharList.setLayoutManager(mLayoutManager);
+        mCharList.setLayoutParams(paramsMsg);
+        mCharList.setAdapter(mCharAdapter);
+        mCharList.removeAllViewsInLayout();
+        mCharList.setNestedScrollingEnabled(false);
+        mCharAdapter.filterList(charactersList);
+
+        //RecycleView
+        tb_row1.removeAllViews();
+        tb_row2.removeAllViews();
+        for (int x = 0 ; x < enkaBuffObject.size(); x++) {
+            View char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team_2048,tb_row1 , false);
+            if((x >= 4) && (height > width)){
+                char_view = LayoutInflater.from(context).inflate(R.layout.item_char_advice_team_2048,tb_row2 , false);
+            }
+            ImageView item_img = char_view.findViewById(R.id.advice_item_img);
+
+            int oneOverN = (height > width ? 4 : 8);
+
+            final int radius_circ = 360;
+            final int margin_circ = 0;
+            final Transformation transformation_circ = new RoundedCornersTransformation(radius_circ, margin_circ);
+            Picasso.get()
+                    .load(FileLoader.loadIMG(item_rss.getCharByName(enkaBuffObject.get(x).getCharacter().getCharName(), context)[3], context))
+                    .transform(transformation_circ)
+                    .error(R.drawable.paimon_lost)
+                    .resize((width_curr - 32 - 16) / oneOverN - 16, (width_curr - 32 - 16) / oneOverN - 16)
+                    .into(item_img);
+
+            item_img.setAdjustViewBounds(true);
+            item_img.getLayoutParams().height = WRAP_CONTENT;
+            item_img.getLayoutParams().width = WRAP_CONTENT;
+
+            int finalX = x;
+            item_img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                }
+            });
+            String json_base = LoadData("db/char/char_list.json");
+            String name;
+            int rare;
+            try {
+                JSONArray array = new JSONArray(json_base);
+                for (int i = 0; i < array.length(); i++) {
+                    JSONObject object = array.getJSONObject(i);
+                    name = object.getString("name");
+                    rare = object.getInt("rare");
+
+                    if (name.equals(enkaBuffObject.get(x).getCharacter().getCharName())) {
+                        if (rare == 4) {
+                            item_img.setBackgroundResource(R.drawable.item_char_list_bg_circ_4s);
+                        } else if (rare == 5) {
+                            item_img.setBackgroundResource(R.drawable.item_char_list_bg_circ_5s);
+                        }
+                    }
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+            if ((x >= 4) && (height > width)){
+                tb_row2.addView(char_view);
+            }else{
+                tb_row1.addView(char_view);
+            }
+        }
+
+
+    }
+
+    public void addCharToLocal(String charName) {
+        BuffObject buffObject = new BuffObject();
+        if(charactersList.indexOf(charName) != -1){
+            Characters characters = charactersList.get(charactersList.indexOf(charName));
+            Character characterFinal = new Character();
+            BuffCatelogy buffCatelogy = new BuffCatelogy();
+
+            characterFinal.setCharElement(characters.getElement());
+            characterFinal.setCharRare(characters.getRare());
+            characterFinal.setCharName(characters.getName());
+            characterFinal.setCharCon(0);
+            characterFinal.setCharLvl(90);
+            characterFinal.setCharTalentLvl(new int[]{10,10,10});
+            characterFinal.setCharEXP(0);
+            characterFinal.setCharId(buffCatelogy.getIdByCharName(charName));
+            characterFinal.setCharASC(6);
+
+            String char_json_stat = LoadData("db/buff/char/"+charName.replace(" ","_")+".json");
+            if (char_json_stat.length() > 0){
+                try {
+                    JSONObject jsonObject = new JSONObject(char_json_stat);
+                    JSONObject 角色突破 = jsonObject.getJSONObject("角色突破");
+
+                    characterFinal.setCharBaseHP(角色突破.getJSONArray("基礎生命值").getDouble(13));
+                    characterFinal.setCharBaseATK(角色突破.getJSONArray("基礎攻擊力").getDouble(13));
+                    characterFinal.setCharBaseDEF(角色突破.getJSONArray("基礎防禦力").getDouble(13));
+                    characterFinal.setCharHPP(角色突破.getJSONArray("生命值加成").getDouble(13));
+                    characterFinal.setCharATKP(角色突破.getJSONArray("攻擊力加成").getDouble(13));
+                    characterFinal.setCharDEFP(角色突破.getJSONArray("防禦力加成").getDouble(13));
+                    characterFinal.setCharHP(0);
+                    characterFinal.setCharATK(0);
+                    characterFinal.setCharDEF(0);
+                    characterFinal.setCharSpdP(0);
+                    characterFinal.setCharCritRate(角色突破.getJSONArray("暴擊率").getDouble(13));
+                    characterFinal.setCharCritDMG(角色突破.getJSONArray("暴擊傷害").getDouble(13));
+                    characterFinal.setCharEnRech(角色突破.getJSONArray("元素充能").getDouble(13));
+                    characterFinal.setCharEleMas(角色突破.getJSONArray("元素精通").getDouble(13));
+                    characterFinal.setCharHealP(角色突破.getJSONArray("治療加成").getDouble(13));
+                    characterFinal.setCharPyroDMGP(角色突破.getJSONArray("火元素傷害加成").getDouble(13));
+                    characterFinal.setCharHydroDMGP(角色突破.getJSONArray("水元素傷害加成").getDouble(13));
+                    characterFinal.setCharAnemoDMGP(角色突破.getJSONArray("風元素傷害加成").getDouble(13));
+                    characterFinal.setCharElectroDMGP(角色突破.getJSONArray("雷元素傷害加成").getDouble(13));
+                    characterFinal.setCharDendroDMGP(角色突破.getJSONArray("草元素傷害加成").getDouble(13));
+                    characterFinal.setCharCryoDMGP(角色突破.getJSONArray("冰元素傷害加成").getDouble(13));
+                    characterFinal.setCharGeoDMGP(角色突破.getJSONArray("岩元素傷害加成").getDouble(13));
+                    characterFinal.setCharPhyDMGP(角色突破.getJSONArray("物理傷害加成").getDouble(13));
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }else{
+                CustomToast.toast(context,activity,context.getString(R.string.none_info));
+            }
+
+            buffObject.setCharacter(characterFinal);
+            buffObjects.add(buffObject);
+
+            //Art & weapon haven't done
+
+        }
+    }
+
+
     public class MyViewPagerAdapter extends PagerAdapter {
         private List<View> mListViews;
 
@@ -1194,5 +1459,125 @@ public class BuffMainUI extends AppCompatActivity {
             return arg0 == arg1;
         }
 
+    }
+
+    private void char_list_reload() {
+        Log.wtf("DAAM","YEE");
+        String name ,element,weapon,nation,sex,mainStat,role;
+        int rare,isComing;
+        charactersList.clear();
+
+        String json_base = LoadData("db/char/char_list.json");
+        //Get data from JSON
+        try {
+            JSONArray array = new JSONArray(json_base);
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject object = array.getJSONObject(i);
+                name = object.getString("name");
+                element = object.getString("element");
+                weapon = object.getString("weapon");
+                nation = object.getString("nation");
+                sex = object.getString("sex");
+                role = object.getString("role");
+                mainStat = object.getString("mainStat");
+                rare = object.getInt("rare");
+                isComing = object.getInt("isComing");
+
+                Characters characters = new Characters();
+                characters.setName(name);
+                characters.setElement(element);
+                characters.setWeapon(weapon);
+                characters.setNation(nation);
+                characters.setSex(sex);
+                characters.setRole(role);
+                characters.setRare(rare);
+                characters.setMainStat(mainStat);
+                characters.setIsComing(isComing);
+                charactersList.add(characters);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void weapon_list_reload() {
+        Log.wtf("DAAM", "YEE");
+        weaponSwordList.clear();
+        weaponCatalystList.clear();
+        weaponBowList.clear();
+        weaponClaymoreList.clear();
+        weaponPolearmList.clear();
+        String name,weapon,stat_1;
+        int rare,isComing;
+
+        String json_base = LoadData("db/weapons/weapon_list.json");
+        //Get data from JSON
+        try {
+            JSONArray array = new JSONArray(json_base);
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject object = array.getJSONObject(i);
+                name = object.getString("name");
+                weapon = object.getString("weapon");
+                stat_1 = object.getString("stat_1");
+                rare = object.getInt("rare");
+                isComing = object.getInt("isComing");
+
+                Weapons weapons = new Weapons();
+                weapons.setName(name);
+                weapons.setWeapon(weapon);
+                weapons.setRare(rare);
+                weapons.setStat_1(stat_1);
+                weapons.setIsComing(isComing);
+                switch (weapon) {
+                    case "Bow":
+                        weaponBowList.add(weapons);
+                        break;
+                    case "Sowrd":
+                        weaponSwordList.add(weapons);
+                        break;
+                    case "Catalyst":
+                        weaponCatalystList.add(weapons);
+                        break;
+                    case "Claymore":
+                        weaponClaymoreList.add(weapons);
+                        break;
+                    case "Polearm":
+                        weaponPolearmList.add(weapons);
+                        break;
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void artifact_list_reload() {
+        Log.wtf("DAAM", "YEE");
+        artifactsList.clear();
+        String name ,img;
+        int rare,isComing;
+
+        String json_base = LoadData("db/artifacts/artifact_list.json");
+        //Get data from JSON
+        try {
+            JSONArray array = new JSONArray(json_base);
+            for (int i = 0; i < array.length(); i++) {
+                JSONObject object = array.getJSONObject(i);
+                name = object.getString("name");
+                img = object.getString("img");
+                rare = object.getInt("rare");
+                isComing = object.getInt("isComing");
+
+                Artifacts artifacts = new Artifacts();
+                artifacts.setName(name);
+                artifacts.setBaseName(img);
+                artifacts.setRare(rare);
+                artifacts.setIsComing(isComing);
+                artifactsList.add(artifacts);
+            }
+            mArtifactAdapter.filterList(artifactsList);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 }
