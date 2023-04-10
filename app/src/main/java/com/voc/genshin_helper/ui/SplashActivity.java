@@ -10,8 +10,10 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 import static android.os.Build.VERSION.SDK_INT;
 
 import static com.voc.genshin_helper.util.DownloadAndUnzipTask.baseFileName;
+import static com.voc.genshin_helper.util.LogExport.BETA_TESTING;
 import static com.voc.genshin_helper.util.LogExport.DAILYMEMO;
 import static com.voc.genshin_helper.util.LogExport.DOWNLOADTASK;
+import static com.voc.genshin_helper.util.LogExport.DOWNLOAD_UNZIP_TASK;
 import static com.voc.genshin_helper.util.LogExport.UNZIPMANAGER;
 
 import android.Manifest;
@@ -64,14 +66,17 @@ import com.voc.genshin_helper.util.Dialog2048;
 import com.voc.genshin_helper.util.DownloadAndUnzipTask;
 import com.voc.genshin_helper.util.DownloadTask;
 import com.voc.genshin_helper.util.FileLoader;
+import com.voc.genshin_helper.util.InitCA;
 import com.voc.genshin_helper.util.LogExport;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.InetAddress;
@@ -79,10 +84,21 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.UnknownHostException;
+import java.security.KeyManagementException;
+import java.security.KeyStore;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.security.cert.Certificate;
+import java.security.cert.CertificateException;
+import java.security.cert.CertificateFactory;
+import java.security.cert.X509Certificate;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManagerFactory;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -225,45 +241,52 @@ public class SplashActivity extends AppCompatActivity {
 
     }
 
+
     private void goMain() {
         sharedPreferences = getSharedPreferences("user_info", 0);
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-        if (sharedPreferences.getBoolean("downloadBase", false) == false) {
-            /**
-             * Build a class in util -> Dialog2048
-             */
 
-            Dialog2048 dialog2048 = new Dialog2048();
-            dialog2048.setup(context,activity);
-            dialog2048.updateMax(getRemoteFileSize("https://vt.25u.com/genshin_spirit/"+baseFileName));
-            dialog2048.mode(Dialog2048.MODE_DOWNLOAD_BASE);
-            dialog2048.show();
+        if(getRemoteFileSize("https://vt.25u.com/genshin_spirit/"+baseFileName) > 10000000){
+            if (sharedPreferences.getBoolean("downloadBase", false) == false) {
+                /**
+                 * Build a class in util -> Dialog2048
+                 */
 
-            dialog2048.getPositiveBtn().setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    dialog2048.dismiss();
-                    //DownloadTask downloadTask = new DownloadTask();
-                    //downloadTask.start("https://vt.25u.com/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
-                    ArrayList<String> downloadList = new ArrayList<>();
-                    downloadList.add("https://vt.25u.com/genshin_spirit/"+baseFileName);
+                Dialog2048 dialog2048 = new Dialog2048();
+                dialog2048.setup(context,activity);
+                dialog2048.updateMax(getRemoteFileSize("https://vt.25u.com/genshin_spirit/"+baseFileName));
+                dialog2048.mode(Dialog2048.MODE_DOWNLOAD_BASE);
+                dialog2048.show();
 
-                    new DownloadAndUnzipTask(context,activity,downloadList,context.getFilesDir().getAbsolutePath()).execute();
-                }
-            });
+                dialog2048.getPositiveBtn().setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog2048.dismiss();
+                        //DownloadTask downloadTask = new DownloadTask();
+                        //downloadTask.start("https://vt.25u.com/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
+                        ArrayList<String> downloadList = new ArrayList<>();
+                        downloadList.add("https://vt.25u.com/genshin_spirit/"+baseFileName);
 
-            dialog2048.getNegativeBtn().setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    dialog2048.dismiss();
-                    finish();
-                }
-            });
+                        new DownloadAndUnzipTask(context,activity,downloadList,context.getFilesDir().getAbsolutePath()).execute();
+                    }
+                });
 
-        } else {
-            check_updates();
+                dialog2048.getNegativeBtn().setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog2048.dismiss();
+                        finish();
+                    }
+                });
+
+            } else {
+                check_updates();
+            }
+        }else{
+            runDesk(sharedPreferences);
         }
+
     }
 
     //https://blog.csdn.net/fitaotao/article/details/119700579
@@ -373,121 +396,110 @@ public class SplashActivity extends AppCompatActivity {
         sharedPreferences = context.getSharedPreferences("user_info", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        try {
-            String ipAddress = "vt.25u.com";
-            InetAddress inet = InetAddress.getByName(ipAddress);
+        if(getRemoteFileSize("https://vt.25u.com/genshin_spirit/"+baseFileName) > 10000000){
+            OkHttpClient client = new OkHttpClient();
+            String url = "https://vt.25u.com/genshin_spirit/update.json";
+            if (BuildConfig.FLAVOR.equals("dev")){
+                url = "https://vt.25u.com/genshin_spirit/update_dev.json";
+            }
+            Request request = new Request.Builder().url(url).build();
 
-            System.out.println("Sending Ping Request to " + ipAddress);
-            System.out.println(inet.isReachable(500) ? "Host is reachable" : "Host is NOT reachable");
+            long lastUnix = System.currentTimeMillis();
 
+            try {
+                Response sponse = client.newCall(request).execute();
+                String str = sponse.body().string();
+                JSONArray array = new JSONArray(str);
+                ArrayList<String> array_download = new ArrayList<String>();
+                ArrayList<String> array_fileName = new ArrayList<String>();
+                ArrayList<String> array_SfileName = new ArrayList<String>();
+                for (int i = 0; i < array.length(); i++) {
+                    JSONObject object = array.getJSONObject(i);
+                    long release_unix = object.getLong("release_unix");
+                    String fileName = object.getString("fileName");
 
-            if(inet.isReachable(2000) == true){
-                OkHttpClient client = new OkHttpClient();
-                String url = "https://vt.25u.com/genshin_spirit/update.json";
-                if (BuildConfig.FLAVOR.equals("dev")){
-                    url = "https://vt.25u.com/genshin_spirit/update_dev.json";
-                }
-                Request request = new Request.Builder().url(url).build();
-
-                long lastUnix = System.currentTimeMillis();
-
-                try {
-                    Response sponse = client.newCall(request).execute();
-                    String str = sponse.body().string();
-                    JSONArray array = new JSONArray(str);
-                    ArrayList<String> array_download = new ArrayList<String>();
-                    ArrayList<String> array_fileName = new ArrayList<String>();
-                    ArrayList<String> array_SfileName = new ArrayList<String>();
-                    for (int i = 0; i < array.length(); i++) {
-                        JSONObject object = array.getJSONObject(i);
-                        long release_unix = object.getLong("release_unix");
-                        String fileName = object.getString("fileName");
-
-                        if (i == 0) {
-                            lastUnix = release_unix;
-                        }
-
-                        if (release_unix > sharedPreferences.getLong("lastUpdateUnix", 1)) {
-                            array_download.add("https://vt.25u.com/genshin_spirit/" + fileName);
-                            array_fileName.add(fileName);
-                            array_SfileName.add("/" + fileName);
-                        }
+                    if (i == 0) {
+                        lastUnix = release_unix;
                     }
-                    if (array_download.size() > 0) {
-                        if (getRemoteFileSize("https://vt.25u.com/genshin_spirit/base_webp.zip") > getRemoteFileSizeA(array_download)) {
 
-                            Dialog2048 dialog2048 = new Dialog2048();
-                            dialog2048.setup(context,activity);
-                            dialog2048.updateMax(getRemoteFileSizeA(array_download));
-                            dialog2048.mode(Dialog2048.MODE_DOWNLOAD_UPDATE);
-                            dialog2048.show();
+                    if (release_unix > sharedPreferences.getLong("lastUpdateUnix", 1)) {
+                        array_download.add("https://vt.25u.com/genshin_spirit/" + fileName);
+                        array_fileName.add(fileName);
+                        array_SfileName.add("/" + fileName);
+                    }
+                }
+                if (array_download.size() > 0) {
+                    if (getRemoteFileSize("https://vt.25u.com/genshin_spirit/base_webp.zip") > getRemoteFileSizeA(array_download)) {
 
-                            long finalLastUnix = lastUnix;
-                            dialog2048.getPositiveBtn().setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
+                        Dialog2048 dialog2048 = new Dialog2048();
+                        dialog2048.setup(context,activity);
+                        dialog2048.updateMax(getRemoteFileSizeA(array_download));
+                        dialog2048.mode(Dialog2048.MODE_DOWNLOAD_UPDATE);
+                        dialog2048.show();
 
-                                    dialog2048.dismiss();
-                                    //DownloadTask downloadTask = new DownloadTask();
-                                    //downloadTask.startAWithRun(array_download, array_fileName, array_SfileName, context, activity, true);
+                        long finalLastUnix = lastUnix;
+                        dialog2048.getPositiveBtn().setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
 
-                                    new DownloadAndUnzipTask(context,activity,array_download,context.getFilesDir().getAbsolutePath()).execute();
-                                    editor.apply();
-                                }
-                            });
-                            dialog2048.getNegativeBtn().setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
+                                dialog2048.dismiss();
+                                //DownloadTask downloadTask = new DownloadTask();
+                                //downloadTask.startAWithRun(array_download, array_fileName, array_SfileName, context, activity, true);
 
-                                    dialog2048.dismiss();
-                                    runDesk(sharedPreferences);
-                                }
-                            });
+                                new DownloadAndUnzipTask(context,activity,array_download,context.getFilesDir().getAbsolutePath()).execute();
+                                editor.apply();
+                            }
+                        });
+                        dialog2048.getNegativeBtn().setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
 
+                                dialog2048.dismiss();
+                                runDesk(sharedPreferences);
+                            }
+                        });
 
-                        } else {
-                            Dialog2048 dialog2048 = new Dialog2048();
-                            dialog2048.setup(context,activity);
-                            dialog2048.updateMax(getRemoteFileSize("https://vt.25u.com/genshin_spirit/"+baseFileName));
-                            dialog2048.mode(Dialog2048.MODE_DOWNLOAD_BASE);
-                            dialog2048.show();
-
-                            dialog2048.getPositiveBtn().setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    //DownloadTask downloadTask = new DownloadTask();
-                                    //downloadTask.start("https://vt.25u.com/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
-
-                                    ArrayList<String> downloadList = new ArrayList<>();
-                                    downloadList.add("https://vt.25u.com/genshin_spirit/"+baseFileName);
-
-                                    new DownloadAndUnzipTask(context,activity,downloadList,context.getFilesDir().getAbsolutePath()).execute();
-                                }
-                            });
-                            dialog2048.getNegativeBtn().setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    runDesk(sharedPreferences);
-                                }
-                            });
-                        }
 
                     } else {
-                        //CustomToast.toast(context, this, context.getString(R.string.update_download_not_found_update));
+                        Dialog2048 dialog2048 = new Dialog2048();
+                        dialog2048.setup(context,activity);
+                        dialog2048.updateMax(getRemoteFileSize("https://vt.25u.com/genshin_spirit/"+baseFileName));
+                        dialog2048.mode(Dialog2048.MODE_DOWNLOAD_BASE);
+                        dialog2048.show();
 
-                        checkStyleUI();
+                        dialog2048.getPositiveBtn().setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                //DownloadTask downloadTask = new DownloadTask();
+                                //downloadTask.start("https://vt.25u.com/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
+
+                                ArrayList<String> downloadList = new ArrayList<>();
+                                downloadList.add("https://vt.25u.com/genshin_spirit/"+baseFileName);
+
+                                new DownloadAndUnzipTask(context,activity,downloadList,context.getFilesDir().getAbsolutePath()).execute();
+                            }
+                        });
+                        dialog2048.getNegativeBtn().setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+                                runDesk(sharedPreferences);
+                            }
+                        });
                     }
 
-                } catch (JSONException | IOException e) {
-                    e.printStackTrace();
-                }
-            }else{
-                runDesk(sharedPreferences);
-            }
+                } else {
+                    //CustomToast.toast(context, this, context.getString(R.string.update_download_not_found_update));
 
-        } catch (IOException e) {
-            e.printStackTrace();
+                    checkStyleUI();
+                }
+
+            } catch (JSONException | IOException e) {
+                e.printStackTrace();
+            }
+        }else{
+            runDesk(sharedPreferences);
         }
+
     }
 
     private void runDesk(SharedPreferences sharedPreferences) {

@@ -13,3 +13,6 @@
 .externalNativeBuild
 .cxx
 local.properties
+/app/src/main/res/raw/server_cert_20230410.crt
+*.crt
+app/src/main/res/raw/server_cert_20230410.crt

@@ -31,14 +31,26 @@ import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.HttpURLConnection;
 import java.net.InetAddress;
+import java.net.MalformedURLException;
 import java.net.SocketException;
 import java.net.URL;
+import java.security.KeyManagementException;
+import java.security.NoSuchAlgorithmException;
+import java.security.NoSuchProviderException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 import java.util.zip.ZipInputStream;
+
+import javax.net.ssl.HostnameVerifier;
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.SSLSocketFactory;
+import javax.net.ssl.TrustManager;
 
 public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
 
@@ -66,7 +78,11 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
 
     public static final String baseFileName = "base_webp.zip";
 
+    public int laterestUnix = 0;
+    public int lastDownloadSize = 0;
+
     int checkIPAccessable = 0;
+    SSLContext sslContext = null;
     public DownloadAndUnzipTask(Context context, Activity activity, ArrayList<String> urls, String location) {
         this.context = context;
         this.activity = activity;
@@ -76,6 +92,8 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
         sharedPreferences = context.getSharedPreferences("user_info",Context.MODE_PRIVATE);
         downloadAndUnzipTask = this;
         LogExport.export("DownloadAndUnzipTask","DownloadFileFromURL(...)", "FINISH INIT", context, DOWNLOAD_UNZIP_TASK);
+
+        //sslContext = new InitCA().initCA(context);
 
     }
 
@@ -93,7 +111,7 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
         // 建立 NotificationCompat.Builder
         notificationBuilder = new NotificationCompat.Builder(context, "download_noti")
                 .setContentTitle(context.getString(R.string.update_download_downloading))
-                .setContentText("0B / 0B")
+                .setContentText("0B / 0B"+" (0B/s)")
                 .setSmallIcon(android.R.drawable.stat_sys_download)
                 .setAutoCancel(false)
                 .setProgress(100, 0, false);
@@ -107,6 +125,37 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
 
     @Override
     protected Void doInBackground(Void... params) {
+        //加入憑證
+        SSLContext sc = null;
+        try {
+            sc = SSLContext.getInstance("TLSv1.2");
+            sc.init(null,
+                    new TrustManager[] {new MyX509TrustManager() },
+                    new java.security.SecureRandom());
+
+            SSLSocketFactory ssf = sc.getSocketFactory();
+
+            URL url = new URL("https://vt.25u.com");
+
+            HttpsURLConnection httpsConn =
+                    (HttpsURLConnection) url.openConnection();
+
+            HostnameVerifier ignoreHostnameVerifier = new HostnameVerifier() {
+                public boolean verify(String s, SSLSession sslsession) {
+                    System.out.println(
+                            "WARNING: Hostname is not matched for cert."
+                    );
+                    return true;
+                }
+            };
+
+            httpsConn.setDefaultHostnameVerifier(ignoreHostnameVerifier);
+            httpsConn.setDefaultSSLSocketFactory(ssf);
+        } catch (NoSuchAlgorithmException | IOException |
+                 KeyManagementException e) {
+            System.out.println("NNIK : "+e.getMessage());
+            throw new RuntimeException(e);
+        }
 
         for (int i = 0; i < urls.size(); i++) {
             if (!isCancelled()) {
@@ -134,17 +183,20 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
                 // 下載檔案
                 try {
                     URL urlT = new URL(urlStr);
-                    HttpURLConnection connT = (HttpURLConnection) urlT.openConnection();
+                    HttpsURLConnection connT = (HttpsURLConnection) urlT.openConnection();
+                    //connT.setSSLSocketFactory(sslContext.getSocketFactory());
                     connT.setRequestMethod("GET");
                     connT.setConnectTimeout(10000);
                     connT.setReadTimeout(10000);
+                    LogExport.export("DownloadAndUnzipTask","doInBackground", "connT.getResponseCode()+"+connT.getResponseCode()+ "("+connT.getResponseMessage()+")", context, DOWNLOAD_UNZIP_TASK);
+                    LogExport.export("DownloadAndUnzipTask","doInBackground", "connT.usingProxy() "+ connT.usingProxy(), context, DOWNLOAD_UNZIP_TASK);
                     connT.connect();
+                    LogExport.export("DownloadAndUnzipTask","doInBackground", "DOWNLOAD - connT.getContentLength() : "+connT.getContentLength()+" | existingFileSize : "+existingFileSize, context, DOWNLOAD_UNZIP_TASK);
 
-                   LogExport.export("DownloadAndUnzipTask","doInBackground", "DOWNLOAD - connT.getContentLength() : "+connT.getContentLength()+" | existingFileSize : "+existingFileSize, context, DOWNLOAD_UNZIP_TASK);
-
-                    if(connT.getContentLength() != existingFileSize){
+                    if(connT.getContentLength() != existingFileSize && connT.getContentLength() != -1){
                         URL url = new URL(urlStr);
-                        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                        HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+                        //connT.setSSLSocketFactory(sslContext.getSocketFactory());
                         conn.setRequestMethod("GET");
                         conn.setConnectTimeout(10000);
                         conn.setReadTimeout(10000);
@@ -165,8 +217,10 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
 
                         //初始化Dialog
                         dialog2048.updateMax(fileSourceSize+existingFileSize);
-                        publishProgress(0, Dialog2048.MODE_PROGRESS_DOWNLOAD);
+                        publishProgress(0, Dialog2048.MODE_PROGRESS_DOWNLOAD, (int) System.currentTimeMillis());
                         LogExport.export("DownloadAndUnzipTask","doInBackground", "DOWNLOAD - Dialog max & mode init : "+"MODE_PROGRESS_DOWNLOAD", context, DOWNLOAD_UNZIP_TASK);
+                        laterestUnix = (int) System.currentTimeMillis();
+                        lastDownloadSize = (int) existingFileSize;
 
                         while ((count = inputStream.read(buffer, 0, 1024)) != -1) {
                             existingFileSize += count;
@@ -174,7 +228,7 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
 
                             if (counter >= 750) {
                                 // 發佈進度
-                                publishProgress((int) existingFileSize, Dialog2048.MODE_PROGRESS_DOWNLOAD);
+                                publishProgress((int) existingFileSize, Dialog2048.MODE_PROGRESS_DOWNLOAD, (int) System.currentTimeMillis());
                                 counter = 0;
                             } else {
                                 counter++;
@@ -198,7 +252,7 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
 
                     }
                 } catch (IOException e) {
-                    LogExport.export("DownloadAndUnzipTask","doInBackground", "DOWNLOAD - ERROR ! "+e.getMessage(), context, DOWNLOAD_UNZIP_TASK);
+                    LogExport.export("DownloadAndUnzipTask","doInBackground", "DOWNLOAD - ERROR ! "+ e.getMessage()+" -> \n"+Arrays.toString(e.getStackTrace()), context, DOWNLOAD_UNZIP_TASK);
                     e.printStackTrace();
 
                 }
@@ -278,14 +332,18 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
 
         notificationBuilder.setProgress((int) dialog2048.getMax(), progress[0], false);
         if(progress[1] == Dialog2048.MODE_PROGRESS_DOWNLOAD){
+            long speed = (progress[0] - lastDownloadSize) / (progress[2] - laterestUnix) * 1000L;
             notificationBuilder.setContentTitle(context.getString(R.string.update_download_downloading));
-            notificationBuilder.setContentText(dialog2048.prettyByteCount(progress[0]) + " / " + dialog2048.prettyByteCount(dialog2048.getMax()) );
+            notificationBuilder.setContentText(dialog2048.prettyByteCount(progress[0]) + " / " + dialog2048.prettyByteCount(dialog2048.getMax()) +"("+prettyByteCount(speed)+"/s)");
 
+            laterestUnix = progress[2];
+            lastDownloadSize = progress[0];
         } else if (progress[1] == Dialog2048.MODE_PROGRESS_UNZIP) {
             notificationBuilder.setContentTitle(context.getString(R.string.update_download_unzipping));
             notificationBuilder.setContentText(dialog2048.prettyCount(progress[0]) + " / " + dialog2048.prettyCount(dialog2048.getMax()) );
 
         }
+
 
 
         if(sharedPreferences.getBoolean("appStopped", false) && !isCancelled() || progress[1] == MODE_DOWNLOAD_PAUSED_CRASH){
@@ -325,6 +383,26 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
             ((SplashActivity)context).checkStyleUI();
         } else if (context instanceof Desk2048) {
             ((Desk2048)context).refreshUI();
+        }
+    }
+
+    public String prettyByteCount(Number number) {
+        String[] suffix = {"B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"};
+        long numValue = ((long) number.longValue());
+        int base = 0 ;
+        double tmp_val = numValue;
+        while (tmp_val> 1024){
+            tmp_val = tmp_val/1024;
+            base = base +1;
+        }
+
+        int decimal_num = 2;//sharedPreferences.getInt("decimal_num", 0);
+        boolean decimal  = sharedPreferences.getBoolean("decimal", false);
+        if (base < suffix.length) {
+            return new DecimalFormat("##.##").format(numValue / Math.pow(1024, base)) + suffix[base];
+            // Muility
+        } else {
+            return new DecimalFormat("#,###").format(numValue);
         }
     }
 
