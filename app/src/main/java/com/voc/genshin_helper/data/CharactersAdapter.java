@@ -1,6 +1,7 @@
 package com.voc.genshin_helper.data;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
@@ -72,6 +73,8 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
     private ArrayList<BuffObject> enkaBuffObject = null;
     private ArrayList<BuffObject> buffObject = null;
 
+    private Dialog dialogFromBuffMainUI = null;
+
     public CharactersAdapter(Context context, List<Characters> charactersList,Activity activity, SharedPreferences sharedPreferences) {
         this.context = context;
         this.charactersList = charactersList;
@@ -83,13 +86,14 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         }
     }
 
-    public CharactersAdapter(Context context, List<Characters> charactersList,Activity activity, SharedPreferences sharedPreferences, ArrayList<BuffObject> enkaBuffObject, ArrayList<BuffObject> buffObject) {
+    public CharactersAdapter(Context context, List<Characters> charactersList,Activity activity, SharedPreferences sharedPreferences, ArrayList<BuffObject> enkaBuffObject, ArrayList<BuffObject> buffObject, Dialog dialog) {
         this.context = context;
         this.charactersList = charactersList;
         this.activity = activity;
         this.sharedPreferences = sharedPreferences;
         this.buffObject = buffObject;
         this.enkaBuffObject = enkaBuffObject;
+        this.dialogFromBuffMainUI = dialog;
 
         if (sharedPreferences == null) {
             sharedPreferences = context.getSharedPreferences("user_name",MODE_PRIVATE);
@@ -155,7 +159,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
         String gridValue = (context instanceof BuffMainUI ? "3" : sharedPreferences.getString("curr_ui_grid", "2"));
         charactersA.add(Characters);
-        holder.charName = Characters.getName();
+        holder.select_char = Characters;
         holder.char_name.setText(Characters.getName());
         holder.char_base_name.setText(Characters.getName());
 
@@ -685,7 +689,8 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
         public ImageView char_tick;
 
-        public String charName = "N/A";
+        public Characters select_char = null;
+
         public Character characterFinal = new Character();
 
         public ViewHolder(View itemView, final OnItemClickListener listener) {
@@ -776,7 +781,12 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                         if (buffObject.size() >= 8){
                             CustomToast.toast(context,view,context.getString(R.string.max_8_char));
                         }else{
-                            (((BuffMainUI) context)).addCharToLocal(charName);
+                            if (dialogFromBuffMainUI != null){
+                                if (dialogFromBuffMainUI.isShowing()){
+                                    dialogFromBuffMainUI.dismiss();
+                                }
+                            }
+                            (((BuffMainUI) context)).addCharToLocal(select_char);
                         }
                     }
 

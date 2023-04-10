@@ -170,7 +170,7 @@ public class EnkaDataCollect implements Serializable {
                                 weapon.setWeaponFollow(character.getCharName());
                                 weapon.setWeaponFollowId(character.getCharId());
                                 double[] statusValue = new double[]{0,0};
-                                String[] statusStr = new String[]{"N/A","N/A"};
+                                String[] statusStr = new String[]{BuffObject.NONE,BuffObject.NONE};
                                 for (int y = 0 ; y < weaponStats.length() && y < 2; y++){
                                     statusStr[y] = weaponStats.getJSONObject(y).getString("appendPropId"); // [MainStatus, SubStatus]
                                     statusValue[y] = weaponStats.getJSONObject(y).getDouble("statValue"); // [MainStatus, SubStatus]
@@ -196,7 +196,7 @@ public class EnkaDataCollect implements Serializable {
                                 artifact.setArtifactFollowId(character.getCharId());
 
                                 double[] statusValue = new double[]{0,0,0,0,0};  // [MainStatus, SubStatus1, SubStatus2, SubStatus3, SubStatus4]
-                                String[] statusStr = new String[]{"N/A","N/A","N/A","N/A","N/A"};  // [MainStatus, SubStatus1, SubStatus2, SubStatus3, SubStatus4]
+                                String[] statusStr = new String[]{BuffObject.NONE,BuffObject.NONE,BuffObject.NONE,BuffObject.NONE,BuffObject.NONE};  // [MainStatus, SubStatus1, SubStatus2, SubStatus3, SubStatus4]
                                 statusStr[0] = reliquaryMainstat.getString("mainPropId");
                                 statusValue[0] = reliquaryMainstat.getDouble("statValue");
                                 for (int y = 0 ; y < (reliquarySubstats.length()) && y < 5; y++){

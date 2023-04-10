@@ -126,6 +126,7 @@ public class BuffCatelogy {
     //get from https://ambr.top/cht/archive/avatar
     public String getCharNameByID(int id){
         switch (id){
+            case -1 : return "N/A";
             case 10000002 : return "Kamisato Ayaka";
             case 10000003 : return "Jean";
             case 10000005 : return "Aether";
@@ -201,6 +202,7 @@ public class BuffCatelogy {
 
     public int getIdByCharName(String name){
         switch (name){
+            case "N/A" : return -1;
             case "Kamisato Ayaka" : return 10000002;
             case "Jean" : return 10000003;
             case "Aether" : return 10000005;
@@ -277,6 +279,7 @@ public class BuffCatelogy {
     //get from https://ambr.top/cht/archive/weapon
     public String getWeaponById (int id){
         switch (id){
+            case -1 : return "N/A";
             case 11101 : return "Dull Blade";
             case 11201 : return "Silver Sword";
             case 11301 : return "Cool Steel";
@@ -345,12 +348,100 @@ public class BuffCatelogy {
             case 12511 : return "Beacon of the Reed Sea";
             case 13101 : return "Beginner's Protector";
             case 13201 : return "Iron Point";
+            case 13301 : return "White Tassel";
+            case 13302 : return "Halberd";
+            case 13303 : return "Black Tassel";
+            case 13401 : return "Dragon's Bane";
+            case 13402 : return "Prototype Starglitter";
+            case 13403 : return "Crescent Pike";
+            case 13404 : return "Blackcliff Pole";
+            case 13405 : return "Deathmatch";
+            case 13406 : return "Lithic Spear";
+            case 13407 : return "Favonius Lance";
+            case 13408 : return "Royal Spear";
+            case 13409 : return "Dragonspine Spear";
+            case 13414 : return "Kitain Cross Spear";
+            case 13415 : return "The Catch";
+            case 13416 : return "Wavebreaker's Fin";
+            case 13417 : return "Moonpiercer";
+            case 13419 : return "Missive Windspear";
+            case 13501 : return "Staff of Homa";
+            case 13502 : return "Skyward Spine";
+            case 13504 : return "Vortex Vanquisher";
+            case 13505 : return "Primordial Jade Winged-Spear";
+            case 13507 : return "Calamity Queller";
+            case 13509 : return "Engulfing Lightning";
+            case 13511 : return "Staff of the Scarlet Sands";
+            case 14101 : return "Apprentice's Notes";
+            case 14201 : return "Pocket Grimoire";
+            case 14301 : return "Magic Guide";
+            case 14302 : return "Thrilling Tales of Dragon Slayers";
+            case 14303 : return "Otherworldly Story";
+            case 14304 : return "Emerald Orb";
+            case 14305 : return "Twin Nephrite";
+            case 14401 : return "Favonius Codex";
+            case 14402 : return "The Widsith";
+            case 14403 : return "Sacrificial Fragments";
+            case 14404 : return "Royal Grimoire";
+            case 14405 : return "Solar Pearl";
+            case 14406 : return "Prototype Amber";
+            case 14407 : return "Mappa Mare";
+            case 14408 : return "Blackcliff Agate";
+            case 14409 : return "Eye of Perception";
+            case 14410 : return "Wine and Song";
+            case 14412 : return "Frostbearer";
+            case 14413 : return "Dodoco Tales";
+            case 14414 : return "Hakushin Ring";
+            case 14415 : return "Oathsworn Eye";
+            case 14416 : return "Wandering Evenstar";
+            case 14417 : return "Fruit of Fulfillment";
+            case 14501 : return "Skyward Atlas";
+            case 14502 : return "Lost Prayer to the Sacred Winds";
+            case 14504 : return "Memory of Dust";
+            case 14505 : return "Jadefall's Splendor";
+            case 14506 : return "Everlasting Moonglow";
+            case 14509 : return "Kagura's Verity";
+            case 14511 : return "A Thousand Floating Dreams";
+            case 14512 : return "Tulaytullah's Remembrance";
+            case 15101 : return "Hunter's Bow";
+            case 15201 : return "Seasoned Hunter's Bow";
+            case 15301 : return "Raven Bow";
+            case 15302 : return "Sharpshooter's Oath";
+            case 15303 : return "Recurve Bow";
+            case 15304 : return "Slingshot";
+            case 15305 : return "Messenger";
+            case 15401 : return "Favonius Warbow";
+            case 15402 : return "The Stringless";
+            case 15403 : return "Sacrificial Bow";
+            case 15404 : return "Royal Bow";
+            case 15405 : return "Rust";
+            case 15406 : return "Prototype Crescent";
+            case 15407 : return "Compound Bow";
+            case 15408 : return "Blackcliff Warbow";
+            case 15409 : return "The Viridescent Hunt";
+            case 15410 : return "Alley Hunter";
+            case 15411 : return "Fading Twilight";
+            case 15412 : return "Mitternachts Waltz";
+            case 15413 : return "Windblume Ode";
+            case 15414 : return "Hamayumi";
+            case 15415 : return "Predator";
+            case 15416 : return "Mouun's Moon";
+            case 15417 : return "King's Squire";
+            case 15418 : return "End of the Line";
+            case 15501 : return "Skyward Harp";
+            case 15502 : return "Amos' Bow";
+            case 15503 : return "Elegy for the End";
+            case 15507 : return "Polar Star";
+            case 15508 : return "Aqua Simulacra";
+            case 15509 : return "Thundering Pulse";
+            case 15511 : return "Hunter's Path";
 
             default: return "unknown";
         }
     }
     public int getIdByWeaponName(String name){
         switch (name){
+            case "N/A" : return -1;
             case "Dull Blade" : return 11101;
             case "Silver Sword" : return 11201;
             case "Cool Steel" : return 11301;
@@ -419,6 +510,94 @@ public class BuffCatelogy {
             case "Beacon of the Reed Sea" : return 12511;
             case "Beginner's Protector" : return 13101;
             case "Iron Point" : return 13201;
+            case "White Tassel" : return 13301;
+            case "Halberd" : return 13302;
+            case "Black Tassel" : return 13303;
+            case "Dragon's Bane" : return 13401;
+            case "Prototype Starglitter" : return 13402;
+            case "Crescent Pike" : return 13403;
+            case "Blackcliff Pole" : return 13404;
+            case "Deathmatch" : return 13405;
+            case "Lithic Spear" : return 13406;
+            case "Favonius Lance" : return 13407;
+            case "Royal Spear" : return 13408;
+            case "Dragonspine Spear" : return 13409;
+            case "Kitain Cross Spear" : return 13414;
+            case "The Catch" : return 13415;
+            case "Wavebreaker's Fin" : return 13416;
+            case "Moonpiercer" : return 13417;
+            case "Missive Windspear" : return 13419;
+            case "Staff of Homa" : return 13501;
+            case "Skyward Spine" : return 13502;
+            case "Vortex Vanquisher" : return 13504;
+            case "Primordial Jade Winged-Spear" : return 13505;
+            case "Calamity Queller" : return 13507;
+            case "Engulfing Lightning" : return 13509;
+            case "Staff of the Scarlet Sands" : return 13511;
+            case "Apprentice's Notes" : return 14101;
+            case "Pocket Grimoire" : return 14201;
+            case "Magic Guide" : return 14301;
+            case "Thrilling Tales of Dragon Slayers" : return 14302;
+            case "Otherworldly Story" : return 14303;
+            case "Emerald Orb" : return 14304;
+            case "Twin Nephrite" : return 14305;
+            case "Favonius Codex" : return 14401;
+            case "The Widsith" : return 14402;
+            case "Sacrificial Fragments" : return 14403;
+            case "Royal Grimoire" : return 14404;
+            case "Solar Pearl" : return 14405;
+            case "Prototype Amber" : return 14406;
+            case "Mappa Mare" : return 14407;
+            case "Blackcliff Agate" : return 14408;
+            case "Eye of Perception" : return 14409;
+            case "Wine and Song" : return 14410;
+            case "Frostbearer" : return 14412;
+            case "Dodoco Tales" : return 14413;
+            case "Hakushin Ring" : return 14414;
+            case "Oathsworn Eye" : return 14415;
+            case "Wandering Evenstar" : return 14416;
+            case "Fruit of Fulfillment" : return 14417;
+            case "Skyward Atlas" : return 14501;
+            case "Lost Prayer to the Sacred Winds" : return 14502;
+            case "Memory of Dust" : return 14504;
+            case "Jadefall's Splendor" : return 14505;
+            case "Everlasting Moonglow" : return 14506;
+            case "Kagura's Verity" : return 14509;
+            case "A Thousand Floating Dreams" : return 14511;
+            case "Tulaytullah's Remembrance" : return 14512;
+            case "Hunter's Bow" : return 15101;
+            case "Seasoned Hunter's Bow" : return 15201;
+            case "Raven Bow" : return 15301;
+            case "Sharpshooter's Oath" : return 15302;
+            case "Recurve Bow" : return 15303;
+            case "Slingshot" : return 15304;
+            case "Messenger" : return 15305;
+            case "Favonius Warbow" : return 15401;
+            case "The Stringless" : return 15402;
+            case "Sacrificial Bow" : return 15403;
+            case "Royal Bow" : return 15404;
+            case "Rust" : return 15405;
+            case "Prototype Crescent" : return 15406;
+            case "Compound Bow" : return 15407;
+            case "Blackcliff Warbow" : return 15408;
+            case "The Viridescent Hunt" : return 15409;
+            case "Alley Hunter" : return 15410;
+            case "Fading Twilight" : return 15411;
+            case "Mitternachts Waltz" : return 15412;
+            case "Windblume Ode" : return 15413;
+            case "Hamayumi" : return 15414;
+            case "Predator" : return 15415;
+            case "Mouun's Moon" : return 15416;
+            case "King's Squire" : return 15417;
+            case "End of the Line" : return 15418;
+            case "Skyward Harp" : return 15501;
+            case "Amos' Bow" : return 15502;
+            case "Elegy for the End" : return 15503;
+            case "Polar Star" : return 15507;
+            case "Aqua Simulacra" : return 15508;
+            case "Thundering Pulse" : return 15509;
+            case "Hunter's Path" : return 15511;
+
 
             default: return 0;
         }
@@ -427,6 +606,7 @@ public class BuffCatelogy {
     //get from https://ambr.top/cht/archive/reliquary
     public String getArtifactById (int id){
         switch (id){
+            case -1 : return "N/A";
             case 10010: return "Adventurer";
             case 10011: return "Lucky Dog";
             case 10013: return "Traveling Doctor";
@@ -479,6 +659,7 @@ public class BuffCatelogy {
     }
     public int getIdByArtifactName(String name){
         switch (name){
+            case "N/A" : return -1;
             case "Adventurer" : return 10010;
             case "Lucky Dog" : return 10011;
             case "Traveling Doctor" : return 10013;
@@ -679,6 +860,7 @@ public class BuffCatelogy {
     }
 
     public double[] getArtifactStatusValue(int rare, String statusStr){
+        System.out.println("rare : "+rare);
         switch (statusStr){
             case BuffObject.FIGHT_PROP_HP:{return artifactStatusValue[rare-1][0];}
             case BuffObject.FIGHT_PROP_ATK:{return artifactStatusValue[rare-1][1];}

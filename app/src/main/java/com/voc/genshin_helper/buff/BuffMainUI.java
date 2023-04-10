@@ -63,6 +63,7 @@ import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.Dialog2048;
 import com.voc.genshin_helper.util.FileLoader;
+import com.voc.genshin_helper.util.MyViewPagerAdapter;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
 import org.apache.commons.lang3.ArrayUtils;
@@ -193,7 +194,10 @@ public class BuffMainUI extends AppCompatActivity {
                 View view1 = tab.getCustomView();
                 ImageView tab_icon = (ImageView) view1.findViewById(R.id.icon);
                 tab_icon.setForeground(context.getDrawable(R.drawable.bg_buff_tab_selected_kwang));
-                viewPager.setCurrentItem(tab.getPosition());
+                System.out.println("team_tablayout : "+team_tablayout.getTabCount());
+                if(team_tablayout.getTabCount() > 0){
+                    viewPager.setCurrentItem(tab.getPosition());
+                }
 
             }
 
@@ -324,6 +328,7 @@ public class BuffMainUI extends AppCompatActivity {
                     break;
                 }
 
+                // Artifact can be null -> show empty is ok
                 case "ARTIFACT_FLOWER" :
                 case "ARTIFACT_PLUME" :
                 case "ARTIFACT_SAND" :
@@ -731,195 +736,205 @@ public class BuffMainUI extends AppCompatActivity {
                     BuffObject.FIGHT_PROP_ATK
             };
             for (int y = 0 ; y < 5 ; y++){
-                if(artifacts[y] != null) {
-                    Artifact artifact = artifacts[y];
-                    View buff_art_include = view.findViewById(buff_art_include_list[y]);
-                    Spinner buff_art_main_status = buff_art_include.findViewById(R.id.buff_art_main_status);
-                    Spinner buff_art_main_rare = buff_art_include.findViewById(R.id.buff_art_main_rare);
-                    Spinner buff_art_main_lvl = buff_art_include.findViewById(R.id.buff_art_main_lvl);
-
-                    LinearLayout buff_art_sub_status_ll = buff_art_include.findViewById(R.id.buff_art_sub_status_ll);
-                    TextView buff_art_sub_status_1 = buff_art_include.findViewById(R.id.buff_art_sub_status_1);
-                    TextView buff_art_sub_status_2 = buff_art_include.findViewById(R.id.buff_art_sub_status_2);
-                    TextView buff_art_sub_status_3 = buff_art_include.findViewById(R.id.buff_art_sub_status_3);
-                    TextView buff_art_sub_status_4 = buff_art_include.findViewById(R.id.buff_art_sub_status_4);
-
-                    buff_art_sub_status_1.setText(
-                            context.getString(buffCatelogy.getLocaleNameByStatusName(artifact.getArtifactStatStr()[1]))+" : "+ prettyCountX(artifact.getArtifactStatValue()[1])
-                    );
-                    buff_art_sub_status_2.setText(
-                            context.getString(buffCatelogy.getLocaleNameByStatusName(artifact.getArtifactStatStr()[2]))+" : "+ prettyCountX(artifact.getArtifactStatValue()[2])
-                    );
-                    buff_art_sub_status_3.setText(
-                            context.getString(buffCatelogy.getLocaleNameByStatusName(artifact.getArtifactStatStr()[3]))+" : "+ prettyCountX(artifact.getArtifactStatValue()[3])
-                    );
-                    buff_art_sub_status_4.setText(
-                            context.getString(buffCatelogy.getLocaleNameByStatusName(artifact.getArtifactStatStr()[4]))+" : "+ prettyCountX(artifact.getArtifactStatValue()[4])
-                    );
-
-
-                    ArrayAdapter art_lvl = new ArrayAdapter(context, R.layout.spinner_item_cal_2048, art_rare_lvl_list[artifact.getArtifactRare() - 1]);
-                    art_lvl.setDropDownViewResource(R.layout.spinner_dropdown_item_cal_2048);
-                    buff_art_main_lvl.setAdapter(art_lvl);
-
-                    ArrayAdapter art_rare = new ArrayAdapter(context, R.layout.spinner_item_cal_2048, BuffCatelogy.lvlListArtRare);
-                    art_rare.setDropDownViewResource(R.layout.spinner_dropdown_item_cal_2048);
-                    buff_art_main_rare.setAdapter(art_rare);
-
-                    ArrayAdapter art_status = new ArrayAdapter(context, R.layout.spinner_item_cal_2048,
-                            (artifact.getArtifactType().equals(Artifact.FLOWER) ? art_status_flower :
-                                    artifact.getArtifactType().equals(Artifact.PLUME) ? art_status_plume : art_status_mix
-                            ));
-                    art_status.setDropDownViewResource(R.layout.spinner_dropdown_item_cal_2048);
-                    buff_art_main_status.setAdapter(art_status);
-
-                    buff_art_main_lvl.setSelection(artifact.getArtifactLvl()-1);
-                    buff_art_main_rare.setSelection(artifact.getArtifactRare()-1);
-                    buff_art_main_status.setSelection(Arrays.asList(
-                            (artifact.getArtifactType().equals(Artifact.FLOWER) ? art_status_flower_base :
-                            artifact.getArtifactType().equals(Artifact.PLUME) ? art_status_plume_base : art_status_mix_base
-                    )).indexOf(artifact.getArtifactStatStr()[0]));
-
-                    buff_art_main_lvl.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                        @Override
-                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                            switch (artifact.getArtifactType()){
-                                case Artifact.FLOWER: buffObjects.get(finalX).getArtifactFlower().setArtifactLvl(position+1);break;
-                                case Artifact.PLUME: buffObjects.get(finalX).getArtifactPlume().setArtifactLvl(position+1);break;
-                                case Artifact.SAND: buffObjects.get(finalX).getArtifactSand().setArtifactLvl(position+1);break;
-                                case Artifact.CIRCLET: buffObjects.get(finalX).getArtifactCirclet().setArtifactLvl(position+1);break;
-                                case Artifact.GOBLET: buffObjects.get(finalX).getArtifactGoblet().setArtifactLvl(position+1);break;
-                            }
-                        }
-
-                        @Override
-                        public void onNothingSelected(AdapterView<?> parent) {
-
-                        }
-                    });
-                    buff_art_main_rare.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                        @Override
-                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                            switch (artifact.getArtifactType()){
-                                case Artifact.FLOWER: buffObjects.get(finalX).getArtifactFlower().setArtifactRare(position+1);break;
-                                case Artifact.PLUME: buffObjects.get(finalX).getArtifactPlume().setArtifactRare(position+1);break;
-                                case Artifact.SAND: buffObjects.get(finalX).getArtifactSand().setArtifactRare(position+1);break;
-                                case Artifact.CIRCLET: buffObjects.get(finalX).getArtifactCirclet().setArtifactRare(position+1);break;
-                                case Artifact.GOBLET: buffObjects.get(finalX).getArtifactGoblet().setArtifactRare(position+1);break;
-                            }
-                        }
-
-                        @Override
-                        public void onNothingSelected(AdapterView<?> parent) {
-
-                        }
-                    });
-                    buff_art_main_status.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                        @Override
-                        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                            switch (artifact.getArtifactType()){
-                                case Artifact.FLOWER: {
-                                    String[] tmp = buffObjects.get(finalX).getArtifactFlower().getArtifactStatStr();
-                                    tmp[0] = art_status_mix_base[position];
-                                    buffObjects.get(finalX).getArtifactFlower().setArtifactStatStr(tmp);
-                                    break;
-                                }
-                                case Artifact.PLUME: {
-                                    String[] tmp = buffObjects.get(finalX).getArtifactPlume().getArtifactStatStr();
-                                    tmp[0] = art_status_mix_base[position];
-                                    buffObjects.get(finalX).getArtifactPlume().setArtifactStatStr(tmp);
-                                    break;
-                                }
-                                case Artifact.SAND: {
-                                    String[] tmp = buffObjects.get(finalX).getArtifactSand().getArtifactStatStr();
-                                    tmp[0] = art_status_mix_base[position];
-                                    buffObjects.get(finalX).getArtifactSand().setArtifactStatStr(tmp);
-                                    break;
-                                }
-                                case Artifact.CIRCLET: {
-                                    String[] tmp = buffObjects.get(finalX).getArtifactCirclet().getArtifactStatStr();
-                                    tmp[0] = art_status_mix_base[position];
-                                    buffObjects.get(finalX).getArtifactCirclet().setArtifactStatStr(tmp);
-                                    break;
-                                }
-                                case Artifact.GOBLET: {
-                                    String[] tmp = buffObjects.get(finalX).getArtifactGoblet().getArtifactStatStr();
-                                    tmp[0] = art_status_mix_base[position];
-                                    buffObjects.get(finalX).getArtifactGoblet().setArtifactStatStr(tmp);
-                                    break;
-                                }
-                            }
-                        }
-
-                        @Override
-                        public void onNothingSelected(AdapterView<?> parent) {
-
-                        }
-                    });
-
-                    buff_art_sub_status_ll.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            switch (artifact.getArtifactType()){
-                                case Artifact.FLOWER: {
-                                    buffStatusSelectDialog(context,buffObject.getArtifactFlower(),buffObject,Artifact.FLOWER, buffCatelogy, buff_art_include);
-                                    break;
-                                }
-                                case Artifact.PLUME: {
-                                    buffStatusSelectDialog(context,buffObject.getArtifactPlume(),buffObject,Artifact.PLUME, buffCatelogy, buff_art_include);
-                                    break;
-                                }
-                                case Artifact.SAND: {
-                                    buffStatusSelectDialog(context,buffObject.getArtifactSand(),buffObject,Artifact.SAND, buffCatelogy, buff_art_include);
-                                    break;
-                                }
-                                case Artifact.CIRCLET: {
-                                    buffStatusSelectDialog(context,buffObject.getArtifactCirclet(),buffObject,Artifact.CIRCLET, buffCatelogy, buff_art_include);
-                                    break;
-                                }
-                                case Artifact.GOBLET: {
-                                    buffStatusSelectDialog(context,buffObject.getArtifactGoblet(),buffObject,Artifact.GOBLET, buffCatelogy, buff_art_include);
-                                    break;
-                                }
-                            }
-                        }
-                    });
-
+                if(artifacts[y] == null){
+                    Artifact artifact = new Artifact();
+                    artifact.setArtifactId(-1);
+                    artifact.setArtifactLvl(20);
+                    artifact.setArtifactRare(5);
+                    String mainStatus = BuffObject.FIGHT_PROP_HP;
+                    switch (y){
+                        case 0 : artifact.setArtifactType(Artifact.FLOWER);mainStatus = BuffObject.FIGHT_PROP_HP; break;
+                        case 1 : artifact.setArtifactType(Artifact.PLUME);mainStatus = BuffObject.FIGHT_PROP_ATK;break;
+                        case 2 : artifact.setArtifactType(Artifact.SAND);mainStatus = BuffObject.FIGHT_PROP_EN_RECH;break;
+                        case 3 : artifact.setArtifactType(Artifact.CIRCLET);mainStatus = BuffObject.FIGHT_PROP_PHY_DMG;break;
+                        case 4 : artifact.setArtifactType(Artifact.GOBLET);mainStatus = BuffObject.FIGHT_PROP_CRIT_DMG;break;
+                    }
+                    artifact.setArtifactFollowId(character.getCharId());
+                    artifact.setArtifactFollow(character.getCharName());
+                    artifact.setArtifactName("N/A");
+                    artifact.setArtifactStatStr(new String[]{mainStatus});
+                    artifact.setArtifactStatValue(new double[]{0}); //buffCatelogy.getArtifactStatusValue(5,mainStatus)[20-1]
+                    artifacts[y] = artifact;
                 }
+                Artifact artifact = artifacts[y];
+                View buff_art_include = view.findViewById(buff_art_include_list[y]);
+                Spinner buff_art_main_status = buff_art_include.findViewById(R.id.buff_art_main_status);
+                Spinner buff_art_main_rare = buff_art_include.findViewById(R.id.buff_art_main_rare);
+                Spinner buff_art_main_lvl = buff_art_include.findViewById(R.id.buff_art_main_lvl);
 
+                LinearLayout buff_art_sub_status_ll = buff_art_include.findViewById(R.id.buff_art_sub_status_ll);
+                TextView buff_art_sub_status_1 = buff_art_include.findViewById(R.id.buff_art_sub_status_1);
+                TextView buff_art_sub_status_2 = buff_art_include.findViewById(R.id.buff_art_sub_status_2);
+                TextView buff_art_sub_status_3 = buff_art_include.findViewById(R.id.buff_art_sub_status_3);
+                TextView buff_art_sub_status_4 = buff_art_include.findViewById(R.id.buff_art_sub_status_4);
+
+                buff_art_sub_status_1.setText(
+                        context.getString(buffCatelogy.getLocaleNameByStatusName((artifact.getArtifactStatStr().length >= 2 ? artifact.getArtifactStatStr()[1] : BuffObject.NONE)))+ (artifact.getArtifactStatValue().length >= 2 ? " : "+prettyCountX(artifact.getArtifactStatValue()[1]) : "")
+                );
+                buff_art_sub_status_2.setText(
+                        context.getString(buffCatelogy.getLocaleNameByStatusName((artifact.getArtifactStatStr().length >= 3 ? artifact.getArtifactStatStr()[2] : BuffObject.NONE)))+ (artifact.getArtifactStatValue().length >= 3 ? " : "+prettyCountX(artifact.getArtifactStatValue()[2]) : "")
+                );
+                buff_art_sub_status_3.setText(
+                        context.getString(buffCatelogy.getLocaleNameByStatusName((artifact.getArtifactStatStr().length >= 4 ? artifact.getArtifactStatStr()[3] : BuffObject.NONE)))+ (artifact.getArtifactStatValue().length >= 4 ? " : "+prettyCountX(artifact.getArtifactStatValue()[3]) : "")
+                );
+                buff_art_sub_status_4.setText(
+                        context.getString(buffCatelogy.getLocaleNameByStatusName((artifact.getArtifactStatStr().length >= 5 ? artifact.getArtifactStatStr()[4] : BuffObject.NONE)))+ (artifact.getArtifactStatValue().length >= 5 ? " : "+prettyCountX(artifact.getArtifactStatValue()[4]) : "")
+                );
+
+
+                ArrayAdapter art_lvl = new ArrayAdapter(context, R.layout.spinner_item_cal_2048, art_rare_lvl_list[artifact.getArtifactRare() - 1]);
+                art_lvl.setDropDownViewResource(R.layout.spinner_dropdown_item_cal_2048);
+                buff_art_main_lvl.setAdapter(art_lvl);
+
+                ArrayAdapter art_rare = new ArrayAdapter(context, R.layout.spinner_item_cal_2048, BuffCatelogy.lvlListArtRare);
+                art_rare.setDropDownViewResource(R.layout.spinner_dropdown_item_cal_2048);
+                buff_art_main_rare.setAdapter(art_rare);
+
+                ArrayAdapter art_status = new ArrayAdapter(context, R.layout.spinner_item_cal_2048,
+                        (artifact.getArtifactType().equals(Artifact.FLOWER) ? art_status_flower :
+                                artifact.getArtifactType().equals(Artifact.PLUME) ? art_status_plume : art_status_mix
+                        ));
+                art_status.setDropDownViewResource(R.layout.spinner_dropdown_item_cal_2048);
+                buff_art_main_status.setAdapter(art_status);
+
+                buff_art_main_lvl.setSelection(artifact.getArtifactLvl()-1);
+                buff_art_main_rare.setSelection(artifact.getArtifactRare()-1);
+                buff_art_main_status.setSelection(Arrays.asList(
+                        (artifact.getArtifactType().equals(Artifact.FLOWER) ? art_status_flower_base :
+                                artifact.getArtifactType().equals(Artifact.PLUME) ? art_status_plume_base : art_status_mix_base
+                        )).indexOf(artifact.getArtifactStatStr()[0]));
+
+                buff_art_main_lvl.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        artifact.setArtifactLvl(position+1);
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+                    }
+                });
+                buff_art_main_rare.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        artifact.setArtifactRare(position+1);
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+                    }
+                });
+                buff_art_main_status.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+                    @Override
+                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                        switch (artifact.getArtifactType()){
+                            case Artifact.FLOWER: {
+                                ArrayList<String> arrayList = new ArrayList<>();
+                                arrayList.add(art_status_flower_base[0]);
+                                if (artifact.getArtifactStatStr().length >= 2){arrayList.add(artifact.getArtifactStatStr()[1]);}
+                                if (artifact.getArtifactStatStr().length >= 3){arrayList.add(artifact.getArtifactStatStr()[2]);}
+                                if (artifact.getArtifactStatStr().length >= 4){arrayList.add(artifact.getArtifactStatStr()[3]);}
+                                if (artifact.getArtifactStatStr().length >= 5){arrayList.add(artifact.getArtifactStatStr()[4]);}
+                                artifact.setArtifactStatStr(arrayList.toArray(new String[0]));
+                                break;
+                            }
+                            case Artifact.PLUME: {
+                                ArrayList<String> arrayList = new ArrayList<>();
+                                arrayList.add(art_status_plume_base[0]);
+                                if (artifact.getArtifactStatStr().length >= 2){arrayList.add(artifact.getArtifactStatStr()[1]);}
+                                if (artifact.getArtifactStatStr().length >= 3){arrayList.add(artifact.getArtifactStatStr()[2]);}
+                                if (artifact.getArtifactStatStr().length >= 4){arrayList.add(artifact.getArtifactStatStr()[3]);}
+                                if (artifact.getArtifactStatStr().length >= 5){arrayList.add(artifact.getArtifactStatStr()[4]);}
+                                artifact.setArtifactStatStr(arrayList.toArray(new String[0]));
+                                break;
+                            }
+                            case Artifact.SAND:
+                            case Artifact.CIRCLET:
+                            case Artifact.GOBLET: {
+                                ArrayList<String> arrayList = new ArrayList<>();
+                                arrayList.add(art_status_mix_base[0]);
+                                if (artifact.getArtifactStatStr().length >= 2){arrayList.add(artifact.getArtifactStatStr()[1]);}
+                                if (artifact.getArtifactStatStr().length >= 3){arrayList.add(artifact.getArtifactStatStr()[2]);}
+                                if (artifact.getArtifactStatStr().length >= 4){arrayList.add(artifact.getArtifactStatStr()[3]);}
+                                if (artifact.getArtifactStatStr().length >= 5){arrayList.add(artifact.getArtifactStatStr()[4]);}
+                                artifact.setArtifactStatStr(arrayList.toArray(new String[0]));
+                                break;
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onNothingSelected(AdapterView<?> parent) {
+
+                    }
+                });
+
+                buff_art_sub_status_ll.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        switch (artifact.getArtifactType()){
+                            case Artifact.FLOWER: {
+                                buffObjects.get(finalX).setArtifactFlower(buffStatusSelectDialog(context,artifact,buffObject,Artifact.FLOWER, buffCatelogy, buff_art_include));
+                                break;
+                            }
+                            case Artifact.PLUME: {
+                                buffObjects.get(finalX).setArtifactPlume(buffStatusSelectDialog(context,artifact,buffObject,Artifact.PLUME, buffCatelogy, buff_art_include));
+                                break;
+                            }
+                            case Artifact.SAND: {
+                                buffObjects.get(finalX).setArtifactSand(buffStatusSelectDialog(context,artifact,buffObject,Artifact.SAND, buffCatelogy, buff_art_include));
+                                break;
+                            }
+                            case Artifact.CIRCLET: {
+                                buffObjects.get(finalX).setArtifactCirclet(buffStatusSelectDialog(context,artifact,buffObject,Artifact.CIRCLET, buffCatelogy, buff_art_include));
+                                break;
+                            }
+                            case Artifact.GOBLET: {
+                                buffObjects.get(finalX).setArtifactGoblet(buffStatusSelectDialog(context,artifact,buffObject,Artifact.GOBLET, buffCatelogy, buff_art_include));
+                                break;
+                            }
+                        }
+                    }
+                });
             }
 
-
-            //TabLayout
-            View view1 = activity.getLayoutInflater().inflate(R.layout.item_custom_tab, null);
-            ImageView ico_img = view1.findViewById(R.id.icon);
-
-            TextView ico_tv = view1.findViewById(R.id.name);
-            ico_tv.setVisibility(View.GONE);
-
-            Picasso.get()
-                    .load (FileLoader.loadIMG(item_rss.getCharByName(character.getCharName(),context)[3],context))
-                    .transform(transformation)
-                    .resize((int) (48*displayMetrics.density),(int) (48*displayMetrics.density))
-                    .error (R.drawable.paimon_full)
-                    .into (ico_img);
-            switch (character.getCharRare()){
-                case 1 : ico_img.setBackgroundResource(R.drawable.item_char_list_bg_circ_1s);break;
-                case 2 : ico_img.setBackgroundResource(R.drawable.item_char_list_bg_circ_2s);break;
-                case 3 : ico_img.setBackgroundResource(R.drawable.item_char_list_bg_circ_3s);break;
-                case 4 : ico_img.setBackgroundResource(R.drawable.item_char_list_bg_circ_4s);break;
-                case 5 : ico_img.setBackgroundResource(R.drawable.item_char_list_bg_circ_5s);break;
-                default:  ico_img.setBackgroundResource(R.drawable.item_char_list_bg_circ_1s);break;
-            }
-
-            ico_img.setPadding((int) (displayMetrics.density*4),(int) (displayMetrics.density*4),(int) (displayMetrics.density*4),(int) (displayMetrics.density*4));
-            team_tablayout.addTab(team_tablayout.newTab().setCustomView(view1).setId(x));
-
+            addItemToTabView(character, x);
             dynamicView.add(view);
         }
     }
 
-    public void buffStatusSelectDialog(Context context, Artifact artifact, BuffObject buffObject, String TYPE, BuffCatelogy buffCatelogy, View buff_art_include){
+    private void addItemToTabView(Character character, int x) {
+        final int radius = 180;
+        final int margin = 0;
+        final Transformation transformation = new RoundedCornersTransformation(radius, margin);
+        //TabLayout
+        View view1 = activity.getLayoutInflater().inflate(R.layout.item_custom_tab, null);
+        ImageView ico_img = view1.findViewById(R.id.icon);
+
+        TextView ico_tv = view1.findViewById(R.id.name);
+        ico_tv.setVisibility(View.GONE);
+
+        Picasso.get()
+                .load (FileLoader.loadIMG(item_rss.getCharByName(character.getCharName(),context)[3],context))
+                .transform(transformation)
+                .resize((int) (48*displayMetrics.density),(int) (48*displayMetrics.density))
+                .error (R.drawable.paimon_full)
+                .into (ico_img);
+        switch (character.getCharRare()){
+            case 1 : ico_img.setBackgroundResource(R.drawable.item_char_list_bg_circ_1s);break;
+            case 2 : ico_img.setBackgroundResource(R.drawable.item_char_list_bg_circ_2s);break;
+            case 3 : ico_img.setBackgroundResource(R.drawable.item_char_list_bg_circ_3s);break;
+            case 4 : ico_img.setBackgroundResource(R.drawable.item_char_list_bg_circ_4s);break;
+            case 5 : ico_img.setBackgroundResource(R.drawable.item_char_list_bg_circ_5s);break;
+            default:  ico_img.setBackgroundResource(R.drawable.item_char_list_bg_circ_1s);break;
+        }
+        ico_img.setPadding((int) (displayMetrics.density*4),(int) (displayMetrics.density*4),(int) (displayMetrics.density*4),(int) (displayMetrics.density*4));
+        team_tablayout.addTab(team_tablayout.newTab().setCustomView(view1).setId(x));
+    }
+
+    public Artifact buffStatusSelectDialog(Context context, Artifact artifact, BuffObject buffObject, String TYPE, BuffCatelogy buffCatelogy, View buff_art_include){
         final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
         View view = View.inflate(context, R.layout.fragment_buff_artifact_dialog_2048, null);
         dialog.setContentView(view);
@@ -964,42 +979,11 @@ public class BuffMainUI extends AppCompatActivity {
         ArrayList<String> itemStr = new ArrayList<>(Arrays.asList(artifact.getArtifactStatStr()));
         ArrayList<Double> itemValue = new ArrayList<>(Arrays.asList(ArrayUtils.toObject(artifact.getArtifactStatValue())));
 
-        dialog_ok.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                artifact.setArtifactStatValue(toDoubleArr(itemValue));
-                artifact.setArtifactStatStr(itemStr.toArray(new String[0]));
+        String tmpMainStr = itemStr.get(0);
+        double tmpMainValue = itemValue.get(0);
 
-                if(artifact.getArtifactStatStr().length <=1){
-                    buff_art_sub_status_1.setVisibility(View.GONE);
-                }else{
-                    buff_art_sub_status_1.setText(context.getString(buffCatelogy.getLocaleNameByStatusName(artifact.getArtifactStatStr()[1]))+" : "+ prettyCountX(artifact.getArtifactStatValue()[1]));
-                }
-                if(artifact.getArtifactStatStr().length <=2){
-                    buff_art_sub_status_2.setVisibility(View.GONE);
-                }else{
-                    buff_art_sub_status_2.setText(context.getString(buffCatelogy.getLocaleNameByStatusName(artifact.getArtifactStatStr()[2]))+" : "+ prettyCountX(artifact.getArtifactStatValue()[2]));
-                }
-                if(artifact.getArtifactStatStr().length <=3){
-                    buff_art_sub_status_3.setVisibility(View.GONE);
-                }else{
-                    buff_art_sub_status_3.setText(context.getString(buffCatelogy.getLocaleNameByStatusName(artifact.getArtifactStatStr()[3]))+" : "+ prettyCountX(artifact.getArtifactStatValue()[3]));
-                }
-                if(artifact.getArtifactStatStr().length <=4){
-                    buff_art_sub_status_4.setVisibility(View.GONE);
-                }else{
-                    buff_art_sub_status_4.setText(context.getString(buffCatelogy.getLocaleNameByStatusName(artifact.getArtifactStatStr()[4]))+" : "+ prettyCountX(artifact.getArtifactStatValue()[4]));
-                }
-
-                switch (TYPE){
-                    case Artifact.FLOWER : buffObject.setArtifactFlower(artifact);if(dialog != null){dialog.dismiss();}break;
-                    case Artifact.PLUME : buffObject.setArtifactPlume(artifact);if(dialog != null){dialog.dismiss();}break;
-                    case Artifact.SAND : buffObject.setArtifactSand(artifact);if(dialog != null){dialog.dismiss();}break;
-                    case Artifact.CIRCLET : buffObject.setArtifactCirclet(artifact);if(dialog != null){dialog.dismiss();}break;
-                    case Artifact.GOBLET : buffObject.setArtifactGoblet(artifact);if(dialog != null){dialog.dismiss();}break;
-                }
-            }
-        });
+        itemStr.remove(0);
+        itemValue.remove(0);
 
         boolean[] isTick = new boolean[]{false,false,false,false,false,false,false,false,false,false};
 
@@ -1060,16 +1044,20 @@ public class BuffMainUI extends AppCompatActivity {
             buff_set_tick.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    System.out.println("finalX : "+finalX);
                     if(isTick[finalX]){
                         isTick[finalX] = false;
                         buff_set_tick.setImageResource(R.drawable.ic_2048_no_tick);
-                        itemValue.remove(itemStr.indexOf(sub_status_name.get(finalX)));
-                        itemStr.remove(itemStr.indexOf(sub_status_name.get(finalX)));
+                        itemValue.remove(itemStr.lastIndexOf(sub_status_name.get(finalX)));
+                        itemStr.remove(sub_status_name.get(finalX));
 
                     }else if (!isTick[finalX] && frequency(isTick, true) <4){
                         isTick[finalX] = true;
                         buff_set_tick.setImageResource(R.drawable.ic_2048_need_tick);
                         itemStr.add(sub_status_name.get(finalX));
+                        System.out.println("itemValueEnum : "+ Arrays.toString(itemValueEnum));
+                        System.out.println("buff_set_seek.getProgress() : "+buff_set_seek.getProgress());
+                        System.out.println("itemValueEnum[buff_set_seek.getProgress()] : "+itemValueEnum[buff_set_seek.getProgress()]);
                         itemValue.add(itemValueEnum[buff_set_seek.getProgress()]);
 
                     }else{
@@ -1081,12 +1069,63 @@ public class BuffMainUI extends AppCompatActivity {
             });
 
 
-            if((itemStr.indexOf(sub_status_name.get(x)) != 0) && (itemStr.indexOf(sub_status_name.get(x)) != -1)){
+            if(itemStr.contains(sub_status_name.get(x))){
                 buff_set_tick.setImageResource(R.drawable.ic_2048_need_tick);
                 buff_set_seek.setProgress(itemValueEnumArray.indexOf(itemValue.get(itemStr.indexOf(sub_status_name.get(x)))));
                 isTick[x] = true;
             }
+
+            /*
+            if(itemStr.contains(sub_status_name.get(x))){
+                if(Collections.frequency(itemStr,sub_status_name.get(x)) == 1 || (itemStr.get(0).equals(sub_status_name.get(x)) && Collections.frequency(itemStr,sub_status_name.get(x)) == 2)){
+                    buff_set_tick.setImageResource(R.drawable.ic_2048_need_tick);
+                    buff_set_seek.setProgress(itemValueEnumArray.indexOf(itemValue.get(itemStr.indexOf(sub_status_name.get(x)))));
+                    isTick[x] = true;
+                }
+            }
+             */
         }
+
+
+        dialog_ok.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                itemValue.add(0,tmpMainValue);
+                itemStr.add(0,tmpMainStr);
+                System.out.println("itemValue : "+itemValue);
+                System.out.println("itemStr : "+itemStr);
+                artifact.setArtifactStatValue(toDoubleArr(itemValue));
+                artifact.setArtifactStatStr(itemStr.toArray(new String[0]));
+                buff_art_sub_status_1.setVisibility(View.VISIBLE);
+                buff_art_sub_status_2.setVisibility(View.VISIBLE);
+                buff_art_sub_status_3.setVisibility(View.VISIBLE);
+                buff_art_sub_status_4.setVisibility(View.VISIBLE);
+
+                if(artifact.getArtifactStatStr().length <=1){
+                    buff_art_sub_status_1.setVisibility(View.GONE);
+                }else{
+                    buff_art_sub_status_1.setText(context.getString(buffCatelogy.getLocaleNameByStatusName((artifact.getArtifactStatStr().length >= 2) ? artifact.getArtifactStatStr()[1] : BuffObject.NONE))+ (artifact.getArtifactStatValue().length >= 2 ? " : "+prettyCountX(artifact.getArtifactStatValue()[1]) : ""));
+                }
+                if(artifact.getArtifactStatStr().length <=2){
+                    buff_art_sub_status_2.setVisibility(View.GONE);
+                }else{
+                    buff_art_sub_status_2.setText(context.getString(buffCatelogy.getLocaleNameByStatusName((artifact.getArtifactStatStr().length >= 3) ? artifact.getArtifactStatStr()[2] : BuffObject.NONE))+ (artifact.getArtifactStatValue().length >= 3 ? " : "+prettyCountX(artifact.getArtifactStatValue()[2]) : ""));}
+                if(artifact.getArtifactStatStr().length <=3){
+                    buff_art_sub_status_3.setVisibility(View.GONE);
+                }else{
+                    buff_art_sub_status_3.setText(context.getString(buffCatelogy.getLocaleNameByStatusName((artifact.getArtifactStatStr().length >= 4) ? artifact.getArtifactStatStr()[3] : BuffObject.NONE))+ (artifact.getArtifactStatValue().length >= 4 ? " : "+prettyCountX(artifact.getArtifactStatValue()[3]) : ""));
+                }
+                if(artifact.getArtifactStatStr().length <=4){
+                    buff_art_sub_status_4.setVisibility(View.GONE);
+                }else{
+                    buff_art_sub_status_4.setText(context.getString(buffCatelogy.getLocaleNameByStatusName((artifact.getArtifactStatStr().length >= 5) ? artifact.getArtifactStatStr()[4] : BuffObject.NONE))+ (artifact.getArtifactStatValue().length >= 5 ? " : "+prettyCountX(artifact.getArtifactStatValue()[4]) : ""));
+                }
+                if(dialog != null){dialog.dismiss();}
+            }
+        });
+
+
+        return artifact;
     }
 
     public double[] toDoubleArr (ArrayList<Double> doubleArrayList){
@@ -1289,10 +1328,12 @@ public class BuffMainUI extends AppCompatActivity {
         TableRow tb_row2 = view.findViewById(R.id.tb_row2);
 
         mCharList = view.findViewById(R.id.buff_rv);
-        mCharAdapter = new CharactersAdapter(context,charactersList,activity,sharedPreferences,enkaBuffObject,buffObjects);
+        mCharAdapter = new CharactersAdapter(context,charactersList,activity,sharedPreferences,enkaBuffObject,buffObjects, dialog);
         RecyclerView.LayoutManager mLayoutManager = new GridLayoutManager(context,  3);
-        if (height > width){
-            mLayoutManager = new GridLayoutManager(context,  width_curr/400+1);
+        if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+            mLayoutManager = new GridLayoutManager(context,  width/400+1);
+        }else{
+            mLayoutManager = new GridLayoutManager(context,  3);
         }
         LinearLayout.LayoutParams paramsMsg = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, WRAP_CONTENT);
         paramsMsg.gravity = Gravity.CENTER;
@@ -1301,7 +1342,6 @@ public class BuffMainUI extends AppCompatActivity {
         mCharList.setAdapter(mCharAdapter);
         mCharList.removeAllViewsInLayout();
         mCharList.setNestedScrollingEnabled(false);
-        mCharAdapter.filterList(charactersList);
 
         //RecycleView
         tb_row1.removeAllViews();
@@ -1367,12 +1407,13 @@ public class BuffMainUI extends AppCompatActivity {
 
     }
 
-    public void addCharToLocal(String charName) {
+    public void addCharToLocal(Characters characters) {
         BuffObject buffObject = new BuffObject();
-        if(charactersList.indexOf(charName) != -1){
-            Characters characters = charactersList.get(charactersList.indexOf(charName));
+        System.out.println("charactersList : "+charactersList);
+        if(charactersList.contains(characters)){
             Character characterFinal = new Character();
             BuffCatelogy buffCatelogy = new BuffCatelogy();
+            String charName = characters.getName();
 
             characterFinal.setCharElement(characters.getElement());
             characterFinal.setCharRare(characters.getRare());
@@ -1383,7 +1424,6 @@ public class BuffMainUI extends AppCompatActivity {
             characterFinal.setCharEXP(0);
             characterFinal.setCharId(buffCatelogy.getIdByCharName(charName));
             characterFinal.setCharASC(6);
-
             String char_json_stat = LoadData("db/buff/char/"+charName.replace(" ","_")+".json");
             if (char_json_stat.length() > 0){
                 try {
@@ -1420,46 +1460,44 @@ public class BuffMainUI extends AppCompatActivity {
             }else{
                 CustomToast.toast(context,activity,context.getString(R.string.none_info));
             }
-
             buffObject.setCharacter(characterFinal);
+
+            //weapon
+            Weapon weapon = new Weapon();
+            weapon.setWeaponLvl(1);
+            weapon.setWeaponASCLvl(0);
+            weapon.setWeaponRare(1);
+            weapon.setWeaponAffixLvl(1);
+            weapon.setWeaponFollowId(characterFinal.getCharId());
+            weapon.setWeaponFollow(characterFinal.getCharName());
+            weapon.setWeaponType(buffCatelogy.getWeaponTypeByName(characters.getWeapon(),context));
+            weapon.setWeaponStatStr(new String[]{
+                    BuffObject.FIGHT_PROP_BASE_ATK,
+                    BuffObject.NONE
+            });
+            weapon.setWeaponStatValue(new double[]{
+                    23,0
+            });
+            switch (weapon.getWeaponType()){
+                case Weapon.SWORD : weapon.setWeaponId(11101);break; // Dull Blade
+                case Weapon.CLAYMORE : weapon.setWeaponId(12101);break; // Waster Greatsword
+                case Weapon.POLEARM : weapon.setWeaponId(13101);break; // Beginner's Protector
+                case Weapon.CATALYST : weapon.setWeaponId(14101);break; // Apprentice's Notes
+                case Weapon.BOW : weapon.setWeaponId(15101);break; // Hunter's Bow
+                default: weapon.setWeaponId(11101);break;
+            }
+            buffObject.setWeapon(weapon);
+
             buffObjects.add(buffObject);
 
-            //Art & weapon haven't done
+            team_tablayout.removeAllTabs();
+            dynamicView.clear();
+            list_init();
+            viewPager.setAdapter(new MyViewPagerAdapter(dynamicView));
 
         }
     }
 
-
-    public class MyViewPagerAdapter extends PagerAdapter {
-        private List<View> mListViews;
-
-        public MyViewPagerAdapter(List<View> mListViews) {
-            this.mListViews = mListViews;
-        }
-
-        @Override
-        public void destroyItem(ViewGroup container, int position, Object object) {
-            container.removeView((View) object);
-        }
-
-        @Override
-        public Object instantiateItem(ViewGroup container, int position) {
-            View view = mListViews.get(position);
-            container.addView(view);
-            return view;
-        }
-
-        @Override
-        public int getCount() {
-            return mListViews.size();
-        }
-
-        @Override
-        public boolean isViewFromObject(View arg0, Object arg1) {
-            return arg0 == arg1;
-        }
-
-    }
 
     private void char_list_reload() {
         Log.wtf("DAAM","YEE");
