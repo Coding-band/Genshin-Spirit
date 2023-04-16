@@ -33,8 +33,8 @@ public class ItemRss {
     SharedPreferences sharedPreferences;
 
     public static String IMG_FORMAT = ".webp";
-    public static String SERVER_DOWNLOAD_ROOT = "https://github.com/Vocaloid2048/vocaloid2048.github.io/raw/main/";
-    public static String SERVER_REACT_ROOT = "https://github.com/Vocaloid2048/vocaloid2048.github.io/raw/main/";
+    public static String SERVER_DOWNLOAD_ROOT = "https://github.com/Vocaloid2048/Genshin-Spirit/raw/release-master/rss/";
+    public static String SERVER_REACT_ROOT = "https://vt.25u.com/genshin_spirit/";
 
     /**EDIT WHEN ADD NEW ITEMS*/
     // INCLUDED 3.0 CHAR. => 20221003
@@ -47,10 +47,10 @@ public class ItemRss {
             "Wanderer","Thoma","Diona","Rosaria","朝霧冰瀬",
             "Alhaitham","Beidou","Sangonomiya Kokomi","Bennett",
             "Qiqi","Yaoyao","Shenhe","Jean","Noelle","Kamisato Ayato",
-            "Aloy","Dehya","Xiao","Yelan","Diluc",
+            "Aloy","Dehya","Xiao","Yelan","Baizhu","Diluc",
             "Candace","Collei","Gorou","Yun Jin","Fischl",
             "Arataki Itto","Lisa","Venti","Yoimiya","Cyno","Raiden Shogun","Yae Miko","Kuki Shinobu",
-            "Barbara","Kujou Sara","Hu Tao","Voc-夜芷冰","Tartaglia","Shikanoin Heizou","Klee","Yanfei",
+            "Barbara","Kaveh","Kujou Sara","Hu Tao","Voc-夜芷冰","Tartaglia","Shikanoin Heizou","Klee","Yanfei",
             "Amber","Mika","Faruzan","Ningguang","Mona",
             "Diona","Razor","Albedo","Kamisato Ayaka",
             "Xingqiu","Xinyan","Sayu","Eula","Nahida","Kaedehara Kazuha",
@@ -60,10 +60,10 @@ public class ItemRss {
             3,9,18,24,26,
             11,14,22,29,
             3,6,10,14,21,26,
-            4,7,17,20,30,
+            4,7,17,20,25,30,
             3,8,18,21,27,
             1,6,9,21,23,26,27,28,
-            5,14,15,19,20,24,27,28,
+            5,9,14,15,19,20,24,27,28,
             10,11,20,26,31,
             7,9,13,28,
             9,16,19,25,27,29,
@@ -73,10 +73,10 @@ public class ItemRss {
             0,0,0,0,
             1,1,1,1,
             2,2,2,2,2,2,
-            3,3,3,3,3,
+            3,3,3,3,3,3,
             4,4,4,4,4,
             5,5,5,5,5,5,5,5,
-            6,6,6,6,6,6,6,6,
+            6,6,6,6,6,6,6,6,6,
             7,7,7,7,7,
             8,8,8,8,
             9,9,9,9,9,9,
@@ -726,6 +726,8 @@ public class ItemRss {
             //add in 20230225
             case "Mailed Flower" : return new String[] {context.getString(R.string.mailed_flower),"/drawable/mailed_flower"+IMG_FORMAT};
             case "Beacon of the Reed Sea" : return new String[] {context.getString(R.string.beacon_of_the_reed_sea),"/drawable/beacon_of_the_reed_sea"+IMG_FORMAT};
+            //add in 20230416
+            case "Jadefall's Splendor" : return new String[] {context.getString(R.string.jadefalls_splendor),"/drawable/jadefalls_splendor"+IMG_FORMAT};
 
             default :
                 System.out.println("WEAPON+ NAME ERROR : "+str);
@@ -906,6 +908,8 @@ public class ItemRss {
             //add in 20230225
             case "Mailed Flower" : return new String[] {context.getString(R.string.mailed_flower),"/drawable/mailed_flower_gacha"+IMG_FORMAT};
             case "Beacon of the Reed Sea" : return new String[] {context.getString(R.string.beacon_of_the_reed_sea),"/drawable/beacon_of_the_reed_sea_gacha"+IMG_FORMAT};
+            //add in 20230416
+            case "Jadefall's Splendor" : return new String[] {context.getString(R.string.jadefalls_splendor),"/drawable/jadefalls_splendor_gacha"+IMG_FORMAT};
 
 
             default :
@@ -1088,6 +1092,8 @@ public class ItemRss {
             //add in 20230225
             case "mailed_flower" : return "Mailed Flower";
             case "beacon_of_the_reed_sea" : return "Beacon of the Reed Sea";
+            //add in 20230416
+            case "jadefalls_splendor" : return "Jadefall's Splendor";
 
             default: return str;
         }
@@ -1142,6 +1148,9 @@ public class ItemRss {
             // add in 20221210
             case "Desert Pavilion Chronicle" : return new String[] {context.getString(R.string.desert_pavilion_chronicle),"/drawable/desert_pavilion_chronicle_1"+IMG_FORMAT,"/drawable/desert_pavilion_chronicle_2"+IMG_FORMAT,"/drawable/desert_pavilion_chronicle_3"+IMG_FORMAT,"/drawable/desert_pavilion_chronicle_4"+IMG_FORMAT,"/drawable/desert_pavilion_chronicle_5"+IMG_FORMAT};
             case "Flower of Paradise Lost" : return new String[] {context.getString(R.string.flower_of_paradise_lost),"/drawable/flower_of_paradise_lost_1"+IMG_FORMAT,"/drawable/flower_of_paradise_lost_2"+IMG_FORMAT,"/drawable/flower_of_paradise_lost_3"+IMG_FORMAT,"/drawable/flower_of_paradise_lost_4"+IMG_FORMAT,"/drawable/flower_of_paradise_lost_5"+IMG_FORMAT};
+            // add in 20230416
+            case "Nymph's Dream" : return new String[] {context.getString(R.string.nymphs_dream),"/drawable/nymphs_dream_1"+IMG_FORMAT,"/drawable/nymphs_dream_2"+IMG_FORMAT,"/drawable/nymphs_dream_3"+IMG_FORMAT,"/drawable/nymphs_dream_4"+IMG_FORMAT,"/drawable/nymphs_dream_5"+IMG_FORMAT};
+            case "Vourukasha's Glow" : return new String[] {context.getString(R.string.vourukashas_glow),"/drawable/vourukashas_glow_1"+IMG_FORMAT,"/drawable/vourukashas_glow_2"+IMG_FORMAT,"/drawable/vourukashas_glow_3"+IMG_FORMAT,"/drawable/vourukashas_glow_4"+IMG_FORMAT,"/drawable/vourukashas_glow_5"+IMG_FORMAT};
 
             default:
                 String upcoming = str.toLowerCase().replace(" ","_");
@@ -1199,6 +1208,9 @@ public class ItemRss {
             // add in 20221210
             case "desert_pavilion_chronicle" : return "Desert Pavilion Chronicle";
             case "flower_of_paradise_lost" : return "Flower of Paradise Lost";
+            // add in 20230416
+            case "nymphs_dream" : return "Nymph's Dream";
+            case "vourukashas_glow" : return "Vourukasha's Glow";
 
             default: return  str;
         }
@@ -1424,7 +1436,16 @@ public class ItemRss {
             case "Tamanooya's Casket" : return new String[]{"/drawable/tcg_tamanooyas_casket"+IMG_FORMAT, context.getString(R.string.tcg_tamanooyas_casket)};
             case "Sin of Pride" : return new String[]{"/drawable/tcg_sin_of_pride"+IMG_FORMAT, context.getString(R.string.tcg_sin_of_pride)};
             case "Ornate Kabuto" : return new String[]{"/drawable/tcg_ornate_kabuto"+IMG_FORMAT, context.getString(R.string.tcg_ornate_kabuto)};
-            case "General’s Ancient Helm" : return new String[]{"/drawable/tcg_generals_ancient_helm"+IMG_FORMAT, context.getString(R.string.tcg_generals_ancient_helm)};
+            case "General's Ancient Helm" : return new String[]{"/drawable/tcg_generals_ancient_helm"+IMG_FORMAT, context.getString(R.string.tcg_generals_ancient_helm)};
+            //add in 20230416
+            case "Kamisato Ayato" : return new String[]{"/drawable/tcg_kamisato_ayato"+IMG_FORMAT, context.getString(R.string.tcg_kamisato_ayato)};
+            case "Arataki Itto" : return new String[]{"/drawable/tcg_arataki_itto"+IMG_FORMAT, context.getString(R.string.tcg_arataki_itto)};
+            case "Tighnari" : return new String[]{"/drawable/tcg_tighnari"+IMG_FORMAT, context.getString(R.string.tcg_tighnari)};
+            case "Keen Sight" : return new String[]{"/drawable/tcg_keen_sight"+IMG_FORMAT, context.getString(R.string.tcg_keen_sight)};
+            case "Kyouka Fuushi" : return new String[]{"/drawable/tcg_kyouka_fuushi"+IMG_FORMAT, context.getString(R.string.tcg_kyouka_fuushi)};
+            case "Arataki Ichiban" : return new String[]{"/drawable/tcg_arataki_ichiban"+IMG_FORMAT, context.getString(R.string.tcg_arataki_ichiban)};
+            case "Favonius Sword" : return new String[]{"/drawable/tcg_favonius_sword"+IMG_FORMAT, context.getString(R.string.tcg_favonius_sword)};
+            case "Grand Narukami Shrine" : return new String[]{"/drawable/tcg_grand_narukami_shrine"+IMG_FORMAT, context.getString(R.string.tcg_grand_narukami_shrine)};
 
 
             default: return new String[]{
@@ -1646,6 +1667,11 @@ public class ItemRss {
 
     public String[] getCharByName_BASE(String name, Context context){
         switch (name) {
+            case "Kirara": return new String[]{"/drawable/kirara_full"+IMG_FORMAT, context.getString(R.string.kirara), "/drawable/kirara_gacha_splash"+IMG_FORMAT, "/drawable/kirara_ico"+IMG_FORMAT, "/drawable/kirara_card"+IMG_FORMAT};
+
+            case "Baizhu": return new String[]{"/drawable/baizhu_full"+IMG_FORMAT, context.getString(R.string.baizhu), "/drawable/baizhu_gacha_splash"+IMG_FORMAT, "/drawable/baizhu_ico"+IMG_FORMAT, "/drawable/baizhu_card"+IMG_FORMAT};
+            case "Kaveh": return new String[]{"/drawable/kaveh_full"+IMG_FORMAT, context.getString(R.string.kaveh), "/drawable/kaveh_gacha_splash"+IMG_FORMAT, "/drawable/kaveh_ico"+IMG_FORMAT, "/drawable/kaveh_card"+IMG_FORMAT};
+
             case "Dehya": return new String[]{"/drawable/dehya_full"+IMG_FORMAT, context.getString(R.string.dehya), "/drawable/dehya_gacha_splash"+IMG_FORMAT, "/drawable/dehya_ico"+IMG_FORMAT, "/drawable/dehya_card"+IMG_FORMAT};
             case "Mika": return new String[]{"/drawable/mika_full"+IMG_FORMAT, context.getString(R.string.mika), "/drawable/mika_gacha_splash"+IMG_FORMAT, "/drawable/mika_ico"+IMG_FORMAT, "/drawable/mika_card"+IMG_FORMAT};
 
@@ -1973,6 +1999,9 @@ public class ItemRss {
             //add in 20230115
             case "蒼礫蕊羽":
                 return "/drawable/pseudo_stamens"+IMG_FORMAT;
+            //add in 20230416
+            case "常暗圓環":
+                return "/drawable/evergloom_ring"+IMG_FORMAT;
 
             /** Local*/
             case "小燈草":
@@ -2043,6 +2072,8 @@ public class ItemRss {
                 return "/drawable/padisarah"+IMG_FORMAT;
             case "沙脂蛹":
                 return "/drawable/sand_grease_pupa"+IMG_FORMAT;
+            case "悼靈花":
+                return "/drawable/mourning_flower"+IMG_FORMAT;
 
             /** T-Boss*/
             case "北風之環":
@@ -2090,6 +2121,13 @@ public class ItemRss {
                 return "/drawable/miirror_of_mushin"+IMG_FORMAT;
             case "空行的虛鈴":
                 return "/drawable/dakas_bell"+IMG_FORMAT;
+            //add in 20230416
+            case "原初綠洲之初綻":
+                return "/drawable/primordial_greenbloom"+IMG_FORMAT;
+            case "生長天地之蕨草":
+                return "/drawable/worldspan_fern"+IMG_FORMAT;
+            case "亙古樹海之一瞬":
+                return "/drawable/everamber"+IMG_FORMAT;
 
             /** Common*/
             case "牢固的箭簇":
@@ -2166,6 +2204,13 @@ public class ItemRss {
                 return "/drawable/dark_statuette"+IMG_FORMAT;
             case "幽邃刻像":
                 return "/drawable/deathly_statuette"+IMG_FORMAT;
+            //add in 20230416
+            case "來自何處的待放之花":
+                return "/drawable/a_flower_yet_to_bloom"+IMG_FORMAT;
+            case "何人所珍藏之花":
+                return "/drawable/treasured_flower"+IMG_FORMAT;
+            case "漫遊者的盛放之花":
+                return "/drawable/wanderers_blooming_flower"+IMG_FORMAT;
 
             // P.S. There still have Sumeru items not added yet since the name are undefinded or unable to define in there. => 20220716
             // ♪ Added Sumeru items
@@ -2648,7 +2693,6 @@ public class ItemRss {
             return context.getString(R.string.obtain_no);
         }else {return context.getString(R.string.obtain_no);}
     }
-
 
     public String char_birth(int moy, int dom){
         String char_name = "EMPTY";

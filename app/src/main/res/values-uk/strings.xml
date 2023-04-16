@@ -1326,4 +1326,15 @@
     <string name="tcg_beidou">Beidou</string>
     <string name="tcg_lightning_storm">Lightning Storm</string>
     <string name="tcg_pounding_surprise">Pounding Surprise</string>
+
+    <string name="download_cancelled">Завантаження було скасовано, будь ласка сробуте ще раз</string>
+    <string name="last_update">Останнє оновлення</string>
+    <string name="from_game_display">З ігрового простору</string>
+    <string name="pls_wait">Будь ласка, зачекайте 10 сек. </string>
+    <string name="login_dailymemo">Просимо спочатку увійти до DailyMemo</string>
+    <string name="affix">Афікс</string>
+    <string name="weapon_stat_atk_base">Базова шкода</string>
+    <string name="max_4_choice">Макс. 4 вибора</string>
+    <string name="lvl">Рівень</string>
+    <string name="max_8_char">Максимум 8 персонажів</string>
 </resources>

@@ -1374,6 +1374,20 @@
     <string name="asagiri_korise">朝霧冰瀬</string>
     <string name="lazurite_swirl">青金的流旋</string>
     <string name="lvl">等級</string>
+    <string name="baizhu">白朮</string>
+    <string name="kaveh">卡維</string>
+    <string name="jadefalls_splendor">碧落之瓏</string>
+    <string name="nymphs_dream">水仙之夢</string>
+    <string name="vourukashas_glow">花海甘露之光</string>
+    <string name="kirara">綺良良</string>
+    <string name="tcg_kamisato_ayato">神里綾人</string>
+    <string name="tcg_arataki_itto">荒瀧一斗</string>
+    <string name="tcg_tighnari">提納里</string>
+    <string name="tcg_keen_sight">眼識殊明</string>
+    <string name="tcg_kyouka_fuushi">鏡華風姿</string>
+    <string name="tcg_arataki_ichiban">荒瀧第一</string>
+    <string name="tcg_favonius_sword">西風劍</string>
+    <string name="tcg_grand_narukami_shrine">鳴神大社</string>
 
 
 </resources>

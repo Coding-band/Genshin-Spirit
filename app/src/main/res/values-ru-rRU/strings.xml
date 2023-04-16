@@ -1350,4 +1350,31 @@
     <string name="tcg_generals_ancient_helm">Древний шлем генерала</string>
     <string name="tcg_wellspring_of_war_lust">Прилив войны</string>
     <string name="lazurite_swirl">Лазуритовый вихрь</string>
+
+    <string name="download_cancelled">Скачивание было отменено, попроуйте повторить</string>
+    <string name="last_update">Последние обновление</string>
+    <string name="from_game_display">З игрового пространстваy</string>
+    <string name="pls_wait">Пожалуйста, подождите 10 секунд</string>
+    <string name="login_dailymemo">Пожайлуйста, сначала войдите DailyMemo</string>
+    <string name="affix">Аффикс</string>
+    <string name="weapon_stat_atk_base">Базовая атака</string>
+    <string name="max_4_choice">Максимум 4 выбора </string>
+    <string name="lvl">Ур.</string>
+    <string name="max_8_char">Максимум 8 персонажей</string>
+    <string name="baizhu">Бай Чжу</string>
+    <string name="beacon_of_the_reed_sea">Маяк тростникового моря</string>
+    <string name="mailed_flower">Цветок в латах</string>
+    <string name="kaveh">Кавех</string>
+    <string name="jadefalls_splendor">Великолепие лазурного свода</string>
+    <string name="nymphs_dream">Сон нимфы</string>
+    <string name="vourukashas_glow">Сияние Вурукаши</string>
+    <string name="kirara">Кирара</string>
+    <string name="tcg_kamisato_ayato">Камисато Аято</string>
+    <string name="tcg_arataki_itto">Аратаки Итто</string>
+    <string name="tcg_tighnari">Тигнари</string>
+    <string name="tcg_keen_sight">Острый глаз</string>
+    <string name="tcg_kyouka_fuushi">Кёка фуси</string>
+    <string name="tcg_arataki_ichiban">Аратаки итибан</string>
+    <string name="tcg_favonius_sword">Меч Фавония</string>
+    <string name="tcg_grand_narukami_shrine">Великий храм Наруками</string>
 </resources>

@@ -64,6 +64,8 @@ public class Material {
     public int 滅諍草蔓 = 0;
     //add in 20230115
     public int 蒼礫蕊羽 = 0;
+    //add in 20230416
+    public int 常暗圓環 = 0;
 
     /** LOCAL */
     public int  小燈草  = 0 ;
@@ -102,6 +104,8 @@ public class Material {
     public int  帕蒂沙蘭 = 0;
     //add in 20230115
     public int  沙脂蛹 = 0;
+    //add in 20230416
+    public int  悼靈花 = 0;
 
     /** T-BOSS ASC*/
 
@@ -130,6 +134,10 @@ public class Material {
     public int  傀儡的懸絲  = 0 ; // 散兵 Weekly Boss
     public int  無心的淵鏡  = 0 ; // 散兵 Weekly Boss
     public int  空行的虛鈴  = 0 ; // 散兵 Weekly Boss
+    //add in 20230416
+    public int  原初綠洲之初綻  = 0 ; // 阿佩普的綠洲守望者 Weekly Boss
+    public int  生長天地之蕨草  = 0 ; // 阿佩普的綠洲守望者 Weekly Boss
+    public int  亙古樹海之一瞬  = 0 ; // 阿佩普的綠洲守望者 Weekly Boss
 
 
     /** COMMON */ /**[牢固的箭簇,銳利的箭簇,歷戰的箭簇]*/
@@ -147,6 +155,8 @@ public class Material {
     public ArrayList<Integer> 織金紅綢 = new ArrayList<Integer>(Collections.nCopies(3, 0));
     public ArrayList<Integer> 孢囊晶塵 = new ArrayList<Integer>(Collections.nCopies(3, 0));
     public ArrayList<Integer> 幽邃刻像 = new ArrayList<Integer>(Collections.nCopies(3, 0));
+    //add in 20230416
+    public ArrayList<Integer> 漫遊者的盛放之花 = new ArrayList<Integer>(Collections.nCopies(3, 0));
 
 
     /** T-COMMON*/
@@ -251,7 +261,7 @@ public class Material {
                 "排異之露","獸境王器","龍嗣偽鰭",
                 "符紋之齒","蕈王鉤喙","藏雷野實",
                 "永續機芯","導光四面體","滅諍草蔓",
-                "蒼礫蕊羽"
+                "蒼礫蕊羽","常暗圓環"
         };
     }
     public int[] bossCountList (){
@@ -264,7 +274,7 @@ public class Material {
                 排異之露,獸境王器,龍嗣偽鰭,
                 符紋之齒,蕈王鉤喙,藏雷野實,
                 永續機芯,導光四面體,滅諍草蔓,
-                蒼礫蕊羽
+                蒼礫蕊羽,常暗圓環
         };
     }
 
@@ -278,7 +288,8 @@ public class Material {
                 "龍王之冕","血玉之枝","鎏金之鱗",
                 "熔毀之刻","灰燼之心","獄火之蝶",
                 "萬劫之真意","凶將之手眼","禍神之禊淚",
-                "傀儡的懸絲","無心的淵鏡","空行的虛鈴"
+                "傀儡的懸絲","無心的淵鏡","空行的虛鈴",
+                "原初綠洲之初綻","生長天地之蕨草","亙古樹海之一瞬"
 
         };
     }
@@ -291,7 +302,8 @@ public class Material {
                 龍王之冕,血玉之枝,鎏金之鱗,
                 熔毀之刻,灰燼之心,獄火之蝶,
                 萬劫之真意,凶將之手眼,禍神之禊淚,
-                傀儡的懸絲,無心的淵鏡,空行的虛鈴
+                傀儡的懸絲,無心的淵鏡,空行的虛鈴,
+                原初綠洲之初綻,生長天地之蕨草,亙古樹海之一瞬
         };
     }
 
@@ -308,7 +320,7 @@ public class Material {
                 "血斛","幽燈蕈","珊瑚真珠",
                 "鬼兜蟲","樹王聖體菇","月蓮",
                 "劫波蓮","赤念果","聖金蟲",
-                "帕蒂沙蘭","沙脂蛹"
+                "帕蒂沙蘭","沙脂蛹","悼靈花"
         };
     }
     public int[] localCountList (){
@@ -323,7 +335,7 @@ public class Material {
                 血斛,幽燈蕈,珊瑚真珠,
                 鬼兜蟲,樹王聖體菇,月蓮,
                 劫波蓮,赤念果,聖金蟲,
-                帕蒂沙蘭,沙脂蛹
+                帕蒂沙蘭,沙脂蛹,悼靈花
         };
     }
     public int[] localRareList (){
@@ -339,7 +351,7 @@ public class Material {
                 1,1,1,
                 1,1,1,
                 1,1,1,
-                1
+                1,1,1
         };
     }
 
@@ -370,7 +382,8 @@ public class Material {
                 "失活菌核","休眠菌核","茁壯菌核",
                 "混沌容器","混沌模組","混沌錨栓",
                 "破缺稜晶","混濁稜晶","輝光稜晶",
-                "殘毀的橫脊","密固的橫脊","鍥紋的橫脊"
+                "殘毀的橫脊","密固的橫脊","鍥紋的橫脊",
+                "來自何處的待放之花","何人所珍藏之花","漫遊者的盛放之花"
 
         };
     }
@@ -403,7 +416,8 @@ public class Material {
                 茁壯菌核.get(0),茁壯菌核.get(1),茁壯菌核.get(2),
                 混沌錨栓.get(0),混沌錨栓.get(1),混沌錨栓.get(2),
                 輝光稜晶.get(0),輝光稜晶.get(1),輝光稜晶.get(2),
-                鍥紋的橫脊.get(0),鍥紋的橫脊.get(1),鍥紋的橫脊.get(2)
+                鍥紋的橫脊.get(0),鍥紋的橫脊.get(1),鍥紋的橫脊.get(2),
+                漫遊者的盛放之花.get(0),漫遊者的盛放之花.get(1),漫遊者的盛放之花.get(2)
         };
     }
     public int[] commonRareList (){
@@ -418,6 +432,7 @@ public class Material {
                 1,2,3,
                 1,2,3,
 
+                2,3,4,
                 2,3,4,
                 2,3,4,
                 2,3,4,
@@ -650,6 +665,8 @@ public class Material {
                 case "滅諍草蔓": 滅諍草蔓 = addCountIntoVar(滅諍草蔓, temp_count, "BOSS"); break;
                 //add in 20230115
                 case "蒼礫蕊羽": 蒼礫蕊羽 = addCountIntoVar(蒼礫蕊羽, temp_count, "BOSS"); break;
+                //add in 20230416
+                case "常暗圓環": 常暗圓環 = addCountIntoVar(常暗圓環, temp_count, "BOSS"); break;
             }
 
             /** LOCAL */
@@ -690,6 +707,8 @@ public class Material {
                 case "帕蒂沙蘭": 帕蒂沙蘭 = addCountIntoVar(帕蒂沙蘭, temp_count, "LOCAL"); break;
                 //add in 20230115
                 case "沙脂蛹": 沙脂蛹 = addCountIntoVar(沙脂蛹, temp_count, "LOCAL"); break;
+                //add in 20230416
+                case "悼靈花": 悼靈花 = addCountIntoVar(悼靈花, temp_count, "LOCAL"); break;
             }
 
         }
@@ -764,6 +783,11 @@ public class Material {
                 case "傀儡的懸絲": 傀儡的懸絲 = addCountIntoVar(傀儡的懸絲, temp_count, "T-BOSS"); break;
                 case "無心的淵鏡": 無心的淵鏡 = addCountIntoVar(無心的淵鏡, temp_count, "T-BOSS"); break;
                 case "空行的虛鈴": 空行的虛鈴 = addCountIntoVar(空行的虛鈴, temp_count, "T-BOSS"); break;
+                // add in 20221112
+                case "原初綠洲之初綻": 原初綠洲之初綻 = addCountIntoVar(原初綠洲之初綻, temp_count, "T-BOSS"); break;
+                case "生長天地之蕨草": 生長天地之蕨草 = addCountIntoVar(生長天地之蕨草, temp_count, "T-BOSS"); break;
+                case "亙古樹海之一瞬": 亙古樹海之一瞬 = addCountIntoVar(亙古樹海之一瞬, temp_count, "T-BOSS"); break;
+
             }
 
         }
@@ -808,6 +832,8 @@ public class Material {
             case "輝光稜晶": addCountIntoVar(輝光稜晶, temp_count, "COPY2"); break;
             //add in 20230225
             case "鍥紋的橫脊": addCountIntoVar(鍥紋的橫脊, temp_count, "COPY2"); break;
+            //add in 20230416
+            case "漫遊者的盛放之花": addCountIntoVar(漫遊者的盛放之花, temp_count, "COPY2"); break;
         }
 
 

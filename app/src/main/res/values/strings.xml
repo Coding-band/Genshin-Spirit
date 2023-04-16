@@ -1438,6 +1438,15 @@
     <string name="jadefalls_splendor">"Jadefall's Splendor"</string>
     <string name="nymphs_dream">"Nymph's Dream"</string>
     <string name="vourukashas_glow">"Vourukasha's Glow"</string>
+    <string name="kirara">Kirara</string>
+    <string name="tcg_kamisato_ayato">Kamisato Ayato</string>
+    <string name="tcg_arataki_itto">Arataki Itto</string>
+    <string name="tcg_tighnari">Tighnari</string>
+    <string name="tcg_keen_sight">Keen Sight</string>
+    <string name="tcg_kyouka_fuushi">Kyouka Fuushi</string>
+    <string name="tcg_arataki_ichiban">Arataki Ichiban</string>
+    <string name="tcg_favonius_sword">Favonius Sword</string>
+    <string name="tcg_grand_narukami_shrine">Grand Narukami Shrine</string>
 
 
 </resources>

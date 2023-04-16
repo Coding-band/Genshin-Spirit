@@ -232,14 +232,14 @@ public class DailyMemo {
             });
         }
 
-        url = "https://vt.25u.com/genshin_spirit/dailyMemo_3.5/dailyMemoPort.php?"+
+        url = ItemRss.SERVER_REACT_ROOT+"dailyMemo_3.5/dailyMemoPort.php?"+
                 "hoyoUID="+sharedPreferences.getString("hoyolab_ltuid","N/A")+
                 "&hoyoToken="+sharedPreferences.getString("hoyolab_ltoken","N/A")+
                 "&uid="+sharedPreferences.getString("genshin_uid","-1");
 
         String uidF = sharedPreferences.getString("genshin_uid","-1");
         if(uidF.startsWith("1") ||uidF.startsWith("2") ||uidF.startsWith("5")){
-            url = "https://vt.25u.com/genshin_spirit/dailyMemo_3.5/dailyMemoPort.php?"+
+            url = ItemRss.SERVER_REACT_ROOT+"dailyMemo_3.5/dailyMemoPort.php?"+
                     "hoyoUID="+sharedPreferences.getString("hoyolab_ltuid","N/A")+
                     "&hoyoToken="+sharedPreferences.getString("hoyolab_ltoken","N/A")+
                     "&uid="+sharedPreferences.getString("genshin_uid","-1")+
@@ -566,8 +566,8 @@ public class DailyMemo {
                             System.out.println("HEY YOU ! WE SUCCESSED2");
                             tokenUpdate(token_final, uid_final, token_final_v2, uid_final_v2, account_id_v2, cookie_token_v2, account_mid_v2, ltmid_v2);
                             /*
-                            webview2.loadUrl("https://vt.25u.com/genshin_spirit/dataCollection/testInsert.php?unix="+System.currentTimeMillis()+"&hoyoToken="+token_final+"&hoyoUID="+uid_final+"&device_name="+ Build.MODEL);
-                            System.out.println("URL : "+"https://vt.25u.com/genshin_spirit/dataCollection/testInsert.php?unix="+System.currentTimeMillis()+"&hoyoToken="+token_final+"&hoyoUID="+uid_final+"&device_name="+ Build.MODEL);
+                            webview2.loadUrl(ItemRss.SERVER_REACT_ROOT+"dataCollection/testInsert.php?unix="+System.currentTimeMillis()+"&hoyoToken="+token_final+"&hoyoUID="+uid_final+"&device_name="+ Build.MODEL);
+                            System.out.println("URL : "+ItemRss.SERVER_REACT_ROOT+"dataCollection/testInsert.php?unix="+System.currentTimeMillis()+"&hoyoToken="+token_final+"&hoyoUID="+uid_final+"&device_name="+ Build.MODEL);
                             Toast.makeText(context,"TOKEN : "+token_final,Toast.LENGTH_LONG).show();
                             System.out.println("TOKEN : "+token_final);
                              */
@@ -578,7 +578,7 @@ public class DailyMemo {
 
                             if(!token_final_v2.equals("N/A")){
                                 new grabDataFromServer().execute(
-                                        "https://vt.25u.com/genshin_spirit/dailyMemo_3.5/dailyMemoIdListPort.php?" +
+                                        ItemRss.SERVER_REACT_ROOT+"dailyMemo_3.5/dailyMemoIdListPort.php?" +
                                                 "hoyoUID="+ uid_final_v2+
                                                 "&hoyoToken="+token_final_v2+
                                                 "&account_id_v2="+account_id_v2+
@@ -588,7 +588,7 @@ public class DailyMemo {
                                 );
                             }else{
 
-                                new grabDataFromServer().execute("https://vt.25u.com/genshin_spirit/dailyMemo_3.5/dailyMemoIdListPort.php?" +
+                                new grabDataFromServer().execute(ItemRss.SERVER_REACT_ROOT+"dailyMemo_3.5/dailyMemoIdListPort.php?" +
                                         "hoyoUID="+uid_final+
                                         "&hoyoToken="+token_final
                                 );
@@ -623,7 +623,7 @@ public class DailyMemo {
                     System.out.println("uidF : "+uidF);
                     System.out.println("uidF1 : "+uidF.charAt(0));
                     if(uidF.charAt(0) == '1' ||uidF.charAt(0) == '2' ||uidF.charAt(0) == '5'){
-                        new grabIdFromServer().execute("https://vt.25u.com/genshin_spirit/dailyMemo_3.5/dailyMemoPort.php?"+
+                        new grabIdFromServer().execute(ItemRss.SERVER_REACT_ROOT+"dailyMemo_3.5/dailyMemoPort.php?"+
                                 "hoyoUID="+sharedPreferences.getString("hoyolab_ltuid","N/A")+
                                 "&hoyoToken="+sharedPreferences.getString("hoyolab_ltoken","N/A")+
                                 "&uid="+sharedPreferences.getString("genshin_uid","-1")+
@@ -631,7 +631,7 @@ public class DailyMemo {
                                 "&cookie_token_v2="+sharedPreferences.getString("cookie_token_v2","N/A")+
                                 "&account_mid_v2="+sharedPreferences.getString("account_mid_v2","N/A")+
                                 "&ltmid_v2="+sharedPreferences.getString("ltmid_v2","N/A"));
-                        System.out.println("https://vt.25u.com/genshin_spirit/dailyMemo_3.5/dailyMemoPort.php?"+
+                        System.out.println(ItemRss.SERVER_REACT_ROOT+"dailyMemo_3.5/dailyMemoPort.php?"+
                                 "hoyoUID="+sharedPreferences.getString("hoyolab_ltuid","N/A")+
                                 "&hoyoToken="+sharedPreferences.getString("hoyolab_ltoken","N/A")+
                                 "&uid="+sharedPreferences.getString("genshin_uid","-1")+
@@ -640,12 +640,12 @@ public class DailyMemo {
                                 "&account_mid_v2="+sharedPreferences.getString("account_mid_v2","N/A")+
                                 "&ltmid_v2="+sharedPreferences.getString("ltmid_v2","N/A"));
                     }else{
-                        new grabIdFromServer().execute("https://vt.25u.com/genshin_spirit/dailyMemo_3.5/dailyMemoPort.php?"+
+                        new grabIdFromServer().execute(ItemRss.SERVER_REACT_ROOT+"dailyMemo_3.5/dailyMemoPort.php?"+
                                 "hoyoUID="+sharedPreferences.getString("hoyolab_ltuid","N/A")+
                                 "&hoyoToken="+sharedPreferences.getString("hoyolab_ltoken","N/A")+
                                 "&uid="+sharedPreferences.getString("genshin_uid","-1"));
 
-                        System.out.println("https://vt.25u.com/genshin_spirit/dailyMemo_3.5/dailyMemoPort.php?"+
+                        System.out.println(ItemRss.SERVER_REACT_ROOT+"dailyMemo_3.5/dailyMemoPort.php?"+
                                 "hoyoUID="+sharedPreferences.getString("hoyolab_ltuid","N/A")+
                                 "&hoyoToken="+sharedPreferences.getString("hoyolab_ltoken","N/A")+
                                 "&uid="+sharedPreferences.getString("genshin_uid","-1"));
@@ -757,7 +757,7 @@ public class DailyMemo {
                             token_final = jsonObject.getString("ltoken");
                             uid_final = jsonObject.getString("ltuid");
 
-                            new grabDataFromServer().execute("https://vt.25u.com/genshin_spirit/dailyMemo_3.5/dailyMemoIdListPort.php?" +
+                            new grabDataFromServer().execute(ItemRss.SERVER_REACT_ROOT+"dailyMemo_3.5/dailyMemoIdListPort.php?" +
                                     "hoyoUID="+uid_final+
                                     "&hoyoToken="+token_final
                             );
