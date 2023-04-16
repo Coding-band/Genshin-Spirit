@@ -247,7 +247,7 @@ public class SplashActivity extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        if(getRemoteFileSize("https://vt.25u.com/genshin_spirit/"+baseFileName) > 10000000){
+        if(getRemoteFileSize(ItemRss.SERVER_DOWNLOAD_ROOT+baseFileName) > 10000000){
             if (sharedPreferences.getBoolean("downloadBase", false) == false) {
                 /**
                  * Build a class in util -> Dialog2048
@@ -255,7 +255,7 @@ public class SplashActivity extends AppCompatActivity {
 
                 Dialog2048 dialog2048 = new Dialog2048();
                 dialog2048.setup(context,activity);
-                dialog2048.updateMax(getRemoteFileSize("https://vt.25u.com/genshin_spirit/"+baseFileName));
+                dialog2048.updateMax(getRemoteFileSize(ItemRss.SERVER_DOWNLOAD_ROOT+baseFileName));
                 dialog2048.mode(Dialog2048.MODE_DOWNLOAD_BASE);
                 dialog2048.show();
 
@@ -266,7 +266,7 @@ public class SplashActivity extends AppCompatActivity {
                         //DownloadTask downloadTask = new DownloadTask();
                         //downloadTask.start("https://vt.25u.com/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
                         ArrayList<String> downloadList = new ArrayList<>();
-                        downloadList.add("https://vt.25u.com/genshin_spirit/"+baseFileName);
+                        downloadList.add(ItemRss.SERVER_DOWNLOAD_ROOT+baseFileName);
 
                         new DownloadAndUnzipTask(context,activity,downloadList,context.getFilesDir().getAbsolutePath()).execute();
                     }
@@ -396,7 +396,7 @@ public class SplashActivity extends AppCompatActivity {
         sharedPreferences = context.getSharedPreferences("user_info", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        if(getRemoteFileSize("https://vt.25u.com/genshin_spirit/"+baseFileName) > 10000000){
+        if(getRemoteFileSize(ItemRss.SERVER_DOWNLOAD_ROOT+baseFileName) > 10000000){
             OkHttpClient client = new OkHttpClient();
             String url = "https://vt.25u.com/genshin_spirit/update.json";
             if (BuildConfig.FLAVOR.equals("dev")){
@@ -423,7 +423,7 @@ public class SplashActivity extends AppCompatActivity {
                     }
 
                     if (release_unix > sharedPreferences.getLong("lastUpdateUnix", 1)) {
-                        array_download.add("https://vt.25u.com/genshin_spirit/" + fileName);
+                        array_download.add(ItemRss.SERVER_DOWNLOAD_ROOT + fileName);
                         array_fileName.add(fileName);
                         array_SfileName.add("/" + fileName);
                     }
@@ -463,7 +463,7 @@ public class SplashActivity extends AppCompatActivity {
                     } else {
                         Dialog2048 dialog2048 = new Dialog2048();
                         dialog2048.setup(context,activity);
-                        dialog2048.updateMax(getRemoteFileSize("https://vt.25u.com/genshin_spirit/"+baseFileName));
+                        dialog2048.updateMax(getRemoteFileSize(ItemRss.SERVER_DOWNLOAD_ROOT+baseFileName));
                         dialog2048.mode(Dialog2048.MODE_DOWNLOAD_BASE);
                         dialog2048.show();
 
@@ -474,7 +474,7 @@ public class SplashActivity extends AppCompatActivity {
                                 //downloadTask.start("https://vt.25u.com/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
 
                                 ArrayList<String> downloadList = new ArrayList<>();
-                                downloadList.add("https://vt.25u.com/genshin_spirit/"+baseFileName);
+                                downloadList.add(ItemRss.SERVER_DOWNLOAD_ROOT+baseFileName);
 
                                 new DownloadAndUnzipTask(context,activity,downloadList,context.getFilesDir().getAbsolutePath()).execute();
                             }

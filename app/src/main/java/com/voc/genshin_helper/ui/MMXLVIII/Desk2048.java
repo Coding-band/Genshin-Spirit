@@ -763,6 +763,9 @@ public class Desk2048 extends AppCompatActivity {
         ConstraintLayout paimon_setting = viewPager4.findViewById(R.id.paimon_setting);
         ConstraintLayout paimon_about = viewPager4.findViewById(R.id.paimon_about);
 
+        //Unlock in 3.7 or 3.8
+        paimon_buff_cal.setVisibility(View.GONE);
+
         final int radius = 360;
         final int margin = 0;
         final Transformation transformation = new RoundedCornersTransformation(radius, margin,ALL);
@@ -1633,7 +1636,7 @@ public class Desk2048 extends AppCompatActivity {
                 StrictMode.setThreadPolicy(policy);
 
                 ArrayList<String> downloadList = new ArrayList<>();
-                downloadList.add("https://vt.25u.com/genshin_spirit/"+baseFileName);
+                downloadList.add(ItemRss.SERVER_DOWNLOAD_ROOT+baseFileName);
 
                 Dialog2048 dialog2048 = new Dialog2048();
                 dialog2048.setup(context,activity);
@@ -2989,7 +2992,7 @@ public class Desk2048 extends AppCompatActivity {
                 }
 
                 if (release_unix > sharedPreferences.getLong("lastUpdateUnix", 1)) {
-                    array_download.add("https://vt.25u.com/genshin_spirit/" + fileName);
+                    array_download.add(ItemRss.SERVER_DOWNLOAD_ROOT + fileName);
                     array_fileName.add(fileName);
                     array_SfileName.add("/" + fileName);
                 }

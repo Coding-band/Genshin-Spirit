@@ -1432,6 +1432,13 @@
     <string name="lvl">Lvl</string>
     <string name="max_8_char">Max 8 Characters</string>
 
+    <!--add in 20230413-->
+    <string name="baizhu">Baizhu</string>
+    <string name="kaveh">Kaveh</string>
+    <string name="jadefalls_splendor">"Jadefall's Splendor"</string>
+    <string name="nymphs_dream">"Nymph's Dream"</string>
+    <string name="vourukashas_glow">"Vourukasha's Glow"</string>
+
 
 </resources>
 

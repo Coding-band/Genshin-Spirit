@@ -33,6 +33,8 @@ public class ItemRss {
     SharedPreferences sharedPreferences;
 
     public static String IMG_FORMAT = ".webp";
+    public static String SERVER_DOWNLOAD_ROOT = "https://github.com/Vocaloid2048/vocaloid2048.github.io/raw/main/";
+    public static String SERVER_REACT_ROOT = "https://github.com/Vocaloid2048/vocaloid2048.github.io/raw/main/";
 
     /**EDIT WHEN ADD NEW ITEMS*/
     // INCLUDED 3.0 CHAR. => 20221003
