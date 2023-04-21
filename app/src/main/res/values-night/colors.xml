@@ -187,6 +187,6 @@
     <color name="buff_radio_selected_stroke_2048">#5BB74C</color>
     <color name="buff_radio_selected_fill_2048">#408E33</color>
     <color name="buff_radio_unselected_fill_2048">#00000000</color>
-    <color name="buff_spinner_bg">#1AFFFFFF</color>
+    <color name="buff_spinner_bg">#564F49</color>
     <color name="buff_spinner_kwang">#D3BC8E</color>
 </resources>

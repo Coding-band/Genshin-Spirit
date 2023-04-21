@@ -125,6 +125,7 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
 
     @Override
     protected Void doInBackground(Void... params) {
+        /*
         //加入憑證
         SSLContext sc = null;
         try {
@@ -156,6 +157,7 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
             System.out.println("NNIK : "+e.getMessage());
             throw new RuntimeException(e);
         }
+         */
 
         for (int i = 0; i < urls.size(); i++) {
             if (!isCancelled()) {

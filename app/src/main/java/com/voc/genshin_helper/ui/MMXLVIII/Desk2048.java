@@ -764,7 +764,7 @@ public class Desk2048 extends AppCompatActivity {
         ConstraintLayout paimon_about = viewPager4.findViewById(R.id.paimon_about);
 
         //Unlock in 3.7 or 3.8
-        paimon_buff_cal.setVisibility(View.GONE);
+        paimon_buff_cal.setVisibility(View.INVISIBLE);
 
         final int radius = 360;
         final int margin = 0;
@@ -1733,6 +1733,16 @@ public class Desk2048 extends AppCompatActivity {
 
         card_username.setText(dailyMemo.getNickname(context));
         card_userstat.setText(dailyMemo.getServer(context)+" - "+sharedPreferences.getString("genshin_uid","-1") + " - Lv."+dailyMemo.getLevel(context));
+        card_userstat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Voc-夜芷冰#2512
+                ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                ClipData clip = ClipData.newPlainText("Genshin UID", sharedPreferences.getString("genshin_uid","-1"));
+                clipboard.setPrimaryClip(clip);
+                Toast.makeText(context, getString(R.string.copied), Toast.LENGTH_SHORT).show();
+            }
+        });
 
         if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
             height = (int) height/4;

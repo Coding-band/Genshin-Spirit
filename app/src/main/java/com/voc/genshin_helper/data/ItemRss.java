@@ -33,8 +33,9 @@ public class ItemRss {
     SharedPreferences sharedPreferences;
 
     public static String IMG_FORMAT = ".webp";
-    public static String SERVER_DOWNLOAD_ROOT = "https://github.com/Vocaloid2048/Genshin-Spirit/raw/release-master/rss/";
-    public static String SERVER_REACT_ROOT = "https://vt.25u.com/genshin_spirit/";
+    public static String SERVER_DOWNLOAD_ROOT = "https://voc2048.com/genshin_spirit/";
+    //public static String SERVER_DOWNLOAD_ROOT = "https://github.com/Vocaloid2048/Genshin-Spirit/raw/release-master/rss/";
+    public static String SERVER_REACT_ROOT = "https://voc2048.com/genshin_spirit/";
 
     /**EDIT WHEN ADD NEW ITEMS*/
     // INCLUDED 3.0 CHAR. => 20221003

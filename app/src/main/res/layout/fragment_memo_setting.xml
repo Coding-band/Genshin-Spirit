@@ -187,7 +187,7 @@
                             android:fontFamily="@font/genshin_font"
                             android:text="@string/mainland_server"
                             android:textColor="@color/tv_anti_color_2048"
-                            android:visibility="gone" />
+                            android:visibility="visible" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -206,7 +206,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="0"
                             android:fontFamily="@font/genshin_font"
-                            android:text="3."
+                            android:text="3.1."
                             android:textColor="@color/white"
                             android:textSize="18sp" />
 
@@ -256,6 +256,81 @@
                             android:textColor="@color/tv_anti_color_2048" />
 
                     </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_weight="0"
+                        android:alpha="0.8"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="3.2."
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="8dp"
+                            android:layout_weight="0"
+                            android:fontFamily="@font/genshin_font"
+                            android:text="從瀏覽器開發人員頁面貼上對應值"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="8dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="4dp"
+                        android:layout_weight="0"
+                        android:alpha="0.8"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <EditText
+                                android:id="@+id/token_et_ltoken"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:hint="ltoken_v2" />
+
+                            <EditText
+                                android:id="@+id/token_et_cookie_token"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:hint="cookie_token_v2" />
+                        </LinearLayout>
+
+                        <Button
+                            android:id="@+id/token_confirm_cn"
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:layout_gravity="center"
+                            android:layout_margin="8dp"
+                            android:background="@drawable/ic_2048_need_tick"
+                            android:fontFamily="@font/genshin_font"
+                            android:textColor="@color/tv_anti_color_2048" />
+
+                    </LinearLayout>
+
 
                     <LinearLayout
                         android:layout_width="match_parent"

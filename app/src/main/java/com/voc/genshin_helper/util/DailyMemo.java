@@ -473,10 +473,12 @@ public class DailyMemo {
         Button token_btn3 = view.findViewById(R.id.token_btn3);
         Button token_confirm = view.findViewById(R.id.token_confirm);
         EditText token_et = view.findViewById(R.id.token_et);
+        Button token_confirm_cn = view.findViewById(R.id.token_confirm_cn);
+        EditText token_et_cookie_token = view.findViewById(R.id.token_et_cookie_token);
+        EditText token_et_ltoken = view.findViewById(R.id.token_et_ltoken);
         server_spinner = view.findViewById(R.id.setting_server_spinner);
 
         String uid_final = "N/A";
-        String token_final = "N/A";
 
         if(!sharedPreferences.getString("hoyoTokenClip","").equals("")){
             token_et.setText(sharedPreferences.getString("hoyoTokenClip","").toString());
@@ -490,6 +492,24 @@ public class DailyMemo {
                 CookieManager.getInstance().flush();
                  */
                 getCookiesFromLoginPage(GLOBAL);
+            }
+        });
+
+        token_confirm_cn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                cookie_token_v2 = (token_et_cookie_token.getText() != null && !token_et_cookie_token.getText().toString().equals("") ? token_et_cookie_token.getText().toString() : "");
+                token_final = (token_et_ltoken.getText() != null && !token_et_ltoken.getText().toString().equals("") ? token_et_ltoken.getText().toString() : "");
+
+                new grabDataFromServer().execute(ItemRss.SERVER_REACT_ROOT+"dailyMemo_3.5/dailyMemoIdListPort.php?" +
+                        "hoyoUID="+uid_final+
+                        "&hoyoToken="+token_final+
+                        "&account_mid_v2="+account_mid_v2+
+                        "&ltmid_v2="+ltmid_v2+
+                        "&account_mid_v2="+account_mid_v2+
+                        "&cookie_token_v2="+cookie_token_v2
+                );
             }
         });
 
@@ -727,6 +747,14 @@ public class DailyMemo {
             WebView webview = viewX.findViewById(R.id.webView);
             ImageView back_btn = viewX.findViewById(R.id.back_btn);
 
+            webview.setWebViewClient(new WebViewClient() {
+                public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                // webview自己加载URL，让后通知系统不需要HandleURL
+                    view.loadUrl(url);
+                    return true;
+                }
+            });
+
             WebSettings webSettings = webview.getSettings();
             webSettings.setJavaScriptEnabled(true);
             webSettings.setSupportMultipleWindows(true);
@@ -794,14 +822,94 @@ public class DailyMemo {
             dialogWindow.setAttributes(lp);
             dialog.show();
         }else if(TYPE == 2){
-            ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
-            ClipData clip = ClipData.newPlainText("JS_CODE", "Xjavascript:document.cookie");
-            clipboard.setPrimaryClip(clip);
-            CustomToast.toast(context, activity, "Paste the script to the login-page, delete the 'X', and copy all the data ~");
+            Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+            View viewX = View.inflate(context, R.layout.fragment_web, null);
+            DisplayMetrics displayMetrics = new DisplayMetrics();
+            activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 
+            WebView webview = viewX.findViewById(R.id.webView);
+            ImageView back_btn = viewX.findViewById(R.id.back_btn);
+
+            webview.setWebViewClient(new WebViewClient() {
+                public boolean shouldOverrideUrlLoading(WebView view, String url) {
+                    // webview自己加载URL，让后通知系统不需要HandleURL
+                    view.loadUrl("https://bbs.mihoyo.com/ys");
+                    return true;
+                }
+            });
+
+            WebSettings webSettings = webview.getSettings();
+            webSettings.setJavaScriptEnabled(true);
+            webSettings.setSupportMultipleWindows(true);
+            webSettings.setJavaScriptCanOpenWindowsAutomatically(false);
+            webSettings.setDomStorageEnabled(true);
+
+
+            webview.loadUrl("https://bbs.mihoyo.com/ys");
             hoyoServer = "mainland";
-            Intent intent =  new Intent(Intent.ACTION_VIEW, Uri.parse("https://bbs.mihoyo.com/ys"));
-            activity.startActivity(intent);
+            back_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    CookieManager cookieManager = CookieManager.getInstance();
+                    String cookies = cookieManager.getCookie("https://bbs.mihoyo.com/ys");
+                    Toast.makeText(context, "Please wait for 10s", Toast.LENGTH_SHORT).show();
+
+                    System.out.println("cookies BASE : "+cookies);
+                    if (cookies == null) return;
+                    if (cookies.contains("ltuid_v2")){
+
+                        //System.out.println("HEY YOU ! WE SUCCESSED");
+                        isBothHave = true;
+                        cookies = "{\""+cookies+"\"}";
+                        cookies = cookies.replace(" "," \"").replace("=","\":\"").replace(";","\",").replace(".","_");
+                        //System.out.println("cookies DONE : "+cookies);
+                        try {
+                            JSONObject jsonObject = new JSONObject(cookies);
+                            account_id_v2 = jsonObject.getString("account_id_v2");
+                            uid_final = jsonObject.getString("ltuid_v2");
+                            account_mid_v2 = jsonObject.getString("account_mid_v2");
+                            ltmid_v2 = jsonObject.getString("ltmid_v2");
+
+                            /*
+                            new grabDataFromServer().execute(ItemRss.SERVER_REACT_ROOT+"dailyMemo_3.5/dailyMemoIdListPort.php?" +
+                                    "hoyoUID="+uid_final+
+                                    "&hoyoToken="+token_final+
+                                    "&account_mid_v2="+account_mid_v2+
+                                    "&ltmid_v2="+ltmid_v2
+                            );
+                            */
+                        } catch (JSONException e) {
+                            LogExport.export("DailyMemo","getCookiesFromLoginPage -> webview.setWebViewClient.onPageFinished", e.getMessage(), context, DAILYMEMO);
+                        }
+                    }
+
+                    dialog.dismiss();
+                }
+            });
+
+            haveRunLa = false;
+            isBothHave = false;
+
+            Window dialogWindowX = activity.getWindow();
+            dialogWindowX.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            // 2O48 DESIGN
+            dialogWindowX.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            dialogWindowX.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+            dialogWindowX.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
+
+            /** Method of dialog */
+            dialog.setContentView(viewX);
+            Window dialogWindow = dialog.getWindow();
+            WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+            // 2O48 DESIGN
+            dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+            dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
+
+            lp.width = MATCH_PARENT;
+            lp.height = MATCH_PARENT;
+            lp.gravity = Gravity.CENTER;
+            dialogWindow.setAttributes(lp);
+            dialog.show();
         }else if(TYPE == 3){
             ClipboardManager clipboard = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
             ClipData clip = ClipData.newPlainText("JS_CODE", "Xjavascript:document.cookie");
@@ -917,7 +1025,6 @@ public class DailyMemo {
                         editor.putString("ltmid_v2", ltmid_v2);
                         editor.putString("cookie_token_v2", cookie_token_v2);
                         editor.putString("account_mid_v2", account_mid_v2);
-                        editor.putString("ltmid_v2", ltmid_v2);
                         editor.apply();
 
                         System.out.println("XPRR : "+genshin_uid_final);
