@@ -394,7 +394,7 @@ public class Characters_Info {
 
 
     public void show() {
-        final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+        final Dialog dialog = new Dialog(context, R.style.PageDialogStyle_P);
         View view = View.inflate(context, R.layout.fragment_char_info, null);
 
         //BackgroundReload.BackgroundReload(context,view);

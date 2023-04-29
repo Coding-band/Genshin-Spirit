@@ -849,7 +849,7 @@ public class Desk2048 extends AppCompatActivity {
         paimon_setting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+                final Dialog dialog = new Dialog(context, R.style.PageDialogStyle_P);
                 View view = View.inflate(context, R.layout.fragment_setting_2048_new, null);
                 dialog.setContentView(view);
                 dialog.setCanceledOnTouchOutside(true);
@@ -934,6 +934,7 @@ public class Desk2048 extends AppCompatActivity {
                 View view = View.inflate(context, R.layout.fragment_about_2048, null);
                 dialog.setContentView(view);
                 dialog.setCanceledOnTouchOutside(true);
+
                 //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
                 Window dialogWindow = dialog.getWindow();
                 WindowManager.LayoutParams lp = dialogWindow.getAttributes();
@@ -1648,8 +1649,6 @@ public class Desk2048 extends AppCompatActivity {
                     @Override
                     public void onClick(View v) {
                         dialog2048.dismiss();
-                        //DownloadTask downloadTask = new DownloadTask();
-                        //downloadTask.start("https://vt.25u.com/genshin_spirit/base.zip","base.zip","/base.zip",context,activity);
 
                         new DownloadAndUnzipTask(context,activity,downloadList,context.getFilesDir().getAbsolutePath()).execute();
                     }
@@ -2976,10 +2975,10 @@ public class Desk2048 extends AppCompatActivity {
 
     public void check_updates(){
         OkHttpClient client = new OkHttpClient();
-        String url = "https://vt.25u.com/genshin_spirit/update.json";
+        String url = ItemRss.SERVER_DOWNLOAD_ROOT+"update.json";
         if (BuildConfig.FLAVOR.equals("dev")){
             //if (BuildConfig.FLAVOR.equals("dev") || BuildConfig.FLAVOR.equals("beta")){
-            url = "https://vt.25u.com/genshin_spirit/update_dev.json";
+            url = ItemRss.SERVER_DOWNLOAD_ROOT+"update_dev.json";
         }
         Request request = new Request.Builder().url(url).build();
 

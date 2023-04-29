@@ -208,7 +208,7 @@ public class Weapon_Info_2048 {
 
 
     public void show() {
-        final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+        final Dialog dialog = new Dialog(context, R.style.PageDialogStyle_P);
         View view = View.inflate(context, R.layout.fragment_weapon_info_frame_2048, null);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);

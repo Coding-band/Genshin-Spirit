@@ -517,7 +517,7 @@ public class Calculator2048 extends AppCompatActivity{
         ui_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+                final Dialog dialog = new Dialog(context, R.style.PageDialogStyle_P);
                 View view = View.inflate(context, R.layout.fragment_cal_choose_2048, null);
                 dialogX = dialog;
                 mCharAdapter = new CharactersAdapter(context,charactersList,activity,sharedPreferences);
@@ -548,7 +548,7 @@ public class Calculator2048 extends AppCompatActivity{
         ui_cal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+                final Dialog dialog = new Dialog(context, R.style.PageDialogStyle_P);
                 View view = View.inflate(context, R.layout.fragment_cal_result_2048, null);
                 dialogResult = dialog;
 
@@ -984,7 +984,7 @@ public class Calculator2048 extends AppCompatActivity{
                 char_filter.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+                        final Dialog dialog = new Dialog(context, R.style.PageDialogStyle_P);
                         View view = View.inflate(context, R.layout.menu_char_filter_2048, null);
                         // Elements
                         ImageView pyro = view.findViewById(R.id.pyro_ico);
@@ -1180,7 +1180,7 @@ public class Calculator2048 extends AppCompatActivity{
                 weapon_filter.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+                        final Dialog dialog = new Dialog(context, R.style.PageDialogStyle_P);
                         View view = View.inflate(context, R.layout.menu_char_filter_2048, null);
                         // Element
                         TextView menu_elements_title_tv = view.findViewById(R.id.menu_elements_title_tv);
@@ -1366,7 +1366,7 @@ public class Calculator2048 extends AppCompatActivity{
                 artifact_filter.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+                        final Dialog dialog = new Dialog(context, R.style.PageDialogStyle_P);
                         View view = View.inflate(context, R.layout.menu_char_filter_2048, null);
                         // Element
                         TextView menu_elements_title_tv = view.findViewById(R.id.menu_elements_title_tv);
@@ -2821,7 +2821,7 @@ public class Calculator2048 extends AppCompatActivity{
     }
 
     public void addArtifact(String charName_base, int rare) {
-        final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+        final Dialog dialog = new Dialog(context, R.style.PageDialogStyle_P);
         View view = View.inflate(context, R.layout.fragment_art_choose_2048, null);
 
         ImageView art_flower = view.findViewById(R.id.art_flower);

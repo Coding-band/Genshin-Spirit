@@ -1,5 +1,9 @@
 [
   {
+    "version": "12421",
+    "verName": "3.6.0-gp (12421)",
+    "description": "Changelog - 2023-04-23<br><br><b>UI</b><br>1. Rebuild the Download & Update function, which support :<br>    - Paused & Resume progress when app closed<br>    - Notification <br>    - Background Download<br><br>2. Improved some of the UI<br>    - CustomToast -> new style<br>    - Dialog btn -> edit button<br>    - Ascending item -> center tick<br><br><b>Characters, weapons and artifacts</b><br>1. Added characters info :<br>    - Baizhu<br>    - Kaveh<br>2. Added weapons 3.6<br>3. Updated new Character's birthday<br>4. Added characters icon only :<br>    - Kirara<br>5. Added 3.6 TCG (no data sorry)"
+  },{
     "version": "11868",
     "verName": "3.5.0-gp (11868)",
     "description": "Changelog - 2023-01-20<br><br><b>UI</b><br>1. Added new possible way for dailyMemo login, please read the document in our Discord server's #\uD83D\uDCCCannouncements\uD83D\uDCCC if you are not sure how to use it. (Search it by keyword #DailyMemo3.5)<br><br><b>Characters, weapons and artifacts </b><br>1. Added characters info :<br>    - Dehya<br>    - Mika<br>2. Added weapons 3.5<br>3. Updated new Character's birthday<br>4. Added characters icon only :<br>    - Baizhu<br>    - Kelva<br>5. Added 3.5 TCG"

@@ -34,6 +34,7 @@ public class ItemRss {
 
     public static String IMG_FORMAT = ".webp";
     public static String SERVER_DOWNLOAD_ROOT = "https://voc2048.com/genshin_spirit/";
+    public static String SERVER_DATA_ROOT = "https://voc2048.com/genshin_spirit/online_rss/";
     //public static String SERVER_DOWNLOAD_ROOT = "https://github.com/Vocaloid2048/Genshin-Spirit/raw/release-master/rss/";
     public static String SERVER_REACT_ROOT = "https://voc2048.com/genshin_spirit/";
 
@@ -71,7 +72,7 @@ public class ItemRss {
             2,20,26,30,
             2,3,19,21,29,31};
     public int[] charBirthMonth = {
-            0,0,0,0,
+            0,0,0,0,0,
             1,1,1,1,
             2,2,2,2,2,2,
             3,3,3,3,3,3,

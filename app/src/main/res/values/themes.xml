@@ -61,6 +61,7 @@
         <item name="android:textColor">@color/tv_color</item>
         <item name="android:windowFullscreen">false</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowAnimationStyle">@style/ActivityAnimation</item>
         <item name="android:statusBarColor" tools:targetApi="l">@color/theme_dark_color</item>
 
     </style>
@@ -114,6 +115,42 @@
         <item name="android:windowAnimationStyle">@style/normalFadeAnim</item>
         <!--背景变暗-->
         <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+
+    <style name="PageDialogStyle_P">
+        <!--对话框背景 -->
+        <item name="android:windowBackground">@color/colorWhiteAlpha</item>
+        <!--边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!--没有标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 是否浮现在Activity之上 -->
+        <item name="android:windowIsFloating">false</item>
+        <!--背景透明 -->
+        <item name="android:windowIsTranslucent">false</item>
+        <!-- 是否有覆盖 -->
+        <item name="android:windowContentOverlay">@null</item>
+        <!--进出的显示动画 -->
+        <item name="android:windowAnimationStyle">@style/PauseDialogAnimation</item>
+        <!--背景变暗-->
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+    <style name="PauseDialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_in_left</item>
+        <item name="android:windowExitAnimation">@anim/slide_out_left</item>
+    </style>
+    <style name="ActivityAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/left_enter</item>
+        <item name="android:activityOpenExitAnimation">@anim/left_exit</item>
+        <item name="android:activityCloseEnterAnimation">@anim/right_enter</item>
+        <item name="android:activityCloseExitAnimation">@anim/right_exit</item>
+    </style>
+
+    <style name="basicAcitivyPageAnim">
+        <item name="android:windowEnterAnimation">@anim/native_fade_in</item>
+        <item name="android:windowExitAnimation">@anim/native_fade_out</item>
     </style>
 
     <style name="TutorialUI">

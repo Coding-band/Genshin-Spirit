@@ -379,7 +379,7 @@ public class SplashActivity extends AppCompatActivity {
     public static long getRemoteFileSize(String urlSTR) {
         URL url = null;
         try {
-            url = new URL(urlSTR.replace("http://vt.25u.com","https://vt.25u.com"));
+            url = new URL(urlSTR);
             URLConnection urlConnection = url.openConnection();
             urlConnection.connect();
             return urlConnection.getContentLength();
@@ -398,9 +398,9 @@ public class SplashActivity extends AppCompatActivity {
 
         if(getRemoteFileSize(ItemRss.SERVER_DOWNLOAD_ROOT+baseFileName) > 10000000){
             OkHttpClient client = new OkHttpClient();
-            String url = "https://vt.25u.com/genshin_spirit/update.json";
+            String url = ItemRss.SERVER_DOWNLOAD_ROOT+"update.json";
             if (BuildConfig.FLAVOR.equals("dev")){
-                url = "https://vt.25u.com/genshin_spirit/update_dev.json";
+                url = ItemRss.SERVER_DOWNLOAD_ROOT+"update_dev.json";
             }
             Request request = new Request.Builder().url(url).build();
 
@@ -429,7 +429,7 @@ public class SplashActivity extends AppCompatActivity {
                     }
                 }
                 if (array_download.size() > 0) {
-                    if (getRemoteFileSize("https://vt.25u.com/genshin_spirit/base_webp.zip") > getRemoteFileSizeA(array_download)) {
+                    if (getRemoteFileSize(ItemRss.SERVER_DOWNLOAD_ROOT+"base_webp.zip") > getRemoteFileSizeA(array_download)) {
 
                         Dialog2048 dialog2048 = new Dialog2048();
                         dialog2048.setup(context,activity);
