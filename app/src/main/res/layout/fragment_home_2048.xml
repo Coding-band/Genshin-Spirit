@@ -11,7 +11,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/sc_root"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -25,9 +25,9 @@
         <LinearLayout
             android:id="@+id/home_asc_card_list"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingTop="60dp"
+            android:paddingTop="64dp"
             android:paddingBottom="60dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -143,7 +143,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_margin="8dp"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        android:visibility="gone">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -310,13 +311,23 @@
                 android:visibility="visible" />
 
 
+            <com.voc.genshin_helper.util.CustomViewPager
+                android:id="@+id/asc_vp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fadingEdge="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
             <LinearLayout
                 android:id="@+id/char_ll"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="12dp"
                 android:orientation="vertical"
-                android:visibility="visible">
+                android:visibility="gone">
 
             </LinearLayout>
 
@@ -331,12 +342,13 @@
             </LinearLayout>
 
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
         android:layout_height="72dp"
+        android:background="@drawable/mask_head_bg"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -344,64 +356,75 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
-        <ImageView
-            android:id="@+id/home_header_bg"
-            android:layout_width="match_parent"
-            android:layout_height="72dp"
-            android:adjustViewBounds="false"
-            android:scaleType="centerCrop"
-            app:srcCompat="@drawable/mask_head_bg" />
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="64dp">
 
-            <ImageView
-                android:id="@+id/home_switch_btn"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:layout_gravity="center|left"
-                android:layout_margin="8dp"
-                android:layout_weight="1"
+            <FrameLayout
+
+                android:id="@+id/frameLayout7"
+                android:layout_width="wrap_content"
+                android:layout_height="52dp"
+                android:layout_marginStart="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_2048_switch" />
+                app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                android:id="@+id/home_asc_tv"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                android:fontFamily="@font/genshin_font"
-                android:singleLine="false"
-                android:text="@string/char_asc_mater"
-                android:textAlignment="viewStart"
-                android:textColor="@color/tv_spinner_color_2048"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/linearLayout6"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/home_switch_btn"
-                app:layout_constraintTop_toTopOf="parent" />
+                <ImageView
+                    android:id="@+id/imageView20"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="2dp"
+                    android:paddingTop="4dp"
+                    android:paddingRight="2dp"
+                    android:paddingBottom="4dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/bg_tcg_tab_bg" />
+
+                <View
+                    android:id="@+id/indicator"
+                    android:layout_width="52dp"
+                    android:layout_height="52dp"
+                    android:background="@drawable/bg_tcg_tab_selected_round_2048" />
+
+                <com.google.android.material.tabs.TabLayout
+                    android:id="@+id/asc_tablayout"
+                    android:layout_width="130dp"
+                    android:layout_height="match_parent"
+                    android:background="#00000000"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tabGravity="fill"
+                    app:tabIndicator="@drawable/bg_tcg_tab_selecter_2048"
+                    app:tabIndicatorColor="@null"
+                    app:tabIndicatorHeight="52dp"
+                    app:tabInlineLabel="false"
+                    app:tabMode="fixed"
+                    app:tabPaddingBottom="4dp"
+                    app:tabPaddingTop="4dp"
+                    app:tabRippleColor="@null" />
+
+            </FrameLayout>
 
             <FrameLayout
                 android:id="@+id/linearLayout6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|right"
-                android:layout_marginLeft="32dp"
                 android:layout_marginRight="16dp"
                 android:layout_weight="1"
                 android:fadingEdge="horizontal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toEndOf="@+id/home_asc_tv"
+                app:layout_constraintStart_toEndOf="@+id/frameLayout7"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView

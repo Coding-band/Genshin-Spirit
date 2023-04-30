@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
+import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
@@ -63,7 +64,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
-import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -76,7 +76,6 @@ import com.voc.genshin_helper.BuildConfig;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.buff.BuffDatabaseUI;
 import com.voc.genshin_helper.buff.EnkaDataCollect;
-import com.voc.genshin_helper.buff.obj.TMP;
 import com.voc.genshin_helper.buff_old.SipTikCal;
 import com.voc.genshin_helper.data.Artifacts;
 import com.voc.genshin_helper.data.Characters;
@@ -97,6 +96,7 @@ import com.voc.genshin_helper.ui.SipTik.DeskSipTik;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.ChangeLog;
 import com.voc.genshin_helper.util.CustomToast;
+import com.voc.genshin_helper.util.CustomViewPager;
 import com.voc.genshin_helper.util.DailyMemo;
 import com.voc.genshin_helper.util.Dialog2048;
 import com.voc.genshin_helper.util.DownloadAndUnzipTask;
@@ -158,6 +158,7 @@ public class Desk2048 extends AppCompatActivity {
     boolean isWeaponLLShow = false;
 
     boolean firstSelect = false;
+    boolean firstSelectASC = false;
     int id = 0;
     long period = 0;
 
@@ -222,6 +223,7 @@ public class Desk2048 extends AppCompatActivity {
     public boolean show_dps = false;
     public boolean show_sub_dps = false;
     public boolean show_util = false;
+    int indicatorWidth = 0;
 
     public SharedPreferences sharedPreferences;
     public SharedPreferences sharedPreferences_version;
@@ -280,6 +282,7 @@ public class Desk2048 extends AppCompatActivity {
 
     private ViewPager viewPager;
     private ArrayList<View> viewPager_List;
+    private ArrayList<View> viewPager_ASC_List;
     GoSleep gs;
     ColorStateList myList;
 
@@ -298,6 +301,7 @@ public class Desk2048 extends AppCompatActivity {
 
     //View viewPager1, viewPager2, viewPager3;
     View viewPager0, viewPager4, viewPager5, viewPager6;
+    View viewPagerChar, viewPagerWeapon;
 
     int[] tabItemImageArray = new int[]{R.drawable.ic_2048_tab_desk,R.drawable.ic_2048_tab_team,R.drawable.ic_2048_tab_tcg,R.drawable.ic_2048_tab_toolbox};
     int[] tabItemImageSelectedArray = new int[]{R.drawable.ic_2048_tab_desk_selected,R.drawable.ic_2048_tab_team_selected,R.drawable.ic_2048_tab_tcg_selected,R.drawable.ic_2048_tab_toolbox_selected};
@@ -310,6 +314,10 @@ public class Desk2048 extends AppCompatActivity {
     int[] tabTCGItemImageSelectedArray = new int[]{R.drawable.ic_2048_tcg_char_selected,R.drawable.ic_2048_tcg_equip_selected,R.drawable.ic_2048_tcg_support_selected,R.drawable.ic_2048_tcg_event_selected};
 
     ChangeLog changeLog ;
+
+    TabLayout asc_tablayout ;
+    CustomViewPager viewPagerASC;
+    View mIndicator;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -317,13 +325,6 @@ public class Desk2048 extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("user_info",MODE_PRIVATE);
         sharedPreferences_version = getSharedPreferences("changelog_version",MODE_PRIVATE);
         editor = sharedPreferences.edit();
-        if (sharedPreferences.getBoolean("theme_light", true) == true) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        }else if (sharedPreferences.getBoolean("theme_night", false) == true) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        }else if (sharedPreferences.getBoolean("theme_default", false) == true) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
-        }
 
         setContentView(R.layout.activity_desk_2048);
 
@@ -367,6 +368,8 @@ public class Desk2048 extends AppCompatActivity {
         viewPager4 = mInflater.inflate(R.layout.fragment_paimon_2048, null,false);
         viewPager5 = mInflater.inflate(R.layout.fragment_tcg_2048, null,false);
         viewPager6 = mInflater.inflate(R.layout.fragment_team_2048, null,false);
+        viewPagerWeapon = mInflater.inflate(R.layout.fragment_asc_2048, null,false);
+        viewPagerChar = mInflater.inflate(R.layout.fragment_asc_2048, null,false);
 
         viewPager_List = new ArrayList<View>();
         viewPager_List.add(viewPager0);
@@ -376,6 +379,10 @@ public class Desk2048 extends AppCompatActivity {
         viewPager_List.add(viewPager6);
         viewPager_List.add(viewPager5);
         viewPager_List.add(viewPager4);
+
+        viewPager_ASC_List = new ArrayList<View>();
+        viewPager_ASC_List.add(viewPagerChar);
+        viewPager_ASC_List.add(viewPagerWeapon);
 
         check_spinner = 0;
 
@@ -389,30 +396,19 @@ public class Desk2048 extends AppCompatActivity {
         lang_setup();
         home();
         getDOW();
-        bday_reload();
+        //bday_reload();  The tear of last era
         cbg();
         dbChar_reload();
         char_reload(dow);
         weapon_reload(dow);
         setup_home();
         setup_team();
-        //setup_char();
-        //setup_weapon();
-        //setup_art();
         setup_paimon();
         tcg2048.setup(viewPager5,context,activity,sharedPreferences);
         team2048.setup(viewPager6,context,activity,sharedPreferences);
 
         EnkaDataCollect enkaDataCollect = new EnkaDataCollect();
         enkaDataCollect.init(context);
-
-        //new TMP().run();
-        //new TMP().listChar();
-        //new TMP().listWeapon();
-        //new TMP().listArt();
-        /*
-        Necessery
-         */
         char_list_reload();
 
         if(sharedPreferences.getInt("app_started",0) > 10 && sharedPreferences.getBoolean("review_given",false) == false){
@@ -462,40 +458,10 @@ public class Desk2048 extends AppCompatActivity {
             });
         }
 
-        //viewPager4.findViewById(R.id.card_char_bg)
-
-
         BackgroundReload.BackgroundReload(context,activity);
 
-        LinearLayout char_ll = viewPager0.findViewById(R.id.char_ll);
-        LinearLayout weapon_ll = viewPager0.findViewById(R.id.weapon_ll);
-        TextView home_asc_tv = viewPager0.findViewById(R.id.home_asc_tv);
-        ImageView home_switch_btn = viewPager0.findViewById(R.id.home_switch_btn);
-
-        home_asc_tv.setText(context.getString(R.string.char_asc_mater));
-        char_ll.setVisibility(View.VISIBLE);
-        weapon_ll.setVisibility(View.GONE);
-        home_switch_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (isWeaponLLShow == false){
-                    weapon_ll.setVisibility(View.VISIBLE);
-                    char_ll.setVisibility(View.GONE);
-                    isCharLLShow = false;
-                    isWeaponLLShow = true;
-                    home_asc_tv.setText(context.getString(R.string.weapon_asc_mater));
-                }else if (isCharLLShow == false){
-                    weapon_ll.setVisibility(View.GONE);
-                    char_ll.setVisibility(View.VISIBLE);
-                    isCharLLShow = true;
-                    isWeaponLLShow = false;
-                    home_asc_tv.setText(context.getString(R.string.char_asc_mater));
-                }
-            }
-        });
         viewPager.setAdapter(new MyViewPagerAdapter(viewPager_List));
 
-        //for (int x = 0 ; x < 6 ; x++){
         for (int x = 0 ; x < 4 ; x++){
             View view1 = getLayoutInflater().inflate(R.layout.item_custom_tab, null);
             ImageView ico_img = view1.findViewById(R.id.icon);
@@ -566,7 +532,9 @@ public class Desk2048 extends AppCompatActivity {
             lp.height = WindowManager.LayoutParams.MATCH_PARENT;
             lp.gravity = Gravity.CENTER;
             dialogWindow.setAttributes(lp);
-            dialog.show();
+            if(!dialog.isShowing()){
+                dialog.show();
+            }
 
         }else{
             desk_tablayout.selectTab(desk_tablayout.getTabAt(0));
@@ -617,7 +585,7 @@ public class Desk2048 extends AppCompatActivity {
                     };
                     smoothScroller.setTargetPosition(0);
                     switch (tab.getPosition()){
-                        case 0 : ((ScrollView) viewPager0.findViewById(R.id.sc_root)).smoothScrollTo(0,0);break;
+                        case 0 : ((NestedScrollView) viewPager0.findViewById(R.id.sc_root)).smoothScrollTo(0,0);break;
                         case 1 : ((RecyclerView) team2048.getCurrList()).getLayoutManager().startSmoothScroll(smoothScroller);break;
                         case 2 : ((RecyclerView) tcg2048.getCurrList()).getLayoutManager().startSmoothScroll(smoothScroller);break;
                         //case 3 : ((RecyclerView) viewPager4.findViewById(R.id.artifact_list)).getLayoutManager().startSmoothScroll(smoothScroller);break;
@@ -2149,6 +2117,118 @@ public class Desk2048 extends AppCompatActivity {
             }
         });
 
+        NestedScrollView sc_root = (NestedScrollView) viewPager0.findViewById (R.id.sc_root);
+        sc_root.setFillViewport (true);
+
+        asc_tablayout = viewPager0.findViewById(R.id.asc_tablayout);
+        mIndicator = viewPager0.findViewById(R.id.indicator);
+        int itemNum = 2;
+        viewPagerASC = viewPager0.findViewById(R.id.asc_vp);
+        viewPagerASC.setAdapter(new MyViewPagerAdapter(viewPager_ASC_List));
+        viewPagerASC.setIsLinearLayout(true);
+
+        asc_tablayout.removeAllTabs();
+
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+        int height = displayMetrics.heightPixels;
+        int width = displayMetrics.widthPixels;
+
+        int[] itemImageArray = new int[]{R.drawable.ic_2048_team_char,R.drawable.ic_2048_team_weapon};
+        int[] itemImageSelectedArray = new int[]{R.drawable.ic_2048_team_char_selected,R.drawable.ic_2048_team_weapon_selected};
+
+        for (int x = 0 ; x < itemNum ; x++){
+            View view1 = activity.getLayoutInflater().inflate(R.layout.item_custom_tab, null);
+            ImageView ico_img = view1.findViewById(R.id.icon);
+            ico_img.setImageResource(itemImageArray[x]);
+            TextView ico_tv = view1.findViewById(R.id.name);
+            ico_tv.setVisibility(View.GONE);
+            ico_img.setPadding((int) (-displayMetrics.density*6),(int) (-displayMetrics.density*6),(int) (-displayMetrics.density*6),(int) (-displayMetrics.density*6));
+            ico_img.getLayoutParams().width = ico_img.getLayoutParams().height;
+            asc_tablayout.addTab(asc_tablayout.newTab().setCustomView(view1).setId(x));
+        }
+
+        asc_tablayout.getLayoutParams().width = (int) (displayMetrics.density*(52*2));
+
+        asc_tablayout.post(new Runnable() {
+            @Override
+            public void run() {
+                indicatorWidth = asc_tablayout.getWidth() / asc_tablayout.getTabCount();
+
+                //Assign new width
+                FrameLayout.LayoutParams indicatorParams = (FrameLayout.LayoutParams) mIndicator.getLayoutParams();
+                indicatorParams.width = indicatorWidth;
+                mIndicator.setLayoutParams(indicatorParams);
+            }
+        });
+
+        asc_tablayout.setTabIndicatorFullWidth(false);
+        viewPagerASC.setCurrentItem(0);
+        asc_tablayout.selectTab(asc_tablayout.getTabAt(0));
+
+        View view1 = asc_tablayout.getTabAt(0).getCustomView();
+        ImageView tab_icon = (ImageView) view1.findViewById(R.id.icon);
+        tab_icon.setImageResource(itemImageSelectedArray[0]);
+        asc_tablayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                View view1 = tab.getCustomView();
+                ImageView tab_icon = (ImageView) view1.findViewById(R.id.icon);
+                tab_icon.setImageResource(itemImageSelectedArray[tab.getPosition()]);
+                viewPagerASC.setCurrentItem(tab.getPosition());
+
+                if (!firstSelectASC || (System.currentTimeMillis() - period > 3000)){
+                    id = tab.getId();
+                    period = System.currentTimeMillis();
+                    firstSelectASC = true;
+                }else if(firstSelectASC && tab.getId() != id){
+                    firstSelectASC = false;
+                }
+
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+                View view1 = tab.getCustomView();
+                ImageView tab_icon = (ImageView) view1.findViewById(R.id.icon);
+                tab_icon.setImageResource(itemImageArray[tab.getPosition()]);
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+                if (!firstSelectASC || (System.currentTimeMillis() - period > 3000)){
+                    id = tab.getId();
+                    period = System.currentTimeMillis();
+                    firstSelectASC = true;
+                }else if(firstSelectASC && tab.getId() != id){
+                    firstSelectASC = false;
+                }else if (firstSelectASC && (tab.getId() == id) && (System.currentTimeMillis() - period < 3000)){
+                    ((NestedScrollView) viewPager0.findViewById(R.id.sc_root)).smoothScrollTo(0,0);
+                    firstSelectASC = false;
+                }
+            }
+        });
+
+        viewPagerASC.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float positionOffset, int positionOffsetPx) {
+                FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) mIndicator.getLayoutParams();
+                //Multiply positionOffset with indicatorWidth to get translation
+                float translationOffset =  (positionOffset+i) * (indicatorWidth) ;
+                params.leftMargin = (int) translationOffset;
+                mIndicator.setLayoutParams(params);
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                asc_tablayout.selectTab(asc_tablayout.getTabAt(position));
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
     };
 
     private void char_list_reload() {
@@ -2340,6 +2420,7 @@ public class Desk2048 extends AppCompatActivity {
         //TextView birth_char_date = viewPager0.findViewById(R.id.birth_char_date);
         TextView birth_title_normal = viewPager0.findViewById(R.id.birth_title_normal);
         TextView birth_title_special = viewPager0.findViewById(R.id.birth_title_special);
+        LinearLayout birth_card = viewPager0.findViewById(R.id.birth_card);
 
         // Big Icon
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -2357,6 +2438,7 @@ public class Desk2048 extends AppCompatActivity {
         }else{
             birth_title_special.setVisibility(View.GONE);
             birth_title_normal.setVisibility(View.VISIBLE);
+            birth_card.setVisibility(View.GONE);
         }
         // List
 
@@ -2408,7 +2490,7 @@ public class Desk2048 extends AppCompatActivity {
     }
 
     public void char_reload(int dow){
-        LinearLayout char_ll = viewPager0.findViewById(R.id.char_ll);
+        LinearLayout char_ll = viewPagerChar.findViewById(R.id.asc_list);
         char_ll.removeAllViews();
         RoundedCornersTransformation roundedCornersTransformation = new RoundedCornersTransformation(360, 0, RoundedCornersTransformation.CornerType.ALL);
 
@@ -2506,10 +2588,11 @@ public class Desk2048 extends AppCompatActivity {
             // Setup later
             asc_material_tick.setVisibility(View.GONE);
             char_ll.addView(view);
+            viewPagerASC.getLayoutParams().height = char_ll.getLayoutParams().height;
         }
     }
     public void weapon_reload(int dow){
-        LinearLayout weapon_ll = viewPager0.findViewById(R.id.weapon_ll);
+        LinearLayout weapon_ll = viewPagerWeapon.findViewById(R.id.asc_list);
         weapon_ll.removeAllViews();
         RoundedCornersTransformation roundedCornersTransformation = new RoundedCornersTransformation(360, 0, RoundedCornersTransformation.CornerType.ALL);
 
@@ -2606,6 +2689,7 @@ public class Desk2048 extends AppCompatActivity {
             asc_material_tick.setVisibility(View.GONE);
 
             weapon_ll.addView(view);
+            viewPagerASC.getLayoutParams().height = weapon_ll.getLayoutParams().height;
         }
     }
 
@@ -2722,18 +2806,6 @@ public class Desk2048 extends AppCompatActivity {
         }else{
             textView.setTextColor(Color.parseColor(color));
         }
-    }
-
-    @Override
-    public void recreate() {
-        finish();
-        overridePendingTransition(R.anim.fade_in,
-                R.anim.fade_in);
-        startActivity(getIntent());
-        overridePendingTransition(R.anim.fade_out,
-                R.anim.fade_out);
-
-
     }
 
     @Override

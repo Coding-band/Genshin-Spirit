@@ -27,7 +27,6 @@
 
     <application
         android:allowBackup="true"
-        android:configChanges="uiMode"
         android:hardwareAccelerated="true"
         android:icon="@drawable/app_ico"
         android:label="@string/app_name"

@@ -63,6 +63,8 @@
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:windowAnimationStyle">@style/ActivityAnimationOnly1</item>
         <item name="android:statusBarColor" tools:targetApi="l">@color/theme_dark_color</item>
+        <item name="android:windowEnterAnimation">@anim/fade_in</item>
+        <item name="android:windowExitAnimation">@anim/fade_out</item>
 
     </style>
 

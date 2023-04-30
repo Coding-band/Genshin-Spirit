@@ -9,8 +9,8 @@
         android:angle="90"
         android:startColor="@color/card_char_info_bg_start_2048"
         android:endColor="@color/card_char_info_bg_end_2048"/>
-    <corners android:radius="15dp"/>
+    <corners android:radius="20dp"/>
     <stroke
         android:color="@color/card_bg_kwang_2048"
-        android:width="1dp"/>
+        android:width="2dp"/>
 </shape>

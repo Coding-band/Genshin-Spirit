@@ -44,6 +44,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.browser.customtabs.CustomTabsIntent;
+import androidx.cardview.widget.CardView;
 
 import com.squareup.picasso.Picasso;
 import com.voc.genshin_helper.R;
@@ -102,7 +103,7 @@ public class DailyMemo {
      * UI
      */
 
-    LinearLayout memo_card, memo_card_ext;
+    CardView memo_card, memo_card_ext;
     TextView memo_user_name, memo_user_server;
     ImageView memo_user_icon, memo_ext_btn, memo_setting_btn;
     ImageView memo_item1_ico, memo_item2_ico, memo_item3_ico, memo_item4_ico;
@@ -125,7 +126,7 @@ public class DailyMemo {
     Activity activity;
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
-    boolean isExtOut = false;
+    boolean isExtOut = true;
     DisplayMetrics displayMetrics;
     ItemRss item_rss ;
     Handler handler ;

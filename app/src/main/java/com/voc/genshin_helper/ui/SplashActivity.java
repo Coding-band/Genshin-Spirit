@@ -4,6 +4,7 @@ package com.voc.genshin_helper.ui;/*
  * Copyright © 2021 Xectorda 版權所有
  */
 
+import static android.Manifest.permission.POST_NOTIFICATIONS;
 import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.READ_MEDIA_IMAGES;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
@@ -125,6 +126,13 @@ public class SplashActivity extends AppCompatActivity {
     ArrayList<String> randBgAuthor = new ArrayList<>();
     ArrayList<String> randBgFileName = new ArrayList<>();
 
+    private ActivityResultContracts.RequestMultiplePermissions multiplePermissionsContract;
+    private ActivityResultLauncher<String[]> multiplePermissionLauncher;
+
+    final String[] PERMISSIONS_API33 = {
+            READ_MEDIA_IMAGES,
+            POST_NOTIFICATIONS
+    };
 
     @Override
     public void onCreate(Bundle bundle) {
@@ -136,14 +144,6 @@ public class SplashActivity extends AppCompatActivity {
         activity = this;
 
         sharedPreferences = getSharedPreferences("user_info", 0);
-        if (sharedPreferences.getBoolean("theme_light", true) == true) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-        }else if (sharedPreferences.getBoolean("theme_night", false) == true) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
-        }else if (sharedPreferences.getBoolean("theme_default", false) == true) {
-            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
-        }
-
 
         sharedPreferences.edit().putBoolean("appStopped",false).apply();
 
@@ -230,7 +230,22 @@ public class SplashActivity extends AppCompatActivity {
         List<String> needRequestList = checkPermission(activity, checkList);
 
         if (SDK_INT >= Build.VERSION_CODES.TIRAMISU){
-            requestPermissionLauncher.launch(READ_MEDIA_IMAGES);
+            if(hasPermissions(PERMISSIONS_API33)){
+                goMain();
+            }else{
+                //https://stackoverflow.com/questions/66475027/activityresultlauncher-with-requestmultiplepermissions-contract-doesnt-show-per
+                multiplePermissionsContract = new ActivityResultContracts.RequestMultiplePermissions();
+                multiplePermissionLauncher = registerForActivityResult(multiplePermissionsContract, isGranted -> {
+                    if (isGranted.containsValue(false)) {
+                        multiplePermissionLauncher.launch(PERMISSIONS_API33);
+                    }
+                    if(hasPermissions(PERMISSIONS_API33)){
+                        goMain();
+                    }
+                });
+                multiplePermissionLauncher.launch(PERMISSIONS_API33);
+            }
+
         }else{
             if (!needRequestList.isEmpty()) {
                 requestPermission(activity, needRequestList.toArray(new String[needRequestList.size()]));
@@ -241,6 +256,19 @@ public class SplashActivity extends AppCompatActivity {
 
     }
 
+    private boolean hasPermissions(String[] permissions) {
+        if (permissions != null) {
+            for (String permission : permissions) {
+                if (ActivityCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
+                    Log.d("PERMISSIONS", "Permission is not granted: " + permission);
+                    return false;
+                }
+                Log.d("PERMISSIONS", "Permission already granted: " + permission);
+            }
+            return true;
+        }
+        return false;
+    }
 
     private void goMain() {
         sharedPreferences = getSharedPreferences("user_info", 0);
@@ -306,17 +334,6 @@ public class SplashActivity extends AppCompatActivity {
         ActivityCompat.requestPermissions(activity, requestPermissionList, 100);
     }
 
-    private ActivityResultLauncher<String> requestPermissionLauncher =
-            registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
-                if (isGranted) {
-                    Log.w("存儲許可權", "申請成功X");
-                    Log.w("寫錄許可權", "申請成功X");
-                    goMain();
-                } else {
-                    Log.w("存儲許可權", "申請失敗X");
-                    Log.w("寫錄許可權", "申請失敗X");
-                }
-            });
 
     //用戶作出選擇後，返回申請的結果
     @Override

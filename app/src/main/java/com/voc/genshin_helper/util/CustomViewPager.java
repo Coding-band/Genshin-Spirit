@@ -17,6 +17,7 @@ import androidx.viewpager.widget.ViewPager;
 public class CustomViewPager extends ViewPager {
     boolean isLand = false;
     boolean scrollable = true;
+    boolean isLinearLayout = false;
 
     private boolean isPagingEnabled = true;
 
@@ -66,6 +67,9 @@ public class CustomViewPager extends ViewPager {
     public void setScrollable(boolean scrollable) {
         this.scrollable = scrollable;
     }
+    public void setIsLinearLayout(boolean isLinearLayout) {
+        this.isLinearLayout = isLinearLayout;
+    }
 
     public static class VerticalPageTransformer implements ViewPager.PageTransformer {
 
@@ -106,6 +110,29 @@ public class CustomViewPager extends ViewPager {
         ev.setLocation(newX, newY);
 
         return ev;
+    }
+    @Override
+    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+
+        if(isLinearLayout){
+            try {
+                int numChildren = getChildCount();
+                for (int i = 0; i < numChildren; i++) {
+                    View child = getChildAt(i);
+                    if (child != null) {
+                        child.measure(widthMeasureSpec, MeasureSpec.makeMeasureSpec(0, MeasureSpec.UNSPECIFIED));
+                        int h = child.getMeasuredHeight();
+                        heightMeasureSpec = Math.max(heightMeasureSpec, MeasureSpec.makeMeasureSpec(h, MeasureSpec.EXACTLY));
+                    }
+                }
+
+            }
+            catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+
+        super.onMeasure(widthMeasureSpec, heightMeasureSpec);
     }
 
 }

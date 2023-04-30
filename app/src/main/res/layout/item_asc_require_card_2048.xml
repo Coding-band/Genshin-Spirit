@@ -7,9 +7,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:id="@+id/asc_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -17,7 +17,7 @@
         android:background="@drawable/bg_card_kwang_full_2048"
         android:orientation="vertical"
         app:cardBackgroundColor="@color/tab_bg_2048"
-        app:cardCornerRadius="15dp"
+        app:cardCornerRadius="20dp"
         app:cardElevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,7 +26,8 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_card_kwang_full_2048">
 
             <ImageView
                 android:id="@+id/imageView24"
@@ -55,7 +56,10 @@
                     android:id="@+id/linearLayout8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="4dp"
                     android:orientation="horizontal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toStartOf="@+id/asc_material_locate"
@@ -65,7 +69,7 @@
 
                     <FrameLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_gravity="center">
 
                         <ImageView
@@ -132,11 +136,25 @@
                     app:srcCompat="@drawable/ic_2048_locate" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+            <View
+                android:id="@+id/view16"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/bg_dot_line_2048"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linearLayout7"
+                app:layout_constraintVertical_bias="0.0" />
+
             <HorizontalScrollView
                 android:id="@+id/asc_sc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
                 android:fadingEdge="horizontal"
                 android:fadingEdgeLength="40dp"
@@ -146,7 +164,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout7"
+                app:layout_constraintTop_toBottomOf="@+id/view16"
                 app:layout_constraintVertical_bias="0.0">
 
                 <LinearLayout
@@ -166,9 +184,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick1"
@@ -190,9 +208,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick2"
@@ -214,9 +232,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick3"
@@ -238,9 +256,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick4"
@@ -262,9 +280,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick5"
@@ -286,9 +304,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick6"
@@ -310,9 +328,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick7"
@@ -334,9 +352,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick8"
@@ -358,9 +376,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick9"
@@ -382,9 +400,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick10"
@@ -406,9 +424,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick11"
@@ -430,9 +448,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick12"
@@ -454,9 +472,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick13"
@@ -478,9 +496,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick14"
@@ -502,9 +520,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick15"
@@ -526,9 +544,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick16"
@@ -550,9 +568,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick17"
@@ -574,9 +592,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick18"
@@ -598,9 +616,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick19"
@@ -622,9 +640,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick20"
@@ -646,9 +664,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick21"
@@ -670,9 +688,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick22"
@@ -694,9 +712,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick23"
@@ -718,9 +736,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick24"
@@ -742,9 +760,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick25"
@@ -766,9 +784,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick26"
@@ -790,9 +808,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick27"
@@ -814,9 +832,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick28"
@@ -838,9 +856,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick29"
@@ -862,9 +880,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick30"
@@ -886,9 +904,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick31"
@@ -910,9 +928,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick32"
@@ -934,9 +952,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick33"
@@ -958,9 +976,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick34"
@@ -982,9 +1000,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick35"
@@ -1006,9 +1024,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick36"
@@ -1030,9 +1048,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick37"
@@ -1054,9 +1072,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick38"
@@ -1078,9 +1096,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick39"
@@ -1102,9 +1120,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick40"
@@ -1126,9 +1144,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick41"
@@ -1150,9 +1168,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick42"
@@ -1174,9 +1192,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick43"
@@ -1198,9 +1216,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick44"
@@ -1222,9 +1240,9 @@
                             android:layout_width="72dp"
                             android:layout_height="72dp"
                             android:layout_marginRight="4dp"
+                            android:layout_marginBottom="8dp"
                             android:background="@drawable/item_char_list_bg_circ_5s"
-                            app:srcCompat="@drawable/item_char_list_bg_circ_5s"
-                            android:layout_marginBottom="8dp" />
+                            app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
 
                         <ImageView
                             android:id="@+id/asc_char_tick45"
@@ -1241,5 +1259,5 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 </LinearLayout>

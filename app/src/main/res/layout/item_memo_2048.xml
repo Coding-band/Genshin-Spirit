@@ -9,19 +9,19 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:id="@+id/memo_card_ext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
-        android:layout_marginTop="-16dp"
+        android:layout_marginTop="-12dp"
         android:layout_marginRight="16dp"
         android:layout_marginBottom="8dp"
         android:background="@drawable/gone_background"
         android:orientation="vertical"
         android:visibility="visible"
         app:cardBackgroundColor="@color/colorWhiteAlpha"
-        app:cardCornerRadius="15dp"
+        app:cardCornerRadius="20dp"
         app:cardElevation="3dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -314,9 +314,9 @@
             </LinearLayout>
 
         </LinearLayout>
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-    <LinearLayout
+    <androidx.cardview.widget.CardView
         android:id="@+id/memo_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -327,7 +327,7 @@
         android:orientation="vertical"
         android:visibility="visible"
         app:cardBackgroundColor="@color/colorWhiteAlpha"
-        app:cardCornerRadius="15dp"
+        app:cardCornerRadius="20dp"
         app:cardElevation="5dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -431,7 +431,7 @@
                             android:layout_height="24dp"
                             android:layout_gravity="center"
                             android:adjustViewBounds="true"
-                            app:srcCompat="@drawable/item_expand_down_2048" />
+                            app:srcCompat="@drawable/item_expand_up_2048" />
                     </FrameLayout>
 
                 </LinearLayout>
@@ -868,6 +868,6 @@
 
         </LinearLayout>
 
-    </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
