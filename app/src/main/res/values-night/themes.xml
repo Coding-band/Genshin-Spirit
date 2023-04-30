@@ -16,8 +16,7 @@
         <item name="android:windowFullscreen">false</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor" tools:targetApi="l">@color/theme_dark_color</item>
-        <item name="android:windowAnimationStyle">@style/ActivityAnimation</item>
-
+        <item name="android:windowAnimationStyle">@style/ActivityAnimationOnly1</item>
     </style>
 
     <style name="WindowAnimationTransition">
@@ -69,8 +68,6 @@
         <item name="android:windowContentOverlay">@null</item>
         <!--进出的显示动画 -->
         <item name="android:windowAnimationStyle">@style/PauseDialogAnimation</item>
-        <!--背景变暗-->
-        <item name="android:backgroundDimEnabled">true</item>
     </style>
 
     <style name="PauseDialogAnimation">
@@ -82,6 +79,12 @@
         <item name="android:activityOpenExitAnimation">@anim/left_exit</item>
         <item name="android:activityCloseEnterAnimation">@anim/right_enter</item>
         <item name="android:activityCloseExitAnimation">@anim/right_exit</item>
+    </style>
+    <style name="ActivityAnimationOnly1" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/left_enter_0</item>
+        <item name="android:activityOpenExitAnimation">@anim/left_exit_0</item>
+        <item name="android:activityCloseEnterAnimation">@anim/right_enter_0</item>
+        <item name="android:activityCloseExitAnimation">@anim/right_exit_0</item>
     </style>
 
     <style name="basicAcitivyPageAnim">

@@ -6,22 +6,31 @@
   -->
 
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/toast_frame"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/toast_tv"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:background="@drawable/bg_item_edgeless"
-        android:drawableLeft="@drawable/ic_baseline_info_24"
-        android:drawablePadding="4dp"
-        android:gravity="center"
-        android:padding="16dp"
-        android:text="@string/press_exit"
-        android:textAlignment="center"
-        android:textColor="@color/tv_color"
-        android:textSize="16sp" />
+        android:layout_margin="16dp"
+        app:cardCornerRadius="60px"
+        app:cardElevation="8dp">
+
+        <TextView
+            android:id="@+id/toast_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/item_toast"
+            android:drawableLeft="@drawable/ic_baseline_info_24"
+            android:drawablePadding="4dp"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="@string/press_exit"
+            android:textAlignment="center"
+            android:textColor="@color/tv_color"
+            android:textSize="16sp" />
+    </androidx.cardview.widget.CardView>
+
 </FrameLayout>

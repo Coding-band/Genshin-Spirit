@@ -552,19 +552,26 @@ public class Weapon_Info_2048 {
             info_weapon_name_base.setText(name);
         }
 
+        /**
+         * Animation
+         */
+
+        /*
         Animation animImgLTR = AnimationUtils.loadAnimation(context,R.anim.img_ltr);
         Animation animImgRTL = AnimationUtils.loadAnimation(context,R.anim.img_rtl);
         weapon_img.setAnimation(animImgLTR);
         LinearLayout info_detail = weaponDescPage.findViewById(R.id.info_detail);
         info_detail.setAnimation(animImgRTL);
-
+        */
         if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
             ImageView weapon_imgL = view.findViewById(R.id.info_weapon_img);
-            weapon_imgL.setAnimation(animImgLTR);
+            /*weapon_imgL.setAnimation(animImgLTR); Animation*/
             weapon_imgL.setImageDrawable(FileLoader.loadIMG2Drawable(item_rss.getWeaponGachaByName(name,context)[1],context));
         }else{
             weapon_img.setImageDrawable(FileLoader.loadIMG2Drawable(item_rss.getWeaponGachaByName(name,context)[1],context));
         }
+
+
 
         weapon_obtain_way_tv.setText(item_rss.getObtainCode(obtain_way,context));
         //weapon_title.setText(nick);

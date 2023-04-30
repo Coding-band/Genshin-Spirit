@@ -682,11 +682,16 @@ public class Characters_Info_2048 {
         info_advice_util.setVisibility(View.GONE);
         info_advice_team.setVisibility(View.GONE);
 
+        /**
+         * Animation
+         */
+        /*
         Animation animImgLTR = AnimationUtils.loadAnimation(context,R.anim.img_ltr);
         Animation animImgRTL = AnimationUtils.loadAnimation(context,R.anim.img_rtl);
         char_img.setAnimation(animImgLTR);
         LinearLayout info_detail = charDescPage.findViewById(R.id.info_detail);
         info_detail.setAnimation(animImgRTL);
+         */
 
         /** THEME COLOR SET*/
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
@@ -1323,7 +1328,10 @@ public class Characters_Info_2048 {
 
         if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
             ImageView char_imgL = view.findViewById(R.id.info_char_img);
-            char_imgL.setAnimation(animImgLTR);
+            /**
+             * Animation
+             */
+            //char_imgL.setAnimation(animImgLTR);
             char_imgL.setImageDrawable(FileLoader.loadIMG2Drawable(item_rss.getCharByName(name,context)[0],context));
             char_imgL.getLayoutParams().width = width;
         }else{

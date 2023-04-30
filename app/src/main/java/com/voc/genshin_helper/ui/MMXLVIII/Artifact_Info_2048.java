@@ -428,16 +428,26 @@ public class Artifact_Info_2048 {
         int height_curr = displayMetrics.heightPixels;
         int width_curr = displayMetrics.widthPixels;
 
+        /**
+         * Animation
+         */
 
+        /*
         Animation animImgLTR = AnimationUtils.loadAnimation(context,R.anim.img_ltr);
         Animation animImgRTL = AnimationUtils.loadAnimation(context,R.anim.img_rtl);
         art_con.setAnimation(animImgLTR);
         LinearLayout info_detail = artifactDescPage.findViewById(R.id.info_detail);
         info_detail.setAnimation(animImgRTL);
 
+         */
+
         if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
+
             ConstraintLayout art_imgL = view.findViewById(R.id.art_con);
-            art_imgL.setAnimation(animImgLTR);
+            /**
+             * Animation
+             */
+            /*art_imgL.setAnimation(animImgLTR); */
             ImageView artifact_imgL = view.findViewById(R.id.info_artifact_img);
             ImageView artifact_img1L = view.findViewById(R.id.info_artifact_img1);
             ImageView artifact_img2L = view.findViewById(R.id.info_artifact_img2);
