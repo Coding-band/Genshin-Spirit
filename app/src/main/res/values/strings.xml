@@ -194,14 +194,14 @@
     <string name="alarm_time2">8hrs</string>
     <string name="alarm_time3">12hrs</string>
     <string name="alarm_time4">20hrs</string>
-    <string name="jb_title">[Genshin Spirit] Hi ~ It\'s time to do boss mission!</string>
-    <string name="common_info">Don\'t forget to do it before reset</string>
-    <string name="daily_mission_title">[Genshin Spirit] Hi ~ Have u finished the daily mission yet?</string>
-    <string name="dtbc_title">[Genshin Spirit] Hi ~ Your realm currency has already fulled, remember to claim them ~</string>
-    <string name="ph_title">[Genshin Spirit] Hi ~ the expedition has already finished</string>
-    <string name="ph_info">Let\'s see what he/she found ~</string>
+    <string name="jb_title">[Genshin Spirit] Hi ~ It\'s time to do a Boss Mission!</string>
+    <string name="common_info">Don\'t forget to do it before it resets</string>
+    <string name="daily_mission_title">[Genshin Spirit] Hi ~ Have you finished the Daily Missions yet?</string>
+    <string name="dtbc_title">[Genshin Spirit] Hi ~ Your Realm Currency is full, remember to claim it ~</string>
+    <string name="ph_title">[Genshin Spirit] Hi ~ the Expedition has been finished</string>
+    <string name="ph_info">Let\'s see what they found ~</string>
     <string name="dtbc_info">Ehm... If you don\'t need them, then I will take them away ~</string>
-    <string name="resin_title">[Genshin Spirit] Hi ~ Your resin has already fulled, remember to use them~</string>
+    <string name="resin_title">[Genshin Spirit] Hi ~ Your Resin has been maxed out, remember to use it~</string>
     <string name="edit_title">Edit alarm</string>
     <string name="edit_type">Type</string>
     <string name="edit_time">Time</string>
@@ -217,7 +217,7 @@
     <string name="america_ser">America</string>
     <string name="europe_ser">Europe</string>
     <string name="asia_ser">Asia</string>
-    <string name="hk_tw_mo_ser">HK、TW、MO</string>
+    <string name="hk_tw_mo_ser">HK, TW, MO</string>
     <string name="sky_land_ser">天空岛服</string>
     <string name="world_tree">世界树服</string>
 
@@ -226,14 +226,14 @@
     <string name="genshinhelper_link" translatable="false"><a href="https://github.com/Vocaloid2048/GenshinHelper">★ Genshin Spirit Github</a></string>
     <string name="genshinhelper_dclink" translatable="false"><a href="https://discord.gg/uXatcbWKv2">★ Genshin Spirit Discord Server</a></string>
     <string name="genshindb_dclink" translatable="false"><a href="https://discord.com/invite/rztDRXnnDj">★ Shiroi Discord Server</a></string>
-    <string name="press_exit">Press again to exit app</string>
-    <string name="vote_title">Please help for rate this app~</string>
-    <string name="vote_info">If you like Genshin Spirit, please take a moment to help comment~ Your little help will be of great help to me, and it will not take you a lot of time.</string>
-    <string name="vote_help">Help for rate</string>
+    <string name="press_exit">Press again to exit the app</string>
+    <string name="vote_title">Please help by rating this app~</string>
+    <string name="vote_info">If you like Genshin Spirit, please take a moment to Review it ~ Your Review will be of great help to me, and it will not take you a lot of time.</string>
+    <string name="vote_help">Rate App</string>
     <string name="vote_no">No</string>
     <string name="vote_later">Later</string>
     <string name="copied">Copied</string>
-    <string name="pls_restart_app">Please restart app</string>
+    <string name="pls_restart_app">Please restart the app</string>
 
     <!-- cal_item_name -->
     <string name="result">Result</string>
@@ -247,7 +247,7 @@
     <string name="caled_char_weapon_art">Calculated Characters/Weapons/Artifacts</string>
     <string name="char_lvls">Character level</string>
     <!-- added in 20211001 -->
-    <string name="cal_choosed_already">You have already choosed him/her/it !</string>
+    <string name="cal_choosed_already">You have already choosed them!</string>
     <!-- add in 20211003 -->
     <string name="cal_crystal">Crystal</string>
     <string name="cal_boss">Drop from General Boss</string>
@@ -292,20 +292,20 @@
     <string name="about">About</string>
     <string name="link">Link</string>
     <string name="about_title1">Disclaimer</string>
-    <string name="about_info1">This application does not belong to miHoYo Co., Ltd. and has not been approved by it. 原神小幫手(Genshin Spirit) is only an app that provides data developed by fans. The information provided in this app is for reference only. Genshin Spirit will not guarantee the accuracy and completeness of any information contained in it to any degree.</string>
+    <string name="about_info1">This application is not affiliated with miHoYo Co. Ltd. 原神小幫手(Genshin Spirit) is only an app that provides data developed by fans. The information provided in this app is for reference only. Genshin Spirit will not guarantee the accuracy and completeness of any information provided on it to any degree.</string>
     <string name="about_title2">Privacy Collection Statement</string>
-    <string name="about_info2">This application will not collect any personal privacy data, may be used to identify and track users and other information. If necessary, the application will only collect the data notified, such as the program crash stack. The above data is only used to repair application vulnerabilities and improve user experience.</string>
+    <string name="about_info2">This application will not collect any personal privacy data that may be used to identify and track users along with other information. If necessary, the application will only collect application stack errors. The collected data is used to repair application vulnerabilities and improve user experience.</string>
     <string name="about_title3">Resource usage statement</string>
-    <string name="about_info3">This application is developed based on Shiori for Genshin and aims to pay tribute to Shiori for Genshin and its collaborators, but it has not yet been recognized by its collaborators. Some pictures of this application, data are taken from open source projects, and links will be attached below. Therefore, part of the interface and layout of this application is very similar to Shiori for Genshin. However, this application uses Java instead of Dart as the programming language, and it will only work on Android or/and any supporting .apk and .aab file formats. Installation and operation in the device.</string>
+    <string name="about_info3">This application is developed and based on Shiori for Genshin and aims to pay tribute to Shiori for Genshin and its collaborators, but it has not yet been recognized by its collaborators. Some pictures of this application, data are taken from open source projects, and links will be attached below. Therefore, part of the interface and layout of this application is very similar to Shiori for Genshin. However, this application uses Java instead of Dart as the programming language, and it will only work on Android or/and any supporting .apk and .aab file formats. Installation and operation in the device.</string>
     <string name="about_title4">Project open source statement</string>
     <string name="about_info4">Since this application is intended to pay tribute to Shiori for Genshin and its collaborators, it will be open sourced on Github. Anyone can view, provide comments, and even collaborate. I also welcome any suggestions and applications for this application. This application will also be available on Google Play. If you want to comment on this project, bugs, new features, etc., you are also welcome to contact by E-mail or Discord (QQ is available for mainland China). Finally, thank you for your understanding and support.</string>
     <string name="about_title5">Third-Party Distribution and Compilation Statement</string>
-    <string name="about_info5">This project (原神小幫手 Genshin Spirit) does not object to anyone adding functions, debugging, compiling and testing, and using it for learning purposes, but this project does not allow third parties to distribute freely (whether private or public) the unofficial version [Note 1] without written permission from Voc-夜芷冰, and deliberately pretend to be the developer of this project [Note 2]. Voc-夜芷冰 reserves the right to ask individuals/institutions who violate the above conditions to be removed from the shelves after version 3.2.0 (10825).\n[Note 1] The unofficial version includes third-party self-compilation and distribution after downloading the application installation file on the cooperative platform.\n[Note 2] Discord Bot [原神小幫手] has nothing to do with this project (this project was uploaded on Github as early as September 2021, and the official version will be released on Google Play in November 2021)</string>
+    <string name="about_info5">This project (原神小幫手 Genshin Spirit) does not object to anyone adding functions, debugging, compiling and testing, and using it for learning purposes, but this project does not allow third parties to distribute freely (whether private or public) the unofficial version [Note 1] without written permission from Voc-夜芷冰, and deliberately pretend to be the developer of this project [Note 2]. Voc-夜芷冰 reserves the right to ask individuals/institutions who violate the above conditions to be removed from the shelves after version 3.2.0 (10825).\n[Note 1] The unofficial version includes third-party self-compilation and distribution after downloading the application installation file on the cooperative platform.\n[Note 2] Discord Bot [原神小幫手] has nothing to do with this project (this project was uploaded on Github as early as September 2021, and the official version was released on Google Play in November 2021)</string>
     <!-- add in 20210918-->
     <string name="thanks_title">Special Thanks</string>
     <string name="translator_title">Translator</string>
     <string name="beta_tester_title">Beta Testers</string>
-    <string name="thanks_intro">Because of your help, Genshin Spirit can be more perfect</string>
+    <string name="thanks_intro">Because of your help, Genshin Spirit is more perfect</string>
     <!-- add in 20211016-->
     <string name="list_grid">List grid</string>
 
@@ -571,30 +571,30 @@
     <string name="voc">Voc-夜芷冰</string>
 
     <!-- add in 20220110-->
-    <string name="traveler_sex_setting">"What's your traveler's sex ?"</string>
-    <string name="name_start_with_num_err">"Number and special symbols are not allow to use a first character."</string>
+    <string name="traveler_sex_setting">"What's your traveler's gender ?"</string>
+    <string name="name_start_with_num_err">"Numbers and special symbols are not allowed."</string>
     <string name="cal_create_set">"Create a new Calculate Set"</string>
     <string name="cal_enter_name">"Please enter a name"</string>
     <string name="kaguras_verity">Kagura\'s Verity</string>
     <string name="oathsworn_eye">Oathsworn Eye</string>
 
     <!-- add in 20220130-->
-    <string name="press_see_details">Press to see more detail</string>
+    <string name="press_see_details">Press for more details</string>
 
     <!-- add in 20220201-->
-    <string name="update_download_update_curr">Download the update resource files</string>
-    <string name="update_download_update_base">Download all resource files</string>
-    <string name="update_download_advice">It is recommended to download after connecting to Wi-Fi</string>
-    <string name="update_download_base_file_size">All resource files size : </string>
+    <string name="update_download_update_curr">Download Updated Resource files</string>
+    <string name="update_download_update_base">Download all Resource files</string>
+    <string name="update_download_advice">It is recommended that you download the Resources using Wi-Fi</string>
+    <string name="update_download_base_file_size">All Resource files size : </string>
     <string name="update_download_update_file_size">Update resource files size : </string>
     <string name="update_download_later">Download Later</string>
     <string name="update_download_now">Download Now</string>
-    <string name="update_download_check">Check updates</string>
-    <string name="update_download_found_update">Found new update resource files !</string>
-    <string name="update_download_downloading">Downloading...Please wait...</string>
-    <string name="update_download_unzipping">Unzipping...Please wait...</string>
-    <string name="update_download_not_found_update">None of new updates of resource files currently ~</string>
-    <string name="update_download_done">All downloads/ updates were done</string>
+    <string name="update_download_check">Check for updates</string>
+    <string name="update_download_found_update">Found new Resource file Updates!</string>
+    <string name="update_download_downloading">(Downloading) Please wait...</string>
+    <string name="update_download_unzipping">(Unzipping) Please wait...</string>
+    <string name="update_download_not_found_update">No new Updated Resource Files found ~</string>
+    <string name="update_download_done">Finished Downloading/Updating</string>
 
     <!-- add in 20220206-->
     <string name="pyro_slime">Pyro Slime</string>
@@ -954,12 +954,12 @@
     <string name="bwiki_link" translatable="false"><a href="https://wiki.biligame.com/ys">★ Bilibili - 原神WIKI</a></string>
     <string name="wiki_4399_link" translatable="false"><a href="http://news.4399.com/yssy/">★ 4399 - 原神攻略</a></string>
     <string name="fandom_link" translatable="false"><a href="https://genshin-impact.fandom.com/wiki/">★ Fandom - Genshin Impact Wiki</a></string>
-    <string name="these_is_rss_source">"These are the source of Genshin Spirit's information, data and images."</string>
-    <string name="press_open_link">"Press to open the website"</string>
-    <string name="developer">Deveoloper</string>
+    <string name="these_is_rss_source">"These are the sources for Genshin Spirit's information(data, images, etc.)."</string>
+    <string name="press_open_link">"Press to open website"</string>
+    <string name="developer">Developer</string>
     <string name="genshin_cal_link" translatable="false"><a href="https://play.google.com/store/apps/details?id=com.dfsly.genshin">★ Genshin Calculator By dfsly</a></string>
 
-    <string name="buff_cal_thx">✧ Special thanks to dfsly\n✧ Who allow continuation Genshin Calculator as inline function</string>
+    <string name="buff_cal_thx">✧ Special thanks to dfsly\n✧ Who allowed continuation to Genshin Calculator as an inline function</string>
     <string name="buff_calcluator">Buff Calculator</string>
     <string name="ui_design">UI Design</string>
 
@@ -1037,7 +1037,7 @@
     <string name="ui_siptik_name">Material</string>
     <string name="ui_voc_name">Classic</string>
     <string name="shikanoin_heizou">Shikanoin Heizou</string>
-    <string name="detail">Detail</string>
+    <string name="detail">Details</string>
 
     <!-- add in 20220521 -->
     <string name="release_state">Release State</string>
@@ -1056,28 +1056,28 @@
     <string name="fading_twilight">Fading Twilight</string>
 
     <!-- add in 20220529 -->
-    <string name="tut_part0_1">"Hi, I'm Voc-夜芷冰, the developer of Genshin Spirit, and I'm your guide of this tutorial."</string>
-    <string name="tut_part0_2">"First, please let me have a little introduction of Genshin Spirit. "</string>
-    <string name="tut_part0_3">"Genshin Spirit is an app which contains both information lookup and calculation functions."</string>
+    <string name="tut_part0_1">"Hi, I'm Voc-夜芷冰, the developer of Genshin Spirit, and I'll be your guide for this tutorial."</string>
+    <string name="tut_part0_2">"First, please let me give you a little introduction of Genshin Spirit. "</string>
+    <string name="tut_part0_3">"Genshin Spirit is an app that contains both information lookup and calculation functions."</string>
     <string name="tut_part0_4">"Also, it's an open-source project, we are always welcome everyone to give suggestions about new functions ~"</string>
     <string name="tut_part0_5">"Alright, let's start the tutorial now ~"</string>
-    <string name="tut_part0_6">"The bottom of this page is the navigation bar, which you change the page by pressing them "</string>
-    <string name="tut_part0_7">"It is also possible to scroll left/right to change the page"</string>
-    <string name="tut_part1_1">"This is our home page, you will see the highlights of today, such as character ascension material, weapon ascension material,etc..."</string>
+    <string name="tut_part0_6">"The bottom of this page is the navigation bar, which you change the page by pressing it"</string>
+    <string name="tut_part0_7">"You can also scroll left/right to change the page"</string>
+    <string name="tut_part1_1">"This is the home page, you will see the highlights of today, such as character ascension material, weapon ascension material,etc..."</string>
     <string name="tut_part1_2">"If you want to read further information of this character/weapon, simply to press the character/weapon's icon"</string>
     <string name="tut_part1_3">"Also, there will have a birthday reminder if today is one of the character's birthday"</string>
-    <string name="tut_part1_4">"I wish this page will be helpful to you on planning "</string>
-    <string name="tut_part2_1">"This is character list, where you can search any characters inside the game"</string>
-    <string name="tut_part2_2">"Simply to press them to read the detail ~"</string>
-    <string name="tut_part2_3">"If you want to search specificity requirement, please press the Filter Button to switch on the filter"</string>
-    <string name="tut_part2_4">"If you want to search via their local name or English name, please press the Search Button to switch on the search"</string>
-    <string name="tut_part3_5">"This is weapon list, where you can search any weapons inside the game"</string>
-    <string name="tut_part3_6">"Basically as like as Character List ~"</string>
-    <string name="tut_part4_1">"This is artifact list, basically as like as Character List ~"</string>
-    <string name="tut_part5_1">"This is Setting/Paimon page, where you can do setting inside there"</string>
-    <string name="tut_part5_2">"Alright, I think it should be the ending of the tutorial"</string>
-    <string name="tut_part5_3">"If you have any questions or problems, you may directly find me in Discord"</string>
-    <string name="tut_part5_4">"The invite link of our offical Discord Server has already put in the 'About' part in setting page ~"</string>
+    <string name="tut_part1_4">"I wish this page will be helpful to you in the future "</string>
+    <string name="tut_part2_1">"This is the character list, where you can search any characters inside the game"</string>
+    <string name="tut_part2_2">"Simply press them to read About them ~"</string>
+    <string name="tut_part2_3">"If you want to search for something specific, please press the Filter Button to filter content"</string>
+    <string name="tut_part2_4">"If you want to search via their local name or English name, please press the Search Button"</string>
+    <string name="tut_part3_5">"This is the weapon list, where you can search for any weapons inside the game"</string>
+    <string name="tut_part3_6">"Such as the Character List ~"</string>
+    <string name="tut_part4_1">"This is the artifact list, where you can search for any artifacts inside the game ~"</string>
+    <string name="tut_part5_1">"This is Setting/Paimon page, where you can change certain application settings"</string>
+    <string name="tut_part5_2">"Alright, I think I should end tutorial here"</string>
+    <string name="tut_part5_3">"If you have any questions or problems, you may find me in Discord"</string>
+    <string name="tut_part5_4">"The invite link of our offical Discord Server is in the 'About' part in the Settings page ~"</string>
     <string name="tut_part5_5">"See ya around in Discord ~"</string>
 
     <!-- add in 20220714 -->
@@ -1123,7 +1123,7 @@
     <string name="steeple_of_ignorance">Steeple of Ignorance</string>
     <string name="tower_of_abject_pride">Tower of Abject Pride</string>
     <string name="copper_talisman_of_the_forest_dew">Copper Talisman of the Forest Dew</string>
-    <string name="oasis_gardens_reminiscence">Oasis Garden’s Reminiscence</string>
+    <string name="oasis_gardens_reminiscence">Oasis Garden's Reminiscence</string>
     <string name="echo_of_scorching_might">Echo of Scorching Might</string>
 
     <!-- add in 20220923 -->
@@ -1141,8 +1141,8 @@
     <string name="nahida">Nahida</string>
     <string name="layla">Layla</string>
     <string name="a_thousand_floating_dreams">A Thousand Floating Dreams</string>
-    <string name="screenshot_not_saved">Screenshot unable to save</string>
-    <string name="screenshot_not_saved_permission">Please accept the write permission</string>
+    <string name="screenshot_not_saved">Unable to save Screenshot</string>
+    <string name="screenshot_not_saved_permission">Writing Permissions required to save</string>
     <string name="screenshot_saved">"Screenshot saved "</string>
     <string name="talent_lvl">"Talent Lvl : "</string>
     <string name="today">Today</string>
