@@ -1037,7 +1037,7 @@
     <string name="ui_siptik_name">Material</string>
     <string name="ui_voc_name">Classic</string>
     <string name="shikanoin_heizou">Shikanoin Heizou</string>
-    <string name="detail">Detail</string>
+    <string name="detail">Details</string>
 
     <!-- add in 20220521 -->
     <string name="release_state">Release State</string>
