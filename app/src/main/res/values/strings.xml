@@ -570,6 +570,7 @@
     <string name="background_display">Display</string>
     <string name="voc">Voc-夜芷冰</string>
 
+
     <!-- add in 20220110-->
     <string name="traveler_sex_setting">"What\'s your traveler\'s gender ?"</string>
     <string name="name_start_with_num_err">"Numbers and special symbols are not allowed."</string>

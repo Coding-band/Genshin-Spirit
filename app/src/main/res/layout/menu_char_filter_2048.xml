@@ -11,47 +11,52 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:background="@drawable/bg_kwang_filter"
+        android:orientation="vertical"
+        android:padding="2dp">
 
-        <LinearLayout
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/menu_title_tv"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_weight="0"
+                android:background="@drawable/bg_dialog_header_edge"
+                android:fontFamily="@font/genshin_font"
+                android:gravity="center"
+                android:padding="8dp"
+                android:text="@string/filters"
+                android:textColor="@color/tv_spinner_color_2048"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/menu_cancel"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center|right"
+                android:layout_marginRight="8dp"
+                android:layout_weight="0"
+                android:textColor="@color/theme_color"
+                app:srcCompat="@drawable/ic_2048_close_btn" />
+        </FrameLayout>
+
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
-
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <TextView
-                    android:id="@+id/menu_title_tv"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:layout_weight="0"
-                    android:background="@drawable/bg_dialog_header_edge"
-                    android:fontFamily="@font/genshin_font"
-                    android:gravity="center"
-                    android:padding="8dp"
-                    android:text="@string/filters"
-                    android:textColor="@color/tv_spinner_color_2048"
-                    android:textSize="20sp" />
-
-                <ImageView
-                    android:id="@+id/menu_cancel"
-                    android:layout_width="36dp"
-                    android:layout_height="36dp"
-                    android:layout_gravity="center|right"
-                    android:layout_marginRight="8dp"
-                    android:layout_weight="0"
-                    android:textColor="@color/theme_color"
-                    app:srcCompat="@drawable/ic_2048_close_btn" />
-            </FrameLayout>
+            android:layout_weight="1">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/bg_dialog_body_edge"
+                android:background="@drawable/bg_dialog_body_solid"
                 android:orientation="vertical">
 
                 <TextView
@@ -313,8 +318,6 @@
                         android:layout_gravity="center"
                         android:layout_marginLeft="16dp"
                         android:layout_marginRight="8dp"
-                        app:useMaterialThemeColors="false"
-                        app:buttonTint="@null"
                         android:layout_weight="1"
                         android:background="@drawable/item_2048_checkbox_bg"
                         android:button="@drawable/item_2048_checkbox"
@@ -331,7 +334,9 @@
                         android:text="★5"
                         android:textAlignment="viewEnd"
                         android:textColor="@color/tv_spinner_color_2048"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        app:buttonTint="@null"
+                        app:useMaterialThemeColors="false" />
 
                     <CheckBox
                         android:id="@+id/menu_rare4"
@@ -341,8 +346,6 @@
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="16dp"
                         android:layout_weight="1"
-                        app:useMaterialThemeColors="false"
-                        app:buttonTint="@null"
                         android:background="@drawable/item_2048_checkbox_bg"
                         android:button="@drawable/item_2048_checkbox"
                         android:checked="false"
@@ -358,7 +361,9 @@
                         android:text="★4"
                         android:textAlignment="viewEnd"
                         android:textColor="@color/tv_spinner_color_2048"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        app:buttonTint="@null"
+                        app:useMaterialThemeColors="false" />
 
                 </LinearLayout>
 
@@ -404,8 +409,6 @@
                         android:background="@drawable/item_2048_checkbox_bg"
                         android:button="@drawable/item_2048_checkbox"
                         android:checked="false"
-                        app:useMaterialThemeColors="false"
-                        app:buttonTint="@null"
                         android:clickable="true"
                         android:fontFamily="@font/genshin_font"
                         android:gravity="center"
@@ -418,7 +421,9 @@
                         android:text="@string/released"
                         android:textAlignment="viewEnd"
                         android:textColor="@color/tv_spinner_color_2048"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        app:buttonTint="@null"
+                        app:useMaterialThemeColors="false" />
 
                     <CheckBox
                         android:id="@+id/menu_release_1"
@@ -428,8 +433,6 @@
                         android:layout_marginLeft="8dp"
                         android:layout_marginRight="16dp"
                         android:layout_weight="1"
-                        app:useMaterialThemeColors="false"
-                        app:buttonTint="@null"
                         android:background="@drawable/item_2048_checkbox_bg"
                         android:button="@drawable/item_2048_checkbox"
                         android:checked="false"
@@ -445,7 +448,9 @@
                         android:text="@string/unreleased"
                         android:textAlignment="viewEnd"
                         android:textColor="@color/tv_spinner_color_2048"
-                        android:textSize="16sp" />
+                        android:textSize="16sp"
+                        app:buttonTint="@null"
+                        app:useMaterialThemeColors="false" />
 
                 </LinearLayout>
 
@@ -464,166 +469,208 @@
                 <LinearLayout
                     android:id="@+id/menu_role_ll"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_height="wrap_content"
                     android:layout_margin="4dp"
                     android:gravity="center"
-                    android:orientation="horizontal"
+                    android:orientation="vertical"
                     android:visibility="visible">
 
-                    <CheckBox
-                        android:id="@+id/menu_role_dps"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="16dp"
-                        android:layout_marginRight="8dp"
-                        android:layout_weight="1"
-                        app:useMaterialThemeColors="false"
-                        app:buttonTint="@null"
-                        android:background="@drawable/item_2048_checkbox_bg"
-                        android:button="@drawable/item_2048_checkbox"
-                        android:checked="false"
-                        android:clickable="true"
-                        android:fontFamily="@font/genshin_font"
-                        android:gravity="center"
-                        android:layoutDirection="rtl"
-                        android:paddingLeft="16dp"
-                        android:paddingTop="12dp"
-                        android:paddingBottom="12dp"
-                        android:singleLine="true"
-                        android:text="@string/main_dps"
-                        android:textAlignment="viewEnd"
-                        android:textColor="@color/tv_spinner_color_2048"
-                        android:textSize="14sp" />
+                        android:orientation="horizontal">
 
-                    <CheckBox
-                        android:id="@+id/menu_role_sub_dps"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="8dp"
-                        android:layout_weight="1"
-                        app:useMaterialThemeColors="false"
-                        app:buttonTint="@null"
-                        android:background="@drawable/item_2048_checkbox_bg"
-                        android:button="@drawable/item_2048_checkbox"
-                        android:checked="false"
-                        android:clickable="true"
-                        android:fontFamily="@font/genshin_font"
-                        android:gravity="center"
-                        android:layoutDirection="rtl"
-                        android:paddingLeft="16dp"
-                        android:paddingTop="12dp"
-                        android:paddingBottom="12dp"
-                        android:singleLine="true"
-                        android:text="@string/support_dps"
-                        android:textAlignment="viewEnd"
-                        android:textColor="@color/tv_spinner_color_2048"
-                        android:textSize="14sp" />
-
-                    <CheckBox
-                        android:id="@+id/menu_role_utility"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:layout_marginLeft="8dp"
-                        android:layout_marginRight="16dp"
-                        android:layout_weight="1"
-                        app:useMaterialThemeColors="false"
-                        app:buttonTint="@null"
-                        android:background="@drawable/item_2048_checkbox_bg"
-                        android:button="@drawable/item_2048_checkbox"
-                        android:checked="false"
-                        android:clickable="true"
-                        android:fontFamily="@font/genshin_font"
-                        android:gravity="center"
-                        android:layoutDirection="rtl"
-                        android:paddingLeft="16dp"
-                        android:paddingTop="12dp"
-                        android:paddingBottom="12dp"
-                        android:singleLine="true"
-                        android:text="@string/utility"
-                        android:textAlignment="viewEnd"
-                        android:textColor="@color/tv_spinner_color_2048"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginBottom="16dp"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <FrameLayout
-                        android:id="@+id/menu_reset"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        android:layout_margin="8dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/bg_dialog_btn"
-                        android:text="@string/cal_reset">
-
-                        <ImageView
-                            android:id="@+id/imageView14"
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:layout_gravity="center|left"
-                            android:layout_marginLeft="8dp"
-                            android:adjustViewBounds="true"
-                            app:srcCompat="@drawable/ic_2048_cancel_btn_ico" />
-
-                        <TextView
-                            android:id="@+id/menu_reset_tv"
+                        <CheckBox
+                            android:id="@+id/menu_role_sub_dps"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/item_2048_checkbox_bg"
+                            android:button="@drawable/item_2048_checkbox"
+                            android:checked="false"
+                            android:clickable="true"
+                            android:fontFamily="@font/genshin_font"
+                            android:gravity="center"
+                            android:layoutDirection="rtl"
+                            android:paddingLeft="16dp"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="12dp"
+                            android:singleLine="true"
+                            android:text="@string/support_dps"
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/tv_spinner_color_2048"
+                            android:textSize="14sp"
+                            app:buttonTint="@null"
+                            app:useMaterialThemeColors="false" />
+
+                        <CheckBox
+                            android:id="@+id/menu_role_dps"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
                             android:layout_gravity="center"
                             android:layout_marginLeft="8dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/item_2048_checkbox_bg"
+                            android:button="@drawable/item_2048_checkbox"
+                            android:checked="false"
+                            android:clickable="true"
                             android:fontFamily="@font/genshin_font"
-                            android:gravity="center|left"
-                            android:text="@string/cal_reset"
-                            android:textColor="@color/tv_anti_color_2048"
-                            android:textSize="18sp" />
-                    </FrameLayout>
+                            android:gravity="center"
+                            android:layoutDirection="rtl"
+                            android:paddingLeft="16dp"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="12dp"
+                            android:singleLine="true"
+                            android:text="@string/main_dps"
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/tv_spinner_color_2048"
+                            android:textSize="14sp"
+                            app:buttonTint="@null"
+                            app:useMaterialThemeColors="false" />
+                    </LinearLayout>
 
-                    <FrameLayout
-                        android:id="@+id/menu_ok"
+                    <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        android:layout_margin="8dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/bg_dialog_btn"
-                        android:text="@android:string/ok">
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:orientation="horizontal">
 
-                        <ImageView
-                            android:id="@+id/imageView15"
-                            android:layout_width="32dp"
-                            android:layout_height="32dp"
-                            android:layout_gravity="center|left"
-                            android:layout_marginLeft="8dp"
-                            android:adjustViewBounds="true"
-                            app:srcCompat="@drawable/ic_2048_ok_btn_ico" />
+                        <CheckBox
+                            android:id="@+id/menu_role_utility"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/item_2048_checkbox_bg"
+                            android:button="@drawable/item_2048_checkbox"
+                            android:checked="false"
+                            android:clickable="true"
+                            android:fontFamily="@font/genshin_font"
+                            android:gravity="center"
+                            android:layoutDirection="rtl"
+                            android:paddingLeft="16dp"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="12dp"
+                            android:singleLine="true"
+                            android:text="@string/utility"
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/tv_spinner_color_2048"
+                            android:textSize="14sp"
+                            app:buttonTint="@null"
+                            app:useMaterialThemeColors="false" />
 
-                        <TextView
-                            android:id="@+id/menu_ok_tv"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                        <CheckBox
+                            android:id="@+id/menu_role_utility2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
                             android:layout_gravity="center"
                             android:layout_marginLeft="8dp"
+                            android:layout_marginRight="16dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/item_2048_checkbox_bg"
+                            android:button="@drawable/item_2048_checkbox"
+                            android:checked="false"
+                            android:clickable="true"
                             android:fontFamily="@font/genshin_font"
-                            android:gravity="center|left"
-                            android:text="@android:string/ok"
-                            android:textColor="@color/tv_anti_color_2048"
-                            android:textSize="18sp" />
-                    </FrameLayout>
+                            android:gravity="center"
+                            android:layoutDirection="rtl"
+                            android:paddingLeft="16dp"
+                            android:paddingTop="12dp"
+                            android:paddingBottom="12dp"
+                            android:singleLine="true"
+                            android:text="@string/utility"
+                            android:textAlignment="viewEnd"
+                            android:textColor="@color/tv_spinner_color_2048"
+                            android:textSize="14sp"
+                            android:visibility="invisible"
+                            app:buttonTint="@null"
+                            app:useMaterialThemeColors="false" />
+                    </LinearLayout>
+
                 </LinearLayout>
 
             </LinearLayout>
+        </ScrollView>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_dialog_body_edge"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:paddingBottom="8dp">
+
+            <FrameLayout
+                android:id="@+id/menu_reset"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_dialog_btn"
+                android:text="@string/cal_reset">
+
+                <ImageView
+                    android:id="@+id/imageView14"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center|left"
+                    android:layout_marginLeft="8dp"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/ic_2048_cancel_btn_ico" />
+
+                <TextView
+                    android:id="@+id/menu_reset_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center|left"
+                    android:text="@string/cal_reset"
+                    android:textColor="@color/tv_anti_color_2048"
+                    android:textSize="18sp" />
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/menu_ok"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_margin="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/bg_dialog_btn"
+                android:text="@android:string/ok">
+
+                <ImageView
+                    android:id="@+id/imageView15"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center|left"
+                    android:layout_marginLeft="8dp"
+                    android:adjustViewBounds="true"
+                    app:srcCompat="@drawable/ic_2048_ok_btn_ico" />
+
+                <TextView
+                    android:id="@+id/menu_ok_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="8dp"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center|left"
+                    android:text="@android:string/ok"
+                    android:textColor="@color/tv_anti_color_2048"
+                    android:textSize="18sp" />
+            </FrameLayout>
         </LinearLayout>
-    </ScrollView>
+
+    </LinearLayout>
 
 </LinearLayout>

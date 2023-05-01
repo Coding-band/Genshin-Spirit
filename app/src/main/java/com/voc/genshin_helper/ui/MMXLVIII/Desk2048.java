@@ -1060,6 +1060,50 @@ public class Desk2048 extends AppCompatActivity {
         theme_night = view.findViewById(R.id.theme_dark);
         theme_default = view.findViewById(R.id.theme_default);
 
+        //Server choice
+        ArrayAdapter server_aa = new ArrayAdapter(context,R.layout.spinner_item,serverList);
+        server_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_2048);
+        Spinner server_spinner = view.findViewById(R.id.server_spinner);
+        server_spinner.setAdapter(server_aa);
+        server_spinner.setSelection(sharedPreferences.getInt("serverPos",0));
+
+        server_spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if(position == 0){
+                    editor.putString("serverLocation","America");
+                    editor.apply();
+                }else if (position == 1){
+                    editor.putString("serverLocation","Europe");
+                    editor.apply();
+                }else if (position == 2){
+                    editor.putString("serverLocation","Asia");
+                    editor.apply();
+                }else if (position == 3){
+                    editor.putString("serverLocation","HK_TW_MO");
+                    editor.apply();
+                }else if (position == 4){
+                    editor.putString("serverLocation","天空島");
+                    editor.apply();
+                }else if (position == 5){
+                    editor.putString("serverLocation","世界樹");
+                    editor.apply();
+                }
+
+                editor.putInt("serverPos",position);
+                editor.apply();
+                getDOW();
+                char_reload(dow);
+                weapon_reload(dow);
+                cbg();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
         other_exit_confirm = view.findViewById(R.id.other_exit_confirm);
 
         if (sharedPreferences.getBoolean("theme_light",true) == true){

@@ -78,6 +78,7 @@
     <color name="orange">#FF9800</color>
 
     <color name="shadow_char_ico">#22000000</color>
+    <color name="shadow_barrier">#99313131</color>
 
     <!-- 2O48 -->
     <color name="tv_color_2048">#ECE5D8</color>
@@ -113,7 +114,7 @@
     <color name="tab_no_circ_selected_inline_2048">#FFECE5D8</color>
 
     <color name="bg_dialog_title_2048">#454E5E</color>
-    <color name="bg_dialog_info_2048">#4D5668</color>
+    <color name="bg_dialog_info_2048">#FFECE5D8</color>
     <color name="dialog_title_tv_color_2048">#D3BC8E</color>
     <color name="dialog_subtitle_tv_color_2048">#8F5923</color>
     <color name="dialog_desc_title_tv_color_2048">#A84D5668</color>
@@ -227,6 +228,8 @@
     <color name="buff_radio_unselected_fill_2048">#00000000</color>
     <color name="buff_spinner_kwang">#D3BC8E</color>
     <color name="buff_spinner_bg">#ECE5D8</color>
+
+    <color name="dialog_kwang">#33FFFFFF</color>
 
 
 </resources>

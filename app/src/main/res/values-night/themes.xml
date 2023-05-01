@@ -42,7 +42,7 @@
         <!--没有标题 -->
         <item name="android:windowNoTitle">true</item>
         <!-- 是否浮现在Activity之上 -->
-        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowIsFloating">true</item>
         <!--背景透明 -->
         <item name="android:windowIsTranslucent">false</item>
         <!-- 是否有覆盖 -->
