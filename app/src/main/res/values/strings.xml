@@ -571,7 +571,7 @@
     <string name="voc">Voc-夜芷冰</string>
 
     <!-- add in 20220110-->
-    <string name="traveler_sex_setting">"What's your traveler's gender ?"</string>
+    <string name="traveler_sex_setting">"What\'s your traveler\'s gender ?"</string>
     <string name="name_start_with_num_err">"Numbers and special symbols are not allowed."</string>
     <string name="cal_create_set">"Create a new Calculate Set"</string>
     <string name="cal_enter_name">"Please enter a name"</string>
@@ -1056,7 +1056,7 @@
     <string name="fading_twilight">Fading Twilight</string>
 
     <!-- add in 20220529 -->
-    <string name="tut_part0_1">"Hi, I'm Voc-夜芷冰, the developer of Genshin Spirit, and I'll be your guide for this tutorial."</string>
+    <string name="tut_part0_1">"Hi, I\'m Voc-夜芷冰, the developer of Genshin Spirit, and I\'ll be your guide for this tutorial."</string>
     <string name="tut_part0_2">"First, please let me give you a little introduction of Genshin Spirit. "</string>
     <string name="tut_part0_3">"Genshin Spirit is an app that contains both information lookup and calculation functions."</string>
     <string name="tut_part0_4">"Also, it's an open-source project, we are always welcome everyone to give suggestions about new functions ~"</string>
@@ -1077,7 +1077,7 @@
     <string name="tut_part5_1">"This is Setting/Paimon page, where you can change certain application settings"</string>
     <string name="tut_part5_2">"Alright, I think I should end tutorial here"</string>
     <string name="tut_part5_3">"If you have any questions or problems, you may find me in Discord"</string>
-    <string name="tut_part5_4">"The invite link of our offical Discord Server is in the 'About' part in the Settings page ~"</string>
+    <string name="tut_part5_4">"The invite link of our offical Discord Server is in the \'About\' part in the Settings page ~"</string>
     <string name="tut_part5_5">"See ya around in Discord ~"</string>
 
     <!-- add in 20220714 -->
@@ -1123,7 +1123,7 @@
     <string name="steeple_of_ignorance">Steeple of Ignorance</string>
     <string name="tower_of_abject_pride">Tower of Abject Pride</string>
     <string name="copper_talisman_of_the_forest_dew">Copper Talisman of the Forest Dew</string>
-    <string name="oasis_gardens_reminiscence">Oasis Garden's Reminiscence</string>
+    <string name="oasis_gardens_reminiscence">Oasis Garden\'s Reminiscence</string>
     <string name="echo_of_scorching_might">Echo of Scorching Might</string>
 
     <!-- add in 20220923 -->
