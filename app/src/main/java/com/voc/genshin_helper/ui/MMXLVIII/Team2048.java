@@ -19,13 +19,16 @@ import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
@@ -52,6 +55,7 @@ import com.voc.genshin_helper.data.TCG;
 import com.voc.genshin_helper.data.TCGAdapter;
 import com.voc.genshin_helper.data.Weapons;
 import com.voc.genshin_helper.data.WeaponsAdapter;
+import com.voc.genshin_helper.util.CustomEditTextView;
 import com.voc.genshin_helper.util.MyViewPagerAdapter;
 
 import org.json.JSONArray;
@@ -93,6 +97,10 @@ public class Team2048 {
     ArrayList<Weapons> weaponsList = new ArrayList<>();
     ArrayList<Artifacts> artifactsList = new ArrayList<>();
 
+    boolean isActionDown = false;
+    float pretendY = 0;
+    float lastY = 0;
+
     public boolean show_pyro = true;
     public boolean show_hydro = true;
     public boolean show_anemo = true;
@@ -117,6 +125,8 @@ public class Team2048 {
     public boolean show_dps = false;
     public boolean show_sub_dps = false;
     public boolean show_util = false;
+
+    public boolean isFiltering = false;
 
     int[] tabteamItemImageArray = new int[]{R.drawable.ic_2048_team_char,R.drawable.ic_2048_team_weapon,R.drawable.ic_2048_team_art};
     int[] tabteamItemImageSelectedArray = new int[]{R.drawable.ic_2048_team_char_selected,R.drawable.ic_2048_team_weapon_selected,R.drawable.ic_2048_team_art_selected};
@@ -431,14 +441,161 @@ public class Team2048 {
 
             };
         });
-
         */
 
+        team_search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_SEARCH);
+                View view = View.inflate(context, R.layout.menu_search_2048, null);
+
+                ImageViewAnimatedChange(context, team_search, R.drawable.ic_2048_search_selected);
+
+                CustomEditTextView header_search_et = view.findViewById(R.id.header_search_et);
+                ImageView header_search_cancel = view.findViewById(R.id.header_search_cancel);
+
+                header_search_et.addTextChangedListener(new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
+                        switch (viewPager.getCurrentItem()){
+                            case 0:{
+                                if (header_search_et.getText() != null){
+                                    String request = header_search_et.getText().toString();
+                                    if (!request.equals("")){
+                                        ArrayList<Characters> filteredList = new ArrayList<>();
+                                        int x = 0;
+                                        for (Characters item : charactersList) {
+                                            String str = request.toLowerCase();
+                                            if (item_rss.getCharByName(item.getName(),context)[1].contains(str)||item_rss.getCharByName(item.getName(),context)[1].toLowerCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
+                                                filteredList.add(item);
+                                            }
+                                            x = x +1;
+                                        }
+                                        mCharAdapter.filterList(filteredList);
+                                    }else{
+                                        mCharAdapter.filterList(charactersList);
+                                    }
+                                }else{
+                                    mCharAdapter.filterList(charactersList);
+                                }
+                                break;
+                            }
+                            case 1:{
+                                if (header_search_et.getText() != null){
+                                    String request = header_search_et.getText().toString();
+                                    if (!request.equals("")){
+                                        ArrayList<Weapons> filteredList = new ArrayList<>();
+                                        int x = 0;
+                                        for (Weapons item : weaponsList) {
+                                            String str = request.toLowerCase();
+                                            if (item_rss.getWeaponByName(item.getName(),context)[0].contains(str)||item_rss.getWeaponByName(item.getName(),context)[0].toLowerCase().contains(str)||item_rss.getWeaponByName(item.getName(),context)[0].toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){
+                                                filteredList.add(item);
+                                            }
+                                            x = x +1;
+                                        }
+                                        mWeaponsAdapter.filterList(filteredList);
+                                    }else{
+                                        mWeaponsAdapter.filterList(weaponsList);
+                                    }
+                                }else{
+                                    mWeaponsAdapter.filterList(weaponsList);
+                                }
+                                break;
+                            }
+                            case 2:{
+                                if (header_search_et.getText() != null){
+                                    String request = header_search_et.getText().toString();
+                                    if (!request.equals("")){
+                                        ArrayList<Artifacts> filteredList = new ArrayList<>();
+                                        int x = 0;
+                                        for (Artifacts item : artifactsList) {
+                                            String str = request.toLowerCase();
+                                            if (item_rss.getCharByName(item.getName(),context)[1].contains(str)||item_rss.getCharByName(item.getName(),context)[1].toLowerCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
+                                                filteredList.add(item);
+                                            }
+                                            x = x +1;
+                                        }
+                                        mArtifactAdapter.filterList(filteredList);
+                                    }else{
+                                        mArtifactAdapter.filterList(artifactsList);
+                                    }
+                                }else{
+                                    mArtifactAdapter.filterList(artifactsList);
+                                }
+                                break;
+                            }
+                        }
+                    }
+                });
+
+
+                header_search_et.requestFocus();
+                InputMethodManager imm = (InputMethodManager) context.getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.showSoftInput(header_search_et, InputMethodManager.SHOW_IMPLICIT);
+
+                header_search_et.isLock(true);
+                header_search_et.editTextRealObj(header_search_et);
+                header_search_et.dialogCase(context, team_search,dialog,R.drawable.ic_2048_search);
+
+                header_search_cancel.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        //header_search_et.setText("");
+
+                        /*
+                        if(header_search_et.getText() == null || header_search_et.getText().toString().equals(""){
+                            dialog.dismiss();
+                        }else{
+                            header_search_et.setText("");
+                        }
+                         */
+                        header_search_et.setText("");
+                        dialog.dismiss();
+                        ImageViewAnimatedChange(context, team_search, R.drawable.ic_2048_search);
+                    }
+                });
+
+                dialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_RESIZE);
+                dialog.setContentView(view);
+                dialog.setCanceledOnTouchOutside(false);
+
+                //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
+                Window dialogWindow = dialog.getWindow();
+                WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+                // 2O48 DESIGN
+                dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+                dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
+                // For allow actions below dialog
+                dialogWindow.setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL,
+                        WindowManager.LayoutParams.FLAG_NOT_TOUCH_MODAL);
+                dialogWindow.clearFlags(WindowManager.LayoutParams.FLAG_DIM_BEHIND);
+
+
+                DisplayMetrics displayMetrics = new DisplayMetrics();
+                activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+                int height = displayMetrics.heightPixels;
+                int width = displayMetrics.widthPixels;
+
+                lp.width = width;
+                lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
+                lp.gravity = Gravity.BOTTOM;
+                dialogWindow.setAttributes(lp);
+                dialog.show();
+            }
+        });
         team_filter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ImageViewAnimatedChange(context,team_filter,R.drawable.ic_2048_filter_selected);
-
                 final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
                 View view = View.inflate(context, R.layout.menu_char_filter_2048, null);
                 // Elements
@@ -545,6 +702,14 @@ public class Team2048 {
                 if (show_sub_dps){ menu_role_sub_dps.setChecked(true); }
                 if (show_util){ menu_role_utility.setChecked(true); }
 
+                cbStatusModifier(menu_rare4,context);
+                cbStatusModifier(menu_rare5,context);
+                cbStatusModifier(menu_release_0,context);
+                cbStatusModifier(menu_release_1,context);
+                cbStatusModifier(menu_role_dps,context);
+                cbStatusModifier(menu_role_sub_dps,context);
+                cbStatusModifier(menu_role_utility,context);
+
                 pyro.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_pyro){show_pyro = false;pyro.setColorFilter(context.getColor(R.color.shadow_barrier));}else{show_pyro = true;pyro.setColorFilter(Color.parseColor("#00000000"));}}});
                 hydro.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_hydro){show_hydro = false;hydro.setColorFilter(context.getColor(R.color.shadow_barrier));}else{show_hydro = true;hydro.setColorFilter(Color.parseColor("#00000000"));}}});
                 anemo.setOnClickListener(new View.OnClickListener() { @Override public void onClick(View v) { if(show_anemo){show_anemo = false;anemo.setColorFilter(context.getColor(R.color.shadow_barrier));}else{show_anemo = true;anemo.setColorFilter(Color.parseColor("#00000000"));}}});
@@ -619,6 +784,9 @@ public class Team2048 {
                         editor.apply();
                         dialog.dismiss();
 
+                        isFiltering = false;
+                        ImageViewAnimatedChange(context, team_filter, R.drawable.ic_2048_filter);
+
                         switch (viewPager.getCurrentItem()){
                             case 0 : mCharAdapter.filterList(charactersList);break;
                             case 1 : mWeaponsAdapter.filterList(weaponsList);break;
@@ -638,7 +806,6 @@ public class Team2048 {
                         if (menu_role_dps.isChecked()){show_dps = true;}else{show_dps = false;}
                         if (menu_role_sub_dps.isChecked()){show_sub_dps = true;}else{show_sub_dps = false;}
                         if (menu_role_utility.isChecked()){show_util = true;}else{show_util = false;}
-                        filterCharAlgothm();
 
                         switch (viewPager.getCurrentItem()){
                             case 0 : filterCharAlgothm();break;
@@ -669,21 +836,28 @@ public class Team2048 {
                 lp.gravity = Gravity.CENTER;
                 dialogWindow.setAttributes(lp);
                 dialog.show();
-
-                dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
-                    @Override
-                    public void onCancel(DialogInterface dialog) {
-                        ImageViewAnimatedChange(context,team_filter,R.drawable.ic_2048_filter);
-                    }
-                });
-                dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-                    @Override
-                    public void onDismiss(DialogInterface dialog) {
-                        ImageViewAnimatedChange(context,team_filter,R.drawable.ic_2048_filter);
-                    }
-                });
             }
         });
+    }
+
+    public void cbStatusModifier(CheckBox checkBox, Context context){
+        if (checkBox != null){
+            if (checkBox.isChecked()){
+                checkBox.setTextColor(context.getColor(R.color.tv_cb_selected_2048));
+            }else{
+                checkBox.setTextColor(context.getColor(R.color.tv_cb_unselected_2048));
+            }
+            checkBox.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (checkBox.isChecked()){
+                        checkBox.setTextColor(context.getColor(R.color.tv_cb_selected_2048));
+                    }else{
+                        checkBox.setTextColor(context.getColor(R.color.tv_cb_unselected_2048));
+                    }
+                }
+            });
+        }
     }
 
 
@@ -944,6 +1118,18 @@ public class Team2048 {
 
     public void filterCharAlgothm(){
         ArrayList<Characters> filteredList = new ArrayList<>();
+        if((show_sword == false && show_claymore == false && show_catalyst == false && show_bow == false && show_polearm == false) &&
+                (show_anemo == false  && show_cryo == false && show_dendor == false && show_electro == false && show_hydro == false && show_geo == false && show_pyro == false) &&
+                (show_released == false  && show_unreleased == false) &&
+                (show_rare1 == false && show_rare2 == false && show_rare3 == false && show_rare4 == false && show_rare5 == false) &&
+                (show_dps == false && show_sub_dps == false && show_util == false)) {
+
+            isFiltering = false;
+            ImageViewAnimatedChange(context, team_filter, R.drawable.ic_2048_filter);
+        }else{
+            isFiltering = true;
+            ImageViewAnimatedChange(context, team_filter, R.drawable.ic_2048_filter_selected);
+        }
         for (Characters item : charactersList) {
             // DEFAULT
             if((show_sword == false && show_claymore == false && show_catalyst == false && show_bow == false && show_polearm == false) &&
@@ -952,6 +1138,7 @@ public class Team2048 {
                     (show_rare1 == false && show_rare2 == false && show_rare3 == false && show_rare4 == false && show_rare5 == false) &&
                     (show_dps == false && show_sub_dps == false && show_util == false)) {
                 filteredList.add(item);
+
             }else{
                 boolean isAllTrue = true;
                 int isSingleElement = 0;
@@ -1084,6 +1271,19 @@ public class Team2048 {
         }
 
         ArrayList<Weapons> filteredList = new ArrayList<>();
+
+        if((show_sword == false && show_claymore == false && show_catalyst == false && show_bow == false && show_polearm == false) &&
+                (show_anemo == false  && show_cryo == false && show_dendor == false && show_electro == false && show_hydro == false && show_geo == false && show_pyro == false) &&
+                (show_released == false  && show_unreleased == false) &&
+                (show_rare1 == false && show_rare2 == false && show_rare3 == false && show_rare4 == false && show_rare5 == false) &&
+                (show_dps == false && show_sub_dps == false && show_util == false)) {
+            isFiltering = false;
+            ImageViewAnimatedChange(context, team_filter, R.drawable.ic_2048_filter);
+        }else{
+            isFiltering = true;
+            ImageViewAnimatedChange(context, team_filter, R.drawable.ic_2048_filter_selected);
+        }
+
         for (Weapons item : weaponsList) {
             // DEFAULT
             if((show_sword == false && show_claymore == false && show_catalyst == false && show_bow == false && show_polearm == false) &&
@@ -1091,6 +1291,8 @@ public class Team2048 {
                     (show_rare1 == false && show_rare2 == false && show_rare3 == false && show_rare4 == false && show_rare5 == false)) {
                 filteredList.add(item);
             }else{
+                isFiltering = true;
+                ImageViewAnimatedChange(context, team_filter, R.drawable.ic_2048_filter_selected);
                 boolean isAllTrue = true;
                 int isSingleWeapon = 0;
                 int isSingleRare = 0;
@@ -1189,12 +1391,28 @@ public class Team2048 {
             case 5: show_rare5 = true;show_rare1 = false; show_rare2 = false ; show_rare3 = false;show_rare4 = false ;break;
         }
         ArrayList<Artifacts> filteredList = new ArrayList<>();
+
+        if((show_sword == false && show_claymore == false && show_catalyst == false && show_bow == false && show_polearm == false) &&
+                (show_anemo == false  && show_cryo == false && show_dendor == false && show_electro == false && show_hydro == false && show_geo == false && show_pyro == false) &&
+                (show_released == false  && show_unreleased == false) &&
+                (show_rare1 == false && show_rare2 == false && show_rare3 == false && show_rare4 == false && show_rare5 == false) &&
+                (show_dps == false && show_sub_dps == false && show_util == false)) {
+
+            isFiltering = false;
+            ImageViewAnimatedChange(context, team_filter, R.drawable.ic_2048_filter);
+        }else{
+            isFiltering = true;
+            ImageViewAnimatedChange(context, team_filter, R.drawable.ic_2048_filter_selected);
+        }
+
         for (Artifacts item : artifactsList) {
             // DEFAULT
             if((show_released == false  && show_unreleased == false) &&
                     (show_rare1 == false && show_rare2 == false && show_rare3 == false && show_rare4 == false && show_rare5 == false)) {
                 filteredList.add(item);
             }else{
+                isFiltering = true;
+                ImageViewAnimatedChange(context, team_filter, R.drawable.ic_2048_filter_selected);
                 boolean isAllTrue = true;
                 int isSingleRare = 0;
                 int isSingleRelease = 0;

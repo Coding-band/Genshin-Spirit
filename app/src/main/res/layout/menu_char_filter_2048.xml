@@ -66,6 +66,8 @@
                     android:fontFamily="@font/genshin_font"
                     android:gravity="center|left"
                     android:paddingLeft="12dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
                     android:text="@string/elements"
                     android:textColor="@color/tv_spinner_color_2048"
                     android:textSize="18sp" />
@@ -199,6 +201,8 @@
                     android:fontFamily="@font/genshin_font"
                     android:gravity="center|left"
                     android:paddingLeft="12dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
                     android:text="@string/title_weapons"
                     android:textColor="@color/tv_spinner_color_2048"
                     android:textSize="18sp" />
@@ -300,6 +304,8 @@
                     android:fontFamily="@font/genshin_font"
                     android:gravity="center|left"
                     android:paddingLeft="12dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
                     android:text="@string/rarity"
                     android:textColor="@color/tv_spinner_color_2048"
                     android:textSize="18sp" />
@@ -321,7 +327,6 @@
                         android:layout_weight="1"
                         android:background="@drawable/item_2048_checkbox_bg"
                         android:button="@drawable/item_2048_checkbox"
-                        android:checked="false"
                         android:clickable="true"
                         android:fontFamily="@font/genshin_font"
                         android:gravity="center"
@@ -333,8 +338,8 @@
                         android:singleLine="true"
                         android:text="★5"
                         android:textAlignment="viewEnd"
-                        android:textColor="@color/tv_spinner_color_2048"
-                        android:textSize="16sp"
+                        android:textColor="@color/tv_cb_unselected_2048"
+                        android:textSize="14sp"
                         app:buttonTint="@null"
                         app:useMaterialThemeColors="false" />
 
@@ -360,8 +365,8 @@
                         android:singleLine="true"
                         android:text="★4"
                         android:textAlignment="viewEnd"
-                        android:textColor="@color/tv_spinner_color_2048"
-                        android:textSize="16sp"
+                        android:textColor="@color/tv_cb_unselected_2048"
+                        android:textSize="14sp"
                         app:buttonTint="@null"
                         app:useMaterialThemeColors="false" />
 
@@ -387,6 +392,8 @@
                     android:fontFamily="@font/genshin_font"
                     android:gravity="center|left"
                     android:paddingLeft="12dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
                     android:text="@string/release_state"
                     android:textColor="@color/tv_spinner_color_2048"
                     android:textSize="18sp" />
@@ -420,8 +427,8 @@
                         android:singleLine="true"
                         android:text="@string/released"
                         android:textAlignment="viewEnd"
-                        android:textColor="@color/tv_spinner_color_2048"
-                        android:textSize="16sp"
+                        android:textColor="@color/tv_cb_unselected_2048"
+                        android:textSize="14sp"
                         app:buttonTint="@null"
                         app:useMaterialThemeColors="false" />
 
@@ -447,8 +454,8 @@
                         android:singleLine="true"
                         android:text="@string/unreleased"
                         android:textAlignment="viewEnd"
-                        android:textColor="@color/tv_spinner_color_2048"
-                        android:textSize="16sp"
+                        android:textColor="@color/tv_cb_unselected_2048"
+                        android:textSize="14sp"
                         app:buttonTint="@null"
                         app:useMaterialThemeColors="false" />
 
@@ -462,6 +469,8 @@
                     android:fontFamily="@font/genshin_font"
                     android:gravity="center|left"
                     android:paddingLeft="12dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
                     android:text="@string/char_role"
                     android:textColor="@color/tv_spinner_color_2048"
                     android:textSize="18sp" />
@@ -501,7 +510,7 @@
                             android:singleLine="true"
                             android:text="@string/support_dps"
                             android:textAlignment="viewEnd"
-                            android:textColor="@color/tv_spinner_color_2048"
+                            android:textColor="@color/tv_cb_unselected_2048"
                             android:textSize="14sp"
                             app:buttonTint="@null"
                             app:useMaterialThemeColors="false" />
@@ -527,7 +536,7 @@
                             android:singleLine="true"
                             android:text="@string/main_dps"
                             android:textAlignment="viewEnd"
-                            android:textColor="@color/tv_spinner_color_2048"
+                            android:textColor="@color/tv_cb_unselected_2048"
                             android:textSize="14sp"
                             app:buttonTint="@null"
                             app:useMaterialThemeColors="false" />
@@ -560,7 +569,7 @@
                             android:singleLine="true"
                             android:text="@string/utility"
                             android:textAlignment="viewEnd"
-                            android:textColor="@color/tv_spinner_color_2048"
+                            android:textColor="@color/tv_cb_unselected_2048"
                             android:textSize="14sp"
                             app:buttonTint="@null"
                             app:useMaterialThemeColors="false" />

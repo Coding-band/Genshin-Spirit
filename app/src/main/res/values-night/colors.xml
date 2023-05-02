@@ -75,12 +75,15 @@
     <color name="tv_anti_color_2048">#ECE5D8</color>
     <color name="tab_bg_2048">#4A4842</color>
     <color name="tab_bg_2048_always">#4A4842</color>
+    <color name="tab_bg_2048_cb">#4A4842</color>
     <color name="tab_bg_2048_anti">#FFECE5D8</color>
     <color name="tab_stroke_2048">#33000000</color>
     <color name="spinner_bg_2048">#FF495366</color>
     <color name="spinner_stroke_2048">#CC495366</color>
     <color name="lvl_stroke_2048">#D3BC8E</color>
     <color name="lvl_bg_2048">#99262626</color>
+    <color name="tv_cb_unselected_2048">#FFFFFF</color>
+    <color name="tv_cb_selected_2048">#F3DDB1</color>
 
     <color name="tab_selected_obj_2048">#4D5668</color>
     <color name="tab_unselected_obj_2048">#ECE5D8</color>

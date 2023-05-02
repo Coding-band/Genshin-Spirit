@@ -80,12 +80,12 @@
             android:layout_height="48dp"
             android:layout_gravity="center"
             android:layout_margin="8dp"
-            android:layout_weight="3"
+            android:layout_weight="2"
             android:background="@drawable/item_2048_search_bar_confirm"
             android:fontFamily="@font/genshin_font"
             android:text="@android:string/cancel"
             android:textColor="@color/tv_anti_color_2048"
-            android:textSize="16sp" />
+            android:textSize="14sp" />
 
     </LinearLayout>
 

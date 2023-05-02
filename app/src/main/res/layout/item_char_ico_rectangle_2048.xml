@@ -101,6 +101,7 @@
             android:id="@+id/shadowLayout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="-6dp"
             android:gravity="center"
             android:orientation="vertical"
             app:bgColor="@color/colorWhiteAlpha"
@@ -126,7 +127,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="1.0"
-                app:srcCompat="@drawable/klee_ico" />
+                app:srcCompat="@color/app_ico_bg" />
 
         </cn.enjoytoday.shadow.ShadowLayout>
 

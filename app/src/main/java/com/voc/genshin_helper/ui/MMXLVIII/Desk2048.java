@@ -732,7 +732,7 @@ public class Desk2048 extends AppCompatActivity {
         ConstraintLayout paimon_about = viewPager4.findViewById(R.id.paimon_about);
 
         //Unlock in 3.7 or 3.8
-        paimon_buff_cal.setVisibility(View.INVISIBLE);
+        //paimon_buff_cal.setVisibility(View.INVISIBLE);
 
         final int radius = 360;
         final int margin = 0;

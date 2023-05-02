@@ -7,7 +7,7 @@
 <shape android:shape="rectangle"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <solid android:color="@color/buff_spinner_bg"/>
-    <corners android:radius="60px"/>
+    <corners android:radius="360dp"/>
     <size android:width="60dp" android:height="30dp"/>
     <stroke android:color="@color/buff_spinner_kwang" android:width="1.4dp" />
 </shape>

@@ -144,8 +144,17 @@ public class SplashActivity extends AppCompatActivity {
         activity = this;
 
         sharedPreferences = getSharedPreferences("user_info", 0);
+        if (sharedPreferences.getBoolean("theme_light", true) == true) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        }else if (sharedPreferences.getBoolean("theme_night", false) == true) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        }else if (sharedPreferences.getBoolean("theme_default", false) == true) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+        }
 
         sharedPreferences.edit().putBoolean("appStopped",false).apply();
+
+
 
         LogExport.init(context);
         ((TextView) findViewById(R.id.splash_version)).setText(BuildConfig.VERSION_NAME);

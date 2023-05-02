@@ -4,9 +4,6 @@
   ~ Copyright © 2023 Xectorda 版權所有
   -->
 
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle">
-    <solid
-        android:color="@color/tab_bg_2048_cb">
-    </solid>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#01FFFFFF"/>
 </shape>
