@@ -585,7 +585,7 @@
     <!-- add in 20220201-->
     <string name="update_download_update_curr">Download Updated Resource files</string>
     <string name="update_download_update_base">Download all Resource files</string>
-    <string name="update_download_advice">Make sure your Internet speed is stable</string>
+    <string name="update_download_advice">Make sure your Internet Speed is stable</string>
     <string name="update_download_base_file_size">All Resource files size : </string>
     <string name="update_download_update_file_size">Update resource files size : </string>
     <string name="update_download_later">Download Later</string>
