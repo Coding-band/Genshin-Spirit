@@ -6,6 +6,7 @@ import static com.voc.genshin_helper.util.RoundedCornersTransformation.CornerTyp
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.appcompat.widget.SwitchCompat;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.core.widget.NestedScrollView;
@@ -60,6 +61,7 @@ import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -317,6 +319,7 @@ public class Desk2048 extends AppCompatActivity {
 
     TabLayout asc_tablayout ;
     CustomViewPager viewPagerASC;
+    SwitchCompat asc_switch;
     View mIndicator;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -407,8 +410,8 @@ public class Desk2048 extends AppCompatActivity {
         tcg2048.setup(viewPager5,context,activity,sharedPreferences);
         team2048.setup(viewPager6,context,activity,sharedPreferences);
 
-        EnkaDataCollect enkaDataCollect = new EnkaDataCollect();
-        enkaDataCollect.init(context);
+        //EnkaDataCollect enkaDataCollect = new EnkaDataCollect();
+        //enkaDataCollect.init(context);
         char_list_reload();
 
         if(sharedPreferences.getInt("app_started",0) > 10 && sharedPreferences.getBoolean("review_given",false) == false){
@@ -716,20 +719,21 @@ public class Desk2048 extends AppCompatActivity {
     public void refreshPaimon(){
         TextView card_userstat = viewPager4.findViewById(R.id.card_userstat);
         TextView card_username = viewPager4.findViewById(R.id.card_username);
+        TextView card_lvl_tv = viewPager4.findViewById(R.id.card_lvl_tv);
 
         card_username.setText(dailyMemo.getNickname(context));
-        card_userstat.setText(dailyMemo.getServer(context)+" - "+sharedPreferences.getString("genshin_uid","-1") + " - Lv."+dailyMemo.getLevel(context));
-
+        card_userstat.setText(dailyMemo.getServer(context)+" - "+sharedPreferences.getString("genshin_uid","-1"));
+        card_lvl_tv.setText(dailyMemo.getLevel(context));
     }
 
     private void setup_paimon() {
-        ConstraintLayout paimon_cal = viewPager4.findViewById(R.id.paimon_cal);
-        ConstraintLayout paimon_buff_cal = viewPager4.findViewById(R.id.paimon_buff_cal);
-        ConstraintLayout paimon_daily = viewPager4.findViewById(R.id.paimon_daily);
-        ConstraintLayout paimon_map = viewPager4.findViewById(R.id.paimon_map);
-        ConstraintLayout paimon_alarm = viewPager4.findViewById(R.id.paimon_alarm);
-        ConstraintLayout paimon_setting = viewPager4.findViewById(R.id.paimon_setting);
-        ConstraintLayout paimon_about = viewPager4.findViewById(R.id.paimon_about);
+        //ConstraintLayout paimon_cal = viewPager4.findViewById(R.id.paimon_cal);
+        //ConstraintLayout paimon_buff_cal = viewPager4.findViewById(R.id.paimon_buff_cal);
+        //ConstraintLayout paimon_daily = viewPager4.findViewById(R.id.paimon_daily);
+        //ConstraintLayout paimon_map = viewPager4.findViewById(R.id.paimon_map);
+        //ConstraintLayout paimon_alarm = viewPager4.findViewById(R.id.paimon_alarm);
+        //ConstraintLayout paimon_setting = viewPager4.findViewById(R.id.paimon_setting);
+        //ConstraintLayout paimon_about = viewPager4.findViewById(R.id.paimon_about);
 
         //Unlock in 3.7 or 3.8
         //paimon_buff_cal.setVisibility(View.INVISIBLE);
@@ -762,169 +766,140 @@ public class Desk2048 extends AppCompatActivity {
                 .into ((ImageView) viewPager4.findViewById(R.id.card_char_ico));
 
         ImageView card_char_bg = viewPager4.findViewById(R.id.card_char_bg);
-        card_char_bg.setImageResource(css.getRare2048ByInt(sharedPreferences.getInt("icon_rare",5)));
+        card_char_bg.setImageResource(css.getCharRare2048ByInt(sharedPreferences.getInt("icon_rare",5)));
 
+        int countPerRow = (int) ((width_curr - 8*displayMetrics.density) / (300));
+        int itemWidth = (int) (300 + ((width_curr - 8*displayMetrics.density) % (300)) / countPerRow);
 
-        // Btn of paimon page
-        paimon_cal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Desk2048.this, CalculatorDB_2048.class);
-                startActivity(i);
+        LinearLayout paimon_ll = viewPager4.findViewById(R.id.paimon_ll);
+        paimon_ll.removeAllViews();
+        int[] btnStr = new int[]{R.string.calculator, R.string.daily_login, R.string.map, R.string.title_settings, R.string.about, R.string.buff_calcluator};
+        int[] btnIMG = new int[]{R.drawable.ic_2048_cal, R.drawable.ic_2048_daily, R.drawable.ic_2048_map, R.drawable.ic_2048_setting, R.drawable.ic_2048_about, R.drawable.ic_2048_cal};
+        View.OnClickListener[] btnOnClick = new View.OnClickListener[]{paimon_cal, paimon_daily, paimon_map, paimon_setting, paimon_about, paimon_buff_cal};
+
+        LinearLayout ll_main = new LinearLayout(context);
+        for (int x = 0; x < btnStr.length ; x++){
+            if (x % countPerRow == 0){
+                LinearLayout ll = new LinearLayout(context);
+                ll.setOrientation(LinearLayout.HORIZONTAL);
+                ll.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,ViewGroup.LayoutParams.WRAP_CONTENT));
+                ll_main = ll;
+                paimon_ll.addView(ll_main);
             }
-        });
-        paimon_buff_cal.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(Desk2048.this, BuffDatabaseUI.class);
-                startActivity(i);
-            }
-        });
-        paimon_daily.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String lang = "en-us";
-                switch (sharedPreferences.getString("curr_lang","en-US")){
-                    case "zh-HK" : lang = "zh-tw";break;
-                    default: lang = sharedPreferences.getString("curr_lang","en-US").toLowerCase();break;
-                }
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481&lang="+lang));
-                startActivity(browserIntent);
-            }
-        });
-        paimon_map.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String lang = "en-us";
-                switch (sharedPreferences.getString("curr_lang","en-US")){
-                    case "zh-HK" : lang = "zh-tw";break;
-                    default: lang = sharedPreferences.getString("curr_lang","en-US").toLowerCase();break;
-                }
-                Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://act.hoyolab.com/ys/app/interactive-map/index.html?lang="+lang+"#/map/2"));
-                startActivity(browserIntent);
-            }
-        });
+            View view = View.inflate(context, R.layout.item_paimon_btn_2048, null);
 
-        paimon_alarm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(context, AlarmUI.class);
-                startActivity(i);
-            }
-        });
+            ImageView paimon_bg = view.findViewById(R.id.paimon_bg);
+            TextView paimon_tv = view.findViewById(R.id.paimon_tv);
+            ImageView paimon_ico = view.findViewById(R.id.paimon_ico);
 
+            paimon_tv.setText(context.getString(btnStr[x]));
+            paimon_ico.setImageResource(btnIMG[x]);
+            paimon_bg.setOnClickListener(btnOnClick[x]);
+            paimon_bg.getLayoutParams().width = itemWidth - (int) (8*displayMetrics.density);
 
-        paimon_setting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final Dialog dialog = new Dialog(context, R.style.PageDialogStyle_P);
-                View view = View.inflate(context, R.layout.fragment_setting_2048_new, null);
-                dialog.setContentView(view);
-                dialog.setCanceledOnTouchOutside(true);
-                //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
-                Window dialogWindow = dialog.getWindow();
-                WindowManager.LayoutParams lp = dialogWindow.getAttributes();
-                // 2O48 DESIGN
-                dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
-                dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
-
-                DisplayMetrics displayMetrics = new DisplayMetrics();
-                getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-                int height = displayMetrics.heightPixels;
-                int width = displayMetrics.widthPixels;
-
-                setup_setting(view,dialog);
-                //setColorBk(view);
-
-                lp.width = WindowManager.LayoutParams.MATCH_PARENT;
-                lp.height = WindowManager.LayoutParams.MATCH_PARENT;
-                lp.gravity = Gravity.CENTER;
-                dialogWindow.setAttributes(lp);
-
-                dialog.show();
-            }
-        });
-
-        /*
-        paimon_setting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
-                View view = View.inflate(context, R.layout.fragment_setting_2048_new, null);
-                dialog.setContentView(view);
-                dialog.setCanceledOnTouchOutside(true);
-                //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
-                Window dialogWindow = dialog.getWindow();
-                WindowManager.LayoutParams lp = dialogWindow.getAttributes();
-                // 2O48 DESIGN
-                dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
-                dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
-
-                DisplayMetrics displayMetrics = new DisplayMetrics();
-                getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-                int height = displayMetrics.heightPixels;
-                int width = displayMetrics.widthPixels;
-
-                //setup_setting(view,dialog);
-                //setColorBk(view);
-
-                ImageView result_camera = view.findViewById(R.id.discord_ico);
-                result_camera.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        ScrollView scrollview = view.findViewById(R.id.setting_sc);
-
-                        Bitmap bitmap = getBitmapFromView(scrollview, scrollview.getChildAt(0).getHeight(), scrollview.getChildAt(0).getWidth());
-                        requestPermission();
-                        if (isWritePermissionGranted){
-                            if (saveImageToExternalStorage("Voc_Setting_Page",bitmap)){
-                                CustomToast.toast(context,activity,context.getString(R.string.screenshot_saved));
-                            }
-                        }else {
-                            CustomToast.toast(context,activity,context.getString(R.string.screenshot_not_saved_permission));
-                        }
-                    }
-                });
-
-                lp.width = WindowManager.LayoutParams.MATCH_PARENT;
-                lp.height = WindowManager.LayoutParams.MATCH_PARENT;
-                lp.gravity = Gravity.CENTER;
-                dialogWindow.setAttributes(lp);
-                dialog.show();
-            }
-        });
-         */
-        paimon_about.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
-                View view = View.inflate(context, R.layout.fragment_about_2048, null);
-                dialog.setContentView(view);
-                dialog.setCanceledOnTouchOutside(true);
-
-                //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
-                Window dialogWindow = dialog.getWindow();
-                WindowManager.LayoutParams lp = dialogWindow.getAttributes();
-                // 2O48 DESIGN
-                dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
-                dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
-
-                DisplayMetrics displayMetrics = new DisplayMetrics();
-                getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-                int height = displayMetrics.heightPixels;
-                int width = displayMetrics.widthPixels;
-
-                setup_about(view,dialog);
-
-                lp.width = WindowManager.LayoutParams.MATCH_PARENT;
-                lp.height = WindowManager.LayoutParams.MATCH_PARENT;
-                lp.gravity = Gravity.CENTER;
-                dialogWindow.setAttributes(lp);
-                dialog.show();
-            }
-        });
+            ll_main.addView(view);
+        }
     }
+
+    public View.OnClickListener paimon_cal = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent i = new Intent(Desk2048.this, CalculatorDB_2048.class);
+            startActivity(i);
+        }
+    };
+    public View.OnClickListener paimon_buff_cal = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent i = new Intent(Desk2048.this, BuffDatabaseUI.class);
+            startActivity(i);
+        }
+    };
+    public View.OnClickListener paimon_daily = new View.OnClickListener()  {
+        @Override
+        public void onClick(View v) {
+            String lang = "en-us";
+            switch (sharedPreferences.getString("curr_lang","en-US")){
+                case "zh-HK" : lang = "zh-tw";break;
+                default: lang = sharedPreferences.getString("curr_lang","en-US").toLowerCase();break;
+            }
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481&lang="+lang));
+            startActivity(browserIntent);
+        }
+    };
+    public View.OnClickListener paimon_map = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent i = new Intent(context, AlarmUI.class);
+            startActivity(i);
+        }
+    };
+    public View.OnClickListener paimon_alarm = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            Intent i = new Intent(context, AlarmUI.class);
+            startActivity(i);
+        }
+    };
+    public View.OnClickListener paimon_setting = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            final Dialog dialog = new Dialog(context, R.style.PageDialogStyle_P);
+            View view = View.inflate(context, R.layout.fragment_setting_2048_new, null);
+            dialog.setContentView(view);
+            dialog.setCanceledOnTouchOutside(true);
+            //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
+            Window dialogWindow = dialog.getWindow();
+            WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+            // 2O48 DESIGN
+            dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+            dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
+
+            DisplayMetrics displayMetrics = new DisplayMetrics();
+            getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+            int height = displayMetrics.heightPixels;
+            int width = displayMetrics.widthPixels;
+
+            setup_setting(view,dialog);
+            //setColorBk(view);
+
+            lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+            lp.height = WindowManager.LayoutParams.MATCH_PARENT;
+            lp.gravity = Gravity.CENTER;
+            dialogWindow.setAttributes(lp);
+
+            dialog.show();
+        }
+    };
+    public View.OnClickListener paimon_about = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+            View view = View.inflate(context, R.layout.fragment_about_2048, null);
+            dialog.setContentView(view);
+            dialog.setCanceledOnTouchOutside(true);
+
+            //view.setMinimumHeight((int) (ScreenSizeUtils.getInstance(this).getScreenHeight()));
+            Window dialogWindow = dialog.getWindow();
+            WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+            // 2O48 DESIGN
+            dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+            dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
+
+            DisplayMetrics displayMetrics = new DisplayMetrics();
+            getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+            int height = displayMetrics.heightPixels;
+            int width = displayMetrics.widthPixels;
+
+            setup_about(view,dialog);
+
+            lp.width = WindowManager.LayoutParams.MATCH_PARENT;
+            lp.height = WindowManager.LayoutParams.MATCH_PARENT;
+            lp.gravity = Gravity.CENTER;
+            dialogWindow.setAttributes(lp);
+            dialog.show();
+        }
+    };
 
     private Bitmap getBitmapFromView(View view, int height, int width) {
         Bitmap bitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
@@ -1741,9 +1716,11 @@ public class Desk2048 extends AppCompatActivity {
 
         TextView card_userstat = viewX.findViewById(R.id.card_userstat);
         TextView card_username = viewX.findViewById(R.id.card_username);
+        TextView card_lvl_tv = viewPager4.findViewById(R.id.card_lvl_tv);
 
         card_username.setText(dailyMemo.getNickname(context));
-        card_userstat.setText(dailyMemo.getServer(context)+" - "+sharedPreferences.getString("genshin_uid","-1") + " - Lv."+dailyMemo.getLevel(context));
+        card_userstat.setText(dailyMemo.getServer(context)+" - "+sharedPreferences.getString("genshin_uid","-1"));
+        card_lvl_tv.setText(dailyMemo.getLevel(context));
         card_userstat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -1774,7 +1751,7 @@ public class Desk2048 extends AppCompatActivity {
                 .into (card_char_ico);
 
         ImageView card_char_bg = viewX.findViewById(R.id.card_char_bg);
-        card_char_bg.setImageResource(item_rss.getRare2048ByInt(sharedPreferences.getInt("icon_rare",5)));
+        card_char_bg.setImageResource(item_rss.getCharRare2048ByInt(sharedPreferences.getInt("icon_rare",5)));
 
         ConstraintLayout card_cl = viewX.findViewById(R.id.card_cl);
         card_cl.setMinHeight(height);
@@ -1837,7 +1814,7 @@ public class Desk2048 extends AppCompatActivity {
             icon_rare_final = rare;
         }
 
-        card_char_bg.setImageResource(item_rss.getRare2048ByInt(icon_rare_final));
+        card_char_bg.setImageResource(item_rss.getCharRare2048ByInt(icon_rare_final));
 
         FrameLayout dialog_ok = viewX.findViewById(R.id.dialog_ok);
         dialog_ok.setOnClickListener(new View.OnClickListener() {
@@ -1871,7 +1848,7 @@ public class Desk2048 extends AppCompatActivity {
                         .into ((ImageView) viewPager4.findViewById(R.id.card_char_ico));
 
                 ImageView card_char_bg = viewPager4.findViewById(R.id.card_char_bg);
-                card_char_bg.setImageResource(css.getRare2048ByInt(sharedPreferences.getInt("icon_rare",5)));
+                card_char_bg.setImageResource(css.getCharRare2048ByInt(sharedPreferences.getInt("icon_rare",5)));
 
                 dialog.dismiss();
             }
@@ -2170,6 +2147,9 @@ public class Desk2048 extends AppCompatActivity {
         viewPagerASC = viewPager0.findViewById(R.id.asc_vp);
         viewPagerASC.setAdapter(new MyViewPagerAdapter(viewPager_ASC_List));
         viewPagerASC.setIsLinearLayout(true);
+        asc_switch = viewPager0.findViewById(R.id.asc_switch);
+        ImageView asc_switch_char = viewPager0.findViewById(R.id.asc_switch_char);
+        ImageView asc_switch_weapon = viewPager0.findViewById(R.id.asc_switch_weapon);
 
         asc_tablayout.removeAllTabs();
 
@@ -2178,6 +2158,7 @@ public class Desk2048 extends AppCompatActivity {
         int height = displayMetrics.heightPixels;
         int width = displayMetrics.widthPixels;
 
+        /*
         int[] itemImageArray = new int[]{R.drawable.ic_2048_team_char,R.drawable.ic_2048_team_weapon};
         int[] itemImageSelectedArray = new int[]{R.drawable.ic_2048_team_char_selected,R.drawable.ic_2048_team_weapon_selected};
 
@@ -2213,6 +2194,7 @@ public class Desk2048 extends AppCompatActivity {
         View view1 = asc_tablayout.getTabAt(0).getCustomView();
         ImageView tab_icon = (ImageView) view1.findViewById(R.id.icon);
         tab_icon.setImageResource(itemImageSelectedArray[0]);
+
         asc_tablayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
@@ -2252,6 +2234,22 @@ public class Desk2048 extends AppCompatActivity {
                 }
             }
         });
+         */
+
+        asc_switch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked){
+                    asc_switch_char.setImageResource(R.drawable.ic_2048_team_char);
+                    asc_switch_weapon.setImageResource(R.drawable.ic_2048_team_weapon_selected);
+                    viewPagerASC.setCurrentItem(1);
+                }else{
+                    asc_switch_char.setImageResource(R.drawable.ic_2048_team_char_selected);
+                    asc_switch_weapon.setImageResource(R.drawable.ic_2048_team_weapon);
+                    viewPagerASC.setCurrentItem(0);
+                }
+            }
+        });
 
         viewPagerASC.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
@@ -2266,6 +2264,7 @@ public class Desk2048 extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
                 asc_tablayout.selectTab(asc_tablayout.getTabAt(position));
+                asc_switch.setChecked(position==1);
             }
 
             @Override

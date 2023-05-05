@@ -51,7 +51,6 @@
                     android:id="@+id/frameLayout5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -61,16 +60,16 @@
 
                     <ImageView
                         android:id="@+id/card_char_bg"
-                        android:layout_width="72dp"
-                        android:layout_height="72dp"
-                        android:layout_margin="8dp"
-                        android:foreground="@drawable/outline_ico"
-                        app:srcCompat="@drawable/item_char_list_bg_circ_5s" />
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_margin="4dp"
+                        app:srcCompat="@drawable/item_paimon_char_bg_circ_5s" />
 
                     <ImageView
                         android:id="@+id/card_char_ico"
                         android:layout_width="72dp"
                         android:layout_height="72dp"
+                        android:layout_gravity="center"
                         android:layout_margin="8dp"
                         app:srcCompat="@drawable/klee_ico" />
 
@@ -79,13 +78,27 @@
                         android:layout_width="72dp"
                         android:layout_height="72dp"
                         android:layout_margin="8dp"
-                        android:foreground="@drawable/outline_ico" />
+                        android:foreground="@drawable/outline_ico"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/card_lvl_tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom|center"
+                        android:layout_marginBottom="12dp"
+                        android:background="@drawable/setting_tab_bg_2048"
+                        android:fontFamily="@font/genshin_font"
+                        android:paddingLeft="4dp"
+                        android:paddingRight="4dp"
+                        android:text="60"
+                        android:textSize="12sp" />
                 </FrameLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginBottom="8dp"
                     android:orientation="vertical"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -103,12 +116,21 @@
                         android:textSize="20sp" />
 
                     <TextView
+                        android:id="@+id/card_userstat2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="你好 我在玩星穹鐵道 窮了\n明天去漫展嗎？"
+                        android:textColor="@color/white" />
+
+                    <TextView
                         android:id="@+id/card_userstat"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/genshin_font"
-                        android:text="港、台、澳服 - 123456789 - Lv.59 "
-                        android:textColor="@color/white" />
+                        android:text="港、台、澳服 - 123456789"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
 
                 </LinearLayout>
 
@@ -352,7 +374,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:visibility="gone">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -675,7 +698,22 @@
 
                 </LinearLayout>
 
+
             </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/paimon_ll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="4dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
 
         </LinearLayout>
     </ScrollView>

@@ -47,6 +47,8 @@
                         android:layout_height="72dp"
                         android:layout_gravity="center"
                         android:layout_weight="1"
+                        android:background="@drawable/bg_colored_talent_pyro"
+                        android:padding="4dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -90,7 +92,7 @@
                         android:text="砰砰"
                         android:textAlignment="center"
                         android:textColor="@color/tv_anti_color_2048"
-                        android:textSize="24dp" />
+                        android:textSize="20sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -101,7 +103,7 @@
                         android:text="@string/noraml_atk"
                         android:textAlignment="center"
                         android:textColor="@color/dialog_desc_title_tv_color_2048"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -223,6 +225,8 @@
                         android:layout_height="72dp"
                         android:layout_gravity="center"
                         android:layout_weight="1"
+                        android:background="@drawable/bg_colored_talent_pyro"
+                        android:padding="4dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -267,7 +271,7 @@
                         android:text="蹦蹦炸彈"
                         android:textAlignment="center"
                         android:textColor="@color/tv_anti_color_2048"
-                        android:textSize="24dp" />
+                        android:textSize="20sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -278,7 +282,7 @@
                         android:text="@string/element_atk"
                         android:textAlignment="center"
                         android:textColor="@color/dialog_desc_title_tv_color_2048"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -294,7 +298,8 @@
                 android:text="描述"
                 android:textAlignment="viewStart"
                 android:textColor="@color/dialog_title_tv_color_2048"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/info_talent2_normal"
@@ -346,6 +351,8 @@
                         android:layout_height="72dp"
                         android:layout_gravity="center"
                         android:layout_weight="1"
+                        android:background="@drawable/bg_colored_talent_pyro"
+                        android:padding="4dp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -390,7 +397,7 @@
                         android:text="轟轟火花"
                         android:textAlignment="center"
                         android:textColor="@color/tv_anti_color_2048"
-                        android:textSize="24dp" />
+                        android:textSize="20sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -401,7 +408,7 @@
                         android:text="@string/final_atk"
                         android:textAlignment="center"
                         android:textColor="@color/dialog_desc_title_tv_color_2048"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -417,7 +424,8 @@
                 android:text="描述"
                 android:textAlignment="viewStart"
                 android:textColor="@color/dialog_title_tv_color_2048"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/info_talent3_normal"
@@ -467,6 +475,8 @@
                     android:layout_height="72dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
+                    android:background="@drawable/bg_colored_talent_pyro"
+                    android:padding="4dp"
                     app:srcCompat="@drawable/ico_catalyst" />
 
                 <LinearLayout
@@ -485,7 +495,7 @@
                         android:text="神里,莫娜適用"
                         android:textAlignment="center"
                         android:textColor="@color/tv_anti_color_2048"
-                        android:textSize="24dp" />
+                        android:textSize="20sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -496,7 +506,7 @@
                         android:text="@string/other_title"
                         android:textAlignment="center"
                         android:textColor="@color/dialog_desc_title_tv_color_2048"
-                        android:textSize="18sp" />
+                        android:textSize="16sp" />
                 </LinearLayout>
 
             </LinearLayout>
@@ -512,7 +522,8 @@
                 android:text="描述"
                 android:textAlignment="viewStart"
                 android:textColor="@color/dialog_title_tv_color_2048"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/info_talent4_normal"

@@ -1384,6 +1384,7 @@ public class Characters_Info_2048 {
 
         /** BATTLE_TALENT */
         char_talent1_ico.setImageDrawable(item_rss.getTalentIcoByName(normal_img,context));
+        char_talent1_ico.setBackgroundResource(item_rss.getTalentBg2048ByElement(element));
         char_talent1_name.setText(talent1_name);
 
 
@@ -1392,58 +1393,71 @@ public class Characters_Info_2048 {
         char_talent1_drop.setText(setSpanAndTv(mSpan,normal_desc3,mWord), TextView.BufferType.SPANNABLE);
 
         char_talent2_ico.setImageDrawable(item_rss.getTalentIcoByName(element_img,context));
+        char_talent2_ico.setBackgroundResource(item_rss.getTalentBg2048ByElement(element));
         char_talent2_name.setText(element_name);
         char_talent2_normal.setText(setSpanAndTv(mSpan, String.valueOf(Html.fromHtml(element_desc)),mWord), TextView.BufferType.SPANNABLE);
 
         char_talent3_ico.setImageDrawable(item_rss.getTalentIcoByName(final_img,context));
+        char_talent3_ico.setBackgroundResource(item_rss.getTalentBg2048ByElement(element));
         char_talent3_name.setText(final_name);
         char_talent3_normal.setText(setSpanAndTv(mSpan, String.valueOf(Html.fromHtml(final_desc)),mWord), TextView.BufferType.SPANNABLE);
 
         if(other_name != "XPR"){
             char_talent4_card.setVisibility(View.VISIBLE);
             char_talent4_ico.setImageDrawable(item_rss.getTalentIcoByName(other_img,context));
+            char_talent4_ico.setBackgroundResource(item_rss.getTalentBg2048ByElement(element));
             char_talent4_name.setText(other_name);
             char_talent4_normal.setText(setSpanAndTv(mSpan,String.valueOf(Html.fromHtml(other_desc)),mWord), TextView.BufferType.SPANNABLE);
         }
 
         /** BASIC_TALENT */
         char_basic_talent1_ico.setImageDrawable(item_rss.getTalentIcoByName(talent1_img,context));
+        char_basic_talent1_ico.setBackgroundResource(item_rss.getTalentBg2048ByElement(element));
         char_basic_talent1_name.setText(talent1_name);
         char_basic_talent1_normal.setText(setSpanAndTv(mSpan,talent1_desc,mWord), TextView.BufferType.SPANNABLE);
 
         char_basic_talent2_ico.setImageDrawable(item_rss.getTalentIcoByName(talent2_img,context));
+        char_basic_talent2_ico.setBackgroundResource(item_rss.getTalentBg2048ByElement(element));
         char_basic_talent2_name.setText(talent2_name);
         char_basic_talent2_normal.setText(setSpanAndTv(mSpan,talent2_desc,mWord), TextView.BufferType.SPANNABLE);
 
         if(!talent3_name.isEmpty() && !talent3_name.equals("XPR")){
             char_basic_talent3_card.setVisibility(View.VISIBLE);
             char_basic_talent3_ico.setImageDrawable(item_rss.getTalentIcoByName(talent3_img,context));
+            char_basic_talent3_ico.setBackgroundResource(item_rss.getTalentBg2048ByElement(element));
             char_basic_talent3_name.setText(talent3_name);
             char_basic_talent3_normal.setText(setSpanAndTv(mSpan,talent3_desc,mWord), TextView.BufferType.SPANNABLE);
         }
 
         /** Soul of Life*/
         char_sof1_ico.setImageDrawable(item_rss.getTalentIcoByName(sof1_img,context));
+        char_sof1_ico.setBackgroundResource(item_rss.getSOFBg2048ByElement(element));
+        char_sof1_ico.setBackgroundResource(item_rss.getSOFBg2048ByElement(element));
         char_sof1_name.setText(sof1_name);
         char_sof1_normal.setText(setSpanAndTv(mSpan,sof1_desc,mWord), TextView.BufferType.SPANNABLE);
 
         char_sof2_ico.setImageDrawable(item_rss.getTalentIcoByName(sof2_img,context));
+        char_sof2_ico.setBackgroundResource(item_rss.getSOFBg2048ByElement(element));
         char_sof2_name.setText(sof2_name);
         char_sof2_normal.setText(setSpanAndTv(mSpan,sof2_desc,mWord), TextView.BufferType.SPANNABLE);
 
         char_sof3_ico.setImageDrawable(item_rss.getTalentIcoByName(sof3_img,context));
+        char_sof3_ico.setBackgroundResource(item_rss.getSOFBg2048ByElement(element));
         char_sof3_name.setText(sof3_name);
         char_sof3_normal.setText(setSpanAndTv(mSpan,sof3_desc,mWord), TextView.BufferType.SPANNABLE);
 
         char_sof4_ico.setImageDrawable(item_rss.getTalentIcoByName(sof4_img,context));
+        char_sof4_ico.setBackgroundResource(item_rss.getSOFBg2048ByElement(element));
         char_sof4_name.setText(sof4_name);
         char_sof4_normal.setText(setSpanAndTv(mSpan,sof4_desc,mWord), TextView.BufferType.SPANNABLE);
 
         char_sof5_ico.setImageDrawable(item_rss.getTalentIcoByName(sof5_img,context));
+        char_sof5_ico.setBackgroundResource(item_rss.getSOFBg2048ByElement(element));
         char_sof5_name.setText(sof5_name);
         char_sof5_normal.setText(setSpanAndTv(mSpan,sof5_desc,mWord), TextView.BufferType.SPANNABLE);
 
         char_sof6_ico.setImageDrawable(item_rss.getTalentIcoByName(sof6_img,context));
+        char_sof6_ico.setBackgroundResource(item_rss.getSOFBg2048ByElement(element));
         char_sof6_name.setText(sof6_name);
         char_sof6_normal.setText(setSpanAndTv(mSpan,sof6_desc,mWord), TextView.BufferType.SPANNABLE);
 

@@ -66,7 +66,9 @@ public class DailyMemo2048Widget extends AppWidgetProvider {
         Intent intent = new Intent(context, DailyMemo2048Service.class);
         if(!isServiceRun(context)){
             if (context.getSharedPreferences("user_info", Context.MODE_PRIVATE).getBoolean("isDailyMemoEnabled", true)) {
-                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+                    System.out.println("DailyMemo - Widget not allowed to run since >= Android S");
+                }else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                     context.startForegroundService(intent);
                 } else {
                     context.startService(intent);

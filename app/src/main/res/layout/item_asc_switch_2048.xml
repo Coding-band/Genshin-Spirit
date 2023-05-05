@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Project Genshin Spirit (原神小幫手) was
+  ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
+  ~ Copyright © 2023 Xectorda 版權所有
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="104dp"
+    android:layout_height="52dp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
+        android:src="@drawable/bg_tcg_tab_bg" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/asc_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:layout_centerVertical="true"
+        android:checked="false"
+        android:textColor="@color/white"
+        android:thumb="@drawable/item_asc_selector_2048"
+        app:track="@drawable/item_asc_track_2048" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <ImageView
+            android:id="@+id/asc_switch_char"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="8dp"
+            android:src="@drawable/ic_2048_team_char_selected"/>
+
+        <ImageView
+            android:id="@+id/asc_switch_weapon"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:padding="8dp"
+            android:src="@drawable/ic_2048_team_weapon"/>
+
+
+    </LinearLayout>
+</RelativeLayout>

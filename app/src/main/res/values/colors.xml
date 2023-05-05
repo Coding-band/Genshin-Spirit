@@ -106,7 +106,7 @@
     <color name="tab_selected_bg_2048">#ECE5D8</color>
     <color name="tab_unselected_bg_2048">#4D5668</color>
     <color name="tab_stroke_edge_2048">#33FFFFFF</color>
-    <color name="tab_selected_2048">#3B4255</color>
+    <color name="tab_selected_2048">#ECE5D8</color>
     <color name="tab_selected_char_2048">#3B4255</color>
     <color name="tab_unselected_char_2048">#4D5668</color>
     <color name="tab_unselected_2048">#3B4255</color>

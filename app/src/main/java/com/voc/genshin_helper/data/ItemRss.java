@@ -168,6 +168,38 @@ public class ItemRss {
             default : return R.drawable.item_char_list_bg_circ_0s;
         }
     }
+    public int getCharRare2048ByInt(int i){
+        switch (i){
+            case 0 : return R.drawable.item_paimon_char_bg_circ_0s;
+            case 4 : return R.drawable.item_paimon_char_bg_circ_4s;
+            case 5 : return R.drawable.item_paimon_char_bg_circ_5s;
+            default : return R.drawable.item_paimon_char_bg_circ_0s;
+        }
+    }
+    public int getTalentBg2048ByElement(String element){
+        switch (element){
+            case "Anemo" : return R.drawable.bg_colored_talent_anemo;
+            case "Cryo" : return R.drawable.bg_colored_talent_cryo;
+            case "Dendro" : return R.drawable.bg_colored_talent_dendro;
+            case "Electro" : return R.drawable.bg_colored_talent_electro;
+            case "Geo" : return R.drawable.bg_colored_talent_geo;
+            case "Hydro" : return R.drawable.bg_colored_talent_hydro;
+            case "Pyro" : return R.drawable.bg_colored_talent_pyro;
+            default: return R.drawable.bg_colored_talent_pyro;
+        }
+    }
+    public int getSOFBg2048ByElement(String element){
+        switch (element){
+            case "Anemo" : return R.drawable.bg_colored_sof_anemo;
+            case "Cryo" : return R.drawable.bg_colored_sof_cryo;
+            case "Dendro" : return R.drawable.bg_colored_sof_dendro;
+            case "Electro" : return R.drawable.bg_colored_sof_electro;
+            case "Geo" : return R.drawable.bg_colored_sof_geo;
+            case "Hydro" : return R.drawable.bg_colored_sof_hydro;
+            case "Pyro" : return R.drawable.bg_colored_sof_pyro;
+            default: return R.drawable.bg_colored_sof_pyro;
+        }
+    }
 
 
     public int getWeaponTypeIMG (String str, Context context){

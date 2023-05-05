@@ -98,6 +98,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManagerFactory;
 
@@ -139,6 +140,13 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(bundle);
         setTheme(R.style.SplashTheme);
         setContentView(R.layout.activity_splash_new);
+
+        if (BuildConfig.FLAVOR.equals("dev")){
+            StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+                    .detectAll()
+                    .penaltyLog()
+                    .build());
+        }
 
         context = this;
         activity = this;
@@ -281,10 +289,8 @@ public class SplashActivity extends AppCompatActivity {
 
     private void goMain() {
         sharedPreferences = getSharedPreferences("user_info", 0);
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-
-        if(getRemoteFileSize(ItemRss.SERVER_DOWNLOAD_ROOT+baseFileName) > 10000000){
+        long remoteFileSize = getRemoteFileSize(ItemRss.SERVER_DOWNLOAD_ROOT+baseFileName);
+        if(remoteFileSize > 10000000){
             if (sharedPreferences.getBoolean("downloadBase", false) == false) {
                 /**
                  * Build a class in util -> Dialog2048
@@ -292,7 +298,7 @@ public class SplashActivity extends AppCompatActivity {
 
                 Dialog2048 dialog2048 = new Dialog2048();
                 dialog2048.setup(context,activity);
-                dialog2048.updateMax(getRemoteFileSize(ItemRss.SERVER_DOWNLOAD_ROOT+baseFileName));
+                dialog2048.updateMax(remoteFileSize);
                 dialog2048.mode(Dialog2048.MODE_DOWNLOAD_BASE);
                 dialog2048.show();
 
@@ -318,7 +324,7 @@ public class SplashActivity extends AppCompatActivity {
                 });
 
             } else {
-                check_updates();
+                check_updates(remoteFileSize);
             }
         }else{
             runDesk(sharedPreferences);
@@ -403,14 +409,15 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     public static long getRemoteFileSize(String urlSTR) {
-        URL url = null;
         try {
-            url = new URL(urlSTR);
-            URLConnection urlConnection = url.openConnection();
-            urlConnection.connect();
-            return urlConnection.getContentLength();
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
+            URL url = new URL(urlSTR);
+            HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+            //connT.setSSLSocketFactory(sslContext.getSocketFactory());
+            conn.setRequestMethod("GET");
+            conn.setConnectTimeout(4000);
+            conn.setReadTimeout(4000);
+            conn.connect();
+            return conn.getContentLength();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -418,11 +425,11 @@ public class SplashActivity extends AppCompatActivity {
     }
 
 
-    public void check_updates() {
+    public void check_updates(long remoteFileSize) {
         sharedPreferences = context.getSharedPreferences("user_info", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        if(getRemoteFileSize(ItemRss.SERVER_DOWNLOAD_ROOT+baseFileName) > 10000000){
+        if(remoteFileSize > 10000000){
             OkHttpClient client = new OkHttpClient();
             String url = ItemRss.SERVER_DOWNLOAD_ROOT+"update.json";
             if (BuildConfig.FLAVOR.equals("dev")){
@@ -525,7 +532,6 @@ public class SplashActivity extends AppCompatActivity {
         }else{
             runDesk(sharedPreferences);
         }
-
     }
 
     private void runDesk(SharedPreferences sharedPreferences) {
@@ -568,15 +574,17 @@ public class SplashActivity extends AppCompatActivity {
 
 
     public static long getRemoteFileSizeA(ArrayList<String> urlSTR) {
-        URL url = null;
         long size = 0;
         for (int x = 0; x < urlSTR.size(); x++) {
-            System.out.println(urlSTR.get(x));
             try {
-                url = new URL(urlSTR.get(x));
-                URLConnection urlConnection = url.openConnection();
-                urlConnection.connect();
-                size = size + urlConnection.getContentLength();
+                URL url = new URL(urlSTR.get(x));
+                HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
+                //connT.setSSLSocketFactory(sslContext.getSocketFactory());
+                conn.setRequestMethod("GET");
+                conn.setConnectTimeout(4000);
+                conn.setReadTimeout(4000);
+                conn.connect();
+                size = size + conn.getContentLength();
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -594,15 +602,12 @@ public class SplashActivity extends AppCompatActivity {
             /*
             final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
             View view = View.inflate(context, R.layout.fragment_choose_style_ui, null);
-
             WebView webView = view.findViewById(R.id.webView);
             RadioButton style_Voc_rb = view.findViewById(R.id.ui_Voc_rb);
             RadioButton style_2O48_rb = view.findViewById(R.id.ui_2O48_rb);
             RadioButton style_SipTik_rb = view.findViewById(R.id.ui_SipTik_rb);
             FrameLayout menu_ok = view.findViewById(R.id.menu_ok);
-
             SharedPreferences.Editor editor = sharedPreferences.edit();
-
             style_Voc_rb.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -612,7 +617,6 @@ public class SplashActivity extends AppCompatActivity {
                     choice = "Voc";
                 }
             });
-
             style_2O48_rb.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -622,7 +626,6 @@ public class SplashActivity extends AppCompatActivity {
                     choice = "2O48";
                 }
             });
-
             style_SipTik_rb.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -634,7 +637,6 @@ public class SplashActivity extends AppCompatActivity {
                     choice = "SipTik";
                 }
             });
-
             menu_ok.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -648,23 +650,19 @@ public class SplashActivity extends AppCompatActivity {
                     }
                 }
             });
-
             dialog.setContentView(view);
             dialog.setCanceledOnTouchOutside(true);
             Window dialogWindow = dialog.getWindow();
             WindowManager.LayoutParams lp = dialogWindow.getAttributes();
-
             DisplayMetrics displayMetrics = new DisplayMetrics();
             getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
             int height = displayMetrics.heightPixels;
             int width = displayMetrics.widthPixels;
-
             lp.width = (int) (width * 0.9);
             lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
             lp.gravity = Gravity.CENTER;
             dialogWindow.setAttributes(lp);
             dialog.show();
-
              */
         } else {
             runDesk(sharedPreferences);
@@ -695,4 +693,3 @@ public class SplashActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
     }
 }
-

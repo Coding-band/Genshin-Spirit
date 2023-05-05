@@ -222,7 +222,9 @@ public class Dialog2048 {
 
     public void dismiss(){
         if (dialog != null){
-            dialog.dismiss();
+            if (dialog.isShowing()){
+                dialog.dismiss();
+            }
         }
     }
 

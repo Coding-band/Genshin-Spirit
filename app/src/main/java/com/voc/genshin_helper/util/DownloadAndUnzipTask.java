@@ -188,8 +188,8 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
                     HttpsURLConnection connT = (HttpsURLConnection) urlT.openConnection();
                     //connT.setSSLSocketFactory(sslContext.getSocketFactory());
                     connT.setRequestMethod("GET");
-                    connT.setConnectTimeout(10000);
-                    connT.setReadTimeout(10000);
+                    connT.setConnectTimeout(4000);
+                    connT.setReadTimeout(4000);
                     LogExport.export("DownloadAndUnzipTask","doInBackground", "connT.getResponseCode()+"+connT.getResponseCode()+ "("+connT.getResponseMessage()+")", context, DOWNLOAD_UNZIP_TASK);
                     LogExport.export("DownloadAndUnzipTask","doInBackground", "connT.usingProxy() "+ connT.usingProxy(), context, DOWNLOAD_UNZIP_TASK);
                     connT.connect();
@@ -200,8 +200,8 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
                         HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
                         //connT.setSSLSocketFactory(sslContext.getSocketFactory());
                         conn.setRequestMethod("GET");
-                        conn.setConnectTimeout(10000);
-                        conn.setReadTimeout(10000);
+                        conn.setConnectTimeout(4000);
+                        conn.setReadTimeout(4000);
                         conn.setRequestProperty("Range", "bytes=" + existingFileSize + "-");
                         conn.connect();
 

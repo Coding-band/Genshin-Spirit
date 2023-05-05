@@ -41,6 +41,8 @@
                     android:layout_height="72dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
+                    android:background="@drawable/bg_colored_sof_pyro"
+                    android:padding="4dp"
                     app:srcCompat="@drawable/ico_catalyst" />
 
                 <LinearLayout
@@ -125,6 +127,8 @@
                     android:layout_height="72dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
+                    android:background="@drawable/bg_colored_sof_pyro"
+                    android:padding="4dp"
                     app:srcCompat="@drawable/ico_catalyst" />
 
                 <LinearLayout
@@ -208,6 +212,8 @@
                     android:layout_height="72dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
+                    android:background="@drawable/bg_colored_sof_pyro"
+                    android:padding="4dp"
                     app:srcCompat="@drawable/ico_catalyst" />
 
                 <LinearLayout
@@ -291,6 +297,8 @@
                     android:layout_height="72dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
+                    android:background="@drawable/bg_colored_sof_pyro"
+                    android:padding="4dp"
                     app:srcCompat="@drawable/ico_catalyst" />
 
                 <LinearLayout
@@ -375,6 +383,8 @@
                     android:layout_height="72dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
+                    android:background="@drawable/bg_colored_sof_pyro"
+                    android:padding="4dp"
                     app:srcCompat="@drawable/ico_catalyst" />
 
                 <LinearLayout
@@ -458,6 +468,8 @@
                     android:layout_height="72dp"
                     android:layout_gravity="center"
                     android:layout_weight="1"
+                    android:background="@drawable/bg_colored_sof_pyro"
+                    android:padding="4dp"
                     app:srcCompat="@drawable/ico_catalyst" />
 
                 <LinearLayout
