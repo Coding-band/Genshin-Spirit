@@ -147,9 +147,9 @@ public class TCG_Info_2048 {
         is_default = LoadData("db/tcg/en-US/"+this.tcg.getFileName().replace("_","")+".json");
         is = LoadData("db/tcg/"+lang+"/"+this.tcg.getFileName().replace("_","")+".json");
 
-        if(is != null){
+        if(!is.equals("")){
             JsonToStr(is,tcg);
-        }else if(is_default != null){
+        }else if(!is_default.equals("")){
             JsonToStr(is_default,tcg);
         }
     }

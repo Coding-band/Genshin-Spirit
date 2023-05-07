@@ -162,10 +162,10 @@ public class Artifact_Info_2048 {
         is_default = LoadData("db/artifacts/en-US/"+this.ArtifactName_BASE+".json");
         is = LoadData("db/artifacts/"+lang+"/"+this.ArtifactName_BASE+".json");
 
-        if(is != null){
+        if(!is.equals("")){
             //JsonToStr(is,is_dps);
             JsonToStr(is);
-        }else if(is_default != null){
+        }else if(!is_default.equals("")){
             //JsonToStr(is_default,is_dps);
             JsonToStr(is_default);
         }
@@ -349,6 +349,8 @@ public class Artifact_Info_2048 {
             View view1 = activity.getLayoutInflater().inflate(R.layout.item_custom_tab, null);
             ImageView ico_img = view1.findViewById(R.id.icon);
             ico_img.setImageResource(tabItemImageArray[x]);
+            TextView ico_tv = view1.findViewById(R.id.name);
+            ico_tv.setVisibility(View.GONE);
             info_tablelayout.addTab(info_tablelayout.newTab().setCustomView(view1).setId(x));
         }
 

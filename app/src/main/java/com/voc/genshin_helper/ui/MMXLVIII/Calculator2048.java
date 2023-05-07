@@ -1674,9 +1674,9 @@ public class Calculator2048 extends AppCompatActivity{
             is_default = LoadData("db/char/en-US/" + CharName_BASE_UNDERSCORE + ".json");
             is = LoadData("db/char/" + lang + "/" + CharName_BASE_UNDERSCORE + ".json");
 
-            if (is != null) {
+            if (!is.equals("")) {
                 result1 = is;
-            } else if (is_default != null) {
+            } else if (!is_default.equals("")) {
                 result1 = is_default;
             }
 

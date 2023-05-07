@@ -11,23 +11,16 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 import static android.os.Build.VERSION.SDK_INT;
 
 import static com.voc.genshin_helper.util.DownloadAndUnzipTask.baseFileName;
-import static com.voc.genshin_helper.util.LogExport.BETA_TESTING;
-import static com.voc.genshin_helper.util.LogExport.DAILYMEMO;
-import static com.voc.genshin_helper.util.LogExport.DOWNLOADTASK;
-import static com.voc.genshin_helper.util.LogExport.DOWNLOAD_UNZIP_TASK;
-import static com.voc.genshin_helper.util.LogExport.UNZIPMANAGER;
 
 import android.Manifest;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.ComponentName;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.content.Intent;
@@ -35,16 +28,9 @@ import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.StrictMode;
-import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
-import android.webkit.WebView;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
-import android.widget.RadioButton;
 import android.widget.TextView;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -61,46 +47,35 @@ import com.voc.genshin_helper.BuildConfig;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
-import com.voc.genshin_helper.ui.SipTik.DeskSipTik;
-import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.Dialog2048;
 import com.voc.genshin_helper.util.DownloadAndUnzipTask;
-import com.voc.genshin_helper.util.DownloadTask;
 import com.voc.genshin_helper.util.FileLoader;
-import com.voc.genshin_helper.util.InitCA;
 import com.voc.genshin_helper.util.LogExport;
+import com.voc.genshin_helper.util.RemoteFileSizeFetcher;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.InetAddress;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
-import java.net.UnknownHostException;
-import java.security.KeyManagementException;
-import java.security.KeyStore;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.security.cert.Certificate;
-import java.security.cert.CertificateException;
-import java.security.cert.CertificateFactory;
-import java.security.cert.X509Certificate;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.Callable;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 import javax.net.ssl.HttpsURLConnection;
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.TrustManagerFactory;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -287,9 +262,12 @@ public class SplashActivity extends AppCompatActivity {
         return false;
     }
 
+    // Must let it be AsyncTask !
     private void goMain() {
         sharedPreferences = getSharedPreferences("user_info", 0);
-        long remoteFileSize = getRemoteFileSize(ItemRss.SERVER_DOWNLOAD_ROOT+baseFileName);
+        ArrayList<String> arrayList = new ArrayList<>();
+        arrayList.add(ItemRss.SERVER_DOWNLOAD_ROOT+baseFileName);
+        long remoteFileSize = getRemoteFileSize(arrayList);
         if(remoteFileSize > 10000000){
             if (sharedPreferences.getBoolean("downloadBase", false) == false) {
                 /**
@@ -408,20 +386,46 @@ public class SplashActivity extends AppCompatActivity {
         }
     }
 
-    public static long getRemoteFileSize(String urlSTR) {
+    public long getRemoteFileSize(ArrayList<String> urlSTR){
+        CompletableFuture<Long> completableFuture = new CompletableFuture<>();
+
+        new AsyncTask<Void, Void, Long>() {
+            @Override
+            protected Long doInBackground(Void... params) {
+                long fileSize = 0;
+                try {
+                    for (int x = 0 ; x < urlSTR.size() ; x++){
+                        URL url = new URL(urlSTR.get(x));
+                        URLConnection conn = url.openConnection();
+                        conn.connect();
+                        fileSize = conn.getContentLengthLong();
+                        conn.getInputStream().close();
+
+                        System.out.println("HI THERE : "+fileSize);
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+                completableFuture.complete(fileSize);
+                return fileSize;
+            }
+        }.execute();
+
         try {
-            URL url = new URL(urlSTR);
-            HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
-            //connT.setSSLSocketFactory(sslContext.getSocketFactory());
-            conn.setRequestMethod("GET");
-            conn.setConnectTimeout(4000);
-            conn.setReadTimeout(4000);
-            conn.connect();
-            return conn.getContentLength();
-        } catch (IOException e) {
-            e.printStackTrace();
+            return completableFuture.get(5000, TimeUnit.MILLISECONDS);
+        } catch (ExecutionException  e) {
+            LogExport.export("SplashActivity", "getRemoteFileSize()", "ExecutionException : "+e.getMessage(), context, LogExport.FETCH_FILE_FUTURE);
+            runDesk(sharedPreferences);
+            return -2;
+        } catch (InterruptedException e) {
+            LogExport.export("SplashActivity", "getRemoteFileSize()", "InterruptedException : "+e.getMessage(), context, LogExport.FETCH_FILE_FUTURE);
+            runDesk(sharedPreferences);
+            return -3;
+        } catch (TimeoutException e){
+            LogExport.export("SplashActivity", "getRemoteFileSize()", "TimeoutException : "+e.getMessage(), context, LogExport.FETCH_FILE_FUTURE);
+            return -4;
         }
-        return 1;
     }
 
 
@@ -435,100 +439,108 @@ public class SplashActivity extends AppCompatActivity {
             if (BuildConfig.FLAVOR.equals("dev")){
                 url = ItemRss.SERVER_DOWNLOAD_ROOT+"update_dev.json";
             }
-            Request request = new Request.Builder().url(url).build();
 
-            long lastUnix = System.currentTimeMillis();
+            String finalUrl = url;
+            new AsyncTask<Void, Void, Void>() {
+                @Override
+                protected Void doInBackground(Void... params) {
+                    try {
+                        Request request = new Request.Builder().url(finalUrl).build();
+                        Response sponse = client.newCall(request).execute();
+                        String str = sponse.body().string();
+                        JSONArray array = new JSONArray(str);
+                        ArrayList<String> array_download = new ArrayList<String>();
+                        ArrayList<String> array_fileName = new ArrayList<String>();
+                        ArrayList<String> array_SfileName = new ArrayList<String>();
+                        for (int i = 0; i < array.length(); i++) {
+                            JSONObject object = array.getJSONObject(i);
+                            long release_unix = object.getLong("release_unix");
+                            String fileName = object.getString("fileName");
 
-            try {
-                Response sponse = client.newCall(request).execute();
-                String str = sponse.body().string();
-                JSONArray array = new JSONArray(str);
-                ArrayList<String> array_download = new ArrayList<String>();
-                ArrayList<String> array_fileName = new ArrayList<String>();
-                ArrayList<String> array_SfileName = new ArrayList<String>();
-                for (int i = 0; i < array.length(); i++) {
-                    JSONObject object = array.getJSONObject(i);
-                    long release_unix = object.getLong("release_unix");
-                    String fileName = object.getString("fileName");
+                            long lastUnix = System.currentTimeMillis();
+                            if (i == 0) {
+                                lastUnix = release_unix;
+                            }
 
-                    if (i == 0) {
-                        lastUnix = release_unix;
+                            if (release_unix > sharedPreferences.getLong("lastUpdateUnix", 1)) {
+                                array_download.add(ItemRss.SERVER_DOWNLOAD_ROOT + fileName);
+                                array_fileName.add(fileName);
+                                array_SfileName.add("/" + fileName);
+                            }
+                        }
+                        if (array_download.size() > 0) {
+                            ArrayList<String> arrayList = new ArrayList<>();
+                            arrayList.add(ItemRss.SERVER_DOWNLOAD_ROOT + baseFileName);
+                            if (getRemoteFileSize(arrayList) > getRemoteFileSize(array_download)) {
+
+                                Dialog2048 dialog2048 = new Dialog2048();
+                                dialog2048.setup(context, activity);
+                                dialog2048.updateMax(getRemoteFileSize(array_download));
+                                dialog2048.mode(Dialog2048.MODE_DOWNLOAD_UPDATE);
+                                dialog2048.show();
+
+                                dialog2048.getPositiveBtn().setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+
+                                        dialog2048.dismiss();
+                                        //DownloadTask downloadTask = new DownloadTask();
+                                        //downloadTask.startAWithRun(array_download, array_fileName, array_SfileName, context, activity, true);
+
+                                        new DownloadAndUnzipTask(context, activity, array_download, context.getFilesDir().getAbsolutePath()).execute();
+                                        editor.apply();
+                                    }
+                                });
+                                dialog2048.getNegativeBtn().setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+
+                                        dialog2048.dismiss();
+                                        runDesk(sharedPreferences);
+                                    }
+                                });
+
+
+                            } else {
+                                Dialog2048 dialog2048 = new Dialog2048();
+                                dialog2048.setup(context, activity);
+
+                                dialog2048.updateMax(getRemoteFileSize(arrayList));
+                                dialog2048.mode(Dialog2048.MODE_DOWNLOAD_BASE);
+                                dialog2048.show();
+
+                                dialog2048.getPositiveBtn().setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        //DownloadTask downloadTask = new DownloadTask();
+                                        //downloadTask.start("https://vt.25u.com/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
+
+                                        ArrayList<String> downloadList = new ArrayList<>();
+                                        downloadList.add(ItemRss.SERVER_DOWNLOAD_ROOT + baseFileName);
+
+                                        new DownloadAndUnzipTask(context, activity, downloadList, context.getFilesDir().getAbsolutePath()).execute();
+                                    }
+                                });
+                                dialog2048.getNegativeBtn().setOnClickListener(new View.OnClickListener() {
+                                    @Override
+                                    public void onClick(View v) {
+                                        runDesk(sharedPreferences);
+                                    }
+                                });
+                            }
+
+                        } else {
+                            //CustomToast.toast(context, this, context.getString(R.string.update_download_not_found_update));
+                            checkStyleUI();
+                        }
+                    }catch (JSONException e) {
+                        LogExport.export("SplashActivity", "getRemoteFileSize()", "JSONException : "+e.getMessage(), context, LogExport.FETCH_FILE_FUTURE);
+                    }catch (IOException e) {
+                        LogExport.export("SplashActivity", "getRemoteFileSize()", "IOException : "+e.getMessage(), context, LogExport.FETCH_FILE_FUTURE);
                     }
-
-                    if (release_unix > sharedPreferences.getLong("lastUpdateUnix", 1)) {
-                        array_download.add(ItemRss.SERVER_DOWNLOAD_ROOT + fileName);
-                        array_fileName.add(fileName);
-                        array_SfileName.add("/" + fileName);
-                    }
+                    return null;
                 }
-                if (array_download.size() > 0) {
-                    if (getRemoteFileSize(ItemRss.SERVER_DOWNLOAD_ROOT+"base_webp.zip") > getRemoteFileSizeA(array_download)) {
-
-                        Dialog2048 dialog2048 = new Dialog2048();
-                        dialog2048.setup(context,activity);
-                        dialog2048.updateMax(getRemoteFileSizeA(array_download));
-                        dialog2048.mode(Dialog2048.MODE_DOWNLOAD_UPDATE);
-                        dialog2048.show();
-
-                        long finalLastUnix = lastUnix;
-                        dialog2048.getPositiveBtn().setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-
-                                dialog2048.dismiss();
-                                //DownloadTask downloadTask = new DownloadTask();
-                                //downloadTask.startAWithRun(array_download, array_fileName, array_SfileName, context, activity, true);
-
-                                new DownloadAndUnzipTask(context,activity,array_download,context.getFilesDir().getAbsolutePath()).execute();
-                                editor.apply();
-                            }
-                        });
-                        dialog2048.getNegativeBtn().setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-
-                                dialog2048.dismiss();
-                                runDesk(sharedPreferences);
-                            }
-                        });
-
-
-                    } else {
-                        Dialog2048 dialog2048 = new Dialog2048();
-                        dialog2048.setup(context,activity);
-                        dialog2048.updateMax(getRemoteFileSize(ItemRss.SERVER_DOWNLOAD_ROOT+baseFileName));
-                        dialog2048.mode(Dialog2048.MODE_DOWNLOAD_BASE);
-                        dialog2048.show();
-
-                        dialog2048.getPositiveBtn().setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                //DownloadTask downloadTask = new DownloadTask();
-                                //downloadTask.start("https://vt.25u.com/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
-
-                                ArrayList<String> downloadList = new ArrayList<>();
-                                downloadList.add(ItemRss.SERVER_DOWNLOAD_ROOT+baseFileName);
-
-                                new DownloadAndUnzipTask(context,activity,downloadList,context.getFilesDir().getAbsolutePath()).execute();
-                            }
-                        });
-                        dialog2048.getNegativeBtn().setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                runDesk(sharedPreferences);
-                            }
-                        });
-                    }
-
-                } else {
-                    //CustomToast.toast(context, this, context.getString(R.string.update_download_not_found_update));
-
-                    checkStyleUI();
-                }
-
-            } catch (JSONException | IOException e) {
-                e.printStackTrace();
-            }
+            }.execute();
         }else{
             runDesk(sharedPreferences);
         }
@@ -570,28 +582,6 @@ public class SplashActivity extends AppCompatActivity {
 
             }
         }, 2000);
-    }
-
-
-    public static long getRemoteFileSizeA(ArrayList<String> urlSTR) {
-        long size = 0;
-        for (int x = 0; x < urlSTR.size(); x++) {
-            try {
-                URL url = new URL(urlSTR.get(x));
-                HttpsURLConnection conn = (HttpsURLConnection) url.openConnection();
-                //connT.setSSLSocketFactory(sslContext.getSocketFactory());
-                conn.setRequestMethod("GET");
-                conn.setConnectTimeout(4000);
-                conn.setReadTimeout(4000);
-                conn.connect();
-                size = size + conn.getContentLength();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-
-
-        return size;
     }
 
     public void checkStyleUI() {
@@ -692,4 +682,5 @@ public class SplashActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
     }
+
 }
