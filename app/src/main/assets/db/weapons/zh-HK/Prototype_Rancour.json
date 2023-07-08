@@ -1,0 +1,12 @@
+{
+  "name": "Prototype Rancour",
+  "rare": 4,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "EnRech%",
+  "second_status": "ATK",
+  "desc": "黑岩廠中秘藏的古老長劍。可揮砍斷岩而刃不卷。",
+  "skill_name": "碎石",
+  "skill_desc": "普通攻擊或重擊命中時，攻擊力（原為基礎攻擊力）和防禦力提高4%/5%/6%/7%/8%，持續6秒，最多疊加4層。該效果每0.3秒只能觸發一次。",
+  "obtain_way": "FORGE_LVL10_SJGW"
+}

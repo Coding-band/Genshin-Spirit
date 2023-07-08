@@ -1,21 +1,13 @@
 package com.voc.genshin_helper.data;
 
 import static android.content.Context.MODE_PRIVATE;
-import static com.voc.genshin_helper.util.RoundedCornersTransformation.CornerType.TOP;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.res.ColorStateList;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.database.sqlite.SQLiteOpenHelper;
-import android.graphics.Bitmap;
-import android.graphics.Color;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -30,12 +22,8 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
@@ -43,16 +31,11 @@ import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.database.DataBaseHelper;
 import com.voc.genshin_helper.ui.CalculatorDBActivity;
-import com.voc.genshin_helper.ui.CalculatorUI;
 import com.voc.genshin_helper.ui.MMXLVIII.Artifact_Info_2048;
 import com.voc.genshin_helper.ui.MMXLVIII.CalculatorDB_2048;
 import com.voc.genshin_helper.ui.MMXLVIII.Characters_Info_2048;
-import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
 import com.voc.genshin_helper.ui.MMXLVIII.Weapon_Info_2048;
-import com.voc.genshin_helper.ui.MainActivity;
-import com.voc.genshin_helper.ui.SplashActivity;
 import com.voc.genshin_helper.util.CustomToast;
-import com.voc.genshin_helper.util.DownloadTask;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
@@ -64,10 +47,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -193,7 +174,7 @@ public class CalculatorDBAdapter extends RecyclerView.Adapter<CalculatorDBAdapte
                     }
 
                     Picasso.get()
-                            .load (FileLoader.loadIMG(item_rss.getCharByName(choosedNameList.get(x),context)[3],context))
+                            .load (item_rss.getCharByName(choosedNameList.get(x),context)[3])
                             .transform(transformation)
                             .fit()
                             .error (R.drawable.paimon_full)
@@ -237,7 +218,7 @@ public class CalculatorDBAdapter extends RecyclerView.Adapter<CalculatorDBAdapte
                 }
 
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getWeaponByName(weaponChoosedNameList.get(x),context)[1],context))
+                        .load (item_rss.getWeaponByName(weaponChoosedNameList.get(x))[1])
                         .transform(transformation)
                         .fit()
                         .error (R.drawable.paimon_full)
@@ -291,7 +272,7 @@ public class CalculatorDBAdapter extends RecyclerView.Adapter<CalculatorDBAdapte
                 }
 
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(artifactChoosedNameList.get(x)),context)[tmp_artifact_type_id],context))
+                        .load (item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(artifactChoosedNameList.get(x)))[tmp_artifact_type_id])
                         .transform(transformation)
                         .fit()
                         .error (R.drawable.paimon_full)

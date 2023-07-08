@@ -74,7 +74,7 @@ public class WeeklyBK3Adapter extends RecyclerView.Adapter<WeeklyBK3Adapter.Week
         final Transformation transformation_circ = new RoundedCornersTransformation(radius_circ, margin_circ);
 
         Picasso.get()
-                .load (FileLoader.loadIMG(item_rss.getItemIcoByName(materials.getInside_name(),context),context)).resize(size_per_img,size_per_img).transform(transformation_circ)
+                .load (item_rss.getItemIcoByName(materials.getInside_name())).resize(size_per_img,size_per_img).transform(transformation_circ)
                 .error (R.drawable.paimon_full)
                 .into (holder.item_icon);
 

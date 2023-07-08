@@ -1,0 +1,138 @@
+{
+	"name": "Recurve Bow",
+	"description": "It is said that this bow can shoot down eagles in flight, but ultimately how true that is depends on the skill of the archer.",
+	"weapontype": "Bow",
+	"rarity": "3",
+	"story": "A recurve bow exquisitely made from wood, bones, and animal tendons.\nIn the hands of a masterful archer, it can shoot down eagles in flight.\nIt is the pride of a hunter, and proof of mastery.\nPity the innocent eagles.",
+	"baseatk": 38,
+	"substat": "HP",
+	"subvalue": "10.2",
+	"effectname": "Cull the Weak",
+	"effect": "Defeating an opponent restores {0} HP.",
+	"r1": [
+		"8%"
+	],
+	"r2": [
+		"10%"
+	],
+	"r3": [
+		"12%"
+	],
+	"r4": [
+		"14%"
+	],
+	"r5": [
+		"16%"
+	],
+	"weaponmaterialtype": "Dandelion Gladiator",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Fetters of the Dandelion Gladiator",
+				"count": 2
+			},
+			{
+				"name": "Chaos Device",
+				"count": 2
+			},
+			{
+				"name": "Divining Scroll",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Chains of the Dandelion Gladiator",
+				"count": 2
+			},
+			{
+				"name": "Chaos Device",
+				"count": 8
+			},
+			{
+				"name": "Divining Scroll",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Chains of the Dandelion Gladiator",
+				"count": 4
+			},
+			{
+				"name": "Chaos Circuit",
+				"count": 4
+			},
+			{
+				"name": "Sealed Scroll",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Shackles of the Dandelion Gladiator",
+				"count": 2
+			},
+			{
+				"name": "Chaos Circuit",
+				"count": 8
+			},
+			{
+				"name": "Sealed Scroll",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Shackles of the Dandelion Gladiator",
+				"count": 4
+			},
+			{
+				"name": "Chaos Core",
+				"count": 6
+			},
+			{
+				"name": "Forbidden Curse Scroll",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Dream of the Dandelion Gladiator",
+				"count": 3
+			},
+			{
+				"name": "Chaos Core",
+				"count": 12
+			},
+			{
+				"name": "Forbidden Curse Scroll",
+				"count": 8
+			}
+		]
+	}
+}

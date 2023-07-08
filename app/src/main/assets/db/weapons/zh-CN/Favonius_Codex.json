@@ -1,0 +1,12 @@
+{
+  "name": "Favonius Codex",
+  "rare": 4,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "西风骑士团的学者间流传的秘典，记载着元素与物质的道理和力量。",
+  "first_status": "EnRech%",
+  "second_status": "ATK",
+  "skill_name": "顺风而行",
+  "skill_desc": "攻击造成暴击时，有60％/70％/80％/90％/100％的几率产生少量元素微粒，能为角色恢复6点元素能量。该效果每12/10.5/9/7.5/6秒只能触发一次",
+  "obtain_way": "WISH"
+}

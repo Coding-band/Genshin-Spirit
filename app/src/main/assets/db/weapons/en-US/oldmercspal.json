@@ -1,0 +1,92 @@
+{
+	"name": "Old Merc's Pal",
+	"description": "A battle-tested greatsword that has seen better days and worse.",
+	"weapontype": "Claymore",
+	"rarity": "2",
+	"story": "He would often mention the experiences that he had in his youth as an adventurer.\nThey were always the same old long-winded, annoying tall tales.\nBut this old greatsword seems to silently say,\n\"Well, it is a bit over the top, yes. But I was there too, you know.\"",
+	"baseatk": 33,
+	"substat": "",
+	"subvalue": "",
+	"effectname": "",
+	"effect": "",
+	"r1": [],
+	"r2": [],
+	"r3": [],
+	"r4": [],
+	"r5": [],
+	"weaponmaterialtype": "Boreal Wolf",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Boreal Wolf's Milk Tooth",
+				"count": 1
+			},
+			{
+				"name": "Dead Ley Line Branch",
+				"count": 1
+			},
+			{
+				"name": "Slime Condensate",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Boreal Wolf's Cracked Tooth",
+				"count": 1
+			},
+			{
+				"name": "Dead Ley Line Branch",
+				"count": 5
+			},
+			{
+				"name": "Slime Condensate",
+				"count": 4
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Boreal Wolf's Cracked Tooth",
+				"count": 3
+			},
+			{
+				"name": "Dead Ley Line Leaves",
+				"count": 3
+			},
+			{
+				"name": "Slime Secretions",
+				"count": 3
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Boreal Wolf's Broken Fang",
+				"count": 1
+			},
+			{
+				"name": "Dead Ley Line Leaves",
+				"count": 5
+			},
+			{
+				"name": "Slime Secretions",
+				"count": 4
+			}
+		]
+	}
+}

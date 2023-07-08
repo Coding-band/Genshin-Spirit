@@ -1,0 +1,58 @@
+{
+  "name" : "Arataki Itto",
+  
+  "dps_weapons" : [
+	"redhorn_stonethresher",
+    "wolfs_gravestone",
+    "the_unforged",
+	"skyward_pride",
+	"serpent_spine",
+	"whiteblind",
+	"favonius_greatsword"
+  ],
+  "dps_art1": [
+    "husk_of_opulent_dreams",
+    "husk_of_opulent_dreams",
+    "husk_of_opulent_dreams",
+    "husk_of_opulent_dreams",
+    "husk_of_opulent_dreams"
+  ],
+  "dps_art2": [
+    "retracing_bolide",
+    "retracing_bolide",
+    "retracing_bolide",
+    "retracing_bolide",
+    "retracing_bolide"
+  ],
+  "dps_art3": [
+    "husk_of_opulent_dreams",
+    "husk_of_opulent_dreams",
+    "tenacity_of_the_millelith",
+    "tenacity_of_the_millelith",
+    "tenacity_of_the_millelith"
+  ],
+  "dps_art_sand_entry": [
+    "DEF",
+	"HP"
+  ],
+  "dps_art_goblet_entry": [
+    "EleDMG_Geo"
+  ],
+  "dps_art_circlet_entry": [
+    "CritRate",
+    "CritDMG"
+  ],
+  "dps_art_sub_entry": [
+    "CritDMG",
+    "CritRate",
+    "HP",
+    "DEF"
+  ],
+  
+  "team1":[
+	"Arataki Itto","Gorou","Albedo","Zhongli"
+  ],
+  "team2":[
+	"Arataki Itto","Gorou","Zhongli","Raiden Shogun"
+  ]
+}

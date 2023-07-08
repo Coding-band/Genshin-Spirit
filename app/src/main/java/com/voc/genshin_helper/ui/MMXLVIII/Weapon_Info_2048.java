@@ -16,7 +16,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
-import android.text.Html;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
@@ -27,8 +26,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
@@ -44,7 +41,6 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
 import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.data.Material;
@@ -193,9 +189,9 @@ public class Weapon_Info_2048 {
         String is_dps = null;
         String is_default = null;
 
-        //is_dps = LoadData("db/weapon/weapon_advice/"+this.WeaponName_BASE+".json");
-        is_default = LoadData("db/weapons/en-US/"+this.WeaponName_BASE+".json");
-        is = LoadData("db/weapons/"+lang+"/"+this.WeaponName_BASE+".json");
+        //is_dps = ItemRss.LoadAssestData(context,"db/weapon/weapon_advice/"+this.WeaponName_BASE+".json");
+        is_default = ItemRss.LoadAssestData(context,"db/weapons/en-US/"+this.WeaponName_BASE+".json");
+        is = ItemRss.LoadAssestData(context,"db/weapons/"+lang+"/"+this.WeaponName_BASE+".json");
 
         if(!is.equals("")){
             //JsonToStr(is,is_dps);
@@ -548,7 +544,7 @@ public class Weapon_Info_2048 {
         });
 
         /** MAIN */
-        weapon_name.setText(item_rss.getWeaponByName(name,context)[0]);
+        weapon_name.setText(item_rss.getWeaponByName(name)[0]);
         if(sharedPreferences.getBoolean("isBaseNameDisplay",false) == true){
             info_weapon_name_base.setVisibility(View.VISIBLE);
             info_weapon_name_base.setText(name);
@@ -568,9 +564,9 @@ public class Weapon_Info_2048 {
         if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
             ImageView weapon_imgL = view.findViewById(R.id.info_weapon_img);
             /*weapon_imgL.setAnimation(animImgLTR); Animation*/
-            weapon_imgL.setImageDrawable(FileLoader.loadIMG2Drawable(item_rss.getWeaponGachaByName(name,context)[1],context));
+            weapon_imgL.setImageDrawable(context.getDrawable(item_rss.getWeaponGachaByName(name)[1]));
         }else{
-            weapon_img.setImageDrawable(FileLoader.loadIMG2Drawable(item_rss.getWeaponGachaByName(name,context)[1],context));
+            weapon_img.setImageDrawable(context.getDrawable(item_rss.getWeaponGachaByName(name)[1]));
         }
 
 
@@ -638,7 +634,7 @@ public class Weapon_Info_2048 {
     }
 
     public int getWeaponRareFromListJson(String str) {
-        String json_base = LoadData("db/weapons/weapon_list.json");
+        String json_base = ItemRss.LoadAssestData(context,"db/weapons/weapon_list.json");
         String name ;
         int rare;
         try {
@@ -659,7 +655,7 @@ public class Weapon_Info_2048 {
     }
 
     public int getArtifactRareFromListJson(String str) {
-        String json_base = LoadData("db/artifacts/artifact_list.json");
+        String json_base = ItemRss.LoadAssestData(context,"db/artifacts/artifact_list.json");
         String name ;
         int rare;
         try {
@@ -681,7 +677,7 @@ public class Weapon_Info_2048 {
 
 
     public boolean readWeaponBaseDataFromBuff(String name, int tmp_break) {
-        String weapon_json_stat = LoadData("db/buff/weapons/"+name.replace(" ","_")+".json");
+        String weapon_json_stat = ItemRss.LoadAssestData(context,"db/buff/weapons/"+name.replace(" ","_")+".json");
         if (weapon_json_stat.length() > 0){
             try {
                 JSONObject jsonObject = new JSONObject(weapon_json_stat);
@@ -724,9 +720,9 @@ public class Weapon_Info_2048 {
     }
 
     public void readWeaponAscData(){
-        String weapon_require_asc = LoadData("db/weapons/weapon_require_asc.json");
-        String weapon_exp = LoadData("db/weapons/weapon_rare"+String.valueOf(star)+"_exp.json");
-        String weapon_asc = LoadData("db/weapons/weapon_rare"+String.valueOf(star)+"_asc_lvl.json");
+        String weapon_require_asc = ItemRss.LoadAssestData(context,"db/weapons/weapon_require_asc.json");
+        String weapon_exp = ItemRss.LoadAssestData(context,"db/weapons/weapon_rare"+String.valueOf(star)+"_exp.json");
+        String weapon_asc = ItemRss.LoadAssestData(context,"db/weapons/weapon_rare"+String.valueOf(star)+"_asc_lvl.json");
 
         //Log.wtf("Procedure","char_readJSON_1"+" || "+System.currentTimeMillis());
 
@@ -846,7 +842,7 @@ public class Weapon_Info_2048 {
 
                 img_bg.setBackgroundResource(getRssByRare(itemRareListBASE[x]));
                 //Picasso.get().load(getRssByRare(itemRareListBASE[x])).resize(150,180).into(img_bg);
-                Picasso.get().load(FileLoader.loadIMG(item_rss.getItemIcoByName(itemNameListBASE[x],context),context)).resize(144,144).into(img_img);
+                Picasso.get().load(item_rss.getItemIcoByName(itemNameListBASE[x])).resize(144,144).into(img_img);
                 img_tv.setText(prettyCount(itemValueListBASE[x],0));
 
                 img_bg.getLayoutParams().width = 150;
@@ -935,7 +931,7 @@ public class Weapon_Info_2048 {
 
                     img_bg.setBackgroundResource(getRssByRare(itemRareList[x]));
                     //Picasso.get().load(getRssByRare(itemRareList[x])).resize(150,180).into(img_bg);
-                    Picasso.get().load(FileLoader.loadIMG(item_rss.getItemIcoByName(itemNameList[x],context),context)).resize(144,144).into(img_img);
+                    Picasso.get().load(item_rss.getItemIcoByName(itemNameList[x])).resize(144,144).into(img_img);
                     img_tv.setText(prettyCount(itemValueList[x],0));
 
                     img_bg.getLayoutParams().width = 150;
@@ -978,25 +974,6 @@ public class Weapon_Info_2048 {
         }
 
         return bitmap;
-    }
-
-    public String LoadData(String inFile) {
-        String tContents = "";
-        try {
-            File file = new File(context.getFilesDir()+"/"+inFile);
-            InputStream stream = new FileInputStream(file);
-
-            int size = stream.available();
-            byte[] buffer = new byte[size];
-            stream.read(buffer);
-            stream.close();
-            tContents = new String(buffer);
-        } catch (IOException e) {
-            // Handle exceptions here
-        }
-
-        return tContents;
-
     }
 
     public void colorGradient(TextView textView,String start_color, String end_color, boolean isColorGradient , String color){

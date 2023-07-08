@@ -4,9 +4,6 @@ package com.voc.genshin_helper.ui.MMXLVIII;/*
  * Copyright © 2022 Xectorda 版權所有
  */
 
-import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
-import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
-
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
@@ -14,7 +11,6 @@ import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.os.Handler;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -31,13 +27,10 @@ import android.view.animation.Transformation;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.recyclerview.widget.RecyclerView;
 
-import com.alibaba.fastjson2.JSON;
 import com.squareup.picasso.Picasso;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
@@ -56,7 +49,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-import pl.droidsonroids.gif.GifDrawable;
 import pl.droidsonroids.gif.GifImageView;
 
 /*
@@ -143,9 +135,9 @@ public class TCG_Info_2048 {
         String is_dps = null;
         String is_default = null;
 
-        //is_dps = LoadData("db/weapon/weapon_advice/"+this.WeaponName_BASE+".json");
-        is_default = LoadData("db/tcg/en-US/"+this.tcg.getFileName().replace("_","")+".json");
-        is = LoadData("db/tcg/"+lang+"/"+this.tcg.getFileName().replace("_","")+".json");
+        //is_dps = ItemRss.LoadAssestData(context,"db/weapon/weapon_advice/"+this.WeaponName_BASE+".json");
+        is_default = ItemRss.LoadAssestData(context,"db/tcg/en-US/"+this.tcg.getFileName().replace("_","")+".json");
+        is = ItemRss.LoadAssestData(context,"db/tcg/"+lang+"/"+this.tcg.getFileName().replace("_","")+".json");
 
         if(!is.equals("")){
             JsonToStr(is,tcg);
@@ -498,7 +490,7 @@ public class TCG_Info_2048 {
     public void tcg_info_setup() throws JSONException {
         //Common
         tcg_detail_ll.setVisibility(View.GONE);
-        tcg_intro_tv.setText(item_rss.getTCGByName(tcg.getName(),context)[1]);
+        tcg_intro_tv.setText(item_rss.getTCGByName(tcg.getName())[1]);
         tcg_intro_element.setVisibility(View.GONE);
         tcg_intro_location.setVisibility(View.GONE);
         tcg_intro_weapon.setVisibility(View.GONE);
@@ -647,7 +639,7 @@ public class TCG_Info_2048 {
     }
 
     public String[] getTalentFromCharFile(String name){
-        String json = LoadData("db/char/"+"en-US"+"/"+this.tcg.getName().replace(" ","_")+".json");
+        String json = ItemRss.LoadAssestData(context,"db/char/"+"en-US"+"/"+this.tcg.getName().replace(" ","_")+".json");
         if (json == null){return new String[]{"N/A","N/A","N/A","N/A"};}
         try {
             JSONObject jsonObject = new JSONObject(json);
@@ -744,7 +736,7 @@ public class TCG_Info_2048 {
         }else
          */
             Picasso.get()
-                    .load (FileLoader.loadIMG(item_rss.getTCGByName(tcg.getName(),context)[0],context))
+                    .load (item_rss.getTCGByName(tcg.getName())[0])
                     .resize((widthNew),((int) (widthNew * 12/7)))
                     .error (R.drawable.paimon_lost)
                     .into(tcg_card_img);
@@ -754,7 +746,7 @@ public class TCG_Info_2048 {
             System.out.println("displayMetrics.density*(32) : "+displayMetrics.density*(32));
             System.out.println("widthNew : "+widthNew);
 
-        tcg_card_name.setText(item_rss.getTCGByName(tcg.getName(),context)[1]);
+        tcg_card_name.setText(item_rss.getTCGByName(tcg.getName())[1]);
         tcg_card_name_base.setText(tcg.getName());
         tcg_press_mask.getLayoutParams().width = (int) (0);
         tcg_press_mask.getLayoutParams().height = (int) (0);
@@ -879,25 +871,6 @@ public class TCG_Info_2048 {
         public boolean willChangeBounds() {
             return true;
         }
-    }
-
-    public String LoadData(String inFile) {
-        String tContents = "";
-        try {
-            File file = new File(context.getFilesDir()+"/"+inFile);
-            InputStream stream = new FileInputStream(file);
-
-            int size = stream.available();
-            byte[] buffer = new byte[size];
-            stream.read(buffer);
-            stream.close();
-            tContents = new String(buffer);
-        } catch (IOException e) {
-            // Handle exceptions here
-        }
-
-        return tContents;
-
     }
 
     public SpannableString setSpanAndTv(String str){

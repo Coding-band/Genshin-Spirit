@@ -1,0 +1,138 @@
+{
+	"name": "Wandering Evenstar",
+	"description": "This was originally a device used by researchers to observe and perform calculations on celestial phenomena. It serves as a conduit and catalyst.",
+	"weapontype": "Catalyst",
+	"rarity": "4",
+	"story": "This story takes place thousands of years ago, in an era after the foolish God-King was buried by the sandstorms.\nThe wandering prince, having lost his kingdom, retreated into the cascading rainforest, surrounded by the tranquil moonlight.\nHe had come here with the ambition to conquer new lands, but ended up being pursued by the huntress with the white bow,\nAnd thus did the dejected wanderer come to be trapped by vine branches and, in the cold moonlight, he heard the low growls of the tiger around him.\n\n\"The rainforest trail road was so treacherous that mortals could only tell the way ahead by the moonlight breaking through the leaves.\"\n\"The flickering evening stars lit the wanderer's way but also lured him into a deadly trap.\"\n\"The huntress darted through the deepwood with her white bow, driving this intruder away time and again.\"\n\"Together with the ancient tiger and its roar, she gave the order for his expulsion, but did not take his life.\"\n\nThe old blind poet repeated the story of the wandering prince in a cracked, hoarse voice.\nEven though he had lost his eyes long ago, he still unconsciously looked at the evening star that lay next to the bright moon.\nThe flickering star of the night had led the wanderer toward new hope, but also to a dead end,\n\nAnd years later, when the wanderer who had nothing to lose faced death, he had to make a choice...\nWhen the teachings of death were whispered in his ear, he finally realized the meaning of the warning...\n\n\"You belong to neither the forest nor death, so stay far from the king's palace.\"\n\"If you cherish life and memory still, do not go deep into the dark and dangerous lands.\"\n\n\"Stop repeating those silly words...\"\n\"If my wandering fate leads me to the moon-white bow, and if the evening stars foretell my end,\"\n\"Well then! I would rather accept my fate than die pursuing a falcon.\"",
+	"baseatk": 42,
+	"substat": "Elemental Mastery",
+	"subvalue": "36",
+	"effectname": "Wildling Nightstar",
+	"effect": "The following effect will trigger every 10s: The equipping character will gain {0} of their Elemental Mastery as bonus ATK for 12s, with nearby party members gaining 30% of this buff for the same duration. Multiple instances of this weapon can allow this buff to stack. This effect will still trigger even if the character is not on the field.",
+	"r1": [
+		"24%"
+	],
+	"r2": [
+		"30%"
+	],
+	"r3": [
+		"36%"
+	],
+	"r4": [
+		"42%"
+	],
+	"r5": [
+		"48%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Oasis Garden's Reminiscence",
+				"count": 3
+			},
+			{
+				"name": "Inactivated Fungal Nucleus",
+				"count": 3
+			},
+			{
+				"name": "Fungal Spores",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Oasis Garden's Kindness",
+				"count": 3
+			},
+			{
+				"name": "Inactivated Fungal Nucleus",
+				"count": 12
+			},
+			{
+				"name": "Fungal Spores",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Oasis Garden's Kindness",
+				"count": 6
+			},
+			{
+				"name": "Dormant Fungal Nucleus",
+				"count": 6
+			},
+			{
+				"name": "Luminescent Pollen",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Oasis Garden's Mourning",
+				"count": 3
+			},
+			{
+				"name": "Dormant Fungal Nucleus",
+				"count": 12
+			},
+			{
+				"name": "Luminescent Pollen",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Oasis Garden's Mourning",
+				"count": 6
+			},
+			{
+				"name": "Robust Fungal Nucleus",
+				"count": 9
+			},
+			{
+				"name": "Crystalline Cyst Dust",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Oasis Garden's Truth",
+				"count": 4
+			},
+			{
+				"name": "Robust Fungal Nucleus",
+				"count": 18
+			},
+			{
+				"name": "Crystalline Cyst Dust",
+				"count": 12
+			}
+		]
+	}
+}

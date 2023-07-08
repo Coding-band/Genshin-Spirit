@@ -1,0 +1,12 @@
+{
+  "name": "Amos' Bow",
+  "rare": 5,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "極めて古い弓。元の主がいなくても、その力は変わらない。それは万物の中にある力であり、欲するものから遠くなるほど、その力は強くなる。",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "一心不乱",
+  "skill_desc": "通常攻撃と狙い撃ちのダメージ+12%/15%/18%/21%/24%。矢を放った後、0.1秒毎にダメージ+8%/10%/12%/14%/16%、最大5回まで上昇する。",
+  "obtain_way": "WISH"
+}

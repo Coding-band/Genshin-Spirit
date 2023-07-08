@@ -24,12 +24,9 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
-import android.widget.TableLayout;
 import android.widget.TextView;
 
-import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
-import androidx.gridlayout.widget.GridLayout;
 
 import com.squareup.picasso.Picasso;
 import com.voc.genshin_helper.R;
@@ -676,7 +673,7 @@ public class CalculatorExtendSipTik {
             item_lvl.getLayoutParams().height  = LinearLayout.LayoutParams.WRAP_CONTENT;
             item_lvl.getLayoutParams().width = size;
             Picasso.get()
-                    .load (FileLoader.loadIMG(item_rss.getItemIcoByName(itemName,context),context))
+                    .load (item_rss.getItemIcoByName(itemName))
                     .resize(size,size)
                     .error (R.drawable.paimon_lost)
                     .into (item_ico);

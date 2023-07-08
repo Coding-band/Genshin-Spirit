@@ -1,0 +1,12 @@
+{
+  "name": "Tulaytullah's Remembrance",
+  "rare": 5,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "A bell crafted of deep sapphire and sterling silver. Its echoes are as crisp as they are distant.",
+  "first_status": "CritDMG%",
+  "second_status": "ATK",
+  "skill_name": "Bygone Azure Teardrop",
+  "skill_desc": "Normal Attack SPD is increased by 10%. After the wielder unleashes an Elemental Skill, Normal Attack DMG will increase by 4.8% every second for 14s. After hitting an opponent with a Normal Attack during this duration, Normal Attack DMG will be increased by 9.6%. This increase can be triggered once every 0.3s. The maximum Normal Attack DMG increase per single duration of the overall effect is 48%. The effect will be removed when the wielder leaves the field, and using the Elemental Skill again will reset all DMG buffs.",
+  "obtain_way": "LIMITED_WISH"
+}

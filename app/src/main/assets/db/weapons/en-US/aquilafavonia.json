@@ -1,0 +1,148 @@
+{
+	"name": "Aquila Favonia",
+	"description": "The soul of the Knights of Favonius. Millennia later, it still calls on the winds of swift justice to vanquish all evil — just like the last heroine who wielded it.",
+	"weapontype": "Sword",
+	"rarity": "5",
+	"story": "All knew the falcon's protection was a blessing of Favonius.\nFew knew the blessing of Favonius was from a distant tribe.\n\nUnder the tyranny of the old nobles, Mondstadt cried for freedom.\nEnslaved was the exiled foreign fighter in the land of wind.\nYet she knelt not before injustice and deception, but set a shining example.\nFor she overthrew the barbaric nobles and established a chivalric order and the Church.\nBlessed was she to eventually walk with the gods.\n\nThis was her sword that witnessed all her hardships and feats.\nA testament to her achievement in spreading justice across Mondstadt.\nYou can feel her unrelenting spirit when swinging this sword:\n\nJustice for the oppressed.\nFreedom for the shackled.\nWisdom for the deceived.\nLet the wind of justice and freedom lead.",
+	"baseatk": 48,
+	"substat": "Physical DMG Bonus",
+	"subvalue": "9",
+	"effectname": "Falcon's Defiance",
+	"effect": "ATK is increased by {0}. Triggers on taking DMG: the soul of the Falcon of the West awakens, holding the banner of resistance aloft, regenerating HP equal to {1} of ATK and dealing {2} of ATK as DMG to surrounding opponents. This effect can only occur once every 15s.",
+	"r1": [
+		"20%",
+		"100%",
+		"200%"
+	],
+	"r2": [
+		"25%",
+		"115%",
+		"230%"
+	],
+	"r3": [
+		"30%",
+		"130%",
+		"260%"
+	],
+	"r4": [
+		"35%",
+		"145%",
+		"290%"
+	],
+	"r5": [
+		"40%",
+		"160%",
+		"320%"
+	],
+	"weaponmaterialtype": "Decarabian",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Tile of Decarabian's Tower",
+				"count": 5
+			},
+			{
+				"name": "Heavy Horn",
+				"count": 5
+			},
+			{
+				"name": "Firm Arrowhead",
+				"count": 3
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Debris of Decarabian's City",
+				"count": 5
+			},
+			{
+				"name": "Heavy Horn",
+				"count": 18
+			},
+			{
+				"name": "Firm Arrowhead",
+				"count": 12
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Debris of Decarabian's City",
+				"count": 9
+			},
+			{
+				"name": "Black Bronze Horn",
+				"count": 9
+			},
+			{
+				"name": "Sharp Arrowhead",
+				"count": 9
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Fragment of Decarabian's Epic",
+				"count": 5
+			},
+			{
+				"name": "Black Bronze Horn",
+				"count": 18
+			},
+			{
+				"name": "Sharp Arrowhead",
+				"count": 14
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 55000
+			},
+			{
+				"name": "Fragment of Decarabian's Epic",
+				"count": 9
+			},
+			{
+				"name": "Black Crystal Horn",
+				"count": 14
+			},
+			{
+				"name": "Weathered Arrowhead",
+				"count": 9
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 65000
+			},
+			{
+				"name": "Scattered Piece of Decarabian's Dream",
+				"count": 6
+			},
+			{
+				"name": "Black Crystal Horn",
+				"count": 27
+			},
+			{
+				"name": "Weathered Arrowhead",
+				"count": 18
+			}
+		]
+	}
+}

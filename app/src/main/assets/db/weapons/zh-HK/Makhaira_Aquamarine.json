@@ -1,0 +1,12 @@
+{
+  "name": "Makhaira Aquamarine",
+  "rare": 4,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "一把光澤如水的古老大劍，經過千年流沙磨洗，鋒刃依然銳利異常。",
+  "first_status": "EleMas",
+  "second_status": "ATK",
+  "skill_name": "沙上樓閣",
+  "skill_desc": "每10秒，產生如下效果：基於裝備者的元素精通的24%，提升該角色的攻擊力，並基於該提升的30%為隊伍中附近的其他角色提升攻擊力，持續12秒，多件同名武器產生的此效果可以疊加。角色處於隊伍後臺時也能觸發效果。",
+  "obtain_way": "LIMITED_WISH"
+}

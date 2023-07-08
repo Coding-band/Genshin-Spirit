@@ -1,0 +1,17 @@
+{
+  "name": "Aqua Simulacra",
+  "rare": 5,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "The Qilin are ben{
+  "name": "Aqua Simulacra",
+  "rare": 5,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "麒麟本性仁慈，除非万不得已，绝不会伤害他人的灵魂。",
+  "first_status": "CritDMG%",
+  "second_status": "ATK",
+  "skill_name": "洗濯诸类之形",
+  "skill_desc": "生命值提升16%。周围存在敌人时，装备该武器的角色造成的伤害都会提升20%，不论该角色处于场上或是处于队伍后台。",
+  "obtain_way": "LIMITED_WISH"
+}

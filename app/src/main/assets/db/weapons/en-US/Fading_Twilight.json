@@ -1,0 +1,12 @@
+{
+  "name": "Fading Twilight",
+  "rare": 4,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "A sturdy sheet of iron that may be powerful enough to break apart mountains, if wielded with enough willpower.",
+  "first_status": "EnRech%",
+  "second_status": "ATK",
+  "skill_name": "Radiance of the Deeps",
+  "skill_desc": "Has three states, Evengleam, Afterglow, and Dawnblaze, which increase DMG dealt by 6%/10%/14% respectively. When attacks hit opponents, this weapon will switch to the next state. This weapon can change states once every 7s. The character equipping this weapon can still trigger the state switch while not on the field.",
+  "obtain_way": "N/A"
+}

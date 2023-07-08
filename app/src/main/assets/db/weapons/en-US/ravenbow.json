@@ -1,0 +1,138 @@
+{
+	"name": "Raven Bow",
+	"description": "Ravens are known to be the ferrymen of the dead. This bow's limb is decorated with raven feathers, which forebode the imminent death of its target.",
+	"weapontype": "Bow",
+	"rarity": "3",
+	"story": "Ravens are messengers of death.\n\"Placing this feather on the limb of one's bow\ndeclares the death of one's prey.\"\nOr so claimed the weapon vendors.",
+	"baseatk": 40,
+	"substat": "Elemental Mastery",
+	"subvalue": "20",
+	"effectname": "Bane of Flame and Water",
+	"effect": "Increases DMG against opponents affected by Hydro or Pyro by {0}.",
+	"r1": [
+		"12%"
+	],
+	"r2": [
+		"15%"
+	],
+	"r3": [
+		"18%"
+	],
+	"r4": [
+		"21%"
+	],
+	"r5": [
+		"24%"
+	],
+	"weaponmaterialtype": "Decarabian",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Tile of Decarabian's Tower",
+				"count": 2
+			},
+			{
+				"name": "Heavy Horn",
+				"count": 2
+			},
+			{
+				"name": "Firm Arrowhead",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Debris of Decarabian's City",
+				"count": 2
+			},
+			{
+				"name": "Heavy Horn",
+				"count": 8
+			},
+			{
+				"name": "Firm Arrowhead",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Debris of Decarabian's City",
+				"count": 4
+			},
+			{
+				"name": "Black Bronze Horn",
+				"count": 4
+			},
+			{
+				"name": "Sharp Arrowhead",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Fragment of Decarabian's Epic",
+				"count": 2
+			},
+			{
+				"name": "Black Bronze Horn",
+				"count": 8
+			},
+			{
+				"name": "Sharp Arrowhead",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Fragment of Decarabian's Epic",
+				"count": 4
+			},
+			{
+				"name": "Black Crystal Horn",
+				"count": 6
+			},
+			{
+				"name": "Weathered Arrowhead",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Scattered Piece of Decarabian's Dream",
+				"count": 3
+			},
+			{
+				"name": "Black Crystal Horn",
+				"count": 12
+			},
+			{
+				"name": "Weathered Arrowhead",
+				"count": 8
+			}
+		]
+	}
+}

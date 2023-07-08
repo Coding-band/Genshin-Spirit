@@ -16,14 +16,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
-import android.provider.BaseColumns;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
-import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -42,7 +39,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -50,20 +46,12 @@ import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.Artifacts;
-import com.voc.genshin_helper.data.CalculatorDB;
-import com.voc.genshin_helper.data.CalculatorDBAdapter;
 import com.voc.genshin_helper.data.Characters;
 import com.voc.genshin_helper.data.CharactersAdapter;
 import com.voc.genshin_helper.data.ItemRss;
-import com.voc.genshin_helper.data.ScreenSizeUtils;
 import com.voc.genshin_helper.data.Weapons;
 import com.voc.genshin_helper.data.WeaponsAdapter;
-import com.voc.genshin_helper.database.DataBaseContract;
-import com.voc.genshin_helper.database.DataBaseHelper;
-import com.voc.genshin_helper.ui.SipTik.DataBaseHelper_SipTik;
-import com.voc.genshin_helper.ui.MMXLVIII.Calculator2048;
 import com.voc.genshin_helper.util.BackgroundReload;
-import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.LangUtils;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
@@ -77,7 +65,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /*
@@ -498,7 +485,7 @@ public class CalculatorDB_SipTik extends AppCompatActivity {
                                         int x = 0;
                                         for (Characters item : charactersList) {
                                             String str = request.toLowerCase();
-                                            if (css.getCharByName(item.getName(), context)[1].contains(str) || css.getCharByName(item.getName(), context)[1].toLowerCase().contains(str) || item.getName().toLowerCase().contains(str)) { // EN -> ZH
+                                            if (context.getString(css.getCharByName(item.getName(), context)[1]).contains(str) || context.getString(css.getCharByName(item.getName(), context)[1]).toLowerCase().contains(str) || item.getName().toLowerCase().contains(str)) { // EN -> ZH
                                                 filteredListC.add(item);
                                             }
                                             x = x + 1;
@@ -511,7 +498,7 @@ public class CalculatorDB_SipTik extends AppCompatActivity {
                                         int x = 0;
                                         for (Weapons item : weaponsList) {
                                             String str = request.toLowerCase();
-                                            if (css.getWeaponByName(item.getName(),context)[0].contains(str)||css.getWeaponByName(item.getName(),context)[0].toLowerCase().contains(str)||css.getWeaponByName(item.getName(),context)[0].toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
+                                            if (context.getString(css.getWeaponByName(item.getName())[0]).contains(str)||context.getString(css.getWeaponByName(item.getName())[0]).toLowerCase().contains(str)||context.getString(css.getWeaponByName(item.getName())[0]).toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
                                                 filteredListW.add(item);
                                             }
                                             x = x +1;
@@ -1711,7 +1698,7 @@ public class CalculatorDB_SipTik extends AppCompatActivity {
 
                 item_name.setText(item_rss.getCharByName(name,context)[1]);
                 Picasso.get()
-                        .load(FileLoader.loadIMG(item_rss.getCharByName(name, context)[3], context))
+                        .load(item_rss.getCharByName(name, context)[3])
                         .fit()
                         .transform(transformation)
                         .error(R.drawable.paimon_lost)
@@ -1760,9 +1747,9 @@ public class CalculatorDB_SipTik extends AppCompatActivity {
                 talent_ll.setVisibility(View.GONE);
                 talent_title.setVisibility(View.GONE);
 
-                item_name.setText(item_rss.getWeaponByName(name,context)[0]);
+                item_name.setText(item_rss.getWeaponByName(name)[0]);
                 Picasso.get()
-                        .load(FileLoader.loadIMG(item_rss.getWeaponByName(name, context)[1], context))
+                        .load(item_rss.getWeaponByName(name)[1])
                         .fit()
                         .transform(transformation)
                         .error(R.drawable.paimon_lost)

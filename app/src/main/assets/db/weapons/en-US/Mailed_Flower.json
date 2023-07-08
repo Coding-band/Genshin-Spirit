@@ -1,0 +1,12 @@
+{
+  "name": "Mailed_Flower",
+  "rare": 4,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "N/A",
+  "first_status": "CritDMG",
+  "second_status": "ATK",
+  "skill_name": "Whispers of Wind and Flower",
+  "skill_desc": "Within 8s after the character’s Elemental Skill hits an opponent or triggers an Elemental Reaction, the character’s ATK and Elemental Mastery will be increased by 12% and 48 respectively.",
+  "obtain_way": "LIMITED_WISH"
+}

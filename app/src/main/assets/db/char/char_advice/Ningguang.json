@@ -1,0 +1,36 @@
+{
+  "name" : "Ningguang",
+  "dps_weapons": [
+    "lost_prayer_to_the_sacred_winds",
+    "skyward_atlas",
+    "memory_of_dust",
+    "dodoco_tales",
+    "solar_pearl"
+   ],
+  "sup_dps_weapons": [
+    "lost_prayer_to_the_sacred_winds",
+    "skyward_atlas",
+    "memory_of_dust",
+    "solar_pearl"
+  ],
+  "sup_dps_art1": [
+    "retracing_bolide",
+    "retracing_bolide",
+    "retracing_bolide",
+    "retracing_bolide",
+    "retracing_bolide"
+	],
+  "dps_art1": [
+    "archaic_petra",
+    "archaic_petra",
+    "gladiators_finale",
+    "gladiators_finale",
+    "gladiators_finale"
+  ],
+  "team1":[
+	"Ningguang","Xiangling","Yanfei","Noelle"
+  ],
+  "team1":[
+	"Ningguang","Barbara","Bennett","Venti"
+  ]
+}

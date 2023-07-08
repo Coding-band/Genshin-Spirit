@@ -1,0 +1,12 @@
+{
+  "name": "Pocket Grimoire",
+  "rare": 2,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "精心編纂，只留下考試重點的魔導參考小冊。",
+  "first_status": "N/A",
+  "second_status": "ATK",
+  "skill_name": "無",
+  "skill_desc": "無",
+  "obtain_way": "CHEST_SHOP"
+}

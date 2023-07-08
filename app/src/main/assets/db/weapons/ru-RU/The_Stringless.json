@@ -1,0 +1,12 @@
+{
+  "name": "The Stringless",
+  "rare": 4,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "Когда-то этот лук был восхитительным музыкальным инструментом, но больше под его музыку никто не запляшет.",
+  "first_status": "EnRech%",
+  "second_status": "ATK",
+  "skill_name": "Песнь без стрел",
+  "skill_desc": "Увеличивает урон элементальных навыков и взрыва стихии на 24%/30%/36%/42%/48%.",
+  "obtain_way": "WISH"
+}

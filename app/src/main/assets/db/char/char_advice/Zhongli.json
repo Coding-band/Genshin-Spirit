@@ -1,0 +1,95 @@
+{
+  "name" : "Zhongli",
+   
+  "dps_weapons": [
+    "staff_of_homa",
+    "primordial_jade_winged_spear",
+    "calamity_queller",
+    "favonius_lance",
+    "deathmatch"
+  ],
+  "dps_art1": [
+    "archaic_petra",
+    "archaic_petra",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "dps_art2": [
+    "tenacity_of_the_millelith",
+    "tenacity_of_the_millelith",
+    "tenacity_of_the_millelith",
+    "tenacity_of_the_millelith",
+    "tenacity_of_the_millelith"
+  ],
+  "dps_art3": [
+    "archaic_petra",
+    "archaic_petra",
+    "archaic_petra",
+    "archaic_petra",
+    "archaic_petra"
+  ],
+  "dps_art_sand_entry": [
+    "HP"
+  ],
+  "dps_art_goblet_entry": [
+	"EleDMG_Geo",
+	"HP"
+  ],
+  "dps_art_circlet_entry": [
+	"CritDMG",
+	"CritRate",
+	"HP"
+  ],
+  "dps_art_sub_entry": [
+    "CritRate",
+    "CritDMG",
+    "HP",
+    "EnRech",
+    "ATK"
+  ],
+  
+  "util_weapons": [
+    "black_tassel",
+    "staff_of_homa",
+    "favonius_lance"
+  ],
+  "util_art1": [
+    "tenacity_of_the_millelith",
+    "tenacity_of_the_millelith",
+    "tenacity_of_the_millelith",
+    "tenacity_of_the_millelith",
+    "tenacity_of_the_millelith"
+  ],
+  "util_art2": [
+    "archaic_petra",
+    "archaic_petra",
+    "archaic_petra",
+    "archaic_petra",
+    "archaic_petra"
+  ],
+  "util_art_sand_entry": [
+    "HP"
+  ],
+  "util_art_goblet_entry": [
+	"HP"
+  ],
+  "util_art_circlet_entry": [
+	"HP"
+  ],
+  "util_art_sub_entry": [
+    "HP",
+    "baseHP",
+    "EnRech",
+    "EleMas"
+  ],
+  "team1":[
+	"Zhongli","Hu Tao","Yelan","Albedo"
+  ],
+  "team2":[
+	"Zhongli","Albedo","Gorou","Arataki Itto"
+  ],
+  "team3":[
+	"Zhongli","Albedo","Jean","Venti"
+  ]
+}

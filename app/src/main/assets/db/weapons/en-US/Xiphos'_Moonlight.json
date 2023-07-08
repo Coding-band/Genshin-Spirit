@@ -1,0 +1,12 @@
+{
+  "name": "Xiphos' Moonlight",
+  "rare": 4,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "desc": "This ancient double-edged sword glimmers with moonlight. It is said that a now-silent Jinni dwells within it.",
+  "first_status": "EleMas",
+  "second_status": "ATK",
+  "skill_name": "Jinni’s Whisper",
+  "skill_desc": "The following effect will trigger every 10s: The equipping character will gain 0.036% Energy Recharge for each point of Elemental Mastery they possess for 12s, with nearby party members gaining 30% of this buff for the same duration. Multiple instances of this weapon can allow this buff to stack. This effect will still trigger even if the character is not on the field.",
+  "obtain_way": "LIMITED_WISH"
+}

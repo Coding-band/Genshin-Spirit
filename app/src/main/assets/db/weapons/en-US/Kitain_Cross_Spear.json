@@ -1,0 +1,12 @@
+{
+  "name": "Kitain Cross Spear",
+  "rare": 4,
+  "weapon": "Polearm",
+  "isComingSoon": false,
+  "desc": "A special lance that was once used by a famed warrior who guarded the Tatarigami on Yashiori Island.",
+  "first_status": "EleMas",
+  "second_status": "ATK",
+  "skill_name": "Samurai Conduct",
+  "skill_desc": "Increases Elemental Skill DMG by 6%/7.5%/9%/10.5%/12%. After Elemental Skill hits an opponent, the character loses 3 Energy but regenerates 3/3.5/4/4.5/5 Energy every 2s for the next 6s. This effect can occur once every 10s. Can be triggered even when the character is not on the field.",
+  "obtain_way": "FORGE_YLYSWS"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "This is a sword",
+  "rare": 4,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "desc": "一块坚固的铁片，如果有足够的意志力，它的力量可能足以摧毁山脉。",
+  "first_status": "ATK",
+  "second_status": "ATK",
+  "skill_name": "N/A",
+  "skill_desc": "普通攻击、重击或下落攻击命中敌人时，将卷起切落风，造成180%攻击力的范围伤害，并且使攻击力提升15%，持续8秒。该效果每8秒至多触发一次。",
+  "obtain_way": "N/A"
+}

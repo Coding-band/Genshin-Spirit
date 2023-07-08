@@ -1,0 +1,138 @@
+{
+	"name": "Rainslasher",
+	"description": "A fluorescent greatsword with no sharp edge that crushes enemies with brute force and raw power.",
+	"weapontype": "Claymore",
+	"rarity": "4",
+	"story": "A dimly fluorescent greatsword with no sharp edge.\nYears ago it was known as the \"Beacon of the Nether\" by the mountain bandits.\nSeeing it meant there was no way back.\nThe only way was forward, towards the end of one's life.\n\n\"Formless, like the rain that cuts through rain. Weightless, like the light that pierces light.\"\n\"Untouchable, moving like a snake. Inescapable, as sword's stare and polearm's glance.\"\n\nThe Rainslasher was named out of reverence for its master. Originally it had no name.\nThe blade's first and final master was a martial nomad who went by the name of Guhua.\n\nIt is said that he was an adeptus. While Guhua lived, bandits dared not act and the wilderness knew a peace like that of the city.\nAllegedly, at the end of his journey he ascended in a purple haze and became a star.\n\nOne to whom Guhua had shown kindness founded what is now known as the Guhua School in his honor. But no school is destined to last forever.",
+	"baseatk": 42,
+	"substat": "Elemental Mastery",
+	"subvalue": "36",
+	"effectname": "Bane of Storm and Tide",
+	"effect": "Increases DMG against opponents affected by Hydro or Electro by {0}.",
+	"r1": [
+		"20%"
+	],
+	"r2": [
+		"24%"
+	],
+	"r3": [
+		"28%"
+	],
+	"r4": [
+		"32%"
+	],
+	"r5": [
+		"36%"
+	],
+	"weaponmaterialtype": "Mist Veiled Elixir",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Mist Veiled Lead Elixir",
+				"count": 3
+			},
+			{
+				"name": "Mist Grass Pollen",
+				"count": 3
+			},
+			{
+				"name": "Divining Scroll",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Mist Veiled Mercury Elixir",
+				"count": 3
+			},
+			{
+				"name": "Mist Grass Pollen",
+				"count": 12
+			},
+			{
+				"name": "Divining Scroll",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Mist Veiled Mercury Elixir",
+				"count": 6
+			},
+			{
+				"name": "Mist Grass",
+				"count": 6
+			},
+			{
+				"name": "Sealed Scroll",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Mist Veiled Gold Elixir",
+				"count": 3
+			},
+			{
+				"name": "Mist Grass",
+				"count": 12
+			},
+			{
+				"name": "Sealed Scroll",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Mist Veiled Gold Elixir",
+				"count": 6
+			},
+			{
+				"name": "Mist Grass Wick",
+				"count": 9
+			},
+			{
+				"name": "Forbidden Curse Scroll",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Mist Veiled Primo Elixir",
+				"count": 4
+			},
+			{
+				"name": "Mist Grass Wick",
+				"count": 18
+			},
+			{
+				"name": "Forbidden Curse Scroll",
+				"count": 12
+			}
+		]
+	}
+}

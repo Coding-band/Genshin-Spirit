@@ -1,0 +1,12 @@
+{
+  "name": "Dull Blade",
+  "rare": 1,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "ATK",
+  "second_status": "N/A",
+  "desc": "少年人的夢想，踏上旅途的興奮——如果這兩種珍貴的品質還不夠鋒利，那就用勇氣補足吧。",
+  "skill_name": "N/A",
+  "skill_desc": "N/A",
+  "obtain_way": "FIRST_GIFT"
+}

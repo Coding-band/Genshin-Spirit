@@ -1,0 +1,65 @@
+{
+  "name" : "Yoimiya",
+    
+  "util_weapons": [
+    "thundering_pulse",
+    "amos_bow",
+    "skyward_harp",
+    "rust",
+    "hamayumi"
+  ],
+  "util_art1": [
+    "shimenawas_reminiscence",
+    "shimenawas_reminiscence",
+    "shimenawas_reminiscence",
+    "shimenawas_reminiscence",
+    "shimenawas_reminiscence"
+  ],
+  "util_art2": [
+    "retracing_bolide",
+    "retracing_bolide",
+    "retracing_bolide",
+    "retracing_bolide",
+    "retracing_bolide"
+  ],
+  "util_art3": [
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames"
+  ],
+  "util_art4": [
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames",
+    "shimenawas_reminiscence",
+    "shimenawas_reminiscence",
+    "shimenawas_reminiscence"
+  ],
+  "util_art_sand_entry": [
+    "ATK"
+  ],
+  "util_art_goblet_entry": [
+	"EleDMG_Pyro"
+  ],
+  "util_art_circlet_entry": [
+    "CritDMG",
+	"CritRate"
+  ],
+  "util_art_sub_entry": [
+    "CritRate",
+    "CritDMG",
+    "ATK",
+    "baseATK"
+  ],
+  
+  "team1":[
+	"Kaedehara Kazuha","Bennett","Xingqiu","Yoimiya"
+  ],
+  "team2":[
+	"Yoimiya","Bennett","Fischl","Beidou"
+  ],
+  "team3":[
+	"Yoimiya","Hu Tao","Kaedehara Kazuha","Zhongli"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "name" : "Raiden Shogun",
+  
+  "dps_weapons" : [
+	"engulfing_lightning",
+	"skyward_spine",
+	"the_catch",
+	"favonius_lance",
+  ],
+  "dps_art1": [
+    "emblem_of_severed_fate",
+    "emblem_of_severed_fate",
+    "emblem_of_severed_fate",
+    "emblem_of_severed_fate",
+    "emblem_of_severed_fate"
+  ],
+  "dps_art2": [
+    "thundering_fury",
+    "thundering_fury",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "dps_art_sand_entry": [
+    "EnRech"
+  ],
+  "dps_art_goblet_entry": [
+    "ATK"
+  ],
+  "dps_art_circlet_entry": [
+    "CritRate"
+  ],
+  "dps_art_sub_entry": [
+    "CritDMG",
+    "CritRate",
+    "EnRech",
+    "ATK",
+    "EleMas"
+  ],
+  
+  "team1":[
+	"Raiden Shogun","Kujou Sara","Kaedehara Kazuha","Bennett"
+  ],
+  "team2":[
+	"Eula","Raiden Shogun","Zhongli","Kamisato Ayaka"
+  ],
+  "team3":[
+	"Xiangling","Xingqiu","Raiden Shogun","Bennett"
+  ]
+}

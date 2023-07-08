@@ -1,0 +1,52 @@
+{
+  "name" : "Razor",
+  
+  "dps_weapons" : [
+	"wolfs_gravestone",
+	"serpent_spine",
+	"protptype_archaic",
+	"snow_tombed_starsilver"
+  ],
+  "dps_art1": [
+    "gladiators_finale",
+    "gladiators_finale",
+    "gladiators_finale",
+    "gladiators_finale",
+    "gladiators_finale"
+  ],
+  "dps_art2": [
+    "pale_flame",
+    "pale_flame",
+    "pale_flame",
+    "pale_flame",
+    "pale_flame"
+  ],
+  "dps_art_sand_entry": [
+    "ATK"
+  ],
+  "dps_art_goblet_entry": [
+    "PhyDMG",
+	"ATK"
+  ],
+  "dps_art_circlet_entry": [
+    "CritDMG",
+	"CritRate"
+  ],
+  "dps_art_sub_entry": [
+    "ATK",
+    "CritRate",
+    "CritDMG",
+    "EnRech",
+    "HP",
+  ],
+  
+  "team1":[
+	"Razor","Qiqi","Xingqiu","Fischl"
+  ],
+  "team2":[
+	"Razor","Barbara","Kaeya","Bennett"
+  ],
+  "team3":[
+	"Razor","Barbara","Kaeya","Xiangling"
+  ],
+}

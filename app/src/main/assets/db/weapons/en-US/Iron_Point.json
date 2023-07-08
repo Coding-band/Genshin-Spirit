@@ -1,0 +1,12 @@
+{
+  "name": "Iron Point",
+  "rare": 2,
+  "weapon": "Polearm",
+  "isComingSoon": false,
+  "desc": "Sharp and pointy at one end, it is a balanced weapon that is quite popular among travelers.",
+  "first_status": "N/A",
+  "second_status": "ATK",
+  "skill_name": "N/A",
+  "skill_desc": "N/A",
+  "obtain_way": "CHEST_SHOP"
+}

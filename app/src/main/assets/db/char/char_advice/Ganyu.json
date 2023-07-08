@@ -1,0 +1,42 @@
+{
+  "name" : "Ganyu",
+  "dps_weapons": [
+    "amos_bow",
+	"prototype_crescent",
+	"blackcliff_warbow",
+	"favonius_warbow"
+   ],
+  "dps_art1": [
+    "blizzard_strayer",
+    "blizzard_strayer",
+    "blizzard_strayer",
+    "blizzard_strayer",
+    "blizzard_strayer"
+  ],
+  "dps_art2": [
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "wanderers_troupe"
+  ],
+  "dps_art_sand_entry": [
+    "ATK",
+	"EleMas"
+  ],
+  "dps_art_goblet_entry": [
+	"EleDMG_Cryo"
+  ],
+  "dps_art_circlet_entry": [
+	"CritDMG",
+	"CritRate"
+  ],
+  "dps_art_sub_entry": [
+    "CritDMG",
+    "CritRate",
+    "ATK"
+  ],
+  "team1":[
+	"Ganyu","Mona","Venti","Diona"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "name": "Mouun's Moon",
+  "rare": 4,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "螺鈿と珊瑚でできた精巧な弓。月色の弓幹には凄然たる光沢を放っている。",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "波を統べる海祇の民",
+  "skill_desc": "チーム全員の元素エネルギー上限の合計を基に、元素爆発ダメージをアップさせる。1ポイントにつき、装備したキャラクターの元素爆発ダメージ+0.12%。この方式でアップできる元素爆発ダメージは最大40%まで。",
+  "obtain_way": "LIMITED_WISH"
+}
+
+

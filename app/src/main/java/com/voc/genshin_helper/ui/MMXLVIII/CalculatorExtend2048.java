@@ -7,12 +7,8 @@ import android.app.Activity;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
-import android.content.res.ColorStateList;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -23,47 +19,22 @@ import android.net.Uri;
 import android.os.Build;
 import android.provider.MediaStore;
 import android.util.DisplayMetrics;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
-import androidx.core.content.FileProvider;
-import androidx.recyclerview.widget.ConcatAdapter;
-import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
 import androidx.gridlayout.widget.GridLayout;
 
 import com.squareup.picasso.Picasso;
-import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.data.Material;
-import com.voc.genshin_helper.data.material.Materials;
-import com.voc.genshin_helper.data.material.BossAdapter;
-import com.voc.genshin_helper.data.material.CharWeaponAdapter;
-import com.voc.genshin_helper.data.material.CommonAdapter;
-import com.voc.genshin_helper.data.material.CrystalAdapter;
-import com.voc.genshin_helper.data.material.LocalAdapter;
-import com.voc.genshin_helper.data.material.OtherAdapter;
-import com.voc.genshin_helper.data.material.WeekBossAdapter;
-import com.voc.genshin_helper.data.material.WeeklyBK1Adapter;
-import com.voc.genshin_helper.data.material.WeeklyBK2Adapter;
-import com.voc.genshin_helper.data.material.WeeklyBK3Adapter;
-import com.voc.genshin_helper.database.DataBaseHelper;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.FileLoader;
-import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -71,7 +42,6 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -80,10 +50,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
-import java.util.List;
 import java.util.Objects;
 
 /*
@@ -827,7 +795,7 @@ public class CalculatorExtend2048 {
             item_lvl.getLayoutParams().height  = LinearLayout.LayoutParams.WRAP_CONTENT;
             item_lvl.getLayoutParams().width = size;
             Picasso.get()
-                    .load (FileLoader.loadIMG(item_rss.getItemIcoByName(itemName,context),context))
+                    .load (item_rss.getItemIcoByName(itemName))
                     .resize(size,size)
                     .error (R.drawable.paimon_lost)
                     .into (item_ico);
@@ -1107,10 +1075,10 @@ public class CalculatorExtend2048 {
     }
 
     public void char_readJSON () {
-        String char_lvl_exp = LoadData("db/char/char_lvl_exp.json");
-        String char_asc_lvl = LoadData("db/char/char_asc_lvl.json");
-        String char_skill_lvl = LoadData("db/char/char_skill_lvl.json");
-        String char_require_asc_skill = LoadData("db/char/char_require_asc_skill.json");
+        String char_lvl_exp = ItemRss.LoadAssestData(context,"db/char/char_lvl_exp.json");
+        String char_asc_lvl = ItemRss.LoadAssestData(context,"db/char/char_asc_lvl.json");
+        String char_skill_lvl = ItemRss.LoadAssestData(context,"db/char/char_skill_lvl.json");
+        String char_require_asc_skill = ItemRss.LoadAssestData(context,"db/char/char_require_asc_skill.json");
 
         //Log.wtf("Procedure","char_readJSON_1"+" || "+System.currentTimeMillis());
         try {
@@ -1214,19 +1182,19 @@ public class CalculatorExtend2048 {
     }
 
     public void weapon_readJSON() {
-        String weapon_rare1_exp = LoadData("db/weapons/weapon_rare1_exp.json");
-        String weapon_rare2_exp = LoadData("db/weapons/weapon_rare2_exp.json");
-        String weapon_rare3_exp = LoadData("db/weapons/weapon_rare3_exp.json");
-        String weapon_rare4_exp = LoadData("db/weapons/weapon_rare4_exp.json");
-        String weapon_rare5_exp = LoadData("db/weapons/weapon_rare5_exp.json");
+        String weapon_rare1_exp = ItemRss.LoadAssestData(context,"db/weapons/weapon_rare1_exp.json");
+        String weapon_rare2_exp = ItemRss.LoadAssestData(context,"db/weapons/weapon_rare2_exp.json");
+        String weapon_rare3_exp = ItemRss.LoadAssestData(context,"db/weapons/weapon_rare3_exp.json");
+        String weapon_rare4_exp = ItemRss.LoadAssestData(context,"db/weapons/weapon_rare4_exp.json");
+        String weapon_rare5_exp = ItemRss.LoadAssestData(context,"db/weapons/weapon_rare5_exp.json");
 
-        String weapon_rare1_asc = LoadData("db/weapons/weapon_rare1_asc_lvl.json");
-        String weapon_rare2_asc = LoadData("db/weapons/weapon_rare2_asc_lvl.json");
-        String weapon_rare3_asc = LoadData("db/weapons/weapon_rare3_asc_lvl.json");
-        String weapon_rare4_asc = LoadData("db/weapons/weapon_rare4_asc_lvl.json");
-        String weapon_rare5_asc = LoadData("db/weapons/weapon_rare5_asc_lvl.json");
+        String weapon_rare1_asc = ItemRss.LoadAssestData(context,"db/weapons/weapon_rare1_asc_lvl.json");
+        String weapon_rare2_asc = ItemRss.LoadAssestData(context,"db/weapons/weapon_rare2_asc_lvl.json");
+        String weapon_rare3_asc = ItemRss.LoadAssestData(context,"db/weapons/weapon_rare3_asc_lvl.json");
+        String weapon_rare4_asc = ItemRss.LoadAssestData(context,"db/weapons/weapon_rare4_asc_lvl.json");
+        String weapon_rare5_asc = ItemRss.LoadAssestData(context,"db/weapons/weapon_rare5_asc_lvl.json");
 
-        String weapon_require_asc = LoadData("db/weapons/weapon_require_asc.json");
+        String weapon_require_asc = ItemRss.LoadAssestData(context,"db/weapons/weapon_require_asc.json");
 
         //Log.wtf("Procedure","weapon_readJSON_1"+" || "+System.currentTimeMillis());
         /** EXP */
@@ -1403,11 +1371,11 @@ public class CalculatorExtend2048 {
     }
 
     public void artifact_readJSON() {
-        String artifact_rare1_exp = LoadData("db/artifacts/artifact_rare1_exp.json");
-        String artifact_rare2_exp = LoadData("db/artifacts/artifact_rare2_exp.json");
-        String artifact_rare3_exp = LoadData("db/artifacts/artifact_rare3_exp.json");
-        String artifact_rare4_exp = LoadData("db/artifacts/artifact_rare4_exp.json");
-        String artifact_rare5_exp = LoadData("db/artifacts/artifact_rare5_exp.json");
+        String artifact_rare1_exp = ItemRss.LoadAssestData(context,"db/artifacts/artifact_rare1_exp.json");
+        String artifact_rare2_exp = ItemRss.LoadAssestData(context,"db/artifacts/artifact_rare2_exp.json");
+        String artifact_rare3_exp = ItemRss.LoadAssestData(context,"db/artifacts/artifact_rare3_exp.json");
+        String artifact_rare4_exp = ItemRss.LoadAssestData(context,"db/artifacts/artifact_rare4_exp.json");
+        String artifact_rare5_exp = ItemRss.LoadAssestData(context,"db/artifacts/artifact_rare5_exp.json");
 
         //Log.wtf("Procedure","artifact_readJSON_1"+" || "+System.currentTimeMillis());
         /** EXP */
@@ -1471,26 +1439,6 @@ public class CalculatorExtend2048 {
         }
         //Log.wtf("Procedure","artifact_readJSON_2"+" || "+System.currentTimeMillis());
         artifact_calculate();
-
-    }
-
-    public String LoadData(String inFile) {
-        String tContents = "";
-
-        try {
-            File file = new File(context.getFilesDir()+"/"+inFile);
-            InputStream stream = new FileInputStream(file);
-
-            int size = stream.available();
-            byte[] buffer = new byte[size];
-            stream.read(buffer);
-            stream.close();
-            tContents = new String(buffer);
-        } catch (IOException e) {
-            // Handle exceptions here
-        }
-
-        return tContents;
 
     }
 

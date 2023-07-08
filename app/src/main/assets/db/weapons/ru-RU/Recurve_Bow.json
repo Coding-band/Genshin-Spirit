@@ -1,0 +1,12 @@
+{
+  "name": "Recurve Bow",
+  "rare": 3,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "Говорят, этот лук может сбить орла в полёте, но всё же многое зависит и от навыка самого лучника.",
+  "first_status": "HP%",
+  "second_status": "ATK",
+  "skill_name": "Жатва",
+  "skill_desc": "Победа над противником восстанавливает 8%/10%/12%/14%/16% HP.",
+  "obtain_way": "WISH"
+}

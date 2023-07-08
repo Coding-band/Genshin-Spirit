@@ -1,0 +1,62 @@
+{
+  "name" : "Kamisato Ayato",
+  
+  "dps_weapons": [
+    "haran_geppaku_futsu",
+    "primordial_jade_cutter",
+    "mistsplitter_reforged",
+    "the_black_sword",
+    "the_flute",
+    "amenoma_kageuchi",
+    "prototype_archaic"
+   ],
+  "dps_art1": [
+    "echoes_of_an_offering",
+    "echoes_of_an_offering",
+    "echoes_of_an_offering",
+    "echoes_of_an_offering",
+    "echoes_of_an_offering"
+  ],
+  "dps_art2": [
+    "heart_of_depth",
+    "gladiators_finale",
+    "gladiators_finale",
+    "gladiators_finale",
+    "gladiators_finale"
+  ],
+  "dps_art3": [
+    "heart_of_depth",
+    "heart_of_depth",
+    "heart_of_depth",
+    "heart_of_depth",
+    "heart_of_depth"
+  ],
+  "dps_art_sand_entry": [
+    "ATK"
+  ],
+  "dps_art_goblet_entry": [
+    "EleDMG_Hydro"
+  ],
+  "dps_art_circlet_entry": [
+    "CritRate",
+    "CritDMG"
+  ],
+  "dps_art_sub_entry": [
+    "CritDMG",
+    "CritRate",
+    "HP",
+    "EnRech"
+  ],  
+  "team1":[
+	"Kamisato Ayato","Xingqiu","Kaedehara Kazuha","Bennett"
+  ],
+  "team2":[
+	"Kamisato Ayato","Ganyu","Bennett","Venti"
+  ],
+  "team3":[
+	"Kamisato Ayato","Kamisato Ayaka","Bennett","Zhongli"
+  ],
+  "team4":[
+	"Kamisato Ayato","Venti","Sangonomiya Kokomi","Yun Jin"
+  ]
+}

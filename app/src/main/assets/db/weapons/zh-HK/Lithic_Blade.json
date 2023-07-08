@@ -1,0 +1,12 @@
+{
+  "name": "Lithic Blade",
+  "rare": 4,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "以璃月的基岩為原料削鑿成的厚重大劍。",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "千岩訣·同心",
+  "skill_desc": "隊伍中每有一位璃月角色，裝備該武器的角色便獲得7%/8%/9%/10%/11%攻擊力提升與3%/4%/5%/6%/7%暴擊率提升。至多獲得4層提升效果。",
+  "obtain_way": "LIMITED_WISH"
+}

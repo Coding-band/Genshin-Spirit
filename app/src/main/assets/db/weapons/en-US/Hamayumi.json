@@ -1,0 +1,143 @@
+{
+	"name": "Hamayumi",
+	"description": "A certain shrine maiden once owned this warbow. It was made with surpassing skill, and is both intricate and sturdy.",
+	"weapontype": "Bow",
+	"rarity": "4",
+	"story": "\"Get off the ship. Women are a hindrance here!\"\nThe thief they called Ako Domeki turned and left.\nBut hearing this, the shrine maiden could not help by smile faintly.\nIf the person who had taught me archery had not gone forth to campaign alongside the Shogun,\nThen our son would been the same age as Zaemon now.\nAnd perhaps I would have come to be a Takamine, or he, an Asase...\n\nZaemon's tone, and the way he intentionally turns his back on me,\nIs the spitting image of how he once did it, sword in hand.\nThis time, I will not let this person die.\nEven if it means fighting against the Electro Mitsudomoe banner...\n\n\"Our fishing spears and swords have been sharpened. It is time to set sail.\"\n\"Well then, let's show those Shogunate lackeys Seirai's strength!\"\n\nHearing the sea shanties greeting their departure, the shrine maiden set down her warbow.\nShe once secretly learned true \"magic\" on Mt. Yougou,\nAnd though she felt sorry for her Master, the Tengu, she would use it here.\nShe would undo the great barrier that had held for a thousand years,\nAnd she would set the resentment of the moribund violet glede free,\nAllowing it to ravage the ships that flew the Electro Archon's banner.\nShe could only hope that that old cat wouldn't come charging into the storm...",
+	"baseatk": 41,
+	"substat": "ATK",
+	"subvalue": "12",
+	"effectname": "Full Draw",
+	"effect": "Increases Normal Attack DMG by {0} and Charged Attack DMG by {1}. When the equipping character's Energy reaches 100%, this effect is increased by 100%.",
+	"r1": [
+		"16%",
+		"12%"
+	],
+	"r2": [
+		"20%",
+		"15%"
+	],
+	"r3": [
+		"24%",
+		"18%"
+	],
+	"r4": [
+		"28%",
+		"21%"
+	],
+	"r5": [
+		"32%",
+		"24%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Narukami's Wisdom",
+				"count": 3
+			},
+			{
+				"name": "Dismal Prism",
+				"count": 3
+			},
+			{
+				"name": "Firm Arrowhead",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Narukami's Joy",
+				"count": 3
+			},
+			{
+				"name": "Dismal Prism",
+				"count": 12
+			},
+			{
+				"name": "Firm Arrowhead",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Narukami's Joy",
+				"count": 6
+			},
+			{
+				"name": "Crystal Prism",
+				"count": 6
+			},
+			{
+				"name": "Sharp Arrowhead",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Narukami's Affection",
+				"count": 3
+			},
+			{
+				"name": "Crystal Prism",
+				"count": 12
+			},
+			{
+				"name": "Sharp Arrowhead",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Narukami's Affection",
+				"count": 6
+			},
+			{
+				"name": "Polarizing Prism",
+				"count": 9
+			},
+			{
+				"name": "Weathered Arrowhead",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Narukami's Valor",
+				"count": 4
+			},
+			{
+				"name": "Polarizing Prism",
+				"count": 18
+			},
+			{
+				"name": "Weathered Arrowhead",
+				"count": 12
+			}
+		]
+	}
+}

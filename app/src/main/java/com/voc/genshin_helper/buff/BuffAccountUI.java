@@ -15,19 +15,15 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearSmoothScroller;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.alibaba.fastjson2.JSON;
 import com.google.android.material.tabs.TabLayout;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
@@ -37,7 +33,6 @@ import com.voc.genshin_helper.buff.obj.BuffObject;
 import com.voc.genshin_helper.buff.obj.Character;
 import com.voc.genshin_helper.buff.obj.Weapon;
 import com.voc.genshin_helper.data.ItemRss;
-import com.voc.genshin_helper.ui.MMXLVIII.Calculator2048;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 import com.willy.ratingbar.ScaleRatingBar;
@@ -227,7 +222,7 @@ public class BuffAccountUI extends AppCompatActivity {
                 default: talentBg = R.drawable.bg_colored_talent_pyro; sofBg = R.drawable.bg_colored_sof_pyro;break;
             }
             Picasso.get()
-                    .load (FileLoader.loadIMG(item_rss.getCharByName(character.getCharName(),context)[3],context))
+                    .load (item_rss.getCharByName(character.getCharName(),context)[3])
                     .transform(transformation)
                     .fit()
                     .error (R.drawable.paimon_full)
@@ -286,7 +281,7 @@ public class BuffAccountUI extends AppCompatActivity {
             }
 
             Picasso.get()
-                    .load (FileLoader.loadIMG(item_rss.getWeaponByName(weapon.getWeaponName(),context)[1],context))
+                    .load (item_rss.getWeaponByName(weapon.getWeaponName())[1])
                     .transform(transformation)
                     .fit()
                     .error (R.drawable.paimon_full)
@@ -299,7 +294,7 @@ public class BuffAccountUI extends AppCompatActivity {
                 case 5 : buff_dmg_weapon_ico.setBackgroundResource(R.drawable.item_char_list_bg_circ_5s);break;
                 default:  buff_dmg_weapon_ico.setBackgroundResource(R.drawable.item_char_list_bg_circ_1s);break;
             }
-            buff_dmg_weapon_name.setText(item_rss.getWeaponByName(weapon.getWeaponName(),context)[0]);
+            buff_dmg_weapon_name.setText(item_rss.getWeaponByName(weapon.getWeaponName())[0]);
             buff_dmg_weapon_lvl.setText("Lvl. "+String.valueOf(weapon.getWeaponLvl()));
             buff_dmg_weapon_affix_lvl.setText(context.getString(R.string.affix)+String.valueOf(weapon.getWeaponAffixLvl()));
 
@@ -358,7 +353,7 @@ public class BuffAccountUI extends AppCompatActivity {
                     }
 
                     Picasso.get()
-                            .load (FileLoader.loadIMG(item_rss.getArtifactByName(artifact.getArtifactName(),context)[artifactType],context))
+                            .load (item_rss.getArtifactByName(artifact.getArtifactName())[artifactType])
                             .transform(transformation)
                             .resize((int) (48*displayMetrics.density), (int) (48*displayMetrics.density))
                             .error (R.drawable.paimon_full)
@@ -394,7 +389,7 @@ public class BuffAccountUI extends AppCompatActivity {
             ico_tv.setVisibility(View.GONE);
 
             Picasso.get()
-                    .load (FileLoader.loadIMG(item_rss.getCharByName(character.getCharName(),context)[3],context))
+                    .load (item_rss.getCharByName(character.getCharName(),context)[3])
                     .transform(transformation)
                     .resize((int) (48*displayMetrics.density),(int) (48*displayMetrics.density))
                     .error (R.drawable.paimon_full)

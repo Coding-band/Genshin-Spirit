@@ -1,0 +1,131 @@
+{
+  "name" : "Qiqi",
+  
+  "dps_weapons" : [
+	"the_flute",
+    "amenoma_kageuchi",
+    "lions_roar",
+	"aquila_favonia",
+	"prototype_rancour"
+  ],
+  "dps_art1": [
+    "bloodstained_chivalry",
+    "bloodstained_chivalry",
+    "pale_flame",
+    "pale_flame",
+    "pale_flame"
+  ],
+  "dps_art_sand_entry": [
+    "ATK"
+  ],
+  "dps_art_goblet_entry": [
+    "PhyDMG",
+    "ATK"
+  ],
+  "dps_art_circlet_entry": [
+    "CritRate",
+    "CritDMG"
+  ],
+  "dps_art_sub_entry": [
+    "CritDMG",
+    "CritRate",
+    "ATK",
+    "EnRech"
+  ],
+  
+  "sup_dps_weapons" : [
+	"the_flute",
+    "amenoma_kageuchi",
+    "lions_roar",
+	"aquila_favonia",
+	"prototype_rancour"
+  ],
+  "sup_dps_art1": [
+    "ocean_hued_clam",
+    "ocean_hued_clam",
+    "ocean_hued_clam",
+    "ocean_hued_clam",
+    "ocean_hued_clam"
+  ],
+  "sup_dps_art_sand_entry": [
+    "EnRech",
+    "ATK"
+  ],
+  "sup_dps_art_goblet_entry": [
+    "ATK"
+  ],
+  "sup_dps_art_circlet_entry": [
+    "Healing"
+  ],
+  "sup_dps_art_sub_entry": [
+    "ATK",
+    "EnRech"
+  ],
+  
+  "util_weapons": [
+    "sacrificial_sword",
+    "festering_desire",
+    "skyward_blade",
+    "the_flute",
+    "amenoma_kageuchi",
+    "lions_roar",
+    "prototype_rancour",
+    "freedom_sworn",
+    "summit_shaper",
+    "aquila_favonia",
+    "mistsplitter_reforged"
+  ],
+  "util_art1": [
+    "maiden_beloved",
+    "maiden_beloved",
+    "maiden_beloved",
+    "maiden_beloved",
+    "maiden_beloved"
+  ],
+  "util_art2": [
+    "ocean_hued_clam",
+    "ocean_hued_clam",
+    "gladiators_finale",
+    "gladiators_finale",
+    "gladiators_finale"
+  ],
+  "util_art3": [
+    "maiden_beloved",
+    "maiden_beloved",
+    "gladiators_finale",
+    "gladiators_finale",
+    "gladiators_finale"
+  ],
+  "util_art4": [
+    "blizzard_strayer",
+    "blizzard_strayer",
+    "blizzard_strayer",
+    "blizzard_strayer",
+    "blizzard_strayer"
+  ],
+  "util_art_sand_entry": [
+    "EnRech",
+    "ATK"
+  ],
+  "util_art_goblet_entry": [
+    "ATK"
+  ],
+  "util_art_circlet_entry": [
+    "Healing",
+    "ATK"
+  ],
+  "util_art_sub_entry": [
+    "ATK",
+    "EnRech"
+  ],
+  
+  "team1":[
+	"Kamisato Ayaka","Xingqiu","Kaedehara Kazuha","Qiqi"
+  ],
+  "team2":[
+	"Qiqi","Raiden Shogun","Zhongli","Rosaria"
+  ],
+  "team3":[
+	"Razor","Rosaria","Zhongli","Qiqi"
+  ]
+}

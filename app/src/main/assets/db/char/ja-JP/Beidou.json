@@ -1,0 +1,59 @@
+{
+  "name": "Beidou",
+  "rare": 4,
+  "area": "Liyue",
+  "element": "Electro",
+  "weapon": "Claymore",
+  "sex": "Female",
+  "birth": "02/14",
+  "role": "Support_DPS",
+  "isComingSoon": false,
+  "nick": "無冠の龍王",
+  "desc": "武装船隊「南十字」の頭領、豪快な姉貴。",
+  "battle_talent": {
+    "normal_name": "征浪",
+    "normal_img": "normal_atack_oceanborne",
+    "normal_desc1": "最大5段の連続攻撃を行う。",
+    "normal_desc2": "持続的にスタミナを消費し、素早い連続攻撃を発動する。\n重撃が終了した時に、更に強力な攻撃を1回放つ。",
+    "normal_desc3": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
+    "element_name": "浪追い",
+    "element_img": "tidecaller",
+    "element_desc": "心配することはない。彼女や彼女の仲間に手を出す者がいた場合、彼女は雷と大剣で十倍返しにする。\n\n一回押し:\n雷の力を凝集させ、前方に大剣を振り、雷元素ダメージを与える。\n\n長押し:\n武器をシールドとして使う、ダメージ吸収量は北斗のHP上限によって決まる。\n手を放すまたはスキル継続時間終了時、大剣を振り回して攻撃を行い、雷元素ダメージを与える。スキル期間中に受けた攻撃の回数により、与えるダメージを最大2回までアップさせる。\nシールドには下記の効果がある。\n·雷元素ダメージに対して250%の吸収効果がある。\n·スキル発動時、北斗に雷元素付着効果を付与する。",
+    "final_name": "雷斫り",
+    "final_img": "stormbreaker",
+    "final_desc": "巨獣海山との戦いを思い出した北斗は、巨獣と雷電の力を召喚し、雷獣の盾を作り、周囲の敵に雷元素ダメージを与える。\n雷獣の盾\n·通常攻撃と重撃が近距離の敵に命中すると、雷の力で敵の間を跳躍する稲妻を発生させ、敵に雷元素ダメージを与える。\n·キャラクターの中断耐性をアップさせ、受けるダメージを軽減する。\n稲妻発生の効果は一秒に1回のみ。"
+  },
+  "basic_talent": {
+    "talent1_name": "完全なる霊光",
+    "talent1_img": "retribution",
+    "talent1_desc": "攻撃された瞬間に発動した浪追いの反撃は最大ダメージアップ効果を得る。",
+    "talent2_name": "満天の霹靂",
+    "talent2_img": "lightning_storm",
+    "talent2_desc": "最大ダメージアップ効果のある浪追いを発動した後の10秒間、下記の効果が発動される。\n·通常攻撃と重撃の攻撃速度+15%、攻撃ダメージ+15%。\n·重撃に必要な時間が大幅に減少する。",
+    "talent3_name": "怒濤踏み",
+    "talent3_img": "conqueror_of_tides",
+    "talent3_desc": "チーム内の自身のキャラクター全員が泳ぎに消費するスタミナ-20%。\n同じ効果を持つ固有天赋との重ね掛け不可。"
+  },
+  "sof": {
+    "sof1_name": "四方に沈む魚龍",
+    "sof1_img": "sea_beasts_scourge",
+    "sof1_desc": "雷斫りを発動した時、下記の効果が発動される。\nダメージ吸収量がHP上限の16%に値するシールドを生成する。持続時間15秒。\nこのシールドは雷元素ダメージに対して250%の吸収効果がある。",
+    "sof2_name": "沸き上がる雷",
+    "sof2_img": "upon_the_turbulent_sea",
+    "sof2_desc": "雷斫りの稲妻が2体の敵を追加で攻撃可能になる。",
+    "sof3_name": "雷引きの潮",
+    "sof3_img": "summoner_of_storm",
+    "sof3_desc": "浪追いのスキルLv.+3。\n最大Lv.15まで。",
+    "sof4_name": "星に導かれた岸線",
+    "sof4_img": "stunning_revenge",
+    "sof4_desc": "攻撃を受けた後の10秒間、北斗の通常攻撃に追加で20%の雷元素ダメージが付与される。",
+    "sof5_name": "白波に映る霞光",
+    "sof5_img": "crimson_tidewalker",
+    "sof5_desc": "雷斫りのスキルLv.+3。\n最大Lv.15まで。",
+    "sof6_name": "北斗の祓い",
+    "sof6_img": "bane_of_evil",
+    "sof6_desc": "雷斫り継続中、周囲の敵の雷元素耐性-15%。"
+  }
+}
+
+

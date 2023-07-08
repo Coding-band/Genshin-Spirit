@@ -1,0 +1,138 @@
+{
+	"name": "White Iron Greatsword",
+	"description": "A claymore made from white iron. Lightweight without compromising on power. Effective even when wielded by one of average strength, it is extremely deadly in the hands of a physically stronger wielder.",
+	"weapontype": "Claymore",
+	"rarity": "3",
+	"story": "A lightweight greatsword made of white iron with a silver sheen.\nWhen swung rapidly, the flashes of light can blind the enemy.\nHowever, this sword is not usually used as a weapon.\nAccording to the way of warriors of old, when a comrade falls in battle, polished weapons will line the ground where they fell.\nThough such rituals as these are no longer in fashion, some few still remember what they mean...",
+	"baseatk": 39,
+	"substat": "DEF",
+	"subvalue": "9.6",
+	"effectname": "Cull the Weak",
+	"effect": "Defeating an opponent restores {0} HP.",
+	"r1": [
+		"8%"
+	],
+	"r2": [
+		"10%"
+	],
+	"r3": [
+		"12%"
+	],
+	"r4": [
+		"14%"
+	],
+	"r5": [
+		"16%"
+	],
+	"weaponmaterialtype": "Dandelion Gladiator",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Fetters of the Dandelion Gladiator",
+				"count": 2
+			},
+			{
+				"name": "Chaos Device",
+				"count": 2
+			},
+			{
+				"name": "Slime Condensate",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Chains of the Dandelion Gladiator",
+				"count": 2
+			},
+			{
+				"name": "Chaos Device",
+				"count": 8
+			},
+			{
+				"name": "Slime Condensate",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Chains of the Dandelion Gladiator",
+				"count": 4
+			},
+			{
+				"name": "Chaos Circuit",
+				"count": 4
+			},
+			{
+				"name": "Slime Secretions",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Shackles of the Dandelion Gladiator",
+				"count": 2
+			},
+			{
+				"name": "Chaos Circuit",
+				"count": 8
+			},
+			{
+				"name": "Slime Secretions",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Shackles of the Dandelion Gladiator",
+				"count": 4
+			},
+			{
+				"name": "Chaos Core",
+				"count": 6
+			},
+			{
+				"name": "Slime Concentrate",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Dream of the Dandelion Gladiator",
+				"count": 3
+			},
+			{
+				"name": "Chaos Core",
+				"count": 12
+			},
+			{
+				"name": "Slime Concentrate",
+				"count": 8
+			}
+		]
+	}
+}

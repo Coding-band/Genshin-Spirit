@@ -1,0 +1,12 @@
+{
+  "name": "Black Tassel",
+  "rare": 3,
+  "weapon": "Polearm",
+  "isComingSoon": false,
+  "desc": "白紐の汚れやすい問題を解決した絶世の良槍。",
+  "first_status": "HP%",
+  "second_status": "ATK",
+  "skill_name": "スライム殺し",
+  "skill_desc": "スライムタイプの敵に与えるダメージ+40%/50%/60%/70%/80%。",
+  "obtain_way": "WISH"
+}

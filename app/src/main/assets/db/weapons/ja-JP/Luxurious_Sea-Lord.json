@@ -1,0 +1,12 @@
+{
+  "name": "Luxurious Sea-Lord",
+  "rare": 4,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "海の王様。風乾を経た今、武器としてはもちろん、非常食としても使える。",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "海の勝利",
+  "skill_desc": "元素爆発ダメージ+12%/15%/18%/21%/24%。元素爆発が敵に命中すると、100%の確率でマグロを召喚し、衝撃を与え、攻撃力100%/125%/150%/175%/200%分の範囲ダメージを与える。この効果は15秒毎に1回のみ発動可能。",
+  "obtain_way": "EVENT"
+}

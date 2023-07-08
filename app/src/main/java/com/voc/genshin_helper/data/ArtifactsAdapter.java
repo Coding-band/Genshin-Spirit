@@ -37,7 +37,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
-import com.voc.genshin_helper.buff_old.SipTikCal;
+import com.voc.genshin_helper.data.buff_old.SipTikCal;
 import com.voc.genshin_helper.ui.CalculatorUI;
 import com.voc.genshin_helper.ui.MMXLVIII.Calculator2048;
 import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
@@ -49,10 +49,6 @@ import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 import com.voc.genshin_helper.R;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.commons.lang3.StringUtils;
@@ -164,10 +160,10 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
             SharedPreferences sharedPreferences = ArtifactsAdapter.this.context.getSharedPreferences("user_info", 0);
             String string = sharedPreferences.getString("curr_lang", "zh-HK");
             String replace = baseName.replace("'", "_");
-            String str = LoadData("db/artifacts/" + string + "/" + replace + ".json");
+            String str = ItemRss.LoadAssestData(context,"db/artifacts/" + string + "/" + replace + ".json");
 
             if (str == null) {
-                str = LoadData("db/artifacts/en-US/" + replace + ".json");
+                str = ItemRss.LoadAssestData(context,"db/artifacts/en-US/" + replace + ".json");
             }
             if (str != null) {
                 try {
@@ -199,10 +195,10 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
             SharedPreferences sharedPreferences = ArtifactsAdapter.this.context.getSharedPreferences("user_info", 0);
             String string = sharedPreferences.getString("curr_lang", "zh-HK");
             String replace = baseName.replace("'", "_");
-            String str = LoadData("db/artifacts/" + string + "/" + replace + ".json");
+            String str = ItemRss.LoadAssestData(context,"db/artifacts/" + string + "/" + replace + ".json");
 
             if (str == null) {
-                str = LoadData("db/artifacts/en-US/" + replace + ".json");
+                str = ItemRss.LoadAssestData(context,"db/artifacts/en-US/" + replace + ".json");
             }
             if (str != null) {
                 try {
@@ -593,7 +589,7 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
         switch (sharedPreferences.getString("curr_ui_grid", "2")){
             case "2":{
                 Picasso.get().
-                        load(FileLoader.loadIMG(itemRss.getArtifactByName(artifacts.getName(),context)[1],context))
+                        load(itemRss.getArtifactByName(artifacts.getName())[1])
                         .fit()
                         .centerCrop()
                         .error(R.drawable.paimon_full)
@@ -602,7 +598,7 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
             }
             case "3":{
                 Picasso.get()
-                        .load(FileLoader.loadIMG(itemRss.getArtifactByName(artifacts.getName(),context)[1],context))
+                        .load(itemRss.getArtifactByName(artifacts.getName())[1])
                         .resize(one_curr,one_curr)
                         .error(R.drawable.paimon_full)
                         .into(viewHolder.artifact_icon);
@@ -613,7 +609,7 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                 viewHolder.artifact_icon.getLayoutParams().width = 96*width/315;
                 viewHolder.artifact_icon.getLayoutParams().height = 96*width/315;
                 Picasso.get()
-                        .load(FileLoader.loadIMG(itemRss.getArtifactByName(artifacts.getName(),context)[1],context))
+                        .load(itemRss.getArtifactByName(artifacts.getName())[1])
                         .resize(96*width/315,96*width/315)
                         .transform(transformation_circ_siptik_ico)
                         .error (R.drawable.paimon_full)
@@ -622,7 +618,7 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
             }
         }
 
-        viewHolder.artifact_name.setText(itemRss.getArtifactByName(artifacts.getName(),context)[0]);
+        viewHolder.artifact_name.setText(itemRss.getArtifactByName(artifacts.getName())[0]);
     }
 
     @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -701,10 +697,10 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                         Log.wtf("CharName_BASE", valueOf);
                         String replace = valueOf.replace("'", "_");
                         Log.wtf("lang", string);
-                        String str = LoadData("db/artifacts/" + string + "/" + replace + ".json");
+                        String str = ItemRss.LoadAssestData(context,"db/artifacts/" + string + "/" + replace + ".json");
 
                         if (str == null) {
-                            str = LoadData("db/artifacts/en-US/" + replace + ".json");
+                            str = ItemRss.LoadAssestData(context,"db/artifacts/en-US/" + replace + ".json");
                         }
                         if (str != null) {
                             try {
@@ -733,7 +729,7 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                                 ImageView imageView6 = (ImageView) inflate.findViewById(R.id.info_item3);
                                 ImageView imageView7 = (ImageView) inflate.findViewById(R.id.info_item4);
                                 ImageView imageView8 = (ImageView) inflate.findViewById(R.id.info_item5);
-                                Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(str4,context)[1],context)).fit().centerInside().transform(transformation).error(R.drawable.paimon_lost).into(imageView2);
+                                Picasso.get().load(itemRss.getArtifactByName(str4)[1]).fit().centerInside().transform(transformation).error(R.drawable.paimon_lost).into(imageView2);
                                 ((TextView) inflate.findViewById(R.id.item_name)).setText(ViewHolder.this.artifact_name.getText());
                                 //((TextView) inflate.findViewById(R.id.item_name)).setText(ViewHolder.this.artifact_base_name.getText());
                                 if (jSONObject.has("1pc")) {
@@ -753,20 +749,20 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                                 ratingBar.setRating((float) parseInt);
                                 imageView2.setBackgroundResource(itemRss.getRareColorByName(parseInt)[0]);
                                 linearLayout.setBackgroundResource(itemRss.getRareColorByName(parseInt)[1]);
-                                Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(str4,context)[1],context)).fit().centerInside().transform(transformation).error(R.drawable.paimon_lost).into(imageView);
+                                Picasso.get().load(itemRss.getArtifactByName(str4)[1]).fit().centerInside().transform(transformation).error(R.drawable.paimon_lost).into(imageView);
                                 imageView.setBackgroundResource(itemRss.getRareColorByName(parseInt)[3]);
-                                if (itemRss.getArtifactByName(str4,context).length > 2) {
+                                if (itemRss.getArtifactByName(str4).length > 2) {
                                     imageView5.setVisibility(View.VISIBLE);
                                     imageView6.setVisibility(View.VISIBLE);
                                     imageView7.setVisibility(View.VISIBLE);
                                     imageView8.setVisibility(View.VISIBLE);
-                                    Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(str4,context)[2],context)).fit().centerInside().transform(transformation).error(R.drawable.paimon_lost).into(imageView5);
+                                    Picasso.get().load(itemRss.getArtifactByName(str4)[2]).fit().centerInside().transform(transformation).error(R.drawable.paimon_lost).into(imageView5);
                                     imageView5.setBackgroundResource(itemRss.getRareColorByName(parseInt)[3]);
-                                    Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(str4,context)[3],context)).fit().centerInside().transform(transformation).error(R.drawable.paimon_lost).into(imageView6);
+                                    Picasso.get().load(itemRss.getArtifactByName(str4)[3]).fit().centerInside().transform(transformation).error(R.drawable.paimon_lost).into(imageView6);
                                     imageView6.setBackgroundResource(itemRss.getRareColorByName(parseInt)[3]);
-                                    Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(str4,context)[4],context)).fit().centerInside().transform(transformation).error(R.drawable.paimon_lost).into(imageView7);
+                                    Picasso.get().load(itemRss.getArtifactByName(str4)[4]).fit().centerInside().transform(transformation).error(R.drawable.paimon_lost).into(imageView7);
                                     imageView7.setBackgroundResource(itemRss.getRareColorByName(parseInt)[3]);
-                                    Picasso.get().load(FileLoader.loadIMG(itemRss.getArtifactByName(str4,context)[5],context)).fit().centerInside().transform(transformation).error(R.drawable.paimon_lost).into(imageView8);
+                                    Picasso.get().load(itemRss.getArtifactByName(str4)[5]).fit().centerInside().transform(transformation).error(R.drawable.paimon_lost).into(imageView8);
                                     imageView8.setBackgroundResource(itemRss.getRareColorByName(parseInt)[3]);
                                 }
                                 if (ViewHolder.this.artifact_isComing.getVisibility() == View.VISIBLE) {
@@ -826,25 +822,5 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
     public void filterList(List<Artifacts> list) {
         this.artifactsList = list;
         notifyDataSetChanged();
-    }
-
-    public String LoadData(String inFile) {
-        String tContents = "";
-
-        try {
-            File file = new File(context.getFilesDir()+"/"+inFile);
-            InputStream stream = new FileInputStream(file);
-
-            int size = stream.available();
-            byte[] buffer = new byte[size];
-            stream.read(buffer);
-            stream.close();
-            tContents = new String(buffer);
-        } catch (IOException e) {
-            // Handle exceptions here
-        }
-
-        return tContents;
-
     }
 }

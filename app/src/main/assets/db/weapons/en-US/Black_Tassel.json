@@ -1,0 +1,12 @@
+{
+  "name": "Black Tassel",
+  "rare": 3,
+  "weapon": "Polearm",
+  "isComingSoon": false,
+  "desc": "An exceptionally powerful polearm that also offers a simple but elegant solution to the issue of the easily stained white tassel.",
+  "first_status": "HP%",
+  "second_status": "ATK",
+  "skill_name": "Bane of the Soft",
+  "skill_desc": "Increases DMG against slimes by 40%/50%/60%/70%/80%.",
+  "obtain_way": "WISH"
+}

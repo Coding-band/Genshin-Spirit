@@ -1,0 +1,12 @@
+{
+  "name": "Fading Twilight",
+  "rare": 4,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "十分な意志力が与えられれば、山を破壊するのに十分強力かもしれない頑丈な鉄片。",
+  "first_status": "EnRech%",
+  "second_status": "ATK",
+  "skill_name": "淵中霞彩",
+  "skill_desc": "夕暮、流霞、朝日の3種類の強化効果が武器にはあり、それぞれ与えるダメージ+6%/10%/14%。攻撃が敵に命中すると、強化効果が次のものに切り替わる。この切り替わりは7秒に1回のみ発動でき、装備キャラクターが待機状態でも発動する。",
+  "obtain_way": "N/A"
+}

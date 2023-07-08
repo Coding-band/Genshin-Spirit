@@ -1,0 +1,68 @@
+{
+  "name" : "Tartaglia",
+    
+  "util_weapons": [
+    "polar_star",
+    "thundering_pulse",
+    "skyward_harp",
+    "amos_bow",
+    "rust",
+    "the_viridescent_hunt",
+    "the_stringless",
+    "hamayumi"
+  ],
+  "util_art1": [
+    "heart_of_depth",
+    "heart_of_depth",
+    "gladiators_finale",
+    "gladiators_finale",
+    "gladiators_finale"
+  ],
+  "util_art2": [
+    "heart_of_depth",
+    "heart_of_depth",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "util_art3": [
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "util_art4": [
+    "heart_of_depth",
+    "heart_of_depth",
+    "heart_of_depth",
+    "heart_of_depth",
+    "heart_of_depth"
+  ],
+  "util_art_sand_entry": [
+    "ATK",
+  ],
+  "util_art_goblet_entry": [
+    "EleDMG_Hydro"
+  ],
+  "util_art_circlet_entry": [
+    "CritDMG",
+    "CritRate"
+  ],
+  "util_art_sub_entry": [
+    "CritRate",
+    "CritDMG",
+    "ATK",
+    "EleMas"
+  ],
+  
+  "team1":[
+	"Tartaglia","Kaedehara Kazuha","xingqiu",Bennett"
+  ],
+  "team2":[
+	"Tartaglia","Xingqiu","Beidou","Fischl"
+  ],
+  "team3":[
+	"Tartaglia","Sucrose","Mona","Bennett"
+  ]
+}

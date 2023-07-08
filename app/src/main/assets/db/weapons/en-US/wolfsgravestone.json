@@ -1,0 +1,143 @@
+{
+	"name": "Wolf's Gravestone",
+	"description": "A longsword used by the Wolf Knight. Originally just a heavy sheet of iron given to the knight by a blacksmith from the city, it became endowed with legendary power owing to his friendship with the wolves.",
+	"weapontype": "Claymore",
+	"rarity": "5",
+	"story": "The Knight of Boreas' journey ended at the city of Barbatos.\nWandering souls attract each other, boundless freedom begets only anxiety.\n\nUpon entering the city, the Knight of Boreas' companion bade him farewell in silence.\nFor the free-spirited Wolf resented the stone walls and lamplight, and yearned for the open wilds.\n\nThe Knight of Boreas' heart remained free, though his flesh was inside the prison-like city.\nMeanwhile, the windborne Wolf roamed the forest in the flesh, while his heart remained loyal to the Knight.\n\nThe Knight of Boreas rode again to hunt. The Wolf followed his scent into battle.\nStill one were they, the Wolf and the Knight.\n\nThough one they were, death comes for beasts sooner than men.\nLaying down his sword as a gravestone, the Knight of Boreas buried the Wolf in the remote countryside.\nThe Knight of Boreas then left the city behind, living instead the wandering life of a lone wolf.\n\nYet the eternal wolf spirit remained here,\nWatching over the land the Knight once protected.",
+	"baseatk": 46,
+	"substat": "ATK",
+	"subvalue": "10.8",
+	"effectname": "Wolfish Tracker",
+	"effect": "Increases ATK by {0}. On hit, attacks against opponents with less than 30% HP increase all party members' ATK by {1} for 12s. Can only occur once every 30s.",
+	"r1": [
+		"20%",
+		"40%"
+	],
+	"r2": [
+		"25%",
+		"50%"
+	],
+	"r3": [
+		"30%",
+		"60%"
+	],
+	"r4": [
+		"35%",
+		"70%"
+	],
+	"r5": [
+		"40%",
+		"80%"
+	],
+	"weaponmaterialtype": "Dandelion Gladiator",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Fetters of the Dandelion Gladiator",
+				"count": 5
+			},
+			{
+				"name": "Chaos Device",
+				"count": 5
+			},
+			{
+				"name": "Divining Scroll",
+				"count": 3
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Chains of the Dandelion Gladiator",
+				"count": 5
+			},
+			{
+				"name": "Chaos Device",
+				"count": 18
+			},
+			{
+				"name": "Divining Scroll",
+				"count": 12
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Chains of the Dandelion Gladiator",
+				"count": 9
+			},
+			{
+				"name": "Chaos Circuit",
+				"count": 9
+			},
+			{
+				"name": "Sealed Scroll",
+				"count": 9
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Shackles of the Dandelion Gladiator",
+				"count": 5
+			},
+			{
+				"name": "Chaos Circuit",
+				"count": 18
+			},
+			{
+				"name": "Sealed Scroll",
+				"count": 14
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 55000
+			},
+			{
+				"name": "Shackles of the Dandelion Gladiator",
+				"count": 9
+			},
+			{
+				"name": "Chaos Core",
+				"count": 14
+			},
+			{
+				"name": "Forbidden Curse Scroll",
+				"count": 9
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 65000
+			},
+			{
+				"name": "Dream of the Dandelion Gladiator",
+				"count": 6
+			},
+			{
+				"name": "Chaos Core",
+				"count": 27
+			},
+			{
+				"name": "Forbidden Curse Scroll",
+				"count": 18
+			}
+		]
+	}
+}

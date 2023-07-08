@@ -1,0 +1,12 @@
+{
+  "name": "White Tassel",
+  "rare": 3,
+  "weapon": "Polearm",
+  "isComingSoon": false,
+  "desc": "千岩軍兵士の制式装備。槍身は丈夫で槍先が鋭い頼もしい武器。",
+  "first_status": "CritDMG%",
+  "second_status": "ATK",
+  "skill_name": "鋭利",
+  "skill_desc": "通常攻撃のダメージ+24%/30%/36%/42%/48%。",
+  "obtain_way": "CHEST_LY"
+}

@@ -1,0 +1,66 @@
+{
+  "name" : "Thoma",
+    
+  "util_weapons": [
+    "engulfing_lightning",
+    "skyward_spine",
+    "staff_of_homa",
+    "prototype_starglitter",
+    "the_catch",
+    "favonius_lance",
+    "black_tassel"
+  ],
+  "util_art1": [
+    "emblem_of_severed_fate",
+    "emblem_of_severed_fate",
+    "archaic_petra",
+    "archaic_petra",
+    "archaic_petra"
+  ],
+  "util_art2": [
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "util_art3": [
+    "the_exile",
+    "the_exile",
+    "emblem_of_severed_fate",
+    "emblem_of_severed_fate",
+    "emblem_of_severed_fate"
+  ],
+  "util_art_sand_entry": [
+    "HP"
+  ],
+  "util_art_goblet_entry": [
+    "HP",
+    "EleDMG_Pyro"
+  ],
+  "util_art_circlet_entry": [
+    "HP"
+  ],
+  "util_art_sub_entry": [
+    "EnRech",
+    "HP",
+    "CritRate",
+    "CritDMG"
+  ],
+  
+  "team1":[
+	"Hu Tao","Sucrose","Xingqiu","Thoma"
+  ],
+  "team2":[
+	"Hu Tao","Kaedehara Kazuha","Xingqiu","Thoma"
+  ],
+  "team3":[
+	"Yoimiya","Xingqiu","Thoma","Bennett"
+  ],
+  "team4":[
+	"Tartaglia","Kaedehara Kazuha","Thoma","Bennett"
+  ],
+  "team5":[
+	"Kamisato Ayaka","Kaedehara Kazuha","Thoma","Bennett"
+  ]
+}

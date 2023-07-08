@@ -69,7 +69,7 @@ import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.BuildConfig;
 import com.voc.genshin_helper.R;
-import com.voc.genshin_helper.buff_old.SipTikCal;
+import com.voc.genshin_helper.data.buff_old.SipTikCal;
 import com.voc.genshin_helper.data.Artifacts;
 import com.voc.genshin_helper.data.ArtifactsAdapter;
 import com.voc.genshin_helper.data.Characters;
@@ -505,7 +505,7 @@ public class MainActivity extends AppCompatActivity {
                 int x = 0;
                 for (Weapons item : weaponsList) {
                     String str = String.valueOf(s).toLowerCase();
-                    if (css.getWeaponByName(item.getName(),context)[0].contains(str)||css.getWeaponByName(item.getName(),context)[0].toLowerCase().contains(str)||css.getWeaponByName(item.getName(),context)[0].toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
+                    if (context.getString(css.getWeaponByName(item.getName())[0]).contains(str)||context.getString(css.getWeaponByName(item.getName())[0]).toLowerCase().contains(str)||context.getString(css.getWeaponByName(item.getName())[0]).toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
                         filteredList.add(item);
                     }
                     x = x +1;
@@ -785,7 +785,7 @@ public class MainActivity extends AppCompatActivity {
                 int x = 0;
                 for (Characters item : charactersList) {
                     String str = String.valueOf(s).toLowerCase();
-                    if (css.getCharByName(item.getName(),context)[1].contains(str)||css.getCharByName(item.getName(),context)[1].toLowerCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
+                    if (context.getString(css.getCharByName(item.getName(),context)[1]).contains(str)||context.getString(css.getCharByName(item.getName(),context)[1]).toLowerCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
                         filteredList.add(item);
                     }
                     x = x +1;
@@ -1053,7 +1053,7 @@ public class MainActivity extends AppCompatActivity {
                 int x = 0;
                 for (Artifacts item : artifactsList) {
                     String str = String.valueOf(s).toLowerCase();
-                    if (css.getArtifactByName(item.getName(),context)[0].contains(str)||css.getArtifactByName(item.getName(),context)[0].toLowerCase().contains(str)||css.getArtifactByName(item.getName(),context)[0].toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
+                    if (context.getString(css.getArtifactByName(item.getName())[0]).contains(str)||context.getString(css.getArtifactByName(item.getName())[0]).toLowerCase().contains(str)||context.getString(css.getArtifactByName(item.getName())[0]).toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
                         filteredList.add(item);
                     }
                     x = x +1;
@@ -2167,7 +2167,7 @@ public class MainActivity extends AppCompatActivity {
         int rare,isComing;
         charactersList.clear();
 
-        String json_base = LoadData("db/char/char_list.json");
+        String json_base = ItemRss.LoadAssestData(context,"db/char/char_list.json");
         //Get data from JSON
         try {
             JSONArray array = new JSONArray(json_base);
@@ -2207,7 +2207,7 @@ public class MainActivity extends AppCompatActivity {
         String name,weapon,stat_1;
         int rare,isComing;
 
-        String json_base = LoadData("db/weapons/weapon_list.json");
+        String json_base = ItemRss.LoadAssestData(context,"db/weapons/weapon_list.json");
         //Get data from JSON
         try {
             JSONArray array = new JSONArray(json_base);
@@ -2239,7 +2239,7 @@ public class MainActivity extends AppCompatActivity {
         String name ,img;
         int rare,isComing;
 
-        String json_base = LoadData("db/artifacts/artifact_list.json");
+        String json_base = ItemRss.LoadAssestData(context,"db/artifacts/artifact_list.json");
         //Get data from JSON
         try {
             JSONArray array = new JSONArray(json_base);
@@ -2265,25 +2265,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void showCharDetail (String name){
-
-    }
-
-    public String LoadData(String inFile) {
-        String tContents = "";
-        try {
-            File file = new File(context.getFilesDir()+"/"+inFile);
-            InputStream stream = new FileInputStream(file);
-
-            int size = stream.available();
-            byte[] buffer = new byte[size];
-            stream.read(buffer);
-            stream.close();
-            tContents = new String(buffer);
-        } catch (IOException e) {
-            // Handle exceptions here
-        }
-
-        return tContents;
 
     }
 
@@ -2355,7 +2336,7 @@ public class MainActivity extends AppCompatActivity {
         if(!char_name.equals("EMPTY")){
             birth_card.setVisibility(View.VISIBLE);
             Picasso.get()
-                    .load (FileLoader.loadIMG(css.getCharByName(char_name,context)[3],context))
+                    .load (css.getCharByName(char_name,context)[3])
                     .transform(transformation)
                     .error (R.drawable.paimon_lost)
                     .into (birth_char);
@@ -2392,7 +2373,7 @@ public class MainActivity extends AppCompatActivity {
             ImageView img = viewPager2.findViewById(imageArray[x]);
             TextView tv = viewPager2.findViewById(tvArray[x]);
             Picasso.get()
-                    .load (FileLoader.loadIMG(css.getCharByName(nextBirthCharName,context)[3],context))
+                    .load (css.getCharByName(nextBirthCharName,context)[3])
                     .transform(transformation)
                     .resize((int) (pix*2), (int) (pix*2))
                     .error (R.drawable.paimon_lost)

@@ -1,0 +1,12 @@
+{
+  "name": "Sacrificial Greatsword",
+  "rare": 4,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "長い年月の中で石化した道具剣、上にあった装飾がまだ綺麗に残っている。時間の風による祝福の力がある。",
+  "first_status": "EnRech%",
+  "second_status": "ATK",
+  "skill_name": "落ち着き",
+  "skill_desc": "元素スキルが敵にダメージを与えた時、40%/50%/60%/70%/80%の確率で該当スキルのクールタイムをリセットする。30/26/22/19/16秒毎に1回のみ発動する。",
+  "obtain_way": "WISH"
+}

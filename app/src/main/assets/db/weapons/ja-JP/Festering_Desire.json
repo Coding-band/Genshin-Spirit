@@ -1,0 +1,12 @@
+{
+  "name": "Festering Desire",
+  "rare": 4,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "EnRech%",
+  "second_status": "ATK",
+  "desc": "命に飢える不気味な直剣。龍さえも侵食する腐植の毒を持っている。",
+  "skill_name": "底なしの渇望",
+  "skill_desc": "元素スキルのダメージ＋16%/20%/24%/28%/32%、元素スキルの会心率＋6%/7.5%/9%/10.5%/12%。",
+  "obtain_way": "EVENT"
+}

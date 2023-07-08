@@ -1,0 +1,12 @@
+{
+  "name": "Alley Hunter",
+  "rare": 4,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "An intricate, opulent longbow. It once belonged to a gentleman thief who was never caught.",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "Oppidan Ambush",
+  "skill_desc": "While the character equipped with this weapon is in the party but not on the field, their DMG increases by 2%/2.5%/3%/3.5%/4% every second up to a max of 20%/25%/30%/35%/40%. When the character is on the field for more than 4s, the aforementioned DMG buff decreases by 4%/5%/6%/7%/8% per second until it reaches 0%.",
+  "obtain_way": "LIMITED_WISH"
+}

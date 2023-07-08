@@ -1,0 +1,101 @@
+{
+  "name" : "Rosaria",
+  
+  "sup_dps_weapons" : [
+	"dragonspine_spear",
+	"blackcliff_pole",
+	"staff_of_homa"
+  ],
+  "sup_dps_art1": [
+    "blizzard_strayer",
+    "blizzard_strayer",
+    "blizzard_strayer",
+    "blizzard_strayer",
+    "blizzard_strayer"
+  ],
+  "sup_dps_art2": [
+    "bloodstained_chivalry",
+    "bloodstained_chivalry",
+    "blizzard_strayer",
+    "blizzard_strayer",
+    "blizzard_strayer"
+  ],
+  "sup_dps_art_sand_entry": [
+    "ATK"
+  ],
+  "sup_dps_art_goblet_entry": [
+    "PhyDMG",
+	"EleDMG_Cryo"
+  ],
+  "sup_dps_art_circlet_entry": [
+    "CritDMG",
+	"CritRate"
+  ],
+  "sup_dps_art_sub_entry": [
+    "CritRate",
+    "CritDMG",
+    "ATK",
+    "EnRech"
+  ],
+  
+  "util_weapons": [
+    "deathmatch",
+    "lithic_spear",
+	"skyward_spine",
+	"primordial_jade_winged_spear"
+  ],
+  "util_art1": [
+    "berserker",
+    "berserker",
+    "berserker",
+    "berserker",
+    "berserker"
+  ],
+  "util_art2": [
+    "blizzard_strayer",
+    "blizzard_strayer",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "util_art3": [
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "util_art_sand_entry": [
+    "EnRech"
+  ],
+  "util_art_goblet_entry": [
+    "EleDMG_Cryo",
+    "ATK"
+  ],
+  "util_art_circlet_entry": [
+    "CritRate",
+    "CritDMG"
+  ],
+  "util_art_sub_entry": [
+    "CritRate",
+    "EnRech",
+    "ATK",
+    "EleMas"
+  ],
+  
+  "team1":[
+	"Chongyun","Xingqiu","Bennett","Rosaria"
+  ],
+  "team2":[
+	"Eula","Fischl","Bennett","Rosaria"
+  ],
+  "team3":[
+	"Hu Tao","Xingqiu","Zhongli","Rosaria"
+  ],
+  "team4":[
+	"Xiao","Diona","Sucrose","Rosaria"
+  ],
+  "team5":[
+	"Razor","Xingqiu","Diona","Rosaria"
+  ]
+}

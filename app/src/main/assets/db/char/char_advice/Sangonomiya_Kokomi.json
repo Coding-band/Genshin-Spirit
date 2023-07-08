@@ -1,0 +1,50 @@
+{
+  "name" : "Sangonomiya Kokomi",
+    
+  "util_weapons": [
+    "everlasting_moonglow",
+    "lost_prayer_to_the_sacred_winds",
+    "prototype_amber",
+	"thrilling_tales_of_dragon_slayers"
+  ],
+  "util_art1": [
+    "maiden_beloved",
+    "maiden_beloved",
+    "maiden_beloved",
+    "maiden_beloved",
+    "maiden_beloved"
+  ],
+  "util_art2": [
+    "archaic_petra",
+    "archaic_petra",
+    "archaic_petra",
+    "archaic_petra",
+    "archaic_petra"
+  ],
+  "util_art_sand_entry": [
+    "EnRech",
+    "HP"
+  ],
+  "util_art_goblet_entry": [
+    "EleDMG_Hydro",
+    "HP"
+  ],
+  "util_art_circlet_entry": [
+    "Healing",
+    "HP"
+  ],
+  "util_art_sub_entry": [
+    "HP",
+    "EnRech"
+  ],
+  
+  "team1":[
+	"Sangonomiya Kokomi","Beidou","Xingqiu","Fischl"
+  ],
+  "team2":[
+	"Ganyu","Kamisato Ayaka","Kaedehara Kazuha","Sangonomiya Kokomi"
+  ],
+  "team3":[
+	"Raiden Shogun","Kujou Sara","Kaedehara Kazuha","Sangonomiya Kokomi"
+  ]
+}

@@ -1,12 +1,10 @@
 package com.voc.genshin_helper.data;
 
 import static android.content.Context.MODE_PRIVATE;
-import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,7 +16,6 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
@@ -29,12 +26,9 @@ import com.voc.genshin_helper.util.CustomTextView;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import pl.droidsonroids.gif.GifDrawable;
 import pl.droidsonroids.gif.GifImageView;
 
 /*
@@ -120,7 +114,7 @@ public class TCGAdapter extends RecyclerView.Adapter<TCGAdapter.ViewHolder> {
         holder.tcg_width = (int) (img_width+displayMetrics.density*(20));
 
         Picasso.get()
-                .load (FileLoader.loadIMG(item_rss.getTCGByNameBase(tcg.getName(),context)[0],context))
+                .load ((item_rss.getTCGByNameBase(tcg.getName())[0]))
                 .resize(img_width,(int) (img_width*12/7))
                 .error (R.drawable.tcg_card_unknown)
                 .into (holder.tcg_card_img);
@@ -130,7 +124,7 @@ public class TCGAdapter extends RecyclerView.Adapter<TCGAdapter.ViewHolder> {
         //holder.tcg_card_item.setPadding(0,0, (int) (displayMetrics.density*8),0);
 
 
-        holder.tcg_card_name.setText(item_rss.getTCGByName(tcg.getName(),context)[1]);
+        holder.tcg_card_name.setText(item_rss.getTCGByName(tcg.getName())[1]);
         holder.tcg_card_name_base.setText(tcg.getName());
         holder.tcg_press_mask.getLayoutParams().width = (int) (img_width);
         holder.tcg_press_mask.getLayoutParams().height = (int) (img_width*12/7);

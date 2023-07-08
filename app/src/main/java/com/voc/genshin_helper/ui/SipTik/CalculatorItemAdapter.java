@@ -1,60 +1,31 @@
 package com.voc.genshin_helper.ui.SipTik;
 
-import static android.content.Context.MODE_PRIVATE;
-
 import android.app.Activity;
-import android.app.Dialog;
 import android.content.Context;
-import android.content.SharedPreferences;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
-import android.view.WindowManager;
 import android.webkit.WebView;
 import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.R;
-import com.voc.genshin_helper.data.CalculatorDB;
 import com.voc.genshin_helper.data.ItemRss;
-import com.voc.genshin_helper.data.ScreenSizeUtils;
-import com.voc.genshin_helper.database.DataBaseHelper;
-import com.voc.genshin_helper.ui.CalculatorDBActivity;
-import com.voc.genshin_helper.ui.MMXLVIII.Artifact_Info_2048;
-import com.voc.genshin_helper.ui.MMXLVIII.CalculatorDB_2048;
-import com.voc.genshin_helper.ui.MMXLVIII.Characters_Info_2048;
-import com.voc.genshin_helper.ui.MMXLVIII.Weapon_Info_2048;
-import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
 /*
@@ -147,7 +118,7 @@ public class CalculatorItemAdapter extends RecyclerView.Adapter<CalculatorItemAd
                 holder.db_talent_ll.setVisibility(View.VISIBLE);
                 holder.db_talent_tv.setText(String.valueOf(db.getAfterSkill1Lvl())+"/"+String.valueOf(db.getAfterSkill2Lvl())+"/"+String.valueOf(db.getAfterSkill3Lvl()));
             }else{
-                holder.db_name.setText(item_rss.getWeaponByName(db.getName(),context)[0]);
+                holder.db_name.setText(item_rss.getWeaponByName(db.getName())[0]);
                 holder.db_talent_ll.setVisibility(View.GONE);
             }
 
@@ -156,9 +127,9 @@ public class CalculatorItemAdapter extends RecyclerView.Adapter<CalculatorItemAd
             Transformation roundedCornersTransformation = new RoundedCornersTransformation(64, 0);
 
             if (db.getType().equals("CHAR")){
-                Picasso.get().load(FileLoader.loadIMG(item_rss.getCharByName(db.getName(),context)[3],context)).fit().transform(roundedCornersTransformation).into(holder.db_ico);
+                Picasso.get().load(item_rss.getCharByName(db.getName(),context)[3]).fit().transform(roundedCornersTransformation).into(holder.db_ico);
             }else {
-                Picasso.get().load(FileLoader.loadIMG(item_rss.getWeaponByName(db.getName(),context)[1],context)).fit().transform(roundedCornersTransformation).into(holder.db_ico);
+                Picasso.get().load(item_rss.getWeaponByName(db.getName())[1]).fit().transform(roundedCornersTransformation).into(holder.db_ico);
             }
 
             switch (db.getRare()){

@@ -1,0 +1,138 @@
+{
+	"name": "Royal Greatsword",
+	"description": "An old greatsword that belonged to the erstwhile rulers of Mondstadt. It is made from the finest-quality materials and has stood the test of time. A weapon for use by the nobility only.",
+	"weapontype": "Claymore",
+	"rarity": "4",
+	"story": "A greatsword once used by nobles who ruled over Mondstadt. It was made using premium materials and masterful craftsmanship.\nFor that reason, even after being passed down for generations, it is still as good as new.\nCombat was once a responsibility of the nobles.\nThey protected their people from monsters that threatened peace and stability.\nUnfortunately, they all but forgot their responsibilities, which turned them into the very monsters they once sought to destroy.\n\nResearch suggests that gladiatorial combat originated in a religious context during the rule of the Aristocracy.\nNow outlawed by the Knights of Favonius, it began as a sacrificial ceremony held jointly with prayers to the gods.\n\nThough the practice was later turned into a perverted sport for the Lawrence Clan's pleasure, and subsequently abolished by the Knights,\nSome texts of the original prayers still remain.\n\n\"O guardian winds of Mondstadt. Look after me, my friends, my countrymen, and my opponent. May the sound of clashing blades delight you, and may the offering of sweat and blood please you.\"\n\"O winds that guide my path. When I'm exhausted, bless me with the strength to keep going forward. When I'm uncertain, bless me with the wisdom to distinguish good from evil.\"",
+	"baseatk": 44,
+	"substat": "ATK",
+	"subvalue": "6",
+	"effectname": "Focus",
+	"effect": "Upon damaging an opponent, increases CRIT Rate by {0}. Max 5 stacks. A CRIT Hit removes all stacks.",
+	"r1": [
+		"8%"
+	],
+	"r2": [
+		"10%"
+	],
+	"r3": [
+		"12%"
+	],
+	"r4": [
+		"14%"
+	],
+	"r5": [
+		"16%"
+	],
+	"weaponmaterialtype": "Dandelion Gladiator",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Fetters of the Dandelion Gladiator",
+				"count": 3
+			},
+			{
+				"name": "Chaos Device",
+				"count": 3
+			},
+			{
+				"name": "Slime Condensate",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Chains of the Dandelion Gladiator",
+				"count": 3
+			},
+			{
+				"name": "Chaos Device",
+				"count": 12
+			},
+			{
+				"name": "Slime Condensate",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Chains of the Dandelion Gladiator",
+				"count": 6
+			},
+			{
+				"name": "Chaos Circuit",
+				"count": 6
+			},
+			{
+				"name": "Slime Secretions",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Shackles of the Dandelion Gladiator",
+				"count": 3
+			},
+			{
+				"name": "Chaos Circuit",
+				"count": 12
+			},
+			{
+				"name": "Slime Secretions",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Shackles of the Dandelion Gladiator",
+				"count": 6
+			},
+			{
+				"name": "Chaos Core",
+				"count": 9
+			},
+			{
+				"name": "Slime Concentrate",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Dream of the Dandelion Gladiator",
+				"count": 4
+			},
+			{
+				"name": "Chaos Core",
+				"count": 18
+			},
+			{
+				"name": "Slime Concentrate",
+				"count": 12
+			}
+		]
+	}
+}

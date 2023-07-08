@@ -1,0 +1,12 @@
+{
+  "name": "Wolf's Gravestone",
+  "rare": 5,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "A longsword used by the Wolf Knight. Originally just a heavy sheet of iron given to the knight by a blacksmith from the city, it became endowed with legendary power owing to his friendship with the wolves.",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "Wolfish Tracker",
+  "skill_desc": "Increases ATK by 20%/25%/30%/35%/40%. On hit, attacks against opponents with less than 30% HP increase all party members' ATK by 40%/50%/60%/70%/80% for 12s. Can only occur once every 30s.",
+  "obtain_way": "WISH"
+}

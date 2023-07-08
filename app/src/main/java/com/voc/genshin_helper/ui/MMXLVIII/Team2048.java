@@ -4,24 +4,18 @@ package com.voc.genshin_helper.ui.MMXLVIII;/*
  * Copyright © 2023 Xectorda 版權所有
  */
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
-import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -29,16 +23,13 @@ import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.Button;
 import android.widget.CheckBox;
-import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearSmoothScroller;
 import androidx.recyclerview.widget.RecyclerView;
@@ -51,8 +42,6 @@ import com.voc.genshin_helper.data.ArtifactsAdapter;
 import com.voc.genshin_helper.data.Characters;
 import com.voc.genshin_helper.data.CharactersAdapter;
 import com.voc.genshin_helper.data.ItemRss;
-import com.voc.genshin_helper.data.TCG;
-import com.voc.genshin_helper.data.TCGAdapter;
 import com.voc.genshin_helper.data.Weapons;
 import com.voc.genshin_helper.data.WeaponsAdapter;
 import com.voc.genshin_helper.util.CustomEditTextView;
@@ -476,7 +465,7 @@ public class Team2048 {
                                         int x = 0;
                                         for (Characters item : charactersList) {
                                             String str = request.toLowerCase();
-                                            if (item_rss.getCharByName(item.getName(),context)[1].contains(str)||item_rss.getCharByName(item.getName(),context)[1].toLowerCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
+                                            if (context.getString(item_rss.getCharByName(item.getName(),context)[1]).contains(str)||context.getString(item_rss.getCharByName(item.getName(),context)[1]).toLowerCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
                                                 filteredList.add(item);
                                             }
                                             x = x +1;
@@ -498,7 +487,7 @@ public class Team2048 {
                                         int x = 0;
                                         for (Weapons item : weaponsList) {
                                             String str = request.toLowerCase();
-                                            if (item_rss.getWeaponByName(item.getName(),context)[0].contains(str)||item_rss.getWeaponByName(item.getName(),context)[0].toLowerCase().contains(str)||item_rss.getWeaponByName(item.getName(),context)[0].toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){
+                                            if (context.getString(item_rss.getWeaponByName(item.getName())[0]).contains(str)||context.getString(item_rss.getWeaponByName(item.getName())[0]).toLowerCase().contains(str)||context.getString(item_rss.getWeaponByName(item.getName())[0]).toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){
                                                 filteredList.add(item);
                                             }
                                             x = x +1;
@@ -520,7 +509,7 @@ public class Team2048 {
                                         int x = 0;
                                         for (Artifacts item : artifactsList) {
                                             String str = request.toLowerCase();
-                                            if (item_rss.getCharByName(item.getName(),context)[1].contains(str)||item_rss.getCharByName(item.getName(),context)[1].toLowerCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
+                                            if (context.getString(item_rss.getCharByName(item.getName(),context)[1]).contains(str)||context.getString(item_rss.getCharByName(item.getName(),context)[1]).toLowerCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
                                                 filteredList.add(item);
                                             }
                                             x = x +1;
@@ -1020,7 +1009,7 @@ public class Team2048 {
         int rare,isComing;
         charactersList.clear();
 
-        String json_base = LoadData("db/char/char_list.json");
+        String json_base = ItemRss.LoadAssestData(context,"db/char/char_list.json");
         //Get data from JSON
         try {
             JSONArray array = new JSONArray(json_base);
@@ -1060,7 +1049,7 @@ public class Team2048 {
         String name,weapon,stat_1;
         int rare,isComing;
 
-        String json_base = LoadData("db/weapons/weapon_list.json");
+        String json_base = ItemRss.LoadAssestData(context,"db/weapons/weapon_list.json");
         //Get data from JSON
         try {
             JSONArray array = new JSONArray(json_base);
@@ -1092,7 +1081,7 @@ public class Team2048 {
         String name ,img;
         int rare,isComing;
 
-        String json_base = LoadData("db/artifacts/artifact_list.json");
+        String json_base = ItemRss.LoadAssestData(context,"db/artifacts/artifact_list.json");
         //Get data from JSON
         try {
             JSONArray array = new JSONArray(json_base);
@@ -1478,25 +1467,6 @@ public class Team2048 {
         editor.putBoolean("show_sub_dps",show_sub_dps);
         editor.putBoolean("show_util",show_util);
         editor.apply();
-    }
-
-    public String LoadData(String inFile) {
-        String tContents = "";
-        try {
-            File file = new File(context.getFilesDir()+"/"+inFile);
-            InputStream stream = new FileInputStream(file);
-
-            int size = stream.available();
-            byte[] buffer = new byte[size];
-            stream.read(buffer);
-            stream.close();
-            tContents = new String(buffer);
-        } catch (IOException e) {
-            // Handle exceptions here
-        }
-
-        return tContents;
-
     }
 
     //https://stackoverflow.com/questions/7161500/creating-animation-on-imageview-while-changing-image-resource

@@ -73,20 +73,20 @@ public class CharWeaponAdapter extends RecyclerView.Adapter<CharWeaponAdapter.Ch
         final int margin_circ = 0;
         final Transformation transformation_circ = new RoundedCornersTransformation(radius_circ, margin_circ);
 
-        if (!item_rss.getCharByName(materials.getInside_name(),context)[1].equals(context.getString(R.string.unknown))){
+        if (!context.getString(item_rss.getCharByName(materials.getInside_name(),context)[1]).equals(context.getString(R.string.unknown))){
             Picasso.get()
-                    .load (FileLoader.loadIMG(item_rss.getCharByName(materials.getInside_name(),context)[3],context)).resize(size_per_img,size_per_img).transform(transformation_circ)
+                    .load (item_rss.getCharByName(materials.getInside_name(),context)[3]).resize(size_per_img,size_per_img).transform(transformation_circ)
                     .error (R.drawable.paimon_full)
                     .into (holder.item_icon);
 
             holder.item_name.setText(item_rss.getCharByName(materials.getInside_name(),context)[1]);
-        }else if (!item_rss.getWeaponByName(materials.getInside_name(),context)[0].equals(context.getString(R.string.unknown))){
+        }else if (!context.getString(item_rss.getWeaponByName(materials.getInside_name())[0]).equals(context.getString(R.string.unknown))){
             Picasso.get()
-                    .load (FileLoader.loadIMG(item_rss.getWeaponByName(materials.getInside_name(),context)[1],context)).resize(size_per_img,size_per_img).transform(transformation_circ)
+                    .load (item_rss.getWeaponByName(materials.getInside_name())[1]).resize(size_per_img,size_per_img).transform(transformation_circ)
                     .error (R.drawable.paimon_full)
                     .into (holder.item_icon);
 
-            holder.item_name.setText(item_rss.getWeaponByName(materials.getInside_name(),context)[1]);
+            holder.item_name.setText(item_rss.getWeaponByName(materials.getInside_name())[1]);
         }
     }
 

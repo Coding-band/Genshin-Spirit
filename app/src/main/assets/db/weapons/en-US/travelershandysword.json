@@ -1,0 +1,138 @@
+{
+	"name": "Traveler's Handy Sword",
+	"description": "A handy steel sword which contains scissors, a magnifying glass, tinder, and other useful items in its sheath.",
+	"weapontype": "Sword",
+	"rarity": "3",
+	"story": "A reliable and balanced sword made of fine steel.\nThe one downside is that the partial-tang design renders it less durable than its full-tang counterparts.\nThat said, the partial tang creates space in the hilt for hidden knives, scissors, tinder, and other objects.\nHence the name, Traveler's Handy Sword. It contains all sorts of handy items for travelers.",
+	"baseatk": 40,
+	"substat": "DEF",
+	"subvalue": "6.4",
+	"effectname": "Journey",
+	"effect": "Each Elemental Orb or Particle collected restores {0} HP.",
+	"r1": [
+		"1%"
+	],
+	"r2": [
+		"1.25%"
+	],
+	"r3": [
+		"1.5%"
+	],
+	"r4": [
+		"1.75%"
+	],
+	"r5": [
+		"2%"
+	],
+	"weaponmaterialtype": "Dandelion Gladiator",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Fetters of the Dandelion Gladiator",
+				"count": 2
+			},
+			{
+				"name": "Chaos Device",
+				"count": 2
+			},
+			{
+				"name": "Divining Scroll",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Chains of the Dandelion Gladiator",
+				"count": 2
+			},
+			{
+				"name": "Chaos Device",
+				"count": 8
+			},
+			{
+				"name": "Divining Scroll",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Chains of the Dandelion Gladiator",
+				"count": 4
+			},
+			{
+				"name": "Chaos Circuit",
+				"count": 4
+			},
+			{
+				"name": "Sealed Scroll",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Shackles of the Dandelion Gladiator",
+				"count": 2
+			},
+			{
+				"name": "Chaos Circuit",
+				"count": 8
+			},
+			{
+				"name": "Sealed Scroll",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Shackles of the Dandelion Gladiator",
+				"count": 4
+			},
+			{
+				"name": "Chaos Core",
+				"count": 6
+			},
+			{
+				"name": "Forbidden Curse Scroll",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Dream of the Dandelion Gladiator",
+				"count": 3
+			},
+			{
+				"name": "Chaos Core",
+				"count": 12
+			},
+			{
+				"name": "Forbidden Curse Scroll",
+				"count": 8
+			}
+		]
+	}
+}

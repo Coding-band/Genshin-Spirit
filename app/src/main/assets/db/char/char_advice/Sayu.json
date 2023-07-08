@@ -1,0 +1,53 @@
+{
+  "name" : "Sayu",
+    
+  "util_weapons": [
+    "wolfsgravestone",
+    "song_of_broken_pines",
+    "skyward_pride",
+	"the_unforged",
+	"prototype_archaic",
+	"favonius_greatsword",
+	"sacrificial_greatsword",
+	"katsuragikiri_nagamasa",
+	"rainslasher"
+  ],
+  "util_art1": [
+    "viridescent_venerer",
+    "viridescent_venerer",
+    "viridescent_venerer",
+    "viridescent_venerer",
+    "viridescent_venerer"
+  ],
+  "util_art2": [
+    "maiden_beloved",
+    "maiden_beloved",
+    "maiden_beloved",
+    "maiden_beloved",
+    "maiden_beloved"
+  ],
+  "util_art_sand_entry": [
+    "ATK",
+    "EnRech"
+  ],
+  "util_art_goblet_entry": [
+    "ATK",
+    "EleMas"
+  ],
+  "util_art_circlet_entry": [
+    "ATK",
+    "EleMas"
+  ],
+  "util_art_sub_entry": [
+    "ATK",
+    "EleMas",
+    "EnRech"
+  ],
+  
+  "team1":[
+	"Zhongli","Kamisato Ayaka","Kaedehara Kazuha","Sayu"
+  ],
+  "team2":[
+	"Klee","Qiqi","Diona","Sayu"
+  ]
+}

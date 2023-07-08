@@ -1,0 +1,110 @@
+{
+  "name" : "Kuki Shinobu",
+  
+  "sup_dps_weapons" : [
+	"primordial_jade_cutter",
+    "iron_sting",
+    "favonius_sword",
+	"festering_desire"
+  ],
+  "sup_dps_art1": [
+    "archaic_petra",
+    "archaic_petra",
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "wanderers_troupe"
+  ],
+  "sup_dps_art2": [
+    "thundering_fury",
+    "thundering_fury",
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "wanderers_troupe"
+  ],
+  "sup_dps_art3": [
+    "thundering_fury",
+    "thundering_fury",
+    "archaic_petra",
+    "archaic_petra",
+    "archaic_petra"
+  ],
+  "sup_dps_art_sand_entry": [
+    "EleMas",
+    "ATK"
+  ],
+  "sup_dps_art_goblet_entry": [
+    "EleDMG_Electro",
+	"EleMas"
+  ],
+  "sup_dps_art_circlet_entry": [
+    "CritDMG",
+	"CritRate",
+	"EleMas"
+
+  ],
+  "sup_dps_art_sub_entry": [
+    "EleMas",
+    "HP",
+    "CritDMG",
+	"CritRate",
+	"EnRech"
+  ],
+  
+  "util_weapons" : [
+	"primordial_jade_cutter",
+    "iron_sting",
+    "favonius_sword",
+	"festering_desire"
+  ],
+  "util_art1": [
+    "ocean_hued_clam",
+    "ocean_hued_clam",
+    "ocean_hued_clam",
+    "ocean_hued_clam",
+    "ocean_hued_clam"
+  ],
+  "util_art2": [
+    "thundering_fury",
+    "thundering_fury",
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "wanderers_troupe"
+  ],
+  "util_art3": [
+    "archaic_petra",
+    "archaic_petra",
+    "thundering_fury",
+    "thundering_fury",
+    "thundering_fury"
+  ],
+  "util_art_sand_entry": [
+    "HP",
+    "EleMas"
+  ],
+  "util_art_goblet_entry": [
+    "EleDMG_Electro",
+    "EleMas"
+  ],
+  "util_art_circlet_entry": [
+    "EleMas",
+    "CritDMG",
+	"CritRate"
+  ],
+  "util_art_sub_entry": [
+    "EleMas",
+    "HP",
+    "CritDMG",
+	"CritRate",
+    "EnRech"
+  ],
+  
+  "team1":[
+	"Kuki Shinobu","Rosaria","Eula","Zhongli"
+  ],
+  "team2":[
+	"Kuki Shinobu","Yun Jin","Razor","Diona"
+  ],
+  "team3":[
+	"Kuki Shinobu","Rosaria","Kaeya","Diona"
+  ]
+}

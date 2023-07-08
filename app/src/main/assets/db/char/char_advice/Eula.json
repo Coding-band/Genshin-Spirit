@@ -1,0 +1,35 @@
+{
+  "name" : "Eula",
+  "dps_weapons": [
+    "song_of_broken_pines",
+    "the_unforged",
+    "wolfs_gravestone",
+    "skyward_pride",
+    "serpent_spine",
+    "snow_tombed_starsilver",
+    "prototype_archaic"
+   ],
+  "dps_art1": [
+    "pale_flame",
+    "pale_flame",
+    "bloodstained_chivalry",
+    "bloodstained_chivalry",
+    "bloodstained_chivalry"
+  ],
+  "dps_art2": [
+    "pale_flame",
+    "pale_flame",
+    "pale_flame",
+    "pale_flame",
+    "pale_flame"
+  ],
+  "team1":[
+	"Eula","Qiqi","Xingqiu","Beidou"
+  ],
+  "team2":[
+	"Eula","Rosaria","Xingqiu","Bennett"
+  ],
+  "team3":[
+	"Eula","Sucrose","Xingqiu","Beidou"
+  ]
+}

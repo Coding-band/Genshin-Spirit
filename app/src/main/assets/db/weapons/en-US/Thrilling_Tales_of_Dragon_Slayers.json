@@ -1,0 +1,12 @@
+{
+  "name": "Thrilling Tales of Dragon Slayers",
+  "rare": 3,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "A fictional story of a band of five heroes who go off on a dragon hunt. It is poorly written and structurally incoherent. Its value lies in the many lessons that can be learned from failure.",
+  "first_status": "HP%",
+  "second_status": "ATK",
+  "skill_name": "Heritage",
+  "skill_desc": "When switching characters, the new character taking the field has their ATK increased by 24%/30%/36%/42%/48% for 10s. This effect can only occur once every 20s.",
+  "obtain_way": "WISH"
+}

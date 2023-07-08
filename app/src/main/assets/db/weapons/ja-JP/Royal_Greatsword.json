@@ -1,0 +1,12 @@
+{
+  "name": "Royal Greatsword",
+  "rare": 4,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "かつてモンドを支配した旧貴族の大剣。高級素材が使われているため、長い年月が経っても新しいまま。貴族が戦闘時に使う武器である。",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "集中",
+  "skill_desc": "攻撃が敵にダメージを与えた時、会心率+8%/9.5%/11%/12.5%/14%、最大5重まで。攻撃会心発生時、効果をクリアにする。",
+  "obtain_way": "SHOP"
+}

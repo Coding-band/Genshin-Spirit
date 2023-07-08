@@ -1,0 +1,12 @@
+{
+  "name": "Amber Catalyst",
+  "rare": 3,
+  "weapon": "Catalyst",
+  "isComingSoon": true,
+  "desc": "琥珀で作られた法器。日差しの下に置くと暖かい光の輪が出現する。",
+  "first_status": "EleMas",
+  "second_status": "ATK",
+  "skill_name": "元素熟達",
+  "skill_desc": "通常攻撃が命中した後、元素ダメージ+6%、継続時間6秒、最大2重まで。",
+  "obtain_way": "N/A"
+}

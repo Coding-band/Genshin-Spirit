@@ -1,0 +1,77 @@
+{
+  "name" : "Yae Miko",
+    
+  "util_weapons": [
+    "kaguras_verity",
+    "lost_prayer_to_the_sacred_winds",
+    "skyward_atlas",
+    "memory_of_dust",
+    "the_widsith",
+    "solar_pearl",
+    "oathsworn_eye",
+    "hakushin_ring",
+    "mappa_mare",
+    "royal_grimoire",
+    "blackcliff_agate"
+  ],
+  "util_art1": [
+    "thundersoother",
+    "thundersoother",
+    "thundersoother",
+    "thundersoother",
+    "thundersoother"
+  ],
+  "util_art2": [
+    "thundering_fury",
+    "thundering_fury",
+    "gladiators_finale",
+    "gladiators_finale",
+    "gladiators_finale"
+  ],
+  "util_art3": [
+    "thundering_fury",
+    "thundering_fury",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "util_art4": [
+    "thundering_fury",
+    "thundering_fury",
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "wanderers_troupe"
+  ],
+  "util_art_sand_entry": [
+    "ATK",
+	"EleMas"
+  ],
+  "util_art_goblet_entry": [
+	"EleDMG_Electro",
+	"ATK"
+  ],
+  "util_art_circlet_entry": [
+    "CritDMG",
+	"CritRate"
+  ],
+  "util_art_sub_entry": [
+    "CritRate",
+    "CritDMG",
+    "ATK",
+    "EnRech",
+    "EleMas"
+  ],
+  
+  "team1":[
+	"Raiden Shogun","Yae Miko","Kujou Sara","Jean"
+  ],
+  "team2":[
+	"Raiden Shogun","Yae Miko","Bennett","Kaedehara Kazuha"
+  ],
+  "team3":[
+	"Bennett","Yae Miko","Kujou Sara","Sucrose"
+  ],
+  "team4":[
+	"Raiden Shogun","Yae Miko","Kaedehara Kazuha","Sangonomiya Kokomi"
+  ]
+}

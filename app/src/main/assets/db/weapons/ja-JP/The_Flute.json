@@ -1,0 +1,12 @@
+{
+  "name": "The Flute",
+  "rare": 4,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "desc": "剣の錆跡から本来の華やかな装飾が透けて見える。風のように軽い。",
+  "skill_name": "和音",
+  "skill_desc": "通常攻撃または重撃が命中すると、100%の確率で和音を1個獲得する。和音を5個集めると、音律の力を放ち、周囲の敵に攻撃力の100%/125%/150%/175%/200%のダメージを与える。和音は最大30秒存在し、0.5秒毎に最大1個獲得可能。",
+  "obtain_way": "WISH"
+}

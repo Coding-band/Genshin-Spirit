@@ -61,8 +61,10 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLConnection;
+import java.net.URLEncoder;
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -153,19 +155,18 @@ public class SplashActivity extends AppCompatActivity {
                 suffix = "_crop"+ ItemRss.IMG_FORMAT;
             }
 
-            String json_base = LoadData("randomScenery/rss_bg.json");
+            String json_base = ItemRss.LoadAssestData(context,"randomScenery/rss_bg.json");
             //Get data from JSON
             try {
                 JSONArray array = new JSONArray(json_base);
                 randNum = (int) (Math.random()*array.length()) ;
                 JSONObject object = array.getJSONObject(randNum);
 
-                System.out.println("randNum : "+randNum);
-
-                System.out.println("IMG NAME : "+"/randomScenery/"+object.getString("img_name")+suffix);
+                String url = "file:///android_asset/randomScenery/"+object.getString("img_name")+suffix;
+                URLEncoder.encode(url, "UTF-8");
 
                 Picasso.get()
-                        .load (FileLoader.loadIMG("/randomScenery/"+object.getString("img_name")+suffix,context))
+                        .load (url)
                         .fit()
                         .error (R.drawable.demo_random_sencery)
                         .into ((ImageView) findViewById(R.id.splash_random_bg));
@@ -185,6 +186,8 @@ public class SplashActivity extends AppCompatActivity {
                 ((TextView) findViewById(R.id.splash_rand_author)).setText(object.getString("author"));
             } catch (JSONException e) {
                 e.printStackTrace();
+            } catch (UnsupportedEncodingException e) {
+                throw new RuntimeException(e);
             }
         }else{
             ((ConstraintLayout) findViewById(R.id.splash_rand_cons)).setVisibility(View.GONE);
@@ -264,50 +267,7 @@ public class SplashActivity extends AppCompatActivity {
 
     // Must let it be AsyncTask !
     private void goMain() {
-        sharedPreferences = getSharedPreferences("user_info", 0);
-        ArrayList<String> arrayList = new ArrayList<>();
-        arrayList.add(ItemRss.SERVER_DOWNLOAD_ROOT+baseFileName);
-        long remoteFileSize = getRemoteFileSize(arrayList);
-        if(remoteFileSize > 10000000){
-            if (sharedPreferences.getBoolean("downloadBase", false) == false) {
-                /**
-                 * Build a class in util -> Dialog2048
-                 */
-
-                Dialog2048 dialog2048 = new Dialog2048();
-                dialog2048.setup(context,activity);
-                dialog2048.updateMax(remoteFileSize);
-                dialog2048.mode(Dialog2048.MODE_DOWNLOAD_BASE);
-                dialog2048.show();
-
-                dialog2048.getPositiveBtn().setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        dialog2048.dismiss();
-                        //DownloadTask downloadTask = new DownloadTask();
-                        //downloadTask.start("https://vt.25u.com/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
-                        ArrayList<String> downloadList = new ArrayList<>();
-                        downloadList.add(ItemRss.SERVER_DOWNLOAD_ROOT+baseFileName);
-
-                        new DownloadAndUnzipTask(context,activity,downloadList,context.getFilesDir().getAbsolutePath()).execute();
-                    }
-                });
-
-                dialog2048.getNegativeBtn().setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        dialog2048.dismiss();
-                        finish();
-                    }
-                });
-
-            } else {
-                check_updates(remoteFileSize);
-            }
-        }else{
-            runDesk(sharedPreferences);
-        }
-
+        runDesk(sharedPreferences);
     }
 
     //https://blog.csdn.net/fitaotao/article/details/119700579
@@ -657,25 +617,6 @@ public class SplashActivity extends AppCompatActivity {
         } else {
             runDesk(sharedPreferences);
         }
-    }
-
-    public String LoadData(String inFile) {
-        String tContents = "";
-        try {
-            File file = new File(context.getFilesDir()+"/"+inFile);
-            InputStream stream = new FileInputStream(file);
-
-            int size = stream.available();
-            byte[] buffer = new byte[size];
-            stream.read(buffer);
-            stream.close();
-            tContents = new String(buffer);
-        } catch (IOException e) {
-            // Handle exceptions here
-        }
-
-        return tContents;
-
     }
 
     @Override

@@ -1,0 +1,12 @@
+{
+  "name": "Festering Desire",
+  "rare": 4,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "EnRech%",
+  "second_status": "ATK",
+  "desc": "希冀著生命的詭譎直劍，附有連龍也能侵蝕的腐殖之毒。",
+  "skill_name": "無盡的渴慕",
+  "skill_desc": "元素戰技造成的傷害增加16/20/24/28/32%，元素戰技的暴擊率提升6/7.5/9/10.5/12%。",
+  "obtain_way": "EVENT"
+}

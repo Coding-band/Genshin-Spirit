@@ -1,0 +1,20 @@
+{
+  "name" : "Bennett",
+  "util_weapons": [
+    "festering_desire",
+    "favonius_sword"
+  ],
+  "util_art1": [
+    "brave_heart",
+    "brave_heart",
+    "resolution_of_sojourner",
+    "resolution_of_sojourner",
+    "resolution_of_sojourner"
+  ],
+  "team1":[
+	"Diluc","Bennett","chongyun","Barbara"
+  ],
+  "team2":[
+	"Razor","Bennett","Venti","Barbara"
+  ]
+}

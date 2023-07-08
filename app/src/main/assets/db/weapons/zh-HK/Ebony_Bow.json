@@ -1,0 +1,12 @@
+{
+  "name": "Ebony Bow",
+  "rare": 3,
+  "weapon": "Bow",
+  "isComingSoon": true,
+  "desc": "用檀木製成的長弓，弓臂比尋常木材硬。因此力量也更大。",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "摧堅",
+  "skill_desc": "對遺跡機關類敵人：造成的傷害提高40/50/60/70/80%",
+  "obtain_way": "N/A"
+}

@@ -1,0 +1,39 @@
+{
+  "name" : "Xiao",
+    
+  "util_weapons": [
+    "primordial_jade_winged_spear",
+    "deathmatch",
+    "blackcliff_pole"
+  ],
+  "util_art1": [
+    "viridescent_venerer",
+    "viridescent_venerer",
+    "gladiators_finale",
+    "gladiators_finale",
+    "gladiators_finale"
+  ],
+  "util_art_sand_entry": [
+    "ATK"
+  ],
+  "util_art_goblet_entry": [
+    "EleDMG_Anemo"
+  ],
+  "util_art_circlet_entry": [
+    "CritDMG",
+	"CritRate"
+  ],
+  "util_art_sub_entry": [
+    "CritRate",
+    "CritDMG",
+    "ATK",
+    "EnRech"
+  ],
+  
+  "team1":[
+	"Bennett","Qiqi","Mona","Xiao"
+  ],
+  "team2":[
+	"Bennett","Ganyu","Venti","Xiao"
+  ]
+}

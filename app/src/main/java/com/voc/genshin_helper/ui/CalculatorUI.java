@@ -77,7 +77,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.voc.genshin_helper.buff_old.CalculatorBuff;
+import com.voc.genshin_helper.data.buff_old.CalculatorBuff;
 
 
 /*
@@ -537,7 +537,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             final int margin = 4;
             final Transformation transformation = new RoundedCornersTransformation(radius, margin);
             Picasso.get()
-                    .load (FileLoader.loadIMG(item_rss.getCharByName(choosedNameList.get(x),context)[3],context))
+                    .load (item_rss.getCharByName(choosedNameList.get(x),context)[3])
                     .transform(transformation)
                     .fit()
                     .error (R.drawable.paimon_full)
@@ -561,7 +561,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                 int x = 0;
                 for (Characters item : charactersList) {
                     String str = String.valueOf(s).toLowerCase();
-                    if (css.getCharByName(item.getName(),context)[1].contains(str)||css.getCharByName(item.getName(),context)[1].toLowerCase().contains(str)||css.getCharByName(item.getName(),context)[1].toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
+                    if (context.getString(css.getCharByName(item.getName(),context)[1]).contains(str)||context.getString(css.getCharByName(item.getName(),context)[1]).toLowerCase().contains(str)||context.getString(css.getCharByName(item.getName(),context)[1]).toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
                         filteredList.add(item);
                     }
                     x = x +1;
@@ -813,7 +813,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             final int margin = 4;
             final Transformation transformation = new RoundedCornersTransformation(radius, margin);
             Picasso.get()
-                    .load (FileLoader.loadIMG(item_rss.getWeaponByName(weaponChoosedNameList.get(x),context)[1],context))
+                    .load (item_rss.getWeaponByName(weaponChoosedNameList.get(x))[1])
                     .transform(transformation)
                     .fit()
                     .error (R.drawable.paimon_full)
@@ -837,7 +837,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                 int x = 0;
                 for (Weapons item : weaponsList) {
                     String str = String.valueOf(s).toLowerCase();
-                    if (css.getWeaponByName(item.getName(),context)[0].contains(str)||css.getWeaponByName(item.getName(),context)[0].toLowerCase().contains(str)||css.getWeaponByName(item.getName(),context)[0].toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
+                    if (context.getString(css.getWeaponByName(item.getName())[0]).contains(str)||context.getString(css.getWeaponByName(item.getName())[0]).toLowerCase().contains(str)||context.getString(css.getWeaponByName(item.getName())[0]).toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
                         filteredList.add(item);
                     }
                     x = x +1;
@@ -1065,7 +1065,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             final int margin = 4;
             final Transformation transformation = new RoundedCornersTransformation(radius, margin);
             Picasso.get()
-                    .load (FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(artifactChoosedNameList.get(x)),context)[tmp_artifact_type_id],context))
+                    .load (item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(artifactChoosedNameList.get(x)))[tmp_artifact_type_id])
                     .transform(transformation)
                     .fit()
                     .error (R.drawable.paimon_full)
@@ -1076,7 +1076,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             if(!artifactChoosedFollowList.get(x).isEmpty() && !artifactChoosedFollowList.get(x).equals("N/A")) {
                 item_user_img.setVisibility(View.VISIBLE);
                 Picasso.get()
-                        .load(FileLoader.loadIMG(item_rss.getCharByName(artifactChoosedFollowList.get(x),context)[3],context))
+                        .load(item_rss.getCharByName(artifactChoosedFollowList.get(x),context)[3])
                         .transform(transformation)
                         .resize(36, 36)
                         .error(R.drawable.paimon_full)
@@ -1102,7 +1102,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                 int x = 0;
                 for (Artifacts item : artifactsList) {
                     String str = String.valueOf(s).toLowerCase();
-                    if (css.getArtifactByName(item.getName(),context)[0].contains(str)||css.getArtifactByName(item.getName(),context)[0].toLowerCase().contains(str)||css.getArtifactByName(item.getName(),context)[0].toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
+                    if (context.getString(css.getArtifactByName(item.getName())[0]).contains(str)||context.getString(css.getArtifactByName(item.getName())[0]).toLowerCase().contains(str)||context.getString(css.getArtifactByName(item.getName())[0]).toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
                         filteredList.add(item);
                     }
                     x = x +1;
@@ -1225,8 +1225,8 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         String is_default = null;
         String result1 = null;
 
-        is_default = LoadData("db/char/en-US/"+CharName_BASE_UNDERSCORE+".json");
-        is = LoadData("db/char/"+lang+"/"+CharName_BASE_UNDERSCORE+".json");
+        is_default = ItemRss.LoadAssestData(context,"db/char/en-US/"+CharName_BASE_UNDERSCORE+".json");
+        is = ItemRss.LoadAssestData(context,"db/char/"+lang+"/"+CharName_BASE_UNDERSCORE+".json");
 
         if(is != null){
             result1 = is;
@@ -1551,7 +1551,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                             final int margin = 4;
                             final Transformation transformation = new RoundedCornersTransformation(radius, margin);
                             Picasso.get()
-                                    .load (FileLoader.loadIMG(item_rss.getCharByName(choosedNameList.get(x),context)[3],context))
+                                    .load (item_rss.getCharByName(choosedNameList.get(x),context)[3])
                                     .transform(transformation)
                                     .fit()
                                     .error (R.drawable.paimon_full)
@@ -1723,7 +1723,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
         menu_char_lvl_before.setText(getString(R.string.curr_lvl)+String.valueOf(before_lvl));
         menu_char_lvl_after.setText(getString(R.string.aim_lvl)+String.valueOf(after_lvl));
-        menu_title.setText(item_rss.getWeaponByName(CharName_BASE,context)[0]);
+        menu_title.setText(item_rss.getWeaponByName(CharName_BASE)[0]);
 
         divider.setVisibility(View.GONE);
         menu_skill1_title.setVisibility(View.GONE);
@@ -1744,7 +1744,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
         String[] langList = new String[choosedNameList.size()];
         for (int x = 0 ; x < choosedNameList.size() ; x++){
-            langList[x] = item_rss.getCharByName(choosedNameList.get(x),context)[1];
+            langList[x] = context.getString(item_rss.getCharByName(choosedNameList.get(x),context)[1]);
         }
 
         ArrayAdapter char_aa = new ArrayAdapter(context,R.layout.spinner_item,langList);
@@ -1779,7 +1779,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
             langList = new String[choosedNameList.size()];
             for (int x = 0 ; x < choosedNameList.size() ; x++){
-                langList[x] = item_rss.getCharByName(choosedNameList.get(x),context)[1];
+                langList[x] = context.getString(item_rss.getCharByName(choosedNameList.get(x),context)[1]);
                 if(choosedNameList.get(x).equals(weaponChoosedFollowList.get(k))){
                     char_aa = new ArrayAdapter(context,R.layout.spinner_item,langList);
                     char_aa.setDropDownViewResource(R.layout.spinner_dropdown_item);
@@ -1974,7 +1974,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                             final int margin = 4;
                             final Transformation transformation = new RoundedCornersTransformation(radius, margin);
                             Picasso.get()
-                                    .load (FileLoader.loadIMG(item_rss.getWeaponByName(weaponChoosedNameList.get(x),context)[1],context))
+                                    .load (item_rss.getWeaponByName(weaponChoosedNameList.get(x))[1])
                                     .transform(transformation)
                                     .fit()
                                     .error (R.drawable.paimon_full)
@@ -1984,7 +1984,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                             if(!weaponChoosedFollowList.get(x).isEmpty() && !weaponChoosedFollowList.get(x).equals("N/A")) {
                                 item_user_img.setVisibility(View.VISIBLE);
                                 Picasso.get()
-                                        .load(FileLoader.loadIMG(item_rss.getCharByName(weaponChoosedFollowList.get(x), context)[3],context))
+                                        .load(item_rss.getCharByName(weaponChoosedFollowList.get(x), context)[3])
                                         .transform(transformation)
                                         .resize(36, 36)
                                         .error(R.drawable.paimon_full)
@@ -2252,7 +2252,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
         menu_char_lvl_before.setText(getString(R.string.curr_lvl)+String.valueOf(before_lvl));
         menu_char_lvl_after.setText(getString(R.string.aim_lvl)+String.valueOf(after_lvl));
-        menu_title.setText(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(CharName_BASE),context)[0]);
+        menu_title.setText(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(CharName_BASE))[0]);
 
 
         ArrayList<String> cList = new ArrayList<String>();
@@ -2265,19 +2265,19 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
         for(int x = 0 ; x< choosedNameList.size() ; x++){
             if(charHasFlower.get(x) == false){
-                charFlowerList.add(item_rss.getCharByName(choosedNameList.get(x),context)[1]);
+                charFlowerList.add(context.getString(item_rss.getCharByName(choosedNameList.get(x),context)[1]));
             }
             if(charHasPlume.get(x) == false){
-                charPlumeList.add(item_rss.getCharByName(choosedNameList.get(x),context)[1]);
+                charPlumeList.add(context.getString(item_rss.getCharByName(choosedNameList.get(x),context)[1]));
             }
             if(charHasSand.get(x) == false){
-                charSandList.add(item_rss.getCharByName(choosedNameList.get(x),context)[1]);
+                charSandList.add(context.getString(item_rss.getCharByName(choosedNameList.get(x),context)[1]));
             }
             if(charHasGoblet.get(x) == false){
-                charGobletList.add(item_rss.getCharByName(choosedNameList.get(x),context)[1]);
+                charGobletList.add(context.getString(item_rss.getCharByName(choosedNameList.get(x),context)[1]));
             }
             if(charHasCirclet.get(x) == false){
-                charCircletList.add(item_rss.getCharByName(choosedNameList.get(x),context)[1]);
+                charCircletList.add(context.getString(item_rss.getCharByName(choosedNameList.get(x),context)[1]));
             }
         }
         switch (tmp_artifact_type){
@@ -2500,7 +2500,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                     }
 
                     Picasso.get()
-                            .load (FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(artifactChoosedNameList.get(x)),context)[tmp_artifact_type_id],context))
+                            .load (item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(artifactChoosedNameList.get(x)))[tmp_artifact_type_id])
                             .transform(transformation)
                             .fit()
                             .error (R.drawable.paimon_full)
@@ -2510,7 +2510,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                     if(!artifactChoosedFollowList.get(x).equals("N/A") && !artifactChoosedFollowList.get(x).isEmpty()){
                         item_user_img.setVisibility(View.VISIBLE);
                         Picasso.get()
-                                .load (FileLoader.loadIMG(item_rss.getCharByName(item_rss.getCharNameByTranslatedName(artifactChoosedFollowList.get(x),context),context)[3],context))
+                                .load (item_rss.getCharByName(item_rss.getCharNameByTranslatedName(artifactChoosedFollowList.get(x),context),context)[3])
                                 .transform(transformation)
                                 .resize(36,36)
                                 .error (R.drawable.paimon_full)
@@ -2590,23 +2590,23 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
 
         for(int x = 0 ; x< choosedNameList.size() ; x++){
             if(charHasFlower.get(x) == false){
-                charFlowerList.add(item_rss.getCharByName(choosedNameList.get(x),context)[1]);
+                charFlowerList.add(context.getString(item_rss.getCharByName(choosedNameList.get(x),context)[1]));
                 charFlowerTMPList.add(choosedNameList.get(x));
             }
             if(charHasPlume.get(x) == false){
-                charPlumeList.add(item_rss.getCharByName(choosedNameList.get(x),context)[1]);
+                charPlumeList.add(context.getString(item_rss.getCharByName(choosedNameList.get(x),context)[1]));
                 charPlumeTMPList.add(choosedNameList.get(x));
             }
             if(charHasSand.get(x) == false){
-                charSandList.add(item_rss.getCharByName(choosedNameList.get(x),context)[1]);
+                charSandList.add(context.getString(item_rss.getCharByName(choosedNameList.get(x),context)[1]));
                 charSandTMPList.add(choosedNameList.get(x));
             }
             if(charHasGoblet.get(x) == false){
-                charGobletList.add(item_rss.getCharByName(choosedNameList.get(x),context)[1]);
+                charGobletList.add(context.getString(item_rss.getCharByName(choosedNameList.get(x),context)[1]));
                 charGobletTMPList.add(choosedNameList.get(x));
             }
             if(charHasCirclet.get(x) == false){
-                charCircletList.add(item_rss.getCharByName(choosedNameList.get(x),context)[1]);
+                charCircletList.add(context.getString(item_rss.getCharByName(choosedNameList.get(x),context)[1]));
                 charCircletTMPList.add(choosedNameList.get(x));
             }
         }
@@ -2729,7 +2729,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             final int margin = 4;
             final Transformation transformation = new RoundedCornersTransformation(radius, margin);
             Picasso.get()
-                    .load (FileLoader.loadIMG(item_rss.getCharByName(choosedNameList.get(x),context)[3],context))
+                    .load (item_rss.getCharByName(choosedNameList.get(x),context)[3])
                     .transform(transformation)
                     .fit()
                     .error (R.drawable.paimon_full)
@@ -2804,7 +2804,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             final int margin = 4;
             final Transformation transformation = new RoundedCornersTransformation(radius, margin);
             Picasso.get()
-                    .load (FileLoader.loadIMG(item_rss.getWeaponByName(weaponChoosedNameList.get(x),context)[1],context))
+                    .load (item_rss.getWeaponByName(weaponChoosedNameList.get(x))[1])
                     .transform(transformation)
                     .fit()
                     .error (R.drawable.paimon_full)
@@ -2815,7 +2815,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
                 item_user_img.setVisibility(View.VISIBLE);
 
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(weaponChoosedFollowList.get(x),context)[3],context))
+                        .load (item_rss.getCharByName(weaponChoosedFollowList.get(x),context)[3])
                         .transform(transformation)
                         .resize(36,36)
                         .error (R.drawable.paimon_full)
@@ -2907,7 +2907,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             }
 
             Picasso.get()
-                    .load (FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(artifactChoosedNameList.get(x)),context)[tmp_artifact_type_id],context))
+                    .load (item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(artifactChoosedNameList.get(x)))[tmp_artifact_type_id])
                     .transform(transformation)
                     .fit()
                     .error (R.drawable.paimon_full)
@@ -2916,7 +2916,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
             if(!artifactChoosedFollowList.get(x).isEmpty() && !artifactChoosedFollowList.get(x).equals("N/A")) {
                 item_user_img.setVisibility(View.VISIBLE);
                 Picasso.get()
-                        .load(FileLoader.loadIMG(item_rss.getCharByName(artifactChoosedFollowList.get(x),context)[3],context))
+                        .load(item_rss.getCharByName(artifactChoosedFollowList.get(x),context)[3])
                         .transform(transformation)
                         .resize(36, 36)
                         .error(R.drawable.paimon_full)
@@ -2938,7 +2938,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         int rare,isComing;
         charactersList.clear();
 
-        String json_base = LoadData("db/char/char_list.json");
+        String json_base = ItemRss.LoadAssestData(context,"db/char/char_list.json");
         //Get data from JSON
         try {
             JSONArray array = new JSONArray(json_base);
@@ -2980,7 +2980,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         String name,weapon,stat_1;
         int rare,isComing;
 
-        String json_base = LoadData("db/weapons/weapon_list.json");
+        String json_base = ItemRss.LoadAssestData(context,"db/weapons/weapon_list.json");
         //Get data from JSON
         try {
             JSONArray array = new JSONArray(json_base);
@@ -3012,7 +3012,7 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         String name ,img;
         int rare,isComing;
 
-        String json_base = LoadData("db/artifacts/artifact_list.json");
+        String json_base = ItemRss.LoadAssestData(context,"db/artifacts/artifact_list.json");
         //Get data from JSON
         try {
             JSONArray array = new JSONArray(json_base);
@@ -3034,25 +3034,6 @@ public class CalculatorUI extends AppCompatActivity implements NumberPicker.OnVa
         } catch (JSONException e) {
             e.printStackTrace();
         }
-    }
-
-    public String LoadData(String inFile) {
-        String tContents = "";
-        try {
-            File file = new File(context.getFilesDir()+"/"+inFile);
-            InputStream stream = new FileInputStream(file);
-
-            int size = stream.available();
-            byte[] buffer = new byte[size];
-            stream.read(buffer);
-            stream.close();
-            tContents = new String(buffer);
-        } catch (IOException e) {
-            // Handle exceptions here
-        }
-
-        return tContents;
-
     }
 
 

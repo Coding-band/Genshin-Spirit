@@ -233,12 +233,12 @@ public class DailyMemo2048Service extends Service {
             }else{
                 icon = item_rss.getCharNameByTranslatedName(icon, context);
             }
-            views.setImageViewBitmap(R.id.memo_user_icon,getRoundedCornerBitmap(FileLoader.loadIMG2Bitmap(item_rss.getCharByName(icon,context)[3],context),120, context));
-            views.setImageViewBitmap(R.id.memo_expe1_ico,getRoundedCornerBitmap(FileLoader.loadIMG2Bitmap(item_rss.getCharByName(expedition1_name,context)[3],context),120, context));
-            views.setImageViewBitmap(R.id.memo_expe2_ico,getRoundedCornerBitmap(FileLoader.loadIMG2Bitmap(item_rss.getCharByName(expedition2_name,context)[3],context),120, context));
-            views.setImageViewBitmap(R.id.memo_expe3_ico,getRoundedCornerBitmap(FileLoader.loadIMG2Bitmap(item_rss.getCharByName(expedition3_name,context)[3],context),120, context));
-            views.setImageViewBitmap(R.id.memo_expe4_ico,getRoundedCornerBitmap(FileLoader.loadIMG2Bitmap(item_rss.getCharByName(expedition4_name,context)[3],context),120, context));
-            views.setImageViewBitmap(R.id.memo_expe5_ico,getRoundedCornerBitmap(FileLoader.loadIMG2Bitmap(item_rss.getCharByName(expedition5_name,context)[3],context),120, context));
+            views.setImageViewBitmap(R.id.memo_user_icon,getRoundedCornerBitmap(BitmapFactory.decodeResource(context.getResources(),item_rss.getCharByName(icon,context)[3]),120, context));
+            views.setImageViewBitmap(R.id.memo_expe1_ico,getRoundedCornerBitmap(BitmapFactory.decodeResource(context.getResources(),item_rss.getCharByName(expedition1_name,context)[3]),120, context));
+            views.setImageViewBitmap(R.id.memo_expe2_ico,getRoundedCornerBitmap(BitmapFactory.decodeResource(context.getResources(),item_rss.getCharByName(expedition2_name,context)[3]),120, context));
+            views.setImageViewBitmap(R.id.memo_expe3_ico,getRoundedCornerBitmap(BitmapFactory.decodeResource(context.getResources(),item_rss.getCharByName(expedition3_name,context)[3]),120, context));
+            views.setImageViewBitmap(R.id.memo_expe4_ico,getRoundedCornerBitmap(BitmapFactory.decodeResource(context.getResources(),item_rss.getCharByName(expedition4_name,context)[3]),120, context));
+            views.setImageViewBitmap(R.id.memo_expe5_ico,getRoundedCornerBitmap(BitmapFactory.decodeResource(context.getResources(),item_rss.getCharByName(expedition5_name,context)[3]),120, context));
 
         }
 

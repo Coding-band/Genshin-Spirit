@@ -9,7 +9,10 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 
+import androidx.annotation.IntegerRes;
+
 import java.io.File;
+import java.io.IOException;
 
 /*
  * Project Genshin Spirit (原神小幫手) was
@@ -25,6 +28,10 @@ public class FileLoader {
     public static Drawable loadIMG2Drawable(String path, Context context){
         Drawable d = Drawable.createFromPath(context.getFilesDir()+path);
         return d;
+    }
+
+    public static Drawable loadINT2Drawable(int res, Context context){
+        return context.getDrawable(res);
     }
 
     public static Bitmap loadIMG2Bitmap(String path, Context context){

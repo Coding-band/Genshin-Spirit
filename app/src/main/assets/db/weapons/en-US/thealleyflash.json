@@ -1,0 +1,138 @@
+{
+	"name": "The Alley Flash",
+	"description": "A straight sword as black as the night. It once belonged to a thief who roamed the benighted streets.",
+	"weapontype": "Sword",
+	"rarity": "4",
+	"story": "A mighty and noble longsword that bursts forth like a flash of light from the depths of the night.\nTo the end, not even once was the sword's edge marred by blood.\nIt is said that over the generations, many swords crafted for the noblest of knights have been based on this design.\n\nThe darkened blade blended into the nights of yore with ease,\nFor in those days, people feared to light fires in the nighttime.\nAccording the songs of some bards, it was stained black during the age of the aristocracy.\n\nReading the tales and songs of his upright ancestors sowed seeds of rebellion in the young noble's heart.\nWhen the time came, he forsook his venerable house, stole this sword, and hid himself in the streets.\nThere he roamed the dark alleys and taverns like the common folk, and put his noble swordsmanship to use by robbing the rich to give to the poor.\nUnder cover of night, the sword from an opulent arsenal leaped across roofs and streets in the hands of one with equally noble blood.\nThe blade's pristine edge remained unblemished, as did the heart of the gentleman thief who had forsaken his corrupt lineage.\n\nBut wine and song and youth would fade, and many things would happen.\nIn the end, when under moonlight he buried his beloved blade and fled across the sea,\nHe remembered that night when he had stolen it from his family's vault,\nAnd he remembered his vow to his family, to past and present, to his land, and to his sworn brother Eberhart:\n\"Even if only by a little, I want to use my strength to turn this dark world around.\"",
+	"baseatk": 45,
+	"substat": "Elemental Mastery",
+	"subvalue": "12",
+	"effectname": "Itinerant Hero",
+	"effect": "Increases DMG dealt by the character equipping this weapon by {0}. Taking DMG disables this effect for 5s.",
+	"r1": [
+		"12%"
+	],
+	"r2": [
+		"15%"
+	],
+	"r3": [
+		"18%"
+	],
+	"r4": [
+		"21%"
+	],
+	"r5": [
+		"24%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Tile of Decarabian's Tower",
+				"count": 3
+			},
+			{
+				"name": "Heavy Horn",
+				"count": 3
+			},
+			{
+				"name": "Divining Scroll",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Debris of Decarabian's City",
+				"count": 3
+			},
+			{
+				"name": "Heavy Horn",
+				"count": 12
+			},
+			{
+				"name": "Divining Scroll",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Debris of Decarabian's City",
+				"count": 6
+			},
+			{
+				"name": "Black Bronze Horn",
+				"count": 6
+			},
+			{
+				"name": "Sealed Scroll",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Fragment of Decarabian's Epic",
+				"count": 3
+			},
+			{
+				"name": "Black Bronze Horn",
+				"count": 12
+			},
+			{
+				"name": "Sealed Scroll",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Fragment of Decarabian's Epic",
+				"count": 6
+			},
+			{
+				"name": "Black Crystal Horn",
+				"count": 9
+			},
+			{
+				"name": "Forbidden Curse Scroll",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Scattered Piece of Decarabian's Dream",
+				"count": 4
+			},
+			{
+				"name": "Black Crystal Horn",
+				"count": 18
+			},
+			{
+				"name": "Forbidden Curse Scroll",
+				"count": 12
+			}
+		]
+	}
+}

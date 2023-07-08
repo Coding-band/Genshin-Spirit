@@ -67,7 +67,7 @@ import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.BuildConfig;
 import com.voc.genshin_helper.R;
-import com.voc.genshin_helper.buff_old.SipTikCal;
+import com.voc.genshin_helper.data.buff_old.SipTikCal;
 import com.voc.genshin_helper.data.Artifacts;
 import com.voc.genshin_helper.data.ArtifactsAdapter;
 import com.voc.genshin_helper.data.Characters;
@@ -585,7 +585,7 @@ public class DeskSipTik extends AppCompatActivity {
                                 int x = 0;
                                 for (Weapons item : weaponsList) {
                                     String str = request.toLowerCase();
-                                    if (css.getWeaponByName(item.getName(),context)[0].contains(str)||css.getWeaponByName(item.getName(),context)[0].toLowerCase().contains(str)||css.getWeaponByName(item.getName(),context)[0].toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
+                                    if (context.getString(css.getWeaponByName(item.getName())[0]).contains(str)||context.getString(css.getWeaponByName(item.getName())[0]).toLowerCase().contains(str)||context.getString(css.getWeaponByName(item.getName())[0]).toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
                                         filteredList.add(item);
                                     }
                                     x = x +1;
@@ -989,7 +989,7 @@ public class DeskSipTik extends AppCompatActivity {
                                 int x = 0;
                                 for (Characters item : charactersList) {
                                     String str = request.toLowerCase();
-                                    if (css.getCharByName(item.getName(),context)[1].contains(str)||css.getCharByName(item.getName(),context)[1].toLowerCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
+                                    if (context.getString(css.getCharByName(item.getName(),context)[1]).contains(str)||context.getString(css.getCharByName(item.getName(),context)[1]).toLowerCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
                                         filteredList.add(item);
                                     }
                                     x = x +1;
@@ -1396,7 +1396,7 @@ public class DeskSipTik extends AppCompatActivity {
                                 int x = 0;
                                 for (Artifacts item : artifactsList) {
                                     String str = request.toLowerCase();
-                                    if (css.getArtifactByName(item.getName(),context)[0].contains(str)||css.getArtifactByName(item.getName(),context)[0].toLowerCase().contains(str)||css.getArtifactByName(item.getName(),context)[0].toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
+                                    if (context.getString(css.getArtifactByName(item.getName())[0]).contains(str)||context.getString(css.getArtifactByName(item.getName())[0]).toLowerCase().contains(str)||context.getString(css.getArtifactByName(item.getName())[0]).toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
                                         filteredList.add(item);
                                     }
                                     x = x +1;
@@ -2853,7 +2853,7 @@ public class DeskSipTik extends AppCompatActivity {
 
         if(!char_name.equals("EMPTY")){
             Picasso.get()
-                    .load (FileLoader.loadIMG(css.getCharByName(char_name,context)[3],context))
+                    .load (css.getCharByName(char_name,context)[3])
                     .transform(transformation)
                     .resize((int) (pix*1.2), (int) (pix*1.2))
                     .error (R.drawable.paimon_lost)
@@ -2892,7 +2892,7 @@ public class DeskSipTik extends AppCompatActivity {
             ImageView img = viewPager0.findViewById(imageArray[x]);
             TextView tv = viewPager0.findViewById(tvArray[x]);
             Picasso.get()
-                    .load (FileLoader.loadIMG(css.getCharByName(nextBirthCharName,context)[3],context))
+                    .load (css.getCharByName(nextBirthCharName,context)[3])
                     .transform(transformation)
                     .resize((int) (pix*2), (int) (pix*2))
                     .error (R.drawable.paimon_lost)
@@ -2966,7 +2966,7 @@ public class DeskSipTik extends AppCompatActivity {
                             default:  img.setBackgroundResource(R.drawable.bg_rare1_char_siptik);break;
                         }
 
-                        Picasso.get().load(FileLoader.loadIMG(css.getCharByName(name,context)[3],context)).fit().transform(roundedCornersTransformation).into(img);
+                        Picasso.get().load(css.getCharByName(name,context)[3]).fit().transform(roundedCornersTransformation).into(img);
                         tmp_cnt = tmp_cnt +1;
                         // if character is exist in list
                         //tick.setVisibility(View.VISIBLE);
@@ -3040,7 +3040,7 @@ public class DeskSipTik extends AppCompatActivity {
                         ImageView tick = view.findViewById(asc_weapon_tick[tmp_cnt]);
                         ImageView img = view.findViewById(asc_weapon_ico[tmp_cnt]);
 
-                        Picasso.get().load(css.getWeaponByName(name,context)[1]).fit().into(img);
+                        Picasso.get().load(css.getWeaponByName(name)[1]).fit().into(img);
 
                         String finalName = name;
                         img.setOnClickListener(new View.OnClickListener() {
@@ -3064,7 +3064,7 @@ public class DeskSipTik extends AppCompatActivity {
                             default:  img.setBackgroundResource(R.drawable.bg_rare1_char_siptik);break;
                         }
 
-                        Picasso.get().load(FileLoader.loadIMG(css.getWeaponByName(name,context)[1],context)).fit().transform(roundedCornersTransformation).into(img);
+                        Picasso.get().load(css.getWeaponByName(name)[1]).fit().transform(roundedCornersTransformation).into(img);
                         tmp_cnt = tmp_cnt +1;
                         // if character is exist in list
                         //tick.setVisibility(View.VISIBLE);

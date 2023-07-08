@@ -1,0 +1,12 @@
+{
+  "name": "Seasoned Hunter's Bow",
+  "rare": 2,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "飽經磨練又精心護養的弓，經歷了漫長的歲月。仿佛會主動配合射手的動作一般好使。",
+  "first_status": "N/A",
+  "second_status": "ATK",
+  "skill_name": "無",
+  "skill_desc": "無",
+  "obtain_way": "CHEST_SHOP"
+}

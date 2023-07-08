@@ -1,0 +1,12 @@
+{
+  "name": "Twin Nephrite",
+  "rare": 3,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "A jade pendant formed by piecing together two jade stones.",
+  "first_status": "CritRate%",
+  "second_status": "ATK",
+  "skill_name": "Guerilla Tactic",
+  "skill_desc": "Defeating an opponent increases Movement SPD and ATK by 12%/14%/16%/18%/20% for 15s.",
+  "obtain_way": "CHEST_LY"
+}

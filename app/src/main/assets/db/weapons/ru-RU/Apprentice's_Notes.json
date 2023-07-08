@@ -1,0 +1,12 @@
+{
+  "name": "Apprentice's Notes",
+  "rare": 1,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "Конспекты, оставленные лучшим учеником класса, содержат много полезных заклинаний. Написано прекрасным почерком.",
+  "first_status": "N/A",
+  "second_status": "ATK",
+  "skill_name": "N/A",
+  "skill_desc": "N/A",
+  "obtain_way": "FIRST_GIFT"
+}

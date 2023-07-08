@@ -1,0 +1,12 @@
+{
+  "name": "Beacon of the Reed Sea",
+  "rare": 5,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "N/A",
+  "first_status": "CritDMG",
+  "second_status": "ATK",
+  "skill_name": "沙海守望",
+  "skill_desc": "元素戰技命中敵人後，攻擊力提升20%，持續8秒；受到傷害後，攻擊力提升20%，持續8秒。上述2種效果角色處於隊伍後臺時也能觸發。此外，不處於護盾庇護下時，生命值上限提高32%。",
+  "obtain_way": "LIMITED_WISH"
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Aqua Simulacra",
+  "rare": 5,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "麒麟本性仁慈，除非萬不得已，絕不會傷害他人的靈魂。",
+  "first_status": "CritDMG%",
+  "second_status": "ATK",
+  "skill_name": "洗濯諸類之形",
+  "skill_desc": "生命值提升16%。周圍存在敵人時，裝備該武器的角色造成的傷害都會提升20%，不論該角色處於場上或是處於隊伍後台。",
+  "obtain_way": "LIMITED_WISH"
+}

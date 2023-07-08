@@ -1,0 +1,113 @@
+{
+  "name" : "Aloy",
+  
+  "dps_weapons" : [
+	"thundering_pulse",
+    "skyward_harp",
+    "amos_bow",
+	"aqua_simulacra",
+	"predator",
+	"rust",
+	"sacrificial_bow",
+	"hamayumi"
+  ],
+  "dps_art1": [
+    "shimenawas_reminiscence",
+    "shimenawas_reminiscence",
+    "shimenawas_reminiscence",
+    "shimenawas_reminiscence",
+    "shimenawas_reminiscence"
+  ],
+  "dps_art2": [
+    "echoes_of_an_offering",
+    "echoes_of_an_offering",
+    "echoes_of_an_offering",
+    "echoes_of_an_offering",
+    "echoes_of_an_offering"
+  ],
+  "dps_art3": [
+    "blizzard_strayer",
+    "blizzard_strayer",
+    "blizzard_strayer",
+    "blizzard_strayer",
+    "blizzard_strayer"
+  ],
+  "dps_art_sand_entry": [
+    "ATK"
+  ],
+  "dps_art_goblet_entry": [
+    "EleDMG_Cryo"
+  ],
+  "dps_art_circlet_entry": [
+    "CritRate",
+    "CritDMG"
+  ],
+  "dps_art_sub_entry": [
+    "CritDMG",
+    "CritRate",
+    "ATK",
+    "EleMas",
+    "EnRech"
+  ],
+  
+  "sup_dps_weapons" : [
+	"aqua_simulacra",
+    "skyward_harp",
+    "mouuns_moon",
+	"the_stringless",
+	"fading_twilight",
+	"alley_hunter"
+  ],
+  "sup_dps_art1": [
+    "blizzard_strayer",
+    "blizzard_strayer",
+    "blizzard_strayer",
+    "blizzard_strayer",
+    "blizzard_strayer"
+  ],
+  "sup_dps_art2": [
+    "emblem_of_severed_fate",
+    "emblem_of_severed_fate",
+    "emblem_of_severed_fate",
+    "emblem_of_severed_fate",
+    "emblem_of_severed_fate"
+  ],
+  "sup_dps_art3": [
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "sup_dps_art4": [
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "blizzard_strayer",
+    "blizzard_strayer",
+    "blizzard_strayer"
+  ],
+  "sup_dps_art_sand_entry": [
+    "ATK",
+    "EnRech"
+  ],
+  "sup_dps_art_goblet_entry": [
+    "EleDMG_Cryo"
+  ],
+  "sup_dps_art_circlet_entry": [
+    "CritRate",
+    "CritDMG"
+  ],
+  "sup_dps_art_sub_entry": [
+    "CritDMG",
+    "CritRate",
+    "ATK",
+    "EnRech"
+  ],
+  
+  "team1":[
+	"Aloy","Surcose","Kaedehara Kazuha","Jean"
+  ],
+  "team2":[
+	"Aloy","Xingqiu","Surcose","Rosaria"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Silver Sword",
+  "rare": 2,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "N/A",
+  "second_status": "ATK",
+  "desc": "A sword for chasing away demons. Everyone knows it's made of a silver alloy, not pure silver.",
+  "skill_name": "N/A",
+  "skill_desc": "N/A",
+  "obtain_way": "CHEST_SHOP"
+}

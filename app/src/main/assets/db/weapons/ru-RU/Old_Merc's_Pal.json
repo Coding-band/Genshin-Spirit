@@ -1,0 +1,12 @@
+{
+  "name": "Old Merc's Pal",
+  "rare": 2,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "Этот меч, испытанный битвой, видал лучшие дни... и худшие тоже.",
+  "first_status": "N/A",
+  "second_status": "ATK",
+  "skill_name": "N/A",
+  "skill_desc": "N/A",
+  "obtain_way": "CHEST_SHOP"
+}

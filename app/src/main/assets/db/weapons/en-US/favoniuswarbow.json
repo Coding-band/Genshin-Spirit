@@ -1,0 +1,143 @@
+{
+	"name": "Favonius Warbow",
+	"description": "A standard-issue recurve bow of the Knights of Favonius. Only the best archers can unleash its full potential.",
+	"weapontype": "Bow",
+	"rarity": "4",
+	"story": "A standard recurve bow wielded by the Knights of Favonius. Only issued to the best archers long in service of the order.\nExpertly crafted, the oak frame provides superior strength while the addition of metal parts makes it easy to use.\nThe bowstring is enchanted with the secrets of alchemy and magic, granting protection to the fingers of the archer.\nThis bow serves as a reward to worthy guardians of Mondstadt, and a fine tool with which for them to continue in their guardianship.\n\nThe Knights of Favonius once had a formidable team of archer scouts known as the Outriders.\nThe team was founded by a mercenary leader from Liyue, who passed on his lifetime's worth of knowledge to the Outriders.\n\nThe tracking skills they acquired, along with the ability to sense when danger was afoot, were unique among all the knights.\nHence, the skills of the Outriders were invaluable to the Knights of Favonius.\n\nThis lasted until the first of the Outriders, for reasons unknown to the Knights, ultimately left the order.\nFrom that day, the Outrider team was a shell of its former self. Its expertise was gone, though its structure and name have been preserved.\nNevertheless, there are still those who work tirelessly to maintain the dignity of the Outrider title.",
+	"baseatk": 41,
+	"substat": "Energy Recharge",
+	"subvalue": "13.3",
+	"effectname": "Windfall",
+	"effect": "CRIT Hits have a {0} chance to generate a small amount of Elemental Particles, which will regenerate 6 Energy for the character. Can only occur once every {1}.",
+	"r1": [
+		"60%",
+		"12s"
+	],
+	"r2": [
+		"70%",
+		"10.5s"
+	],
+	"r3": [
+		"80%",
+		"9s"
+	],
+	"r4": [
+		"90%",
+		"7.5s"
+	],
+	"r5": [
+		"100%",
+		"6s"
+	],
+	"weaponmaterialtype": "Dandelion Gladiator",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Fetters of the Dandelion Gladiator",
+				"count": 3
+			},
+			{
+				"name": "Chaos Device",
+				"count": 3
+			},
+			{
+				"name": "Whopperflower Nectar",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Chains of the Dandelion Gladiator",
+				"count": 3
+			},
+			{
+				"name": "Chaos Device",
+				"count": 12
+			},
+			{
+				"name": "Whopperflower Nectar",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Chains of the Dandelion Gladiator",
+				"count": 6
+			},
+			{
+				"name": "Chaos Circuit",
+				"count": 6
+			},
+			{
+				"name": "Shimmering Nectar",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Shackles of the Dandelion Gladiator",
+				"count": 3
+			},
+			{
+				"name": "Chaos Circuit",
+				"count": 12
+			},
+			{
+				"name": "Shimmering Nectar",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Shackles of the Dandelion Gladiator",
+				"count": 6
+			},
+			{
+				"name": "Chaos Core",
+				"count": 9
+			},
+			{
+				"name": "Energy Nectar",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Dream of the Dandelion Gladiator",
+				"count": 4
+			},
+			{
+				"name": "Chaos Core",
+				"count": 18
+			},
+			{
+				"name": "Energy Nectar",
+				"count": 12
+			}
+		]
+	}
+}

@@ -1,0 +1,52 @@
+{
+  "name" : "Venti",
+    
+  "util_weapons": [
+    "skyward_harp",
+    "elegy_for_the_end",
+    "favonius_warbow",
+    "the_viridescent_hunt",
+    "the_stringless",
+    "windblume_ode"
+  ],
+  "util_art1": [
+    "viridescent_venerer",
+    "viridescent_venerer",
+    "viridescent_venerer",
+    "viridescent_venerer",
+    "viridescent_venerer"
+  ],
+  "util_art2": [
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "util_art_sand_entry": [
+    "ATK"
+  ],
+  "util_art_goblet_entry": [
+    "EleDMG_Anemo"
+  ],
+  "util_art_circlet_entry": [
+    "CritDMG",
+	"CritRate"
+  ],
+  "util_art_sub_entry": [
+    "CritRate",
+    "CritDMG",
+    "EleMas",
+    "EnRech"
+  ],
+  
+  "team1":[
+	"Venti","Sucrose","Klee","Xiangling"
+  ],
+  "team2":[
+	"Venti","Xiangling","Fischl","Jean"
+  ],
+  "team3":[
+	"Venti","Ganyu","Mona","Jean"
+  ]
+}

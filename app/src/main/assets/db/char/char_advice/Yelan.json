@@ -1,0 +1,63 @@
+{
+  "name" : "Yelan",
+  
+  "dps_weapons" : [
+	"aqua_simulacra",
+    "skyward_harp",
+    "elegy_for_the_end",
+	"aquila_favonia",
+	"mouuns_moon",
+	"fading_twilight"
+  ],
+  "dps_art1": [
+    "emblem_of_serverd_fate",
+    "emblem_of_serverd_fate",
+    "emblem_of_serverd_fate",
+    "emblem_of_serverd_fate",
+    "emblem_of_serverd_fate"
+  ],
+  "dps_art2": [
+    "tenacity_of_the_millelith",
+    "tenacity_of_the_millelith",
+    "heart_of_depth",
+    "heart_of_depth",
+    "heart_of_depth"
+  ],
+  "dps_art3": [
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "heart_of_depth",
+    "heart_of_depth",
+    "heart_of_depth"
+  ],
+  "dps_art_sand_entry": [
+    "EnRech",
+    "HP"
+  ],
+  "dps_art_goblet_entry": [
+    "EleDMG_Hydro"
+  ],
+  "dps_art_circlet_entry": [
+    "CritRate",
+    "CritDMG"
+  ],
+  "dps_art_sub_entry": [
+    "CritDMG",
+    "CritRate",
+    "ATK",
+    "EnRech"
+  ],
+  
+  "team1":[
+	"Kaedehara Kazuha","Albedo","Yelan","Raiden Shogun"
+  ],
+  "team2":[
+	"Yoimiya","Yelan","Zhongli","Bennett"
+  ],
+  "team3":[
+	"Yoimiya","Yelan","Xingqiu","Bennett"
+  ],
+  "team4":[
+	"Yoimiya","Yelan","Xingqiu","Zhongli"
+  ]
+}

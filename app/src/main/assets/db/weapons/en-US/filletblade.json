@@ -1,0 +1,143 @@
+{
+	"name": "Fillet Blade",
+	"description": "A sharp filleting knife. The blade is long, thin, and incredibly sharp.",
+	"weapontype": "Sword",
+	"rarity": "3",
+	"story": "It was said that the Ticker Fish was a favorite among the people of Liyue.\nAs word caught on, somehow Ticker became Tiger.\nNow, the real Ticker Fish is hard to come by,\nbut Tiger Fish fillets have become synonymous with delicious fish for the people of Liyue.",
+	"baseatk": 39,
+	"substat": "ATK",
+	"subvalue": "7.7",
+	"effectname": "Gash",
+	"effect": "On hit, has a 50% chance to deal {0} ATK DMG to a single target. Can only occur once every {1}.",
+	"r1": [
+		"240%",
+		"15s"
+	],
+	"r2": [
+		"280%",
+		"14s"
+	],
+	"r3": [
+		"320%",
+		"13s"
+	],
+	"r4": [
+		"360%",
+		"12s"
+	],
+	"r5": [
+		"400%",
+		"11s"
+	],
+	"weaponmaterialtype": "Mist Veiled Elixir",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Mist Veiled Lead Elixir",
+				"count": 2
+			},
+			{
+				"name": "Mist Grass Pollen",
+				"count": 2
+			},
+			{
+				"name": "Treasure Hoarder Insignia",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Mist Veiled Mercury Elixir",
+				"count": 2
+			},
+			{
+				"name": "Mist Grass Pollen",
+				"count": 8
+			},
+			{
+				"name": "Treasure Hoarder Insignia",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Mist Veiled Mercury Elixir",
+				"count": 4
+			},
+			{
+				"name": "Mist Grass",
+				"count": 4
+			},
+			{
+				"name": "Silver Raven Insignia",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Mist Veiled Gold Elixir",
+				"count": 2
+			},
+			{
+				"name": "Mist Grass",
+				"count": 8
+			},
+			{
+				"name": "Silver Raven Insignia",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Mist Veiled Gold Elixir",
+				"count": 4
+			},
+			{
+				"name": "Mist Grass Wick",
+				"count": 6
+			},
+			{
+				"name": "Golden Raven Insignia",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Mist Veiled Primo Elixir",
+				"count": 3
+			},
+			{
+				"name": "Mist Grass Wick",
+				"count": 12
+			},
+			{
+				"name": "Golden Raven Insignia",
+				"count": 8
+			}
+		]
+	}
+}

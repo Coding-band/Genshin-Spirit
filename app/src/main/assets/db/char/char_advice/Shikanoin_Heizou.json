@@ -1,0 +1,77 @@
+{
+  "name" : "Shikanoin Heizou",
+  
+  "dps_weapons" : [
+	"kaguras_verity",
+    "skyward_atlas",
+    "lost_prayer_to_the_sacred_winds",
+	"memory_of_dust",
+	"the_widsith",
+	"solar_pearl",
+	"dodoco_tales",
+	"mappa_mare"
+  ],
+  "dps_art1": [
+    "viridescent_venerer",
+    "viridescent_venerer",
+    "viridescent_venerer",
+    "viridescent_venerer",
+    "viridescent_venerer"
+  ],
+  "dps_art2": [
+    "viridescent_venerer",
+    "viridescent_venerer",
+    "gladiators_finale",
+    "gladiators_finale",
+    "gladiators_finale"
+  ],
+  "dps_art3": [
+    "viridescent_venerer",
+    "viridescent_venerer",
+    "shimenawas_reminiscence",
+    "shimenawas_reminiscence",
+    "shimenawas_reminiscence"
+  ],
+  "dps_art4": [
+    "viridescent_venerer",
+    "viridescent_venerer",
+    "echoes_of_an_offering",
+    "echoes_of_an_offering",
+    "echoes_of_an_offering"
+  ],
+  "dps_art5": [
+    "viridescent_venerer",
+    "viridescent_venerer",
+    "vermillion_hereafter",
+    "vermillion_hereafter",
+    "vermillion_hereafter"
+  ],
+  "dps_art_sand_entry": [
+    "ATK"
+  ],
+  "dps_art_goblet_entry": [
+    "EleDMG_Anemo",
+    "ATK"
+  ],
+  "dps_art_circlet_entry": [
+    "CritRate",
+    "CritDMG"
+  ],
+  "dps_art_sub_entry": [
+    "CritDMG",
+    "CritRate",
+    "ATK",
+    "EleMas",
+    "EnRech"
+  ],
+  
+  "team1":[
+	"Shikanoin Heizou","Xingqiu","Bennett","Xiangling"
+  ],
+  "team2":[
+	"Shikanoin Heizou","Yelan","Zhongli","Xingqiu"
+  ],
+  "team3":[
+	"Shikanoin Heizou","Mona","Bennett","Jean"
+  ]
+}

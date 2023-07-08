@@ -1,0 +1,92 @@
+{
+	"name": "Iron Point",
+	"description": "Sharp and pointy at one end, it is a balanced weapon that is quite popular among travelers.",
+	"weapontype": "Polearm",
+	"rarity": "2",
+	"story": "A simple weapon that exudes a certain austerity.\nFor those who defend that which they must protect,\nOr a traveler with naught to their name but themselves,\nEven the most mundane of weapons might be ten times as powerful as it seems.",
+	"baseatk": 33,
+	"substat": "",
+	"subvalue": "",
+	"effectname": "",
+	"effect": "",
+	"r1": [],
+	"r2": [],
+	"r3": [],
+	"r4": [],
+	"r5": [],
+	"weaponmaterialtype": "Dandelion Gladiator",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Fetters of the Dandelion Gladiator",
+				"count": 1
+			},
+			{
+				"name": "Chaos Device",
+				"count": 1
+			},
+			{
+				"name": "Divining Scroll",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Chains of the Dandelion Gladiator",
+				"count": 1
+			},
+			{
+				"name": "Chaos Device",
+				"count": 5
+			},
+			{
+				"name": "Divining Scroll",
+				"count": 4
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Chains of the Dandelion Gladiator",
+				"count": 3
+			},
+			{
+				"name": "Chaos Circuit",
+				"count": 3
+			},
+			{
+				"name": "Sealed Scroll",
+				"count": 3
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Shackles of the Dandelion Gladiator",
+				"count": 1
+			},
+			{
+				"name": "Chaos Circuit",
+				"count": 5
+			},
+			{
+				"name": "Sealed Scroll",
+				"count": 4
+			}
+		]
+	}
+}

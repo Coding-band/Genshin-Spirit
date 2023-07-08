@@ -1,8 +1,6 @@
 package com.voc.genshin_helper.ui.SipTik;
 
 import static android.content.Context.MODE_PRIVATE;
-import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
-import static com.google.android.material.tabs.TabLayout.MODE_FIXED;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -20,7 +18,6 @@ import android.text.Spanned;
 import android.text.style.ForegroundColorSpan;
 import android.util.DisplayMetrics;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -31,17 +28,12 @@ import android.widget.LinearLayout;
 import android.widget.RatingBar;
 import android.widget.TextView;
 
-import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.viewpager.widget.ViewPager;
-
-import com.google.android.material.tabs.TabLayout;
 import com.squareup.picasso.Picasso;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.FileLoader;
-import com.voc.genshin_helper.util.MyViewPagerAdapter;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
 import org.json.JSONArray;
@@ -53,7 +45,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 
 //https://stackoverflow.com/questions/3592836/check-for-file-existence-in-androids-assets-folder/7337516
 
@@ -317,17 +308,17 @@ public class Artifact_Info_SipTik {
 
         /** MAIN */
 
-        artifact_name.setText(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[0]);
+        artifact_name.setText(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name))[0]);
         //artifact_title.setText(nick);
         //Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(name,context)[0],context)).centerCrop().into(artifact_img);
         if (!artifactSet1PC.equals("XPR")){
-            Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[1],context)).into(artifact_img);
+            Picasso.get().load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name))[1]).into(artifact_img);
         }else if (!artifactSet2PC.equals("XPR") && !artifactSet4PC.equals("XPR")){
-            Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[1],context)).into(artifact_img1);
-            Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[2],context)).into(artifact_img2);
-            Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[3],context)).into(artifact_img3);
-            Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[4],context)).into(artifact_img4);
-            Picasso.get().load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name),context)[5],context)).into(artifact_img5);
+            Picasso.get().load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name))[1]).into(artifact_img1);
+            Picasso.get().load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name))[2]).into(artifact_img2);
+            Picasso.get().load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name))[3]).into(artifact_img3);
+            Picasso.get().load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name))[4]).into(artifact_img4);
+            Picasso.get().load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name))[5]).into(artifact_img5);
         }
 
         displayMetrics = new DisplayMetrics();

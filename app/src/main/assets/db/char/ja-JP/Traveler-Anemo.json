@@ -1,0 +1,59 @@
+{
+    "name": "Traveler-Anemo",
+    "rare": 5,
+    "area": "Another World",
+    "element": "Anemo",
+    "weapon": "Sword",
+    "sex": "SET_BY_PLAYER",
+    "birth": "SET_BY_PLAYER",
+    "role": "Support_DPS",
+    "isComingSoon": false,
+    "nick":"旅人",
+    "desc": "世界の外から漂流してきた旅人。肉親が見知らぬ神に連れ去られたため、七神を探す旅に出た。",
+    "battle_talent": {
+      "normal_name": "異邦の鉄風",
+      "normal_img": "normal_attack_foreign_ironwind",
+      "normal_desc1": "剣による最大5段の連続攻撃を行う。",
+      "normal_desc2": "一定のスタミナを消費し、前方に斬撃を2回放つ。",
+      "normal_desc3": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
+      "element_name": "旋風の剣",
+      "element_img": "palm_vortex",
+      "element_desc": "風の力を握りしめ、手のひらに真空の渦を集中させ、前方の敵に風元素ダメージを持続的に与える。\nスキル終了時、真空の渦は爆発し、より広範囲で強力な風元素ダメージを与える。\n長押し:ダメージと影響範囲が徐々に大きくなる。\n元素変化:真空の渦が継続時間中に水元素/炎元素/氷元素/雷元素に接触すると、接触した元素の属性を獲得し、該当元素の付加ダメージを追加で与える。\n元素変化はスキル継続中に1回のみ発生する。",
+      "final_name": "激風の息",
+      "final_img": "gust_surge",
+      "final_desc": "風を導き、前方に継続前進する竜巻を召喚する。経路上の物体と敵を巻き込み、風元素ダメージを持続的に与える。\n元素変化:竜巻がスキル継続中に水元素/炎元素/氷元素/雷元素に接触すると、接触した元素の属性を獲得し、該当元素の付加ダメージを追加で与える。\n元素変化はスキル継続中に1回のみ発生する。"
+    },
+    "basic_talent": {
+      "talent1_name": "空を裂く風",
+      "talent1_img": "slitting_wind",
+      "talent1_desc": "通常攻撃の最後の1撃が風の刃を放つようになり、経路上の敵に攻撃力60%分の風元素ダメージを与える。",
+      "talent2_name": "蘇生の風",
+      "talent2_img": "second_wind",
+      "talent2_desc": "旋風の剣で敵を倒した後、1秒毎にHPを2%回復する、継続時間5秒。\n5秒に1回のみ発動可能。"
+    },
+    "sof": {
+      "sof1_name": "回転する怒風",
+      "sof1_img": "raging_vortex",
+      "sof1_desc": "旋風の剣は周囲5メートル以内の敵と物体をゆっくりと自分の前に吸い寄せることができる。",
+      "sof2_name": "革新の旋風",
+      "sof2_img": "uprising_whirlwind",
+      "sof2_desc": "元素チャージ効率+16%。",
+      "sof3_name": "天地の剛風",
+      "sof3_img": "sweeping_gust",
+      "sof3_desc": "激風の息のスキルLv.+3。\n最大Lv.15まで。",
+      "sof4_name": "恩眷の和風",
+      "sof4_img": "cherishing_breezes",
+      "sof4_desc": "旋風の剣継続中、自身の受けるダメージ-10%。",
+      "sof5_name": "群星の渦風",
+      "sof5_img": "vortex_stellaris",
+      "sof5_desc": "旋風の剣のスキルLv.+3。\n最大Lv.15まで。",
+      "sof6_name": "もつれる信風",
+      "sof6_img": "interwined_winds",
+      "sof6_desc": "激風の息によるダメージを受けた敵の風元素耐性-20%。\n元素変化があった場合、該当の元素耐性-20%。"
+    }
+  }
+  
+  
+  
+
+

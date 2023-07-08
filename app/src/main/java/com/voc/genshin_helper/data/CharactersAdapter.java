@@ -457,7 +457,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                 }
 
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[4],context)).resize((int) (width_curr),(int) ((width_curr)/2.1))//.transform(transformation_circ_siptik)
+                        .load (item_rss.getCharByName(Characters.getName(),context)[4]).resize((int) (width_curr),(int) ((width_curr)/2.1))//.transform(transformation_circ_siptik)
                         .error (R.drawable.paimon_lost)
                         .into(holder.char_card_bg);
 
@@ -524,7 +524,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                 }
 
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[4],context)).resize((int) (width_curr),(int) ((width_curr)/2.1))//.transform(transformation_circ_siptik)
+                        .load (item_rss.getCharByName(Characters.getName(),context)[4]).resize((int) (width_curr),(int) ((width_curr)/2.1))//.transform(transformation_circ_siptik)
                         .error (R.drawable.paimon_lost)
                         .into(holder.char_card_bg);
 
@@ -572,11 +572,11 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
                 holder.char_small_ico.setVisibility(View.VISIBLE);
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize((int) (width/3.25),(int) (width/3.25)).transform(transformation_circ)
+                        .load (item_rss.getCharByName(Characters.getName(),context)[3]).resize((int) (width/3.25),(int) (width/3.25)).transform(transformation_circ)
                         .error (R.drawable.paimon_lost)
                         .into (holder.char_small_ico);
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[0],context)).resize((int)(width/1.1),(int)(height/1.1)).centerCrop().transform(transformation)
+                        .load (item_rss.getCharByName(Characters.getName(),context)[0]).resize((int)(width/1.1),(int)(height/1.1)).centerCrop().transform(transformation)
                         .error (R.drawable.paimon_full)
                         .into (holder.char_icon);
                 holder.char_icon.getLayoutParams().width = width;
@@ -598,7 +598,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                 }
 
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize((int) (width/1),(int) (width/1)).transform(transformation_circ)
+                        .load (item_rss.getCharByName(Characters.getName(),context)[3]).resize((int) (width/1),(int) (width/1)).transform(transformation_circ)
                         .error (R.drawable.paimon_full)
                         .into (holder.char_icon);
                 break;
@@ -621,7 +621,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                 holder.char_card.getLayoutParams().height = height-16;
 
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(96*width/315,96*width/315).transform(transformation_circ_siptik_ico)
+                        .load (item_rss.getCharByName(Characters.getName(),context)[3]).resize(96*width/315,96*width/315).transform(transformation_circ_siptik_ico)
                         .error (R.drawable.paimon_full)
                         .into (holder.char_icon);
                 holder.char_icon.getLayoutParams().width = 96*width/315;
@@ -645,7 +645,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                 holder.char_cbg.getLayoutParams().height = height-16;
 
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(Characters.getName(),context)[3],context)).resize(96*width/315,96*width/315).transform(transformation_circ_siptik_ico)
+                        .load (item_rss.getCharByName(Characters.getName(),context)[3]).resize(96*width/315,96*width/315).transform(transformation_circ_siptik_ico)
                         .error (R.drawable.paimon_full)
                         .into (holder.char_icon);
                 holder.char_icon.getLayoutParams().width = 96*width/315;

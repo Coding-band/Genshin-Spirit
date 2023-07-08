@@ -1,0 +1,138 @@
+{
+	"name": "Cool Steel",
+	"description": "A reliable steel-forged weapon that serves as a testament to the great adventures of its old master.",
+	"weapontype": "Sword",
+	"rarity": "3",
+	"story": "A sturdy steel sword forged by the method of folding.\nIt has a dull shine with a cold glimmer.\nIt belonged to a famous adventurer who witnessed the vastness of the earth.\nWith it, he severed the iron bones of monsters and crossed blades with bandits.\nBut in the end,\nHe gave up the vast earth, the boundless sky,\nHis friends in the Guild, his trusty Cool Steel, and old pals, to be with the girl he loved.",
+	"baseatk": 39,
+	"substat": "ATK",
+	"subvalue": "7.7",
+	"effectname": "Bane of Water and Ice",
+	"effect": "Increases DMG against opponents affected by Hydro or Cryo by {0}.",
+	"r1": [
+		"12%"
+	],
+	"r2": [
+		"15%"
+	],
+	"r3": [
+		"18%"
+	],
+	"r4": [
+		"21%"
+	],
+	"r5": [
+		"24%"
+	],
+	"weaponmaterialtype": "Decarabian",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Tile of Decarabian's Tower",
+				"count": 2
+			},
+			{
+				"name": "Heavy Horn",
+				"count": 2
+			},
+			{
+				"name": "Firm Arrowhead",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Debris of Decarabian's City",
+				"count": 2
+			},
+			{
+				"name": "Heavy Horn",
+				"count": 8
+			},
+			{
+				"name": "Firm Arrowhead",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Debris of Decarabian's City",
+				"count": 4
+			},
+			{
+				"name": "Black Bronze Horn",
+				"count": 4
+			},
+			{
+				"name": "Sharp Arrowhead",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Fragment of Decarabian's Epic",
+				"count": 2
+			},
+			{
+				"name": "Black Bronze Horn",
+				"count": 8
+			},
+			{
+				"name": "Sharp Arrowhead",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Fragment of Decarabian's Epic",
+				"count": 4
+			},
+			{
+				"name": "Black Crystal Horn",
+				"count": 6
+			},
+			{
+				"name": "Weathered Arrowhead",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Scattered Piece of Decarabian's Dream",
+				"count": 3
+			},
+			{
+				"name": "Black Crystal Horn",
+				"count": 12
+			},
+			{
+				"name": "Weathered Arrowhead",
+				"count": 8
+			}
+		]
+	}
+}

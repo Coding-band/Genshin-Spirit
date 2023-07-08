@@ -1,0 +1,12 @@
+{
+  "name": "Wandering Evenstar",
+  "rare": 4,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "	原本是學者用於觀測與計算天象的古老儀器。具有傳導力量作為法器的能力。",
+  "first_status": "EnRech%",
+  "second_status": "ATK",
+  "skill_name": "林野晚星",
+  "skill_desc": "每10秒，產生如下效果：基於裝備者的元素精通的24%，提升該角色的攻擊力，並基於該提升的30%為隊伍中附近的其他角色提升攻擊力，持續12秒，多件同名武器產生的此效果可以疊加。角色處於隊伍後臺時也能觸發效果。",
+  "obtain_way": "LIMITED_WISH"
+}

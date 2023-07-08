@@ -1,0 +1,12 @@
+{
+  "name": "Hunter's Path",
+  "rare": 5,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "以珍贵的白枝制成的饰金猎弓，曾经射落无数侵入森林的恶兽。",
+  "first_status": "CritRate%",
+  "second_status": "ATK",
+  "skill_name": "兽径的终点",
+  "skill_desc": "获得12%所有元素伤害加成。重击命中敌人后，将获得「无休止的狩猎」：重击造成的伤害值提高相当于元素精通数值的160%。该效果将在生效12次或10秒后消失，每12秒至多获得一次无休止的狩猎。",
+  "obtain_way": "FORGE"
+}

@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.Handler;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -163,7 +162,7 @@ public class BuffDBAdapter extends RecyclerView.Adapter<BuffDBAdapter.ViewHolder
                     }
 
                     Picasso.get()
-                            .load(FileLoader.loadIMG(item_rss.getCharByName(charChoosedNameList.get(x), context)[3], context))
+                            .load(item_rss.getCharByName(charChoosedNameList.get(x), context)[3])
                             .transform(transformation)
                             .fit()
                             .error(R.drawable.paimon_full)
@@ -221,7 +220,7 @@ public class BuffDBAdapter extends RecyclerView.Adapter<BuffDBAdapter.ViewHolder
                 }
 
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(charChoosedNameList.get(x),context)[3],context))
+                        .load (item_rss.getCharByName(charChoosedNameList.get(x),context)[3])
                         .transform(transformation)
                         .fit()
                         .error (R.drawable.paimon_full)
@@ -263,7 +262,7 @@ public class BuffDBAdapter extends RecyclerView.Adapter<BuffDBAdapter.ViewHolder
                 }
 
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getWeaponByName(weaponChoosedNameList.get(x),context)[1],context))
+                        .load (item_rss.getWeaponByName(weaponChoosedNameList.get(x))[1])
                         .transform(transformation)
                         .fit()
                         .error (R.drawable.paimon_full)
@@ -272,7 +271,7 @@ public class BuffDBAdapter extends RecyclerView.Adapter<BuffDBAdapter.ViewHolder
                 if(!weaponChoosedFollowList.get(x).equals("N/A")){
                     item_user_img.setVisibility(View.VISIBLE);
                     Picasso.get()
-                            .load (FileLoader.loadIMG(item_rss.getCharByName(weaponChoosedFollowList.get(x),context)[3],context))
+                            .load (item_rss.getCharByName(weaponChoosedFollowList.get(x),context)[3])
                             .transform(transformation)
                             .fit()
                             .error (R.drawable.paimon_full)
@@ -326,7 +325,7 @@ public class BuffDBAdapter extends RecyclerView.Adapter<BuffDBAdapter.ViewHolder
                 }
 
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(artifactChoosedNameList.get(x)),context)[tmp_artifact_type_id],context))
+                        .load (item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(artifactChoosedNameList.get(x)))[tmp_artifact_type_id])
                         .transform(transformation)
                         .fit()
                         .error (R.drawable.paimon_full)
@@ -335,7 +334,7 @@ public class BuffDBAdapter extends RecyclerView.Adapter<BuffDBAdapter.ViewHolder
                 if(!artifactChoosedFollowList.get(x).equals("N/A")){
                     item_user_img.setVisibility(View.VISIBLE);
                     Picasso.get()
-                            .load (FileLoader.loadIMG(item_rss.getCharByName(artifactChoosedFollowList.get(x),context)[3],context))
+                            .load (item_rss.getCharByName(artifactChoosedFollowList.get(x),context)[3])
                             .transform(transformation)
                             .fit()
                             .error (R.drawable.paimon_full)

@@ -1,0 +1,12 @@
+{
+  "name": "Thrilling Tales of Dragon Slayers",
+  "rare": 3,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "5人の英雄がドラゴン討伐の旅に出るフィクション。文章は悪く、作りもかなり雑。失敗の教訓だけがこの本が持つ偉大な力。",
+  "first_status": "HP%",
+  "second_status": "ATK",
+  "skill_name": "伝承",
+  "skill_desc": "キャラを切り替えると、次に登場するキャラの攻撃力+24%/30%/36%/42%/48%、継続時間10秒。20秒に1回のみ発動可能。",
+  "obtain_way": "WISH"
+}

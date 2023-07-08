@@ -1,0 +1,52 @@
+{
+  "name" : "Sucrose",
+    
+  "util_weapons": [
+    "sacrificial_fragment",
+    "favonius_codex",
+    "thrilling_tales_of_dragon_slayers"
+  ],
+  "util_art1": [
+    "viridescent_venerer",
+    "viridescent_venerer",
+    "viridescent_venerer",
+    "viridescent_venerer",
+    "viridescent_venerer"
+  ],
+  "util_art2": [
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "util_art_sand_entry": [
+    "EnRech",
+    "ATK",
+    "EleMas"
+  ],
+  "util_art_goblet_entry": [
+    "EleDMG_Anemo",
+    "EleDMG_Cryo"
+  ],
+  "util_art_circlet_entry": [
+    "HP"
+  ],
+  "util_art_sub_entry": [
+    "EnRech",
+    "EleMas",
+    "CritRate",
+    "CritDMG",
+    "ATK"
+  ],
+  
+  "team1":[
+	"Venti","Sucrose","Mona","Barbara"
+  ],
+  "team2":[
+	"Mona","Sucrose","Jean","Bennett"
+  ],
+  "team3":[
+	"Razor","Sucrose","Jean","Klee"
+  ]
+}

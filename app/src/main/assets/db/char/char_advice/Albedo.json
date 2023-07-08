@@ -1,0 +1,33 @@
+{
+  "name": "Albedo",
+  "util_weapons": [
+    "summit_shaper",
+    "festering_desire",
+	"harbinger_of_dawn",
+	"cinnabar_spindle"
+  ],
+  "util_art1": [
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "gladiators_finale",
+    "gladiators_finale",
+    "gladiators_finale"
+  ],
+  "util_art2": [
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "archaic_petra",
+    "archaic_petra",
+    "archaic_petra"
+  ],
+  "sup_dps_art1": [
+    "tenacity_of_the_millelith",
+    "tenacity_of_the_millelith",
+    "tenacity_of_the_millelith",
+    "tenacity_of_the_millelith",
+    "tenacity_of_the_millelith"
+  ],
+  "team1":[
+	"Diluc","Qiqi","Albedo","Razor"
+  ]
+}

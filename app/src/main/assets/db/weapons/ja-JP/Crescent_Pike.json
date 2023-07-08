@@ -1,0 +1,12 @@
+{
+  "name": "Crescent Pike",
+  "rare": 4,
+  "weapon": "Polearm",
+  "isComingSoon": false,
+  "desc": "槍の先端は細く、根元には半月の形をした刃がある異国の兵器。貿易ルートを経て異国から璃月に渡った。少し練習すれば、かなりの破壊力を出せる優れもの。",
+  "first_status": "PhyDMG%",
+  "second_status": "ATK",
+  "skill_name": "注入の針",
+  "skill_desc": "元素粒子又は元素オーブを獲得した5秒間、通常攻撃と重撃で、攻撃力の20％/25%/30%/35%/40%の追加ダメージを与える。",
+  "obtain_way": "FORGE"
+}

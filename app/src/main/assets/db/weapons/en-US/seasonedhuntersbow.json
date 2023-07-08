@@ -1,0 +1,92 @@
+{
+	"name": "Seasoned Hunter's Bow",
+	"description": "A bow that has been well-polished by time and meticulously cared for by its owner. It feels almost like an extension of the archer's arm.",
+	"weapontype": "Bow",
+	"rarity": "2",
+	"story": "A hunter must always be downwind, and must never walk upright on a mountain's ridge.\nIt matters not if their target is beast, monster or the wicked — this method remains the same.",
+	"baseatk": 33,
+	"substat": "",
+	"subvalue": "",
+	"effectname": "",
+	"effect": "",
+	"r1": [],
+	"r2": [],
+	"r3": [],
+	"r4": [],
+	"r5": [],
+	"weaponmaterialtype": "Boreal Wolf",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Boreal Wolf's Milk Tooth",
+				"count": 1
+			},
+			{
+				"name": "Dead Ley Line Branch",
+				"count": 1
+			},
+			{
+				"name": "Treasure Hoarder Insignia",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Boreal Wolf's Cracked Tooth",
+				"count": 1
+			},
+			{
+				"name": "Dead Ley Line Branch",
+				"count": 5
+			},
+			{
+				"name": "Treasure Hoarder Insignia",
+				"count": 4
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Boreal Wolf's Cracked Tooth",
+				"count": 3
+			},
+			{
+				"name": "Dead Ley Line Leaves",
+				"count": 3
+			},
+			{
+				"name": "Silver Raven Insignia",
+				"count": 3
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Boreal Wolf's Broken Fang",
+				"count": 1
+			},
+			{
+				"name": "Dead Ley Line Leaves",
+				"count": 5
+			},
+			{
+				"name": "Silver Raven Insignia",
+				"count": 4
+			}
+		]
+	}
+}

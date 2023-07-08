@@ -1,0 +1,138 @@
+{
+	"name": "Lost Prayer to the Sacred Winds",
+	"description": "An educational tome written by anonymous early inhabitants who worshiped the wind. It has been blessed by the wind for its faithfulness and influence over the millennia.",
+	"weapontype": "Catalyst",
+	"rarity": "5",
+	"story": "Scriptures of the ancient winds, passed from generation to generation among the observers of ritual in service of the Anemo Archon.\nCountless hands have touched the now-yellowing pages of this book, though any prints they left have since been carried away by the wind.\n\nIn the era when the Storm Lord reigned from his tower up high, desperate appeals filled the scriptures.\nThen, in the era when the sands of snow thawed, the joy of the sprouting greenery flooded the pages.\n\nIn the days of yore, when the ruling aristocracy pulled at puppet strings to control the masses,\nThe scriptures in the hands of slaves told of their envy and their desire for the thousand winds.\n\nThe people of Mondstadt lived, endured, fought, rejoiced, and enjoyed freedom.\nAs the precious years passed, the scriptures grew thicker and heavier.\n\nWhen Mondstadt was born anew, and the Church finally unshackled,\nThe scriptures of the winds could bear no longer being confined to a shelf,\nAnd so the book took flight, left the Church's treasury, and was gone.\nLike the winds of Mondstadt, and like the people of Mondstadt,\nIt belonged to freedom and the winds.\n\nThe elegant handwriting on the title page reads:\n\nChildren of the Anemo Archon, heed these words:\nFrom the winds we have come, and with the winds we shall go.\nNever, ever grieve for me.\n'Tis but my flesh and bones which rest in the soil:\nMy soul has become one with the thousand winds.\n\nWhen flowers bloom, when leaves sway,\nThat is me who sings the songs of freedom, of the winds.",
+	"baseatk": 46,
+	"substat": "CRIT Rate",
+	"subvalue": "7.2",
+	"effectname": "Boundless Blessing",
+	"effect": "Increases Movement SPD by 10%. When in battle, gain a {0} Elemental DMG Bonus every 4s. Max 4 stacks. Lasts until the character falls or leaves combat.",
+	"r1": [
+		"8%"
+	],
+	"r2": [
+		"10%"
+	],
+	"r3": [
+		"12%"
+	],
+	"r4": [
+		"14%"
+	],
+	"r5": [
+		"16%"
+	],
+	"weaponmaterialtype": "Dandelion Gladiator",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Fetters of the Dandelion Gladiator",
+				"count": 5
+			},
+			{
+				"name": "Chaos Device",
+				"count": 5
+			},
+			{
+				"name": "Slime Condensate",
+				"count": 3
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Chains of the Dandelion Gladiator",
+				"count": 5
+			},
+			{
+				"name": "Chaos Device",
+				"count": 18
+			},
+			{
+				"name": "Slime Condensate",
+				"count": 12
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Chains of the Dandelion Gladiator",
+				"count": 9
+			},
+			{
+				"name": "Chaos Circuit",
+				"count": 9
+			},
+			{
+				"name": "Slime Secretions",
+				"count": 9
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Shackles of the Dandelion Gladiator",
+				"count": 5
+			},
+			{
+				"name": "Chaos Circuit",
+				"count": 18
+			},
+			{
+				"name": "Slime Secretions",
+				"count": 14
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 55000
+			},
+			{
+				"name": "Shackles of the Dandelion Gladiator",
+				"count": 9
+			},
+			{
+				"name": "Chaos Core",
+				"count": 14
+			},
+			{
+				"name": "Slime Concentrate",
+				"count": 9
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 65000
+			},
+			{
+				"name": "Dream of the Dandelion Gladiator",
+				"count": 6
+			},
+			{
+				"name": "Chaos Core",
+				"count": 27
+			},
+			{
+				"name": "Slime Concentrate",
+				"count": 18
+			}
+		]
+	}
+}

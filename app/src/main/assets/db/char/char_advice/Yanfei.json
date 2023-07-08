@@ -1,0 +1,63 @@
+{
+  "name" : "Yanfei",
+    
+  "util_weapons": [
+    "skyward_atlas",
+    "memory_of_dust",
+    "solar_pearl",
+    "the_widsith",
+    "blackcliff_agate",
+    "hakushin_ring",
+    "mappa_mare"
+  ],
+  "util_art1": [
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames"
+  ],
+  "util_art2": [
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "wanderers_troupe"
+  ],
+  "util_art3": [
+    "retracing_bolide",
+    "retracing_bolide",
+    "retracing_bolide",
+    "retracing_bolide",
+    "retracing_bolide"
+  ],
+  "util_art_sand_entry": [
+    "ATK"
+  ],
+  "util_art_goblet_entry": [
+	"EleDMG_Pyro"
+  ],
+  "util_art_circlet_entry": [
+    "CritDMG",
+	"CritRate"
+  ],
+  "util_art_sub_entry": [
+    "CritRate",
+    "CritDMG",
+    "ATK",
+    "EleMas"
+  ],
+  
+  "team1":[
+	"Yanfei","Xingqiu","Zhongli","Albedo"
+  ],
+  "team2":[
+	"Yanfei","Kaeya","Xingqiu","Albedo"
+  ],
+  "team3":[
+	"Yanfei","Diona","Fischl","Albedo"
+  ],
+  "team4":[
+	"Yanfei","Diona","Fischl","Bennett"
+  ]
+}

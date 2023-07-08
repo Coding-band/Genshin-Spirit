@@ -1,0 +1,138 @@
+{
+	"name": "Prototype Archaic",
+	"description": "An ancient greatsword discovered in the Blackcliff Forge. It swings with such an immense force that one feels it could cut straight through reality itself.",
+	"weapontype": "Claymore",
+	"rarity": "4",
+	"story": "An ancient prototype greatsword from Liyue's arsenal. The batch number has faded and no records exist to confirm the date of production.\nWeighing in at close to forty pounds, this weapon's hilt is made from a rare ore, while the blade is forged from the finest steel. All you will see when it is swung are blinding flashes of light, powerful enough to devour the clouds and blot out the moon.\n\nAfter the great disaster, the Yun family forge joined forces with master craftsman Han Wu to find a way to push past the constraints of contemporary blade design and revolutionize their craft.\nThus was born a new series of weapon models, simply named \"the prototypes.\" The first greatsword built using the new design was unusually understated in its final appearance.\nThe underwhelming sight of dull, blotchy gold masked the weapon's true strength. While not much to look at, any who cared to try it would discover that it was weighty but not unwieldy.\n\nHan Wu, the master craftsman who forged the weapon, traveled north through the night to hand the sword over to a martial artist who followed the chivalric code.\nThe martial artist inspected the blade closely before trialing it. The blade howled like the wind and in an instant decimated the entire bamboo forest. It was a rare sight to behold.\n\nThe martial artist said to Han Wu, \"This blade is endowed with the elegance of antiquity. It is of equal value both as a weapon and an ornament.\"\n\"Such a fine creation possessed of both scale and subtlety is worthy of a prestigious name. May it be known as Archaic.\"\nDue to its unparalleled strength, this sword subsequently became the model for thousands of greatswords in Liyue.",
+	"baseatk": 44,
+	"substat": "ATK",
+	"subvalue": "6",
+	"effectname": "Crush",
+	"effect": "On hit, Normal or Charged Attacks have a 50% chance to deal an additional {0} ATK DMG to opponents within a small AoE. Can only occur once every 15s.",
+	"r1": [
+		"240%"
+	],
+	"r2": [
+		"300%"
+	],
+	"r3": [
+		"360%"
+	],
+	"r4": [
+		"420%"
+	],
+	"r5": [
+		"480%"
+	],
+	"weaponmaterialtype": "Aerosiderite",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Grain of Aerosiderite",
+				"count": 3
+			},
+			{
+				"name": "Fragile Bone Shard",
+				"count": 3
+			},
+			{
+				"name": "Damaged Mask",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Piece of Aerosiderite",
+				"count": 3
+			},
+			{
+				"name": "Fragile Bone Shard",
+				"count": 12
+			},
+			{
+				"name": "Damaged Mask",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Piece of Aerosiderite",
+				"count": 6
+			},
+			{
+				"name": "Sturdy Bone Shard",
+				"count": 6
+			},
+			{
+				"name": "Stained Mask",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Bit of Aerosiderite",
+				"count": 3
+			},
+			{
+				"name": "Sturdy Bone Shard",
+				"count": 12
+			},
+			{
+				"name": "Stained Mask",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Bit of Aerosiderite",
+				"count": 6
+			},
+			{
+				"name": "Fossilized Bone Shard",
+				"count": 9
+			},
+			{
+				"name": "Ominous Mask",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Chunk of Aerosiderite",
+				"count": 4
+			},
+			{
+				"name": "Fossilized Bone Shard",
+				"count": 18
+			},
+			{
+				"name": "Ominous Mask",
+				"count": 12
+			}
+		]
+	}
+}

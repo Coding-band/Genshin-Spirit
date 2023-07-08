@@ -1,0 +1,143 @@
+{
+	"name": "The Viridescent Hunt",
+	"description": "A pure green hunting bow. This once belonged to a certain hunter whose home was the forest.",
+	"weapontype": "Bow",
+	"rarity": "4",
+	"story": "This bow once belonged to a certain hunter, and its green color was such that it could blend in with the natural environment.\nTo be as pure as the beasts of the verdant fields, who roam in the forests in the light of day.\nTo never bear any ill-will, and to never loose an arrow for any reason but to survive.\n\nThe nameless hunter was taught thus, and grew thus, far away from the city.\n\"We were born of the greenery. As long as there is grass and shade, we shall move unimpeded.\"\n\"We are the same as beast and bird. As long as we follow the laws of nature, then we shall not fear death.\"\n\"All those who follow nature, when their life reaches its last ebb, shall head towards that endless plain.\"\n\nFollowing these precepts, the hunter left no traces, and fought not against the natural order.\nShe comforted the wild beasts that had been shot through the heart, until their lives had returned to nature.\nIf that calamity had not happened, if she had not tracked the tainted blood upon the leaves,\nIf she had not met that dying, blind youth under the tree where she often napped,\nThen perhaps she may never have been shaken by thoughts of revenge, by blood and fire...\n\n\"Never forget, good Viridescent.\"\n\"Never forget that you belong to the green, child of the forest.\"\n\"Never loose your arrow for war, for revenge, or for glory.\"\n\"For the bloodstained shall never find yonder hunting fields of endless viridescence.\"\n\n\"Then at least do not let this bow be tainted by my mortal vengeance.\"\n\"I cannot reach the other side, whether to meet my master or the parents whom I have never met.\"\n\"But at least let this bow remain pure, and let it carry my thoughts and regrets to them.\"",
+	"baseatk": 42,
+	"substat": "CRIT Rate",
+	"subvalue": "6",
+	"effectname": "Verdant Wind",
+	"effect": "Upon hit, Normal and Charged Attacks have a 50% chance to generate a Cyclone, which will continuously attract surrounding opponents, dealing {0} of ATK as DMG to these opponents every 0.5s for 4s. This effect can only occur once every {1}.",
+	"r1": [
+		"40%",
+		"14s"
+	],
+	"r2": [
+		"50%",
+		"13s"
+	],
+	"r3": [
+		"60%",
+		"12s"
+	],
+	"r4": [
+		"70%",
+		"11s"
+	],
+	"r5": [
+		"80%",
+		"10s"
+	],
+	"weaponmaterialtype": "Decarabian",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Tile of Decarabian's Tower",
+				"count": 3
+			},
+			{
+				"name": "Heavy Horn",
+				"count": 3
+			},
+			{
+				"name": "Firm Arrowhead",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Debris of Decarabian's City",
+				"count": 3
+			},
+			{
+				"name": "Heavy Horn",
+				"count": 12
+			},
+			{
+				"name": "Firm Arrowhead",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Debris of Decarabian's City",
+				"count": 6
+			},
+			{
+				"name": "Black Bronze Horn",
+				"count": 6
+			},
+			{
+				"name": "Sharp Arrowhead",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Fragment of Decarabian's Epic",
+				"count": 3
+			},
+			{
+				"name": "Black Bronze Horn",
+				"count": 12
+			},
+			{
+				"name": "Sharp Arrowhead",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Fragment of Decarabian's Epic",
+				"count": 6
+			},
+			{
+				"name": "Black Crystal Horn",
+				"count": 9
+			},
+			{
+				"name": "Weathered Arrowhead",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Scattered Piece of Decarabian's Dream",
+				"count": 4
+			},
+			{
+				"name": "Black Crystal Horn",
+				"count": 18
+			},
+			{
+				"name": "Weathered Arrowhead",
+				"count": 12
+			}
+		]
+	}
+}

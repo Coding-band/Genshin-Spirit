@@ -1,0 +1,12 @@
+{
+  "name": "Windblume Ode",
+  "rare": 4,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "點綴以無名花朵的弓，承載著同樣無名之人的殷切希望。",
+  "first_status": "EleMas",
+  "second_status": "ATK",
+  "skill_name": "風花之願",
+  "skill_desc": "施放元素戰技時，獲得風之花的悠古願望加持，攻擊力提升16%/20%/24%/28%/32%，持續6秒",
+  "obtain_way": "EVENT"
+}

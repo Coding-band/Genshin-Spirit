@@ -1,0 +1,143 @@
+{
+	"name": "Sacrificial Bow",
+	"description": "A ceremonial hunting bow that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
+	"weapontype": "Bow",
+	"rarity": "4",
+	"story": "On the cliff facing the eastern sea, the ancestors worshiped the masters of Time and Anemo together.\nThe two are intimately related, as expressed in the saying, \"Anemo brings stories while Time nurtures them.\"\nThis bow tells the story of the pioneers and the hardships they went through.\nIt used to be a prop with an immobile bowstring, but the string became both flexible and sturdier with the passage of time.\n\nThis bow was once the property of the proud Lawrence Clan.\nIn the far-flung past, they used it to reenact their clan's brave victory over the frozen wilderness.\n\nThe first act of the ceremony told the tale of their forebears conquering the land through their wisdom and strength.\nOver their long history, though this ceremony was lost, they continued to play the same role.\n\nBut this role became corrupted. Gradually, their view of themselves shifted from conquerors, to overlords, to kings.\nGradually, they strayed onto the path of depravity, and lost the affection of Mondstadt's winds.",
+	"baseatk": 44,
+	"substat": "Energy Recharge",
+	"subvalue": "6.7",
+	"effectname": "Composed",
+	"effect": "After damaging an opponent with an Elemental Skill, the skill has a {0} chance to end its own CD. Can only occur once every {1}.",
+	"r1": [
+		"40%",
+		"30s"
+	],
+	"r2": [
+		"50%",
+		"26s"
+	],
+	"r3": [
+		"60%",
+		"22s"
+	],
+	"r4": [
+		"70%",
+		"19s"
+	],
+	"r5": [
+		"80%",
+		"16s"
+	],
+	"weaponmaterialtype": "Boreal Wolf",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Boreal Wolf's Milk Tooth",
+				"count": 3
+			},
+			{
+				"name": "Dead Ley Line Branch",
+				"count": 3
+			},
+			{
+				"name": "Slime Condensate",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Boreal Wolf's Cracked Tooth",
+				"count": 3
+			},
+			{
+				"name": "Dead Ley Line Branch",
+				"count": 12
+			},
+			{
+				"name": "Slime Condensate",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Boreal Wolf's Cracked Tooth",
+				"count": 6
+			},
+			{
+				"name": "Dead Ley Line Leaves",
+				"count": 6
+			},
+			{
+				"name": "Slime Secretions",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Boreal Wolf's Broken Fang",
+				"count": 3
+			},
+			{
+				"name": "Dead Ley Line Leaves",
+				"count": 12
+			},
+			{
+				"name": "Slime Secretions",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Boreal Wolf's Broken Fang",
+				"count": 6
+			},
+			{
+				"name": "Ley Line Sprout",
+				"count": 9
+			},
+			{
+				"name": "Slime Concentrate",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Boreal Wolf's Nostalgia",
+				"count": 4
+			},
+			{
+				"name": "Ley Line Sprout",
+				"count": 18
+			},
+			{
+				"name": "Slime Concentrate",
+				"count": 12
+			}
+		]
+	}
+}

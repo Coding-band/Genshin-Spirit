@@ -112,7 +112,7 @@ public class IconCardAdapter extends RecyclerView.Adapter<IconCardAdapter.ViewHo
                 width = (int) (width_curr-16)/2-16;
             }
             Picasso.get()
-                    .load (FileLoader.loadIMG(item_rss.getCharByName(iconCard.getItemBaseName(), context)[4],context))
+                    .load (item_rss.getCharByName(iconCard.getItemBaseName(), context)[4])
                     .transform(transformation_card)
                     .resize((int) width, (int) (width/2.1))
                     .error (R.drawable.unknown_card)
@@ -124,7 +124,7 @@ public class IconCardAdapter extends RecyclerView.Adapter<IconCardAdapter.ViewHo
                 width = (int) (width_curr-16)/4-16;
             }
             Picasso.get()
-                    .load (FileLoader.loadIMG(item_rss.getCharByName(iconCard.getItemBaseName(), context)[3],context))
+                    .load (item_rss.getCharByName(iconCard.getItemBaseName(), context)[3])
                     .transform(transformation_circ)
                     .resize((int) width, (int) (width))
                     .error (R.drawable.paimon_lost)

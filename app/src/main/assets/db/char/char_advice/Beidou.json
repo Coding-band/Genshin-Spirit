@@ -1,0 +1,42 @@
+{
+  "name" : "Beidou",
+  "dps_weapons": [
+    "wolfs_gravestone",
+	"skyward_pride",
+	"the_unforged",
+	"lithic_blade",
+	"serpent_spine",
+	"blackcliff_slasher",
+	"prototype_archaic"
+   ],
+  "sup_dps_weapons": [
+    "sacrificial_greatsword"
+  ],
+  "dps_art1": [
+    "gambler",
+    "gambler",
+    "gambler",
+    "gambler",
+    "gambler"
+  ],
+  "dps_art2": [
+    "thundering_fury",
+    "thundering_fury",
+    "thundering_fury",
+    "thundering_fury",
+    "thundering_fury"
+  ],
+  "sup_dps_art1": [
+    "thundersoother",
+    "thundersoother",
+    "thundersoother",
+    "thundersoother",
+    "thundersoother"
+  ],
+  "team1":[
+	"Beidou","Xiangling","Fischl","Barbara"
+  ],
+  "team2":[
+	"Tartaglia","Xingqiu","Beidou","Fischl"
+  ]
+}

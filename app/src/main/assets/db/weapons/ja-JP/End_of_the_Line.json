@@ -1,0 +1,12 @@
+{
+  "name": "End of the Line",
+  "rare": 4,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "This seems to be a now-extinct fish. Its body is sufficiently elastic that a string may be attached to it to let it serve as a bow.",
+  "first_status": "EnRech%",
+  "second_status": "ATK",
+  "skill_name": "ネットブレーカー",
+  "skill_desc": "元素スキルを発動すると「廻流」効果が付与され、攻撃が敵に命中した時、攻撃力80%分の範囲ダメージを与える。この効果は15秒後、または3回範囲ダメージ発動後にクリアされる。範囲ダメージは2秒毎に1回のみ発動でき、「廻流」効果は12秒毎に1回のみ発動できる。",
+  "obtain_way": "EVENT"
+}

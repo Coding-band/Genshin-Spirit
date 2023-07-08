@@ -1,0 +1,12 @@
+{
+  "name": "Polar Star",
+  "rare": 5,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "A pristine bow that is as sharp as the glaciers of the far north.",
+  "first_status": "CritRate%",
+  "second_status": "ATK",
+  "skill_name": "Daylight’s Augury",
+  "skill_desc": "Elemental Skill and Elemental Burst DMG increased by 12%. After a Normal Attack, Charged Attack, Elemental Skill or Elemental Burst hits an opponent, 1 stack of Ashen Nightstar will be gained for 12s. When 1/2/3/4 stacks of Ashen Nightstar are present, ATK is increased by 10/20/30/48%. The stack of Ashen Nightstar created by the Normal Attack, Charged Attack, Elemental Skill or Elemental Burst will be counted independently of the others.",
+  "obtain_way": "LIMITED_WISH"
+}

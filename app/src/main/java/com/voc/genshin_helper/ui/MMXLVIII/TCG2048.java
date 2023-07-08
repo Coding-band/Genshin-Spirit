@@ -12,14 +12,12 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Color;
-import android.media.Image;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -28,7 +26,6 @@ import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -42,7 +39,6 @@ import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.data.TCG;
 import com.voc.genshin_helper.data.TCGAdapter;
-import com.voc.genshin_helper.data.Weapons;
 import com.voc.genshin_helper.util.MyViewPagerAdapter;
 
 import org.json.JSONArray;
@@ -54,7 +50,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.List;
 
 /*
  * Project Genshin Spirit (原神小幫手) was
@@ -156,8 +151,6 @@ public class TCG2048 {
         viewPager_List.add(viewPager3);
         //viewPager_List.add(viewPager4);
         viewPager.setAdapter(new MyViewPagerAdapter(viewPager_List));
-
-
 
         setup_char();
         setup_equip();
@@ -343,7 +336,7 @@ public class TCG2048 {
                                 int x = 0;
                                 for (TCG item : tempList) {
                                     String str = request.toLowerCase();
-                                    if (item_rss.getTCGByName(item.getName(),context)[0].contains(str)||item_rss.getTCGByName(item.getName(),context)[0].toLowerCase().contains(str)||item_rss.getTCGByName(item.getName(),context)[0].toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)||item.getLocaleName().toLowerCase().contains(str)){ // EN -> ZH
+                                    if (context.getString(item_rss.getTCGByName(item.getName())[1]).contains(str)||context.getString(item_rss.getTCGByName(item.getName())[1]).toLowerCase().contains(str)||context.getString(item_rss.getTCGByName(item.getName())[1]).toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)||item.getLocaleName().toLowerCase().contains(str)){ // EN -> ZH
                                         filteredList.add(item);
                                     }
                                     x = x +1;
@@ -987,7 +980,7 @@ public class TCG2048 {
         eventList.clear();
         backsideList.clear();
 
-        String json_base = LoadData("db/tcg/tcg_list.json");
+        String json_base = ItemRss.LoadAssestData(context,"db/tcg/tcg_list.json");
         //Get data from JSON
         try {
             JSONArray array = new JSONArray(json_base);
@@ -1011,7 +1004,7 @@ public class TCG2048 {
                 tcg.setDiceCost(diceCost);
                 tcg.setHP(HP);
                 tcg.setFileName(fileName);
-                tcg.setLocaleName(item_rss.getTCGByName(name,context)[1]);
+                tcg.setLocaleName(context.getString(item_rss.getTCGByName(name)[1]));
 
                 switch (type){
                     case TCG.CHAR:charList.add(tcg);break;
@@ -1029,24 +1022,5 @@ public class TCG2048 {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-    }
-
-    public String LoadData(String inFile) {
-        String tContents = "";
-        try {
-            File file = new File(context.getFilesDir()+"/"+inFile);
-            InputStream stream = new FileInputStream(file);
-
-            int size = stream.available();
-            byte[] buffer = new byte[size];
-            stream.read(buffer);
-            stream.close();
-            tContents = new String(buffer);
-        } catch (IOException e) {
-            // Handle exceptions here
-        }
-
-        return tContents;
-
     }
 }

@@ -1,0 +1,12 @@
+{
+  "name": "Blackcliff Agate",
+  "rare": 4,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "黒岩でできた不思議な法器。赤い光はまるで大地の奥にある動きと同調しているみたいだ。",
+  "first_status": "CritDMG%",
+  "second_status": "ATK",
+  "skill_name": "勝ちに乗じる",
+  "skill_desc": "敵を倒した後、攻撃力+12％/15%/18%/21%/24%、継続時間30秒、最大3重まで。効果継続時間は加算されず、重ごとに別カウントされる。",
+  "obtain_way": "SHOP"
+}

@@ -16,7 +16,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.LinearGradient;
 import android.graphics.Shader;
-import android.graphics.drawable.Drawable;
 import android.text.Html;
 import android.text.SpannableString;
 import android.text.Spanned;
@@ -28,8 +27,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
@@ -41,7 +38,6 @@ import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
@@ -56,7 +52,6 @@ import com.voc.genshin_helper.util.CustomViewPager;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.MyViewPagerAdapter;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
-import com.voc.genshin_helper.util.VerticalViewPager;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -460,9 +455,9 @@ public class Characters_Info_2048 {
         String is_dps = null;
         String is_default = null;
 
-        is_dps = LoadData("db/char/char_advice/"+this.CharName_BASE+".json");
-        is_default = LoadData("db/char/en-US/"+this.CharName_BASE+".json");
-        is = LoadData("db/char/"+lang+"/"+this.CharName_BASE+".json");
+        is_dps = ItemRss.LoadAssestData(context,"db/char/char_advice/"+this.CharName_BASE+".json");
+        is_default = ItemRss.LoadAssestData(context,"db/char/en-US/"+this.CharName_BASE+".json");
+        is = ItemRss.LoadAssestData(context,"db/char/"+lang+"/"+this.CharName_BASE+".json");
 
         if(!is.equals("")){
             JsonToStr(is,is_dps);
@@ -1334,10 +1329,10 @@ public class Characters_Info_2048 {
              * Animation
              */
             //char_imgL.setAnimation(animImgLTR);
-            char_imgL.setImageDrawable(FileLoader.loadIMG2Drawable(item_rss.getCharByName(name,context)[0],context));
+            char_imgL.setImageResource(item_rss.getCharByName(name,context)[0]);
             char_imgL.getLayoutParams().width = width;
         }else{
-            char_img.setImageDrawable(FileLoader.loadIMG2Drawable(item_rss.getCharByName(name,context)[0],context));
+            char_img.setImageResource(item_rss.getCharByName(name,context)[0]);
             char_img.getLayoutParams().width = width;
         }
 
@@ -1571,7 +1566,7 @@ public class Characters_Info_2048 {
                     final int margin_circ = 0;
                     final Transformation transformation_circ = new RoundedCornersTransformation(radius_circ, margin_circ);
                     Picasso.get()
-                            .load(FileLoader.loadIMG(item_rss.getCharByName(team1[x].replace("XPR"," "),context)[3],context))
+                            .load(item_rss.getCharByName(team1[x].replace("XPR"," "),context)[3])
                             .transform(transformation_circ)
                             .error(R.drawable.paimon_lost)
                             .resize((width_curr-32-16)/4-16,(width_curr-32-16)/4-16)
@@ -1590,7 +1585,7 @@ public class Characters_Info_2048 {
                             characters_info_2048.setup(team1[finalX].replace("XPR"," "),context,activity);
                         }
                     });
-                    String json_base = LoadData("db/char/char_list.json");
+                    String json_base = ItemRss.LoadAssestData(context,"db/char/char_list.json");
                     String name ;
                     int rare;
                     try {
@@ -1628,7 +1623,7 @@ public class Characters_Info_2048 {
                     final int margin_circ = 0;
                     final Transformation transformation_circ = new RoundedCornersTransformation(radius_circ, margin_circ);
                     Picasso.get()
-                            .load(FileLoader.loadIMG(item_rss.getCharByName(team2[x].replace("XPR"," "),context)[3],context))
+                            .load(item_rss.getCharByName(team2[x].replace("XPR"," "),context)[3])
                             .transform(transformation_circ)
                             .error(R.drawable.paimon_lost)
                             .resize((width_curr-32-16)/4-16,(width_curr-32-16)/4-16)
@@ -1646,7 +1641,7 @@ public class Characters_Info_2048 {
                     item_img.getLayoutParams().height=WRAP_CONTENT;
 
                     item_img.setAdjustViewBounds(true);
-                    String json_base = LoadData("db/char/char_list.json");
+                    String json_base = ItemRss.LoadAssestData(context,"db/char/char_list.json");
                     String name ;
                     int rare;
                     try {
@@ -1684,7 +1679,7 @@ public class Characters_Info_2048 {
                     final int margin_circ = 0;
                     final Transformation transformation_circ = new RoundedCornersTransformation(radius_circ, margin_circ);
                     Picasso.get()
-                            .load(FileLoader.loadIMG(item_rss.getCharByName(team3[x].replace("XPR"," "),context)[3],context))
+                            .load(item_rss.getCharByName(team3[x].replace("XPR"," "),context)[3])
                             .transform(transformation_circ)
                             .error(R.drawable.paimon_lost)
                             .resize((width_curr-32-16)/4-16,(width_curr-32-16)/4-16)
@@ -1702,7 +1697,7 @@ public class Characters_Info_2048 {
                     item_img.getLayoutParams().height=WRAP_CONTENT;
 
                     item_img.setAdjustViewBounds(true);
-                    String json_base = LoadData("db/char/char_list.json");
+                    String json_base = ItemRss.LoadAssestData(context,"db/char/char_list.json");
                     String name ;
                     int rare;
                     try {
@@ -1740,7 +1735,7 @@ public class Characters_Info_2048 {
                     final int margin_circ = 0;
                     final Transformation transformation_circ = new RoundedCornersTransformation(radius_circ, margin_circ);
                     Picasso.get()
-                            .load(FileLoader.loadIMG(item_rss.getCharByName(team4[x].replace("XPR"," "),context)[3],context))
+                            .load(item_rss.getCharByName(team4[x].replace("XPR"," "),context)[3])
                             .transform(transformation_circ)
                             .error(R.drawable.paimon_lost)
                             .resize((width_curr-32-16)/4-16,(width_curr-32-16)/4-16)
@@ -1758,7 +1753,7 @@ public class Characters_Info_2048 {
                         }
                     });
                     item_img.setAdjustViewBounds(true);
-                    String json_base = LoadData("db/char/char_list.json");
+                    String json_base = ItemRss.LoadAssestData(context,"db/char/char_list.json");
                     String name ;
                     int rare;
                     try {
@@ -1796,7 +1791,7 @@ public class Characters_Info_2048 {
                     final int margin_circ = 0;
                     final Transformation transformation_circ = new RoundedCornersTransformation(radius_circ, margin_circ);
                     Picasso.get()
-                            .load(FileLoader.loadIMG(item_rss.getCharByName(team5[x].replace("XPR"," "),context)[3],context))
+                            .load(item_rss.getCharByName(team5[x].replace("XPR"," "),context)[3])
                             .transform(transformation_circ)
                             .error(R.drawable.paimon_lost)
                             .resize((width_curr-32-16)/4-16,(width_curr-32-16)/4-16)
@@ -1814,7 +1809,7 @@ public class Characters_Info_2048 {
                     item_img.getLayoutParams().height=WRAP_CONTENT;
 
                     item_img.setAdjustViewBounds(true);
-                    String json_base = LoadData("db/char/char_list.json");
+                    String json_base = ItemRss.LoadAssestData(context,"db/char/char_list.json");
                     String name ;
                     int rare;
                     try {
@@ -1865,7 +1860,7 @@ public class Characters_Info_2048 {
     }
 
     public int getWeaponRareFromListJson(String str) {
-        String json_base = LoadData("db/weapons/weapon_list.json");
+        String json_base = ItemRss.LoadAssestData(context,"db/weapons/weapon_list.json");
         String name ;
         int rare;
         try {
@@ -1886,7 +1881,7 @@ public class Characters_Info_2048 {
     }
 
     public int getArtifactRareFromListJson(String str) {
-        String json_base = LoadData("db/artifacts/artifact_list.json");
+        String json_base = ItemRss.LoadAssestData(context,"db/artifacts/artifact_list.json");
         String name ;
         int rare;
         try {
@@ -1907,7 +1902,7 @@ public class Characters_Info_2048 {
     }
 
     public boolean readCharESkillDataFromBuff(String name, int charSkill1AfterLvl) {
-        String char_json_stat = LoadData("db/buff/char/"+name.replace(" ","_")+".json");
+        String char_json_stat = ItemRss.LoadAssestData(context,"db/buff/char/"+name.replace(" ","_")+".json");
         charSkill1AfterLvl = charSkill1AfterLvl +1;
         if (char_json_stat.length() > 0){
             try {
@@ -1954,7 +1949,7 @@ public class Characters_Info_2048 {
     }
 
     public boolean readCharQSkillDataFromBuff(String name, int charSkill1AfterLvl) {
-        String char_json_stat = LoadData("db/buff/char/"+name.replace(" ","_")+".json");
+        String char_json_stat = ItemRss.LoadAssestData(context,"db/buff/char/"+name.replace(" ","_")+".json");
         charSkill1AfterLvl = charSkill1AfterLvl +1;
         if(char_json_stat.length() > 0){
             try {
@@ -1993,7 +1988,7 @@ public class Characters_Info_2048 {
     }
 
     public boolean readCharNormalATKDataFromBuff(String name, int charSkill1AfterLvl) {
-        String char_json_stat = LoadData("db/buff/char/"+name.replace(" ","_")+".json");
+        String char_json_stat = ItemRss.LoadAssestData(context,"db/buff/char/"+name.replace(" ","_")+".json");
         charSkill1AfterLvl = charSkill1AfterLvl +1;
         if (char_json_stat.length() > 0) {
             try {
@@ -2094,7 +2089,7 @@ public class Characters_Info_2048 {
     }
 
     public boolean readCharBaseDataFromBuff(String name, int tmp_break) {
-        String char_json_stat = LoadData("db/buff/char/"+name.replace(" ","_")+".json");
+        String char_json_stat = ItemRss.LoadAssestData(context,"db/buff/char/"+name.replace(" ","_")+".json");
         if (char_json_stat.length() > 0){
             try {
                 JSONObject jsonObject = new JSONObject(char_json_stat);
@@ -2195,25 +2190,6 @@ public class Characters_Info_2048 {
         }
 
         return bitmap;
-    }
-
-    public String LoadData(String inFile) {
-        String tContents = "";
-        try {
-            File file = new File(context.getFilesDir()+"/"+inFile);
-            InputStream stream = new FileInputStream(file);
-
-            int size = stream.available();
-            byte[] buffer = new byte[size];
-            stream.read(buffer);
-            stream.close();
-            tContents = new String(buffer);
-        } catch (IOException e) {
-            // Handle exceptions here
-        }
-
-        return tContents;
-
     }
 
     public void colorGradient(TextView textView,String start_color, String end_color, boolean isColorGradient , String color){
@@ -2351,7 +2327,7 @@ public class Characters_Info_2048 {
             ImageView img_img = char_view.findViewById(R.id.img_weapon);
             TextView img_tv = char_view.findViewById(R.id.img_tv);
 
-            img_tv.setText(item_rss.getWeaponByName(item_rss.getWeaponNameByFileName(advice[x]),context)[0]);
+            img_tv.setText(item_rss.getWeaponByName(item_rss.getWeaponNameByFileName(advice[x]))[0]);
             int min_width = 240;
 
             boolean isNight = false;
@@ -2424,7 +2400,7 @@ public class Characters_Info_2048 {
             }
 
             Picasso.get()
-                    .load(FileLoader.loadIMG(item_rss.getWeaponByName(item_rss.getWeaponNameByFileName(advice[x]),context)[1],context))
+                    .load(item_rss.getWeaponByName(item_rss.getWeaponNameByFileName(advice[x]))[1])
                     .resize(min_width,min_width).transform(roundedCornersTransformation)
                     .error(R.drawable.paimon_lost)
                     .into(img_img);
@@ -2502,7 +2478,7 @@ public class Characters_Info_2048 {
             }
 
             Picasso.get()
-                    .load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(advice[x]),context)[pos[x]],context))
+                    .load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(advice[x]))[pos[x]])
                     .fit().transform(roundedCornersTransformation)
                     .error(R.drawable.paimon_lost)
                     .into(img_img);
@@ -2516,7 +2492,7 @@ public class Characters_Info_2048 {
                 }
             });
 
-            img_tv.setText(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(advice[x]),context)[0]);
+            img_tv.setText(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(advice[x]))[0]);
             img_tv.setTextSize(10);
             img_tv.setVisibility(View.GONE);
             img_img.getLayoutParams().width = min_width;
@@ -2551,10 +2527,10 @@ public class Characters_Info_2048 {
     }
 
     public void readCharAscData(){
-        String char_lvl_exp = LoadData("db/char/char_lvl_exp.json");
-        String char_asc_lvl = LoadData("db/char/char_asc_lvl.json");
-        String char_skill_lvl = LoadData("db/char/char_skill_lvl.json");
-        String char_require_asc_skill = LoadData("db/char/char_require_asc_skill.json");
+        String char_lvl_exp = ItemRss.LoadAssestData(context,"db/char/char_lvl_exp.json");
+        String char_asc_lvl = ItemRss.LoadAssestData(context,"db/char/char_asc_lvl.json");
+        String char_skill_lvl = ItemRss.LoadAssestData(context,"db/char/char_skill_lvl.json");
+        String char_require_asc_skill = ItemRss.LoadAssestData(context,"db/char/char_require_asc_skill.json");
 
         //Log.wtf("Procedure","char_readJSON_1"+" || "+System.currentTimeMillis());
         try {
@@ -2747,7 +2723,7 @@ public class Characters_Info_2048 {
 
                 img_bg.setBackgroundResource(getRssByRare(itemRareListBASE[x]));
                 //Picasso.get().load(getRssByRare(itemRareListBASE[x])).resize(144,180).into(img_bg);
-                Picasso.get().load(FileLoader.loadIMG(item_rss.getItemIcoByName(itemNameListBASE[x],context),context)).resize(144,144).into(img_img);
+                Picasso.get().load(item_rss.getItemIcoByName(itemNameListBASE[x])).resize(144,144).into(img_img);
                 img_tv.setText(prettyCount(itemValueListBASE[x],0));
 
                 img_bg.getLayoutParams().width = 144;
@@ -2795,7 +2771,7 @@ public class Characters_Info_2048 {
 
                     img_bg.setBackgroundResource(getRssByRare(itemRareList[x]));
                     //Picasso.get().load(getRssByRare(itemRareList[x])).resize(144,180).into(img_bg);
-                    Picasso.get().load(FileLoader.loadIMG(item_rss.getItemIcoByName(itemNameList[x],context),context)).resize(144,144).into(img_img);
+                    Picasso.get().load(item_rss.getItemIcoByName(itemNameList[x])).resize(144,144).into(img_img);
                     img_tv.setText(prettyCount(itemValueList[x],0));
 
                     img_bg.getLayoutParams().width = 144;
@@ -2847,7 +2823,7 @@ public class Characters_Info_2048 {
 
                     img_bg.setBackgroundResource(getRssByRare(itemRareList[x]));
                     //Picasso.get().load(getRssByRare(itemRareList[x])).resize(144,180).into(img_bg);
-                    Picasso.get().load(FileLoader.loadIMG(item_rss.getItemIcoByName(itemNameList[x],context),context)).resize(144,144).into(img_img);
+                    Picasso.get().load(item_rss.getItemIcoByName(itemNameList[x])).resize(144,144).into(img_img);
                     img_tv.setText(prettyCount(itemValueList[x],0));
 
                     img_bg.getLayoutParams().width = 144;
@@ -2867,7 +2843,7 @@ public class Characters_Info_2048 {
 
                 img_bg.setBackgroundResource(getRssByRare(5));
                 //Picasso.get().load(getRssByRare(5)).resize(144,180).into(img_bg);
-                Picasso.get().load(FileLoader.loadIMG(item_rss.getItemIcoByName("智識之冕",context),context)).resize(144,144).into(img_img);
+                Picasso.get().load(item_rss.getItemIcoByName("智識之冕")).resize(144,144).into(img_img);
                 img_tv.setText(prettyCount(1,0));
 
                 img_bg.getLayoutParams().width = 144;

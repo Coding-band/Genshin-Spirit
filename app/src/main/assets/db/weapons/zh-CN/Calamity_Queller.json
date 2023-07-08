@@ -1,0 +1,12 @@
+{
+  "name": "Calamity Queller",
+  "rare": 5,
+  "weapon": "Polearm",
+  "isComingSoon": false,
+  "desc": "由奇异晶石打造成的锋锐利器。幽幽蓝光似乎诉说着无尽往事。",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "灭却之戒法",
+  "skill_desc": "获得12%/15%/18%/21%/24%所有元素伤害加成；施放元素战技后，获得持续20秒的「圆顿」，攻击力每1秒提升3.2%，该攻击力提升效果至多迭加6次。当装备此武器的角色处于队伍后台时，「圆顿」的攻击力提升效果翻倍。",
+  "obtain_way": "WISH"
+}

@@ -1,0 +1,93 @@
+{
+  "name" : "Xinyan",
+  
+  "dps_weapons": [
+    "prototype_archaic",
+    "wolfs_gravestone"
+  ],
+  "dps_art1": [
+    "bloodstained_chivalry",
+    "bloodstained_chivalry",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "dps_art2": [
+    "bloodstained_chivalry",
+    "bloodstained_chivalry",
+    "gladiators_finale",
+    "gladiators_finale",
+    "gladiators_finale"
+  ],
+  "dps_art3": [
+    "gladiators_finale",
+    "gladiators_finale",
+    "gladiators_finale",
+    "gladiators_finale",
+    "gladiators_finale"
+  ],
+  "dps_art_sand_entry": [
+    "ATK"
+  ],
+  "dps_art_goblet_entry": [
+	"PhyDMG"
+  ],
+  "dps_art_circlet_entry": [
+    "CritDMG",
+	"CritRate"
+  ],
+  "dps_art_sub_entry": [
+    "CritRate",
+    "CritDMG",
+    "ATK",
+    "EnRech",
+    "EleMas"
+  ],
+    
+  "util_weapons": [
+    "skyward_pride",
+    "the_unforged",
+    "sacrificial_greatsword",
+    "favonius_greatsword"
+  ],
+  "util_art1": [
+    "retracing_bolide",
+    "retracing_bolide",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "util_art2": [
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "util_art_sand_entry": [
+    "DEF"
+  ],
+  "util_art_goblet_entry": [
+	"EnRech"
+  ],
+  "util_art_circlet_entry": [
+    "DEF",
+	"EnRech"
+  ],
+  "util_art_sub_entry": [
+    "DEF",
+    "EnRech",
+    "CritRate",
+    "CritDMG",
+    "ATK",
+    "HP",
+    "EleMas"
+  ],
+  
+  "team1":[
+	"Razor","Xinyan","Bennett",Keqing"
+  ],
+  "team2":[
+	"Xinyan","Bennett","Mona","Tartaglia"
+  ]
+}

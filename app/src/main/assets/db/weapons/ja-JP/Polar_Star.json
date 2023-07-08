@@ -1,0 +1,12 @@
+{
+  "name": "Polar Star",
+  "rare": 5,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "真冬の堅氷の如く、鋭き無垢なる弓。",
+  "first_status": "CritRate%",
+  "second_status": "ATK",
+  "skill_name": "白夜の前兆者",
+  "skill_desc": "元素スキルと元素爆発が与えるダメージ+12%。通常攻撃、重撃、元素スキル、元素爆発が敵に命中すると、それぞれ継続時間12秒の「白夜極星」効果を1層獲得する。「白夜極星」を1/2/3/4層有する時、キャラクターの攻撃力+10/20/30/48%。各攻撃によって獲得する「白夜極星」の継続時間は、層ごとに独立する。",
+  "obtain_way": "LIMITED_WISH"
+}

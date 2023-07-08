@@ -1,0 +1,12 @@
+{
+  "name": "Beginner's Protector",
+  "rare": 1,
+  "weapon": "Polearm",
+  "isComingSoon": false,
+  "desc": "筆直得像旗杆一般的長槍，揮舞起來頗具氣勢。足以應付大多數情況。",
+  "first_status": "N/A",
+  "second_status": "ATK",
+  "skill_name": "無",
+  "skill_desc": "無",
+  "obtain_way": "FIRST_GIFT"
+}

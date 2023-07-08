@@ -1,0 +1,12 @@
+{
+  "name": "Missive Windspear",
+  "rare": 4,
+  "weapon": "Polearm",
+  "isComingSoon": false,
+  "desc": "A beacon that shows the direction of the wind. Not every idyll carried on the breeze remains a gentle thing…",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "The Wind Unattained",
+  "skill_desc": "Within 10s after an Elemental Reaction is triggered, ATK is increased by 12% and Elemental Mastery is increased by 48.",
+  "obtain_way": "EVENT"
+}

@@ -1,0 +1,138 @@
+{
+	"name": "Slingshot",
+	"description": "A bow, despite the name. After countless experiments and improvements to the design, the creator of the ultimate slingshot found himself to have made what was actually a bow.",
+	"weapontype": "Bow",
+	"rarity": "3",
+	"story": "One who wished to improve the range and accuracy of slingshots discovered that\nPower increases range, but costs accuracy.\nSo slingshot rocks were replaced with long wooden poles that sported feathers for stability.\nThe slingshot's limbs were lengthened and the ends recurved to increase pull.\nIt then dawned on him that he had made a bow.",
+	"baseatk": 38,
+	"substat": "CRIT Rate",
+	"subvalue": "6.8",
+	"effectname": "Slingshot",
+	"effect": "If a Normal or Charged Attack hits a target within 0.3s of being fired, increases DMG by {0}. Otherwise, decreases DMG by 10%.",
+	"r1": [
+		"36%"
+	],
+	"r2": [
+		"42%"
+	],
+	"r3": [
+		"48%"
+	],
+	"r4": [
+		"54%"
+	],
+	"r5": [
+		"60%"
+	],
+	"weaponmaterialtype": "Guyun",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Luminous Sands from Guyun",
+				"count": 2
+			},
+			{
+				"name": "Hunter's Sacrificial Knife",
+				"count": 2
+			},
+			{
+				"name": "Damaged Mask",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Lustrous Stone from Guyun",
+				"count": 2
+			},
+			{
+				"name": "Hunter's Sacrificial Knife",
+				"count": 8
+			},
+			{
+				"name": "Damaged Mask",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Lustrous Stone from Guyun",
+				"count": 4
+			},
+			{
+				"name": "Agent's Sacrificial Knife",
+				"count": 4
+			},
+			{
+				"name": "Stained Mask",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Relic from Guyun",
+				"count": 2
+			},
+			{
+				"name": "Agent's Sacrificial Knife",
+				"count": 8
+			},
+			{
+				"name": "Stained Mask",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Relic from Guyun",
+				"count": 4
+			},
+			{
+				"name": "Inspector's Sacrificial Knife",
+				"count": 6
+			},
+			{
+				"name": "Ominous Mask",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Divine Body from Guyun",
+				"count": 3
+			},
+			{
+				"name": "Inspector's Sacrificial Knife",
+				"count": 12
+			},
+			{
+				"name": "Ominous Mask",
+				"count": 8
+			}
+		]
+	}
+}

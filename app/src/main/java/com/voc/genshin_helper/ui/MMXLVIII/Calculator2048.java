@@ -583,7 +583,7 @@ public class Calculator2048 extends AppCompatActivity{
                         View char_view = LayoutInflater.from(context).inflate(R.layout.item_img_2048, db_char_ll, false);
                         ImageView item_img = char_view.findViewById(R.id.item_img);
 
-                        String json_base = LoadData("db/char/char_require_asc_skill.json");
+                        String json_base = ItemRss.LoadAssestData(context,"db/char/char_require_asc_skill.json");
                         String name = "";
                         int rare = 1;
                         int tmp_cnt = 0;
@@ -610,7 +610,7 @@ public class Calculator2048 extends AppCompatActivity{
                             }
 
                             Picasso.get()
-                                    .load (FileLoader.loadIMG(item_rss.getCharByName(choosedNameList.get(x),context)[3],context))
+                                    .load (item_rss.getCharByName(choosedNameList.get(x),context)[3])
                                     .transform(transformation)
                                     .fit()
                                     .error (R.drawable.paimon_full)
@@ -656,7 +656,7 @@ public class Calculator2048 extends AppCompatActivity{
                         }
 
                         Picasso.get()
-                                .load (FileLoader.loadIMG(item_rss.getWeaponByName(weaponChoosedNameList.get(x),context)[1],context))
+                                .load (item_rss.getWeaponByName(weaponChoosedNameList.get(x))[1])
                                 .transform(transformation)
                                 .fit()
                                 .error (R.drawable.paimon_full)
@@ -712,7 +712,7 @@ public class Calculator2048 extends AppCompatActivity{
                         }
 
                         Picasso.get()
-                                .load (FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(artifactChoosedNameList.get(x)),context)[tmp_artifact_type_id],context))
+                                .load (item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(artifactChoosedNameList.get(x)))[tmp_artifact_type_id])
                                 .transform(transformation)
                                 .fit()
                                 .error (R.drawable.paimon_full)
@@ -886,7 +886,7 @@ public class Calculator2048 extends AppCompatActivity{
                                         int x = 0;
                                         for (Characters item : charactersList) {
                                             String str = request.toLowerCase();
-                                            if (css.getCharByName(item.getName(), context)[1].contains(str) || css.getCharByName(item.getName(), context)[1].toLowerCase().contains(str) || item.getName().toLowerCase().contains(str)) { // EN -> ZH
+                                            if (context.getString(css.getCharByName(item.getName(), context)[1]).contains(str) || context.getString(css.getCharByName(item.getName(), context)[1]).toLowerCase().contains(str) || item.getName().toLowerCase().contains(str)) { // EN -> ZH
                                                 filteredListC.add(item);
                                             }
                                             x = x + 1;
@@ -899,7 +899,7 @@ public class Calculator2048 extends AppCompatActivity{
                                         int x = 0;
                                         for (Weapons item : weaponsList) {
                                             String str = request.toLowerCase();
-                                            if (css.getWeaponByName(item.getName(),context)[0].contains(str)||css.getWeaponByName(item.getName(),context)[0].toLowerCase().contains(str)||css.getWeaponByName(item.getName(),context)[0].toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
+                                            if (context.getString(css.getWeaponByName(item.getName())[0]).contains(str)||context.getString(css.getWeaponByName(item.getName())[0]).toLowerCase().contains(str)||context.getString(css.getWeaponByName(item.getName())[0]).toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
                                                 filteredListW.add(item);
                                             }
                                             x = x +1;
@@ -912,7 +912,7 @@ public class Calculator2048 extends AppCompatActivity{
                                         int x = 0;
                                         for (Artifacts item : artifactsList) {
                                             String str = request.toLowerCase();
-                                            if (css.getArtifactByName(item.getName(),context)[0].contains(str)||css.getArtifactByName(item.getName(),context)[0].toLowerCase().contains(str)||css.getArtifactByName(item.getName(),context)[0].toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
+                                            if (context.getString(css.getArtifactByName(item.getName())[0]).contains(str)||context.getString(css.getArtifactByName(item.getName())[0]).toLowerCase().contains(str)||context.getString(css.getArtifactByName(item.getName())[0]).toUpperCase().contains(str)||item.getName().toLowerCase().contains(str)){ // EN -> ZH
                                                 filteredListA.add(item);
                                             }
                                             x = x +1;
@@ -1671,8 +1671,8 @@ public class Calculator2048 extends AppCompatActivity{
             String is_default = null;
             String result1 = null;
 
-            is_default = LoadData("db/char/en-US/" + CharName_BASE_UNDERSCORE + ".json");
-            is = LoadData("db/char/" + lang + "/" + CharName_BASE_UNDERSCORE + ".json");
+            is_default = ItemRss.LoadAssestData(context,"db/char/en-US/" + CharName_BASE_UNDERSCORE + ".json");
+            is = ItemRss.LoadAssestData(context,"db/char/" + lang + "/" + CharName_BASE_UNDERSCORE + ".json");
 
             if (!is.equals("")) {
                 result1 = is;
@@ -1702,7 +1702,7 @@ public class Calculator2048 extends AppCompatActivity{
 
 
             Picasso.get()
-                    .load(FileLoader.loadIMG(item_rss.getCharByName(choosedNameList.get(x), context)[3], context))
+                    .load(item_rss.getCharByName(choosedNameList.get(x), context)[3])
                     .fit()
                     .error(R.drawable.paimon_lost)
                     .into(char_ico);
@@ -1899,12 +1899,12 @@ public class Calculator2048 extends AppCompatActivity{
             });
 
             Picasso.get()
-                    .load(FileLoader.loadIMG(item_rss.getWeaponByName(weaponChoosedNameList.get(x), context)[1], context))
+                    .load(item_rss.getWeaponByName(weaponChoosedNameList.get(x))[1])
                     .fit()
                     .error(R.drawable.paimon_lost)
                     .into(weapon_ico);
             weapon_ico.setPadding(0, 8, 0, 0);
-            weapon_name.setText(item_rss.getWeaponByName(weaponChoosedNameList.get(x), context)[0]);
+            weapon_name.setText(item_rss.getWeaponByName(weaponChoosedNameList.get(x))[0]);
             weapon_lvl.setText("Lv." + weaponChoosedBeforeLvlList.get(x) + checkLvlPlus(weaponChoosedBeforeBreakUPLvlList.get(x)));
 
             ArrayAdapter lvl_weapon = new ArrayAdapter(context, R.layout.spinner_item_cal_2048, lvlListWeapon70);
@@ -2030,7 +2030,7 @@ public class Calculator2048 extends AppCompatActivity{
             // 1. Char Weapon Type
 
             try {
-                String json_base = LoadData("db/weapons/weapon_list.json");
+                String json_base = ItemRss.LoadAssestData(context,"db/weapons/weapon_list.json");
                 String name = "";
                 String weapon = "Sword";
                 JSONObject object = null;
@@ -2294,13 +2294,13 @@ public class Calculator2048 extends AppCompatActivity{
             }
 
             Picasso.get()
-                    .load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(artifactChoosedNameList.get(x)), context)[tmp_artifact_type_id], context))
+                    .load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(artifactChoosedNameList.get(x)))[tmp_artifact_type_id])
                     .fit()
                     .error(R.drawable.paimon_lost)
                     .into(art_ico);
 
             art_ico.setPadding(0, 8, 0, 0);
-            art_name.setText(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(artifactChoosedNameList.get(x)), context)[0]);
+            art_name.setText(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(artifactChoosedNameList.get(x)))[0]);
             art_lvl.setText("Lv." + artifactChoosedBeforeLvlList.get(x));
 
             ArrayAdapter lvl_art = new ArrayAdapter(context, R.layout.spinner_item_cal_2048, lvlListArt20);
@@ -2459,7 +2459,7 @@ public class Calculator2048 extends AppCompatActivity{
         charNameTranslated.add("N/A");
 
         try {
-            String json_base = LoadData("db/char/char_require_asc_skill.json");
+            String json_base = ItemRss.LoadAssestData(context,"db/char/char_require_asc_skill.json");
             JSONObject object = null;
             JSONArray array = new JSONArray(json_base);
 
@@ -2474,10 +2474,10 @@ public class Calculator2048 extends AppCompatActivity{
         }
 
         for (int x = 0; x < choosedNameList.size(); x++) {
-            charNameTranslated.add(item_rss.getCharByName(choosedNameList.get(x), context)[1]);
+            charNameTranslated.add(context.getString(item_rss.getCharByName(choosedNameList.get(x), context)[1]));
 
             try {
-                String json_base = LoadData("db/char/char_list.json");
+                String json_base = ItemRss.LoadAssestData(context,"db/char/char_list.json");
                 String name = "";
                 JSONArray array = new JSONArray(json_base);
                 int y = 0;
@@ -2487,19 +2487,19 @@ public class Calculator2048 extends AppCompatActivity{
                 name = array.getJSONObject(y).getString("name");
                 switch (array.getJSONObject(y).getString("weapon")) {
                     case "Sword":
-                        charUseSword.add(item_rss.getCharByName(name, context)[1]);
+                        charUseSword.add(context.getString(item_rss.getCharByName(name, context)[1]));
                         break;
                     case "Bow":
-                        charUseBow.add(item_rss.getCharByName(name, context)[1]);
+                        charUseBow.add(context.getString(item_rss.getCharByName(name, context)[1]));
                         break;
                     case "Claymore":
-                        charUseClaymore.add(item_rss.getCharByName(name, context)[1]);
+                        charUseClaymore.add(context.getString(item_rss.getCharByName(name, context)[1]));
                         break;
                     case "Polearm":
-                        charUsePolearm.add(item_rss.getCharByName(name, context)[1]);
+                        charUsePolearm.add(context.getString(item_rss.getCharByName(name, context)[1]));
                         break;
                     case "Catalyst":
-                        charUseCatalyst.add(item_rss.getCharByName(name, context)[1]);
+                        charUseCatalyst.add(context.getString(item_rss.getCharByName(name, context)[1]));
                 }
 
                 }catch (JSONException e) {
@@ -2509,7 +2509,7 @@ public class Calculator2048 extends AppCompatActivity{
 
         for (int x = 0; x < weaponChoosedNameList.size(); x++){
             try {
-                String json_base = LoadData("db/weapons/weapon_list.json");
+                String json_base = ItemRss.LoadAssestData(context,"db/weapons/weapon_list.json");
                 String name = "";
                 JSONArray array = new JSONArray(json_base);
                 int y = 0;
@@ -2628,7 +2628,7 @@ public class Calculator2048 extends AppCompatActivity{
         int rare, isComing;
         charactersList.clear();
 
-        String json_base = LoadData("db/char/char_list.json");
+        String json_base = ItemRss.LoadAssestData(context,"db/char/char_list.json");
         //Get data from JSON
         try {
             JSONArray array = new JSONArray(json_base);
@@ -2670,7 +2670,7 @@ public class Calculator2048 extends AppCompatActivity{
         String name, weapon, stat_1;
         int rare, isComing;
 
-        String json_base = LoadData("db/weapons/weapon_list.json");
+        String json_base = ItemRss.LoadAssestData(context,"db/weapons/weapon_list.json");
         //Get data from JSON
         try {
             JSONArray array = new JSONArray(json_base);
@@ -2702,7 +2702,7 @@ public class Calculator2048 extends AppCompatActivity{
         String name, img;
         int rare, isComing;
 
-        String json_base = LoadData("db/artifacts/artifact_list.json");
+        String json_base = ItemRss.LoadAssestData(context,"db/artifacts/artifact_list.json");
         //Get data from JSON
         try {
             JSONArray array = new JSONArray(json_base);
@@ -2724,25 +2724,6 @@ public class Calculator2048 extends AppCompatActivity{
         } catch (JSONException e) {
             e.printStackTrace();
         }
-    }
-
-    public String LoadData(String inFile) {
-        String tContents = "";
-        try {
-            File file = new File(context.getFilesDir() + "/" + inFile);
-            InputStream stream = new FileInputStream(file);
-
-            int size = stream.available();
-            byte[] buffer = new byte[size];
-            stream.read(buffer);
-            stream.close();
-            tContents = new String(buffer);
-        } catch (IOException e) {
-            // Handle exceptions here
-        }
-
-        return tContents;
-
     }
 
     public void addChar(String charName_base) {

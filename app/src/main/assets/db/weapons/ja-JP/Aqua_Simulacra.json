@@ -1,0 +1,12 @@
+{
+  "name": "Aqua Simulacra",
+  "rare": 5,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "The Qilin are benevolent by nature, and will never harm another soul, save by necessity.",
+  "first_status": "CritDMG%",
+  "second_status": "ATK",
+  "skill_name": "濯ぎし諸般の形",
+  "skill_desc": "HP+16%。周囲に敵がいる時、装備キャラクターの与えるダメージ+20%、この効果はキャラクターが待機状態でも発動する。",
+  "obtain_way": "LIMITED_WISH"
+}

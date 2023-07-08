@@ -1,0 +1,62 @@
+{
+    "name": "Rosaria",
+    "rare": 4,
+    "area": "Mondstadt",
+    "element": "Cryo",
+    "weapon": "Polearm",
+    "sex": "Female",
+    "birth": "01/24",
+    "role": "Utility",
+    "isComingSoon": false,
+    "nick":"荊冠の恩典",
+    "desc": "身にまとう服装以外、何ひとつとして聖職者とは思えないシスター。冷たい言動の中には、相手を見透かす鋭さが隠されている。また、いつも一人で行動をしている。",
+    "battle_talent": {
+      "normal_name": "教会槍術",
+      "normal_img": "normal_attack_rain_of_stone",
+      "normal_desc1": "槍による最大5段の連続攻撃を行う。",
+      "normal_desc2": "一定のスタミナを消費して前方に突進し、経路上の敵にダメージを与える。",
+      "normal_desc3": "空中から落下し地面に衝撃を与える。経路上の敵を攻撃し、落下時に範囲ダメージを与える。",
+      "element_name": "罪喰いの懺悔",
+      "element_img": "ravaging_confession",
+      "element_desc": "素早く敵の背後に回り込み、長槍で突きと振り降ろしを繰り出すことで、氷元素ダメージを与える。\nこのスキルは、大きな体形を持つ敵の背後に回り込むことはできない。",
+      "final_name": "臨終の聖礼",
+      "final_img": "rites_of_termination",
+      "final_desc": "ロサリア専属の祈りの儀式。武器を振り周囲の敵を攻撃した後、極寒を蓄積した氷槍を地面に差し込み、氷元素ダメージを与える。\n氷槍が存在している間、定期的に冷気を発散し、近くの敵に氷元素ダメージを与える。"
+    },
+    "basic_talent": {
+      "talent1_name": "懺悔に耳を傾ける幻影",
+      "talent1_img": "regina_probatium",
+      "talent1_desc": "罪喰いの懺悔で敵の背後から攻撃すると、ロサリアの会心率+12%、継続時間5秒。",
+      "talent2_name": "陰から支える暗色",
+      "talent2_img": "shadow_samaritan",
+      "talent2_desc": "臨終の聖礼発動時、自身の会心率の15%分、周囲のチーム全員（ロサリア自身を除く）の会心率をアップさせる、継続時間10秒。\nこの方法で獲得できる会心率アップ効果は、最大15%まで。",
+      "talent3_name": "夜行",
+      "talent3_img": "night_walk",
+      "talent3_desc": "夜間（18時から6時まで）になると、チーム内自身のキャラクターの移動速度+10%。\nこの効果は秘境、征討領域、深境螺旋では発動されない。また、同じ効果を持つ固有天赋との重ね掛け不可。"
+    },
+    "sof": {
+      "sof1_name": "罪の導き",
+      "sof1_img": "unholy_revelation",
+      "sof1_desc": "ロサリアの攻撃で会心が発生すると、攻撃速度+10%、通常攻撃のダメージ+10%、継続時間4秒。",
+      "sof2_name": "無福の地",
+      "sof2_img": "land_without_promise",
+      "sof2_desc": "臨終の聖礼で創られる氷槍の継続時間+4秒。",
+      "sof3_name": "懺悔の儀",
+      "sof3_img": "ravaging_confession",
+      "sof3_desc": "罪喰いの懺悔のスキルLv.+3。\n最大Lv.15まで。",
+      "sof4_name": "苦痛の恩典",
+      "sof4_img": "painful_grace",
+      "sof4_desc": "罪喰いの懺悔で会心が発生すると、ロサリア自身の元素エネルギーが5回復する。\nこの効果は、1回の罪喰いの懺悔で1度のみ発動可能。",
+      "sof5_name": "臨終の祈り",
+      "sof5_img": "rites_of_termination",
+      "sof5_desc": "臨終の聖礼のスキルLv.+3。\n最大Lv.15まで。",
+      "sof6_name": "代行裁判",
+      "sof6_img": "divine_retribution",
+      "sof6_desc": "臨終の聖礼の攻撃が敵に命中すると、敵の物理耐性-20%、継続時間10秒。"
+    }
+  }
+  
+  
+  
+
+

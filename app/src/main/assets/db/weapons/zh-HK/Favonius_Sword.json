@@ -1,0 +1,12 @@
+{
+  "name": "Favonius Sword",
+  "rare": 4,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "EnRech%",
+  "second_status": "ATK",
+  "desc": "西風騎士團的制式長劍。輕快銳利之餘，也能輕易匯出元素力量。",
+  "skill_name": "順風而行",
+  "skill_desc": "攻擊造成暴擊時，有60%/70%/80%/90%/100%的幾率產生少量元素微粒，能為角色恢復6點元素能量。該效果每12/10.5/9/7.5/6秒只能觸發一次。",
+  "obtain_way": "WISH"
+}

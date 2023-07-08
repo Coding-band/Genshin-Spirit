@@ -1,0 +1,12 @@
+{
+  "name": "Sacrificial Greatsword",
+  "rare": 4,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "A ceremonial greatsword that has become petrified over time. The trinkets on it are still visible. It grants the wielder the power to withstand the winds of time.",
+  "first_status": "EnRech%",
+  "second_status": "ATK",
+  "skill_name": "Composed",
+  "skill_desc": "After dealing damage to an opponent with an Elemental Skill, the skill has a 40%/50%/60%/70%/80% chance to end its own CD. Can only occur once every 30/26/22/19/16s.",
+  "obtain_way": "WISH"
+}

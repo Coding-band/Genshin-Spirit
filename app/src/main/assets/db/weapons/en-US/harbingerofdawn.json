@@ -1,0 +1,138 @@
+{
+	"name": "Harbinger of Dawn",
+	"description": "A sword that once shone like the sun. The wielder of this sword will be blessed with a \"feel-good\" buff. The reflective material on the blade has long worn off.",
+	"weapontype": "Sword",
+	"rarity": "3",
+	"story": "This sword has an extraordinary full name:\nThe Triumphant Harbinger of Dawn that Points Towards Victory.\nOnly one has ever fallen by this blade on the battlefield.\nOne night, the bearer drew the sword triumphantly.\nThe night sky lit up as bright as day,\npin-pointing his precise location.\nArrows rained down upon him.",
+	"baseatk": 39,
+	"substat": "CRIT DMG",
+	"subvalue": "10.2",
+	"effectname": "Vigorous",
+	"effect": "When HP is above 90%, increases CRIT Rate by {0}.",
+	"r1": [
+		"14%"
+	],
+	"r2": [
+		"17.5%"
+	],
+	"r3": [
+		"21%"
+	],
+	"r4": [
+		"24.5%"
+	],
+	"r5": [
+		"28%"
+	],
+	"weaponmaterialtype": "Boreal Wolf",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Boreal Wolf's Milk Tooth",
+				"count": 2
+			},
+			{
+				"name": "Dead Ley Line Branch",
+				"count": 2
+			},
+			{
+				"name": "Slime Condensate",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Boreal Wolf's Cracked Tooth",
+				"count": 2
+			},
+			{
+				"name": "Dead Ley Line Branch",
+				"count": 8
+			},
+			{
+				"name": "Slime Condensate",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Boreal Wolf's Cracked Tooth",
+				"count": 4
+			},
+			{
+				"name": "Dead Ley Line Leaves",
+				"count": 4
+			},
+			{
+				"name": "Slime Secretions",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Boreal Wolf's Broken Fang",
+				"count": 2
+			},
+			{
+				"name": "Dead Ley Line Leaves",
+				"count": 8
+			},
+			{
+				"name": "Slime Secretions",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Boreal Wolf's Broken Fang",
+				"count": 4
+			},
+			{
+				"name": "Ley Line Sprout",
+				"count": 6
+			},
+			{
+				"name": "Slime Concentrate",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Boreal Wolf's Nostalgia",
+				"count": 3
+			},
+			{
+				"name": "Ley Line Sprout",
+				"count": 12
+			},
+			{
+				"name": "Slime Concentrate",
+				"count": 8
+			}
+		]
+	}
+}

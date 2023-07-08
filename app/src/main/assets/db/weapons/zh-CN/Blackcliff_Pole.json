@@ -1,0 +1,12 @@
+{
+  "name": "Blackcliff Pole",
+  "rare": 4,
+  "weapon": "Polearm",
+  "isComingSoon": false,
+  "desc": "以黑岩与陨铁铸成的兵器，玄锋清凛的光泽中仿佛隐隐可见血色。",
+  "first_status": "CritDMG%",
+  "second_status": "ATK",
+  "skill_name": "乘胜追击",
+  "skill_desc": "击败敌人后，攻击力提升12%/15%/18%/21%/24%，持续30秒。该效果至多叠加3层，每层持续时间独立。",
+  "obtain_way": "SHOP"
+}

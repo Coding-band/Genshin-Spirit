@@ -1,0 +1,148 @@
+{
+	"name": "Snow-Tombed Starsilver",
+	"description": "An ancient greatsword that was stored between frescoes. Forged from Starsilver, it has the power to cleave through ice and snow.",
+	"weapontype": "Claymore",
+	"rarity": "4",
+	"story": "When the verdant city was sealed by cloud and mist,\nWhen the unending snowstorms blotted out the clear moonlight,\nWhen all life and every interrupted story,\nWas pierced by that nail that fell from the azure skies...\n\nThe priest's daughter gave the Starsilver greatsword to the hero from another land,\nIn the howling wind and snow, her words could not reach their intended target.\n\n\"This fourth fresco is prepared for you. Your likeness will forever remain on this wall.\"\n\"For the sake of that fresco, and for everyone, I will wait for you, and pray for your return...\"\n\nWhen the daughter of that snow-entombed city withered together with the grafted yet barren silver branches,\nThe outlander destined to wield this sword to shatter ice and snow alike was far afield, chasing answers.\nBright as the moonlight though she was, her final words, too, would never reach that wayfarer.\n\n\"It's been a while since I last saw the blue sky and green grass. I don't know which hues to use to capture the landscape of thawing ice and snow that my father so longs for.\"\n\"I wish I could see you again...\"\n\nThis was the answer he found—\n\nThe hero ended his fruitless journey at last.\nTainted black blood dripped from the blade of his greatsword,\nAs he trudged through now-foreign snowy paths.\nBut when he returned to the great hall of that mountain country,\nNaught but ringing deathly echoes welcomed him.\n\n\"So even here, there is nothing left for me to protect...\"\n\"You who dwell in the heavens, you must wish for naught but to watch our ashen suffering here below.\"\n\"In that case, then let me help you pass the time with a song of iron and blood.\"\nThe outlander left the Starsilver originally meant to shatter snow and wind alike between the frescoes.\nThen, he descended the mountain to search for a land full of war and strife — a place he might paint red with blood.",
+	"baseatk": 44,
+	"substat": "Physical DMG Bonus",
+	"subvalue": "7.5",
+	"effectname": "Frost Burial",
+	"effect": "Hitting an opponent with Normal and Charged Attacks has a {0} chance of forming and dropping an Everfrost Icicle above them, dealing AoE DMG equal to {1} of ATK. Opponents affected by Cryo are instead dealt DMG equal to {2} of ATK. Can only occur once every 10s.",
+	"r1": [
+		"60%",
+		"80%",
+		"200%"
+	],
+	"r2": [
+		"70%",
+		"95%",
+		"240%"
+	],
+	"r3": [
+		"80%",
+		"110%",
+		"280%"
+	],
+	"r4": [
+		"90%",
+		"125%",
+		"320%"
+	],
+	"r5": [
+		"100%",
+		"140%",
+		"360%"
+	],
+	"weaponmaterialtype": "Decarabian",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Tile of Decarabian's Tower",
+				"count": 3
+			},
+			{
+				"name": "Heavy Horn",
+				"count": 3
+			},
+			{
+				"name": "Slime Condensate",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Debris of Decarabian's City",
+				"count": 3
+			},
+			{
+				"name": "Heavy Horn",
+				"count": 12
+			},
+			{
+				"name": "Slime Condensate",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Debris of Decarabian's City",
+				"count": 6
+			},
+			{
+				"name": "Black Bronze Horn",
+				"count": 6
+			},
+			{
+				"name": "Slime Secretions",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Fragment of Decarabian's Epic",
+				"count": 3
+			},
+			{
+				"name": "Black Bronze Horn",
+				"count": 12
+			},
+			{
+				"name": "Slime Secretions",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Fragment of Decarabian's Epic",
+				"count": 6
+			},
+			{
+				"name": "Black Crystal Horn",
+				"count": 9
+			},
+			{
+				"name": "Slime Concentrate",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Scattered Piece of Decarabian's Dream",
+				"count": 4
+			},
+			{
+				"name": "Black Crystal Horn",
+				"count": 18
+			},
+			{
+				"name": "Slime Concentrate",
+				"count": 12
+			}
+		]
+	}
+}

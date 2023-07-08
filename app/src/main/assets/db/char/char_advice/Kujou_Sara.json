@@ -1,0 +1,71 @@
+{
+  "name" : "Kujor Sara",
+  
+  "util_weapons": [
+    "skyward_harp",
+    "elegy_for_the_end",
+    "alley_hunter",
+	"sacrificial_bow"
+  ],
+  "util_art1": [
+    "emblem_of_severed_fate",
+    "emblem_of_severed_fate",
+    "emblem_of_severed_fate",
+    "emblem_of_severed_fate",
+    "emblem_of_severed_fate"
+  ],
+  "util_art2": [
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "util_art3": [
+    "thundering_fury",
+    "thundering_fury",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "util_art4": [
+    "emblem_of_severed_fate",
+    "emblem_of_severed_fate",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "util_art5": [
+    "the_exile",
+    "the_exile",
+    "the_exile",
+    "the_exile",
+    "the_exile"
+  ],
+  "util_art_sand_entry": [
+    "EnRech"
+  ],
+  "util_art_goblet_entry": [
+    "EleDMG_Electro"
+  ],
+  "util_art_circlet_entry": [
+    "CritDMG",
+    "CritRate"
+  ],
+  "util_art_sub_entry": [
+    "EnRech",
+    "CritDMG",
+    "CritRate",
+    "ATK"
+  ],
+  
+  "team1":[
+	"Raiden Shogun","Kujor Sara","Kaedehara Kazuha","Bennett"
+  ],
+  "team2":[
+	"Sucrose","Xingqiu","Beidou","Kujor Sara"
+  ],
+  "team3":[
+	"Bennett","Kaedehara Kazuha","Sucrose","Mona"
+  ]
+}

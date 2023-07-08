@@ -1,0 +1,12 @@
+{
+  "name": "Missive Windspear",
+  "rare": 4,
+  "weapon": "Polearm",
+  "isComingSoon": false,
+  "desc": "導示長風的標鵠。風的牧歌並不總是輕柔如初…",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "不至之風",
+  "skill_desc": "觸發元素反應後的10秒內，攻擊力提升12%，元素精通提升48點。",
+  "obtain_way": "EVENT"
+}

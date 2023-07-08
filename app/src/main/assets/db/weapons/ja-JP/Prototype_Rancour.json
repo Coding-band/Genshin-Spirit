@@ -1,0 +1,12 @@
+{
+  "name": "Prototype Rancour",
+  "rare": 4,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "first_status": "EnRech%",
+  "second_status": "ATK",
+  "desc": "黒岩場の中に隠されていた古い長剣、岩を斬っても傷つかない。",
+  "skill_name": "岩砕き",
+  "skill_desc": "通常攻撃または重撃が命中すると、攻撃力と防御力+4%/5%/6%/7%/8%、継続時間6秒、最大4重まで。0.3秒ごとに1回発動可能。",
+  "obtain_way": "FORGE_LVL10_SJGW"
+}

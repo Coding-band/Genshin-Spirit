@@ -1,0 +1,12 @@
+{
+  "name": "Light of Foliar Incision",
+  "rare": 5,
+  "weapon": "Sword",
+  "isComingSoon": false,
+  "desc": "貴重な白き枝で作られた金メッキの刃。かつては、森を浸す無数の黒い毒を切り裂いていた。",
+  "first_status": "CritDMG",
+  "second_status": "ATK",
+  "skill_name": "白月に輝く枝",
+  "skill_desc": "会心率+4%。通常攻撃で元素ダメージを与えた後、「裁葉」効果を獲得し、通常攻撃および元素スキルによるダメージが元素熟知の120%分アップする。「裁葉」効果は28回発動または12秒後にクリアされ、12秒毎に1回のみ獲得できる。",
+  "obtain_way": "LIMITED_WISH"
+}

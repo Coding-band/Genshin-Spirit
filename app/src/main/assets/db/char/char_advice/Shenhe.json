@@ -1,0 +1,71 @@
+{
+  "name" : "Shenhe",
+    
+  "util_weapons": [
+    "calamity_queller",
+    "primordial_jade_winged_spear",
+    "vortex_vanquisher",
+	"lithic_spear",
+	"wavebreakers_fin"
+  ],
+  "util_art1": [
+    "gladiators_finale",
+    "gladiators_finale",
+    "shimenawas_reminiscence",
+    "shimenawas_reminiscence",
+    "shimenawas_reminiscence"
+  ],
+  "util_art2": [
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "util_art3": [
+    "blizzard_strayer",
+    "blizzard_strayer",
+    "blizzard_strayer",
+    "blizzard_strayer",
+    "blizzard_strayer"
+  ],
+  "util_art4": [
+    "blizzard_strayer",
+    "blizzard_strayer",
+    "gladiators_finale",
+    "gladiators_finale",
+    "gladiators_finale"
+  ],
+  "util_art_sand_entry": [
+    "ATK"
+  ],
+  "util_art_goblet_entry": [
+    "ATK",
+    "EleDMG_Cryo"
+  ],
+  "util_art_circlet_entry": [
+    "ATK"
+  ],
+  "util_art_sub_entry": [
+    "ATK",
+    "EnRech",
+    "CritRate",
+    "CritDMG"
+  ],
+  
+  "team1":[
+	"Kamisato Ayaka","Kaedehara Kazuha","Diona","Shenhe"
+  ],
+  "team2":[
+	"Ganyu","Shenhe","Kaedehara Kazuha","Sangonomiya Kokomi"
+  ],
+  "team3":[
+	"Shenhe","Xiangling","Bennett","Chongyun"
+  ],
+  "team4":[
+	"Keqing","Shenhe","Chongyun","Kaedehara Kazuha"
+  ],
+  "team5":[
+	"Eula","Shenhe","Rosaria","Qiqi"
+  ]
+}

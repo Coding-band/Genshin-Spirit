@@ -1,0 +1,12 @@
+{
+  "name": "Mappa Mare",
+  "rare": 4,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "詳盡記載了大陸周邊海流氣候的海圖，是從異國經由商路流落到璃月的奇異典籍。",
+  "first_status": "EleMas",
+  "second_status": "ATK",
+  "skill_name": "注能之卷",
+  "skill_desc": "觸發元素反應後的10秒內，獲得8%/10%/12%/14%/16%元素傷害加成，該效果最多可疊加2層",
+  "obtain_way": "FORGE"
+}

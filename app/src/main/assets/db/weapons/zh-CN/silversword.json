@@ -1,0 +1,92 @@
+{
+	"name": "银剑",
+	"description": "能退魔的银剑。大家都知道，其实用料是银合金而不是纯银。",
+	"weapontype": "单手剑",
+	"rarity": "2",
+	"story": "与民间信仰相悖，银其实不具有退魔的功效。\n心无杂念的执剑旅人，才是斩妖除魔的关键。",
+	"baseatk": 33,
+	"substat": "",
+	"subvalue": "",
+	"effectname": "",
+	"effect": "",
+	"r1": [],
+	"r2": [],
+	"r3": [],
+	"r4": [],
+	"r5": [],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "摩拉",
+				"count": 5000
+			},
+			{
+				"name": "高塔孤王的破瓦",
+				"count": 1
+			},
+			{
+				"name": "沉重号角",
+				"count": 1
+			},
+			{
+				"name": "牢固的箭簇",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "摩拉",
+				"count": 5000
+			},
+			{
+				"name": "高塔孤王的残垣",
+				"count": 1
+			},
+			{
+				"name": "沉重号角",
+				"count": 5
+			},
+			{
+				"name": "牢固的箭簇",
+				"count": 4
+			}
+		],
+		"ascend3": [
+			{
+				"name": "摩拉",
+				"count": 10000
+			},
+			{
+				"name": "高塔孤王的残垣",
+				"count": 3
+			},
+			{
+				"name": "黑铜号角",
+				"count": 3
+			},
+			{
+				"name": "锐利的箭簇",
+				"count": 3
+			}
+		],
+		"ascend4": [
+			{
+				"name": "摩拉",
+				"count": 15000
+			},
+			{
+				"name": "高塔孤王的断片",
+				"count": 1
+			},
+			{
+				"name": "黑铜号角",
+				"count": 5
+			},
+			{
+				"name": "锐利的箭簇",
+				"count": 4
+			}
+		]
+	}
+}

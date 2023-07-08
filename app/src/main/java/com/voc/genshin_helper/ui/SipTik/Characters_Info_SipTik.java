@@ -2,7 +2,6 @@ package com.voc.genshin_helper.ui.SipTik;
 
 import static android.content.Context.MODE_PRIVATE;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
-import static com.google.android.material.tabs.TabLayout.MODE_FIXED;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -31,7 +30,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.view.translation.TranslationContext;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
@@ -44,9 +42,7 @@ import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.viewpager.widget.ViewPager;
 
-import com.google.android.material.tabs.TabLayout;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.R;
@@ -55,7 +51,6 @@ import com.voc.genshin_helper.data.Material;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.FileLoader;
-import com.voc.genshin_helper.util.MyViewPagerAdapter;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
 import org.json.JSONArray;
@@ -1381,7 +1376,7 @@ public class Characters_Info_SipTik {
         char_name.setText(item_rss.getCharByName(name,context)[1]);
         char_title.setText(nick);
         //Picasso.get().load(FileLoader.loadIMG(item_rss.getCharByName(name,context)[0],context)).centerCrop().into(char_img);
-        char_img.setImageDrawable(FileLoader.loadIMG2Drawable(item_rss.getCharByName(name,context)[0],context));
+        char_img.setImageResource(item_rss.getCharByName(name,context)[0]);
 
         fragment_1.getLayoutParams().height = (int) (height_curr/1.5);
 
@@ -1596,7 +1591,7 @@ public class Characters_Info_SipTik {
                     final int margin_circ = 0;
                     final Transformation transformation_circ = new RoundedCornersTransformation(radius_circ, margin_circ);
                     Picasso.get()
-                            .load(FileLoader.loadIMG(item_rss.getCharByName(team1[x].replace("XPR"," "),context)[3],context))
+                            .load(item_rss.getCharByName(team1[x].replace("XPR"," "),context)[3])
                             .transform(transformation_circ)
                             .error(R.drawable.paimon_lost)
                             .resize((width_curr-32-16)/4-16,(width_curr-32-16)/4-16)
@@ -1660,7 +1655,7 @@ public class Characters_Info_SipTik {
                     final int margin_circ = 0;
                     final Transformation transformation_circ = new RoundedCornersTransformation(radius_circ, margin_circ);
                     Picasso.get()
-                            .load(FileLoader.loadIMG(item_rss.getCharByName(team2[x].replace("XPR"," "),context)[3],context))
+                            .load(item_rss.getCharByName(team2[x].replace("XPR"," "),context)[3])
                             .transform(transformation_circ)
                             .error(R.drawable.paimon_lost)
                             .resize((width_curr-32-16)/4-16,(width_curr-32-16)/4-16)
@@ -1708,7 +1703,7 @@ public class Characters_Info_SipTik {
                     final int margin_circ = 0;
                     final Transformation transformation_circ = new RoundedCornersTransformation(radius_circ, margin_circ);
                     Picasso.get()
-                            .load(FileLoader.loadIMG(item_rss.getCharByName(team3[x].replace("XPR"," "),context)[3],context))
+                            .load(item_rss.getCharByName(team3[x].replace("XPR"," "),context)[3])
                             .transform(transformation_circ)
                             .error(R.drawable.paimon_lost)
                             .resize((width_curr-32-16)/4-16,(width_curr-32-16)/4-16)
@@ -1764,7 +1759,7 @@ public class Characters_Info_SipTik {
                     final int margin_circ = 0;
                     final Transformation transformation_circ = new RoundedCornersTransformation(radius_circ, margin_circ);
                     Picasso.get()
-                            .load(FileLoader.loadIMG(item_rss.getCharByName(team4[x].replace("XPR"," "),context)[3],context))
+                            .load(item_rss.getCharByName(team4[x].replace("XPR"," "),context)[3])
                             .transform(transformation_circ)
                             .error(R.drawable.paimon_lost)
                             .resize((width_curr-32-16)/4-16,(width_curr-32-16)/4-16)
@@ -1820,7 +1815,7 @@ public class Characters_Info_SipTik {
                     final int margin_circ = 0;
                     final Transformation transformation_circ = new RoundedCornersTransformation(radius_circ, margin_circ);
                     Picasso.get()
-                            .load(FileLoader.loadIMG(item_rss.getCharByName(team5[x].replace("XPR"," "),context)[3],context))
+                            .load(item_rss.getCharByName(team5[x].replace("XPR"," "),context)[3])
                             .transform(transformation_circ)
                             .error(R.drawable.paimon_lost)
                             .resize((width_curr-32-16)/4-16,(width_curr-32-16)/4-16)
@@ -2377,7 +2372,7 @@ public class Characters_Info_SipTik {
             ImageView img_img = char_view.findViewById(R.id.img_weapon);
             TextView img_tv = char_view.findViewById(R.id.img_tv);
 
-            img_tv.setText(item_rss.getWeaponByName(item_rss.getWeaponNameByFileName(advice[x]),context)[0]);
+            img_tv.setText(item_rss.getWeaponByName(item_rss.getWeaponNameByFileName(advice[x]))[0]);
             int min_width = 240;
 
             boolean isNight = false;
@@ -2450,7 +2445,7 @@ public class Characters_Info_SipTik {
             }
 
             Picasso.get()
-                    .load(FileLoader.loadIMG(item_rss.getWeaponByName(item_rss.getWeaponNameByFileName(advice[x]),context)[1],context))
+                    .load(item_rss.getWeaponByName(item_rss.getWeaponNameByFileName(advice[x]))[1])
                     .resize(min_width,min_width).transform(roundedCornersTransformation)
                     .error(R.drawable.paimon_lost)
                     .into(img_img);
@@ -2527,7 +2522,7 @@ public class Characters_Info_SipTik {
             }
 
             Picasso.get()
-                    .load(FileLoader.loadIMG(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(advice[x]),context)[pos[x]],context))
+                    .load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(advice[x]))[pos[x]])
                     .fit().transform(roundedCornersTransformation)
                     .error(R.drawable.paimon_lost)
                     .into(img_img);
@@ -2541,7 +2536,7 @@ public class Characters_Info_SipTik {
                 }
             });
 
-            img_tv.setText(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(advice[x]),context)[0]);
+            img_tv.setText(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(advice[x]))[0]);
             img_tv.setTextSize(10);
             img_tv.setVisibility(View.GONE);
             img_img.getLayoutParams().width = min_width;
@@ -2788,7 +2783,7 @@ public class Characters_Info_SipTik {
 
                 img_bg.setBackgroundResource(getRssByRare(itemRareListBASE[x]));
                 //Picasso.get().load(getRssByRare(itemRareListBASE[x])).resize(144,180).into(img_bg);
-                Picasso.get().load(FileLoader.loadIMG(item_rss.getItemIcoByName(itemNameListBASE[x],context),context)).resize(144,144).into(img_img);
+                Picasso.get().load(item_rss.getItemIcoByName(itemNameListBASE[x])).resize(144,144).into(img_img);
                 img_tv.setText(prettyCount(itemValueListBASE[x],0));
 
                 img_bg.getLayoutParams().width = 144;
@@ -2848,7 +2843,7 @@ public class Characters_Info_SipTik {
 
                     img_bg.setBackgroundResource(getRssByRare(itemRareList[x]));
                     //Picasso.get().load(getRssByRare(itemRareList[x])).resize(144,180).into(img_bg);
-                    Picasso.get().load(FileLoader.loadIMG(item_rss.getItemIcoByName(itemNameList[x],context),context)).resize(144,144).into(img_img);
+                    Picasso.get().load(item_rss.getItemIcoByName(itemNameList[x])).resize(144,144).into(img_img);
                     img_tv.setText(prettyCount(itemValueList[x],0));
 
                     img_bg.getLayoutParams().width = 144;
@@ -2927,7 +2922,7 @@ public class Characters_Info_SipTik {
 
                     img_bg.setBackgroundResource(getRssByRare(itemRareList[x]));
                     //Picasso.get().load(getRssByRare(itemRareList[x])).resize(144,180).into(img_bg);
-                    Picasso.get().load(FileLoader.loadIMG(item_rss.getItemIcoByName(itemNameList[x],context),context)).resize(144,144).into(img_img);
+                    Picasso.get().load(item_rss.getItemIcoByName(itemNameList[x])).resize(144,144).into(img_img);
                     img_tv.setText(prettyCount(itemValueList[x],0));
 
                     img_bg.getLayoutParams().width = 144;
@@ -2960,7 +2955,7 @@ public class Characters_Info_SipTik {
 
                 img_bg.setBackgroundResource(getRssByRare(5));
                 //Picasso.get().load(getRssByRare(5)).resize(144,180).into(img_bg);
-                Picasso.get().load(FileLoader.loadIMG(item_rss.getItemIcoByName("智識之冕",context),context)).resize(144,144).into(img_img);
+                Picasso.get().load(item_rss.getItemIcoByName("智識之冕")).resize(144,144).into(img_img);
                 img_tv.setText(prettyCount(1,0));
 
                 img_bg.getLayoutParams().width = 144;

@@ -1,0 +1,91 @@
+{
+	"name": "無鋒の剣",
+	"description": "少年の夢、旅に出る興奮——この2つでも物足りないなら、勇気も入れてみよう。",
+	"weapontype": "片手剣",
+	"rarity": "1",
+	"story": "旅路は出会いと別れで溢れている。\n最後まで旅人と歩み続けてくれるのは、\n剣と遠い夢しかないだろう。",
+	"baseatk": 23,
+	"substat": "",
+	"subvalue": "",
+	"effectname": "",
+	"effect": "",
+	"r1": [],
+	"r2": [],
+	"r3": [],
+	"r4": [],
+	"r5": [],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "モラ"
+			},
+			{
+				"name": "高塔の王の瓦",
+				"count": 1
+			},
+			{
+				"name": "重い角笛",
+				"count": 1
+			},
+			{
+				"name": "牢固な矢先",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "モラ",
+				"count": 5000
+			},
+			{
+				"name": "高塔の王の残壁",
+				"count": 1
+			},
+			{
+				"name": "重い角笛",
+				"count": 4
+			},
+			{
+				"name": "牢固な矢先",
+				"count": 2
+			}
+		],
+		"ascend3": [
+			{
+				"name": "モラ",
+				"count": 5000
+			},
+			{
+				"name": "高塔の王の残壁",
+				"count": 2
+			},
+			{
+				"name": "黒銅の角笛",
+				"count": 2
+			},
+			{
+				"name": "鋭利な矢先",
+				"count": 2
+			}
+		],
+		"ascend4": [
+			{
+				"name": "モラ",
+				"count": 10000
+			},
+			{
+				"name": "高塔の王の断片",
+				"count": 1
+			},
+			{
+				"name": "黒銅の角笛",
+				"count": 4
+			},
+			{
+				"name": "鋭利な矢先",
+				"count": 3
+			}
+		]
+	}
+}

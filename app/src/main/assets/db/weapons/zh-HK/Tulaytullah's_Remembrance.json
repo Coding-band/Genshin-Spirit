@@ -1,0 +1,12 @@
+{
+  "name": "Tulaytullah's Remembrance",
+  "rare": 5,
+  "weapon": "Catalyst",
+  "isComingSoon": false,
+  "desc": "深藍寶石與純銀雕成的鈴鐺，迴響之聲清脆悠遠。",
+  "first_status": "CritDMG%",
+  "second_status": "ATK",
+  "skill_name": "堙沒的藍寶石淚滴",
+  "skill_desc": "普通攻擊速度提升10%；施放元素戰技後的14秒內：普通攻擊造成的傷害每1秒提升4.8%；普通攻擊命中敵人後，普通攻擊造成的傷害提升9.6%，該效果每0.3秒至多觸發1次。持續期間內，普通攻擊造成的傷害至多透過上述效果提升至48%。角色退場時將移除效果，再次施放元素戰技時會先移除原有的效果。",
+  "obtain_way": "LIMITED_WISH"
+}

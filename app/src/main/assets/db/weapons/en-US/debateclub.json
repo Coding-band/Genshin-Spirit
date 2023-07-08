@@ -1,0 +1,138 @@
+{
+	"name": "Debate Club",
+	"description": "A handy club made of fine steel. The most persuasive line of reasoning in any debater's arsenal.",
+	"weapontype": "Claymore",
+	"rarity": "3",
+	"story": "A persuasive tool, sure to turn the tide of a heated argument in the wielder's favor. Guaranteed to add weight to one's words.\nUseful in any argument, no matter who the opponent, to convince them to listen to reason.\nIn short, people listen to pearls of wisdom.\nUltimately, production was forcibly ended due to mass protests.\nThe needs of the many outweigh the needs of the one.",
+	"baseatk": 39,
+	"substat": "ATK",
+	"subvalue": "7.7",
+	"effectname": "Blunt Conclusion",
+	"effect": "After using an Elemental Skill, on hit, Normal and Charged Attacks deal additional DMG equal to {0} of ATK in a small AoE. Effect lasts 15s. DMG can only occur once every 3s.",
+	"r1": [
+		"60%"
+	],
+	"r2": [
+		"75%"
+	],
+	"r3": [
+		"90%"
+	],
+	"r4": [
+		"105%"
+	],
+	"r5": [
+		"120%"
+	],
+	"weaponmaterialtype": "Mist Veiled Elixir",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Mist Veiled Lead Elixir",
+				"count": 2
+			},
+			{
+				"name": "Mist Grass Pollen",
+				"count": 2
+			},
+			{
+				"name": "Damaged Mask",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Mist Veiled Mercury Elixir",
+				"count": 2
+			},
+			{
+				"name": "Mist Grass Pollen",
+				"count": 8
+			},
+			{
+				"name": "Damaged Mask",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Mist Veiled Mercury Elixir",
+				"count": 4
+			},
+			{
+				"name": "Mist Grass",
+				"count": 4
+			},
+			{
+				"name": "Stained Mask",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Mist Veiled Gold Elixir",
+				"count": 2
+			},
+			{
+				"name": "Mist Grass",
+				"count": 8
+			},
+			{
+				"name": "Stained Mask",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Mist Veiled Gold Elixir",
+				"count": 4
+			},
+			{
+				"name": "Mist Grass Wick",
+				"count": 6
+			},
+			{
+				"name": "Ominous Mask",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Mist Veiled Primo Elixir",
+				"count": 3
+			},
+			{
+				"name": "Mist Grass Wick",
+				"count": 12
+			},
+			{
+				"name": "Ominous Mask",
+				"count": 8
+			}
+		]
+	}
+}

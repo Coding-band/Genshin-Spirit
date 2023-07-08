@@ -1,0 +1,12 @@
+{
+  "name": "Oathsworn Eye",
+  "rare": 4,
+  "weapon": "Catalyst",
+  "isComingSoon": true,
+  "desc": "N/A",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "People of the Faltering Light",
+  "skill_desc": "Increases Energy Recharge by 24% for 10s after using an Elemental Skill.",
+  "obtain_way": "WISH"
+}

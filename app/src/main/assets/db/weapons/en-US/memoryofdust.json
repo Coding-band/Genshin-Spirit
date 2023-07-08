@@ -1,0 +1,143 @@
+{
+	"name": "Memory of Dust",
+	"description": "A stone dumbbell containing distant memories. Its endless transformations reveal the power within.",
+	"weapontype": "Catalyst",
+	"rarity": "5",
+	"story": "\"This is the mark of our pledge, and it is also my challenge to you.\"\n\"All my wisdom is hidden within this stone dumbbell.\"\nHe remembers meeting the young woman with the billowing sleeves, remembers the way she acted solemn, yet seemed joyful when she presented him this token.\nWhat a silly notion. There was no formal contract between them. They were merely two people walking the same path for their own reasons...\nBut he remembers the scene of their first meeting anyway, when the Glaze Lilies were still in abundant bloom.\nHe also remembers those words she spoke at the end — again, amid the Glaze Lilies.\n\n\"Those little people are as small and fragile as dust.\"\n\"Because they are so small, they know not when they will lose their lives to disaster or strife, and so they are afraid.\"\n\"Because they are afraid, they try so hard to become more intelligent. This I understand.\"\n\"So I thought that since there is such a gulf between us in strength, I should use technique and wisdom instead.\"\n\"With your brawn and my brains, this city would surely become a great one.\"\nHer final smile was a lonely one, even as her form dissolved into the finest dust.\n\"It seems that our journey together has come to an end. As for that stone dumbbell, forget about it, would you?\"\n\n\"This is the mark of our pledge, and it is also my challenge to you.\"\n\"All my wisdom is hidden within this stone dumbbell.\"\n\"If you can unlock it—\"\nMany years passed, and he was never able to unlock that dumbbell, nor would he ever learn what might have followed that sentence.\nOver the years, the wild Glaze Lilies, too, dwindled till at last they were no more.",
+	"baseatk": 46,
+	"substat": "ATK",
+	"subvalue": "10.8",
+	"effectname": "Golden Majesty",
+	"effect": "Increases Shield Strength by {0}. Scoring hits on opponents increases ATK by {1} for 8s. Max 5 stacks. Can only occur once every 0.3s. While protected by a shield, this ATK increase effect is increased by 100%.",
+	"r1": [
+		"20%",
+		"4%"
+	],
+	"r2": [
+		"25%",
+		"5%"
+	],
+	"r3": [
+		"30%",
+		"6%"
+	],
+	"r4": [
+		"35%",
+		"7%"
+	],
+	"r5": [
+		"40%",
+		"8%"
+	],
+	"weaponmaterialtype": "Aerosiderite",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Grain of Aerosiderite",
+				"count": 5
+			},
+			{
+				"name": "Fragile Bone Shard",
+				"count": 5
+			},
+			{
+				"name": "Damaged Mask",
+				"count": 3
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Piece of Aerosiderite",
+				"count": 5
+			},
+			{
+				"name": "Fragile Bone Shard",
+				"count": 18
+			},
+			{
+				"name": "Damaged Mask",
+				"count": 12
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Piece of Aerosiderite",
+				"count": 9
+			},
+			{
+				"name": "Sturdy Bone Shard",
+				"count": 9
+			},
+			{
+				"name": "Stained Mask",
+				"count": 9
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Bit of Aerosiderite",
+				"count": 5
+			},
+			{
+				"name": "Sturdy Bone Shard",
+				"count": 18
+			},
+			{
+				"name": "Stained Mask",
+				"count": 14
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 55000
+			},
+			{
+				"name": "Bit of Aerosiderite",
+				"count": 9
+			},
+			{
+				"name": "Fossilized Bone Shard",
+				"count": 14
+			},
+			{
+				"name": "Ominous Mask",
+				"count": 9
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 65000
+			},
+			{
+				"name": "Chunk of Aerosiderite",
+				"count": 6
+			},
+			{
+				"name": "Fossilized Bone Shard",
+				"count": 27
+			},
+			{
+				"name": "Ominous Mask",
+				"count": 18
+			}
+		]
+	}
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Beacon of the Reed Sea",
+  "rare": 5,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "N/A",
+  "first_status": "CritDMG",
+  "second_status": "ATK",
+  "skill_name": "砂海の守護",
+  "skill_desc": "元素スキルが敵に命中した後、攻撃力+20%、継続時間8秒。ダメージを受けた後、攻撃力+20%、継続時間8秒。上記二つの効果は、キャラクターが待機中でも発動できる。また、シールド状態でない時、HP上限+32%。",
+  "obtain_way": "LIMITED_WISH"
+}

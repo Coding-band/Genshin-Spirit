@@ -1,0 +1,52 @@
+{
+  "name" : "Gorou",
+  
+  "util_weapons": [
+    "sacrificial_bow",
+    "favonius_warbow",
+    "skyward_blade",
+    "elegy_for_the_end"
+  ],
+  "util_art1": [
+    "emblem_of_severed_fate",
+    "emblem_of_severed_fate",
+    "husk_of_opulent_dreams",
+    "husk_of_opulent_dreams",
+    "husk_of_opulent_dreams"
+  ],
+  "util_art2": [
+    "husk_of_opulent_dreams",
+    "husk_of_opulent_dreams",
+    "husk_of_opulent_dreams",
+    "husk_of_opulent_dreams",
+    "husk_of_opulent_dreams"
+  ],
+  "util_art_sand_entry": [
+    "EnRech",
+    "DEF",
+    "CritDMG",
+    "CritRate"
+  ],
+  "util_art_goblet_entry": [
+    "DEF",
+    "CritDMG",
+    "CritRate",
+	"EnRech"
+  ],
+  "util_art_circlet_entry": [
+    "CritDMG",
+    "CritRate",
+    "DEF",
+	"EnRech"
+  ],
+  "util_art_sub_entry": [
+    "DEF",
+    "CritDMG",
+    "CritRate",
+    "EnRech"
+  ],
+  
+  "team1":[
+	"Arataki Itto","Gorou","Albedo","Zhongli"
+  ]
+}

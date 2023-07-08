@@ -1,0 +1,61 @@
+{
+  "name" : "Xiangling",
+    
+  "util_weapons": [
+    "staff_of_homa",
+    "primordial_jade_winged_spear",
+    "skyward_spine",
+    "deathmatch",
+    "favonius_lance",
+    "lithic_spear",
+    "lions_roar"
+  ],
+  "util_art1": [
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames"
+  ],
+  "util_art2": [
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames"
+  ],
+  "util_art3": [
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames",
+    "crimson_witch_of_flames"
+  ],
+  "util_art4": [
+    "wanderers_troupe",
+    "wanderers_troupe",
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "noblesse_oblige"
+  ],
+  "util_art_sand_entry": [
+    "EnRech"
+  ],
+  "util_art_goblet_entry": [
+    "EleDMG_Pyro"
+  ],
+  "util_art_circlet_entry": [
+    "CritDMG",
+	"CritRate"
+  ],
+  "util_art_sub_entry": [
+    "CritRate",
+    "CritDMG",
+    "EleMas",
+    "EnRech"
+  ],
+  
+  "team1":[
+	"Xiangling","Xingqiu","Chongyun","Bennett"
+  ]
+}

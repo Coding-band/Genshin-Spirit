@@ -1,0 +1,53 @@
+{
+  "name" : "Xingqiu",
+    
+  "util_weapons": [
+    "skyward_blade",
+    "primordial_jade_cutter",
+    "freedom_sworn",
+    "mistsplitter_reforged",
+    "sacrificial_sword",
+    "favonius_sword"
+  ],
+  "util_art1": [
+    "noblesse_oblige",
+    "noblesse_oblige",
+    "heart_of_depth",
+    "heart_of_depth",
+    "heart_of_depth"
+  ],
+  "util_art2": [
+    "emblem_of_severed_fate",
+    "emblem_of_severed_fate",
+    "emblem_of_severed_fate",
+    "emblem_of_severed_fate",
+    "emblem_of_severed_fate"
+  ],
+  "util_art_sand_entry": [
+    "EnRech"
+  ],
+  "util_art_goblet_entry": [
+    "HP",
+	"EleDMG_Hydro"
+  ],
+  "util_art_circlet_entry": [
+    "CritDMG",
+	"CritRate"
+  ],
+  "util_art_sub_entry": [
+    "CritRate",
+    "CritDMG",
+    "HP",
+    "EnRech"
+  ],
+  
+  "team1":[
+	"Zhongli","Xingqiu","Bennett","Xiangling"
+  ],
+  "team2":[
+	"Tartaglia","Xingqiu","Fischl","Beidou"
+  ],
+  "team3":[
+	"Kaedehara Kazuha","Kamisato Ayaka","Xingqiu","Shenhe"
+  ]
+}

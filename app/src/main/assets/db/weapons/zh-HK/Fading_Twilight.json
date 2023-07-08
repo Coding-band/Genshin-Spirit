@@ -1,0 +1,12 @@
+{
+  "name": "Fading Twilight",
+  "rare": 4,
+  "weapon": "Bow",
+  "isComingSoon": false,
+  "desc": "一塊堅固的鐵片，如果有足夠的意志力，它的力量可能足以摧毀山脈。",
+  "first_status": "EnRech%",
+  "second_status": "ATK",
+  "skill_name": "淵中霞彩",
+  "skill_desc": "具有夕暮、流霞、朝暉三種狀態，分別能使造成的傷害提升6%/10%/14%。攻擊命中敵人後，將轉換為下一種狀態，每7秒至多轉換一次狀態。裝備該武器的角色處於隊伍後台時該效果依舊能觸發轉換。",
+  "obtain_way": "N/A"
+}

@@ -1,0 +1,91 @@
+{
+	"name": "Beginner's Protector",
+	"description": "A polearm as straight as a flag pole. Well suited to most combat situations, it has an imposing presence when swung.",
+	"weapontype": "Polearm",
+	"rarity": "1",
+	"story": "In old Mondstadt, spear arts were forbidden by the nobility.\nOstensibly, they claimed that only the sword was worthy of noble stock,\nBut they say that in reality, it was because the length of polearms could bridge the gaps in training,\nWhich might grant the unarmed and unschooled commoners a weapon with which to resist.",
+	"baseatk": 23,
+	"substat": "",
+	"subvalue": "",
+	"effectname": "",
+	"effect": "",
+	"r1": [],
+	"r2": [],
+	"r3": [],
+	"r4": [],
+	"r5": [],
+	"weaponmaterialtype": "Dandelion Gladiator",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora"
+			},
+			{
+				"name": "Fetters of the Dandelion Gladiator",
+				"count": 1
+			},
+			{
+				"name": "Chaos Device",
+				"count": 1
+			},
+			{
+				"name": "Divining Scroll",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Chains of the Dandelion Gladiator",
+				"count": 1
+			},
+			{
+				"name": "Chaos Device",
+				"count": 4
+			},
+			{
+				"name": "Divining Scroll",
+				"count": 2
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Chains of the Dandelion Gladiator",
+				"count": 2
+			},
+			{
+				"name": "Chaos Circuit",
+				"count": 2
+			},
+			{
+				"name": "Sealed Scroll",
+				"count": 2
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Shackles of the Dandelion Gladiator",
+				"count": 1
+			},
+			{
+				"name": "Chaos Circuit",
+				"count": 4
+			},
+			{
+				"name": "Sealed Scroll",
+				"count": 3
+			}
+		]
+	}
+}

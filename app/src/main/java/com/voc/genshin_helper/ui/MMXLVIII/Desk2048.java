@@ -40,6 +40,7 @@ import android.graphics.LinearGradient;
 import android.graphics.Shader;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -76,9 +77,8 @@ import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.BuildConfig;
 import com.voc.genshin_helper.R;
-import com.voc.genshin_helper.buff.BuffDatabaseUI;
 import com.voc.genshin_helper.buff.EnkaDataCollect;
-import com.voc.genshin_helper.buff_old.SipTikCal;
+import com.voc.genshin_helper.data.buff_old.SipTikCal;
 import com.voc.genshin_helper.data.Artifacts;
 import com.voc.genshin_helper.data.Characters;
 import com.voc.genshin_helper.data.IconCard;
@@ -756,10 +756,10 @@ public class Desk2048 extends AppCompatActivity {
 
         ImageView card_bg = viewPager4.findViewById(R.id.card_bg);
         card_bg.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        card_bg.setImageDrawable(FileLoader.loadIMG2Drawable(css.getCharByName(sharedPreferences.getString("card_name","Klee"),context)[4],context));
+        card_bg.setImageResource(css.getCharByName(sharedPreferences.getString("card_name","Klee"),context)[4]);
 
         Picasso.get()
-                .load (FileLoader.loadIMG(css.getCharByName(sharedPreferences.getString("icon_name","Klee"),context)[3],context))
+                .load (css.getCharByName(sharedPreferences.getString("icon_name","Klee"),context)[3])
                 .transform(transformation)
                 .fit()
                 .error (R.drawable.paimon_lost)
@@ -811,8 +811,9 @@ public class Desk2048 extends AppCompatActivity {
     public View.OnClickListener paimon_buff_cal = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent i = new Intent(Desk2048.this, BuffDatabaseUI.class);
-            startActivity(i);
+            CustomToast.toast(context, activity, "Release in 3.7.0");
+            //Intent i = new Intent(Desk2048.this, BuffDatabaseUI.class);
+            //startActivity(i);
         }
     };
     public View.OnClickListener paimon_daily = new View.OnClickListener()  {
@@ -1613,7 +1614,14 @@ public class Desk2048 extends AppCompatActivity {
         bg_download_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                check_updates();
+                new AsyncTask<Void, Void, Void>() {
+                    @Override
+                    protected Void doInBackground(Void... voids) {
+
+                        check_updates();
+                        return null;
+                    }
+                }.execute();
             }
         });
 
@@ -1692,7 +1700,7 @@ public class Desk2048 extends AppCompatActivity {
                 final Transformation transformation_circ = new RoundedCornersTransformation(radius_circ, margin_circ);
 
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(icon_name_final,context)[3],context)).resize((int) (40*displayMetrics.density),(int) (40*displayMetrics.density)).transform(transformation_circ)
+                        .load (item_rss.getCharByName(icon_name_final,context)[3]).resize((int) (40*displayMetrics.density),(int) (40*displayMetrics.density)).transform(transformation_circ)
                         .error (R.drawable.paimon_full)
                         .into ((ImageView) viewPager0.findViewById(R.id.memo_user_icon));
             }
@@ -1736,7 +1744,7 @@ public class Desk2048 extends AppCompatActivity {
             height = (int) height/4;
         }
         Picasso.get()
-                .load (FileLoader.loadIMG(item_rss.getCharByName(sharedPreferences.getString("card_name","Klee"), context)[4],context))
+                .load (item_rss.getCharByName(sharedPreferences.getString("card_name","Klee"), context)[4])
                 .resize(width, height)
                 .error (R.drawable.unknown_card)
                 .into (card_bg);
@@ -1744,7 +1752,7 @@ public class Desk2048 extends AppCompatActivity {
         card_bg.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
         Picasso.get()
-                .load (FileLoader.loadIMG(item_rss.getCharByName(sharedPreferences.getString("icon_name","Klee"), context)[3],context))
+                .load (item_rss.getCharByName(sharedPreferences.getString("icon_name","Klee"), context)[3])
                 .transform(transformation_circ)
                 .fit()
                 .error (R.drawable.paimon_lost)
@@ -1798,14 +1806,14 @@ public class Desk2048 extends AppCompatActivity {
 
         if (type == CARD){
             Picasso.get()
-                    .load (FileLoader.loadIMG(item_rss.getCharByName(baseName, context)[4],context))
+                    .load (item_rss.getCharByName(baseName, context)[4])
                     .fit()
                     .error (R.drawable.unknown_card)
                     .into (card_bg);
             card_name_final = baseName;
         }else{
             Picasso.get()
-                    .load (FileLoader.loadIMG(item_rss.getCharByName(baseName, context)[3],context))
+                    .load (item_rss.getCharByName(baseName, context)[3])
                     .transform(transformation_circ)
                     .fit()
                     .error (R.drawable.paimon_lost)
@@ -1833,7 +1841,7 @@ public class Desk2048 extends AppCompatActivity {
                     height = (int) height/4;
                 }
                 Picasso.get()
-                        .load (FileLoader.loadIMG(css.getCharByName(sharedPreferences.getString("card_name","Klee"),context)[4],context))
+                        .load (css.getCharByName(sharedPreferences.getString("card_name","Klee"),context)[4])
                         .resize(width_curr,height)
                         .error (R.drawable.paimon_lost)
                         .into ((ImageView) viewPager4.findViewById(R.id.card_bg));
@@ -1841,7 +1849,7 @@ public class Desk2048 extends AppCompatActivity {
                 ((ImageView) viewPager4.findViewById(R.id.card_bg)).setScaleType(ImageView.ScaleType.CENTER_CROP);
 
                 Picasso.get()
-                        .load (FileLoader.loadIMG(css.getCharByName(sharedPreferences.getString("icon_name","Klee"),context)[3],context))
+                        .load (css.getCharByName(sharedPreferences.getString("icon_name","Klee"),context)[3])
                         .transform(transformation_circ)
                         .fit()
                         .error (R.drawable.paimon_lost)
@@ -2280,7 +2288,7 @@ public class Desk2048 extends AppCompatActivity {
         int rare,isComing;
         //charactersList.clear();
 
-        String json_base = LoadData("db/char/char_list.json");
+        String json_base = ItemRss.LoadAssestData(context,"db/char/char_list.json");
         //Get data from JSON
         try {
             JSONArray array = new JSONArray(json_base);
@@ -2327,7 +2335,7 @@ public class Desk2048 extends AppCompatActivity {
         String name,weapon,stat_1;
         int rare,isComing;
 
-        String json_base = LoadData("db/weapons/weapon_list.json");
+        String json_base = ItemRss.LoadAssestData(context,"db/weapons/weapon_list.json");
         //Get data from JSON
         try {
             JSONArray array = new JSONArray(json_base);
@@ -2359,7 +2367,7 @@ public class Desk2048 extends AppCompatActivity {
         String name ,img;
         int rare,isComing;
 
-        String json_base = LoadData("db/artifacts/artifact_list.json");
+        String json_base = ItemRss.LoadAssestData(context,"db/artifacts/artifact_list.json");
         //Get data from JSON
         try {
             JSONArray array = new JSONArray(json_base);
@@ -2385,25 +2393,6 @@ public class Desk2048 extends AppCompatActivity {
 
 
     public void showCharDetail (String name){
-
-    }
-
-    public String LoadData(String inFile) {
-        String tContents = "";
-        try {
-            File file = new File(context.getFilesDir()+"/"+inFile);
-            InputStream stream = new FileInputStream(file);
-
-            int size = stream.available();
-            byte[] buffer = new byte[size];
-            stream.read(buffer);
-            stream.close();
-            tContents = new String(buffer);
-        } catch (IOException e) {
-            // Handle exceptions here
-        }
-
-        return tContents;
 
     }
 
@@ -2516,7 +2505,7 @@ public class Desk2048 extends AppCompatActivity {
             ImageView img = viewPager0.findViewById(imageArray[x]);
             TextView tv = viewPager0.findViewById(tvArray[x]);
             Picasso.get()
-                    .load (FileLoader.loadIMG(css.getCharByName(nextBirthCharName,context)[3],context))
+                    .load (css.getCharByName(nextBirthCharName,context)[3])
                     .transform(transformation)
                     .resize((int) (pix*2), (int) (pix*2))
                     .error (R.drawable.paimon_lost)
@@ -2573,7 +2562,7 @@ public class Desk2048 extends AppCompatActivity {
             int[] asc_char_ico = new int[]{R.id.asc_char_ico1,R.id.asc_char_ico2,R.id.asc_char_ico3,R.id.asc_char_ico4,R.id.asc_char_ico5,R.id.asc_char_ico6,R.id.asc_char_ico7,R.id.asc_char_ico8,R.id.asc_char_ico9,R.id.asc_char_ico10,R.id.asc_char_ico11,R.id.asc_char_ico12,R.id.asc_char_ico13,R.id.asc_char_ico14,R.id.asc_char_ico15,R.id.asc_char_ico16,R.id.asc_char_ico17,R.id.asc_char_ico18,R.id.asc_char_ico19,R.id.asc_char_ico20,R.id.asc_char_ico21,R.id.asc_char_ico22,R.id.asc_char_ico23,R.id.asc_char_ico24,R.id.asc_char_ico25,R.id.asc_char_ico26,R.id.asc_char_ico27,R.id.asc_char_ico28,R.id.asc_char_ico29,R.id.asc_char_ico30,R.id.asc_char_ico31,R.id.asc_char_ico32,R.id.asc_char_ico33,R.id.asc_char_ico34,R.id.asc_char_ico35,R.id.asc_char_ico36,R.id.asc_char_ico37,R.id.asc_char_ico38,R.id.asc_char_ico39,R.id.asc_char_ico40,R.id.asc_char_ico41,R.id.asc_char_ico42,R.id.asc_char_ico43,R.id.asc_char_ico44,R.id.asc_char_ico45};
             int[] asc_char_tick = new int[]{R.id.asc_char_tick1,R.id.asc_char_tick2,R.id.asc_char_tick3,R.id.asc_char_tick4,R.id.asc_char_tick5,R.id.asc_char_tick6,R.id.asc_char_tick7,R.id.asc_char_tick8,R.id.asc_char_tick9,R.id.asc_char_tick10,R.id.asc_char_tick11,R.id.asc_char_tick12,R.id.asc_char_tick13,R.id.asc_char_tick14,R.id.asc_char_tick15,R.id.asc_char_tick16,R.id.asc_char_tick17,R.id.asc_char_tick18,R.id.asc_char_tick19,R.id.asc_char_tick20,R.id.asc_char_tick21,R.id.asc_char_tick22,R.id.asc_char_tick23,R.id.asc_char_tick24,R.id.asc_char_tick25,R.id.asc_char_tick26,R.id.asc_char_tick27,R.id.asc_char_tick28,R.id.asc_char_tick29,R.id.asc_char_tick30,R.id.asc_char_tick31,R.id.asc_char_tick32,R.id.asc_char_tick33,R.id.asc_char_tick34,R.id.asc_char_tick35,R.id.asc_char_tick36,R.id.asc_char_tick37,R.id.asc_char_tick38,R.id.asc_char_tick39,R.id.asc_char_tick40,R.id.asc_char_tick41,R.id.asc_char_tick42,R.id.asc_char_tick43,R.id.asc_char_tick44,R.id.asc_char_tick45};
             int[] asc_char_ll = new int[]{R.id.asc_char_ll1,R.id.asc_char_ll2,R.id.asc_char_ll3,R.id.asc_char_ll4,R.id.asc_char_ll5,R.id.asc_char_ll6,R.id.asc_char_ll7,R.id.asc_char_ll8,R.id.asc_char_ll9,R.id.asc_char_ll10,R.id.asc_char_ll11,R.id.asc_char_ll12,R.id.asc_char_ll13,R.id.asc_char_ll14,R.id.asc_char_ll15,R.id.asc_char_ll16,R.id.asc_char_ll17,R.id.asc_char_ll18,R.id.asc_char_ll19,R.id.asc_char_ll20,R.id.asc_char_ll21,R.id.asc_char_ll22,R.id.asc_char_ll23,R.id.asc_char_ll24,R.id.asc_char_ll25,R.id.asc_char_ll26,R.id.asc_char_ll27,R.id.asc_char_ll28,R.id.asc_char_ll29,R.id.asc_char_ll30,R.id.asc_char_ll31,R.id.asc_char_ll32,R.id.asc_char_ll33,R.id.asc_char_ll34,R.id.asc_char_ll35,R.id.asc_char_ll36,R.id.asc_char_ll37,R.id.asc_char_ll38,R.id.asc_char_ll39,R.id.asc_char_ll40,R.id.asc_char_ll41,R.id.asc_char_ll42,R.id.asc_char_ll43,R.id.asc_char_ll44,R.id.asc_char_ll45};
-            String json_base = LoadData("db/char/char_require_asc_skill.json");
+            String json_base = ItemRss.LoadAssestData(context,"db/char/char_require_asc_skill.json");
             String name = null,book ;
             int rare;
             int tmp_cnt = 0;
@@ -2603,7 +2592,7 @@ public class Desk2048 extends AppCompatActivity {
                             default:  img.setBackgroundResource(R.drawable.item_char_list_bg_circ_1s);break;
                         }
 
-                        Picasso.get().load(FileLoader.loadIMG(css.getCharByName(name,context)[3],context)).fit().transform(roundedCornersTransformation).into(img);
+                        Picasso.get().load(css.getCharByName(name,context)[3]).fit().transform(roundedCornersTransformation).into(img);
                         tmp_cnt = tmp_cnt +1;
                         // if character is exist in list
 
@@ -2676,7 +2665,7 @@ public class Desk2048 extends AppCompatActivity {
             int[] asc_weapon_tick = new int[]{R.id.asc_char_tick1,R.id.asc_char_tick2,R.id.asc_char_tick3,R.id.asc_char_tick4,R.id.asc_char_tick5,R.id.asc_char_tick6,R.id.asc_char_tick7,R.id.asc_char_tick8,R.id.asc_char_tick9,R.id.asc_char_tick10,R.id.asc_char_tick11,R.id.asc_char_tick12,R.id.asc_char_tick13,R.id.asc_char_tick14,R.id.asc_char_tick15,R.id.asc_char_tick16,R.id.asc_char_tick17,R.id.asc_char_tick18,R.id.asc_char_tick19,R.id.asc_char_tick20,R.id.asc_char_tick21,R.id.asc_char_tick22,R.id.asc_char_tick23,R.id.asc_char_tick24,R.id.asc_char_tick25,R.id.asc_char_tick26,R.id.asc_char_tick27,R.id.asc_char_tick28,R.id.asc_char_tick29,R.id.asc_char_tick30,R.id.asc_char_tick31,R.id.asc_char_tick32,R.id.asc_char_tick33,R.id.asc_char_tick34,R.id.asc_char_tick35,R.id.asc_char_tick36,R.id.asc_char_tick37,R.id.asc_char_tick38,R.id.asc_char_tick39,R.id.asc_char_tick40,R.id.asc_char_tick41,R.id.asc_char_tick42,R.id.asc_char_tick43,R.id.asc_char_tick44,R.id.asc_char_tick45};
             int[] asc_weapon_ll = new int[]{R.id.asc_char_ll1,R.id.asc_char_ll2,R.id.asc_char_ll3,R.id.asc_char_ll4,R.id.asc_char_ll5,R.id.asc_char_ll6,R.id.asc_char_ll7,R.id.asc_char_ll8,R.id.asc_char_ll9,R.id.asc_char_ll10,R.id.asc_char_ll11,R.id.asc_char_ll12,R.id.asc_char_ll13,R.id.asc_char_ll14,R.id.asc_char_ll15,R.id.asc_char_ll16,R.id.asc_char_ll17,R.id.asc_char_ll18,R.id.asc_char_ll19,R.id.asc_char_ll20,R.id.asc_char_ll21,R.id.asc_char_ll22,R.id.asc_char_ll23,R.id.asc_char_ll24,R.id.asc_char_ll25,R.id.asc_char_ll26,R.id.asc_char_ll27,R.id.asc_char_ll28,R.id.asc_char_ll29,R.id.asc_char_ll30,R.id.asc_char_ll31,R.id.asc_char_ll32,R.id.asc_char_ll33,R.id.asc_char_ll34,R.id.asc_char_ll35,R.id.asc_char_ll36,R.id.asc_char_ll37,R.id.asc_char_ll38,R.id.asc_char_ll39,R.id.asc_char_ll40,R.id.asc_char_ll41,R.id.asc_char_ll42,R.id.asc_char_ll43,R.id.asc_char_ll44,R.id.asc_char_ll45};
             int tmp_cnt = 0;
-            String json_base = LoadData("db/weapons/weapon_require_asc.json");
+            String json_base = ItemRss.LoadAssestData(context,"db/weapons/weapon_require_asc.json");
             String name,copy1 ;
             int rare;
             try {
@@ -2692,7 +2681,7 @@ public class Desk2048 extends AppCompatActivity {
                         ImageView tick = asc_material_weapon_ll.findViewById(asc_weapon_tick[tmp_cnt]);
                         ImageView img = asc_material_weapon_ll.findViewById(asc_weapon_ico[tmp_cnt]);
 
-                        Picasso.get().load(css.getWeaponByName(name,context)[1]).fit().into(img);
+                        Picasso.get().load(css.getWeaponByName(name)[1]).fit().into(img);
 
                         String finalName = name;
                         img.setOnClickListener(new View.OnClickListener() {
@@ -2718,7 +2707,7 @@ public class Desk2048 extends AppCompatActivity {
                             default:  img.setBackgroundResource(R.drawable.item_char_list_bg_circ_1s);break;
                         }
 
-                        Picasso.get().load(FileLoader.loadIMG(css.getWeaponByName(name,context)[1],context)).fit().transform(roundedCornersTransformation).into(img);
+                        Picasso.get().load(css.getWeaponByName(name)[1]).fit().transform(roundedCornersTransformation).into(img);
                         tmp_cnt = tmp_cnt +1;
                         // if character is exist in list
                         //tick.setVisibility(View.VISIBLE);

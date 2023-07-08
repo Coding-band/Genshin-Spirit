@@ -951,7 +951,7 @@ public class CalculatorProcess {
                 linearLayout5.getLayoutParams().height  = LinearLayout.LayoutParams.WRAP_CONTENT;
                 linearLayout5.getLayoutParams().width = LinearLayout.LayoutParams.WRAP_CONTENT;
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getCharByName(NameList.get(x),context)[3],context))
+                        .load (item_rss.getCharByName(NameList.get(x),context)[3])
                         .transform(transformation)
                         .resize(size150,size150)
                         .error (R.drawable.paimon_lost)
@@ -981,12 +981,12 @@ public class CalculatorProcess {
                 linearLayout5.getLayoutParams().height  = LinearLayout.LayoutParams.WRAP_CONTENT;
                 linearLayout5.getLayoutParams().width = LinearLayout.LayoutParams.WRAP_CONTENT;
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getWeaponByName(WeaponNameList.get(x-NameList.size()),context)[1],context))
+                        .load (item_rss.getWeaponByName(WeaponNameList.get(x-NameList.size()))[1])
                         .transform(transformation)
                         .resize(size150,size150)
                         .error (R.drawable.paimon_lost)
                         .into (item_cal_img);
-                item_cal_tv.setText(item_rss.getWeaponByName(WeaponNameList.get(x-NameList.size()),context)[0]);
+                item_cal_tv.setText(item_rss.getWeaponByName(WeaponNameList.get(x-NameList.size()))[0]);
 
                 if(WeaponIsCal.get(x-NameList.size()) == false){
                     Drawable drawable = context.getResources().getDrawable(R.drawable.barrier);
@@ -1022,7 +1022,7 @@ public class CalculatorProcess {
                 linearLayout5.getLayoutParams().height  = LinearLayout.LayoutParams.WRAP_CONTENT;
                 linearLayout5.getLayoutParams().width = LinearLayout.LayoutParams.WRAP_CONTENT;
                         Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getItemIcoByName(material.crystalNameList()[x],context),context))
+                        .load (item_rss.getItemIcoByName(material.crystalNameList()[x]))
                         .resize(size,size)
                         .error (R.drawable.paimon_lost)
                         .into (item_cal_img);
@@ -1061,7 +1061,7 @@ public class CalculatorProcess {
                 linearLayout5.getLayoutParams().height  = LinearLayout.LayoutParams.WRAP_CONTENT;
                 linearLayout5.getLayoutParams().width = LinearLayout.LayoutParams.WRAP_CONTENT;
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getItemIcoByName(material.bossNameList()[x],context),context))
+                        .load (item_rss.getItemIcoByName(material.bossNameList()[x]))
                         .resize(size,size)
                         .error (R.drawable.paimon_lost)
                         .into (item_cal_img);
@@ -1098,7 +1098,7 @@ public class CalculatorProcess {
                 linearLayout5.getLayoutParams().height  = LinearLayout.LayoutParams.WRAP_CONTENT;
                 linearLayout5.getLayoutParams().width = LinearLayout.LayoutParams.WRAP_CONTENT;
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getItemIcoByName(material.weekBossNameList()[x],context),context))
+                        .load (item_rss.getItemIcoByName(material.weekBossNameList()[x]))
                         .resize(size,size)
                         .error (R.drawable.paimon_lost)
                         .into (item_cal_img);
@@ -1136,7 +1136,7 @@ public class CalculatorProcess {
                 linearLayout5.getLayoutParams().height  = LinearLayout.LayoutParams.WRAP_CONTENT;
                 linearLayout5.getLayoutParams().width = LinearLayout.LayoutParams.WRAP_CONTENT;
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getItemIcoByName(material.localNameList()[x],context),context))
+                        .load (item_rss.getItemIcoByName(material.localNameList()[x]))
                         .resize(size,size)
                         .error (R.drawable.paimon_lost)
                         .into (item_cal_img);
@@ -1174,7 +1174,7 @@ public class CalculatorProcess {
                 linearLayout5.getLayoutParams().height = LinearLayout.LayoutParams.WRAP_CONTENT;
                 linearLayout5.getLayoutParams().width = LinearLayout.LayoutParams.WRAP_CONTENT;
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getItemIcoByName(material.commonNameList()[x],context),context))
+                        .load (item_rss.getItemIcoByName(material.commonNameList()[x]))
                         .resize(size,size)
                         .error (R.drawable.paimon_lost)
                         .into (item_cal_img);
@@ -1213,7 +1213,7 @@ public class CalculatorProcess {
                 linearLayout5.getLayoutParams().height  = LinearLayout.LayoutParams.WRAP_CONTENT;
                 linearLayout5.getLayoutParams().width = LinearLayout.LayoutParams.WRAP_CONTENT;
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getItemIcoByName(material.weekly1NameList()[x],context),context))
+                        .load (item_rss.getItemIcoByName(material.weekly1NameList()[x]))
                         .resize(size,size)
                         .error (R.drawable.paimon_lost)
                         .into (item_cal_img);
@@ -1259,7 +1259,7 @@ public class CalculatorProcess {
                 linearLayout5.getLayoutParams().height  = LinearLayout.LayoutParams.WRAP_CONTENT;
                 linearLayout5.getLayoutParams().width = LinearLayout.LayoutParams.WRAP_CONTENT;
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getItemIcoByName(material.weekly2NameList()[x],context),context))
+                        .load (item_rss.getItemIcoByName(material.weekly2NameList()[x]))
                         .resize(size,size)
                         .error (R.drawable.paimon_lost)
                         .into (item_cal_img);
@@ -1306,7 +1306,7 @@ public class CalculatorProcess {
                 linearLayout5.getLayoutParams().height  = LinearLayout.LayoutParams.WRAP_CONTENT;
                 linearLayout5.getLayoutParams().width = LinearLayout.LayoutParams.WRAP_CONTENT;
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getItemIcoByName(material.weekly3NameList()[x],context),context))
+                        .load (item_rss.getItemIcoByName(material.weekly3NameList()[x]))
                         .resize(size,size)
                         .error (R.drawable.paimon_lost)
                         .into (item_cal_img);
@@ -1352,7 +1352,7 @@ public class CalculatorProcess {
                 linearLayout5.getLayoutParams().height  = LinearLayout.LayoutParams.WRAP_CONTENT;
                 linearLayout5.getLayoutParams().width = LinearLayout.LayoutParams.WRAP_CONTENT;
                 Picasso.get()
-                        .load (FileLoader.loadIMG(item_rss.getItemIcoByName(other_temp[x],context),context))
+                        .load (item_rss.getItemIcoByName(other_temp[x]))
                         .resize(size,size)
                         .error (R.drawable.paimon_lost)
                         .into (item_cal_img);

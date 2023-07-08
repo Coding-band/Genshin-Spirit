@@ -37,7 +37,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
-import com.voc.genshin_helper.buff_old.SipTikCal;
+import com.voc.genshin_helper.data.buff_old.SipTikCal;
 import com.voc.genshin_helper.ui.CalculatorUI;
 import com.voc.genshin_helper.ui.MMXLVIII.Calculator2048;
 import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
@@ -250,7 +250,7 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
         }
 
         viewHolder.weapon_stat.setText(this.context.getString(itemRss.getSecAttr(weapons.stat_1)));
-        viewHolder.weapon_name.setText(itemRss.getWeaponByName(weapons.getName(),context)[0]);
+        viewHolder.weapon_name.setText(itemRss.getWeaponByName(weapons.getName())[0]);
         viewHolder.weapon_weapon.setImageResource(itemRss.getWeaponTypeIMG(weapons.getWeapon(),context));
         //viewHolder.weapon_icon.setBackgroundResource(itemRss.getRareColorByName(weapons.getRare())[0]);
         //viewHolder.weapon_bg.setBackgroundResource(itemRss.getRareColorByName(weapons.getRare())[0]);
@@ -505,7 +505,7 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
         switch (sharedPreferences.getString("curr_ui_grid", "2")){
             case "2":{
                 Picasso.get()
-                        .load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context))
+                        .load(itemRss.getWeaponByName(weapons.getName())[1])
                         .fit().centerCrop()
                         .error(R.drawable.paimon_full)
                         .into(viewHolder.weapon_icon);
@@ -513,7 +513,7 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
             }
             case "3":{
                 Picasso.get()
-                        .load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context))
+                        .load(itemRss.getWeaponByName(weapons.getName())[1])
                         .resize(one_curr,one_curr)
                         .error(R.drawable.paimon_full)
                         .into(viewHolder.weapon_icon);
@@ -524,7 +524,7 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                 viewHolder.weapon_icon.getLayoutParams().width = 96*width/315;
                 viewHolder.weapon_icon.getLayoutParams().height = 96*width/315;
                 Picasso.get()
-                        .load(FileLoader.loadIMG(itemRss.getWeaponByName(weapons.getName(),context)[1],context))
+                        .load(itemRss.getWeaponByName(weapons.getName())[1])
                         .resize(96*width/315,96*width/315)
                         .transform(transformation_circ_siptik_ico)
                         .error (R.drawable.paimon_full)
@@ -644,13 +644,13 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                                 TextView info_skill_title = (TextView) inflate.findViewById(R.id.info_skill_title);
 
                                 Picasso.get()
-                                        .load(FileLoader.loadIMG(itemRss.getWeaponByName(name,context)[1],context)).fit().centerInside().transform(transformation)
+                                        .load(itemRss.getWeaponByName(name)[1]).fit().centerInside().transform(transformation)
                                         .error(R.drawable.paimon_lost)
                                         .into(item_img);
 
                                 //.setText(itemRss.getWeaponByName(name,context)[0]);
                                 //((TextView) inflate.findViewById(R.id.item_name)).setText(weapon_base_name.getText());
-                                ((TextView) inflate.findViewById(R.id.item_name)).setText(itemRss.getWeaponByName(name,context)[0]);
+                                ((TextView) inflate.findViewById(R.id.item_name)).setText(itemRss.getWeaponByName(name)[0]);
                                 ((TextView) inflate.findViewById(R.id.item_info)).setText(desc);
                                 ((ImageView) inflate.findViewById(R.id.item_element)).setVisibility(View.GONE);
 

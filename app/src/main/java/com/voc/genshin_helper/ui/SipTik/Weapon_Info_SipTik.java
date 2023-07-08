@@ -2,7 +2,6 @@ package com.voc.genshin_helper.ui.SipTik;
 
 import static android.content.Context.MODE_PRIVATE;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
-import static com.google.android.material.tabs.TabLayout.MODE_FIXED;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -38,9 +37,7 @@ import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
-import androidx.viewpager.widget.ViewPager;
 
-import com.google.android.material.tabs.TabLayout;
 import com.squareup.picasso.Picasso;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
@@ -48,7 +45,6 @@ import com.voc.genshin_helper.data.Material;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.FileLoader;
-import com.voc.genshin_helper.util.MyViewPagerAdapter;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
 import org.json.JSONArray;
@@ -434,11 +430,11 @@ public class Weapon_Info_SipTik {
         });
 
         /** MAIN */
-        weapon_name.setText(item_rss.getWeaponByName(name,context)[0]);
+        weapon_name.setText(item_rss.getWeaponByName(name)[0]);
         weapon_obtain_way_tv.setText(item_rss.getObtainCode(obtain_way,context));
         //weapon_title.setText(nick);
         //Picasso.get().load(FileLoader.loadIMG(item_rss.getWeaponByName(name,context)[0],context)).centerCrop().into(weapon_img);
-        weapon_img.setImageDrawable(FileLoader.loadIMG2Drawable(item_rss.getWeaponGachaByName(name,context)[1],context));
+        weapon_img.setImageDrawable(context.getDrawable(item_rss.getWeaponGachaByName(name)[1]));
         switch (weapon){
             case "Sword" :
             case "Polearm" :
@@ -713,7 +709,7 @@ public class Weapon_Info_SipTik {
 
                 img_bg.setBackgroundResource(getRssByRare(itemRareListBASE[x]));
                 //Picasso.get().load(getRssByRare(itemRareListBASE[x])).resize(150,180).into(img_bg);
-                Picasso.get().load(FileLoader.loadIMG(item_rss.getItemIcoByName(itemNameListBASE[x],context),context)).resize(144,144).into(img_img);
+                Picasso.get().load(item_rss.getItemIcoByName(itemNameListBASE[x])).resize(144,144).into(img_img);
                 img_tv.setText(prettyCount(itemValueListBASE[x],0));
 
                 img_bg.getLayoutParams().width = 150;
@@ -802,7 +798,7 @@ public class Weapon_Info_SipTik {
 
                     img_bg.setBackgroundResource(getRssByRare(itemRareList[x]));
                     //Picasso.get().load(getRssByRare(itemRareList[x])).resize(150,180).into(img_bg);
-                    Picasso.get().load(FileLoader.loadIMG(item_rss.getItemIcoByName(itemNameList[x],context),context)).resize(144,144).into(img_img);
+                    Picasso.get().load(item_rss.getItemIcoByName(itemNameList[x])).resize(144,144).into(img_img);
                     img_tv.setText(prettyCount(itemValueList[x],0));
 
                     img_bg.getLayoutParams().width = 150;

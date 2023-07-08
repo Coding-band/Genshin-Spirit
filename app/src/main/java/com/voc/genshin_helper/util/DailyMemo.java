@@ -321,7 +321,7 @@ public class DailyMemo {
         }
 
         Picasso.get()
-                .load (FileLoader.loadIMG(item_rss.getCharByName(item_rss.getCharNameByTranslatedName(icon,context),context)[3],context)).resize((int) (40*displayMetrics.density),(int) (40*displayMetrics.density)).transform(transformation_circ_siptik_ico)
+                .load (item_rss.getCharByName(item_rss.getCharNameByTranslatedName(icon,context),context)[3]).resize((int) (40*displayMetrics.density),(int) (40*displayMetrics.density)).transform(transformation_circ_siptik_ico)
                 .error (R.drawable.paimon_full)
                 .into (memo_user_icon);
 
@@ -348,28 +348,28 @@ public class DailyMemo {
         }
 
         Picasso.get()
-                .load (FileLoader.loadIMG(item_rss.getCharByName(icon,context)[3],context)).resize((int) (48*displayMetrics.density),(int) (48*displayMetrics.density)).transform(transformation_circ_siptik_ico)
+                .load (item_rss.getCharByName(icon,context)[3]).resize((int) (48*displayMetrics.density),(int) (48*displayMetrics.density)).transform(transformation_circ_siptik_ico)
                 .error (R.drawable.paimon_full)
                 .into (memo_user_icon);
 
         Picasso.get()
-                .load (FileLoader.loadIMG(item_rss.getCharByName(item_rss.getCharNameByTranslatedName(expedition1_name,context),context)[3],context)).resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density)).transform(transformation_circ_siptik_ico)
+                .load (item_rss.getCharByName(item_rss.getCharNameByTranslatedName(expedition1_name,context),context)[3]).resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density)).transform(transformation_circ_siptik_ico)
                 .error (R.drawable.paimon_full)
                 .into (memo_expe1_ico);
         Picasso.get()
-                .load (FileLoader.loadIMG(item_rss.getCharByName(item_rss.getCharNameByTranslatedName(expedition2_name,context),context)[3],context)).resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density)).transform(transformation_circ_siptik_ico)
+                .load (item_rss.getCharByName(item_rss.getCharNameByTranslatedName(expedition2_name,context),context)[3]).resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density)).transform(transformation_circ_siptik_ico)
                 .error (R.drawable.paimon_full)
                 .into (memo_expe2_ico);
         Picasso.get()
-                .load (FileLoader.loadIMG(item_rss.getCharByName(item_rss.getCharNameByTranslatedName(expedition3_name,context),context)[3],context)).resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density)).transform(transformation_circ_siptik_ico)
+                .load (item_rss.getCharByName(item_rss.getCharNameByTranslatedName(expedition3_name,context),context)[3]).resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density)).transform(transformation_circ_siptik_ico)
                 .error (R.drawable.paimon_full)
                 .into (memo_expe3_ico);
         Picasso.get()
-                .load (FileLoader.loadIMG(item_rss.getCharByName(item_rss.getCharNameByTranslatedName(expedition4_name,context),context)[3],context)).resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density)).transform(transformation_circ_siptik_ico)
+                .load (item_rss.getCharByName(item_rss.getCharNameByTranslatedName(expedition4_name,context),context)[3]).resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density)).transform(transformation_circ_siptik_ico)
                 .error (R.drawable.paimon_full)
                 .into (memo_expe4_ico);
         Picasso.get()
-                .load (FileLoader.loadIMG(item_rss.getCharByName(item_rss.getCharNameByTranslatedName(expedition5_name,context),context)[3],context)).resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density)).transform(transformation_circ_siptik_ico)
+                .load (item_rss.getCharByName(item_rss.getCharNameByTranslatedName(expedition5_name,context),context)[3]).resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density)).transform(transformation_circ_siptik_ico)
                 .error (R.drawable.paimon_full)
                 .into (memo_expe5_ico);
 

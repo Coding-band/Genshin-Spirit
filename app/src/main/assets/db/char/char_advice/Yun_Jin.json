@@ -1,0 +1,62 @@
+{
+  "name" : "Yun Jin",
+    
+  "util_weapons": [
+    "engulfing_lightning",
+    "skyward_spine",
+    "favonius_lance",
+    "kitain_cross_spear",
+    "hamayumi"
+  ],
+  "util_art1": [
+    "husk_of_opulent_dreams",
+    "husk_of_opulent_dreams",
+    "husk_of_opulent_dreams",
+    "husk_of_opulent_dreams",
+    "husk_of_opulent_dreams"
+  ],
+  "util_art2": [
+    "defenders_will",
+    "defenders_will",
+    "husk_of_opulent_dreams",
+    "husk_of_opulent_dreams",
+    "husk_of_opulent_dreams"
+  ],
+  "util_art3": [
+    "husk_of_opulent_dreams",
+    "husk_of_opulent_dreams",
+    "emblem_of_severed_fate",
+    "emblem_of_severed_fate",
+    "emblem_of_severed_fate"
+  ],
+  "util_art_sand_entry": [
+    "DEF",
+    "EnRech"
+  ],
+  "util_art_goblet_entry": [
+	"DEF"
+  ],
+  "util_art_circlet_entry": [
+	"DEF"
+  ],
+  "util_art_sub_entry": [
+    "DEF",
+    "EnRech"
+  ],
+  
+  "team1":[
+	"Yun Jin","Bennett","Zhongli","Yoimiya"
+  ],
+  "team2":[
+	"Qiqi","Raiden Shogun","Yun Jin","Zhongli"
+  ],
+  "team3":[
+	"Fischl","Yun Jin","Shenhe","Zhongli"
+  ],
+  "team4":[
+	"Fischl","Yun Jin","Shenhe","Xingqiu"
+  ],
+  "team5":[
+	"Yun Jin","Xingqiu","Kaedehara Kazuha","Bennett"
+  ]
+}

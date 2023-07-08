@@ -1,0 +1,12 @@
+{
+  "name": "Luxurious Sea-Lord",
+  "rare": 4,
+  "weapon": "Claymore",
+  "isComingSoon": false,
+  "desc": "The great king of the ocean. Having been air-dried, it makes for a fine weapon as well as emergency sustenance.",
+  "first_status": "ATK%",
+  "second_status": "ATK",
+  "skill_name": "Oceanic Victory",
+  "skill_desc": "Increases Elemental Burst DMG by 12%/15%/18%/21%/24%. When Elemental Burst hits opponents, there is a 100% chance of summoning a huge onrush of tuna that charges and deals 100%/125%/150%/175%/200% ATK as AoE DMG. This effect can occur once every 15s.",
+  "obtain_way": "EVENT"
+}
