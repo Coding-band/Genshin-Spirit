@@ -1,0 +1,138 @@
+{
+	"name": "Segadeira da Chuva",
+	"description": "Uma espada grande fluorescente sem ponta afiada que esmaga os inimigos com força brutal.",
+	"weapontype": "Espadão",
+	"rarity": "4",
+	"story": "Um espadão escuro e fluorescente sem lâminas afiadas.\nAnos antes, era conhecido como 'Farol da Escuridão' pelos bandidos da montanha.\nVê-lo significava que não existia caminho de volta.\nSignifica que o fim havia chegado.\n\n\"Sem forma, como a chuva que atravessa a chuva. Sem peso, como a luz que atravessa a luz.\"\n\"Intocável, movendo-se como uma cobra. Inescapável, como o olhar de uma espada e de uma lança.\"\n\nA Segadeira da Chuva foi nomeada em homenagem ao seu mestre, originalmente não tinha nenhum nome.\nO primeiro e último mestre da lâmina era um Artista Marcial nômade conhecido como Guhua.\n\nDiz-se que ele era um Adeptus. Na época de Guhua, os bandidos não ousaram agir e em todos os lugares incluindo nas vilas eram pacíficos.\nAlegadamente, no final de sua jornada ele ascendeu em uma névoa roxa e se tornou uma estrela.\n\nAlguém a quem Guhua mostrou bondade fundou o Clã Guhua em sua homenagem. Mas nenhum clã está destinado a durar para sempre.",
+	"baseatk": 42,
+	"substat": "Proficiência Elemental",
+	"subvalue": "36",
+	"effectname": "Destruição de Tempestade e Maré",
+	"effect": "Aumenta o Dano contra inimigos afetados por Hydro ou Electro em {0}.",
+	"r1": [
+		"20%"
+	],
+	"r2": [
+		"24%"
+	],
+	"r3": [
+		"28%"
+	],
+	"r4": [
+		"32%"
+	],
+	"r5": [
+		"36%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Elixir de Chumbo Velado por Névoa",
+				"count": 3
+			},
+			{
+				"name": "Pólen de Névoa",
+				"count": 3
+			},
+			{
+				"name": "Pergaminho Guia",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Elixir de Mercúrio com Véu de Névoa",
+				"count": 3
+			},
+			{
+				"name": "Pólen de Névoa",
+				"count": 12
+			},
+			{
+				"name": "Pergaminho Guia",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Elixir de Mercúrio com Véu de Névoa",
+				"count": 6
+			},
+			{
+				"name": "Grama do Nevoeiro",
+				"count": 6
+			},
+			{
+				"name": "Pergaminho do Encantamento",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Elixir de Ouro com Véu de Névoa",
+				"count": 3
+			},
+			{
+				"name": "Grama do Nevoeiro",
+				"count": 12
+			},
+			{
+				"name": "Pergaminho do Encantamento",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Elixir de Ouro com Véu de Névoa",
+				"count": 6
+			},
+			{
+				"name": "Pavio do Nevoeiro",
+				"count": 9
+			},
+			{
+				"name": "Pergaminho da Maldição",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Alternação das Nuvens e o Mar",
+				"count": 4
+			},
+			{
+				"name": "Pavio do Nevoeiro",
+				"count": 18
+			},
+			{
+				"name": "Pergaminho da Maldição",
+				"count": 12
+			}
+		]
+	}
+}

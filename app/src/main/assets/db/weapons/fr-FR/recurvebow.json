@@ -1,0 +1,138 @@
+{
+	"name": "Arc courbé",
+	"description": "Avec cet arc de chasse, vous devriez pouvoir abattre un aigle en plein vol. Bien évidemment, le résultat dépend entièrement de la technique de l'archer.",
+	"weapontype": "Arc",
+	"rarity": "3",
+	"story": "Un arc courbe réalisé délicatement à partir de bois, d'os et de tendons d'animaux.\nUn archer aguerri peut abattre avec un aigle en plein vol.\nCette arme fait la fierté de son possesseur, et est une preuve de sa maîtrise.\nSeuls les aigles sont à plaindre.",
+	"baseatk": 38,
+	"substat": "PV",
+	"subvalue": "10.2",
+	"effectname": "Moissonneur",
+	"effect": "Restaure {0} des PV après la défaite d'un ennemi.",
+	"r1": [
+		"8 %"
+	],
+	"r2": [
+		"10 %"
+	],
+	"r3": [
+		"12 %"
+	],
+	"r4": [
+		"14 %"
+	],
+	"r5": [
+		"16 %"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Entraves du Chevalier du Croc de Lion",
+				"count": 2
+			},
+			{
+				"name": "Dispositif du chaos",
+				"count": 2
+			},
+			{
+				"name": "Parchemin divinatoire",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Chaînes du Chevalier du Croc de Lion",
+				"count": 2
+			},
+			{
+				"name": "Dispositif du chaos",
+				"count": 8
+			},
+			{
+				"name": "Parchemin divinatoire",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Chaînes du Chevalier du Croc de Lion",
+				"count": 4
+			},
+			{
+				"name": "Circuit du chaos",
+				"count": 4
+			},
+			{
+				"name": "Parchemin sigillé",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Menottes du Chevalier du Croc de Lion",
+				"count": 2
+			},
+			{
+				"name": "Circuit du chaos",
+				"count": 8
+			},
+			{
+				"name": "Parchemin sigillé",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Menottes du Chevalier du Croc de Lion",
+				"count": 4
+			},
+			{
+				"name": "Noyau du chaos",
+				"count": 6
+			},
+			{
+				"name": "Parchemin maudit",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Idéaux du Chevalier du Croc de Lion",
+				"count": 3
+			},
+			{
+				"name": "Noyau du chaos",
+				"count": 12
+			},
+			{
+				"name": "Parchemin maudit",
+				"count": 8
+			}
+		]
+	}
+}

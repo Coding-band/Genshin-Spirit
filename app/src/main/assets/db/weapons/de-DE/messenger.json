@@ -1,0 +1,138 @@
+{
+	"name": "Überbringer",
+	"description": "Ein einfacher Holzbogen, mit dem man früher wohl einmal Nachrichten übermittelt hat.",
+	"weapontype": "Bogen",
+	"rarity": "3",
+	"story": "Es wird erzählt, dass in vergangenen Tagen\nsich die Bewohner Liyues die Post mit Pfeil und Bogen schickten.\n„Würden dabei keine Passanten verletzt werden?“\n„Es ist nicht verwunderlich, dass dieser Bogen jetzt eine Antiquität ist.“\nDer Antiquitätenhändler rieb sich das Kinn und grinste.",
+	"baseatk": 40,
+	"substat": "KSCH",
+	"subvalue": "6.8",
+	"effectname": "Flugpost",
+	"effect": "Verursacht beim Treffen von Schwachstellen mit heftigen Schlägen zusätzlichen Schaden in Höhe von {0} ANG sowie auf jeden Fall einen KT. 10 s Abklingzeit.",
+	"r1": [
+		"100 %"
+	],
+	"r2": [
+		"125 %"
+	],
+	"r3": [
+		"150 %"
+	],
+	"r4": [
+		"175 %"
+	],
+	"r5": [
+		"200 %"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Bleikugeln des Nebelschleiers",
+				"count": 2
+			},
+			{
+				"name": "Nebelgraspollen",
+				"count": 2
+			},
+			{
+				"name": "Krähenwappen der Schatzsuche",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Quecksilberkugeln des Nebelschleiers",
+				"count": 2
+			},
+			{
+				"name": "Nebelgraspollen",
+				"count": 8
+			},
+			{
+				"name": "Krähenwappen der Schatzsuche",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Quecksilberkugeln des Nebelschleiers",
+				"count": 4
+			},
+			{
+				"name": "Nebelgrassäckchen",
+				"count": 4
+			},
+			{
+				"name": "Krähenwappen der Silberschätze",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Goldkugel des Nebelschleiers",
+				"count": 2
+			},
+			{
+				"name": "Nebelgrassäckchen",
+				"count": 8
+			},
+			{
+				"name": "Krähenwappen der Silberschätze",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Goldkugel des Nebelschleiers",
+				"count": 4
+			},
+			{
+				"name": "Nebelgrasdocht",
+				"count": 6
+			},
+			{
+				"name": "Krähenwappen der Goldschätze",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Wunderkugel des Nebelschleiers",
+				"count": 3
+			},
+			{
+				"name": "Nebelgrasdocht",
+				"count": 12
+			},
+			{
+				"name": "Krähenwappen der Goldschätze",
+				"count": 8
+			}
+		]
+	}
+}

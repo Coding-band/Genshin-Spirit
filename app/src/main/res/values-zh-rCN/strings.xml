@@ -1387,4 +1387,5 @@
     <string name="tcg_arataki_ichiban">荒泷第一</string>
     <string name="tcg_favonius_sword">西风剑</string>
     <string name="tcg_grand_narukami_shrine">鸣神大社</string>
+    <string name="memo_available_weekboss_change">尚余{%1}次</string>
 </resources>

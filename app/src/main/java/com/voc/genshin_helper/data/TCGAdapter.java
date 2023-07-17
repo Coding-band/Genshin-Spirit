@@ -3,9 +3,12 @@ package com.voc.genshin_helper.data;
 import static android.content.Context.MODE_PRIVATE;
 
 import android.app.Activity;
+import android.app.ActivityOptions;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.util.DisplayMetrics;
+import android.util.Pair;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,12 +19,14 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.core.view.ViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
+import com.voc.genshin_helper.ui.MMXLVIII.TCG_Info_2048;
 import com.voc.genshin_helper.util.CustomTextView;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
@@ -202,6 +207,35 @@ public class TCGAdapter extends RecyclerView.Adapter<TCGAdapter.ViewHolder> {
             tcg_press_mask.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+
+                    if (context instanceof Desk2048) {
+                        Intent intent = new Intent(context, TCG_Info_2048.class);
+                        intent.putExtra("tcg_data",tcg_data);
+
+                        ViewCompat.setTransitionName(tcg_card_img,"tcg_card_img");
+                        ViewCompat.setTransitionName(tcg_card,"tcg_card");
+                        ViewCompat.setTransitionName(tcg_card_kwang,"tcg_card_kwang");
+                        ViewCompat.setTransitionName(tcg_hp_bg,"tcg_hp_bg");
+                        ViewCompat.setTransitionName(tcg_hp_tv,"tcg_hp_tv");
+                        ViewCompat.setTransitionName(tcg_dice_bg,"tcg_dice_bg");
+                        ViewCompat.setTransitionName(tcg_dice_tv,"tcg_dice_tv");
+
+                        Pair<View,String> pair1 = new Pair<>((View)tcg_card_img,ViewCompat.getTransitionName(tcg_card_img));
+                        Pair<View,String> pair2 = new Pair<>((View)tcg_card,ViewCompat.getTransitionName(tcg_card));
+                        Pair<View,String> pair3 = new Pair<>((View)tcg_card_kwang,ViewCompat.getTransitionName(tcg_card_kwang));
+                        Pair<View,String> pair4 = new Pair<>((View)tcg_hp_bg,ViewCompat.getTransitionName(tcg_hp_bg));
+                        Pair<View,String> pair5 = new Pair<>((View)tcg_hp_tv,ViewCompat.getTransitionName(tcg_hp_tv));
+                        Pair<View,String> pair6 = new Pair<>((View)tcg_dice_bg,ViewCompat.getTransitionName(tcg_dice_bg));
+                        Pair<View,String> pair7 = new Pair<>((View)tcg_dice_tv,ViewCompat.getTransitionName(tcg_dice_tv));
+
+                         ActivityOptions options = ActivityOptions
+                                .makeSceneTransitionAnimation((Activity) context, pair1, pair2, pair3, pair4, pair5, pair6, pair7);
+                        context.startActivity(intent, options.toBundle());
+                    }
+
+                    //OLD Solution
+                    /*
+
                     if (context instanceof Desk2048) {
                         //CustomToast.toast(context,activity,"This is "+tcg_card_name.getText().toString());
                         int[] screenPos = new int[2];
@@ -216,6 +250,7 @@ public class TCGAdapter extends RecyclerView.Adapter<TCGAdapter.ViewHolder> {
                                 activity,
                                 screenPos);
                     }
+                     */
                 }
             });
 

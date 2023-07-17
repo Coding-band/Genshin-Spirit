@@ -1,0 +1,138 @@
+{
+	"name": "Magieführer",
+	"description": "Auflage 12. Mit den Inhalten und Korrekturen von Auflage 11 sowie Ergänzungen zu den neusten Entwicklungen der Zeit.",
+	"weapontype": "Katalysator",
+	"rarity": "3",
+	"story": "Diese Version vom „Magieführer“ hat bei der Veröffentlichung für viel Wirbel gesorgt.\nGanz zu schweigen von den Widersprüchen, die man in „Kapitel VII: Grundlagen der Anemo-Kraft“ lesen kann.\nFehler kann man auch bemerken, wenn man die grundlegenden Prinzipien der Hydro- und Elektro-Kraft betrachtet.\nAnscheinend hatte niemand das Buch vor der Veröffentlichung zur Probe gelesen.\nNichtsdestotrotz ist das Buch eins der besten auf dem Gebiet der Magiekunde, die es gibt.",
+	"baseatk": 38,
+	"substat": "Elementarkunde",
+	"subvalue": "41",
+	"effectname": "Bewährtheit von Wasser und Blitz",
+	"effect": "Erhöht den von Hydro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {0}.",
+	"r1": [
+		"12 %"
+	],
+	"r2": [
+		"15 %"
+	],
+	"r3": [
+		"18 %"
+	],
+	"r4": [
+		"21 %"
+	],
+	"r5": [
+		"24 %"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Decarabians zerbrochener Ziegel",
+				"count": 2
+			},
+			{
+				"name": "Schweres Horn",
+				"count": 2
+			},
+			{
+				"name": "Schleimabsonderung",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Decarabians zerbröckelter Wall",
+				"count": 2
+			},
+			{
+				"name": "Schweres Horn",
+				"count": 8
+			},
+			{
+				"name": "Schleimabsonderung",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Decarabians zerbröckelter Wall",
+				"count": 4
+			},
+			{
+				"name": "Kupferhorn",
+				"count": 4
+			},
+			{
+				"name": "Schleimkondensat",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Decarabians Palastfragment",
+				"count": 2
+			},
+			{
+				"name": "Kupferhorn",
+				"count": 8
+			},
+			{
+				"name": "Schleimkondensat",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Decarabians Palastfragment",
+				"count": 4
+			},
+			{
+				"name": "Schwarzes Kristallhorn",
+				"count": 6
+			},
+			{
+				"name": "Schleimkonzentrat",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Decarabians zerstörter Traum",
+				"count": 3
+			},
+			{
+				"name": "Schwarzes Kristallhorn",
+				"count": 12
+			},
+			{
+				"name": "Schleimkonzentrat",
+				"count": 8
+			}
+		]
+	}
+}

@@ -73,5 +73,9 @@
   {"name":"Kaveh","rare": 4,"crystal":"生長碧翡","boss":"滅諍草蔓","local":"悼靈花","common":"孢囊晶塵","book":"「巧思」的哲學","t_boss":"原初綠洲之初綻"},
   {"name":"Baizhu","rare": 5,"crystal":"生長碧翡","boss":"常暗圓環","local":"琉璃袋","common":"孢囊晶塵","book":"「黃金」的哲學","t_boss":"生長天地之蕨草"},
   
-  {"name":"Kirara","rare": 4,"crystal":"生長碧翡","boss":"常暗圓環","local":"天雲草實","common":"浮游晶化核","book":"「浮世」的哲學","t_boss":"亙古樹海之一瞬"}
+  {"name":"Kirara","rare": 4,"crystal":"生長碧翡","boss":"常暗圓環","local":"天雲草實","common":"浮游晶化核","book":"「浮世」的哲學","t_boss":"亙古樹海之一瞬"},
+
+  {"name":"Lynette","rare": 4,"crystal":"自在松石","boss":"奇械發條備件·歌裴莉婭","local":"柔燈鈴","common":"奇械機芯齒輪","book":"「秩序」的哲學","t_boss":"亙古樹海之一瞬"},
+  {"name":"Lyney","rare": 5,"crystal":"燃願瑪瑙","boss":"帝皇的決斷","local":"虹彩薔薇","common":"尉官的徽記","book":"「公平」的哲學","t_boss":"原初綠洲之初綻"},
+  {"name":"Freminet","rare": 4,"crystal":"哀敘冰玉","boss":"奇械發條備件·科培琉司","local":"海露花","common":"異色結晶石","book":"「正義」的哲學","t_boss":"生長天地之蕨草"}
 ]

@@ -1,0 +1,138 @@
+{
+	"name": "Drachenschrei",
+	"description": "Eine aufwendig gefertigte Klinge, die jedoch nichts an Biegsamkeit und Schärfe einbüßt. Schwingt man sie durch die Luft, ist es, als höre man einen Drachen schreien.",
+	"weapontype": "Einhänder",
+	"rarity": "4",
+	"story": "Ein Schwert, über das man sich viele Legenden in Liyue erzählt.\nDie Schwertscheide war aus duftendem Adlerholz geschnitzt, mit Mica-Mineralien verziert und die Legenden des Krieges waren darauf eingeritzt.\nDieses unbezahlbare Meisterwerk jedoch ging verloren und war nicht mehr auffindbar.\nFür das Schwert jedoch, war es mehr ein Gefängnis, welches das Schwert von seiner wahren Bestimmung abhielt.\nDie Klinge des Schwertes ist so scharf, dass seine Opfer erst nach Stunden merken würden, dass sie bereits tot sind.\n\nLegenden zufolge hat Kunwu nur einen Tag damit verbracht sein preisgekröntes Schwert zu fertigen.\nAls Kunwus bereits stark gealterter Meister sein Werk sah, runzelte er mit der Stirn und stieß mit seinem Stock auf den Boden.\n„Gute Güte, was ist das denn nur?“\nEr seufzte ein weiteres Mal lange und schlich davon.\n\nKunwu dachte drei lange Tage über die Worte seines Meisters nach und fertigte keinerlei Schwert in dieser Zeit.\nEr verbrachte ein weiteres qualvolles Jahr damit eine Schwertscheide aus Adlerholz zu schnitzen.\n\nKunwu dachte sich, dass eine elegante und opulente Schwertscheide bestimmt die Rohheit des Schwertes mildern würde.\nDas Schwert jedoch ging eines Tages verloren. Nur die Klinge blieb erhalten aber von der opulenten Schwertscheide blieb nur noch eine Legende.\nDas Schwert dürstete zu sehr nach Blut, um sich von einer Schwertscheide gefangen halten zu lassen.",
+	"baseatk": 42,
+	"substat": "ANG",
+	"subvalue": "9",
+	"effectname": "Bewährtheit von Feuer und Blitz",
+	"effect": "Erhöht den von Pyro- oder Elektro-Effekten betroffenen Gegnern zugefügten Schaden um {0}.",
+	"r1": [
+		"20 %"
+	],
+	"r2": [
+		"24 %"
+	],
+	"r3": [
+		"28 %"
+	],
+	"r4": [
+		"32 %"
+	],
+	"r5": [
+		"36 %"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Leuchtender Sand von Guyun",
+				"count": 3
+			},
+			{
+				"name": "Zeremonielles Jagdschwert",
+				"count": 3
+			},
+			{
+				"name": "Krähenwappen der Schatzsuche",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Glänzender Stein von Guyun",
+				"count": 3
+			},
+			{
+				"name": "Zeremonielles Jagdschwert",
+				"count": 12
+			},
+			{
+				"name": "Krähenwappen der Schatzsuche",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Glänzender Stein von Guyun",
+				"count": 6
+			},
+			{
+				"name": "Zeremonielles Agentenschwert",
+				"count": 6
+			},
+			{
+				"name": "Krähenwappen der Silberschätze",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Reliquie von Guyun",
+				"count": 3
+			},
+			{
+				"name": "Zeremonielles Agentenschwert",
+				"count": 12
+			},
+			{
+				"name": "Krähenwappen der Silberschätze",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Reliquie von Guyun",
+				"count": 6
+			},
+			{
+				"name": "Zeremonielles Kundschafterlangschwert",
+				"count": 9
+			},
+			{
+				"name": "Krähenwappen der Goldschätze",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Heiligtum von Guyun",
+				"count": 4
+			},
+			{
+				"name": "Zeremonielles Kundschafterlangschwert",
+				"count": 18
+			},
+			{
+				"name": "Krähenwappen der Goldschätze",
+				"count": 12
+			}
+		]
+	}
+}

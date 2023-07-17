@@ -1,0 +1,148 @@
+{
+	"name": "Báculo de Homa",
+	"description": "Um bastão vermelho utilizado em um antigo ritual que não se pratica há muito tempo.",
+	"weapontype": "Lança",
+	"rarity": "5",
+	"story": "Purificar com fogo tudo que é impuro, deixar que as impurezas subam com as chamas para os céus acomodadores:\nEsses tipos de rituais viam novas madeiras acesas, e que a fumaça subia dessas chamas como orações para bênçãos e pela derrota do mal.\n\nEsses rituais flamejantes eram comuns especialmente durante períodos de guerra.\nMas os sonhos e desilusões dos corpos silenciosos dos deuses produziram terríveis miasmas,\nLevando cidadãos que não eram mais seus, e aqueles que também nunca foram.\n\nNaquela época, um doutor misericordioso ouviu um sussurro das chamas forte como o sol poente,\nDe dentro da grama queimando.\n\"Somente uma chama descontrolada pode purificar esse mundo.\"\n\"Levante essa lenha escarlate. Com ela você conseguirá repelir todos os demônios\".\n\nEntão o médico pegou aquele cajado diabolicamente vermelho e queimou tudo o que era impuro.\nAqueles que faleceram, incapazes de suportar a profunda tristeza e desde então envoltos em carma e calamidade,\nForam reduzidos a borboletas cinzentas nessa chama e aliviados de seus infortúnios e mágoas.\nQuanto ao médico que acendeu aquelas chamas incontáveis, diz a lenda que ele também foi reduzido a uma fumaça em forma de borboleta.\n\nEsses ritos foram esquecidos com o tempo e após a chegada da paz.\nAqueles com fogo em seus corações ainda podem ouvir as seguintes palavras sussurradas nas chamas bruxuleantes ao se deparar com a imponente escuridão:\n\"Somente as chamas livres podem purificar este mundo.\"",
+	"baseatk": 46,
+	"substat": "Dano Crítico",
+	"subvalue": "14.4",
+	"effectname": "Liberdade da Borboleta Vermelha",
+	"effect": "Aumenta a Vida em {0}. Além disso, o Personagem que equipar esta arma terá um Bônus de ATQ de {1} com base na Vida Máxima. Quando a Vida do Personagem que equipar essa arma cair para abaixo de 50%, seu ATQ aumentará {2} com base em sua Vida Máxima.",
+	"r1": [
+		"20%",
+		"0.8%",
+		"1%"
+	],
+	"r2": [
+		"25%",
+		"1%",
+		"1.2%"
+	],
+	"r3": [
+		"30%",
+		"1.2%",
+		"1.4%"
+	],
+	"r4": [
+		"35%",
+		"1.4%",
+		"1.6%"
+	],
+	"r5": [
+		"40%",
+		"1.6%",
+		"1.8%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Grão de Aerosiderite",
+				"count": 5
+			},
+			{
+				"name": "Ramo Seco de Linha Ley",
+				"count": 5
+			},
+			{
+				"name": "Condensado de Slime",
+				"count": 3
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Pedaço de Aerosiderite",
+				"count": 5
+			},
+			{
+				"name": "Ramo Seco de Linha Ley",
+				"count": 18
+			},
+			{
+				"name": "Condensado de Slime",
+				"count": 12
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Pedaço de Aerosiderite",
+				"count": 9
+			},
+			{
+				"name": "Folha Morta de Linha Ley",
+				"count": 9
+			},
+			{
+				"name": "Secreção de Slime",
+				"count": 9
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Fragmento de Aerosiderite",
+				"count": 5
+			},
+			{
+				"name": "Folha Morta de Linha Ley",
+				"count": 18
+			},
+			{
+				"name": "Secreção de Slime",
+				"count": 14
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 55000
+			},
+			{
+				"name": "Fragmento de Aerosiderite",
+				"count": 9
+			},
+			{
+				"name": "Broto de Linha Ley",
+				"count": 14
+			},
+			{
+				"name": "Essência de Slime",
+				"count": 9
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 65000
+			},
+			{
+				"name": "Bloco de Aerosiderite",
+				"count": 6
+			},
+			{
+				"name": "Broto de Linha Ley",
+				"count": 27
+			},
+			{
+				"name": "Essência de Slime",
+				"count": 18
+			}
+		]
+	}
+}

@@ -72,7 +72,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="4dp"
                 android:background="@drawable/gone_background"
-                android:visibility="gone"
+                android:visibility="visible"
                 app:cardBackgroundColor="@color/colorWhiteAlpha"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="0dp">

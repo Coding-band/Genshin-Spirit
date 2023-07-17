@@ -1,0 +1,138 @@
+{
+	"name": "Épée sanglante",
+	"description": "Une épée en acier qui fut trempée dans du sang de dragon, la rendant invulnérable. On ne peut pas forcément en dire autant de la personne qui la manie.",
+	"weapontype": "Épée à deux mains",
+	"rarity": "3",
+	"story": "La légende raconte que le héros se baigna dans le sang du dragon qu'il avait vaincu,\ncherchant de cette manière à obtenir l'invincibilité.\nIl obtint exactement ce qu'il désirait.\nÉpées, flèches et lances,\nnulle arme ne semblait pouvoir l'atteindre.\nHélas ! Ses ennemis finirent par découvrir son seul point faible.\nCar s'étant baigné avec sa fidèle épée en bandoulière,\nson dos était sa faiblesse.",
+	"baseatk": 38,
+	"substat": "Maîtrise élémentaire",
+	"subvalue": "41",
+	"effectname": "Fléau de feu et de foudre",
+	"effect": "Augmente les DGT infligés aux ennemis affectés par les éléments Pyro ou Électro de {0}.",
+	"r1": [
+		"12 %"
+	],
+	"r2": [
+		"15 %"
+	],
+	"r3": [
+		"18 %"
+	],
+	"r4": [
+		"21 %"
+	],
+	"r5": [
+		"24 %"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Dent de lait du Loup boréal",
+				"count": 2
+			},
+			{
+				"name": "Branche morte des lignes énergétiques",
+				"count": 2
+			},
+			{
+				"name": "Pointe de flèche robuste",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Croc brisé du Loup boréal",
+				"count": 2
+			},
+			{
+				"name": "Branche morte des lignes énergétiques",
+				"count": 8
+			},
+			{
+				"name": "Pointe de flèche robuste",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Croc brisé du Loup boréal",
+				"count": 4
+			},
+			{
+				"name": "Feuilles mortes des lignes énergétiques",
+				"count": 4
+			},
+			{
+				"name": "Pointe de flèche aiguisée",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Croc fendu du Loup boréal",
+				"count": 2
+			},
+			{
+				"name": "Feuilles mortes des lignes énergétiques",
+				"count": 8
+			},
+			{
+				"name": "Pointe de flèche aiguisée",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Croc fendu du Loup boréal",
+				"count": 4
+			},
+			{
+				"name": "Pousse des lignes énergétiques",
+				"count": 6
+			},
+			{
+				"name": "Pointe de flèche usée",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Nostalgie du Loup boréal",
+				"count": 3
+			},
+			{
+				"name": "Pousse des lignes énergétiques",
+				"count": 12
+			},
+			{
+				"name": "Pointe de flèche usée",
+				"count": 8
+			}
+		]
+	}
+}

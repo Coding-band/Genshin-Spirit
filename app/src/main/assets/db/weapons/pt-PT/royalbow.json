@@ -1,0 +1,138 @@
+{
+	"name": "Arco Real",
+	"description": "Um velho arco real que pertencia aos antigos governantes de Mondstadt. Inúmeras gerações depois, a corda do arco ainda está firme e ainda pode disparar flechas com grande força.",
+	"weapontype": "Arco",
+	"rarity": "4",
+	"story": "Um arco longo usado por um nobre que governou Mondstadt. Foi elaborado artesanalmente com materiais de altíssima qualidade.\nPor esse motivo, gerações depois, ainda é tão poderoso como sempre.\nAntigamente, a caça era um passatempo para os nobres.\nEles demonstraram sua força no mundo natural e compartilharam os despojos com o povo com benevolência.\nInfelizmente a benevolência foi perdida e juntamente o seu reino.\n\nApós a revolta, o clã Lawrence, que há muito governava Mondstadt, foi derrubado.\nOs recém-criados Cavaleiros de Favonius, em um espírito de magnanimidade, não acharam necessário investigar mais.\nO clã Lawrence foi imediatamente expulso de Mondstadt, para nunca mais voltar.\n\n\"No caminho para o nosso exílio, vi o meu pai suspirar de dor: com a traição do povo, mudança de era, e fim da história.\"\n\"Vimos as pessoas que já foram os nossos súditos regozijando-se no campo aberto enquanto nos despedíamos de nossa pátria.\"\nSomente anos depois percebi: fomos nós, o clã Lawrence, que traímos, que terminamos uma era gloriosa, e que encerramos os livros de história. Só agora era Mondstadt, como sempre deveria ter sido.\n\nVennessa foi apenas o empurrão final que derrubou uma torre desmoronando. Antes dela, as chamas da fúria já brilhavam, e ocasionalmente as chamas cintilantes haviam brilhado através da densa fumaça do segredo.\nSeja o ladrão fantasma, elogiado em segredo pelo povo, a mulher que podia ver a morte, ou a Trupe Itinerante com a intenção de revolucionar.\nO sangue do povo de Mondstadt é vinculado a alma de revolta.",
+	"baseatk": 42,
+	"substat": "ATQ",
+	"subvalue": "9",
+	"effectname": "Foco",
+	"effect": "Ao atingir um oponente, aumenta a Taxa Crítica em {0}, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos.",
+	"r1": [
+		"8%"
+	],
+	"r2": [
+		"10%"
+	],
+	"r3": [
+		"12%"
+	],
+	"r4": [
+		"14%"
+	],
+	"r5": [
+		"16%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Grilhões de Dandelion",
+				"count": 3
+			},
+			{
+				"name": "Dispositivo do Caos",
+				"count": 3
+			},
+			{
+				"name": "Pergaminho Guia",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Correntes do Gladiador de Dandelion",
+				"count": 3
+			},
+			{
+				"name": "Dispositivo do Caos",
+				"count": 12
+			},
+			{
+				"name": "Pergaminho Guia",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Correntes do Gladiador de Dandelion",
+				"count": 6
+			},
+			{
+				"name": "Circuito do Caos",
+				"count": 6
+			},
+			{
+				"name": "Pergaminho do Encantamento",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Manilhas do Gladiador de Dandelion",
+				"count": 3
+			},
+			{
+				"name": "Circuito do Caos",
+				"count": 12
+			},
+			{
+				"name": "Pergaminho do Encantamento",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Manilhas do Gladiador de Dandelion",
+				"count": 6
+			},
+			{
+				"name": "Fornalha do Caos",
+				"count": 9
+			},
+			{
+				"name": "Pergaminho da Maldição",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Sonho do Gladiador de Dandelion",
+				"count": 4
+			},
+			{
+				"name": "Fornalha do Caos",
+				"count": 18
+			},
+			{
+				"name": "Pergaminho da Maldição",
+				"count": 12
+			}
+		]
+	}
+}

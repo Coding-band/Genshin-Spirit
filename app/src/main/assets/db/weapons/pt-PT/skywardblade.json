@@ -1,0 +1,153 @@
+{
+	"name": "Espada Celestial",
+	"description": "A espada de um cavaleiro que simboliza a honra restaurada de Dvalin. As bênçãos do Arconte Anemo repousam sobre a lâmina mais cheia, imbuindo a espada com os poderes do céu e do vento.",
+	"weapontype": "Espada",
+	"rarity": "5",
+	"story": "Uma presa que perfura os céus.\nUma vez perfurou as escamas douradas pretas do reino do abismo,\ne cortou as gargantas dos filhos de antigos pecadores.\n\nMondstadt uma vez foi ameaçada pelo dragão Durin.\nSua inveja da prosperidade de Mondstadt gerava o mal, envenenando à terra.\nNaqueles dias escuros, Mondstadt estava cercada por monstros e terras áridas.\nOuvindo o clamor do povo por ajuda, o Arconte Anemo desceu dos céus e acordou Dvalin.\nDvalin correu com o vento e através os céus, lutando por toda a vida.\n\nAbençoado pelo Arconte Anemo, Dvalin lutou contra o dragão do mal.\nAs nuvens se dividiram e o céu ficou roxo; a última hora de Mondstadt parecia ter chegado.\nEventualmente, as presas abençoadas de Dvalin perfuraram a garganta de Durin.\nO Durin caiu, mas o Dvalin foi envenenado pelo sangue contaminado do Durin.\n\nIncapaz de aguentar a dor, Dvalin caiu inconsciente,\nAté mesmo os bardos mais eruditos não sabem onde Dvalin dormiu.\nSéculos passaram, e o sacrifício de Dvalin foi esquecido pelo povo de Mondstadt.\nQuando Dvalin finalmente acordou, seu amigo e o som reconfortante de sua lira já haviam partido.\nE aqueles que ele protegia agora se encolheram de medo ao vê-lo.\n\nA honra restaurada e o veneno purificado.\nAs baladas devolverão ao povo a memória esquecida.\nEssa espada é uma promessa que o nome de Dvalin será restaurado.",
+	"baseatk": 46,
+	"substat": "Recarga de Energia",
+	"subvalue": "12",
+	"effectname": "Dente Perfurador do Céu",
+	"effect": "A Taxa Crítica aumenta em {0}. Obtém a Perfuração Celestial ao usar o Supremo: Aumenta a Veloc. Mov. em {1}, aumenta a Velocidade de Ataque em {2}. Quando o Ataque Normal e o Ataque Carregado atingirem, causará um Dano Adicional de {3} por 12s.",
+	"r1": [
+		"4%",
+		"10%",
+		"10%",
+		"20%"
+	],
+	"r2": [
+		"5%",
+		"10%",
+		"10%",
+		"25%"
+	],
+	"r3": [
+		"6%",
+		"10%",
+		"10%",
+		"30%"
+	],
+	"r4": [
+		"7%",
+		"10%",
+		"10%",
+		"35%"
+	],
+	"r5": [
+		"8%",
+		"10%",
+		"10%",
+		"40%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Dente de Leite do Lobo Boreal",
+				"count": 5
+			},
+			{
+				"name": "Ramo Seco de Linha Ley",
+				"count": 5
+			},
+			{
+				"name": "Condensado de Slime",
+				"count": 3
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Dente Rachado do Lobo Boreal",
+				"count": 5
+			},
+			{
+				"name": "Ramo Seco de Linha Ley",
+				"count": 18
+			},
+			{
+				"name": "Condensado de Slime",
+				"count": 12
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Dente Rachado do Lobo Boreal",
+				"count": 9
+			},
+			{
+				"name": "Folha Morta de Linha Ley",
+				"count": 9
+			},
+			{
+				"name": "Secreção de Slime",
+				"count": 9
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Presa Quebrada do Lobo Boreal",
+				"count": 5
+			},
+			{
+				"name": "Folha Morta de Linha Ley",
+				"count": 18
+			},
+			{
+				"name": "Secreção de Slime",
+				"count": 14
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 55000
+			},
+			{
+				"name": "Presa Quebrada do Lobo Boreal",
+				"count": 9
+			},
+			{
+				"name": "Broto de Linha Ley",
+				"count": 14
+			},
+			{
+				"name": "Essência de Slime",
+				"count": 9
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 65000
+			},
+			{
+				"name": "Nostalgia do Lobo Boreal",
+				"count": 6
+			},
+			{
+				"name": "Broto de Linha Ley",
+				"count": 27
+			},
+			{
+				"name": "Essência de Slime",
+				"count": 18
+			}
+		]
+	}
+}

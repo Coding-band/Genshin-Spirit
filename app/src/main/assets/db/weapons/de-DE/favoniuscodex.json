@@ -1,0 +1,143 @@
+{
+	"name": "Favonius-Kodex",
+	"description": "Ein Kodex, der unter den Gelehrten des Ordo Favonius weitergetragen wird. Darin werden die Prinzipien und Kräfte von Elementen und Stoffen erläutert.",
+	"weapontype": "Katalysator",
+	"rarity": "4",
+	"story": "Ein geheimer Kodex, der unter den Gelehrten des Ordo Favonius weitergetragen wurde. Darin wird das gesamte Wissen der Gelehrten gesammelt.\nDer Favonius-Kodex hatte Kristall-Elemente als Einlegearbeit in der Buchbindung, das machte ihn besonders.\nEs waren aber nicht nur die Kristalle, die ihn so wertvoll machten, sondern auch die reine Handarbeit.\nNur Gelehrte, die die Kunst der Kontrolle über die Elemente gemeistert haben, sind in der Lage solche Kristalle herzustellen.\n\nAls der Ritterorden gegründet wurde, ordnete Ragnvindr an, dass alle Aristokraten-Badezimmer in Bibliotheken umgewandelt werden sollten.\nDie vielen Spenden von Barden, Gelehrten und Reisenden in Mondstadt machten die Bibliothek zu einer der umfangreichsten in der nördlichen Hemisphäre des Landes.\nLetztendlich werden alle Lieder vom Wind davongetragen und der Wein bietet nur ein kurzweiliges Vergnügen. Nur Geschichten und Wissen sind für die Ewigkeit bestimmt.\n\nDas Sortiment der Bibliothek umfasst jetzt nur noch einen Bruchteil von dem, was sie einst zu bieten hatte.\nLeider brannte die Bibliothek während des „Großen Feuers der Tagundnachtgleiche“ komplett nieder.\n\nIm Keller der Bibliothek steht ein Paar massive Türen, gefertigt aus Pappelholz.\nGeschichten zufolge sind die Türen sogar älter als die Bibliothek selbst und das Feuer und der Rauch kamen nicht durch sie hindurch.\nManche behaupten, sie standen hier bereits lange vor der Gründung des Ritterordens.\nDer Ritterorden sagt offiziell, dass sich der verbotene Bereich der Bibliothek hinter diesen Türen befindet.\nEs gibt jedoch Geschichten, die von weitaus geheimeren Dingen hinter diesen Türen berichten.",
+	"baseatk": 42,
+	"substat": "Aufladerate",
+	"subvalue": "10",
+	"effectname": "Folge dem Wind",
+	"effect": "Erschafft bei einem KT mit einer Wahrscheinlichkeit von {0} einige Elementarteilchen, die der Figur 6 Punkte Elementarenergie wiederherstellen. {1} s Abklingzeit.",
+	"r1": [
+		"60 %",
+		"12"
+	],
+	"r2": [
+		"70 %",
+		"10,5"
+	],
+	"r3": [
+		"80 %",
+		"9"
+	],
+	"r4": [
+		"90 %",
+		"7,5"
+	],
+	"r5": [
+		"100 %",
+		"6"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Decarabians zerbrochener Ziegel",
+				"count": 3
+			},
+			{
+				"name": "Schweres Horn",
+				"count": 3
+			},
+			{
+				"name": "Leitende Schriftrolle",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Decarabians zerbröckelter Wall",
+				"count": 3
+			},
+			{
+				"name": "Schweres Horn",
+				"count": 12
+			},
+			{
+				"name": "Leitende Schriftrolle",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Decarabians zerbröckelter Wall",
+				"count": 6
+			},
+			{
+				"name": "Kupferhorn",
+				"count": 6
+			},
+			{
+				"name": "Zaubersiegel-Schriftrolle",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Decarabians Palastfragment",
+				"count": 3
+			},
+			{
+				"name": "Kupferhorn",
+				"count": 12
+			},
+			{
+				"name": "Zaubersiegel-Schriftrolle",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Decarabians Palastfragment",
+				"count": 6
+			},
+			{
+				"name": "Schwarzes Kristallhorn",
+				"count": 9
+			},
+			{
+				"name": "Fluchschriftrolle",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Decarabians zerstörter Traum",
+				"count": 4
+			},
+			{
+				"name": "Schwarzes Kristallhorn",
+				"count": 18
+			},
+			{
+				"name": "Fluchschriftrolle",
+				"count": 12
+			}
+		]
+	}
+}

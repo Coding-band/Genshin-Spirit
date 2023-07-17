@@ -1,0 +1,148 @@
+{
+	"name": "Elegia do Suspiro Final",
+	"description": "Um arco tão adorável quanto a lira de qualquer bardo, suas flechas perfuram o coração como um suspiro lamentável.",
+	"weapontype": "Arco",
+	"rarity": "5",
+	"story": "\"O vento do leste leva a fragrância do vinho.\"\n\"O vento das montanhas traz notícias do destino.\"\n\"A brisa vinda de longe agitou meu coração.\"\n\"Ela expressa minhas saudades de você.\"\n\nHá muito tempo, havia um cavaleiro que sempre parecia aflito.\nApenas essa música pode aliviar sua dor.\nApenas aquela garota que canta essa música no palácio\nPoderia fazer com que ele se esquecesse do grande fardo de seu dever por um tempinho.\n\nMas, por fim, a calamidade veio sobre esta terra.\nAs canções que outrora voavam alegremente ao vento foram afogadas por um dragão venenoso.\nOs seus passos que abalavam a terra, junto com os seus gritos e as chamas, foram todos despedaçados.\nO Arconte Anemo que se recusou a governar ouviu um choro aflito,\nMas, para proteger o sonho de seus velhos amigos e defender os campos verdes beijados pelo vento,\nEle acordou de seu longo sono novamente, e voltou a defrontar o dragão azul do céu em uma batalha...\nO cavaleiro e os seus companheiros também lutaram por suas terras.\n\nQuando o dragão maligno finalmente foi derrotado na montanha de gelo selado, e o dragão azul adormeceu na torre da cidade antiga,\nMas o Cavaleiro estava no vale, esgotando o sangue de sua vida, e ao cair, ele apenas pensava:\n\"Ela está estudando no exterior, então ela deve estar bem. Mas, ah! Se pudesse ouvi-la cantar novamente.\"\n\"Pelo menos Arundolyn e Roland estão bem. Quando ela voltar, esta calamidade deverá ter passado.\"\n\nOs poemas de louvor ao arconte e as melodias que gravaram a batalha dos dois dragões foram muitos, mas todas lentamente se desapareceram.\nA música que a garota adorava cantar também mudou quando ela voltou.\n\"Os Dandelions vão para longe com o vento matinal.\"\n\"O vento do outono leva de volta a fragrância de colheita.\"\n\"Mas não havia nenhum vento em nenhuma das estações na terra.\"\n\"Nunca pode trazer os seus olhares.\"\n\nE depois que sua voz e suas lágrimas secaram, a garota jurou usar a chama de sua vida para limpar as tortuosidades do mundo.",
+	"baseatk": 46,
+	"substat": "Recarga de Energia",
+	"subvalue": "12",
+	"effectname": "Canção de Despedida",
+	"effect": "Uma parte do Concerto Milenar que flutua no vento. Aumenta a Proficiência Elemental em {0} pontos. Quando a Habilidade Elemental ou o Supremo atingir os inimigos, o personagem obterá um Símbolo das Lembranças, que pode ser ativado uma vez a cada 0.2s, mesmo quando o personagem não está no campo de batalha. Possuir 4 Símbolos das Lembranças faz consumir todos eles, e faz todos os personagens da equipe obterem o efeito de \"Concerto Milenar: Música da Despedida\" por 12s: A Proficiência Elemental será aumentada em {1} pontos, além disso, o ATQ será aumentado em {2}. Dentro de 20s depois da ativação, não é possível obter os Símbolos das Lembranças de novo. Entre todos os efeitos de vários valores, os efeitos do mesmo valor não podem ser acumulados.",
+	"r1": [
+		"60",
+		"100",
+		"20%"
+	],
+	"r2": [
+		"75%",
+		"125",
+		"25%"
+	],
+	"r3": [
+		"90%",
+		"150",
+		"30%"
+	],
+	"r4": [
+		"105%",
+		"175",
+		"35%"
+	],
+	"r5": [
+		"120%",
+		"200",
+		"40%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Dente de Leite do Lobo Boreal",
+				"count": 5
+			},
+			{
+				"name": "Chifre Pesado",
+				"count": 5
+			},
+			{
+				"name": "Insígnia de Recruta",
+				"count": 3
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Dente Rachado do Lobo Boreal",
+				"count": 5
+			},
+			{
+				"name": "Chifre Pesado",
+				"count": 18
+			},
+			{
+				"name": "Insígnia de Recruta",
+				"count": 12
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Dente Rachado do Lobo Boreal",
+				"count": 9
+			},
+			{
+				"name": "Chifre de Bronze Negro",
+				"count": 9
+			},
+			{
+				"name": "Insígnia de Sargento",
+				"count": 9
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Presa Quebrada do Lobo Boreal",
+				"count": 5
+			},
+			{
+				"name": "Chifre de Bronze Negro",
+				"count": 18
+			},
+			{
+				"name": "Insígnia de Sargento",
+				"count": 14
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 55000
+			},
+			{
+				"name": "Presa Quebrada do Lobo Boreal",
+				"count": 9
+			},
+			{
+				"name": "Chifre de Cristal Preto",
+				"count": 14
+			},
+			{
+				"name": "Insígnia de Oficial",
+				"count": 9
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 65000
+			},
+			{
+				"name": "Nostalgia do Lobo Boreal",
+				"count": 6
+			},
+			{
+				"name": "Chifre de Cristal Preto",
+				"count": 27
+			},
+			{
+				"name": "Insígnia de Oficial",
+				"count": 18
+			}
+		]
+	}
+}

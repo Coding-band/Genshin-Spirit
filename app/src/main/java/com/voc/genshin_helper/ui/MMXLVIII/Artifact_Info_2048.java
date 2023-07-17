@@ -107,7 +107,6 @@ public class Artifact_Info_2048 {
         if(!str.equals("")){
             try {
                 jsonObject = new JSONObject(str);
-                name = ArtifactName_BASE;
                 if (jsonObject.has("1pc")){
                     artifactSet1PC = jsonObject.getString("1pc");
                 }else if(jsonObject.has("2pc") && jsonObject.has("4pc")){
@@ -139,11 +138,10 @@ public class Artifact_Info_2048 {
 
     public void setup (String ArtifactName_BASE, Context context,Activity activity){
         sharedPreferences = context.getSharedPreferences("user_info",Context.MODE_PRIVATE);
-        this.ArtifactName_BASE = ArtifactName_BASE.replace(" ","_");
+        this.ArtifactName_BASE = ArtifactName_BASE;
         this.context = context;
         this.activity = activity;
         item_rss = new ItemRss();
-
 
         String lang = sharedPreferences.getString("curr_lang","zh-HK");
         String is = null;
@@ -151,8 +149,8 @@ public class Artifact_Info_2048 {
         String is_default = null;
 
         //is_dps = ItemRss.LoadAssestData(context,"db/artifact/artifact_advice/"+this.ArtifactName_BASE+".json");
-        is_default = ItemRss.LoadAssestData(context,"db/artifacts/en-US/"+this.ArtifactName_BASE+".json");
-        is = ItemRss.LoadAssestData(context,"db/artifacts/"+lang+"/"+this.ArtifactName_BASE+".json");
+        is_default = ItemRss.LoadAssestData(context,"db/artifacts/en-US/"+ItemRss.convertToLowerFileName(this.ArtifactName_BASE)+".json");
+        is = ItemRss.LoadAssestData(context,"db/artifacts/"+lang+"/"+ItemRss.convertToLowerFileName(this.ArtifactName_BASE)+".json");
 
         if(!is.equals("")){
             //JsonToStr(is,is_dps);
@@ -408,7 +406,7 @@ public class Artifact_Info_2048 {
 
         /** MAIN */
 
-        artifact_name.setText(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name))[0]);
+        artifact_name.setText(item_rss.getArtifactByName(ArtifactName_BASE)[0]);
         if(sharedPreferences.getBoolean("isBaseNameDisplay",false) == true){
             artifact_name_base.setVisibility(View.VISIBLE);
             artifact_name_base.setText(name);
@@ -448,25 +446,26 @@ public class Artifact_Info_2048 {
             ImageView artifact_img3L = view.findViewById(R.id.info_artifact_img3);
             ImageView artifact_img4L = view.findViewById(R.id.info_artifact_img4);
             ImageView artifact_img5L = view.findViewById(R.id.info_artifact_img5);
+
             if (!artifactSet1PC.equals("XPR")){
-                Picasso.get().load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name))[1]).into(artifact_imgL);
+                Picasso.get().load(item_rss.getArtifactByName(ArtifactName_BASE)[1]).into(artifact_imgL);
             }else if (!artifactSet2PC.equals("XPR") && !artifactSet4PC.equals("XPR")){
-                Picasso.get().load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name))[1]).into(artifact_img1L);
-                Picasso.get().load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name))[2]).into(artifact_img2L);
-                Picasso.get().load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name))[3]).into(artifact_img3L);
-                Picasso.get().load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name))[4]).into(artifact_img4L);
-                Picasso.get().load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name))[5]).into(artifact_img5L);
+                Picasso.get().load(item_rss.getArtifactByName(ArtifactName_BASE)[1]).into(artifact_img1L);
+                Picasso.get().load(item_rss.getArtifactByName(ArtifactName_BASE)[2]).into(artifact_img2L);
+                Picasso.get().load(item_rss.getArtifactByName(ArtifactName_BASE)[3]).into(artifact_img3L);
+                Picasso.get().load(item_rss.getArtifactByName(ArtifactName_BASE)[4]).into(artifact_img4L);
+                Picasso.get().load(item_rss.getArtifactByName(ArtifactName_BASE)[5]).into(artifact_img5L);
             }
             art_imgL.getLayoutParams().width = width;
         }else{
             if (!artifactSet1PC.equals("XPR")){
-                Picasso.get().load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name))[1]).into(artifact_img);
+                Picasso.get().load(item_rss.getArtifactByName(ArtifactName_BASE)[1]).into(artifact_img);
             }else if (!artifactSet2PC.equals("XPR") && !artifactSet4PC.equals("XPR")){
-                Picasso.get().load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name))[1]).into(artifact_img1);
-                Picasso.get().load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name))[2]).into(artifact_img2);
-                Picasso.get().load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name))[3]).into(artifact_img3);
-                Picasso.get().load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name))[4]).into(artifact_img4);
-                Picasso.get().load(item_rss.getArtifactByName(item_rss.getArtifactNameByFileName(name))[5]).into(artifact_img5);
+                Picasso.get().load(item_rss.getArtifactByName(ArtifactName_BASE)[1]).into(artifact_img1);
+                Picasso.get().load(item_rss.getArtifactByName(ArtifactName_BASE)[2]).into(artifact_img2);
+                Picasso.get().load(item_rss.getArtifactByName(ArtifactName_BASE)[3]).into(artifact_img3);
+                Picasso.get().load(item_rss.getArtifactByName(ArtifactName_BASE)[4]).into(artifact_img4);
+                Picasso.get().load(item_rss.getArtifactByName(ArtifactName_BASE)[5]).into(artifact_img5);
             }
             art_con.getLayoutParams().width = width;
         }

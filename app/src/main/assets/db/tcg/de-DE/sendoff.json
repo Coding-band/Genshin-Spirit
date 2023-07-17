@@ -1,0 +1,20 @@
+{
+	"id": 332013,
+	"name": "Lebe wohl!",
+	"cardtype": "GCG_CARD_EVENT",
+	"cardtypetext": "Ereigniskarte",
+	"tags": [],
+	"tagstext": [],
+	"description": "Einsatzmöglichkeit der gewählten Beschwörung des Gegners -2.",
+	"descriptionraw": "$[K3] der gewählten Beschwörung des Gegners -2.",
+	"descriptionreplaced": "<color=#FFFFFFFF>Einsatzmöglichkeit</color> der gewählten Beschwörung des Gegners -2.",
+	"storytitle": "Lebe wohl!",
+	"storytext": "„Einer nach dem anderen! Das Bestattungsunternehmen Wangsheng garantiert beste Qualität für vollste Zufriedenheit!“",
+	"source": "Vom anfänglichen Deck zu erhalten",
+	"playcost": [
+		{
+			"costtype": "GCG_COST_DICE_SAME",
+			"count": 2
+		}
+	]
+}

@@ -1,0 +1,138 @@
+{
+	"name": "Arc du corbeau",
+	"description": "Les corbeaux sont les messagers de la mort dans de nombreuses légendes. Leurs plumes décorent cet arc qui annonce la mort imminente de toute proie.",
+	"weapontype": "Arc",
+	"rarity": "3",
+	"story": "Les corbeaux sont connus pour être les messagers de la mort.\n« Placez une plume de corbeau sur le bras d'un arc, »\n« et la musique de la corde annonce la mort certaine de la cible visée. »\nC'est du moins ce que prétendent les marchands d'armes.",
+	"baseatk": 40,
+	"substat": "Maîtrise élémentaire",
+	"subvalue": "20",
+	"effectname": "Fléau de feu et d'eau",
+	"effect": "Augmente les DGT infligés aux ennemis affectés par les éléments Hydro ou Pyro de {0}.",
+	"r1": [
+		"12 %"
+	],
+	"r2": [
+		"15 %"
+	],
+	"r3": [
+		"18 %"
+	],
+	"r4": [
+		"21 %"
+	],
+	"r5": [
+		"24 %"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Tuile cassée de Décabarian",
+				"count": 2
+			},
+			{
+				"name": "Corne lourde",
+				"count": 2
+			},
+			{
+				"name": "Pointe de flèche robuste",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Mur abattu de Décabarian",
+				"count": 2
+			},
+			{
+				"name": "Corne lourde",
+				"count": 8
+			},
+			{
+				"name": "Pointe de flèche robuste",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Mur abattu de Décabarian",
+				"count": 4
+			},
+			{
+				"name": "Corne en bronze noir",
+				"count": 4
+			},
+			{
+				"name": "Pointe de flèche aiguisée",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Fragment dispersé de Décabarian",
+				"count": 2
+			},
+			{
+				"name": "Corne en bronze noir",
+				"count": 8
+			},
+			{
+				"name": "Pointe de flèche aiguisée",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Fragment dispersé de Décabarian",
+				"count": 4
+			},
+			{
+				"name": "Corne à cristal noir",
+				"count": 6
+			},
+			{
+				"name": "Pointe de flèche usée",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Rêve brisé de Décabarian",
+				"count": 3
+			},
+			{
+				"name": "Corne à cristal noir",
+				"count": 12
+			},
+			{
+				"name": "Pointe de flèche usée",
+				"count": 8
+			}
+		]
+	}
+}

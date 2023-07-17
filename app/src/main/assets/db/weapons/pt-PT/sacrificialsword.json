@@ -1,0 +1,143 @@
+{
+	"name": "Espada do Sacrifício",
+	"description": "Uma espada decorativa que foi petrificada pelo tempo. Os acessórios inseridos ainda estão visíveis. Garante um grande poder ao seu portador.",
+	"weapontype": "Espada",
+	"rarity": "4",
+	"story": "No penhasco de frente para o mar oriental, os ancestrais adoravam o mestre do tempo e Anemo juntos.\nAs duas histórias estão relacionadas; como diz o ditado, \"O Anemo trouxe as histórias, entretanto, foi o tempo que as nutriu.\"\nEssa espada conta a história da proteção para mostrar seu valor.\nOriginalmente apenas um adereço, sua lâmina foi afiada pela passagem do tempo.\n\nEssa espada já pertenceu ao gentil clã Gunnhildr.\nNas cerimônias de sacrifício, eles encenavam a defesa de Mondstadt.\n\nEram três atos na cerimônia dedicados aos ventos do tempo.\nO ato final contava a história da proteção de Mondstadt, da vida e liberdade.\n\nA cerimônia e sua história foram agora perdidas.\nMas o clã Gunnhildr continua a agir como guardião de Mondstadt até hoje.",
+	"baseatk": 41,
+	"substat": "Recarga de Energia",
+	"subvalue": "13.3",
+	"effectname": "Composto",
+	"effect": "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {0} de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {1} segundos.",
+	"r1": [
+		"40%",
+		"30"
+	],
+	"r2": [
+		"50%",
+		"26"
+	],
+	"r3": [
+		"60%",
+		"22"
+	],
+	"r4": [
+		"70%",
+		"19"
+	],
+	"r5": [
+		"80%",
+		"16"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Grilhões de Dandelion",
+				"count": 3
+			},
+			{
+				"name": "Dispositivo do Caos",
+				"count": 3
+			},
+			{
+				"name": "Pergaminho Guia",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Correntes do Gladiador de Dandelion",
+				"count": 3
+			},
+			{
+				"name": "Dispositivo do Caos",
+				"count": 12
+			},
+			{
+				"name": "Pergaminho Guia",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Correntes do Gladiador de Dandelion",
+				"count": 6
+			},
+			{
+				"name": "Circuito do Caos",
+				"count": 6
+			},
+			{
+				"name": "Pergaminho do Encantamento",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Manilhas do Gladiador de Dandelion",
+				"count": 3
+			},
+			{
+				"name": "Circuito do Caos",
+				"count": 12
+			},
+			{
+				"name": "Pergaminho do Encantamento",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Manilhas do Gladiador de Dandelion",
+				"count": 6
+			},
+			{
+				"name": "Fornalha do Caos",
+				"count": 9
+			},
+			{
+				"name": "Pergaminho da Maldição",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Sonho do Gladiador de Dandelion",
+				"count": 4
+			},
+			{
+				"name": "Fornalha do Caos",
+				"count": 18
+			},
+			{
+				"name": "Pergaminho da Maldição",
+				"count": 12
+			}
+		]
+	}
+}

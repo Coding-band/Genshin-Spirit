@@ -1280,7 +1280,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:fontFamily="@font/genshin_font"
-                android:text="@string/update_download_check" />
+                android:text="@string/update_download_check"
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/bg_download_update"
@@ -1293,9 +1294,10 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/bg_dialog_btn"
-                app:backgroundTint="@color/tab_bg_2048"
                 android:fontFamily="@font/genshin_font"
-                android:text="@string/update_download_check" />
+                android:text="@string/update_download_check"
+                android:visibility="gone"
+                app:backgroundTint="@color/tab_bg_2048" />
 
             <TextView
                 android:id="@+id/textView32"
@@ -1303,7 +1305,8 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="8dp"
                 android:fontFamily="@font/genshin_font"
-                android:text="@string/update_download_update_base" />
+                android:text="@string/update_download_update_base"
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/bg_download_base"
@@ -1316,9 +1319,10 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
                 android:background="@drawable/bg_dialog_btn"
-                app:backgroundTint="@color/tab_bg_2048"
                 android:fontFamily="@font/genshin_font"
-                android:text="@string/update_download_update_base" />
+                android:text="@string/update_download_update_base"
+                app:backgroundTint="@color/tab_bg_2048"
+                android:visibility="gone" />
 
 
         </LinearLayout>

@@ -1,0 +1,18 @@
+{
+	"id": 333004,
+	"name": "Frango Defumado do Norte",
+	"cardtype": "GCG_CARD_EVENT",
+	"cardtypetext": "Carta de Evento",
+	"tags": [
+		"GCG_TAG_FOOD"
+	],
+	"tagstext": [
+		"Prato"
+	],
+	"description": "Durante este Turno, o próximo Ataque Normal do personagem alvo custa -1 Elemento Indefinido.\n(Um personagem pode consumir até 1 Prato por Turno)",
+	"descriptionraw": "Durante este Turno, o próximo <color=#FFFFFFFF>Ataque Normal</color> do personagem alvo custa -1 $[K309].\\n(Um personagem pode consumir até 1 {SPRITE_PRESET#3101}Prato por Turno)",
+	"descriptionreplaced": "Durante este Turno, o próximo <color=#FFFFFFFF>Ataque Normal</color> do personagem alvo custa -1 <color=#FFFFFFFF>{SPRITE_PRESET#1109}Elemento Indefinido</color>.\\n(Um personagem pode consumir até 1 {SPRITE_PRESET#3101}Prato por Turno)",
+	"storytitle": "Frango Defumado do Norte",
+	"storytext": "Esse prato é uma iguaria muito apreciada por visitantes que vêm para o norte. Agora que tipo de convidados serão \"servidos\" desta vez?",
+	"playcost": []
+}

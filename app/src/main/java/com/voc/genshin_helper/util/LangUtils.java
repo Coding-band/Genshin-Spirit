@@ -15,13 +15,15 @@ import java.util.Locale;
 
 public class LangUtils {
     private static final int FOLLOW_SYSTEM = -1;
-    private static final int en_US = 2;
-    private static final int fr_FR = 5;
-    private static final int ja_JP = 4;
-    private static final int ru_RU = 3;
     private static final int zh_CH = 1;
     private static final int zh_HK = 0;
+    private static final int en_US = 2;
+    private static final int ru_RU = 3;
+    private static final int ja_JP = 4;
+    private static final int fr_FR = 5;
     private static final int uk_UA = 6;
+    private static final int pt_PT = 7;
+    private static final int de_DE = 8;
 
     public static Locale getCurrentLang(int i) {
         switch (i) {
@@ -41,6 +43,10 @@ public class LangUtils {
                 return Locale.FRANCE;
             case 6:
                 return new Locale("uk", "UA");
+            case 7:
+                return new Locale("pt", "PT");
+            case 8:
+                return Locale.GERMANY;
             default:
                 return Locale.US;
         }

@@ -1,0 +1,143 @@
+{
+	"name": "Lâmina de Filés",
+	"description": "Uma faca afiada com uma lâmina longa.",
+	"weapontype": "Espada",
+	"rarity": "3",
+	"story": "Dizem que o Peixe Tigre estava entre os favoritos do povo de Liyue.\nCom o passar do tempo, as pessoas começaram a chamar o peixe de Peixe Tigre.\nAgora, é difícil encontrar os verdadeiros Peixes Tigre.\nMas os filés de Peixe Tigre se tornaram sinônimos de peixe delicioso para o povo de Liyue.",
+	"baseatk": 39,
+	"substat": "ATQ",
+	"subvalue": "7.7",
+	"effectname": "Determinação",
+	"effect": "Ao acertar, possui 50% de chance de infligir {0} de Dano de ATQ a um único alvo. Pode ocorrer uma vez a cada {1}.",
+	"r1": [
+		"240%",
+		"15s"
+	],
+	"r2": [
+		"280%",
+		"14s"
+	],
+	"r3": [
+		"320%",
+		"13s"
+	],
+	"r4": [
+		"360%",
+		"12s"
+	],
+	"r5": [
+		"400%",
+		"11s"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Elixir de Chumbo Velado por Névoa",
+				"count": 2
+			},
+			{
+				"name": "Pólen de Névoa",
+				"count": 2
+			},
+			{
+				"name": "Insígnia dos Ladrões de Tesouro",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Elixir de Mercúrio com Véu de Névoa",
+				"count": 2
+			},
+			{
+				"name": "Pólen de Névoa",
+				"count": 8
+			},
+			{
+				"name": "Insígnia dos Ladrões de Tesouro",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Elixir de Mercúrio com Véu de Névoa",
+				"count": 4
+			},
+			{
+				"name": "Grama do Nevoeiro",
+				"count": 4
+			},
+			{
+				"name": "Insígnia do Corvo Prateado",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Elixir de Ouro com Véu de Névoa",
+				"count": 2
+			},
+			{
+				"name": "Grama do Nevoeiro",
+				"count": 8
+			},
+			{
+				"name": "Insígnia do Corvo Prateado",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Elixir de Ouro com Véu de Névoa",
+				"count": 4
+			},
+			{
+				"name": "Pavio do Nevoeiro",
+				"count": 6
+			},
+			{
+				"name": "Insígnia de Corvo Dourado",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Alternação das Nuvens e o Mar",
+				"count": 3
+			},
+			{
+				"name": "Pavio do Nevoeiro",
+				"count": 12
+			},
+			{
+				"name": "Insígnia de Corvo Dourado",
+				"count": 8
+			}
+		]
+	}
+}

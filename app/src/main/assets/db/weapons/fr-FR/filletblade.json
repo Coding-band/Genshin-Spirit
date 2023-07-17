@@ -1,0 +1,143 @@
+{
+	"name": "Couteau à filets",
+	"description": "Un couteau de pêche à la lame tranchante. Il est très acéré.",
+	"weapontype": "Épée à une main",
+	"rarity": "3",
+	"story": "La légende raconte que les poissons chiwen abondaient autrefois à Liyue ; les habitants en raffolaient.\nLe nom évolua au fil du temps en « poisson chihu ».\nIl est de nos jours assez rare d'en voir ;\net le terme « poisson chihu » désigne également les amateurs de poissons de Liyue.",
+	"baseatk": 39,
+	"substat": "ATQ",
+	"subvalue": "7.7",
+	"effectname": "Détermination",
+	"effect": "Les attaques ont 50 % de chances d'infliger {0} de DGT d'ATQ à un ennemi lorsqu'elles touchent. Cet effet peut être déclenché 1 fois toutes les {1} s.",
+	"r1": [
+		"240 %",
+		"15"
+	],
+	"r2": [
+		"280 %",
+		"14"
+	],
+	"r3": [
+		"320 %",
+		"13"
+	],
+	"r4": [
+		"360 %",
+		"12"
+	],
+	"r5": [
+		"400 %",
+		"11"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Plomb karstique",
+				"count": 2
+			},
+			{
+				"name": "Pollen d'herbe brumeuse",
+				"count": 2
+			},
+			{
+				"name": "Insigne des Pilleurs",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Mercure karstique",
+				"count": 2
+			},
+			{
+				"name": "Pollen d'herbe brumeuse",
+				"count": 8
+			},
+			{
+				"name": "Insigne des Pilleurs",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Mercure karstique",
+				"count": 4
+			},
+			{
+				"name": "Herbe brumeuse",
+				"count": 4
+			},
+			{
+				"name": "Insigne de corbeau en argent",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Argent karstique",
+				"count": 2
+			},
+			{
+				"name": "Herbe brumeuse",
+				"count": 8
+			},
+			{
+				"name": "Insigne de corbeau en argent",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Argent karstique",
+				"count": 4
+			},
+			{
+				"name": "Mèches d'herbe brumeuse",
+				"count": 6
+			},
+			{
+				"name": "Insigne de corbeau en or",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Or karstique",
+				"count": 3
+			},
+			{
+				"name": "Mèches d'herbe brumeuse",
+				"count": 12
+			},
+			{
+				"name": "Insigne de corbeau en or",
+				"count": 8
+			}
+		]
+	}
+}

@@ -1,0 +1,143 @@
+{
+	"name": "Lune de Mouun",
+	"description": "Un élégant arc de guerre fait de coquillages et de corail. Un éclat mélancolique se répand le long de ses branches couleur clair de lune.",
+	"weapontype": "Arc",
+	"rarity": "4",
+	"story": "Un arc long qui était autrefois utilisé par la prêtresse Mouun de Watatsumi.\nIl est d'un blanc pur semblable à celui de l'écume de la crête d'une vague.\n\nLa prêtresse était l'amie de démons venant de mers lointaines, avec qui elle combattit les nuages orageux pour le rêve éphémère de Watatsumi.\nEnsemble, ces compagnons chevauchaient les vagues, et se profilaient dans l'embrun de la proue des bateaux...\nEt ils continuaient d'avancer, sans relâche, en direction de Watatsumi sur un chemin sans retour qui les mena à leur péril tragique. \n\n« La guerre de la Divinité des tréfonds était peut-être vouée à l'échec dès le départ.\nMais si l'on peut laisser une trace, et semer les germes du sacrifice, alors peut-être que cela en vaut la peine. »\n\nLes chants de jadis louaient les liens qui la liaient à l'umigozen, en tant que jumelles de Watatsumi.\nCeux-ci les décrivaient arc tendu et lance levée, se baignant dans les embruns blanchâtres provoqués par la proue d'un navire...\nCes chants lointains racontaient comment elle et Touzannou chevauchaient une créature marine en pleine nuit.\nEt comment elle murmurait, d'une manière à la fois douce et mélancolique, les histoires de lendemains brisés à l'oreille du héros...\n\nPendant les jours paisibles, les jumelles chantaient en chœur avec la baleine des grands fonds,\ndécrivant les journées sans fin passées dans les profondeurs et la pénombre toujours présente, ou dépeignant la Divinité des tréfonds et les branches de jade étincelantes.\nElle jouait autrefois sous la lune avec ce jeune homme dont la vigueur était le seul atout...\n\n« Quand j'aurai ramené le masque légendaire du grand Tengu, ce sera à toi de tenir ta promesse et de terminer cette tâche.\n\n- D'accord. Si le moment venu, tu continues à raconter des sottises, j'ordonnerai à la grande baleine de soulever des vagues pour nettoyer ta bouche. »",
+	"baseatk": 44,
+	"substat": "ATQ",
+	"subvalue": "6",
+	"effectname": "Marchevague de Watatsumi",
+	"effect": "Pour chaque point de l'énergie élémentaire combinée de l'ensemble de l'équipe, les DGT du déchaînement élémentaire du personnage équipé de cette arme augmentent de {0}. Les DGT du déchaînement élémentaire peuvent être augmentés jusqu'à {1} de cette manière.",
+	"r1": [
+		"0,12 %",
+		"40 %"
+	],
+	"r2": [
+		"0,15 %",
+		"50 %"
+	],
+	"r3": [
+		"0,18 %",
+		"60 %"
+	],
+	"r4": [
+		"0,21 %",
+		"70 %"
+	],
+	"r5": [
+		"0,24 %",
+		"80 %"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Sagesse de Narukami",
+				"count": 3
+			},
+			{
+				"name": "Prisme sombre",
+				"count": 3
+			},
+			{
+				"name": "Coquille spectrale",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Joie de Narukami",
+				"count": 3
+			},
+			{
+				"name": "Prisme sombre",
+				"count": 12
+			},
+			{
+				"name": "Coquille spectrale",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Joie de Narukami",
+				"count": 6
+			},
+			{
+				"name": "Prisme de cristal",
+				"count": 6
+			},
+			{
+				"name": "Cœur spectral",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Affection de Narukami",
+				"count": 3
+			},
+			{
+				"name": "Prisme de cristal",
+				"count": 12
+			},
+			{
+				"name": "Cœur spectral",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Affection de Narukami",
+				"count": 6
+			},
+			{
+				"name": "Prisme polarisant",
+				"count": 9
+			},
+			{
+				"name": "Noyau spectral",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Vaillance de Narukami",
+				"count": 4
+			},
+			{
+				"name": "Prisme polarisant",
+				"count": 18
+			},
+			{
+				"name": "Noyau spectral",
+				"count": 12
+			}
+		]
+	}
+}

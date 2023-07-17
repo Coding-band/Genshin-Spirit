@@ -1,0 +1,138 @@
+{
+	"name": "Dunkles Eisenschwert",
+	"description": "Das ist einfach nur ein normales Eisenschwert, das etwas dunkler geraten ist.",
+	"weapontype": "Einhänder",
+	"rarity": "3",
+	"story": "Warum hast du das Schwert auf den Boden gelegt?\nDamit es mehr Sonne abkriegt und dunkler wird.\nWarum soll das Schwert denn dunkler werden?\nDas ist eine gute Frage. Welche anderen Dinge sind denn auch dunkel?\nKrähen?\nRichtig! Was sonst noch?\nÄhm, alte Kochtöpfe?\nEin sehr guter Gedankenansatz! Was befindet sich denn unter dem Kochtopf?\nFeuer!\nUnd wo kommt Feuer her?\n(Das Mädchen überlegte einen Moment und hatte dann eine Erleuchtung.)\nKohle! Es ist Kohle! Kohle ist am dunkelsten!\nDas ist richtig. Kohle, also der Kohlenstoff, macht Eisen härter. Aber ich habe mir überlegt, anstelle von Kohle bräune ich das Schwert direkt.\n(Zufrieden drehte er das Schwert auf die andere Seite zum Bräunen.)",
+	"baseatk": 39,
+	"substat": "Elementarkunde",
+	"subvalue": "31",
+	"effectname": "Hochspannung",
+	"effect": "Erhöht den ANG nach Auslösen der Reaktionen „Überladen“, „Supraleiter“, „Unter Strom“, „Urwuchs“, „Suprawuchs“, „Supraspross“ und „Elektro-Verwirbelung“ 12 s lang um {0}.",
+	"r1": [
+		"20 %"
+	],
+	"r2": [
+		"25 %"
+	],
+	"r3": [
+		"30 %"
+	],
+	"r4": [
+		"35 %"
+	],
+	"r5": [
+		"40 %"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Leuchtender Sand von Guyun",
+				"count": 2
+			},
+			{
+				"name": "Zeremonielles Jagdschwert",
+				"count": 2
+			},
+			{
+				"name": "Zerbrochene Maske",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Glänzender Stein von Guyun",
+				"count": 2
+			},
+			{
+				"name": "Zeremonielles Jagdschwert",
+				"count": 8
+			},
+			{
+				"name": "Zerbrochene Maske",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Glänzender Stein von Guyun",
+				"count": 4
+			},
+			{
+				"name": "Zeremonielles Agentenschwert",
+				"count": 4
+			},
+			{
+				"name": "Verdreckte Maske",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Reliquie von Guyun",
+				"count": 2
+			},
+			{
+				"name": "Zeremonielles Agentenschwert",
+				"count": 8
+			},
+			{
+				"name": "Verdreckte Maske",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Reliquie von Guyun",
+				"count": 4
+			},
+			{
+				"name": "Zeremonielles Kundschafterlangschwert",
+				"count": 6
+			},
+			{
+				"name": "Unheilvolle Maske",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Heiligtum von Guyun",
+				"count": 3
+			},
+			{
+				"name": "Zeremonielles Kundschafterlangschwert",
+				"count": 12
+			},
+			{
+				"name": "Unheilvolle Maske",
+				"count": 8
+			}
+		]
+	}
+}

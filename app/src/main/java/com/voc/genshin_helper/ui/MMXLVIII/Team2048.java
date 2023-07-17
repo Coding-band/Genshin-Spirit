@@ -1094,7 +1094,7 @@ public class Team2048 {
 
                 Artifacts artifacts = new Artifacts();
                 artifacts.setName(name);
-                artifacts.setBaseName(img);
+                artifacts.setBaseName(name);
                 artifacts.setRare(rare);
                 artifacts.setIsComing(isComing);
                 artifactsList.add(artifacts);

@@ -1,0 +1,143 @@
+{
+	"name": "Espadon de Nagamasa",
+	"description": "Une lame qui était autrefois fabriquée à Tatarasuna. Lourde et résistante.",
+	"weapontype": "Épée à deux mains",
+	"rarity": "4",
+	"story": "Un long parchemin conçu par l'un des inspecteurs de Tatarasuna...\nIl est dit que ce schéma est aussi simple et droit que l'artiste.\n\nPendant longtemps, avant l'introduction des technologies venues de l'étranger qui ont aidé à construire le Fourneau Mikage,\nTatarasuna faisait fondre le fer en utilisant la traditionnelle méthode de métallurgie de Tatara.\nAprès que Mikoshi Nagamasa soit devenu inspecteur, il a été pendant un certain temps obsédé par la beauté sinistre de l'acier.\nIl consulta donc Miyazaki, le vice-officier d'armurerie aux mêmes idées que lui, pour obtenir des conseils...\nEt le résultat final fut cette épée simple et robuste, le Daitatara de Nagamasa.\n\nBien qu'il n'était que le fils adoptif du Clan Mikoshi, et bien que sa mère adoptive ait entaché la réputation des Mikoshi,\net même si le seul héritier légitime des Mikoshi, Michihiro, l'avait abandonné avant de disparaître,\nsa stupidité et sa loyauté assumées l'ont amené à chérir d'autant plus le nom des Mikoshi.\nIl s'efforça d'entrer au gouvernement et se débarrassa de la mauvaise réputation de la famille grâce à sa diligence et sa droiture.\n\nLorsque Katsuragi, son yoriki, fut relié à un simple soupçon d'inconduite, il le fit exécuter sans pitié.\nDepuis lors, le nom de l'épée et son titre sont entachés de sang.",
+	"baseatk": 42,
+	"substat": "Recharge d'énergie",
+	"subvalue": "10",
+	"effectname": "Code du samouraï",
+	"effect": "Augmente les DGT infligés par les compétences élémentaires de {0}. Lorsqu'une compétence élémentaire touche un ennemi, le personnage perd 3 pts d'énergie élémentaire, mais récupère {1} pts d'énergie toutes les 2 s pendant 6 s. Cet effet peut être déclenché une fois toutes les 10 s, même si le personnage fait partie de l'équipe mais n'est pas déployé.",
+	"r1": [
+		"6 %",
+		"3"
+	],
+	"r2": [
+		"7,5 %",
+		"3,5"
+	],
+	"r3": [
+		"9 %",
+		"4"
+	],
+	"r4": [
+		"10,5 %",
+		"4,5"
+	],
+	"r5": [
+		"12 %",
+		"5"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Sagesse de Narukami",
+				"count": 3
+			},
+			{
+				"name": "Engrenage du chaos",
+				"count": 3
+			},
+			{
+				"name": "Garde-main ancien",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Joie de Narukami",
+				"count": 3
+			},
+			{
+				"name": "Engrenage du chaos",
+				"count": 12
+			},
+			{
+				"name": "Garde-main ancien",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Joie de Narukami",
+				"count": 6
+			},
+			{
+				"name": "Axe du chaos",
+				"count": 6
+			},
+			{
+				"name": "Garde-main kageuchi",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Affection de Narukami",
+				"count": 3
+			},
+			{
+				"name": "Axe du chaos",
+				"count": 12
+			},
+			{
+				"name": "Garde-main kageuchi",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Affection de Narukami",
+				"count": 6
+			},
+			{
+				"name": "Œil du chaos",
+				"count": 9
+			},
+			{
+				"name": "Garde-main célèbre",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Vaillance de Narukami",
+				"count": 4
+			},
+			{
+				"name": "Œil du chaos",
+				"count": 18
+			},
+			{
+				"name": "Garde-main célèbre",
+				"count": 12
+			}
+		]
+	}
+}

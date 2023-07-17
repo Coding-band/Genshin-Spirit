@@ -1,5 +1,9 @@
 [
-{"name":"Kirara","element":"Dendro","rare":0,"weapon":"N/A","isComing":1,"nation":"Inazuma","sex":"Female","mainStat":"N/A","role":"Support_DPS"},
+{"name":"Lynette","element":"Anemo","rare":0,"weapon":"N/A","isComing":1,"nation":"Inazuma","sex":"Male","mainStat":"N/A","role":"Support_DPS"},
+{"name":"Lyney","element":"Pyro","rare":0,"weapon":"N/A","isComing":1,"nation":"Fontaine","sex":"Female","mainStat":"N/A","role":"Support_DPS"},
+{"name":"Freminet","element":"Cryo","rare":0,"weapon":"N/A","isComing":1,"nation":"Fontaine","sex":"Female","mainStat":"N/A","role":"Support_DPS"},
+
+{"name":"Kirara","element":"Dendro","rare":4,"weapon":"Sword","isComing":0,"nation":"Inazuma","sex":"Female","mainStat":"HP","role":"Support_DPS"},
 
 {"name":"Kaveh","element":"Dendro","rare":4,"weapon":"Claymore","isComing":0,"nation":"Sumeru","sex":"Male","mainStat":"EleMas","role":"Support_DPS"},
 {"name":"Baizhu","element":"Dendro","rare":5,"weapon":"Catalyst","isComing":0,"nation":"Liyue","sex":"Male","mainStat":"HP","role":"Support_DPS"},

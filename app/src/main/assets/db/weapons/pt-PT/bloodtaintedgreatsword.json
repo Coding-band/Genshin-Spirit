@@ -1,0 +1,138 @@
+{
+	"name": "Espadão Sangrento",
+	"description": "Uma espada de aço que quem dizem ter sido revestida com sangue de dragão, tornando-a invulnerável ao dano. Contudo, este bônus não é estendido ao seu portador.",
+	"weapontype": "Espadão",
+	"rarity": "3",
+	"story": "Diz a lenda que após derrotar o dragão venenoso,\nO famoso herói se banhou em seu sangue pois desejava se tornar invulnerável.\nRealmente, o sangue de dragão tem esse efeito: ele se tornou intocável.\nSejam espadas, sejam lanças ou uma chuva de flechas,\nEle apenas se ria enquanto se afastava das mesmas.\nPor fim, seus inimigos descobriram:\nSua espada tão preciosa também estava ensanguentada.\nA sua maior força era também sua maior fraqueza.",
+	"baseatk": 38,
+	"substat": "Proficiência Elemental",
+	"subvalue": "41",
+	"effectname": "Destruição de Fogo e Trovão",
+	"effect": "Aumenta o Dano contra inimigos afetados por Pyro ou Electro em {0}.",
+	"r1": [
+		"12%"
+	],
+	"r2": [
+		"15%"
+	],
+	"r3": [
+		"18%"
+	],
+	"r4": [
+		"21%"
+	],
+	"r5": [
+		"24%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Dente de Leite do Lobo Boreal",
+				"count": 2
+			},
+			{
+				"name": "Ramo Seco de Linha Ley",
+				"count": 2
+			},
+			{
+				"name": "Ponta de Flecha Robusta",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Dente Rachado do Lobo Boreal",
+				"count": 2
+			},
+			{
+				"name": "Ramo Seco de Linha Ley",
+				"count": 8
+			},
+			{
+				"name": "Ponta de Flecha Robusta",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Dente Rachado do Lobo Boreal",
+				"count": 4
+			},
+			{
+				"name": "Folha Morta de Linha Ley",
+				"count": 4
+			},
+			{
+				"name": "Ponta de Flecha Afiada",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Presa Quebrada do Lobo Boreal",
+				"count": 2
+			},
+			{
+				"name": "Folha Morta de Linha Ley",
+				"count": 8
+			},
+			{
+				"name": "Ponta de Flecha Afiada",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Presa Quebrada do Lobo Boreal",
+				"count": 4
+			},
+			{
+				"name": "Broto de Linha Ley",
+				"count": 6
+			},
+			{
+				"name": "Ponta de Flecha Usada",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Nostalgia do Lobo Boreal",
+				"count": 3
+			},
+			{
+				"name": "Broto de Linha Ley",
+				"count": 12
+			},
+			{
+				"name": "Ponta de Flecha Usada",
+				"count": 8
+			}
+		]
+	}
+}

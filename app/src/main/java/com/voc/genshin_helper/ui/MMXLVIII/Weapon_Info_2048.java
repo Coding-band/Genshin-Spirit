@@ -40,6 +40,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
+import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.Picasso;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
@@ -156,14 +157,14 @@ public class Weapon_Info_2048 {
             try {
                 jsonObject = new JSONObject(str);
                 name = jsonObject.getString("name");
-                star = jsonObject.getInt("rare");
-                weapon = jsonObject.getString("weapon");
-                isComing = jsonObject.getBoolean("isComingSoon");
-                desc = jsonObject.getString("desc");
-                obtain_way = jsonObject.getString("obtain_way");
-                status = jsonObject.getString("second_status");
-                skill_name = jsonObject.getString("skill_name");
-                skill_desc = jsonObject.getString("skill_desc");
+                star = Integer.parseInt(jsonObject.getString("rarity"));
+                weapon = jsonObject.getString("weapontype");
+                //isComing = jsonObject.getBoolean("isComingSoon");
+                desc = jsonObject.getString("description");
+                //obtain_way = jsonObject.getString("obtain_way");
+                //status = jsonObject.getString("second_status");
+                skill_name = jsonObject.getString("effectname");
+                //skill_desc = jsonObject.getString("effect");
 
                 readWeaponAscData();
                 show();
@@ -177,7 +178,7 @@ public class Weapon_Info_2048 {
 
     public void setup (String WeaponName_BASE, Context context,Activity activity){
         sharedPreferences = context.getSharedPreferences("user_info",Context.MODE_PRIVATE);
-        this.WeaponName_BASE = WeaponName_BASE.replace(" ","_");
+        this.WeaponName_BASE = WeaponName_BASE;
         this.context = context;
         this.activity = activity;
         item_rss = new ItemRss();
@@ -190,8 +191,8 @@ public class Weapon_Info_2048 {
         String is_default = null;
 
         //is_dps = ItemRss.LoadAssestData(context,"db/weapon/weapon_advice/"+this.WeaponName_BASE+".json");
-        is_default = ItemRss.LoadAssestData(context,"db/weapons/en-US/"+this.WeaponName_BASE+".json");
-        is = ItemRss.LoadAssestData(context,"db/weapons/"+lang+"/"+this.WeaponName_BASE+".json");
+        is_default = ItemRss.LoadAssestData(context,"db/weapons/en-US/"+ItemRss.convertToLowerFileName(this.WeaponName_BASE)+".json");
+        is = ItemRss.LoadAssestData(context,"db/weapons/"+lang+"/"+ItemRss.convertToLowerFileName(this.WeaponName_BASE)+".json");
 
         if(!is.equals("")){
             //JsonToStr(is,is_dps);
@@ -272,7 +273,7 @@ public class Weapon_Info_2048 {
         readWeaponMaterialByBuff(base_lvl_ll);
 
         weapon_talent_name.setText(skill_name);
-        weapon_talent_normal.setText(skill_desc);
+        weapon_talent_normal.setText(ItemRss.combineEffectStatus(jsonObject,"effect"));
 
         /** THEME COLOR SET*/
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
@@ -487,7 +488,7 @@ public class Weapon_Info_2048 {
                 menu_lv_sp.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
                     @Override
                     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        if(readWeaponBaseDataFromBuff(name,position)){
+                        if(readWeaponBaseDataFromBuff(WeaponName_BASE,position)){
                             TextView[] item_title_tv = new TextView[]{menu_part_title_tv1,menu_part_title_tv2,menu_part_title_tv3,menu_part_title_tv4,menu_part_title_tv5,menu_part_title_tv6,menu_part_title_tv7,menu_part_title_tv8,menu_part_title_tv9,menu_part_title_tv10,menu_part_title_tv11,menu_part_title_tv12,menu_part_title_tv13,menu_part_title_tv14,menu_part_title_tv15,menu_part_title_tv16};
                             TextView[] item_value_tv = new TextView[]{menu_part_value_tv1,menu_part_value_tv2,menu_part_value_tv3,menu_part_value_tv4,menu_part_value_tv5,menu_part_value_tv6,menu_part_value_tv7,menu_part_value_tv8,menu_part_value_tv9,menu_part_value_tv10,menu_part_value_tv11,menu_part_value_tv12,menu_part_value_tv13,menu_part_value_tv14,menu_part_value_tv15,menu_part_value_tv16};
                             double[] item_name_value = new double[]{武器基礎攻擊力,武器生命值加成,武器攻擊力加成,武器防禦力加成,武器暴擊率,武器暴擊傷害,武器元素充能,武器元素精通,武器物理傷害加成};
@@ -544,10 +545,10 @@ public class Weapon_Info_2048 {
         });
 
         /** MAIN */
-        weapon_name.setText(item_rss.getWeaponByName(name)[0]);
+        weapon_name.setText(name);
         if(sharedPreferences.getBoolean("isBaseNameDisplay",false) == true){
             info_weapon_name_base.setVisibility(View.VISIBLE);
-            info_weapon_name_base.setText(name);
+            info_weapon_name_base.setText(WeaponName_BASE);
         }
 
         /**
@@ -561,17 +562,20 @@ public class Weapon_Info_2048 {
         LinearLayout info_detail = weaponDescPage.findViewById(R.id.info_detail);
         info_detail.setAnimation(animImgRTL);
         */
+
         if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
             ImageView weapon_imgL = view.findViewById(R.id.info_weapon_img);
             /*weapon_imgL.setAnimation(animImgLTR); Animation*/
-            weapon_imgL.setImageDrawable(context.getDrawable(item_rss.getWeaponGachaByName(name)[1]));
+            //weapon_imgL.setImageDrawable(context.getDrawable(item_rss.getWeaponGachaByName(name)[1]));
+            Picasso.get().load(item_rss.getWeaponGachaByName(WeaponName_BASE)[1]).into(weapon_imgL);
         }else{
-            weapon_img.setImageDrawable(context.getDrawable(item_rss.getWeaponGachaByName(name)[1]));
+            //weapon_img.setImageDrawable(context.getDrawable(item_rss.getWeaponGachaByName(name)[1]));
+            Picasso.get().load(item_rss.getWeaponGachaByName(WeaponName_BASE)[1]).into(weapon_img);
         }
 
 
 
-        weapon_obtain_way_tv.setText(item_rss.getObtainCode(obtain_way,context));
+        //weapon_obtain_way_tv.setText(item_rss.getObtainCode(obtain_way,context));
         //weapon_title.setText(nick);
         //Picasso.get().load(FileLoader.loadIMG(item_rss.getWeaponByName(name,context)[0],context)).centerCrop().into(weapon_img);
 
@@ -677,7 +681,12 @@ public class Weapon_Info_2048 {
 
 
     public boolean readWeaponBaseDataFromBuff(String name, int tmp_break) {
-        String weapon_json_stat = ItemRss.LoadAssestData(context,"db/buff/weapons/"+name.replace(" ","_")+".json");
+        name = name.replace(" ","_")
+                .replace("-", "")
+                .replace("'", "")
+                .replace(":", "")
+                .replace("!", "");
+        String weapon_json_stat = ItemRss.LoadAssestData(context,"db/buff/weapons/"+name+".json");
         if (weapon_json_stat.length() > 0){
             try {
                 JSONObject jsonObject = new JSONObject(weapon_json_stat);
@@ -730,7 +739,7 @@ public class Weapon_Info_2048 {
             JSONArray array = new JSONArray(weapon_require_asc);
             for (int i = 0; i < array.length(); i++) {
                 JSONObject object = array.getJSONObject(i);
-                if (object.getString("name").equals(name)){
+                if (object.getString("name").equals(WeaponName_BASE)){
                     local1REQUIRE = object.getString("copy1");
                     local2REQUIRE = object.getString("copy2");
                     commonREQUIRE = object.getString("common");
@@ -1117,5 +1126,6 @@ public class Weapon_Info_2048 {
 
         return new int[]{exp_small,exp_mid,exp_big};
     }
+
 
 }

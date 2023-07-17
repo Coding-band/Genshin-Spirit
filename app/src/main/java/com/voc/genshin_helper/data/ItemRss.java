@@ -12,6 +12,9 @@ import android.graphics.drawable.Drawable;
 
 import com.voc.genshin_helper.R;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -2028,6 +2031,13 @@ public class ItemRss {
             //add in 20230416
             case "常暗圓環":
                 return R.drawable.evergloom_ring;
+            //add in 20230710
+            case "奇械發條備件·歌裴莉婭":
+                return R.drawable.novel_spare_clockwork_component_geppelia;
+            case "帝皇的決斷":
+                return R.drawable.emperors_resolution;
+            case "奇械發條備件·科培琉司":
+                return R.drawable.novel_spare_clockwork_component_coppelius;
 
             /** Local*/
             case "小燈草":
@@ -2100,6 +2110,13 @@ public class ItemRss {
                 return R.drawable.sand_grease_pupa;
             case "悼靈花":
                 return R.drawable.mourning_flower;
+            //add in 20230710
+            case "柔燈鈴":
+                return R.drawable.lumidouce_bell;
+            case "虹彩薔薇":
+                return R.drawable.rainbow_rose;
+            case "海露花":
+                return R.drawable.romaritime_flower;
 
             /** T-Boss*/
             case "北風之環":
@@ -2237,6 +2254,19 @@ public class ItemRss {
                 return R.drawable.treasured_flower;
             case "漫遊者的盛放之花":
                 return R.drawable.wanderers_blooming_flower;
+            //add in 20230710
+            case "齧合齒輪":
+                return R.drawable.meshing_gear;
+            case "機關正齒輪":
+                return R.drawable.mechanical_spur_gear;
+            case "奇械機芯齒輪":
+                return R.drawable.novel_dynamic_gear;
+            case "異海凝珠":
+                return R.drawable.transoceanic_pearl;
+            case "異海之塊":
+                return R.drawable.transoceanic_chunk;
+            case "異色結晶石":
+                return R.drawable.kaleidoscopic_crystal;
 
             // P.S. There still have Sumeru items not added yet since the name are undefinded or unable to define in there. => 20220716
             // ♪ Added Sumeru items
@@ -2495,6 +2525,25 @@ public class ItemRss {
                 return R.drawable.philosophies_of_ingenuity;
             case "「諍言」的哲學":
                 return R.drawable.philosophies_of_praxis;
+            //add in 20230710
+            case "「公平」的教導":
+                return R.drawable.teachings_of_fairness;
+            case "「正義」的教導":
+                return R.drawable.teachings_of_justice;
+            case "「秩序」的教導":
+                return R.drawable.teachings_of_order;
+            case "「公平」的指引":
+                return R.drawable.guide_to_fairness;
+            case "「正義」的指引":
+                return R.drawable.guide_to_justice;
+            case "「秩序」的指引":
+                return R.drawable.guide_to_order;
+            case "「公平」的哲學":
+                return R.drawable.philosophies_of_fairness;
+            case "「正義」的哲學":
+                return R.drawable.philosophies_of_justice;
+            case "「秩序」的哲學":
+                return R.drawable.philosophies_of_order;
 
             /** Crystal*/
             case "燃願瑪瑙碎屑":
@@ -3074,6 +3123,48 @@ public class ItemRss {
 
         return tContents;
 
+    }
+
+    public static String convertToLowerFileName(String str){
+        return str
+                .toLowerCase()
+                .replace(" ", "")
+                .replace("_", "")
+                .replace("-", "")
+                .replace("'", "")
+                .replace(":", "")
+                .replace("!", "");
+    }
+
+    /**
+     *
+     * @param jsonObject : including KEY `effect`, also maybe include `r1`, `r2`, etc...
+     * @return Combined Effect String
+     */
+    public static String combineEffectStatus(JSONObject jsonObject, String effectKey) {
+        try{
+            int rMax = 0;
+            while (jsonObject.has("r"+String.valueOf(rMax+1))){
+                rMax++;
+            }
+
+            String effect = jsonObject.getString(effectKey);
+
+            if (rMax >= 1){
+                for (int rPerLen = 0 ; rPerLen < jsonObject.getJSONArray("r1").length() ; rPerLen++){
+                    String tmpValueCombine = "";
+                    for (int x = 1 ;x <= rMax ; x++){
+                        tmpValueCombine += (jsonObject.getJSONArray("r"+String.valueOf(x)).get(rPerLen) + ((x < (rMax)) ? "/" : ""));
+                    }
+                    effect = effect.replace("{"+String.valueOf(rPerLen)+"}", tmpValueCombine);
+                }
+                return effect;
+            }else{
+                return jsonObject.getString(jsonObject.getString(effectKey));
+            }
+        }catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 }

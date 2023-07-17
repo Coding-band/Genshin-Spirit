@@ -1,0 +1,91 @@
+{
+	"name": "Épée émoussée",
+	"description": "Si les rêves de jeunesse et la soif d'aventure ne suffisent pas, compensez avec beaucoup de courage.",
+	"weapontype": "Épée à une main",
+	"rarity": "1",
+	"story": "La route est pleine de rencontres et d'adieux.\nPeut-être que les seuls vrais compagnons du voyageur\nsont son épée et son rêve.",
+	"baseatk": 23,
+	"substat": "",
+	"subvalue": "",
+	"effectname": "",
+	"effect": "",
+	"r1": [],
+	"r2": [],
+	"r3": [],
+	"r4": [],
+	"r5": [],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora"
+			},
+			{
+				"name": "Tuile cassée de Décabarian",
+				"count": 1
+			},
+			{
+				"name": "Corne lourde",
+				"count": 1
+			},
+			{
+				"name": "Pointe de flèche robuste",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Mur abattu de Décabarian",
+				"count": 1
+			},
+			{
+				"name": "Corne lourde",
+				"count": 4
+			},
+			{
+				"name": "Pointe de flèche robuste",
+				"count": 2
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Mur abattu de Décabarian",
+				"count": 2
+			},
+			{
+				"name": "Corne en bronze noir",
+				"count": 2
+			},
+			{
+				"name": "Pointe de flèche aiguisée",
+				"count": 2
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Fragment dispersé de Décabarian",
+				"count": 1
+			},
+			{
+				"name": "Corne en bronze noir",
+				"count": 4
+			},
+			{
+				"name": "Pointe de flèche aiguisée",
+				"count": 3
+			}
+		]
+	}
+}

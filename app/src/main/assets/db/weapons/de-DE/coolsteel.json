@@ -1,0 +1,138 @@
+{
+	"name": "Kühle Klinge",
+	"description": "Eine stabile Waffe aus mehrfach gefaltetem Stahl, die ihrem ehemaligen Besitzer bei vielen Abenteuern nützlich war.",
+	"weapontype": "Einhänder",
+	"rarity": "3",
+	"story": "Ein stabiles Eisen, geschmiedet durch wiederholtes Falten.\nEs hat einen matten Schimmer mit ein wenig kaltem Glanz.\nEs gehörte einst einem berühmten Abenteurer, der die endlose Weite des Landes erlebt hatte.\nEr durchtrennte damit die eisernen Knochen der Monster und lieferte sich Klingenduelle mit anderen Banditen.\nAm Schluss jedoch\ngab er alles auf, die Weite, den endlosen Himmel,\nseine Gefährten in der Gilde, den verlässlichen Stahl und alte Freunde, das alles nur für ein Mädchen.",
+	"baseatk": 39,
+	"substat": "ANG",
+	"subvalue": "7.7",
+	"effectname": "Bewährtheit von Wasser und Eis",
+	"effect": "Erhöht den von Hydro- oder Kryo-Effekten betroffenen Gegnern zugefügten Schaden um {0}.",
+	"r1": [
+		"12 %"
+	],
+	"r2": [
+		"15 %"
+	],
+	"r3": [
+		"18 %"
+	],
+	"r4": [
+		"21 %"
+	],
+	"r5": [
+		"24 %"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Decarabians zerbrochener Ziegel",
+				"count": 2
+			},
+			{
+				"name": "Schweres Horn",
+				"count": 2
+			},
+			{
+				"name": "Stabile Bolzenspitze",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Decarabians zerbröckelter Wall",
+				"count": 2
+			},
+			{
+				"name": "Schweres Horn",
+				"count": 8
+			},
+			{
+				"name": "Stabile Bolzenspitze",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Decarabians zerbröckelter Wall",
+				"count": 4
+			},
+			{
+				"name": "Kupferhorn",
+				"count": 4
+			},
+			{
+				"name": "Scharfe Bolzenspitze",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Decarabians Palastfragment",
+				"count": 2
+			},
+			{
+				"name": "Kupferhorn",
+				"count": 8
+			},
+			{
+				"name": "Scharfe Bolzenspitze",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Decarabians Palastfragment",
+				"count": 4
+			},
+			{
+				"name": "Schwarzes Kristallhorn",
+				"count": 6
+			},
+			{
+				"name": "Abgenutzte Bolzenspitze",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Decarabians zerstörter Traum",
+				"count": 3
+			},
+			{
+				"name": "Schwarzes Kristallhorn",
+				"count": 12
+			},
+			{
+				"name": "Abgenutzte Bolzenspitze",
+				"count": 8
+			}
+		]
+	}
+}

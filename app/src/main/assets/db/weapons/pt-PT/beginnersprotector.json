@@ -1,0 +1,91 @@
+{
+	"name": "Protetor de Iniciante",
+	"description": "Uma arma tão reta quanto uma haste de bandeira. Adequado para a maioria das situações, parece imponente quando é balançada.",
+	"weapontype": "Lança",
+	"rarity": "1",
+	"story": "Na Mondstadt de antigamente, os nobres proibiram o uso de lanças.\nAparentemente, a esgrima é a arte marcial dos nobres,\nna verdade é porque as lanças podem preencher as deficiências do treinamento,\nque permitiam as pessoas comuns que não tinham armas e experiência pudessem resistir.",
+	"baseatk": 23,
+	"substat": "",
+	"subvalue": "",
+	"effectname": "",
+	"effect": "",
+	"r1": [],
+	"r2": [],
+	"r3": [],
+	"r4": [],
+	"r5": [],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora"
+			},
+			{
+				"name": "Grilhões de Dandelion",
+				"count": 1
+			},
+			{
+				"name": "Dispositivo do Caos",
+				"count": 1
+			},
+			{
+				"name": "Pergaminho Guia",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Correntes do Gladiador de Dandelion",
+				"count": 1
+			},
+			{
+				"name": "Dispositivo do Caos",
+				"count": 4
+			},
+			{
+				"name": "Pergaminho Guia",
+				"count": 2
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Correntes do Gladiador de Dandelion",
+				"count": 2
+			},
+			{
+				"name": "Circuito do Caos",
+				"count": 2
+			},
+			{
+				"name": "Pergaminho do Encantamento",
+				"count": 2
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Manilhas do Gladiador de Dandelion",
+				"count": 1
+			},
+			{
+				"name": "Circuito do Caos",
+				"count": 4
+			},
+			{
+				"name": "Pergaminho do Encantamento",
+				"count": 3
+			}
+		]
+	}
+}

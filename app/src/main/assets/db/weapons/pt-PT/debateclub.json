@@ -1,0 +1,138 @@
+{
+	"name": "Pacifista",
+	"description": "Um porrete feito de aço. É a base do \"convencimento racional\".",
+	"weapontype": "Espadão",
+	"rarity": "3",
+	"story": "Uma ferramenta persuasiva, capaz de mudar a direção de uma discussão em favor de quem a usa. Adicionará peso às palavras de seu portador.\nÚtil em qualquer discussão, independente de quem seja o oponente, para convencê-lo a escutar a voz da razão.\nEm resumo, as pessoas não conseguem resistir à eloquência.\nFinalmente, a produção foi parada à força devido à quantidade de protestos.\nAs necessidades de muitos superam as necessidades de um único indivíduo.",
+	"baseatk": 39,
+	"substat": "ATQ",
+	"subvalue": "7.7",
+	"effectname": "Convencer",
+	"effect": "Após usar e acertar uma Habilidade Elemental, Normal ou Ataque Carregado, causa Dano de ATQ adicional de {0} em uma área pequena por 15s. Pode ser ativado uma vez a cada 3s.",
+	"r1": [
+		"60%"
+	],
+	"r2": [
+		"75%"
+	],
+	"r3": [
+		"90%"
+	],
+	"r4": [
+		"105%"
+	],
+	"r5": [
+		"120%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Elixir de Chumbo Velado por Névoa",
+				"count": 2
+			},
+			{
+				"name": "Pólen de Névoa",
+				"count": 2
+			},
+			{
+				"name": "Máscara Danificada",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Elixir de Mercúrio com Véu de Névoa",
+				"count": 2
+			},
+			{
+				"name": "Pólen de Névoa",
+				"count": 8
+			},
+			{
+				"name": "Máscara Danificada",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Elixir de Mercúrio com Véu de Névoa",
+				"count": 4
+			},
+			{
+				"name": "Grama do Nevoeiro",
+				"count": 4
+			},
+			{
+				"name": "Máscara Suja",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Elixir de Ouro com Véu de Névoa",
+				"count": 2
+			},
+			{
+				"name": "Grama do Nevoeiro",
+				"count": 8
+			},
+			{
+				"name": "Máscara Suja",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Elixir de Ouro com Véu de Névoa",
+				"count": 4
+			},
+			{
+				"name": "Pavio do Nevoeiro",
+				"count": 6
+			},
+			{
+				"name": "Máscara Ominosa",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Alternação das Nuvens e o Mar",
+				"count": 3
+			},
+			{
+				"name": "Pavio do Nevoeiro",
+				"count": 12
+			},
+			{
+				"name": "Máscara Ominosa",
+				"count": 8
+			}
+		]
+	}
+}

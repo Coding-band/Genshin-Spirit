@@ -1,0 +1,143 @@
+{
+	"name": "Schwarzes Schwert",
+	"description": "Ein tiefschwarzes Langschwert, das nach Streit und Schlacht dürstet. Es soll seinen Träger dazu bringen, ekstatisch im Blut der Niedergemetzelten zu baden.",
+	"weapontype": "Einhänder",
+	"rarity": "4",
+	"story": "Eine Klinge, die nach frischem Blut dürstet, wird durch den Duft davon geweckt.\nDiejenigen, die es besitzen, benutzen und nähren, werden weiter töten,\nbis selbst eine reine Seele vom vielen Blutvergießen ganz schwarz wird ...\n\nEs war einmal ein strahlend weißer Ritter, der sich immer nach dem Weg der Gerechtigkeit sehnte.\nEr trug eine silbern glänzende Rüstung und an seiner Hüfte hing ein Schwert, blank wie ein Spiegel.\nWo immer es Ungerechtigkeit, Ungeheuer oder lodernde Feuer in der Ferne gab,\nder Ritter würde herbeieilen, um zu schneiden, schlitzen und zu durchbohren.\nEr folgte den Lehren des Jungen Wolfs, der ihn Ritterlichkeit, Gerechtigkeit und Schwertkampf lehrte.\nEr schnitt, schlitzte und durchbohrte seine Feinde von Kopf bis Fuß ...\nBis die Gerechtigkeit ihren Lauf genommen hatte und das Monster sich nicht mehr bewegte.\n\n„Ich begann, mich im Schneiden, Schlitzen und Durchbohren gänzlich zu verlieren.“\n„Als die Schneide meiner Klinge auf das Fleisch meines Feindes traf, kribbelte es ganz elektrisch in meiner Wirbelsäule.“\n„Ah, dachte ich, das muss das Gefühl der Gerechtigkeit sein.“\n„Solange ich das Böse in dieser verkehrten Welt zerteile, zerhacke und durchbohre,“\n„wird irgendwann, eines Tages, alles gereinigt sein.“\n\n„Oh, törichter Ritter, das Schlachten im Namen der Gerechtigkeit ist immer noch Schlachten.“\n„Nein. Schlachten im Namen der Gerechtigkeit ist Gerechtigkeit.“\n\nSchneiden, Schlitzen und Durchbohren, nur damit gibt es echte Gerechtigkeit!\nAuch wenn die weißen Blumen, die die Jungfrau euch anbietet, bereits schwarz von Blut verschmiert sind, und euer Schwert nicht mehr hell leuchtet,\nauch wenn ein schönes Gesicht hässlich und verzerrt wird und man gezwungen ist, eine Eisenmaske zu tragen,\nund auch wenn diejenigen, die du verteidigst, dich nicht verstehen können, hör niemals auf!\n\nUnd so blieb der schwarzgefärbte Ritter auf seinem Weg und verfolgte im Namen der Gerechtigkeit Monster,\nbis er auf ein altes, lang gefallenes Reich stieß, wo er die ultimative Ungerechtigkeit entdeckte ...",
+	"baseatk": 42,
+	"substat": "KT",
+	"subvalue": "6",
+	"effectname": "„Gerechtigkeit“",
+	"effect": "Erhöht den mit Standardangriffen und heftigen Schlägen verursachten Schaden um {0}. Stellt bei KT von Standardangriffen und heftigen Schlägen LP in Höhe von {1} ANG wieder her. 5 s Abklingzeit.",
+	"r1": [
+		"20 %",
+		"60 %"
+	],
+	"r2": [
+		"25 %",
+		"70 %"
+	],
+	"r3": [
+		"30 %",
+		"80 %"
+	],
+	"r4": [
+		"35 %",
+		"90 %"
+	],
+	"r5": [
+		"40 %",
+		"100 %"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Milchzahn des borealischen Wolfs",
+				"count": 3
+			},
+			{
+				"name": "Alte Rute des Flusses der Elemente",
+				"count": 3
+			},
+			{
+				"name": "Schleimabsonderung",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Zersplitterter Zahn des borealischen Wolfs",
+				"count": 3
+			},
+			{
+				"name": "Alte Rute des Flusses der Elemente",
+				"count": 12
+			},
+			{
+				"name": "Schleimabsonderung",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Zersplitterter Zahn des borealischen Wolfs",
+				"count": 6
+			},
+			{
+				"name": "Verdorrte Blätter des Flusses der Elemente",
+				"count": 6
+			},
+			{
+				"name": "Schleimkondensat",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Abgebrochener Zahn des borealischen Wolfs",
+				"count": 3
+			},
+			{
+				"name": "Verdorrte Blätter des Flusses der Elemente",
+				"count": 12
+			},
+			{
+				"name": "Schleimkondensat",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Abgebrochener Zahn des borealischen Wolfs",
+				"count": 6
+			},
+			{
+				"name": "Frische Triebe des Flusses der Elemente",
+				"count": 9
+			},
+			{
+				"name": "Schleimkonzentrat",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Heimweh des borealischen Wolfs",
+				"count": 4
+			},
+			{
+				"name": "Frische Triebe des Flusses der Elemente",
+				"count": 18
+			},
+			{
+				"name": "Schleimkonzentrat",
+				"count": 12
+			}
+		]
+	}
+}

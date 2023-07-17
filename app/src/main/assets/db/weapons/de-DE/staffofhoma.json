@@ -1,0 +1,148 @@
+{
+	"name": "Homa-Stab",
+	"description": "Ein sogenannter roter Brennholzstab, der in alten, mittlerweile vergessenen Ritualen verwendet wurde.",
+	"weapontype": "Stangenwaffe",
+	"rarity": "5",
+	"story": "Reinige alle Unreinheiten mit Feuer und lass den Schmutz mit dem Feuer hinaufsteigen in den höchsten Himmel, wo alle Dinge sein mögen:\nBei diesen Riten wurde während der Regenzeit auch noch frischer Zunder angezündet und aus diesen Feuern stieg dann Wolfsrauch auf, im Gebet für Segen und den Sieg über das Böse.\n\nDiese flammenden Rituale waren besonders in jener alten Zeit des Unfriedens üblich.\nDenn die Träume und Wahnvorstellungen der stummen Götterleichen würden böse Seuchen erzeugen,\nwelche die Bürger wegrissen, die nicht mehr die ihren waren, und auch solche, die nie die ihren waren.\n\nDann hörte ein barmherziger Arzt ein Flüstern aus dem Inneren der brennend roten Flamme,\naus dem Knistern und Brechen von vertrocknetem Gras.\n„Nur unbändiges Feuer kann den Schmutz von Himmel und Erde reinigen.“\n„Hebe dieses scharlachrote Brennholz auf. Mit ihm sollst du jeden Dämon abwehren.“\n\nAlso nahm der Arzt den teuflisch roten Stab in seine Hand und entzündete alles, was unrein war.\nDiejenigen, die bereits gegangen sind, unfähig, tiefe Traurigkeit zu ertragen, die aber inzwischen von schlechtem Karma und Unglück umhüllt sind,\nSie sollen in dieser Flamme zu kreidebleichen Schmetterlingen werden und endlich Erleichterung von ihrem Unglück und ihren Verletzungen erhalten.\nDer Arzt, der jene endlosen Feuer entfacht hatte, ist der Legende nach letztendlich selbst zu einem Ascheschmetterling geworden.\n\nAuch wenn viele dieser Rituale über die Zeit und den Frieden hindurch vergessen wurden,\njene, die das Feuer in ihrem Herzen tragen, können noch heute das Flüstern der knisternden Flammen hören, wenn sie sich von aufsteigender Dunkelheit bedroht sehen.\nSo tanzt das Feuer und knistert, da sonst nichts als seine Flammen die Welt zu reinigen vermag.",
+	"baseatk": 46,
+	"substat": "KSCH",
+	"subvalue": "14.4",
+	"effectname": "Ungezügelter Schmetterling",
+	"effect": "Erhöht die LP um {0}. Erhöht den ANG um {1} der max. LP der mit dieser Waffe ausgerüsteten Figur. Erhöht den ANG bei weniger als 50 % LP der mit dieser Waffe ausgerüsteten Figur um weitere {2} der max. LP.",
+	"r1": [
+		"20 %",
+		"0,8 %",
+		"1 %"
+	],
+	"r2": [
+		"25 %",
+		"1 %",
+		"1,2 %"
+	],
+	"r3": [
+		"30 %",
+		"1,2 %",
+		"1,4 %"
+	],
+	"r4": [
+		"35 %",
+		"1,4 %",
+		"1,6 %"
+	],
+	"r5": [
+		"40 %",
+		"1,6 %",
+		"1,8 %"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Körnchen pechschwarzer Aerosiderit",
+				"count": 5
+			},
+			{
+				"name": "Alte Rute des Flusses der Elemente",
+				"count": 5
+			},
+			{
+				"name": "Schleimabsonderung",
+				"count": 3
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Stückchen pechschwarzer Aerosiderit",
+				"count": 5
+			},
+			{
+				"name": "Alte Rute des Flusses der Elemente",
+				"count": 18
+			},
+			{
+				"name": "Schleimabsonderung",
+				"count": 12
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Stückchen pechschwarzer Aerosiderit",
+				"count": 9
+			},
+			{
+				"name": "Verdorrte Blätter des Flusses der Elemente",
+				"count": 9
+			},
+			{
+				"name": "Schleimkondensat",
+				"count": 9
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Klumpen pechschwarzer Aerosiderit",
+				"count": 5
+			},
+			{
+				"name": "Verdorrte Blätter des Flusses der Elemente",
+				"count": 18
+			},
+			{
+				"name": "Schleimkondensat",
+				"count": 14
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 55000
+			},
+			{
+				"name": "Klumpen pechschwarzer Aerosiderit",
+				"count": 9
+			},
+			{
+				"name": "Frische Triebe des Flusses der Elemente",
+				"count": 14
+			},
+			{
+				"name": "Schleimkonzentrat",
+				"count": 9
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 65000
+			},
+			{
+				"name": "Brocken pechschwarzer Aerosiderit",
+				"count": 6
+			},
+			{
+				"name": "Frische Triebe des Flusses der Elemente",
+				"count": 27
+			},
+			{
+				"name": "Schleimkonzentrat",
+				"count": 18
+			}
+		]
+	}
+}

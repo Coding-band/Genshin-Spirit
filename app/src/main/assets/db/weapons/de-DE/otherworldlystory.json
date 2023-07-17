@@ -1,0 +1,138 @@
+{
+	"name": "Geschichten einer anderen Welt",
+	"description": "Ein nahezu wertloser Fantasyroman. Auch seine Nutzung als magischer Katalysator entspringt eher der Fantasie.",
+	"weapontype": "Katalysator",
+	"rarity": "3",
+	"story": "Ein sehr durchschnittliches Werk, das die Geschichte eines gewöhnlichen Menschen erzählt, der sich nach seinem Tod in einer anderen Welt wiederfindet.\nDie Welt ist voll von Gefahren. Stählerne Monster, die so groß wie Planeten werden konnten, lauerten im Untergrund und verschlangen tausende von Leuten.\nEin mächtiges Wesen, welches die Temperatur in einem Raum beliebig ändern und die Nacht zum Tag werden lassen kann. Eine unwahre und unbedeutende Geschichte.\nEs teilt mit der realen Welt nur eine Sache: Alle wertvollen Metalle gehören nur einer Handvoll Leute, die sie gut versteckt im Geheimen aufbewahren.",
+	"baseatk": 39,
+	"substat": "Aufladerate",
+	"subvalue": "8.5",
+	"effectname": "Energiebad",
+	"effect": "Stellt beim Erhalten von Elementarteilchen oder Elementarkristallen {0} LP wieder her.",
+	"r1": [
+		"1 %"
+	],
+	"r2": [
+		"1,25 %"
+	],
+	"r3": [
+		"1,5 %"
+	],
+	"r4": [
+		"1,75 %"
+	],
+	"r5": [
+		"2 %"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Fesseln des Löwenzahnkämpfers",
+				"count": 2
+			},
+			{
+				"name": "Chaos-Apparat",
+				"count": 2
+			},
+			{
+				"name": "Zerbrochene Maske",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Ketten des Löwenzahnkämpfers",
+				"count": 2
+			},
+			{
+				"name": "Chaos-Apparat",
+				"count": 8
+			},
+			{
+				"name": "Zerbrochene Maske",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Ketten des Löwenzahnkämpfers",
+				"count": 4
+			},
+			{
+				"name": "Chaos-Schaltkreis",
+				"count": 4
+			},
+			{
+				"name": "Verdreckte Maske",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Schellen des Löwenzahnkämpfers",
+				"count": 2
+			},
+			{
+				"name": "Chaos-Schaltkreis",
+				"count": 8
+			},
+			{
+				"name": "Verdreckte Maske",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Schellen des Löwenzahnkämpfers",
+				"count": 4
+			},
+			{
+				"name": "Chaos-Getriebe",
+				"count": 6
+			},
+			{
+				"name": "Unheilvolle Maske",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Ideal des Löwenzahnkriegers",
+				"count": 3
+			},
+			{
+				"name": "Chaos-Getriebe",
+				"count": 12
+			},
+			{
+				"name": "Unheilvolle Maske",
+				"count": 8
+			}
+		]
+	}
+}

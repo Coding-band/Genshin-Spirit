@@ -1,0 +1,138 @@
+{
+	"name": "Prenúncio do Alvorecer",
+	"description": "Uma espada que, uma vez, brilhou como o sol. O portador desta espada será abençoado com um bônus de \"boa sensação\". O material refletivo em sua lâmina já se desgastou há muito tempo.",
+	"weapontype": "Espada",
+	"rarity": "3",
+	"story": "Essa espada possui um nome completo extraordinário:\n\"Prenúncio Triunfante da Madrugada que Aponta para a Vitória\".\nMas apenas uma pessoa caiu para essa espada no campo de batalha:\nUma noite, desembainhou a espada triunfantemente,\no céu da noite iluminou-se, claro como o dia.\nRevelando sua localização exata,\nChoveram flechas sobre ele.",
+	"baseatk": 39,
+	"substat": "Dano Crítico",
+	"subvalue": "10.2",
+	"effectname": "Vigoroso",
+	"effect": "Quando a Vida estiver acima de 90%, aumenta a Taxa Crítica em {0}.",
+	"r1": [
+		"14%"
+	],
+	"r2": [
+		"17.5%"
+	],
+	"r3": [
+		"21%"
+	],
+	"r4": [
+		"24.5%"
+	],
+	"r5": [
+		"28%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Dente de Leite do Lobo Boreal",
+				"count": 2
+			},
+			{
+				"name": "Ramo Seco de Linha Ley",
+				"count": 2
+			},
+			{
+				"name": "Condensado de Slime",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Dente Rachado do Lobo Boreal",
+				"count": 2
+			},
+			{
+				"name": "Ramo Seco de Linha Ley",
+				"count": 8
+			},
+			{
+				"name": "Condensado de Slime",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Dente Rachado do Lobo Boreal",
+				"count": 4
+			},
+			{
+				"name": "Folha Morta de Linha Ley",
+				"count": 4
+			},
+			{
+				"name": "Secreção de Slime",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Presa Quebrada do Lobo Boreal",
+				"count": 2
+			},
+			{
+				"name": "Folha Morta de Linha Ley",
+				"count": 8
+			},
+			{
+				"name": "Secreção de Slime",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Presa Quebrada do Lobo Boreal",
+				"count": 4
+			},
+			{
+				"name": "Broto de Linha Ley",
+				"count": 6
+			},
+			{
+				"name": "Essência de Slime",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Nostalgia do Lobo Boreal",
+				"count": 3
+			},
+			{
+				"name": "Broto de Linha Ley",
+				"count": 12
+			},
+			{
+				"name": "Essência de Slime",
+				"count": 8
+			}
+		]
+	}
+}

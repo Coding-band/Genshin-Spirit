@@ -1,0 +1,138 @@
+{
+	"name": "Arc rouillé",
+	"description": "Un grand arc en fer complètement recouvert de rouille. Le soulever ou le manier est impossible sans posséder une force hors du commun.",
+	"weapontype": "Arc",
+	"rarity": "4",
+	"story": "Un arc aussi rigide que la fonte ayant appartenu à un archer célèbre.\nMonstres et bandits tombaient autrefois comme des mouches sous ses flèches.\nOn raconte que dans sa quête de la maîtrise ultime de son arme,\nla corde de son arc chantait telle la foudre,\net ses flèches pleuvaient telle une pluie d'acier au soleil.\n\nL'archer réalisa dans ses dernières années la vérité suivante :\n« De même que le véritable tribun sait garder le silence, le véritable chasseur sait garder sa flèche. »\n\nIl ne parla dès lors plus des flèches tombant des cieux,\nni des monstres terribles abattus de flèches de fer, tirées d'un arc de fer.\n\nAyant enterré son arc, il partit vivre en ermite dans la montagne.\n\nOn raconte la chose suivante concernant son décès :\nDe son vivant, le son d'une corde pincée avait pour habitude de résonner chaque nuit de sa demeure ; les monstres n'osaient en approcher.\nLa nuit de sa mort fut une nuit d'orage. Dans le vent et la pluie hurlants résonna un unique coup de tonnerre ; mais son éclair monta vers les cieux, brillant aussi fort que les étoiles de la galaxie.",
+	"baseatk": 42,
+	"substat": "ATQ",
+	"subvalue": "9",
+	"effectname": "Tir rapide",
+	"effect": "Augmente les DGT infligés par les attaques normales de {0} et réduit les DGT infligés par les attaques chargées de 10 %.",
+	"r1": [
+		"40 %"
+	],
+	"r2": [
+		"50 %"
+	],
+	"r3": [
+		"60 %"
+	],
+	"r4": [
+		"70 %"
+	],
+	"r5": [
+		"80 %"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Sable lumineux de Guyun",
+				"count": 3
+			},
+			{
+				"name": "Dague de chasse rituelle",
+				"count": 3
+			},
+			{
+				"name": "Masque endommagé",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Roche lustrée de Guyun",
+				"count": 3
+			},
+			{
+				"name": "Dague de chasse rituelle",
+				"count": 12
+			},
+			{
+				"name": "Masque endommagé",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Roche lustrée de Guyun",
+				"count": 6
+			},
+			{
+				"name": "Dague rituelle de l'Usurier",
+				"count": 6
+			},
+			{
+				"name": "Masque sale",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Squelette sacré de Guyun",
+				"count": 3
+			},
+			{
+				"name": "Dague rituelle de l'Usurier",
+				"count": 12
+			},
+			{
+				"name": "Masque sale",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Squelette sacré de Guyun",
+				"count": 6
+			},
+			{
+				"name": "Grande dague de l'Inspecteur",
+				"count": 9
+			},
+			{
+				"name": "Masque sinistre",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Corps divin de Guyun",
+				"count": 4
+			},
+			{
+				"name": "Grande dague de l'Inspecteur",
+				"count": 18
+			},
+			{
+				"name": "Masque sinistre",
+				"count": 12
+			}
+		]
+	}
+}

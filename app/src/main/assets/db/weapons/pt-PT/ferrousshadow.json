@@ -1,0 +1,143 @@
+{
+	"name": "Sombra de Ferro",
+	"description": "Uma réplica da espada famosa de Arundolyn, o Leão da Luz. Maneje-a e sinta o poder de um herói lendário! Aviso: Sonhar demais pode ser prejudicial para você.",
+	"weapontype": "Espadão",
+	"rarity": "3",
+	"story": "Quando o jovem Arundolyn brandia seu espadão, réplica da grande espada do Cavaleiro de Boreas Ravenwood, imaginando que estava derrubando os velhos nobres de Mondstadt, ele nunca imaginou que se tornaria o renomado \"Leão da Luz\". Tampouco imaginava que seu jovem rival Rostam, que morreu depois de servir ao povo de Mondstadt por 23 anos, se tornaria um dia seu braço direito de maior confiança.\nA réplica da espada larga do Leão da Luz está agora nas mãos de outro jovem.\nComo será passado esse misterioso destino?",
+	"baseatk": 39,
+	"substat": "Vida",
+	"subvalue": "7.7",
+	"effectname": "Implacável",
+	"effect": "Quando a Vida estiver inferior a {0}, Ataques Carregados raramente são interrompidos e aumenta {1} do Ataque Carregado.",
+	"r1": [
+		"70%",
+		"30%"
+	],
+	"r2": [
+		"75%",
+		"35%"
+	],
+	"r3": [
+		"80%",
+		"40%"
+	],
+	"r4": [
+		"85%",
+		"45%"
+	],
+	"r5": [
+		"90%",
+		"50%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Fragmento de Azulejo de Decarabian",
+				"count": 2
+			},
+			{
+				"name": "Chifre Pesado",
+				"count": 2
+			},
+			{
+				"name": "Néctar da Flor Gigante",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Detritos da Cidade de Decarabian",
+				"count": 2
+			},
+			{
+				"name": "Chifre Pesado",
+				"count": 8
+			},
+			{
+				"name": "Néctar da Flor Gigante",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Detritos da Cidade de Decarabian",
+				"count": 4
+			},
+			{
+				"name": "Chifre de Bronze Negro",
+				"count": 4
+			},
+			{
+				"name": "Néctar Brilhante",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Fragmentos Épicos da Decarabian",
+				"count": 2
+			},
+			{
+				"name": "Chifre de Bronze Negro",
+				"count": 8
+			},
+			{
+				"name": "Néctar Brilhante",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Fragmentos Épicos da Decarabian",
+				"count": 4
+			},
+			{
+				"name": "Chifre de Cristal Preto",
+				"count": 6
+			},
+			{
+				"name": "Néctar Elemental",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Pedaços de Sonho da Decarabian",
+				"count": 3
+			},
+			{
+				"name": "Chifre de Cristal Preto",
+				"count": 12
+			},
+			{
+				"name": "Néctar Elemental",
+				"count": 8
+			}
+		]
+	}
+}

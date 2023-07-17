@@ -11,6 +11,15 @@
         <item name="android:windowFullscreen">true</item>
     </style>
 
+    <style name="TCG_Info" parent="@style/NoTheme">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
     <style name="rareStar" parent="@android:style/Widget.RatingBar">
         <item name="android:progressDrawable">@drawable/star_48</item>
         <item name="android:minHeight">24dp</item>

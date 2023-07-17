@@ -1,0 +1,138 @@
+{
+	"name": "Guia de Magia",
+	"description": "12ª edição. Uma reedição com correção da 11ª edição e novas adições baseadas nos desenvolvimentos atuais.",
+	"weapontype": "Catalisador",
+	"rarity": "3",
+	"story": "Essa versão do Guia de Magia gerou muita controvérsia quando foi publicada.\nO Capítulo VII: Princípios do Elemento Anemo continha claras contradições com o senso comum,\nerros também podem ser observados no que concerne os princípios básicos dos elementos Hydro e Electro.\nEvidentemente, o livro não foi revisado por pares antes de ser publicado.\nDe qualquer maneira, o livro ainda é o melhor guia de magia que existe.",
+	"baseatk": 38,
+	"substat": "Proficiência Elemental",
+	"subvalue": "41",
+	"effectname": "Destruição de Tempestade e Maré",
+	"effect": "Aumenta o Dano contra inimigos afetados por Hydro ou Electro em {0}.",
+	"r1": [
+		"12%"
+	],
+	"r2": [
+		"15%"
+	],
+	"r3": [
+		"18%"
+	],
+	"r4": [
+		"21%"
+	],
+	"r5": [
+		"24%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Fragmento de Azulejo de Decarabian",
+				"count": 2
+			},
+			{
+				"name": "Chifre Pesado",
+				"count": 2
+			},
+			{
+				"name": "Condensado de Slime",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Detritos da Cidade de Decarabian",
+				"count": 2
+			},
+			{
+				"name": "Chifre Pesado",
+				"count": 8
+			},
+			{
+				"name": "Condensado de Slime",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Detritos da Cidade de Decarabian",
+				"count": 4
+			},
+			{
+				"name": "Chifre de Bronze Negro",
+				"count": 4
+			},
+			{
+				"name": "Secreção de Slime",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Fragmentos Épicos da Decarabian",
+				"count": 2
+			},
+			{
+				"name": "Chifre de Bronze Negro",
+				"count": 8
+			},
+			{
+				"name": "Secreção de Slime",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Fragmentos Épicos da Decarabian",
+				"count": 4
+			},
+			{
+				"name": "Chifre de Cristal Preto",
+				"count": 6
+			},
+			{
+				"name": "Essência de Slime",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Pedaços de Sonho da Decarabian",
+				"count": 3
+			},
+			{
+				"name": "Chifre de Cristal Preto",
+				"count": 12
+			},
+			{
+				"name": "Essência de Slime",
+				"count": 8
+			}
+		]
+	}
+}

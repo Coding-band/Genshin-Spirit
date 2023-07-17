@@ -1320,7 +1320,6 @@ public class Characters_Info_2048 {
         /** MAIN */
         char_name.setText(item_rss.getCharByName(name,context)[1]);
         char_title.setText(nick);
-        //Picasso.get().load(FileLoader.loadIMG(item_rss.getCharByName(name,context)[0],context)).centerCrop().into(char_img);
 
 
         if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
@@ -1329,11 +1328,11 @@ public class Characters_Info_2048 {
              * Animation
              */
             //char_imgL.setAnimation(animImgLTR);
-            char_imgL.setImageResource(item_rss.getCharByName(name,context)[0]);
-            char_imgL.getLayoutParams().width = width;
+            char_imgL.setAdjustViewBounds(true);
+            Picasso.get().load(item_rss.getCharByName(name,context)[0]).fit().centerInside().into(char_imgL);
         }else{
-            char_img.setImageResource(item_rss.getCharByName(name,context)[0]);
-            char_img.getLayoutParams().width = width;
+            char_img.setAdjustViewBounds(true);
+            Picasso.get().load(item_rss.getCharByName(name,context)[0]).fit().centerInside().into(char_img);
         }
 
         displayMetrics = new DisplayMetrics();
@@ -2618,7 +2617,6 @@ public class Characters_Info_2048 {
                 String book = object.getString("book");
                 String t_boss = object.getString("t_boss");
 
-                System.out.println("CharName_BASE CIF : "+CharName_BASE);
                 String CharName = CharName_BASE.replace("_"," ");
                 if(name.equals(CharName)){
                     crystalREQUIRE = crystal;
@@ -2627,13 +2625,6 @@ public class Characters_Info_2048 {
                     commonREQUIRE = common;
                     bookREQUIRE = book;
                     t_bossREQUIRE = t_boss;
-
-                    System.out.println("crystal CIF : "+crystal);
-                    System.out.println("boss CIF : "+boss);
-                    System.out.println("local CIF : "+local);
-                    System.out.println("common CIF : "+common);
-                    System.out.println("book CIF : "+book);
-                    System.out.println("t_boss CIF : "+t_boss);
                 }
             }
         } catch (JSONException e) {

@@ -1,0 +1,148 @@
+{
+	"name": "Épée-horloge",
+	"description": "Une grande épée lourde équipée d'une cloche, mais dont le mécanisme de chronométrage a été détruit il y a bien longtemps.",
+	"weapontype": "Épée à deux mains",
+	"rarity": "4",
+	"story": "Une étrange et lourde épée, incrustée d'une horloge délicate.\nLe son distinct du mécanisme rythme le combat pour son possesseur et ses alliés.\nAprès la dissolution de la Compagnie Vagabonde, l'épée fut enfouie dans l'acide ; les roues dentées de l'horloge sont à présent rouillées.\nElle n'en demeure cependant pas moins une arme mortelle.\n\nUn homme répondant au nom de Kreuzlied fut à une époque membre de la Compagnie Vagabonde, avant de se voir jugé traître puis banni.\nEn ces temps, l'histoire était délaissée par les chercheurs et les bardes ; la classe noble au pouvoir ne souhaitait en effet pas voir sa tyrannie jugée par le temps.\nMais au son de l'arme brandie par Kreuzlied, pas un aristocrate ne put résister ; car c'était là la lame du jugement.\n\nLa punition qui lui fut infligée suivant l'échec de la rébellion ne fut pas rendue publique... Peut-être fut-ce là une faveur due à son origine privilégiée.\nD'aucuns racontent qu'après avoir été renvoyé de son poste, son désir de poursuivre l'héritage de ses anciens compagnons le poussa à établir une société secrète ayant pour but ultime la chute de l'aristocratie.\nOn raconte aussi que lorsque la gladiatrice venue d'ailleurs se révolta, il fut parmi les premiers à lui apporter son soutien.\n\nSi l'on remonte encore dans le passé, d'autres rumeurs prétendent que la société secrète continua de veiller dans l'ombre,\napportant son aide aux chevaliers de l'Ordre de Favonius, accomplissant les tâches auxquelles les chevaliers ne devaient pas prendre part.\nOn prétendit même que derrière Kreuzlied était Rostam, le Jeune Loup, qui dirigeait l'organisation dans le plus grand secret.",
+	"baseatk": 42,
+	"substat": "PV",
+	"subvalue": "9",
+	"effectname": "Protecteur rebelle",
+	"effect": "Subir des DGT génère un bouclier qui absorbe jusqu'à {0} des PV max pendant 10 s. Peut être déclenché une fois toutes les {1} s. Lorsque le personnage est sous la protection du bouclier, les DGT infligés augmentent de {2}.",
+	"r1": [
+		"20 %",
+		"45",
+		"12 %"
+	],
+	"r2": [
+		"23 %",
+		"45",
+		"15 %"
+	],
+	"r3": [
+		"26 %",
+		"45",
+		"18 %"
+	],
+	"r4": [
+		"29 %",
+		"45",
+		"21 %"
+	],
+	"r5": [
+		"32 %",
+		"45",
+		"24 %"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Tuile cassée de Décabarian",
+				"count": 3
+			},
+			{
+				"name": "Corne lourde",
+				"count": 3
+			},
+			{
+				"name": "Nectar de Fleur mensongère",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Mur abattu de Décabarian",
+				"count": 3
+			},
+			{
+				"name": "Corne lourde",
+				"count": 12
+			},
+			{
+				"name": "Nectar de Fleur mensongère",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Mur abattu de Décabarian",
+				"count": 6
+			},
+			{
+				"name": "Corne en bronze noir",
+				"count": 6
+			},
+			{
+				"name": "Nectar miroitant",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Fragment dispersé de Décabarian",
+				"count": 3
+			},
+			{
+				"name": "Corne en bronze noir",
+				"count": 12
+			},
+			{
+				"name": "Nectar miroitant",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Fragment dispersé de Décabarian",
+				"count": 6
+			},
+			{
+				"name": "Corne à cristal noir",
+				"count": 9
+			},
+			{
+				"name": "Nectar élémentaire",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Rêve brisé de Décabarian",
+				"count": 4
+			},
+			{
+				"name": "Corne à cristal noir",
+				"count": 18
+			},
+			{
+				"name": "Nectar élémentaire",
+				"count": 12
+			}
+		]
+	}
+}

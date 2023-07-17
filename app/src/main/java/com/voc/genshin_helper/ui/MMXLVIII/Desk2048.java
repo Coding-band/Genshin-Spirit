@@ -44,7 +44,6 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.StrictMode;
 import android.provider.BaseColumns;
 import android.provider.MediaStore;
 import android.text.method.LinkMovementMethod;
@@ -102,7 +101,6 @@ import com.voc.genshin_helper.util.CustomViewPager;
 import com.voc.genshin_helper.util.DailyMemo;
 import com.voc.genshin_helper.util.Dialog2048;
 import com.voc.genshin_helper.util.DownloadAndUnzipTask;
-import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.LangUtils;
 import com.voc.genshin_helper.util.LocaleHelper;
 import com.voc.genshin_helper.util.MyViewPagerAdapter;
@@ -354,7 +352,8 @@ public class Desk2048 extends AppCompatActivity {
         npd = new NumberPickerDialog(this);
         changeLog = new ChangeLog();
 
-        // Check Is First Time Open
+        // Check Is First Time Open -- Disabled
+        /*
         if(sharedPreferences_version.getBoolean(BuildConfig.VERSION_NAME,false) == false){
             changeLog.show(context,activity);
 
@@ -362,6 +361,7 @@ public class Desk2048 extends AppCompatActivity {
             editor2.putBoolean(BuildConfig.VERSION_NAME,true);
             editor2.apply();
         }
+         */
 
         final LayoutInflater mInflater = getLayoutInflater().from(this);
         viewPager0 = mInflater.inflate(R.layout.fragment_home_2048, null,false);
@@ -1441,7 +1441,7 @@ public class Desk2048 extends AppCompatActivity {
         });
 
         // Translate -- U MUST NOT DELETE ANYTHING
-        langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp),getString(R.string.fr_fr),getString(R.string.uk_ua)};
+        langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp),getString(R.string.fr_fr),getString(R.string.pt_pt),getString(R.string.de_de)};
         ArrayAdapter lang_aa = new ArrayAdapter(context,R.layout.spinner_item,langList);
         lang_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_2048);
 
@@ -1454,56 +1454,41 @@ public class Desk2048 extends AppCompatActivity {
                 // https://blog.csdn.net/pigdreams/article/details/81277110
                 // https://stackoverflow.com/questions/13397933/android-spinner-avoid-onitemselected-calls-during-initialization
                 if(check_spinner >0){
-                    if(position == 0){
-                        editor.putString("curr_lang","zh-HK");
-                        editor.putInt("curr_lang_pos",position);
-                        editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
-                        editor.apply();
-                        LangUtils.getAttachBaseContext(context,position);
-                        recreate();
-                    }else if(position == 1){
-                        editor.putString("curr_lang","zh-CN");
-                        editor.putInt("curr_lang_pos",position);
-                        editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
-                        editor.apply();
-                        LangUtils.getAttachBaseContext(context,position);
-                        recreate();
-                    }else if(position == 2){
-                        editor.putString("curr_lang","en-US");
-                        editor.putInt("curr_lang_pos",position);
-                        editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
-                        editor.apply();
-                        LangUtils.getAttachBaseContext(context,position);
-                        recreate();
-                    }else if(position == 3){
-                        editor.putString("curr_lang","ru-RU");
-                        editor.putInt("curr_lang_pos",position);
-                        editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
-                        editor.apply();
-                        LangUtils.getAttachBaseContext(context,position);
-                        recreate();
-                    }else if(position == 4){
-                        editor.putString("curr_lang","ja-JP");
-                        editor.putInt("curr_lang_pos",position);
-                        editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
-                        editor.apply();
-                        LangUtils.getAttachBaseContext(context,position);
-                        recreate();
-                    }else if(position == 5){
-                        editor.putString("curr_lang","fr-FR");
-                        editor.putInt("curr_lang_pos",position);
-                        editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
-                        editor.apply();
-                        LangUtils.getAttachBaseContext(context,position);
-                        recreate();
-                    }else if(position == 6){
-                        editor.putString("curr_lang","uk-UA");
-                        editor.putInt("curr_lang_pos",position);
-                        editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
-                        editor.apply();
-                        LangUtils.getAttachBaseContext(context,position);
-                        recreate();
+                    switch (position) {
+                        case 0:
+                            editor.putString("curr_lang", "zh-HK");
+                            break;
+                        case 1:
+                            editor.putString("curr_lang", "zh-CN");
+                            break;
+                        case 2:
+                            editor.putString("curr_lang", "en-US");
+                            break;
+                        case 3:
+                            editor.putString("curr_lang", "ru-RU");
+                            break;
+                        case 4:
+                            editor.putString("curr_lang", "ja-JP");
+                            break;
+                        case 5:
+                            editor.putString("curr_lang", "fr-FR");
+                            break;
+                        case 6:
+                            editor.putString("curr_lang", "uk-UA");
+                            break;
+                        case 7:
+                            editor.putString("curr_lang", "pt-PT");
+                            break;
+                        case 8:
+                            editor.putString("curr_lang", "de-DE");
+                            break;
                     }
+
+                    editor.putInt("curr_lang_pos",position);
+                    editor.putBoolean("PASS_JUST_CHANGED_THEME",true);
+                    editor.apply();
+                    LangUtils.getAttachBaseContext(context,position);
+                    recreate();
                 }
                 check_spinner = check_spinner +1;
             }
@@ -1588,6 +1573,7 @@ public class Desk2048 extends AppCompatActivity {
         Button bg_download_reset = view.findViewById(R.id.bg_download_reset);
         Button bg_download_delete = view.findViewById(R.id.bg_download_delete);
 
+
         if (BuildConfig.FLAVOR.equals("dev") || BuildConfig.FLAVOR.equals("beta")){
             bg_download_reset.setVisibility(View.VISIBLE);
             //bg_download_delete.setVisibility(View.VISIBLE);
@@ -1628,9 +1614,6 @@ public class Desk2048 extends AppCompatActivity {
         bg_download_base.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-                StrictMode.setThreadPolicy(policy);
-
                 ArrayList<String> downloadList = new ArrayList<>();
                 downloadList.add(ItemRss.SERVER_DOWNLOAD_ROOT+baseFileName);
 
@@ -2738,7 +2721,7 @@ public class Desk2048 extends AppCompatActivity {
         aif.setup(String.valueOf(name),context,activity);
     }
     public void startTCGInfo(FrameLayout tcg_card,TCG tcg, int tcg_width, Activity activity, int[] screenPos){
-        TCG_Info_2048 tcgI = new TCG_Info_2048();
+        TCG_Info_2048_OLD tcgI = new TCG_Info_2048_OLD();
         tcgI.setup(tcg_card,tcg,tcg_width,context,activity,sharedPreferences,editor, screenPos);
     }
     public void runSipTikCal (Characters characters, Activity activity){
@@ -2927,6 +2910,10 @@ public class Desk2048 extends AppCompatActivity {
                 editor.putString("curr_lang","ft-FR"); editor.putInt("curr_lang_pos",5);x=5;
             }else if(tag.contains("uk-")){
                 editor.putString("curr_lang","uk-UA"); editor.putInt("curr_lang_pos",6);x=6;
+            }else if(tag.contains("pt-")){
+                editor.putString("curr_lang","pt-PT"); editor.putInt("curr_lang_pos",7);x=7;
+            }else if(tag.contains("de-")){
+                editor.putString("curr_lang","de-DE"); editor.putInt("curr_lang_pos",8);x=8;
             }else{
                 editor.putString("curr_lang","en-US"); editor.putInt("curr_lang_pos",2);x=2;
             }

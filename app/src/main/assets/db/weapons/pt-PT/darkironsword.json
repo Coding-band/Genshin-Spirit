@@ -1,0 +1,138 @@
+{
+	"name": "Espada de Ferro Negro",
+	"description": "Bem, na verdade é apenas uma espada de ferro um pouco escura.",
+	"weapontype": "Espada",
+	"rarity": "3",
+	"story": "\"Por que sua espada está no chão?\"\n\"Estou bronzeando a espada para torná-la mais escura.\"\n\"Por que a espada tem que tomar banho de sol?\"\n\"Ótima pergunta, caro amigo. O que mais é preto?\"\n\"Corvos?\"\n\"...Claro. O que mais?\"\n\"Hum... Panelas de aço!\"\n\"Ótimo raciocínio! O que tem embaixo da panela?\"\n\"Fogo!\"\n\"E de onde vem o fogo?\"\nA garota pensou por um tempo, percebendo a resposta subitamente.\n\"Carvão! Carvão é preto!\"\n\"É isso mesmo! O carvão, ou carbono, é o que torna o ferro mais forte. Mas eu imagino que posso apenas escurecer a espada bronzeando-a.\"\nAo terminar de falar, ele virou a espada.",
+	"baseatk": 39,
+	"substat": "Proficiência Elemental",
+	"subvalue": "31",
+	"effectname": "Sobrecarga",
+	"effect": "Após causar uma reação elemental de Sobrecarga, Supercondutor, Eletricamente Carregado, Aceleração, Intensificação, Superflorescimento ou Redemoinho com Electro, o ATQ é aumentado em {0} por 12s.",
+	"r1": [
+		"20%"
+	],
+	"r2": [
+		"25%"
+	],
+	"r3": [
+		"30%"
+	],
+	"r4": [
+		"35%"
+	],
+	"r5": [
+		"40%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Areia Brilhante de Guyun",
+				"count": 2
+			},
+			{
+				"name": "Faca de Caça",
+				"count": 2
+			},
+			{
+				"name": "Máscara Danificada",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Pedra Lustrosa de Guyun",
+				"count": 2
+			},
+			{
+				"name": "Faca de Caça",
+				"count": 8
+			},
+			{
+				"name": "Máscara Danificada",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Pedra Lustrosa de Guyun",
+				"count": 4
+			},
+			{
+				"name": "Faca Especial",
+				"count": 4
+			},
+			{
+				"name": "Máscara Suja",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Relíquia de Guyun",
+				"count": 2
+			},
+			{
+				"name": "Faca Especial",
+				"count": 8
+			},
+			{
+				"name": "Máscara Suja",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Relíquia de Guyun",
+				"count": 4
+			},
+			{
+				"name": "Faca Longa de Inspetor",
+				"count": 6
+			},
+			{
+				"name": "Máscara Ominosa",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Corpo Divino de Guyun",
+				"count": 3
+			},
+			{
+				"name": "Faca Longa de Inspetor",
+				"count": 12
+			},
+			{
+				"name": "Máscara Ominosa",
+				"count": 8
+			}
+		]
+	}
+}

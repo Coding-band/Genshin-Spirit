@@ -1,0 +1,138 @@
+{
+	"name": "Lâmina Fria",
+	"description": "Uma arma laminada confiável, forjada em aço, que serve como testemunho das grandes aventuras de seu antigo mestre.",
+	"weapontype": "Espada",
+	"rarity": "3",
+	"story": "Uma firme espada de aço forjada pelo método de dobras,\nTem um brilho frio e opaco.\nPertenceu a um famoso aventureiro que visitou as imensidões da terra,\nCom ela, feriu os ossos de ferro dos monstros e lutou contra bandidos.\nMas no fim,\nPor uma mulher, ele abandonou a vasta terra e o céu infinito,\nSeus colegas na Guilda, sua confiável Lâmina Fria, seus velhos amigos, tudo para ficar com a mulher que amava.",
+	"baseatk": 39,
+	"substat": "ATQ",
+	"subvalue": "7.7",
+	"effectname": "Destruição de Água e Gelo",
+	"effect": "Aumenta o Dano contra inimigos afetados por Hydro ou Cryo em {0}.",
+	"r1": [
+		"12%"
+	],
+	"r2": [
+		"15%"
+	],
+	"r3": [
+		"18%"
+	],
+	"r4": [
+		"21%"
+	],
+	"r5": [
+		"24%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Fragmento de Azulejo de Decarabian",
+				"count": 2
+			},
+			{
+				"name": "Chifre Pesado",
+				"count": 2
+			},
+			{
+				"name": "Ponta de Flecha Robusta",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Detritos da Cidade de Decarabian",
+				"count": 2
+			},
+			{
+				"name": "Chifre Pesado",
+				"count": 8
+			},
+			{
+				"name": "Ponta de Flecha Robusta",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Detritos da Cidade de Decarabian",
+				"count": 4
+			},
+			{
+				"name": "Chifre de Bronze Negro",
+				"count": 4
+			},
+			{
+				"name": "Ponta de Flecha Afiada",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Fragmentos Épicos da Decarabian",
+				"count": 2
+			},
+			{
+				"name": "Chifre de Bronze Negro",
+				"count": 8
+			},
+			{
+				"name": "Ponta de Flecha Afiada",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Fragmentos Épicos da Decarabian",
+				"count": 4
+			},
+			{
+				"name": "Chifre de Cristal Preto",
+				"count": 6
+			},
+			{
+				"name": "Ponta de Flecha Usada",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Pedaços de Sonho da Decarabian",
+				"count": 3
+			},
+			{
+				"name": "Chifre de Cristal Preto",
+				"count": 12
+			},
+			{
+				"name": "Ponta de Flecha Usada",
+				"count": 8
+			}
+		]
+	}
+}

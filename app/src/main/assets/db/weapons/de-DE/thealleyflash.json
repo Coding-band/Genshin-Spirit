@@ -1,0 +1,138 @@
+{
+	"name": "Gassenleuchte",
+	"description": "Ein Langschwert so schwarz wie die Nacht. Es gehört früher einem Räuber, der sich nachts durch die Gassen trieb.",
+	"weapontype": "Einhänder",
+	"rarity": "4",
+	"story": "Ein mächtiges und edles Langschwert, das wie ein Lichtblitz in der Tiefe der Nacht scheint.\nBis zum Ende war die Klinge des Schwertes nicht ein einziges Mal von Blut getrübt worden.\nMan sagt, dass im Laufe der Generationen viele Schwerter, die für die edelsten Ritter gefertigt wurden, auf seinem Entwurf beruhten.\n\nDie verdunkelte Klinge mischte sich mit Leichtigkeit in die Dunkelheit der Nacht.\nDenn damals fürchtete man sich davor, in der Nacht ein Feuer zu entfachen.\nEin paar Barden singen in ihren Liedern davon, dass es während der Regentschaft der Aristokraten schwarz gefärbt wurde.\n\nDas Lesen der Erzählungen und Lieder seiner aufrechten Vorfahren säte die Saat der Rebellion im Herzen des jungen Aristokraten.\nAls die Zeit gekommen war, verließ er sein ehrwürdiges Haus, stahl dieses Schwert und hielt sich auf den Straßen versteckt.\nDort streifte er wie einfaches Volk durch die dunklen Gassen und Tavernen und setzte seine edle Schwertkunst ein, um den Reichen zu nehmen und den Armen zu geben.\nIm Schutze der Nacht sprang das edle Schwert über Dächer und Straßen in den Händen eines Menschen mit ebenso edlem Blut.\nDie unberührte Schneide der Klinge blieb unbefleckt, ebenso wie das Herz des edlen Diebes, der seine korrupte Abstammungslinie aufgegeben hatte.\n\nAber Wein, Gesang und Jugend würden verblassen und viele Dinge könnten geschehen.\nAm Ende begrub er bei Mondschein seine geliebte Klinge und floh über das Meer,\ndann erinnerte er sich plötzlich an die Nacht, in der er das Langschwert von seinem Zuhause entwendet hatte.\nSo er erinnerte sich an sein Gelübde gegenüber seiner Familie, gegenüber Vergangenheit und Gegenwart, gegenüber seinem Land und seinem eingeschworenen Bruder Eberhart:\n„Wenn auch nur ein wenig, so möchte ich doch meine Kraft einsetzen, um diese dunkle Welt zu ändern.“",
+	"baseatk": 45,
+	"substat": "Elementarkunde",
+	"subvalue": "12",
+	"effectname": "Held der Gassen",
+	"effect": "Erhöht den von Figuren verursachten Schaden um {0}. Dieser Schadensbonus erlischt beim Erleiden von Schaden 5 s lang.",
+	"r1": [
+		"12 %"
+	],
+	"r2": [
+		"15 %"
+	],
+	"r3": [
+		"18 %"
+	],
+	"r4": [
+		"21 %"
+	],
+	"r5": [
+		"24 %"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Decarabians zerbrochener Ziegel",
+				"count": 3
+			},
+			{
+				"name": "Schweres Horn",
+				"count": 3
+			},
+			{
+				"name": "Leitende Schriftrolle",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Decarabians zerbröckelter Wall",
+				"count": 3
+			},
+			{
+				"name": "Schweres Horn",
+				"count": 12
+			},
+			{
+				"name": "Leitende Schriftrolle",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Decarabians zerbröckelter Wall",
+				"count": 6
+			},
+			{
+				"name": "Kupferhorn",
+				"count": 6
+			},
+			{
+				"name": "Zaubersiegel-Schriftrolle",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Decarabians Palastfragment",
+				"count": 3
+			},
+			{
+				"name": "Kupferhorn",
+				"count": 12
+			},
+			{
+				"name": "Zaubersiegel-Schriftrolle",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Decarabians Palastfragment",
+				"count": 6
+			},
+			{
+				"name": "Schwarzes Kristallhorn",
+				"count": 9
+			},
+			{
+				"name": "Fluchschriftrolle",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Decarabians zerstörter Traum",
+				"count": 4
+			},
+			{
+				"name": "Schwarzes Kristallhorn",
+				"count": 18
+			},
+			{
+				"name": "Fluchschriftrolle",
+				"count": 12
+			}
+		]
+	}
+}

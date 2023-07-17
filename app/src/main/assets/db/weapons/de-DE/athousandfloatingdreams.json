@@ -1,0 +1,148 @@
+{
+	"name": "Fließende Träume von tausend Nächten",
+	"description": "Eine die fließenden Träume von tausend Nächten erhellende Lampe, in deren smaragdgrünen Licht das Lied der einstigen Welt treibt.",
+	"weapontype": "Katalysator",
+	"rarity": "5",
+	"story": "„Alle Dinge entstehen und vergehen in regelmäßigen Abständen, wie der nicht endende Wechsel zwischen Dämmerung und Tagesanbruch.“\n„Lass die Geschichte in dieser Lampe dir Träume geben, die es wert sind, auf sie zu hoffen.“\n\nIn dem Moment als der kaiserliche Garten fiel, vernahm das Mädchen, das nie das „Licht“ kennengelernt hatte, in ihrem Traum ihr Flüstern.\nDas Kind, das sich ursprünglich entschlossen hatte, dem „Traum“ zu folgen, sah ihr Mitgefühl in den Tränen.\n\nDie smaragdgrüne Laterne reflektierte das Licht des stillen Mondes und erzählte vom Funkeln der Sterne und dem ewigen Gesang ...\nDie Tänzerin mit den türkisfarbenen Augen küsste sanft die honigfarbene Seide. Weiße, rote, blaue und gelbe Fische schwammen im perlend klaren Wasser Pirouetten.\nEin Musikant auf dem Nachtspaziergang, mit den Fackeln der Dschinn in der Hand, sang von der goldenen Festung und dem granatfarbenen Brokat im Sandmeer.\nEin wortgewandter Matrose begab sich auf eine glorreiche Reise, um die Lieder und prächtigen Gärten seiner Träume an fernen Ufern zu finden.\n\nDie friedlichen Lichter erhellten den gefallenen kaiserlichen Garten, begleitet von den herrlichen Träumen aus tausend Welten.\nDie sanfte Brise des Waldes fegte über den staubigen Weg und führte das verlorene Kind aus dem Palast, in dem kein Frieden mehr herrschte.\nAls das abnehmende Tageslicht durch die feinen Blätter sickerte, wurde die smaragdgrüne Laterne, die den Traum von tausend Nächten erzählte, immer blasser:\nErst als das verirrte blinde Mädchen den Kopf wandte, bemerkte es, dass der Wald verschwunden und der Morgen angebrochen war.\n\nVon da an hörte die Traumlampe auf zu schimmern und die Träume der vergangenen Nächte wurden vom Lauf der Zeit verschluckt,\naber die Vögel, die die Morgendämmerung begrüßen, sangen wieder zu den Legenden, die wie prächtige Blumen erblühten,\num Kindern, die keine Träume mehr haben, den verheißenen Mut, die Hoffnung und die Freude zu geben.\nSie singen das nicht enden wollende Lied von tausend Nächten, das die Lichter der Nacht erhellt, während sie auf den Sonnenaufgang warten.\n\nNach Träumen von tausend Nächten, bis die Nachtigallen ihren Gesang verstummen, bis die Sonne wieder versinkt,\nfand die Reisende am Ende ihres Wegs endlich wieder jene smaragdgrüne Laterne, jene ferne Heimat.\nDie mit Tau benetzte Rose schaukelt noch immer sanft in der Brise im Mondlicht und wartet darauf, ihre neuen Geschichten zu hören:\n„Auch wenn die Erinnerungen an den gestrigen Abend für immer vergangen sind, werden wir für die Schönheit des Traums von heute Nacht singen.“",
+	"baseatk": 44,
+	"substat": "Elementarkunde",
+	"subvalue": "58",
+	"effectname": "Morgengesang von tausend Nächten",
+	"effect": "Verleiht dem Träger für jedes weitere Truppenmitglied gemäß dessen Elementartyp folgende Boni. Gleicher Elementartyp: Erhöht die Elementarkunde um {0} Punkte. Anderer Elementartyp: Erhöht den Schaden des jeweiligen Elements des Trägers um {1}. Beide Effekte sind 3-fach stapelbar. Erhöht außerdem die Elementarkunde der anderen Truppenmitglieder in der Nähe um {2} Punkte. Dieser Effekt kann bei mehreren gleichen Waffen gestapelt werden.",
+	"r1": [
+		"32",
+		"10 %",
+		"40"
+	],
+	"r2": [
+		"40",
+		"14 %",
+		"42"
+	],
+	"r3": [
+		"48",
+		"18 %",
+		"44"
+	],
+	"r4": [
+		"56",
+		"22 %",
+		"46"
+	],
+	"r5": [
+		"64",
+		"26 %",
+		"48"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Reminiszenz der Oase der blühenden Blumen",
+				"count": 5
+			},
+			{
+				"name": "Zerbrochenes Prisma",
+				"count": 5
+			},
+			{
+				"name": "Sporen der Pilzbestie",
+				"count": 3
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Gnade der Oase der blühenden Blumen",
+				"count": 5
+			},
+			{
+				"name": "Zerbrochenes Prisma",
+				"count": 18
+			},
+			{
+				"name": "Sporen der Pilzbestie",
+				"count": 12
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Gnade der Oase der blühenden Blumen",
+				"count": 9
+			},
+			{
+				"name": "Trübes Prisma",
+				"count": 9
+			},
+			{
+				"name": "Leuchtendes Sporenpulver",
+				"count": 9
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Trauer der Oase der blühenden Blumen",
+				"count": 5
+			},
+			{
+				"name": "Trübes Prisma",
+				"count": 18
+			},
+			{
+				"name": "Leuchtendes Sporenpulver",
+				"count": 14
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 55000
+			},
+			{
+				"name": "Trauer der Oase der blühenden Blumen",
+				"count": 9
+			},
+			{
+				"name": "Leuchtendes Prisma",
+				"count": 14
+			},
+			{
+				"name": "Kristalliner Zystenstaub",
+				"count": 9
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 65000
+			},
+			{
+				"name": "Wahrheit der Oase der blühenden Blumen",
+				"count": 6
+			},
+			{
+				"name": "Leuchtendes Prisma",
+				"count": 27
+			},
+			{
+				"name": "Kristalliner Zystenstaub",
+				"count": 18
+			}
+		]
+	}
+}

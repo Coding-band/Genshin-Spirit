@@ -151,6 +151,8 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
         final int margin_circ_siptik_ico = 0;
         final Transformation transformation_circ_siptik_ico = new RoundedCornersTransformation(radius_circ_siptik_ico, margin_circ_siptik_ico);
 
+        System.out.println(artifacts.getBaseName());
+
         viewHolder.str = artifacts.getName();
         viewHolder.artifact_name.setText(artifacts.getName());
         viewHolder.artifact_base_name.setText(artifacts.getBaseName());
@@ -801,6 +803,7 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                             CustomToast.toast(context,view,context.getString(R.string.cal_choosed_already));
                         }
                     } else if (ArtifactsAdapter.this.context instanceof Desk2048) {
+                        System.out.println(artifact_base_name.getText());
                         (((Desk2048) context)).startArtifactInfo(String.valueOf(artifact_base_name.getText()),activity);
                     } else if (ArtifactsAdapter.this.context instanceof DeskSipTik) {
                         (((DeskSipTik) context)).startArtifactInfo(String.valueOf(artifact_base_name.getText()),activity);

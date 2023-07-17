@@ -1,0 +1,91 @@
+{
+	"name": "Stumpfes Schwert",
+	"description": "Die Träume eines Abenteurers und der Enthusiasmus bei der Reise sind zwei wertvolle Dinge, die das Schwert aber auch nicht schärfer machen. Mach es einfach mit Mut wieder wett!",
+	"weapontype": "Einhänder",
+	"rarity": "1",
+	"story": "Reisen sind voll von Begegnungen und Abschieden.\nWahrscheinlich sind immer noch die treusten Begleiter eines Reisenden\ndas Schwert in der Hand und der Traum im Herzen.",
+	"baseatk": 23,
+	"substat": "",
+	"subvalue": "",
+	"effectname": "",
+	"effect": "",
+	"r1": [],
+	"r2": [],
+	"r3": [],
+	"r4": [],
+	"r5": [],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora"
+			},
+			{
+				"name": "Decarabians zerbrochener Ziegel",
+				"count": 1
+			},
+			{
+				"name": "Schweres Horn",
+				"count": 1
+			},
+			{
+				"name": "Stabile Bolzenspitze",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Decarabians zerbröckelter Wall",
+				"count": 1
+			},
+			{
+				"name": "Schweres Horn",
+				"count": 4
+			},
+			{
+				"name": "Stabile Bolzenspitze",
+				"count": 2
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Decarabians zerbröckelter Wall",
+				"count": 2
+			},
+			{
+				"name": "Kupferhorn",
+				"count": 2
+			},
+			{
+				"name": "Scharfe Bolzenspitze",
+				"count": 2
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Decarabians Palastfragment",
+				"count": 1
+			},
+			{
+				"name": "Kupferhorn",
+				"count": 4
+			},
+			{
+				"name": "Scharfe Bolzenspitze",
+				"count": 3
+			}
+		]
+	}
+}

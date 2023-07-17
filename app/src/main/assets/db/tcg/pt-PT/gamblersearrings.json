@@ -1,0 +1,23 @@
+{
+	"id": 312004,
+	"name": "Brincos de Apostador",
+	"cardtype": "GCG_CARD_MODIFY",
+	"cardtypetext": "Carta de Equipamento",
+	"tags": [
+		"GCG_TAG_ARTIFACT"
+	],
+	"tagstext": [
+		"Artefato"
+	],
+	"description": "Após um personagem adversário ser derrotado: Se o personagem com o efeito desta carta for o Personagem em Combate, cria 2 Elemento Omni. (Pode acontecer 3 vezes por partida)\n(Um personagem pode equipar até 1 Artefato)",
+	"descriptionraw": "<color=#FFFFFFFF>Após um personagem adversário ser derrotado:</color> Se o personagem com o efeito desta carta for o Personagem em Combate, cria 2 $[K411]. (Pode acontecer 3 vezes por partida)\\n(Um personagem pode equipar até 1 {SPRITE_PRESET#3004}Artefato)",
+	"descriptionreplaced": "<color=#FFFFFFFF>Após um personagem adversário ser derrotado:</color> Se o personagem com o efeito desta carta for o Personagem em Combate, cria 2 <color=#FFFFFFFF>{SPRITE_PRESET#1111}Elemento Omni</color>. (Pode acontecer 3 vezes por partida)\\n(Um personagem pode equipar até 1 {SPRITE_PRESET#3004}Artefato)",
+	"storytitle": "O Momento da Jogada - Brincos de Apostador",
+	"storytext": "\"Em jogos que se aposta com a vida e a morte, manter a compostura é a chave da vitória.\"",
+	"playcost": [
+		{
+			"costtype": "GCG_COST_DICE_SAME",
+			"count": 1
+		}
+	]
+}

@@ -1,0 +1,143 @@
+{
+	"name": "Cortador de Montanhas",
+	"description": "Um símbolo de um pacto lendário, esta lâmina afiada uma vez cortou o pico de uma montanha.",
+	"weapontype": "Espada",
+	"rarity": "5",
+	"story": "Naqueles tempos antigos, quando os deuses e todas as espécies de criaturas estranhas andavam pela terra,\nno tempo de caos no céu e na terra, a humanidade não podia deixar de fazer essa pergunta...\n\"Por favor me diga, para onde foram nossos entes queridos, filhos e filhas?\"\n\"Por favor me diga, quando aqueles que partiram poderão retornar?\"\n\"Ah, ah, mestre, até quando continuarão esses anos assustadores?\"\n\nAinda que fossem um povo que cresceu nas montanhas, o coração também pode partir com a dor.\nAinda que não falassem uma palavra e acreditassem teimosamente nos deuses, sua visão poderia se tornar irritada.\nAinda que não tivessem abandonado essas perguntas, as dúvidas escondidas no fundo do coração também podem sair.\n\nO Arconte Geo fez um milagre, cortou do puro Âmbar dourado uma lâmina,\ncom um corte arrancou o topo de uma montanha, estabelecendo seu contrato supremo com o povo.\nAs pessoas que se separaram inevitavelmente se reunirão; as pessoas que quebraram um contrato inevitavelmente serão punidas.\nAqueles que perderam o verdadeiro amor, que perderam o que valorizavam e que sofreram injustiças serão recompensados.\n\nTalvez seja um dos incontáveis dialetos de Liyue que não é possível saber sua autenticidade. \nMas talvez o acordo do Arconte Geo ainda esteja em vigor em Liyue hoje.\nTrair o contrato é ter como inimigo o deus que cuida dessa terra.\nOs picos das montanhas que Rex Lapis cortou mais cedo ou mais tarde cairão sobre as cabeças dos traidores.\n\nAinda há lendas nessas terras de que um dia seu verdadeiro mestre aparecerá novamente.\nNessa hora, essa grande lâmina irradiará uma luz dourada novamente, e cortará as injustiças neste mundo...\nAssim como o juramento que o Arconte Geo estabeleceu em frente ao povo incontáveis anos antes.",
+	"baseatk": 46,
+	"substat": "ATQ",
+	"subvalue": "10.8",
+	"effectname": "Majestade Dourada",
+	"effect": "Aumenta a força do Escudo em {0}. Acertar ataques em inimigos aumenta o ataque em {1} por 8s. Acumula até 5 vezes. Pode ocorrer apenas uma vez a cada 0.3s. Enquanto estiver protegido por um escudo, esse efeito de ataque é aumentado em 100%.",
+	"r1": [
+		"20%",
+		"4%"
+	],
+	"r2": [
+		"25%",
+		"5%"
+	],
+	"r3": [
+		"30%",
+		"6%"
+	],
+	"r4": [
+		"35%",
+		"7%"
+	],
+	"r5": [
+		"40%",
+		"8%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Areia Brilhante de Guyun",
+				"count": 5
+			},
+			{
+				"name": "Faca de Caça",
+				"count": 5
+			},
+			{
+				"name": "Máscara Danificada",
+				"count": 3
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Pedra Lustrosa de Guyun",
+				"count": 5
+			},
+			{
+				"name": "Faca de Caça",
+				"count": 18
+			},
+			{
+				"name": "Máscara Danificada",
+				"count": 12
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Pedra Lustrosa de Guyun",
+				"count": 9
+			},
+			{
+				"name": "Faca Especial",
+				"count": 9
+			},
+			{
+				"name": "Máscara Suja",
+				"count": 9
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Relíquia de Guyun",
+				"count": 5
+			},
+			{
+				"name": "Faca Especial",
+				"count": 18
+			},
+			{
+				"name": "Máscara Suja",
+				"count": 14
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 55000
+			},
+			{
+				"name": "Relíquia de Guyun",
+				"count": 9
+			},
+			{
+				"name": "Faca Longa de Inspetor",
+				"count": 14
+			},
+			{
+				"name": "Máscara Ominosa",
+				"count": 9
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 65000
+			},
+			{
+				"name": "Corpo Divino de Guyun",
+				"count": 6
+			},
+			{
+				"name": "Faca Longa de Inspetor",
+				"count": 27
+			},
+			{
+				"name": "Máscara Ominosa",
+				"count": 18
+			}
+		]
+	}
+}

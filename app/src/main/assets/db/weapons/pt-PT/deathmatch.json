@@ -1,0 +1,148 @@
+{
+	"name": "Lança do Duelo",
+	"description": "Uma lança afiada vermelho-sangue que era inestimável para um gladiador no passado. Sua ponta está manchada com o sangue de inúmeras bestas e pessoas.",
+	"weapontype": "Lança",
+	"rarity": "4",
+	"story": "Esta lança carmesim já presenciou a inúmeras batalhas e testemunhou o valor de um certo gladiador.\nSua ponta gelada muitas vezes estava encharcada com o sangue de seus inimigos, para os aplausos estrondosos da multidão.\nO destino do gladiador estava manchado de sangue, e a liberdade, tão próxima, mas tão distante, era muitas vezes equilibrada na ponta de uma faca.\nE o som abafado do aço carmesim afundando na carne era o som da morte para muitos lutadores.\n\nQuando a apresentação final do gladiador terminou, o seu mestre falou em meio aos aplausos estrondosos:\n\"O número prometido foi cumprido. Você agiu bem e é um guerreiro digno de grande renome.\"\n\"Considere esta arma como um presente de despedida... Ainda assim, você não consideraria continuar lutando?\"\n\"Continue a sua brilhante atuação como pessoa livre, para a sua glória e a minha. O que você diz?\"\nMuitos anos atrás, os animais e homens que caíram com aquela lança se tornaram numerosos demais para serem contados.\nEnquanto a arma ficou conhecida por ser invencível em duelos, o coração do Gladiador passou a ser propriedade de seu jovem mestre.\n\nQuando a performance final do gladiador terminou, em meio a aplausos estrondosos,\nsua arma caiu na areia ensanguentada enquanto a lâmina ardente da donzela de cabelos vermelhos perfurava o coração do velho guerreiro.\nAo cair, abatido, voltou os olhos para seu amado mestre, seu nobre senhor que tanto o apreciava...\n\"Eberhart, Mestre Eberhart... Meu desempenho final lhe agradou?\"\nO assento de seu mestre estava desocupado, havia apenas uma taça de vinho e uma bandeja de prata caídos.\n\n\"No início, lutei por mim mesmo, pelo sangue e pela luxúria da batalha.\"\n\"Mas desde uma época que não sei quando, tenho matado para meu mestre.\"\n\"Somente para o bem dos outros é que conseguimos lutar como bestas selvagens sem preocupações.\"\n\"Alguém como você, que luta pelo seu povo e não para si mesma... Certamente, você entende o que quero dizer com isso.\"",
+	"baseatk": 41,
+	"substat": "Taxa Crítica",
+	"subvalue": "8",
+	"effectname": "Gladiador",
+	"effect": "Se houver 2 inimigos ao redor, o ATQ é aumentado em {0} e a DEF é aumentada em {1}. Se houver menos que 2 inimigos ao redor, o ATQ é aumentado em {2}.",
+	"r1": [
+		"16%",
+		"16%",
+		"24%"
+	],
+	"r2": [
+		"20%",
+		"20%",
+		"30%"
+	],
+	"r3": [
+		"24%",
+		"24%",
+		"36%"
+	],
+	"r4": [
+		"28%",
+		"28%",
+		"42%"
+	],
+	"r5": [
+		"32%",
+		"32%",
+		"48%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Dente de Leite do Lobo Boreal",
+				"count": 3
+			},
+			{
+				"name": "Ramo Seco de Linha Ley",
+				"count": 3
+			},
+			{
+				"name": "Néctar da Flor Gigante",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Dente Rachado do Lobo Boreal",
+				"count": 3
+			},
+			{
+				"name": "Ramo Seco de Linha Ley",
+				"count": 12
+			},
+			{
+				"name": "Néctar da Flor Gigante",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Dente Rachado do Lobo Boreal",
+				"count": 6
+			},
+			{
+				"name": "Folha Morta de Linha Ley",
+				"count": 6
+			},
+			{
+				"name": "Néctar Brilhante",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Presa Quebrada do Lobo Boreal",
+				"count": 3
+			},
+			{
+				"name": "Folha Morta de Linha Ley",
+				"count": 12
+			},
+			{
+				"name": "Néctar Brilhante",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Presa Quebrada do Lobo Boreal",
+				"count": 6
+			},
+			{
+				"name": "Broto de Linha Ley",
+				"count": 9
+			},
+			{
+				"name": "Néctar Elemental",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Nostalgia do Lobo Boreal",
+				"count": 4
+			},
+			{
+				"name": "Broto de Linha Ley",
+				"count": 18
+			},
+			{
+				"name": "Néctar Elemental",
+				"count": 12
+			}
+		]
+	}
+}

@@ -1,0 +1,138 @@
+{
+	"name": "Mensageiro",
+	"description": "Um arco básico de madeira. Dizem que ele foi usado para comunicações de longa distância.",
+	"weapontype": "Arco",
+	"rarity": "3",
+	"story": "Dizem que em tempos muito antigos,\nAs pessoas do Porto de Liyue enviavam mensagens através de flechas.\n\"Mas, dessa forma, não vai machucar os passageiros?\"\n\"Por isso, esse arco passou a ser uma antiguidade.\"\nO dono da antiguidade coçou o queixo, e sorriu.",
+	"baseatk": 40,
+	"substat": "Dano Crítico",
+	"subvalue": "6.8",
+	"effectname": "Mensagem da Flecha Voadora",
+	"effect": "Ao acertar um ponto fraco com Ataque Carregado, causa um adicional de {0} de Dano de ATQ como Dano Crítico. Este efeito pode ser ativado uma vez a cada 10s.",
+	"r1": [
+		"100%"
+	],
+	"r2": [
+		"125%"
+	],
+	"r3": [
+		"150%"
+	],
+	"r4": [
+		"175%"
+	],
+	"r5": [
+		"200%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Elixir de Chumbo Velado por Névoa",
+				"count": 2
+			},
+			{
+				"name": "Pólen de Névoa",
+				"count": 2
+			},
+			{
+				"name": "Insígnia dos Ladrões de Tesouro",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Elixir de Mercúrio com Véu de Névoa",
+				"count": 2
+			},
+			{
+				"name": "Pólen de Névoa",
+				"count": 8
+			},
+			{
+				"name": "Insígnia dos Ladrões de Tesouro",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Elixir de Mercúrio com Véu de Névoa",
+				"count": 4
+			},
+			{
+				"name": "Grama do Nevoeiro",
+				"count": 4
+			},
+			{
+				"name": "Insígnia do Corvo Prateado",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Elixir de Ouro com Véu de Névoa",
+				"count": 2
+			},
+			{
+				"name": "Grama do Nevoeiro",
+				"count": 8
+			},
+			{
+				"name": "Insígnia do Corvo Prateado",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Elixir de Ouro com Véu de Névoa",
+				"count": 4
+			},
+			{
+				"name": "Pavio do Nevoeiro",
+				"count": 6
+			},
+			{
+				"name": "Insígnia de Corvo Dourado",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Alternação das Nuvens e o Mar",
+				"count": 3
+			},
+			{
+				"name": "Pavio do Nevoeiro",
+				"count": 12
+			},
+			{
+				"name": "Insígnia de Corvo Dourado",
+				"count": 8
+			}
+		]
+	}
+}

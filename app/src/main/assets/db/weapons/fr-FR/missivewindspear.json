@@ -1,0 +1,143 @@
+{
+	"name": "Lance du vent saisonnier",
+	"description": "Une girouette qui peut guider le vent. Les idylles portées par la brise ne restent pas forcément douces...",
+	"weapontype": "Arme d'hast",
+	"rarity": "4",
+	"story": "Une balise qui guide de loin les voyageurs chez eux. Peu importe où ils se trouvent, l'aigle d'argent s'incline toujours vers un vent lointain.\nLa plume verdoyante tourbillonnait alors qu'elle chantait doucement, guidant le retour depuis l'autre côté, où le vent doux soufflait.\n\n« Je me fiche d'où vous venez, ou des péchés que vous avez pu commettre. C'est juste que... »\nLe « jeune maître » (bien qu'il ne le soit pas et ne puisse jamais être reconnu comme tel) dit en essuyant le sang de son visage.\n« Lorsque le temps viendra où les vents du changement souffleront sur cette terre, je veux vous avoir à mes côtés. »\n« J'ai tué le faucon. Gardez ce secret entre nous... »\n\nTout comme le sang de la parenté serait à l'avenir répandu par une lance brutale et laissé pour passer du rouge au noir dans la neige...\nSon cœur à elle aussi fut transpercé, comme par une flèche invisible, lorsqu'elle aperçut le véritable « jeune maître » dans son esprit.\nDès lors, elle garda un œil sur les choses qu'elle avait à faire en tant que servante...\n... Et un autre sur les « missions » qui devaient être accomplies pour la vision qu'il avait décrite.\nElle rêvait d'être à ses côtés... Non, même être dans la foule derrière lui serait bien...\nSi elle pouvait se baigner dans les vents, ce qu'elle ne comprenait même pas, avec lui, son vrai « jeune maître »...\nÀ cet effet, beaucoup de clous et de tenons devaient être arrachés pour faire basculer le grand édifice...\n\n« Ne pleurez pas, Priscilla. Tout dans ce monde a un prix. »\n« Rappelez-vous : si ces affaires sont révélées, allumez la balise au Coin du guet. »\n« Lorsque le temps viendra où les vents du changement souffleront sur cette terre, nous serons son avant-garde sauvage et hurlante, vous et moi. »\n\n« Oui, maître Ebelhart. »\nOui... Elle oublierait la lignée et le devoir, abandonnerait la séparation et le cœur malade.\nPeu de clous restaient. Les gloires passées reviendraient bientôt.\n\nMais...\nLes faucons et les chiens de la famille repérèrent l'odeur de l'intrigue et la silhouette des voiles ne fut jamais aperçue sur le cap.\n\nÀ la fin, elle gloussa. Une fois, elle s'était insurgée contre son destin et le sort d'innombrables autres.\nCependant, à ce moment, quand elle leva les yeux vers le pâle clair de lune et l'ombre des épées qui la reflétaient...\nTandis qu'elle regardait le troupeau moqueur de nobles, elle n'éprouvait ni détresse ni ressentiment, bien qu'elle ne sût pas pourquoi...\n\nPeu de clous restaient. Les gloires passées reviendraient bientôt.\nJeune maître, vous serez comme cet aigle d'argent. Vous guiderez l'ouragan.\nNe me pleurez pas. Je serai bientôt un feu follet dans mille vents...",
+	"baseatk": 42,
+	"substat": "ATQ",
+	"subvalue": "9",
+	"effectname": "Vent de nulle part",
+	"effect": "Déclencher une réaction élémentaire augmente pendant 10 s l'ATQ de {0} et la maîtrise élémentaire de {1} pts.",
+	"r1": [
+		"12 %",
+		"48"
+	],
+	"r2": [
+		"15 %",
+		"60"
+	],
+	"r3": [
+		"18 %",
+		"72"
+	],
+	"r4": [
+		"21 %",
+		"84"
+	],
+	"r5": [
+		"24 %",
+		"96"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Dent de lait du Loup boréal",
+				"count": 3
+			},
+			{
+				"name": "Statuette sinistre",
+				"count": 3
+			},
+			{
+				"name": "Bave de Blob",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Croc brisé du Loup boréal",
+				"count": 3
+			},
+			{
+				"name": "Statuette sinistre",
+				"count": 12
+			},
+			{
+				"name": "Bave de Blob",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Croc brisé du Loup boréal",
+				"count": 6
+			},
+			{
+				"name": "Statuette maudite",
+				"count": 6
+			},
+			{
+				"name": "Mucus de Blob",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Croc fendu du Loup boréal",
+				"count": 3
+			},
+			{
+				"name": "Statuette maudite",
+				"count": 12
+			},
+			{
+				"name": "Mucus de Blob",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Croc fendu du Loup boréal",
+				"count": 6
+			},
+			{
+				"name": "Statuette maléfique",
+				"count": 9
+			},
+			{
+				"name": "Essence de Blob",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Nostalgie du Loup boréal",
+				"count": 4
+			},
+			{
+				"name": "Statuette maléfique",
+				"count": 18
+			},
+			{
+				"name": "Essence de Blob",
+				"count": 12
+			}
+		]
+	}
+}

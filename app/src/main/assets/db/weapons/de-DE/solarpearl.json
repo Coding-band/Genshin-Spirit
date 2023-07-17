@@ -1,0 +1,143 @@
+{
+	"name": "Sonne und Mond",
+	"description": "Diese Kugel aus unbekanntem dunklem Metall enthält den himmlischen Glanz von Sonne und Mond und strahlt eine spürbare Wärme aus.",
+	"weapontype": "Katalysator",
+	"rarity": "4",
+	"story": "Eine dunkle Kugel, über die man sich viele Legenden in Liyue erzählt.\nSie saugte einst das Licht der Sonne, der Erde und des Mondes auf, wurde dann aber für Tausende von Jahren in einer Kiste versteckt.\nIhre Macht würde aber nicht einfach so verschwinden. Jetzt, da sie aus ihrem hölzernen Gefängnis befreit ist, scheint sie umso heller.\nIn den Händen eines sehr weisen Magiers jedoch kann seine extreme Macht vielleicht endlich entfesselt werden.\n\nEine seit langer Zeit unter den Juwelieren von Liyue beliebte Geschichte besagt, dass die Meisterschmiede Kunwu einst das Licht der Himmelskörper in eine hölzerne Schachtel einschloss.\nKunwu vergrub diese Schachtel dann tief in einer dunklen Felskammer, wo sie neunundvierzig Tage und zwanzig Stunden in völliger Dunkelheit blieb, bis die Perle in ihrem Inneren den Schein von Sonne und Mond absorbiert hatte.\n\nEine wirklich bizarre Geschichte. Und trotzdem glauben bis zum heutigen Tag viele an die wundersamen Fähigkeiten des Meisterschmiedes Kunwu.\nEinst fasste jemand sich ein Herz und fragte den alternden Meisterhandwerker nach seinem Geheimnis. Der exzentrische alte Mann lachte nur über die unsinnige Vorstellung, er habe mystische Fähigkeiten:\n„I wo! Das war nur das Ergebnis langen Polierens!“\n\nAber unter vier Augen erzählte sein Lehrling etwas Anderes: Gerade als Kunwu damit fertig war, „Sonne und Mond“ zu polieren, strahlte der Glanz des Himmels auf ihn herab und ein roter Mond erfüllte den Himmel.\nBedeutete dieses Phänomen etwa, dass Kunwu wirklich göttliche Hilfe bei seinem Handwerk erhielt? Oder war es nur ein Zeichen seiner eigenen Kunstfertigkeit, dass seine hohen Ambitionen Wellen durch das Firmament entsendeten und sogar die Himmelskörper selbst auf sie reagierten?",
+	"baseatk": 42,
+	"substat": "KT",
+	"subvalue": "6",
+	"effectname": "Himmlisches Leuchten",
+	"effect": "Erhöht den Schaden von Elementarfähigkeiten und Spezialfähigkeiten bei Treffern mit Standardangriffen 6 s lang um {0}. Erhöht den Schaden von Standardangriffen bei Treffern mit Elementarfähigkeiten und Spezialfähigkeiten 6 s lang um {1}.",
+	"r1": [
+		"20 %",
+		"20 %"
+	],
+	"r2": [
+		"25 %",
+		"25 %"
+	],
+	"r3": [
+		"30 %",
+		"30 %"
+	],
+	"r4": [
+		"35 %",
+		"35 %"
+	],
+	"r5": [
+		"40 %",
+		"40 %"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Leuchtender Sand von Guyun",
+				"count": 3
+			},
+			{
+				"name": "Zeremonielles Jagdschwert",
+				"count": 3
+			},
+			{
+				"name": "Vaniloqua-Nektar",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Glänzender Stein von Guyun",
+				"count": 3
+			},
+			{
+				"name": "Zeremonielles Jagdschwert",
+				"count": 12
+			},
+			{
+				"name": "Vaniloqua-Nektar",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Glänzender Stein von Guyun",
+				"count": 6
+			},
+			{
+				"name": "Zeremonielles Agentenschwert",
+				"count": 6
+			},
+			{
+				"name": "Leuchtender Nektar",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Reliquie von Guyun",
+				"count": 3
+			},
+			{
+				"name": "Zeremonielles Agentenschwert",
+				"count": 12
+			},
+			{
+				"name": "Leuchtender Nektar",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Reliquie von Guyun",
+				"count": 6
+			},
+			{
+				"name": "Zeremonielles Kundschafterlangschwert",
+				"count": 9
+			},
+			{
+				"name": "Elementarnektar",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Heiligtum von Guyun",
+				"count": 4
+			},
+			{
+				"name": "Zeremonielles Kundschafterlangschwert",
+				"count": 18
+			},
+			{
+				"name": "Elementarnektar",
+				"count": 12
+			}
+		]
+	}
+}

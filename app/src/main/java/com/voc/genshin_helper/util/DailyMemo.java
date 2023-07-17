@@ -21,8 +21,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
+import android.view.animation.DecelerateInterpolator;
 import android.view.animation.Transformation;
 import android.webkit.CookieManager;
 import android.webkit.JsResult;
@@ -109,12 +113,13 @@ public class DailyMemo {
     ImageView memo_item1_ico, memo_item2_ico, memo_item3_ico, memo_item4_ico;
     TextView memo_item1_curr, memo_item2_curr, memo_item3_curr, memo_item4_curr;
     TextView memo_item1_max, memo_item2_max, memo_item3_max, memo_item4_max;
-    TextView memo_item1_time,memo_item2_time,memo_item3_time,memo_item4_time,memo_item5_time,memo_item6_time;
+    TextView memo_item1_time,memo_item2_time,memo_item3_time,memo_item4_time;
     ImageView memo_expe1_ico,memo_expe2_ico,memo_expe3_ico,memo_expe4_ico,memo_expe5_ico;
     TextView memo_expe1_time,memo_expe2_time,memo_expe3_time,memo_expe4_time,memo_expe5_time;
     ImageView memo_expe1_tick,memo_expe2_tick,memo_expe3_tick,memo_expe4_tick,memo_expe5_tick;
     ProgressBar memo_expe1_pb,memo_expe2_pb,memo_expe3_pb,memo_expe4_pb,memo_expe5_pb;
     Spinner server_spinner;
+    LinearLayout memo_status_ll, memo_exped_ll;
 
     ImageButton memo_logoff_btn, memo_noti_btn;
 
@@ -127,6 +132,7 @@ public class DailyMemo {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
     boolean isExtOut = true;
+    boolean isShowingStatus = true;
     DisplayMetrics displayMetrics;
     ItemRss item_rss ;
     Handler handler ;
@@ -181,6 +187,8 @@ public class DailyMemo {
         memo_item2_curr = view.findViewById(R.id.memo_item2_curr);
         memo_item3_curr = view.findViewById(R.id.memo_item3_curr);
         memo_item4_curr = view.findViewById(R.id.memo_item4_curr);
+        memo_status_ll = view.findViewById(R.id.memo_status_ll);
+        memo_exped_ll = view.findViewById(R.id.memo_exped_ll);
         memo_item1_max = view.findViewById(R.id.memo_item1_max);
         memo_item2_max = view.findViewById(R.id.memo_item2_max);
         memo_item3_max = view.findViewById(R.id.memo_item3_max);
@@ -212,8 +220,8 @@ public class DailyMemo {
             memo_card_ext = view.findViewById(R.id.memo_card_ext);
 
             memo_ext_btn = view.findViewById(R.id.memo_ext_btn);
-            memo_item5_time = view.findViewById(R.id.memo_item5_time);
-            memo_item6_time = view.findViewById(R.id.memo_item6_time);
+            //memo_item5_time = view.findViewById(R.id.memo_item5_time);
+            //memo_item6_time = view.findViewById(R.id.memo_item6_time);
 
             memo_expe1_pb = view.findViewById(R.id.memo_expe1_pb);
             memo_expe2_pb = view.findViewById(R.id.memo_expe2_pb);
@@ -221,7 +229,7 @@ public class DailyMemo {
             memo_expe4_pb = view.findViewById(R.id.memo_expe4_pb);
             memo_expe5_pb = view.findViewById(R.id.memo_expe5_pb);
         }else if(STYLE == MATERIAL){
-            memo_item6_time = memo_item3_time;
+            //memo_item6_time = memo_item3_time;
             memo_noti_btn = view.findViewById(R.id.memo_noti_btn);
             memo_logoff_btn = view.findViewById(R.id.memo_logoff_btn);
             memo_logoff_btn.setOnClickListener(new View.OnClickListener() {
@@ -321,7 +329,9 @@ public class DailyMemo {
         }
 
         Picasso.get()
-                .load (item_rss.getCharByName(item_rss.getCharNameByTranslatedName(icon,context),context)[3]).resize((int) (40*displayMetrics.density),(int) (40*displayMetrics.density)).transform(transformation_circ_siptik_ico)
+                .load (item_rss.getCharByName(item_rss.getCharNameByTranslatedName(icon,context),context)[3])
+                .resize((int) (40*displayMetrics.density),(int) (40*displayMetrics.density))
+                .transform(transformation_circ_siptik_ico)
                 .error (R.drawable.paimon_full)
                 .into (memo_user_icon);
 
@@ -336,40 +346,52 @@ public class DailyMemo {
         memo_item1_time.setText(prettyTime(resin_remain_time));
         memo_item2_time.setText(prettyTime(currency_remain_time));
         //memo_item3_time.setText(prettyTime(mission_remain_time));
-        //memo_item4_time.setText(prettyTime(weekboss_remain_time));
-        if (memo_item5_time != null){
-            memo_item5_time.setText(prettyTime(transformer_recovery_time));
-        }
+        memo_item4_time.setText(context.getString(R.string.memo_available_weekboss_change).replace("{%1}",String.valueOf((3-weekboss_30))));
+        //if (memo_item5_time != null){
+        //    memo_item5_time.setText(prettyTime(transformer_recovery_time));
+        //}
 
-        if (mission_claim == true && memo_item6_time != null){
-            memo_item6_time.setText(context.getString(R.string.claimed));
+        if (mission_claim == true && memo_item3_time != null){
+            memo_item3_time.setText(context.getString(R.string.claimed));
         }else{
-            memo_item6_time.setText(context.getString(R.string.unclaimed));
+            memo_item3_time.setText(context.getString(R.string.unclaimed));
         }
 
         Picasso.get()
-                .load (item_rss.getCharByName(icon,context)[3]).resize((int) (48*displayMetrics.density),(int) (48*displayMetrics.density)).transform(transformation_circ_siptik_ico)
+                .load (item_rss.getCharByName(icon,context)[3])
+                .resize((int) (48*displayMetrics.density),(int) (48*displayMetrics.density))
+                .transform(transformation_circ_siptik_ico)
                 .error (R.drawable.paimon_full)
                 .into (memo_user_icon);
 
         Picasso.get()
-                .load (item_rss.getCharByName(item_rss.getCharNameByTranslatedName(expedition1_name,context),context)[3]).resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density)).transform(transformation_circ_siptik_ico)
+                .load (expedition1_name)
+                .resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density))
+                .transform(transformation_circ_siptik_ico)
                 .error (R.drawable.paimon_full)
                 .into (memo_expe1_ico);
         Picasso.get()
-                .load (item_rss.getCharByName(item_rss.getCharNameByTranslatedName(expedition2_name,context),context)[3]).resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density)).transform(transformation_circ_siptik_ico)
+                .load (expedition2_name)
+                .resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density))
+                .transform(transformation_circ_siptik_ico)
                 .error (R.drawable.paimon_full)
                 .into (memo_expe2_ico);
         Picasso.get()
-                .load (item_rss.getCharByName(item_rss.getCharNameByTranslatedName(expedition3_name,context),context)[3]).resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density)).transform(transformation_circ_siptik_ico)
+                .load (expedition3_name)
+                .resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density))
+                .transform(transformation_circ_siptik_ico)
                 .error (R.drawable.paimon_full)
                 .into (memo_expe3_ico);
         Picasso.get()
-                .load (item_rss.getCharByName(item_rss.getCharNameByTranslatedName(expedition4_name,context),context)[3]).resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density)).transform(transformation_circ_siptik_ico)
+                .load (expedition4_name)
+                .resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density))
+                .transform(transformation_circ_siptik_ico)
                 .error (R.drawable.paimon_full)
                 .into (memo_expe4_ico);
         Picasso.get()
-                .load (item_rss.getCharByName(item_rss.getCharNameByTranslatedName(expedition5_name,context),context)[3]).resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density)).transform(transformation_circ_siptik_ico)
+                .load (expedition5_name)
+                .resize((int) (60*displayMetrics.density),(int) (60*displayMetrics.density))
+                .transform(transformation_circ_siptik_ico)
                 .error (R.drawable.paimon_full)
                 .into (memo_expe5_ico);
 
@@ -431,6 +453,7 @@ public class DailyMemo {
             memo_ext_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    /*
                     if (isExtOut){
                         Animation ani = new ShowAnim(memo_card_ext,-112,false);
                         ani.setDuration(250);
@@ -444,6 +467,119 @@ public class DailyMemo {
                         ImageViewAnimatedChange(context,memo_ext_btn,R.drawable.item_expand_up_2048);
                         isExtOut = true;
                     }
+                     */
+
+                    /*
+                    Animation fadeIn = new AlphaAnimation(0, 1);
+                    fadeIn.setInterpolator(new DecelerateInterpolator()); //add this
+                    fadeIn.setDuration(1000);
+
+                    Animation fadeOut = new AlphaAnimation(1, 0);
+                    fadeOut.setInterpolator(new AccelerateInterpolator()); //and this
+                    fadeOut.setDuration(1000);
+
+                    Animation showIn = new ShowAnim(memo_exped_ll, -12, true);
+                    showIn.setDuration(1000);
+
+                    Animation showOut = new ShowAnim(memo_exped_ll, -12, false);
+                    showOut.setDuration(1000);
+
+                    AnimationSet animationSet1 = new AnimationSet(false);
+                    animationSet1.addAnimation(fadeIn);
+                    animationSet1.addAnimation(showIn);
+
+                    AnimationSet animationSet2 = new AnimationSet(false);
+                    animationSet2.addAnimation(fadeOut);
+                    animationSet2.addAnimation(showOut);
+
+                    if (isShowingStatus){
+                        animationSet2.setAnimationListener(new Animation.AnimationListener() {
+                            @Override
+                            public void onAnimationStart(Animation animation) {
+
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animation animation) {
+                                memo_exped_ll.setVisibility(View.GONE);
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animation animation) {
+
+                            }
+                        });
+                        memo_exped_ll.startAnimation(animationSet2);
+                    }else {
+                        animationSet1.setAnimationListener(new Animation.AnimationListener() {
+                            @Override
+                            public void onAnimationStart(Animation animation) {
+
+                                memo_exped_ll.setVisibility(View.VISIBLE);
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animation animation) {
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animation animation) {
+
+                            }
+                        });
+                        memo_exped_ll.startAnimation(animationSet1);
+                    }
+                     */
+
+                    Animation fadeIn = new AlphaAnimation(0, 1);
+                    fadeIn.setInterpolator(new DecelerateInterpolator()); //add this
+                    fadeIn.setDuration(500);
+
+                    Animation fadeOut = new AlphaAnimation(1, 0);
+                    fadeOut.setInterpolator(new AccelerateInterpolator()); //and this
+                    fadeOut.setDuration(500);
+
+                    if (isShowingStatus){
+                        fadeOut.setAnimationListener(new Animation.AnimationListener() {
+                            @Override
+                            public void onAnimationStart(Animation animation) {
+                                memo_exped_ll.setVisibility(View.VISIBLE);
+                                memo_exped_ll.startAnimation(fadeIn);
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animation animation) {
+                                memo_status_ll.setVisibility(View.INVISIBLE);
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animation animation) {
+
+                            }
+                        });
+                        memo_status_ll.startAnimation(fadeOut);
+                    }else{
+                        fadeIn.setAnimationListener(new Animation.AnimationListener() {
+                            @Override
+                            public void onAnimationStart(Animation animation) {
+                                memo_status_ll.setVisibility(View.VISIBLE);
+                                memo_exped_ll.startAnimation(fadeOut);
+                            }
+
+                            @Override
+                            public void onAnimationEnd(Animation animation) {
+                                memo_exped_ll.setVisibility(View.INVISIBLE);
+                            }
+
+                            @Override
+                            public void onAnimationRepeat(Animation animation) {
+
+                            }
+                        });
+                        memo_status_ll.startAnimation(fadeIn);
+                    }
+
+                    isShowingStatus = !isShowingStatus;
                 }
             });
         }
@@ -1171,8 +1307,11 @@ public class DailyMemo {
 
             ViewGroup.MarginLayoutParams layoutParams =
                     (ViewGroup.MarginLayoutParams) view.getLayoutParams();
-            layoutParams.setMargins((int) (16*displayMetrics.density), (int) (targetTop*interpolatedTime_auth*displayMetrics.density-16*displayMetrics.density), (int) (16*displayMetrics.density), (int) (8*displayMetrics.density));
+            //layoutParams.setMargins((int) (16*displayMetrics.density), (int) (targetTop*interpolatedTime_auth), (int) (16*displayMetrics.density), (int) (8*displayMetrics.density));
+            layoutParams.setMargins((int) 0, (int) (targetTop*interpolatedTime_auth*displayMetrics.density), (int) 0, (int) 0);
             view.setLayoutParams(layoutParams);
+
+            System.out.println(targetTop*interpolatedTime_auth);
         }
 
         @Override

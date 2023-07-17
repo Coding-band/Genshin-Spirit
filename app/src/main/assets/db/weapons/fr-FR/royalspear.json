@@ -1,0 +1,138 @@
+{
+	"name": "Lance de chasse royale",
+	"description": "Cette arme d'hast était autrefois chérie par l'un des nobles gouvernant Mondstadt, il y a de cela longtemps. Elle n'a sans doute jamais vu la lumière du jour, et est toujours particulièrement aiguisée.",
+	"weapontype": "Arme d'hast",
+	"rarity": "4",
+	"story": "Cette lance, appartenant autrefois à la collection privée d'un aristocrate qui dirigeait Mondstadt, a été fabriquée à la main avec des matériaux de haute qualité.\nC'est pourquoi, bien que de nombreuses générations se la soient transmise, elle est toujours aussi tranchante qu'au jour premier.\nCependant, à l'époque de l'aristocratie, cette arme ne vit jamais la lumière du jour, et demeura baignée par les rayons de la lune.\n\nLes aristocrates pensaient que les personnes d'origine noble ne devaient utiliser que des épées en combat,\naffirmant que le son de deux épées aiguisées s'entrechoquant reflétait la mélodie de leurs âmes.\nC'est pourquoi lances et arbalètes étaient les armes des gladiateurs de la plèbe et des humbles paysans.\n\nLes paysans qui brandissent fourches et piquets peuvent après tout déjà se défendre contre un jeune noble armé d'une épée.\nCeci était sans nul doute dur à accepter pour la classe dirigeante.\n\nSelon la légende, un jeune homme de sang noble\nchargea un artisan de lui forger cette lance ornée du blason familial.\nCependant, cette lance, tout comme son jeune propriétaire, ne pouvait recevoir l'approbation de la famille.\nPas sans avoir versé le sang.\n\nPour voir arriver le changement, le jeune noble avait besoin de puissance.\nMême si cela voulait dire utiliser une arme reniée par l'aristocratie.\nMême si cela voulait dire se cacher dans la nuit pour la manier.",
+	"baseatk": 44,
+	"substat": "ATQ",
+	"subvalue": "6",
+	"effectname": "Focus",
+	"effect": "Augmente le taux CRIT de {0} à chaque attaque qui cause des DGT à un ennemi. Cet effet peut être cumulé 5 fois maximum et est réinitialisé lors d'un coup CRIT.",
+	"r1": [
+		"8 %"
+	],
+	"r2": [
+		"10 %"
+	],
+	"r3": [
+		"12 %"
+	],
+	"r4": [
+		"14 %"
+	],
+	"r5": [
+		"16 %"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Plomb karstique",
+				"count": 3
+			},
+			{
+				"name": "Pollen d'herbe brumeuse",
+				"count": 3
+			},
+			{
+				"name": "Insigne de nouvelle recrue",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Mercure karstique",
+				"count": 3
+			},
+			{
+				"name": "Pollen d'herbe brumeuse",
+				"count": 12
+			},
+			{
+				"name": "Insigne de nouvelle recrue",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Mercure karstique",
+				"count": 6
+			},
+			{
+				"name": "Herbe brumeuse",
+				"count": 6
+			},
+			{
+				"name": "Insigne de sergent",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Argent karstique",
+				"count": 3
+			},
+			{
+				"name": "Herbe brumeuse",
+				"count": 12
+			},
+			{
+				"name": "Insigne de sergent",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Argent karstique",
+				"count": 6
+			},
+			{
+				"name": "Mèches d'herbe brumeuse",
+				"count": 9
+			},
+			{
+				"name": "Insigne d'officier",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Or karstique",
+				"count": 4
+			},
+			{
+				"name": "Mèches d'herbe brumeuse",
+				"count": 18
+			},
+			{
+				"name": "Insigne d'officier",
+				"count": 12
+			}
+		]
+	}
+}

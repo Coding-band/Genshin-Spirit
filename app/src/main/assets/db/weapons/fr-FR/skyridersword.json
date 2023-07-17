@@ -1,0 +1,138 @@
+{
+	"name": "Épée céleste",
+	"description": "Une solide épée en acier. On raconte que quelqu'un a essayé de s'en servir comme moyen de transport...",
+	"weapontype": "Épée à une main",
+	"rarity": "3",
+	"story": "Le maître épéiste sauta des hauteurs du Karst Jueyun.\nIgnorant le vent soufflant à ses oreilles, il traversa les nuages.\nMais c'est le bruit craquant de l'os se brisant qui suivit.\nSeulement alors réalisa-t-il qu'il est certaines choses que l'art de l'épée ne permet de réaliser.\nMais plus tard, même après qu'il eut mis en gage son épée pour acheter des pilules,\nson rêve de voler dans les cieux ne se tarit point.",
+	"baseatk": 38,
+	"substat": "Recharge d'énergie",
+	"subvalue": "11.3",
+	"effectname": "Détermination",
+	"effect": "Augmente l'ATQ et la VIT de déplacement de {0} pendant 15 s après un déchaînement élémentaire.",
+	"r1": [
+		"12 %"
+	],
+	"r2": [
+		"15 %"
+	],
+	"r3": [
+		"18 %"
+	],
+	"r4": [
+		"21 %"
+	],
+	"r5": [
+		"24 %"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Grain d'aérosidérite noire",
+				"count": 2
+			},
+			{
+				"name": "Fragment d'os fragile",
+				"count": 2
+			},
+			{
+				"name": "Insigne de nouvelle recrue",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Éclat d'aérosidérite noire",
+				"count": 2
+			},
+			{
+				"name": "Fragment d'os fragile",
+				"count": 8
+			},
+			{
+				"name": "Insigne de nouvelle recrue",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Éclat d'aérosidérite noire",
+				"count": 4
+			},
+			{
+				"name": "Fragment d'os solide",
+				"count": 4
+			},
+			{
+				"name": "Insigne de sergent",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Fragment d'aérosidérite noire",
+				"count": 2
+			},
+			{
+				"name": "Fragment d'os solide",
+				"count": 8
+			},
+			{
+				"name": "Insigne de sergent",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Fragment d'aérosidérite noire",
+				"count": 4
+			},
+			{
+				"name": "Fragment d'os fossilisé",
+				"count": 6
+			},
+			{
+				"name": "Insigne d'officier",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Morceau d'aérosidérite noire",
+				"count": 3
+			},
+			{
+				"name": "Fragment d'os fossilisé",
+				"count": 12
+			},
+			{
+				"name": "Insigne d'officier",
+				"count": 8
+			}
+		]
+	}
+}

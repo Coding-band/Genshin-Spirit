@@ -1,0 +1,138 @@
+{
+	"name": "Espada Longa Real",
+	"description": "Uma velha espada longa que pertencia aos antigos governantes de Mondstadt. Requintadamente trabalhada, as esculturas e enfeites testemunham a estatura de seu dono.",
+	"weapontype": "Espada",
+	"rarity": "4",
+	"story": "Uma espada larga usada por um nobre que governou Mondstadt. Foi elaborada artesanalmente com materiais de altíssima qualidade.\nPor essa razão, mesmo depois de ter sido passada por gerações permanece tão afiada.\nAntigamente, a habilidade com a espada era uma habilidade obrigatória para os nobres.\nEntretanto, foi com o propósito de refinar a sabedoria e a elegância, não para uso em combate.\nInfelizmente, a sabedoria e a elegância foram esquecidas. A arte da espada tornou-se meramente uma questão de formalidade.\n\nVinte e seis séculos atrás foi a era dos habitantes mais antigos de Mondstadt.\nEles fizeram um juramento solene, depois que o novo Arconte Anemo desceu e reformou o mundo:\n\n\"Por Mondstadt, como sempre. Pelas planícies verdejantes, pelas colinas e pelas florestas de Mondstadt. Que elas continuem a florescer, como sempre.\"\n\"Por liberdade eterna de Mondstadt! Para proteger Mondstadt do frio da nevasca e da opressão do tirano!\"\n\nNão importa o que possa vir a acontecer em Mondstadt, seja a tirania humana ou a infestação de monstros, ou mesmo que essa tábua na qual está escrito o juramento de proteção for destruída,\nO próprio juramento será para sempre suportado pelos ventos, acariciando suavemente Mondstadt com amor, e defendendo firmemente Mondstadt como um pai carinhoso.",
+	"baseatk": 42,
+	"substat": "ATQ",
+	"subvalue": "9",
+	"effectname": "Foco",
+	"effect": "Ao atingir um oponente, aumenta a Taxa Crítica em {0}, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos.",
+	"r1": [
+		"8%"
+	],
+	"r2": [
+		"10%"
+	],
+	"r3": [
+		"12%"
+	],
+	"r4": [
+		"14%"
+	],
+	"r5": [
+		"16%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Fragmento de Azulejo de Decarabian",
+				"count": 3
+			},
+			{
+				"name": "Chifre Pesado",
+				"count": 3
+			},
+			{
+				"name": "Máscara Danificada",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Detritos da Cidade de Decarabian",
+				"count": 3
+			},
+			{
+				"name": "Chifre Pesado",
+				"count": 12
+			},
+			{
+				"name": "Máscara Danificada",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Detritos da Cidade de Decarabian",
+				"count": 6
+			},
+			{
+				"name": "Chifre de Bronze Negro",
+				"count": 6
+			},
+			{
+				"name": "Máscara Suja",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Fragmentos Épicos da Decarabian",
+				"count": 3
+			},
+			{
+				"name": "Chifre de Bronze Negro",
+				"count": 12
+			},
+			{
+				"name": "Máscara Suja",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Fragmentos Épicos da Decarabian",
+				"count": 6
+			},
+			{
+				"name": "Chifre de Cristal Preto",
+				"count": 9
+			},
+			{
+				"name": "Máscara Ominosa",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Pedaços de Sonho da Decarabian",
+				"count": 4
+			},
+			{
+				"name": "Chifre de Cristal Preto",
+				"count": 18
+			},
+			{
+				"name": "Máscara Ominosa",
+				"count": 12
+			}
+		]
+	}
+}

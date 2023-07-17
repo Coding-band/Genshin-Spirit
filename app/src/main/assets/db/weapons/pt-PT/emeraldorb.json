@@ -1,0 +1,138 @@
+{
+	"name": "Orbe de Esmeralda",
+	"description": "Um catalisador esculpido com uma jade rígida de Relevo de Jueyun, norte de Liyue. É pequena, leve e durável.",
+	"weapontype": "Catalisador",
+	"rarity": "3",
+	"story": "Um catalisador leve esculpido em jade. É duradouro e acessível, muito procurado em todos os lugares.\nPequeno, mas requintadamente trabalhado, é apelidado pelo povo de Liyue de \"Bola de Jade\".\nServe tanto como um catalisador de defesa, quanto como um acessório de boa aparência.",
+	"baseatk": 40,
+	"substat": "Proficiência Elemental",
+	"subvalue": "20",
+	"effectname": "Corrente Torrencial",
+	"effect": "Após causar uma reação elemental de Vaporizar, Eletricamente Carregado, Congelamento, Florescimento ou Redemoinho com Hydro, o ATQ é aumentado em {0} por 12s.",
+	"r1": [
+		"20%"
+	],
+	"r2": [
+		"25%"
+	],
+	"r3": [
+		"30%"
+	],
+	"r4": [
+		"35%"
+	],
+	"r5": [
+		"40%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Areia Brilhante de Guyun",
+				"count": 2
+			},
+			{
+				"name": "Faca de Caça",
+				"count": 2
+			},
+			{
+				"name": "Insígnia dos Ladrões de Tesouro",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Pedra Lustrosa de Guyun",
+				"count": 2
+			},
+			{
+				"name": "Faca de Caça",
+				"count": 8
+			},
+			{
+				"name": "Insígnia dos Ladrões de Tesouro",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Pedra Lustrosa de Guyun",
+				"count": 4
+			},
+			{
+				"name": "Faca Especial",
+				"count": 4
+			},
+			{
+				"name": "Insígnia do Corvo Prateado",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Relíquia de Guyun",
+				"count": 2
+			},
+			{
+				"name": "Faca Especial",
+				"count": 8
+			},
+			{
+				"name": "Insígnia do Corvo Prateado",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Relíquia de Guyun",
+				"count": 4
+			},
+			{
+				"name": "Faca Longa de Inspetor",
+				"count": 6
+			},
+			{
+				"name": "Insígnia de Corvo Dourado",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Corpo Divino de Guyun",
+				"count": 3
+			},
+			{
+				"name": "Faca Longa de Inspetor",
+				"count": 12
+			},
+			{
+				"name": "Insígnia de Corvo Dourado",
+				"count": 8
+			}
+		]
+	}
+}

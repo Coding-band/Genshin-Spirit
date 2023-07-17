@@ -1,0 +1,143 @@
+{
+	"name": "Antikes Millelithenschwert",
+	"description": "Ein wuchtiges Schwert gemeißelt aus dem Gestein, auf dem Liyue gebaut ist.",
+	"weapontype": "Zweihänder",
+	"rarity": "4",
+	"story": "Eine von den alten Millelithen bevorzugte Waffe.\nGehauen aus dem göttlichen Grundgestein, aus dem auch der Hafen von Liyue errichtet wurde. Es ist unvergleichlich schwer.\nKein normaler Mensch könnte diese Klinge heben, geschweige denn im Kampf führen.\nUnd doch gibt es Aufzeichnungen darüber, dass die alten Millelithen sie mit Leichtigkeit benutzen konnten.\n\nDie Millelithen waren eine Organisation, die zuerst auf Initiative der Anhänger von Rex Lapis hin gegründet wurde.\nIhre Geschichte lässt sich bis zur Gründung der Hafenstadt zurückverfolgen.\nUnter dem Banner von Rex Lapis und Liyue marschierten sie und sie würden nie abtrünnig werden, weder im Angriff noch im Rückzug.\n„Millelithen solln sein der Stadt Schild und Schwert, wie Fels und Gestein uns den Frieden beschert.“\nDie Millelithen-Krieger halten sich unbedingt an diesen Kodex und würden dafür ohne Reue sterben.\n\nSie traten nach besten Kräften in die Fußstapfen von Rex Lapis, töteten Monster, schützten die Bürger und bewahrten den Frieden in Liyue.\nDie Millelithen machten sich nicht durch das Abschlachten von Gegnern, sondern durch Verteidigung einen Namen, indem sie ihre eigenen Körper als Schutzschild für ihre Heimat einsetzten.\n\nDieses Großschwert von unübertroffenem Gewicht und großer Härte spiegelt die Pflicht und den Willen von Liyues Wächtern wider.\nXing und Han, die beiden, die einst als erste aus Stein Schwerter fertigten, müssen tief in ihrem Innern gewusst haben,\ndass in der Zukunft diejenigen, die die Kraft hätten, diese Steinschwerter zu schwingen, immer weniger werden würden.\nDies bedeutete aber auch, dass die Welt in Frieden leben würde und weder Wächter noch Schwerter mehr gebraucht würden.",
+	"baseatk": 42,
+	"substat": "ANG",
+	"subvalue": "9",
+	"effectname": "Axiom der Millelithen – Einigkeit",
+	"effect": "Erhöht den Angriff der mit dieser Waffe ausgerüsteten Figur für jede Figur aus Liyue in der Truppe um {0} und die KT um je {1}. 4-fach stapelbar.",
+	"r1": [
+		"7 %",
+		"3 %"
+	],
+	"r2": [
+		"8 %",
+		"4 %"
+	],
+	"r3": [
+		"9 %",
+		"5 %"
+	],
+	"r4": [
+		"10 %",
+		"6 %"
+	],
+	"r5": [
+		"11 %",
+		"7 %"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Leuchtender Sand von Guyun",
+				"count": 3
+			},
+			{
+				"name": "Zeremonielles Jagdschwert",
+				"count": 3
+			},
+			{
+				"name": "Stabile Bolzenspitze",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Glänzender Stein von Guyun",
+				"count": 3
+			},
+			{
+				"name": "Zeremonielles Jagdschwert",
+				"count": 12
+			},
+			{
+				"name": "Stabile Bolzenspitze",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Glänzender Stein von Guyun",
+				"count": 6
+			},
+			{
+				"name": "Zeremonielles Agentenschwert",
+				"count": 6
+			},
+			{
+				"name": "Scharfe Bolzenspitze",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Reliquie von Guyun",
+				"count": 3
+			},
+			{
+				"name": "Zeremonielles Agentenschwert",
+				"count": 12
+			},
+			{
+				"name": "Scharfe Bolzenspitze",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Reliquie von Guyun",
+				"count": 6
+			},
+			{
+				"name": "Zeremonielles Kundschafterlangschwert",
+				"count": 9
+			},
+			{
+				"name": "Abgenutzte Bolzenspitze",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Heiligtum von Guyun",
+				"count": 4
+			},
+			{
+				"name": "Zeremonielles Kundschafterlangschwert",
+				"count": 18
+			},
+			{
+				"name": "Abgenutzte Bolzenspitze",
+				"count": 12
+			}
+		]
+	}
+}

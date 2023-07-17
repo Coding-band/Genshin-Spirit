@@ -269,6 +269,8 @@
     <string name="ja_jp" translatable="false">日本語</string>
     <string name="fr_fr" translatable="false">français</string>
     <string name="uk_ua" translatable="false">українська</string>
+    <string name="pt_pt" translatable="false">Português</string>
+    <string name="de_de" translatable="false">Deutsch</string>
 
     <!-- main_page -->
     <string name="material_force">Material Force</string>
@@ -1396,7 +1398,7 @@
     <string name="tcg_keyword_shield">Shield</string>
     <string name="tcg_keyword_unalignedelement">Unaligned Element</string>
     <string name="tcg_keyword_usages">Usage(s)</string>
-    
+
     <!--add in 20230118-->
     <string name="light_of_foliar_incision">Light of Foliar Incision</string>
     <string name="tcg_klee">Klee</string>
@@ -1448,6 +1450,9 @@
     <string name="tcg_arataki_ichiban">Arataki Ichiban</string>
     <string name="tcg_favonius_sword">Favonius Sword</string>
     <string name="tcg_grand_narukami_shrine">Grand Narukami Shrine</string>
+    
+    <!-- Ver. 4.0.0 Update -->
+    <string name="memo_available_weekboss_change">Still have {%1} more</string>
 
 
 </resources>

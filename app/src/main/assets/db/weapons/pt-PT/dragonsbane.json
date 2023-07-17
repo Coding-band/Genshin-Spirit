@@ -1,0 +1,138 @@
+{
+	"name": "Perdição do Dragão",
+	"description": "Uma lança decorada com um dragão dourado entrelaçado. Leve e afiada, esta arma pode muito bem matar dragões com facilidade.",
+	"weapontype": "Lança",
+	"rarity": "4",
+	"story": "Uma lança lendária, segundo os rumores de Liyue.\nA lança possui um dragão enroscado que vai da empunhadura até a ponta.\nCostumava ter uma bainha de madeira em forma de dragão,\nmas agora não mais precisa conter seu poder.\nAtravessará por qualquer coisa que fique em seu caminho.\n\nDiz-se que quando Kunwu forjou esta lança, ele usou uma espinha de dragão para o cabo e uma garra de dragão para a ponta.\nDaí a razão da arma ser inquebrável, enquanto sua ponta é incomparavelmente afiada e brilha com a malícia do dragão.\n\nUma vez existiu um matador de dragões de força e coragem inimaginável, que desafiou a fúria do oceano e lutou ferozmente contra as monstruosidades de dentro dele.\nDepois de muitos anos do desaparecimento do matador de dragões, ainda era possível escutar o som de um dragão chorando no oceano.\n\nO herói agora apenas existe nas lendas, e a lança que derrotou o dragão perdeu o seu peso com o passar do tempo.\nAssim que se aliviou das restrições do passado, mostrou como ele era capaz, é como se um dragão voltasse para o seu território.",
+	"baseatk": 41,
+	"substat": "Proficiência Elemental",
+	"subvalue": "48",
+	"effectname": "Destruição das Chamas e Água",
+	"effect": "Aumenta o Dano contra inimigos afetados por Hydro ou Pyro em {0}.",
+	"r1": [
+		"20%"
+	],
+	"r2": [
+		"24%"
+	],
+	"r3": [
+		"28%"
+	],
+	"r4": [
+		"32%"
+	],
+	"r5": [
+		"36%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Elixir de Chumbo Velado por Névoa",
+				"count": 3
+			},
+			{
+				"name": "Pólen de Névoa",
+				"count": 3
+			},
+			{
+				"name": "Pergaminho Guia",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Elixir de Mercúrio com Véu de Névoa",
+				"count": 3
+			},
+			{
+				"name": "Pólen de Névoa",
+				"count": 12
+			},
+			{
+				"name": "Pergaminho Guia",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Elixir de Mercúrio com Véu de Névoa",
+				"count": 6
+			},
+			{
+				"name": "Grama do Nevoeiro",
+				"count": 6
+			},
+			{
+				"name": "Pergaminho do Encantamento",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Elixir de Ouro com Véu de Névoa",
+				"count": 3
+			},
+			{
+				"name": "Grama do Nevoeiro",
+				"count": 12
+			},
+			{
+				"name": "Pergaminho do Encantamento",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Elixir de Ouro com Véu de Névoa",
+				"count": 6
+			},
+			{
+				"name": "Pavio do Nevoeiro",
+				"count": 9
+			},
+			{
+				"name": "Pergaminho da Maldição",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Alternação das Nuvens e o Mar",
+				"count": 4
+			},
+			{
+				"name": "Pavio do Nevoeiro",
+				"count": 18
+			},
+			{
+				"name": "Pergaminho da Maldição",
+				"count": 12
+			}
+		]
+	}
+}

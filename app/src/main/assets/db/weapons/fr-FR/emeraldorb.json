@@ -1,0 +1,138 @@
+{
+	"name": "Orbe jadien",
+	"description": "Un catalyseur sculpté dans la jadéite, produite au Karst Jueyun, au nord de Liyue. Petit et léger, résistant et durable, les gens l'appellent souvent « Boulette de jade ».",
+	"weapontype": "Catalyseur",
+	"rarity": "3",
+	"story": "Un catalyseur gravé dans le jade, au poids léger. Résistant et durable, son prix raisonnable en fait un objet populaire.\nDe taille réduite, mais finement travaillé, il est surnommé par les gens de Liyue « Boulette de jade ».\nIl offre en plus d'être un catalyseur défensif efficace le style d'un accessoire élégant.",
+	"baseatk": 40,
+	"substat": "Maîtrise élémentaire",
+	"subvalue": "20",
+	"effectname": "Torrent",
+	"effect": "Augmente l'ATQ de {0} pendant 12 s après avoir déclenché Évaporation, Électrocution, Gel, Fleurissement ou Dispersion Hydro.",
+	"r1": [
+		"20 %"
+	],
+	"r2": [
+		"25 %"
+	],
+	"r3": [
+		"30 %"
+	],
+	"r4": [
+		"35 %"
+	],
+	"r5": [
+		"40 %"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Sable lumineux de Guyun",
+				"count": 2
+			},
+			{
+				"name": "Dague de chasse rituelle",
+				"count": 2
+			},
+			{
+				"name": "Insigne des Pilleurs",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Roche lustrée de Guyun",
+				"count": 2
+			},
+			{
+				"name": "Dague de chasse rituelle",
+				"count": 8
+			},
+			{
+				"name": "Insigne des Pilleurs",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Roche lustrée de Guyun",
+				"count": 4
+			},
+			{
+				"name": "Dague rituelle de l'Usurier",
+				"count": 4
+			},
+			{
+				"name": "Insigne de corbeau en argent",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Squelette sacré de Guyun",
+				"count": 2
+			},
+			{
+				"name": "Dague rituelle de l'Usurier",
+				"count": 8
+			},
+			{
+				"name": "Insigne de corbeau en argent",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Squelette sacré de Guyun",
+				"count": 4
+			},
+			{
+				"name": "Grande dague de l'Inspecteur",
+				"count": 6
+			},
+			{
+				"name": "Insigne de corbeau en or",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Corps divin de Guyun",
+				"count": 3
+			},
+			{
+				"name": "Grande dague de l'Inspecteur",
+				"count": 12
+			},
+			{
+				"name": "Insigne de corbeau en or",
+				"count": 8
+			}
+		]
+	}
+}

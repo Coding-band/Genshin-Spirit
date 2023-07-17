@@ -1,0 +1,138 @@
+{
+	"name": "Königliches Langschwert",
+	"description": "Ein altes Schwert der Aristokraten, die einst über Mondstadt herrschten. Es ist fein ausgearbeitet und zeigt mit seinen Verzierungen und Schnitzereien den Status seines Trägers.",
+	"weapontype": "Einhänder",
+	"rarity": "4",
+	"story": "Dieses Langschwert wurde einst vom alten Adel Mondstadts geführt. Sein Material ist erlesen und hat all die Zeit gut überstanden.\nSelbst nach Generationen ist dieses Schwert noch so scharf wie eh und je.\nFechtkunst war einst Pflicht für jeden Adligen.\nDies sollte jedoch hauptsächlich der Bildung und Eleganz dienen, nicht zum Einsatz in eigentlichen Kämpfen.\nBedauerlicherweise gerieten Bildung und Eleganz ab einem gewissen Punkt in Vergessenheit. Fechtkunst war nur noch eine Pflichterfüllung.\n\nDer älteste Stammbaum Mondstadts begann vor zweitausendsechshundert Jahren.\nNach dem Erscheinen des Anemo-Archons und dem Wandel der Welt schworen sie einen Eid.\n\n„Immer für Mondstadt. Für seine sanften Ebenen, seine Hügel und Wälder, für das ewige Grün.“\n„Immer für Mondstadt. Für den ewigen Frieden, frei von Tyrannei und Unterdrückung.“\n\nEgal was die Jahre Mondstadt brachten, ob Tyrannenherrschaft, Monsterplagen oder sogar die Zerstörung der Eidesfafel,\ndie Essenz des Eides wird für immer vom Wind getragen, der die Stadt sachte streichelt wie ein Liebender und sie gleichzeitig beschützt wie ein sorgender Vater.",
+	"baseatk": 42,
+	"substat": "ANG",
+	"subvalue": "9",
+	"effectname": "Konzentration",
+	"effect": "Erhöht die KT beim Verursachen von Schaden um {0}, 5-fach stapelbar. Effekt erlischt beim Verursachen eines KT.",
+	"r1": [
+		"8 %"
+	],
+	"r2": [
+		"10 %"
+	],
+	"r3": [
+		"12 %"
+	],
+	"r4": [
+		"14 %"
+	],
+	"r5": [
+		"16 %"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Decarabians zerbrochener Ziegel",
+				"count": 3
+			},
+			{
+				"name": "Schweres Horn",
+				"count": 3
+			},
+			{
+				"name": "Zerbrochene Maske",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Decarabians zerbröckelter Wall",
+				"count": 3
+			},
+			{
+				"name": "Schweres Horn",
+				"count": 12
+			},
+			{
+				"name": "Zerbrochene Maske",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Decarabians zerbröckelter Wall",
+				"count": 6
+			},
+			{
+				"name": "Kupferhorn",
+				"count": 6
+			},
+			{
+				"name": "Verdreckte Maske",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Decarabians Palastfragment",
+				"count": 3
+			},
+			{
+				"name": "Kupferhorn",
+				"count": 12
+			},
+			{
+				"name": "Verdreckte Maske",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Decarabians Palastfragment",
+				"count": 6
+			},
+			{
+				"name": "Schwarzes Kristallhorn",
+				"count": 9
+			},
+			{
+				"name": "Unheilvolle Maske",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Decarabians zerstörter Traum",
+				"count": 4
+			},
+			{
+				"name": "Schwarzes Kristallhorn",
+				"count": 18
+			},
+			{
+				"name": "Unheilvolle Maske",
+				"count": 12
+			}
+		]
+	}
+}

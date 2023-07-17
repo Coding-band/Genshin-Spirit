@@ -1,0 +1,143 @@
+{
+	"name": "Kitain-Kreuzlanze",
+	"description": "Eine besondere Lanze, die einst von einem berühmten Krieger benutzt wurde, der die Tatarigami auf der Insel Yashiori bewachte.",
+	"weapontype": "Stangenwaffe",
+	"rarity": "4",
+	"story": "Eine einzigartige Waffe, die Kitain Bunsou für seinen eigenen speziellen Schießstil entwickelt hat.\nIn Amateurhänden können eigenwillige Gegengewichte das Manövrieren sehr erschweren.\nAber in den Händen von jemandem, der es zu nutzen weiß, kann es außerordentlich mächtig und zerstörerisch sein.\n\nIn der fernen Vergangenheit war Kitain die Familienlinie, die „Tatarigami“ jagte.\nEr übernahm auch die Verantwortung für die „Yashiori-Wächter“ für viele Generationen in der Vergangenheit.\n\nIn der Vergangenheit gab es einen Kinderreim, der im Land von Inazuma kursierte.\n„Arataki vom Haupttor, Iwakura, der Nachfolger, Kitain, die Schlange, und Takamine, der Nebelspalter“,\num den schillernden Kampfkünstler zu beschreiben, der einst wie ein Santalum die Erde erleuchtete.\nUnter den ursprünglichen gab es noch viele andere Namen, aber sie sind alle von der Geschichte ausgelöscht worden.\nWer ständig Dämonen und das Böse tötet, trinkt unweigerlich das verseuchte Blut des Miasmas.",
+	"baseatk": 44,
+	"substat": "Elementarkunde",
+	"subvalue": "24",
+	"effectname": "Verhalten eines Samurais",
+	"effect": "Erhöht den mit Elementarfähigkeiten verursachten Schaden um {0}. Zieht der Figur bei Treffern mit einer Elementarfähigkeit 3 Punkte Elementarenergie ab und stellt im Gegenzug 6 s lang alle 2 s {1} Punkte Elementarenergie wieder her. Dieser Effekt kann nur einmal alle 10 s ausgelöst werden, auch von Figuren, die sich in deiner Truppe, aber nicht im Kampf befinden.",
+	"r1": [
+		"6 %",
+		"3"
+	],
+	"r2": [
+		"7,5 %",
+		"3,5"
+	],
+	"r3": [
+		"9 %",
+		"4"
+	],
+	"r4": [
+		"10,5 %",
+		"4,5"
+	],
+	"r5": [
+		"12 %",
+		"5"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Die Maske des bösen Leutnants",
+				"count": 3
+			},
+			{
+				"name": "Chaos-Vorrichtung",
+				"count": 3
+			},
+			{
+				"name": "Krähenwappen der Schatzsuche",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Die Maske des Tigerbisses",
+				"count": 3
+			},
+			{
+				"name": "Chaos-Vorrichtung",
+				"count": 12
+			},
+			{
+				"name": "Krähenwappen der Schatzsuche",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Die Maske des Tigerbisses",
+				"count": 6
+			},
+			{
+				"name": "Chaos-Achse",
+				"count": 6
+			},
+			{
+				"name": "Krähenwappen der Silberschätze",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Maske des Einhörnigen",
+				"count": 3
+			},
+			{
+				"name": "Chaos-Achse",
+				"count": 12
+			},
+			{
+				"name": "Krähenwappen der Silberschätze",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Maske des Einhörnigen",
+				"count": 6
+			},
+			{
+				"name": "Chaos-Oculus",
+				"count": 9
+			},
+			{
+				"name": "Krähenwappen der Goldschätze",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Maske der Kijin",
+				"count": 4
+			},
+			{
+				"name": "Chaos-Oculus",
+				"count": 18
+			},
+			{
+				"name": "Krähenwappen der Goldschätze",
+				"count": 12
+			}
+		]
+	}
+}

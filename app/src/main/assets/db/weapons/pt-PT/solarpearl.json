@@ -1,0 +1,143 @@
+{
+	"name": "Pérola Solar",
+	"description": "Abriga a luz do sol e da lua, uma pérola feita de materiais desconhecidos pulsa com uma força calorosa.",
+	"weapontype": "Catalisador",
+	"rarity": "4",
+	"story": "Em Liyue, correm rumores sobre um orbe escuro.\nUma vez absorveu toda a luz no mundo, mas depois foi guardado dentro de uma caixa de madeira por milênios.\nAinda assim, seu poder não havia se dissipado. Agora tirado de sua caixa, seu brilho permanece.\nNas mãos de um sábio verdadeiramente conhecedor, talvez seu extraordinário poder fosse finalmente liberado após ter ficado adormecido por milênios.\n\nOs comerciantes de joalheria em Liyue sempre dizem que um artesão chamado Kunwu uma vez pegou os raios do universo e os selou numa caixa.\nO Kunwu então enterrou aquela caixa no fundo de uma câmara rochosa escura, onde permaneceu na escuridão por quarenta e nove dias e vinte horas, até que finalmente a pérola dentro dele absorveu o brilho do sol e da lua.\n\nUma história muito curiosa, de fato. E ainda assim, até hoje, muitos em Liyue mantêm firmemente sua crença nos talentos esotéricos do mestre artesão Kunwu.\nAlguém uma vez teve a coragem de perguntar ao artesão idoso qual era seu segredo. O velho excêntrico riu da ideia absurda de suas capacidades místicas e disse:\n\"Pff! Foi puramente o resultado de um polimento prolongado!\"\n\nMas o seu aprendiz revelou uma história diferente quando questionado sobre isso em particular: Assim que Kunwu terminou de polir a Pérola Solar, o esplendor dos céus brilhou e uma lua carmesim encheu o céu.\nMas esse fenômeno significa que o Kunwu realmente recebeu ajuda divina em sua arte? Ou a sua inspiração e determinação firme provocaram resposta do céu.",
+	"baseatk": 42,
+	"substat": "Taxa Crítica",
+	"subvalue": "6",
+	"effectname": "Brilho Celestial",
+	"effect": "Dentro de 6s após acertar um Ataque Normal, o Dano da Habilidade Elemental e do Supremo aumentam em {0}. Dentro de 6s após acertar uma Habilidade Elemental e o Supremo, o Dano do Ataque Normal aumenta {1}.",
+	"r1": [
+		"20%",
+		"20%"
+	],
+	"r2": [
+		"25%",
+		"25%"
+	],
+	"r3": [
+		"30%",
+		"30%"
+	],
+	"r4": [
+		"35%",
+		"35%"
+	],
+	"r5": [
+		"40%",
+		"40%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Areia Brilhante de Guyun",
+				"count": 3
+			},
+			{
+				"name": "Faca de Caça",
+				"count": 3
+			},
+			{
+				"name": "Néctar da Flor Gigante",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Pedra Lustrosa de Guyun",
+				"count": 3
+			},
+			{
+				"name": "Faca de Caça",
+				"count": 12
+			},
+			{
+				"name": "Néctar da Flor Gigante",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Pedra Lustrosa de Guyun",
+				"count": 6
+			},
+			{
+				"name": "Faca Especial",
+				"count": 6
+			},
+			{
+				"name": "Néctar Brilhante",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Relíquia de Guyun",
+				"count": 3
+			},
+			{
+				"name": "Faca Especial",
+				"count": 12
+			},
+			{
+				"name": "Néctar Brilhante",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Relíquia de Guyun",
+				"count": 6
+			},
+			{
+				"name": "Faca Longa de Inspetor",
+				"count": 9
+			},
+			{
+				"name": "Néctar Elemental",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Corpo Divino de Guyun",
+				"count": 4
+			},
+			{
+				"name": "Faca Longa de Inspetor",
+				"count": 18
+			},
+			{
+				"name": "Néctar Elemental",
+				"count": 12
+			}
+		]
+	}
+}

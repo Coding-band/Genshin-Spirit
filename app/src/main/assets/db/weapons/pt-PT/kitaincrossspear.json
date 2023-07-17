@@ -1,0 +1,143 @@
+{
+	"name": "Lança Cruzada de Kitain",
+	"description": "Uma lança especial que foi usada por um guerreiro famoso que guardava o Tatarigami da Ilha Yashiori.",
+	"weapontype": "Lança",
+	"rarity": "4",
+	"story": "Uma arma estranha projetada por Kitain Bunsou por seu estilo único de lança.\nSeu grande peso faz com que seja extremamente difícil de ser operada por leigos.\nMas nas mãos de um especialista, é capaz de liberar um imenso poder destrutivo.\n\nNo passado distante, os Kitain eram uma família que caçava o Tatarigami.\nDurante muitas gerações, eles eram responsáveis por serem os \"Guardiões da Ilha Yashiori\".\n\nNo passado, havia um verso que circulava amplamente em Inazuma,\n\"Arataki do Portão Frontal, Iwakura o Sucessor, a Serpente Kitain e Takamine o Cortador da Névoa\".\nEle descrevia os brilhantes guerreiros que outrora iluminaram a terra como cometas.\nExistiam muitos outros nomes. Mas eles foram apagados pela história.\nTendo sido um caçador de demônios por tanto tempo, é difícil evitar se manchar com o sangue cheio de miasmas.",
+	"baseatk": 44,
+	"substat": "Proficiência Elemental",
+	"subvalue": "24",
+	"effectname": "Conduta do Samurai",
+	"effect": "Aumenta o Dano causado pela Habilidade Elemental em {0}. Quando o personagem acerta no inimigo com sua Habilidade Elemental, ele perde 3 pontos de Energia Elemental e dentro dos 6s posteriores ele restaura {1} pontos de Energia Elemental a cada 2s. Esse efeito só pode ser ativado uma vez a cada 10s. Quando o personagem não está em campo ele também pode ser ativado.",
+	"r1": [
+		"6%",
+		"3"
+	],
+	"r2": [
+		"7.5%",
+		"3.5"
+	],
+	"r3": [
+		"9%",
+		"4"
+	],
+	"r4": [
+		"10.5%",
+		"4.5"
+	],
+	"r5": [
+		"12%",
+		"5"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Máscara do Tenente Perverso",
+				"count": 3
+			},
+			{
+				"name": "Mecanismo do Caos",
+				"count": 3
+			},
+			{
+				"name": "Insígnia dos Ladrões de Tesouro",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Máscara da Mordida do Tigre",
+				"count": 3
+			},
+			{
+				"name": "Mecanismo do Caos",
+				"count": 12
+			},
+			{
+				"name": "Insígnia dos Ladrões de Tesouro",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Máscara da Mordida do Tigre",
+				"count": 6
+			},
+			{
+				"name": "Processador do Caos",
+				"count": 6
+			},
+			{
+				"name": "Insígnia do Corvo Prateado",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Máscara Daquele com Um Chifre",
+				"count": 3
+			},
+			{
+				"name": "Processador do Caos",
+				"count": 12
+			},
+			{
+				"name": "Insígnia do Corvo Prateado",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Máscara Daquele com Um Chifre",
+				"count": 6
+			},
+			{
+				"name": "Olho do Caos",
+				"count": 9
+			},
+			{
+				"name": "Insígnia de Corvo Dourado",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Máscara de Kijin",
+				"count": 4
+			},
+			{
+				"name": "Olho do Caos",
+				"count": 18
+			},
+			{
+				"name": "Insígnia de Corvo Dourado",
+				"count": 12
+			}
+		]
+	}
+}

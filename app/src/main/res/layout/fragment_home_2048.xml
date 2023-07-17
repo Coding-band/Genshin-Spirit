@@ -305,7 +305,7 @@
 
             <include
                 android:id="@+id/home_dailymemo"
-                layout="@layout/item_memo_2048"
+                layout="@layout/item_memo_new2_2048"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:visibility="visible" />

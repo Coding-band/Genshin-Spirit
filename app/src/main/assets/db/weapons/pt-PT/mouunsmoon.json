@@ -1,0 +1,143 @@
+{
+	"name": "Lua de Mouun",
+	"description": "Um arco de guerra adorável feito de conchas e coral. Um brilho lúgubre flui ao longo de seus braços coloridos à luz da lua.",
+	"weapontype": "Arco",
+	"rarity": "4",
+	"story": "O arco longo uma vez usado pela sacerdotisa Mouun do santuário Watatsumi,\nÉ branco puro como a espuma do mar na ponta de uma onda iluminada pela lua.\n\nA sacerdotisa era amiga dos monstros de mares distantes, e juntos lutaram contra as nuvens trovejantes em prol do sonho passageiro de Watatsumi.\nJuntos, os companheiros do peito cavalgavam as ondas, sempre a aparecerem no jato criado pelas proas dos navios...\nE continuaram, seguindo o caminho sem retorno que Watatsumi estava agora, até irem juntos para a terra de sua trágica obliteração.\n\nTalvez seja verdade que a guerra do Lorde Watatsumi Omikami estava condenada desde o início.\n\"Mas desde que deixemos essas lembranças para trás, desde que semeemos as sementes do sacrifício, tudo isso pode valer a pena.\"\n\nAs canções do passado louvam o vínculo tácito que ela compartilhou com \"Umigozen\" como gêmeas nascidas de Watatsumi,\nE retratam elas, com o arco puxado e a lança erguida, banhando o jato de ondas da proa de um navio...\nEstas canções distantes contam como ela cavalgou com Touzannou nas costas de uma criatura do mar durante a noite,\nOs amanhãs quebrados que ela sussurrou, suavemente e de luto, ao ouvido do herói...\n\nEm dias ainda pacíficos, as gêmeas cantavam uma vez em coro com a grande baleia das profundezas do mar,\nContando os dias sombrios passados nas profundezas e na escuridão da noite, e de Omikami e dos galhos radiantes de jade.\nEla uma vez brincou com aquele jovem imprudente, cuja única vantagem era a sua força...\n\n\"Uma vez que eu traga de volta essa lendária máscara do Grande Tengu, você tem que manter nossa promessa e terminar esse negócio.\"\n\n\"Claro, e se você ainda estiver tão cheio de si então, vou conseguir que uma baleia levante uma onda suficientemente grande para lavar essa sua boca suja.\"",
+	"baseatk": 44,
+	"substat": "ATQ",
+	"subvalue": "6",
+	"effectname": "Dominadora de Ondas Watatsumi",
+	"effect": "O Personagem que usar esta arma terá um aumento do Dano do Supremo de {0} por cada 1 ponto da soma do máximo da Energia Elemental de todos os membros da equipe. O aumento de Dano do Supremo máximo obtível dessa maneira é de {1}.",
+	"r1": [
+		"0.12%",
+		"40%"
+	],
+	"r2": [
+		"0.15%",
+		"50%"
+	],
+	"r3": [
+		"0.18%",
+		"60%"
+	],
+	"r4": [
+		"0.21%",
+		"70%"
+	],
+	"r5": [
+		"0.24%",
+		"80%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "A Sabedoria de Narukami",
+				"count": 3
+			},
+			{
+				"name": "Prisma Sombrio",
+				"count": 3
+			},
+			{
+				"name": "Casca Espectral",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "A Alegria de Narukami",
+				"count": 3
+			},
+			{
+				"name": "Prisma Sombrio",
+				"count": 12
+			},
+			{
+				"name": "Casca Espectral",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "A Alegria de Narukami",
+				"count": 6
+			},
+			{
+				"name": "Prisma Cristalino",
+				"count": 6
+			},
+			{
+				"name": "Coração Espectral",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "O Afeto de Narukami",
+				"count": 3
+			},
+			{
+				"name": "Prisma Cristalino",
+				"count": 12
+			},
+			{
+				"name": "Coração Espectral",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "O Afeto de Narukami",
+				"count": 6
+			},
+			{
+				"name": "Prisma Polarizado",
+				"count": 9
+			},
+			{
+				"name": "Núcleo Espectral",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "A Coragem de Narukami",
+				"count": 4
+			},
+			{
+				"name": "Prisma Polarizado",
+				"count": 18
+			},
+			{
+				"name": "Núcleo Espectral",
+				"count": 12
+			}
+		]
+	}
+}

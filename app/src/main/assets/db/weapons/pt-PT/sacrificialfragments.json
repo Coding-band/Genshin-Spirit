@@ -1,0 +1,143 @@
+{
+	"name": "Memórias de Sacrifício",
+	"description": "Um guia desgastado, cujo texto não é mais legível. Um item amaldiçoado erodido pelos ventos do tempo.",
+	"weapontype": "Catalisador",
+	"rarity": "4",
+	"story": "Os primeiros habitantes de Mondstadt tinham a tradição de construir teatros no topo de penhascos ventosos para agradar aos deuses.\nNa verdade, os seus ritos tinham assumido a forma de teatro, porque eles acreditavam que os deuses amavam poemas e canções.\nEsse escrito tem milhares de anos, e não é mais legível.\n\nNuma guerra travada entre o Deus de Tempestade e o Grande Rei de Lobo do Norte, Mondstadt estava envolto em nevascas e tempestade.\nUm grupo que não conseguira mais suportar o frio construiu um santuário no alto de um penhasco no leste. Lá, eles rezaram por misericórdia e proteção divina.\n\nO vento sopra por um momento, mas as devastações do tempo são constantes, implacáveis e irreversíveis.\nO deus dos ventos pode virar as páginas de um livro, mas no final foi o impiedoso deus do tempo que tornou essas páginas ilegíveis.\n\nEntretanto, a ação do tempo e do vento no coração é igual.\nTalvez seja por isso que gerações futuras presumiram que o santuário era dedicado ao vento, e a ele apenas.",
+	"baseatk": 41,
+	"substat": "Proficiência Elemental",
+	"subvalue": "48",
+	"effectname": "Composto",
+	"effect": "Ao causar dano contra um oponente com Habilidade Elemental, a habilidade possui {0} de chance de redefinir o tempo de Recarga desta habilidade. Este efeito pode ser ativado apenas uma vez a cada {1} segundos.",
+	"r1": [
+		"40%",
+		"30"
+	],
+	"r2": [
+		"50%",
+		"26"
+	],
+	"r3": [
+		"60%",
+		"22"
+	],
+	"r4": [
+		"70%",
+		"19"
+	],
+	"r5": [
+		"80%",
+		"16"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Grilhões de Dandelion",
+				"count": 3
+			},
+			{
+				"name": "Dispositivo do Caos",
+				"count": 3
+			},
+			{
+				"name": "Insígnia dos Ladrões de Tesouro",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Correntes do Gladiador de Dandelion",
+				"count": 3
+			},
+			{
+				"name": "Dispositivo do Caos",
+				"count": 12
+			},
+			{
+				"name": "Insígnia dos Ladrões de Tesouro",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Correntes do Gladiador de Dandelion",
+				"count": 6
+			},
+			{
+				"name": "Circuito do Caos",
+				"count": 6
+			},
+			{
+				"name": "Insígnia do Corvo Prateado",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Manilhas do Gladiador de Dandelion",
+				"count": 3
+			},
+			{
+				"name": "Circuito do Caos",
+				"count": 12
+			},
+			{
+				"name": "Insígnia do Corvo Prateado",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Manilhas do Gladiador de Dandelion",
+				"count": 6
+			},
+			{
+				"name": "Fornalha do Caos",
+				"count": 9
+			},
+			{
+				"name": "Insígnia de Corvo Dourado",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Sonho do Gladiador de Dandelion",
+				"count": 4
+			},
+			{
+				"name": "Fornalha do Caos",
+				"count": 18
+			},
+			{
+				"name": "Insígnia de Corvo Dourado",
+				"count": 12
+			}
+		]
+	}
+}

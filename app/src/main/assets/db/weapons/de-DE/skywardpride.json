@@ -1,0 +1,143 @@
+{
+	"name": "Stolz des Himmels",
+	"description": "Ein Zweihänder, der Dvalins stolzen Flug im Himmel symbolisiert. Geschwungen ertönt Dvalins tiefe Stimme mit der Kraft von Himmel und Wind.",
+	"weapontype": "Zweihänder",
+	"rarity": "5",
+	"story": "Himmel erschütternder Mut.\nSelbst der aus Sünden geborene Drache aus dem alten Königreich des Abgrunds\nverlor seine Flügel an diesen stolzen Diener des Windes.\n\nMondstadt wurde einst von dem fürchterlichen Schattendrachen Durin terrorisiert.\nErweckt durch die Schreie der Opfer\nbeschwor der Gott des Windes seinen treuen Diener.\nEr trat gegen den Schattendrachen an in einem Kampf um Leben und Freiheit.\n\nDvalin entfesselte seine gottgesegneten sechs Flügel.\nWie ein schwerer Säbel teilte er die Luft und riss Durins Schuppen von dessen Körper.\nDvalin schwang seine Windklauen wie ein mächtiges Schwert\nund rammte sie tief in Durins schwarzes verrottendes Fleisch.\n\nDer Kampf dieser Giganten erschütterte sogar den Himmel und selbst die furchtlose Sonne erzitterte.\nDvalin riss Durin letztendlich den Hals auf und besiegte somit die böse Bedrohung.\nEr hatte nicht nur den Kampf gewonnen, sondern auch den Segen des Windes und rettete so das Leben der Bewohner Mondstadts.\nUnglücklicherweise wurde Dvalin bei dem Kampf mit Durin von dessen Blut vergiftet.\n\nDvalin konnte sich nur in die Einsamkeit zurückziehen, denn sein nun zu verrotten beginnendes Fleisch zog jede Menge Monster und andere dunkle Wesen an.\nEinsam und verlassen erlag er immer mehr den Verlockungen des Abgrunds und sein Herz gab dem Bösen nach.\nSein Durst nach Rache und die Schmerzen vom tödlichen Gift wurden letztendlich von seinem alten Meister gelindert.\nWahre Freundschaft trieb die Dämonen aus ihm und sein Name und Ruf wurden wiederhergestellt.\n\nWährend Dvalins tiefen Schlafs vergaßen die Bewohner Mondstadts ihren einstigen Retter und seine Macht.\nAufgrund der letzten stürmischen Ereignisse jedoch erschien der sechsflügelige Drache den Menschen erneut.\nEr trug nun Barbatos’ Lied mit sich und war erfüllt vom Segen des Anemo-Archons,\nsodass er endlich wieder die Freiheit des Windes unter seinen Flügeln spürte.",
+	"baseatk": 48,
+	"substat": "Aufladerate",
+	"subvalue": "8",
+	"effectname": "Himmel spaltende Drachenwirbel",
+	"effect": "Erhöht den verursachten Schaden um {0}. Nach Anwendung der Spezialfähigkeit: Erschafft nach Treffern mit Standardangriffen und heftigen Schlägen eine Vakuumklinge, die Gegnern in der Bahn Schaden in Höhe von {1} ANG zufügt. Hält 20 s oder 8 Vakuumklingen lang.",
+	"r1": [
+		"8 %",
+		"80 %"
+	],
+	"r2": [
+		"10 %",
+		"100 %"
+	],
+	"r3": [
+		"12 %",
+		"120 %"
+	],
+	"r4": [
+		"14 %",
+		"140 %"
+	],
+	"r5": [
+		"16 %",
+		"160 %"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Milchzahn des borealischen Wolfs",
+				"count": 5
+			},
+			{
+				"name": "Alte Rute des Flusses der Elemente",
+				"count": 5
+			},
+			{
+				"name": "Schleimabsonderung",
+				"count": 3
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Zersplitterter Zahn des borealischen Wolfs",
+				"count": 5
+			},
+			{
+				"name": "Alte Rute des Flusses der Elemente",
+				"count": 18
+			},
+			{
+				"name": "Schleimabsonderung",
+				"count": 12
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Zersplitterter Zahn des borealischen Wolfs",
+				"count": 9
+			},
+			{
+				"name": "Verdorrte Blätter des Flusses der Elemente",
+				"count": 9
+			},
+			{
+				"name": "Schleimkondensat",
+				"count": 9
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Abgebrochener Zahn des borealischen Wolfs",
+				"count": 5
+			},
+			{
+				"name": "Verdorrte Blätter des Flusses der Elemente",
+				"count": 18
+			},
+			{
+				"name": "Schleimkondensat",
+				"count": 14
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 55000
+			},
+			{
+				"name": "Abgebrochener Zahn des borealischen Wolfs",
+				"count": 9
+			},
+			{
+				"name": "Frische Triebe des Flusses der Elemente",
+				"count": 14
+			},
+			{
+				"name": "Schleimkonzentrat",
+				"count": 9
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 65000
+			},
+			{
+				"name": "Heimweh des borealischen Wolfs",
+				"count": 6
+			},
+			{
+				"name": "Frische Triebe des Flusses der Elemente",
+				"count": 27
+			},
+			{
+				"name": "Schleimkonzentrat",
+				"count": 18
+			}
+		]
+	}
+}

@@ -1,0 +1,138 @@
+{
+	"name": "Mappa Mare",
+	"description": "Um mapa bastante detalhado sobre as águas ao redor de Teyvat. É um documento valioso que apareceu nas rotas comerciais de Liyue.",
+	"weapontype": "Catalisador",
+	"rarity": "4",
+	"story": "O mundo vem para Liyue. Esta é uma grande honra para o grande porto comercial.\nCom as marés das pessoas também vieram tesouros exóticos.\nEste mapa, detalhando os vários mares que circundam o continente, está completo com correntes subterrâneas, recifes ocultos e direções do vento.\nDiz-se que é um tomo exótico contendo o conhecimento, a coragem e a fé de exploradores pioneiros.\n\nA página do título deste livro diz o seguinte:\n\"Ame a brisa do mar e as correntes do oceano, pois, são o vento e a água que levam os navegantes ao seu destino.\"\n\"Mas temam mais a mesma brisa e as mesmas correntes; porque o vento e a água também podem quebrar o aço.\"\n\nA fim de conhecer melhor o temperamento do mar, tem que explorar cada recife seu, perseguir cada brisa sua, e visitar cada lugar seu de encontro com baleias.\nIncontáveis navegadores registram tudo isso nos papéis amarelados, e parecem fascinados ao descrever a pele e o cabelo das amantes.\n\nNos outros países, os navegadores versados consideram o mar como a amante, e tratam a água fria e salgada como uma mulher amada.\nSeja por causa do temperamento instável do mar, ou do seu seio vasto, seja porque eles ainda se lembram o quão romântico eram quando subiram a bordo.\nComo o oceano, esta carta não responde a nenhum mestre. Como os marinheiros, ela abriga o sonho romântico de explorar cada canto do mundo.",
+	"baseatk": 44,
+	"substat": "Proficiência Elemental",
+	"subvalue": "24",
+	"effectname": "Pergaminho Infundido",
+	"effect": "Ativar uma reação Elemental concede um adicional de {0} de Dano Elemental por 10s, podendo acumular até 2 vezes.",
+	"r1": [
+		"8%"
+	],
+	"r2": [
+		"10%"
+	],
+	"r3": [
+		"12%"
+	],
+	"r4": [
+		"14%"
+	],
+	"r5": [
+		"16%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Grão de Aerosiderite",
+				"count": 3
+			},
+			{
+				"name": "Fragmento de osso frágil",
+				"count": 3
+			},
+			{
+				"name": "Condensado de Slime",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Pedaço de Aerosiderite",
+				"count": 3
+			},
+			{
+				"name": "Fragmento de osso frágil",
+				"count": 12
+			},
+			{
+				"name": "Condensado de Slime",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Pedaço de Aerosiderite",
+				"count": 6
+			},
+			{
+				"name": "Fragmento de osso sólido",
+				"count": 6
+			},
+			{
+				"name": "Secreção de Slime",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Fragmento de Aerosiderite",
+				"count": 3
+			},
+			{
+				"name": "Fragmento de osso sólido",
+				"count": 12
+			},
+			{
+				"name": "Secreção de Slime",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Fragmento de Aerosiderite",
+				"count": 6
+			},
+			{
+				"name": "Fragmento de osso fossilizado",
+				"count": 9
+			},
+			{
+				"name": "Essência de Slime",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Bloco de Aerosiderite",
+				"count": 4
+			},
+			{
+				"name": "Fragmento de osso fossilizado",
+				"count": 18
+			},
+			{
+				"name": "Essência de Slime",
+				"count": 12
+			}
+		]
+	}
+}

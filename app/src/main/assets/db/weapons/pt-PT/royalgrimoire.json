@@ -1,0 +1,138 @@
+{
+	"name": "Grimório Real",
+	"description": "Um livro que pertenceu a um feiticeiro da realeza de Mondstadt. Guarda feitiços e relatos históricos verdadeiros e extensos.",
+	"weapontype": "Catalisador",
+	"rarity": "4",
+	"story": "Um pergaminho delicado coberto de cera para impedir a decomposição e ser comido por insetos.\nContém a pesquisa dos magos reais, pesquisa que ainda é relevante hoje.\nOs feiticeiros da realeza são encarregados de nutrir a água e o solo, bem como lutar contra monstros. Eles também serviram como professores para os nobres.\nPortanto, o pergaminho contém uma riqueza de informações sobre história, governança, administração e cultura.\nQuando as pessoas derrubaram os nobres, exilaram os magos ao mesmo tempo,\npois os magos abandonaram sua responsabilidade de cultivar a bondade e virtude dos nobres, preferiram agir da mesma maneira que eles.\n\nNos primeiros dias de Mondstadt, o clã Lawrence era liderado por Venerare.\nSob sua liderança, as pessoas construíram uma alta estátua na praça para comemorar o milagre da descida do Arconte Anemo.\n\nA inscrição abaixo da estátua foi colocada ali pelo líder de todos os clãs. Foi feito um juramento de proteção a Mondstadt que eles tinham declarado.\nAo longo dos anos, o clã Lawrence abandonou as nobres aspirações de seus antepassados, e a estátua foi derrubada.\nOs sábios magos da corte não falaram da história ou do juramento novamente.\n\nNa era dos Cavaleiros de Favonius, a estátua foi reconstruída.\nEntretanto, o fraseado do juramento na inscrição foi perdido para sempre.",
+	"baseatk": 44,
+	"substat": "ATQ",
+	"subvalue": "6",
+	"effectname": "Foco",
+	"effect": "Ao atingir um oponente, aumenta a Taxa Crítica em {0}, acumulando no máximo 5 vezes. Causar Dano Crítico remove todos os acúmulos.",
+	"r1": [
+		"8%"
+	],
+	"r2": [
+		"10%"
+	],
+	"r3": [
+		"12%"
+	],
+	"r4": [
+		"14%"
+	],
+	"r5": [
+		"16%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Fragmento de Azulejo de Decarabian",
+				"count": 3
+			},
+			{
+				"name": "Chifre Pesado",
+				"count": 3
+			},
+			{
+				"name": "Insígnia de Recruta",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Detritos da Cidade de Decarabian",
+				"count": 3
+			},
+			{
+				"name": "Chifre Pesado",
+				"count": 12
+			},
+			{
+				"name": "Insígnia de Recruta",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Detritos da Cidade de Decarabian",
+				"count": 6
+			},
+			{
+				"name": "Chifre de Bronze Negro",
+				"count": 6
+			},
+			{
+				"name": "Insígnia de Sargento",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Fragmentos Épicos da Decarabian",
+				"count": 3
+			},
+			{
+				"name": "Chifre de Bronze Negro",
+				"count": 12
+			},
+			{
+				"name": "Insígnia de Sargento",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Fragmentos Épicos da Decarabian",
+				"count": 6
+			},
+			{
+				"name": "Chifre de Cristal Preto",
+				"count": 9
+			},
+			{
+				"name": "Insígnia de Oficial",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Pedaços de Sonho da Decarabian",
+				"count": 4
+			},
+			{
+				"name": "Chifre de Cristal Preto",
+				"count": 18
+			},
+			{
+				"name": "Insígnia de Oficial",
+				"count": 12
+			}
+		]
+	}
+}

@@ -1,0 +1,138 @@
+{
+	"name": "Reiseschwert",
+	"description": "Ein praktisches Schwert aus Stahl, in dessen Scheide sich unter anderem Schere, Fernglas und Zunder für die Reise befinden.",
+	"weapontype": "Einhänder",
+	"rarity": "3",
+	"story": "Ein verlässliches und gut ausbalanciertes Schwert aus feinstem Stahl.\nEiner der größten Nachteile dieses Schwertes ist jedoch die unvollständige Kielstruktur. Dies verringert seine Haltbarkeit.\nJedoch bietet dies die Möglichkeit eines völlig ausgehöhlten Griffs, in dem man Miniaturmesser, Scheren und andere Kleinteile verstecken konnte.\nNennt man es Reiseschwert, weil es so viel Platz für alle möglichen Dinge für eine Reise hat?",
+	"baseatk": 40,
+	"substat": "VTD",
+	"subvalue": "6.4",
+	"effectname": "Reise",
+	"effect": "Stellt beim Erhalten von Elementarkristallen oder Elementarteilchen {0} LP wieder her.",
+	"r1": [
+		"1 %"
+	],
+	"r2": [
+		"1,25 %"
+	],
+	"r3": [
+		"1,5 %"
+	],
+	"r4": [
+		"1,75 %"
+	],
+	"r5": [
+		"2 %"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Fesseln des Löwenzahnkämpfers",
+				"count": 2
+			},
+			{
+				"name": "Chaos-Apparat",
+				"count": 2
+			},
+			{
+				"name": "Leitende Schriftrolle",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Ketten des Löwenzahnkämpfers",
+				"count": 2
+			},
+			{
+				"name": "Chaos-Apparat",
+				"count": 8
+			},
+			{
+				"name": "Leitende Schriftrolle",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Ketten des Löwenzahnkämpfers",
+				"count": 4
+			},
+			{
+				"name": "Chaos-Schaltkreis",
+				"count": 4
+			},
+			{
+				"name": "Zaubersiegel-Schriftrolle",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Schellen des Löwenzahnkämpfers",
+				"count": 2
+			},
+			{
+				"name": "Chaos-Schaltkreis",
+				"count": 8
+			},
+			{
+				"name": "Zaubersiegel-Schriftrolle",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Schellen des Löwenzahnkämpfers",
+				"count": 4
+			},
+			{
+				"name": "Chaos-Getriebe",
+				"count": 6
+			},
+			{
+				"name": "Fluchschriftrolle",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Ideal des Löwenzahnkriegers",
+				"count": 3
+			},
+			{
+				"name": "Chaos-Getriebe",
+				"count": 12
+			},
+			{
+				"name": "Fluchschriftrolle",
+				"count": 8
+			}
+		]
+	}
+}

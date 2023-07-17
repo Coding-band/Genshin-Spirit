@@ -1,0 +1,143 @@
+{
+	"name": "Regenbogenstecher",
+	"description": "Eine Stangenwaffe, die womöglich alles und jeden aufspießen kann. In der Luft geschwungen meint man, Spuren ihrer Schnitte sehen zu können.",
+	"weapontype": "Stangenwaffe",
+	"rarity": "5",
+	"story": "Vor langer Zeit, als Tausende von Booten und Meeresbewohnern auf den Gewässern schwammen,\nkannte Liyue keinen Frieden oder Ruhe aufgrund der unzähligen Bestien und Monster, die den Ozean füllten.\n\nMan erzählte sich, dass eine monströse Bestie die Kontrolle über den Meeresboden übernommen hatte.\nDurch Wirbel und Strudel würde diese Bestie Schiffe zertrümmern und die Meerestiere hinunter in ihr Verderben ziehen.\nEine weitere Legende besagt, dass in der Mitte des Meeres plötzlich im Nebel eine kleine Insel erschien, aus der ein Regenbogen hervorsprang ...\nAngeblich würden die Glücklichen, die den Regenbogen überquerten und die Insel erreichten, geheimnisvolle Schätze finden, die schon seit langer Zeit begraben lägen.\nAuf jener Insel soll auch eine schlafende Kreatur über diese Schätze wachen.\n\nDie meisten Legenden unter Seeleuten sind sehr merkwürdig, aber es gibt eine Geschichte, die jeder glaubte.\nRex Lapis nahm eines Tages seinen Speer und stürzte vom Regenbogen aus in die Mitte der Tiefe zur Quelle des Wirbels.\n\nEs heißt, dass sich nach diesem Tag oft Delfine und Wale in jenem Gebiet des Meeres versammelten, um ihre Lieder zu singen.\nEinige glaubten, dass dies melodiöse Klagelieder seien für die Götter, an die sie glaubten.\nAndere dachten, sie sängen in Ehrfurcht vor der Kraft des Speers von Rex Lapis, der die Kraft hatte, sogar den Regenbogen zu durchbohren.\n\nAuch auf dem Festland glaubten sie an diese Legenden.\nMan sagt, dass der Wirbel, den Rex Lapis mit seinem Speer bezwungen hat, eines Tages wieder erwachen wird.\nDer Wind wird den fauligen Geruch vom Meeresboden auf das Land tragen, als Vorboten einer neunköpfigen Hydra.\nWer konnte damals diese Bestie des Meeres nur kontrollieren?",
+	"baseatk": 46,
+	"substat": "ANG",
+	"subvalue": "10.8",
+	"effectname": "Majestätische Größe",
+	"effect": "Erhöht die Schildeffizienz um {0}. Erhöht den ANG nach Treffern 8 s lang um {1}. 5-fach stapelbar, 0,3 s Abklingzeit. Erhöht die Wirksamkeit der Erhöhung des ANG außerdem im Schutz von Schilden um 100 %.",
+	"r1": [
+		"20 %",
+		"4 %"
+	],
+	"r2": [
+		"25 %",
+		"5 %"
+	],
+	"r3": [
+		"30 %",
+		"6 %"
+	],
+	"r4": [
+		"35 %",
+		"7 %"
+	],
+	"r5": [
+		"40 %",
+		"8 %"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Körnchen pechschwarzer Aerosiderit",
+				"count": 5
+			},
+			{
+				"name": "Zerbrechliches Knochenstück",
+				"count": 5
+			},
+			{
+				"name": "Krähenwappen der Schatzsuche",
+				"count": 3
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Stückchen pechschwarzer Aerosiderit",
+				"count": 5
+			},
+			{
+				"name": "Zerbrechliches Knochenstück",
+				"count": 18
+			},
+			{
+				"name": "Krähenwappen der Schatzsuche",
+				"count": 12
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Stückchen pechschwarzer Aerosiderit",
+				"count": 9
+			},
+			{
+				"name": "Stabiles Knochenstück",
+				"count": 9
+			},
+			{
+				"name": "Krähenwappen der Silberschätze",
+				"count": 9
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Klumpen pechschwarzer Aerosiderit",
+				"count": 5
+			},
+			{
+				"name": "Stabiles Knochenstück",
+				"count": 18
+			},
+			{
+				"name": "Krähenwappen der Silberschätze",
+				"count": 14
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 55000
+			},
+			{
+				"name": "Klumpen pechschwarzer Aerosiderit",
+				"count": 9
+			},
+			{
+				"name": "Versteinertes Knochenstück",
+				"count": 14
+			},
+			{
+				"name": "Krähenwappen der Goldschätze",
+				"count": 9
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 65000
+			},
+			{
+				"name": "Brocken pechschwarzer Aerosiderit",
+				"count": 6
+			},
+			{
+				"name": "Versteinertes Knochenstück",
+				"count": 27
+			},
+			{
+				"name": "Krähenwappen der Goldschätze",
+				"count": 18
+			}
+		]
+	}
+}

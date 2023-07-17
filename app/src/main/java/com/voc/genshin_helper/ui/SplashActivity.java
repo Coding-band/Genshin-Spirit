@@ -9,7 +9,6 @@ import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
 import static android.Manifest.permission.READ_MEDIA_IMAGES;
 import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 import static android.os.Build.VERSION.SDK_INT;
-
 import static com.voc.genshin_helper.util.DownloadAndUnzipTask.baseFileName;
 
 import android.Manifest;
@@ -18,16 +17,15 @@ import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.content.res.Configuration;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
-import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Handler;
 import android.os.Looper;
-import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -49,18 +47,13 @@ import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
 import com.voc.genshin_helper.util.Dialog2048;
 import com.voc.genshin_helper.util.DownloadAndUnzipTask;
-import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.LogExport;
-import com.voc.genshin_helper.util.RemoteFileSizeFetcher;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLConnection;
@@ -69,15 +62,10 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.Callable;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Future;
-import java.util.concurrent.FutureTask;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
-
-import javax.net.ssl.HttpsURLConnection;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -118,13 +106,6 @@ public class SplashActivity extends AppCompatActivity {
         setTheme(R.style.SplashTheme);
         setContentView(R.layout.activity_splash_new);
 
-        if (BuildConfig.FLAVOR.equals("dev")){
-            StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
-                    .detectAll()
-                    .penaltyLog()
-                    .build());
-        }
-
         context = this;
         activity = this;
 
@@ -144,7 +125,7 @@ public class SplashActivity extends AppCompatActivity {
         LogExport.init(context);
         ((TextView) findViewById(R.id.splash_version)).setText(BuildConfig.VERSION_NAME);
 
-        if (sharedPreferences.getBoolean("isRandomTheme",true) == true && sharedPreferences.getBoolean("downloadBase", false) == true){
+        if (sharedPreferences.getBoolean("isRandomTheme",true) == true){
             ((ConstraintLayout) findViewById(R.id.splash_rand_cons)).setVisibility(View.VISIBLE);
             ((ImageView) findViewById(R.id.splash_random_bg)).setVisibility(View.VISIBLE);
             ((ConstraintLayout) findViewById(R.id.splash_base_cons)).setVisibility(View.GONE);

@@ -1,0 +1,138 @@
+{
+	"name": "Espada do Viajante",
+	"description": "Uma espada de aço que esconde tesouras, lupas, entre outros itens úteis de viagem em sua bainha.",
+	"weapontype": "Espada",
+	"rarity": "3",
+	"story": "Uma espada confiável e equilibrada feita de aço de qualidade.\nA desvantagem é que seu cabo é menor, reduzindo sua durabilidade das de cabo maior.\nNo entanto, este projeto permite um espaço no cabo rebaixado, ideal para armazenar pequenas facas, tesouras, fiapos, etc.\nDaí o nome, Espada do Viajante, pois no seu interior pode guardar todas as espécies de coisas...?",
+	"baseatk": 40,
+	"substat": "DEF",
+	"subvalue": "6.4",
+	"effectname": "Jornada",
+	"effect": "Cada Orbe ou Partícula Elemental coletada restaura {0} da Vida.",
+	"r1": [
+		"1%"
+	],
+	"r2": [
+		"1.25%"
+	],
+	"r3": [
+		"1.5%"
+	],
+	"r4": [
+		"1.75%"
+	],
+	"r5": [
+		"2%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Grilhões de Dandelion",
+				"count": 2
+			},
+			{
+				"name": "Dispositivo do Caos",
+				"count": 2
+			},
+			{
+				"name": "Pergaminho Guia",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Correntes do Gladiador de Dandelion",
+				"count": 2
+			},
+			{
+				"name": "Dispositivo do Caos",
+				"count": 8
+			},
+			{
+				"name": "Pergaminho Guia",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Correntes do Gladiador de Dandelion",
+				"count": 4
+			},
+			{
+				"name": "Circuito do Caos",
+				"count": 4
+			},
+			{
+				"name": "Pergaminho do Encantamento",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Manilhas do Gladiador de Dandelion",
+				"count": 2
+			},
+			{
+				"name": "Circuito do Caos",
+				"count": 8
+			},
+			{
+				"name": "Pergaminho do Encantamento",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Manilhas do Gladiador de Dandelion",
+				"count": 4
+			},
+			{
+				"name": "Fornalha do Caos",
+				"count": 6
+			},
+			{
+				"name": "Pergaminho da Maldição",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Sonho do Gladiador de Dandelion",
+				"count": 3
+			},
+			{
+				"name": "Fornalha do Caos",
+				"count": 12
+			},
+			{
+				"name": "Pergaminho da Maldição",
+				"count": 8
+			}
+		]
+	}
+}

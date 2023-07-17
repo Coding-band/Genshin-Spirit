@@ -1,0 +1,138 @@
+{
+	"name": "Néphrite jumelle",
+	"description": "Un pendentif exquis composé de deux pièces de jade assemblées.",
+	"weapontype": "Catalyseur",
+	"rarity": "3",
+	"story": "Une pièce en jade qui, en dépit de sa présentation exquise, semble avoir été abandonnée au hasard sur les étals.\nSa boîte ouvragée contient également un certificat à l'air officiel, provenant d'une organisation dont personne n'a jamais entendu parler.\nLe néophyte se laisserait facilement tenter par la présentation luxueuse ;\nmais le jade qu'il contient reste un investissement raisonnable pour celui qui connaît les dessous de l'industrie.",
+	"baseatk": 40,
+	"substat": "Taux CRIT",
+	"subvalue": "3.4",
+	"effectname": "Au galop",
+	"effect": "Augmente la VIT de déplacement et l'ATQ de {0} pendant 15 s après la défaite d'un ennemi.",
+	"r1": [
+		"12 %"
+	],
+	"r2": [
+		"14 %"
+	],
+	"r3": [
+		"16 %"
+	],
+	"r4": [
+		"18 %"
+	],
+	"r5": [
+		"20 %"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Plomb karstique",
+				"count": 2
+			},
+			{
+				"name": "Pollen d'herbe brumeuse",
+				"count": 2
+			},
+			{
+				"name": "Insigne de nouvelle recrue",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Mercure karstique",
+				"count": 2
+			},
+			{
+				"name": "Pollen d'herbe brumeuse",
+				"count": 8
+			},
+			{
+				"name": "Insigne de nouvelle recrue",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Mercure karstique",
+				"count": 4
+			},
+			{
+				"name": "Herbe brumeuse",
+				"count": 4
+			},
+			{
+				"name": "Insigne de sergent",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Argent karstique",
+				"count": 2
+			},
+			{
+				"name": "Herbe brumeuse",
+				"count": 8
+			},
+			{
+				"name": "Insigne de sergent",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Argent karstique",
+				"count": 4
+			},
+			{
+				"name": "Mèches d'herbe brumeuse",
+				"count": 6
+			},
+			{
+				"name": "Insigne d'officier",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Or karstique",
+				"count": 3
+			},
+			{
+				"name": "Mèches d'herbe brumeuse",
+				"count": 12
+			},
+			{
+				"name": "Insigne d'officier",
+				"count": 8
+			}
+		]
+	}
+}
