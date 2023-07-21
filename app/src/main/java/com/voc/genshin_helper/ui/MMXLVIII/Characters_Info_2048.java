@@ -1064,6 +1064,7 @@ public class Characters_Info_2048 {
                     }
                 });
 
+
                 /** Method of dialog */
                 dialog.setContentView(view);
                 dialog.setCanceledOnTouchOutside(true);

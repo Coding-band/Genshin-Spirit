@@ -34,6 +34,7 @@ import java.util.Date;
 public class LogExport {
 
     public static String DAILYMEMO = "dailyMemo.txt";
+    public static String EVENTLIST = "eventList.txt";
     public static String DOWNLOADTASK = "downloadTask.txt";
     public static String UNZIPMANAGER = "unzipManager.txt";
     public static String ENKADATACOLLECT = "enkaDataCollect.txt";
@@ -41,7 +42,7 @@ public class LogExport {
     public static String FETCH_FILE_FUTURE = "fetchFileFuture.txt";
     public static String BETA_TESTING = "betaTesting.txt";
 
-    public static String[] list = {DAILYMEMO,DOWNLOADTASK,UNZIPMANAGER,ENKADATACOLLECT, DOWNLOAD_UNZIP_TASK,BETA_TESTING, FETCH_FILE_FUTURE};
+    public static String[] list = {DAILYMEMO,DOWNLOADTASK,UNZIPMANAGER,ENKADATACOLLECT, DOWNLOAD_UNZIP_TASK,BETA_TESTING, FETCH_FILE_FUTURE, EVENTLIST};
 
     public static void export (String className, String functionName, String data, Context context, String fileName) {
         //if (BuildConfig.FLAVOR.equals("dev") || BuildConfig.FLAVOR.equals("beta")) {

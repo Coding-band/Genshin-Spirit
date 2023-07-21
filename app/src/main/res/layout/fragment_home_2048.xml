@@ -311,6 +311,13 @@
                 android:visibility="visible" />
 
 
+            <include
+                android:id="@+id/home_eventlist"
+                layout="@layout/item_event_list_2048"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible" />
+
             <com.voc.genshin_helper.util.CustomViewPager
                 android:id="@+id/asc_vp"
                 android:layout_width="match_parent"

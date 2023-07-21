@@ -1388,7 +1388,12 @@
     <string name="tcg_arataki_ichiban">荒瀧第一</string>
     <string name="tcg_favonius_sword">西風劍</string>
     <string name="tcg_grand_narukami_shrine">鳴神大社</string>
+
+    <!-- Ver. 4.0.0 Update -->
     <string name="memo_available_weekboss_change">尚餘{%1}次</string>
+    <string name="event_list_available">{%1}個活動進行中</string>
+    <string name="event_list_day">天</string>
+    <string name="event_list_title">活動列表</string>
 
 
 </resources>

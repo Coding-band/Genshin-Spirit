@@ -101,6 +101,7 @@ import com.voc.genshin_helper.util.CustomViewPager;
 import com.voc.genshin_helper.util.DailyMemo;
 import com.voc.genshin_helper.util.Dialog2048;
 import com.voc.genshin_helper.util.DownloadAndUnzipTask;
+import com.voc.genshin_helper.util.EventUtil;
 import com.voc.genshin_helper.util.LangUtils;
 import com.voc.genshin_helper.util.LocaleHelper;
 import com.voc.genshin_helper.util.MyViewPagerAdapter;
@@ -198,6 +199,7 @@ public class Desk2048 extends AppCompatActivity {
     Resources resources;
     Configuration configuration ;
     LangUtils langUtils;
+    EventUtil eventUtil;
 
     public boolean show_pyro = true;
     public boolean show_hydro = true;
@@ -334,6 +336,8 @@ public class Desk2048 extends AppCompatActivity {
         css = new ItemRss();
         localeHelper = new LocaleHelper();
         langUtils = new LangUtils();
+        eventUtil = new EventUtil();
+
 
         context = this;
         activity = this;
@@ -392,6 +396,8 @@ public class Desk2048 extends AppCompatActivity {
         dailyMemo = new DailyMemo();
         dailyMemo.setup(context,activity,viewPager0,DailyMemo.GAME);
         viewPager0.findViewById(R.id.home_dailymemo).setVisibility(View.VISIBLE);
+
+        eventUtil.init(viewPager0, context,activity);
 
         tcg2048 = new TCG2048();
         team2048 = new Team2048();
@@ -2449,7 +2455,7 @@ public class Desk2048 extends AppCompatActivity {
         if(!char_name.equals("EMPTY")){
             birth_title_normal.setVisibility(View.GONE);
             birth_title_special.setVisibility(View.VISIBLE);
-            birth_title_special.setText(context.getString(R.string.happy_birthday)+" "+css.getCharByName(char_name,context)[1]);
+            birth_title_special.setText(context.getString(R.string.happy_birthday)+" "+context.getString(css.getCharByName(char_name,context)[1]));
         }else{
             birth_title_special.setVisibility(View.GONE);
             birth_title_normal.setVisibility(View.VISIBLE);
