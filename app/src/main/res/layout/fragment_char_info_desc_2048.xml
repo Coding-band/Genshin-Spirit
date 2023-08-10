@@ -181,6 +181,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
+                android:visibility="gone"
                 android:orientation="horizontal">
 
                 <TextView
@@ -276,6 +277,106 @@
                         android:layout_weight="0"
                         app:srcCompat="@drawable/ico_sword"
                         app:tint="@color/tv_color" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center"
+                    android:text="@string/char_occupation"
+                    android:textColor="@color/tv_color"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center"
+                    android:text=" : "
+                    android:textAlignment="center"
+                    android:textColor="@color/tv_color"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:gravity="center|right"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/info_occupation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="April 17th"
+                        android:textColor="@color/tv_color"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="2dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center"
+                    android:text="@string/char_constellation"
+                    android:textColor="@color/tv_color"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="0"
+                    android:fontFamily="@font/genshin_font"
+                    android:gravity="center"
+                    android:text=" : "
+                    android:textAlignment="center"
+                    android:textColor="@color/tv_color"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0"
+                    android:gravity="center|right"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/info_constellation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/genshin_font"
+                        android:text="April 17th"
+                        android:textColor="@color/tv_color"
+                        android:textSize="18sp" />
                 </LinearLayout>
 
             </LinearLayout>

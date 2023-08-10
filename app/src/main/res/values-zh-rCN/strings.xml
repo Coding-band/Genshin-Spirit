@@ -1388,4 +1388,7 @@
     <string name="tcg_favonius_sword">西风剑</string>
     <string name="tcg_grand_narukami_shrine">鸣神大社</string>
     <string name="memo_available_weekboss_change">尚余{%1}次</string>
+    <string name="char_occupation">职称</string>
+    <string name="char_constellation">命之座</string>
+
 </resources>

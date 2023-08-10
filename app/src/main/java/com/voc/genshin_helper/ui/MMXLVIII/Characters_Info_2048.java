@@ -97,6 +97,8 @@ public class Characters_Info_2048 {
     boolean isComing = false ;
     String desc = "XPR" ;
     String nick = "XPR" ;
+    String occupation = "XPR" ;
+    String constellation = "XPR" ;
     JSONObject jsonObject;
     JSONObject jsonObjectDps;
 
@@ -248,17 +250,20 @@ public class Characters_Info_2048 {
         if(!str.equals("")){
             try {
                 jsonObject = new JSONObject(str);
-                name = jsonObject.getString("name");
+                //name = jsonObject.getString("name");
                 star = jsonObject.getInt("rare");
                 area = jsonObject.getString("area");
                 element = jsonObject.getString("element");
                 weapon = jsonObject.getString("weapon");
-                sex = jsonObject.getString("sex");
+                //sex = jsonObject.getString("sex");
                 birth = jsonObject.getString("birth");
-                role = jsonObject.getString("role");
-                isComing = jsonObject.getBoolean("isComingSoon");
+                //role = jsonObject.getString("role");
+                //isComing = jsonObject.getBoolean("isComingSoon");
                 desc = jsonObject.getString("desc");
                 nick = jsonObject.getString("nick");
+                occupation = jsonObject.getString("occupation");
+                constellation = jsonObject.getString("constellation");
+
 
                 JSONObject battle_talent = jsonObject.getJSONObject("battle_talent");
                 normal_name = battle_talent.getString("normal_name");
@@ -444,6 +449,7 @@ public class Characters_Info_2048 {
     public void setup (String CharName_BASE, Context context,Activity activity){
         sharedPreferences = context.getSharedPreferences("user_info",Context.MODE_PRIVATE);
         this.CharName_BASE = CharName_BASE.replace(" ","_");
+        this.name = CharName_BASE;
         this.context = context;
         this.activity = activity;
         item_rss = new ItemRss();
@@ -520,9 +526,11 @@ public class Characters_Info_2048 {
         TextView char_area = charDescPage.findViewById(R.id.info_area_tv);
         ImageView char_area_ico = charDescPage.findViewById(R.id.info_area_ico);
         ImageView char_weapon = charDescPage.findViewById(R.id.info_weapon);
-        TextView char_role = charDescPage.findViewById(R.id.info_role);
+        //TextView char_role = charDescPage.findViewById(R.id.info_role);
         //TextView char_sex = view.findViewById(R.id.info_sex);
         TextView char_birth = charDescPage.findViewById(R.id.info_date);
+        TextView char_occupation = charDescPage.findViewById(R.id.info_occupation);
+        TextView char_constellation = charDescPage.findViewById(R.id.info_constellation);
 
         /** Method of introduce */
         //TextView info_intro = view.findViewById(R.id.info_intro);
@@ -1322,7 +1330,6 @@ public class Characters_Info_2048 {
         char_name.setText(item_rss.getCharByName(name,context)[1]);
         char_title.setText(nick);
 
-
         if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
             ImageView char_imgL = view.findViewById(R.id.info_char_img);
             /**
@@ -1355,8 +1362,10 @@ public class Characters_Info_2048 {
         char_area.setText(item_rss.getLocaleName(area,context));
         char_area_ico.setImageResource(item_rss.getDistrictIMG(area));
         char_weapon.setImageResource(item_rss.getWeaponTypeIMG(weapon,context));
-        char_role.setText(item_rss.getLocaleName(role,context));
+        //char_role.setText(item_rss.getLocaleName(role,context));
         //char_sex.setText(item_rss.getLocaleName(sex,context));
+        char_occupation.setText(occupation);
+        char_constellation.setText(constellation);
         char_birth.setText(item_rss.getLocaleBirth(birth,context,false)); // -> If necessary will change to Month | Day -> E.g. July 24th
         //info_intro.setText(desc);
 

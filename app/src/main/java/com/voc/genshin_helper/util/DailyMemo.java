@@ -599,7 +599,7 @@ public class DailyMemo {
 
     public void setting(){
         Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
-        View view = View.inflate(context, R.layout.fragment_memo_setting, null);
+        View view = View.inflate(context, R.layout.fragment_memo_setting_new, null);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 

@@ -135,6 +135,7 @@
     <color name="memo_card_bg">#ECE5D8</color>
     <color name="memo_card_sub_title">#A79777</color>
     <color name="memo_card_ext_bg">#E4D8C1</color>
+    <color name="memo_card_inner_item">#CC667289</color>
 
     <color name="rand_theme_bg_color">#FFFFFFFF</color>
     <color name="rand_theme_title_color">#FF667289</color>

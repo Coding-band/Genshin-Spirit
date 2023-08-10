@@ -595,6 +595,21 @@ public class ItemRss {
 
     public int[] getWeaponByName(String str) {
         switch (str){
+            //Add in 4.0.0
+            case "Wolf-Fang" : return new int[] {R.string.wolf_fang,R.drawable.wolf_fang};
+            case "Finale of the Deep" : return new int[] {R.string.finale_of_the_deep,R.drawable.finale_of_the_deep};
+            case "Crossing of Fleuve Cendre" : return new int[] {R.string.crossing_of_fleuve_cendre,R.drawable.crossing_of_fleuve_cendre};
+            case "Talking Stick" : return new int[] {R.string.talking_stick,R.drawable.talking_stick};
+            case "Tidal Shadow" : return new int[] {R.string.tidal_shadow,R.drawable.tidal_shadow};
+            case "Ballad of the Fjords" : return new int[] {R.string.ballad_of_the_fjords,R.drawable.ballad_of_the_fjords};
+            case "Rightful Reward" : return new int[] {R.string.rightful_reward,R.drawable.rightful_reward};
+            case "Sacrificial Jade" : return new int[] {R.string.sacrificial_jade,R.drawable.sacrificial_jade};
+            case "Flowing Purity" : return new int[] {R.string.flowing_purity,R.drawable.flowing_purity};
+            case "Scion of the Blazing Sun" : return new int[] {R.string.scion_of_the_blazing_sun,R.drawable.scion_of_the_blazing_sun};
+            case "Song of Stillness" : return new int[] {R.string.song_of_stillness,R.drawable.song_of_stillness};
+            case "The First Great Magic" : return new int[] {R.string.the_first_great_magic,R.drawable.the_first_great_magic};
+
+
             case "Amenoma Kageuchi" : return new int[] {R.string.amenoma_kageuchi,R.drawable.amenoma_kageuchi};
             case "Aquila Favonia" : return new int[] {R.string.aquila_favonia,R.drawable.aquila_favonia};
             case "Blackcliff Longsword" : return new int[] {R.string.blackcliff_longsword,R.drawable.blackcliff_longsword};
@@ -949,7 +964,19 @@ public class ItemRss {
             case "Beacon of the Reed Sea" : return new int[] {R.string.beacon_of_the_reed_sea,R.drawable.beacon_of_the_reed_sea_gacha};
             //add in 20230416
             case "Jadefall's Splendor" : return new int[] {R.string.jadefalls_splendor,R.drawable.jadefalls_splendor_gacha};
-
+            //add in 20230810 - 4.0.0
+            case "Wolf-Fang" : return new int[] {R.string.wolf_fang,R.drawable.wolf_fang_gacha};
+            case "Finale of the Deep" : return new int[] {R.string.finale_of_the_deep,R.drawable.finale_of_the_deep_gacha};
+            case "Crossing of Fleuve Cendre" : return new int[] {R.string.crossing_of_fleuve_cendre,R.drawable.crossing_of_fleuve_cendre_gacha};
+            case "Talking Stick" : return new int[] {R.string.talking_stick,R.drawable.talking_stick_gacha};
+            case "Tidal Shadow" : return new int[] {R.string.tidal_shadow,R.drawable.tidal_shadow_gacha};
+            case "Ballad of the Fjords" : return new int[] {R.string.ballad_of_the_fjords,R.drawable.ballad_of_the_fjords_gacha};
+            case "Rightful Reward" : return new int[] {R.string.rightful_reward,R.drawable.rightful_reward_gacha};
+            case "Sacrificial Jade" : return new int[] {R.string.sacrificial_jade,R.drawable.sacrificial_jade_gacha};
+            case "Flowing Purity" : return new int[] {R.string.flowing_purity,R.drawable.flowing_purity_gacha};
+            case "Scion of the Blazing Sun" : return new int[] {R.string.scion_of_the_blazing_sun,R.drawable.scion_of_the_blazing_sun_gacha};
+            case "Song of Stillness" : return new int[] {R.string.song_of_stillness,R.drawable.song_of_stillness_gacha};
+            case "The First Great Magic" : return new int[] {R.string.the_first_great_magic,R.drawable.the_first_great_magic_gacha};
 
             default :
                 System.out.println("WEAPON+ NAME ERROR : "+str);
@@ -1133,6 +1160,19 @@ public class ItemRss {
             case "beacon_of_the_reed_sea" : return "Beacon of the Reed Sea";
             //add in 20230416
             case "jadefalls_splendor" : return "Jadefall's Splendor";
+            //add in 20230810 - 4.0.0
+            case "wolf_fang" : return "Wolf-Fang";
+            case "finale_of_the_deep" : return "Finale of the Deep";
+            case "crossing_of_fleuve_cendre" : return "Crossing of Fleuve Cendre";
+            case "talking_stick" : return "Talking Stick";
+            case "tidal_shadow" : return "Tidal Shadow";
+            case "ballad_of_the_fjords" : return "Ballad of the Fjords";
+            case "rightful_reward" : return "Rightful Reward";
+            case "sacrificial_jade" : return "Sacrificial Jade";
+            case "flowing_purity" : return "Flowing Purity";
+            case "scion_of_the_blazing_sun" : return "Scion of the Blazing Sun";
+            case "song_of_stillness" : return "Song of Stillness";
+            case "the_first_great_magic" : return "The First Great Magic";
 
             default: return str;
         }
@@ -1189,6 +1229,9 @@ public class ItemRss {
             // add in 20230416
             case "Nymph's Dream" : return new int[] {R.string.nymphs_dream,R.drawable.nymphs_dream_1,R.drawable.nymphs_dream_2,R.drawable.nymphs_dream_3,R.drawable.nymphs_dream_4,R.drawable.nymphs_dream_5};
             case "Vourukasha's Glow" : return new int[] {R.string.vourukashas_glow,R.drawable.vourukashas_glow_1,R.drawable.vourukashas_glow_2,R.drawable.vourukashas_glow_3,R.drawable.vourukashas_glow_4,R.drawable.vourukashas_glow_5};
+            // add in 20230810 - 4.0.0
+            //case "Marechaussee Hunter" : return new int[] {R.string.nymphs_dream,R.drawable.nymphs_dream_1,R.drawable.nymphs_dream_2,R.drawable.nymphs_dream_3,R.drawable.nymphs_dream_4,R.drawable.nymphs_dream_5};
+            //case "Golden Troupe" : return new int[] {R.string.vourukashas_glow,R.drawable.vourukashas_glow_1,R.drawable.vourukashas_glow_2,R.drawable.vourukashas_glow_3,R.drawable.vourukashas_glow_4,R.drawable.vourukashas_glow_5};
 
             default:
                 String upcoming = str.toLowerCase().replace(" ","_");
@@ -1697,6 +1740,10 @@ public class ItemRss {
 
     public int[] getCharByName_BASE(String name, Context context){
         switch (name) {
+            case "Lynette": return new int[]{R.drawable.lynette_full, R.string.lynette, R.drawable.lynette_gacha_splash, R.drawable.lynette_ico, R.drawable.lynette_card};
+            case "Lyney": return new int[]{R.drawable.lyney_full, R.string.lyney, R.drawable.lyney_gacha_splash, R.drawable.lyney_ico, R.drawable.lyney_card};
+            case "Freminet": return new int[]{R.drawable.freminet_full, R.string.freminet, R.drawable.freminet_gacha_splash, R.drawable.freminet_ico, R.drawable.freminet_card};
+
             case "Kirara": return new int[]{R.drawable.kirara_full, R.string.kirara, R.drawable.kirara_gacha_splash, R.drawable.kirara_ico, R.drawable.kirara_card};
 
             case "Baizhu": return new int[]{R.drawable.baizhu_full, R.string.baizhu, R.drawable.baizhu_gacha_splash, R.drawable.baizhu_ico, R.drawable.baizhu_card};

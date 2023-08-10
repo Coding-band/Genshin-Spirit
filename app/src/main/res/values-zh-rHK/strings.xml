@@ -1394,6 +1394,13 @@
     <string name="event_list_available">{%1}個活動進行中</string>
     <string name="event_list_day">天</string>
     <string name="event_list_title">活動列表</string>
+    <string name="dailymemo_setting_login_title">登入方式</string>
+    <string name="dailymemo_setting_login_hoyoverse">Hoyoverse 帳戶</string>
+    <string name="dailymemo_setting_login_third_party">第三方登入</string>
+    <string name="dailymemo_setting_hoyoverse_token">開啟官方登入頁面</string>
+    <string name="dailymemo_setting_confirm">確認</string>
+    <string name="char_occupation">職稱</string>
+    <string name="char_constellation">命之座</string>
 
 
 </resources>

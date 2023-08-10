@@ -1,6 +1,21 @@
 [
+  {"name":"Wolf-Fang","rare":4,"weapon":"Sword","isComing":0,"stat_1":"CritRate%"},
+  {"name":"Finale of the Deep","rare":4,"weapon":"Sword","isComing":0,"stat_1":"ATK%"},
+  {"name":"Crossing of Fleuve Cendre","rare":4,"weapon":"Sword","isComing":0,"stat_1":"EnRech%"},
+  {"name":"Talking Stick","rare":4,"weapon":"Claymore","isComing":0,"stat_1":"CritRate%"},
+  {"name":"Tidal Shadow","rare":4,"weapon":"Claymore","isComing":0,"stat_1":"ATK%"},
+  {"name":"Ballad of the Fjords","rare":4,"weapon":"Polearm","isComing":0,"stat_1":"CritRate%"},
+  {"name":"Rightful Reward","rare":4,"weapon":"Polearm","isComing":0,"stat_1":"HP%"},
+  {"name":"Sacrificial Jade","rare":4,"weapon":"Polearm","isComing":0,"stat_1":"CritRate%"},
+  {"name":"Flowing Purity","rare":4,"weapon":"Catalyst","isComing":0,"stat_1":"ATK%"},
+  {"name":"Scion of the Blazing Sun","rare":4,"weapon":"Bow","isComing":0,"stat_1":"CritRate%"},
+  {"name":"Song of Stillness","rare":4,"weapon":"Bow","isComing":0,"stat_1":"ATK%"},
+  {"name":"The First Great Magic","rare":5,"weapon":"Bow","isComing":0,"stat_1":"CritDMG%"},
+
+  {"name":"Ibis Piercer","rare":5,"weapon":"Bow","isComing":0,"stat_1":"ATK%"},
+
   {"name":"Jadefall's Splendor","rare":5,"weapon":"Catalyst","isComing":0,"stat_1":"HP%"},
-  
+
   {"name":"Beacon of the Reed Sea","rare":5,"weapon":"Claymore","isComing":0,"stat_1":"CritRate%"},
   {"name":"Mailed Flower","rare":4,"weapon":"Claymore","isComing":0,"stat_1":"EleMas"},
   

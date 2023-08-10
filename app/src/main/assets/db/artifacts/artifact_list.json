@@ -1,4 +1,7 @@
 [
+  {"name":"Marechaussee Hunter","rare":5,"img":"marechausseehunter","isComing":0},
+  {"name":"Golden Troupe","rare":5,"img":"goldentroupe","isComing":0},
+
   {"name":"Vourukasha's Glow","rare":5,"img":"vourukashasglow","isComing":0},
   {"name":"Nymph's Dream","rare":5,"img":"nymphsdream","isComing":0},
   {"name":"Desert Pavilion Chronicle","rare":5,"img":"desertpavilionchronicle","isComing":0},

@@ -1456,6 +1456,30 @@
     <string name="event_list_available">{%1} Event(s) Available</string>
     <string name="event_list_day">Day(s)</string>
     <string name="event_list_title">Event List</string>
+    <string name="dailymemo_setting_login_title">Login via...</string>
+    <string name="dailymemo_setting_login_hoyoverse">Hoyoverse Account</string>
+    <string name="dailymemo_setting_login_third_party">Third-Part Login</string>
+    <string name="dailymemo_setting_hoyoverse_token">Open to Offical Login Page</string>
+    <string name="dailymemo_setting_confirm">Confirm</string>
+    <string name="char_occupation">Occupation</string>
+    <string name="char_constellation">Constellation</string>
+    <string name="lynette">Lynette</string>
+    <string name="lyney">Lyney</string>
+    <string name="freminet">Freminet</string>
+    <string name="wolf_fang">"Wolf-Fang"</string>
+    <string name="finale_of_the_deep">"Finale of the Deep"</string>
+    <string name="crossing_of_fleuve_cendre">"Crossing of Fleuve Cendre"</string>
+    <string name="talking_stick">"Talking Stick"</string>
+    <string name="tidal_shadow">"Tidal Shadow"</string>
+    <string name="ballad_of_the_fjords">"Ballad of the Fjords"</string>
+    <string name="rightful_reward">"Rightful Reward"</string>
+    <string name="sacrificial_jade">"Sacrificial Jade"</string>
+    <string name="flowing_purity">"Flowing Purity"</string>
+    <string name="scion_of_the_blazing_sun">"Scion of the Blazing Sun"</string>
+    <string name="song_of_stillness">"Song of Stillness"</string>
+    <string name="the_first_great_magic">"The First Great Magic"</string>
+
+
 
 
 </resources>

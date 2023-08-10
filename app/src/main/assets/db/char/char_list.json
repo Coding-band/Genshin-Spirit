@@ -1,7 +1,7 @@
 [
-{"name":"Lynette","element":"Anemo","rare":0,"weapon":"N/A","isComing":1,"nation":"Inazuma","sex":"Male","mainStat":"N/A","role":"Support_DPS"},
-{"name":"Lyney","element":"Pyro","rare":0,"weapon":"N/A","isComing":1,"nation":"Fontaine","sex":"Female","mainStat":"N/A","role":"Support_DPS"},
-{"name":"Freminet","element":"Cryo","rare":0,"weapon":"N/A","isComing":1,"nation":"Fontaine","sex":"Female","mainStat":"N/A","role":"Support_DPS"},
+{"name":"Lynette","element":"Anemo","rare":4,"weapon":"Sword","isComing":0,"nation":"Fontaine","sex":"Male","mainStat":"N/A","role":"Support_DPS"},
+{"name":"Lyney","element":"Pyro","rare":5,"weapon":"Bow","isComing":0,"nation":"Fontaine","sex":"Female","mainStat":"N/A","role":"Support_DPS"},
+{"name":"Freminet","element":"Cryo","rare":4,"weapon":"Claymore","isComing":0,"nation":"Fontaine","sex":"Female","mainStat":"N/A","role":"Support_DPS"},
 
 {"name":"Kirara","element":"Dendro","rare":4,"weapon":"Sword","isComing":0,"nation":"Inazuma","sex":"Female","mainStat":"HP","role":"Support_DPS"},
 
@@ -78,10 +78,11 @@
 {"name":"Beidou","element":"Electro","rare":4,"weapon":"Claymore","isComing":0,"nation":"Liyue","sex":"Female","mainStat":"EleDMG_Geo","role":"Support_DPS"},
 {"name":"Barbara","element":"Hydro","rare":4,"weapon":"Catalyst","isComing":0,"nation":"Mondstadt","sex":"Female","mainStat":"HP","role":"Support_DPS"},
 {"name":"Amber","element":"Pyro","rare":4,"weapon":"Bow","isComing":0,"nation":"Mondstadt","sex":"Female","mainStat":"ATK","role":"Support_DPS"},
-{"name":"Traveler-Anemo","element":"Anemo","rare":5,"weapon":"Sword","isComing":0,"nation":"Another World","sex":"SET_BY_USER","mainStat":"ATK","role":"Utility"},
-{"name":"Traveler-Electro","element":"Electro","rare":5,"weapon":"Sword","isComing":0,"nation":"Another World","sex":"SET_BY_USER","mainStat":"ATK","role":"Utility"},
-{"name":"Traveler-Geo","element":"Geo","rare":5,"weapon":"Sword","isComing":0,"nation":"Another World","sex":"SET_BY_USER","mainStat":"ATK","role":"Utility"},
-{"name":"Traveler-Dendro","element":"Dendro","rare":5,"weapon":"Sword","isComing":0,"nation":"Another World","sex":"SET_BY_USER","mainStat":"ATK","role":"Utility"},
+{"name":"Traveler-Anemo","element":"Anemo","rare":5,"weapon":"Sword","isComing":1,"nation":"Another World","sex":"SET_BY_USER","mainStat":"ATK","role":"Utility"},
+{"name":"Traveler-Electro","element":"Electro","rare":5,"weapon":"Sword","isComing":1,"nation":"Another World","sex":"SET_BY_USER","mainStat":"ATK","role":"Utility"},
+{"name":"Traveler-Geo","element":"Geo","rare":5,"weapon":"Sword","isComing":1,"nation":"Another World","sex":"SET_BY_USER","mainStat":"ATK","role":"Utility"},
+{"name":"Traveler-Dendro","element":"Dendro","rare":5,"weapon":"Sword","isComing":1,"nation":"Another World","sex":"SET_BY_USER","mainStat":"ATK","role":"Utility"},
+{"name":"Traveler-Hydro","element":"Hydro","rare":5,"weapon":"Sword","isComing":1,"nation":"Another World","sex":"SET_BY_USER","mainStat":"ATK","role":"Utility"},
 
 {"name":"Voc-夜芷冰","element":"Pyro","rare":0,"weapon":"N/A","isComing":1,"nation":"Another World","sex":"Female","mainStat":"N/A","role":"Utility"},
 {"name":"朝霧冰瀬","element":"Electro","rare":0,"weapon":"N/A","isComing":1,"nation":"Another World","sex":"Female","mainStat":"N/A","role":"Utility"}
