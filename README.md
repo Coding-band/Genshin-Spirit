@@ -48,7 +48,7 @@
 | Android Version | 8.0 (API 26) or above | 10.0 (API 29) or above |
 | RAM             | 2GB                   | 4GB or above           |
 | Storage         | 300MB                 | 1GB or above           |
-| App Version     | Hmm…                  | Laterest !             |
+| App Version     | Hmm…                  | Latest !             |
 
 ## Feature
 <table>
