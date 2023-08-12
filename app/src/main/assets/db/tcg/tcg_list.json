@@ -1,12 +1,13 @@
 [
+
     {"name" : "Eula","fileName" : "eula", "type" : "CHAR", "subType" : "蒙德",  "HP" : 10, "recharge" : 3 , "diceCost" : -1, "diceType" : "Cryo"},
     {"name" : "Sangonomiya Kokomi","fileName" : "sangonomiya_kokomi", "type" : "CHAR", "subType" : "稻妻",  "HP" : 10, "recharge" : 2 , "diceCost" : -1, "diceType" : "Hydro"},
     {"name" : "Kujou Sara","fileName" : "kujou_sara", "type" : "CHAR", "subType" : "稻妻", "HP" : 10, "recharge" : 2 , "diceCost" : -1, "diceType" : "Electro"},
     {"name" : "Wellspring of War-Lust","fileName" : "wellspring_of_war_lust", "type" : "EQUIP", "subType" : "天賦", "HP" : -1, "recharge" : -1 , "diceCost" : 3, "diceType" : "Cryo"},
     {"name" : "Tamanooya's Casket","fileName" : "tamanooyas_casket", "type" : "EQUIP", "subType" : "天賦",  "HP" : -1, "recharge" : -1 , "diceCost" : 3, "diceType" : "Hydro"},
     {"name" : "Sin of Pride","fileName" : "sin_of_pride", "type" : "EQUIP", "subType" : "天賦",  "HP" : -1, "recharge" : -1 , "diceCost" : 4, "diceType" : "Electro"},
-    {"name" : "Ornate Kabuto","fileName" : "ornate_kabuto", "type" : "EQUIP", "subType" : "聖遺物", "HP" : -1, "recharge" : 2 , "diceCost" : 2, "diceType" : "SPEC"},
-    {"name" : "General’s Ancient Helm","fileName" : "generals_ancient_helm", "type" : "EQUIP", "subType" : "聖遺物", "HP" : -1, "recharge" : 2 , "diceCost" : 2, "diceType" : "SPEC"},
+    {"name" : "Ornate Kabuto","fileName" : "ornate_kabuto", "type" : "EQUIP", "subType" : "聖遺物", "HP" : -1, "recharge" : -1 , "diceCost" : 2, "diceType" : "SPEC"},
+    {"name" : "General's Ancient Helm","fileName" : "generals_ancient_helm", "type" : "EQUIP", "subType" : "聖遺物", "HP" : -1, "recharge" : -1 , "diceCost" : 2, "diceType" : "SPEC"},
     {"name" : "Lazurite Swirl","fileName" : "lazurite_swirl", "type" : "BACKSIDE", "subType" : "卡背", "HP" : -1, "recharge" : -1 , "diceCost" : -1, "diceType" : "N/A"},
 	
     {"name" : "Klee","fileName" : "klee", "type" : "CHAR", "subType" : "蒙德",  "HP" : 10, "recharge" : 3 , "diceCost" : -1, "diceType" : "Pyro"},

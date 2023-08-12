@@ -1230,8 +1230,8 @@ public class ItemRss {
             case "Nymph's Dream" : return new int[] {R.string.nymphs_dream,R.drawable.nymphs_dream_1,R.drawable.nymphs_dream_2,R.drawable.nymphs_dream_3,R.drawable.nymphs_dream_4,R.drawable.nymphs_dream_5};
             case "Vourukasha's Glow" : return new int[] {R.string.vourukashas_glow,R.drawable.vourukashas_glow_1,R.drawable.vourukashas_glow_2,R.drawable.vourukashas_glow_3,R.drawable.vourukashas_glow_4,R.drawable.vourukashas_glow_5};
             // add in 20230810 - 4.0.0
-            //case "Marechaussee Hunter" : return new int[] {R.string.nymphs_dream,R.drawable.nymphs_dream_1,R.drawable.nymphs_dream_2,R.drawable.nymphs_dream_3,R.drawable.nymphs_dream_4,R.drawable.nymphs_dream_5};
-            //case "Golden Troupe" : return new int[] {R.string.vourukashas_glow,R.drawable.vourukashas_glow_1,R.drawable.vourukashas_glow_2,R.drawable.vourukashas_glow_3,R.drawable.vourukashas_glow_4,R.drawable.vourukashas_glow_5};
+            case "Marechaussee Hunter" : return new int[] {R.string.marechaussee_hunter,R.drawable.marechaussee_hunter_1,R.drawable.marechaussee_hunter_2,R.drawable.marechaussee_hunter_3,R.drawable.marechaussee_hunter_4,R.drawable.marechaussee_hunter_5};
+            case "Golden Troupe" : return new int[] {R.string.golden_troupe,R.drawable.golden_troupe_1,R.drawable.golden_troupe_2,R.drawable.golden_troupe_3,R.drawable.golden_troupe_4,R.drawable.golden_troupe_5};
 
             default:
                 String upcoming = str.toLowerCase().replace(" ","_");
@@ -1292,8 +1292,11 @@ public class ItemRss {
             // add in 20230416
             case "nymphs_dream" : return "Nymph's Dream";
             case "vourukashas_glow" : return "Vourukasha's Glow";
+            // add in 20230810
+            case "marechaussee_hunter" : return "Marechaussee Hunter";
+            case "golden_troupe" : return "Golden Troupe";
 
-            default: return  str;
+            default: return str;
         }
     }
 
@@ -1518,7 +1521,7 @@ public class ItemRss {
             case "Sin of Pride" : return new int[]{R.drawable.tcg_sin_of_pride, R.string.tcg_sin_of_pride};
             case "Ornate Kabuto" : return new int[]{R.drawable.tcg_ornate_kabuto, R.string.tcg_ornate_kabuto};
             case "General's Ancient Helm" : return new int[]{R.drawable.tcg_generals_ancient_helm, R.string.tcg_generals_ancient_helm};
-            //add in 20230416
+            //add in 20230416 3.6.0
             case "Kamisato Ayato" : return new int[]{R.drawable.tcg_kamisato_ayato, R.string.tcg_kamisato_ayato};
             case "Arataki Itto" : return new int[]{R.drawable.tcg_arataki_itto, R.string.tcg_arataki_itto};
             case "Tighnari" : return new int[]{R.drawable.tcg_tighnari, R.string.tcg_tighnari};
@@ -1527,6 +1530,99 @@ public class ItemRss {
             case "Arataki Ichiban" : return new int[]{R.drawable.tcg_arataki_ichiban, R.string.tcg_arataki_ichiban};
             case "Favonius Sword" : return new int[]{R.drawable.tcg_favonius_sword, R.string.tcg_favonius_sword};
             case "Grand Narukami Shrine" : return new int[]{R.drawable.tcg_grand_narukami_shrine, R.string.tcg_grand_narukami_shrine};
+            //add in 20230811 - 3.7.0 ~ 4.0.0
+            case "Amber" : return new int[]{R.drawable.tcg_amber, R.string.tcg_amber};
+            case "Tartaglia" : return new int[]{R.drawable.tcg_tartaglia, R.string.tcg_tartaglia};
+            case "Hu Tao" : return new int[]{R.drawable.tcg_hu_tao, R.string.tcg_hu_tao};
+            case "Raiden Shogun" : return new int[]{R.drawable.tcg_raiden_shogun, R.string.tcg_raiden_shogun};
+            case "Yae Miko" : return new int[]{R.drawable.tcg_yae_miko, R.string.tcg_yae_miko};
+            case "Venti" : return new int[]{R.drawable.tcg_venti, R.string.tcg_venti};
+            case "Xiao" : return new int[]{R.drawable.tcg_xiao, R.string.tcg_xiao};
+            case "Zhongli" : return new int[]{R.drawable.tcg_zhongli, R.string.tcg_zhongli};
+            case "Nahida" : return new int[]{R.drawable.tcg_nahida, R.string.tcg_nahida};
+            case "Fatui Cryo Cicin Mage" : return new int[]{R.drawable.tcg_fatui_cryo_cicin_mage, R.string.tcg_fatui_cryo_cicin_mage};
+            case "Abyss Lector: Fathomless Flames" : return new int[]{R.drawable.tcg_abyss_lector_fathomless_flames, R.string.tcg_abyss_lector_fathomless_flames};
+            case "Electro Hypostasis" : return new int[]{R.drawable.tcg_electro_hypostasis, R.string.tcg_electro_hypostasis};
+            case "Shenhe" : return new int[]{R.drawable.tcg_shenhe, R.string.tcg_shenhe};
+            case "Bunny Triggered" : return new int[]{R.drawable.tcg_bunny_triggered, R.string.tcg_bunny_triggered};
+            case "Embrace of Winds" : return new int[]{R.drawable.tcg_embrace_of_winds, R.string.tcg_embrace_of_winds};
+            case "Conqueror of Evil: Guardian Yaksha" : return new int[]{R.drawable.tcg_conqueror_of_evil_guardian_yaksha, R.string.tcg_conqueror_of_evil_guardian_yaksha};
+            case "Dominance of Earth" : return new int[]{R.drawable.tcg_dominance_of_earth, R.string.tcg_dominance_of_earth};
+            case "Absorbing Prism" : return new int[]{R.drawable.tcg_absorbing_prism, R.string.tcg_absorbing_prism};
+            case "Mystical Abandon" : return new int[]{R.drawable.tcg_mystical_abandon, R.string.tcg_mystical_abandon};
+            case "Abyssal Mayhem: Hydrospout" : return new int[]{R.drawable.tcg_abyssal_mayhem_hydrospout, R.string.tcg_abyssal_mayhem_hydrospout};
+            case "Sanguine Rouge" : return new int[]{R.drawable.tcg_sanguine_rouge, R.string.tcg_sanguine_rouge};
+            case "Wishes Unnumbered" : return new int[]{R.drawable.tcg_wishes_unnumbered, R.string.tcg_wishes_unnumbered};
+            case "The Shrine's Sacred Shade" : return new int[]{R.drawable.tcg_the_shrines_sacred_shade, R.string.tcg_the_shrines_sacred_shade};
+            case "The Seed of Stored Knowledge" : return new int[]{R.drawable.tcg_the_seed_of_stored_knowledge, R.string.tcg_the_seed_of_stored_knowledge};
+            case "Cicin's Cold Glare" : return new int[]{R.drawable.tcg_cicins_cold_glare, R.string.tcg_cicins_cold_glare};
+            case "Embers Rekindled" : return new int[]{R.drawable.tcg_embers_rekindled, R.string.tcg_embers_rekindled};
+            case "Amos' Bow" : return new int[]{R.drawable.tcg_amos_bow, R.string.tcg_amos_bow};
+            case "A Thousand Floating Dreams" : return new int[]{R.drawable.tcg_a_thousand_floating_dreams, R.string.tcg_a_thousand_floating_dreams};
+            case "Elegy for the End" : return new int[]{R.drawable.tcg_elegy_for_the_end, R.string.tcg_elegy_for_the_end};
+            case "Skyward Pride" : return new int[]{R.drawable.tcg_skyward_pride, R.string.tcg_skyward_pride};
+            case "The Bell" : return new int[]{R.drawable.tcg_the_bell, R.string.tcg_the_bell};
+            case "Vortex Vanquisher" : return new int[]{R.drawable.tcg_vortex_vanquisher, R.string.tcg_vortex_vanquisher};
+            case "Engulfing Lightning" : return new int[]{R.drawable.tcg_engulfing_lightning, R.string.tcg_engulfing_lightning};
+            case "Skyward Blade" : return new int[]{R.drawable.tcg_skyward_blade, R.string.tcg_skyward_blade};
+            case "Emblem of Severed Fate" : return new int[]{R.drawable.tcg_emblem_of_severed_fate, R.string.tcg_emblem_of_severed_fate};
+            case "Tenacity of the Millelith" : return new int[]{R.drawable.tcg_tenacity_of_the_millelith, R.string.tcg_tenacity_of_the_millelith};
+            case "Thundering Poise" : return new int[]{R.drawable.tcg_thundering_poise, R.string.tcg_thundering_poise};
+            case "Vermillion Hereafter" : return new int[]{R.drawable.tcg_vermillion_hereafter, R.string.tcg_vermillion_hereafter};
+            case "Capricious Visage" : return new int[]{R.drawable.tcg_capricious_visage, R.string.tcg_capricious_visage};
+            case "Shimenawa's Reminiscence" : return new int[]{R.drawable.tcg_shimenawas_reminiscence, R.string.tcg_shimenawas_reminiscence};
+            case "Tenshukaku" : return new int[]{R.drawable.tcg_tenshukaku, R.string.tcg_tenshukaku};
+            case "Sangonomiya Shrine" : return new int[]{R.drawable.tcg_sangonomiya_shrine, R.string.tcg_sangonomiya_shrine};
+            case "Sumeru City" : return new int[]{R.drawable.tcg_sumeru_city, R.string.tcg_sumeru_city};
+            case "Vanarana" : return new int[]{R.drawable.tcg_vanarana, R.string.tcg_vanarana};
+            case "Chinju Forest" : return new int[]{R.drawable.tcg_chinju_forest, R.string.tcg_chinju_forest};
+            case "Hanachirusato" : return new int[]{R.drawable.tcg_hanachirusato, R.string.tcg_hanachirusato};
+            case "Kid Kujirai" : return new int[]{R.drawable.tcg_kid_kujirai, R.string.tcg_kid_kujirai};
+            case "Xudong" : return new int[]{R.drawable.tcg_xudong, R.string.tcg_xudong};
+            case "Dunyarzad" : return new int[]{R.drawable.tcg_dunyarzad, R.string.tcg_dunyarzad};
+            case "Rana" : return new int[]{R.drawable.tcg_rana, R.string.tcg_rana};
+            case "Red Feather Fan" : return new int[]{R.drawable.tcg_red_feather_fan, R.string.tcg_red_feather_fan};
+            case "Treasure-Seeking Seelie" : return new int[]{R.drawable.tcg_treasure_seeking_seelie, R.string.tcg_treasure_seeking_seelie};
+            case "Wind and Freedom" : return new int[]{R.drawable.tcg_wind_and_freedom, R.string.tcg_wind_and_freedom};
+            case "Stone and Contracts" : return new int[]{R.drawable.tcg_stone_and_contracts, R.string.tcg_stone_and_contracts};
+            case "Thunder and Eternity" : return new int[]{R.drawable.tcg_thunder_and_eternity, R.string.tcg_thunder_and_eternity};
+            case "Nature and Wisdom" : return new int[]{R.drawable.tcg_nature_and_wisdom, R.string.tcg_nature_and_wisdom};
+            case "Fatui Conspiracy" : return new int[]{R.drawable.tcg_fatui_conspiracy, R.string.tcg_fatui_conspiracy};
+            case "Plunging Strike" : return new int[]{R.drawable.tcg_plunging_strike, R.string.tcg_plunging_strike};
+            case "Heavy Strike" : return new int[]{R.drawable.tcg_heavy_strike, R.string.tcg_heavy_strike};
+            case "The Legend of Vennessa" : return new int[]{R.drawable.tcg_the_legend_of_vennessa, R.string.tcg_the_legend_of_vennessa};
+            case "Friendship Eternal" : return new int[]{R.drawable.tcg_friendship_eternal, R.string.tcg_friendship_eternal};
+            case "Teyvat Fried Egg" : return new int[]{R.drawable.tcg_teyvat_fried_egg, R.string.tcg_teyvat_fried_egg};
+            case "Sashimi Platter" : return new int[]{R.drawable.tcg_sashimi_platter, R.string.tcg_sashimi_platter};
+            case "Tandoori Roast Chicken" : return new int[]{R.drawable.tcg_tandoori_roast_chicken, R.string.tcg_tandoori_roast_chicken};
+            case "Butter Crab" : return new int[]{R.drawable.tcg_butter_crab, R.string.tcg_butter_crab};
+            case "Treasures of the Deck" : return new int[]{R.drawable.tcg_treasures_of_the_deck, R.string.tcg_treasures_of_the_deck};
+
+            case "Candace" : return new int[]{R.drawable.tcg_candace, R.string.tcg_candace};
+            case "Yanfei" : return new int[]{R.drawable.tcg_yanfei, R.string.tcg_yanfei};
+            case "Kaedehara Kazuha" : return new int[]{R.drawable.tcg_kaedehara_kazuha, R.string.tcg_kaedehara_kazuha};
+            case "The Overflow" : return new int[]{R.drawable.tcg_the_overflow, R.string.tcg_the_overflow};
+            case "Right of Final Interpretation" : return new int[]{R.drawable.tcg_right_of_final_interpretation, R.string.tcg_right_of_final_interpretation};
+            case "Poetics of Fuubutsu" : return new int[]{R.drawable.tcg_poetics_of_fuubutsu, R.string.tcg_poetics_of_fuubutsu};
+            case "Fruit of Fulfillment" : return new int[]{R.drawable.tcg_fruit_of_fulfillment, R.string.tcg_fruit_of_fulfillment};
+            case "Master Zhang" : return new int[]{R.drawable.tcg_master_zhang, R.string.tcg_master_zhang};
+            case "Ancient Courtyard" : return new int[]{R.drawable.tcg_ancient_courtyard, R.string.tcg_ancient_courtyard};
+            case "Covenant of Rock" : return new int[]{R.drawable.tcg_covenant_of_rock, R.string.tcg_covenant_of_rock};
+            case "Rhythm of the Great Dream" : return new int[]{R.drawable.tcg_rhythm_of_the_great_dream, R.string.tcg_rhythm_of_the_great_dream};
+
+            case "Albedo" : return new int[]{R.drawable.tcg_albedo, R.string.tcg_albedo};
+            case "Qiqi" : return new int[]{R.drawable.tcg_qiqi, R.string.tcg_qiqi};
+            case "Lisa" : return new int[]{R.drawable.tcg_lisa, R.string.tcg_lisa};
+            case "Descent of Divinity" : return new int[]{R.drawable.tcg_descent_of_divinity, R.string.tcg_descent_of_divinity};
+            case "Rite of Resurrection" : return new int[]{R.drawable.tcg_rite_of_resurrection, R.string.tcg_rite_of_resurrection};
+            case "Pulsating Witch" : return new int[]{R.drawable.tcg_pulsating_witch, R.string.tcg_pulsating_witch};
+            case "King's Squire" : return new int[]{R.drawable.tcg_kings_squire, R.string.tcg_kings_squire};
+            case "Golden House" : return new int[]{R.drawable.tcg_golden_house, R.string.tcg_golden_house};
+            case "Setaria" : return new int[]{R.drawable.tcg_setaria, R.string.tcg_setaria};
+            case "Joyous Celebration" : return new int[]{R.drawable.tcg_joyous_celebration, R.string.tcg_joyous_celebration};
+            case "Where Is the Unseen Razor?" : return new int[]{R.drawable.tcg_where_is_the_unseen_razor, R.string.tcg_where_is_the_unseen_razor};
+            case "Fontaine" : return new int[]{R.drawable.tcg_fontaine, R.string.tcg_fontaine};
+
 
 
             default: return new int[]{R.drawable.hu_tao_unknown, R.string.unknown};
