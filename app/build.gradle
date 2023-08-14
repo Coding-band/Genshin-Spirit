@@ -18,7 +18,7 @@ android {
         minSdkVersion 26
         targetSdkVersion 33
         versionCode 1
-        versionName "3.A.0"
+        versionName "3.9.9"
 
         renderscriptTargetApi 21
         renderscriptSupportModeEnabled true

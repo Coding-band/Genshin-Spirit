@@ -1504,6 +1504,9 @@
     <string name="tcg_where_is_the_unseen_razor">剣はいずこに</string>
     <string name="tcg_fontaine">フォンテーヌ</string>
 
+    <!-- add in 20230814 - 3.7.0 -->
+    <string name="ibis_piercer">"トキの嘴"</string>
+
 </resources>
 
 

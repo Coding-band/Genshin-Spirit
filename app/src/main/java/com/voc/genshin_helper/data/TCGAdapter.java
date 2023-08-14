@@ -28,6 +28,7 @@ import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
 import com.voc.genshin_helper.ui.MMXLVIII.TCG_Info_2048;
 import com.voc.genshin_helper.util.CustomTextView;
+import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
@@ -209,6 +210,10 @@ public class TCGAdapter extends RecyclerView.Adapter<TCGAdapter.ViewHolder> {
                 public void onClick(View view) {
 
                     if (context instanceof Desk2048) {
+                        if(ItemRss.LoadAssestData(context, "db/tcg/en-US/" + tcg_data.getFileName().replace("_", "") + ".json").equals("")) {
+                            CustomToast.toast(context,activity,context.getString(R.string.none_info));
+                            return;
+                        }
                         Intent intent = new Intent(context, TCG_Info_2048.class);
                         intent.putExtra("tcg_data",tcg_data);
 

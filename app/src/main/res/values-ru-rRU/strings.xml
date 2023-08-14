@@ -1482,4 +1482,7 @@
     <string name="tcg_joyous_celebration">Танец радости</string>
     <string name="tcg_where_is_the_unseen_razor">Скрытое место</string>
     <string name="tcg_fontaine">Фонтейн</string>
+
+    <!-- add in 20230814 - 3.7.0 -->
+    <string name="ibis_piercer">"Клюв ибиса"</string>
 </resources>

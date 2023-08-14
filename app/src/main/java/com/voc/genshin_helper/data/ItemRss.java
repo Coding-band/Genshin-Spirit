@@ -609,6 +609,8 @@ public class ItemRss {
             case "Song of Stillness" : return new int[] {R.string.song_of_stillness,R.drawable.song_of_stillness};
             case "The First Great Magic" : return new int[] {R.string.the_first_great_magic,R.drawable.the_first_great_magic};
 
+            //add in 20230810 - 3.7.0
+            case "Ibis Piercer" : return new int[] {R.string.ibis_piercer,R.drawable.ibis_piercer};
 
             case "Amenoma Kageuchi" : return new int[] {R.string.amenoma_kageuchi,R.drawable.amenoma_kageuchi};
             case "Aquila Favonia" : return new int[] {R.string.aquila_favonia,R.drawable.aquila_favonia};
@@ -964,6 +966,8 @@ public class ItemRss {
             case "Beacon of the Reed Sea" : return new int[] {R.string.beacon_of_the_reed_sea,R.drawable.beacon_of_the_reed_sea_gacha};
             //add in 20230416
             case "Jadefall's Splendor" : return new int[] {R.string.jadefalls_splendor,R.drawable.jadefalls_splendor_gacha};
+            //add in 20230810 - 3.7.0
+            case "Ibis Piercer" : return new int[] {R.string.ibis_piercer,R.drawable.ibis_piercer_gacha};
             //add in 20230810 - 4.0.0
             case "Wolf-Fang" : return new int[] {R.string.wolf_fang,R.drawable.wolf_fang_gacha};
             case "Finale of the Deep" : return new int[] {R.string.finale_of_the_deep,R.drawable.finale_of_the_deep_gacha};
@@ -1625,176 +1629,6 @@ public class ItemRss {
             case "Fontaine" : return new int[]{R.drawable.tcg_fontaine, R.string.tcg_fontaine};
 
             default: return new int[]{R.drawable.hu_tao_unknown, R.string.unknown};
-        }
-    }
-
-    // Since it isn't in use, so 3.4 wont update it.. 20230118
-    public String getTCGByFileName(String name){
-        switch (name){
-            case "tcg_ganyu" : return "Ganyu";
-            case "tcg_kaeya" : return "Kaeya";
-            case "tcg_chongyun" : return "Chongyun";
-            case "tcg_kamisato_ayaka" : return "Kamisato Ayaka";
-            case "tcg_xingqiu" : return "Xingqiu";
-            case "tcg_mona" : return "Mona";
-            case "tcg_diluc" : return "Diluc";
-            case "tcg_xiangling" : return "Xiangling";
-            case "tcg_bennett" : return "Bennett";
-            case "tcg_yoimiya" : return "Yoimiya";
-            case "tcg_fischl" : return "Fischl";
-            case "tcg_razor" : return "Razor";
-            case "tcg_keqing" : return "Keqing";
-            case "tcg_sucrose" : return "Sucrose";
-            case "tcg_jean" : return "Jean";
-            case "tcg_ningguang" : return "Ningguang";
-            case "tcg_noelle" : return "Noelle";
-            case "tcg_collei" : return "Collei";
-            case "tcg_rhodeia_of_loch" : return "Rhodeia of Loch";
-            case "tcg_fatui_pyro_agent" : return "Fatui Pyro Agent";
-            case "tcg_maguu_kenki" : return "Maguu Kenki";
-            case "tcg_stonehide_lawachurl" : return "Stonehide Lawachurl";
-            case "tcg_diona" : return "Diona";
-            case "tcg_cyno" : return "Cyno";
-            case "tcg_barbara" : return "Barbara";
-            case "tcg_mirror_maiden" : return "Mirror Maiden";
-            case "tcg_jadeplume_terrorshroom" : return "Jadeplume Terrorshroom";
-            case "tcg_undivided_heart" : return "Undivided Heart";
-            case "tcg_cold_blooded_strike" : return "Cold-Blooded Strike";
-            case "tcg_steady_breathing" : return "Steady Breathing";
-            case "tcg_kanten_senmyou_blessing" : return "Kanten Senmyou Blessing";
-            case "tcg_the_scent_remained" : return "The Scent Remained";
-            case "tcg_prophecy_of_submersion" : return "Prophecy of Submersion";
-            case "tcg_flowing_flame" : return "Flowing Flame";
-            case "tcg_crossfire" : return "Crossfire";
-            case "tcg_grand_expectation" : return "Grand Expectation";
-            case "tcg_naganohara_meteor_swarm" : return "Naganohara Meteor Swarm";
-            case "tcg_stellar_predator" : return "Stellar Predator";
-            case "tcg_awakening" : return "Awakening";
-            case "tcg_thundering_penance" : return "Thundering Penance";
-            case "tcg_chaotic_entropy" : return "Chaotic Entropy";
-            case "tcg_lands_of_dandelion" : return "Lands of Dandelion";
-            case "tcg_strategic_reserve" : return "Strategic Reserve";
-            case "tcg_i_got_your_back" : return "I Got Your Back";
-            case "tcg_floral_sidewinder" : return "Floral Sidewinder";
-            case "tcg_streaming_surge" : return "Streaming Surge";
-            case "tcg_paid_in_full" : return "Paid in Full";
-            case "tcg_transcendent_automaton" : return "Transcendent Automaton";
-            case "tcg_stonehide_reforged" : return "Stonehide Reforged";
-            case "tcg_shaken_not_purred" : return "Shaken, Not Purred";
-            case "tcg_featherfall_judgment" : return "Featherfall Judgment";
-            case "tcg_glorious_season" : return "Glorious Season";
-            case "tcg_mirror_cage" : return "Mirror Cage";
-            case "tcg_proliferating_spores" : return "Proliferating Spores";
-            case "tcg_magic_guide" : return "Magic Guide";
-            case "tcg_sacrificial_fragments" : return "Sacrificial Fragments";
-            case "tcg_skyward_atlas" : return "Skyward Atlas";
-            case "tcg_raven_bow" : return "Raven Bow";
-            case "tcg_sacrificial_bow" : return "Sacrificial Bow";
-            case "tcg_skyward_harp" : return "Skyward Harp";
-            case "tcg_white_iron_greatsword" : return "White Iron Greatsword";
-            case "tcg_sacrificial_greatsword" : return "Sacrificial Greatsword";
-            case "tcg_wolfs_gravestone" : return "Wolf's Gravestone";
-            case "tcg_white_tassel" : return "White Tassel";
-            case "tcg_lithic_spear" : return "Lithic Spear";
-            case "tcg_skyward_spine" : return "Skyward Spine";
-            case "tcg_travelers_handy_sword" : return "Traveler's Handy Sword";
-            case "tcg_sacrificial_sword" : return "Sacrificial Sword";
-            case "tcg_aquila_favonia" : return "Aquila Favonia";
-            case "tcg_adventurers_bandana" : return "Adventurer's Bandana";
-            case "tcg_lucky_dogs_silver_circlet" : return "Lucky Dog's Silver Circlet";
-            case "tcg_traveling_doctors_handkerchief" : return "Traveling Doctor's Handkerchief";
-            case "tcg_gamblers_earrings" : return "Gambler's Earrings";
-            case "tcg_instructors_cap" : return "Instructor's Cap";
-            case "tcg_exiles_circlet" : return "Exile's Circlet";
-            case "tcg_broken_rimes_echo" : return "Broken Rime's Echo";
-            case "tcg_blizzard_strayer" : return "Blizzard Strayer";
-            case "tcg_wine_stained_tricorne" : return "Wine-Stained Tricorne";
-            case "tcg_heart_of_depth" : return "Heart of Depth";
-            case "tcg_witchs_scorching_hat" : return "Witch's Scorching Hat";
-            case "tcg_crimson_witch_of_flames" : return "Crimson Witch of Flames";
-            case "tcg_thunder_summoners_crown" : return "Thunder Summoner's Crown";
-            case "tcg_thundering_fury" : return "Thundering Fury";
-            case "tcg_viridescent_venerers_diadem" : return "Viridescent Venerer's Diadem";
-            case "tcg_viridescent_venerer" : return "Viridescent Venerer";
-            case "tcg_mask_of_solitude_basalt" : return "Mask of Solitude Basalt";
-            case "tcg_archaic_petra" : return "Archaic Petra";
-            case "tcg_laurel_coronet" : return "Laurel Coronet";
-            case "tcg_deepwood_memories" : return "Deepwood Memories";
-            case "tcg_liyue_harbor_wharf" : return "Liyue Harbor Wharf";
-            case "tcg_knights_of_favonius_library" : return "Knights of Favonius Library";
-            case "tcg_jade_chamber" : return "Jade Chamber";
-            case "tcg_dawn_winery" : return "Dawn Winery";
-            case "tcg_wangshu_inn" : return "Wangshu Inn";
-            case "tcg_favonius_cathedral" : return "Favonius Cathedral";
-            case "tcg_paimon" : return "Paimon";
-            case "tcg_katheryne" : return "Katheryne";
-            case "tcg_timaeus" : return "Timaeus";
-            case "tcg_wagner" : return "Wagner";
-            case "tcg_chef_mao" : return "Chef Mao";
-            case "tcg_tubby" : return "Tubby";
-            case "tcg_timmie" : return "Timmie";
-            case "tcg_liben" : return "Liben";
-            case "tcg_chang_the_ninth" : return "Chang the Ninth";
-            case "tcg_ellin" : return "Ellin";
-            case "tcg_iron_tongue_tian" : return "Iron Tongue Tian";
-            case "tcg_liu_su" : return "Liu Su";
-            case "tcg_parametric_transformer" : return "Parametric Transformer";
-            case "tcg_nre" : return "NRE";
-            case "tcg_elemental_resonance_woven_ice" : return "Elemental Resonance: Woven Ice";
-            case "tcg_elemental_resonance_shattering_ice" : return "Elemental Resonance: Shattering Ice";
-            case "tcg_elemental_resonance_woven_waters" : return "Elemental Resonance: Woven Waters";
-            case "tcg_elemental_resonance_soothing_water" : return "Elemental Resonance: Soothing Water";
-            case "tcg_elemental_resonance_woven_flames" : return "Elemental Resonance: Woven Flames";
-            case "tcg_elemental_resonance_fervent_flames" : return "Elemental Resonance: Fervent Flames";
-            case "tcg_elemental_resonance_woven_thunder" : return "Elemental Resonance: Woven Thunder";
-            case "tcg_elemental_resonance_high_voltage" : return "Elemental Resonance: High Voltage";
-            case "tcg_elemental_resonance_woven_winds" : return "Elemental Resonance: Woven Winds";
-            case "tcg_elemental_resonance_impetuous_winds" : return "Elemental Resonance: Impetuous Winds";
-            case "tcg_elemental_resonance_woven_stone" : return "Elemental Resonance: Woven Stone";
-            case "tcg_elemental_resonance_enduring_rock" : return "Elemental Resonance: Enduring Rock";
-            case "tcg_elemental_resonance_woven_weeds" : return "Elemental Resonance: Woven Weeds";
-            case "tcg_elemental_resonance_sprawling_greenery" : return "Elemental Resonance: Sprawling Greenery";
-            case "tcg_the_bestest_travel_companion" : return "The Bestest Travel Companion!";
-            case "tcg_changing_shifts" : return "Changing Shifts";
-            case "tcg_toss_up" : return "Toss-Up";
-            case "tcg_strategize" : return "Strategize";
-            case "tcg_i_havent_lost_yet" : return "I Haven't Lost Yet!";
-            case "tcg_leave_it_to_me" : return "Leave it to Me!";
-            case "tcg_when_the_crane_returned" : return "When the Crane Returned";
-            case "tcg_starsigns" : return "Starsigns";
-            case "tcg_calxs_arts" : return "Calx's Arts";
-            case "tcg_master_of_weaponry" : return "Master of Weaponry";
-            case "tcg_blessing_of_the_divine_relics_installation" : return "Blessing of the Divine Relic's Installation";
-            case "tcg_quick_knit" : return "Quick Knit";
-            case "tcg_send_off" : return "Send Off";
-            case "tcg_guardians_oath" : return "Guardian's Oath";
-            case "tcg_abyssal_summons" : return "Abyssal Summons";
-            case "tcg_jueyun_guoba" : return "Jueyun Guoba";
-            case "tcg_adeptus_temptation" : return "Adeptus' Temptation";
-            case "tcg_lotus_flower_crisp" : return "Lotus Flower Crisp";
-            case "tcg_northern_smoked_chicken" : return "Northern Smoked Chicken";
-            case "tcg_sweet_madame" : return "Sweet Madame";
-            case "tcg_mondstadt_hash_brown" : return "Mondstadt Hash Brown";
-            case "tcg_mushroom_pizza" : return "Mushroom Pizza";
-            case "tcg_minty_meat_rolls" : return "Minty Meat Rolls";
-            case "tcg_origin" : return "Origin";
-            case "tcg_mondstadt" : return "Mondstadt";
-            case "tcg_liyue" : return "Liyue";
-            case "tcg_inazuma" : return "Inazuma";
-            case "tcg_sumeru" : return "Sumeru";
-            case "tcg_legend" : return "Legend";
-            case "tcg_adept" : return "Adept";
-            case "tcg_hydro_crystal_chunk" : return "Hydro Crystal Chunk";
-            case "tcg_magical_crystal_chunk" : return "Magical Crystal Chunk";
-            case "tcg_amethyst_lump" : return "Amethyst Lump";
-            case "tcg_flaming_flower_stamen" : return "Flaming Flower Stamen";
-            case "tcg_mist_flower_corolla" : return "Mist Flower Corolla";
-            case "tcg_electro_crystal" : return "Electro Crystal";
-            case "tcg_dandelion_seed" : return "Dandelion Seed";
-            case "tcg_cecilia" : return "Cecilia";
-            case "tcg_glaze_lily" : return "Glaze Lily";
-            case "tcg_dendrobium" : return "Dendrobium";
-            default: return name;
         }
     }
 

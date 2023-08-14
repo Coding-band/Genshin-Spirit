@@ -817,7 +817,7 @@ public class Desk2048 extends AppCompatActivity {
     public View.OnClickListener paimon_buff_cal = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            CustomToast.toast(context, activity, "Release in 3.7.0");
+            CustomToast.toast(context, activity, "Release in 4.0.0");
             //Intent i = new Intent(Desk2048.this, BuffDatabaseUI.class);
             //startActivity(i);
         }

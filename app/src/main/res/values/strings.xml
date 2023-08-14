@@ -1450,7 +1450,7 @@
     <string name="tcg_arataki_ichiban">Arataki Ichiban</string>
     <string name="tcg_favonius_sword">Favonius Sword</string>
     <string name="tcg_grand_narukami_shrine">Grand Narukami Shrine</string>
-    
+
     <!-- Ver. 4.0.0 Update -->
     <string name="memo_available_weekboss_change">Still have {%1} more</string>
     <string name="event_list_available">{%1} Event(s) Available</string>
@@ -1571,7 +1571,10 @@
 	<string name="tcg_setaria">"Setaria"</string>
 	<string name="tcg_joyous_celebration">"Joyous Celebration"</string>
 	<string name="tcg_where_is_the_unseen_razor">"Where Is the Unseen Razor?"</string>
-	<string name="tcg_fontaine">"Fontaine"</string>
+    <string name="tcg_fontaine">"Fontaine"</string>
+
+    <!-- add in 20230814 - 3.7.0 -->
+    <string name="ibis_piercer">"Ibis Piercer"</string>
 
 </resources>
 

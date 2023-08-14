@@ -1508,5 +1508,7 @@
     <string name="tcg_where_is_the_unseen_razor">藏鋒何處</string>
     <string name="tcg_fontaine">楓丹</string>
 
+    <!-- add in 20230814 - 3.7.0 -->
+    <string name="ibis_piercer">"䴉穿之喙"</string>
 
 </resources>

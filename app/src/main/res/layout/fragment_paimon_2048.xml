@@ -121,7 +121,8 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/genshin_font"
                         android:text="你好 我在玩星穹鐵道 窮了\n明天去漫展嗎？"
-                        android:textColor="@color/white" />
+                        android:textColor="@color/white"
+                        android:visibility="gone" />
 
                     <TextView
                         android:id="@+id/card_userstat"
