@@ -28,7 +28,7 @@
 
 ## We need you !
 ### Translator 
-- If you want to help us on translating, feel free to join us through <a href="https://crowdin.com/project/genshin-spirit/invite?h=1a48d2590d5cb9d681e9911a446cb8ea1801823">Crowdin</a> ~
+- If you want to help us on translating, feel free to join us through <a href="https://crowdin.com/project/genshin-spirit/invite?h=1138530b1285476268a5b21d9b8d9a711802681">Crowdin</a> ~
 - If you want to translate new language, you may directly DM Voc-夜芷冰 (vocaloid2048)
 
 ### Developer
@@ -68,13 +68,28 @@
     </tr>
 </table>
 
+1. [Home Page](#home-page)
+    - [Today's Highlights](#todays-highlights)
+    - [DailyMemo](#dailymemo)
+    - [Event List](#event-list)
+2. [Team Page](#team-page)
+    - [Character Info](#character-info)
+    - [Weapon Info](#weapon-info)
+    - [Artifact Info](#artifact-info)
+3. [TCG Page](#tcg-page)
+    - [TCG Info](#tcg-info)
+4. [Paimon Page](#paimon-page)
+    - [Material Calculator](#material-calculator)
+    - [Buff Calculator](#buff-calculator)
+    - [Setting Page](#setting-page)
+
 ## Home Page
 ### Today's Highlights :
 - Available Talent Books
 - Available Weapon Ascension Materials
 - Character's Birthday (Easter eggs in Mid-July !)
 
-### In-game State (DailyMemo)
+### DailyMemo
 User can get their in-game state without opening Genshin Impact!<br>
 In-game state includes :
 - Current Resin (With remaining time)

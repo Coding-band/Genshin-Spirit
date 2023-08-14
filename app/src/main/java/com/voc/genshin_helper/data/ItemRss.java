@@ -1344,6 +1344,7 @@ public class ItemRss {
     // In Fact, we still haven't made enemy card.
     public int[] getTCGByNameBase(String name){
         switch (name){
+            //3.3.0
             case "Ganyu" : return new int[]{R.drawable.tcg_ganyu, R.string.tcg_ganyu};
             case "Kaeya" : return new int[]{R.drawable.tcg_kaeya, R.string.tcg_kaeya};
             case "Chongyun" : return new int[]{R.drawable.tcg_chongyun, R.string.tcg_chongyun};
@@ -1507,12 +1508,12 @@ public class ItemRss {
             case "Cecilia" : return new int[]{R.drawable.tcg_cecilia, R.string.tcg_cecilia};
             case "Glaze Lily" : return new int[]{R.drawable.tcg_glaze_lily, R.string.tcg_glaze_lily};
             case "Dendrobium" : return new int[]{R.drawable.tcg_dendrobium, R.string.tcg_dendrobium};
-            //add in 20230118
+            //add in 20230118 - 3.4.0
             case "Klee" : return new int[]{R.drawable.tcg_klee, R.string.tcg_klee};
             case "Beidou" : return new int[]{R.drawable.tcg_beidou, R.string.tcg_beidou};
             case "Lightning Storm" : return new int[]{R.drawable.tcg_lightning_storm, R.string.tcg_lightning_storm};
             case "Pounding Surprise" : return new int[]{R.drawable.tcg_pounding_surprise, R.string.tcg_pounding_surprise};
-            //add in 20230226
+            //add in 20230226 - 3.5.0
             case "Eula" : return new int[]{R.drawable.tcg_eula, R.string.tcg_eula};
             case "Sangonomiya Kokomi" : return new int[]{R.drawable.tcg_sangonomiya_kokomi, R.string.tcg_sangonomiya_kokomi};
             case "Kujou Sara" : return new int[]{R.drawable.tcg_kujou_sara, R.string.tcg_kujou_sara};
@@ -1521,7 +1522,7 @@ public class ItemRss {
             case "Sin of Pride" : return new int[]{R.drawable.tcg_sin_of_pride, R.string.tcg_sin_of_pride};
             case "Ornate Kabuto" : return new int[]{R.drawable.tcg_ornate_kabuto, R.string.tcg_ornate_kabuto};
             case "General's Ancient Helm" : return new int[]{R.drawable.tcg_generals_ancient_helm, R.string.tcg_generals_ancient_helm};
-            //add in 20230416 3.6.0
+            //add in 20230416 - 3.6.0
             case "Kamisato Ayato" : return new int[]{R.drawable.tcg_kamisato_ayato, R.string.tcg_kamisato_ayato};
             case "Arataki Itto" : return new int[]{R.drawable.tcg_arataki_itto, R.string.tcg_arataki_itto};
             case "Tighnari" : return new int[]{R.drawable.tcg_tighnari, R.string.tcg_tighnari};
@@ -1530,7 +1531,7 @@ public class ItemRss {
             case "Arataki Ichiban" : return new int[]{R.drawable.tcg_arataki_ichiban, R.string.tcg_arataki_ichiban};
             case "Favonius Sword" : return new int[]{R.drawable.tcg_favonius_sword, R.string.tcg_favonius_sword};
             case "Grand Narukami Shrine" : return new int[]{R.drawable.tcg_grand_narukami_shrine, R.string.tcg_grand_narukami_shrine};
-            //add in 20230811 - 3.7.0 ~ 4.0.0
+            //add in 20230811 - 3.7.0
             case "Amber" : return new int[]{R.drawable.tcg_amber, R.string.tcg_amber};
             case "Tartaglia" : return new int[]{R.drawable.tcg_tartaglia, R.string.tcg_tartaglia};
             case "Hu Tao" : return new int[]{R.drawable.tcg_hu_tao, R.string.tcg_hu_tao};
@@ -1597,7 +1598,7 @@ public class ItemRss {
             case "Tandoori Roast Chicken" : return new int[]{R.drawable.tcg_tandoori_roast_chicken, R.string.tcg_tandoori_roast_chicken};
             case "Butter Crab" : return new int[]{R.drawable.tcg_butter_crab, R.string.tcg_butter_crab};
             case "Treasures of the Deck" : return new int[]{R.drawable.tcg_treasures_of_the_deck, R.string.tcg_treasures_of_the_deck};
-
+            //add in 20230811 - 3.8.0
             case "Candace" : return new int[]{R.drawable.tcg_candace, R.string.tcg_candace};
             case "Yanfei" : return new int[]{R.drawable.tcg_yanfei, R.string.tcg_yanfei};
             case "Kaedehara Kazuha" : return new int[]{R.drawable.tcg_kaedehara_kazuha, R.string.tcg_kaedehara_kazuha};
@@ -1609,7 +1610,7 @@ public class ItemRss {
             case "Ancient Courtyard" : return new int[]{R.drawable.tcg_ancient_courtyard, R.string.tcg_ancient_courtyard};
             case "Covenant of Rock" : return new int[]{R.drawable.tcg_covenant_of_rock, R.string.tcg_covenant_of_rock};
             case "Rhythm of the Great Dream" : return new int[]{R.drawable.tcg_rhythm_of_the_great_dream, R.string.tcg_rhythm_of_the_great_dream};
-
+            //add in 20230811 - 4.0.0
             case "Albedo" : return new int[]{R.drawable.tcg_albedo, R.string.tcg_albedo};
             case "Qiqi" : return new int[]{R.drawable.tcg_qiqi, R.string.tcg_qiqi};
             case "Lisa" : return new int[]{R.drawable.tcg_lisa, R.string.tcg_lisa};
@@ -1622,8 +1623,6 @@ public class ItemRss {
             case "Joyous Celebration" : return new int[]{R.drawable.tcg_joyous_celebration, R.string.tcg_joyous_celebration};
             case "Where Is the Unseen Razor?" : return new int[]{R.drawable.tcg_where_is_the_unseen_razor, R.string.tcg_where_is_the_unseen_razor};
             case "Fontaine" : return new int[]{R.drawable.tcg_fontaine, R.string.tcg_fontaine};
-
-
 
             default: return new int[]{R.drawable.hu_tao_unknown, R.string.unknown};
         }
