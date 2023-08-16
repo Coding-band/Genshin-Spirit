@@ -135,6 +135,12 @@ public class TCGAdapter extends RecyclerView.Adapter<TCGAdapter.ViewHolder> {
         holder.tcg_press_mask.getLayoutParams().width = (int) (img_width);
         holder.tcg_press_mask.getLayoutParams().height = (int) (img_width*12/7);
 
+        holder.tcg_card_recharge.setVisibility(View.GONE);
+        if (tcg.getRecharge() > 0){
+            holder.tcg_card_recharge.setVisibility(View.VISIBLE);
+            holder.tcg_recharge_tv.setText(String.valueOf(tcg.getRecharge()));
+        }
+
         switch (tcg.getType()){
             case TCG.CHAR:{
                 holder.tcg_card_hp.setVisibility(View.VISIBLE);
@@ -181,9 +187,9 @@ public class TCGAdapter extends RecyclerView.Adapter<TCGAdapter.ViewHolder> {
         TextView tcg_card_name, tcg_card_name_base;
         ImageView tcg_card_kwang;
         GifImageView tcg_card_img;
-        ImageView tcg_hp_bg, tcg_dice_bg;
-        CustomTextView tcg_hp_tv, tcg_dice_tv;
-        FrameLayout tcg_card_item, tcg_card_hp, tcg_card_dice, tcg_card;
+        ImageView tcg_hp_bg, tcg_dice_bg, tcg_recharge_bg;
+        CustomTextView tcg_hp_tv, tcg_dice_tv, tcg_recharge_tv;
+        FrameLayout tcg_card_item, tcg_card_hp, tcg_card_dice, tcg_card_recharge, tcg_card;
         TCG tcg_data;
         int tcg_width;
 
@@ -193,17 +199,24 @@ public class TCGAdapter extends RecyclerView.Adapter<TCGAdapter.ViewHolder> {
             tcg_card = itemView.findViewById(R.id.tcg_card);
             tcg_hp_bg = itemView.findViewById(R.id.tcg_hp_bg);
             tcg_dice_bg = itemView.findViewById(R.id.tcg_dice_bg);
+            tcg_recharge_bg = itemView.findViewById(R.id.tcg_recharge_bg);
             tcg_card_name = itemView.findViewById(R.id.tcg_card_name);
             tcg_card_name_base = itemView.findViewById(R.id.tcg_card_name_base);
             tcg_card_img = itemView.findViewById(R.id.tcg_card_img);
             tcg_card_kwang = itemView.findViewById(R.id.tcg_card_kwang);
             tcg_hp_tv = itemView.findViewById(R.id.tcg_hp_tv);
             tcg_dice_tv = itemView.findViewById(R.id.tcg_dice_tv);
+            tcg_recharge_tv = itemView.findViewById(R.id.tcg_recharge_tv);
             tcg_card_item = itemView.findViewById(R.id.tcg_card_item);
             tcg_card_hp = itemView.findViewById(R.id.tcg_card_hp);
             tcg_card_dice = itemView.findViewById(R.id.tcg_card_dice);
+            tcg_card_recharge = itemView.findViewById(R.id.tcg_card_recharge);
             tcg_press_mask = itemView.findViewById(R.id.tcg_press_mask);
             tcg_press_mask.startAnimation(buttonClick);
+
+            tcg_card_hp.setVisibility(View.GONE);
+            tcg_card_dice.setVisibility(View.GONE);
+            tcg_card_recharge.setVisibility(View.GONE);
 
             tcg_press_mask.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -224,6 +237,11 @@ public class TCGAdapter extends RecyclerView.Adapter<TCGAdapter.ViewHolder> {
                         ViewCompat.setTransitionName(tcg_hp_tv,"tcg_hp_tv");
                         ViewCompat.setTransitionName(tcg_dice_bg,"tcg_dice_bg");
                         ViewCompat.setTransitionName(tcg_dice_tv,"tcg_dice_tv");
+                        ViewCompat.setTransitionName(tcg_recharge_bg,"tcg_recharge_bg");
+                        ViewCompat.setTransitionName(tcg_recharge_tv,"tcg_recharge_tv");
+                        ViewCompat.setTransitionName(tcg_card_recharge,"tcg_card_recharge");
+                        ViewCompat.setTransitionName(tcg_card_hp,"tcg_card_hp");
+                        ViewCompat.setTransitionName(tcg_card_dice,"tcg_card_dice");
 
                         Pair<View,String> pair1 = new Pair<>((View)tcg_card_img,ViewCompat.getTransitionName(tcg_card_img));
                         Pair<View,String> pair2 = new Pair<>((View)tcg_card,ViewCompat.getTransitionName(tcg_card));
@@ -232,9 +250,14 @@ public class TCGAdapter extends RecyclerView.Adapter<TCGAdapter.ViewHolder> {
                         Pair<View,String> pair5 = new Pair<>((View)tcg_hp_tv,ViewCompat.getTransitionName(tcg_hp_tv));
                         Pair<View,String> pair6 = new Pair<>((View)tcg_dice_bg,ViewCompat.getTransitionName(tcg_dice_bg));
                         Pair<View,String> pair7 = new Pair<>((View)tcg_dice_tv,ViewCompat.getTransitionName(tcg_dice_tv));
+                        Pair<View,String> pair8 = new Pair<>((View)tcg_recharge_bg,ViewCompat.getTransitionName(tcg_recharge_bg));
+                        Pair<View,String> pair9 = new Pair<>((View)tcg_recharge_tv,ViewCompat.getTransitionName(tcg_recharge_tv));
+                        Pair<View,String> pair10 = new Pair<>((View)tcg_card_recharge,ViewCompat.getTransitionName(tcg_card_recharge));
+                        Pair<View,String> pair11 = new Pair<>((View)tcg_card_hp,ViewCompat.getTransitionName(tcg_card_hp));
+                        Pair<View,String> pair12 = new Pair<>((View)tcg_card_dice,ViewCompat.getTransitionName(tcg_card_dice));
 
                          ActivityOptions options = ActivityOptions
-                                .makeSceneTransitionAnimation((Activity) context, pair1, pair2, pair3, pair4, pair5, pair6, pair7);
+                                .makeSceneTransitionAnimation((Activity) context, pair1, pair2, pair3, pair4, pair5, pair6, pair7, pair8, pair9, pair10, pair11, pair12);
                         context.startActivity(intent, options.toBundle());
                     }
 

@@ -76,6 +76,7 @@ import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.BuildConfig;
 import com.voc.genshin_helper.R;
+import com.voc.genshin_helper.buff.BuffDatabaseUI;
 import com.voc.genshin_helper.buff.EnkaDataCollect;
 import com.voc.genshin_helper.data.buff_old.SipTikCal;
 import com.voc.genshin_helper.data.Artifacts;
@@ -818,8 +819,10 @@ public class Desk2048 extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             CustomToast.toast(context, activity, "Release in 4.0.0");
-            //Intent i = new Intent(Desk2048.this, BuffDatabaseUI.class);
-            //startActivity(i);
+            if(BuildConfig.FLAVOR.equals("beta") || BuildConfig.FLAVOR.equals("dev")){
+                Intent i = new Intent(Desk2048.this, BuffDatabaseUI.class);
+                startActivity(i);
+            }
         }
     };
     public View.OnClickListener paimon_daily = new View.OnClickListener()  {

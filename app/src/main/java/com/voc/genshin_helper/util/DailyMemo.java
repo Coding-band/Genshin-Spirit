@@ -587,7 +587,7 @@ public class DailyMemo {
         memo_setting_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                setting();
+                setting_new();
             }
         });
 
@@ -599,7 +599,7 @@ public class DailyMemo {
 
     public void setting(){
         Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
-        View view = View.inflate(context, R.layout.fragment_memo_setting_new, null);
+        View view = View.inflate(context, R.layout.fragment_memo_setting, null);
         DisplayMetrics displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
 
@@ -818,6 +818,148 @@ public class DailyMemo {
                 dialog.dismiss();
             }
         });
+
+        Window dialogWindowX = activity.getWindow();
+        dialogWindowX.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+        // 2O48 DESIGN
+        dialogWindowX.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+        dialogWindowX.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+        dialogWindowX.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
+
+        /** Method of dialog */
+        dialog.setContentView(view);
+        Window dialogWindow = dialog.getWindow();
+        WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+        // 2O48 DESIGN
+        dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+        dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
+
+        lp.width = MATCH_PARENT;
+        lp.height = MATCH_PARENT;
+        lp.gravity = Gravity.CENTER;
+        dialogWindow.setAttributes(lp);
+        dialog.show();
+    }
+    public void setting_new(){
+        Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+        View view = View.inflate(context, R.layout.fragment_memo_setting_new, null);
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+        activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+
+        LinearLayout dialog_hoyoverse = view.findViewById(R.id.dialog_hoyoverse);
+        LinearLayout dialog_third_party = view.findViewById(R.id.dialog_third_party);
+        TextView dialog_miyouse = view.findViewById(R.id.dialog_miyouse);
+
+        dialog_hoyoverse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
+                View view = View.inflate(context, R.layout.fragment_memo_hoyoverse_new, null);
+                DisplayMetrics displayMetrics = new DisplayMetrics();
+                activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+
+                FrameLayout ok = view.findViewById(R.id.ok);
+                Button token_btn = view.findViewById(R.id.token_btn);
+                server_spinner = view.findViewById(R.id.setting_server_spinner);
+                token_btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                /*
+                CookieManager.getInstance().removeAllCookies(null);
+                CookieManager.getInstance().flush();
+                 */
+                        getCookiesFromLoginPage(GLOBAL);
+                    }
+                });
+                ok.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if(!token_final.equals("N/A") && !uid_final.equals("N/A") && !genshin_uid_final.equals("-1")){
+                            editor.putString("hoyolab_ltoken",token_final);
+                            editor.putString("hoyolab_ltuid",uid_final);
+                            editor.putString("genshin_uid",genshin_uid_final);
+                            editor.putString("account_id_v2",account_id_v2);
+                            editor.putString("cookie_token_v2",cookie_token_v2);
+                            editor.putString("account_mid_v2",account_mid_v2);
+                            editor.putString("ltmid_v2",ltmid_v2);
+                            editor.apply();
+                        }
+                        dialog.dismiss();
+                        String x = "023023";
+                        if (!sharedPreferences.getString("genshin_uid","-1").equals("-1")){
+                            String uidF = sharedPreferences.getString("genshin_uid","-1");
+                            System.out.println("uidF : "+uidF);
+                            System.out.println("uidF1 : "+uidF.charAt(0));
+                            if(uidF.charAt(0) == '1' ||uidF.charAt(0) == '2' ||uidF.charAt(0) == '5'){
+                                new grabIdFromServer().execute(ItemRss.SERVER_REACT_ROOT+"dailyMemo_3.5/dailyMemoPort.php?"+
+                                        "hoyoUID="+sharedPreferences.getString("hoyolab_ltuid","N/A")+
+                                        "&hoyoToken="+sharedPreferences.getString("hoyolab_ltoken","N/A")+
+                                        "&uid="+sharedPreferences.getString("genshin_uid","-1")+
+                                        "&account_id_v2="+sharedPreferences.getString("account_id_v2","N/A")+
+                                        "&cookie_token_v2="+sharedPreferences.getString("cookie_token_v2","N/A")+
+                                        "&account_mid_v2="+sharedPreferences.getString("account_mid_v2","N/A")+
+                                        "&ltmid_v2="+sharedPreferences.getString("ltmid_v2","N/A"));
+                                System.out.println(ItemRss.SERVER_REACT_ROOT+"dailyMemo_3.5/dailyMemoPort.php?"+
+                                        "hoyoUID="+sharedPreferences.getString("hoyolab_ltuid","N/A")+
+                                        "&hoyoToken="+sharedPreferences.getString("hoyolab_ltoken","N/A")+
+                                        "&uid="+sharedPreferences.getString("genshin_uid","-1")+
+                                        "&account_id_v2="+sharedPreferences.getString("account_id_v2","N/A")+
+                                        "&cookie_token_v2="+sharedPreferences.getString("cookie_token_v2","N/A")+
+                                        "&account_mid_v2="+sharedPreferences.getString("account_mid_v2","N/A")+
+                                        "&ltmid_v2="+sharedPreferences.getString("ltmid_v2","N/A"));
+                            }else{
+                                new grabIdFromServer().execute(ItemRss.SERVER_REACT_ROOT+"dailyMemo_3.5/dailyMemoPort.php?"+
+                                        "hoyoUID="+sharedPreferences.getString("hoyolab_ltuid","N/A")+
+                                        "&hoyoToken="+sharedPreferences.getString("hoyolab_ltoken","N/A")+
+                                        "&uid="+sharedPreferences.getString("genshin_uid","-1"));
+
+                                System.out.println(ItemRss.SERVER_REACT_ROOT+"dailyMemo_3.5/dailyMemoPort.php?"+
+                                        "hoyoUID="+sharedPreferences.getString("hoyolab_ltuid","N/A")+
+                                        "&hoyoToken="+sharedPreferences.getString("hoyolab_ltoken","N/A")+
+                                        "&uid="+sharedPreferences.getString("genshin_uid","-1"));
+                            }
+                        }
+
+                    }
+                });
+
+                Window dialogWindowX = activity.getWindow();
+                dialogWindowX.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                // 2O48 DESIGN
+                dialogWindowX.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+                dialogWindowX.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+                dialogWindowX.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
+
+                /** Method of dialog */
+                dialog.setContentView(view);
+                Window dialogWindow = dialog.getWindow();
+                WindowManager.LayoutParams lp = dialogWindow.getAttributes();
+                // 2O48 DESIGN
+                dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
+                dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
+
+                lp.width = MATCH_PARENT;
+                lp.height = MATCH_PARENT;
+                lp.gravity = Gravity.CENTER;
+                dialogWindow.setAttributes(lp);
+                dialog.show();
+            }
+        });
+
+        dialog_third_party.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CustomToast.toast(context, view, "暫未開放 Not released yet");
+            }
+        });
+
+        dialog_miyouse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                CustomToast.toast(context, view, "暫未開放 Not released yet");
+            }
+        });
+
 
         Window dialogWindowX = activity.getWindow();
         dialogWindowX.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);

@@ -110,61 +110,99 @@
 
                                 </FrameLayout>
 
-                                <FrameLayout
-                                    android:id="@+id/tcg_card_hp"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="-4dp"
-                                    android:layout_marginTop="4dp"
-                                    android:visibility="visible">
 
-                                    <ImageView
-                                        android:id="@+id/tcg_hp_bg"
-                                        android:layout_width="48dp"
-                                        android:layout_height="48dp"
-                                        app:srcCompat="@drawable/bg_tcg_hp" />
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:orientation="vertical">
 
-                                    <com.voc.genshin_helper.util.CustomTextView
-                                        android:id="@+id/tcg_hp_tv"
+                                    <FrameLayout
+                                        android:id="@+id/tcg_card_hp"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
-                                        android:fontFamily="@font/genshin_font"
-                                        android:text="10"
-                                        android:textColor="@color/white"
-                                        android:textSize="24sp"
-                                        android:textStyle="bold"
-                                        app:strokeColor="@color/black"
-                                        app:strokeJoinStyle="miter"
-                                        app:strokeWidth="0.75dp" />
-                                </FrameLayout>
+                                        android:layout_marginLeft="-4dp"
+                                        android:layout_marginTop="4dp"
+                                        android:visibility="visible">
 
-                                <FrameLayout
-                                    android:id="@+id/tcg_card_dice"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="4dp"
-                                    android:visibility="gone">
+                                        <ImageView
+                                            android:id="@+id/tcg_hp_bg"
+                                            android:layout_width="48dp"
+                                            android:layout_height="48dp"
+                                            app:srcCompat="@drawable/bg_tcg_hp" />
 
-                                    <ImageView
-                                        android:id="@+id/tcg_dice_bg"
-                                        android:layout_width="48dp"
-                                        android:layout_height="48dp"
-                                        app:srcCompat="@drawable/bg_tcg_dice_pyro" />
+                                        <com.voc.genshin_helper.util.CustomTextView
+                                            android:id="@+id/tcg_hp_tv"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:fontFamily="@font/genshin_font"
+                                            android:text="10"
+                                            android:textColor="@color/white"
+                                            android:textSize="24sp"
+                                            android:textStyle="bold"
+                                            app:strokeColor="@color/black"
+                                            app:strokeJoinStyle="miter"
+                                            app:strokeWidth="0.75dp" />
+                                    </FrameLayout>
 
-                                    <com.voc.genshin_helper.util.CustomTextView
-                                        android:id="@+id/tcg_dice_tv"
+                                    <FrameLayout
+                                        android:id="@+id/tcg_card_dice"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:layout_gravity="center"
-                                        android:fontFamily="@font/genshin_font"
-                                        android:text="1"
-                                        android:textColor="@color/white"
-                                        android:textSize="24sp"
-                                        app:strokeColor="@color/black"
-                                        app:strokeJoinStyle="miter"
-                                        app:strokeWidth="1dp" />
-                                </FrameLayout>
+                                        android:layout_marginLeft="-4dp"
+                                        android:layout_marginTop="4dp"
+                                        android:visibility="gone">
+
+                                        <ImageView
+                                            android:id="@+id/tcg_dice_bg"
+                                            android:layout_width="48dp"
+                                            android:layout_height="48dp"
+                                            app:srcCompat="@drawable/bg_tcg_dice_pyro" />
+
+                                        <com.voc.genshin_helper.util.CustomTextView
+                                            android:id="@+id/tcg_dice_tv"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:fontFamily="@font/genshin_font"
+                                            android:text="1"
+                                            android:textColor="@color/white"
+                                            android:textSize="24sp"
+                                            app:strokeColor="@color/black"
+                                            app:strokeJoinStyle="miter"
+                                            app:strokeWidth="1dp" />
+                                    </FrameLayout>
+
+                                    <FrameLayout
+                                        android:id="@+id/tcg_card_recharge"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginLeft="-4dp"
+                                        android:layout_marginTop="4dp"
+                                        android:visibility="gone">
+
+                                        <ImageView
+                                            android:id="@+id/tcg_recharge_bg"
+                                            android:layout_width="48dp"
+                                            android:layout_height="48dp"
+                                            app:srcCompat="@drawable/bg_tcg_recharge" />
+
+                                        <com.voc.genshin_helper.util.CustomTextView
+                                            android:id="@+id/tcg_recharge_tv"
+                                            android:layout_width="wrap_content"
+                                            android:layout_height="wrap_content"
+                                            android:layout_gravity="center"
+                                            android:fontFamily="@font/genshin_font"
+                                            android:text="1"
+                                            android:textColor="@color/white"
+                                            android:textSize="24sp"
+                                            app:strokeColor="@color/black"
+                                            app:strokeJoinStyle="miter"
+                                            app:strokeWidth="1dp" />
+                                    </FrameLayout>
+
+                                </LinearLayout>
+
 
                                 <TextView
                                     android:id="@+id/tcg_card_name"

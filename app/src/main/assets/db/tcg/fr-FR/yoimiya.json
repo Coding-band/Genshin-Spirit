@@ -2,7 +2,7 @@
 	"id": 1305,
 	"name": "Yoimiya",
 	"hp": 10,
-	"maxenergy": 2,
+	"maxenergy": 3,
 	"tags": [
 		"GCG_TAG_ELEMENT_PYRO",
 		"GCG_TAG_WEAPON_BOW",
@@ -40,7 +40,7 @@
 		},
 		{
 			"id": 13052,
-			"name": "#Danse du feu « Niwabi{NON_BREAK_SPACE}»",
+			"name": "Danse du feu « Niwabi»",
 			"descriptionraw": "Accorde un <color=#FFFFFFFF>$[C113051]</color> au personnage. (Cette capacité n'accorde pas de {SPRITE_PRESET#1110}charge)",
 			"descriptionreplaced": "Accorde un <color=#FFFFFFFF>Niwabi Enshou</color> au personnage. (Cette capacité n'accorde pas de {SPRITE_PRESET#1110}charge)",
 			"description": "Accorde un Niwabi Enshou au personnage. (Cette capacité n'accorde pas de charge)",
@@ -56,7 +56,7 @@
 		{
 			"id": 13053,
 			"name": "Saxifrage Ryuukin",
-			"descriptionraw": "Inflige $[D__KEY__DAMAGE] pts de $[D__KEY__ELEMENT] et crée une <color=#FFFFFFFF>$[C113052]</color>.",
+			"descriptionraw": "Inflige $[D__KEY__DAMAGE] {PLURAL#$[D__KEY__DAMAGE|nc]|pt|pts} de $[D__KEY__ELEMENT] et crée une <color=#FFFFFFFF>$[C113052]</color>.",
 			"basedamage": 3,
 			"baseelement": "GCG_ELEMENT_PYRO",
 			"descriptionreplaced": "Inflige 3 pts de {SPRITE_PRESET#2103}<color=#FF9999FF>DGT Pyro</color> et crée une <color=#FFFFFFFF>Flamme Ryuukin</color>.",
@@ -70,7 +70,7 @@
 				},
 				{
 					"costtype": "GCG_COST_ENERGY",
-					"count": 2
+					"count": 3
 				}
 			]
 		}

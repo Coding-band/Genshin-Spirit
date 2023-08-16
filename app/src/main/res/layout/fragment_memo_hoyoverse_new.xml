@@ -157,7 +157,7 @@
                 </LinearLayout>
 
                 <Spinner
-                    android:id="@+id/setting_server_spinner2"
+                    android:id="@+id/setting_server_spinner"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_margin="8dp"

@@ -1,6 +1,6 @@
 {
 	"id": 2301,
-	"name": "Usurier Pyro des Fatui|s1:Usuriers Pyro des Fatui",
+	"name": "Usurier Pyro des Fatui",
 	"hp": 10,
 	"maxenergy": 2,
 	"tags": [
@@ -13,7 +13,7 @@
 		"Autre arme",
 		"Fatui"
 	],
-	"storytitle": "Lame de règlement - Usurier",
+	"storytitle": "Lame de règlement : Usurier",
 	"storytext": "« Aucune fuite face à ses dettes, qu'on soit vivant ou non... »",
 	"source": "Récompense pour avoir accepté un défi de taverne auprès de Prince à La Queue de Chat et remporté la victoire lors d'une partie amicale contre l'Usurier Pyro",
 	"skills": [

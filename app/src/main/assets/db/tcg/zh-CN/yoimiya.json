@@ -2,7 +2,7 @@
 	"id": 1305,
 	"name": "宵宫",
 	"hp": 10,
-	"maxenergy": 2,
+	"maxenergy": 3,
 	"tags": [
 		"GCG_TAG_ELEMENT_PYRO",
 		"GCG_TAG_WEAPON_BOW",
@@ -70,7 +70,7 @@
 				},
 				{
 					"costtype": "GCG_COST_ENERGY",
-					"count": 2
+					"count": 3
 				}
 			]
 		}

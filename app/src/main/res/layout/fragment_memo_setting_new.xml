@@ -61,6 +61,7 @@
                     android:orientation="horizontal">
 
                     <LinearLayout
+                        android:id="@+id/dialog_hoyoverse"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="12dp"
@@ -87,6 +88,7 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/dialog_third_party"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_margin="12dp"
@@ -113,7 +115,7 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/dialog_title_tv2"
+                    android:id="@+id/dialog_miyouse"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:layout_marginBottom="8dp"
