@@ -1134,7 +1134,7 @@ public class CalculatorDB_SipTik extends AppCompatActivity {
                         isAllTrue = false;
                     }
                 }
-
+                /*
                 if (isSingleRole == 1) {
                     if (show_dps && !item.getRole().equals("Main_DPS")) {
                         isAllTrue = false;
@@ -1156,6 +1156,7 @@ public class CalculatorDB_SipTik extends AppCompatActivity {
                         isAllTrue = false;
                     }
                 }
+                 */
 
                 if (isAllTrue == true) {
                     filteredList.add(item);
@@ -1405,7 +1406,7 @@ public class CalculatorDB_SipTik extends AppCompatActivity {
 
     private void char_list_reload() {
         Log.wtf("DAAM", "YEE");
-        String name, element, weapon, nation, sex, mainStat, role;
+        String name, element, weapon, nation, sex, mainStat;
         int rare, isComing;
         charactersList.clear();
 
@@ -1420,7 +1421,6 @@ public class CalculatorDB_SipTik extends AppCompatActivity {
                 weapon = object.getString("weapon");
                 nation = object.getString("nation");
                 sex = object.getString("sex");
-                role = object.getString("role");
                 mainStat = object.getString("mainStat");
                 rare = object.getInt("rare");
                 isComing = object.getInt("isComing");
@@ -1431,7 +1431,6 @@ public class CalculatorDB_SipTik extends AppCompatActivity {
                 characters.setWeapon(weapon);
                 characters.setNation(nation);
                 characters.setSex(sex);
-                characters.setRole(role);
                 characters.setRare(rare);
                 characters.setMainStat(mainStat);
                 characters.setIsComing(isComing);

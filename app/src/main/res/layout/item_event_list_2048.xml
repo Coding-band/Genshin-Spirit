@@ -110,7 +110,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:layout_weight="0"
-                        android:text="天"
+                        android:text="@string/event_list_day"
                         android:textColor="@color/event_list_day_title" />
                 </LinearLayout>
 
@@ -145,7 +145,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:layout_weight="0"
-                        android:text="天"
+                        android:text="@string/event_list_day"
                         android:textColor="@color/event_list_day_title" />
                 </LinearLayout>
 
@@ -180,7 +180,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:layout_weight="0"
-                        android:text="天"
+                        android:text="@string/event_list_day"
                         android:textColor="@color/event_list_day_title" />
                 </LinearLayout>
 
@@ -215,7 +215,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="8dp"
                         android:layout_weight="0"
-                        android:text="天"
+                        android:text="@string/event_list_day"
                         android:textColor="@color/event_list_day_title" />
                 </LinearLayout>
 

@@ -1576,5 +1576,32 @@
     <!-- add in 20230814 - 3.7.0 -->
     <string name="ibis_piercer">"Ibis Piercer"</string>
 
+    <!-- add in 20230820 - New Talent Book-->
+    <string name="teachings_of_equity">"Teachings of Equity"</string>
+    <string name="teachings_of_justice">"Teachings of Justice"</string>
+    <string name="teachings_of_order">"Teachings of Order"</string>
+    <string name="guide_to_equity">"Guide to Equity"</string>
+    <string name="guide_to_justice">"Guide to Justice"</string>
+    <string name="guide_to_order">"Guide to Order"</string>
+    <string name="philosophies_of_equity">"Philosophies of Equity"</string>
+    <string name="philosophies_of_justice">"Philosophies of Justice"</string>
+    <string name="philosophies_of_order">"Philosophies of Order"</string>
+
+    <string name="fragment_of_an_ancient_chord">"Fragment of an Ancient Chord"</string>
+    <string name="dross_of_pure_sacred_dewdrop">"Dross of Pure Sacred Dewdrop"</string>
+    <string name="broken_goblet_of_the_pristine_sea">"Broken Goblet of the Pristine Sea"</string>
+    <string name="chapter_of_an_ancient_chord">"Chapter of an Ancient Chord"</string>
+    <string name="sublimation_of_pure_sacred_dewdrop">"Sublimation of Pure Sacred Dewdrop"</string>
+    <string name="wine_goblet_of_the_pristine_sea">"Wine Goblet of the Pristine Sea"</string>
+    <string name="movement_of_an_ancient_chord">"Movement of an Ancient Chord"</string>
+    <string name="spring_of_pure_sacred_dewdrop">"Spring of Pure Sacred Dewdrop"</string>
+    <string name="silver_goblet_of_the_pristine_sea">"Silver Goblet of the Pristine Sea"</string>
+    <string name="echo_of_an_ancient_chord">"Echo of an Ancient Chord"</string>
+    <string name="essence_of_pure_sacred_dewdrop">"Essence of Pure Sacred Dewdrop"</string>
+    <string name="golden_goblet_of_the_pristine_sea">"Golden Goblet of the Pristine Sea"</string>
+
+    <string name="pale_forgotten_glory">"Pale Forgotten Glory"</string>
+    <string name="echoes_of_the_deep_tides">"Echoes of the Deep Tides"</string>
+
 </resources>
 

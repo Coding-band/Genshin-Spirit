@@ -37,20 +37,23 @@
     "talent4_desc": "L'énergie glacée libérée à la fin du Sentier de givre d'École Kamisato : Sentier de givre confère à Ayaka les effets suivants lorsqu'elle touche l'ennemi :\nRégénération de 10 pts d'endurance ;<br>Bonus de DGT Cryo de 18 % pendant 10 s."
   },
   "sof": {
-    "sof2_name": "Cerise givrée",
+    "sof1_name": "Cerise givrée",
+    "sof1_img": "kamisato_ayaka_c1",
+    "sof1_desc": "Les attaques normales et chargées d'Ayaka ont 50 % de chances de réduire le TdR d'École Kamisato : Fleur de glace de 0,3 s lorsqu'elles infligent des DGT Cryo aux ennemis. Cet effet peut être déclenché une fois toutes les 0,1 s.",
+    "sof2_name": "Lame de blizzard Seki",
     "sof2_img": "kamisato_ayaka_c2",
-    "sof2_desc": "Les attaques normales et chargées d'Ayaka ont 50 % de chances de réduire le TdR d'École Kamisato : Fleur de glace de 0,3 s lorsqu'elles infligent des DGT Cryo aux ennemis. Cet effet peut être déclenché une fois toutes les 0,1 s.",
-    "sof3_name": "Lame de blizzard Seki",
+    "sof2_desc": "Deux petits tourbillons givrés supplémentaires sont libérés à l'activation d'École Kamisato : Givre mortel ; chacun inflige 20 % des DGT du tourbillon d'origine.",
+    "sof3_name": "Confettis de fleuraison givrée",
     "sof3_img": "kamisato_ayaka_c3",
-    "sof3_desc": "Deux petits tourbillons givrés supplémentaires sont libérés à l'activation d'École Kamisato : Givre mortel ; chacun inflige 20 % des DGT du tourbillon d'origine.",
-    "sof4_name": "Confettis de fleuraison givrée",
+    "sof3_desc": "Niveau de compétence École Kamisato : Givre mortel +3.\nNiveau max : 15",
+    "sof4_name": "Retour prééminent",
     "sof4_img": "kamisato_ayaka_c4",
-    "sof4_desc": "Niveau de compétence École Kamisato : Givre mortel +3.\nNiveau max : 15",
-    "sof5_name": "Retour prééminent",
+    "sof4_desc": "La DÉF des ennemis subissant les DGT infligés par le tourbillon givré d'École Kamisato : Givre mortel est réduite de 30 % pendant 6 s.",
+    "sof5_name": "Lune entre les nuages",
     "sof5_img": "kamisato_ayaka_c5",
-    "sof5_desc": "La DÉF des ennemis subissant les DGT infligés par le tourbillon givré d'École Kamisato : Givre mortel est réduite de 30 % pendant 6 s.",
-    "sof6_name": "Lune entre les nuages",
+    "sof5_desc": "Niveau de compétence École Kamisato : Fleur de glace +3.\nNiveau max : 15",
+    "sof6_name": "Danse de la lune",
     "sof6_img": "kamisato_ayaka_c6",
-    "sof6_desc": "Niveau de compétence École Kamisato : Fleur de glace +3.\nNiveau max : 15"
+    "sof6_desc": "Kamisato Ayaka s'illumine d'une gracieuseté gelée toutes les 10 s, augmentant les DGT infligés par son attaque chargée de 298 %. Cet effet s'annule 0,5 s après que l'attaque chargée d'Ayaka touche un ennemi, puis le chronomètre de cette capacité démarre."
   }
 }

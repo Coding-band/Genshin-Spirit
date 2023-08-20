@@ -1496,7 +1496,7 @@ public class BuffMainUI extends AppCompatActivity {
 
     private void char_list_reload() {
         Log.wtf("DAAM","YEE");
-        String name ,element,weapon,nation,sex,mainStat,role;
+        String name ,element,weapon,nation,sex,mainStat;
         int rare,isComing;
         charactersList.clear();
 
@@ -1511,7 +1511,6 @@ public class BuffMainUI extends AppCompatActivity {
                 weapon = object.getString("weapon");
                 nation = object.getString("nation");
                 sex = object.getString("sex");
-                role = object.getString("role");
                 mainStat = object.getString("mainStat");
                 rare = object.getInt("rare");
                 isComing = object.getInt("isComing");
@@ -1522,7 +1521,6 @@ public class BuffMainUI extends AppCompatActivity {
                 characters.setWeapon(weapon);
                 characters.setNation(nation);
                 characters.setSex(sex);
-                characters.setRole(role);
                 characters.setRare(rare);
                 characters.setMainStat(mainStat);
                 characters.setIsComing(isComing);

@@ -324,6 +324,9 @@ public class DailyMemo {
             case "os_cht" : memo_user_server.setText(context.getString(R.string.hk_tw_mo_ser)+" - Lv."+String.valueOf(level));break;
         }
 
+        memo_user_server.setText(sharedPreferences.getString("genshin_uid","-1")+" - Lv."+String.valueOf(level));
+
+
         if (!sharedPreferences.getString("icon_name", "N/A").equals("N/A")){
             icon = sharedPreferences.getString("icon_name", "N/A");
         }

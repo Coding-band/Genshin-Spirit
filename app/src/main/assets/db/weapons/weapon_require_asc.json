@@ -1,4 +1,21 @@
 [
+  {"name" : "Wolf-Fang","rare":4,"type" : "Sword","copy1" : "高塔孤王的碎夢","copy2" : "混沌錨栓","common" : "不祥的面具"},
+  {"name" : "Finale of the Deep","rare":4,"type" : "Sword","copy1" : "純聖露滴的真粹","copy2" : "初生的濁水幻靈","common" : "名刀鐔"},
+  {"name" : "Crossing of Fleuve Cendre","rare":4,"type" : "Sword","copy1" : "悠古弦音的迴響","copy2" : "初生的濁水幻靈","common" : "異色結晶石"},
+  {"name" : "Talking Stick","rare":4,"type" : "Claymore","copy1" : "綠洲花園的真諦","copy2" : "鍥紋的橫脊","common" : "史萊姆原漿"},
+  {"name" : "Tidal Shadow","rare":4,"type" : "Claymore","copy1" : "無垢之海的金杯","copy2" : "異界生命核","common" : "奇械機芯齒輪"},
+  {"name" : "Ballad of the Fjords","rare":4,"type" : "Polearm","copy1" : "無垢之海的金杯","copy2" : "漫遊者的盛放之花","common" : "原素花蜜"},
+  {"name" : "Rightful Reward","rare":4,"type" : "Polearm","copy1" : "無垢之海的金杯","copy2" : "異界生命核","common" : "奇械機芯齒輪"},
+  {"name" : "Sacrificial Jade","rare":4,"type" : "Polearm","copy1" : "孤雲寒林的神體","copy2" : "霧虛燈芯","common" : "禁咒繪卷"},
+  {"name" : "Flowing Purity","rare":4,"type" : "Catalyst","copy1" : "純聖露滴的真粹","copy2" : "異界生命核","common" : "異色結晶石"},
+  {"name" : "Scion of the Blazing Sun","rare":4,"type" : "Bow","copy1" : "烈日威權的舊日","copy2" : "漫遊者的盛放之花","common" : "孢囊晶塵"},
+  {"name" : "Song of Stillness","rare":4,"type" : "Bow","copy1" : "悠古弦音的迴響","copy2" : "初生的濁水幻靈","common" : "歷戰的箭簇"},
+  {"name" : "The First Great Magic","rare":5,"type" : "Bow","copy1" : "悠古弦音的迴響","copy2" : "初生的濁水幻靈","common" : "異色結晶石"},
+
+  {"name" : "Ibis Piercer","rare":4,"type" : "Bow","copy1" : "謐林涓露的金符","copy2" : "漫遊者的盛放之花","common" : "織金紅綢"},
+
+  {"name" : "Jadefall's Splendor","rare":5,"type" : "Catalyst","copy1" : "烈日威權的舊日","copy2" : "漫遊者的盛放之花","common" : "織金紅綢"},
+
   {"name" : "Beacon of the Reed Sea","rare":5,"type" : "Claymore","copy1" : "烈日威權的舊日","copy2" : "鍥紋的橫脊","common" : "織金紅綢"},
   {"name" : "Mailed Flower","rare":4,"type" : "Claymore","copy1" : "獅牙鬥士的理想","copy2" : "鍥紋的橫脊","common" : "浮游晶化核"},
   
@@ -147,11 +164,11 @@
   {"name" : "Kagotsurube Isshin","type" : "Sword","rare" : 4,"copy1" : "今昔劇畫之鬼人","copy2" : "幽邃刻像","common" : "浮游晶化核"},
   {"name" : "Aqua Simulacra","type" : "Bow","rare" : 5,"copy1" : "孤雲寒林的神體","copy2" : "幽邃刻像","common" : "浮游晶化核"},
   {"name" : "Fading Twilight","type" : "Bow","rare" : 4,"copy1" : "漆黑隕鐵的一塊","copy2" : "督察長祭刀","common" : "禁咒繪卷"},
-  {"name" : "Timber Blade","type" : "Sword","rare" : 4,"copy1" : "謐林涓露的金符","copy2" : "混沌錨栓","common" : "織金紅綢"},
+  {"name" : "Sapwood Blade","type" : "Sword","rare" : 4,"copy1" : "謐林涓露的金符","copy2" : "混沌錨栓","common" : "織金紅綢"},
   {"name" : "Forest Regalia","type" : "Claymore","rare" : 4,"copy1" : "謐林涓露的金符","copy2" : "混沌錨栓","common" : "織金紅綢"},
   {"name" : "Moonpiercer","type" : "Polearm","rare" : 4,"copy1" : "綠洲花園的真諦","copy2" : "混沌錨栓","common" : "尉官的徽記"},
   {"name" : "King's Squire","type" : "Bow","rare" : 4,"copy1" : "烈日威權的舊日","copy2" : "茁壯菌核","common" : "歷戰的箭簇"},
-  {"name" : "Trawler","type" : "Bow","rare" : 4,"copy1" : "烈日威權的舊日","copy2" : "茁壯菌核","common" : "孢囊晶塵"},
+  {"name" : "End of the Line","type" : "Bow","rare" : 4,"copy1" : "烈日威權的舊日","copy2" : "茁壯菌核","common" : "孢囊晶塵"},
   {"name" : "Hunter's Path","type" : "Bow","rare" : 5,"copy1" : "烈日威權的舊日","copy2" : "茁壯菌核","common" : "織金紅綢"},
   {"name" : "Fruit of Fulfillment","type" : "Catalyst","rare" : 4,"copy1" : "綠洲花園的真諦","copy2" : "幽邃刻像","common" : "孢囊晶塵"}
 ]

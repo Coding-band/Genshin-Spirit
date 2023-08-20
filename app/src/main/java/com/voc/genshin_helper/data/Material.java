@@ -207,6 +207,10 @@ public class Material {
     public ArrayList<Integer> 	謐林涓露的金符	 = new ArrayList<Integer>(Collections.nCopies(4, 0));
     public ArrayList<Integer> 	綠洲花園的真諦	 = new ArrayList<Integer>(Collections.nCopies(4, 0));
     public ArrayList<Integer> 	烈日威權的舊日	 = new ArrayList<Integer>(Collections.nCopies(4, 0));
+    //add in 20230820
+    public ArrayList<Integer> 	悠古弦音的迴響	 = new ArrayList<Integer>(Collections.nCopies(4, 0));
+    public ArrayList<Integer> 	純聖露滴的真粹	 = new ArrayList<Integer>(Collections.nCopies(4, 0));
+    public ArrayList<Integer> 	無垢之海的金杯	 = new ArrayList<Integer>(Collections.nCopies(4, 0));
 
     public ArrayList<Integer> 	混沌真眼	 = new ArrayList<Integer>(Collections.nCopies(3, 0));
     public ArrayList<Integer> 	混沌爐心	 = new ArrayList<Integer>(Collections.nCopies(3, 0));
@@ -224,6 +228,11 @@ public class Material {
     public ArrayList<Integer> 	輝光稜晶	 = new ArrayList<Integer>(Collections.nCopies(3, 0));
     //add in 20220924
     public ArrayList<Integer> 	鍥紋的橫脊	 = new ArrayList<Integer>(Collections.nCopies(3, 0));
+    //add in 20230820
+    public ArrayList<Integer> 	異界生命核	 = new ArrayList<Integer>(Collections.nCopies(3, 0));
+    public ArrayList<Integer> 	初生的濁水幻靈	 = new ArrayList<Integer>(Collections.nCopies(3, 0));
+    //add in 4.1.0
+    public ArrayList<Integer> 	役人的時時刻刻	 = new ArrayList<Integer>(Collections.nCopies(3, 0));
 
     //-----------↑Method↑-----------↓Return↓-----------\\
 
@@ -389,7 +398,10 @@ public class Material {
                 "殘毀的橫脊","密固的橫脊","鍥紋的橫脊",
                 "來自何處的待放之花","何人所珍藏之花","漫遊者的盛放之花",
                 "齧合齒輪","機關正齒輪","奇械機芯齒輪",
-                "異海凝珠","異海之塊","異色結晶石"
+                "異海凝珠","異海之塊","異色結晶石",
+                "隙間之核","外世突觸","異界生命核",
+                "濁水的一滴","濁水的一掬","初生的濁水幻靈",
+                "老舊的役人懷錶","役人的制式懷錶","役人的時時刻刻",
 
         };
     }
@@ -425,7 +437,10 @@ public class Material {
                 鍥紋的橫脊.get(0),鍥紋的橫脊.get(1),鍥紋的橫脊.get(2),
                 漫遊者的盛放之花.get(0),漫遊者的盛放之花.get(1),漫遊者的盛放之花.get(2),
                 奇械機芯齒輪.get(0),奇械機芯齒輪.get(1),奇械機芯齒輪.get(2),
-                異色結晶石.get(0),異色結晶石.get(1),異色結晶石.get(2)
+                異色結晶石.get(0),異色結晶石.get(1),異色結晶石.get(2),
+                異界生命核.get(0),異界生命核.get(1),異界生命核.get(2),
+                初生的濁水幻靈.get(0),初生的濁水幻靈.get(1),初生的濁水幻靈.get(2),
+                役人的時時刻刻.get(0),役人的時時刻刻.get(1),役人的時時刻刻.get(2)
         };
     }
     public int[] commonRareList (){
@@ -440,6 +455,9 @@ public class Material {
                 1,2,3,
                 1,2,3,
 
+                2,3,4,
+                2,3,4,
+                2,3,4,
                 2,3,4,
                 2,3,4,
                 2,3,4,
@@ -475,7 +493,8 @@ public class Material {
                 "高塔孤王的破瓦", "高塔孤王的殘垣", "高塔孤王的斷片", "高塔孤王的碎夢",
                 "孤雲寒林的光砂", "孤雲寒林的輝岩", "孤雲寒林的聖骸", "孤雲寒林的神體",
                 "遠海夷地的瑚枝", "遠海夷地的玉枝", "遠海夷地的瓊枝", "遠海夷地的金枝",
-                "謐林涓露的銅符", "謐林涓露的鐵符", "謐林涓露的銀符", "謐林涓露的金符"
+                "謐林涓露的銅符", "謐林涓露的鐵符", "謐林涓露的銀符", "謐林涓露的金符",
+                "悠古弦音的殘章", "悠古弦音的斷章", "悠古弦音的樂章", "悠古弦音的迴響",
         };
     }
     public int[] weekly1CountList (){
@@ -490,7 +509,8 @@ public class Material {
                 高塔孤王的碎夢.get(0),高塔孤王的碎夢.get(1),高塔孤王的碎夢.get(2),高塔孤王的碎夢.get(3),
                 孤雲寒林的神體.get(0),孤雲寒林的神體.get(1),孤雲寒林的神體.get(2),孤雲寒林的神體.get(3),
                 遠海夷地的金枝.get(0),遠海夷地的金枝.get(1),遠海夷地的金枝.get(2),遠海夷地的金枝.get(3),
-                謐林涓露的金符.get(0),謐林涓露的金符.get(1),謐林涓露的金符.get(2),謐林涓露的金符.get(3)
+                謐林涓露的金符.get(0),謐林涓露的金符.get(1),謐林涓露的金符.get(2),謐林涓露的金符.get(3),
+                悠古弦音的迴響.get(0),悠古弦音的迴響.get(1),悠古弦音的迴響.get(2),悠古弦音的迴響.get(3)
         };
     }
     public int[] weekly1RareList (){
@@ -502,6 +522,7 @@ public class Material {
                 2,3,4,
                 2,3,4,
 
+                2,3,4,5,
                 2,3,4,5,
                 2,3,4,5,
                 2,3,4,5,
@@ -524,7 +545,8 @@ public class Material {
                 "凜風奔狼的始齔", "凜風奔狼的裂齒", "凜風奔狼的斷牙", "凜風奔狼的懷鄉",
                 "霧海雲間的鉛丹", "霧海雲間的汞丹", "霧海雲間的金丹", "霧海雲間的轉還",
                 "鳴神御靈的明惠", "鳴神御靈的歡喜", "鳴神御靈的親愛", "鳴神御靈的勇武",
-                "綠洲花園的追憶","綠洲花園的恩惠","綠洲花園的哀思","綠洲花園的真諦"
+                "綠洲花園的追憶","綠洲花園的恩惠","綠洲花園的哀思","綠洲花園的真諦",
+                "純聖露滴的濾渣","純聖露滴的凝華","純聖露滴的醴泉","純聖露滴的真粹"
         };
     }
     public int[] weekly2CountList (){
@@ -539,7 +561,8 @@ public class Material {
                 凜風奔狼的懷鄉.get(0),凜風奔狼的懷鄉.get(1),凜風奔狼的懷鄉.get(2),凜風奔狼的懷鄉.get(3),
                 霧海雲間的轉還.get(0),霧海雲間的轉還.get(1),霧海雲間的轉還.get(2),霧海雲間的轉還.get(3),
                 鳴神御靈的勇武.get(0),鳴神御靈的勇武.get(1),鳴神御靈的勇武.get(2),鳴神御靈的勇武.get(3),
-                綠洲花園的真諦.get(0),綠洲花園的真諦.get(1),綠洲花園的真諦.get(2),綠洲花園的真諦.get(3)
+                綠洲花園的真諦.get(0),綠洲花園的真諦.get(1),綠洲花園的真諦.get(2),綠洲花園的真諦.get(3),
+                純聖露滴的真粹.get(0),純聖露滴的真粹.get(1),純聖露滴的真粹.get(2),純聖露滴的真粹.get(3)
         };
     }
     public int[] weekly2RareList (){
@@ -551,6 +574,7 @@ public class Material {
                 2,3,4,
                 2,3,4,
 
+                2,3,4,5,
                 2,3,4,5,
                 2,3,4,5,
                 2,3,4,5,
@@ -573,7 +597,8 @@ public class Material {
                 "獅牙鬥士的枷鎖", "獅牙鬥士的鐵鍊", "獅牙鬥士的鐐銬", "獅牙鬥士的理想",
                 "漆黑隕鐵的一粒", "漆黑隕鐵的一片", "漆黑隕鐵的一角", "漆黑隕鐵的一塊",
                 "今昔劇畫的惡尉", "今昔劇畫的虎囓", "今昔劇畫的一角", "今昔劇畫的鬼人",
-                "烈日威權的殘響","烈日威權的餘光","烈日威權的夢想","烈日威權的舊日"
+                "烈日威權的殘響","烈日威權的餘光","烈日威權的夢想","烈日威權的舊日",
+                "無垢之海的苦盞","無垢之海的酒盞","無垢之海的銀盃","無垢之海的金杯"
         };
     }
     public int[] weekly3CountList (){
@@ -588,7 +613,8 @@ public class Material {
                 獅牙鬥士的理想.get(0),獅牙鬥士的理想.get(1),獅牙鬥士的理想.get(2),獅牙鬥士的理想.get(3),
                 漆黑隕鐵的一塊.get(0),漆黑隕鐵的一塊.get(1),漆黑隕鐵的一塊.get(2),漆黑隕鐵的一塊.get(3),
                 今昔劇畫的鬼人.get(0),今昔劇畫的鬼人.get(1),今昔劇畫的鬼人.get(2),今昔劇畫的鬼人.get(3),
-                烈日威權的舊日.get(0),烈日威權的舊日.get(1),烈日威權的舊日.get(2),烈日威權的舊日.get(3)
+                烈日威權的舊日.get(0),烈日威權的舊日.get(1),烈日威權的舊日.get(2),烈日威權的舊日.get(3),
+                無垢之海的金杯.get(0),無垢之海的金杯.get(1),無垢之海的金杯.get(2),無垢之海的金杯.get(3)
         };
     }
     public int[] weekly3RareList (){
@@ -600,6 +626,7 @@ public class Material {
                 2,3,4,
                 2,3,4,
 
+                2,3,4,5,
                 2,3,4,5,
                 2,3,4,5,
                 2,3,4,5,
@@ -641,7 +668,6 @@ public class Material {
                 //add in 20220716
                 case "孢囊晶塵": addCountIntoVar(孢囊晶塵, temp_count, "COMMON"); break;
                 //add in 20230710
-                case "漫遊者的盛放之花": addCountIntoVar(漫遊者的盛放之花, temp_count, "COMMON"); break;
                 case "奇械機芯齒輪": addCountIntoVar(奇械機芯齒輪, temp_count, "COMMON"); break;
                 case "異色結晶石": addCountIntoVar(異色結晶石, temp_count, "COMMON"); break;
             }
@@ -753,8 +779,11 @@ public class Material {
                 //add in 20210910
                 case "浮游晶化核": addCountIntoVar(浮游晶化核, temp_count, "T-COMMON"); break;
                 //add in 20220716
-                case "孢囊晶塵": addCountIntoVar(孢囊晶塵, temp_count, "pseudo_stamensT-COMMON"); break;
+                case "孢囊晶塵": addCountIntoVar(孢囊晶塵, temp_count, "T-COMMON"); break;
                 case "織金紅綢": addCountIntoVar(織金紅綢, temp_count, "T-COMMON"); break;
+                //add in 20230710
+                case "奇械機芯齒輪": addCountIntoVar(奇械機芯齒輪, temp_count, "T-COMMON"); break;
+                case "異色結晶石": addCountIntoVar(異色結晶石, temp_count, "T-COMMON"); break;
             }
 
             /** T-BOOK -> USING temp_count's pos 0-2 */
@@ -842,6 +871,9 @@ public class Material {
             case "謐林涓露的金符": addCountIntoVar(謐林涓露的金符, temp_count, "COPY1"); break;
             case "綠洲花園的真諦": addCountIntoVar(綠洲花園的真諦, temp_count, "COPY1"); break;
             case "烈日威權的舊日": addCountIntoVar(烈日威權的舊日, temp_count, "COPY1"); break;
+            case "悠古弦音的迴響": addCountIntoVar(悠古弦音的迴響, temp_count, "COPY1"); break;
+            case "純聖露滴的真粹": addCountIntoVar(純聖露滴的真粹, temp_count, "COPY1"); break;
+            case "無垢之海的金杯": addCountIntoVar(無垢之海的金杯, temp_count, "COPY1"); break;
         }
 
         /** COPY2 -> */
@@ -864,9 +896,11 @@ public class Material {
             case "鍥紋的橫脊": addCountIntoVar(鍥紋的橫脊, temp_count, "COPY2"); break;
             //add in 20230416
             case "漫遊者的盛放之花": addCountIntoVar(漫遊者的盛放之花, temp_count, "COPY2"); break;
-            //add in 20230710
-            case "奇械機芯齒輪": addCountIntoVar(奇械機芯齒輪, temp_count, "COPY2"); break;
-            case "異色結晶石": addCountIntoVar(異色結晶石, temp_count, "COPY2"); break;
+            //add in 20230820
+            case "異界生命核": addCountIntoVar(異界生命核, temp_count, "COPY2"); break;
+            case "初生的濁水幻靈": addCountIntoVar(初生的濁水幻靈, temp_count, "COPY2"); break;
+            //add in 4.1.0
+            case "役人的時時刻刻": addCountIntoVar(役人的時時刻刻, temp_count, "COPY2"); break;
         }
 
 
@@ -885,6 +919,9 @@ public class Material {
             //add in 20220716
             case "孢囊晶塵": addCountIntoVar(孢囊晶塵, temp_count, "W-COMMON"); break;
             case "織金紅綢": addCountIntoVar(織金紅綢, temp_count, "W-COMMON"); break;
+            //add in 20230710
+            case "奇械機芯齒輪": addCountIntoVar(奇械機芯齒輪, temp_count, "W-COMMON"); break;
+            case "異色結晶石": addCountIntoVar(異色結晶石, temp_count, "W-COMMON"); break;
         }
     }
 
@@ -979,6 +1016,9 @@ public class Material {
             case "「諍言」的哲學" : return new String[]{"「諍言」的教導","「諍言」的指引","「諍言」的哲學"};
             case "「巧思」的哲學" : return new String[]{"「巧思」的教導","「巧思」的指引","「巧思」的哲學"};
             case "「篤行」的哲學" : return new String[]{"「篤行」的教導","「篤行」的指引","「篤行」的哲學"};
+            case "「公平」的哲學" : return new String[]{"「公平」的教導","「公平」的指引","「公平」的哲學"};
+            case "「正義」的哲學" : return new String[]{"「正義」的教導","「正義」的指引","「正義」的哲學"};
+            case "「秩序」的哲學" : return new String[]{"「秩序」的教導","「秩序」的指引","「秩序」的哲學"};
 
             default: return new String[]{"N/A","N/A","N/A"};
         }
@@ -1001,6 +1041,9 @@ public class Material {
             case "謐林涓露的金符" : return new String[]{"謐林涓露的銅符", "謐林涓露的鐵符", "謐林涓露的銀符", "謐林涓露的金符"};
             case "綠洲花園的真諦" : return new String[]{"綠洲花園的追憶","綠洲花園的恩惠","綠洲花園的哀思","綠洲花園的真諦"};
             case "烈日威權的舊日" : return new String[]{"烈日威權的殘響","烈日威權的餘光","烈日威權的夢想","烈日威權的舊日"};
+            case "悠古弦音的迴響" : return new String[]{"悠古弦音的殘章", "悠古弦音的斷章", "悠古弦音的樂章", "悠古弦音的迴響"};
+            case "純聖露滴的真粹" : return new String[]{"純聖露滴的濾渣","純聖露滴的凝華","純聖露滴的醴泉","純聖露滴的真粹"};
+            case "無垢之海的金杯" : return new String[]{"無垢之海的苦盞","無垢之海的酒盞","無垢之海的銀盃","無垢之海的金杯"};
 
             default: return new String[]{"N/A","N/A","N/A","N/A"};
         }
@@ -1020,6 +1063,10 @@ public class Material {
             case "混沌錨栓" : return new String[]{"混沌容器","混沌模組","混沌錨栓"};
             case "輝光稜晶" : return new String[]{"破缺稜晶","混濁稜晶","輝光稜晶"};
             case "鍥紋的橫脊" : return new String[]{"殘毀的橫脊","密固的橫脊","鍥紋的橫脊"};
+            case "漫遊者的盛放之花" : return new String[]{"來自何處的待放之花","何人所珍藏之花","漫遊者的盛放之花"};
+            case "異界生命核" : return new String[]{"隙間之核","外世突觸","異界生命核"};
+            case "初生的濁水幻靈" : return new String[]{"濁水的一滴","濁水的一掬","初生的濁水幻靈"};
+            case "役人的時時刻刻" : return new String[]{"老舊的役人懷錶","役人的制式懷錶","役人的時時刻刻"};
             default: return new String[]{"N/A","N/A","N/A"};
         }
     }
@@ -1036,6 +1083,8 @@ public class Material {
             case "浮游晶化核" : return new String[]{"浮游乾核","浮游幽核","浮游晶化核"};
             case "孢囊晶塵" : return new String[]{"蕈獸孢子","螢光孢粉","孢囊晶塵"};
             case "織金紅綢" : return new String[]{"褪色紅綢","鑲邊紅綢","織金紅綢"};
+            case "奇械機芯齒輪" : return new String[]{"齧合齒輪","機關正齒輪","奇械機芯齒輪"};
+            case "異色結晶石" : return new String[]{"異海凝珠","異海之塊","異色結晶石"};
 
             default: return new String[]{"N/A","N/A","N/A"};
         }

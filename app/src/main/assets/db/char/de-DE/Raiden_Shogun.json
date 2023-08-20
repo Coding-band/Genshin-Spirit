@@ -37,20 +37,23 @@
     "talent4_desc": "Gewährt Shougun Raiden für jeden Prozentpunkt über 100 % Aufladerate die folgenden Effekte:\n· Erhöht die Elementarenergie-Wiederherstellung von Musou Isshin um 0,6 %.<br>· Erhöht den Elektro-SCH-Bonus um 0,4 %."
   },
   "sof": {
-    "sof2_name": "Unheilvolles Omen",
+    "sof1_name": "Unheilvolles Omen",
+    "sof1_img": "raiden_shogun_c1",
+    "sof1_desc": "Charkra-Desiderate kann Entschlusskraft noch schneller sammeln. Wenn Elektro-Figuren ihre Spezialfähigkeiten verwenden, wird die gewonnene Entschlusskraft um 80 % erhöht. Wenn Figuren anderer Elementartypen ihre Spezialfähigkeiten verwenden, wird die gewonnene Entschlusskraft um 20 % erhöht.",
+    "sof2_name": "Stahlbrecherin",
     "sof2_img": "raiden_shogun_c2",
-    "sof2_desc": "Charkra-Desiderate kann Entschlusskraft noch schneller sammeln. Wenn Elektro-Figuren ihre Spezialfähigkeiten verwenden, wird die gewonnene Entschlusskraft um 80 % erhöht. Wenn Figuren anderer Elementartypen ihre Spezialfähigkeiten verwenden, wird die gewonnene Entschlusskraft um 20 % erhöht.",
-    "sof3_name": "Stahlbrecherin",
+    "sof2_desc": "Wenn Shougun Raiden Musou no Hitotachi einsetzt und durch Geheime Kunst – Musou Shinsetsu in den Zustand Musou Isshin versetzt wird, ignorieren die Angriffe von Shougun Raiden 60 % der VTD von Gegnern.",
+    "sof3_name": "Shinkage-Geschichten",
     "sof3_img": "raiden_shogun_c3",
-    "sof3_desc": "Wenn Shougun Raiden Musou no Hitotachi einsetzt und durch Geheime Kunst – Musou Shinsetsu in den Zustand Musou Isshin versetzt wird, ignorieren die Angriffe von Shougun Raiden 60 % der VTD von Gegnern.",
-    "sof4_name": "Shinkage-Geschichten",
+    "sof3_desc": "Erhöht die Stufe der Fähigkeit Geheime Kunst – Musou Shinsetsu um 3.\nHöchststufe 15.",
+    "sof4_name": "Gelöbnis des Anstands",
     "sof4_img": "raiden_shogun_c4",
-    "sof4_desc": "Erhöht die Stufe der Fähigkeit Geheime Kunst – Musou Shinsetsu um 3.\nHöchststufe 15.",
-    "sof5_name": "Gelöbnis des Anstands",
+    "sof4_desc": "Erhöht nach dem Ende des Zustands Musou Isshin von Geheime Kunst – Musou Shinsetsu den ANG aller Truppenmitglieder in der Nähe außer Shougun Raiden selbst 10 s lang um 30 %.",
+    "sof5_name": "Erscheinen des Unheils",
     "sof5_img": "raiden_shogun_c5",
-    "sof5_desc": "Erhöht nach dem Ende des Zustands Musou Isshin von Geheime Kunst – Musou Shinsetsu den ANG aller Truppenmitglieder in der Nähe außer Shougun Raiden selbst 10 s lang um 30 %.",
-    "sof6_name": "Erscheinen des Unheils",
+    "sof5_desc": "Erhöht die Stufe der Fähigkeit Wunder – Unheilvoller Blick um 3.\nHöchststufe 15.",
+    "sof6_name": "Wunschträgerin",
     "sof6_img": "raiden_shogun_c6",
-    "sof6_desc": "Erhöht die Stufe der Fähigkeit Wunder – Unheilvoller Blick um 3.\nHöchststufe 15."
+    "sof6_desc": "Verringert im Zustand Musou Isshin von Geheime Kunst – Musou Shinsetsu die Abklingzeit der Spezialfähigkeiten aller Truppenmitglieder in der Nähe (außer Shougun Raiden selbst) um 1 s, wenn die Angriffe mit Spezialfähigkeitsschaden von Shougun Raiden Gegner treffen.\n1 s Abklingzeit, 5-mal während der Wirkungsdauer des Zustands auslösbar."
   }
 }

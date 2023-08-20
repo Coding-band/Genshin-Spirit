@@ -37,20 +37,23 @@
     "talent4_desc": "Erhöht Monas Hydro-Schaden zusätzlich um 20 % ihrer Aufladerate."
   },
   "sof": {
-    "sof2_name": "Prophezeiung des Untergangs",
+    "sof1_name": "Prophezeiung des Untergangs",
+    "sof1_img": "mona_c1",
+    "sof1_desc": "Verstärkt den Effekt von Hydro-Elementarreaktionen, wenn eine eigene Figur in der Truppe Gegner im Zustand Omen trifft, 8 s lang:\n· Erhöht den mit der Reaktion Unter Strom verursachten Schaden um 15 %, den mit der Reaktion Verdampfen verursachten Schaden um 15 % und den mit der Reaktion Hydro-Verwirbelung verursachten Schaden um 15 %.<br>· Verlängert die Wirkungsdauer von Gefroren um 15 %.",
+    "sof2_name": "Sternenkette",
     "sof2_img": "mona_c2",
-    "sof2_desc": "Verstärkt den Effekt von Hydro-Elementarreaktionen, wenn eine eigene Figur in der Truppe Gegner im Zustand Omen trifft, 8 s lang:\n· Erhöht den mit der Reaktion Unter Strom verursachten Schaden um 15 %, den mit der Reaktion Verdampfen verursachten Schaden um 15 % und den mit der Reaktion Hydro-Verwirbelung verursachten Schaden um 15 %.<br>· Verlängert die Wirkungsdauer von Gefroren um 15 %.",
-    "sof3_name": "Sternenkette",
+    "sof2_desc": "Löst bei Treffern mit Standardangriffen mit einer Wahrscheinlichkeit von 20 % automatisch einen heftigen Schlag aus.\n5 s Abklingzeit.",
+    "sof3_name": "Im ewigen Umlauf",
     "sof3_img": "mona_c3",
-    "sof3_desc": "Löst bei Treffern mit Standardangriffen mit einer Wahrscheinlichkeit von 20 % automatisch einen heftigen Schlag aus.\n5 s Abklingzeit.",
-    "sof4_name": "Im ewigen Umlauf",
+    "sof3_desc": "Erhöht die Stufe der Fähigkeit Vorbestimmte Laufbahn um 3.\nHöchststufe 15.",
+    "sof4_name": "Prophezeiung der Ausrottung",
     "sof4_img": "mona_c4",
-    "sof4_desc": "Erhöht die Stufe der Fähigkeit Vorbestimmte Laufbahn um 3.\nHöchststufe 15.",
-    "sof5_name": "Prophezeiung der Ausrottung",
+    "sof4_desc": "Erhöht die KT bei Angriffen aller Truppenmitglieder auf Gegner im Zustand Omen um 15 %.",
+    "sof5_name": "Verspottung des Schicksals",
     "sof5_img": "mona_c5",
-    "sof5_desc": "Erhöht die KT bei Angriffen aller Truppenmitglieder auf Gegner im Zustand Omen um 15 %.",
-    "sof6_name": "Verspottung des Schicksals",
+    "sof5_desc": "Erhöht die Stufe der Fähigkeit Trugbilder im Wasser um 3.\nHöchststufe 15.",
+    "sof6_name": "Rhetorik des Unglücks",
     "sof6_img": "mona_c6",
-    "sof6_desc": "Erhöht die Stufe der Fähigkeit Trugbilder im Wasser um 3.\nHöchststufe 15."
+    "sof6_desc": "Erhöht den Schaden des nächsten heftigen Schlags für jede Sekunde, die sich Mona im Zustand Irreführende Strömung bewegt, um 60 %.\nAuf diese Weise kann der Schaden heftiger Schläge um bis zu 180 % erhöht werden und hält bis zu 8 s lang."
   }
 }

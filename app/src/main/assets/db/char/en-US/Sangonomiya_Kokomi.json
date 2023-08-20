@@ -37,20 +37,23 @@
     "talent4_desc": "While donning the Ceremonial Garment created by Nereid's Ascension, the Normal and Charged Attack DMG Bonus Sangonomiya Kokomi gains based on her Max HP will receive a further increase based on 15% of her Healing Bonus."
   },
   "sof": {
-    "sof2_name": "At Water's Edge",
+    "sof1_name": "At Water's Edge",
+    "sof1_img": "sangonomiya_kokomi_c1",
+    "sof1_desc": "While donning the Ceremonial Garment created by Nereid's Ascension, the final Normal Attack in Sangonomiya Kokomi's combo will unleash a swimming fish to deal 30% of her Max HP as Hydro DMG.\nThis DMG is not considered Normal Attack DMG.",
+    "sof2_name": "The Clouds Like Waves Rippling",
     "sof2_img": "sangonomiya_kokomi_c2",
-    "sof2_desc": "While donning the Ceremonial Garment created by Nereid's Ascension, the final Normal Attack in Sangonomiya Kokomi's combo will unleash a swimming fish to deal 30% of her Max HP as Hydro DMG.\nThis DMG is not considered Normal Attack DMG.",
-    "sof3_name": "The Clouds Like Waves Rippling",
+    "sof2_desc": "Sangonomiya Kokomi gains the following Healing Bonuses with regard to characters with 50% or less HP via the following methods:\n·Kurage's Oath Bake-Kurage: 4.5% of Kokomi's Max HP.<br>·Nereid's Ascension Normal and Charged Attacks: 0.6% of Kokomi's Max HP.",
+    "sof3_name": "The Moon, A Ship O'er the Seas",
     "sof3_img": "sangonomiya_kokomi_c3",
-    "sof3_desc": "Sangonomiya Kokomi gains the following Healing Bonuses with regard to characters with 50% or less HP via the following methods:\n·Kurage's Oath Bake-Kurage: 4.5% of Kokomi's Max HP.<br>·Nereid's Ascension Normal and Charged Attacks: 0.6% of Kokomi's Max HP.",
-    "sof4_name": "The Moon, A Ship O'er the Seas",
+    "sof3_desc": "Increases the Level of Nereid's Ascension by 3.\nMaximum upgrade level is 15.",
+    "sof4_name": "The Moon Overlooks the Waters",
     "sof4_img": "sangonomiya_kokomi_c4",
-    "sof4_desc": "Increases the Level of Nereid's Ascension by 3.\nMaximum upgrade level is 15.",
-    "sof5_name": "The Moon Overlooks the Waters",
+    "sof4_desc": "While donning the Ceremonial Garment created by Nereid's Ascension, Sangonomiya Kokomi's Normal Attack SPD is increased by 10%, and Normal Attacks that hit opponents will restore 0.8 Energy for her.\nThis effect can occur once every 0.2s.",
+    "sof5_name": "All Streams Flow to the Sea",
     "sof5_img": "sangonomiya_kokomi_c5",
-    "sof5_desc": "While donning the Ceremonial Garment created by Nereid's Ascension, Sangonomiya Kokomi's Normal Attack SPD is increased by 10%, and Normal Attacks that hit opponents will restore 0.8 Energy for her.\nThis effect can occur once every 0.2s.",
-    "sof6_name": "All Streams Flow to the Sea",
+    "sof5_desc": "Increases the Level of Kurage's Oath by 3.\nMaximum upgrade level is 15.",
+    "sof6_name": "Sango Isshin",
     "sof6_img": "sangonomiya_kokomi_c6",
-    "sof6_desc": "Increases the Level of Kurage's Oath by 3.\nMaximum upgrade level is 15."
+    "sof6_desc": "While donning the Ceremonial Garment created by Nereid's Ascension, Sangonomiya Kokomi gains a 40% Hydro DMG Bonus for 4s when her Normal and Charged Attacks heal, or would heal, any party member with 80% or more HP."
   }
 }

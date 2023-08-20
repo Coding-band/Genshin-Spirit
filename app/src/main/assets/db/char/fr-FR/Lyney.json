@@ -1,13 +1,13 @@
 {
   "localeName": "Lyney",
   "nick": "Spectacle de fantasmagorie",
-  "occupation": "???",
+  "occupation": "Hôtel Bouffes d'été",
   "area": "Fontaine",
   "rare": "5",
   "weapon": "Bow",
   "element": "Pyro",
   "constellation": "Felis Fuscus",
-  "desc": "测试角色",
+  "desc": "Un célèbre magicien fontainois qui a un esprit agile et un grand don pour le bagou. Le public est captivé par ses compétences exquises et s'accroche à chacun de ses mots intelligents.",
   "birth": "02/02",
   "battle_talent": {
     "normal_name": "Attaque normale : Cartomagie",
@@ -20,7 +20,7 @@
     "element_desc": "Lyney agite son chapeau pour déclencher un feu d'artifice surprise.<br>L'utilisation de cette capacité consomme tous les cumuls de fantasmagorie possédés et inflige des DGT Pyro de zone aux ennemis en face. Les DGT augmentent selon la quantité de cumuls consommés, et les PV de Lyney sont aussi restaurés selon ses PV max.<br><br>Lorsqu'un chapeau félinois créé par Lyney est présent sur le champ de bataille, le feu d'artifice le fait exploser pour infliger des DGT Pyro de zone d'une valeur équivalant aux DGT d'une balle d'artifice.<br>Les DGT infligés par un chapeau félinois de cette manière sont considérés comme des DGT d'attaque chargée.<br><br><i>« Tout le monde sait que les magiciens détournent intentionnellement le public... Eh oui, pendant que vous me regardiez, mon chapeau et mon assistant là-bas ont tous deux disparu... Fascinant, n'est-ce pas ? »</i>",
     "final_name": "Clou du spectacle : Parade prodigieuse",
     "final_img": "lyney_s3",
-    "final_desc": "Libérant sa magie, Lyney se transforme en un félin chaponois qui peut se déplacer rapidement. (À ne pas confondre avec son chapeau félinois. Ce sont deux accessoires bien différents !)\nLorsque le félin chaponois s'approche des ennemis, il fait pleuvoir des flammes sur ces derniers, infligeant une fois des DGT Pyro à chaque ennemi. Une fois la pluie de flammes terminée, il dissipe le félin chaponois et fait exploser un magnifique feu d'artifice, ce qui inflige des DGT Pyro de zone, invoque un chapeau félinois et lui accorde un cumul de fantasmagorie.<br><br>Un félin chaponois peut être dissipé manuellement.<br><br><i>« Regardez attentivement. C'est le moment du miracle, et il n'appartient qu'à nous ! »</i>"
+    "final_desc": "Libérant sa magie, Lyney se transforme en un félin chaponois qui peut se déplacer rapidement. (À ne pas confondre avec son chapeau félinois. Ce sont deux accessoires bien différents !)\nLorsque le félin chaponois s'approche des ennemis, il fait pleuvoir des flammes sur ces derniers, infligeant une fois des DGT Pyro à chaque ennemi. Une fois la durée terminée, le félin chaponois se dissipe en faisant exploser un magnifique feu d'artifice, ce qui inflige des DGT Pyro de zone, invoque un chapeau félinois et lui accorde un cumul de fantasmagorie.<br><br>Un félin chaponois peut être dissipé manuellement.<br><br><i>« Regardez attentivement. C'est le moment du miracle, et il n'appartient qu'à nous ! »</i>"
   },
   "basic_talent": {
     "talent2_name": "Observation triviale",

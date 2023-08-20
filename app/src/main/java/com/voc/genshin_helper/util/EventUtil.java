@@ -12,6 +12,7 @@ import static com.voc.genshin_helper.util.LogExport.EVENTLIST;
 import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.text.Spannable;
@@ -70,8 +71,43 @@ public class EventUtil {
         this.context = context;
         this.activity = activity;
         this.viewInDesk = viewInDesk;
+        SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",Context.MODE_PRIVATE);
+        String lang = "zh-tw";
 
-        new grabDataFromServer().execute(ItemRss.SERVER_DOWNLOAD_ROOT + "/dailyMemo_3.5/dailyMemoEventPort.php");
+        /**
+         * LANGS = {
+         *     "zh-cn": "简体中文",
+         *     "zh-tw": "繁體中文",
+         *     "de-de": "Deutsch",
+         *     "en-us": "English",
+         *     "es-es": "Español",
+         *     "fr-fr": "Français",
+         *     "id-id": "Indonesia",
+         *     "it-it": "Italiano",
+         *     "ja-jp": "日本語",
+         *     "ko-kr": "한국어",
+         *     "pt-pt": "Português",
+         *     "ru-ru": "Pусский",
+         *     "th-th": "ภาษาไทย",
+         *     "vi-vn": "Tiếng Việt",
+         *     "tr-tr": "Türkçe",
+         * }
+         */
+
+        switch (sharedPreferences.getString("curr_lang","en-US")){
+            case "zh-HK" : lang = "zh-tw";break;
+            case "zh-CN" : lang = "zh-cn";break;
+            case "en-US" : lang = "en-us";break;
+            case "ru-RU" : lang = "ru-ru";break;
+            case "ja-JP" : lang = "ja-jp";break;
+            case "fr-FR" : lang = "fr-fr";break;
+            case "pt-PT" : lang = "pt-pt";break;
+            case "de-DE" : lang = "de-de";break;
+
+            default : lang = "en-us";break;
+        }
+        eventItemArrayList = new ArrayList<>();
+        new grabDataFromServer().execute(ItemRss.SERVER_DOWNLOAD_ROOT + "dailyMemo_3.5/dailyMemoEventPort.php?lang="+lang);
 
     }
 
@@ -79,8 +115,8 @@ public class EventUtil {
 
 
     private void displayRefresh() {
-        System.out.println("viewInDesk has home_eventlist ? "+viewInDesk.findViewById(R.id.home_eventlist));
-        System.out.println("viewInDesk has home_dailymemo ? "+viewInDesk.findViewById(R.id.home_dailymemo));
+        System.out.println("viewInDesk has home_eventlist ? "+(viewInDesk.findViewById(R.id.home_eventlist) != null));
+        System.out.println("viewInDesk has home_dailymemo ? "+(viewInDesk.findViewById(R.id.home_dailymemo) != null));
         event_available_tv = viewInDesk.findViewById(R.id.event_available_tv);
         event_item_title1 = viewInDesk.findViewById(R.id.event_item_title1);
         event_item_title2 = viewInDesk.findViewById(R.id.event_item_title2);
@@ -91,14 +127,14 @@ public class EventUtil {
         event_item_day3 = viewInDesk.findViewById(R.id.event_item_day3);
         event_item_day4 = viewInDesk.findViewById(R.id.event_item_day4);
 
-        event_item_title1.setText(eventItemArrayList.get(0).getTitle());
-        event_item_title2.setText(eventItemArrayList.get(1).getTitle());
-        event_item_title3.setText(eventItemArrayList.get(2).getTitle());
-        event_item_title4.setText(eventItemArrayList.get(3).getTitle());
-        event_item_day1.setText(String.valueOf(eventItemArrayList.get(0).getEnd_time_days()));
-        event_item_day2.setText(String.valueOf(eventItemArrayList.get(1).getEnd_time_days()));
-        event_item_day3.setText(String.valueOf(eventItemArrayList.get(2).getEnd_time_days()));
-        event_item_day4.setText(String.valueOf(eventItemArrayList.get(3).getEnd_time_days()));
+        event_item_title1.setText(eventItemArrayList.size() > 0 ? eventItemArrayList.get(0).getTitle() : "...");
+        event_item_title2.setText(eventItemArrayList.size() > 1 ? eventItemArrayList.get(1).getTitle() : "...");
+        event_item_title3.setText(eventItemArrayList.size() > 2 ? eventItemArrayList.get(2).getTitle() : "...");
+        event_item_title4.setText(eventItemArrayList.size() > 3 ? eventItemArrayList.get(3).getTitle() : "...");
+        event_item_day1.setText(String.valueOf(eventItemArrayList.size() > 0 ? eventItemArrayList.get(0).getEnd_time_days() : "?"));
+        event_item_day2.setText(String.valueOf(eventItemArrayList.size() > 1 ? eventItemArrayList.get(1).getEnd_time_days() : "?"));
+        event_item_day3.setText(String.valueOf(eventItemArrayList.size() > 2 ? eventItemArrayList.get(2).getEnd_time_days() : "?"));
+        event_item_day4.setText(String.valueOf(eventItemArrayList.size() > 3 ? eventItemArrayList.get(3).getEnd_time_days() : "?"));
         event_available_tv.setText(setSpanAndTv(
                 context.getColor(R.color.event_list_available_number),
                 context.getString(R.string.event_list_available).replace("{%1}",String.valueOf(eventItemArrayList.size())),

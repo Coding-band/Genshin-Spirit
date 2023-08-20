@@ -191,7 +191,7 @@ public class Desk2048 extends AppCompatActivity {
 
     int dow = 0; // Day of Week
     int dom = 0; // Day of Month
-    int moy = 0; // Month of Yeat
+    int moy = 0; // Month of Year
     int exit = 0;
     int app_started = 0;
     int check_spinner = 0;
@@ -635,7 +635,9 @@ public class Desk2048 extends AppCompatActivity {
         lang_setup();
         home();
         getDOW();
-        bday_reload();
+        EventUtil eventUtil = new EventUtil();
+        eventUtil.init(viewPager0, context,activity);
+        //bday_reload();
         cbg();
         dbChar_reload();
         char_reload(dow);
@@ -742,7 +744,7 @@ public class Desk2048 extends AppCompatActivity {
         //ConstraintLayout paimon_setting = viewPager4.findViewById(R.id.paimon_setting);
         //ConstraintLayout paimon_about = viewPager4.findViewById(R.id.paimon_about);
 
-        //Unlock in 3.7 or 3.8
+        //Unlock in 3.7 or 3.8 -> 4.0
         //paimon_buff_cal.setVisibility(View.INVISIBLE);
 
         final int radius = 360;
@@ -798,11 +800,12 @@ public class Desk2048 extends AppCompatActivity {
             ImageView paimon_bg = view.findViewById(R.id.paimon_bg);
             TextView paimon_tv = view.findViewById(R.id.paimon_tv);
             ImageView paimon_ico = view.findViewById(R.id.paimon_ico);
+            FrameLayout paimon_fl = view.findViewById(R.id.paimon_fl);
 
             paimon_tv.setText(context.getString(btnStr[x]));
             paimon_ico.setImageResource(btnIMG[x]);
             paimon_bg.setOnClickListener(btnOnClick[x]);
-            paimon_bg.getLayoutParams().width = itemWidth - (int) (8*displayMetrics.density);
+            paimon_fl.getLayoutParams().width = itemWidth - (int) (8*displayMetrics.density);
 
             ll_main.addView(view);
         }
@@ -1450,7 +1453,7 @@ public class Desk2048 extends AppCompatActivity {
         });
 
         // Translate -- U MUST NOT DELETE ANYTHING
-        langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp),getString(R.string.fr_fr),getString(R.string.pt_pt),getString(R.string.de_de)};
+        langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp),getString(R.string.fr_fr),getString(R.string.uk_ua),getString(R.string.pt_pt),getString(R.string.de_de)};
         ArrayAdapter lang_aa = new ArrayAdapter(context,R.layout.spinner_item,langList);
         lang_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_2048);
 
@@ -1719,7 +1722,8 @@ public class Desk2048 extends AppCompatActivity {
         TextView card_lvl_tv = viewPager4.findViewById(R.id.card_lvl_tv);
 
         card_username.setText(dailyMemo.getNickname(context));
-        card_userstat.setText(dailyMemo.getServer(context)+" - "+sharedPreferences.getString("genshin_uid","-1"));
+        //card_userstat.setText(dailyMemo.getServer(context)+" - "+sharedPreferences.getString("genshin_uid","-1"));
+        card_userstat.setText(sharedPreferences.getString("genshin_uid","-1"));
         card_lvl_tv.setText(dailyMemo.getLevel(context));
         card_userstat.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -2276,7 +2280,7 @@ public class Desk2048 extends AppCompatActivity {
 
     private void char_list_reload() {
         Log.wtf("DAAM","YEE");
-        String name ,element,weapon,nation,sex,mainStat,role;
+        String name ,element,weapon,nation,sex,mainStat;
         int rare,isComing;
         //charactersList.clear();
 
@@ -2291,7 +2295,6 @@ public class Desk2048 extends AppCompatActivity {
                 weapon = object.getString("weapon");
                 nation = object.getString("nation");
                 sex = object.getString("sex");
-                role = object.getString("role");
                 mainStat = object.getString("mainStat");
                 rare = object.getInt("rare");
                 isComing = object.getInt("isComing");
@@ -2302,7 +2305,6 @@ public class Desk2048 extends AppCompatActivity {
                 characters.setWeapon(weapon);
                 characters.setNation(nation);
                 characters.setSex(sex);
-                characters.setRole(role);
                 characters.setRare(rare);
                 characters.setMainStat(mainStat);
                 characters.setIsComing(isComing);
@@ -2392,24 +2394,31 @@ public class Desk2048 extends AppCompatActivity {
         Calendar c = Calendar.getInstance();
         int position = 0;
         String location = sharedPreferences.getString("serverLocation","HK_TW_MO");
-        if(location.equals("America")){
-            c.setTimeZone(TimeZone.getTimeZone("GMT-5"));
-            position = 0;
-        }else if(location.equals("Europe")){
-            c.setTimeZone(TimeZone.getTimeZone("GMT+1"));
-            position = 1;
-        }else if(location.equals("Asia")){
-            c.setTimeZone(TimeZone.getTimeZone("GMT+8"));
-            position = 2;
-        }else if(location.equals("HK_TW_MO")){
-            c.setTimeZone(TimeZone.getTimeZone("GMT+8"));
-            position = 3;
-        }else if(location.equals("天空島")){
-            c.setTimeZone(TimeZone.getTimeZone("GMT+8"));
-            position = 4;
-        }else if(location.equals("世界樹")){
-            c.setTimeZone(TimeZone.getTimeZone("GMT+8"));
-            position = 5;
+        switch (location) {
+            case "America":
+                c.setTimeZone(TimeZone.getTimeZone("GMT-5"));
+                position = 0;
+                break;
+            case "Europe":
+                c.setTimeZone(TimeZone.getTimeZone("GMT+1"));
+                position = 1;
+                break;
+            case "Asia":
+                c.setTimeZone(TimeZone.getTimeZone("GMT+8"));
+                position = 2;
+                break;
+            case "HK_TW_MO":
+                c.setTimeZone(TimeZone.getTimeZone("GMT+8"));
+                position = 3;
+                break;
+            case "天空島":
+                c.setTimeZone(TimeZone.getTimeZone("GMT+8"));
+                position = 4;
+                break;
+            case "世界樹":
+                c.setTimeZone(TimeZone.getTimeZone("GMT+8"));
+                position = 5;
+                break;
         }
         dow = c.get(Calendar.DAY_OF_WEEK);
         dom = c.get(Calendar.DAY_OF_MONTH);
@@ -2428,14 +2437,15 @@ public class Desk2048 extends AppCompatActivity {
         TextView home_f_date_tv = viewPager0.findViewById(R.id.home_f_date_tv);
         home_f_date_tv.setText(serverList[position]);
 
+        bday_reload(c);
+
     }
 
-    public void bday_reload(){
+    public void bday_reload(Calendar c){
+        ItemRss.Birthday birthday = new ItemRss.Birthday();
+        birthday.birthInit(context);
+        ArrayList<ItemRss.Birthday> birthdayList = birthday.upcomingBirthday(c);
         String char_name = "EMPTY";
-        Log.w("MOY",String.valueOf(moy));
-        Log.w("DOM",String.valueOf(dom));
-
-        char_name = css.char_birth(moy,dom);
 
         // Setting
         //ConstraintLayout birth_celebrate = viewPager0.findViewById(R.id.birth_celebrate);
@@ -2444,7 +2454,6 @@ public class Desk2048 extends AppCompatActivity {
         //TextView birth_char_date = viewPager0.findViewById(R.id.birth_char_date);
         TextView birth_title_normal = viewPager0.findViewById(R.id.birth_title_normal);
         TextView birth_title_special = viewPager0.findViewById(R.id.birth_title_special);
-        LinearLayout birth_card = viewPager0.findViewById(R.id.birth_card);
 
         // Big Icon
         DisplayMetrics displayMetrics = new DisplayMetrics();
@@ -2452,64 +2461,52 @@ public class Desk2048 extends AppCompatActivity {
         int pix = (int) ((displayMetrics.widthPixels-16)/6-8);
 
         final int radius = 180;
-        final int margin = 4;
+        final int margin = 0;
         final Transformation transformation = new RoundedCornersTransformation(radius, margin);
 
-        if(!char_name.equals("EMPTY")){
+        System.out.println(birthday.upcomingBirthday(c).get(0).getSumOfBirth() + " : "+ ((moy+1)*100 + dom));
+
+        if(birthday.upcomingBirthday(c).get(0).getSumOfBirth() == ((moy+1)*100 + dom)){
+            char_name = birthdayList.get(0).getCharName();
             birth_title_normal.setVisibility(View.GONE);
             birth_title_special.setVisibility(View.VISIBLE);
             birth_title_special.setText(context.getString(R.string.happy_birthday)+" "+context.getString(css.getCharByName(char_name,context)[1]));
         }else{
             birth_title_special.setVisibility(View.GONE);
             birth_title_normal.setVisibility(View.VISIBLE);
-            birth_card.setVisibility(View.GONE);
-        }
-        // List
-
-        //System.out.println("XPR1 char_name : "+char_name);
-
-        int dom_TMP = dom;
-        int moy_TMP = moy;
-        while (char_name.equals("EMPTY") || !Arrays.asList(css.charBirthName).contains(char_name)){
-            dom_TMP++;
-            if (dom_TMP > 32){dom_TMP = 1;moy_TMP++;}
-            if (moy_TMP > 13){moy_TMP = 0;}
-            char_name = css.char_birth(moy_TMP,dom_TMP);
-
-            //System.out.println("XPR2 char_name : "+char_name);
         }
 
-        //System.out.println("XPR3 char_name : "+char_name);
+        int[] imageArray = {R.id.bday_next1,R.id.bday_next2,R.id.bday_next3,R.id.bday_next4,R.id.bday_next5};
+        int[] tvArray = {R.id.bday_next_tv1,R.id.bday_next_tv2,R.id.bday_next_tv3,R.id.bday_next_tv4,R.id.bday_next_tv5};
 
-        int index = Arrays.asList(css.charBirthName).indexOf(char_name);
-        int[] imageArray = {R.id.bday_next1,R.id.bday_next2,R.id.bday_next3,R.id.bday_next4,R.id.bday_next5,R.id.bday_next6};
-        int[] tvArray = {R.id.bday_next_tv1,R.id.bday_next_tv2,R.id.bday_next_tv3,R.id.bday_next_tv4,R.id.bday_next_tv5,R.id.bday_next_tv6};
-
-        for (int x = 0 ; x < 6; x++ , index++){
-            if (index >= css.charBirthName.length){
-                index = 0;
-            }
-
-            String nextBirthCharName = css.charBirthName[index];
-            int nextBirthCharMonth =  css.charBirthMonth[index];
-            int nextBirthCharDay = css.charBirthDay[index];
+        for (int x = 0 ; x < 5; x++){
+            String nextBirthCharName = birthdayList.get(x).getCharName();
+            int nextBirthCharMonth =  birthdayList.get(x).getMonthOfBirth();
+            int nextBirthCharDay = birthdayList.get(x).getDayOfBirth();
+            int nextBirthCharRare = birthdayList.get(x).getRare();
 
             ImageView img = viewPager0.findViewById(imageArray[x]);
             TextView tv = viewPager0.findViewById(tvArray[x]);
             Picasso.get()
                     .load (css.getCharByName(nextBirthCharName,context)[3])
                     .transform(transformation)
-                    .resize((int) (pix*2), (int) (pix*2))
+                    .resize((int) (64*displayMetrics.density), (int) (64*displayMetrics.density))
                     .error (R.drawable.paimon_lost)
                     .into (img);
 
-            if ((moy == nextBirthCharMonth) && (dom == nextBirthCharDay)){
+            img.setBackgroundResource(css.getRare2048ByInt(nextBirthCharRare));
+            img.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    new Characters_Info_2048().setup(nextBirthCharName,context, activity);
+                }
+            });
+
+            if ((moy+1 == nextBirthCharMonth) && (dom == nextBirthCharDay)){
                 tv.setText(context.getString(R.string.today));
             }else{
-                tv.setText(css.getLocaleBirth(String.valueOf(nextBirthCharMonth+1)+"/"+String.valueOf(nextBirthCharDay),context,true));
+                tv.setText(css.getLocaleBirth(String.valueOf(nextBirthCharMonth)+"/"+String.valueOf(nextBirthCharDay),context,true));
             }
-            img.getLayoutParams().width = pix;
-            img.getLayoutParams().height = pix;
         }
     }
 
@@ -2987,7 +2984,7 @@ public class Desk2048 extends AppCompatActivity {
         getDOW();
         //char_reload(dow);
         //weapon_reload(dow);
-        bday_reload();
+        //bday_reload();
     }
 
     public String prettyByteCount(Number number) {

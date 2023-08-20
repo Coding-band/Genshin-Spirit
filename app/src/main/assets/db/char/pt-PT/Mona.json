@@ -37,20 +37,23 @@
     "talent4_desc": "Aumenta o Bônus de Dano Hydro de Mona em certo grau, equivalente a 20% da sua Taxa de Recarga de Energia."
   },
   "sof": {
-    "sof2_name": "Profecia da Submersão",
+    "sof1_name": "Profecia da Submersão",
+    "sof1_img": "mona_c1",
+    "sof1_desc": "Os efeitos de Reações Elementais relacionadas a Hydro agora são aprimorados por 8 segundos depois que o seu próprio personagem de equipe atingir um inimigo afetado por um Presságio:\n Dano Eletricamente Carregado é aumentado em 15%.<br> Dano de Vaporizar é aumentado em 15%.<br> Dano de Redemoinho é aumentado em 15%.<br>A duração em que os inimigos ficam Congelados é aumentada em 15%.",
+    "sof2_name": "Corrente Lunar",
     "sof2_img": "mona_c2",
-    "sof2_desc": "Os efeitos de Reações Elementais relacionadas a Hydro agora são aprimorados por 8 segundos depois que o seu próprio personagem de equipe atingir um inimigo afetado por um Presságio:\n Dano Eletricamente Carregado é aumentado em 15%.<br> Dano de Vaporizar é aumentado em 15%.<br> Dano de Redemoinho é aumentado em 15%.<br>A duração em que os inimigos ficam Congelados é aumentada em 15%.",
-    "sof3_name": "Corrente Lunar",
+    "sof2_desc": "Quando um Ataque Normal acerta, existe 20% de chance que ele será automaticamente seguido de um Ataque Carregado.\nEsse efeito pode ocorrer apenas uma vez a cada 5 segundos.",
+    "sof3_name": "Revolução Incessante",
     "sof3_img": "mona_c3",
-    "sof3_desc": "Quando um Ataque Normal acerta, existe 20% de chance que ele será automaticamente seguido de um Ataque Carregado.\nEsse efeito pode ocorrer apenas uma vez a cada 5 segundos.",
-    "sof4_name": "Revolução Incessante",
+    "sof3_desc": "Aumenta o nível da Órbita Divina em 3.\nO nível máximo de elevação é 15.",
+    "sof4_name": "Profecia do Fim",
     "sof4_img": "mona_c4",
-    "sof4_desc": "Aumenta o nível da Órbita Divina em 3.\nO nível máximo de elevação é 15.",
-    "sof5_name": "Profecia do Fim",
+    "sof4_desc": "Quando todos os personagens na equipe atacarem um inimigo afetado pelo status do Presságio, sua Taxa Crítica é aumentada em 15%.",
+    "sof5_name": "Zombaria da Fortuna",
     "sof5_img": "mona_c5",
-    "sof5_desc": "Quando todos os personagens na equipe atacarem um inimigo afetado pelo status do Presságio, sua Taxa Crítica é aumentada em 15%.",
-    "sof6_name": "Zombaria da Fortuna",
+    "sof5_desc": "Aumenta o nível da Água Ilusória em 3.\nO nível máximo de elevação é 15.",
+    "sof6_name": "Retórica da Calamidade",
     "sof6_img": "mona_c6",
-    "sof6_desc": "Aumenta o nível da Água Ilusória em 3.\nO nível máximo de elevação é 15."
+    "sof6_desc": "Ao entrar em Vicissitude, Mona ganha um aumento de 60% de Dano em seu próximo Ataque Carregado por segundo.\nUm máximo de 180% de Dano adicional pode ser atingido desta maneira, e este efeito dura por não mais que 8 segundos."
   }
 }

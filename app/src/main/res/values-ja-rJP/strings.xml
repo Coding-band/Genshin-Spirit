@@ -1506,6 +1506,29 @@
 
     <!-- add in 20230814 - 3.7.0 -->
     <string name="ibis_piercer">"トキの嘴"</string>
+    <string name="teachings_of_equity">「公平」の教え</string>
+    <string name="teachings_of_justice">「正義」の教え</string>
+    <string name="teachings_of_order">「秩序」の教え</string>
+    <string name="guide_to_equity">「公平」の導き</string>
+    <string name="guide_to_justice">「正義」の導き</string>
+    <string name="guide_to_order">「秩序」の導き</string>
+    <string name="philosophies_of_equity">「公平」の哲学</string>
+    <string name="philosophies_of_justice">「正義」の哲学</string>
+    <string name="philosophies_of_order">「秩序」の哲学</string>
+    <string name="fragment_of_an_ancient_chord">悠久の弦の残章</string>
+    <string name="dross_of_pure_sacred_dewdrop">純聖な雫の濾滓</string>
+    <string name="broken_goblet_of_the_pristine_sea">無垢な海の苦杯</string>
+    <string name="chapter_of_an_ancient_chord">悠久の弦の断章</string>
+    <string name="sublimation_of_pure_sacred_dewdrop">純聖な雫の昇華</string>
+    <string name="wine_goblet_of_the_pristine_sea">無垢な海の酒盃</string>
+    <string name="movement_of_an_ancient_chord">悠久の弦の楽章</string>
+    <string name="spring_of_pure_sacred_dewdrop">純聖な雫の甘泉</string>
+    <string name="silver_goblet_of_the_pristine_sea">無垢な海の銀盃</string>
+    <string name="echo_of_an_ancient_chord">悠久の弦の響き</string>
+    <string name="essence_of_pure_sacred_dewdrop">純聖な雫の精髄</string>
+    <string name="golden_goblet_of_the_pristine_sea">無垢な海の金盃</string>
+    <string name="pale_forgotten_glory">蒼白の遺栄</string>
+    <string name="echoes_of_the_deep_tides">深潮の余韻</string>
 
 </resources>
 

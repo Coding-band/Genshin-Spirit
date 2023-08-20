@@ -6,7 +6,7 @@
   "weapon": "Claymore",
   "element": "Cryo",
   "constellation": "Automaton",
-  "desc": "测试角色",
+  "desc": "Un jeune homme réservé qui connaît bien la plongée. Sous son air lointain et glacial se cache un cœur pur dépourvu de tout défaut.",
   "birth": "09/24",
   "battle_talent": {
     "normal_name": "Attaque normale : Tourbillon fluide",
@@ -24,10 +24,10 @@
   "basic_talent": {
     "talent2_name": "Navigation en eaux profondes",
     "talent2_img": "freminet_p2",
-    "talent2_desc": "Réduit la consommation d'endurance subaquatique de vos personnages dans l'équipe de 35 %.\nNe peut pas être cumulé avec d'autres aptitudes passives aux effets identiques.",
+    "talent2_desc": "Réduit la consommation d'endurance aquatique de vos personnages dans l'équipe de 35 %.\nNe peut pas être cumulé avec d'autres aptitudes passives aux effets identiques.",
     "talent3_name": "Plongée profonde saturée",
     "talent3_img": "freminet_p3",
-    "talent3_desc": "En utilisant un concassage pressurisé, si le niveau de pression de l'état Indicateur de Pers est inférieur à IV, le TdR de Pressurisation des floes diminue de 1 s.",
+    "talent3_desc": "En utilisant un concassage pressurisé, si le niveau de pression de l'indicateur de Pers est inférieur à IV, le TdR de Pressurisation des floes diminue de 1 s.",
     "talent1_name": "Condenseur parallèle",
     "talent1_img": "freminet_p1",
     "talent1_desc": "Lorsque Fréminet a déclenché une réaction de Brise-glace sur un ennemi, les DGT infligés par le concassage pressurisé de Pressurisation des floes augmentent de 40 % pendant 5 s."
@@ -44,12 +44,12 @@
     "sof3_desc": "Niveau d'aptitude Attaque normale : Tourbillon fluide +3.\nNiveau max : 15",
     "sof4_name": "Dance de lune et de flûte",
     "sof4_img": "freminet_c4",
-    "sof4_desc": "Lorsque Fréminet déclenche une réaction de Gel, de Brise-glace ou de Supraconduction sur un ennemi, son ATQ augmente de 9 % pendant 6 s. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les 0,3 s.",
+    "sof4_desc": "Lorsque Fréminet a déclenché une réaction de Gel, de Brise-glace ou de Supraconduction sur un ennemi, son ATQ augmente de 9 % pendant 6 s. Cet effet peut être cumulé 2 fois maximum et déclenché une fois toutes les 0,3 s.",
     "sof5_name": "Nuit de feu et de joie",
     "sof5_img": "freminet_c5",
     "sof5_desc": "Niveau d'aptitude Pressurisation des floes +3.\nNiveau max : 15",
     "sof6_name": "Instant d'aube et de détermination",
     "sof6_img": "freminet_c6",
-    "sof6_desc": "Lorsque Fréminet déclenche une réaction de Gel, de Brise-glace ou de Supraconduction sur un ennemi, ses DGT CRIT augmente de 12 % pendant 6 s. Cet effet peut être cumulé 3 fois maximum et déclenché une fois toutes les 0,3 s."
+    "sof6_desc": "Lorsque Fréminet a déclenché une réaction de Gel, de Brise-glace ou de Supraconduction sur un ennemi, ses DGT CRIT augmentent de 12 % pendant 6 s. Cet effet peut être cumulé 3 fois maximum et déclenché une fois toutes les 0,3 s."
   }
 }

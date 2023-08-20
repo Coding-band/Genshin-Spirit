@@ -17,6 +17,7 @@
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor" tools:targetApi="l">@color/theme_dark_color</item>
         <item name="android:windowAnimationStyle">@style/ActivityAnimationOnly1</item>
+        <item name="android:fontFamily">@font/genshin_font</item>
     </style>
 
     <style name="TCG_Info" parent="@style/NoTheme">

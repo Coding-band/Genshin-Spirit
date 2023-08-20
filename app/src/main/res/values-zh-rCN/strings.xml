@@ -1387,9 +1387,20 @@
     <string name="tcg_arataki_ichiban">荒泷第一</string>
     <string name="tcg_favonius_sword">西风剑</string>
     <string name="tcg_grand_narukami_shrine">鸣神大社</string>
+
+    <!-- Ver. 4.0.0 Update -->
     <string name="memo_available_weekboss_change">尚余{%1}次</string>
+    <string name="event_list_available">{%1} 个活动进行中</string>
+    <string name="event_list_day">天</string>
+    <string name="event_list_title">活动列表</string>
+    <string name="dailymemo_setting_login_title">登入方式</string>
+    <string name="dailymemo_setting_login_hoyoverse">Hoyoverse 账户</string>
+    <string name="dailymemo_setting_login_third_party">第三方登入</string>
+    <string name="dailymemo_setting_hoyoverse_token">开启官方登入页面</string>
+    <string name="dailymemo_setting_confirm">确认</string>
     <string name="char_occupation">职称</string>
     <string name="char_constellation">命之座</string>
+
     <string name="lynette">琳妮特</string>
     <string name="lyney">林尼</string>
     <string name="freminet">菲米尼</string>
@@ -1499,4 +1510,31 @@
 
     <!-- add in 20230814 - 3.7.0 -->
     <string name="ibis_piercer">"鹮穿之喙"</string>
+
+    <!-- add in 20230820 - New Talent Book-->
+    <string name="teachings_of_equity">"「公平」的教导"</string>
+    <string name="teachings_of_justice">"「正义」的教导"</string>
+    <string name="teachings_of_order">"「秩序」的教导"</string>
+    <string name="guide_to_equity">"「公平」的指引"</string>
+    <string name="guide_to_justice">"「正义」的指引"</string>
+    <string name="guide_to_order">"「秩序」的指引"</string>
+    <string name="philosophies_of_equity">"「公平」的哲学"</string>
+    <string name="philosophies_of_justice">"「正义」的哲学"</string>
+    <string name="philosophies_of_order">"「秩序」的哲学"</string>
+
+    <string name="fragment_of_an_ancient_chord">"悠古弦音的残章"</string>
+    <string name="dross_of_pure_sacred_dewdrop">"纯圣露滴的滤渣"</string>
+    <string name="broken_goblet_of_the_pristine_sea">"无垢之海的苦盏"</string>
+    <string name="chapter_of_an_ancient_chord">"悠古弦音的断章"</string>
+    <string name="sublimation_of_pure_sacred_dewdrop">"纯圣露滴的凝华"</string>
+    <string name="wine_goblet_of_the_pristine_sea">"无垢之海的酒盏"</string>
+    <string name="movement_of_an_ancient_chord">"悠古弦音的乐章"</string>
+    <string name="spring_of_pure_sacred_dewdrop">"纯圣露滴的醴泉"</string>
+    <string name="silver_goblet_of_the_pristine_sea">"无垢之海的银杯"</string>
+    <string name="echo_of_an_ancient_chord">"悠古弦音的回响"</string>
+    <string name="essence_of_pure_sacred_dewdrop">"纯圣露滴的真粹"</string>
+    <string name="golden_goblet_of_the_pristine_sea">"无垢之海的金杯"</string>
+
+    <string name="pale_forgotten_glory">"苍白的遗荣"</string>
+    <string name="echoes_of_the_deep_tides">"深潮的余响"</string>
 </resources>

@@ -5,7 +5,7 @@
   "rare": "5",
   "weapon": "Sword",
   "element": "Multi",
-  "constellation": "Viator",
+  "constellation": "Viatrix",
   "desc": "Uma(Um) Viajante de outro mundo que teve seu ente querido levado e foi forçada(o) a embarcar em uma jornada em busca dos Sete.",
   "birth": "13/00",
   "battle_talent": {
@@ -16,7 +16,7 @@
     "normal_desc3": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE no impacto.",
     "element_name": "Sabre da Insígnia Aquática",
     "element_img": "traveler_s2",
-    "element_desc": "Lança uma corrente torrencial que varre a terra.<br><br>Pressionar<br><br>Lança uma Erupção Torrencial para frente que causa Dano Hydro contra os inimigos que atingir.<br><br>Manter Pressionado<br>Entra no modo de mira e lança continuamente Gotas de Orvalho na direção que se está mirando, causando Dano Hydro contra os inimigos que atingir.<br>Ao terminar, lança uma Erupção Torrencial para frente que causa Dano Hydro contra os inimigos que atingir.<br>Abundância: quando a Vida do Viajante for maior que 50%, consumirá Vida continuamente e aumentará o Dano causado pela Gota de Orvalho, o valor do aumento é baseado na Vida da(o) Viajante.<br><br>Força Fundamental: Pneuma<br>Periodicamente, depois de lançar uma Erupção Torrencial, lançará um Espinho Espiritual que perfurará os inimigos e que causará Dano Hydro aplicado com Pneuma.<br><br><i>Você e Paimon observaram as ondas criadas na superfície das águas.</i>",
+    "element_desc": "Lança uma corrente torrencial que varre a terra.<br><br>Pressionar<br>Lança uma Erupção Torrencial para frente que causa Dano Hydro contra os inimigos que atingir.<br><br>Manter Pressionado<br>Entra no modo de mira e lança continuamente Gotas de Orvalho na direção que se está mirando, causando Dano Hydro contra os inimigos que atingir.<br>Ao terminar, lança uma Erupção Torrencial para frente que causa Dano Hydro contra os inimigos que atingir.<br>Abundância: ao lançar o Manter Pressionado, se a Vida do Viajante for maior que 50%, aumentará o Dano causado por Gota de Orvalho baseado na Vida Máxima do Viajante, e consumirá uma certa quantidade de Vida a cada segundo.<br><br>Arkhe: Pneuma<br>Periodicamente, depois de lançar uma Erupção Torrencial, lançará um Espinho Espiritual que perfurará os inimigos e que causará Dano Hydro aplicado com Pneuma.<br><br><i>Você e Paimon observaram as ondas criadas na superfície das águas.</i>",
     "final_name": "Maré Ascendente",
     "final_img": "traveler_s3",
     "final_desc": "Lança uma Bolha Aquática que se move lentamente, causando Dano Hydro continuamente contra os inimigos próximos.\n<br><i>Você e Paimon estudaram a subida e descida da maré.</i>"
@@ -24,10 +24,10 @@
   "basic_talent": {
     "talent2_name": "Águas Puras",
     "talent2_img": "traveler_p2",
-    "talent2_desc": "Quando a Gota de Orvalho disparada de Sabre da Insígnia Aquática atingir um inimigo, gerará uma Gota d'Água Primordial perto da(o) Viajante. Quando a(o) Viajante coletar uma Gota d'Água Primordial, regenerará 7% de sua Vida.\nÉ possível gerar até uma Gota d'Água Primordial dessa forma. E cada vez que Sabre da Insígnia Aquática for lançado, é possível criar até 4 Gotas d'Água Primordial.",
+    "talent2_desc": "Quando a Gota de Orvalho disparada com o Manter Pressionado de Sabre da Insígnia Aquática atingir um inimigo, gerará uma Gota d'Água Primordial perto da(o) Viajante. Quando a(o) Viajante coletar uma Gota d'Água Primordial, regenerará 7% de sua Vida.\nÉ possível gerar até uma Gota d'Água Primordial dessa forma. E cada vez que Sabre da Insígnia Aquática for lançado, é possível criar até 4 Gotas d'Água Primordial.",
     "talent3_name": "Água Cristalina",
     "talent3_img": "traveler_p3",
-    "talent3_desc": "Se lançar com Manter Pressionado o Sabre da Insígnia Aquática consumir Vida através de Abundância, aumentará o Dano causado de Erupção Torrencial no final do lançamento, o valor do aumento é igual a 45% do valor da Abundância consumido pela(o) Viajante neste lançamento.\nÉ possível aumentar o Dano em até 5.000 desta forma.",
+    "talent3_desc": "Se lançar com o Manter Pressionado de Sabre da Insígnia Aquática consumir Vida através de Abundância, aumentará o Dano causado de Erupção Torrencial no final do lançamento, o valor do aumento é igual a 45% do valor da Abundância consumido pela(o) Viajante neste lançamento.\nÉ possível aumentar o Dano em até 5.000 desta forma.",
     "talent1_name": "Lago Emergente",
     "talent1_img": "traveler_p1",
     "talent1_desc": "Depois de pegar uma Gota d'Água Primordial, a(o) Viajante recuperará 2 de Energia Elemental.\nÉ necessário ter desbloqueado o talento passivo \"Águas Puras\".",
@@ -38,7 +38,7 @@
   "sof": {
     "sof1_name": "Ondas Furiosas",
     "sof1_img": "traveler_c1",
-    "sof1_desc": "Aumenta o nível deSabre da Insígnia Aquática em 3.\nO nível máximo de elevação é 15.",
+    "sof1_desc": "Aumenta o nível de Sabre da Insígnia Aquática em 3.\nO nível máximo de elevação é 15.",
     "sof2_name": "Descida Jorrante",
     "sof2_img": "traveler_c2",
     "sof2_desc": "Ao lançar Sabre da Insígnia Aquática, gerará um Escudo da Insígnia Aquática que absorverá o equivalente a 10% da Vida Máxima, e possui eficácia de 250% contra Dano Hydro, ele persistirá até terminar de lançar a habilidade.\nA cada 2s, depois que a Gota de Orvalho atingir um inimigo, se a(o) Viajante estiver sob a proteção de um Escudo da Insígnia Aquática, recuperará o poder de absorção de Dano do escudo em até 10% da Vida Máxima da(o) Viajante. Se não estiver sob a proteção do Escudo da Insígnia Aquática, gerará um novo escudo.",

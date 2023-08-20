@@ -37,20 +37,23 @@
     "talent4_desc": "Increases Mona's Hydro DMG Bonus by a degree equivalent to 20% of her Energy Recharge rate."
   },
   "sof": {
-    "sof2_name": "Prophecy of Submersion",
+    "sof1_name": "Prophecy of Submersion",
+    "sof1_img": "mona_c1",
+    "sof1_desc": "When any of your own party members hits an opponent affected by an Omen, the effects of Hydro-related Elemental Reactions are enhanced for 8s:\n·Electro-Charged DMG increases by 15%.<br>·Vaporize DMG increases by 15%.<br>·Hydro Swirl DMG increases by 15%.<br>·Frozen duration is extended by 15%.",
+    "sof2_name": "Lunar Chain",
     "sof2_img": "mona_c2",
-    "sof2_desc": "When any of your own party members hits an opponent affected by an Omen, the effects of Hydro-related Elemental Reactions are enhanced for 8s:\n·Electro-Charged DMG increases by 15%.<br>·Vaporize DMG increases by 15%.<br>·Hydro Swirl DMG increases by 15%.<br>·Frozen duration is extended by 15%.",
-    "sof3_name": "Lunar Chain",
+    "sof2_desc": "When a Normal Attack hits, there is a 20% chance that it will be automatically followed by a Charged Attack.\nThis effect can only occur once every 5s.",
+    "sof3_name": "Restless Revolution",
     "sof3_img": "mona_c3",
-    "sof3_desc": "When a Normal Attack hits, there is a 20% chance that it will be automatically followed by a Charged Attack.\nThis effect can only occur once every 5s.",
-    "sof4_name": "Restless Revolution",
+    "sof3_desc": "Increases the Level of Stellaris Phantasm by 3.\nMaximum upgrade level is 15.",
+    "sof4_name": "Prophecy of Oblivion",
     "sof4_img": "mona_c4",
-    "sof4_desc": "Increases the Level of Stellaris Phantasm by 3.\nMaximum upgrade level is 15.",
-    "sof5_name": "Prophecy of Oblivion",
+    "sof4_desc": "When any party member attacks an opponent affected by an Omen, their CRIT Rate is increased by 15%.",
+    "sof5_name": "Mockery of Fortuna",
     "sof5_img": "mona_c5",
-    "sof5_desc": "When any party member attacks an opponent affected by an Omen, their CRIT Rate is increased by 15%.",
-    "sof6_name": "Mockery of Fortuna",
+    "sof5_desc": "Increases the Level of Mirror Reflection of Doom by 3.\nMaximum upgrade level is 15.",
+    "sof6_name": "Rhetorics of Calamitas",
     "sof6_img": "mona_c6",
-    "sof6_desc": "Increases the Level of Mirror Reflection of Doom by 3.\nMaximum upgrade level is 15."
+    "sof6_desc": "Upon entering Illusory Torrent, Mona gains a 60% increase to the DMG of her next Charged Attack per second of movement.\nA maximum DMG Bonus of 180% can be achieved in this manner. The effect lasts for no more than 8s."
   }
 }

@@ -10,8 +10,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 
+import com.alibaba.fastjson2.JSON;
 import com.voc.genshin_helper.R;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -19,7 +21,11 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Locale;
 
 /*
@@ -48,6 +54,10 @@ public class ItemRss {
     // INCLUDED 3.3 CHAR. => 20221210
     // INCLUDED 3.4 CHAR. => 20230117
     // INCLUDED 3.5 CHAR. => 20230225
+    // INCLUDED 3.6 CHAR. => 20230819
+    // INCLUDED 3.7 CHAR. => 20230819
+    // INCLUDED 3.8 CHAR. => 20230819
+    // INCLUDED 4.0 CHAR. => 20230819
     public String[] charBirthName = {
             "Wanderer","Thoma","Diona","Rosaria","朝霧冰瀬",
             "Alhaitham","Beidou","Sangonomiya Kokomi","Bennett",
@@ -89,29 +99,169 @@ public class ItemRss {
             11,11,11,11,11,11};
 
 
+    public static class Birthday implements Serializable {
+        int dayOfBirth = 31;
+        int monthOfBirth = 12;
+        int sumOfBirth = 1231; //i.e. 12/31 => 1231 (12*100 + 31*1)
+        String charName = "Zhongli";
+        int rare = 5;
+
+        public ArrayList<Birthday> birthdayList = new ArrayList<>();
+        public int getDayOfBirth() {
+            return dayOfBirth;
+        }
+
+        public void setDayOfBirth(int dayOfBirth) {
+            this.dayOfBirth = dayOfBirth;
+        }
+
+        public int getMonthOfBirth() {
+            return monthOfBirth;
+        }
+
+        public void setMonthOfBirth(int monthOfBirth) {
+            this.monthOfBirth = monthOfBirth;
+        }
+
+        public String getCharName() {
+            return charName;
+        }
+
+        public void setCharName(String charName) {
+            this.charName = charName;
+        }
+
+        public int getSumOfBirth() {
+            return sumOfBirth;
+        }
+
+        public void setSumOfBirth(int sumOfBirth) {
+            this.sumOfBirth = sumOfBirth;
+        }
+
+        public ArrayList<Birthday> getBirthdayList() {
+            return birthdayList;
+        }
+
+        public void setBirthdayList(ArrayList<Birthday> birthdayList) {
+            this.birthdayList = birthdayList;
+        }
+
+        public int getRare() {
+            return rare;
+        }
+
+        public void setRare(int rare) {
+            this.rare = rare;
+        }
+
+        public void birthInit(Context context){
+            String str = LoadAssestData(context,"db/char/char_list.json");
+            birthdayList = new ArrayList<>();
+            try {
+                JSONArray jsonArray = new JSONArray(str);
+                for (int x = 0 ; x < jsonArray.length() ; x++){
+                    JSONObject jSONObject = jsonArray.getJSONObject(x);
+                    if(jSONObject.has("birth") && !jSONObject.getString("birth").equals("SET_BY_USER")){
+                        Birthday birthday = new Birthday();
+                        birthday.setCharName(jSONObject.getString("name"));
+                        birthday.setMonthOfBirth(Integer.parseInt(jSONObject.getString("birth").split("/")[0]));
+                        birthday.setDayOfBirth(Integer.parseInt(jSONObject.getString("birth").split("/")[1]));
+                        birthday.setSumOfBirth(birthday.getMonthOfBirth()*100 + birthday.getDayOfBirth());
+                        birthday.setRare(jSONObject.getInt("rare"));
+                        birthdayList.add(birthday);
+                    }
+                }
+
+                Collections.sort(birthdayList, Comparator.comparingInt(Birthday::getSumOfBirth));
+
+            } catch (JSONException e) {
+                throw new RuntimeException(e);
+            }
+        }
+        public ArrayList<Birthday> upcomingBirthday(Calendar calendar){
+            ArrayList<Birthday> upcomingBirthList = new ArrayList<>();
+
+            int sum = (calendar.get(Calendar.MONTH) + 1) * 100 + calendar.get(Calendar.DAY_OF_MONTH);
+
+            //System.out.println("OK WO SUM : "+sum);
+
+            int max_pos = birthdayList.size()-1;
+            int min_pos = 0;
+            int pos = (int) (birthdayList.size() / 2);
+            boolean noRecord = false;
+
+            while (Math.abs(max_pos - min_pos) > 1){
+                //System.out.println("OK WO : ["+min_pos+" ("+birthdayList.get(min_pos).getSumOfBirth()+") ... "+pos+" ("+birthdayList.get(pos).getSumOfBirth()+")  ... "+max_pos+" ("+birthdayList.get(max_pos).getSumOfBirth()+")]");
+
+                if (birthdayList.get(pos).getSumOfBirth() > sum){
+                    max_pos = pos-1;
+                }else if(birthdayList.get(pos).getSumOfBirth() < sum){
+                    min_pos = pos+1;
+                }else if(birthdayList.get(pos).getSumOfBirth() == sum){
+                    System.out.println("Founded Birthday Record");
+                    break;
+                }
+                pos = (int) min_pos + ((max_pos - min_pos)/2);
+            }
+
+            ArrayList<Birthday> tmpBirthList = new ArrayList<>();
+            for (int y = 0 ; y < 5 ; y++){
+                if(pos + 1 == birthdayList.size()){
+                    pos = 0;
+                }
+                tmpBirthList.add(birthdayList.get(pos));
+                System.out.println("OK WO IN "+y+" : "+birthdayList.get(pos).getCharName());
+                pos ++;
+            }
+
+            return tmpBirthList;
+        }
+    }
+
+
+
     public String getLocaleName (String str,Context context) {
         /** Area Name */
-        if (str.equals("Mondstadt")){return context.getString(R.string.mondstadt);}
-        else if (str.equals("Liyue")){return context.getString(R.string.liyue);}
-        else if (str.equals("Inazuma")){return context.getString(R.string.inazuma);}
-        else if (str.equals("Nora Fortis")){return context.getString(R.string.nora_fortis);}
-        else if (str.equals("Snezhnaya")){return context.getString(R.string.snezhnaya);}
-        else if (str.equals("Sumeru")){return context.getString(R.string.sumeru);}
-        else if (str.equals("Fontaine")){return context.getString(R.string.fontaine);}
-        else if (str.equals("Natlan")){return context.getString(R.string.natlan);}
-        else if (str.equals("Another World")){return context.getString(R.string.another_world);}
-        /** Char's Role Name*/
-        else if (str.equals("Main_DPS")){return context.getString(R.string.main_dps);}
-        else if (str.equals("Support_DPS")){return context.getString(R.string.support_dps);}
-        else if (str.equals("Utility")){return context.getString(R.string.utility);}
-        // add in 20220411
-        else if (str.equals("N/A")){return context.getString(R.string.unknown);}
-        /** Sex Name */
-        else if (str.equals("Female")){return context.getString(R.string.female);}
-        else if (str.equals("Male")){return context.getString(R.string.male);}
-        else if (str.equals("SET_BY_PLAYER")){return context.getString(R.string.set_by_player);}
-
-        else {return str;}
+        switch (str) {
+            case "Mondstadt":
+                return context.getString(R.string.mondstadt);
+            case "Liyue":
+                return context.getString(R.string.liyue);
+            case "Inazuma":
+                return context.getString(R.string.inazuma);
+            case "Nora Fortis":
+                return context.getString(R.string.nora_fortis);
+            case "Snezhnaya":
+                return context.getString(R.string.snezhnaya);
+            case "Sumeru":
+                return context.getString(R.string.sumeru);
+            case "Fontaine":
+                return context.getString(R.string.fontaine);
+            case "Natlan":
+                return context.getString(R.string.natlan);
+            case "Another World":
+                return context.getString(R.string.another_world);
+            /** Char's Role Name*/
+            case "Main_DPS":
+                return context.getString(R.string.main_dps);
+            case "Support_DPS":
+                return context.getString(R.string.support_dps);
+            case "Utility":
+                return context.getString(R.string.utility);
+            // add in 20220411
+            case "N/A":
+                return context.getString(R.string.unknown);
+            /** Sex Name */
+            case "Female":
+                return context.getString(R.string.female);
+            case "Male":
+                return context.getString(R.string.male);
+            case "SET_BY_PLAYER":
+                return context.getString(R.string.set_by_player);
+            default:
+                return str;
+        }
     }
 
     public String getObtainCode(String str, Context context){
@@ -214,11 +364,20 @@ public class ItemRss {
         else {return R.drawable.hu_tao_unknown;}
     }
     public int getDistrictIMG (String str){
-        if(str.equals("Mondstadt")){return R.drawable.mondstadt_ico;}
-        else if(str.equals("Liyue")){return R.drawable.liyue_ico;}
-        else if(str.equals("Inazuma")){return R.drawable.inazuma_ico;}
-        else if(str.equals("Sumeru")){return R.drawable.sumeru_ico;}
-        else {return R.drawable.unknown;}
+        switch (str) {
+            case "Mondstadt":
+                return R.drawable.mondstadt_ico;
+            case "Liyue":
+                return R.drawable.liyue_ico;
+            case "Inazuma":
+                return R.drawable.inazuma_ico;
+            case "Sumeru":
+                return R.drawable.sumeru_ico;
+            case "Fontaine":
+                return R.drawable.fontaine_ico;
+            default:
+                return R.drawable.unknown;
+        }
     }
 
     // add in 20220207
@@ -2244,6 +2403,32 @@ public class ItemRss {
             case "異色結晶石":
                 return R.drawable.kaleidoscopic_crystal;
 
+            //add in 20230820
+            case "悠古弦音的殘章" :
+                return R.drawable.fragment_of_an_ancient_chord;
+            case "悠古弦音的斷章" :
+                return R.drawable.chapter_of_an_ancient_chord;
+            case "悠古弦音的樂章" :
+                return R.drawable.movement_of_an_ancient_chord;
+            case "悠古弦音的迴響" :
+                return R.drawable.echo_of_an_ancient_chord;
+            case "純聖露滴的濾渣" :
+                return R.drawable.dross_of_pure_sacred_dewdrop;
+            case "純聖露滴的凝華" :
+                return R.drawable.sublimation_of_pure_sacred_dewdrop;
+            case "純聖露滴的醴泉" :
+                return R.drawable.essence_of_pure_sacred_dewdrop;
+            case "純聖露滴的真粹" :
+                return R.drawable.fragment_of_an_ancient_chord;
+            case "無垢之海的苦盞" :
+                return R.drawable.broken_goblet_of_the_pristine_sea;
+            case "無垢之海的酒盞" :
+                return R.drawable.wine_goblet_of_the_pristine_sea;
+            case "無垢之海的銀盃" :
+                return R.drawable.silver_goblet_of_the_pristine_sea;
+            case "無垢之海的金杯" :
+                return R.drawable.golden_branch_of_a_distant_sea;
+
             // P.S. There still have Sumeru items not added yet since the name are undefinded or unable to define in there. => 20220716
             // ♪ Added Sumeru items
             //add in 20220823
@@ -2426,6 +2611,25 @@ public class ItemRss {
                 return R.drawable.sturdy_shell;
             case "鍥紋的橫脊":
                 return R.drawable.marked_shell;
+            //add in 20230820
+            case "隙間之核":
+                return R.drawable.rift_core;
+            case "外世突觸":
+                return R.drawable.foreign_synapse;
+            case "異界生命核":
+                return R.drawable.alien_life_core;
+            case "濁水的一滴":
+                return R.drawable.drop_of_tainted_water;
+            case "濁水的一掬":
+                return R.drawable.scoop_of_tainted_water;
+            case "初生的濁水幻靈":
+                return R.drawable.newborn_tainted_hydro_phantasm;
+            case "老舊的役人懷錶":
+                return R.drawable.old_servants_pocket_watch;
+            case "役人的制式懷錶":
+                return R.drawable.servants_standard_pocket_watch;
+            case "役人的時時刻刻":
+                return R.drawable.servants_constancy;
 
             /** T-Book*/
             case "「自由」的教導":
@@ -2503,19 +2707,19 @@ public class ItemRss {
                 return R.drawable.philosophies_of_praxis;
             //add in 20230710
             case "「公平」的教導":
-                return R.drawable.teachings_of_fairness;
+                return R.drawable.teachings_of_equity;
             case "「正義」的教導":
                 return R.drawable.teachings_of_justice;
             case "「秩序」的教導":
                 return R.drawable.teachings_of_order;
             case "「公平」的指引":
-                return R.drawable.guide_to_fairness;
+                return R.drawable.guide_to_equity;
             case "「正義」的指引":
                 return R.drawable.guide_to_justice;
             case "「秩序」的指引":
                 return R.drawable.guide_to_order;
             case "「公平」的哲學":
-                return R.drawable.philosophies_of_fairness;
+                return R.drawable.philosophies_of_equity;
             case "「正義」的哲學":
                 return R.drawable.philosophies_of_justice;
             case "「秩序」的哲學":

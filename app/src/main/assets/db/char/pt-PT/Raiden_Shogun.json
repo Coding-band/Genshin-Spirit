@@ -37,20 +37,23 @@
     "talent4_desc": "Cada 1% acima de 100% de Recarga de Energia que a Shogun Raiden possui lhe dá:\n·0.6% a mais de restauração de Energia Elemental de Musou Isshin.<br>·0.4% de Bônus de Dano Electro."
   },
   "sof": {
-    "sof2_name": "Inscrição Ameaçadora",
+    "sof1_name": "Inscrição Ameaçadora",
+    "sof1_img": "raiden_shogun_c1",
+    "sof1_desc": "Shogan Byakugen no Rin acumulará Determinação ainda mais rápido. Quando personagens Electro usarem seus Supremos, o ganho de Determinação é aumentado em 80%. Quando personagens de outros Tipos Elementais usam seus Supremos, o ganho de Determinação é aumentado em 20%.",
+    "sof2_name": "Quebra-Aço",
     "sof2_img": "raiden_shogun_c2",
-    "sof2_desc": "Shogan Byakugen no Rin acumulará Determinação ainda mais rápido. Quando personagens Electro usarem seus Supremos, o ganho de Determinação é aumentado em 80%. Quando personagens de outros Tipos Elementais usam seus Supremos, o ganho de Determinação é aumentado em 20%.",
-    "sof3_name": "Quebra-Aço",
+    "sof2_desc": "Sob o estado de Musou no Hitotachi e Musou Isshin, os ataques da Shogun Raiden, aplicados pela Arte Secreta: Musou Shinsetsu, ignoram 60% da DEF dos oponentes.",
+    "sof3_name": "Passado do Shinkage",
     "sof3_img": "raiden_shogun_c3",
-    "sof3_desc": "Sob o estado de Musou no Hitotachi e Musou Isshin, os ataques da Shogun Raiden, aplicados pela Arte Secreta: Musou Shinsetsu, ignoram 60% da DEF dos oponentes.",
-    "sof4_name": "Passado do Shinkage",
+    "sof3_desc": "Aumenta o Nível de Arte Secreta: Musou Shinsetsu em 3.\nO nível máximo de elevação é 15.",
+    "sof4_name": "Juramento de Decoro",
     "sof4_img": "raiden_shogun_c4",
-    "sof4_desc": "Aumenta o Nível de Arte Secreta: Musou Shinsetsu em 3.\nO nível máximo de elevação é 15.",
-    "sof5_name": "Juramento de Decoro",
+    "sof4_desc": "Quando o estado de Musou Isshin aplicado pela Arte Secreta: Musou Shinsetsu expira, todos os membros da equipe próximos (exceto a Shogun Raiden) ganham 30% de Bônus de ATQ por 10s.",
+    "sof5_name": "Descendência Shogun",
     "sof5_img": "raiden_shogun_c5",
-    "sof5_desc": "Quando o estado de Musou Isshin aplicado pela Arte Secreta: Musou Shinsetsu expira, todos os membros da equipe próximos (exceto a Shogun Raiden) ganham 30% de Bônus de ATQ por 10s.",
-    "sof6_name": "Descendência Shogun",
+    "sof5_desc": "Aumenta o Nível de Milagre: Luz Maligna em 3.\nO nível máximo de elevação é 15.",
+    "sof6_name": "Portadora de Desejos",
     "sof6_img": "raiden_shogun_c6",
-    "sof6_desc": "Aumenta o Nível de Milagre: Luz Maligna em 3.\nO nível máximo de elevação é 15."
+    "sof6_desc": "Durante o estado de Musou Isshin aplicado pela Arte Secreta: Musou Shinsetsu, quando o Supremo da Shogun Raiden atinge um inimigo irá reduzir o Tempo de Recarga do Supremo de todos os membros de equipe próximos em 1s (exceto o da própria Shogun Raiden).\nEste efeito pode ser desencadeado uma vez a cada 1s, e pode ser desencadeado em um total de 5 vezes durante a duração deste estado."
   }
 }

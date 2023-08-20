@@ -37,20 +37,23 @@
     "talent4_desc": "Lorsque Kokomi revêt la parure cérémoniale créée par Ascension de la néréide, les bonus de DGT d'attaque normale et chargée en fonction de ses PV max bénéficient d'une augmentation supplémentaire basée sur 15 % de son bonus de soins."
   },
   "sof": {
-    "sof2_name": "Au bord de l'eau",
+    "sof1_name": "Au bord de l'eau",
+    "sof1_img": "sangonomiya_kokomi_c1",
+    "sof1_desc": "Lorsque Kokomi revêt la parure cérémoniale créée par Ascension de la néréide, la dernière attaque normale de son combo libère un poisson qui inflige des DGT Hydro équivalant à 30 % de ses PV max.\nCes DGT ne sont pas considérés comme des DGT d'attaque normale.",
+    "sof2_name": "Nuages comme des vagues ondulantes",
     "sof2_img": "sangonomiya_kokomi_c2",
-    "sof2_desc": "Lorsque Kokomi revêt la parure cérémoniale créée par Ascension de la néréide, la dernière attaque normale de son combo libère un poisson qui inflige des DGT Hydro équivalant à 30 % de ses PV max.\nCes DGT ne sont pas considérés comme des DGT d'attaque normale.",
-    "sof3_name": "Nuages comme des vagues ondulantes",
+    "sof2_desc": "Lorsque Kokomi soigne des personnages dont les PV sont inférieurs ou égaux à 50 %, elle bénéficie d'un bonus de soin en fonction de la méthode utilisée :\n<br>· Méduse fantôme de Serment de Kurage : augmentation équivalant à 4,5 % des PV max de Kokomi.<br>· Attaque normale ou chargée sous l'effet d'Ascension de la néréide : augmentation équivalant à 0,6 % des PV max de Kokomi.",
+    "sof3_name": "La lune, navire des mers",
     "sof3_img": "sangonomiya_kokomi_c3",
-    "sof3_desc": "Lorsque Kokomi soigne des personnages dont les PV sont inférieurs ou égaux à 50 %, elle bénéficie d'un bonus de soin en fonction de la méthode utilisée :\n<br>· Méduse fantôme de Serment de Kurage : augmentation équivalant à 4,5 % des PV max de Kokomi.<br>· Attaque normale ou chargée sous l'effet d'Ascension de la néréide : augmentation équivalant à 0,6 % des PV max de Kokomi.",
-    "sof4_name": "La lune, navire des mers",
+    "sof3_desc": "Niveau d'aptitude Ascension de la néréide +3.\nNiveau max : 15",
+    "sof4_name": "La lune surplombe les eaux",
     "sof4_img": "sangonomiya_kokomi_c4",
-    "sof4_desc": "Niveau d'aptitude Ascension de la néréide +3.\nNiveau max : 15",
-    "sof5_name": "La lune surplombe les eaux",
+    "sof4_desc": "Lorsque Kokomi revêt la parure cérémoniale créée par Ascension de la néréide, la VIT d'attaque de ses attaques normales augmente de 10 %, et toute attaque normale touchant un ennemi lui permet de restaurer son énergie élémentaire de 0,8 pt.\nCet effet peut être déclenché une fois toutes les 0,2 s.",
+    "sof5_name": "Tous les ruisseaux coulent vers la mer",
     "sof5_img": "sangonomiya_kokomi_c5",
-    "sof5_desc": "Lorsque Kokomi revêt la parure cérémoniale créée par Ascension de la néréide, la VIT d'attaque de ses attaques normales augmente de 10 %, et toute attaque normale touchant un ennemi lui permet de restaurer son énergie élémentaire de 0,8 pt.\nCet effet peut être déclenché une fois toutes les 0,2 s.",
-    "sof6_name": "Tous les ruisseaux coulent vers la mer",
+    "sof5_desc": "Niveau d'aptitude Serment de Kurage +3.\nNiveau max : 15",
+    "sof6_name": "Sango Isshin",
     "sof6_img": "sangonomiya_kokomi_c6",
-    "sof6_desc": "Niveau d'aptitude Serment de Kurage +3.\nNiveau max : 15"
+    "sof6_desc": "Lorsque Kokomi revêt la parure cérémoniale créée par Ascension de la néréide, elle bénéficie d'un bonus de DGT Hydro de 40 % pendant 4 s après avoir effectué un soin sur un personnage dont les PV sont supérieurs ou égaux à 80 % grâce à son attaque normale ou chargée."
   }
 }

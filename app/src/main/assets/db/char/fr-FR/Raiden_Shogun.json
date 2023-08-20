@@ -37,20 +37,23 @@
     "talent4_desc": "Tous les 1 % de recharge d'énergie au-dessus de 100 %, la Shogun Raiden bénéficie des effets suivants :\n· La restauration d'énergie élémentaire accordée par l'Harmonie d'idéal augmente de 0,6 % ;<br>· Le bonus de DGT Électro augmente de 0,4 %."
   },
   "sof": {
-    "sof2_name": "Inscription menaçante",
+    "sof1_name": "Inscription menaçante",
+    "sof1_img": "raiden_shogun_c1",
+    "sof1_desc": "Chakra Desiderata accumule de la résolution encore plus rapidement. Quand un personnage Électro utilise un déchaînement élémentaire, le gain de résolution augmente de 80 % ; quand un personnage d'un autre type élémentaire utilise un déchaînement élémentaire, le gain de résolution augmente de 20 %.",
+    "sof2_name": "Brise-acier",
     "sof2_img": "raiden_shogun_c2",
-    "sof2_desc": "Chakra Desiderata accumule de la résolution encore plus rapidement. Quand un personnage Électro utilise un déchaînement élémentaire, le gain de résolution augmente de 80 % ; quand un personnage d'un autre type élémentaire utilise un déchaînement élémentaire, le gain de résolution augmente de 20 %.",
-    "sof3_name": "Brise-acier",
+    "sof2_desc": "Lorsqu'elles bénéficient de l'état Harmonie d'idéal accordé par Art secret : Dogme d'idéal, les attaques de la Shogun Raiden ignorent 60 % de la DÉF des ennemis.",
+    "sof3_name": "Shinkage du passé",
     "sof3_img": "raiden_shogun_c3",
-    "sof3_desc": "Lorsqu'elles bénéficient de l'état Harmonie d'idéal accordé par Art secret : Dogme d'idéal, les attaques de la Shogun Raiden ignorent 60 % de la DÉF des ennemis.",
-    "sof4_name": "Shinkage du passé",
+    "sof3_desc": "Niveau d'aptitude Art secret : Dogme d'idéal +3.\nNiveau max : 15",
+    "sof4_name": "Serment de droiture",
     "sof4_img": "raiden_shogun_c4",
-    "sof4_desc": "Niveau d'aptitude Art secret : Dogme d'idéal +3.\nNiveau max : 15",
-    "sof5_name": "Serment de droiture",
+    "sof4_desc": "Lorsque l'état Harmonie d'idéal accordé par Art secret : Dogme d'idéal prend fin, l'ATQ de tous les membres de l'équipe à proximité (hormis la Shogun Raiden) augmente de 30 % pendant 10 s.",
+    "sof5_name": "Apparition de la Shogun",
     "sof5_img": "raiden_shogun_c5",
-    "sof5_desc": "Lorsque l'état Harmonie d'idéal accordé par Art secret : Dogme d'idéal prend fin, l'ATQ de tous les membres de l'équipe à proximité (hormis la Shogun Raiden) augmente de 30 % pendant 10 s.",
-    "sof6_name": "Apparition de la Shogun",
+    "sof5_desc": "Niveau d'aptitude Transcendance : Présage funeste +3.\nNiveau max : 15",
+    "sof6_name": "Porteur de souhaits",
     "sof6_img": "raiden_shogun_c6",
-    "sof6_desc": "Niveau d'aptitude Transcendance : Présage funeste +3.\nNiveau max : 15"
+    "sof6_desc": "Lorsqu'elles bénéficient de l'état Harmonie d'idéal accordé par Art secret : Dogme d'idéal, les attaques de la Shogun Raiden qui sont considérées comme faisant partie de son déchaînement élémentaire diminuent le TdR des déchaînements élémentaires de tous les membres de l'équipe à proximité (hormis la Shogun Raiden) de 1 s.\nCet effet peut être déclenché une fois toutes les secondes, et un maximum de 5 fois pendant la durée de cet état."
   }
 }

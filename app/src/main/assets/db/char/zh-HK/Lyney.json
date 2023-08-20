@@ -1,13 +1,13 @@
 {
   "localeName": "林尼",
   "nick": "惑光幻戲",
-  "occupation": "???",
+  "occupation": "布法蒂公館",
   "area": "Fontaine",
   "rare": "5",
   "weapon": "Bow",
   "element": "Pyro",
   "constellation": "黑斑貓座",
-  "desc": "测试角色",
+  "desc": "伶牙俐齒，演技精湛的著名楓丹魔術師，以精妙的手法和言語牽動著觀眾的心。",
   "birth": "02/02",
   "battle_talent": {
     "normal_name": "普通攻擊·迫牌易位式",

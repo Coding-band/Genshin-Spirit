@@ -37,20 +37,23 @@
     "talent4_desc": "When the Cryo application at the end of Kamisato Art: Senho hits an opponent, Kamisato Ayaka gains the following effects:\n·Restores 10 Stamina<br>·Gains 18% Cryo DMG Bonus for 10s."
   },
   "sof": {
-    "sof2_name": "Snowswept Sakura",
+    "sof1_name": "Snowswept Sakura",
+    "sof1_img": "kamisato_ayaka_c1",
+    "sof1_desc": "When Kamisato Ayaka's Normal or Charged Attacks deal Cryo DMG to opponents, it has a 50% chance of decreasing the CD of Kamisato Art: Hyouka by 0.3s. This effect can occur once every 0.1s.",
+    "sof2_name": "Blizzard Blade Seki no To",
     "sof2_img": "kamisato_ayaka_c2",
-    "sof2_desc": "When Kamisato Ayaka's Normal or Charged Attacks deal Cryo DMG to opponents, it has a 50% chance of decreasing the CD of Kamisato Art: Hyouka by 0.3s. This effect can occur once every 0.1s.",
-    "sof3_name": "Blizzard Blade Seki no To",
+    "sof2_desc": "When casting Kamisato Art: Soumetsu, unleashes 2 smaller additional Frostflake Seki no To, each dealing 20% of the original storm's DMG.",
+    "sof3_name": "Frostbloom Kamifubuki",
     "sof3_img": "kamisato_ayaka_c3",
-    "sof3_desc": "When casting Kamisato Art: Soumetsu, unleashes 2 smaller additional Frostflake Seki no To, each dealing 20% of the original storm's DMG.",
-    "sof4_name": "Frostbloom Kamifubuki",
+    "sof3_desc": "Increases the Level of Kamisato Art: Soumetsu by 3.\nMaximum upgrade level is 15.",
+    "sof4_name": "Ebb and Flow",
     "sof4_img": "kamisato_ayaka_c4",
-    "sof4_desc": "Increases the Level of Kamisato Art: Soumetsu by 3.\nMaximum upgrade level is 15.",
-    "sof5_name": "Ebb and Flow",
+    "sof4_desc": "Opponents damaged by Kamisato Art: Soumetsu's Frostflake Seki no To will have their DEF decreased by 30% for 6s.",
+    "sof5_name": "Blossom Cloud Irutsuki",
     "sof5_img": "kamisato_ayaka_c5",
-    "sof5_desc": "Opponents damaged by Kamisato Art: Soumetsu's Frostflake Seki no To will have their DEF decreased by 30% for 6s.",
-    "sof6_name": "Blossom Cloud Irutsuki",
+    "sof5_desc": "Increases the Level of Kamisato Art: Hyouka by 3.\nMaximum upgrade level is 15.",
+    "sof6_name": "Dance of Suigetsu",
     "sof6_img": "kamisato_ayaka_c6",
-    "sof6_desc": "Increases the Level of Kamisato Art: Hyouka by 3.\nMaximum upgrade level is 15."
+    "sof6_desc": "Kamisato Ayaka gains Usurahi Butou every 10s, increasing her Charged Attack DMG by 298%. This buff will be cleared 0.5s after Ayaka's Charged ATK hits an opponent, after which the timer for this ability will restart."
   }
 }

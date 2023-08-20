@@ -129,7 +129,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/genshin_font"
-                        android:text="港、台、澳服 - 123456789"
+                        android:text="123456789"
                         android:textColor="@color/white"
                         android:textSize="12sp" />
 

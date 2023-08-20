@@ -17,7 +17,6 @@ public class Characters implements Serializable {
     public int isComing; //是否即將推出
     public String nation; //地區
     public String sex; //性別
-    public String role; //性別
     public String mainStat; //性別
 
     public Characters() {
@@ -32,7 +31,6 @@ public class Characters implements Serializable {
         this.isComing = isComing;
         this.nation = nation;
         this.sex = sex;
-        this.role = role;
         this.mainStat = mainStat;
     }
 
@@ -90,14 +88,6 @@ public class Characters implements Serializable {
 
     public void setSex(String sex) {
         this.sex = sex;
-    }
-
-    public String getRole() {
-        return role;
-    }
-
-    public void setRole(String role) {
-        this.role = role;
     }
 
     public String getMainStat() {

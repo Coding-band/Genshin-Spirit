@@ -70,7 +70,7 @@ public class TCG_Info_2048 extends AppCompatActivity {
     CustomTextView tcg_hp_tv, tcg_dice_tv, tcg_recharge_tv;
     FrameLayout tcg_card_item, tcg_card_hp, tcg_card_dice, tcg_card_recharge;
     View tcg_card_include;
-    LinearLayout tcg_detail_ll;
+    LinearLayout tcg_detail_ll,tcg_card_ll;
     LinearLayout tcg_intro_ll;
     ConstraintLayout tcg_scroll_sc;
 
@@ -286,6 +286,7 @@ public class TCG_Info_2048 extends AppCompatActivity {
         tcg_card_item = findViewById(R.id.tcg_card_item);
         tcg_card_hp = findViewById(R.id.tcg_card_hp);
         tcg_card_dice = findViewById(R.id.tcg_card_dice);
+        tcg_card_ll = findViewById(R.id.tcg_card_ll);
         tcg_card_recharge = findViewById(R.id.tcg_card_recharge);
         tcg_press_mask = findViewById(R.id.tcg_press_mask);
 
@@ -313,6 +314,10 @@ public class TCG_Info_2048 extends AppCompatActivity {
                     }
                 });
 
+        tcg_card_hp.setVisibility(View.GONE);
+        tcg_card_dice.setVisibility(View.GONE);
+        tcg_card_recharge.setVisibility(View.GONE);
+
         postponeEnterTransition();
         ViewCompat.setTransitionName(tcg_card_img,"tcg_card_img");
         ViewCompat.setTransitionName(tcg_card,"tcg_card");
@@ -323,41 +328,19 @@ public class TCG_Info_2048 extends AppCompatActivity {
         ViewCompat.setTransitionName(tcg_dice_tv,"tcg_dice_tv");
         ViewCompat.setTransitionName(tcg_recharge_bg,"tcg_recharge_bg");
         ViewCompat.setTransitionName(tcg_recharge_tv,"tcg_recharge_tv");
-        ViewCompat.setTransitionName(tcg_card_recharge,"tcg_card_recharge");
-        ViewCompat.setTransitionName(tcg_card_hp,"tcg_card_hp");
-        ViewCompat.setTransitionName(tcg_card_dice,"tcg_card_dice");
 
         TransitionSet transitionSet = new TransitionSet();
-        transitionSet.addTransition(new ChangeBounds());
-        transitionSet.addTransition(new ChangeBounds());
-        transitionSet.addTransition(new ChangeBounds());
-        transitionSet.addTransition(new ChangeBounds());
-        transitionSet.addTransition(new ChangeBounds());
-        transitionSet.addTransition(new ChangeBounds());
-        transitionSet.addTransition(new ChangeBounds());
-        transitionSet.addTransition(new ChangeBounds());
-        transitionSet.addTransition(new ChangeBounds());
-        transitionSet.addTransition(new ChangeBounds());
-        transitionSet.addTransition(new ChangeBounds());
-        transitionSet.addTransition(new ChangeBounds());
-        transitionSet.addTarget(tcg_card_img);
-        transitionSet.addTarget(tcg_card);
-        transitionSet.addTarget(tcg_card_kwang);
-        transitionSet.addTarget(tcg_hp_bg);
-        transitionSet.addTarget(tcg_hp_tv);
-        transitionSet.addTarget(tcg_dice_bg);
-        transitionSet.addTarget(tcg_dice_tv);
-        transitionSet.addTarget(tcg_recharge_tv);
-        transitionSet.addTarget(tcg_recharge_bg);
-        transitionSet.addTarget(tcg_card_recharge);
-        transitionSet.addTarget(tcg_card_hp);
-        transitionSet.addTarget(tcg_card_dice);
+        transitionSet.addTarget(tcg_card_img).addTransition(new ChangeBounds());
+        transitionSet.addTarget(tcg_card).addTransition(new ChangeBounds());
+        transitionSet.addTarget(tcg_card_kwang).addTransition(new ChangeBounds());
+        transitionSet.addTarget(tcg_hp_bg).addTransition(new ChangeBounds());
+        transitionSet.addTarget(tcg_hp_tv).addTransition(new ChangeBounds());
+        transitionSet.addTarget(tcg_dice_bg).addTransition(new ChangeBounds());
+        transitionSet.addTarget(tcg_dice_tv).addTransition(new ChangeBounds());
+        transitionSet.addTarget(tcg_recharge_tv).addTransition(new ChangeBounds());
+        transitionSet.addTarget(tcg_recharge_bg).addTransition(new ChangeBounds());
         getWindow().setSharedElementEnterTransition(transitionSet);
         getWindow().setSharedElementExitTransition(transitionSet);
-
-        tcg_card_hp.setVisibility(View.GONE);
-        tcg_card_dice.setVisibility(View.GONE);
-        tcg_card_recharge.setVisibility(View.GONE);
 
         if(activity.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE){
             tcg_card.getLayoutParams().height = (int) (displayMetrics.heightPixels - 64*displayMetrics.density);
@@ -382,18 +365,16 @@ public class TCG_Info_2048 extends AppCompatActivity {
         tcg_card_name.setText(item_rss.getTCGByName(tcg.getName())[1]);
         tcg_card_name_base.setText(tcg.getName());
 
-        tcg_card_recharge.setVisibility(View.GONE);
-        if (tcg.getRecharge() > 0){
-            tcg_card_recharge.setVisibility(View.VISIBLE);
-            tcg_recharge_tv.setText(String.valueOf(tcg.getRecharge()));
-        }
-
         switch (tcg.getType()){
             case TCG.CHAR:{
                 tcg_card_hp.setVisibility(View.VISIBLE);
                 tcg_card_dice.setVisibility(View.GONE);
 
                 tcg_hp_tv.setText(String.valueOf(tcg.getHP()));
+                if (tcg.getRecharge() > 0){
+                    tcg_card_recharge.setVisibility(View.VISIBLE);
+                    tcg_recharge_tv.setText(String.valueOf(tcg.getRecharge()));
+                }
                 break;
             }
             case TCG.EQUIP:
@@ -418,6 +399,10 @@ public class TCG_Info_2048 extends AppCompatActivity {
 
                 tcg_dice_bg.setImageResource(diceType);
                 tcg_dice_tv.setText(String.valueOf(tcg.getDiceCost()));
+                if (tcg.getRecharge() > 0){
+                    tcg_card_recharge.setVisibility(View.VISIBLE);
+                    tcg_recharge_tv.setText(String.valueOf(tcg.getRecharge()));
+                }
                 break;
             }
         }

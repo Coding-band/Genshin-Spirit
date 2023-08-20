@@ -1,12 +1,12 @@
 {
   "nick": "Elegance in the Shadows",
-  "occupation": "???",
+  "occupation": "Hotel Bouffes d'ete",
   "area": "Fontaine",
   "rare": "4",
   "weapon": "Sword",
   "element": "Anemo",
   "constellation": "Felis Alba",
-  "desc": "测试角色",
+  "desc": "A magic assistant of few words, her emotions are as inscrutable as any cat's.",
   "birth": "02/02",
   "battle_talent": {
     "normal_name": "Normal Attack: Rapid Ritesword",
@@ -16,7 +16,7 @@
     "normal_desc3": "Plunges from mid-air to strike the ground below, damaging opponents along the path and dealing AoE DMG upon impact.",
     "element_name": "Enigmatic Feint",
     "element_img": "lynette_s2",
-    "element_desc": "Flicks her mantle and executes an Enigma Thrust, dealing Anemo DMG.<br>When the Enigma Thrust hits an opponent, it will restore Lynette's HP based on her Max HP, and in the 4s afterward, she will lose a certain amount of HP per second.<br>Based on whether you press or hold this ability, she will use Enigma Thrust differently.<br><br>Press<br>She swiftly uses an Enigma Thrust.<br><br>Hold<br>Lynette will enter a high-speed Pilfering Shadow state and apply Shadowsign to a nearby opponent.<br>When this high-speed state ends, Lynette will unleash her Enigma Thrust. If there is an opponent with Shadowsign applied to them nearby, Lynette will approach them in a flash before using Enigma Thrust.<br><br>A maximum of 1 opponent can have Shadowsign at any one time. When this opponent gets too far from Lynette, the Shadowsign will be canceled.<br><br>Arkhe: Ousia<br>At specific intervals, Lynette will unleash a Surging Blade when she uses Enigma Thrust, dealing Ousia-aligned Anemo DMG.<br><br><i>\"Now then, turn your eyes to the stage and continue to enjoy the performance. When I next appear, I'll be where you least expect.\"</i>",
+    "element_desc": "Flicks her mantle and executes an Enigma Thrust, dealing Anemo DMG.<br>When the Enigma Thrust hits an opponent, it will restore Lynette's HP based on her Max HP, and in the 4s afterward, she will lose a certain amount of HP per second.<br>Based on whether you press or hold this ability, she will use Enigma Thrust differently.<br><br>Press<br>She swiftly uses an Enigma Thrust.<br><br>Hold<br>Lynette will enter a high-speed Pilfering Shadow state and apply Shadowsign to a nearby opponent. You can control her movement direction during this state, and you can end it prematurely by using this skill again.<br>When this high-speed state ends, Lynette will unleash her Enigma Thrust. If there is an opponent with Shadowsign applied to them nearby, Lynette will approach them in a flash before using Enigma Thrust.<br><br>A maximum of 1 opponent can have Shadowsign at any one time. When this opponent gets too far from Lynette, the Shadowsign will be canceled.<br><br>Arkhe: Ousia<br>At specific intervals, Lynette will unleash a Surging Blade when she uses Enigma Thrust, dealing Ousia-aligned Anemo DMG.<br><br><i>\"Now then, turn your eyes to the stage and continue to enjoy the performance. When I next appear, I'll be where you least expect.\"</i>",
     "final_name": "Magic Trick: Astonishing Shift",
     "final_img": "lynette_s3",
     "final_desc": "Lynette raises her mantle high, dealing AoE Anemo DMG, using skillful sleight of hand to make a giant Bogglecat Box appear!\n<br>Bogglecat Box<br>·Taunts nearby opponents, attracting their attacks.<br>·Deals Anemo DMG to nearby opponents at intervals.<br>·When the Bogglecat Box comes into contact with Hydro/Pyro/Cryo/Electro, it will gain the corresponding element and additionally fire Vivid Shots that will deal DMG from that element at intervals.<br>Elemental Absorption of this kind will only occur once during this ability's duration.<br><br><i>\"Look this way, and look closely. This is a time for miracles, just for us.\"</i>"
@@ -24,7 +24,7 @@
   "basic_talent": {
     "talent2_name": "Loci-Based Mnemonics",
     "talent2_img": "lynette_p2",
-    "talent2_desc": "Shows the location of nearby Recovery Orbs on the minimap. The underwater Stamina and HP gained from touching Orbs will be increased by 25%.",
+    "talent2_desc": "Shows the location of nearby Recovery Orbs on the minimap. The Aquatic Stamina and HP gained from touching Orbs will be increased by 25%.",
     "talent3_name": "Sophisticated Synergy",
     "talent3_img": "lynette_p3",
     "talent3_desc": "Within 10s after using Magic Trick: Astonishing Shift, when there are 1/2/3/4 Elemental Types in the party, all party members' ATK will be increased by 8%/12%/16%/20% respectively.",

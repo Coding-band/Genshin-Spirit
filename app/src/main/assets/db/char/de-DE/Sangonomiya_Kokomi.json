@@ -37,20 +37,23 @@
     "talent4_desc": "Erhöht den basierend auf Sangonomiya Kokomis max. LP mit Standardangriffen und heftigen Schlägen im Zustand Rituelles Federkleid von Nereidenaufstieg verursachten Schaden zusätzlich um 15 % ihres Heilungsbonus."
   },
   "sof": {
-    "sof2_name": "Am Rande des Flusses",
+    "sof1_name": "Am Rande des Flusses",
+    "sof1_img": "sangonomiya_kokomi_c1",
+    "sof1_desc": "Entfesselt im Zustand Rituelles Federkleid von Nereidenaufstieg mit dem letzten Angriff der Standardangriffe von Sangonomiya Kokomi einen schwimmenden Fisch, der Hydro-Schaden in Höhe von 30 % der max. LP von Sangonomiya Kokomi verursacht.\nDieser Schaden gilt nicht als Schaden von Standardangriffen.",
+    "sof2_name": "Wellen des Wolkenmeers",
     "sof2_img": "sangonomiya_kokomi_c2",
-    "sof2_desc": "Entfesselt im Zustand Rituelles Federkleid von Nereidenaufstieg mit dem letzten Angriff der Standardangriffe von Sangonomiya Kokomi einen schwimmenden Fisch, der Hydro-Schaden in Höhe von 30 % der max. LP von Sangonomiya Kokomi verursacht.\nDieser Schaden gilt nicht als Schaden von Standardangriffen.",
-    "sof3_name": "Wellen des Wolkenmeers",
+    "sof2_desc": "Gewährt Sangonomiya Kokomi Heilungsboni in Bezug auf Figuren mit 50 % oder weniger LP basierend auf ihren max. LP auf folgende Art und Weise:\n· Durch „Bakekurage“ von Eid des Kurage: 4,5 % der max. LP<br>· Durch Standardangriffe und heftige Schläge von Nereidenaufstieg: 0,6 % der max. LP.",
+    "sof3_name": "Mondschiff auf den Meeren",
     "sof3_img": "sangonomiya_kokomi_c3",
-    "sof3_desc": "Gewährt Sangonomiya Kokomi Heilungsboni in Bezug auf Figuren mit 50 % oder weniger LP basierend auf ihren max. LP auf folgende Art und Weise:\n· Durch „Bakekurage“ von Eid des Kurage: 4,5 % der max. LP<br>· Durch Standardangriffe und heftige Schläge von Nereidenaufstieg: 0,6 % der max. LP.",
-    "sof4_name": "Mondschiff auf den Meeren",
+    "sof3_desc": "Erhöht die Stufe der Fähigkeit Nereidenaufstieg um 3.\nHöchststufe 15.",
+    "sof4_name": "Mond über den Strömen",
     "sof4_img": "sangonomiya_kokomi_c4",
-    "sof4_desc": "Erhöht die Stufe der Fähigkeit Nereidenaufstieg um 3.\nHöchststufe 15.",
-    "sof5_name": "Mond über den Strömen",
+    "sof4_desc": "Erhöht die Angriffsgeschwindigkeit der Standardangriffe von Sangonomiya Kokomi im Zustand Rituelles Federkleid von Nereidenaufstieg um 10 % und stellt 0,8 Punkt Elementarenergie wieder, wenn die Standardangriffe Gegner treffen.\n0,2 s Abklingzeit.",
+    "sof5_name": "Alle Ströme fließen ins Meer",
     "sof5_img": "sangonomiya_kokomi_c5",
-    "sof5_desc": "Erhöht die Angriffsgeschwindigkeit der Standardangriffe von Sangonomiya Kokomi im Zustand Rituelles Federkleid von Nereidenaufstieg um 10 % und stellt 0,8 Punkt Elementarenergie wieder, wenn die Standardangriffe Gegner treffen.\n0,2 s Abklingzeit.",
-    "sof6_name": "Alle Ströme fließen ins Meer",
+    "sof5_desc": "Erhöht die Stufe der Fähigkeit Eid des Kurage um 3.\nHöchststufe 15.",
+    "sof6_name": "Sango Isshin",
     "sof6_img": "sangonomiya_kokomi_c6",
-    "sof6_desc": "Erhöht die Stufe der Fähigkeit Eid des Kurage um 3.\nHöchststufe 15."
+    "sof6_desc": "Gewährt Sangonomiya Kokomi im Zustand Rituelles Federkleid von Nereidenaufstieg 4 s lang einen Hydro-SCH-Bonus von 40 %, wenn die Standardangriffe und heftigen Schläge von Sangonomiya Kokomi Figuren mit 80 % oder mehr LP heilen."
   }
 }

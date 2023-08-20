@@ -1485,4 +1485,27 @@
 
     <!-- add in 20230814 - 3.7.0 -->
     <string name="ibis_piercer">"Клюв ибиса"</string>
+    <string name="teachings_of_equity">Учения о «Беспристрастии»</string>
+    <string name="teachings_of_justice">Учения о «Справедливости»</string>
+    <string name="teachings_of_order">Учения о «Порядке»</string>
+    <string name="guide_to_equity">Указания о «Беспристрастии»</string>
+    <string name="guide_to_justice">Указания о «Справедливости»</string>
+    <string name="guide_to_order">Указания о «Порядке»</string>
+    <string name="philosophies_of_equity">Философия о «Беспристрастии»</string>
+    <string name="philosophies_of_justice">Философия о «Справедливости»</string>
+    <string name="philosophies_of_order">Философия о «Порядке»</string>
+    <string name="fragment_of_an_ancient_chord">Фрагмент отзвука древней струны</string>
+    <string name="dross_of_pure_sacred_dewdrop">Осадок чистой капли росы</string>
+    <string name="broken_goblet_of_the_pristine_sea">Разбитая чаша непорочного моря</string>
+    <string name="chapter_of_an_ancient_chord">Незаконченный отзвук древней струны</string>
+    <string name="sublimation_of_pure_sacred_dewdrop">Конденсат чистой капли росы</string>
+    <string name="wine_goblet_of_the_pristine_sea">Чаша непорочного моря</string>
+    <string name="movement_of_an_ancient_chord">Песнь отзвука древней струны</string>
+    <string name="spring_of_pure_sacred_dewdrop">Источник чистой капли росы</string>
+    <string name="silver_goblet_of_the_pristine_sea">Серебряный кубок непорочного моря</string>
+    <string name="echo_of_an_ancient_chord">Эхо отзвука древней струны</string>
+    <string name="essence_of_pure_sacred_dewdrop">Эссенция чистой капли росы</string>
+    <string name="golden_goblet_of_the_pristine_sea">Золотой кубок непорочного моря</string>
+    <string name="pale_forgotten_glory">Бледный забытый цветок</string>
+    <string name="echoes_of_the_deep_tides">Эхо глубоких приливов</string>
 </resources>

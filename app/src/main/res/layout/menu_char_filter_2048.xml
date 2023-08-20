@@ -473,7 +473,8 @@
                     android:paddingBottom="4dp"
                     android:text="@string/char_role"
                     android:textColor="@color/tv_spinner_color_2048"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    android:visibility="gone" />
 
                 <LinearLayout
                     android:id="@+id/menu_role_ll"
@@ -482,7 +483,7 @@
                     android:layout_margin="4dp"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:visibility="visible">
+                    android:visibility="gone">
 
                     <LinearLayout
                         android:layout_width="match_parent"

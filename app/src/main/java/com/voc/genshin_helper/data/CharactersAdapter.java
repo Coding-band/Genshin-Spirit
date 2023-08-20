@@ -663,7 +663,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
 
         holder.char_name.setText(item_rss.getCharByName(Characters.getName(),context)[1]);
         holder.char_weapon.setImageResource(item_rss.getWeaponTypeIMG(Characters.getWeapon(),context));
-        holder.char_role.setText(item_rss.getLocaleName(Characters.getRole(),context));
+        //holder.char_role.setText(item_rss.getLocaleName(Characters.getRole(),context));
         holder.char_main_stat.setText(item_rss.getArtifactBuffName(Characters.getMainStat(),context));
     }
 
@@ -673,7 +673,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public TextView char_name,char_base_name,char_role,char_main_stat;
+        public TextView char_name,char_base_name,char_main_stat;
         public ImageView char_icon,char_small_ico,char_isComing,char_element,char_press_mask,char_weapon;
         //public LinearLayout char_nl;
         public RatingBar char_star;
@@ -717,7 +717,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
             char_press_mask = itemView.findViewById(R.id.char_press_mask);
             char_name_ll = itemView.findViewById(R.id.char_name_ll);
             char_weapon = itemView.findViewById(R.id.char_weapon);
-            char_role = itemView.findViewById(R.id.char_role);
+            //char_role = itemView.findViewById(R.id.char_role);
             char_main_stat = itemView.findViewById(R.id.char_main_stat);
             char_card_bg = itemView.findViewById(R.id.char_card_bg);
             char_card_mask = itemView.findViewById(R.id.char_card_mask);

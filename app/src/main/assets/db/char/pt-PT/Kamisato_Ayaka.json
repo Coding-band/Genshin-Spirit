@@ -37,20 +37,23 @@
     "talent4_desc": "Quando a aplicação de Cryo no final da Arte Kamisato: Senho acerta um oponente, Kamisato Ayaka ganha os seguintes efeitos:\n·Recupera 10 de Stamina<br>·Ganha 18% de Bônus de Dano Cryo por 10s."
   },
   "sof": {
-    "sof2_name": "Sosai Sumizome Sakura",
+    "sof1_name": "Sosai Sumizome Sakura",
+    "sof1_img": "kamisato_ayaka_c1",
+    "sof1_desc": "Quando os Ataques Normal ou Carregado de Kamisato Ayaka infligem Dano Cryo aos inimigos, têm uma chance de 50% de diminuir a Recarga de Arte Kamisato: Hyouka em 0.3s. Esse efeito só pode ocorrer uma vez a cada 0.1s.",
+    "sof2_name": "Lâmina da Nevasca Seki no To",
     "sof2_img": "kamisato_ayaka_c2",
-    "sof2_desc": "Quando os Ataques Normal ou Carregado de Kamisato Ayaka infligem Dano Cryo aos inimigos, têm uma chance de 50% de diminuir a Recarga de Arte Kamisato: Hyouka em 0.3s. Esse efeito só pode ocorrer uma vez a cada 0.1s.",
-    "sof3_name": "Lâmina da Nevasca Seki no To",
+    "sof2_desc": "Ao lançar Arte Kamisato: Soumetsu, lança 2 Portões Souken pequenos adicionais, cada uma causando 20% do Dano da tempestade.",
+    "sof3_name": "Flor Congelada Kamifubuki",
     "sof3_img": "kamisato_ayaka_c3",
-    "sof3_desc": "Ao lançar Arte Kamisato: Soumetsu, lança 2 Portões Souken pequenos adicionais, cada uma causando 20% do Dano da tempestade.",
-    "sof4_name": "Flor Congelada Kamifubuki",
+    "sof3_desc": "Aumenta o nível de Arte Kamisato: Soumetsu em 3.\nO nível máximo de elevação é 15.",
+    "sof4_name": "Eiki Ryuhan",
     "sof4_img": "kamisato_ayaka_c4",
-    "sof4_desc": "Aumenta o nível de Arte Kamisato: Soumetsu em 3.\nO nível máximo de elevação é 15.",
-    "sof5_name": "Eiki Ryuhan",
+    "sof4_desc": "Inimigos atingidos pelo Granizo Seki no To de Arte Kamisato: Soumetsu terão sua DEF reduzido em 30% por 6s.",
+    "sof5_name": "Nuvem de Flores Irutsuki",
     "sof5_img": "kamisato_ayaka_c5",
-    "sof5_desc": "Inimigos atingidos pelo Granizo Seki no To de Arte Kamisato: Soumetsu terão sua DEF reduzido em 30% por 6s.",
-    "sof6_name": "Nuvem de Flores Irutsuki",
+    "sof5_desc": "Aumenta o nível de Arte Kamisato: Hyouka em 3.\nO nível máximo de elevação é 15.",
+    "sof6_name": "Dança de Suigetsu",
     "sof6_img": "kamisato_ayaka_c6",
-    "sof6_desc": "Aumenta o nível de Arte Kamisato: Hyouka em 3.\nO nível máximo de elevação é 15."
+    "sof6_desc": "Kamisato Ayaka ganha Usuhari Butou a cada 10s, aumentando o Dano causado pelo seu Ataque Carregado em 298%. Esse bônus será dissipado 0.5s após o Ataque Carregado de Ayaka atingir um inimigo, em que o Tempo de Recarga dessa habilidade reiniciará."
   }
 }

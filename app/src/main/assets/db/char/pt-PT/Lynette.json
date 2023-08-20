@@ -1,12 +1,12 @@
 {
   "nick": "Elegância nas Sombras",
-  "occupation": "???",
+  "occupation": "Hotel Bouffes d'ete",
   "area": "Fontaine",
   "rare": "4",
   "weapon": "Sword",
   "element": "Anemo",
   "constellation": "Felis Alba",
-  "desc": "测试角色",
+  "desc": "Uma assistente mágica de poucas palavras. Sua personalidade é tão indecifrável quanto a de um gato.",
   "birth": "02/02",
   "battle_talent": {
     "normal_name": "Ataque Normal: Rapieira Veloz",
@@ -16,10 +16,10 @@
     "normal_desc3": "Mergulha em pleno ar para golpear o chão, causando Dano aos inimigos ao longo do caminho e infligindo Dano em uma AdE durante o impacto.",
     "element_name": "Barreira das Sombras",
     "element_img": "lynette_s2",
-    "element_desc": "Balança sua capa e faz um Golpe das Sombras, causando Dano Anemo.<br>Quando o Golpe das Sombras atingir um inimigo, regenerará Vida para Lynette. A quantidade de Vida regenerada é baseada na Vida Máxima de Lynette, e depois disso, consumirá uma certa quantidade de Vida por segundo nos próximos 4s.<br>Fará o Golpe das Sombras de maneira diferente se Pressionar ou Manter Pressionado.<br>Pressionar<br>Faz um Golpe das Sombras rápido.<br><br>Manter Pressionado<br>Corre rapidamente no estado \"Sombra Enigmática\", e aplica \"Marca da Sombra\" nos inimigos próximos.<br>Quando terminar de correr, Lynette fará um Golpe das Sombras. Se houver algum inimigo com a Marca da Sombra por perto, Lynette dará um Golpe das Sombras nele em alta velocidade.<br><br>Só é possível existir até um inimigo com uma Marca da Sombra de Lynette simultaneamente. Se o inimigo que está com a Marca da Sombra estiver muito distante, a Marca da Sombra será removida.<br><br>Força Fundamental: Ousia<br>Periodicamente, quando Lynette lançar um Golpe das Sombras, invocará uma Lâmina da Fluidez que causará Dano Anemo com Ousia.<br><br><i>\"Agora, vire seus olhos para o palco e continue a se divertir com a apresentação. Quando eu aparecer pela próxima vez, será a última coisa que você esperará.\"</i>",
+    "element_desc": "Balança sua capa e faz um Golpe das Sombras, causando Dano Anemo.<br>Quando o Golpe das Sombras atingir um inimigo, regenerará Vida para Lynette. A quantidade de Vida regenerada é baseada na Vida Máxima de Lynette, e depois disso, consumirá uma certa quantidade de Vida por segundo nos próximos 4s.<br>Fará o Golpe das Sombras de maneira diferente se Pressionar ou Manter Pressionado.<br><br>Pressionar<br>Faz um Golpe das Sombras rápido.<br><br>Manter Pressionado<br>Lynette corre rapidamente no estado \"Sombra Enigmática\", e aplica \"Marca da Sombra\" nos inimigos próximos. Durante esse período, é possível controlar a direção da corrida, e lançar a Habilidade novamente fará terminar o estado de corrida mais cedo.<br>Quando terminar de correr, Lynette fará um Golpe das Sombras. Se houver algum inimigo com a Marca da Sombra por perto, Lynette dará um Golpe das Sombras nele em alta velocidade.<br><br>Só é possível existir até um inimigo com uma Marca da Sombra de Lynette simultaneamente. Se o inimigo que está com a Marca da Sombra estiver muito distante, a Marca da Sombra será removida.<br><br>Arkhe: Ousia<br>Periodicamente, quando Lynette lançar um Golpe das Sombras, invocará uma Lâmina da Fluidez que causará Dano Anemo com Ousia.<br><br><i>\"Agora, vire seus olhos para o palco e continue a se divertir com a apresentação. Quando eu aparecer pela próxima vez, será a última coisa que você esperará.\"</i>",
     "final_name": "Magia: Transformação Surpreendente",
     "final_img": "lynette_s3",
-    "final_desc": "Lynette levanta um manto, causando Dano Anemo em AdE e usa uma técnica fantástica para se transformar numa gigantesca Caixa Surpresa Miau Miau!\n<br>Caixa Surpresa Miau Miau<br>· Provoca os inimgos próximos continuamente, atraindo seus ataques.<br>· Periodicamente causa Dano Anemo contra os inimigos próximos.<br>· Quando a Caixa Surpresa Miau Miau tocar Hydro/Pyro/Cryo/Electro, obterá o Elemento correspondente e periodicamente lançará contra os inimigos ao redor um Feixe Colorido, causando o respectivo Dano Elemental.<br>Essa Conversão Elemental só pode ser desencadeada uma vez na duração da habilidade.<br><br><i>\"Olhe bem nessa direção, preste bem atenção. Esse momento de magia pertence somente a nós.\"</i>"
+    "final_desc": "Lynette levanta um manto, causando Dano Anemo em AdE e usa uma técnica fantástica para se transformar numa gigantesca Caixa Surpresa Miau Miau!\n<br>Caixa Surpresa Miau Miau<br>· Provoca os inimigos próximos continuamente, atraindo seus ataques.<br>· Periodicamente causa Dano Anemo contra os inimigos próximos.<br>· Quando a Caixa Surpresa Miau Miau tocar Hydro/Pyro/Cryo/Electro, obterá o Elemento correspondente e periodicamente lançará contra os inimigos ao redor um Feixe Colorido, causando o respectivo Dano Elemental.<br>Essa Conversão Elemental só pode ser desencadeada uma vez na duração da habilidade.<br><br><i>\"Olhe bem nessa direção, preste bem atenção. Esse momento de magia pertence somente a nós.\"</i>"
   },
   "basic_talent": {
     "talent2_name": "Pontos Mnemônicos",

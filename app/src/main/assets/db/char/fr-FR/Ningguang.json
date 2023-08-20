@@ -24,7 +24,7 @@
   "basic_talent": {
     "talent2_name": "Corne d'abondance",
     "talent2_img": "ningguang_p2",
-    "talent2_desc": "Affiche la localisation des filons de minerai utilisables en forge proches sur la carte.",
+    "talent2_desc": "Affiche l'emplacement des filons de minerai utilisables en forge sur la mini-carte.",
     "talent3_name": "Plan de reprise",
     "talent3_img": "ningguang_p3",
     "talent3_desc": "L'attaque chargée de Ningguang ne consomme pas d'endurance tant que celle-ci possède des Jades d'étoile.",

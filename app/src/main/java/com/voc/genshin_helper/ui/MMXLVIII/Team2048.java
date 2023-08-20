@@ -1005,7 +1005,7 @@ public class Team2048 {
 
     private void char_list_reload() {
         Log.wtf("DAAM","YEE");
-        String name ,element,weapon,nation,sex,mainStat,role;
+        String name ,element,weapon,nation,sex,mainStat;
         int rare,isComing;
         charactersList.clear();
 
@@ -1020,7 +1020,6 @@ public class Team2048 {
                 weapon = object.getString("weapon");
                 nation = object.getString("nation");
                 sex = object.getString("sex");
-                role = object.getString("role");
                 mainStat = object.getString("mainStat");
                 rare = object.getInt("rare");
                 isComing = object.getInt("isComing");
@@ -1031,7 +1030,6 @@ public class Team2048 {
                 characters.setWeapon(weapon);
                 characters.setNation(nation);
                 characters.setSex(sex);
-                characters.setRole(role);
                 characters.setRare(rare);
                 characters.setMainStat(mainStat);
                 characters.setIsComing(isComing);
@@ -1205,6 +1203,7 @@ public class Team2048 {
                     if(!show_released && item.getIsComing() ==0){isAllTrue = false;}
                     if(!show_unreleased && item.getIsComing() ==1 ){isAllTrue = false;}
                 }
+                /*
 
                 if (isSingleRole == 1){
                     if(show_dps && !item.getRole().equals("Main_DPS") ){isAllTrue = false;}
@@ -1215,6 +1214,7 @@ public class Team2048 {
                     if(!show_sub_dps && item.getRole().equals("Support_DPS") ){isAllTrue = false;}
                     if(!show_util && item.getRole().equals("Utility")){isAllTrue = false;}
                 }
+                 */
 
                 if (isAllTrue == true){
                     filteredList.add(item);
