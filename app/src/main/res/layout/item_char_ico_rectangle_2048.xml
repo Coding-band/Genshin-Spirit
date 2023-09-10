@@ -19,13 +19,21 @@
         android:id="@+id/char_bg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/pyro_800x1600_dark"
         android:elevation="16dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/char_real_bg"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/char_card"
@@ -51,16 +59,16 @@
             android:fadingEdge="horizontal|vertical"
             android:fadingEdgeLength="30dp"
             android:visibility="gone"
-            app:shadowColor="@color/shadow_char_ico"
-            app:shadowRadius="180dp"
             app:bgColor="@color/colorWhiteAlpha"
             app:blurRadius="10dp"
-            app:xOffset="0dp"
-            app:yOffset="1dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:shadowColor="@color/shadow_char_ico"
+            app:shadowRadius="180dp"
+            app:xOffset="0dp"
+            app:yOffset="1dp" />
 
         <ImageView
             android:id="@+id/char_card_bg"
@@ -268,10 +276,10 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:adjustViewBounds="true"
-            android:visibility="visible"
             android:clickable="true"
             android:focusable="true"
             android:foreground="@drawable/item_selected_circle_effect"
+            android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

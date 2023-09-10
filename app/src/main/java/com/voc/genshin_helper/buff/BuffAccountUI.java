@@ -34,6 +34,7 @@ import com.voc.genshin_helper.buff.obj.Character;
 import com.voc.genshin_helper.buff.obj.Weapon;
 import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.util.FileLoader;
+import com.voc.genshin_helper.util.LogExport;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 import com.willy.ratingbar.ScaleRatingBar;
 
@@ -159,6 +160,7 @@ public class BuffAccountUI extends AppCompatActivity {
 
         for (int x = 0 ; x < buffObjects.size() ; x++){
             BuffObject buffObject = buffObjects.get(x);
+            //if(x == 0) {LogExport.export("BuffAccountUI", "list_init", buffObject.toString(0), context, LogExport.BETA_TESTING);}
             View view = mInflater.inflate(R.layout.fragment_buff_account_group_2048, null,false);
             ImageView buff_dmg_char_ico = view.findViewById(R.id.buff_dmg_char_ico);
             TextView buff_dmg_char_name = view.findViewById(R.id.buff_dmg_char_name);
@@ -446,6 +448,7 @@ public class BuffAccountUI extends AppCompatActivity {
             //
 
             dynamicView.add(view);
+
         }
     }
 

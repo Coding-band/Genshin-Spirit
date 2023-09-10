@@ -96,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
                 android:text="「浪湧之瞬」祈願"
-                android:textColor="@color/tab_bg_2048"
+                android:textColor="@color/tv_color_2048_always"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

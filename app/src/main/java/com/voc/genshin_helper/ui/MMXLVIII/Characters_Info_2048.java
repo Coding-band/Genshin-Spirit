@@ -299,22 +299,22 @@ public class Characters_Info_2048 {
                 JSONObject sof = jsonObject.getJSONObject("sof");
                 sof1_name = sof.getString("sof1_name");
                 sof1_img = sof.getString("sof1_img");
-                sof1_desc = sof.getString("sof1_desc");
+                sof1_desc = sof.getString("sof1_desc").replace("<br>","\n");
                 sof2_name = sof.getString("sof2_name");
                 sof2_img = sof.getString("sof2_img");
-                sof2_desc = sof.getString("sof2_desc");
+                sof2_desc = sof.getString("sof2_desc").replace("<br>","\n");
                 sof3_name = sof.getString("sof3_name");
                 sof3_img = sof.getString("sof3_img");
-                sof3_desc = sof.getString("sof3_desc");
+                sof3_desc = sof.getString("sof3_desc").replace("<br>","\n");
                 sof4_name = sof.getString("sof4_name");
                 sof4_img = sof.getString("sof4_img");
-                sof4_desc = sof.getString("sof4_desc");
+                sof4_desc = sof.getString("sof4_desc").replace("<br>","\n");
                 sof5_name = sof.getString("sof5_name");
                 sof5_img = sof.getString("sof5_img");
-                sof5_desc = sof.getString("sof5_desc");
+                sof5_desc = sof.getString("sof5_desc").replace("<br>","\n");
                 sof6_name = sof.getString("sof6_name");
                 sof6_img = sof.getString("sof6_img");
-                sof6_desc = sof.getString("sof6_desc");
+                sof6_desc = sof.getString("sof6_desc").replace("<br>","\n");
 
                 if(str_dps != null){
                     try {

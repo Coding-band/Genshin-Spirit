@@ -41,17 +41,16 @@ public class BuffCalculate {
     ItemRss itemRss;
     ArrayList<BuffObject> buffObjectArrayList = new ArrayList<>();
 
-    public void initGlobalVar(Context context, Activity activity, BuffCatelogy buffCatelogy, ItemRss itemRss){
+    public static final int CODE_ATK_BOARD = 7190100;
+    public static final int CODE_ATK_TALENT = 7190101;
+
+    public void initGlobalVar(Context context, Activity activity, BuffCatelogy buffCatelogy, ItemRss itemRss, ArrayList<BuffObject> buffObjectArrayList){
         this.context = context;
         this.activity = activity;
         this.buffCatelogy = (buffCatelogy == null ? new BuffCatelogy() : buffCatelogy);
         this.itemRss = (itemRss == null ? new ItemRss() : itemRss);
-    }
-
-    public void initBuffObjectArrayList(ArrayList<BuffObject> buffObjectArrayList){
         this.buffObjectArrayList = buffObjectArrayList;
     }
-
     public void initDataOfCharBuffFile (BuffObject buffObject){
         /**
          * Char Part
@@ -72,13 +71,12 @@ public class BuffCalculate {
         System.out.println(weapon_tmp_break);
 
         Character character = buffObject.getCharacter();
-        Talents talents = buffObject.getCharacter().getTalents();
-        Weapon weapon = buffObject.getWeapon();
+        Talents talents = (buffObject.getCharacter().getTalents() == null ? new Talents() : buffObject.getCharacter().getTalents());
+        Weapon weapon = (buffObject.getWeapon() == null ? new Weapon() : buffObject.getWeapon());
 
         try {
             JSONObject jsonObject = new JSONObject(char_json_stat);
             JSONObject 角色突破 = jsonObject.getJSONObject("角色突破");
-
 
             character.setCharBaseHP(角色突破.getJSONArray("基礎生命值").getDouble(tmp_break));
             character.setCharBaseATK(角色突破.getJSONArray("基礎攻擊力").getDouble(tmp_break));
@@ -255,7 +253,14 @@ public class BuffCalculate {
 
     }
 
-    //====================================================//
+    //================↑[init]===========↓[Formula]=======================//
+
+    private double mainFormula(BuffObject buffObject, int CODE){
+        return 0d;
+    }
+
+
+    //================↑[Formula]===========↓[Tools]=======================//
 
     public String LoadData(String inFile) {
         String tContents = "";

@@ -8,6 +8,7 @@ import android.content.res.ColorStateList;
 import android.content.res.Configuration;
 import android.graphics.Bitmap;
 import android.graphics.Color;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.util.DisplayMetrics;
 import android.util.Log;
@@ -28,6 +29,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.MemoryPolicy;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 import com.squareup.picasso.Transformation;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.buff.BuffMainUI;
@@ -164,11 +166,14 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         holder.char_base_name.setText(Characters.getName());
 
         if(Characters.getRare() == 4){
-            holder.char_small_ico.setBackgroundResource(R.drawable.item_char_list_bg_circ_4s);
+            Picasso.get().load(R.drawable.item_char_list_bg_circ_4s).fit().into(holder.char_small_ico);
+            //holder.char_small_ico.setBackgroundResource(R.drawable.item_char_list_bg_circ_4s);
         }else if (Characters.getRare() == 5){
-            holder.char_small_ico.setBackgroundResource(R.drawable.item_char_list_bg_circ_5s);
+            Picasso.get().load(R.drawable.item_char_list_bg_circ_5s).fit().into(holder.char_small_ico);
+            //holder.char_small_ico.setBackgroundResource(R.drawable.item_char_list_bg_circ_5s);
         }else{
-            holder.char_small_ico.setBackgroundResource(R.drawable.item_char_list_bg_circ_0s);
+            Picasso.get().load(R.drawable.item_char_list_bg_circ_0s).fit().into(holder.char_small_ico);
+            //holder.char_small_ico.setBackgroundResource(R.drawable.item_char_list_bg_circ_0s);
         }
 
         if(Characters.getIsComing() == 0){holder.char_isComing.setVisibility(View.GONE);}
@@ -208,6 +213,39 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         int size_per_img_sq = width_curr/3;
         int size_per_img_siptik = width_curr;
 
+        Target target_char_bg = new Target() {
+            @Override
+            public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                holder.char_bg.setBackground(new BitmapDrawable(bitmap));
+            }
+
+            @Override
+            public void onBitmapFailed(Exception e, Drawable errorDrawable) {
+
+            }
+
+            @Override
+            public void onPrepareLoad(Drawable placeHolderDrawable) {
+
+            }
+        };
+        Target target_char_element = new Target() {
+            @Override
+            public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+                holder.char_element.setBackground(new BitmapDrawable(bitmap));
+            }
+
+            @Override
+            public void onBitmapFailed(Exception e, Drawable errorDrawable) {
+
+            }
+
+            @Override
+            public void onPrepareLoad(Drawable placeHolderDrawable) {
+
+            }
+        };
+
         switch (gridValue){
             default:
             case "2":{
@@ -233,6 +271,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                             Drawable drawable = context.getResources().getDrawable(R.drawable.cryo_800x1600_dark_mask);
                             holder.char_bg.setForeground(drawable);
                         }else{
+                            Picasso.get().load(R.drawable.cryo_800x1600_light).fit().into(target_char_bg);
                             holder.char_bg.setBackgroundResource(R.drawable.cryo_800x1600_light);
                             Drawable drawable = context.getResources().getDrawable(R.drawable.cryo_800x1600_light_mask);
                             holder.char_bg.setForeground(drawable);

@@ -190,8 +190,8 @@ public class EventUtil {
         dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
         dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
 
-        lp.width = (int) (width);
-        lp.height = (int) (height);
+        lp.width = MATCH_PARENT;
+        lp.height = MATCH_PARENT;
         lp.gravity = Gravity.CENTER;
         dialogWindow.setAttributes(lp);
         dialog.show();
@@ -209,7 +209,7 @@ public class EventUtil {
         WebView event_web = view.findViewById(R.id.event_web);
         info_title.setText(eventItem.getTitle());
         String head = "<head><style>@font-face {font-family: 'SDK_SC_Web';src: url('file:///android_asset/genshin_font.ttf');}body {font-family: 'SDK_SC_Web';}</style></head><img src=\""+eventItem.getBanner()+"\" style='height: auto; width: 100%; object-fit: contain' >";
-        event_web.loadDataWithBaseURL(null, head+eventItem.getContent().replace("&lt;","<").replace("&gt;",">"), "text/html", "utf-8", null);
+        event_web.loadDataWithBaseURL(null, head+eventItem.getContent().replace("&lt;","<").replace("&gt;",">").replace("<img","<img style='height: auto; width: 100%; object-fit: contain'"), "text/html", "utf-8", null);
         event_web.getSettings().setLoadWithOverviewMode(true);
         //event_web.getSettings().setUseWideViewPort(true);
 
@@ -234,8 +234,8 @@ public class EventUtil {
         dialogWindow.setStatusBarColor(context.getColor(R.color.status_bar_2048));
         dialogWindow.setNavigationBarColor(context.getColor(R.color.tab_bar_2048));
 
-        lp.width = (int) (width);
-        lp.height = (int) (height);
+        lp.width = MATCH_PARENT;
+        lp.height = MATCH_PARENT;
         lp.gravity = Gravity.CENTER;
         dialogWindow.setAttributes(lp);
         dialog.show();
