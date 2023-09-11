@@ -271,7 +271,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
                             Drawable drawable = context.getResources().getDrawable(R.drawable.cryo_800x1600_dark_mask);
                             holder.char_bg.setForeground(drawable);
                         }else{
-                            Picasso.get().load(R.drawable.cryo_800x1600_light).fit().into(target_char_bg);
+                            //Picasso.get().load(R.drawable.cryo_800x1600_light).fit().into(target_char_bg);
                             holder.char_bg.setBackgroundResource(R.drawable.cryo_800x1600_light);
                             Drawable drawable = context.getResources().getDrawable(R.drawable.cryo_800x1600_light_mask);
                             holder.char_bg.setForeground(drawable);

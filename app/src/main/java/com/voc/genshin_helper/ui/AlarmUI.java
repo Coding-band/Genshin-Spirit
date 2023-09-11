@@ -947,7 +947,7 @@ public class AlarmUI extends AppCompatActivity {
                     intent.putExtra("info",edit_alarm_info);
                     intent.putExtra("type",edit_choose_type);
 
-                    PendingIntent pendingIntent = PendingIntent.getBroadcast(context,0,intent,0);
+                    PendingIntent pendingIntent = PendingIntent.getBroadcast(context,0,intent,PendingIntent.FLAG_MUTABLE);
 
                     AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
 

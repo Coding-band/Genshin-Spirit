@@ -1266,7 +1266,7 @@
                             android:orientation="horizontal">
 
                             <ImageView
-                                android:id="@+id/info_sof1_ico"
+                                android:id="@+id/info_sof1_bg"
                                 android:layout_width="wrap_content"
                                 android:layout_height="64dp"
                                 android:adjustViewBounds="true"

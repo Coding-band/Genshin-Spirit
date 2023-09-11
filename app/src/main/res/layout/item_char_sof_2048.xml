@@ -36,7 +36,7 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:id="@+id/info_sof1_ico"
+                    android:id="@+id/info_sof1_bg"
                     android:layout_width="72dp"
                     android:layout_height="72dp"
                     android:layout_gravity="center"

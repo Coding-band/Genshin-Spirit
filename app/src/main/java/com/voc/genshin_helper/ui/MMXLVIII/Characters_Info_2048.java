@@ -25,6 +25,7 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.AdapterView;
@@ -33,6 +34,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RatingBar;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -49,7 +51,6 @@ import com.voc.genshin_helper.data.Material;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.CustomViewPager;
-import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.MyViewPagerAdapter;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
@@ -57,8 +58,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.DecimalFormat;
@@ -80,6 +79,7 @@ public class Characters_Info_2048 {
     ItemRss item_rss;
     BackgroundReload backgroundReload;
     Material material;
+    boolean isINIT = false;
 
     /** Method of Char's details' container */
     /** Since String can't be null, so there will have "XPR" for identify is result correct */
@@ -496,8 +496,8 @@ public class Characters_Info_2048 {
         viewPager = view.findViewById(R.id.vp);
         final LayoutInflater mInflater = activity.getLayoutInflater().from(context);
         charDescPage = mInflater.inflate(R.layout.fragment_char_info_desc_2048, null,false);
-        charSkillPage = mInflater.inflate(R.layout.fragment_char_info_skill_2048, null,false);
-        charSofPage = mInflater.inflate(R.layout.fragment_char_info_sof_2048, null,false);
+        charSkillPage = mInflater.inflate(R.layout.fragment_char_info_skill_2048_new, null,false);
+        charSofPage = mInflater.inflate(R.layout.fragment_char_info_sof_2048_new, null,false);
         charAdvicePage = mInflater.inflate(R.layout.fragment_char_info_advice_2048, null,false);
 
         viewPager_List = new ArrayList<View>();
@@ -517,7 +517,8 @@ public class Characters_Info_2048 {
         /** Method of info_detail */
         ConstraintLayout info_char_bg = charDescPage.findViewById(R.id.info_char_bg);
         //ConstraintLayout char_bg = view.findViewById(R.id.info_char_bg);
-        ImageView char_img = charDescPage.findViewById(R.id.info_char_img);
+        ImageView char_img = view.findViewById(R.id.info_char_img);
+        ImageView char_img_gradient = view.findViewById(R.id.info_char_img_gradient);
         //ImageView char_layer = view.findViewById(R.id.info_char_layer);
         TextView char_name = charDescPage.findViewById(R.id.info_char_name);
         TextView char_title = charDescPage.findViewById(R.id.info_char_title);
@@ -531,82 +532,86 @@ public class Characters_Info_2048 {
         TextView char_birth = charDescPage.findViewById(R.id.info_date);
         TextView char_occupation = charDescPage.findViewById(R.id.info_occupation);
         TextView char_constellation = charDescPage.findViewById(R.id.info_constellation);
+        LinearLayout info_detail = charDescPage.findViewById(R.id.info_detail);
 
         /** Method of introduce */
         //TextView info_intro = view.findViewById(R.id.info_intro);
 
         /** Method of value btn */
+        LinearLayout info_talent_ll = charSkillPage.findViewById(R.id.info_talent_ll);
         ImageView info_talent1_value_btn = charSkillPage.findViewById(R.id.info_talent1_value_btn);
         ImageView info_talent2_value_btn = charSkillPage.findViewById(R.id.info_talent2_value_btn);
         ImageView info_talent3_value_btn = charSkillPage.findViewById(R.id.info_talent3_value_btn);
         ImageView info_char_base_value_btn = charDescPage.findViewById(R.id.info_char_base_value_btn);
 
         /** Method of battle_talent */
-        CardView char_talent1_card = charSkillPage.findViewById(R.id.info_talent1_card);
+        ScrollView info_skill_scrollview = charSkillPage.findViewById(R.id.info_skill_scrollview);
+        //CardView char_talent1_card = charSkillPage.findViewById(R.id.info_talent1_card);
         ImageView char_talent1_ico = charSkillPage.findViewById(R.id.info_talent1_ico);
         TextView char_talent1_name = charSkillPage.findViewById(R.id.info_talent1_name);
         TextView char_talent1_normal = charSkillPage.findViewById(R.id.info_talent1_normal);
         TextView char_talent1_hard = charSkillPage.findViewById(R.id.info_talent1_hard);
         TextView char_talent1_drop = charSkillPage.findViewById(R.id.info_talent1_drop);
 
-        CardView char_talent2_card = charSkillPage.findViewById(R.id.info_talent2_card);
+        //CardView char_talent2_card = charSkillPage.findViewById(R.id.info_talent2_card);
         ImageView char_talent2_ico = charSkillPage.findViewById(R.id.info_talent2_ico);
         TextView char_talent2_name = charSkillPage.findViewById(R.id.info_talent2_name);
         TextView char_talent2_normal = charSkillPage.findViewById(R.id.info_talent2_normal);
 
-        CardView char_talent3_card = charSkillPage.findViewById(R.id.info_talent3_card);
+        //CardView char_talent3_card = charSkillPage.findViewById(R.id.info_talent3_card);
         ImageView char_talent3_ico = charSkillPage.findViewById(R.id.info_talent3_ico);
         TextView char_talent3_name = charSkillPage.findViewById(R.id.info_talent3_name);
         TextView char_talent3_normal = charSkillPage.findViewById(R.id.info_talent3_normal);
 
-        CardView char_talent4_card = charSkillPage.findViewById(R.id.info_talent4_card);
+        //CardView char_talent4_card = charSkillPage.findViewById(R.id.info_talent4_card);
         ImageView char_talent4_ico = charSkillPage.findViewById(R.id.info_talent4_ico);
         TextView char_talent4_name = charSkillPage.findViewById(R.id.info_talent4_name);
         TextView char_talent4_normal = charSkillPage.findViewById(R.id.info_talent4_normal);
 
         /** Method of basic_talent */
-        CardView char_basic_talent1_card = charSkillPage.findViewById(R.id.info_btalent1_card);
+        //CardView char_basic_talent1_card = charSkillPage.findViewById(R.id.info_btalent1_card);
         ImageView char_basic_talent1_ico = charSkillPage.findViewById(R.id.info_btalent1_ico);
         TextView char_basic_talent1_name = charSkillPage.findViewById(R.id.info_btalent1_name);
         TextView char_basic_talent1_normal = charSkillPage.findViewById(R.id.info_btalent1_normal);
 
-        CardView char_basic_talent2_card = charSkillPage.findViewById(R.id.info_btalent2_card);
+        //CardView char_basic_talent2_card = charSkillPage.findViewById(R.id.info_btalent2_card);
         ImageView char_basic_talent2_ico = charSkillPage.findViewById(R.id.info_btalent2_ico);
         TextView char_basic_talent2_name = charSkillPage.findViewById(R.id.info_btalent2_name);
         TextView char_basic_talent2_normal = charSkillPage.findViewById(R.id.info_btalent2_normal);
 
-        CardView char_basic_talent3_card = charSkillPage.findViewById(R.id.info_btalent3_card);
+        //CardView char_basic_talent3_card = charSkillPage.findViewById(R.id.info_btalent3_card);
         ImageView char_basic_talent3_ico = charSkillPage.findViewById(R.id.info_btalent3_ico);
         TextView char_basic_talent3_name = charSkillPage.findViewById(R.id.info_btalent3_name);
         TextView char_basic_talent3_normal = charSkillPage.findViewById(R.id.info_btalent3_normal);
 
         /** Method of sof */
-        CardView char_sof1_card = charSofPage.findViewById(R.id.info_sof1_card);
+        ScrollView info_sof_scrollview = charSofPage.findViewById(R.id.info_sof_scrollview);
+        //CardView char_sof1_card = charSofPage.findViewById(R.id.info_sof1_card);
         ImageView char_sof1_ico = charSofPage.findViewById(R.id.info_sof1_ico);
         TextView char_sof1_name = charSofPage.findViewById(R.id.info_sof1_name);
         TextView char_sof1_normal = charSofPage.findViewById(R.id.info_sof1_normal);
 
-        CardView char_sof2_card = charSofPage.findViewById(R.id.info_sof2_card);
+        //CardView char_sof2_card = charSofPage.findViewById(R.id.info_sof2_card);
         ImageView char_sof2_ico = charSofPage.findViewById(R.id.info_sof2_ico);
         TextView char_sof2_name = charSofPage.findViewById(R.id.info_sof2_name);
         TextView char_sof2_normal = charSofPage.findViewById(R.id.info_sof2_normal);
 
-        CardView char_sof3_card = charSofPage.findViewById(R.id.info_sof3_card);
+        //CardView char_sof3_card = charSofPage.findViewById(R.id.info_sof3_card);
         ImageView char_sof3_ico = charSofPage.findViewById(R.id.info_sof3_ico);
         TextView char_sof3_name = charSofPage.findViewById(R.id.info_sof3_name);
         TextView char_sof3_normal = charSofPage.findViewById(R.id.info_sof3_normal);
 
-        CardView char_sof4_card = charSofPage.findViewById(R.id.info_sof4_card);
+        //CardView char_sof4_card = charSofPage.findViewById(R.id.info_sof4_card);
         ImageView char_sof4_ico = charSofPage.findViewById(R.id.info_sof4_ico);
         TextView char_sof4_name = charSofPage.findViewById(R.id.info_sof4_name);
         TextView char_sof4_normal = charSofPage.findViewById(R.id.info_sof4_normal);
 
-        CardView char_sof5_card = charSofPage.findViewById(R.id.info_sof5_card);
+        //CardView char_sof5_card = charSofPage.findViewById(R.id.info_sof5_card);
         ImageView char_sof5_ico = charSofPage.findViewById(R.id.info_sof5_ico);
         TextView char_sof5_name = charSofPage.findViewById(R.id.info_sof5_name);
         TextView char_sof5_normal = charSofPage.findViewById(R.id.info_sof5_normal);
 
-        CardView char_sof6_card = charSofPage.findViewById(R.id.info_sof6_card);
+        //CardView char_sof6_card = charSofPage.findViewById(R.id.info_sof6_card);
         ImageView char_sof6_ico = charSofPage.findViewById(R.id.info_sof6_ico);
         TextView char_sof6_name = charSofPage.findViewById(R.id.info_sof6_name);
         TextView char_sof6_normal = charSofPage.findViewById(R.id.info_sof6_normal);
@@ -842,15 +847,38 @@ public class Characters_Info_2048 {
             }
         });
 
+        DisplayMetrics finalDisplayMetrics = displayMetrics;
         viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                //info_tablelayout.selectTab(info_tablelayout.getTabAt(position));
+                // Left -> Right
+                if ((position + positionOffset) <= 1){
+                    ViewGroup.LayoutParams layoutParams = char_img_gradient.getLayoutParams();
+                    layoutParams.height = ((int) ((info_talent_ll.getHeight() - info_detail.getHeight())*(positionOffset+position)+1));
+                    char_img_gradient.setLayoutParams(layoutParams);
+                    }
             }
 
             @Override
             public void onPageSelected(int position) {
                 info_tablelayout.selectTab(info_tablelayout.getTabAt(position));
+                if(!isINIT){
+                    char_talent1_ico.setOnClickListener(v -> info_skill_scrollview.smoothScrollTo(0,charSkillPage.findViewById(R.id.info_talent1_ll).getTop()));
+                    char_talent2_ico.setOnClickListener(v -> info_skill_scrollview.smoothScrollTo(0,charSkillPage.findViewById(R.id.info_talent2_ll).getTop()));
+                    char_talent3_ico.setOnClickListener(v -> info_skill_scrollview.smoothScrollTo(0,charSkillPage.findViewById(R.id.info_talent3_ll).getTop()));
+                    char_talent4_ico.setOnClickListener(v -> info_skill_scrollview.smoothScrollTo(0,charSkillPage.findViewById(R.id.info_talent4_ll).getTop()));
+                    char_basic_talent1_ico.setOnClickListener(v -> info_skill_scrollview.smoothScrollTo(0,charSkillPage.findViewById(R.id.info_btalent1_ll).getTop()));
+                    char_basic_talent2_ico.setOnClickListener(v -> info_skill_scrollview.smoothScrollTo(0,charSkillPage.findViewById(R.id.info_btalent2_ll).getTop()));
+                    char_basic_talent3_ico.setOnClickListener(v -> info_skill_scrollview.smoothScrollTo(0,charSkillPage.findViewById(R.id.info_btalent3_ll).getTop()));
+
+                    char_sof1_ico.setOnClickListener(v -> info_sof_scrollview.smoothScrollTo(0,charSofPage.findViewById(R.id.info_sof1_ll).getTop()));
+                    char_sof2_ico.setOnClickListener(v -> info_sof_scrollview.smoothScrollTo(0,charSofPage.findViewById(R.id.info_sof2_ll).getTop()));
+                    char_sof3_ico.setOnClickListener(v -> info_sof_scrollview.smoothScrollTo(0,charSofPage.findViewById(R.id.info_sof3_ll).getTop()));
+                    char_sof4_ico.setOnClickListener(v -> info_sof_scrollview.smoothScrollTo(0,charSofPage.findViewById(R.id.info_sof4_ll).getTop()));
+                    char_sof5_ico.setOnClickListener(v -> info_sof_scrollview.smoothScrollTo(0,charSofPage.findViewById(R.id.info_sof5_ll).getTop()));
+                    char_sof6_ico.setOnClickListener(v -> info_sof_scrollview.smoothScrollTo(0,charSofPage.findViewById(R.id.info_sof6_ll).getTop()));
+
+                }
             }
 
             @Override
@@ -858,6 +886,49 @@ public class Characters_Info_2048 {
 
             }
         });
+
+
+
+        info_skill_scrollview.setOnScrollChangeListener(new View.OnScrollChangeListener() {
+            @Override
+            public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                int bottomY = info_skill_scrollview.getBottom() - info_skill_scrollview.getTop();
+                int ll_talent1_scroll_y = charSkillPage.findViewById(R.id.info_talent1_ll).getTop();
+                int ll_talent2_scroll_y = charSkillPage.findViewById(R.id.info_talent2_ll).getTop();
+                int ll_talent3_scroll_y = charSkillPage.findViewById(R.id.info_talent3_ll).getTop();
+                int ll_talent4_scroll_y = charSkillPage.findViewById(R.id.info_talent4_ll).getTop();
+                int ll_btalent1_scroll_y = charSkillPage.findViewById(R.id.info_btalent1_ll).getTop();
+                int ll_btalent2_scroll_y = charSkillPage.findViewById(R.id.info_btalent2_ll).getTop();
+                int ll_btalent3_scroll_y = charSkillPage.findViewById(R.id.info_btalent3_ll).getTop();
+                char_talent1_ico.setAlpha((scrollY >= ll_talent1_scroll_y || (scrollY+bottomY) >= ll_talent1_scroll_y) ? 1.0f : 0.7f);
+                char_talent2_ico.setAlpha((scrollY >= ll_talent2_scroll_y || (scrollY+bottomY) >= ll_talent2_scroll_y) ? 1.0f : 0.7f);
+                char_talent3_ico.setAlpha((scrollY >= ll_talent3_scroll_y || (scrollY+bottomY) >= ll_talent3_scroll_y) ? 1.0f : 0.7f);
+                char_talent4_ico.setAlpha((scrollY >= ll_talent4_scroll_y || (scrollY+bottomY) >= ll_talent4_scroll_y) ? 1.0f : 0.7f);
+                char_basic_talent1_ico.setAlpha((scrollY >= ll_btalent1_scroll_y || (scrollY+bottomY) >= ll_btalent1_scroll_y) ? 1.0f : 0.7f);
+                char_basic_talent2_ico.setAlpha((scrollY >= ll_btalent2_scroll_y || (scrollY+bottomY) >= ll_btalent2_scroll_y) ? 1.0f : 0.7f);
+                char_basic_talent3_ico.setAlpha((scrollY >= ll_btalent3_scroll_y || (scrollY+bottomY) >= ll_btalent3_scroll_y) ? 1.0f : 0.7f);
+            }
+        });
+        info_sof_scrollview.setOnScrollChangeListener(new View.OnScrollChangeListener() {
+            @Override
+            public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+                int bottomY = info_sof_scrollview.getBottom() - info_sof_scrollview.getTop();
+                int ll_sof1_scroll_y = charSofPage.findViewById(R.id.info_sof1_ll).getTop();
+                int ll_sof2_scroll_y = charSofPage.findViewById(R.id.info_sof2_ll).getTop();
+                int ll_sof3_scroll_y = charSofPage.findViewById(R.id.info_sof3_ll).getTop();
+                int ll_sof4_scroll_y = charSofPage.findViewById(R.id.info_sof4_ll).getTop();
+                int ll_sof5_scroll_y = charSofPage.findViewById(R.id.info_sof5_ll).getTop();
+                int ll_sof6_scroll_y = charSofPage.findViewById(R.id.info_sof6_ll).getTop();
+                char_sof1_ico.setAlpha((scrollY >= ll_sof1_scroll_y || (scrollY+bottomY) >= ll_sof1_scroll_y) ? 1.0f : 0.7f);
+                char_sof2_ico.setAlpha((scrollY >= ll_sof2_scroll_y || (scrollY+bottomY) >= ll_sof2_scroll_y) ? 1.0f : 0.7f);
+                char_sof3_ico.setAlpha((scrollY >= ll_sof3_scroll_y || (scrollY+bottomY) >= ll_sof3_scroll_y) ? 1.0f : 0.7f);
+                char_sof4_ico.setAlpha((scrollY >= ll_sof4_scroll_y || (scrollY+bottomY) >= ll_sof4_scroll_y) ? 1.0f : 0.7f);
+                char_sof5_ico.setAlpha((scrollY >= ll_sof5_scroll_y || (scrollY+bottomY) >= ll_sof5_scroll_y) ? 1.0f : 0.7f);
+                char_sof6_ico.setAlpha((scrollY >= ll_sof6_scroll_y || (scrollY+bottomY) >= ll_sof6_scroll_y) ? 1.0f : 0.7f);
+            }
+        });
+
+
 
 
         info_back_btn.setOnClickListener(new View.OnClickListener() {
@@ -1409,7 +1480,7 @@ public class Characters_Info_2048 {
         char_talent3_normal.setText(setSpanAndTv(mSpan, String.valueOf(Html.fromHtml(final_desc)),mWord), TextView.BufferType.SPANNABLE);
 
         if(other_name != "XPR"){
-            char_talent4_card.setVisibility(View.VISIBLE);
+            charSkillPage.findViewById(R.id.info_talent4_ll).setVisibility(View.VISIBLE);
             char_talent4_ico.setImageDrawable(item_rss.getTalentIcoByName(other_img,context));
             char_talent4_ico.setBackgroundResource(item_rss.getTalentBg2048ByElement(element));
             char_talent4_name.setText(other_name);
@@ -1428,7 +1499,8 @@ public class Characters_Info_2048 {
         char_basic_talent2_normal.setText(setSpanAndTv(mSpan,talent2_desc,mWord), TextView.BufferType.SPANNABLE);
 
         if(!talent3_name.isEmpty() && !talent3_name.equals("XPR")){
-            char_basic_talent3_card.setVisibility(View.VISIBLE);
+            //char_basic_talent3_card.setVisibility(View.VISIBLE);
+            charSkillPage.findViewById(R.id.info_btalent3_ll).setVisibility(View.VISIBLE);
             char_basic_talent3_ico.setImageDrawable(item_rss.getTalentIcoByName(talent3_img,context));
             char_basic_talent3_ico.setBackgroundResource(item_rss.getTalentBg2048ByElement(element));
             char_basic_talent3_name.setText(talent3_name);

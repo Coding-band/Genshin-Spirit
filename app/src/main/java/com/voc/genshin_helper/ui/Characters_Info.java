@@ -34,15 +34,12 @@ import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.ItemRss;
 import com.voc.genshin_helper.util.BackgroundReload;
 import com.voc.genshin_helper.util.CustomToast;
-import com.voc.genshin_helper.util.FileLoader;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -455,7 +452,7 @@ public class Characters_Info {
 
         /** Method of sof */
         CardView char_sof1_card = view.findViewById(R.id.info_sof1_card);
-        ImageView char_sof1_ico = view.findViewById(R.id.info_sof1_ico);
+        ImageView char_sof1_ico = view.findViewById(R.id.info_sof1_bg);
         TextView char_sof1_name = view.findViewById(R.id.info_sof1_name);
         TextView char_sof1_normal = view.findViewById(R.id.info_sof1_normal);
 

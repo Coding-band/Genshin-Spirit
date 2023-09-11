@@ -371,12 +371,6 @@ public class DailyMemo2048Service extends Service {
         }
     }
 
-    protected PendingIntent getPendingSelfIntent(Context context, String action) {
-        Intent intent = new Intent(context, getClass());
-        intent.setAction(action);
-        return PendingIntent.getBroadcast(context, 0, intent, 0);
-    }
-
     class grabIdFromServer extends AsyncTask<String,Integer,String> {
         private static final int TIME_OUT = 5000;
 
