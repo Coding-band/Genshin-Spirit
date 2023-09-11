@@ -40,6 +40,7 @@ import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.constraintlayout.widget.ConstraintSet;
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.material.tabs.TabLayout;
@@ -853,9 +854,15 @@ public class Characters_Info_2048 {
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 // Left -> Right
                 if ((position + positionOffset) <= 1){
-                    ViewGroup.LayoutParams layoutParams = char_img_gradient.getLayoutParams();
-                    layoutParams.height = ((int) ((info_talent_ll.getHeight() - info_detail.getHeight())*(positionOffset+position)+1));
-                    char_img_gradient.setLayoutParams(layoutParams);
+                    ConstraintLayout cl = (ConstraintLayout) view.findViewById(R.id.info_char_bg);
+                    ConstraintSet cs = new ConstraintSet();
+                    cs.clone(cl);
+                    cs.setVerticalBias(R.id.info_char_img_gradient, (float) (1 - 0.5 * ((positionOffset+position))));
+                    cs.applyTo(cl);
+
+                    //ViewGroup.LayoutParams layoutParams = char_img_gradient.getLayoutParams();
+                    //layoutParams.height = ((int) ((info_talent_ll.getHeight() - info_detail.getHeight())*(positionOffset+position)+1));
+                    //char_img_gradient.setLayoutParams(layoutParams);
                     }
             }
 
