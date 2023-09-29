@@ -1,0 +1,143 @@
+{
+	"name": "Kiếm Thiết Ảnh",
+	"description": "Đây là bội kiếm nổi tiếng của Arundolyn, sư tử ánh sáng. Nắm giữ nó, cảm nhận sức mạnh của anh hùng trong truyền thuyết! Chú ý: Mơ mộng cũng phải có mức độ.",
+	"weapontype": "Trọng Kiếm",
+	"rarity": "3",
+	"story": "Khi đứa bé Arundolyn tay cầm thanh kiếm nhái của Kỵ Sĩ Bắc Phong Ravenwood, xông về phía quý tộc Mondstadt cũ trong trí tưởng tượng, anh ấy chưa từng nghĩ rằng sau này chính bản thân sẽ trở thành Sư Tử Ánh Sáng Tây Phong uy danh khắp chốn. Cũng không hề biết rằng tên Rostam cùng đánh nhau lúc bé sẽ trở thành phụ tá đắc lực nhất của mình, và sau 23 năm phục vụ Mondstadt sẽ hy sinh trong lúc làm việc.\nCho đến nay thanh kiếm nhái thanh đại kiếm mà \"Sư Tử Ánh Sáng\" nắm giữ đã rơi vào tay một thiếu niên.\nSự kế thừa bí mật vĩ đại ấy, sẽ tiếp diễn thế nào đây?",
+	"baseatk": 39,
+	"substat": "HP",
+	"subvalue": "7.7",
+	"effectname": "Bất Khuất",
+	"effect": "Khi HP dưới {0}, trọng kích khó bị ngắt đoạn, và tăng {1} sát thương trọng kích.",
+	"r1": [
+		"70%",
+		"30%"
+	],
+	"r2": [
+		"75%",
+		"35%"
+	],
+	"r3": [
+		"80%",
+		"40%"
+	],
+	"r4": [
+		"85%",
+		"45%"
+	],
+	"r5": [
+		"90%",
+		"50%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Ngói Vỡ Tháp Cô Vương",
+				"count": 2
+			},
+			{
+				"name": "Sừng Nặng",
+				"count": 2
+			},
+			{
+				"name": "Mật Hoa Lừa Dối",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Xác Tàu Tháp Cô Vương",
+				"count": 2
+			},
+			{
+				"name": "Sừng Nặng",
+				"count": 8
+			},
+			{
+				"name": "Mật Hoa Lừa Dối",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Xác Tàu Tháp Cô Vương",
+				"count": 4
+			},
+			{
+				"name": "Sừng Đồng Đen",
+				"count": 4
+			},
+			{
+				"name": "Mật Hoa Lấp Lánh",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Mảnh Vỡ Tháp Cô Vương",
+				"count": 2
+			},
+			{
+				"name": "Sừng Đồng Đen",
+				"count": 8
+			},
+			{
+				"name": "Mật Hoa Lấp Lánh",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Mảnh Vỡ Tháp Cô Vương",
+				"count": 4
+			},
+			{
+				"name": "Sừng Hắc Tinh",
+				"count": 6
+			},
+			{
+				"name": "Mật Hoa Nguyên Tố",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Mảnh Giấc Mơ Tháp Cô Vương",
+				"count": 3
+			},
+			{
+				"name": "Sừng Hắc Tinh",
+				"count": 12
+			},
+			{
+				"name": "Mật Hoa Nguyên Tố",
+				"count": 8
+			}
+		]
+	}
+}

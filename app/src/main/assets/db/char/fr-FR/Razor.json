@@ -24,10 +24,10 @@
   "basic_talent": {
     "talent2_name": "Vélocité lupine",
     "talent2_img": "razor_p2",
-    "talent2_desc": "Réduit la consommation d'endurance des personnages de l'équipe de 20 % lors du sprint.\nNe peut pas être cumulé avec d'autres aptitudes passives aux effets identiques.",
+    "talent2_desc": "Diminue la consommation d'endurance des personnages de l'équipe de 20 % lors du sprint.\nNe peut pas être cumulé avec d'autres aptitudes passives aux effets identiques.",
     "talent3_name": "Éveil",
     "talent3_img": "razor_p3",
-    "talent3_desc": "Réduit le TdR de Griffe et tonnerre de 18 %.\nCroc éclair réinitialise le TdR de Griffe et tonnerre lorsqu'il est activé.",
+    "talent3_desc": "Diminue le TdR de Griffe et tonnerre de 18 %.\nCroc éclair réinitialise le TdR de Griffe et tonnerre lorsqu'il est activé.",
     "talent1_name": "Famine",
     "talent1_img": "razor_p1",
     "talent1_desc": "Razor bénéficie d'un bonus de recharge d'énergie de 30 % lorsque son énergie élémentaire est inférieure à 50 %."
@@ -44,7 +44,7 @@
     "sof3_desc": "Niveau d'aptitude Croc éclair +3.\nNiveau max : 15",
     "sof4_name": "Morsure",
     "sof4_img": "razor_c4",
-    "sof4_desc": "L'appui simple de Griffe et tonnerre réduit la DÉF des cibles de 15 % pendant 7 s.",
+    "sof4_desc": "L'appui simple de Griffe et tonnerre diminue la DÉF des cibles de 15 % pendant 7 s.",
     "sof5_name": "Griffes tranchantes",
     "sof5_img": "razor_c5",
     "sof5_desc": "Niveau d'aptitude Griffe et tonnerre +3.\nNiveau max : 15",

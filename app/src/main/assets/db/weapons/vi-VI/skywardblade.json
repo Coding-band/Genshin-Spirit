@@ -1,0 +1,153 @@
+{
+	"name": "Thiên Không Kiếm",
+	"description": "Thanh kiếm kỵ sĩ, tượng trưng cho danh dự của Phong Long. Lưỡi kiếm toát ra lời chúc phúc của thần gió, chứa đựng sức mạnh của bầu trời và ngàn ngọn gió.",
+	"weapontype": "Kiếm Đơn",
+	"rarity": "5",
+	"story": "Vượt qua trời cao.\nTừng xuyên qua lớp vảy đen ở đất nước cổ xưa xa xôi,\nTừng xé toạc cổ họng của những kẻ tội đồ nơi cổ quốc.\n\nTrong quá khứ, ma long Durin thèm khát vùng đất Mondstadt tươi tốt nên đã kéo đến xâm chiếm, dang cánh che trời.\nSự đố kị của ma long đã sinh ra tà ác, tà ác lại đầu độc các sinh linh trên mặt đất.\nTrong những tháng ngày nguy hiểm ấy, bốn bề Mondstadt đều là ma vật và sự hoang vu.\nPhong thần nghe thấy tiếng lầm than của người dân mà đến cứu giúp, đánh thức Phong Long.\nDvalin theo gió, bay lên thiên không, nghe theo mệnh lệnh chiến đấu vì cuộc sống.\n\nDvalin đem theo lời chúc phúc của Phong thần cùng ma long quyết đấu, cự long giao tranh khiến mây trên trời cao dạt về một hướng.\nNgàn gió đem theo dịch độc, trời cũng phải đổi sắc, bầu trời rực cháy dường như thay cho lời kết thúc.\nTrong phút cuối cuộc hỗn chiến rực cháy bầu trời, Dvalin dùng răng kiếm được ma thần ban phước cắn xuyên qua yết hầu của ma long.\nDurin chưa kịp trăn trối đã rớt xuống từ không trung. Dvalin cũng vì thế uống phải dòng máu chứa chất kịch độc.\n\nChất kịch độc nhanh chóng thấm vào cơ thể, gây nên đau đớn khiến Phong Long chìm vào hôn mê,\nNhững nhà thơ hoạt ngôn nhất cũng không biết rõ Dvalin nay ở nơi đâu.\nTrong giấc ngủ kéo dài đến hàng trăm năm, con cháu vùng đất Mondstadt đã quên đi cuộc tử chiến Phong Long.\nKhi Dvalin chịu đựng nỗi đau thấm xương quay trở lại, không còn nghe thấy tiếng đàn của người bạn cũ.\nNhững người từng nhận sự bảo hộ nay nhanh chóng trốn tránh, gọi nó là \"Ma Long\".\n\nDanh dự cuối cũng quay lại, độc tố của mãnh thú cuối cùng cũng được thanh tẩy.\nGiai điệu của nhạc sĩ cuối cùng cũng đánh thức trí nhớ của con người.\nThanh kiếm này là lời cầu nguyện của Phong Long khôi phục danh dự.",
+	"baseatk": 46,
+	"substat": "Hiệu Quả Nạp Nguyên Tố",
+	"subvalue": "12",
+	"effectname": "Răng Nanh Xuyên Qua Trời Cao",
+	"effect": "Tỷ lệ bạo kích tăng {0}, khi thi triển kỹ năng nộ, nhận khí thế phá hủy trên không: tốc độ di chuyển tăng {1}, tốc độ tấn công tăng {2}, khi tấn công thường và trọng kích đánh trúng, sẽ tạo thêm sát thương bằng {3} lực tấn công, kéo dài 12s.",
+	"r1": [
+		"4%",
+		"10%",
+		"10%",
+		"20%"
+	],
+	"r2": [
+		"5%",
+		"10%",
+		"10%",
+		"25%"
+	],
+	"r3": [
+		"6%",
+		"10%",
+		"10%",
+		"30%"
+	],
+	"r4": [
+		"7%",
+		"10%",
+		"10%",
+		"35%"
+	],
+	"r5": [
+		"8%",
+		"10%",
+		"10%",
+		"40%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Răng Sữa Sói Bão",
+				"count": 5
+			},
+			{
+				"name": "Cành Cây Địa Mạch",
+				"count": 5
+			},
+			{
+				"name": "Dịch Slime",
+				"count": 3
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Răng Vỡ Sói Bão",
+				"count": 5
+			},
+			{
+				"name": "Cành Cây Địa Mạch",
+				"count": 18
+			},
+			{
+				"name": "Dịch Slime",
+				"count": 12
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Răng Vỡ Sói Bão",
+				"count": 9
+			},
+			{
+				"name": "Lá Khô Địa Mạch",
+				"count": 9
+			},
+			{
+				"name": "Tinh Slime",
+				"count": 9
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Mảnh Răng Sói Bão",
+				"count": 5
+			},
+			{
+				"name": "Lá Khô Địa Mạch",
+				"count": 18
+			},
+			{
+				"name": "Tinh Slime",
+				"count": 14
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 55000
+			},
+			{
+				"name": "Mảnh Răng Sói Bão",
+				"count": 9
+			},
+			{
+				"name": "Chồi Non Địa Mạch",
+				"count": 14
+			},
+			{
+				"name": "Bột Slime",
+				"count": 9
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 65000
+			},
+			{
+				"name": "Nỗi Nhớ Của Sói Bão",
+				"count": 6
+			},
+			{
+				"name": "Chồi Non Địa Mạch",
+				"count": 27
+			},
+			{
+				"name": "Bột Slime",
+				"count": 18
+			}
+		]
+	}
+}

@@ -1,0 +1,143 @@
+{
+	"name": "Orgullo Celestial",
+	"description": "Un mandoble que simboliza el orgullo de Dvalin en los cielos. Cuando es utilizado, emite un zumbido que representa la fuerza de Dvalin y el poder de Anemo.",
+	"weapontype": "Mandoble",
+	"rarity": "5",
+	"story": "Armado de una valentía capaz de estremecer los cielos,\nel malvado dragón nació en el antiguo reino del abismo.\nSin embargo, sus alas fueron desgarradas por un fiel sirviente del viento.\n\nEn el pasado, Durin, que envidiaba la gloria de Mondstadt, atacó la ciudad, aterrorizando a sus habitantes.\nEl clamor del pueblo despertó al Arconte Anemo de su sueño.\nTras el llamado del pueblo, apareció e invocó a su fiel amigo.\nAmbos pelearon hombro con hombro para proteger la vida y la libertad.\n\nDurante la batalla en las nubes, Dvalin extendió sus seis alas.\nCon ellas rasgó los cielos, y atravesó las escamas de hierro de Durin.\nEn la batalla bajo el cielo oscuro, Dvalin atacó con sus garras\ny penetró la negra piel podrida de Durin.\n\nLa batalla conmocionó al mundo; incluso el sol se ocultó.\nDvalin desgarró la garganta de Durin, y el mal cayó.\nEl Dragón del Viento ganó con la bendición del Arconte, y el pueblo de Mondstadt fue protegido.\nPero ignoró el veneno que lo contaminaba, y que lentamente lo corroía hasta la médula.\n\nA pesar de ser un héroe, Dvalin fue obligado al ostracismo, y su sangre corrupta atrajo a los monstruos.\nAtraído por el Abismo, Dvalin cayó ante el mal y se convirtió en Stormterror.\nEn medio de su sed de venganza y el dolor del veneno, su amo regresó para apaciguarlo.\nJuntos, rompieron valientemente el hechizo y Dvalin recuperó su honor.\n\nDespués de siglos de sueño, la grandeza de Dvalin quedó olvidada por la gente de Mondstadt.\nPero en estos tiempos de malestar general, la figura de seis alas volvió a aparecer ante los ojos de la gente.\nTrayendo consigo el canto de Barbatos, la bendición del Arconte\ny los indomables vientos, Dvalin finalmente surcó de nuevo los cielos.",
+	"baseatk": 48,
+	"substat": "Recarga de Energía",
+	"subvalue": "8",
+	"effectname": "Espina de dragón rompecielos",
+	"effect": "Aumenta el daño infligido en un {0}. Al realizar Ataques Normales o Cargados después de usar la Habilidad Definitiva, se crea una hoja de vacío que inflige un {1} de daño a todos los enemigos a los que atraviesa. Tiene una duración de 20 s u 8 ataques de hoja de vacío.",
+	"r1": [
+		"8%",
+		"80%"
+	],
+	"r2": [
+		"10%",
+		"100%"
+	],
+	"r3": [
+		"12%",
+		"120%"
+	],
+	"r4": [
+		"14%",
+		"140%"
+	],
+	"r5": [
+		"16%",
+		"160%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Diente de leche de lobo boreal",
+				"count": 5
+			},
+			{
+				"name": "Rama seca de líneas ley",
+				"count": 5
+			},
+			{
+				"name": "Condensado de Slime",
+				"count": 3
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Diente roto de lobo boreal",
+				"count": 5
+			},
+			{
+				"name": "Rama seca de líneas ley",
+				"count": 18
+			},
+			{
+				"name": "Condensado de Slime",
+				"count": 12
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Diente roto de lobo boreal",
+				"count": 9
+			},
+			{
+				"name": "Hojas secas de líneas ley",
+				"count": 9
+			},
+			{
+				"name": "Babas de Slime",
+				"count": 9
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Colmillo roto de lobo boreal",
+				"count": 5
+			},
+			{
+				"name": "Hojas secas de líneas ley",
+				"count": 18
+			},
+			{
+				"name": "Babas de Slime",
+				"count": 14
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 55000
+			},
+			{
+				"name": "Colmillo roto de lobo boreal",
+				"count": 9
+			},
+			{
+				"name": "Brotes de líneas ley",
+				"count": 14
+			},
+			{
+				"name": "Esencia de Slime",
+				"count": 9
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 65000
+			},
+			{
+				"name": "Nostalgia del lobo boreal",
+				"count": 6
+			},
+			{
+				"name": "Brotes de líneas ley",
+				"count": 27
+			},
+			{
+				"name": "Esencia de Slime",
+				"count": 18
+			}
+		]
+	}
+}

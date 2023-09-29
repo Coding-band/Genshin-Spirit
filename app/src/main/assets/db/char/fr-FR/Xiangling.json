@@ -35,7 +35,7 @@
   "sof": {
     "sof1_name": "Croustillant à l'extérieur, tendre à l'intérieur",
     "sof1_img": "xiangling_c1",
-    "sof1_desc": "La RÉS Pyro des ennemis touchés par Gooba est réduite de 15 % pendant 6 s.",
+    "sof1_desc": "La RÉS Pyro des ennemis touchés par Gooba diminue de 15 % pendant 6 s.",
     "sof2_name": "L'huile sur le feu",
     "sof2_img": "xiangling_c2",
     "sof2_desc": "Le dernier coup d'attaque normale inflige pendant 2 s un effet d'implosion aux ennemis. Au bout de ce délai, ils explosent, infligeant des DGT Pyro de zone équivalant à 75 % de l'ATQ.",

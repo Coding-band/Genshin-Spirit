@@ -20,7 +20,7 @@
     "element_desc": "Kokomi crée une méduse fantôme à partir d'eau pour soigner ses alliés.<br>Utiliser cette compétence applique l'état Trempé à Kokomi.<br><br>Méduse fantôme<br>Inflige des DGT Hydro aux ennemis proches et restaure les PV des personnages déployés à proximité à intervalles réguliers. Les soins sont fonction des PV max de Kokomi.<br><br><i>Kokomi a besoin de récupérer des forces régulièrement pour maintenir son efficacité de travail.</i>",
     "final_name": "Ascension de la néréide",
     "final_img": "sangonomiya_kokomi_s3",
-    "final_desc": "La puissance de Watatsumi se manifeste, infligeant des DGT Hydro aux ennemis proches, avant d'entourer Kokomi d'une parure cérémoniale faite des eaux vives de Sangonomiya.\n<br>Parure cérémoniale<br>· Les DGT des attaques normales et chargées de Kokomi et ceux de la méduse fantôme créée par sa compétence élémentaire augmentent en fonction des PV max de Kokomi ;<br>· Lorsque ses attaques normales et chargées touchent des ennemis, Kokomi restaure les PV de tous les personnages de l'équipe à proximité, la quantité de PV restaurés dépendant des PV max de Kokomi ;<br>· Augmente la RÉS à l'interruption de Kokomi, et lui permet de se déplacer à la surface de l'eau.<br><br>Ces effets prennent fin lorsque Kokomi quitte le champ de bataille.<br><br><i>Une lumière claire se fond dans les robes autour de Son Altesse Sangonomiya Kokomi, reflétant sa forme magnifique.</i>"
+    "final_desc": "La puissance de Watatsumi se manifeste, infligeant des DGT Hydro aux ennemis proches, avant d'entourer Kokomi d'une parure cérémoniale faite des eaux vives de Sangonomiya.\n<br>Parure cérémoniale<br>· Les DGT des attaques normales et chargées de Kokomi et ceux de la méduse fantôme créée par sa compétence élémentaire augmentent en fonction des PV max de Kokomi.<br>· Lorsque ses attaques normales et chargées touchent des ennemis, Kokomi restaure les PV de tous les personnages de l'équipe à proximité, la quantité de PV restaurés dépendant des PV max de Kokomi.<br>· Augmente la RÉS à l'interruption de Kokomi, et lui permet de se déplacer à la surface de l'eau.<br><br>Ces effets prennent fin lorsque Kokomi quitte le champ de bataille.<br><br><i>Une lumière claire se fond dans les robes autour de Son Altesse Sangonomiya Kokomi, reflétant sa forme magnifique.</i>"
   },
   "basic_talent": {
     "talent2_name": "Stratégie sans faille",
@@ -28,7 +28,7 @@
     "talent2_desc": "Kokomi obtient un bonus de soins de 25 %, mais son taux CRIT diminue de 100 %.",
     "talent3_name": "Princesse de Watatsumi",
     "talent3_img": "sangonomiya_kokomi_p3",
-    "talent3_desc": "Réduit la consommation d'endurance de vos personnages dans l'équipe de 20 % lors de la nage.\nNe peut pas être cumulé avec d'autres aptitudes passives aux effets identiques.",
+    "talent3_desc": "Diminue la consommation d'endurance de vos personnages dans l'équipe de 20 % lors de la nage.\nNe peut pas être cumulé avec d'autres aptitudes passives aux effets identiques.",
     "talent1_name": "Coffret de tamakushi",
     "talent1_img": "sangonomiya_kokomi_p1",
     "talent1_desc": "Si la méduse fantôme de Kokomi est sur le champ de bataille lorsqu'elle utilise Ascension de la néréide, sa durée est réinitialisée.",

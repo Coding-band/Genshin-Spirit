@@ -1,0 +1,138 @@
+{
+	"name": "Espada del Viajero",
+	"description": "Una práctica espada de acero que esconde en su empuñadura unas tijeras, una lupa y yesca, entre otras cosas...",
+	"weapontype": "Espada ligera",
+	"rarity": "3",
+	"story": "Una espada fiable y equilibrada, hecha de acero resistente.\nLa mayor desventaja es su estructura, que no tiene virola, lo que reduce en gran medida su durabilidad.\nEn lugar de eso, esconde en su empuñadura un cuchillo para fruta, tijeras, yesca y otros útiles.\n¿Quizás se llama Espada del Viajero porque... tiene todo tipo de herramientas de viaje?",
+	"baseatk": 40,
+	"substat": "DEF",
+	"subvalue": "6.4",
+	"effectname": "Viaje",
+	"effect": "Restaura un {0} de Vida al obtener un orbe o partícula elemental.",
+	"r1": [
+		"1%"
+	],
+	"r2": [
+		"1.25%"
+	],
+	"r3": [
+		"1.5%"
+	],
+	"r4": [
+		"1.75%"
+	],
+	"r5": [
+		"2%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Grilletes de Diente de León",
+				"count": 2
+			},
+			{
+				"name": "Dispositivo del caos",
+				"count": 2
+			},
+			{
+				"name": "Pergamino guía",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Cadena de Diente de León",
+				"count": 2
+			},
+			{
+				"name": "Dispositivo del caos",
+				"count": 8
+			},
+			{
+				"name": "Pergamino guía",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Cadena de Diente de León",
+				"count": 4
+			},
+			{
+				"name": "Circuito del caos",
+				"count": 4
+			},
+			{
+				"name": "Pergamino hechizado",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Esposas de Diente de León",
+				"count": 2
+			},
+			{
+				"name": "Circuito del caos",
+				"count": 8
+			},
+			{
+				"name": "Pergamino hechizado",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Esposas de Diente de León",
+				"count": 4
+			},
+			{
+				"name": "Caldera del caos",
+				"count": 6
+			},
+			{
+				"name": "Pergamino maldito",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Ideales de Diente de León",
+				"count": 3
+			},
+			{
+				"name": "Caldera del caos",
+				"count": 12
+			},
+			{
+				"name": "Pergamino maldito",
+				"count": 8
+			}
+		]
+	}
+}

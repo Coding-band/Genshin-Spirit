@@ -19,7 +19,7 @@
     "element_desc": "Sucrose invoque un Esprit du vent de taille réduite, qui attire les ennemis et les objets proches à lui, projetant les ennemis dans les airs et leur infligeant des DGT Anémo.<br><br><i>C'est un peu embarrassant, mais il faut bien reconnaître que malgré leur courte durée de vie, les entités élémentaires créées via ce procédé sont particulièrement utiles pour l'aventure. Comme quoi, même les expériences ratées peuvent servir.</i>",
     "final_name": "Esprit du vent : Isomorphe 75 Type II",
     "final_img": "sucrose_s3",
-    "final_desc": "Sucrose jette une concoction instable qui libère un Esprit du vent de grande taille.\nL'Esprit attire les ennemis et les objets proches à lui, projetant les ennemis dans les airs et leur infligeant des DGT Anémo.<br><br>Absorption élémentaire<br>L'Esprit du vent absorbe les éléments Hydro, Pyro, Cryo et Électro avec lesquels il entre en contact ; ceux-ci lui confèrent leurs attributs, et infligent un bonus de DGT de l'élément correspondant.<br>Une seule réaction d'absorption élémentaire peut avoir lieu par utilisation.<br><br><i>Sucrose aime à donner des noms à ses Hypostases Anémo instables ; leur lignée est encore plus longue que celle du Baron Lapinou 893e du nom.</i>"
+    "final_desc": "Sucrose jette une concoction instable qui libère un Esprit du vent de grande taille.\nL'Esprit attire les ennemis et les objets proches à lui, projetant les ennemis dans les airs et leur infligeant des DGT Anémo.<br><br>Absorption élémentaire<br>L'Esprit du vent absorbe les éléments Hydro, Pyro, Cryo et Électro avec lesquels il entre en contact, ceux-ci lui conférant leurs attributs et infligeant un bonus de DGT de l'élément correspondant.<br>Une seule réaction d'absorption élémentaire peut avoir lieu par utilisation.<br><br><i>Sucrose aime à donner des noms à ses Hypostases Anémo instables... Leur lignée est encore plus longue que celle du Baron Lapinou 893e du nom.</i>"
   },
   "basic_talent": {
     "talent2_name": "Fragile découverte",
@@ -44,7 +44,7 @@
     "sof3_desc": "Niveau d'aptitude Esprit du vent : Sujet 6308 +3.\nNiveau max : 15",
     "sof4_name": "Alchémania",
     "sof4_img": "sucrose_c4",
-    "sof4_desc": "Sucrose réduit le TdR d'Esprit du vent : Sujet 6308 de 1 à 7 s tous les 7 coups d'attaque normale ou chargée qu'elle inflige à un ennemi.\nUn coup peut être compté toutes les 0,1 s.",
+    "sof4_desc": "Sucrose diminue le TdR d'Esprit du vent : Sujet 6308 de 1 à 7 s tous les 7 coups d'attaque normale ou chargée qu'elle inflige à un ennemi.\nUn coup peut être compté toutes les 0,1 s.",
     "sof5_name": "Flasque standard",
     "sof5_img": "sucrose_c5",
     "sof5_desc": "Niveau d'aptitude Esprit du vent : Isomorphe 75 Type II +3.\nNiveau max : 15",

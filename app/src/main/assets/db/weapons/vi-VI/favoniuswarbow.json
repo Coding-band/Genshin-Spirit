@@ -1,0 +1,143 @@
+{
+	"name": "Cung Tây Phong",
+	"description": "Cung Phản Khúc của đội Đội Kỵ Sĩ Tây Phong, chỉ có cung thủ kiệt xuất mới có thể sử dụng được tính năng kiệt xuất của nó.",
+	"weapontype": "Cung",
+	"rarity": "4",
+	"story": "Cung Phản Khúc của đội Đội Kỵ Sĩ Tây Phong chỉ ban cho những xạ thủ tài ba có thời gian hoạt động dài và có cung thuật xuất chúng.\nCung được tạo nên từ gỗ sồi, kỹ nghệ gia công đặc biệt khiến cây cung giữ được sự chắc chắn của gỗ, lại nhẹ nhàng dễ mang như kim loại.\nDây cung chứa đựng sự huyền bí của kĩ thuật giả kim và ma pháp, khiến người dùng cung này có thể bắn cả trăm mũi tên mà bàn tay không hề đau đớn.\nChiếc cung này không chỉ là phần thưởng cho người có ý chí kiên cường thủ hộ Mondstadt, mà còn là món vũ khí lợi hại của vệ sĩ.\n\nTrước kia, Đội Kỵ Sĩ Tây Phong từng có đội quân bắn cung vô cùng xuất sắc được gọi là Kỵ Sĩ Trinh Thám.\nNgười sáng lập là một thủ lĩnh lính đánh thuê đến từ Liyue, người đã truyền lại toàn bộ kiến thức cả đời của mình cho Kỵ Sĩ Trinh Thám.\n\nDù cho đó là khả năng truy tìm nơi hoang dã, hay bản năng cảm nhận nguy hiểm, đều là những thứ kỵ sĩ không có sẵn.\nDo đó, kỹ thuật của Kỵ Sĩ Trinh Thám là vô cùng quý giá đối với đội kỵ sĩ.\n\nCho đến khi Kỵ Sĩ Trinh Thám đầu tiên, bằng cách nào đó đã rời bỏ đội kỵ sĩ.\nSau đó, nhánh quân này chỉ còn tồn tại trên danh nghĩa. Có điều biên chế được giữ lại cho đến ngày nay.\nNgày nay, vẫn còn những người làm việc chăm chỉ để không làm ô nhục Kỵ Sĩ Trinh Thám.",
+	"baseatk": 41,
+	"substat": "Hiệu Quả Nạp Nguyên Tố",
+	"subvalue": "13.3",
+	"effectname": "Đi Cùng Với Gió",
+	"effect": "Khi tạo thành bạo kích có tỷ lệ {0} sinh ra một lượng nhỏ Nguyên Tố Hạt Nhân, khôi phục 6 Năng Lượng Nguyên Tố cho nhân vật. Mỗi {1} mới thi triển 1 lần.",
+	"r1": [
+		"60%",
+		"12s"
+	],
+	"r2": [
+		"70%",
+		"10.5s"
+	],
+	"r3": [
+		"80%",
+		"9s"
+	],
+	"r4": [
+		"90%",
+		"7.5s"
+	],
+	"r5": [
+		"100%",
+		"6s"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Xiềng Xích Đấu Sĩ Nanh Sư Tử",
+				"count": 3
+			},
+			{
+				"name": "Cấu Trúc Hỗn Độn",
+				"count": 3
+			},
+			{
+				"name": "Mật Hoa Lừa Dối",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Dây Sắt Đấu Sĩ Nanh Sư Tử",
+				"count": 3
+			},
+			{
+				"name": "Cấu Trúc Hỗn Độn",
+				"count": 12
+			},
+			{
+				"name": "Mật Hoa Lừa Dối",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Dây Sắt Đấu Sĩ Nanh Sư Tử",
+				"count": 6
+			},
+			{
+				"name": "Bộ Não Hỗn Độn",
+				"count": 6
+			},
+			{
+				"name": "Mật Hoa Lấp Lánh",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Gông Cùm Đấu Sĩ Nanh Sư Tử",
+				"count": 3
+			},
+			{
+				"name": "Bộ Não Hỗn Độn",
+				"count": 12
+			},
+			{
+				"name": "Mật Hoa Lấp Lánh",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Gông Cùm Đấu Sĩ Nanh Sư Tử",
+				"count": 6
+			},
+			{
+				"name": "Trái Tim Hỗn Độn",
+				"count": 9
+			},
+			{
+				"name": "Mật Hoa Nguyên Tố",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Lý Tưởng Của Đấu Sĩ Nanh Sư Tử",
+				"count": 4
+			},
+			{
+				"name": "Trái Tim Hỗn Độn",
+				"count": 18
+			},
+			{
+				"name": "Mật Hoa Nguyên Tố",
+				"count": 12
+			}
+		]
+	}
+}

@@ -24,7 +24,7 @@
   "basic_talent": {
     "talent2_name": "Aux premières lueurs de l'aube",
     "talent2_img": "candace_p2",
-    "talent2_desc": "Réduit la consommation d'endurance de vos personnages dans l'équipe de 20 % lors de l'escalade.\nNe peut pas être cumulé avec d'autres aptitudes passives aux effets identiques.",
+    "talent2_desc": "Diminue la consommation d'endurance de vos personnages dans l'équipe de 20 % lors de l'escalade.\nNe peut pas être cumulé avec d'autres aptitudes passives aux effets identiques.",
     "talent3_name": "Égide des flèches croisées",
     "talent3_img": "candace_p3",
     "talent3_desc": "Si Candace est touchée par une attaque pendant l'appui long de Liturgie : Sanctuaire de la héronne, la charge se complète immédiatement.",
@@ -44,7 +44,7 @@
     "sof3_desc": "Niveau d'aptitude Liturgie : Marée de la bergeronnette +3.\nNiveau max : 15",
     "sof4_name": "Serment de la sentinelle",
     "sof4_img": "candace_c4",
-    "sof4_desc": "Réduit le TdR de l'appui long de Liturgie : Sanctuaire de la héronne pour correspondre à celui de l'appui simple.",
+    "sof4_desc": "Diminue le TdR de l'appui long de Liturgie : Sanctuaire de la héronne pour correspondre à celui de l'appui simple.",
     "sof5_name": "Regard hétérochromatique",
     "sof5_img": "candace_c5",
     "sof5_desc": "Niveau d'aptitude Liturgie : Sanctuaire de la héronne +3.\nNiveau max : 15",

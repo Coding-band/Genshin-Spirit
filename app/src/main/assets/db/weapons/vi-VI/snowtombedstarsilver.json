@@ -1,0 +1,148 @@
+{
+	"name": "Tuyết Vùi Tinh Ngân",
+	"description": "Thanh kiếm cổ xưa được cất giấu giữa bức bích họa. Được đúc từ Tinh Ngân, dường như có sở hữu sức mạnh có thể cắt vỡ băng tuyết.",
+	"weapontype": "Trọng Kiếm",
+	"rarity": "4",
+	"story": "Khi đô thành xanh tươi ẩn trong mây mù,\nBão tuyết không ngớt che lấp ánh trăng sáng,\nTrong đó sự sống và mỗi câu chuyện ngắt quãng,\nđều bị xuyên thủng bởi mũi đinh dài rơi xuống từ trời cao...\n\nCon gái của Tư Tế trao thanh Đại Kiếm làm bằng sao bạc cho dũng sĩ tha hương,\nTrong tiếng ào ào của gió tuyết, lời cô nói ra không thể truyền đạt tới đối phương.\n\n\"Bức bích hoạ thứ tư ở đây được chuẩn bị cho chàng, và hình ảnh của chàng sẽ vĩnh viễn lưu lại trên bức tường này.\"\n\"Vì bức bích hoạ này, vì mọi người, em nhất định sẽ ở đây chờ chàng, cầu chúc cho chàng trở về...\"\n\nKhi cô gái của Cố Đô Tuyết Vùi cùng tàn lụi theo Nhánh Bạc được chiết cành không ra quả.\nNgười tha hương có số mệnh vung thanh kiếm này cắt xuyên băng tuyết đang tìm kiếm đáp án ở nơi xa.\nNàng trong sáng như ánh trăng, mà tâm niệm cuối cùng nàng không sao chuyển tải được đến người lữ khách phương xa.\n\n\"Đã rất lâu ta không được nhìn thấy bầu trời trong xanh và cánh đồng xanh mướt. Không biết nên dùng màu xanh lam hay xanh lục nào để vẽ cảnh băng tuyết tan chảy mà bố ta mong muốn.\"\n\"Sau đó, nếu có thể gặp lại nàng thì tốt biết mấy...\"\n\nĐây chính là đáp án mà anh tìm thấy...\n\nDũng sĩ tha hương cuối cùng đã kết thúc hành trình vô vọng của mình,\nMáu đen chảy ra từ lưỡi của thanh đại kiếm,\nĐôi chân nặng trĩu bước trên con đường mòn tuyết đã trở nên xa lạ.\nKhi người tha hương mệt mỏi cuối cùng cũng trở về cung điện sơn quốc,\nNgười tẩy trần cho anh chỉ còn lại tiếng vọng âm u chết chóc.\n\n\"Ngay cả nơi này, cũng không còn thứ đáng để ta bảo vệ nữa sao...\"\n\"Các người trên trời, chỉ muốn nhìn thấy cảnh khốn cùng của chúng sinh nhỉ.\" \n\"Nếu đã vậy, hãy để bài ca của Thép và Máu giúp các người tiêu khiển.\"\nNgười tha hương đem Tinh Ngân mà thiếu nữ giao cho anh - đáng lẽ phải chém vụn thành gió tuyết - giữ lại trên bích hoạ.\nSau đó xuống núi tìm nơi luôn có phân tranh và chiến đấu, để có thể giúp anh say trong máu tươi.",
+	"baseatk": 44,
+	"substat": "Tăng Sát Thương Vật Lý",
+	"subvalue": "7.5",
+	"effectname": "Sương Táng",
+	"effect": "Khi tấn công thường và trọng kích đánh trúng kẻ địch có tỷ lệ {0} tạo ra Đá Vĩnh Hằng phía trên kẻ địch và rơi xuống, gây sát thương phạm vi bằng {1} tấn công. Nếu địch bị ảnh hưởng bởi nguyên tố Băng, sẽ gây sát thương bằng {2} tấn công. Hiệu quả này mỗi 10s kích hoạt 1 lần.",
+	"r1": [
+		"60%",
+		"80%",
+		"200%"
+	],
+	"r2": [
+		"70%",
+		"95%",
+		"240%"
+	],
+	"r3": [
+		"80%",
+		"110%",
+		"280%"
+	],
+	"r4": [
+		"90%",
+		"125%",
+		"320%"
+	],
+	"r5": [
+		"100%",
+		"140%",
+		"360%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Ngói Vỡ Tháp Cô Vương",
+				"count": 3
+			},
+			{
+				"name": "Sừng Nặng",
+				"count": 3
+			},
+			{
+				"name": "Dịch Slime",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Xác Tàu Tháp Cô Vương",
+				"count": 3
+			},
+			{
+				"name": "Sừng Nặng",
+				"count": 12
+			},
+			{
+				"name": "Dịch Slime",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Xác Tàu Tháp Cô Vương",
+				"count": 6
+			},
+			{
+				"name": "Sừng Đồng Đen",
+				"count": 6
+			},
+			{
+				"name": "Tinh Slime",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Mảnh Vỡ Tháp Cô Vương",
+				"count": 3
+			},
+			{
+				"name": "Sừng Đồng Đen",
+				"count": 12
+			},
+			{
+				"name": "Tinh Slime",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Mảnh Vỡ Tháp Cô Vương",
+				"count": 6
+			},
+			{
+				"name": "Sừng Hắc Tinh",
+				"count": 9
+			},
+			{
+				"name": "Bột Slime",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Mảnh Giấc Mơ Tháp Cô Vương",
+				"count": 4
+			},
+			{
+				"name": "Sừng Hắc Tinh",
+				"count": 18
+			},
+			{
+				"name": "Bột Slime",
+				"count": 12
+			}
+		]
+	}
+}

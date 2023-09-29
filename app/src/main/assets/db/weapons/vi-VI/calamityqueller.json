@@ -1,0 +1,143 @@
+{
+	"name": "Hủy Diệt",
+	"description": "Vũ khí sắc bén được chế tạo từ Tinh Thạch kỳ lạ. Ánh sáng xanh u tối dường như đang kể lại vô vàn những chuyện đã qua.",
+	"weapontype": "Vũ Khí Cán Dài",
+	"rarity": "5",
+	"story": "Nghe nói là loại vũ khí cán dài được chế tạo từ vật thể bên ngoài thế giới.\nTừng lưu truyền trong tay của vô số những người trung thành nhưng bạc mệnh,\nChứng kiến quá nhiều khởi đầu và kết thúc của các trận giết chóc cùng với máu thịt của yêu ma.\n\nTruyền thuyết nói rằng từng có người phụ trách xua đuổi tà ma đã đến nơi vực sâu tinh thạch,\nTừ nơi sâu thẳm nhất ở đó lấy được tinh thạch xui rủi có màu của nước,\nNhờ người chế tạo thành binh khí, đặt tên \"Hủy Diệt\".\n\n\"Trong tương lai nếu có tai ương giáng xuống, nhất định có thể dùng nó để bình định.\"\nNhững người dân mưu sinh trên núi đá hiểm trở, xưa nay không hề thích khen chê.\nNhưng nếu chưa từng lập ra khế ước, cũng không cần cho đi, thì nhận về cũng không sao cả.\n\nKhi thế lực ma vật quá hùng hổ, biến cả vùng đất màu chu sa trở thành một màu đen u tối,\nCuộc chiến giữa Thiên Nham và thế lực đen tối nổ ra, những chiến sĩ gục ngã.\nGiống như ánh sao lạnh lẽo trong bóng tối, \"Hủy Diệt\" lấp lánh giữa lốc xoáy...\n\nCuối cùng ánh hoàng hôn đã phá tan đi mây đen mù mịt, bùn lầy rồi cũng lắng xuống hang ổ sâu thẳm.\nHủy Diệt đã cùng với sự biến mất của Dạ Xoa sở hữu nó, mà trở về với trầm lặng.\nVề sau, những người từng vung cây thương này, hơn một nửa cũng cùng chung số phận,\nNhưng những người đi thảo phạt mà không chịu sự ràng buộc của vương quyền, bảo vệ lê dân mà không từng lập lời thề,\nĐối với số mệnh như thế, phần lớn cũng không có lời oán trách đâu nhỉ...\n\nCũng có người nói rằng, cây thương này đã từng bị người khác mượn đi.\nVà trong hang động ẩm ướt lạnh lẽo đã chứng kiến cảnh bằng hữu chí cốt trở mặt nhau.",
+	"baseatk": 49,
+	"substat": "Tấn Công",
+	"subvalue": "3.6",
+	"effectname": "Diệt Khước Giới Pháp",
+	"effect": "Tăng {0} sát thương tất cả nguyên tố; Sau khi thi triển Kỹ Năng Nguyên Tố sẽ nhận được hiệu quả \"Viên Đột\", duy trì 20s, sức tấn công mỗi giây tăng {1}, hiệu quả tăng tấn công này tối đa cộng dồn 6 lần. Khi nhân vật trang bị vũ khí này không xuất hiện trong trận, hiệu quả tăng tấn công của \"Viên Đột\" tăng gấp đôi.",
+	"r1": [
+		"12%",
+		"3.2%"
+	],
+	"r2": [
+		"15%",
+		"4%"
+	],
+	"r3": [
+		"18%",
+		"4.8%"
+	],
+	"r4": [
+		"21%",
+		"5.6%"
+	],
+	"r5": [
+		"24%",
+		"6.4%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Diên Đơn Biển Sương Mù",
+				"count": 5
+			},
+			{
+				"name": "Phấn Hoa Hư Vô",
+				"count": 5
+			},
+			{
+				"name": "Mật Hoa Lừa Dối",
+				"count": 3
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Hống Đơn Biển Sương Mù",
+				"count": 5
+			},
+			{
+				"name": "Phấn Hoa Hư Vô",
+				"count": 18
+			},
+			{
+				"name": "Mật Hoa Lừa Dối",
+				"count": 12
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Hống Đơn Biển Sương Mù",
+				"count": 9
+			},
+			{
+				"name": "Túi Cỏ Hư Vô",
+				"count": 9
+			},
+			{
+				"name": "Mật Hoa Lấp Lánh",
+				"count": 9
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Kim Đơn Biển Sương Mù",
+				"count": 5
+			},
+			{
+				"name": "Túi Cỏ Hư Vô",
+				"count": 18
+			},
+			{
+				"name": "Mật Hoa Lấp Lánh",
+				"count": 14
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 55000
+			},
+			{
+				"name": "Kim Đơn Biển Sương Mù",
+				"count": 9
+			},
+			{
+				"name": "Đuốc Hư Vô",
+				"count": 14
+			},
+			{
+				"name": "Mật Hoa Nguyên Tố",
+				"count": 9
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 65000
+			},
+			{
+				"name": "Sự Chuyển Dời Của Biển Sương Mù",
+				"count": 6
+			},
+			{
+				"name": "Đuốc Hư Vô",
+				"count": 27
+			},
+			{
+				"name": "Mật Hoa Nguyên Tố",
+				"count": 18
+			}
+		]
+	}
+}

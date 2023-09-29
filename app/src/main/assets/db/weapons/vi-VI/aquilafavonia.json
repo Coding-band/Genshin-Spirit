@@ -1,0 +1,148 @@
+{
+	"name": "Phong Ưng Kiếm",
+	"description": "Linh hồn của Đội Kỵ Sĩ Tây Phong. Trải qua ngàn năm vẫn không ngừng gọi gió chính nghĩa, trừ gian diệt ác, giống như người nữ anh hùng từng dùng nó.",
+	"weapontype": "Kiếm Đơn",
+	"rarity": "5",
+	"story": "Mọi người đều biết, khát vọng của chim ưng là ân huệ của gió Tây.\nThế nhưng ít người biết rằng ân huệ của gió Tây chính là dị tộc phương xa.\n\nKhi ấy, dười thời thống trị của quý tộc cổ vùng Mondstadt tự do là điều luôn được nhắc đến.\nCác nô lệ vốn là đấu sĩ dị tộc vùng xa xôi cũng tìm đến đất nước của gió.\nCho dù phải đối mặt với bất mãn và không công bằng, cô vẫn giương lên ngọn gió chính nghĩa.\nLật đổ lớp quý tộc hoành hành, xây dựng nên đội kỵ sĩ và Giáo Hội chân chính. \nCuối cùng cô nhận được sự trợ giúp của trời và thần linh. \n\nĐây chính là thanh kiếm năm xưa sát cánh với cô, chứng kiến từng bước chân và sự cố gắng,\nCuối cùng chứng kiến được sự tự do và chính nghĩa do cô thiết lập trải khắp vùng Mondstadt.\nKhi vung lên, có thể cảm nhận được dũng khí chiến đấu của người chủ cũ:\n\nỞ đâu có áp bức, ở đó sẽ có chính nghĩa;\nỞ đâu có giam cầm, ở đó sẽ được tự do;\nỞ đâu còn mông muội, ở đó sẽ có trí tuệ.\nNghe theo hướng gió, chính là ngọn gió của chính nghĩa và tự do.",
+	"baseatk": 48,
+	"substat": "Tăng Sát Thương Vật Lý",
+	"subvalue": "9",
+	"effectname": "Kháng Chiến Của Chim Ưng Tây Phong",
+	"effect": "Tấn công tăng {0}, kích hoạt khi chịu sát thương: Linh hồn Tây Phong Ưng thức tỉnh dưới cờ hiệu kháng chiến, hồi HP bằng {1} tấn công và gây cho địch xung quanh sát thương bằng {2} lực tấn công. Mỗi 15s kích hoạt 1 lần.",
+	"r1": [
+		"20%",
+		"100%",
+		"200%"
+	],
+	"r2": [
+		"25%",
+		"115%",
+		"230%"
+	],
+	"r3": [
+		"30%",
+		"130%",
+		"260%"
+	],
+	"r4": [
+		"35%",
+		"145%",
+		"290%"
+	],
+	"r5": [
+		"40%",
+		"160%",
+		"320%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Ngói Vỡ Tháp Cô Vương",
+				"count": 5
+			},
+			{
+				"name": "Sừng Nặng",
+				"count": 5
+			},
+			{
+				"name": "Mũi Tên Chắc Chắn",
+				"count": 3
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Xác Tàu Tháp Cô Vương",
+				"count": 5
+			},
+			{
+				"name": "Sừng Nặng",
+				"count": 18
+			},
+			{
+				"name": "Mũi Tên Chắc Chắn",
+				"count": 12
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Xác Tàu Tháp Cô Vương",
+				"count": 9
+			},
+			{
+				"name": "Sừng Đồng Đen",
+				"count": 9
+			},
+			{
+				"name": "Mũi Tên Sắc Bén",
+				"count": 9
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Mảnh Vỡ Tháp Cô Vương",
+				"count": 5
+			},
+			{
+				"name": "Sừng Đồng Đen",
+				"count": 18
+			},
+			{
+				"name": "Mũi Tên Sắc Bén",
+				"count": 14
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 55000
+			},
+			{
+				"name": "Mảnh Vỡ Tháp Cô Vương",
+				"count": 9
+			},
+			{
+				"name": "Sừng Hắc Tinh",
+				"count": 14
+			},
+			{
+				"name": "Mũi Tên Thiện Chiến",
+				"count": 9
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 65000
+			},
+			{
+				"name": "Mảnh Giấc Mơ Tháp Cô Vương",
+				"count": 6
+			},
+			{
+				"name": "Sừng Hắc Tinh",
+				"count": 27
+			},
+			{
+				"name": "Mũi Tên Thiện Chiến",
+				"count": 18
+			}
+		]
+	}
+}

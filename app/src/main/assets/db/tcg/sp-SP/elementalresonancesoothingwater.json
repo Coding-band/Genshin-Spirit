@@ -1,0 +1,23 @@
+{
+	"id": 331202,
+	"name": "Consonancia elemental: Agua medicinal",
+	"cardtype": "GCG_CARD_EVENT",
+	"cardtypetext": "Evento",
+	"tags": [
+		"GCG_TAG_RESONANCE"
+	],
+	"tagstext": [
+		"Consonancia elemental"
+	],
+	"description": "Cura 2 pts. de Vida a tu personaje en combate, y luego cura 1 pt. a todos tus personajes en reserva.\nSolo puedes añadir esta carta al mazo si en él hay al menos 2 personajes Hydro.",
+	"descriptionraw": "Cura 2 pts. de Vida a tu personaje en combate, y luego cura 1 pt. a todos tus personajes en reserva.\\nSolo puedes añadir esta carta al mazo si en él hay al menos 2 personajes {SPRITE_PRESET#2102}<color=#80C0FFFF>Hydro</color>.",
+	"descriptionreplaced": "Cura 2 pts. de Vida a tu personaje en combate, y luego cura 1 pt. a todos tus personajes en reserva.\\nSolo puedes añadir esta carta al mazo si en él hay al menos 2 personajes {SPRITE_PRESET#2102}<color=#80C0FFFF>Hydro</color>.",
+	"storytitle": "Consonancia elemental: Agua medicinal",
+	"storytext": "Fíjate siempre en la esencia. De fuente limpia, aguas claras.",
+	"playcost": [
+		{
+			"costtype": "GCG_COST_DICE_HYDRO",
+			"count": 1
+		}
+	]
+}

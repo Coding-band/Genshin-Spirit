@@ -27,7 +27,7 @@
     "talent2_desc": "Quando a Lisa cria uma poção, ela possui 20% de chance de retornar uma porção dos materiais usados.",
     "talent3_name": "Indução Pós-Choque",
     "talent3_img": "lisa_p3",
-    "talent3_desc": "Ao ser atingida por Ataques aplica o estado de Condutividade de Arco Violeta aos inimigos.",
+    "talent3_desc": "Ao ser atingida por Ataques Carregados aplica o estado de Condutividade de Arco Violeta aos inimigos.",
     "talent1_name": "Campo de Eletricidade Estática",
     "talent1_img": "lisa_p1",
     "talent1_desc": "Inimigos acertados por Rosa do Relâmpago têm sua DEF diminuída em 15% por 10 segundos."

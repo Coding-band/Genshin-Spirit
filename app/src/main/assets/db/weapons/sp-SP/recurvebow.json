@@ -1,0 +1,138 @@
+{
+	"name": "Arco Recurvo",
+	"description": "Se dice que este arco podría derribar águilas en vuelo, pero mucho de eso depende de la habilidad del arquero.",
+	"weapontype": "Arco",
+	"rarity": "3",
+	"story": "Un fantástico arco recurvo, hecho con madera, huesos y tendones de animales.\nEn manos de un maestro arquero, es capaz de derribar a un águila en pleno vuelo.\nEs el orgullo de cualquier arquero, y una prueba del dominio del arco.\nUna verdadera pena para las águilas inocentes.",
+	"baseatk": 38,
+	"substat": "Vida",
+	"subvalue": "10.2",
+	"effectname": "Cosecha",
+	"effect": "Restaura un {0} de Vida tras derrotar a un enemigo.",
+	"r1": [
+		"8%"
+	],
+	"r2": [
+		"10%"
+	],
+	"r3": [
+		"12%"
+	],
+	"r4": [
+		"14%"
+	],
+	"r5": [
+		"16%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Grilletes de Diente de León",
+				"count": 2
+			},
+			{
+				"name": "Dispositivo del caos",
+				"count": 2
+			},
+			{
+				"name": "Pergamino guía",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Cadena de Diente de León",
+				"count": 2
+			},
+			{
+				"name": "Dispositivo del caos",
+				"count": 8
+			},
+			{
+				"name": "Pergamino guía",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Cadena de Diente de León",
+				"count": 4
+			},
+			{
+				"name": "Circuito del caos",
+				"count": 4
+			},
+			{
+				"name": "Pergamino hechizado",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Esposas de Diente de León",
+				"count": 2
+			},
+			{
+				"name": "Circuito del caos",
+				"count": 8
+			},
+			{
+				"name": "Pergamino hechizado",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Esposas de Diente de León",
+				"count": 4
+			},
+			{
+				"name": "Caldera del caos",
+				"count": 6
+			},
+			{
+				"name": "Pergamino maldito",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Ideales de Diente de León",
+				"count": 3
+			},
+			{
+				"name": "Caldera del caos",
+				"count": 12
+			},
+			{
+				"name": "Pergamino maldito",
+				"count": 8
+			}
+		]
+	}
+}

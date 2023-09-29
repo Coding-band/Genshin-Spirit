@@ -38,7 +38,7 @@
     "sof1_desc": "Augmente l'absorption de DGT des rideaux de sommeil de Nuits de solennité de 20 %.\nDe plus, déclencher Nuits de solennité génère un bouclier pour tous les personnages de l'équipe à proximité qui ne sont pas protégés par un rideau de sommeil. Ce bouclier bénéficie d'une absorption de DGT équivalant à 35 % de celle d'un rideau de sommeil, dure 12 s et absorbe les DGT Cryo 250 % plus efficacement.",
     "sof2_name": "Hégémonie de lumière",
     "sof2_img": "layla_c2",
-    "sof2_desc": "Lorsqu'une étoile filante de Nuits de solennité touche un ennemi, Layla récupère 1 pt d'énergie. Chaque étoile filante peut restaurer l'énergie de Layla 1 fois de cette manière.",
+    "sof2_desc": "Lorsqu'une étoile filante de Nuits de solennité touche un ennemi, Layla récupère 1 pt d'énergie. Chaque étoile filante peut restaurer l'énergie de Layla une fois de cette manière.",
     "sof3_name": "Secret de la nuit",
     "sof3_img": "layla_c3",
     "sof3_desc": "Niveau d'aptitude Nuits de solennité +3.\nNiveau max : 15",

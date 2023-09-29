@@ -1,0 +1,138 @@
+{
+	"name": "Historias de Otros Mundos",
+	"description": "Una novela de fantasía barata y sin ningún valor. También es fantasía el hecho de que pueda servir como catalizador.",
+	"weapontype": "Catalizador",
+	"rarity": "3",
+	"story": "Una novela de ficción barata que cuenta la historia de un hombre común y corriente que se despierta en otro mundo después de morir.\nEse otro mundo está lleno de peligros, como monstruos de acero enormes como galaxias que acechan bajo tierra y devoran a miles y miles de personas.\nO un poderoso ser capaz de aclimatar una habitación en cualquier estación del año o de iluminar la noche como si fuera de día con un solo chasquido de sus dedos. Es una historia sin sentido ni fundamento.\nSolo hay una cosa parecida a la realidad: que la mayor parte de la riqueza está en manos de unos pocos, resguardada en cajas fuertes.",
+	"baseatk": 39,
+	"substat": "Recarga de Energía",
+	"subvalue": "8.5",
+	"effectname": "Inmersión energética",
+	"effect": "Restaura un {0} de Vida al obtener orbes o partículas elementales.",
+	"r1": [
+		"1%"
+	],
+	"r2": [
+		"1.25%"
+	],
+	"r3": [
+		"1.5%"
+	],
+	"r4": [
+		"1.75%"
+	],
+	"r5": [
+		"2%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Grilletes de Diente de León",
+				"count": 2
+			},
+			{
+				"name": "Dispositivo del caos",
+				"count": 2
+			},
+			{
+				"name": "Máscara dañada",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Cadena de Diente de León",
+				"count": 2
+			},
+			{
+				"name": "Dispositivo del caos",
+				"count": 8
+			},
+			{
+				"name": "Máscara dañada",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Cadena de Diente de León",
+				"count": 4
+			},
+			{
+				"name": "Circuito del caos",
+				"count": 4
+			},
+			{
+				"name": "Máscara sucia",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Esposas de Diente de León",
+				"count": 2
+			},
+			{
+				"name": "Circuito del caos",
+				"count": 8
+			},
+			{
+				"name": "Máscara sucia",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Esposas de Diente de León",
+				"count": 4
+			},
+			{
+				"name": "Caldera del caos",
+				"count": 6
+			},
+			{
+				"name": "Máscara amenazante",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Ideales de Diente de León",
+				"count": 3
+			},
+			{
+				"name": "Caldera del caos",
+				"count": 12
+			},
+			{
+				"name": "Máscara amenazante",
+				"count": 8
+			}
+		]
+	}
+}

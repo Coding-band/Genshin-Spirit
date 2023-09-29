@@ -1,0 +1,91 @@
+{
+	"name": "Hoja Desafilada",
+	"description": "Si tus sueños de la juventud y la emoción de la aventura no son suficientes, ¡compleméntalos con valentía!",
+	"weapontype": "Espada ligera",
+	"rarity": "1",
+	"story": "El camino siempre está repleto de encuentros y despedidas.\nLos únicos que nunca abandonan al viajero\nson sus sueños y su espada.",
+	"baseatk": 23,
+	"substat": "",
+	"subvalue": "",
+	"effectname": "",
+	"effect": "",
+	"r1": [],
+	"r2": [],
+	"r3": [],
+	"r4": [],
+	"r5": [],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora"
+			},
+			{
+				"name": "Fragmento de azulejo de Decarabian",
+				"count": 1
+			},
+			{
+				"name": "Cuerno pesado",
+				"count": 1
+			},
+			{
+				"name": "Flecha robusta",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Escombro de la ciudad de Decarabian",
+				"count": 1
+			},
+			{
+				"name": "Cuerno pesado",
+				"count": 4
+			},
+			{
+				"name": "Flecha robusta",
+				"count": 2
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Escombro de la ciudad de Decarabian",
+				"count": 2
+			},
+			{
+				"name": "Cuerno de bronce negro",
+				"count": 2
+			},
+			{
+				"name": "Flecha afilada",
+				"count": 2
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Fragmento de epopeya de Decarabian",
+				"count": 1
+			},
+			{
+				"name": "Cuerno de bronce negro",
+				"count": 4
+			},
+			{
+				"name": "Flecha afilada",
+				"count": 3
+			}
+		]
+	}
+}

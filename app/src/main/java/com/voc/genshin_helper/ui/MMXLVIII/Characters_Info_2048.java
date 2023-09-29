@@ -853,17 +853,30 @@ public class Characters_Info_2048 {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
                 // Left -> Right
-                if ((position + positionOffset) <= 1){
-                    ConstraintLayout cl = (ConstraintLayout) view.findViewById(R.id.info_char_bg);
-                    ConstraintSet cs = new ConstraintSet();
-                    cs.clone(cl);
-                    cs.setVerticalBias(R.id.info_char_img_gradient, (float) (1 - 0.5 * ((positionOffset+position))));
-                    cs.applyTo(cl);
 
-                    //ViewGroup.LayoutParams layoutParams = char_img_gradient.getLayoutParams();
-                    //layoutParams.height = ((int) ((info_talent_ll.getHeight() - info_detail.getHeight())*(positionOffset+position)+1));
-                    //char_img_gradient.setLayoutParams(layoutParams);
+                if (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT){
+                    if ((position + positionOffset) <= 2){
+                        ConstraintLayout cl = (ConstraintLayout) view.findViewById(R.id.info_root);
+                        ConstraintSet cs = new ConstraintSet();
+                        cs.clone(cl);
+                        cs.setVerticalBias(R.id.info_char_img_gradient, (float) (1 - 0.5 * ((positionOffset+position) > 1 ? 1 : positionOffset+position)));
+                        cs.applyTo(cl);
+
+                        //ViewGroup.LayoutParams layoutParams = char_img_gradient.getLayoutParams();
+                        //layoutParams.height = ((int) ((info_talent_ll.getHeight() - info_detail.getHeight())*(positionOffset+position)+1));
+                        //char_img_gradient.setLayoutParams(layoutParams);
+                    }else{
+
+                        ConstraintLayout cl = (ConstraintLayout) view.findViewById(R.id.info_root);
+                        ConstraintSet cs = new ConstraintSet();
+                        cs.clone(cl);
+                        cs.setVerticalBias(R.id.info_char_img_gradient, (float) (1 - 0.5 * ((positionOffset+position-1))));
+                        cs.applyTo(cl);
                     }
+                }else{
+                    charSkillPage.findViewById(R.id.blankx).setVisibility(View.GONE);
+                    charSofPage.findViewById(R.id.blankx).setVisibility(View.GONE);
+                }
             }
 
             @Override
@@ -885,6 +898,31 @@ public class Characters_Info_2048 {
                     char_sof5_ico.setOnClickListener(v -> info_sof_scrollview.smoothScrollTo(0,charSofPage.findViewById(R.id.info_sof5_ll).getTop()));
                     char_sof6_ico.setOnClickListener(v -> info_sof_scrollview.smoothScrollTo(0,charSofPage.findViewById(R.id.info_sof6_ll).getTop()));
 
+                }
+
+
+                if (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+                    if ((position) <= 2) {
+                        ConstraintLayout cl = (ConstraintLayout) view.findViewById(R.id.info_root);
+                        ConstraintSet cs = new ConstraintSet();
+                        cs.clone(cl);
+                        cs.setVerticalBias(R.id.info_char_img_gradient, (float) (1 - 0.5 * ((position) > 1 ? 1 : position)));
+                        cs.applyTo(cl);
+
+                        //ViewGroup.LayoutParams layoutParams = char_img_gradient.getLayoutParams();
+                        //layoutParams.height = ((int) ((info_talent_ll.getHeight() - info_detail.getHeight())*(positionOffset+position)+1));
+                        //char_img_gradient.setLayoutParams(layoutParams);
+                    } else {
+
+                        ConstraintLayout cl = (ConstraintLayout) view.findViewById(R.id.info_root);
+                        ConstraintSet cs = new ConstraintSet();
+                        cs.clone(cl);
+                        cs.setVerticalBias(R.id.info_char_img_gradient, (float) (0));
+                        cs.applyTo(cl);
+                    }
+                }else{
+                    charSkillPage.findViewById(R.id.blankx).setVisibility(View.GONE);
+                    charSofPage.findViewById(R.id.blankx).setVisibility(View.GONE);
                 }
             }
 
@@ -1424,7 +1462,7 @@ public class Characters_Info_2048 {
         displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int height_curr = displayMetrics.heightPixels;
-        int width_curr = displayMetrics.widthPixels;
+        int width_curr = (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT ? displayMetrics.widthPixels : displayMetrics.heightPixels);
 
         //char_img.setBackgroundResource(item_rss.getElementByName(element)[2]);
 

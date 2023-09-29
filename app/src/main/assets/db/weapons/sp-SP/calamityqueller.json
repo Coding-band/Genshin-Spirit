@@ -1,0 +1,143 @@
+{
+	"name": "Pacificadora del Desastre",
+	"description": "Una afilada arma forjada con extraños minerales. Su tenue brillo azul parece estar contando incontables historias del pasado.",
+	"weapontype": "Lanza",
+	"rarity": "5",
+	"story": "Dicen que esta lanza se forjó con materiales procedentes de otros mundos.\nAntaño, pasó por las manos de innumerables almas leales y desafortunadas, presenció infinidad de combates de principio a\nfin y derramó la sangre de muchos monstruos.\n\nSe dice que, una vez, un exorcista se adentró en una gran sima de arena cristalizada y rescató de las profundidades un cristal\nmaligno del color del agua.\nEntonces, le encomendó a alguien que lo forjara y lo convirtiera en un arma que bautizaría como “Pacificadora del Desastre”.\n\n“Esta lanza pondrá fin a cualquier mal que se presente”.\nA las tribus que vivían en las escarpadas montañas no les gustaba ni alabar ni criticar las cosas.\nSin embargo, tampoco existía un contrato ni se había establecido un precio, por lo que aceptar la lanza no supondría ningún daño.\n\nCuando las criaturas malignas irrumpieron en las montañas y tiñeron la tierra cinabria de oscuridad, la Geoarmada y las\nfuerzas oscuras se enfrentaron, y todo soldado que se quedó atrás acabó encontrando la muerte.\nComo una estrella helada que centellea en la oscuridad, la Pacificadora del Desastre resplandecía en mitad de aquel caos.\n\nFinalmente, cuando el crepúsculo disipó las oscuras nubes y la corrupción se volvió a hundir en las profundidades de aquella sima, la Pacificadora del Desastre también desapareció junto con\nel Yaksha que la empuñaba, y así se sumieron en el silencio.\nA partir de ese entonces, casi todo aquel que empuñara esta lanza correría la misma suerte.\nSin embargo, aquellos que lucharon sin haber recibido órdenes, que protegieron al pueblo sin haber hecho un juramento, tampoco\nse arrepintieron a pesar del destino que encontraron...\n\nHay quien dice que alguien tomó prestada esta lanza.\nEntonces, en una cueva fría y erosionada por el agua, presenció la pelea entre dos buenos amigos.",
+	"baseatk": 49,
+	"substat": "ATQ",
+	"subvalue": "3.6",
+	"effectname": "Ley de la aniquilación",
+	"effect": "Otorga un {0} a todos los Bonos de Daño Elemental. Al lanzar la Habilidad Elemental, se obtiene el efecto “consumación” durante 20 s, el cual aumenta el ATQ en un {1} por segundo. Este efecto puede acumularse hasta 6 veces. Cuando el personaje que equipa esta arma está en tu equipo pero no en uso, el aumento de ataque otorgado por consumación se dobla.",
+	"r1": [
+		"12%",
+		"3.2%"
+	],
+	"r2": [
+		"15%",
+		"4%"
+	],
+	"r3": [
+		"18%",
+		"4.8%"
+	],
+	"r4": [
+		"21%",
+		"5.6%"
+	],
+	"r5": [
+		"24%",
+		"6.4%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Perdigones de plomo",
+				"count": 5
+			},
+			{
+				"name": "Polen neblinoso",
+				"count": 5
+			},
+			{
+				"name": "Néctar de Megaflora",
+				"count": 3
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Perdigones de mercurio",
+				"count": 5
+			},
+			{
+				"name": "Polen neblinoso",
+				"count": 18
+			},
+			{
+				"name": "Néctar de Megaflora",
+				"count": 12
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Perdigones de mercurio",
+				"count": 9
+			},
+			{
+				"name": "Hierba neblinosa",
+				"count": 9
+			},
+			{
+				"name": "Néctar brillante",
+				"count": 9
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Perdigones de oro",
+				"count": 5
+			},
+			{
+				"name": "Hierba neblinosa",
+				"count": 18
+			},
+			{
+				"name": "Néctar brillante",
+				"count": 14
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 55000
+			},
+			{
+				"name": "Perdigones de oro",
+				"count": 9
+			},
+			{
+				"name": "Lámpara de hierba neblinosa",
+				"count": 14
+			},
+			{
+				"name": "Néctar energético",
+				"count": 9
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 65000
+			},
+			{
+				"name": "Perdigones primordiales",
+				"count": 6
+			},
+			{
+				"name": "Lámpara de hierba neblinosa",
+				"count": 27
+			},
+			{
+				"name": "Néctar energético",
+				"count": 18
+			}
+		]
+	}
+}

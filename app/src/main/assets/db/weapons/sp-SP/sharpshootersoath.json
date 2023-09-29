@@ -1,0 +1,138 @@
+{
+	"name": "Juramento del Arquero",
+	"description": "Este sublime arco perteneció una vez a un maestro arquero. Emite un fuerte olor, por lo que no es apto para la caza.",
+	"weapontype": "Arco",
+	"rarity": "3",
+	"story": "Esta es una historia que ocurrió en un lugar y tiempo lejanos.\nUna historia de hermanos que tomaron armas unos contra otros.\nEntre ellos, había un gran arquero que había sido humillado.\nEl arquero juró que, antes de que la flecha atravesara la garganta del enemigo,\nantes de que la sangre enemiga se secara, no se lavaría los pies.\nSe dice que el arquero murió de una infección en los pies.",
+	"baseatk": 39,
+	"substat": "Daño CRIT",
+	"subvalue": "10.2",
+	"effectname": "Precisión",
+	"effect": "Aumenta en un {0} el daño contra los puntos débiles.",
+	"r1": [
+		"24%"
+	],
+	"r2": [
+		"30%"
+	],
+	"r3": [
+		"36%"
+	],
+	"r4": [
+		"42%"
+	],
+	"r5": [
+		"48%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Diente de leche de lobo boreal",
+				"count": 2
+			},
+			{
+				"name": "Rama seca de líneas ley",
+				"count": 2
+			},
+			{
+				"name": "Condensado de Slime",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Diente roto de lobo boreal",
+				"count": 2
+			},
+			{
+				"name": "Rama seca de líneas ley",
+				"count": 8
+			},
+			{
+				"name": "Condensado de Slime",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Diente roto de lobo boreal",
+				"count": 4
+			},
+			{
+				"name": "Hojas secas de líneas ley",
+				"count": 4
+			},
+			{
+				"name": "Babas de Slime",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Colmillo roto de lobo boreal",
+				"count": 2
+			},
+			{
+				"name": "Hojas secas de líneas ley",
+				"count": 8
+			},
+			{
+				"name": "Babas de Slime",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Colmillo roto de lobo boreal",
+				"count": 4
+			},
+			{
+				"name": "Brotes de líneas ley",
+				"count": 6
+			},
+			{
+				"name": "Esencia de Slime",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Nostalgia del lobo boreal",
+				"count": 3
+			},
+			{
+				"name": "Brotes de líneas ley",
+				"count": 12
+			},
+			{
+				"name": "Esencia de Slime",
+				"count": 8
+			}
+		]
+	}
+}

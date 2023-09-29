@@ -1,0 +1,143 @@
+{
+	"name": "Deseo Ponzoñoso",
+	"description": "Una espada muy recta y misteriosa que parece sedienta de vida. De ella gotea un veneno capaz de corromper hasta a un dragón.",
+	"weapontype": "Espada ligera",
+	"rarity": "4",
+	"story": "Eso ocurrió hace mucho, mucho tiempo...\n\nUna vida que no puede nacer, deseos que no se pueden cumplir,\nsueños infructuosos que deambulan por la oscuridad del universo,\nse apoderaron de mi cuerpo y llegaron a este mundo.\n\nDespués, queridos niños,\ncomo la lluvia que se cuela por las grietas y las plantas que crecen hacia la luz del sol,\nvan a un lugar hermoso y muestran su belleza.\n\nEstos son los recuerdos que un niño llamado Durin tiene de su madre.\n\n“Gracias, madre, gracias”.\n“Gracias por darme alas para volar y un cuerpo fuerte y poderoso”.\n“Quiero ir a un lugar donde hay canciones hermosas, madre”.\n“Les hablaré sobre ti, madre, y sobre todos los demás”.\n“Les contaré lo hermoso que es el lugar en el que nací”.",
+	"baseatk": 42,
+	"substat": "Recarga de Energía",
+	"subvalue": "10",
+	"effectname": "Anhelo infinito",
+	"effect": "Aumenta en un {0} el daño de la Habilidad Elemental y en un {1} su Prob. CRIT.",
+	"r1": [
+		"16%",
+		"6%"
+	],
+	"r2": [
+		"20%",
+		"7.5%"
+	],
+	"r3": [
+		"24%",
+		"9%"
+	],
+	"r4": [
+		"28%",
+		"10.5%"
+	],
+	"r5": [
+		"32%",
+		"12%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Grilletes de Diente de León",
+				"count": 3
+			},
+			{
+				"name": "Cuerno pesado",
+				"count": 3
+			},
+			{
+				"name": "Insignia del recluta",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Cadena de Diente de León",
+				"count": 3
+			},
+			{
+				"name": "Cuerno pesado",
+				"count": 12
+			},
+			{
+				"name": "Insignia del recluta",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Cadena de Diente de León",
+				"count": 6
+			},
+			{
+				"name": "Cuerno de bronce negro",
+				"count": 6
+			},
+			{
+				"name": "Insignia del sargento",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Esposas de Diente de León",
+				"count": 3
+			},
+			{
+				"name": "Cuerno de bronce negro",
+				"count": 12
+			},
+			{
+				"name": "Insignia del sargento",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Esposas de Diente de León",
+				"count": 6
+			},
+			{
+				"name": "Cuerno con cristal negro",
+				"count": 9
+			},
+			{
+				"name": "Insignia del oficial",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Ideales de Diente de León",
+				"count": 4
+			},
+			{
+				"name": "Cuerno con cristal negro",
+				"count": 18
+			},
+			{
+				"name": "Insignia del oficial",
+				"count": 12
+			}
+		]
+	}
+}

@@ -1,0 +1,138 @@
+{
+	"name": "Quả Cầu Ngọc",
+	"description": "Pháp khí được điêu khắc từ bảo ngọc Tuyệt Vân Gián phía bắc Liyue. Nhỏ nhắn xinh xắn, được mệnh danh là Phỉ Ngọc Hoàn.",
+	"weapontype": "Pháp Khí",
+	"rarity": "3",
+	"story": "Pháp Khí được đẽo gọt từ đá phỉ thúy, nhẹ bền, giá cả vừa phải, được giới giang hồ ưa thích.\nDo ngọai hình nhỏ gọn, gia công tinh tế, được người dân Liyue gọi là \"Phỉ Ngọc Hoàn\"\nPháp khí này không chỉ là vật phòng thân hữu hiệu, mà còn là món đồ trang sức đẹp.",
+	"baseatk": 40,
+	"substat": "Tinh Thông Nguyên Tố",
+	"subvalue": "20",
+	"effectname": "Kích Lưu",
+	"effect": "Trong 12s sau khi kích hoạt Bốc Hơi, Điện Cảm, Đóng Băng, Sum Suê hoặc Khuếch Tán nguyên tố Thủy, tấn công tăng {0}.",
+	"r1": [
+		"20%"
+	],
+	"r2": [
+		"25%"
+	],
+	"r3": [
+		"30%"
+	],
+	"r4": [
+		"35%"
+	],
+	"r5": [
+		"40%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Ánh Sáng Rừng Băng Giá",
+				"count": 2
+			},
+			{
+				"name": "Dao Săn Bắt",
+				"count": 2
+			},
+			{
+				"name": "Ấn Quạ Tầm Bảo",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Nham Thạch Rừng Băng Giá",
+				"count": 2
+			},
+			{
+				"name": "Dao Săn Bắt",
+				"count": 8
+			},
+			{
+				"name": "Ấn Quạ Tầm Bảo",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Nham Thạch Rừng Băng Giá",
+				"count": 4
+			},
+			{
+				"name": "Dao Đặc Công",
+				"count": 4
+			},
+			{
+				"name": "Ấn Quạ Bạc Ẩn",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Thánh Cốt Rừng Băng Giá",
+				"count": 2
+			},
+			{
+				"name": "Dao Đặc Công",
+				"count": 8
+			},
+			{
+				"name": "Ấn Quạ Bạc Ẩn",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Thánh Cốt Rừng Băng Giá",
+				"count": 4
+			},
+			{
+				"name": "Dao Đô Thám Trưởng",
+				"count": 6
+			},
+			{
+				"name": "Ấn Quạ Trộm Vàng",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Thần Thể Rừng Băng Giá",
+				"count": 3
+			},
+			{
+				"name": "Dao Đô Thám Trưởng",
+				"count": 12
+			},
+			{
+				"name": "Ấn Quạ Trộm Vàng",
+				"count": 8
+			}
+		]
+	}
+}

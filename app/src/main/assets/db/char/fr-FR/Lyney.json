@@ -36,7 +36,7 @@
   "sof": {
     "sof1_name": "Art de mysticité",
     "sof1_img": "lyney_c1",
-    "sof1_desc": "Un maximum de 2 chapeaux félinois peut exister en même temps.\nDe plus, les flèches postiches invoquent 2 chapeaux félinois et accordent un cumul supplémentaire de fantasmagorie après avoir touché. Cet effet peut être déclenché une fois toutes les 15 s.",
+    "sof1_desc": "Un maximum de 2 chapeaux félinois peut exister en même temps.\nDe plus, les flèches postiches invoquent 2 chapeaux félinois après avoir touché et accordent un cumul supplémentaire de fantasmagorie. Cet effet peut être déclenché une fois toutes les 15 s.",
     "sof2_name": "Cajolerie affable",
     "sof2_img": "lyney_c2",
     "sof2_desc": "Lyney obtient un cumul de lucidité toutes les 2 s qu'il passe sur le terrain, augmentant ses DGT CRIT de 20 %. Cet effet peut être cumulé 3 fois maximum, et cesse lorsque Lyney quitte le champ de bataille.",

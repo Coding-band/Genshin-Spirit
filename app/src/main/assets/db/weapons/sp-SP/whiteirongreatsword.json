@@ -1,0 +1,138 @@
+{
+	"name": "Espada de Hierro Blanco",
+	"description": "Un mandoble fabricado con hierro blanco que aumenta su potencia al tiempo que tiene un peso relativamente ligero. Puede ser manejada por personas con fuerza normal en los brazos, pero su manejo es mucho mejor cuando es empuñada por grandes guerreros.",
+	"weapontype": "Mandoble",
+	"rarity": "3",
+	"story": "Un mandoble ligero hecho de hierro blanco con un brillo plateado.\nCuando se blande rápidamente, emite unos destellos de luz que pueden cegar al enemigo.\nSin embargo, esta espada no suele utilizarse como arma.\nSegún un antiguo protocolo guerrero, cuando un compañero de armas cae en combate, se deben colocar armas con un gran brillo sobre el lugar donde este murió.\nAunque este ritual ya no es una práctica común, todavía hay quien recuerda su significado simbólico.",
+	"baseatk": 39,
+	"substat": "DEF",
+	"subvalue": "9.6",
+	"effectname": "Cosecha",
+	"effect": "Restaura un {0} de Vida tras derrotar a un enemigo.",
+	"r1": [
+		"8%"
+	],
+	"r2": [
+		"10%"
+	],
+	"r3": [
+		"12%"
+	],
+	"r4": [
+		"14%"
+	],
+	"r5": [
+		"16%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Grilletes de Diente de León",
+				"count": 2
+			},
+			{
+				"name": "Dispositivo del caos",
+				"count": 2
+			},
+			{
+				"name": "Condensado de Slime",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Cadena de Diente de León",
+				"count": 2
+			},
+			{
+				"name": "Dispositivo del caos",
+				"count": 8
+			},
+			{
+				"name": "Condensado de Slime",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Cadena de Diente de León",
+				"count": 4
+			},
+			{
+				"name": "Circuito del caos",
+				"count": 4
+			},
+			{
+				"name": "Babas de Slime",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Esposas de Diente de León",
+				"count": 2
+			},
+			{
+				"name": "Circuito del caos",
+				"count": 8
+			},
+			{
+				"name": "Babas de Slime",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Esposas de Diente de León",
+				"count": 4
+			},
+			{
+				"name": "Caldera del caos",
+				"count": 6
+			},
+			{
+				"name": "Esencia de Slime",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Ideales de Diente de León",
+				"count": 3
+			},
+			{
+				"name": "Caldera del caos",
+				"count": 12
+			},
+			{
+				"name": "Esencia de Slime",
+				"count": 8
+			}
+		]
+	}
+}

@@ -25,7 +25,7 @@
   "basic_talent": {
     "talent2_name": "Accord des vents tourbillonnants",
     "talent2_img": "wanderer_p2",
-    "talent2_desc": "Les moras utilisés lors de l'élévation de catalyseurs et d'arcs sont réduits de 50 %.",
+    "talent2_desc": "Les moras utilisés lors de l'élévation de catalyseurs et d'arcs diminuent de 50 %.",
     "talent3_name": "Fleur de jade",
     "talent3_img": "wanderer_p3",
     "talent3_desc": "Pendant Hanega : Lyrisme des vents, entrer au contact de l'élément Hydro/Pyro/Cryo/Électro permet à l'état Bienfait venteux qui en résulte d'obtenir un effet de renforcement selon l'élément concerné :\n· Hydro : la limite de Kuugoryoku augmente de 20 pts.<br>· Pyro : l'ATQ augmente de 30 %.<br>· Cryo : le taux CRIT augmente de 20 %.<br>· Électro : les attaques normales et chargées restaurent 0,8 pt d'énergie élémentaire après avoir touché un ennemi. L'énergie élémentaire peut être restaurée une fois toutes les 0,2 s de cette manière.<br><br>Un maximum de 2 types différents de ces effets de renforcement peut être obtenu simultanément.",

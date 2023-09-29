@@ -24,6 +24,8 @@ public class LangUtils {
     private static final int uk_UA = 6;
     private static final int pt_PT = 7;
     private static final int de_DE = 8;
+    private static final int sp_SP = 9;
+    private static final int vi_VI = 10;
 
     public static Locale getCurrentLang(int i) {
         switch (i) {
@@ -47,6 +49,10 @@ public class LangUtils {
                 return new Locale("pt", "PT");
             case 8:
                 return Locale.GERMANY;
+            case 9:
+                return new Locale("es", "ES");
+            case 10:
+                return new Locale("vi", "VI");
             default:
                 return Locale.US;
         }

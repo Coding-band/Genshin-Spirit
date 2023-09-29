@@ -1,0 +1,91 @@
+{
+	"name": "Cung Săn Bắn",
+	"description": "Âm nhạc mà người thợ săn biểu diễn được tạo thành từ hai loại âm sắc. Âm thanh từ cung và tiếng phát ra của tên khi bay.",
+	"weapontype": "Cung",
+	"rarity": "1",
+	"story": "Theo truyền thuyết trước đây, Mondstadt đã từng dùng cung nỏ tấu nhạc, \nHoặc những nhạc sĩ lang thang dùng dây đàn bắn tên.\nNhưng đó chỉ là truyền thuyết từ lâu đời.",
+	"baseatk": 23,
+	"substat": "",
+	"subvalue": "",
+	"effectname": "",
+	"effect": "",
+	"r1": [],
+	"r2": [],
+	"r3": [],
+	"r4": [],
+	"r5": [],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora"
+			},
+			{
+				"name": "Răng Sữa Sói Bão",
+				"count": 1
+			},
+			{
+				"name": "Cành Cây Địa Mạch",
+				"count": 1
+			},
+			{
+				"name": "Ấn Quạ Tầm Bảo",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Răng Vỡ Sói Bão",
+				"count": 1
+			},
+			{
+				"name": "Cành Cây Địa Mạch",
+				"count": 4
+			},
+			{
+				"name": "Ấn Quạ Tầm Bảo",
+				"count": 2
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Răng Vỡ Sói Bão",
+				"count": 2
+			},
+			{
+				"name": "Lá Khô Địa Mạch",
+				"count": 2
+			},
+			{
+				"name": "Ấn Quạ Bạc Ẩn",
+				"count": 2
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Mảnh Răng Sói Bão",
+				"count": 1
+			},
+			{
+				"name": "Lá Khô Địa Mạch",
+				"count": 4
+			},
+			{
+				"name": "Ấn Quạ Bạc Ẩn",
+				"count": 3
+			}
+		]
+	}
+}

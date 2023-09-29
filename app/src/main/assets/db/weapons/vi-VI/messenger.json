@@ -1,0 +1,138 @@
+{
+	"name": "Tín Sứ",
+	"description": "Cung làm từ gỗ có tạo hình đơn giản. Nghe nói nó từng được dùng làm công cụ truyền tin xa.",
+	"weapontype": "Cung",
+	"rarity": "3",
+	"story": "Tương truyền rằng, ở một quãng thời gian nào đó trong lịch sử cổ xưa kia,\nNgười dân cảng Liyue, thích dùng cung đưa tin.\n\"Như vậy chẳng phải sẽ bắn vào người đi ngang qua sao\"\n\"Chính vì vậy, cây cung này mới thành món đồ cổ\"\nÔng chủ tiệm đồ cổ cười mỉm, vuốt nhẹ hàm râu của mình.",
+	"baseatk": 40,
+	"substat": "ST Bạo Kích",
+	"subvalue": "6.8",
+	"effectname": "Mũi Tên Truyền Tin",
+	"effect": "Nếu trọng kích đánh trúng điểm yếu, sẽ tạo thành thêm sát thương bằng {0} tấn công, sát thương này chắc chắn bạo kích. Mỗi 10s chỉ có hiệu quả 1 lần.",
+	"r1": [
+		"100%"
+	],
+	"r2": [
+		"125%"
+	],
+	"r3": [
+		"150%"
+	],
+	"r4": [
+		"175%"
+	],
+	"r5": [
+		"200%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Diên Đơn Biển Sương Mù",
+				"count": 2
+			},
+			{
+				"name": "Phấn Hoa Hư Vô",
+				"count": 2
+			},
+			{
+				"name": "Ấn Quạ Tầm Bảo",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Hống Đơn Biển Sương Mù",
+				"count": 2
+			},
+			{
+				"name": "Phấn Hoa Hư Vô",
+				"count": 8
+			},
+			{
+				"name": "Ấn Quạ Tầm Bảo",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Hống Đơn Biển Sương Mù",
+				"count": 4
+			},
+			{
+				"name": "Túi Cỏ Hư Vô",
+				"count": 4
+			},
+			{
+				"name": "Ấn Quạ Bạc Ẩn",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Kim Đơn Biển Sương Mù",
+				"count": 2
+			},
+			{
+				"name": "Túi Cỏ Hư Vô",
+				"count": 8
+			},
+			{
+				"name": "Ấn Quạ Bạc Ẩn",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Kim Đơn Biển Sương Mù",
+				"count": 4
+			},
+			{
+				"name": "Đuốc Hư Vô",
+				"count": 6
+			},
+			{
+				"name": "Ấn Quạ Trộm Vàng",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Sự Chuyển Dời Của Biển Sương Mù",
+				"count": 3
+			},
+			{
+				"name": "Đuốc Hư Vô",
+				"count": 12
+			},
+			{
+				"name": "Ấn Quạ Trộm Vàng",
+				"count": 8
+			}
+		]
+	}
+}

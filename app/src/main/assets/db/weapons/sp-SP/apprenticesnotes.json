@@ -1,0 +1,91 @@
+{
+	"name": "Apuntes del Aprendiz",
+	"description": "Notas escritas por un estudiante brillante. Dejó anotados muchos hechizos útiles. Su letra es hermosa.",
+	"weapontype": "Catalizador",
+	"rarity": "1",
+	"story": "Los estudios, las investigaciones y los encantamientos se registran mediante palabras.\nLos espacios en blanco que quedan entre las palabras son la prueba del esfuerzo del discípulo que las escribió.",
+	"baseatk": 23,
+	"substat": "",
+	"subvalue": "",
+	"effectname": "",
+	"effect": "",
+	"r1": [],
+	"r2": [],
+	"r3": [],
+	"r4": [],
+	"r5": [],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora"
+			},
+			{
+				"name": "Fragmento de azulejo de Decarabian",
+				"count": 1
+			},
+			{
+				"name": "Cuerno pesado",
+				"count": 1
+			},
+			{
+				"name": "Máscara dañada",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Escombro de la ciudad de Decarabian",
+				"count": 1
+			},
+			{
+				"name": "Cuerno pesado",
+				"count": 4
+			},
+			{
+				"name": "Máscara dañada",
+				"count": 2
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Escombro de la ciudad de Decarabian",
+				"count": 2
+			},
+			{
+				"name": "Cuerno de bronce negro",
+				"count": 2
+			},
+			{
+				"name": "Máscara sucia",
+				"count": 2
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Fragmento de epopeya de Decarabian",
+				"count": 1
+			},
+			{
+				"name": "Cuerno de bronce negro",
+				"count": 4
+			},
+			{
+				"name": "Máscara sucia",
+				"count": 3
+			}
+		]
+	}
+}

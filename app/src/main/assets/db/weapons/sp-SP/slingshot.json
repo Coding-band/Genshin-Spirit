@@ -1,0 +1,138 @@
+{
+	"name": "Tirachinas",
+	"description": "Después de muchas modificaciones y mejoras, su inventor acabó cambiando su aspecto por completo. Ahora, en realidad, es un arco.",
+	"weapontype": "Arco",
+	"rarity": "3",
+	"story": "Hace mucho tiempo, hubo una persona que quiso mejorar el rango y la precisión de un tirachinas.\nDescubrió que, si aumentaba el rango, perdía precisión,\nasí que reemplazó la munición de piedras por palos de madera con plumas en su parte posterior para estabilizarlo.\nAl nuevo tirachinas le cambió el agarre y curvó sus extremidades para aumentar la tensión.\nAl final, se dio cuenta de que terminó por hacer un arco.",
+	"baseatk": 38,
+	"substat": "Prob. CRIT",
+	"subvalue": "6.8",
+	"effectname": "Tirachinas",
+	"effect": "Si un Ataque Normal o Cargado golpea al enemigo en menos de 0.3 s de ser lanzado, el daño infligido aumentará en un {0}. Si se excede este tiempo, el daño disminuirá en un 10%.",
+	"r1": [
+		"36%"
+	],
+	"r2": [
+		"42%"
+	],
+	"r3": [
+		"48%"
+	],
+	"r4": [
+		"54%"
+	],
+	"r5": [
+		"60%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Arena brillante de Guyun",
+				"count": 2
+			},
+			{
+				"name": "Daga de cacería",
+				"count": 2
+			},
+			{
+				"name": "Máscara dañada",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Piedra reluciente de Guyun",
+				"count": 2
+			},
+			{
+				"name": "Daga de cacería",
+				"count": 8
+			},
+			{
+				"name": "Máscara dañada",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Piedra reluciente de Guyun",
+				"count": 4
+			},
+			{
+				"name": "Daga del agente",
+				"count": 4
+			},
+			{
+				"name": "Máscara sucia",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Reliquia de Guyun",
+				"count": 2
+			},
+			{
+				"name": "Daga del agente",
+				"count": 8
+			},
+			{
+				"name": "Máscara sucia",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Reliquia de Guyun",
+				"count": 4
+			},
+			{
+				"name": "Daga larga del inspector",
+				"count": 6
+			},
+			{
+				"name": "Máscara amenazante",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Cuerpo divino de Guyun",
+				"count": 3
+			},
+			{
+				"name": "Daga larga del inspector",
+				"count": 12
+			},
+			{
+				"name": "Máscara amenazante",
+				"count": 8
+			}
+		]
+	}
+}

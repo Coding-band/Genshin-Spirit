@@ -1,4 +1,15 @@
 [
+  {"name" : "Sword of Narzissenkreuz","rare" : 4,"type" : "Sword","copy1" : "悠古弦音的迴響","copy2" : "役人的時時刻刻","common" : "異色結晶石"},
+  {"name" : "Splendor of Still Waters","rare" : 5,"type" : "Sword","copy1" : "純聖露滴的真粹","copy2" : "初生的濁水幻靈","common" : "異色結晶石"},
+
+  {"name" : "The Dockhand's Assistant","rare" : 4,"type" : "Sword","copy1" : "純聖露滴的真粹","copy2" : "役人的時時刻刻","common" : "異色結晶石"},
+  {"name" : "Portable Power Saw","rare" : 4,"type" : "Claymore","copy1" : "無垢之海的金杯","copy2" : "異界生命核","common" : "奇械機芯齒輪"},
+  {"name" : "Prospector's Drill","rare" : 4,"type" : "Polearm","copy1" : "悠古弦音的迴響","copy2" : "役人的時時刻刻","common" : "奇械機芯齒輪"},
+  {"name" : "Ballad of the Boundless Blue","rare" : 4,"type" : "Catalyst","copy1" : "凜風奔狼的懷鄉","copy2" : "石化的骨片","common" : "攫金鴉印"},
+  {"name" : "Cashflow Supervision","rare" : 5,"type" : "Catalyst","copy1" : "無垢之海的金杯","copy2" : "役人的時時刻刻","common" : "異色結晶石"},
+  {"name" : "Tome of the Eternal Flow","rare" : 5,"type" : "Catalyst","copy1" : "純聖露滴的真粹","copy2" : "異界生命核","common" : "奇械機芯齒輪"},
+  {"name" : "Range Gauge","rare" : 4,"type" : "Bow","copy1" : "悠古弦音的迴響","copy2" : "初生的濁水幻靈","common" : "異色結晶石"},
+
   {"name" : "Wolf-Fang","rare":4,"type" : "Sword","copy1" : "高塔孤王的碎夢","copy2" : "混沌錨栓","common" : "不祥的面具"},
   {"name" : "Finale of the Deep","rare":4,"type" : "Sword","copy1" : "純聖露滴的真粹","copy2" : "初生的濁水幻靈","common" : "名刀鐔"},
   {"name" : "Crossing of Fleuve Cendre","rare":4,"type" : "Sword","copy1" : "悠古弦音的迴響","copy2" : "初生的濁水幻靈","common" : "異色結晶石"},

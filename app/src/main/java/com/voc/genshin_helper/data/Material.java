@@ -70,6 +70,10 @@ public class Material {
     public int 奇械發條備件_歌裴莉婭 = 0;
     public int 帝皇的決斷 = 0;
     public int 奇械發條備件_科培琉司 = 0;
+    //add in 20230929
+    public int 圖比昂裝置 = 0;
+    public int 未能達成超越之水 = 0;
+    public int 原海麟角 = 0;
 
     /** LOCAL */
     public int  小燈草  = 0 ;
@@ -114,6 +118,11 @@ public class Material {
     public int  柔燈鈴 = 0;
     public int  虹彩薔薇 = 0;
     public int  海露花 = 0;
+    //add in 20230929
+    public int  子探測單元 = 0;
+    public int  幽光星星 = 0;
+    public int  蒼晶螺 = 0;
+    public int  湖光鈴蘭 = 0;
 
     /** T-BOSS ASC*/
 
@@ -231,7 +240,7 @@ public class Material {
     //add in 20230820
     public ArrayList<Integer> 	異界生命核	 = new ArrayList<Integer>(Collections.nCopies(3, 0));
     public ArrayList<Integer> 	初生的濁水幻靈	 = new ArrayList<Integer>(Collections.nCopies(3, 0));
-    //add in 4.1.0
+    //add in 20230929
     public ArrayList<Integer> 	役人的時時刻刻	 = new ArrayList<Integer>(Collections.nCopies(3, 0));
 
     //-----------↑Method↑-----------↓Return↓-----------\\
@@ -286,7 +295,8 @@ public class Material {
                 "符紋之齒","蕈王鉤喙","藏雷野實",
                 "永續機芯","導光四面體","滅諍草蔓",
                 "蒼礫蕊羽","常暗圓環","奇械發條備件·歌裴莉婭",
-                "帝皇的決斷","奇械發條備件·科培琉司"
+                "帝皇的決斷","奇械發條備件·科培琉司","「圖比昂裝置」",
+                "未能達成超越之水","原海麟角"
         };
     }
     public int[] bossCountList (){
@@ -300,7 +310,8 @@ public class Material {
                 符紋之齒,蕈王鉤喙,藏雷野實,
                 永續機芯,導光四面體,滅諍草蔓,
                 蒼礫蕊羽,常暗圓環,奇械發條備件_歌裴莉婭,
-                帝皇的決斷,奇械發條備件_科培琉司
+                帝皇的決斷,奇械發條備件_科培琉司,圖比昂裝置,
+                未能達成超越之水,原海麟角
         };
     }
 
@@ -347,7 +358,9 @@ public class Material {
                 "鬼兜蟲","樹王聖體菇","月蓮",
                 "劫波蓮","赤念果","聖金蟲",
                 "帕蒂沙蘭","沙脂蛹","悼靈花",
-                "柔燈鈴","虹彩薔薇","海露花"
+                "柔燈鈴","虹彩薔薇","海露花",
+                "子探測單元","幽光星星","蒼晶螺",
+                "湖光鈴蘭"
         };
     }
     public int[] localCountList (){
@@ -363,7 +376,9 @@ public class Material {
                 鬼兜蟲,樹王聖體菇,月蓮,
                 劫波蓮,赤念果,聖金蟲,
                 帕蒂沙蘭,沙脂蛹,悼靈花,
-                柔燈鈴,虹彩薔薇,海露花
+                柔燈鈴,虹彩薔薇,海露花,
+                子探測單元,幽光星星,蒼晶螺,
+                湖光鈴蘭
         };
     }
 
@@ -715,6 +730,10 @@ public class Material {
                 case "奇械發條備件·歌裴莉婭": 奇械發條備件_歌裴莉婭 = addCountIntoVar(奇械發條備件_歌裴莉婭, temp_count, "BOSS"); break;
                 case "帝皇的決斷": 帝皇的決斷 = addCountIntoVar(帝皇的決斷, temp_count, "BOSS"); break;
                 case "奇械發條備件·科培琉司": 奇械發條備件_科培琉司 = addCountIntoVar(奇械發條備件_科培琉司, temp_count, "BOSS"); break;
+                //add in 20230929
+                case "「圖比昂裝置」": 圖比昂裝置 = addCountIntoVar(圖比昂裝置, temp_count, "BOSS"); break;
+                case "未能達成超越之水": 未能達成超越之水 = addCountIntoVar(未能達成超越之水, temp_count, "BOSS"); break;
+                case "原海麟角": 原海麟角 = addCountIntoVar(原海麟角, temp_count, "BOSS"); break;
             }
 
             /** LOCAL */
@@ -761,6 +780,11 @@ public class Material {
                 case "柔燈鈴": 柔燈鈴 = addCountIntoVar(柔燈鈴, temp_count, "LOCAL"); break;
                 case "虹彩薔薇": 虹彩薔薇 = addCountIntoVar(虹彩薔薇, temp_count, "LOCAL"); break;
                 case "海露花": 海露花 = addCountIntoVar(海露花, temp_count, "LOCAL"); break;
+                //add in 20230929
+                case "子探測單元": 子探測單元 = addCountIntoVar(子探測單元, temp_count, "LOCAL"); break;
+                case "幽光星星": 幽光星星 = addCountIntoVar(幽光星星, temp_count, "LOCAL"); break;
+                case "蒼晶螺": 蒼晶螺 = addCountIntoVar(蒼晶螺, temp_count, "LOCAL"); break;
+                case "湖光鈴蘭": 湖光鈴蘭 = addCountIntoVar(湖光鈴蘭, temp_count, "LOCAL"); break;
             }
 
         }

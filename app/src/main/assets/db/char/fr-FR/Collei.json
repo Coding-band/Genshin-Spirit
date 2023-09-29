@@ -24,7 +24,7 @@
   "basic_talent": {
     "talent2_name": "Championne de planage de Sumeru",
     "talent2_img": "collei_p2",
-    "talent2_desc": "Réduit la consommation d'endurance de vos personnages dans l'équipe de 20 % lors du planage.\nNe peut pas être cumulé avec d'autres aptitudes passives aux effets identiques.",
+    "talent2_desc": "Diminue la consommation d'endurance de vos personnages dans l'équipe de 20 % lors du planage.\nNe peut pas être cumulé avec d'autres aptitudes passives aux effets identiques.",
     "talent3_name": "Retour folié",
     "talent3_img": "collei_p3",
     "talent3_desc": "Si un de vos personnages dans l'équipe déclenche une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d'Exubérance ou de Bourgeonnement avant le retour de l'anneau floral , le personnage obtient l'effet Germe au retour de l'anneau, ce qui inflige de façon continue aux ennemis proches des DGT Dendro d'une valeur équivalant à 40 % de l'ATQ de Collei pendant 3 s.\nSi un nouvel effet Germe est déclenché pendant la durée d'un effet Germe existant, l'effet d'origine est supprimé. Les DGT infligés par l'effet Germe sont considérés comme des DGT de compétence élémentaire.",
@@ -38,7 +38,7 @@
     "sof1_desc": "La recharge d'énergie de Collei augmente de 20 % lorsqu'elle fait partie de l'équipe mais n'est pas déployée.",
     "sof2_name": "À travers collines et bosquets",
     "sof2_img": "collei_c2",
-    "sof2_desc": "L'aptitude passive « Retour folié » est modifiée :\nAu retour de l'anneau floral, le personnage obtient l'effet Germe de l'aptitude passive « Retour folié », infligeant de façon continue aux ennemis proches des DGT Dendro d'une valeur équivalant à 40 % de l'ATQ de Collei pendant 3 s.<br>Si un de vos personnages dans l'équipe déclenche une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d'Exubérance ou de Bourgeonnement entre l'utilisation de Brosse florale et l'arrêt de cet effet Germe, la durée de l'effet est prolongée de 3 s.<br>L'effet peut être prolongé 1 fois maximum de cette manière. Si un nouvel effet Germe est déclenché pendant la durée d'un effet Germe existant, l'effet d'origine est supprimé. Les DGT infligés par l'effet Germe sont considérés comme des DGT de compétence élémentaire.<br>L'aptitude passive « Retour folié » doit être déjà débloquée.",
+    "sof2_desc": "L'aptitude passive « Retour folié » est modifiée :\nAu retour de l'anneau floral, le personnage obtient l'effet Germe de l'aptitude passive « Retour folié », infligeant de façon continue aux ennemis proches des DGT Dendro d'une valeur équivalant à 40 % de l'ATQ de Collei pendant 3 s.<br>Si un de vos personnages dans l'équipe déclenche une réaction de Brûlure, de Stimulation, de Suractivation, de Propagation, de Fleurissement, d'Exubérance ou de Bourgeonnement entre l'utilisation de Brosse florale et l'arrêt de cet effet Germe, la durée de l'effet est prolongée de 3 s.<br>L'effet peut être prolongé une fois maximum de cette manière. Si un nouvel effet Germe est déclenché pendant la durée d'un effet Germe existant, l'effet d'origine est supprimé. Les DGT infligés par l'effet Germe sont considérés comme des DGT de compétence élémentaire.<br>L'aptitude passive « Retour folié » doit être déjà débloquée.",
     "sof3_name": "Fragrance estivale",
     "sof3_img": "collei_c3",
     "sof3_desc": "Niveau d'aptitude Brosse florale +3.\nNiveau max : 15",

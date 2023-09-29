@@ -1,0 +1,138 @@
+{
+	"name": "Đoản Đao Amenoma",
+	"description": "Thanh kiếm chế tạo theo lệnh của một samurai nổi tiếng. Theo truyền thuyết có thể nhanh chóng hạ gục ngay cả chiến binh Tengu thần tốc.",
+	"weapontype": "Kiếm Đơn",
+	"rarity": "4",
+	"story": "Một trong những bản sao của danh đao \"Hakuen Michimitsu Amenoma\".\nĐược tặng cho nhà Saimon bởi tông chủ đầu tiên của phái Iwakura, \"Douin\".\nĐó là món quà cảm ơn vì sự chăm sóc đã nhận được trong thời gian sống ở Làng Konda.\n\nTheo truyền thuyết, bí kiếm \"Tengu Càn Quét\" của phái Iwakura là một chiêu thức chỉ có thể được sử dụng khi trong lòng không một chút bối rối.\nTrước đây cái tên \"Tengu Càn Quét\" được phát âm là \"Chiến Thắng Tengu\", là một thanh kiếm có thể chém rơi cả Tengu đang di chuyển trong không trung.\nTrong hàng trăm năm, kiếm sĩ Iwakura kế thừa cái tên \"In\" đã sử dụng bí kiếm để tiêu diệt vô số yêu quái trên quần đảo Inazuma.\n\nNghe nói nơi \"Tengu Càn Quét\" khi mới hoàn thành là tại một ngôi đền nhỏ đã lụi bại.\nThanh bí kiếm mạnh đến mức phá hủy tất cả các ngôi nhà, và thanh kiếm của Iwakura Douin cũng bị gãy làm đôi.\nSau này, dựa vào kiếm thuật, ông đã tạo dựng nên phái Iwakura, trở thành người dẫn dắt gia tộc Kujou.\nVà đặt Amenoma lúc bấy giờ làm danh kiếm \"Hakuen Michimitsu Amenoma\" được lưu truyền cùng với danh tiếng \"In\".\n\nCó rất nhiều truyền thuyết liên quan đến thanh kiếm, nghe nói nó sắc bén đến nỗi có thể chém đứt cả duyên phận của con người.\nVề cái tên của thanh kiếm, người ta nói rằng đó là Iwakura Douin đã đặc biệt chỉ định cho Amenoma trong lúc chế tạo nó.",
+	"baseatk": 41,
+	"substat": "Tấn Công",
+	"subvalue": "12",
+	"effectname": "Sự Kế Thừa Iwakura",
+	"effect": "Sau khi thi triển Kỹ Năng Nguyên Tố, nhận 1 Âm Chủng, hiệu quả này mỗi 5s nhiều nhất kích hoạt 1 lần. Âm Chủng kéo dài 30s, cùng lúc có thể tồn tại nhiều nhất 3 cái. Sau khi thi triển Kỹ Năng Nộ, sẽ xóa tất cả Âm Chủng hiện có, và 2s sau đó sẽ dựa vào số Âm Chủng tiêu hao mà hồi {0} điểm năng lượng nguyên tố cho nhân vật đó.",
+	"r1": [
+		"6"
+	],
+	"r2": [
+		"7.5"
+	],
+	"r3": [
+		"9"
+	],
+	"r4": [
+		"10.5"
+	],
+	"r5": [
+		"12"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Nhánh San Hô Của Biển Xa",
+				"count": 3
+			},
+			{
+				"name": "Cơ Quan Hỗn Độn",
+				"count": 3
+			},
+			{
+				"name": "Kiếm Cách Cũ Nát",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Nhánh Ngọc Của Biển Xa",
+				"count": 3
+			},
+			{
+				"name": "Cơ Quan Hỗn Độn",
+				"count": 12
+			},
+			{
+				"name": "Kiếm Cách Cũ Nát",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Nhánh Ngọc Của Biển Xa",
+				"count": 6
+			},
+			{
+				"name": "Đầu Nối Hỗn Độn",
+				"count": 6
+			},
+			{
+				"name": "Kiếm Cách Bản Sao",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Nhánh Quỳnh Ngọc Của Biển Xa",
+				"count": 3
+			},
+			{
+				"name": "Đầu Nối Hỗn Độn",
+				"count": 12
+			},
+			{
+				"name": "Kiếm Cách Bản Sao",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Nhánh Quỳnh Ngọc Của Biển Xa",
+				"count": 6
+			},
+			{
+				"name": "Con Ngươi Hỗn Độn",
+				"count": 9
+			},
+			{
+				"name": "Kiếm Cách Trứ Danh",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Nhánh Vàng Của Biển Xa",
+				"count": 4
+			},
+			{
+				"name": "Con Ngươi Hỗn Độn",
+				"count": 18
+			},
+			{
+				"name": "Kiếm Cách Trứ Danh",
+				"count": 12
+			}
+		]
+	}
+}

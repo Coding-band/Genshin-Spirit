@@ -1,0 +1,143 @@
+{
+	"name": "Halcón de Jade",
+	"description": "Una pesada y afilada lanza de jade capaz de derrotar a los poderosos monstruos marinos de la antigüedad.",
+	"weapontype": "Lanza",
+	"rarity": "5",
+	"story": "Cuando se fundó Liyue, los monstruos y los dioses todavía gobernaban los mares.\nLos antepasados vivían atemorizados y lucharon contra el mar con las pocas fuerzas que pudieron reunir.\n\nEn medio de una miríada de primaveras y otoños, una gigantesca criatura marina emergió como líder supremo del inmenso océano.\nNi siquiera la Ballena Geo del Arconte Geo fue capaz de vencerla.\n\nLa gente de Liyue llamó al monstruo “Bachiu”, y nada en los océanos se podía equiparar a él.\nEl ocasional romper de sus olas causó inundaciones que lo asolaron todo a su paso.\n\nEntonces, el Arconte Geo creó a mano un halcón negro con nefrita y piedras.\n\nUna vez labrado, el pájaro Geo se despojó de las cadenas que lo ataban al mundo, ascendió a los cielos\ny, como los rayos del sol ardiente, se arrojó al corazón del océano, donde la feroz bestia y la Ballena Geo peleaban.\nLa bestia cayó a las profundidades de una fosa marina, de donde nunca pudo escapar.\nY así, la gente de Liyue se liberó de sus rugidos.",
+	"baseatk": 48,
+	"substat": "Prob. CRIT",
+	"subvalue": "4.8",
+	"effectname": "Lanza justiciera del halcón",
+	"effect": "Al atacar a un enemigo, aumenta el ATQ en un {0} durante 6 s y puede acumularse hasta 7 veces. Este efecto solo puede ocurrir una vez cada 0.3 s. Cuando se alcanza el máximo de acumulaciones, el daño aumenta en un {1}.",
+	"r1": [
+		"3.2%",
+		"12%"
+	],
+	"r2": [
+		"3.9%",
+		"15%"
+	],
+	"r3": [
+		"4.6%",
+		"18%"
+	],
+	"r4": [
+		"5.3%",
+		"21%"
+	],
+	"r5": [
+		"6%",
+		"24%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Arena brillante de Guyun",
+				"count": 5
+			},
+			{
+				"name": "Daga de cacería",
+				"count": 5
+			},
+			{
+				"name": "Insignia del recluta",
+				"count": 3
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Piedra reluciente de Guyun",
+				"count": 5
+			},
+			{
+				"name": "Daga de cacería",
+				"count": 18
+			},
+			{
+				"name": "Insignia del recluta",
+				"count": 12
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Piedra reluciente de Guyun",
+				"count": 9
+			},
+			{
+				"name": "Daga del agente",
+				"count": 9
+			},
+			{
+				"name": "Insignia del sargento",
+				"count": 9
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Reliquia de Guyun",
+				"count": 5
+			},
+			{
+				"name": "Daga del agente",
+				"count": 18
+			},
+			{
+				"name": "Insignia del sargento",
+				"count": 14
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 55000
+			},
+			{
+				"name": "Reliquia de Guyun",
+				"count": 9
+			},
+			{
+				"name": "Daga larga del inspector",
+				"count": 14
+			},
+			{
+				"name": "Insignia del oficial",
+				"count": 9
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 65000
+			},
+			{
+				"name": "Cuerpo divino de Guyun",
+				"count": 6
+			},
+			{
+				"name": "Daga larga del inspector",
+				"count": 27
+			},
+			{
+				"name": "Insignia del oficial",
+				"count": 18
+			}
+		]
+	}
+}

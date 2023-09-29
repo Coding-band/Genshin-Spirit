@@ -1,0 +1,138 @@
+{
+	"name": "Lãnh Nhẫn",
+	"description": "Binh khí làm từ thép tinh khiết trải qua nhiều lần tôi luyện, từng chứng kiến nhiều cuộc mạo hiểm thăng trầm của chủ cũ.",
+	"weapontype": "Kiếm Đơn",
+	"rarity": "3",
+	"story": "Thanh thép cứng được tôi luyện nhiều lần, \nÁnh lên sắc tối, nhưng vẫn lấp lánh như băng lạnh.\nTừng thuộc về nhà mạo hiểm lừng danh, hiểu biết nhiều điều kì thú trên trái đất rộng lớn này.\nTừng đánh gẫy xương cứng của ma vật, cũng từng giao chiến với lưỡi kiếm sắc bén của đám thổ phỉ.\nĐến cuối cùng,\nVì một thiếu nữ mà đã bỏ cả vùng đất bao la và vùng trời rộng lớn,\nBỏ cả những người đồng hành, thậm chí cả là người bạn đáng tin cậy là thanh thép lạnh được tôi luyện.",
+	"baseatk": 39,
+	"substat": "Tấn Công",
+	"subvalue": "7.7",
+	"effectname": "Chặn Nước Tan Băng",
+	"effect": "Sát thương tạo ra cho kẻ địch bị ảnh hưởng bởi nguyên tố Thủy hoặc Băng tăng {0}.",
+	"r1": [
+		"12%"
+	],
+	"r2": [
+		"15%"
+	],
+	"r3": [
+		"18%"
+	],
+	"r4": [
+		"21%"
+	],
+	"r5": [
+		"24%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Ngói Vỡ Tháp Cô Vương",
+				"count": 2
+			},
+			{
+				"name": "Sừng Nặng",
+				"count": 2
+			},
+			{
+				"name": "Mũi Tên Chắc Chắn",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Xác Tàu Tháp Cô Vương",
+				"count": 2
+			},
+			{
+				"name": "Sừng Nặng",
+				"count": 8
+			},
+			{
+				"name": "Mũi Tên Chắc Chắn",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Xác Tàu Tháp Cô Vương",
+				"count": 4
+			},
+			{
+				"name": "Sừng Đồng Đen",
+				"count": 4
+			},
+			{
+				"name": "Mũi Tên Sắc Bén",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Mảnh Vỡ Tháp Cô Vương",
+				"count": 2
+			},
+			{
+				"name": "Sừng Đồng Đen",
+				"count": 8
+			},
+			{
+				"name": "Mũi Tên Sắc Bén",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Mảnh Vỡ Tháp Cô Vương",
+				"count": 4
+			},
+			{
+				"name": "Sừng Hắc Tinh",
+				"count": 6
+			},
+			{
+				"name": "Mũi Tên Thiện Chiến",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Mảnh Giấc Mơ Tháp Cô Vương",
+				"count": 3
+			},
+			{
+				"name": "Sừng Hắc Tinh",
+				"count": 12
+			},
+			{
+				"name": "Mũi Tên Thiện Chiến",
+				"count": 8
+			}
+		]
+	}
+}

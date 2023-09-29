@@ -1537,4 +1537,18 @@
 
     <string name="pale_forgotten_glory">"苍白的遗荣"</string>
     <string name="echoes_of_the_deep_tides">"深潮的余响"</string>
+    <string name="wriothesley">莱欧斯利</string>
+    <string name="neuvillette">那维莱特</string>
+    <string name="charlotte">夏洛蒂</string>
+    <string name="furina">芙宁娜</string>
+    <string name="the_dockhands_assistant">船坞长剑</string>
+    <string name="portable_power_saw">便携动力锯</string>
+    <string name="prospectors_drill">勘探钻机</string>
+    <string name="ballad_of_the_boundless_blue">无垠蔚蓝之歌</string>
+    <string name="cashflow_supervision">金流监督</string>
+    <string name="tome_of_the_eternal_flow">万世流涌大典</string>
+    <string name="range_gauge">测距规</string>
+    <string name="sword_of_narzissenkreuz">水仙十字之剑</string>
+    <string name="splendor_of_still_waters">静水流涌之辉</string>
+    <string name="traveler_hydro">旅行者(水)</string>
 </resources>

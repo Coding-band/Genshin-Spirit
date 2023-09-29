@@ -1,0 +1,138 @@
+{
+	"name": "Cung Phản Khúc",
+	"description": "Là cây cung có thể bắn được đại bàng, nhưng chủ yếu vẫn còn phải phụ thuộc vào kỹ thuật người cầm cung.",
+	"weapontype": "Cung",
+	"rarity": "3",
+	"story": "Cung Phản Khúc được tạo ra từ gỗ, xương và gân của động vật.\nNếu nằm trong tay thợ săn có tài thiện xạ thì có thể bắn hạ được đại bàng đang bay trên trời cao.\nĐó là sự cao ngạo của người thợ săn, đồng thời chứng minh cho cung thuật cao siêu.\nThế nhưng chỉ đáng thương thay cho chú chim kia.",
+	"baseatk": 38,
+	"substat": "HP",
+	"subvalue": "10.2",
+	"effectname": "Dứt Điểm",
+	"effect": "Khi đánh bại kẻ địch, hồi {0}HP",
+	"r1": [
+		"8%"
+	],
+	"r2": [
+		"10%"
+	],
+	"r3": [
+		"12%"
+	],
+	"r4": [
+		"14%"
+	],
+	"r5": [
+		"16%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Xiềng Xích Đấu Sĩ Nanh Sư Tử",
+				"count": 2
+			},
+			{
+				"name": "Cấu Trúc Hỗn Độn",
+				"count": 2
+			},
+			{
+				"name": "Bản Vẽ Hướng Dẫn",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Dây Sắt Đấu Sĩ Nanh Sư Tử",
+				"count": 2
+			},
+			{
+				"name": "Cấu Trúc Hỗn Độn",
+				"count": 8
+			},
+			{
+				"name": "Bản Vẽ Hướng Dẫn",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Dây Sắt Đấu Sĩ Nanh Sư Tử",
+				"count": 4
+			},
+			{
+				"name": "Bộ Não Hỗn Độn",
+				"count": 4
+			},
+			{
+				"name": "Bản Vẽ Phong Ấn",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Gông Cùm Đấu Sĩ Nanh Sư Tử",
+				"count": 2
+			},
+			{
+				"name": "Bộ Não Hỗn Độn",
+				"count": 8
+			},
+			{
+				"name": "Bản Vẽ Phong Ấn",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Gông Cùm Đấu Sĩ Nanh Sư Tử",
+				"count": 4
+			},
+			{
+				"name": "Trái Tim Hỗn Độn",
+				"count": 6
+			},
+			{
+				"name": "Bản Vẽ Cấm Chú",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Lý Tưởng Của Đấu Sĩ Nanh Sư Tử",
+				"count": 3
+			},
+			{
+				"name": "Trái Tim Hỗn Độn",
+				"count": 12
+			},
+			{
+				"name": "Bản Vẽ Cấm Chú",
+				"count": 8
+			}
+		]
+	}
+}

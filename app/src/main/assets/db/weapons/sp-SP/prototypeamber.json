@@ -1,0 +1,143 @@
+{
+	"name": "Prototipo Ámbar",
+	"description": "Un catalizador recubierto de oro guardado en secreto en la Forja Peñasco Oscuro. Parece brillar con la misma luz del cielo.",
+	"weapontype": "Catalizador",
+	"rarity": "4",
+	"story": "Un catalizador antiguo fabricado en el arsenal de Liyue. Se desconoce su número de serie. En los registros antiguos tampoco aparece su fecha de fabricación.\nLa forma de disco del catalizador representa el tiempo del universo. En su centro hay cor purum como símbolo de las estrellas en la bóveda celeste.\n\nAún después de la calamidad, algunos monstruos seguían merodeando por la tierra. Las armas no bastaban, así que se recurrió a las artes mágicas.\nSin embargo, el arte de la fabricación de catalizadores había cesado hacía más de cien años, y los artefactos, desgastados por el tiempo, eran imposibles de utilizar.\nLos magos acudieron a la familia Yun en Liyue, donde le imploraron a Yun Hui que creara un nuevo catalizador.\nAsí fue como Yun Hui agregó el catalizador a la «Enciclopedia de prototipos».\n\nEste nuevo catalizador fue fabricado con maderas antiguas y minerales poco comunes. El cor purum en su centro fue un obsequio de un exorcista.\nEl cor purum se produce metiendo cor lapis en un horno para someterlo a mucho calor durante cuarenta y nueve días, después de los cuales se deja enfriar en las aguas de un manantial durante otros cuarenta y nueve días más.\nLa doble purificación del fuego y el agua hace que el cor purum sea irrompible. Los exorcistas creen que dicha purificación permite que la gema actúe como un recipiente para la energía cósmica primordial. Un catalizador con cor purum en su núcleo puede canalizar la energía cósmica con el giro del disco, que, al dar doce vueltas, purifica dicha energía.\n\nSu color y brillo son traslúcidos y semejantes al ámbar, por lo que, tras consultarlo con los exorcistas, Yun Hui decidió bautizarlo con el nombre de “Ámbar”.\nEste catalizador es el antecesor de los que algún día erradicarán el mal de la tierra.",
+	"baseatk": 42,
+	"substat": "Vida",
+	"subvalue": "9",
+	"effectname": "Dorado",
+	"effect": "Tras lanzar una Habilidad Definitiva, regenera {0} pts. de Energía Elemental cada 2 s durante 6 s. Además, todos los miembros del equipo recuperarán un {1} de Vida cada 2 s.",
+	"r1": [
+		"4",
+		"4%"
+	],
+	"r2": [
+		"4.5",
+		"4.5%"
+	],
+	"r3": [
+		"5",
+		"5%"
+	],
+	"r4": [
+		"5.5",
+		"5.5%"
+	],
+	"r5": [
+		"6",
+		"6%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Perdigones de plomo",
+				"count": 3
+			},
+			{
+				"name": "Polen neblinoso",
+				"count": 3
+			},
+			{
+				"name": "Flecha robusta",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Perdigones de mercurio",
+				"count": 3
+			},
+			{
+				"name": "Polen neblinoso",
+				"count": 12
+			},
+			{
+				"name": "Flecha robusta",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Perdigones de mercurio",
+				"count": 6
+			},
+			{
+				"name": "Hierba neblinosa",
+				"count": 6
+			},
+			{
+				"name": "Flecha afilada",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Perdigones de oro",
+				"count": 3
+			},
+			{
+				"name": "Hierba neblinosa",
+				"count": 12
+			},
+			{
+				"name": "Flecha afilada",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Perdigones de oro",
+				"count": 6
+			},
+			{
+				"name": "Lámpara de hierba neblinosa",
+				"count": 9
+			},
+			{
+				"name": "Flecha veterana",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Perdigones primordiales",
+				"count": 4
+			},
+			{
+				"name": "Lámpara de hierba neblinosa",
+				"count": 18
+			},
+			{
+				"name": "Flecha veterana",
+				"count": 12
+			}
+		]
+	}
+}

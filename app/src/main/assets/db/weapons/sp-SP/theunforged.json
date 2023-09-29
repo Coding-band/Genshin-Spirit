@@ -1,0 +1,143 @@
+{
+	"name": "Espada de la Desidia",
+	"description": "Espada sin filo capaz de acabar con demonios y villanos. ¿Tendrá poderes divinos?",
+	"weapontype": "Mandoble",
+	"rarity": "5",
+	"story": "Hace mucho tiempo, en Liyue había un dragón.\nNo era como esos dragones que vuelan por los aires, sino que vivía entre las montañas.\nUn antiguo dragón de piedra con un cuerpo como una cordillera.\n\nCuenta la leyenda que un día se durmió en la Montaña Nantianmen, camuflándose entre sus rocas.\nAl despertarse, cualquier pequeño movimiento que hiciera, como desperezarse,\nprovocaba un temblor de tierra.\nPara acabar con los temblores, Rex Lapis fue adonde estaba el anciano dragón.\n\nSe dice que la paz duró mucho tiempo;\ny Rex Lapis ganó un nuevo compañero.\n\nPero los dragones son incompatibles con los dioses y las personas...\n\nDespués de haber sido reprimido en las profundidades de la tierra, el dragón temía la ira de los dioses.\nLos Dragartos Geo, que en el pasado escuchaban los temblores de las rocas, se unieron a la rebelión.\nY se refugiaron en las profundidades de la montaña.\nPasaron miles de años y los Dragartos comenzaron a causar problemas de nuevo...\n\nSegún la leyenda, el vencedor clavó esta espada al lado del árbol gigantesco que contenía al viejo dragón.\nAl ser uno de los sellos, los demonios y los espíritus malignos no podían tocarla.\nSi la leyenda está en lo cierto, solo las personas de corazón puro pueden acercarse a ella.\nSi la leyenda está en lo cierto, ¿por qué se desconoce el paradero de esta espada?",
+	"baseatk": 46,
+	"substat": "ATQ",
+	"subvalue": "10.8",
+	"effectname": "Majestad dorada",
+	"effect": "Aumenta en un {0} la Protección de Escudo.. Tras atacar a un enemigo, el ATQ aumenta en un {1} durante 8 s. Este efecto puede acumularse hasta 5 veces y activarse una vez cada 0.3 s. Además, al estar bajo la protección de un escudo, el efecto de aumento de ATQ aumenta en un 100%.",
+	"r1": [
+		"20%",
+		"4%"
+	],
+	"r2": [
+		"25%",
+		"5%"
+	],
+	"r3": [
+		"30%",
+		"6%"
+	],
+	"r4": [
+		"35%",
+		"7%"
+	],
+	"r5": [
+		"40%",
+		"8%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Perdigones de plomo",
+				"count": 5
+			},
+			{
+				"name": "Polen neblinoso",
+				"count": 5
+			},
+			{
+				"name": "Insignia de cuervo de bronce",
+				"count": 3
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Perdigones de mercurio",
+				"count": 5
+			},
+			{
+				"name": "Polen neblinoso",
+				"count": 18
+			},
+			{
+				"name": "Insignia de cuervo de bronce",
+				"count": 12
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Perdigones de mercurio",
+				"count": 9
+			},
+			{
+				"name": "Hierba neblinosa",
+				"count": 9
+			},
+			{
+				"name": "Insignia de cuervo plateada",
+				"count": 9
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Perdigones de oro",
+				"count": 5
+			},
+			{
+				"name": "Hierba neblinosa",
+				"count": 18
+			},
+			{
+				"name": "Insignia de cuervo plateada",
+				"count": 14
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 55000
+			},
+			{
+				"name": "Perdigones de oro",
+				"count": 9
+			},
+			{
+				"name": "Lámpara de hierba neblinosa",
+				"count": 14
+			},
+			{
+				"name": "Insignia de cuervo dorada",
+				"count": 9
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 65000
+			},
+			{
+				"name": "Perdigones primordiales",
+				"count": 6
+			},
+			{
+				"name": "Lámpara de hierba neblinosa",
+				"count": 27
+			},
+			{
+				"name": "Insignia de cuervo dorada",
+				"count": 18
+			}
+		]
+	}
+}

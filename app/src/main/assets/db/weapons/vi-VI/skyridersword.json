@@ -1,0 +1,138 @@
+{
+	"name": "Kiếm Phi Thiên",
+	"description": "Kiếm bằng gang, truyền thuyết nói rằng \"Ngự Kiếm Công Tử\" từng muốn dùng nó để bay lên trời.",
+	"weapontype": "Kiếm Đơn",
+	"rarity": "3",
+	"story": "Ngự Kiếm Công Tử với kiếm thuật cao cường nhảy từ trên Tuyệt Vân Gián xuống,\nKhông màng những tiếng gió rít giật mạnh bên tai, công tử xuyên qua từng tầng mây.\nCho đến khi tiếng nứt lớn truyền từ chân lên đầu...\nAnh mới nhận ra rằng, có những việc kiếm thuật cũng khó có thể thực hiện được.\nTuy rơi mất thanh kiếm thép sáng bóng, đổi lại bằng viên thuốc Kim Sang.\nThế nhưng Ngự Kiếm Công Tử cũng biết rằng, cuộc hành trình rộng lớn phía trước vẫn chưa kết thúc!",
+	"baseatk": 38,
+	"substat": "Hiệu Quả Nạp Nguyên Tố",
+	"subvalue": "11.3",
+	"effectname": "Quyết Tâm",
+	"effect": "Sau khi thi triển Kỹ Năng Nộ, tăng {0} tấn công và tốc độ di chuyển, kéo dài 15s.",
+	"r1": [
+		"12%"
+	],
+	"r2": [
+		"15%"
+	],
+	"r3": [
+		"18%"
+	],
+	"r4": [
+		"21%"
+	],
+	"r5": [
+		"24%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Hạt Thiên Thạch Đen",
+				"count": 2
+			},
+			{
+				"name": "Mảnh Xương Giòn Yếu",
+				"count": 2
+			},
+			{
+				"name": "Phù Hiệu Tân Binh",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Mảnh Thiên Thạch Đen",
+				"count": 2
+			},
+			{
+				"name": "Mảnh Xương Giòn Yếu",
+				"count": 8
+			},
+			{
+				"name": "Phù Hiệu Tân Binh",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Mảnh Thiên Thạch Đen",
+				"count": 4
+			},
+			{
+				"name": "Mảnh Xương Chắc Chắn",
+				"count": 4
+			},
+			{
+				"name": "Phù Hiệu Sĩ Quan",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Một Góc Thiên Thạch Đen",
+				"count": 2
+			},
+			{
+				"name": "Mảnh Xương Chắc Chắn",
+				"count": 8
+			},
+			{
+				"name": "Phù Hiệu Sĩ Quan",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Một Góc Thiên Thạch Đen",
+				"count": 4
+			},
+			{
+				"name": "Mảnh Xương Hóa Thạch",
+				"count": 6
+			},
+			{
+				"name": "Phù Hiệu Hiệu Úy",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Miếng Thiên Thạch Đen",
+				"count": 3
+			},
+			{
+				"name": "Mảnh Xương Hóa Thạch",
+				"count": 12
+			},
+			{
+				"name": "Phù Hiệu Hiệu Úy",
+				"count": 8
+			}
+		]
+	}
+}

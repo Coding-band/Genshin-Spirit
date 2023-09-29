@@ -1,0 +1,138 @@
+{
+	"name": "Arco Real",
+	"description": "Un viejo arco largo de la aristocracia que en el pasado gobernó Mondstadt. Innumerables generaciones después, la cuerda del arco sigue tensa y puede disparar flechas rápidamente.",
+	"weapontype": "Arco",
+	"rarity": "4",
+	"story": "Un arco largo que perteneció a la antigua aristocracia gobernante de Mondstadt. Fue elaborado artesanalmente con materiales de primera calidad.\nPor eso, aunque ha pasado de generación en generación, sigue siendo tan poderoso como siempre.\nLa caza fue una vez el pasatiempo de los nobles.\nEstos demostraban su fuerza en la naturaleza y compartían el botín con la gente como muestra de benevolencia.\nLamentablemente, dicha benevolencia se perdió y, con ella, el reinado de los nobles.\n\nDespués del levantamiento, la familia Lawrence, que había gobernado durante tanto tiempo en Mondstadt, fue derrocado.\nComo gobierno benevolente recientemente establecido, los Caballeros de Favonius consideraron que no era necesario seguir investigando los crímenes de los Lawrence.\nAsí, la familia fue rápidamente expulsada de Mondstadt y condenada a no volver jamás.\n\n“En el camino a nuestro exilio, mi padre suspiró con pena por la traición de la gente, por el final de una era gloriosa y por el fin de un capítulo de la historia.\nLas personas que una vez fueron nuestros súbditos se regocijaban en las verdes praderas, cantando y bailando mientras nosotros nos despedíamos de nuestra patria.\nPasaron años hasta que, por fin, me di cuenta de algo: los verdaderos traidores y los que cambiamos fuimos nosotros, los Lawrence. Mondstadt siempre tendría que haber sido así de alegre”.\n\nVennessa fue la que dio el empujón final para derribar de una vez por todas el cúmulo de corrupción de Mondstadt. Antes de ella, las furiosas llamas humeantes ya habían empezado a revelar su fuerza.\nYa sea en los ladronzuelos aclamados en secreto por la gente, en la mujer que veía la muerte o en la sanguinaria Orquesta de la Espadachina,\nel espíritu de resistencia está patente en la sangre de todo el pueblo de Mondstadt.",
+	"baseatk": 42,
+	"substat": "ATQ",
+	"subvalue": "9",
+	"effectname": "Concentración",
+	"effect": "Al dañar a un enemigo, aumenta la Prob. CRIT en un {0}. Puede acumularse hasta 5 veces. Una vez asestado un golpe CRIT, las acumulaciones de Concentración se reiniciarán.",
+	"r1": [
+		"8%"
+	],
+	"r2": [
+		"10%"
+	],
+	"r3": [
+		"12%"
+	],
+	"r4": [
+		"14%"
+	],
+	"r5": [
+		"16%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Grilletes de Diente de León",
+				"count": 3
+			},
+			{
+				"name": "Dispositivo del caos",
+				"count": 3
+			},
+			{
+				"name": "Pergamino guía",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Cadena de Diente de León",
+				"count": 3
+			},
+			{
+				"name": "Dispositivo del caos",
+				"count": 12
+			},
+			{
+				"name": "Pergamino guía",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Cadena de Diente de León",
+				"count": 6
+			},
+			{
+				"name": "Circuito del caos",
+				"count": 6
+			},
+			{
+				"name": "Pergamino hechizado",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Esposas de Diente de León",
+				"count": 3
+			},
+			{
+				"name": "Circuito del caos",
+				"count": 12
+			},
+			{
+				"name": "Pergamino hechizado",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Esposas de Diente de León",
+				"count": 6
+			},
+			{
+				"name": "Caldera del caos",
+				"count": 9
+			},
+			{
+				"name": "Pergamino maldito",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Ideales de Diente de León",
+				"count": 4
+			},
+			{
+				"name": "Caldera del caos",
+				"count": 18
+			},
+			{
+				"name": "Pergamino maldito",
+				"count": 12
+			}
+		]
+	}
+}

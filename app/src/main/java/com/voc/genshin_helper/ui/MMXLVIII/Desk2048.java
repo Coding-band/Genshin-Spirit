@@ -744,7 +744,7 @@ public class Desk2048 extends AppCompatActivity {
         //ConstraintLayout paimon_setting = viewPager4.findViewById(R.id.paimon_setting);
         //ConstraintLayout paimon_about = viewPager4.findViewById(R.id.paimon_about);
 
-        //Unlock in 3.7 or 3.8 -> 4.0
+        //Unlock in 3.7 or 3.8 -> 4.0 -> 4.2
         //paimon_buff_cal.setVisibility(View.INVISIBLE);
 
         final int radius = 360;
@@ -821,7 +821,7 @@ public class Desk2048 extends AppCompatActivity {
     public View.OnClickListener paimon_buff_cal = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            CustomToast.toast(context, activity, "Release in 4.0.0");
+            CustomToast.toast(context, activity, "80% done !");
             if(BuildConfig.FLAVOR.equals("beta") || BuildConfig.FLAVOR.equals("dev")){
                 Intent i = new Intent(Desk2048.this, BuffDatabaseUI.class);
                 startActivity(i);
@@ -1453,7 +1453,7 @@ public class Desk2048 extends AppCompatActivity {
         });
 
         // Translate -- U MUST NOT DELETE ANYTHING
-        langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp),getString(R.string.fr_fr),getString(R.string.uk_ua),getString(R.string.pt_pt),getString(R.string.de_de)};
+        langList = new String[]{getString(R.string.zh_hk),getString(R.string.zh_cn),getString(R.string.en_us),getString(R.string.ru_ru),getString(R.string.ja_jp),getString(R.string.fr_fr),getString(R.string.uk_ua),getString(R.string.pt_pt),getString(R.string.de_de),getString(R.string.sp_sp),getString(R.string.vi_vi)};
         ArrayAdapter lang_aa = new ArrayAdapter(context,R.layout.spinner_item,langList);
         lang_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_2048);
 
@@ -1493,6 +1493,12 @@ public class Desk2048 extends AppCompatActivity {
                             break;
                         case 8:
                             editor.putString("curr_lang", "de-DE");
+                            break;
+                        case 9:
+                            editor.putString("curr_lang", "sp-SP");
+                            break;
+                        case 10:
+                            editor.putString("curr_lang", "vi-VI");
                             break;
                     }
 
@@ -2920,6 +2926,10 @@ public class Desk2048 extends AppCompatActivity {
                 editor.putString("curr_lang","pt-PT"); editor.putInt("curr_lang_pos",7);x=7;
             }else if(tag.contains("de-")){
                 editor.putString("curr_lang","de-DE"); editor.putInt("curr_lang_pos",8);x=8;
+            }else if(tag.contains("sp-")){
+                editor.putString("curr_lang","sp-SP"); editor.putInt("curr_lang_pos",9);x=9;
+            }else if(tag.contains("vi-")){
+                editor.putString("curr_lang","vi-VI"); editor.putInt("curr_lang_pos",10);x=10;
             }else{
                 editor.putString("curr_lang","en-US"); editor.putInt("curr_lang_pos",2);x=2;
             }

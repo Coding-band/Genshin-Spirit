@@ -1,0 +1,143 @@
+{
+	"name": "Thiên Nham Cổ Kiếm",
+	"description": "Đại kiếm được mài giũa từ đá ở Liyue.",
+	"weapontype": "Trọng Kiếm",
+	"rarity": "4",
+	"story": "Vũ khí yêu thích của Thiên Nham Quân cổ đại.\nĐược làm từ nền đá tạo nên cảng Liyue, nặng không gì sánh bằng.\nNgười thường không thể nhấc lên được, nói gì đến vung lên cùng chiến đấu.\nNhưng theo ghi chép, binh sĩ của Thiên Nham Quân cổ đại có thể nhẹ nhàng vung lên.\n\nQuân đội Thiên Nham Quân ban đầu được thành lập tự phát từ những người đi theo Nham Thần.\nCó thể bắt nguồn sớm nhất từ thời điểm thành phố cảng mới thành lập\nTheo Nham Quân, cờ hiệu lấy tên Liyue, cùng tiến cùng lui, không bao giờ bỏ cuộc:\n\"Thiên Nham vững chắc, núi vững khó dời. Binh tốt tướng giỏi, hàng ma trừ tà\"\nNhững binh lính của Thiên Nham đều tuân theo lời dạy này, chết không hối tiếc.\n\nHọ dốc sức đi theo bước chân của Nham Vương Đế Quân, tiêu diệt ma quỷ, cứu giúp người dân, bảo vệ sự yên bình của Liyue.\nThành tựu có tiếng nhất của Thiên Nham Quân không phải là giết chóc mà là bảo vệ. Lấy bản thân làm lá chắn, bảo vệ quê hương phía sau.\n\nThanh kiếm lớn này vô cùng nặng nề và kiên cố, giống như trách nhiệm và ý chí của người bảo vệ.\nLúc đầu gọt đá làm kiếm, họ Xing và họ Han của binh đoàn vũ trang có lẽ cũng dự đoán được,\nTrong tương lai, sẽ càng ngày càng ít người có sức mạnh sử dụng loại kiếm đá này để chiến đấu.\nNhưng điều này cũng cho thấy rằng thế giới đã hòa bình, không còn cần người bảo vệ và kiếm nữa.",
+	"baseatk": 42,
+	"substat": "Tấn Công",
+	"subvalue": "9",
+	"effectname": "Thiên Nham Quyết - Đồng Tâm",
+	"effect": "Mỗi khi trong đội có 1 nhân vật Liyue, nhân vật trang bị vũ khí này sẽ nhận {0} tăng tấn công và {1} tăng tỷ lệ bạo kích. Nhiều nhất có thể nhận 4 tầng hiệu quả tăng.",
+	"r1": [
+		"7%",
+		"3%"
+	],
+	"r2": [
+		"8%",
+		"4%"
+	],
+	"r3": [
+		"9%",
+		"5%"
+	],
+	"r4": [
+		"10%",
+		"6%"
+	],
+	"r5": [
+		"11%",
+		"7%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Ánh Sáng Rừng Băng Giá",
+				"count": 3
+			},
+			{
+				"name": "Dao Săn Bắt",
+				"count": 3
+			},
+			{
+				"name": "Mũi Tên Chắc Chắn",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Nham Thạch Rừng Băng Giá",
+				"count": 3
+			},
+			{
+				"name": "Dao Săn Bắt",
+				"count": 12
+			},
+			{
+				"name": "Mũi Tên Chắc Chắn",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Nham Thạch Rừng Băng Giá",
+				"count": 6
+			},
+			{
+				"name": "Dao Đặc Công",
+				"count": 6
+			},
+			{
+				"name": "Mũi Tên Sắc Bén",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Thánh Cốt Rừng Băng Giá",
+				"count": 3
+			},
+			{
+				"name": "Dao Đặc Công",
+				"count": 12
+			},
+			{
+				"name": "Mũi Tên Sắc Bén",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Thánh Cốt Rừng Băng Giá",
+				"count": 6
+			},
+			{
+				"name": "Dao Đô Thám Trưởng",
+				"count": 9
+			},
+			{
+				"name": "Mũi Tên Thiện Chiến",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Thần Thể Rừng Băng Giá",
+				"count": 4
+			},
+			{
+				"name": "Dao Đô Thám Trưởng",
+				"count": 18
+			},
+			{
+				"name": "Mũi Tên Thiện Chiến",
+				"count": 12
+			}
+		]
+	}
+}

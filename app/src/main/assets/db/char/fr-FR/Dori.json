@@ -30,7 +30,7 @@
     "talent3_desc": "Si le personnage relié au djinn a déclenché une réaction d'Électrocution, de Supraconduction, de Surcharge, de Stimulation, de Suractivation, d'Exubérance, de Dispersion Électro ou de Cristallisation Électro, le TdR de Lampe de protection : Canon pacificateur diminue de 1 s.\nCet effet peut être déclenché une fois toutes les 3 s.",
     "talent1_name": "Intérêts composés",
     "talent1_img": "dori_p1",
-    "talent1_desc": "Si le tir pacificateur ou les obus de S.A.V. de Lampe de protection : Canon pacificateur touche un ennemi, Dori restaure 5 pts d'énergie élémentaire tous les 100 % de recharge d'énergie qu'elle possède.\nPour chaque utilisation de Lampe de protection : Canon pacificateur, l'énergie élémentaire peut être restaurée une fois et d'un maximum de 15 pts de cette manière."
+    "talent1_desc": "Si le tir pacificateur ou les obus de S.A.V. de Lampe de protection : Canon pacificateur touche un ennemi, Dori restaure 5 pts d'énergie élémentaire pour chaque tranche de 100 % de recharge d'énergie qu'elle possède.\nPour chaque utilisation de Lampe de protection : Canon pacificateur, l'énergie élémentaire peut être restaurée une fois et d'un maximum de 15 pts de cette manière."
   },
   "sof": {
     "sof1_name": "Investissement supplémentaire",

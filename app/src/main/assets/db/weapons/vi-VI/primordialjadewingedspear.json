@@ -1,0 +1,143 @@
+{
+	"name": "Hòa Phác Diên",
+	"description": "Thương hóa thân từ ma thần, có độ sắc bén và sức mạnh từ thời viễn cổ.",
+	"weapontype": "Vũ Khí Cán Dài",
+	"rarity": "5",
+	"story": "Đó là những năm đầu xây dựng Liyue, biển cả vẫn thuộc sự cai quản của cự quái và Ma Thần.\nThuở xưa ấy, người dân sống trong sợ hãi, chỉ biết dùng chút sức mọn đối đầu với biển cả.\n\nNghìn năm trôi qua, hải thú khổng lồ trở thành bá chủ vùng biển lớn.\nCho dù quyết chiến với Thạch Kình do Nham Chi Chủ tạo ra cũng không gục ngã. \n\nNgười dân Liyue bèn gọi là ma thú \"Bát Cù\", kẻ vô địch nơi vực sâu.\nThi thoảng lại ngoi lên từ nơi vực sâu không đáy, tạo ra những cơn sóng cao với sức tàn phá khủng khiếp, phá hủy nhà cửa và thuyền bè.\n\nNham Thần đích thân dùng ngọc thạch và nham thạch nặn ra một con diều hâu.\n\nThạch điểu vừa tạo thành, đã đập cánh bay vút lên trời cao, thoát khỏi sự kìm giữ của vạn vật.\nTrường thương như ánh mặt trời chói lọi, xuyên thẳng vào chiến trường của ma thú và Nham Kình dưới lòng biển sâu thẳm.\nCự thú gào lên rồi bị ghim chặt trong hang động sâu dưới đáy biển đen tối, và không quay trở lại nữa.\nTừ đó trở về sau người dân Liyue đã thoát khỏi sự thống trị của cự thú biển sâu.",
+	"baseatk": 48,
+	"substat": "Tỷ Lệ Bạo Kích",
+	"subvalue": "4.8",
+	"effectname": "Thương Đại Bàng Ngân Nga",
+	"effect": "Khi đánh trúng kẻ địch tấn công của bản thân tăng {0}, kéo dài 6s, có thể cộng dồn 7 tầng. Mỗi 0.3s có hiệu quả 1 lần, khi cộng dồn đầy sẽ tăng {1} sát thương.",
+	"r1": [
+		"3.2%",
+		"12%"
+	],
+	"r2": [
+		"3.9%",
+		"15%"
+	],
+	"r3": [
+		"4.6%",
+		"18%"
+	],
+	"r4": [
+		"5.3%",
+		"21%"
+	],
+	"r5": [
+		"6%",
+		"24%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Ánh Sáng Rừng Băng Giá",
+				"count": 5
+			},
+			{
+				"name": "Dao Săn Bắt",
+				"count": 5
+			},
+			{
+				"name": "Phù Hiệu Tân Binh",
+				"count": 3
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Nham Thạch Rừng Băng Giá",
+				"count": 5
+			},
+			{
+				"name": "Dao Săn Bắt",
+				"count": 18
+			},
+			{
+				"name": "Phù Hiệu Tân Binh",
+				"count": 12
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Nham Thạch Rừng Băng Giá",
+				"count": 9
+			},
+			{
+				"name": "Dao Đặc Công",
+				"count": 9
+			},
+			{
+				"name": "Phù Hiệu Sĩ Quan",
+				"count": 9
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Thánh Cốt Rừng Băng Giá",
+				"count": 5
+			},
+			{
+				"name": "Dao Đặc Công",
+				"count": 18
+			},
+			{
+				"name": "Phù Hiệu Sĩ Quan",
+				"count": 14
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 55000
+			},
+			{
+				"name": "Thánh Cốt Rừng Băng Giá",
+				"count": 9
+			},
+			{
+				"name": "Dao Đô Thám Trưởng",
+				"count": 14
+			},
+			{
+				"name": "Phù Hiệu Hiệu Úy",
+				"count": 9
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 65000
+			},
+			{
+				"name": "Thần Thể Rừng Băng Giá",
+				"count": 6
+			},
+			{
+				"name": "Dao Đô Thám Trưởng",
+				"count": 27
+			},
+			{
+				"name": "Phù Hiệu Hiệu Úy",
+				"count": 18
+			}
+		]
+	}
+}

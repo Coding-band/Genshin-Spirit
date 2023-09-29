@@ -1,0 +1,138 @@
+{
+	"name": "Gran Espada Sangrienta",
+	"description": "Una espada de acero que se dice que ha sido vestida con sangre de dragón, haciéndola invulnerable al daño. Sin embargo, este efecto no se extiende a su portador.",
+	"weapontype": "Mandoble",
+	"rarity": "3",
+	"story": "Tras derrotar al dragón venenoso,\nel famoso héroe se bañó en su sangre, buscando así volverse invulnerable.\nEsa era la particularidad de su sangre.\nYa fueran espadas, lanzas o una lluvia de flechas,\nlo esquivaba todo mientras se reía.\nPero sus enemigos pronto descubrieron\nque su espada tan preciada también estaba bañada en la sangre del dragón.\nEra tanto su mayor fortaleza como su mayor debilidad.",
+	"baseatk": 38,
+	"substat": "Maestría Elemental",
+	"subvalue": "41",
+	"effectname": "Perdición del fuego y el trueno",
+	"effect": "Aumenta en un {0} el daño contra los enemigos afectados por Pyro o Electro.",
+	"r1": [
+		"12%"
+	],
+	"r2": [
+		"15%"
+	],
+	"r3": [
+		"18%"
+	],
+	"r4": [
+		"21%"
+	],
+	"r5": [
+		"24%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Diente de leche de lobo boreal",
+				"count": 2
+			},
+			{
+				"name": "Rama seca de líneas ley",
+				"count": 2
+			},
+			{
+				"name": "Flecha robusta",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Diente roto de lobo boreal",
+				"count": 2
+			},
+			{
+				"name": "Rama seca de líneas ley",
+				"count": 8
+			},
+			{
+				"name": "Flecha robusta",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Diente roto de lobo boreal",
+				"count": 4
+			},
+			{
+				"name": "Hojas secas de líneas ley",
+				"count": 4
+			},
+			{
+				"name": "Flecha afilada",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Colmillo roto de lobo boreal",
+				"count": 2
+			},
+			{
+				"name": "Hojas secas de líneas ley",
+				"count": 8
+			},
+			{
+				"name": "Flecha afilada",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Colmillo roto de lobo boreal",
+				"count": 4
+			},
+			{
+				"name": "Brotes de líneas ley",
+				"count": 6
+			},
+			{
+				"name": "Flecha veterana",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Nostalgia del lobo boreal",
+				"count": 3
+			},
+			{
+				"name": "Brotes de líneas ley",
+				"count": 12
+			},
+			{
+				"name": "Flecha veterana",
+				"count": 8
+			}
+		]
+	}
+}

@@ -271,6 +271,8 @@
     <string name="uk_ua" translatable="false">українська</string>
     <string name="pt_pt" translatable="false">Português</string>
     <string name="de_de" translatable="false">Deutsch</string>
+    <string name="sp_sp" translatable="false">Español</string>
+    <string name="vi_vi" translatable="false">Tiếng Việt</string>
 
     <!-- main_page -->
     <string name="material_force">Material Force</string>
@@ -1602,6 +1604,23 @@
 
     <string name="pale_forgotten_glory">"Pale Forgotten Glory"</string>
     <string name="echoes_of_the_deep_tides">"Echoes of the Deep Tides"</string>
+
+    <!-- add in 20230929 - 4.1 & 4.2 data -->
+    <string name="wriothesley">"Wriothesley"</string>
+    <string name="neuvillette">"Neuvillette"</string>
+    <string name="charlotte">"Charlotte"</string>
+    <string name="furina">"Furina"</string>
+    <string name="the_dockhands_assistant">"The Dockhand's Assistant"</string>
+    <string name="portable_power_saw">"Portable Power Saw"</string>
+    <string name="prospectors_drill">"Prospector's Drill"</string>
+    <string name="ballad_of_the_boundless_blue">"Ballad of the Boundless Blue"</string>
+    <string name="cashflow_supervision">"Cashflow Supervision"</string>
+    <string name="tome_of_the_eternal_flow">"Tome of the Eternal Flow"</string>
+    <string name="range_gauge">"Range Gauge"</string>
+    <string name="sword_of_narzissenkreuz">"Sword of Narzissenkreuz"</string>
+    <string name="splendor_of_still_waters">"Splendor of Still Waters"</string>
+    <string name="traveler_hydro">Traveler(Hydro)</string>
+
 
 </resources>
 

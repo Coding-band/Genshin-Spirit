@@ -30,7 +30,7 @@
     "talent3_desc": "Lorsque Noëlle fait partie de l'équipe et n'est pas déployée, l'effet suivant se déclenche automatiquement si les PV du personnage déployé sont inférieurs à 30 % :\nConfère un bouclier au personnage déployé pouvant absorber des DGT équivalant à 400 % de la DÉF de Noëlle pendant 20 s.<br>· Le bouclier est efficace à 150 % contre les DGT élémentaires et les DGT physiques.<br>· Le bouclier peut être déclenché une fois toutes les 60 s.",
     "talent1_name": "Clair et net",
     "talent1_img": "noelle_p1",
-    "talent1_desc": "Noëlle réduit le TdR d'Armure de cœur de 1 s tous les 4 coups d'attaque normale ou chargée qu'elle inflige à un ennemi.\nUn coup peut être compté toutes les 0,1 s."
+    "talent1_desc": "Noëlle diminue le TdR d'Armure de cœur de 1 s tous les 4 coups d'attaque normale ou chargée qu'elle inflige à un ennemi.\nUn coup peut être compté toutes les 0,1 s."
   },
   "sof": {
     "sof1_name": "J'assure vos arrières",

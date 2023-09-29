@@ -39,7 +39,7 @@
     "sof1_desc": "À chaque fois qu'un cumul de cœur de glace de Vortex des mers glacées est consommé, Eula gagne un bonus de DGT physiques de 30 % pendant 6 s.\nChaque cumul de cœur de glace consommé prolonge la durée de l'effet de 6 s, jusqu'à un maximum de 18 s.",
     "sof2_name": "Fille d'écume de mer",
     "sof2_img": "eula_c2",
-    "sof2_desc": "Réduit le TdR de l'appui long de Vortex des mers glacées pour correspondre à celui de l'appui simple.",
+    "sof2_desc": "Diminue le TdR de l'appui long de Vortex des mers glacées pour correspondre à celui de l'appui simple.",
     "sof3_name": "Le sang des Lawrence",
     "sof3_img": "eula_c3",
     "sof3_desc": "Niveau d'aptitude Lame de fond +3.\nNiveau max : 15",

@@ -1,0 +1,138 @@
+{
+	"name": "Tia Sáng Nơi Hẻm Tối",
+	"description": "Trường kiếm thẳng tắp có màu sắc của bóng đêm, từng thuộc về tên cướp ở bến cảng.",
+	"weapontype": "Kiếm Đơn",
+	"rarity": "4",
+	"story": "Trường kiếm cao quý thẳng tắp giống như tia sáng trong đêm tối.\nTừ đầu đến cuối, mũi kiếm chưa từng nhiễm một giọt máu tươi nào.\nNghe nói người của hậu thế dùng nó làm nguyên mẫu để thiết kế bội kiếm kỵ sĩ cao quý.\n\nThân kiếm màu tối có thể dễ dàng hòa vào đêm đen.\nBởi vì trong bóng đêm của thời đại ấy, người dân không bao giờ dám thắp đèn.\nTrong thơ ca của một số thi nhân, nó đã bị thời đại quý tộc thống trị nhiễm đen.\n\nThơ tự sự kể về đức độ của tổ tiên chôn hạt giống phản nghịch trong lòng thiếu niên quý tộc.\nKhi thời cơ đến, con cháu danh môn vứt bỏ gia tộc, đánh cắp trường kiếm lẩn vào đường phố,\nTuần tra quán rượu nơi ngõ hẻm giống như dân thường, dùng kiếm thuật quý tộc dạy để cướp của người giàu chia cho người nghèo.\nTrường kiếm lấy từ bảo khố của quý tộc, đồng nhất với huyết mạch quý tộc, vào ban đêm, chạy giữa mái nhà và đường phố,\nÁnh sáng lấp lóe trên mũi kiếm chưa từng tắt, giống như trái tim của tên trộm nghĩa hiệp đã vứt bỏ tên họ hậu duệ quý tộc hủ bại của mình.\n\nThơ ca, rượu và những ngày tháng tuổi trẻ rồi sẽ kết thúc. Sau đó xảy ra rất nhiều chuyện.\nCuối cùng, khi chạy trốn ra biển, dưới ánh trăng, anh ấy chôn vùi trường kiếm đã đồng hành với mình nhiều năm.\nLại nhớ tới năm đó trước khi đi mình đã trộm thanh trường kiếm từ bảo khố trong nhà,\nLời tuyên bố với gia tộc, với quá khứ và tương lai, với mảnh đất này, với em trai cùng bố khác mẹ Eberhart:\n\"Cho dù chỉ có chút sức mọn không đáng kể. Tôi cũng muốn dùng sức mình để xoay chuyển thế giới đen tối này\"",
+	"baseatk": 45,
+	"substat": "Tinh Thông Nguyên Tố",
+	"subvalue": "12",
+	"effectname": "Hiệp Sĩ Đường Phố",
+	"effect": "Sát thương nhân vật tạo thành tăng {0}. Sau khi chịu phải sát thương, hiệu quả tăng sát thương này sẽ mất hiệu lực 5s.",
+	"r1": [
+		"12%"
+	],
+	"r2": [
+		"15%"
+	],
+	"r3": [
+		"18%"
+	],
+	"r4": [
+		"21%"
+	],
+	"r5": [
+		"24%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Ngói Vỡ Tháp Cô Vương",
+				"count": 3
+			},
+			{
+				"name": "Sừng Nặng",
+				"count": 3
+			},
+			{
+				"name": "Bản Vẽ Hướng Dẫn",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Xác Tàu Tháp Cô Vương",
+				"count": 3
+			},
+			{
+				"name": "Sừng Nặng",
+				"count": 12
+			},
+			{
+				"name": "Bản Vẽ Hướng Dẫn",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Xác Tàu Tháp Cô Vương",
+				"count": 6
+			},
+			{
+				"name": "Sừng Đồng Đen",
+				"count": 6
+			},
+			{
+				"name": "Bản Vẽ Phong Ấn",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Mảnh Vỡ Tháp Cô Vương",
+				"count": 3
+			},
+			{
+				"name": "Sừng Đồng Đen",
+				"count": 12
+			},
+			{
+				"name": "Bản Vẽ Phong Ấn",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Mảnh Vỡ Tháp Cô Vương",
+				"count": 6
+			},
+			{
+				"name": "Sừng Hắc Tinh",
+				"count": 9
+			},
+			{
+				"name": "Bản Vẽ Cấm Chú",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Mảnh Giấc Mơ Tháp Cô Vương",
+				"count": 4
+			},
+			{
+				"name": "Sừng Hắc Tinh",
+				"count": 18
+			},
+			{
+				"name": "Bản Vẽ Cấm Chú",
+				"count": 12
+			}
+		]
+	}
+}

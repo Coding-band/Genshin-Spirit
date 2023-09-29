@@ -1,0 +1,138 @@
+{
+	"name": "Sông Cạn",
+	"description": "Loài cá dường như đã tuyệt chủng, thân của chúng có độ đàn hồi cao, gắn thêm dây vào sẽ có thể dùng như cung.",
+	"weapontype": "Cung",
+	"rarity": "4",
+	"story": "Từng có dòng nước chảy vào trong cát vàng, nhưng đó là chuyện xảy ra từ rất lâu trước đây rồi.\nSau đó, người vĩ đại đi theo tiếng gọi của đất và mệnh lệnh của trời bước vào sa mạc, nhưng người sống sót trở về chẳng còn mấy ai.\nCon cá vốn sống trong hồ nước khổng lồ giữa cao nguyên, như mũi tên thẳng tắp xuyên thủng không gian,\nNó từng thẳng tắp như ngọn giáo, bơi theo dòng thánh tích,\nDòng suối lại dần ngấm vào cát, hồ nước rút thành vũng nước,\nCuối cùng chỉ đành cuộn mình trong vũng nước, kết quả là trở thành con mồi của những người hành hương.\n\nCâu chuyện này nói cho chúng ta biết một đạo lý:\nChỉ cần thành tâm hướng thiện, dù ở giữa sa mạc cũng có thể bắt được cá.",
+	"baseatk": 42,
+	"substat": "Hiệu Quả Nạp Nguyên Tố",
+	"subvalue": "10",
+	"effectname": "Phá Lưới",
+	"effect": "Thi triển Kỹ Năng Nguyên Tố sẽ kích hoạt hiệu ứng \"Xuôi Dòng\", khi đánh trúng kẻ địch sẽ gây sát thương diện rộng bằng {0} tấn công, hiệu quả này sẽ bị xóa sau 15s hoặc kích hoạt 3 lần sát thương diện rộng. Mỗi 2s tối đa gây một lần sát thương diện rộng bằng cách này, mỗi 12s tối đa kích hoạt một lần \"Xuôi Dòng\".",
+	"r1": [
+		"80%"
+	],
+	"r2": [
+		"100%"
+	],
+	"r3": [
+		"120%"
+	],
+	"r4": [
+		"140%"
+	],
+	"r5": [
+		"160%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Dư Âm Của Ánh Nắng Quyền Uy",
+				"count": 3
+			},
+			{
+				"name": "Nhân Bào Nấm Đã Chết",
+				"count": 3
+			},
+			{
+				"name": "Bào Tử Nấm Quỷ",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Tia Sáng Của Ánh Nắng Quyền Uy",
+				"count": 3
+			},
+			{
+				"name": "Nhân Bào Nấm Đã Chết",
+				"count": 12
+			},
+			{
+				"name": "Bào Tử Nấm Quỷ",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Tia Sáng Của Ánh Nắng Quyền Uy",
+				"count": 6
+			},
+			{
+				"name": "Nhân Bào Nấm Bất Động",
+				"count": 6
+			},
+			{
+				"name": "Bột Huỳnh Quang",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Mơ Ước Của Ánh Nắng Quyền Uy",
+				"count": 3
+			},
+			{
+				"name": "Nhân Bào Nấm Bất Động",
+				"count": 12
+			},
+			{
+				"name": "Bột Huỳnh Quang",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Mơ Ước Của Ánh Nắng Quyền Uy",
+				"count": 6
+			},
+			{
+				"name": "Nhân Bào Nấm Hồi Phục",
+				"count": 9
+			},
+			{
+				"name": "Bụi Tinh Thể",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Quá Khứ Của Ánh Nắng Quyền Uy",
+				"count": 4
+			},
+			{
+				"name": "Nhân Bào Nấm Hồi Phục",
+				"count": 18
+			},
+			{
+				"name": "Bụi Tinh Thể",
+				"count": 12
+			}
+		]
+	}
+}

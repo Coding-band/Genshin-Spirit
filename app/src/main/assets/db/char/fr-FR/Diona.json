@@ -19,7 +19,7 @@
     "element_desc": "Libère des griffes de chat Cryo qui infligent des DGT Cryo, et génèrent un bouclier lorsqu'elles touchent.<br>Le bouclier peut absorber une quantité de DGT proportionnelle aux PV max de Diona, et sa durée dépend du nombre de cibles touchées.<br><br>Appui simple<br>Exécute rapidement deux attaques consécutives de Griffes Cryo.<br><br>Appui long<br>Bat rapidement en retraite, et libère 5 Griffes Cryo.<br>Le bouclier généré lors d'un appui long obtient un bonus de 75 % d'absorption de DGT.<br><br>Le bouclier est efficace à 250 % contre les DGT Cryo, et applique l'élément Cryo au personnage déployé pendant un court instant lorsque le bouclier est généré.<br><br><i>En théorie, la glace versée dans un breuvage est sans danger pour celui qui le boit. Ceci était exact jusqu'à ce que Diona utilise son œil divin pour créer une glace capable de geler jusqu'au cerveau... 5 étoiles !</i>",
     "final_name": "Cuvée spéciale",
     "final_img": "diona_s3",
-    "final_desc": "Diona lance un cocktail gelé de sa fabrication, infligeant des DGT Cryo de zone, et génère un champ de vapeur d'alcool.\n<br>Champ de vapeur d'alcool<br>· Inflige aux ennemis présents dans la zone des DGT Cryo continus.<br>· Restaure les PV des personnages présents dans la zone.<br><br><i>Une recette que même Diona juge inhumaine. L'avant-goût terrifiant est mieux laissé aux ennemis ; nous ne parlerons pas de l'arrière-goût particulièrement frais qui en découle.</i>"
+    "final_desc": "Diona lance un cocktail gelé de sa fabrication, infligeant des DGT Cryo de zone, et génère un champ de vapeur d'alcool.\n<br>Champ de vapeur d'alcool<br>· Inflige aux ennemis présents dans la zone des DGT Cryo continus.<br>· Restaure les PV des personnages présents dans la zone.<br><br><i>Une recette que même Diona juge inhumaine. L'avant-goût terrifiant est mieux laissé aux ennemis... Nous ne parlerons pas de l'arrière-goût particulièrement frais qui en découle.</i>"
   },
   "basic_talent": {
     "talent2_name": "Apéritif offert",
@@ -27,7 +27,7 @@
     "talent2_desc": "12 % de chances d'obtenir un plat supplémentaire lorsque vous cuisinez un plat de soins parfait.",
     "talent3_name": "Menu secret de La Queue de Chat",
     "talent3_img": "diona_p3",
-    "talent3_desc": "Augmente de 10 % la VIT de déplacement des personnages sous la protection du bouclier généré par les Griffes Cryo. Leur consommation d'endurance est de plus réduite de 10 %.",
+    "talent3_desc": "Augmente de 10 % la VIT de déplacement des personnages sous la protection du bouclier généré par les Griffes Cryo. Leur consommation d'endurance diminue de plus de 10 %.",
     "talent1_name": "Joyeuse ébriété",
     "talent1_img": "diona_p1",
     "talent1_desc": "Les ennemis entrant dans le champ de vapeur d'alcool de Cuvée Spéciale voient leur ATQ baisser de 10 % pendant 15 s."
@@ -44,7 +44,7 @@
     "sof3_desc": "Niveau d'aptitude Cuvée spéciale +3.\nNiveau max : 15",
     "sof4_name": "Mixologie",
     "sof4_img": "diona_c4",
-    "sof4_desc": "Le temps de charge du tir visé de Diona est réduit de 60 % lorsqu'elle se trouve dans le champ de vapeur d'alcool de Cuvée spéciale.",
+    "sof4_desc": "Le temps de charge du tir visé de Diona diminue de 60 % lorsqu'elle se trouve dans le champ de vapeur d'alcool de Cuvée spéciale.",
     "sof5_name": "Un double avec glaçons",
     "sof5_img": "diona_c5",
     "sof5_desc": "Niveau d'aptitude Griffes Cryo +3.\nNiveau max : 15",

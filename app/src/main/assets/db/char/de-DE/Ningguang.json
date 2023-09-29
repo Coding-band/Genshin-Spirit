@@ -6,12 +6,12 @@
   "weapon": "Catalyst",
   "element": "Geo",
   "constellation": "Opus Aequilibrium",
-  "desc": "Der „Tianquan“ unter den „Qixing von Liyue“. Ihr Reichtum ist enorm und bleibt unangefochten der größte im ganzen Land.",
+  "desc": "Der „Tianquan“ unter den „Qixing von Liyue“. Ihr Reichtum ist enorm und nur wenige können es auf dem ganzen Kontinent mit ihr aufnehmen.",
   "birth": "08/26",
   "battle_talent": {
     "normal_name": "Standardangriff: Teure Geschosse",
     "normal_img": "ningguang_s1",
-    "normal_desc1": "Verschießt Edelsteine, die Geo-Schaden verursachen.Gibt Ningguang bei Treffern eine Sternjade.",
+    "normal_desc1": "Verschießt Edelsteine, die Geo-Schaden verursachen.Verleiht Ningguang bei Treffern eine Sternjade.",
     "normal_desc2": "Verbraucht Ausdauer und wirft einen gewaltigen Edelstein, der Geo-Schaden verursacht.Verschießt während eines heftigen Schlags bei Vorhandensein von Sternjade die gesamte Sternjade und verursacht zusätzlichen Schaden.",
     "normal_desc3": "Konzentriert die Kraft des Gesteins, schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Geo-Flächenschaden.",
     "element_name": "Jadeschirm",
@@ -19,7 +19,7 @@
     "element_desc": "Errichtet einen stabilen Jadeschirm aus Gold, Obsidian und dem Willen eines Kämpfers, der Geo-Flächenschaden verursacht.<br><br>Jadeschirm<br>· Hält gegnerische Geschosse ab.<br>· Beständigkeit hängt von Ninguangs max. LP ab.<br><br>Der Jadeschirm gilt als Geo-Objekt, hält einen Teil Angriffe ab und kann nicht erklommen werden. Zu einem Zeitpunkt kann nur ein Jadeschirm existieren.<br><br><i>Leuchtend wie die Sterne am Himmel, zusammengesetzt aus wertvoller Jade.</i>",
     "final_name": "Sternensplitter",
     "final_img": "ningguang_s3",
-    "final_desc": "Ningguang sammelt unzählige Edelsteine, die auf einen Schlag auf Gegner in der Umgebung zufliegen und hohen Geo-Schaden verursachen.\nLässt einen eventuell anwesenden Jadeschirm in der Nähe bei Anwendung von Sternensplitter zusätzlich viele kleine Edelsteine abschießen.<br><br><i>Die Sterne zerbrechen in Tausende Teile.</i>"
+    "final_desc": "Ningguang sammelt unzählige Edelsteine, die auf einen Schlag auf Gegner in der Umgebung zufliegen und hohen Geo-Schaden verursachen.\nLässt einen eventuell anwesenden Jadeschirm in der Nähe bei Anwendung von Sternensplitter zusätzlich viele kleine Edelsteine abschießen.<br><br><i>Sterne zerbrechen. Stille fällt.</i>"
   },
   "basic_talent": {
     "talent2_name": "Edelsteinhort",

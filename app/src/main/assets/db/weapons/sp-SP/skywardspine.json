@@ -1,0 +1,153 @@
+{
+	"name": "Púa Celestial",
+	"description": "Una lanza que simboliza la firme resolución de Dvalin. La recta asta de esta arma, que apunta hacia los cielos, está revestida con el poder del cielo y del viento.",
+	"weapontype": "Lanza",
+	"rarity": "5",
+	"story": "La columna que sostiene el cielo.\nEl verdadero compañero del Arconte Anemo nunca vaciló en su deseo de proteger el Reino del Viento.\nEsta determinación inquebrantable fue lo que sostuvo al Dragón del Viento durante la batalla contra su némesis.\n\nEn la antigüedad, Durin, el dragón de las sombras, codiciaba la paz de la que disfrutaba Mondstadt. Por ello, salió de su escondite para profanar la tierra.\nLas alas negras de Durin cubrieron el cielo, y liberaron unas nubes de humo tóxicas.\nTanto fue así que ni siquiera los mil vientos pudieron contener la peste y putrefacción.\nEntonces, una lluvia negra cayó del cielo. El estruendo del aguacero ahogó los gritos y lamentos de la gente.\nLa agonía de la gente despertó al Arconte Anemo, cuyo corazón se llenó de desesperación.\nAsí pues, invocó a Dvalin y, envueltos en una tormenta, atravesaron los cielos venenosos.\n\nEl gran dragón gritó antes de lanzarse a la batalla y crear una grieta en el nocivo nimbo que había creado el dragón de las sombras.\nEl Dragón del Viento movió sus alas para crear un rápido torbellino que destruyó las nubes tóxicas.\nDvalin agarró al dragón venenoso con sus poderosas garras y lo elevó a una altura a la que ni siquiera las nubes eran capaces de llegar.\nLa lluvia venenosa se dispersó tan pronto como sobrepasaron las nubes, y el ardiente cielo se convirtió en el campo de batalla de ambos dragones.\n\nFinalmente, el Dragón del Viento atravesó la garganta de su enemigo con sus afilados colmillos, tras lo que desgarró su corazón corrupto por medio de sus gigantescas garras.\nEl monstruo al que los pecadores alimentaron, lleno de eterno pesar, cayó de los ahora inmaculados cielos sobre el pico de una montaña nevada.\nAsí, la gente del Arconte Anemo permaneció sana y salva gracias a la feroz batalla que había tenido lugar en las alturas del cielo.\nPero en el momento de su triunfo, el líquido venenoso de su enemigo pasó desde los dientes de Dvalin hasta sus entrañas.\n\nEl dolor marchitó los huesos y la médula del agonizante Dragón del Viento, que se acurrucó en las profundidades de unas antiguas ruinas.\nMientras se lamía sus heridas para curarlas, Dvalin se aferraba a la esperanza de que algún día alguien lo despertaría.\nEntonces, volvería a sobrevolar los cielos, dispersaría la oscuridad y cantaría al son de la lira de su querido amigo, el Arconte Anemo.",
+	"baseatk": 48,
+	"substat": "Recarga de Energía",
+	"subvalue": "8",
+	"effectname": "Colmillo quebrantador",
+	"effect": "Aumenta la Prob. CRIT en un {0} y aumenta la Vel. de Ataque Normal en un {1}. Además, los Ataques Normales y Cargados contra los enemigos tienen una probabilidad del {2} de disparar una cuchilla de vacío que inflige un {3} de daño de ATQ en una pequeña AdE. Este efecto solo puede ocurrir una vez cada 2 s.",
+	"r1": [
+		"8%",
+		"12%",
+		"50%",
+		"40%"
+	],
+	"r2": [
+		"10%",
+		"12%",
+		"50%",
+		"55%"
+	],
+	"r3": [
+		"12%",
+		"12%",
+		"50%",
+		"70%"
+	],
+	"r4": [
+		"14%",
+		"12%",
+		"50%",
+		"85%"
+	],
+	"r5": [
+		"16%",
+		"12%",
+		"50%",
+		"100%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Grilletes de Diente de León",
+				"count": 5
+			},
+			{
+				"name": "Dispositivo del caos",
+				"count": 5
+			},
+			{
+				"name": "Pergamino guía",
+				"count": 3
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Cadena de Diente de León",
+				"count": 5
+			},
+			{
+				"name": "Dispositivo del caos",
+				"count": 18
+			},
+			{
+				"name": "Pergamino guía",
+				"count": 12
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Cadena de Diente de León",
+				"count": 9
+			},
+			{
+				"name": "Circuito del caos",
+				"count": 9
+			},
+			{
+				"name": "Pergamino hechizado",
+				"count": 9
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Esposas de Diente de León",
+				"count": 5
+			},
+			{
+				"name": "Circuito del caos",
+				"count": 18
+			},
+			{
+				"name": "Pergamino hechizado",
+				"count": 14
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 55000
+			},
+			{
+				"name": "Esposas de Diente de León",
+				"count": 9
+			},
+			{
+				"name": "Caldera del caos",
+				"count": 14
+			},
+			{
+				"name": "Pergamino maldito",
+				"count": 9
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 65000
+			},
+			{
+				"name": "Ideales de Diente de León",
+				"count": 6
+			},
+			{
+				"name": "Caldera del caos",
+				"count": 27
+			},
+			{
+				"name": "Pergamino maldito",
+				"count": 18
+			}
+		]
+	}
+}

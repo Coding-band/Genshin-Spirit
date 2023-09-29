@@ -1,0 +1,138 @@
+{
+	"name": "Ngọc Sinh Đôi",
+	"description": "Ngọc bội tinh xảo được ghép từ hai miếng ngọc.",
+	"weapontype": "Pháp Khí",
+	"rarity": "3",
+	"story": "Viên ngọc để trong hộp đựng có vẻ vô cùng quý giá, nhưng lại được đặt ở nơi dễ nhìn thấy nhất trong cửa hàng.\nTrên vỏ hộp được dán giấy chứng nhận loại A được cấp bởi cơ quan uy quyền nhất mà mọi người chưa từng nghe bao giờ.\nNếu như không có con mắt nhìn hàng, rất dễ bị vỏ ngoài hoa lệ và giấy tờ làm mờ mắt.\nThế nhưng nếu đem so với các loại ngọc đắt tiền khác thì thứ ngọc này được coi là có giá cả hợp lý với người dân.",
+	"baseatk": 40,
+	"substat": "Tỷ Lệ Bạo Kích",
+	"subvalue": "3.4",
+	"effectname": "Chiến Thuật Đột Kích",
+	"effect": "Trong 15s sau khi đánh bại kẻ địch, tốc độ di chuyển và tấn công tăng {0}.",
+	"r1": [
+		"12%"
+	],
+	"r2": [
+		"14%"
+	],
+	"r3": [
+		"16%"
+	],
+	"r4": [
+		"18%"
+	],
+	"r5": [
+		"20%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Diên Đơn Biển Sương Mù",
+				"count": 2
+			},
+			{
+				"name": "Phấn Hoa Hư Vô",
+				"count": 2
+			},
+			{
+				"name": "Phù Hiệu Tân Binh",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Hống Đơn Biển Sương Mù",
+				"count": 2
+			},
+			{
+				"name": "Phấn Hoa Hư Vô",
+				"count": 8
+			},
+			{
+				"name": "Phù Hiệu Tân Binh",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Hống Đơn Biển Sương Mù",
+				"count": 4
+			},
+			{
+				"name": "Túi Cỏ Hư Vô",
+				"count": 4
+			},
+			{
+				"name": "Phù Hiệu Sĩ Quan",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Kim Đơn Biển Sương Mù",
+				"count": 2
+			},
+			{
+				"name": "Túi Cỏ Hư Vô",
+				"count": 8
+			},
+			{
+				"name": "Phù Hiệu Sĩ Quan",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Kim Đơn Biển Sương Mù",
+				"count": 4
+			},
+			{
+				"name": "Đuốc Hư Vô",
+				"count": 6
+			},
+			{
+				"name": "Phù Hiệu Hiệu Úy",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Sự Chuyển Dời Của Biển Sương Mù",
+				"count": 3
+			},
+			{
+				"name": "Đuốc Hư Vô",
+				"count": 12
+			},
+			{
+				"name": "Phù Hiệu Hiệu Úy",
+				"count": 8
+			}
+		]
+	}
+}

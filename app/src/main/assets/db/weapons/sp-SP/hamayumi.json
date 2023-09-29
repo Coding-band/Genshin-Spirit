@@ -1,0 +1,143 @@
+{
+	"name": "Masacrademonios",
+	"description": "El arco de guerra que perteneció a una miko del pasado. Exquisito y resistente, fue fabricado con una técnica inigualable.",
+	"weapontype": "Arco",
+	"rarity": "4",
+	"story": "“¡Bájate! ¡Las mujeres siempre se las apañan para estorbar en el barco!”.\nEso dijo el ladrón Ako Domeki mientras se giraba.\nAl oír esto, la miko no pudo evitar sonreír.\nSi quien me enseñó a tirar con el arco no se hubiera ido a la guerra con la Shogun...\nNuestro hijo tendría ahora la misma edad que Zaemon.\nY quizás yo me apellidaría Takamine, o él tomaría el apellido Asase...\n\nEl tono de Zaemon y cómo me dio la espalda deliberadamente...\nFue como cuando él tomó la espada y se marchó.\nAsí que, esta vez, no dejaré que este hombre muera.\nIncluso aunque signifique luchar contra el estandarte del emblema Electro...\n\n“Ya afilamos los arpones y las espadas. Es hora de zarpar”.\n“¡Mostremos a esos soldados la fuerza de Seiragi!”.\n\nAl oír las salomas, la miko bajó su arco.\nLa magia auténtica que aprendió en secreto en la Montaña Yougou...\nAunque le daba lástima por su maestro tengu, decidió usarla aquí.\nDesharía la gran barrera que había durado miles de años,\ny dejaría que el resentimiento moribundo del iris violeta\ndestruyera los barcos con el estandarte Electro.\nSolo esperaba que ese gato viejo no atravesara la tormenta...",
+	"baseatk": 41,
+	"substat": "ATQ",
+	"subvalue": "12",
+	"effectname": "Gran jugada",
+	"effect": "Aumenta en un {0} el daño infligido con Ataques Normales y en un {1} el infligido con Ataques Cargados. Este efecto aumenta en un 100% cuando el personaje que equipa esta arma tiene restaurada toda su Energía Elemental.",
+	"r1": [
+		"16%",
+		"12%"
+	],
+	"r2": [
+		"20%",
+		"15%"
+	],
+	"r3": [
+		"24%",
+		"18%"
+	],
+	"r4": [
+		"28%",
+		"21%"
+	],
+	"r5": [
+		"32%",
+		"24%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Sabiduría de Narukami",
+				"count": 3
+			},
+			{
+				"name": "Prisma oscuro",
+				"count": 3
+			},
+			{
+				"name": "Flecha robusta",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Júbilo de Narukami",
+				"count": 3
+			},
+			{
+				"name": "Prisma oscuro",
+				"count": 12
+			},
+			{
+				"name": "Flecha robusta",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Júbilo de Narukami",
+				"count": 6
+			},
+			{
+				"name": "Prisma de cristal",
+				"count": 6
+			},
+			{
+				"name": "Flecha afilada",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Afecto de Narukami",
+				"count": 3
+			},
+			{
+				"name": "Prisma de cristal",
+				"count": 12
+			},
+			{
+				"name": "Flecha afilada",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Afecto de Narukami",
+				"count": 6
+			},
+			{
+				"name": "Prisma polarizador",
+				"count": 9
+			},
+			{
+				"name": "Flecha veterana",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Valentía de Narukami",
+				"count": 4
+			},
+			{
+				"name": "Prisma polarizador",
+				"count": 18
+			},
+			{
+				"name": "Flecha veterana",
+				"count": 12
+			}
+		]
+	}
+}

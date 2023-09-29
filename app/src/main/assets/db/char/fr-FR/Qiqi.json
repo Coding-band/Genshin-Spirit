@@ -45,7 +45,7 @@
     "sof3_desc": "Niveau d'aptitude Arcane d'Adepte : Talisman sacré +3.\nNiveau max : 15",
     "sof4_name": "Répression divine",
     "sof4_img": "qiqi_c4",
-    "sof4_desc": "L'ATQ des cibles marquées par un talisman de fortune est réduite de 20 %.",
+    "sof4_desc": "L'ATQ des cibles marquées par un talisman de fortune diminue de 20 %.",
     "sof5_name": "Éclosion du lotus rouge",
     "sof5_img": "qiqi_c5",
     "sof5_desc": "Niveau d'aptitude Arcane d'Adepte : Héraut de givre +3.\nNiveau max : 15",

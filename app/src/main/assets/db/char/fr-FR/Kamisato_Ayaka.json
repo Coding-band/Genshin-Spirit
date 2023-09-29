@@ -20,7 +20,7 @@
     "element_desc": "Ayaka invoque une fleur glacée qui projette les ennemis proches, leur infligeant des DGT Cryo de zone.<br><br><i>« Les nuages enveloppent la lune, le désir descend tel un brouillard, emplissant le cœur du voyageur. »</i>",
     "final_name": "École Kamisato : Sentier de givre",
     "final_img": "kamisato_ayaka_s3",
-    "final_desc": "Sprint alternatif\nAyaka consomme de l'endurance pour se déplacer rapidement au milieu d'un brouillard de glace.<br><br>Sous Sentier de givre, Ayaka peut se déplacer rapidement sur l'eau.<br>À la fin de l'état, elle réapparaît ; deux choses se produisent alors simultanément :<br>· Elle libère une énergie glacée qui applique aux ennemis proches l'élément Cryo.<br>· Le froid se concentre sur son épée : les DGT qu'inflige cette dernière sont momentanément convertis en DGT Cryo.<br><br><i>« Volent les ailes mouillées / Le héron blanc marche sur l'eau / D'une vision parfaite »</i>"
+    "final_desc": "Sprint alternatif\nAyaka consomme de l'endurance pour se déplacer rapidement au milieu d'un brouillard de glace.<br><br>Sous Sentier de givre, Ayaka peut se déplacer rapidement sur l'eau.<br>À la fin de l'état, elle réapparaît, et deux choses se produisent alors simultanément :<br>· Elle libère une énergie glacée qui applique aux ennemis proches l'élément Cryo.<br>· Le froid se concentre sur son épée : les DGT qu'inflige cette dernière sont momentanément convertis en DGT Cryo.<br><br><i>« Volent les ailes mouillées ; le héron blanc marche sur l'eau ; d'une vision parfaite »</i>"
   },
   "basic_talent": {
     "talent2_name": "École Kamisato : Givre mortel",
@@ -34,7 +34,7 @@
     "talent1_desc": "Confère aux attaques normales et chargées d'Ayaka suivant dans les 6 s le lancement d'École Kamisato : Fleur de glace un bonus de 30 % de DGT.",
     "talent4_name": "Bénédiction de Kanten Senmyou",
     "talent4_img": "kamisato_ayaka_p4",
-    "talent4_desc": "L'énergie glacée libérée à la fin du Sentier de givre d'École Kamisato : Sentier de givre confère à Ayaka les effets suivants lorsqu'elle touche l'ennemi :\nRégénération de 10 pts d'endurance ;<br>Bonus de DGT Cryo de 18 % pendant 10 s."
+    "talent4_desc": "L'énergie glacée libérée à la fin du Sentier de givre d'École Kamisato : Sentier de givre confère à Ayaka les effets suivants lorsqu'elle touche l'ennemi :\nRégénération de 10 pts d'endurance.<br>Bonus de DGT Cryo de 18 % pendant 10 s."
   },
   "sof": {
     "sof1_name": "Cerise givrée",
@@ -48,7 +48,7 @@
     "sof3_desc": "Niveau de compétence École Kamisato : Givre mortel +3.\nNiveau max : 15",
     "sof4_name": "Retour prééminent",
     "sof4_img": "kamisato_ayaka_c4",
-    "sof4_desc": "La DÉF des ennemis subissant les DGT infligés par le tourbillon givré d'École Kamisato : Givre mortel est réduite de 30 % pendant 6 s.",
+    "sof4_desc": "La DÉF des ennemis subissant les DGT infligés par le tourbillon givré d'École Kamisato : Givre mortel diminue de 30 % pendant 6 s.",
     "sof5_name": "Lune entre les nuages",
     "sof5_img": "kamisato_ayaka_c5",
     "sof5_desc": "Niveau de compétence École Kamisato : Fleur de glace +3.\nNiveau max : 15",

@@ -35,7 +35,7 @@
   "sof": {
     "sof1_name": "Plaidoyer convaincant",
     "sof1_img": "yanfei_c1",
-    "sof1_desc": "Lorsque Yanfei utilise une attaque chargée, chaque sceau écarlate existant réduit sa consommation d'endurance de 10 % supplémentaires et augmente la RÉS à l'interruption lors de son déclenchement.",
+    "sof1_desc": "Lorsque Yanfei utilise une attaque chargée, chaque sceau écarlate existant diminue sa consommation d'endurance de 10 % supplémentaires et augmente la RÉS à l'interruption lors de son déclenchement.",
     "sof2_name": "Verdict final",
     "sof2_img": "yanfei_c2",
     "sof2_desc": "Le taux CRIT des attaques chargées de Yanfei augmente de 20 % lorsqu'elles touchent des ennemis dont les PV sont inférieurs à 50 %.",

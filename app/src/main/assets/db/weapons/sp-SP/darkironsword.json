@@ -1,0 +1,138 @@
+{
+	"name": "Espada de Hierro Oscuro",
+	"description": "Esta espada... es simplemente una espada de hierro de un tono oscuro.",
+	"weapontype": "Espada ligera",
+	"rarity": "3",
+	"story": "“¿Por qué pones la espada en el suelo?”\n“Para que tome el sol”.\n“¿Por qué tiene que tomar el sol?”\n“Buena pregunta. Dime, ¿qué cosas son de color negro?”\n“¿Los cuervos?”\n“¡Correcto! ¿Qué más?”\n“Ehmm... ¿una olla?”\n“¡Muy bien! ¿Y qué hay debajo de la olla?”\n“¡Fuego!”\n“¿Y de dónde viene el fuego?”\nLa niña pensó unos segundos antes de responder:\n“¡Del carbón! ¡El carbón es negro!”\n“Así es. El carbón es lo que hace que el acero se vuelva más fuerte. Por eso pongo mi espada a tomar el sol”.\nY con estas palabras, volteó la espada.",
+	"baseatk": 39,
+	"substat": "Maestría Elemental",
+	"subvalue": "31",
+	"effectname": "Sobrecarga",
+	"effect": "Tras causar una reacción de Sobrecarga, Superconductor, Electrocargado, Aceleración, Intensificación, Sobreflorecimiento o Torbellino Electro, aumenta el ATQ en un {0} durante 12 s.",
+	"r1": [
+		"20%"
+	],
+	"r2": [
+		"25%"
+	],
+	"r3": [
+		"30%"
+	],
+	"r4": [
+		"35%"
+	],
+	"r5": [
+		"40%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Arena brillante de Guyun",
+				"count": 2
+			},
+			{
+				"name": "Daga de cacería",
+				"count": 2
+			},
+			{
+				"name": "Máscara dañada",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Piedra reluciente de Guyun",
+				"count": 2
+			},
+			{
+				"name": "Daga de cacería",
+				"count": 8
+			},
+			{
+				"name": "Máscara dañada",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Piedra reluciente de Guyun",
+				"count": 4
+			},
+			{
+				"name": "Daga del agente",
+				"count": 4
+			},
+			{
+				"name": "Máscara sucia",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Reliquia de Guyun",
+				"count": 2
+			},
+			{
+				"name": "Daga del agente",
+				"count": 8
+			},
+			{
+				"name": "Máscara sucia",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Reliquia de Guyun",
+				"count": 4
+			},
+			{
+				"name": "Daga larga del inspector",
+				"count": 6
+			},
+			{
+				"name": "Máscara amenazante",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Cuerpo divino de Guyun",
+				"count": 3
+			},
+			{
+				"name": "Daga larga del inspector",
+				"count": 12
+			},
+			{
+				"name": "Máscara amenazante",
+				"count": 8
+			}
+		]
+	}
+}

@@ -1,0 +1,148 @@
+{
+	"name": "Trượng Hộ Ma",
+	"description": "\"Trượng Lửa\" màu đỏ sử dụng trong nghi lễ cổ xưa, đã thất truyền từ lâu.",
+	"weapontype": "Vũ Khí Cán Dài",
+	"rarity": "5",
+	"story": "Hãy rửa sạch mọi thứ ô uế bằng ngọn lửa rực cháy, để cho những thứ dơ bẩn và ánh lửa cùng bay lên bầu trời cao:\nNghi lễ này đã từng thắp sáng nhiều nơi trên đất liền vào mùa nước đổ, bốc lên làn khói của hy vọng và diệt trừ cái ác.\n\nNghi lễ rực lửa này từng phổ biến trong thời đại tranh chấp cổ xưa.\nBởi vì những ảo tưởng và giấc mơ thầm lặng sẽ biến thành chướng khí ma quỷ đeo bám, \nLấy đi những con dân không còn thuộc về họ và những người con chưa từng thuộc về họ.\n\nLúc đó, thầy thuốc nghe thấy tiếng lửa dữ dội lúc chạng vạng,\nTiếng rên rỉ trầm thấp trong âm thanh của đám cỏ khô héo đang cháy như tiếng dầu mỡ đang sôi.\n\"Chỉ có ngọn lửa tự do mới có thể tẩy sạch bụi bẩn của trời đất\"\n\"Giương cao bó củi đỏ rực, đẩy lùi mọi yêu tà\"\n\nThầy thuốc cầm gậy đỏ, đốt cháy những thứ bị ô nhiễm bởi cái ác.\nNhững người đã vướng vào ác nghiệp và tai họa, những người không thể chịu đựng nỗi buồn sâu thẳm,\nSẽ biến thành tro trong lửa, thoát khỏi mọi bất hạnh và tổn thương trong thế giới bùn lầy.\nCòn thầy thuốc đã đốt cháy vô số đống củi kia, truyền thuyết kể rằng cuối cùng cũng tan thành mây khói.\n\nNgay cả khi nghi lễ này bị lãng quên với hòa bình và thời gian,\nBất cứ ai có ngọn lửa trong tim, khi đối mặt với uy nghiêm của thần bóng tối, chắc chắn sẽ nghe thấy.\nVũ điệu rực rỡ của ngọn lửa thì thầm, chỉ có ngọn lửa không bị dập tắt mới có thể thanh tẩy thế giới ...",
+	"baseatk": 46,
+	"substat": "ST Bạo Kích",
+	"subvalue": "14.4",
+	"effectname": "Bướm Đỏ Tự Do",
+	"effect": "HP tăng {0}. Ngoài ra, nhận được buff tấn công bằng {1} giới hạn HP của nhân vật trang bị vũ khí này. Khi HP của nhân vật trang bị vũ khí này dưới 50%, sẽ nhận thêm buff tấn công bằng {2} giới hạn HP.",
+	"r1": [
+		"20%",
+		"0.8%",
+		"1%"
+	],
+	"r2": [
+		"25%",
+		"1%",
+		"1.2%"
+	],
+	"r3": [
+		"30%",
+		"1.2%",
+		"1.4%"
+	],
+	"r4": [
+		"35%",
+		"1.4%",
+		"1.6%"
+	],
+	"r5": [
+		"40%",
+		"1.6%",
+		"1.8%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Hạt Thiên Thạch Đen",
+				"count": 5
+			},
+			{
+				"name": "Cành Cây Địa Mạch",
+				"count": 5
+			},
+			{
+				"name": "Dịch Slime",
+				"count": 3
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Mảnh Thiên Thạch Đen",
+				"count": 5
+			},
+			{
+				"name": "Cành Cây Địa Mạch",
+				"count": 18
+			},
+			{
+				"name": "Dịch Slime",
+				"count": 12
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Mảnh Thiên Thạch Đen",
+				"count": 9
+			},
+			{
+				"name": "Lá Khô Địa Mạch",
+				"count": 9
+			},
+			{
+				"name": "Tinh Slime",
+				"count": 9
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Một Góc Thiên Thạch Đen",
+				"count": 5
+			},
+			{
+				"name": "Lá Khô Địa Mạch",
+				"count": 18
+			},
+			{
+				"name": "Tinh Slime",
+				"count": 14
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 55000
+			},
+			{
+				"name": "Một Góc Thiên Thạch Đen",
+				"count": 9
+			},
+			{
+				"name": "Chồi Non Địa Mạch",
+				"count": 14
+			},
+			{
+				"name": "Bột Slime",
+				"count": 9
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 65000
+			},
+			{
+				"name": "Miếng Thiên Thạch Đen",
+				"count": 6
+			},
+			{
+				"name": "Chồi Non Địa Mạch",
+				"count": 27
+			},
+			{
+				"name": "Bột Slime",
+				"count": 18
+			}
+		]
+	}
+}

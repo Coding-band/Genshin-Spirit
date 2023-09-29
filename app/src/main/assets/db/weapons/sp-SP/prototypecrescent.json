@@ -1,0 +1,138 @@
+{
+	"name": "Prototipo Luz de Luna",
+	"description": "Un prototipo de arco largo descubierto en la Forja Peñasco Oscuro. La flecha disparada desde este arco brilla como un rayo de luz de luna.",
+	"weapontype": "Arco",
+	"rarity": "4",
+	"story": "Un antiguo arco fabricado en el arsenal de Liyue. Se desconoce su número de serie. En los registros antiguos tampoco aparece su fecha de fabricación.\nEl arco fue fabricado con madera de morera, y está revestido con finos hilos de oro y componentes de acero.\nLa cuerda está hecha de fibra de árbol Irminsul, los cuales crecen en las entrañas de la tierra. Es tan suave que lo hace casi imperceptible al tacto, pero es irrompible.\n\nLa familia Yun de Liyue creó una compilación de armas legendarias llamada «Enciclopedia de prototipos» con el fin de romper las cadenas de la ortodoxia e innovar el diseño de las armas.\nAun siendo una de las armas más convencionales, el arco también figura en la lista.\nEl artesano Han Wu accedió a fabricarlo bajo solicitud de su amigo Yun Hui.\n\nPara ello, le pidió a los comerciantes de todos los rincones que recolectaran cientos de miles de materiales. De entre todas las rarezas, escogió madera de morera, acero puro y ramas de Irminsul.\nEl resultado final fue una verdadera obra maestra. El arco es firme, ligero y frío al tacto.\nEs bello como la luna menguante, aunque de un color plateado más oscuro, como la luz de la luna que se cuela en la neblina nocturna.\nCuando una de sus flechas atraviesa el viento, el arco emite un destello tenue y frío que deja una huella imborrable en la memoria.\n\nPor ello, el arco fue bautizado como “Luz de Luna”.\nSu aspecto era extremadamente cautivador, tanto que todos los herreros lo replicaban. Más tarde, en todos los arcos largos de Liyue se podía ver claramente la influencia de Luz de Luna.",
+	"baseatk": 42,
+	"substat": "ATQ",
+	"subvalue": "9",
+	"effectname": "Sin retorno",
+	"effect": "Al golpear un punto débil con un Ataque Cargado, aumenta la Vel. Movimiento en un 10% y el ATQ en un {0} durante 10 s.",
+	"r1": [
+		"36%"
+	],
+	"r2": [
+		"45%"
+	],
+	"r3": [
+		"54%"
+	],
+	"r4": [
+		"63%"
+	],
+	"r5": [
+		"72%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Perdigones de plomo",
+				"count": 3
+			},
+			{
+				"name": "Polen neblinoso",
+				"count": 3
+			},
+			{
+				"name": "Insignia de cuervo de bronce",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Perdigones de mercurio",
+				"count": 3
+			},
+			{
+				"name": "Polen neblinoso",
+				"count": 12
+			},
+			{
+				"name": "Insignia de cuervo de bronce",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Perdigones de mercurio",
+				"count": 6
+			},
+			{
+				"name": "Hierba neblinosa",
+				"count": 6
+			},
+			{
+				"name": "Insignia de cuervo plateada",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Perdigones de oro",
+				"count": 3
+			},
+			{
+				"name": "Hierba neblinosa",
+				"count": 12
+			},
+			{
+				"name": "Insignia de cuervo plateada",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Perdigones de oro",
+				"count": 6
+			},
+			{
+				"name": "Lámpara de hierba neblinosa",
+				"count": 9
+			},
+			{
+				"name": "Insignia de cuervo dorada",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Perdigones primordiales",
+				"count": 4
+			},
+			{
+				"name": "Lámpara de hierba neblinosa",
+				"count": 18
+			},
+			{
+				"name": "Insignia de cuervo dorada",
+				"count": 12
+			}
+		]
+	}
+}

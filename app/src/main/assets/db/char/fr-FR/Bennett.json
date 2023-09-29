@@ -24,13 +24,13 @@
   "basic_talent": {
     "talent2_name": "R.A.S.",
     "talent2_img": "bennett_p2",
-    "talent2_desc": "Réduit la durée d'une expédition de 25 % lorsqu'elle se déroule à Mondstadt.",
+    "talent2_desc": "Diminue la durée d'une expédition de 25 % lorsqu'elle se déroule à Mondstadt.",
     "talent3_name": "Renouveau de la passion",
     "talent3_img": "bennett_p3",
-    "talent3_desc": "Réduit le TdR de Surpassion de 20 %.",
+    "talent3_desc": "Diminue le TdR de Surpassion de 20 %.",
     "talent1_name": "Enthousiasme intrépide",
     "talent1_img": "bennett_p1",
-    "talent1_desc": "Dans le champ de Merveilleux voyage, Surpassion bénéficie des effets suivants :\n· TdR réduit de 50 %.<br>· ne projette pas Bennett en l'air en niveau 2 de charge."
+    "talent1_desc": "Dans le champ de Merveilleux voyage, Surpassion bénéficie des effets suivants :\n· Diminue le TdR de 50 %.<br>· Ne projette pas Bennett en l'air en niveau 2 de charge."
   },
   "sof": {
     "sof1_name": "Perspective de voyage",

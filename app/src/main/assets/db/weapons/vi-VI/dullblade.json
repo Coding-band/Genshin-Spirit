@@ -1,0 +1,91 @@
+{
+	"name": "Vô Phong Kiếm",
+	"description": "Là ước mơ và khát vọng của những thiếu niên, nếu hai phẩm chất đáng quý này vẫn không đủ, vậy thì thêm chút dũng khí nào.",
+	"weapontype": "Kiếm Đơn",
+	"rarity": "1",
+	"story": "Suốt đường đi là những khoảnh khắc tương phùng rồi ly biệt.\nNgười bạn đồng hành trung thành không hề bỏ rơi lữ khách, \nE rằng chỉ là mộng tưởng của trường kiếm và viễn hành.",
+	"baseatk": 23,
+	"substat": "",
+	"subvalue": "",
+	"effectname": "",
+	"effect": "",
+	"r1": [],
+	"r2": [],
+	"r3": [],
+	"r4": [],
+	"r5": [],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora"
+			},
+			{
+				"name": "Ngói Vỡ Tháp Cô Vương",
+				"count": 1
+			},
+			{
+				"name": "Sừng Nặng",
+				"count": 1
+			},
+			{
+				"name": "Mũi Tên Chắc Chắn",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Xác Tàu Tháp Cô Vương",
+				"count": 1
+			},
+			{
+				"name": "Sừng Nặng",
+				"count": 4
+			},
+			{
+				"name": "Mũi Tên Chắc Chắn",
+				"count": 2
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Xác Tàu Tháp Cô Vương",
+				"count": 2
+			},
+			{
+				"name": "Sừng Đồng Đen",
+				"count": 2
+			},
+			{
+				"name": "Mũi Tên Sắc Bén",
+				"count": 2
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Mảnh Vỡ Tháp Cô Vương",
+				"count": 1
+			},
+			{
+				"name": "Sừng Đồng Đen",
+				"count": 4
+			},
+			{
+				"name": "Mũi Tên Sắc Bén",
+				"count": 3
+			}
+		]
+	}
+}

@@ -24,18 +24,18 @@
   "basic_talent": {
     "talent2_name": "Arpentage des terres",
     "talent2_img": "kujou_sara_p2",
-    "talent2_desc": "Réduit la durée d'une expédition de 25 % lorsqu'elle se déroule à Inazuma.",
+    "talent2_desc": "Diminue la durée d'une expédition de 25 % lorsqu'elle se déroule à Inazuma.",
     "talent3_name": "Volonté immuable",
     "talent3_img": "kujou_sara_p3",
-    "talent3_desc": "Sous l'effet de la protection corvidée de Tempestrier tengu, la durée de charge du tir visé est réduite de 60 %.",
+    "talent3_desc": "Sous l'effet de la protection corvidée de Tempestrier tengu, la durée de charge du tir visé diminue de 60 %.",
     "talent1_name": "Décorum",
     "talent1_img": "kujou_sara_p1",
-    "talent1_desc": "Lorsque Tengu Juurai : Embuscade a touché un ennemi, Sara restaure 1,2 pt d'énergie élémentaire à tous les personnages de l'équipe tous les 100 % de recharge d'énergie dont elle dispose. Cet effet peut être déclenché une fois toutes les 3 s."
+    "talent1_desc": "Lorsque Tengu Juurai : Embuscade a touché un ennemi, Sara restaure 1,2 pt d'énergie élémentaire à tous les personnages de l'équipe pour chaque tranche de 100 % de recharge d'énergie qu'elle possède. Cet effet peut être déclenché une fois toutes les 3 s."
   },
   "sof": {
     "sof1_name": "Œil de corbeau",
     "sof1_img": "kujou_sara_c1",
-    "sof1_desc": "Lorsque Tengu Juurai a accordé aux personnages des bonus d'ATQ ou touché des ennemis, le TdR de Tempestrier tengu est réduit de 1 s.\nCet effet peut être déclenché une fois toutes les 3 s.",
+    "sof1_desc": "Lorsque Tengu Juurai a accordé aux personnages des bonus d'ATQ ou touché des ennemis, le TdR de Tempestrier tengu diminue de 1 s.\nCet effet peut être déclenché une fois toutes les 3 s.",
     "sof2_name": "Ailes sombres",
     "sof2_img": "kujou_sara_c2",
     "sof2_desc": "Lorsque Sara libère Tempestrier tengu, elle laisse une plume de corbeau plus faible à son emplacement d'origine, cette dernière infligeant 30 % des DGT d'origine.",

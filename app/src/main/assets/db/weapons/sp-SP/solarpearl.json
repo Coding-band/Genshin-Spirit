@@ -1,0 +1,143 @@
+{
+	"name": "Perla Solar",
+	"description": "Una perla opaca y dorada hecha de una sustancia desconocida que alberga la luz del sol y la luna. Late con una fuerza muy cálida.",
+	"weapontype": "Catalizador",
+	"rarity": "4",
+	"story": "Un orbe de oro oscuro del que se habla mucho en Liyue.\nAlguna vez absorbió la luz de los astros y la tierra, y fue conservado en una caja de madera durante miles de años.\nAun así, sus poderes no se han perdido y, aunque no se sabe el paradero de la caja, su brillo permanece.\nEn manos de un sabio, podría despertar un poder milenario adormecido.\n\nEntre los comerciantes de piedras preciosas de Liyue corre la leyenda de que alguna vez el artesano Kunwu atrapó la luz del día y la guardó en una cajita.\nDespués, tomó la caja y la resguardó en una oscura habitación de piedra durante cuarenta y nueve días y veinte horas para, finalmente, obtener el destello del día y la noche.\n\nAunque suene extraordinario, la gente de Liyue cree firmemente en las habilidades divinas de Kunwu.\nUna vez, alguien tuvo el valor de poner en tela de juicio sus habilidades. Entonces, el viejo artesano simplemente respondió en tono de burla:\n“¡Pff! Lo único que hay que hacer es pulir y pulir y pulir...”\n\nEntre sus discípulos se extendió el rumor de que, al pulir por completo una Perla Solar, el cielo brillaría espléndidamente y una luna carmesí aparecería en el firmamento.\nPara hacer algo así, el artesano debió haber recibido la gracia divina. ¿O quizás fueron su extraordinario espíritu creativo y fuerza de voluntad los que alteraron de tal modo a los astros y al firmamento?",
+	"baseatk": 42,
+	"substat": "Prob. CRIT",
+	"subvalue": "6",
+	"effectname": "Brillo solar",
+	"effect": "Tras atacar con un Ataque Normal, el daño de la Habilidad Elemental y la Habilidad Definitiva aumenta en un {0} durante 6 s. Además, tras lanzar una Habilidad Elemental o Definitiva, el daño de Ataque Normal aumenta en un {1} durante 6 s.",
+	"r1": [
+		"20%",
+		"20%"
+	],
+	"r2": [
+		"25%",
+		"25%"
+	],
+	"r3": [
+		"30%",
+		"30%"
+	],
+	"r4": [
+		"35%",
+		"35%"
+	],
+	"r5": [
+		"40%",
+		"40%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Arena brillante de Guyun",
+				"count": 3
+			},
+			{
+				"name": "Daga de cacería",
+				"count": 3
+			},
+			{
+				"name": "Néctar de Megaflora",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Piedra reluciente de Guyun",
+				"count": 3
+			},
+			{
+				"name": "Daga de cacería",
+				"count": 12
+			},
+			{
+				"name": "Néctar de Megaflora",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Piedra reluciente de Guyun",
+				"count": 6
+			},
+			{
+				"name": "Daga del agente",
+				"count": 6
+			},
+			{
+				"name": "Néctar brillante",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Reliquia de Guyun",
+				"count": 3
+			},
+			{
+				"name": "Daga del agente",
+				"count": 12
+			},
+			{
+				"name": "Néctar brillante",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Reliquia de Guyun",
+				"count": 6
+			},
+			{
+				"name": "Daga larga del inspector",
+				"count": 9
+			},
+			{
+				"name": "Néctar energético",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Cuerpo divino de Guyun",
+				"count": 4
+			},
+			{
+				"name": "Daga larga del inspector",
+				"count": 18
+			},
+			{
+				"name": "Néctar energético",
+				"count": 12
+			}
+		]
+	}
+}

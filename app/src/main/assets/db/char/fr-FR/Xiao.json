@@ -20,12 +20,12 @@
     "element_desc": "Xiao se précipite vers l'avant, infligeant des DGT Anémo aux ennemis sur sa route.<br>Fonctionne aussi dans les airs.<br>Xiao commence avec 2 charges.<br><br><i>La légende d'un lointain pays raconte qu'un jour, le monde périra entre deux roues à aubes. La maîtrise totale de la lance permet à Xiao d'écraser ses ennemis, à l'image des roues légendaires écrasant le monde.</i>",
     "final_name": "Fléau du mal",
     "final_img": "xiao_s3",
-    "final_desc": "Xiao revêt le Masque du Yaksha, qui, il y a bien longtemps, fit trembler dieux et démons.\n<br>Masque du Yaksha<br>· Améliore considérablement la capacité de saut de Xiao.<br>· Augmente la portée et les DGT d'attaque.<br>· Les DGT d'attaque sont convertis en DGT Anémo ne pouvant pas être enchantés.<br><br>Cet effet consomme des PV de façon continue.<br><br>L'état prend fin lorsque Xiao quitte le champ de bataille.<br><br><i>En revêtant le Masque du Yaksha, Xiao prend la forme terrifiante du Gardien Yaksha Dompteur de démons. Mais un tel pouvoir a un prix ; aussi l'appelle-t-on : le Fléau du mal.</i>"
+    "final_desc": "Xiao revêt le Masque du Yaksha, qui, il y a bien longtemps, fit trembler dieux et démons.\n<br>Masque du Yaksha<br>· Améliore considérablement la capacité de saut de Xiao.<br>· Augmente la portée et les DGT d'attaque.<br>· Les DGT d'attaque sont convertis en DGT Anémo ne pouvant pas être enchantés.<br><br>Cet effet consomme des PV de façon continue.<br><br>L'état prend fin lorsque Xiao quitte le champ de bataille.<br><br><i>En revêtant le Masque du Yaksha, Xiao prend la forme terrifiante du Gardien Yaksha Dompteur de démons. Mais un tel pouvoir a un prix... Aussi l'appelle-t-on : le Fléau du mal.</i>"
   },
   "basic_talent": {
     "talent2_name": "Transcendance : Contrôleur de gravité",
     "talent2_img": "xiao_p2",
-    "talent2_desc": "Réduit la consommation d'endurance de vos personnages dans l'équipe de 20 % lors de l'escalade.\nNe peut pas être cumulé avec d'autres aptitudes passives aux effets identiques.",
+    "talent2_desc": "Diminue la consommation d'endurance de vos personnages dans l'équipe de 20 % lors de l'escalade.\nNe peut pas être cumulé avec d'autres aptitudes passives aux effets identiques.",
     "talent3_name": "Dompteur de démons : Conquérant du mal",
     "talent3_img": "xiao_p3",
     "talent3_desc": "Xiao inflige 5 % de DGT supplémentaires tant que Fléau du mal est actif. Un cumul de 5 % de DGT supplémentaires est ensuite appliqué toutes les 3 s tant que dure la compétence.\nCumul maximum : 25 % de DGT supplémentaires.",

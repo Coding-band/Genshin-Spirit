@@ -1,0 +1,138 @@
+{
+	"name": "Mensajero",
+	"description": "Un arco de madera básico. Dicen que se usaba para comunicaciones de larga distancia.",
+	"weapontype": "Arco",
+	"rarity": "3",
+	"story": "Se dice que en tiempos antiguos,\nla gente de Liyue mandaba mensajes a través de flechas.\n“¿Pero no era peligroso?“\n“Precisamente por eso el arco se convirtió en una antigüedad”,\ndijo entre risas el dueño de la tienda de antigüedades mientras se frotaba la barbilla.",
+	"baseatk": 40,
+	"substat": "Daño CRIT",
+	"subvalue": "6.8",
+	"effectname": "Mensaje del arquero",
+	"effect": "Al golpear un punto débil con un Ataque Cargado, inflige un {0} adicional de daño de ATQ como Daño CRIT. Este efecto puede activarse una vez cada 10 s.",
+	"r1": [
+		"100%"
+	],
+	"r2": [
+		"125%"
+	],
+	"r3": [
+		"150%"
+	],
+	"r4": [
+		"175%"
+	],
+	"r5": [
+		"200%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Perdigones de plomo",
+				"count": 2
+			},
+			{
+				"name": "Polen neblinoso",
+				"count": 2
+			},
+			{
+				"name": "Insignia de cuervo de bronce",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Perdigones de mercurio",
+				"count": 2
+			},
+			{
+				"name": "Polen neblinoso",
+				"count": 8
+			},
+			{
+				"name": "Insignia de cuervo de bronce",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Perdigones de mercurio",
+				"count": 4
+			},
+			{
+				"name": "Hierba neblinosa",
+				"count": 4
+			},
+			{
+				"name": "Insignia de cuervo plateada",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Perdigones de oro",
+				"count": 2
+			},
+			{
+				"name": "Hierba neblinosa",
+				"count": 8
+			},
+			{
+				"name": "Insignia de cuervo plateada",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Perdigones de oro",
+				"count": 4
+			},
+			{
+				"name": "Lámpara de hierba neblinosa",
+				"count": 6
+			},
+			{
+				"name": "Insignia de cuervo dorada",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Perdigones primordiales",
+				"count": 3
+			},
+			{
+				"name": "Lámpara de hierba neblinosa",
+				"count": 12
+			},
+			{
+				"name": "Insignia de cuervo dorada",
+				"count": 8
+			}
+		]
+	}
+}

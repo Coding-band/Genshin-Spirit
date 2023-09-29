@@ -20,7 +20,7 @@
     "element_desc": "Ganyu dépose un lotus de glace qui inflige des DGT Cryo de zone puis part vite en retraite.<br><br>Lotus de glace<br>· Le lotus nargue les ennemis et concentre leurs attaques.<br>· Ses PV sont proportionnels aux PV max de Ganyu.<br>· Le lotus explose à la fin ou s'il est détruit entre temps, et inflige des DGT Cryo de zone.<br><br><i>« Vous m'avez aperçue ? Ça doit être une erreur, je suis restée tard au travail. »</i>",
     "final_name": "Baptême céleste",
     "final_img": "ganyu_s3",
-    "final_desc": "Condensant les particules présentes dans l'air, Ganyu invoque une perle de glace magique qui exorcise les démons.\nTant qu'elle est active, la perle libère des éclats de glace de façon continue qui infligent des DGT Cryo aux ennemis dans la zone.<br><br><i>Ganyu sait bien sûr comment invoquer une bruine rafraîchissante ; mais quand il s'agit de combattre, la bruine se change en tempête de neige.</i>"
+    "final_desc": "Condensant les particules présentes dans l'air, Ganyu invoque une perle de glace magique qui exorcise les démons.\nTant qu'elle est active, la perle libère des éclats de glace de façon continue qui infligent des DGT Cryo aux ennemis dans la zone.<br><br><i>Ganyu sait bien sûr comment invoquer une bruine rafraîchissante... Mais quand il s'agit de combattre, la bruine se change en tempête de neige.</i>"
   },
   "basic_talent": {
     "talent2_name": "Arc de réserve",
@@ -36,7 +36,7 @@
   "sof": {
     "sof1_name": "Buveur de rosée",
     "sof1_img": "ganyu_c1",
-    "sof1_desc": "La RÉS Cryo des ennemis touchés par une flèche de givre (attaque chargée) ou par la zone de givre qui en résulte est réduite de 15 % pendant 6 s.\nGanyu récupère de plus 2 pts d'énergie élémentaire lorsqu'elle touche. Ce dernier effet ne peut être déclenché qu'une fois par flèche de givre, même si la zone de givre et la flèche de givre touchent toutes les deux.",
+    "sof1_desc": "La RÉS Cryo des ennemis touchés par une flèche de givre (attaque chargée) ou par la zone de givre qui en résulte diminue de 15 % pendant 6 s.\nGanyu récupère de plus 2 pts d'énergie élémentaire lorsqu'elle touche. Ce dernier effet ne peut être déclenché qu'une fois par flèche de givre, même si la zone de givre et la flèche de givre touchent toutes les deux.",
     "sof2_name": "Auspices",
     "sof2_img": "ganyu_c2",
     "sof2_desc": "Confère une utilisation supplémentaire de Trace de Qilin.",

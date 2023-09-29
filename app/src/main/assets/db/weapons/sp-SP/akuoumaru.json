@@ -1,0 +1,143 @@
+{
+	"name": "Rey del Mal",
+	"description": "La espada más querida del Rey del Mal. Aunque es enorme e imponente, al blandirla es sorprendentemente ligera.",
+	"weapontype": "Mandoble",
+	"rarity": "4",
+	"story": "Esta espada solía usarla un poderoso general de Watatsumi.\nSe dice que las únicas técnicas de espada que conocía eran los estilos Getsumouun y Yuushio, que aprendió él mismo.\nPero gracias a estos dos estilos, nunca fue derrotado por ningún mortal en un duelo o en el campo de batalla.\n\nA menudo se dice que las serpientes y los peces son animales de sangre fría, pero estas criaturas siempre buscan el tan ansiado calor.\nPara hacer realidad los sueños de su pueblo, Omikami desafió a las nubes de tormenta que se estaban juntando.\nDe entre las gentes de Watatsumi que perseguían la conquista, un joven sobresalía del resto.\nSu valor inigualable le ganó la admiración de muchos en Watatsumi, y lo apodaron “Rey de la Montaña del Este”.\nPero después de muchos años, este nombre fue olvidado y lo reemplazaron los epítetos con los que sus enemigos lo conocían:\n“Rey del Mal”, los malvados colmillos y garras de la gran serpiente, el invasor salvaje y demoniaco de la Isla Yashiori...\n\nLas matanzas habían endurecido al joven y lo habían convertido en un guerrero.\nPero para él, el deseo que había pedido antes de partir, el deseo que pidió a la luna que se reflejaba en el estanque del santuario, era eterno.\n\n“Algún día subiré a lo más alto de la Montaña Yougou, por encima del palacio de la Soberana de los Truenos.\nCombatiré con el legendario gran tengu de Yougou en el tejado de Tenshukaku.\nDespués, les llevaré a Ayame y Mouun la máscara del tengu como recuerdo”.\n\nAl final, las olas se llevaron sus sueños como si fueran castillos de arena.\nLa máscara del tengu, que brillaba como una estrella roja, se deshizo en medio de la batalla como la arena de la orilla.\nLa miko, que relucía con el brillo de la luna en el alma del joven, tampoco regresó nunca.\nY el Rey del Mal se enfrentó al rayo cegador junto a la gran serpiente.",
+	"baseatk": 42,
+	"substat": "ATQ",
+	"subvalue": "9",
+	"effectname": "Dominaolas de Watatsumi",
+	"effect": "El daño infligido por la Habilidad Definitiva del portador de esta arma aumenta en un {0} por cada punto de la Energía Elemental máxima total de todos los miembros del equipo. El daño puede aumentar hasta un {1} de esta forma.",
+	"r1": [
+		"0.12%",
+		"40%"
+	],
+	"r2": [
+		"0.15%",
+		"50%"
+	],
+	"r3": [
+		"0.18%",
+		"60%"
+	],
+	"r4": [
+		"0.21%",
+		"70%"
+	],
+	"r5": [
+		"0.24%",
+		"80%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Rama de coral del mar distante",
+				"count": 3
+			},
+			{
+				"name": "Garra oculta",
+				"count": 3
+			},
+			{
+				"name": "Guardamano viejo",
+				"count": 2
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Rama enjoyada del mar distante",
+				"count": 3
+			},
+			{
+				"name": "Garra oculta",
+				"count": 12
+			},
+			{
+				"name": "Guardamano viejo",
+				"count": 8
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Rama enjoyada del mar distante",
+				"count": 6
+			},
+			{
+				"name": "Garra afilada oculta",
+				"count": 6
+			},
+			{
+				"name": "Guardamano gemelo",
+				"count": 6
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Rama de jade del mar distante",
+				"count": 3
+			},
+			{
+				"name": "Garra afilada oculta",
+				"count": 12
+			},
+			{
+				"name": "Guardamano gemelo",
+				"count": 9
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 35000
+			},
+			{
+				"name": "Rama de jade del mar distante",
+				"count": 6
+			},
+			{
+				"name": "Garra fantasmal oculta",
+				"count": 9
+			},
+			{
+				"name": "Guardamano célebre",
+				"count": 6
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Rama dorada del mar distante",
+				"count": 4
+			},
+			{
+				"name": "Garra fantasmal oculta",
+				"count": 18
+			},
+			{
+				"name": "Guardamano célebre",
+				"count": 12
+			}
+		]
+	}
+}

@@ -24,7 +24,7 @@
   "basic_talent": {
     "talent2_name": "Nachtwanderin",
     "talent2_img": "rosaria_p2",
-    "talent2_desc": "Erhöht die Bewegungs-GSW der eigenen Figuren in der Truppe nachts (18 bis 6 Uhr) um 10 %.\nDieser Effekt gilt nicht in Sphären, Gebietssäuberungen und im Gewundenen Abgrund und kann auch nicht mit den Effekten exakt gleicher passiver Talente gestapelt werden.",
+    "talent2_desc": "Erhöht die Bewegungs-GSW der eigenen Figuren in der Truppe nachts (18 bis 6 Uhr) um 10 %.\nDieser Effekt gilt nicht in Sphären, Gebietssäuberungen und im Gewundenen Abgrund und ist nicht mit passiven Talenten mit völlig gleichen Effekten stapelbar.",
     "talent3_name": "Schatten der Beichte",
     "talent3_img": "rosaria_p3",
     "talent3_desc": "Erhöht Rosarias KT bei Angriffen von Gegnern mit Erschütterndes Geständnis von hinten 5 s lang um 12 %.",

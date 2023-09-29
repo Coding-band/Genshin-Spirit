@@ -24,7 +24,7 @@
   "basic_talent": {
     "talent2_name": "Navigation en eaux profondes",
     "talent2_img": "freminet_p2",
-    "talent2_desc": "Réduit la consommation d'endurance aquatique de vos personnages dans l'équipe de 35 %.\nNe peut pas être cumulé avec d'autres aptitudes passives aux effets identiques.",
+    "talent2_desc": "Diminue la consommation d'endurance aquatique de vos personnages dans l'équipe de 35 %.\nNe peut pas être cumulé avec d'autres aptitudes passives aux effets identiques.",
     "talent3_name": "Plongée profonde saturée",
     "talent3_img": "freminet_p3",
     "talent3_desc": "En utilisant un concassage pressurisé, si le niveau de pression de l'indicateur de Pers est inférieur à IV, le TdR de Pressurisation des floes diminue de 1 s.",

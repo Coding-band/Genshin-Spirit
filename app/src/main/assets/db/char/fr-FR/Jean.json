@@ -45,12 +45,12 @@
     "sof3_desc": "Niveau d'aptitude Brise de pissenlit +3.\nNiveau max : 15",
     "sof4_name": "Territoire des pissenlits",
     "sof4_img": "jean_c4",
-    "sof4_desc": "La RÉS Anémo des ennemis à l'intérieur du champ de Brise de pissenlit est réduite de 40 %.",
+    "sof4_desc": "La RÉS Anémo des ennemis à l'intérieur du champ de Brise de pissenlit diminue de 40 %.",
     "sof5_name": "Le moment du vent violent",
     "sof5_img": "jean_c5",
     "sof5_desc": "Niveau d'aptitude Épée de tourbillon +3.\nNiveau max : 15",
     "sof6_name": "Croc de Lion, le protecteur de Mondstadt",
     "sof6_img": "jean_c6",
-    "sof6_desc": "Les DGT subis par les personnages dans le champ de Brise de pissenlit sont réduits de 35 %.\nAprès avoir quitté le champ, cet effet disparaît après avoir subi 3 attaques ou après 10 s."
+    "sof6_desc": "Les DGT subis par les personnages dans le champ de Brise de pissenlit diminuent de 35 %.\nAprès avoir quitté le champ, cet effet disparaît après avoir subi 3 attaques ou après 10 s."
   }
 }

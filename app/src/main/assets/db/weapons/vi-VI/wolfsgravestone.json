@@ -1,0 +1,143 @@
+{
+	"name": "Đường Cùng Của Sói",
+	"description": "Kiếm được kỵ sĩ của sói dùng. Vốn chỉ là miếng sắt của lò rèn trong thành, nhưng do tình bạn với sói mà nhận được sức mạnh thần thánh.",
+	"weapontype": "Trọng Kiếm",
+	"rarity": "5",
+	"story": "Được phong là Kỵ Sĩ Bắc Phong, cuối cùng kết thúc quãng đường du hành của mình tại thành phố của Phong Thần.\nKẻ theo gió mà đến sẽ thu hút lẫn nhau, sự tự do cuối cùng cũng chỉ là lòng do dự.\n\nKhi Kỵ Sĩ bước vào thành, những người bạn đồng hành từ vùng núi phương xa tạm biệt trong trầm lặng.\nNhững con sói căm ghét sự gò bó và ấm áp, chúng cần vùng cỏ hoang rộng lớn.\n\nKỵ Sĩ Bắc Phong vẫn luôn giữ trái tim tự do, chỉ là giam thân thể trong thành lũy mà thôi.\nSói đồng hành cùng gió vút chạy trong cánh rừng ngoài thành kia, thế nhưng trái tim lại bị ghim chặt trong thân phận Kỵ Sĩ.\n\nKhi Kỵ Sĩ ra khỏi thành đánh đuổi ma vật, đàn sói vì thế cũng tham chiến cùng chàng.\nSói và Kỵ Sĩ gắn bó với nhau như một, dường như chưa từng rời xa.\n\nSói và Kỵ Sĩ như hình với bóng, thế nhưng tuổi tác của sói không thể như các động vật linh trưởng khác.\nKỵ Sĩ Bắc Phong lấy kiếm làm bia, đem sói chôn ở vùng đất xa ngoài thành lũy.\nKỵ Sĩ Bắc Phong từ đó từ bỏ thành cao, mang theo con tim tự do, lang bạt cùng gió.\n\nLinh hồn bất diệt của sói, sẽ vĩnh viễn canh giữ địa bàn của chúng,\nThủ hộ vùng đất xanh mà Kỵ Sĩ từng bảo vệ.",
+	"baseatk": 46,
+	"substat": "Tấn Công",
+	"subvalue": "10.8",
+	"effectname": "Người Thợ Săn Như Sói",
+	"effect": "Tấn công tăng {0}; Khi đánh trúng kẻ địch có HP dưới 30%, lực tấn công của tất cả thành viên đội tăng {1}, kéo dài 12s. Mỗi 30s mới thi triển 1 lần.",
+	"r1": [
+		"20%",
+		"40%"
+	],
+	"r2": [
+		"25%",
+		"50%"
+	],
+	"r3": [
+		"30%",
+		"60%"
+	],
+	"r4": [
+		"35%",
+		"70%"
+	],
+	"r5": [
+		"40%",
+		"80%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Xiềng Xích Đấu Sĩ Nanh Sư Tử",
+				"count": 5
+			},
+			{
+				"name": "Cấu Trúc Hỗn Độn",
+				"count": 5
+			},
+			{
+				"name": "Bản Vẽ Hướng Dẫn",
+				"count": 3
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Dây Sắt Đấu Sĩ Nanh Sư Tử",
+				"count": 5
+			},
+			{
+				"name": "Cấu Trúc Hỗn Độn",
+				"count": 18
+			},
+			{
+				"name": "Bản Vẽ Hướng Dẫn",
+				"count": 12
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Dây Sắt Đấu Sĩ Nanh Sư Tử",
+				"count": 9
+			},
+			{
+				"name": "Bộ Não Hỗn Độn",
+				"count": 9
+			},
+			{
+				"name": "Bản Vẽ Phong Ấn",
+				"count": 9
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 45000
+			},
+			{
+				"name": "Gông Cùm Đấu Sĩ Nanh Sư Tử",
+				"count": 5
+			},
+			{
+				"name": "Bộ Não Hỗn Độn",
+				"count": 18
+			},
+			{
+				"name": "Bản Vẽ Phong Ấn",
+				"count": 14
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 55000
+			},
+			{
+				"name": "Gông Cùm Đấu Sĩ Nanh Sư Tử",
+				"count": 9
+			},
+			{
+				"name": "Trái Tim Hỗn Độn",
+				"count": 14
+			},
+			{
+				"name": "Bản Vẽ Cấm Chú",
+				"count": 9
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 65000
+			},
+			{
+				"name": "Lý Tưởng Của Đấu Sĩ Nanh Sư Tử",
+				"count": 6
+			},
+			{
+				"name": "Trái Tim Hỗn Độn",
+				"count": 27
+			},
+			{
+				"name": "Bản Vẽ Cấm Chú",
+				"count": 18
+			}
+		]
+	}
+}

@@ -19,18 +19,18 @@
     "element_desc": "N'ayez crainte. Que quelqu'un ose s'en prendre à Beidou ou aux siens, et sa lame et le tonnerre lui feront payer au centuple.<br><br>Appui simple<br>Beidou concentre le pouvoir de la foudre sur son épée, et exécute un coup violent qui inflige aux ennemis en face des DGT Électro.<br><br>Appui long<br>Beidou brandit son arme, qu'elle utilise comme bouclier. La quantité de DGT absorbés est proportionnelle aux PV max de Beidou.<br>Lorsque vous relâchez la compétence ou que celle-ci prend fin, Beidou brandit sa longue épée et effectue une contre-attaque libérant toute l'énergie accumulée, infligeant des DGT Électro.<br>Les DGT infligés augmentent en fonction du nombre d'attaques subies par Beidou pendant la durée de la compétence. Le bonus de DGT maximum est atteint lorsque l'effet est déclenché deux fois.<br>Le bouclier a les propriétés suivantes :<br>· A 250 % d'efficacité contre les DGT Électro.<br>· Applique l'élément Électro à Beidou à l'activation.<br><br><i>À l'assaut des mers ! À la poursuite des vagues et de la tempête !</i>",
     "final_name": "Brisure d'orage",
     "final_img": "beidou_s3",
-    "final_desc": "Se remémorant son combat contre Haishan, la bête géante, Beidou fait appel à la même force destructrice, et crée un bouclier de foudre qui inflige des DGT Électro aux ennemis proches.\n<br>Bouclier de foudre<br>· Les attaques normales et chargées, lorsqu'elles touchent, libèrent une décharge électrique qui se propage d'ennemi en ennemi et inflige des DGT Électro.<br>· Augmente la RÉS à l'interruption du personnage et réduit les DGT subis.<br><br>Une décharge peut être libérée une fois toutes les secondes.<i>Le plus puissant des éclairs peut fendre mers et montagnes.</i>"
+    "final_desc": "Se remémorant son combat contre Haishan, la bête géante, Beidou fait appel à la même force destructrice, et crée un bouclier de foudre qui inflige des DGT Électro aux ennemis proches.\n<br>Bouclier de foudre<br>· Les attaques normales et chargées, lorsqu'elles touchent, libèrent une décharge électrique qui se propage d'ennemi en ennemi et inflige des DGT Électro.<br>· Augmente la RÉS à l'interruption du personnage et diminue les DGT subis.<br><br>Une décharge peut être libérée une fois toutes les secondes.<i>Le plus puissant des éclairs peut fendre mers et montagnes.</i>"
   },
   "basic_talent": {
     "talent2_name": "Braveuse de marée",
     "talent2_img": "beidou_p2",
-    "talent2_desc": "Réduit la consommation d'endurance de vos personnages dans l'équipe de 20 % lors de la nage.\nNe peut pas être cumulé avec d'autres aptitudes passives aux effets identiques.",
+    "talent2_desc": "Diminue la consommation d'endurance de vos personnages dans l'équipe de 20 % lors de la nage.\nNe peut pas être cumulé avec d'autres aptitudes passives aux effets identiques.",
     "talent3_name": "Châtiment",
     "talent3_img": "beidou_p3",
     "talent3_desc": "La contre-attaque d'Invocation des marées inflige le maximum de DGT lorsqu'elle est exécutée juste après une attaque.",
     "talent1_name": "Tempête de coups de tonnerre",
     "talent1_img": "beidou_p1",
-    "talent1_desc": "Invocation des marées confère pendant 10 s les effets suivants lorsque cette aptitude est exécutée avec le maximum de bonus de DGT :\n· Les attaques normales et chargées infligent 15 % de DGT supplémentaires.<br>· La VIT des attaques normales et chargées augmente de 15 %.<br>· Réduit considérablement le temps de préparation des attaques chargées."
+    "talent1_desc": "Invocation des marées confère pendant 10 s les effets suivants lorsque cette aptitude est exécutée avec le maximum de bonus de DGT :\n· Les attaques normales et chargées infligent 15 % de DGT supplémentaires.<br>· La VIT des attaques normales et chargées augmente de 15 %.<br>· Diminue considérablement le temps de préparation des attaques chargées."
   },
   "sof": {
     "sof1_name": "Fléau des monstres marins",
@@ -50,6 +50,6 @@
     "sof5_desc": "Niveau d'aptitude Brisure d'orage +3.\nNiveau max : 15",
     "sof6_name": "Chancre du mal",
     "sof6_img": "beidou_c6",
-    "sof6_desc": "La RÉS Électro des ennemis proches est réduite de 15 % tant que Brisure d'orage est actif."
+    "sof6_desc": "La RÉS Électro des ennemis proches diminue de 15 % tant que Brisure d'orage est actif."
   }
 }

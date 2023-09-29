@@ -1,0 +1,138 @@
+{
+	"name": "Lời Thề Xạ Thủ Thần",
+	"description": "Từng thuộc về người xạ thủ lão luyện, là một cây cung tốt. Vì phát ra hơi thở mạnh mẽ nên khó có thể dùng để săn bắn.",
+	"weapontype": "Cung",
+	"rarity": "3",
+	"story": "Trong truyền thuyết, những việc đã xảy ra trong quá khứ sâu xa.\nĐó là bị kịch thời viễn cổ, huynh đệ dùng vũ khí tương tàn lẫn nhau.\nTrong đó có một cung thủ vĩ đại đã chịu sự sỉ nhục, từ đó anh hạ lời thề:\nTrước khi truy sát kẻ địch, trước khi bắn mũi tên xuyên qua yết hầu của kẻ địch,\nTrước khi để dòng máu của kẻ địch khô cạn, tuyệt đối không rửa chân.\nCũng theo truyền thuyết, người đó cuối cùng vì viêm chân mà ngã xuống.",
+	"baseatk": 39,
+	"substat": "ST Bạo Kích",
+	"subvalue": "10.2",
+	"effectname": "Tinh Chuẩn",
+	"effect": "Tăng {0} sát thương tạo thành với điểm yếu.",
+	"r1": [
+		"24%"
+	],
+	"r2": [
+		"30%"
+	],
+	"r3": [
+		"36%"
+	],
+	"r4": [
+		"42%"
+	],
+	"r5": [
+		"48%"
+	],
+	"weaponmaterialtype": "",
+	"costs": {
+		"ascend1": [
+			{
+				"name": "Mora",
+				"count": 5000
+			},
+			{
+				"name": "Răng Sữa Sói Bão",
+				"count": 2
+			},
+			{
+				"name": "Cành Cây Địa Mạch",
+				"count": 2
+			},
+			{
+				"name": "Dịch Slime",
+				"count": 1
+			}
+		],
+		"ascend2": [
+			{
+				"name": "Mora",
+				"count": 10000
+			},
+			{
+				"name": "Răng Vỡ Sói Bão",
+				"count": 2
+			},
+			{
+				"name": "Cành Cây Địa Mạch",
+				"count": 8
+			},
+			{
+				"name": "Dịch Slime",
+				"count": 5
+			}
+		],
+		"ascend3": [
+			{
+				"name": "Mora",
+				"count": 15000
+			},
+			{
+				"name": "Răng Vỡ Sói Bão",
+				"count": 4
+			},
+			{
+				"name": "Lá Khô Địa Mạch",
+				"count": 4
+			},
+			{
+				"name": "Tinh Slime",
+				"count": 4
+			}
+		],
+		"ascend4": [
+			{
+				"name": "Mora",
+				"count": 20000
+			},
+			{
+				"name": "Mảnh Răng Sói Bão",
+				"count": 2
+			},
+			{
+				"name": "Lá Khô Địa Mạch",
+				"count": 8
+			},
+			{
+				"name": "Tinh Slime",
+				"count": 6
+			}
+		],
+		"ascend5": [
+			{
+				"name": "Mora",
+				"count": 25000
+			},
+			{
+				"name": "Mảnh Răng Sói Bão",
+				"count": 4
+			},
+			{
+				"name": "Chồi Non Địa Mạch",
+				"count": 6
+			},
+			{
+				"name": "Bột Slime",
+				"count": 4
+			}
+		],
+		"ascend6": [
+			{
+				"name": "Mora",
+				"count": 30000
+			},
+			{
+				"name": "Nỗi Nhớ Của Sói Bão",
+				"count": 3
+			},
+			{
+				"name": "Chồi Non Địa Mạch",
+				"count": 12
+			},
+			{
+				"name": "Bột Slime",
+				"count": 8
+			}
+		]
+	}
+}
