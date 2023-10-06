@@ -124,6 +124,7 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
 
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
         Weapons weapons = this.weaponsList.get(i);
+        viewHolder.isComing = weapons.getIsComing();
         ItemRss itemRss = new ItemRss();
         Context context = this.context;
 
@@ -560,6 +561,7 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
         public FadingImageView weapon_card_ico_deco;
         public CardView weapon_card;
         public LinearLayout weapon_cbg;
+        public int isComing = 0;
 
         public ViewHolder(View view, OnItemClickListener onItemClickListener) {
             super(view);
@@ -589,6 +591,7 @@ public class WeaponsAdapter extends RecyclerView.Adapter<WeaponsAdapter.ViewHold
                 @Override
                 public void onClick(View v) {
 
+                    if (isComing == 1) {CustomToast.toast(context, view, context.getString(R.string.unreleased)); return;}
                     Log.wtf("is context instanceof MainActivity ?", WeaponsAdapter.this.context.getPackageName());
                     if (context instanceof MainActivity) {
 

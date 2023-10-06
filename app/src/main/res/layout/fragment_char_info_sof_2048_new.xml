@@ -16,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="0.6"
+        android:minHeight="48dp"
         android:orientation="vertical"></LinearLayout>
 
     <LinearLayout
@@ -30,6 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="0.9"
+            android:minHeight="24dp"
             android:orientation="vertical">
 
         </LinearLayout>

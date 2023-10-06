@@ -4,22 +4,18 @@
   ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
   ~ Copyright © 2023 Xectorda 版權所有
   -->
-
 <resources>
     <string name="app_name">Genshin Spirit</string>
-
     <!-- page_title_menu -->
     <string name="title_char">Персонажи</string>
     <string name="title_artifacts">Артефакты</string>
     <string name="title_home">Главная</string>
     <string name="title_weapons">Оружие</string>
     <string name="title_settings">Настройки</string>
-
     <!-- material_moment -->
     <string name="dow_set1">Пн, Чт, Вс</string>
     <string name="dow_set2">Вт, Пт, Вс</string>
     <string name="dow_set3">Ср, Сб, Вс</string>
-
     <!-- dow -->
     <string name="monday">Пн</string>
     <string name="tuesday">Вт</string>
@@ -28,7 +24,6 @@
     <string name="friday">Пт</string>
     <string name="saturday">Сб</string>
     <string name="sunday">Вс</string>
-
     <!-- material_name -->
     <string name="teaching_of_ballad">Учения о «Поэзии»</string>
     <string name="teaching_of_diligence">Учения об «Усердии»</string>
@@ -39,7 +34,26 @@
     <string name="teachings_of_elegance">Учения об «Изяществе»</string>
     <string name="teachings_of_light">Учения о «Свете»</string>
     <string name="teachings_of_transience">Учения о «Бренности»</string>
-
+    <!-- add in 20210910 -->
+    <string name="guide_of_freedom">Guide to Freedom</string>
+    <string name="guide_of_gold">Guide to Gold</string>
+    <string name="guide_of_resistance">Guide to Resistance</string>
+    <string name="guide_of_prosperity">Guide to Prosperity</string>
+    <string name="guide_of_ballad">Guide to Ballad</string>
+    <string name="guide_of_diligence">Guide to Diligence</string>
+    <string name="guides_of_elegance">Guide to Elegance</string>
+    <string name="guides_of_transience">Guide to Transience</string>
+    <string name="guides_of_light">Guide to Light</string>
+    <string name="philosophies_of_freedom">Philosophies of Freedom</string>
+    <string name="philosophies_of_gold">Philosophies of Gold</string>
+    <string name="philosophies_of_resistance">Philosophies of Resistance</string>
+    <string name="philosophies_of_prosperity">Philosophies of Prosperity</string>
+    <string name="philosophies_of_ballad">Philosophies of Ballad</string>
+    <string name="philosophies_of_diligence">Philosophies of Diligence</string>
+    <string name="philosophiess_of_elegance">Philosophiess of Elegance</string>
+    <string name="philosophiess_of_transience">Philosophiess of Transience</string>
+    <string name="philosophiess_of_light">Philosophiess of Light</string>
+    <!-- base -->
     <string name="tile_of_decarabians_tower">Плитка башни Декарабиана</string>
     <string name="luminous_sands_from_guyun">Светящийся песок Гуюнь</string>
     <string name="coral_branch_of_a_distant_sea">Коралловая ветвь внешних морей</string>
@@ -49,7 +63,6 @@
     <string name="grain_of_aerosiderite">Зерно чёрного сидерита</string>
     <string name="fetters_of_the_dandelion_gladiator">Кандалы львиного клыка</string>
     <string name="mask_of_the_wicked_lieutenant">Маска злого военачальника</string>
-
     <!-- char_name -->
     <string name="kamisato_ayato">Камисато Аято</string>
     <string name="aloy">Элой</string>
@@ -96,7 +109,11 @@
     <string name="barbara">Барбара</string>
     <string name="amber">Эмбер</string>
     <string name="unknown">неизвестный</string>
-
+    <!-- New Character in here-->
+    <string name="thoma">Тома</string>
+    <string name="gorou">Горо</string>
+    <string name="arataki_itto">Аратаки Итто</string>
+    <string name="yae_miko">Яэ Мико</string>
     <!-- char_info -->
     <string name="search">Найти</string>
     <string name="elements">Элементы</string>
@@ -139,7 +156,25 @@
     <string name="team_advice">Совет по отрядам</string>
     <string name="weapon_advice">Совет по оружию</string>
     <string name="art_advice">Совет по артефакта</string>
-
+    <!-- added in 20211001 -->
+    <string name="none_info">Актуальной информации по нём/ей нету</string>
+    <string name="weapon_stat">"2-й артибут: "</string>
+    <string name="weapon_stat_atk">"АТК"</string>
+    <string name="weapon_stat_DEF">"ЗАЩ"</string>
+    <string name="weapon_stat_HP">"HP"</string>
+    <string name="weapon_stat_atkP">"АТК %"</string>
+    <string name="weapon_stat_CritDMGP">"Крит. урон %"</string>
+    <string name="weapon_stat_CritRateP">"Шанс. крита %"</string>
+    <string name="weapon_stat_PhyDMGP">"Физ. урон %"</string>
+    <string name="weapon_stat_EnRechP">"Вост. энергии %"</string>
+    <string name="weapon_stat_EleMas">"Мастертво стихии"</string>
+    <string name="weapon_stat_DEFP">"ЗАЩ %"</string>
+    <string name="weapon_stat_HPP">"HP %"</string>
+    <string name="weapon_stat_no">"N/A"</string>
+    <!-- add in 20211018-->
+    <string name="artifact_stat1">1 часть</string>
+    <string name="artifact_stat2">2 части</string>
+    <string name="artifact_stat4">4 части</string>
     <!-- alarm -->
     <string name="alarm_t1">Босс</string>
     <string name="alarm_t2">Смола</string>
@@ -168,16 +203,13 @@
     <string name="edit_info_notif">Информация</string>
     <string name="edit_cd_25off">Сократить на 25%</string>
     <string name="edit_use_notif">Использовать этот будильник</string>
-
     <!-- server -->
-    <!-- NOT NEED TO TRANSLATE-->
     <string name="america_ser">America</string>
     <string name="europe_ser">Europe</string>
     <string name="asia_ser">Asia</string>
     <string name="hk_tw_mo_ser">HK、TW、MO</string>
     <string name="sky_land_ser">天空岛服</string>
     <string name="world_tree">世界树服</string>
-
     <!-- inside ui -->
     <string name="press_exit">Нажмите ещё раз чтобы выйти</string>
     <string name="vote_title">Пожалуйста, оцените моё приложение~</string>
@@ -187,7 +219,6 @@
     <string name="vote_later">Позже</string>
     <string name="copied">Скопировано</string>
     <string name="pls_restart_app">Пожалуйста, перезапустите приложение</string>
-
     <!-- cal_item_name -->
     <string name="result">Результат</string>
     <string name="curr_lvl">"Текущий лвл: "</string>
@@ -199,9 +230,21 @@
     <string name="choosed">"Выбрать : "</string>
     <string name="caled_char_weapon_art">Расчёт персонажей, оружия, артефактов</string>
     <string name="char_lvls">Уровень персонажа</string>
-
+    <!-- added in 20211001 -->
+    <string name="cal_choosed_already">Вы уже выбрили его/её</string>
+    <!-- add in 20211003 -->
+    <string name="cal_crystal">Crystal</string>
+    <string name="cal_boss">Drop from General Boss</string>
+    <string name="cal_week_boss">Drop from Weekly Boss</string>
+    <string name="cal_local">Local Specialty</string>
+    <string name="cal_monster">Drop from Monster</string>
+    <string name="cal_weeklybk1">Drop from Mon,Thur,Sun Domain</string>
+    <string name="cal_weeklybk2">Drop from Tue,Fri,Sun Domain</string>
+    <string name="cal_weeklybk3">Drop from Wed,Sat,Sun Domain</string>
+    <string name="cal_other">Other</string>
+    <!-- add in 20211025 -->
+    <string name="cal_reset">сброс настроек</string>
     <!-- Language (Don't translate)-->
-
     <!-- main_page -->
     <string name="material_force">Ежедненвный сбор</string>
     <string name="char_asc_mater">Материалы возвышения персонажа</string>
@@ -211,7 +254,6 @@
     <string name="daily_login">Ежедневные отметки</string>
     <string name="map">Карта</string>
     <string name="alarm">Будильник</string>
-
     <!-- setting -->
     <string name="bg_title">Тема фона</string>
     <string name="light_theme">Светлая</string>
@@ -231,8 +273,15 @@
     <string name="about_info3">Это приложение разработано на основе Shiori for Genshin и направлено на то, чтобы отдать дань уважения Shiori for Genshin и его сотрудников, но оно еще не было признано его сотрудниками. Некоторые изображения этого приложения, данные взяты из проектов с открытым исходным кодом, ссылки будут прикреплены ниже. Поэтому часть интерфейса и верстка этого приложения очень похожи на Shiori for Genshin. Однако это приложение использует Java вместо Dart в качестве языка программирования, и оно будет работать только на Android и (или) любых поддерживающих форматах файлов .apk и .aab., или других платформ поддержуешие эти форматы.</string>
     <string name="about_title4">Заявление об открытом исходном коде проекта</string>
     <string name="about_info4">Поскольку это приложение предназначено для того, чтобы отдать дань уважения Shiori for Genshin и его сотрудников, его исходный код будет открыт на Github. Кто угодно может просматривать, комментировать и даже сотрудничать. Я также приветствую любые предложения и приложения для этого приложения. Это приложение также будет доступно в Google Play. Если вы хотите прокомментировать этот проект, ошибки, новые функции и т. д., Вы также можете связаться по электронной почте или в Discord (QQ доступен для материкового Китая). И наконец, спасибо за понимание и поддержку.</string>
-
-
+    <string name="about_title5">Third-Party Distribution and Compilation Statement</string>
+    <string name="about_info5">This project (原神小幫手 Genshin Spirit) does not object to anyone adding functions, debugging, compiling and testing, and using it for learning purposes, but this project does not allow third parties to distribute freely (whether private or public) the unofficial version [Note 1] without written permission from Voc-夜芷冰, and deliberately pretend to be the developer of this project [Note 2]. Voc-夜芷冰 reserves the right to ask individuals/institutions who violate the above conditions to be removed from the shelves after version 3.2.0 (10825).\n[Note 1] The unofficial version includes third-party self-compilation and distribution after downloading the application installation file on the cooperative platform.\n[Note 2] Discord Bot [原神小幫手] has nothing to do with this project (this project was uploaded on Github as early as September 2021, and the official version was released on Google Play in November 2021)</string>
+    <!-- add in 20210918-->
+    <string name="thanks_title">Отдельное спасибо</string>
+    <string name="translator_title">Переводчикам</string>
+    <string name="beta_tester_title">Бета тестерам</string>
+    <string name="thanks_intro">Благодаря вашей помощи Genshin Spirit может стать более совершенным</string>
+    <!-- add in 20211016-->
+    <string name="list_grid">Сетка списка</string>
     <!-- moy -->
     <string name="date_jan">Января</string>
     <string name="date_feb">Февраля</string>
@@ -246,7 +295,6 @@
     <string name="date_oct">Октября</string>
     <string name="date_nov">Ноября</string>
     <string name="date_dec">Декабря</string>
-
     <!-- dom -->
     <string name="date_1st">" 1-е"</string>
     <string name="date_2nd">" 2-е"</string>
@@ -279,8 +327,6 @@
     <string name="date_29th">" 29-е"</string>
     <string name="date_30th">" 30-е"</string>
     <string name="date_31st">" 31-е"</string>
-
-    <!-- add in 20211001 -->
     <!-- Weapon-Sword -->
     <string name="amenoma_kageuchi">"Амэнома Кагэути"</string>
     <string name="aquila_favonia">"Меч Сокола"</string>
@@ -309,7 +355,6 @@
     <string name="the_black_sword">"Чёрный меч"</string>
     <string name="the_flute">"Меч-флейта"</string>
     <string name="travelers_handy_sword">"Меч путешественника"</string>
-
     <!-- Weapon-Claymore -->
     <string name="waster_greatsword">"Двуручный меч богатыря"</string>
     <string name="old_mercs_pal">"Лучший друг наёмника"</string>
@@ -336,8 +381,9 @@
     <string name="song_of_broken_pines">"Песнь разбитых сосен"</string>
     <string name="the_unforged">"Некованный"</string>
     <string name="wolfs_gravestone">"Волчья погибель"</string>
-
-    <!-- Weapon-Plearm -->
+    <!-- add in 20211030 -->
+    <string name="wavebreakers_fin">"Wavebreaker's Fin"</string>
+    <!-- Weapon-Polearm -->
     <string name="beginners_protector">"Копьё новичка"</string>
     <string name="iron_point">"Железный наконечник"</string>
     <string name="black_tassel">"Чёрная кисть"</string>
@@ -359,7 +405,8 @@
     <string name="skyward_spine">"Небесная ось"</string>
     <string name="staff_of_homa">"Посох Хомы"</string>
     <string name="vortex_vanquisher">"Покоритель вихря"</string>
-
+    <!-- add in 20211030 -->
+    <string name="akuoumaru">"Акуомару"</string>
     <!-- Weapon-Catalyst -->
     <string name="apprentices_notes">"Записи ученика"</string>
     <string name="pocket_grimoire">"Карманный гримуар"</string>
@@ -386,7 +433,6 @@
     <string name="lost_prayer_to_the_sacred_winds">"Молитва святым ветрам"</string>
     <string name="memory_of_dust">"Память о пыли"</string>
     <string name="skyward_atlas">"Небесный атлас"</string>
-
     <!-- Weapon-Bow -->
     <string name="hunters_bow">"Лук охотника"</string>
     <string name="seasoned_hunters_bow">"Лук опытного охотника"</string>
@@ -414,43 +460,8 @@
     <string name="elegy_for_the_end">"Элегия погибели"</string>
     <string name="skyward_harp">"Небесное крыло"</string>
     <string name="thundering_pulse">"Громовой пульс"</string>
-
-    <!-- char_info -->
-    <string name="none_info">Актуальной информации по нём/ей нету</string>>
-    <string name="weapon_stat">"2-й артибут: "</string>
-    <string name="weapon_stat_atk">"АТК"</string>
-    <string name="weapon_stat_DEF">"ЗАЩ"</string>
-    <string name="weapon_stat_HP">"HP"</string>
-    <string name="weapon_stat_atkP">"АТК %"</string>
-    <string name="weapon_stat_CritDMGP">"Крит. урон %"</string>
-    <string name="weapon_stat_CritRateP">"Шанс. крита %"</string>
-    <string name="weapon_stat_PhyDMGP">"Физ. урон %"</string>
-    <string name="weapon_stat_EnRechP">"Вост. энергии %"</string>
-    <string name="weapon_stat_EleMas">"Мастертво стихии"</string>
-    <string name="weapon_stat_DEFP">"ЗАЩ %"</string>
-    <string name="weapon_stat_HPP">"HP %"</string>
-    <string name="weapon_stat_no">"N/A"</string>
-
-    <!-- cal_item_name -->
-    <string name="cal_choosed_already">Вы уже выбрили его/её</string>
-
-    <!-- setting -->
-    <string name="thanks_title">Отдельное спасибо</string>
-    <string name="translator_title">Переводчикам</string>
-    <string name="beta_tester_title">Бета тестерам</string>
-    <string name="thanks_intro">Благодаря вашей помощи Genshin Spirit может стать более совершенным</string>
-
-    <!-- add in 20211018 -->
-
-    <!-- char_info -->
-    <string name="artifact_stat1">1 часть</string>
-    <string name="artifact_stat2">2 части</string>
-    <string name="artifact_stat4">4 части</string>
-
-
-    <!-- setting -->
-    <string name="list_grid">Сетка списка</string>
-
+    <!-- add in 20211030 -->
+    <string name="mouuns_moon">"Mouun's Moon"</string>
     <!-- artifacts -->
     <string name="adventurer">"Искатель приключений"</string>
     <string name="archaic_petra">"Архаичный камень"</string>
@@ -487,30 +498,19 @@
     <string name="traveling_doctor">"Целитель"</string>
     <string name="viridescent_venerer">"Изумрудная тень"</string>
     <string name="wanderers_troupe">"Странствующий ансамбль"</string>
-
-    <!-- add in 20211023 -->
-    <!-- New Character in here-->
-    <string name="gorou">Горо</string>
-    <string name="arataki_itto">Аратаки Итто</string>
-    <string name="yae_miko">Яэ Мико</string>
-    <string name="buff">Бафф</string>
-
     <!-- add in 20211025 -->
-    <string name="cal_reset">сброс настроек</string>
-
+    <string name="buff">Бафф</string>
     <!-- add in 20211027 -->
     <string name="nora_fortis">Нора Фортис</string>
     <string name="snezhnaya">Снежная</string>
-
     <!-- add in 20211028 -->
     <string name="happy_birthday">"С днём рождения!"</string>
-
     <!-- add in 20211127 -->
-    <string name="cinnabar_spindle">Киноварное веретено</string>
-    <string name="shenhe">Шэнь Хэ</string>
-    <string name="yun_jin">Юнь Цзинь</string>
-    <string name="husk_of_opulent_dreams">Кокон сладких грёз</string>
-
+    <string name="cinnabar_spindle">"Киноварное веретено"</string>
+    <string name="shenhe">"Шэнь Хэ"</string>
+    <string name="yun_jin">"Юнь Цзинь"</string>
+    <string name="husk_of_opulent_dreams">"Кокон сладких грёз"</string>
+    <string name="ocean_hued_clam">"Моллюск морских красок"</string>
     <!-- add in 20211226 && 20220103 -->
     <string name="weapon_stat_EleDMGP_Electro">Бонус физ. урона</string>
     <string name="weapon_stat_EleDMGP_Pyro">Бонус Пиро урона</string>
@@ -521,12 +521,7 @@
     <string name="weapon_stat_EleDMGP_Geo">Бонус Гео урона</string>
     <string name="weapon_stat_HealingP">Бонус лечения</string>
     <string name="calamity_queller">Усмиритель бед</string>
-
-    <!-- add in 20220105 -->
-    <string name="ocean_hued_clam">Моллюск морских красок</string>
     <string name="redhorn_stonethresher">Краснорогий камнеруб</string>
-    <string name="thoma">Тома</string>
-
     <!-- add in 20220108 -->
     <string name="background_setting">Настройка фона</string>
     <string name="background_accept_list">Принимаются только JPG, JPEG, PNG, GIF</string>
@@ -534,20 +529,16 @@
     <string name="background_source">Источник</string>
     <string name="background_display">Отображать</string>
     <string name="voc">Voc-夜芷冰</string>
-
-    <!-- append in 20220110-->
-    <string name="akuoumaru">"Акуомару"</string>
-
     <!-- add in 20220110-->
-    <string name="traveler_sex_setting">Какого пола ваш путешественник?</string>
-    <string name="name_start_with_num_err">Число и специальные символы не могут использовать первый символ.</string>
-    <string name="cal_create_set">Создать новый набор вычислений</string>
-    <string name="cal_enter_name">Пожалуйста, введите имя</string>
+    <string name="traveler_sex_setting">"Какого пола ваш путешественник?"</string>
+    <string name="name_start_with_num_err">"Число и специальные символы не могут использовать первый символ."</string>
+    <string name="cal_create_set">"Создать новый набор вычислений"</string>
+    <string name="cal_enter_name">"Пожалуйста, введите имя"</string>
     <string name="kaguras_verity">Истина кагура</string>
     <string name="oathsworn_eye">Око клятвы</string>
-
     <!-- add in 20220130-->
     <string name="press_see_details">Нажмите, чтобы увидеть подробнее</string>
+    <!-- add in 20220201-->
     <string name="update_download_update_curr">Скачать обновление</string>
     <string name="update_download_update_base">Скачать все файлы</string>
     <string name="update_download_advice">Рекомендуется скачивать после подключения к Wi-Fi</string>
@@ -561,9 +552,7 @@
     <string name="update_download_unzipping">Распаковка... подождите...</string>
     <string name="update_download_not_found_update">В настоящее время нет обновлений ресурсов ~</string>
     <string name="update_download_done">Все загрузки/обновления завершены</string>
-
-
-    <!-- add in 20220207-->
+    <!-- add in 20220206-->
     <string name="pyro_slime">Пиро слайм</string>
     <string name="large_pyro_slime">Большой Пиро слайм</string>
     <string name="electro_slime">Электро слайм</string>
@@ -741,7 +730,6 @@
     <string name="maguu_kenki_galloping_frost">Магу кэнки: Бегущий иней</string>
     <string name="maguu_kenki_mask_of_terror">Магу кэнки: Маска ужаса</string>
     <string name="the_great_snowboar_king">Король большой снежной свиньи</string>
-
     <!-- add in 20220209-->
     <string name="element_reaction">Элемент Реакция</string>
     <string name="buff_normal_1_hit">Урон атаки 1</string>
@@ -751,22 +739,18 @@
     <string name="buff_normal_5_hit">Урон атаки 5</string>
     <string name="buff_normal_6_hit">Урон атаки 6</string>
     <string name="buff_normal_shoot">Прицельный выстрел</string>
-
     <string name="buff_charged_shoot">Заряженный выстрел</string>
     <string name="buff_charged_dmg">Урон при падении</string>
     <string name="buff_charged_spinning_dmg">Урон вращающейся атаки</string>
     <string name="buff_charged_final_dmg">Урон последней заряженной атаки</string>
-
     <string name="buff_plunge_dmg">Урон в падении</string>
     <string name="buff_low_plunge_dmg">Урон низкого удара</string>
     <string name="buff_high_plunge_dmg">Высокого удара</string>
-
     <string name="buff_uncrit_dmg">НЕкрит. урон</string>
     <string name="buff_crited_dmg">Критич. урон</string>
     <string name="buff_grade">Оценка:</string>
     <string name="buff_upgrade_times">Время обновления:</string>
-
-    <!-- add in 20220217-->
+    <!-- add in 20220215-->
     <string name="skill_dmg">Урон навыка</string>
     <string name="transient_blossom_dmg">Урон Цветка мимолётности</string>
     <string name="freeze_bomb_dmg"> Урон Морозильной бомбы</string>
@@ -791,7 +775,7 @@
     <string name="base_shield_dmg_absorption_base">Базовое поглозение щита (Базовое знач.)</string>
     <string name="hold_dmg">Урон догого нажатия</string>
     <string name="icewhirl_brand_dmg">Урон Меча вихря</string>
-    <string name="ozs_atk_dmg"> Урон атаки Оза</string>
+    <string name="ozs_atk_dmg">" Урон атаки Оза"</string>
     <string name="summoning_dmg">Урон призыва</string>
     <string name="blood_blossom_dmg">Урон Кровавого цветка</string>
     <string name="press_skill_dmg">Урон быстрого нажатия</string>
@@ -802,7 +786,7 @@
     <string name="jumpy_dumpty_dmg">Урон от бомбы</string>
     <string name="mine_dmg">Урон от мины</string>
     <string name="tengu_juurai_ambush_dmg">Урон Тэнгу дзюрай</string>
-    <string name="non_conductive_hold_dmg">Урон долгого нажатия по непроводниковым целям</string>
+    <string name="non_conductive_hold_dmg">"Урон долгого нажатия по непроводниковым целям"</string>
     <string name="stack_1_conductive_hold_dmg">Урон долгого нажатия по целям с 1х проводником</string>
     <string name="stack_2_conductive_hold_dmg">Урон долгого нажатия по целям с 2х проводником</string>
     <string name="stack_3_conductive_hold_dmg">Урон долгого нажатия по целям с 3х проводником</string>
@@ -905,32 +889,29 @@
     <string name="pyronado_dmg">Урон огненного вихря</string>
     <string name="sword_rain_dmg">Урон меня дождя</string>
     <string name="aurous_blaze_explosion_dmg">Урон взрыва золотого сияния</string>
+    <!-- add in 20220219-->
     <string name="sesshou_sakura_dmg_level_1">Урон Сакуры сэссё ур. 1</string>
     <string name="sesshou_sakura_dmg_level_2">Урон Сакуры сэссё ур. 2</string>
     <string name="sesshou_sakura_dmg_level_3">Урон Сакуры сэссё ур. 3</string>
     <string name="sesshou_sakura_dmg_level_4">Урон Сакуры сэссё ур. 4</string>
     <string name="tenko_thunderbolt_dmg">Урон молнии Небесной кицунэ</string>
-
     <string name="name_used">Это имя уже используется, введите другое имя.</string>
     <string name="alds_helper_title">Алгоритмы и обобщение данных</string>
-    <string name="these_is_rss_source">Это источник информации, данных и изображений Genshin Spirit.</string>
-    <string name="press_open_link">Нажмите, чтобы открыть сайт</string>
+    <string name="these_is_rss_source">"Это источник информации, данных и изображений Genshin Spirit."</string>
+    <string name="press_open_link">"Нажмите, чтобы открыть сайт"</string>
     <string name="developer">Разработчик</string>
-
     <string name="buff_cal_thx">✧ Особая благодарность dfsly\n✧ Тот кто разрешил использывать приложение Genshin Calculator, как встроенную функцию</string>
     <string name="buff_calcluator">Калькулятор баффов</string>
     <string name="ui_design">Дизайн пользовательского интерфейса</string>
-
     <!-- add in 20220304 -->
-    <string name="rectangle" >Прямоугольник</string>
-    <string name="square" >Квадратный</string>
-    <string name="char_suit_on" >Сменить наряд</string>
-    <string name="goblet">Кубок пространства:</string>
+    <string name="rectangle">Прямоугольник</string>
+    <string name="square">Квадратный</string>
+    <string name="char_suit_on">Сменить наряд</string>
     <string name="circlet">Корона разума:</string>
     <string name="sand">Пески времени:</string>
+    <string name="goblet">Кубок пространства:</string>
     <string name="main_entry">Основные характеристики:</string>
     <string name="sub_entry">Доп. характеристики</string>
-
     <!-- add in 20220329 -->
     <string name="haran_geppaku_futsu">Харан гэппаку фуцу</string>
     <string name="echoes_of_an_offering">Отголоски подношения</string>
@@ -939,7 +920,6 @@
     <string name="yelan">Е Лань</string>
     <string name="advance_stat">Хар.</string>
     <string name="card">Карточный</string>
-
     <!-- add in 20220419 -->
     <string name="element_Electro">физ.</string>
     <string name="element_Pyro">Пиро</string>
@@ -955,7 +935,9 @@
     <string name="hidden_palace_of_lianshan_formula">Лабиринт Ляншан</string>
     <string name="court_of_flowing_sand">Зал текущего песка</string>
     <string name="img_reset_finish">фон был сброшен</string>
-
+    <string name="title_activity_characters_info_scroll2048">Characters_Info_Scroll_2048</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
     <!-- add in 20220423 -->
     <string name="obtain_no">N/A</string>
     <string name="obtain_forge_mission_nmdbj">Ковка (Сокровище фермера)</string>
@@ -984,14 +966,12 @@
     <string name="obtain_npc_dcdyhw">Магазин NPC,  Ассоциация рыболовов Инадзумы</string>
     <string name="obtain_chesr_ly">Сундуки в Ли Юэ</string>
     <string name="obtain_chest_gwk">Сундуки в Каменном лесу Гуюнь</string>
-
     <!-- add in 20220512 -->
     <string name="ui_2048_name">Game</string>
     <string name="ui_siptik_name">Material</string>
     <string name="ui_voc_name">Classic</string>
     <string name="shikanoin_heizou">Сиканоин Хэйдзо</string>
     <string name="detail">Подробнее</string>
-
     <!-- add in 20220521 -->
     <string name="release_state">Состояние выпуска</string>
     <string name="released">Выпущен</string>
@@ -1006,7 +986,7 @@
     <string name="paimon">Паймон</string>
     <string name="aqua_simulacra">Аква симулякрум</string>
     <string name="kagotsurube_isshin">Кагоцурубэ Иссин</string>
-
+    <string name="fading_twilight">Fading Twilight</string>
     <!-- add in 20220529 -->
     <string name="tut_part0_1">"Привет, я Voc-夜芷冰, разработчик Genshin Spirit, и я твой путеводитель по этому обучению."</string>
     <string name="tut_part0_2">"Во-первых, позвольте мне немного рассказать о Genshin Spirit. "</string>
@@ -1026,12 +1006,11 @@
     <string name="tut_part3_5">"Это список оружия, где вы можете найти любое оружие в игре."</string>
     <string name="tut_part3_6">"По сути, как например в виде списка персонажей~"</string>
     <string name="tut_part4_1">"Это список артефактов, в основном похож на список персонажей ~"</string>
-    <string name="tut_part5_1">"Это страница Настройка/Паймон, где вы можете менять настройки.""</string>
+    <string name="tut_part5_1">"Это страница Настройка/Паймон, где вы можете менять настройки.\""</string>
     <string name="tut_part5_2">"Хорошо, я думаю, это должно быть завершением урока."</string>
     <string name="tut_part5_3">"Если у вас есть какие-либо вопросы или проблемы, вы можете связаться со мной напрямую в Discord"</string>
     <string name="tut_part5_4">"Ссылка для приглашения на наш официальный сервер Discord уже размещена в разделе «Общая информация» на странице настроек ~"</string>
     <string name="tut_part5_5">"Увидимся в Дискорде ~"</string>
-
     <!-- add in 20220714 -->
     <string name="sumeru">Сумеру</string>
     <string name="fontaine">Фонтейн</string>
@@ -1061,22 +1040,22 @@
     <string name="rukkhashava_mushrooms">Грибы руккхашава</string>
     <string name="deepwood_memories">Воспоминания дремучего леса</string>
     <string name="gilded_dreams">Позолоченные сны</string>
-
     <!-- add in 20220823 -->
-    <string name="philosophies_of_ingenuity">Философия о «Остроумии»</string>
-    <string name="guides_of_ingenuity">Указания о «Остроумии»</string>
-    <string name="teachings_of_ingenuity">Учения о «Остроумии»</string>
-    <string name="teachings_of_admonition">Учения о «Наставлениях»</string>
     <string name="guides_of_admonition">Указания о «Наставлениях»</string>
-    <string name="philosophies_of_admonition">Философия о «Наставлениях»</string>
-    <string name="teachings_of_praxis">Учения о «Честности»</string>
+    <string name="guides_of_ingenuity">Указания о «Остроумии»</string>
     <string name="guides_of_praxis">Указания о «Честности»</string>
+    <string name="philosophies_of_admonition">Философия о «Наставлениях»</string>
+    <string name="philosophies_of_ingenuity">Философия о «Остроумии»</string>
     <string name="philosophies_of_praxis">Философия о «Честности»</string>
+    <string name="teachings_of_admonition">Учения о «Наставлениях»</string>
+    <string name="teachings_of_ingenuity">Учения о «Остроумии»</string>
+    <string name="teachings_of_praxis">Учения о «Честности»</string>
     <string name="steeple_of_ignorance">Башня невежества</string>
     <string name="tower_of_abject_pride">Башня презренной гордости</string>
     <string name="copper_talisman_of_the_forest_dew">Медный амулет лесной росы</string>
     <string name="oasis_gardens_reminiscence">Воспоминания цветущего оазиса</string>
     <string name="echo_of_scorching_might">Эхо пылающей мощи</string>
+    <!-- add in 20220923 -->
     <string name="nilou">Нилу</string>
     <string name="cyno">Сайно</string>
     <string name="candace">Кандакия</string>
@@ -1086,17 +1065,22 @@
     <string name="missive_windspear">Копьё послания ветров</string>
     <string name="staff_of_the_scarlet_sands">Посох алых песков</string>
     <string name="wandering_evenstar">Скитающаяся звезда</string>
-    <string name="a_thousand_floating_dreams">Сновидения тысячи ночей</string>
-    <string name="layla">Лайла</string>
+    <!-- add in 20221001 -->
     <string name="nahida">Нахида</string>
+    <string name="layla">Лайла</string>
+    <string name="a_thousand_floating_dreams">Сновидения тысячи ночей</string>
     <string name="screenshot_not_saved">Скриншот не удалось сохранить</string>
     <string name="screenshot_not_saved_permission">Пожалуйста, примите разрешение на запись</string>
-    <string name="screenshot_saved">Скриншот сохранен</string>
+    <string name="screenshot_saved">"Скриншот сохранен"</string>
     <string name="talent_lvl">"Уровень таланта : "</string>
     <string name="today">Cегодня</string>
     <string name="unclaimed">Невостребованный</string>
     <string name="claimed">Получил</string>
     <string name="idle">Праздный</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">This is an app widget description</string>
+    <!-- add in 20221102-->
     <string name="puppet_strings">Нити марионетки</string>
     <string name="mirror_of_mushin">Зеркало Мусин</string>
     <string name="dakas_bell">Пустой колокольчик</string>
@@ -1112,8 +1096,8 @@
     <string name="clean_cookies">Очистить все куки</string>
     <string name="clean_cookies_already">Уже удалил все куки</string>
     <string name="display_beta_data">Показать бета-данные</string>
-    <string name="wanderer">Странник</string>
     <string name="faruzan">Фарузан</string>
+    <string name="wanderer">Странник</string>
     <string name="custom_icon">Настроить значок</string>
     <string name="custom_card">Настроить открытка</string>
     <string name="polar_star">Полярная звезда</string>
@@ -1121,182 +1105,184 @@
     <string name="toukabou_shigure">Токабо сигурэ</string>
     <string name="flower_of_paradise_lost">Цветок потерянного рая</string>
     <string name="desert_pavilion_chronicle">Хроники Чертогов в пустыне</string>
-    <string name="alhaitham">Аль-Хайтам</string>
     <string name="yaoyao">Яо Яо</string>
-    <string name="tcg_ganyu">Гань Юй</string>
-    <string name="tcg_kaeya">Кэйа</string>
-    <string name="tcg_chongyun">Чун Юнь</string>
-    <string name="tcg_kamisato_ayaka">Камисато Аяка</string>
-    <string name="tcg_xingqiu">Син Цю</string>
-    <string name="tcg_mona">Мона</string>
-    <string name="tcg_diluc">Дилюк</string>
-    <string name="tcg_xiangling">Сян Лин</string>
-    <string name="tcg_bennett">Беннет</string>
-    <string name="tcg_yoimiya">Ёимия</string>
-    <string name="tcg_fischl">Фишль</string>
-    <string name="tcg_razor">Рэйзор</string>
-    <string name="tcg_keqing">Кэ Цин</string>
-    <string name="tcg_sucrose">Сахароза</string>
-    <string name="tcg_jean">Джинн</string>
-    <string name="tcg_ningguang">Нин Гуан</string>
-    <string name="tcg_noelle">Ноэлль</string>
-    <string name="tcg_collei">Коллеи</string>
-    <string name="tcg_rhodeia_of_loch">Родия</string>
-    <string name="tcg_fatui_pyro_agent">Пиро агент Фатуи</string>
-    <string name="tcg_maguu_kenki">Магу кэнки</string>
-    <string name="tcg_stonehide_lawachurl">Лавачурл с каменным панцирем</string>
-    <string name="tcg_diona">Диона</string>
-    <string name="tcg_cyno">Сайно</string>
-    <string name="tcg_barbara">Барбара</string>
-    <string name="tcg_mirror_maiden">Зеркальная дева</string>
-    <string name="tcg_jadeplume_terrorshroom">Пернатый плесенник</string>
-    <string name="tcg_undivided_heart">Неразделённое сердце</string>
-    <string name="tcg_cold_blooded_strike">Клинок холодной крови</string>
-    <string name="tcg_steady_breathing">Ровное дыхание</string>
-    <string name="tcg_kanten_senmyou_blessing">Благословение кантэн сэммё</string>
-    <string name="tcg_the_scent_remained">Запах утреннего дождя</string>
-    <string name="tcg_prophecy_of_submersion">Пророчество потопа</string>
-    <string name="tcg_flowing_flame">Палящая комета</string>
-    <string name="tcg_crossfire">Перекрёстный огонь</string>
-    <string name="tcg_grand_expectation">Мечты о приключениях</string>
-    <string name="tcg_naganohara_meteor_swarm">Падающие звёзды Наганохары</string>
-    <string name="tcg_stellar_predator">Ворон, клюющий звёзды</string>
-    <string name="tcg_awakening">Пробуждение</string>
-    <string name="tcg_thundering_penance">Небесное покаяние</string>
-    <string name="tcg_chaotic_entropy">Энтропия хаоса</string>
-    <string name="tcg_lands_of_dandelion">Королевство Одуванчиков</string>
-    <string name="tcg_strategic_reserve">Стратегические запасы</string>
-    <string name="tcg_i_got_your_back">Я прикрою!</string>
-    <string name="tcg_floral_sidewinder">Возвращение цветов</string>
-    <string name="tcg_streaming_surge">Взрывной поток</string>
-    <string name="tcg_paid_in_full">Расплата</string>
-    <string name="tcg_transcendent_automaton">Трансцендентный автоматон</string>
-    <string name="tcg_stonehide_reforged">Восстановленная камнекожа</string>
-    <string name="tcg_shaken_not_purred">Взболтать, но не мурлыкать</string>
-    <string name="tcg_featherfall_judgment">Суд пера</string>
-    <string name="tcg_glorious_season">Урожайный сезон</string>
-    <string name="tcg_mirror_cage">Зеркальная клетка</string>
-    <string name="tcg_proliferating_spores">Живучие споры</string>
-    <string name="tcg_magic_guide">Руководство по магии</string>
-    <string name="tcg_sacrificial_fragments">Церемониальные мемуары</string>
-    <string name="tcg_skyward_atlas">Небесный атлас</string>
-    <string name="tcg_raven_bow">Лук Ворона</string>
-    <string name="tcg_sacrificial_bow">Церемониальный лук</string>
-    <string name="tcg_skyward_harp">Небесное крыло</string>
-    <string name="tcg_white_iron_greatsword">Меч из белого железа</string>
-    <string name="tcg_sacrificial_greatsword">Церемониальный двуручный меч</string>
-    <string name="tcg_wolfs_gravestone">Волчья погибель</string>
-    <string name="tcg_white_tassel">Белая кисть</string>
-    <string name="tcg_lithic_spear">Каменное копьё</string>
-    <string name="tcg_skyward_spine">Небесная ось</string>
-    <string name="tcg_travelers_handy_sword">Меч путешественника</string>
-    <string name="tcg_sacrificial_sword">Церемониальный меч</string>
-    <string name="tcg_aquila_favonia">Меч Сокола</string>
-    <string name="tcg_adventurers_bandana">Повязка искателя приключений</string>
-    <string name="tcg_lucky_dogs_silver_circlet">Серебряная корона везунчика</string>
-    <string name="tcg_traveling_doctors_handkerchief">Платок целителя</string>
-    <string name="tcg_gamblers_earrings">Серёжки азартного игрока</string>
-    <string name="tcg_instructors_cap">Кепка инструктора</string>
-    <string name="tcg_exiles_circlet">Корона изгнанника</string>
-    <string name="tcg_broken_rimes_echo">Эхо осколков инея</string>
-    <string name="tcg_blizzard_strayer">Заблудший в метели</string>
-    <string name="tcg_wine_stained_tricorne">Треуголка в пятнах вина</string>
-    <string name="tcg_heart_of_depth">Сердце глубин</string>
-    <string name="tcg_witchs_scorching_hat">Тлеющая ведьмина шляпа</string>
-    <string name="tcg_crimson_witch_of_flames">Горящая алая ведьма</string>
-    <string name="tcg_thunder_summoners_crown">Корона призывателя грома</string>
-    <string name="tcg_thundering_fury">Громогласный рёв ярости</string>
-    <string name="tcg_viridescent_venerers_diadem">Венок изумрудного охотника</string>
-    <string name="tcg_viridescent_venerer">Изумрудная тень</string>
-    <string name="tcg_mask_of_solitude_basalt">Маска из одинокого базальта</string>
-    <string name="tcg_archaic_petra">Архаичный камень</string>
-    <string name="tcg_laurel_coronet">Лавровый венец</string>
-    <string name="tcg_deepwood_memories">Воспоминания дремучего леса</string>
-    <string name="tcg_liyue_harbor_wharf">Гавань Ли Юэ</string>
-    <string name="tcg_knights_of_favonius_library">Библиотека Ордо Фавониус</string>
-    <string name="tcg_jade_chamber">Нефритовый дворец</string>
-    <string name="tcg_dawn_winery">Винокурня «Рассвет»</string>
-    <string name="tcg_wangshu_inn">Постоялый двор «Ваншу»</string>
-    <string name="tcg_favonius_cathedral">Собор Фавония</string>
-    <string name="tcg_paimon">Паймон</string>
-    <string name="tcg_katheryne">Катерина</string>
-    <string name="tcg_timaeus">Тимей</string>
-    <string name="tcg_wagner">Вагнер</string>
-    <string name="tcg_chef_mao">Шеф-повар Мао</string>
-    <string name="tcg_tubby">Пухляш</string>
-    <string name="tcg_timmie">Тимми</string>
-    <string name="tcg_liben">Ли Бэнь</string>
-    <string name="tcg_chang_the_ninth">Чан Девятый</string>
-    <string name="tcg_ellin">Айлин</string>
-    <string name="tcg_iron_tongue_tian">Тянь Железный Язык</string>
-    <string name="tcg_liu_su">Лю Су</string>
-    <string name="tcg_parametric_transformer">Параметрический преобразователь</string>
-    <string name="tcg_nre">Сухпаёк</string>
-    <string name="tcg_elemental_resonance_woven_ice">Элементальный резонанс: Переплетение Крио</string>
-    <string name="tcg_elemental_resonance_shattering_ice">Элементальный резонанс: Расколотый лёд</string>
-    <string name="tcg_elemental_resonance_woven_waters">Элементальный резонанс: Переплетение Гидро</string>
-    <string name="tcg_elemental_resonance_soothing_water">Элементальный резонанс: Успокаивающая вода</string>
-    <string name="tcg_elemental_resonance_woven_flames">Элементальный резонанс: Переплетение Пиро</string>
-    <string name="tcg_elemental_resonance_fervent_flames">Элементальный резонанс: Пылающий огонь</string>
-    <string name="tcg_elemental_resonance_woven_thunder">Элементальный резонанс: Переплетение Электро</string>
-    <string name="tcg_elemental_resonance_high_voltage">Элементальный резонанс: Высокое напряжение</string>
-    <string name="tcg_elemental_resonance_woven_winds">Элементальный резонанс: Переплетение Анемо</string>
-    <string name="tcg_elemental_resonance_impetuous_winds">Элементальный резонанс: Проворный ветер</string>
-    <string name="tcg_elemental_resonance_woven_stone">Элементальный резонанс: Переплетение Гео</string>
-    <string name="tcg_elemental_resonance_enduring_rock">Элементальный резонанс: Несокрушимый камень</string>
-    <string name="tcg_elemental_resonance_woven_weeds">Элементальный резонанс: Переплетение Дендро</string>
-    <string name="tcg_elemental_resonance_sprawling_greenery">Элементальный резонанс: Ползучая зелень</string>
-    <string name="tcg_the_bestest_travel_companion">Самый лучший компаньон!</string>
-    <string name="tcg_changing_shifts">Смена дежурства</string>
-    <string name="tcg_toss_up">Бросок</string>
-    <string name="tcg_strategize">Стратег</string>
-    <string name="tcg_i_havent_lost_yet">Это ещё не конец!</string>
-    <string name="tcg_leave_it_to_me">Поручи это мне!</string>
-    <string name="tcg_when_the_crane_returned">Журавль после возвращенья</string>
-    <string name="tcg_starsigns">Звёздные знамения</string>
-    <string name="tcg_calxs_arts">Искусство Альбедо</string>
-    <string name="tcg_master_of_weaponry">Мастерское владение оружием</string>
-    <string name="tcg_blessing_of_the_divine_relics_installation">Благословение установки божественной реликвии</string>
-    <string name="tcg_quick_knit">Быстрое вязание</string>
-    <string name="tcg_send_off">Последний путь</string>
-    <string name="tcg_guardians_oath">Клятва стража</string>
-    <string name="tcg_abyssal_summons">Призыв Бездны</string>
-    <string name="tcg_jueyun_guoba">Заоблачный гоба</string>
-    <string name="tcg_adeptus_temptation">Искушение Адепта</string>
-    <string name="tcg_lotus_flower_crisp">Печенье лотоса</string>
-    <string name="tcg_northern_smoked_chicken">Копчёный цыплёночек</string>
-    <string name="tcg_sweet_madame">Цыплёнок в медовом соусе</string>
-    <string name="tcg_mondstadt_hash_brown">Мондштадтские оладушки</string>
-    <string name="tcg_mushroom_pizza">Грибная пицца</string>
-    <string name="tcg_minty_meat_rolls">Мясные рулетики с мятой</string>
-    <string name="tcg_origin">Изначальный</string>
-    <string name="tcg_mondstadt">Мондштадт</string>
-    <string name="tcg_liyue">Ли Юэ</string>
-    <string name="tcg_inazuma">Инадзума</string>
-    <string name="tcg_sumeru">Сумеру</string>
-    <string name="tcg_legend">Легенда</string>
-    <string name="tcg_adept">Знаток</string>
-    <string name="tcg_hydro_crystal_chunk">Обломок кристалла</string>
-    <string name="tcg_magical_crystal_chunk">Магический кристальный обломок</string>
-    <string name="tcg_amethyst_lump">Кусок аметиста</string>
-    <string name="tcg_flaming_flower_stamen">Тычинка пылающего цветка</string>
-    <string name="tcg_mist_flower_corolla">Венчик туманного цветка</string>
-    <string name="tcg_electro_crystal">Электро кристалл</string>
-    <string name="tcg_dandelion_seed">Семена одуванчика</string>
-    <string name="tcg_cecilia">Цветок сесилии</string>
-    <string name="tcg_glaze_lily">Глазурная лилия</string>
-    <string name="tcg_dendrobium">Кровоцвет</string>
-    <string name="tcg_type_backside">Обратная Сторона Карты</string>
+    <string name="alhaitham">Аль-Хайтам</string>
+    <!-- add in 20221213 -->
+    <string name="tcg_ganyu">"Гань Юй"</string>
+    <string name="tcg_kaeya">"Кэйа"</string>
+    <string name="tcg_chongyun">"Чун Юнь"</string>
+    <string name="tcg_kamisato_ayaka">"Камисато Аяка"</string>
+    <string name="tcg_xingqiu">"Син Цю"</string>
+    <string name="tcg_mona">"Мона"</string>
+    <string name="tcg_diluc">"Дилюк"</string>
+    <string name="tcg_xiangling">"Сян Лин"</string>
+    <string name="tcg_bennett">"Беннет"</string>
+    <string name="tcg_yoimiya">"Ёимия"</string>
+    <string name="tcg_fischl">"Фишль"</string>
+    <string name="tcg_razor">"Рэйзор"</string>
+    <string name="tcg_keqing">"Кэ Цин"</string>
+    <string name="tcg_sucrose">"Сахароза"</string>
+    <string name="tcg_jean">"Джинн"</string>
+    <string name="tcg_ningguang">"Нин Гуан"</string>
+    <string name="tcg_noelle">"Ноэлль"</string>
+    <string name="tcg_collei">"Коллеи"</string>
+    <string name="tcg_rhodeia_of_loch">"Родия"</string>
+    <string name="tcg_fatui_pyro_agent">"Пиро агент Фатуи"</string>
+    <string name="tcg_maguu_kenki">"Магу кэнки"</string>
+    <string name="tcg_stonehide_lawachurl">"Лавачурл с каменным панцирем"</string>
+    <string name="tcg_diona">"Диона"</string>
+    <string name="tcg_cyno">"Сайно"</string>
+    <string name="tcg_barbara">"Барбара"</string>
+    <string name="tcg_mirror_maiden">"Зеркальная дева"</string>
+    <string name="tcg_jadeplume_terrorshroom">"Пернатый плесенник"</string>
+    <string name="tcg_undivided_heart">"Неразделённое сердце"</string>
+    <string name="tcg_cold_blooded_strike">"Клинок холодной крови"</string>
+    <string name="tcg_steady_breathing">"Ровное дыхание"</string>
+    <string name="tcg_kanten_senmyou_blessing">"Благословение кантэн сэммё"</string>
+    <string name="tcg_the_scent_remained">"Запах утреннего дождя"</string>
+    <string name="tcg_prophecy_of_submersion">"Пророчество потопа"</string>
+    <string name="tcg_flowing_flame">"Палящая комета"</string>
+    <string name="tcg_crossfire">"Перекрёстный огонь"</string>
+    <string name="tcg_grand_expectation">"Мечты о приключениях"</string>
+    <string name="tcg_naganohara_meteor_swarm">"Падающие звёзды Наганохары"</string>
+    <string name="tcg_stellar_predator">"Ворон, клюющий звёзды"</string>
+    <string name="tcg_awakening">"Пробуждение"</string>
+    <string name="tcg_thundering_penance">"Небесное покаяние"</string>
+    <string name="tcg_chaotic_entropy">"Энтропия хаоса"</string>
+    <string name="tcg_lands_of_dandelion">"Королевство Одуванчиков"</string>
+    <string name="tcg_strategic_reserve">"Стратегические запасы"</string>
+    <string name="tcg_i_got_your_back">"Я прикрою!"</string>
+    <string name="tcg_floral_sidewinder">"Возвращение цветов"</string>
+    <string name="tcg_streaming_surge">"Взрывной поток"</string>
+    <string name="tcg_paid_in_full">"Расплата"</string>
+    <string name="tcg_transcendent_automaton">"Трансцендентный автоматон"</string>
+    <string name="tcg_stonehide_reforged">"Восстановленная камнекожа"</string>
+    <string name="tcg_shaken_not_purred">"Взболтать, но не мурлыкать"</string>
+    <string name="tcg_featherfall_judgment">"Суд пера"</string>
+    <string name="tcg_glorious_season">"Урожайный сезон"</string>
+    <string name="tcg_mirror_cage">"Зеркальная клетка"</string>
+    <string name="tcg_proliferating_spores">"Живучие споры"</string>
+    <string name="tcg_magic_guide">"Руководство по магии"</string>
+    <string name="tcg_sacrificial_fragments">"Церемониальные мемуары"</string>
+    <string name="tcg_skyward_atlas">"Небесный атлас"</string>
+    <string name="tcg_raven_bow">"Лук Ворона"</string>
+    <string name="tcg_sacrificial_bow">"Церемониальный лук"</string>
+    <string name="tcg_skyward_harp">"Небесное крыло"</string>
+    <string name="tcg_white_iron_greatsword">"Меч из белого железа"</string>
+    <string name="tcg_sacrificial_greatsword">"Церемониальный двуручный меч"</string>
+    <string name="tcg_wolfs_gravestone">"Волчья погибель"</string>
+    <string name="tcg_white_tassel">"Белая кисть"</string>
+    <string name="tcg_lithic_spear">"Каменное копьё"</string>
+    <string name="tcg_skyward_spine">"Небесная ось"</string>
+    <string name="tcg_travelers_handy_sword">"Меч путешественника"</string>
+    <string name="tcg_sacrificial_sword">"Церемониальный меч"</string>
+    <string name="tcg_aquila_favonia">"Меч Сокола"</string>
+    <string name="tcg_adventurers_bandana">"Повязка искателя приключений"</string>
+    <string name="tcg_lucky_dogs_silver_circlet">"Серебряная корона везунчика"</string>
+    <string name="tcg_traveling_doctors_handkerchief">"Платок целителя"</string>
+    <string name="tcg_gamblers_earrings">"Серёжки азартного игрока"</string>
+    <string name="tcg_instructors_cap">"Кепка инструктора"</string>
+    <string name="tcg_exiles_circlet">"Корона изгнанника"</string>
+    <string name="tcg_broken_rimes_echo">"Эхо осколков инея"</string>
+    <string name="tcg_blizzard_strayer">"Заблудший в метели"</string>
+    <string name="tcg_wine_stained_tricorne">"Треуголка в пятнах вина"</string>
+    <string name="tcg_heart_of_depth">"Сердце глубин"</string>
+    <string name="tcg_witchs_scorching_hat">"Тлеющая ведьмина шляпа"</string>
+    <string name="tcg_crimson_witch_of_flames">"Горящая алая ведьма"</string>
+    <string name="tcg_thunder_summoners_crown">"Корона призывателя грома"</string>
+    <string name="tcg_thundering_fury">"Громогласный рёв ярости"</string>
+    <string name="tcg_viridescent_venerers_diadem">"Венок изумрудного охотника"</string>
+    <string name="tcg_viridescent_venerer">"Изумрудная тень"</string>
+    <string name="tcg_mask_of_solitude_basalt">"Маска из одинокого базальта"</string>
+    <string name="tcg_archaic_petra">"Архаичный камень"</string>
+    <string name="tcg_laurel_coronet">"Лавровый венец"</string>
+    <string name="tcg_deepwood_memories">"Воспоминания дремучего леса"</string>
+    <string name="tcg_liyue_harbor_wharf">"Гавань Ли Юэ"</string>
+    <string name="tcg_knights_of_favonius_library">"Библиотека Ордо Фавониус"</string>
+    <string name="tcg_jade_chamber">"Нефритовый дворец"</string>
+    <string name="tcg_dawn_winery">"Винокурня «Рассвет»"</string>
+    <string name="tcg_wangshu_inn">"Постоялый двор «Ваншу»"</string>
+    <string name="tcg_favonius_cathedral">"Собор Фавония"</string>
+    <string name="tcg_paimon">"Паймон"</string>
+    <string name="tcg_katheryne">"Катерина"</string>
+    <string name="tcg_timaeus">"Тимей"</string>
+    <string name="tcg_wagner">"Вагнер"</string>
+    <string name="tcg_chef_mao">"Шеф-повар Мао"</string>
+    <string name="tcg_tubby">"Пухляш"</string>
+    <string name="tcg_timmie">"Тимми"</string>
+    <string name="tcg_liben">"Ли Бэнь"</string>
+    <string name="tcg_chang_the_ninth">"Чан Девятый"</string>
+    <string name="tcg_ellin">"Айлин"</string>
+    <string name="tcg_iron_tongue_tian">"Тянь Железный Язык"</string>
+    <string name="tcg_liu_su">"Лю Су"</string>
+    <string name="tcg_parametric_transformer">"Параметрический преобразователь"</string>
+    <string name="tcg_nre">"Сухпаёк"</string>
+    <string name="tcg_elemental_resonance_woven_ice">"Элементальный резонанс: Переплетение Крио"</string>
+    <string name="tcg_elemental_resonance_shattering_ice">"Элементальный резонанс: Расколотый лёд"</string>
+    <string name="tcg_elemental_resonance_woven_waters">"Элементальный резонанс: Переплетение Гидро"</string>
+    <string name="tcg_elemental_resonance_soothing_water">"Элементальный резонанс: Успокаивающая вода"</string>
+    <string name="tcg_elemental_resonance_woven_flames">"Элементальный резонанс: Переплетение Пиро"</string>
+    <string name="tcg_elemental_resonance_fervent_flames">"Элементальный резонанс: Пылающий огонь"</string>
+    <string name="tcg_elemental_resonance_woven_thunder">"Элементальный резонанс: Переплетение Электро"</string>
+    <string name="tcg_elemental_resonance_high_voltage">"Элементальный резонанс: Высокое напряжение"</string>
+    <string name="tcg_elemental_resonance_woven_winds">"Элементальный резонанс: Переплетение Анемо"</string>
+    <string name="tcg_elemental_resonance_impetuous_winds">"Элементальный резонанс: Проворный ветер"</string>
+    <string name="tcg_elemental_resonance_woven_stone">"Элементальный резонанс: Переплетение Гео"</string>
+    <string name="tcg_elemental_resonance_enduring_rock">"Элементальный резонанс: Несокрушимый камень"</string>
+    <string name="tcg_elemental_resonance_woven_weeds">"Элементальный резонанс: Переплетение Дендро"</string>
+    <string name="tcg_elemental_resonance_sprawling_greenery">"Элементальный резонанс: Ползучая зелень"</string>
+    <string name="tcg_the_bestest_travel_companion">"Самый лучший компаньон!"</string>
+    <string name="tcg_changing_shifts">"Смена дежурства"</string>
+    <string name="tcg_toss_up">"Бросок"</string>
+    <string name="tcg_strategize">"Стратег"</string>
+    <string name="tcg_i_havent_lost_yet">"Это ещё не конец!"</string>
+    <string name="tcg_leave_it_to_me">"Поручи это мне!"</string>
+    <string name="tcg_when_the_crane_returned">"Журавль после возвращенья"</string>
+    <string name="tcg_starsigns">"Звёздные знамения"</string>
+    <string name="tcg_calxs_arts">"Искусство Альбедо"</string>
+    <string name="tcg_master_of_weaponry">"Мастерское владение оружием"</string>
+    <string name="tcg_blessing_of_the_divine_relics_installation">"Благословение установки божественной реликвии"</string>
+    <string name="tcg_quick_knit">"Быстрое вязание"</string>
+    <string name="tcg_send_off">"Последний путь"</string>
+    <string name="tcg_guardians_oath">"Клятва стража"</string>
+    <string name="tcg_abyssal_summons">"Призыв Бездны"</string>
+    <string name="tcg_jueyun_guoba">"Заоблачный гоба"</string>
+    <string name="tcg_adeptus_temptation">"Искушение Адепта"</string>
+    <string name="tcg_lotus_flower_crisp">"Печенье лотоса"</string>
+    <string name="tcg_northern_smoked_chicken">"Копчёный цыплёночек"</string>
+    <string name="tcg_sweet_madame">"Цыплёнок в медовом соусе"</string>
+    <string name="tcg_mondstadt_hash_brown">"Мондштадтские оладушки"</string>
+    <string name="tcg_mushroom_pizza">"Грибная пицца"</string>
+    <string name="tcg_minty_meat_rolls">"Мясные рулетики с мятой"</string>
+    <string name="tcg_origin">"Изначальный"</string>
+    <string name="tcg_mondstadt">"Мондштадт"</string>
+    <string name="tcg_liyue">"Ли Юэ"</string>
+    <string name="tcg_inazuma">"Инадзума"</string>
+    <string name="tcg_sumeru">"Сумеру"</string>
+    <string name="tcg_legend">"Легенда"</string>
+    <string name="tcg_adept">"Знаток"</string>
+    <string name="tcg_hydro_crystal_chunk">"Обломок кристалла"</string>
+    <string name="tcg_magical_crystal_chunk">"Магический кристальный обломок"</string>
+    <string name="tcg_amethyst_lump">"Кусок аметиста"</string>
+    <string name="tcg_flaming_flower_stamen">"Тычинка пылающего цветка"</string>
+    <string name="tcg_mist_flower_corolla">"Венчик туманного цветка"</string>
+    <string name="tcg_electro_crystal">"Электро кристалл"</string>
+    <string name="tcg_dandelion_seed">"Семена одуванчика"</string>
+    <string name="tcg_cecilia">"Цветок сесилии"</string>
+    <string name="tcg_glaze_lily">"Глазурная лилия"</string>
+    <string name="tcg_dendrobium">"Кровоцвет"</string>
     <string name="tcg_type_char">Карты персонажей</string>
     <string name="tcg_type_equip">Карты экипировки</string>
     <string name="tcg_type_support">Карты поддержки</string>
     <string name="tcg_type_event">Карты событий</string>
-    <string name="sword">Одноручное</string>
+    <string name="tcg_type_backside">Обратная Сторона Карты</string>
     <string name="bow">Стрелковое</string>
+    <string name="sword">Одноручное</string>
     <string name="catalyst">Катализатор</string>
-    <string name="claymore">Двуручное</string>
     <string name="polearm">Древковое</string>
+    <string name="claymore">Двуручное</string>
     <string name="passive_atk">Пассивный навык</string>
+    <!-- add in 20221228 -->
     <string name="tcg_keyword_anemo">Анемо</string>
     <string name="tcg_keyword_anemodmg">Анемо урон</string>
     <string name="tcg_keyword_combataction">Боевое действие</string>
@@ -1334,23 +1320,28 @@
     <string name="tcg_keyword_shield">Щит</string>
     <string name="tcg_keyword_unalignedelement">Неопределённый элемент</string>
     <string name="tcg_keyword_usages">Кол-во применений</string>
+    <!--add in 20230118-->
     <string name="light_of_foliar_incision">Свет лиственного разреза</string>
     <string name="tcg_klee">Кли</string>
     <string name="tcg_beidou">Бэй Доу</string>
     <string name="tcg_lightning_storm">Гром и молния</string>
     <string name="tcg_pounding_surprise">Тук-тук, кто там?</string>
+    <!--add in 20230215-->
+    <!--add in 20230225-->
     <string name="dehya">Дэхья</string>
     <string name="mika">Мика</string>
-    <string name="tcg_eula">Эола</string>
-    <string name="tcg_sangonomiya_kokomi">Сангономия Кокоми</string>
-    <string name="tcg_kujou_sara">Кудзё Сара</string>
+    <string name="beacon_of_the_reed_sea">Маяк тростникового моря</string>
+    <string name="mailed_flower">Цветок в латах</string>
+    <string name="tcg_eula">"Эола"</string>
+    <string name="tcg_sangonomiya_kokomi">"Сангономия Кокоми"</string>
+    <string name="tcg_kujou_sara">"Кудзё Сара"</string>
+    <string name="tcg_wellspring_of_war_lust">Прилив войны</string>
     <string name="tcg_tamanooyas_casket">Шкатулка таманои</string>
     <string name="tcg_sin_of_pride">Грех гордыни</string>
     <string name="tcg_ornate_kabuto">Украшенный кабуто</string>
     <string name="tcg_generals_ancient_helm">Древний шлем генерала</string>
-    <string name="tcg_wellspring_of_war_lust">Прилив войны</string>
+    <string name="asagiri_korise">Asagiri Korise</string>
     <string name="lazurite_swirl">Лазуритовый вихрь</string>
-
     <string name="download_cancelled">Скачивание было отменено, попроуйте повторить</string>
     <string name="last_update">Последние обновление</string>
     <string name="from_game_display">З игрового пространстваy</string>
@@ -1361,13 +1352,12 @@
     <string name="max_4_choice">Максимум 4 выбора </string>
     <string name="lvl">Ур.</string>
     <string name="max_8_char">Максимум 8 персонажей</string>
+    <!--add in 20230413-->
     <string name="baizhu">Бай Чжу</string>
-    <string name="beacon_of_the_reed_sea">Маяк тростникового моря</string>
-    <string name="mailed_flower">Цветок в латах</string>
     <string name="kaveh">Кавех</string>
-    <string name="jadefalls_splendor">Великолепие лазурного свода</string>
-    <string name="nymphs_dream">Сон нимфы</string>
-    <string name="vourukashas_glow">Сияние Вурукаши</string>
+    <string name="jadefalls_splendor">"Великолепие лазурного свода"</string>
+    <string name="nymphs_dream">"Сон нимфы"</string>
+    <string name="vourukashas_glow">"Сияние Вурукаши"</string>
     <string name="kirara">Кирара</string>
     <string name="tcg_kamisato_ayato">Камисато Аято</string>
     <string name="tcg_arataki_itto">Аратаки Итто</string>
@@ -1377,149 +1367,163 @@
     <string name="tcg_arataki_ichiban">Аратаки итибан</string>
     <string name="tcg_favonius_sword">Меч Фавония</string>
     <string name="tcg_grand_narukami_shrine">Великий храм Наруками</string>
+    <!-- Ver. 4.0.0 Update -->
+    <string name="memo_available_weekboss_change">Still have {%1} more</string>
+    <string name="event_list_available">{%1} Event(s) Available</string>
+    <string name="event_list_day">Day(s)</string>
+    <string name="event_list_title">Event List</string>
+    <string name="dailymemo_setting_login_title">Login via...</string>
+    <string name="dailymemo_setting_login_hoyoverse">Hoyoverse Account</string>
+    <string name="dailymemo_setting_login_third_party">Third-Part Login</string>
+    <string name="dailymemo_setting_hoyoverse_token">Open to Offical Login Page</string>
+    <string name="dailymemo_setting_confirm">Confirm</string>
+    <string name="char_occupation">Occupation</string>
+    <string name="char_constellation">Constellation</string>
     <string name="lynette">Линетт</string>
     <string name="lyney">Лини</string>
     <string name="freminet">Фремине</string>
-    <string name="wolf_fang">Волчий клык</string>
-    <string name="finale_of_the_deep">Грандиозный финал глубин</string>
-    <string name="crossing_of_fleuve_cendre">Переправа на Флёв Сандре</string>
-    <string name="talking_stick">Дубина беседы</string>
-    <string name="tidal_shadow">Глефа тени волны</string>
-    <string name="ballad_of_the_fjords">Долгая песнь фьордов</string>
-    <string name="rightful_reward">Справедливая награда</string>
-    <string name="sacrificial_jade">Погребение нефритового драконаЪЪЪ</string>
-    <string name="flowing_purity">Сверкание чистых вод</string>
-    <string name="scion_of_the_blazing_sun">Наследник палящего солнца</string>
-    <string name="song_of_stillness">Мелодия покоя</string>
-    <string name="the_first_great_magic">Первый великий фокус</string>
+    <string name="wolf_fang">"Волчий клык"</string>
+    <string name="finale_of_the_deep">"Грандиозный финал глубин"</string>
+    <string name="crossing_of_fleuve_cendre">"Переправа на Флёв Сандре"</string>
+    <string name="talking_stick">"Дубина беседы"</string>
+    <string name="tidal_shadow">"Глефа тени волны"</string>
+    <string name="ballad_of_the_fjords">"Долгая песнь фьордов"</string>
+    <string name="rightful_reward">"Справедливая награда"</string>
+    <string name="sacrificial_jade">"Погребение нефритового драконаЪЪЪ"</string>
+    <string name="flowing_purity">"Сверкание чистых вод"</string>
+    <string name="scion_of_the_blazing_sun">"Наследник палящего солнца"</string>
+    <string name="song_of_stillness">"Мелодия покоя"</string>
+    <string name="the_first_great_magic">"Первый великий фокус"</string>
     <string name="marechaussee_hunter">Охота на теньЪЪЪ</string>
-    <string name="tcg_amber">Эмбер</string>
-    <string name="tcg_tartaglia">Тарталья</string>
-    <string name="tcg_hu_tao">Ху Тао</string>
-    <string name="tcg_raiden_shogun">Сёгун Райдэн</string>
-    <string name="tcg_yae_miko">Яэ Мико</string>
-    <string name="tcg_venti">Венти</string>
-    <string name="tcg_xiao">Сяо</string>
-    <string name="tcg_zhongli">Чжун Ли</string>
-    <string name="tcg_nahida">Нахида</string>
-    <string name="tcg_fatui_cryo_cicin_mage">Фатуи: Маг Крио цицинов</string>
-    <string name="tcg_abyss_lector_fathomless_flames">Чтец Бездны: Пламя бездны</string>
-    <string name="tcg_electro_hypostasis">Электро гипостазис</string>
-    <string name="tcg_shenhe">Шэнь Хэ</string>
-    <string name="tcg_bunny_triggered">Зайчик активирован</string>
-    <string name="tcg_embrace_of_winds">Объятья ветра</string>
-    <string name="tcg_conqueror_of_evil_guardian_yaksha">Завоеватель зла: Защитник Якса</string>
-    <string name="tcg_dominance_of_earth">Господство земли</string>
-    <string name="tcg_absorbing_prism">Поглощающая призма</string>
-    <string name="tcg_mystical_abandon">Забытое таинство</string>
-    <string name="tcg_abyssal_mayhem_hydrospout">Хаос бездны: Гидро излив</string>
-    <string name="tcg_sanguine_rouge">Кровавая сангина</string>
-    <string name="tcg_wishes_unnumbered">Бесчисленные мечты</string>
-    <string name="tcg_the_shrines_sacred_shade">Божественная тень святилища</string>
-    <string name="tcg_the_seed_of_stored_knowledge">Семя потаённых знаний</string>
-    <string name="tcg_cicins_cold_glare">Холодный взгляд цицина</string>
-    <string name="tcg_embers_rekindled">Разжигание пламени</string>
-    <string name="tcg_amos_bow">Лук Амоса</string>
-    <string name="tcg_a_thousand_floating_dreams">Сновидения тысячи ночей</string>
-    <string name="tcg_elegy_for_the_end">Элегия погибели</string>
-    <string name="tcg_skyward_pride">Небесное величие</string>
-    <string name="tcg_the_bell">Меч-колокол</string>
-    <string name="tcg_vortex_vanquisher">Покоритель вихря</string>
-    <string name="tcg_engulfing_lightning">Сияющая жатва</string>
-    <string name="tcg_skyward_blade">Небесный меч</string>
-    <string name="tcg_emblem_of_severed_fate">Эмблема рассечённой судьбы</string>
-    <string name="tcg_tenacity_of_the_millelith">Стойкость Миллелита</string>
-    <string name="tcg_thundering_poise">Громогласный облик</string>
-    <string name="tcg_vermillion_hereafter">Киноварное загробье</string>
-    <string name="tcg_capricious_visage">Непостоянный лик</string>
-    <string name="tcg_shimenawas_reminiscence">Воспоминания Симэнавы</string>
-    <string name="tcg_tenshukaku">Резиденция Тэнсюкаку</string>
-    <string name="tcg_sangonomiya_shrine">Сангономия</string>
-    <string name="tcg_sumeru_city">Город Сумеру</string>
-    <string name="tcg_vanarana">Ванарана</string>
-    <string name="tcg_chinju_forest">Лес Тиндзю</string>
-    <string name="tcg_hanachirusato">Ханатирусато</string>
-    <string name="tcg_kid_kujirai">Малыш Кудзирай</string>
-    <string name="tcg_xudong">Сюй Дун</string>
-    <string name="tcg_dunyarzad">Дуньярзада</string>
-    <string name="tcg_rana">Рана</string>
-    <string name="tcg_red_feather_fan">Веер из красных перьев</string>
-    <string name="tcg_treasure_seeking_seelie">Поисковая фея</string>
-    <string name="tcg_wind_and_freedom">Ветер и свобода</string>
-    <string name="tcg_stone_and_contracts">Камень и контракты</string>
-    <string name="tcg_thunder_and_eternity">Молнии и вечность</string>
-    <string name="tcg_nature_and_wisdom">Природная мудрость</string>
-    <string name="tcg_fatui_conspiracy">Заговор Фатуи</string>
-    <string name="tcg_plunging_strike">Удар в падении</string>
-    <string name="tcg_heavy_strike">Тяжёлый удар</string>
-    <string name="tcg_the_legend_of_vennessa">Легенда о Веннессе</string>
-    <string name="tcg_friendship_eternal">Вечная дружба</string>
-    <string name="tcg_teyvat_fried_egg">Яичница по-тейватски</string>
-    <string name="tcg_sashimi_platter">Ассорти из сашими</string>
-    <string name="tcg_tandoori_roast_chicken">Цыплёнок в тандыре</string>
-    <string name="tcg_butter_crab">Краб в масле</string>
-    <string name="tcg_treasures_of_the_deck">Карточное сокровище</string>
-    <string name="tcg_candace">Кандакия</string>
-    <string name="tcg_yanfei">Янь Фэй</string>
-    <string name="tcg_kaedehara_kazuha">Каэдэхара Кадзуха</string>
-    <string name="tcg_the_overflow">Затопляющий прилив</string>
-    <string name="tcg_right_of_final_interpretation">Право толкования</string>
-    <string name="tcg_poetics_of_fuubutsu">Поэзия песен ветра</string>
-    <string name="tcg_fruit_of_fulfillment">Плод восполнения</string>
-    <string name="tcg_master_zhang">Мастер Чжан</string>
-    <string name="tcg_ancient_courtyard">Старинный двор</string>
-    <string name="tcg_covenant_of_rock">Каменный завет</string>
-    <string name="tcg_rhythm_of_the_great_dream">Песня великого сновидения</string>
-    <string name="tcg_albedo">Альбедо</string>
-    <string name="tcg_qiqi">Ци Ци</string>
-    <string name="tcg_lisa">Лиза</string>
-    <string name="tcg_descent_of_divinity">Сошествие духовности</string>
-    <string name="tcg_rite_of_resurrection">Возвращение к жизни</string>
-    <string name="tcg_pulsating_witch">Импульс ведьмы</string>
-    <string name="tcg_kings_squire">Приближённый короля</string>
-    <string name="tcg_golden_house">Золотая палата</string>
-    <string name="tcg_setaria">Сетария</string>
-    <string name="tcg_joyous_celebration">Танец радости</string>
-    <string name="tcg_where_is_the_unseen_razor">Скрытое место</string>
-    <string name="tcg_fontaine">Фонтейн</string>
-
+    <string name="golden_troupe">Golden Troupe</string>
+    <string name="tcg_amber">"Эмбер"</string>
+    <string name="tcg_tartaglia">"Тарталья"</string>
+    <string name="tcg_hu_tao">"Ху Тао"</string>
+    <string name="tcg_raiden_shogun">"Сёгун Райдэн"</string>
+    <string name="tcg_yae_miko">"Яэ Мико"</string>
+    <string name="tcg_venti">"Венти"</string>
+    <string name="tcg_xiao">"Сяо"</string>
+    <string name="tcg_zhongli">"Чжун Ли"</string>
+    <string name="tcg_nahida">"Нахида"</string>
+    <string name="tcg_fatui_cryo_cicin_mage">"Фатуи: Маг Крио цицинов"</string>
+    <string name="tcg_abyss_lector_fathomless_flames">"Чтец Бездны: Пламя бездны"</string>
+    <string name="tcg_electro_hypostasis">"Электро гипостазис"</string>
+    <string name="tcg_shenhe">"Шэнь Хэ"</string>
+    <string name="tcg_bunny_triggered">"Зайчик активирован"</string>
+    <string name="tcg_embrace_of_winds">"Объятья ветра"</string>
+    <string name="tcg_conqueror_of_evil_guardian_yaksha">"Завоеватель зла: Защитник Якса"</string>
+    <string name="tcg_dominance_of_earth">"Господство земли"</string>
+    <string name="tcg_absorbing_prism">"Поглощающая призма"</string>
+    <string name="tcg_mystical_abandon">"Забытое таинство"</string>
+    <string name="tcg_abyssal_mayhem_hydrospout">"Хаос бездны: Гидро излив"</string>
+    <string name="tcg_sanguine_rouge">"Кровавая сангина"</string>
+    <string name="tcg_wishes_unnumbered">"Бесчисленные мечты"</string>
+    <string name="tcg_the_shrines_sacred_shade">"Божественная тень святилища"</string>
+    <string name="tcg_the_seed_of_stored_knowledge">"Семя потаённых знаний"</string>
+    <string name="tcg_cicins_cold_glare">"Холодный взгляд цицина"</string>
+    <string name="tcg_embers_rekindled">"Разжигание пламени"</string>
+    <string name="tcg_amos_bow">"Лук Амоса"</string>
+    <string name="tcg_a_thousand_floating_dreams">"Сновидения тысячи ночей"</string>
+    <string name="tcg_elegy_for_the_end">"Элегия погибели"</string>
+    <string name="tcg_skyward_pride">"Небесное величие"</string>
+    <string name="tcg_the_bell">"Меч-колокол"</string>
+    <string name="tcg_vortex_vanquisher">"Покоритель вихря"</string>
+    <string name="tcg_engulfing_lightning">"Сияющая жатва"</string>
+    <string name="tcg_skyward_blade">"Небесный меч"</string>
+    <string name="tcg_emblem_of_severed_fate">"Эмблема рассечённой судьбы"</string>
+    <string name="tcg_tenacity_of_the_millelith">"Стойкость Миллелита"</string>
+    <string name="tcg_thundering_poise">"Громогласный облик"</string>
+    <string name="tcg_vermillion_hereafter">"Киноварное загробье"</string>
+    <string name="tcg_capricious_visage">"Непостоянный лик"</string>
+    <string name="tcg_shimenawas_reminiscence">"Воспоминания Симэнавы"</string>
+    <string name="tcg_tenshukaku">"Резиденция Тэнсюкаку"</string>
+    <string name="tcg_sangonomiya_shrine">"Сангономия"</string>
+    <string name="tcg_sumeru_city">"Город Сумеру"</string>
+    <string name="tcg_vanarana">"Ванарана"</string>
+    <string name="tcg_chinju_forest">"Лес Тиндзю"</string>
+    <string name="tcg_hanachirusato">"Ханатирусато"</string>
+    <string name="tcg_kid_kujirai">"Малыш Кудзирай"</string>
+    <string name="tcg_xudong">"Сюй Дун"</string>
+    <string name="tcg_dunyarzad">"Дуньярзада"</string>
+    <string name="tcg_rana">"Рана"</string>
+    <string name="tcg_red_feather_fan">"Веер из красных перьев"</string>
+    <string name="tcg_treasure_seeking_seelie">"Поисковая фея"</string>
+    <string name="tcg_wind_and_freedom">"Ветер и свобода"</string>
+    <string name="tcg_stone_and_contracts">"Камень и контракты"</string>
+    <string name="tcg_thunder_and_eternity">"Молнии и вечность"</string>
+    <string name="tcg_nature_and_wisdom">"Природная мудрость"</string>
+    <string name="tcg_fatui_conspiracy">"Заговор Фатуи"</string>
+    <string name="tcg_plunging_strike">"Удар в падении"</string>
+    <string name="tcg_heavy_strike">"Тяжёлый удар"</string>
+    <string name="tcg_the_legend_of_vennessa">"Легенда о Веннессе"</string>
+    <string name="tcg_friendship_eternal">"Вечная дружба"</string>
+    <string name="tcg_teyvat_fried_egg">"Яичница по-тейватски"</string>
+    <string name="tcg_sashimi_platter">"Ассорти из сашими"</string>
+    <string name="tcg_tandoori_roast_chicken">"Цыплёнок в тандыре"</string>
+    <string name="tcg_butter_crab">"Краб в масле"</string>
+    <string name="tcg_treasures_of_the_deck">"Карточное сокровище"</string>
+    <string name="tcg_candace">"Кандакия"</string>
+    <string name="tcg_yanfei">"Янь Фэй"</string>
+    <string name="tcg_kaedehara_kazuha">"Каэдэхара Кадзуха"</string>
+    <string name="tcg_the_overflow">"Затопляющий прилив"</string>
+    <string name="tcg_right_of_final_interpretation">"Право толкования"</string>
+    <string name="tcg_poetics_of_fuubutsu">"Поэзия песен ветра"</string>
+    <string name="tcg_fruit_of_fulfillment">"Плод восполнения"</string>
+    <string name="tcg_master_zhang">"Мастер Чжан"</string>
+    <string name="tcg_ancient_courtyard">"Старинный двор"</string>
+    <string name="tcg_covenant_of_rock">"Каменный завет"</string>
+    <string name="tcg_rhythm_of_the_great_dream">"Песня великого сновидения"</string>
+    <string name="tcg_albedo">"Альбедо"</string>
+    <string name="tcg_qiqi">"Ци Ци"</string>
+    <string name="tcg_lisa">"Лиза"</string>
+    <string name="tcg_descent_of_divinity">"Сошествие духовности"</string>
+    <string name="tcg_rite_of_resurrection">"Возвращение к жизни"</string>
+    <string name="tcg_pulsating_witch">"Импульс ведьмы"</string>
+    <string name="tcg_kings_squire">"Приближённый короля"</string>
+    <string name="tcg_golden_house">"Золотая палата"</string>
+    <string name="tcg_setaria">"Сетария"</string>
+    <string name="tcg_joyous_celebration">"Танец радости"</string>
+    <string name="tcg_where_is_the_unseen_razor">"Скрытое место"</string>
+    <string name="tcg_fontaine">"Фонтейн"</string>
     <!-- add in 20230814 - 3.7.0 -->
     <string name="ibis_piercer">"Клюв ибиса"</string>
-    <string name="teachings_of_equity">Учения о «Беспристрастии»</string>
-    <string name="teachings_of_justice">Учения о «Справедливости»</string>
-    <string name="teachings_of_order">Учения о «Порядке»</string>
-    <string name="guide_to_equity">Указания о «Беспристрастии»</string>
-    <string name="guide_to_justice">Указания о «Справедливости»</string>
-    <string name="guide_to_order">Указания о «Порядке»</string>
-    <string name="philosophies_of_equity">Философия о «Беспристрастии»</string>
-    <string name="philosophies_of_justice">Философия о «Справедливости»</string>
-    <string name="philosophies_of_order">Философия о «Порядке»</string>
-    <string name="fragment_of_an_ancient_chord">Фрагмент отзвука древней струны</string>
-    <string name="dross_of_pure_sacred_dewdrop">Осадок чистой капли росы</string>
-    <string name="broken_goblet_of_the_pristine_sea">Разбитая чаша непорочного моря</string>
-    <string name="chapter_of_an_ancient_chord">Незаконченный отзвук древней струны</string>
-    <string name="sublimation_of_pure_sacred_dewdrop">Конденсат чистой капли росы</string>
-    <string name="wine_goblet_of_the_pristine_sea">Чаша непорочного моря</string>
-    <string name="movement_of_an_ancient_chord">Песнь отзвука древней струны</string>
-    <string name="spring_of_pure_sacred_dewdrop">Источник чистой капли росы</string>
-    <string name="silver_goblet_of_the_pristine_sea">Серебряный кубок непорочного моря</string>
-    <string name="echo_of_an_ancient_chord">Эхо отзвука древней струны</string>
-    <string name="essence_of_pure_sacred_dewdrop">Эссенция чистой капли росы</string>
-    <string name="golden_goblet_of_the_pristine_sea">Золотой кубок непорочного моря</string>
-    <string name="pale_forgotten_glory">Бледный забытый цветок</string>
-    <string name="echoes_of_the_deep_tides">Эхо глубоких приливов</string>
-    <string name="wriothesley">Ризли</string>
-    <string name="neuvillette">Нёвиллет</string>
-    <string name="charlotte">Шарлотта</string>
-    <string name="furina">Фурина</string>
-    <string name="the_dockhands_assistant">Верфь</string>
-    <string name="portable_power_saw">Переносная мотопила</string>
-    <string name="prospectors_drill">Бур рудоискателя</string>
-    <string name="ballad_of_the_boundless_blue">Песнь необъятной лазури</string>
-    <string name="cashflow_supervision">Казначейский надзор</string>
-    <string name="tome_of_the_eternal_flow">Обряд вечного течения</string>
-    <string name="range_gauge">Дальномер</string>
-    <string name="sword_of_narzissenkreuz">Меч Нарциссенкрейца</string>
-    <string name="splendor_of_still_waters">Блеск тихих вод</string>
-    <string name="traveler_hydro">Путешественник(Гидро)</string>
+    <!-- add in 20230820 - New Talent Book-->
+    <string name="teachings_of_equity">"Teachings of Equity"</string>
+    <string name="teachings_of_justice">"Teachings of Justice"</string>
+    <string name="teachings_of_order">"Teachings of Order"</string>
+    <string name="guide_to_equity">"Guide to Equity"</string>
+    <string name="guide_to_justice">"Guide to Justice"</string>
+    <string name="guide_to_order">"Guide to Order"</string>
+    <string name="philosophies_of_equity">"Philosophies of Equity"</string>
+    <string name="philosophies_of_justice">"Philosophies of Justice"</string>
+    <string name="philosophies_of_order">"Philosophies of Order"</string>
+    <string name="fragment_of_an_ancient_chord">"Fragment of an Ancient Chord"</string>
+    <string name="dross_of_pure_sacred_dewdrop">"Dross of Pure Sacred Dewdrop"</string>
+    <string name="broken_goblet_of_the_pristine_sea">"Broken Goblet of the Pristine Sea"</string>
+    <string name="chapter_of_an_ancient_chord">"Chapter of an Ancient Chord"</string>
+    <string name="sublimation_of_pure_sacred_dewdrop">"Sublimation of Pure Sacred Dewdrop"</string>
+    <string name="wine_goblet_of_the_pristine_sea">"Wine Goblet of the Pristine Sea"</string>
+    <string name="movement_of_an_ancient_chord">"Movement of an Ancient Chord"</string>
+    <string name="spring_of_pure_sacred_dewdrop">"Spring of Pure Sacred Dewdrop"</string>
+    <string name="silver_goblet_of_the_pristine_sea">"Silver Goblet of the Pristine Sea"</string>
+    <string name="echo_of_an_ancient_chord">"Echo of an Ancient Chord"</string>
+    <string name="essence_of_pure_sacred_dewdrop">"Essence of Pure Sacred Dewdrop"</string>
+    <string name="golden_goblet_of_the_pristine_sea">"Golden Goblet of the Pristine Sea"</string>
+    <string name="pale_forgotten_glory">"Pale Forgotten Glory"</string>
+    <string name="echoes_of_the_deep_tides">"Echoes of the Deep Tides"</string>
+    <!-- add in 20230929 - 4.1 & 4.2 data -->
+    <string name="wriothesley">"Wriothesley"</string>
+    <string name="neuvillette">"Neuvillette"</string>
+    <string name="charlotte">"Charlotte"</string>
+    <string name="furina">"Furina"</string>
+    <string name="the_dockhands_assistant">"The Dockhand's Assistant"</string>
+    <string name="portable_power_saw">"Portable Power Saw"</string>
+    <string name="prospectors_drill">"Prospector's Drill"</string>
+    <string name="ballad_of_the_boundless_blue">"Ballad of the Boundless Blue"</string>
+    <string name="cashflow_supervision">"Cashflow Supervision"</string>
+    <string name="tome_of_the_eternal_flow">"Tome of the Eternal Flow"</string>
+    <string name="range_gauge">"Range Gauge"</string>
+    <string name="sword_of_narzissenkreuz">"Sword of Narzissenkreuz"</string>
+    <string name="splendor_of_still_waters">"Splendor of Still Waters"</string>
+    <string name="traveler_hydro">Traveler(Hydro)</string>
 </resources>

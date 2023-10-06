@@ -9,8 +9,8 @@
         android:startColor="#801E2C3E"
         android:angle="-90"
         android:centerY="0.57"
-        android:centerColor="#ECE5D8"
-        android:endColor="#ECE5D8"
+        android:centerColor="@color/gradient_center"
+        android:endColor="@color/gradient_end"
 
         />
 </shape>

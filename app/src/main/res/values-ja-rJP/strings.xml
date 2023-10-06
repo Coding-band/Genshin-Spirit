@@ -4,22 +4,18 @@
   ~ Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
   ~ Copyright © 2023 Xectorda 版權所有
   -->
-
 <resources>
     <string name="app_name">Genshin Spirit</string>
-
     <!-- page_title_menu -->
     <string name="title_char">キャラクター</string>
     <string name="title_artifacts">聖遺物</string>
     <string name="title_home">ホーム</string>
     <string name="title_weapons">武器</string>
     <string name="title_settings">設定</string>
-
     <!-- material_moment -->
     <string name="dow_set1">月,木,日</string>
     <string name="dow_set2">火,金,日</string>
     <string name="dow_set3">水,土,日</string>
-
     <!-- dow -->
     <string name="monday">月曜日</string>
     <string name="tuesday">火曜日</string>
@@ -28,7 +24,6 @@
     <string name="friday">金曜日</string>
     <string name="saturday">土曜日</string>
     <string name="sunday">日曜日</string>
-
     <!-- material_name -->
     <string name="teaching_of_ballad">「詩文」の教え</string>
     <string name="teaching_of_diligence">「勤労」の教え</string>
@@ -58,7 +53,6 @@
     <string name="philosophiess_of_elegance">「風雅」の哲学</string>
     <string name="philosophiess_of_transience">「浮世」の哲学</string>
     <string name="philosophiess_of_light">「天光」の哲学</string>
-
     <!-- base -->
     <string name="tile_of_decarabians_tower">高塔の王の瓦</string>
     <string name="luminous_sands_from_guyun">孤雲寒林の光砂</string>
@@ -69,7 +63,6 @@
     <string name="grain_of_aerosiderite">漆黒の隕鉄の一粒</string>
     <string name="fetters_of_the_dandelion_gladiator">獅牙戦士の枷</string>
     <string name="mask_of_the_wicked_lieutenant">今昔劇画の悪尉</string>
-
     <!-- char_name -->
     <string name="kamisato_ayato">神里綾人</string>
     <string name="aloy">アーロイ</string>
@@ -116,10 +109,11 @@
     <string name="barbara">バーバラ</string>
     <string name="amber">アンバー</string>
     <string name="unknown">不明</string>
-
     <!-- New Character in here-->
     <string name="thoma">トーマ</string>
-
+    <string name="gorou">ゴロー</string>
+    <string name="arataki_itto">荒瀧一斗</string>
+    <string name="yae_miko">八重神子</string>
     <!-- char_info -->
     <string name="search">検索...</string>
     <string name="elements">元素</string>
@@ -162,7 +156,25 @@
     <string name="team_advice">おすすめパーティー</string>
     <string name="weapon_advice">おすすめ武器</string>
     <string name="art_advice">おすすめ聖遺物</string>
-
+    <!-- added in 20211001 -->
+    <string name="none_info">現時点では彼/彼女に関する関連情報はありません。</string>
+    <string name="weapon_stat">"二次属性 : "</string>
+    <string name="weapon_stat_atk">"攻撃力"</string>
+    <string name="weapon_stat_DEF">"防御力"</string>
+    <string name="weapon_stat_HP">"HP"</string>
+    <string name="weapon_stat_atkP">"攻撃力 %"</string>
+    <string name="weapon_stat_CritDMGP">"会心 %"</string>
+    <string name="weapon_stat_CritRateP">"会心率 %"</string>
+    <string name="weapon_stat_PhyDMGP">"物理ダメージ %"</string>
+    <string name="weapon_stat_EnRechP">"元素チャージ %"</string>
+    <string name="weapon_stat_EleMas">"元素熟知"</string>
+    <string name="weapon_stat_DEFP">"防御力 %"</string>
+    <string name="weapon_stat_HPP">"HP %"</string>
+    <string name="weapon_stat_no">"N/A"</string>
+    <!-- add in 20211018-->
+    <string name="artifact_stat1">1 ピース</string>
+    <string name="artifact_stat2">2 ピース</string>
+    <string name="artifact_stat4">4 ピース</string>
     <!-- alarm -->
     <string name="alarm_t1">ボス</string>
     <string name="alarm_t2">樹脂</string>
@@ -191,7 +203,6 @@
     <string name="edit_info_notif">情報</string>
     <string name="edit_cd_25off">25％時間短縮</string>
     <string name="edit_use_notif">このアラームを使用する</string>
-
     <!-- server -->
     <string name="america_ser">America (アメリカ)</string>
     <string name="europe_ser">Europe (ヨーロッパ)</string>
@@ -199,7 +210,6 @@
     <string name="hk_tw_mo_ser">HK、TW、MO</string>
     <string name="sky_land_ser">天空島</string>
     <string name="world_tree">世界樹</string>
-
     <!-- inside ui -->
     <string name="press_exit">もう一度押して終了</string>
     <string name="vote_title">このアプリの評価にご協力ください。</string>
@@ -209,7 +219,6 @@
     <string name="vote_later">後で</string>
     <string name="copied">コピーしました</string>
     <string name="pls_restart_app">アプリを再起動してください</string>
-
     <!-- cal_item_name -->
     <string name="result">結果</string>
     <string name="curr_lvl">"キャラLv. : "</string>
@@ -221,9 +230,21 @@
     <string name="choosed">"選択 : "</string>
     <string name="caled_char_weapon_art">計算されたキャラクター/武器/聖遺物</string>
     <string name="char_lvls">キャラクターレベル</string>
-
+    <!-- added in 20211001 -->
+    <string name="cal_choosed_already">あなたはすでに彼/彼女を選択しています。</string>
+    <!-- add in 20211003 -->
+    <string name="cal_crystal">水晶</string>
+    <string name="cal_boss">ボスドロップ</string>
+    <string name="cal_week_boss">週ボスドロップ</string>
+    <string name="cal_local">特産品</string>
+    <string name="cal_monster">モンスタードロップ</string>
+    <string name="cal_weeklybk1">月,木,日,秘境でドロップ</string>
+    <string name="cal_weeklybk2">火,金,日,秘境でドロップ</string>
+    <string name="cal_weeklybk3">水,土,日,秘境でドロップ</string>
+    <string name="cal_other">その他</string>
+    <!-- add in 20211025 -->
+    <string name="cal_reset">リセット</string>
     <!-- Language (Don't translate)-->
-
     <!-- main_page -->
     <string name="material_force">限界突破素材</string>
     <string name="char_asc_mater">限界突破素材:キャラクター</string>
@@ -233,7 +254,6 @@
     <string name="daily_login">デイリーログインボーナス</string>
     <string name="map">マップ</string>
     <string name="alarm">アラーム</string>
-
     <!-- setting -->
     <string name="bg_title">テーマ</string>
     <string name="light_theme">ライト</string>
@@ -253,7 +273,15 @@
     <string name="about_info3">このアプリケーションは、「Shiori for Genshin」をベースに開発され、「Shiori for Genshin」とその協力者に敬意を表することを目的としていますが、協力者からはまだ認められていません。このアプリケーションの画像やデータは、オープンソースプロジェクトから引用したもので、以下にリンクを貼っておきます。そのため、このアプリケーションのインターフェイスやレイアウトの一部は、「Shiori for Genshin」と非常によく似ています。ただし、本アプリケーションは、プログラミング言語としてDartではなくJavaを使用しており、Androidでサポートされている.apkと.aabのファイル形式でのみ動作します。デバイスへのインストールと操作。</string>
     <string name="about_title4">オープンソース声明</string>
     <string name="about_info4">このアプリケーションは、「Shiori for Genshin」とその協力者に敬意を表することを目的としているため、Githubでオープンソースで開発しており、誰でも閲覧、コメントの提供、さらには共同作業を行うことができます。 また、このアプリケーションに関する提案やアプリケーションを歓迎します。 Google Playでも公開される予定です。 このプロジェクト、バグ、新機能などについて連絡したい場合は、EメールまたはDiscordで連絡することもできます(中国本土ではQQが利用できます)。 最後に、皆様のご理解とご支援をお願いいたします。</string>
-
+    <string name="about_title5">Third-Party Distribution and Compilation Statement</string>
+    <string name="about_info5">This project (原神小幫手 Genshin Spirit) does not object to anyone adding functions, debugging, compiling and testing, and using it for learning purposes, but this project does not allow third parties to distribute freely (whether private or public) the unofficial version [Note 1] without written permission from Voc-夜芷冰, and deliberately pretend to be the developer of this project [Note 2]. Voc-夜芷冰 reserves the right to ask individuals/institutions who violate the above conditions to be removed from the shelves after version 3.2.0 (10825).\n[Note 1] The unofficial version includes third-party self-compilation and distribution after downloading the application installation file on the cooperative platform.\n[Note 2] Discord Bot [原神小幫手] has nothing to do with this project (this project was uploaded on Github as early as September 2021, and the official version was released on Google Play in November 2021)</string>
+    <!-- add in 20210918-->
+    <string name="thanks_title">スペシャルサンクス</string>
+    <string name="translator_title">翻訳者</string>
+    <string name="beta_tester_title">ベータテスター</string>
+    <string name="thanks_intro">あなたの助けのおかげで、Genshin Spiritはより完璧なものになりました。</string>
+    <!-- add in 20211016-->
+    <string name="list_grid">リストグリッド</string>
     <!-- moy -->
     <string name="date_jan">1月</string>
     <string name="date_feb">2月</string>
@@ -267,7 +295,6 @@
     <string name="date_oct">10月</string>
     <string name="date_nov">11月</string>
     <string name="date_dec">12月</string>
-
     <!-- dom -->
     <string name="date_1st">" 1日"</string>
     <string name="date_2nd">" 2日"</string>
@@ -300,8 +327,6 @@
     <string name="date_29th">" 29日"</string>
     <string name="date_30th">" 30日"</string>
     <string name="date_31st">" 31日"</string>
-
-    <!-- add in 20211001 -->
     <!-- Weapon-Sword -->
     <string name="amenoma_kageuchi">"天目影打"</string>
     <string name="aquila_favonia">"風鷹剣"</string>
@@ -330,7 +355,6 @@
     <string name="the_black_sword">"黒剣"</string>
     <string name="the_flute">"笛の剣"</string>
     <string name="travelers_handy_sword">"旅道の剣"</string>
-
     <!-- Weapon-Claymore -->
     <string name="waster_greatsword">"訓練用大剣"</string>
     <string name="old_mercs_pal">"傭兵の重剣"</string>
@@ -357,8 +381,9 @@
     <string name="song_of_broken_pines">"松韻の響く頃"</string>
     <string name="the_unforged">"無工の剣"</string>
     <string name="wolfs_gravestone">"狼の末路"</string>
-
-    <!-- Weapon-Plearm -->
+    <!-- add in 20211030 -->
+    <string name="wavebreakers_fin">"斬波のひれ長"</string>
+    <!-- Weapon-Polearm -->
     <string name="beginners_protector">"新米の長槍"</string>
     <string name="iron_point">"鉄尖槍"</string>
     <string name="black_tassel">"黒纓槍"</string>
@@ -380,7 +405,8 @@
     <string name="skyward_spine">"天空の脊"</string>
     <string name="staff_of_homa">"護摩の杖"</string>
     <string name="vortex_vanquisher">"破天の槍"</string>
-
+    <!-- add in 20211030 -->
+    <string name="akuoumaru">"惡王丸"</string>
     <!-- Weapon-Catalyst -->
     <string name="apprentices_notes">"生徒ノート"</string>
     <string name="pocket_grimoire">"ポケット魔導書"</string>
@@ -407,7 +433,6 @@
     <string name="lost_prayer_to_the_sacred_winds">"四風原典"</string>
     <string name="memory_of_dust">"浮世の錠"</string>
     <string name="skyward_atlas">"天空の巻"</string>
-
     <!-- Weapon-Bow -->
     <string name="hunters_bow">"狩猟弓"</string>
     <string name="seasoned_hunters_bow">"歴戦の狩猟弓"</string>
@@ -435,54 +460,8 @@
     <string name="elegy_for_the_end">"終焉を嘆く詩"</string>
     <string name="skyward_harp">"天空の翼"</string>
     <string name="thundering_pulse">"飛雷の鳴弦"</string>
-
-    <!-- char_info -->
-    <string name="none_info">現時点では彼/彼女に関する関連情報はありません。</string>>
-    <string name="weapon_stat">"二次属性 : "</string>
-    <string name="weapon_stat_atk">"攻撃力"</string>
-    <string name="weapon_stat_DEF">"防御力"</string>
-    <string name="weapon_stat_HP">"HP"</string>
-    <string name="weapon_stat_atkP">"攻撃力 %"</string>
-    <string name="weapon_stat_CritDMGP">"会心 %"</string>
-    <string name="weapon_stat_CritRateP">"会心率 %"</string>
-    <string name="weapon_stat_PhyDMGP">"物理ダメージ %"</string>
-    <string name="weapon_stat_EnRechP">"元素チャージ %"</string>
-    <string name="weapon_stat_EleMas">"元素熟知"</string>
-    <string name="weapon_stat_DEFP">"防御力 %"</string>
-    <string name="weapon_stat_HPP">"HP %"</string>
-    <string name="weapon_stat_no">"N/A"</string>
-
-    <!-- cal_item_name -->
-    <string name="cal_choosed_already">あなたはすでに彼/彼女を選択しています。</string>
-
-    <!-- setting -->
-    <string name="thanks_title">スペシャルサンクス</string>
-    <string name="translator_title">翻訳者</string>
-    <string name="beta_tester_title">ベータテスター</string>
-    <string name="thanks_intro">あなたの助けのおかげで、Genshin Spiritはより完璧なものになりました。</string>
-
-    <!-- add in 20211003 -->
-    <!-- cal_item_name -->
-    <string name="cal_crystal">水晶</string>
-    <string name="cal_boss">ボスドロップ</string>
-    <string name="cal_week_boss">週ボスドロップ</string>
-    <string name="cal_local">特産品</string>
-    <string name="cal_monster">モンスタードロップ</string>
-    <string name="cal_weeklybk1">月,木,日,秘境でドロップ</string>
-    <string name="cal_weeklybk2">火,金,日,秘境でドロップ</string>
-    <string name="cal_weeklybk3">水,土,日,秘境でドロップ</string>
-    <string name="cal_other">その他</string>
-
-    <!-- add in 20211018 -->
-    <!-- char_info -->
-    <string name="artifact_stat1">1 ピース</string>
-    <string name="artifact_stat2">2 ピース</string>
-    <string name="artifact_stat4">4 ピース</string>
-
-
-    <!-- setting -->
-    <string name="list_grid">リストグリッド</string>
-
+    <!-- add in 20211030 -->
+    <string name="mouuns_moon">"曚雲の月"</string>
     <!-- artifacts -->
     <string name="adventurer">"冒険者"</string>
     <string name="archaic_petra">"悠久の磐岩"</string>
@@ -519,33 +498,19 @@
     <string name="traveling_doctor">"医者"</string>
     <string name="viridescent_venerer">"翠緑の影"</string>
     <string name="wanderers_troupe">"大地を流浪する楽団"</string>
-
-    <!-- add in 20211023 -->
-    <!-- New Character in here-->
-    <string name="gorou">ゴロー</string>
-    <string name="arataki_itto">荒瀧一斗</string>
-    <string name="yae_miko">八重神子</string>
-    <string name="buff">バフ</string>
-
     <!-- add in 20211025 -->
-    <string name="cal_reset">リセット</string>
+    <string name="buff">バフ</string>
     <!-- add in 20211027 -->
     <string name="nora_fortis">Nora Fortis</string>
     <string name="snezhnaya">Snezhnaya</string>
     <!-- add in 20211028 -->
     <string name="happy_birthday">"お誕生日おめでとう！"</string>
-	<!-- add in 20211030 -->
-    <string name="wavebreakers_fin">"斬波のひれ長"</string>
-    <string name="akuoumaru">"惡王丸"</string>
-    <string name="mouuns_moon">"曚雲の月"</string>
     <!-- add in 20211127 -->
-    <string name="cinnabar_spindle">シナバースピンドル</string>
-    <string name="shenhe">申鶴</string>
-    <string name="yun_jin">雲菫</string>
-    <string name="husk_of_opulent_dreams">華館夢醒形骸記</string>
-    <string name="ocean_hued_clam">海染硨磲</string>
-    <string name="redhorn_stonethresher">赤角石塵滅砕</string>
-
+    <string name="cinnabar_spindle">"シナバースピンドル"</string>
+    <string name="shenhe">"申鶴"</string>
+    <string name="yun_jin">"雲菫"</string>
+    <string name="husk_of_opulent_dreams">"華館夢醒形骸記"</string>
+    <string name="ocean_hued_clam">"海染硨磲"</string>
     <!-- add in 20211226 && 20220103 -->
     <string name="weapon_stat_EleDMGP_Electro">雷元素ダメージボーナス</string>
     <string name="weapon_stat_EleDMGP_Pyro">炎元素ダメージボーナス</string>
@@ -556,7 +521,7 @@
     <string name="weapon_stat_EleDMGP_Geo">岩元素ダメージボーナス</string>
     <string name="weapon_stat_HealingP">治療ボーナス</string>
     <string name="calamity_queller">息災</string>
-
+    <string name="redhorn_stonethresher">赤角石塵滅砕</string>
     <!-- add in 20220108 -->
     <string name="background_setting">背景設定</string>
     <string name="background_accept_list">JPG、JPEG、PNG、GIFのみが受け入れられます</string>
@@ -564,17 +529,16 @@
     <string name="background_source">ソース</string>
     <string name="background_display">画面</string>
     <string name="voc">Voc-夜芷冰</string>
-
     <!-- add in 20220110-->
-    <string name="traveler_sex_setting">あなたの旅行者の性別は何ですか？</string>
-    <string name="name_start_with_num_err">数字と特殊記号で最初の文字を使用することはできません。</string>
-    <string name="cal_create_set">新しい計算セットを作成する</string>
-    <string name="cal_enter_name">名前を入力してください</string>
+    <string name="traveler_sex_setting">"あなたの旅行者の性別は何ですか？"</string>
+    <string name="name_start_with_num_err">"数字と特殊記号で最初の文字を使用することはできません。"</string>
+    <string name="cal_create_set">"新しい計算セットを作成する"</string>
+    <string name="cal_enter_name">"名前を入力してください"</string>
     <string name="kaguras_verity">神楽の真意</string>
     <string name="oathsworn_eye">誓いの明瞳</string>
-
     <!-- add in 20220130-->
     <string name="press_see_details">を押して詳細を表示します</string>
+    <!-- add in 20220201-->
     <string name="update_download_update_curr">アップデートをダウンロードする</string>
     <string name="update_download_update_base">すべてのファイルをダウンロード</string>
     <string name="update_download_advice">Wi-Fiに接続してからダウンロードすることをお勧めします</string>
@@ -588,8 +552,7 @@
     <string name="update_download_unzipping">解凍...お待ちください...</string>
     <string name="update_download_not_found_update">現在、リソースの更新はありません〜</string>
     <string name="update_download_done">すべてのダウンロード/更新が完了しました</string>
-
-    <!-- add in 20220207-->
+    <!-- add in 20220206-->
     <string name="pyro_slime">炎スライム</string>
     <string name="large_pyro_slime">大型炎スライム</string>
     <string name="electro_slime">雷スライム</string>
@@ -742,10 +705,10 @@
     <string name="azhdaha">始める若陀龍王</string>
     <string name="pyro_azhdaha">火若陀龍王</string>
     <string name="hydro_azhdaha">水若陀龍王</string>
-    <string name="firecryo_azhdaha">火->冰若陀龍王</string>
-    <string name="fireelectro_azhdaha">火->雷若陀龍王</string>
-    <string name="hydrocryo_azhdaha">水->冰若陀龍王</string>
-    <string name="hydroelectro_azhdaha">水->雷若陀龍王</string>
+    <string name="firecryo_azhdaha">火-&gt;冰若陀龍王</string>
+    <string name="fireelectro_azhdaha">火-&gt;雷若陀龍王</string>
+    <string name="hydrocryo_azhdaha">水-&gt;冰若陀龍王</string>
+    <string name="hydroelectro_azhdaha">水-&gt;雷若陀龍王</string>
     <string name="phase_1_la_signora">「淑女」第一段階</string>
     <string name="phase_2_la_signora">「淑女」第二段階</string>
     <string name="magatsu_mitake_narukami_no_mikoto">禍津御建鳴神命</string>
@@ -767,7 +730,6 @@
     <string name="maguu_kenki_galloping_frost">魔偶剣鬼·霜馳</string>
     <string name="maguu_kenki_mask_of_terror">魔偶剣鬼·凶面</string>
     <string name="the_great_snowboar_king">雪のイノシシ王</string>
-
     <!-- add in 20220209-->
     <string name="element_reaction">元素反応</string>
     <string name="buff_normal_1_hit">1段ダメージ</string>
@@ -777,22 +739,18 @@
     <string name="buff_normal_5_hit">5段ダメージ</string>
     <string name="buff_normal_6_hit">6段ダメージ</string>
     <string name="buff_normal_shoot">狙い撃ち</string>
-
     <string name="buff_charged_shoot">フルチャージ狙い撃ち</string>
     <string name="buff_charged_dmg">重撃ダメージ</string>
     <string name="buff_charged_spinning_dmg">連続重撃ダメージ</string>
     <string name="buff_charged_final_dmg">重撃終了ダメージ</string>
-
     <string name="buff_plunge_dmg">落下期間のダメージ</string>
     <string name="buff_low_plunge_dmg">低空落下攻撃ダメージ</string>
     <string name="buff_high_plunge_dmg">高空落下攻撃ダメージ</string>
-
     <string name="buff_uncrit_dmg">クリティカルダメージではない</string>
     <string name="buff_crited_dmg">クリティカルダメージ</string>
     <string name="buff_grade">階級 : </string>
     <string name="buff_upgrade_times">アップグレードの数 : </string>
-
-    <!-- add in 20220216-->
+    <!-- add in 20220215-->
     <string name="skill_dmg">スキルダメージ</string>
     <string name="transient_blossom_dmg">刹那の花ダメージ</string>
     <string name="freeze_bomb_dmg">氷の爆弾ダメージ</string>
@@ -817,7 +775,7 @@
     <string name="base_shield_dmg_absorption_base">シールド基礎吸収量 (基本)</string>
     <string name="hold_dmg">長押しダメージ</string>
     <string name="icewhirl_brand_dmg">氷渦の剣ダメージ</string>
-    <string name="ozs_atk_dmg">オズの攻撃ダメージ</string>
+    <string name="ozs_atk_dmg">"オズの攻撃ダメージ"</string>
     <string name="summoning_dmg">召喚ダメージ</string>
     <string name="blood_blossom_dmg">血梅香ダメージ</string>
     <string name="press_skill_dmg">一回押しスキルダメージ</string>
@@ -828,7 +786,7 @@
     <string name="jumpy_dumpty_dmg">ボンボン爆弾ダメージ</string>
     <string name="mine_dmg">ブービートラップダメージ</string>
     <string name="tengu_juurai_ambush_dmg">天狗呪雷·伏 ダメージ</string>
-    <string name="non_conductive_hold_dmg">誘雷なしの長押しダメージ</string>
+    <string name="non_conductive_hold_dmg">"誘雷なしの長押しダメージ"</string>
     <string name="stack_1_conductive_hold_dmg">誘雷1重の長押しダメージ</string>
     <string name="stack_2_conductive_hold_dmg">誘雷2重の長押しダメージ</string>
     <string name="stack_3_conductive_hold_dmg">誘雷3重の長押しダメージ</string>
@@ -872,7 +830,7 @@
     <string name="elemental_burst_dmg">元素爆発ダメージ</string>
     <string name="fatal_blossom_dmg">生滅の花ダメージ</string>
     <string name="fiery_rain_dmg_per_wave">矢の雨1回のダメージ</string>
-    <string name="total_fiery_rain_dmg">矢の雨の合計ダメージ	</string>
+    <string name="total_fiery_rain_dmg">矢の雨の合計ダメージ</string>
     <string name="atk_bonus">攻撃力上昇</string>
     <string name="regeneration">回復量</string>
     <string name="regeneration_base">回復量 (基本)</string>
@@ -883,7 +841,7 @@
     <string name="hp_regeneration_over_time">継続回復量</string>
     <string name="hp_regeneration_over_time_base">継続回復量 (基本)</string>
     <string name="lightfall_sword_base_dmg">光臨の剣基礎ダメージ</string>
-    <string name="falling_thunder_dmg">威光の落雷ダメージ	</string>
+    <string name="falling_thunder_dmg">威光の落雷ダメージ</string>
     <string name="ice_shard_dmg">氷柱ダメージ</string>
     <string name="crystal_collapse_dmg">岩晶崩滅ダメージ</string>
     <string name="low_hp_skill_dmg">低HP時スキルダメージ</string>
@@ -931,31 +889,29 @@
     <string name="pyronado_dmg">旋火輪ダメージ</string>
     <string name="sword_rain_dmg">剣雨のダメージ</string>
     <string name="aurous_blaze_explosion_dmg">琉金の炎爆発ダメージ</string>
+    <!-- add in 20220219-->
     <string name="sesshou_sakura_dmg_level_1">殺生櫻ダメージ·階位壱</string>
     <string name="sesshou_sakura_dmg_level_2">殺生櫻ダメージ·階位弐</string>
     <string name="sesshou_sakura_dmg_level_3">殺生櫻ダメージ·階位参</string>
     <string name="sesshou_sakura_dmg_level_4">殺生櫻ダメージ·階位肆</string>
     <string name="tenko_thunderbolt_dmg">天狐雷霆ダメージ</string>
-
     <string name="name_used">この名前はすでに使用されています。別の名前を入力してください。</string>
     <string name="alds_helper_title">アルゴリズムとデータ統合</string>
-    <string name="these_is_rss_source">以下は、Genshin Spiritの情報、データ、画像ソースです。</string>
-    <string name="press_open_link">を押して対応するリンクを開きます</string>
+    <string name="these_is_rss_source">"以下は、Genshin Spiritの情報、データ、画像ソースです。"</string>
+    <string name="press_open_link">"を押して対応するリンクを開きます"</string>
     <string name="developer">デベロッパー</string>
     <string name="buff_cal_thx">✧インライン関数としてGenshinCalculatorの継続を許可してくれたdfslylz \n✧に感謝します</string>
     <string name="buff_calcluator">バフ計算機</string>
     <string name="ui_design">UIデザイン</string>
-
     <!-- add in 20220304 -->
-    <string name="rectangle" >長方形</string>
-    <string name="square" >正方形</string>
-    <string name = "char_suit_on">アクティブスーツに変更</string>
+    <string name="rectangle">長方形</string>
+    <string name="square">正方形</string>
+    <string name="char_suit_on">アクティブスーツに変更</string>
     <string name="circlet">理の冠：</string>
-    <string name="goblet">空の杯：</string>
     <string name="sand">時の砂：</string>
+    <string name="goblet">空の杯：</string>
     <string name="main_entry">主詞：</string>
     <string name="sub_entry">副詞：</string>
-
     <!-- add in 20220329 -->
     <string name="haran_geppaku_futsu">波乱月白経津</string>
     <string name="echoes_of_an_offering">来歆の余響</string>
@@ -964,7 +920,6 @@
     <string name="yelan">夜蘭</string>
     <string name="advance_stat">画期的なプロパティ</string>
     <string name="card">カード</string>
-
     <!-- add in 20220419 -->
     <string name="element_Electro">雷元素</string>
     <string name="element_Pyro">炎元素</string>
@@ -976,11 +931,13 @@
     <string name="forsaken_rift">忘却の峡谷</string>
     <string name="taishan_mansion">太山府</string>
     <string name="violet_court">菫色ノ庭</string>
-    <string name="court_of_flowing_sand">砂流ノ庭</string>
-    <string name="hidden_palace_of_lianshan_formula">震雷連山密宮</string>
     <string name="cecilia_garden">セシリアの苗床</string>
+    <string name="hidden_palace_of_lianshan_formula">震雷連山密宮</string>
+    <string name="court_of_flowing_sand">砂流ノ庭</string>
     <string name="img_reset_finish">背景がリセットされました</string>
-
+    <string name="title_activity_characters_info_scroll2048">Characters_Info_Scroll_2048</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
     <!-- add in 20220423 -->
     <string name="obtain_no">N/A</string>
     <string name="obtain_forge_mission_nmdbj">鍛冶屋(農夫の宝)</string>
@@ -1009,14 +966,12 @@
     <string name="obtain_npc_dcdyhw">ギフトNPC店、稲妻漁業協同組合</string>
     <string name="obtain_chesr_ly">璃月のチェスト</string>
     <string name="obtain_chest_gwk">孤雲閣のチェスト</string>
-
     <!-- add in 20220512 -->
     <string name="ui_2048_name">ゲーム</string>
     <string name="ui_siptik_name">マテリアル</string>
     <string name="ui_voc_name">クラシック</string>
     <string name="shikanoin_heizou">鹿野院平蔵</string>
     <string name="detail">詳細</string>
-
     <!-- add in 20220521 -->
     <string name="release_state">実装状態</string>
     <string name="released">実装済み</string>
@@ -1032,7 +987,6 @@
     <string name="aqua_simulacra">若水</string>
     <string name="kagotsurube_isshin">籠釣瓶一心</string>
     <string name="fading_twilight">落霞</string>
-
     <!-- add in 20220529 -->
     <string name="tut_part0_1">"こんにちは、私はGenshinSpiritの開発者であるVoc-夜芷冰です。私はこのチュートリアルのガイドです。"</string>
     <string name="tut_part0_2">"まず、GenshinSpiritについて少しご紹介させていただきます。"</string>
@@ -1057,7 +1011,6 @@
     <string name="tut_part5_3">"質問や問題がある場合は、Discordで直接質問することができます。"</string>
     <string name="tut_part5_4">"私たちの公式Discordサーバーの招待リンクは、パイモンタブの'About'もしくは設定タブの'About'に記載されています。"</string>
     <string name="tut_part5_5">"それでは、またDiscordでお会いしましょう。"</string>
-
     <!-- add in 20220714 -->
     <string name="sumeru">スメール</string>
     <string name="fontaine">フォンテーヌ</string>
@@ -1085,25 +1038,24 @@
     <string name="rich_red_brocade">金織の赤い絹</string>
     <string name="majestic_hooked_beak">蕈王の鉤状のくちばし</string>
     <string name="rukkhashava_mushrooms">ルッカデヴァタダケ</string>
-    <string name="gilded_dreams">金メッキの夢</string>
     <string name="deepwood_memories">深林の記憶</string>
-
-
+    <string name="gilded_dreams">金メッキの夢</string>
     <!-- add in 20220823 -->
-    <string name="philosophies_of_praxis">「篤行」の哲学</string>
-    <string name="guides_of_praxis">「篤行」の導き</string>
-    <string name="teachings_of_praxis">「篤行」の教え</string>
-    <string name="teachings_of_admonition">「忠言」の教え</string>
     <string name="guides_of_admonition">「忠言」の導き</string>
+    <string name="guides_of_ingenuity">「創意」の導き</string>
+    <string name="guides_of_praxis">「篤行」の導き</string>
     <string name="philosophies_of_admonition">「忠言」の哲学</string>
     <string name="philosophies_of_ingenuity">「創意」の哲学</string>
+    <string name="philosophies_of_praxis">「篤行」の哲学</string>
+    <string name="teachings_of_admonition">「忠言」の教え</string>
     <string name="teachings_of_ingenuity">「創意」の教え</string>
-    <string name="guides_of_ingenuity">「創意」の導き</string>
+    <string name="teachings_of_praxis">「篤行」の教え</string>
     <string name="steeple_of_ignorance">無学の塔</string>
     <string name="tower_of_abject_pride">有頂の塔</string>
     <string name="copper_talisman_of_the_forest_dew">静謐な森のしずくの銅符</string>
     <string name="oasis_gardens_reminiscence">オアシスガーデンの追憶</string>
     <string name="echo_of_scorching_might">烈日権威の残響</string>
+    <!-- add in 20220923 -->
     <string name="nilou">ニィロウ</string>
     <string name="cyno">セノ</string>
     <string name="candace">キャンディス</string>
@@ -1113,21 +1065,26 @@
     <string name="missive_windspear">風信の矛</string>
     <string name="staff_of_the_scarlet_sands">赤砂の杖</string>
     <string name="wandering_evenstar">彷徨える星</string>
-    <string name="a_thousand_floating_dreams">千夜浮夢</string>
-    <string name="layla">レイラ</string>
+    <!-- add in 20221001 -->
     <string name="nahida">ナヒーダ</string>
-    <string name="screenshot_saved">スクリーンショットが正常に保存されました</string>
-    <string name="screenshot_not_saved_permission">閲覧許可に同意してください</string>
+    <string name="layla">レイラ</string>
+    <string name="a_thousand_floating_dreams">千夜浮夢</string>
     <string name="screenshot_not_saved">スクリーンショットを保存できませんでした</string>
+    <string name="screenshot_not_saved_permission">閲覧許可に同意してください</string>
+    <string name="screenshot_saved">"スクリーンショットが正常に保存されました"</string>
     <string name="talent_lvl">"スキルレベル : "</string>
     <string name="today">本日</string>
     <string name="unclaimed">未請求</string>
     <string name="claimed">請求すでに</string>
     <string name="idle">休眠</string>
-    <string name="is_random_scenery">ランダムな風景の抜粋を有効にする</string>
-    <string name="dakas_bell">空行の虚鈴</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">This is an app widget description</string>
+    <!-- add in 20221102-->
     <string name="puppet_strings">傀儡の糸</string>
     <string name="mirror_of_mushin">無心の淵鏡</string>
+    <string name="dakas_bell">空行の虚鈴</string>
+    <string name="is_random_scenery">ランダムな風景の抜粋を有効にする</string>
     <string name="global_server">国際サーバー</string>
     <string name="mainland_server">中国本土サーバー</string>
     <string name="memo_step1">資格情報を取得する</string>
@@ -1139,194 +1096,193 @@
     <string name="clean_cookies">すべての Cookies を削除する</string>
     <string name="clean_cookies_already">すべての Cookies を消去済み</string>
     <string name="display_beta_data">ベータデータを表示</string>
-    <string name="wanderer">放浪者</string>
     <string name="faruzan">ファルザン</string>
-    <string name="custom_card">カスタム名刺</string>
+    <string name="wanderer">放浪者</string>
     <string name="custom_icon">カスタムアバター</string>
+    <string name="custom_card">カスタム名刺</string>
     <string name="polar_star">冬極の白星</string>
     <string name="tulaytullahs_remembrance">トゥライトゥーラの記憶</string>
     <string name="toukabou_shigure">東花坊時雨</string>
     <string name="flower_of_paradise_lost">楽園の絶花</string>
     <string name="desert_pavilion_chronicle">砂上の楼閣の史話</string>
-    <string name="alhaitham">アルハイゼン</string>
     <string name="yaoyao">ヨォーヨ</string>
-
-    <string name="tcg_ganyu">甘雨</string>
-    <string name="tcg_kaeya">ガイア</string>
-    <string name="tcg_chongyun">重雲</string>
-    <string name="tcg_kamisato_ayaka">神里綾華</string>
-    <string name="tcg_xingqiu">行秋</string>
-    <string name="tcg_mona">モナ</string>
-    <string name="tcg_diluc">ディルック</string>
-    <string name="tcg_xiangling">香菱</string>
-    <string name="tcg_bennett">ベネット</string>
-    <string name="tcg_yoimiya">宵宮</string>
-    <string name="tcg_fischl">フィッシュル</string>
-    <string name="tcg_razor">レザー</string>
-    <string name="tcg_keqing">刻晴</string>
-    <string name="tcg_sucrose">スクロース</string>
-    <string name="tcg_jean">ジン</string>
-    <string name="tcg_ningguang">凝光</string>
-    <string name="tcg_noelle">ノエル</string>
-    <string name="tcg_collei">コレイ</string>
-    <string name="tcg_rhodeia_of_loch">純水精霊·ローデシア</string>
-    <string name="tcg_fatui_pyro_agent">デットエージェント·炎</string>
-    <string name="tcg_maguu_kenki">魔偶剣鬼</string>
-    <string name="tcg_stonehide_lawachurl">ヒルチャール·岩兜の王</string>
-    <string name="tcg_diona">ディオナ</string>
-    <string name="tcg_cyno">セノ</string>
-    <string name="tcg_barbara">バーバラ</string>
-    <string name="tcg_mirror_maiden">ミラーメイデン</string>
-    <string name="tcg_jadeplume_terrorshroom">マッシュラプトル</string>
-    <string name="tcg_undivided_heart">唯一の心</string>
-    <string name="tcg_cold_blooded_strike">冷血の剣</string>
-    <string name="tcg_steady_breathing">吐納真定</string>
-    <string name="tcg_kanten_senmyou_blessing">寒空の宣命祝詞</string>
-    <string name="tcg_the_scent_remained">すだれの残香</string>
-    <string name="tcg_prophecy_of_submersion">沈没の預言</string>
-    <string name="tcg_flowing_flame">流火焼灼</string>
-    <string name="tcg_crossfire">交差する炎</string>
-    <string name="tcg_grand_expectation">冒険の憧れ</string>
-    <string name="tcg_naganohara_meteor_swarm">長野原龍勢流星群</string>
-    <string name="tcg_stellar_predator">星喰いの鴉</string>
-    <string name="tcg_awakening">覚醒</string>
-    <string name="tcg_thundering_penance">抵天の雷罰</string>
-    <string name="tcg_chaotic_entropy">混元熵增論</string>
-    <string name="tcg_lands_of_dandelion">蒲公英の国土</string>
-    <string name="tcg_strategic_reserve">備えあれば憂いなし</string>
-    <string name="tcg_i_got_your_back">支援はお任せください</string>
-    <string name="tcg_floral_sidewinder">フライリーフワインダー</string>
-    <string name="tcg_streaming_surge">百川奔流</string>
-    <string name="tcg_paid_in_full">目には目を</string>
-    <string name="tcg_transcendent_automaton">からくり神通</string>
-    <string name="tcg_stonehide_reforged">鋳直し：岩兜</string>
-    <string name="tcg_shaken_not_purred">クールキャッツクロー</string>
-    <string name="tcg_featherfall_judgment">落羽の裁決</string>
-    <string name="tcg_glorious_season">輝く季節</string>
-    <string name="tcg_mirror_cage">鏡の檻</string>
-    <string name="tcg_proliferating_spores">胞子増殖</string>
-    <string name="tcg_magic_guide">魔導緒論</string>
-    <string name="tcg_sacrificial_fragments">祭礼の断片</string>
-    <string name="tcg_skyward_atlas">天空の巻</string>
-    <string name="tcg_raven_bow">鴉羽の弓</string>
-    <string name="tcg_sacrificial_bow">祭礼の弓</string>
-    <string name="tcg_skyward_harp">天空の翼</string>
-    <string name="tcg_white_iron_greatsword">白鉄の大剣</string>
-    <string name="tcg_sacrificial_greatsword">祭礼の大剣</string>
-    <string name="tcg_wolfs_gravestone">狼の末路</string>
-    <string name="tcg_white_tassel">白纓槍</string>
-    <string name="tcg_lithic_spear">千岩長槍</string>
-    <string name="tcg_skyward_spine">天空の脊</string>
-    <string name="tcg_travelers_handy_sword">旅道の剣</string>
-    <string name="tcg_sacrificial_sword">祭礼の剣</string>
-    <string name="tcg_aquila_favonia">風鷹剣</string>
-    <string name="tcg_adventurers_bandana">冒険者のバンダナ</string>
-    <string name="tcg_lucky_dogs_silver_circlet">幸運の冠</string>
-    <string name="tcg_traveling_doctors_handkerchief">医者の方巾</string>
-    <string name="tcg_gamblers_earrings">博徒のピアス</string>
-    <string name="tcg_instructors_cap">教官の帽子</string>
-    <string name="tcg_exiles_circlet">亡命者の冠</string>
-    <string name="tcg_broken_rimes_echo">氷雪を踏む音</string>
-    <string name="tcg_blizzard_strayer">氷風を彷徨う勇士</string>
-    <string name="tcg_wine_stained_tricorne">酒に漬けた帽子</string>
-    <string name="tcg_heart_of_depth">沈淪の心</string>
-    <string name="tcg_witchs_scorching_hat">焦げた魔女の帽子</string>
-    <string name="tcg_crimson_witch_of_flames">燃え盛る炎の魔女</string>
-    <string name="tcg_thunder_summoners_crown">雷を呼ぶ冠</string>
-    <string name="tcg_thundering_fury">雷のような怒り</string>
-    <string name="tcg_viridescent_venerers_diadem">緑の狩人の冠</string>
-    <string name="tcg_viridescent_venerer">翠緑の影</string>
-    <string name="tcg_mask_of_solitude_basalt">不動玄石の相</string>
-    <string name="tcg_archaic_petra">悠久の磐岩</string>
-    <string name="tcg_laurel_coronet">月桂の宝冠</string>
-    <string name="tcg_deepwood_memories">深林の記憶</string>
-    <string name="tcg_liyue_harbor_wharf">璃月港口</string>
-    <string name="tcg_knights_of_favonius_library">騎士団図書館</string>
-    <string name="tcg_jade_chamber">群玉閣</string>
-    <string name="tcg_dawn_winery">アカツキワイナリー</string>
-    <string name="tcg_wangshu_inn">望舒旅館</string>
-    <string name="tcg_favonius_cathedral">西風大聖堂</string>
-    <string name="tcg_paimon">パイモン</string>
-    <string name="tcg_katheryne">キャサリン</string>
-    <string name="tcg_timaeus">ティマイオス</string>
-    <string name="tcg_wagner">ワーグナー</string>
-    <string name="tcg_chef_mao">卯師匠</string>
-    <string name="tcg_tubby">マル</string>
-    <string name="tcg_timmie">ティミー</string>
-    <string name="tcg_liben">立本</string>
-    <string name="tcg_chang_the_ninth">常九</string>
-    <string name="tcg_ellin">エリン</string>
-    <string name="tcg_iron_tongue_tian">田饒舌</string>
-    <string name="tcg_liu_su">劉蘇</string>
-    <string name="tcg_parametric_transformer">参量物質変化器</string>
-    <string name="tcg_nre">携帯式栄養袋</string>
-    <string name="tcg_elemental_resonance_woven_ice">元素共鳴：交錯の氷</string>
-    <string name="tcg_elemental_resonance_shattering_ice">元素共鳴：粉砕の氷</string>
-    <string name="tcg_elemental_resonance_woven_waters">元素共鳴：交錯の水</string>
-    <string name="tcg_elemental_resonance_soothing_water">元素共鳴：治療の水</string>
-    <string name="tcg_elemental_resonance_woven_flames">元素共鳴：交錯の炎</string>
-    <string name="tcg_elemental_resonance_fervent_flames">元素共鳴：熱誠の炎</string>
-    <string name="tcg_elemental_resonance_woven_thunder">元素共鳴：交錯の雷</string>
-    <string name="tcg_elemental_resonance_high_voltage">元素共鳴：強権の雷</string>
-    <string name="tcg_elemental_resonance_woven_winds">元素共鳴：交錯の風</string>
-    <string name="tcg_elemental_resonance_impetuous_winds">元素共鳴：迅速の風</string>
-    <string name="tcg_elemental_resonance_woven_stone">元素共鳴：交錯の岩</string>
-    <string name="tcg_elemental_resonance_enduring_rock">元素共鳴：不動の岩</string>
-    <string name="tcg_elemental_resonance_woven_weeds">元素共鳴：交錯の草</string>
-    <string name="tcg_elemental_resonance_sprawling_greenery">元素共鳴：蔓生の草</string>
-    <string name="tcg_the_bestest_travel_companion">最高の仲間！</string>
-    <string name="tcg_changing_shifts">シフト交代の時間</string>
-    <string name="tcg_toss_up">乾坤一擲</string>
-    <string name="tcg_strategize">権謀術数</string>
-    <string name="tcg_i_havent_lost_yet">俺様はまだ負けちゃいねぇ！</string>
-    <string name="tcg_leave_it_to_me">お任せください！</string>
-    <string name="tcg_when_the_crane_returned">鶴の帰郷</string>
-    <string name="tcg_starsigns">星天の兆</string>
-    <string name="tcg_calxs_arts">白亜の術</string>
-    <string name="tcg_master_of_weaponry">武芸マスター</string>
-    <string name="tcg_blessing_of_the_divine_relics_installation">神宝遷宮祝詞</string>
-    <string name="tcg_quick_knit">迅速裁縫の術</string>
-    <string name="tcg_send_off">送ってあげよ～！</string>
-    <string name="tcg_guardians_oath">護法の誓い</string>
-    <string name="tcg_abyssal_summons">アビスの呼びかけ</string>
-    <string name="tcg_jueyun_guoba">絶雲お焦げ</string>
-    <string name="tcg_adeptus_temptation">仙跳牆</string>
-    <string name="tcg_lotus_flower_crisp">ハスの花パイ</string>
-    <string name="tcg_northern_smoked_chicken">北地のスモークチキン</string>
-    <string name="tcg_sweet_madame">鳥肉のスイートフラワー漬け焼き</string>
-    <string name="tcg_mondstadt_hash_brown">モンド風ハッシュドポテト</string>
-    <string name="tcg_mushroom_pizza">キノコピザ</string>
-    <string name="tcg_minty_meat_rolls">ミントの獣肉巻き</string>
-    <string name="tcg_origin">原初</string>
-    <string name="tcg_mondstadt">モンド</string>
-    <string name="tcg_liyue">璃月</string>
-    <string name="tcg_inazuma">稲妻</string>
-    <string name="tcg_sumeru">スメール</string>
-    <string name="tcg_legend">レジェンド</string>
-    <string name="tcg_adept">達人</string>
-    <string name="tcg_hydro_crystal_chunk">水晶の塊</string>
-    <string name="tcg_magical_crystal_chunk">魔晶の塊</string>
-    <string name="tcg_amethyst_lump">紫水晶の塊</string>
-    <string name="tcg_flaming_flower_stamen">烈焔花の花蕊</string>
-    <string name="tcg_mist_flower_corolla">霧氷花の花蕊</string>
-    <string name="tcg_electro_crystal">電気水晶</string>
-    <string name="tcg_dandelion_seed">蒲公英の種</string>
-    <string name="tcg_cecilia">セシリアの花</string>
-    <string name="tcg_glaze_lily">琉璃百合</string>
-    <string name="tcg_dendrobium">血石華</string>
-    <string name="tcg_type_backside">カードバック</string>
+    <string name="alhaitham">アルハイゼン</string>
+    <!-- add in 20221213 -->
+    <string name="tcg_ganyu">"甘雨"</string>
+    <string name="tcg_kaeya">"ガイア"</string>
+    <string name="tcg_chongyun">"重雲"</string>
+    <string name="tcg_kamisato_ayaka">"神里綾華"</string>
+    <string name="tcg_xingqiu">"行秋"</string>
+    <string name="tcg_mona">"モナ"</string>
+    <string name="tcg_diluc">"ディルック"</string>
+    <string name="tcg_xiangling">"香菱"</string>
+    <string name="tcg_bennett">"ベネット"</string>
+    <string name="tcg_yoimiya">"宵宮"</string>
+    <string name="tcg_fischl">"フィッシュル"</string>
+    <string name="tcg_razor">"レザー"</string>
+    <string name="tcg_keqing">"刻晴"</string>
+    <string name="tcg_sucrose">"スクロース"</string>
+    <string name="tcg_jean">"ジン"</string>
+    <string name="tcg_ningguang">"凝光"</string>
+    <string name="tcg_noelle">"ノエル"</string>
+    <string name="tcg_collei">"コレイ"</string>
+    <string name="tcg_rhodeia_of_loch">"純水精霊·ローデシア"</string>
+    <string name="tcg_fatui_pyro_agent">"デットエージェント·炎"</string>
+    <string name="tcg_maguu_kenki">"魔偶剣鬼"</string>
+    <string name="tcg_stonehide_lawachurl">"ヒルチャール·岩兜の王"</string>
+    <string name="tcg_diona">"ディオナ"</string>
+    <string name="tcg_cyno">"セノ"</string>
+    <string name="tcg_barbara">"バーバラ"</string>
+    <string name="tcg_mirror_maiden">"ミラーメイデン"</string>
+    <string name="tcg_jadeplume_terrorshroom">"マッシュラプトル"</string>
+    <string name="tcg_undivided_heart">"唯一の心"</string>
+    <string name="tcg_cold_blooded_strike">"冷血の剣"</string>
+    <string name="tcg_steady_breathing">"吐納真定"</string>
+    <string name="tcg_kanten_senmyou_blessing">"寒空の宣命祝詞"</string>
+    <string name="tcg_the_scent_remained">"すだれの残香"</string>
+    <string name="tcg_prophecy_of_submersion">"沈没の預言"</string>
+    <string name="tcg_flowing_flame">"流火焼灼"</string>
+    <string name="tcg_crossfire">"交差する炎"</string>
+    <string name="tcg_grand_expectation">"冒険の憧れ"</string>
+    <string name="tcg_naganohara_meteor_swarm">"長野原龍勢流星群"</string>
+    <string name="tcg_stellar_predator">"星喰いの鴉"</string>
+    <string name="tcg_awakening">"覚醒"</string>
+    <string name="tcg_thundering_penance">"抵天の雷罰"</string>
+    <string name="tcg_chaotic_entropy">"混元熵增論"</string>
+    <string name="tcg_lands_of_dandelion">"蒲公英の国土"</string>
+    <string name="tcg_strategic_reserve">"備えあれば憂いなし"</string>
+    <string name="tcg_i_got_your_back">"支援はお任せください"</string>
+    <string name="tcg_floral_sidewinder">"フライリーフワインダー"</string>
+    <string name="tcg_streaming_surge">"百川奔流"</string>
+    <string name="tcg_paid_in_full">"目には目を"</string>
+    <string name="tcg_transcendent_automaton">"からくり神通"</string>
+    <string name="tcg_stonehide_reforged">"鋳直し：岩兜"</string>
+    <string name="tcg_shaken_not_purred">"クールキャッツクロー"</string>
+    <string name="tcg_featherfall_judgment">"落羽の裁決"</string>
+    <string name="tcg_glorious_season">"輝く季節"</string>
+    <string name="tcg_mirror_cage">"鏡の檻"</string>
+    <string name="tcg_proliferating_spores">"胞子増殖"</string>
+    <string name="tcg_magic_guide">"魔導緒論"</string>
+    <string name="tcg_sacrificial_fragments">"祭礼の断片"</string>
+    <string name="tcg_skyward_atlas">"天空の巻"</string>
+    <string name="tcg_raven_bow">"鴉羽の弓"</string>
+    <string name="tcg_sacrificial_bow">"祭礼の弓"</string>
+    <string name="tcg_skyward_harp">"天空の翼"</string>
+    <string name="tcg_white_iron_greatsword">"白鉄の大剣"</string>
+    <string name="tcg_sacrificial_greatsword">"祭礼の大剣"</string>
+    <string name="tcg_wolfs_gravestone">"狼の末路"</string>
+    <string name="tcg_white_tassel">"白纓槍"</string>
+    <string name="tcg_lithic_spear">"千岩長槍"</string>
+    <string name="tcg_skyward_spine">"天空の脊"</string>
+    <string name="tcg_travelers_handy_sword">"旅道の剣"</string>
+    <string name="tcg_sacrificial_sword">"祭礼の剣"</string>
+    <string name="tcg_aquila_favonia">"風鷹剣"</string>
+    <string name="tcg_adventurers_bandana">"冒険者のバンダナ"</string>
+    <string name="tcg_lucky_dogs_silver_circlet">"幸運の冠"</string>
+    <string name="tcg_traveling_doctors_handkerchief">"医者の方巾"</string>
+    <string name="tcg_gamblers_earrings">"博徒のピアス"</string>
+    <string name="tcg_instructors_cap">"教官の帽子"</string>
+    <string name="tcg_exiles_circlet">"亡命者の冠"</string>
+    <string name="tcg_broken_rimes_echo">"氷雪を踏む音"</string>
+    <string name="tcg_blizzard_strayer">"氷風を彷徨う勇士"</string>
+    <string name="tcg_wine_stained_tricorne">"酒に漬けた帽子"</string>
+    <string name="tcg_heart_of_depth">"沈淪の心"</string>
+    <string name="tcg_witchs_scorching_hat">"焦げた魔女の帽子"</string>
+    <string name="tcg_crimson_witch_of_flames">"燃え盛る炎の魔女"</string>
+    <string name="tcg_thunder_summoners_crown">"雷を呼ぶ冠"</string>
+    <string name="tcg_thundering_fury">"雷のような怒り"</string>
+    <string name="tcg_viridescent_venerers_diadem">"緑の狩人の冠"</string>
+    <string name="tcg_viridescent_venerer">"翠緑の影"</string>
+    <string name="tcg_mask_of_solitude_basalt">"不動玄石の相"</string>
+    <string name="tcg_archaic_petra">"悠久の磐岩"</string>
+    <string name="tcg_laurel_coronet">"月桂の宝冠"</string>
+    <string name="tcg_deepwood_memories">"深林の記憶"</string>
+    <string name="tcg_liyue_harbor_wharf">"璃月港口"</string>
+    <string name="tcg_knights_of_favonius_library">"騎士団図書館"</string>
+    <string name="tcg_jade_chamber">"群玉閣"</string>
+    <string name="tcg_dawn_winery">"アカツキワイナリー"</string>
+    <string name="tcg_wangshu_inn">"望舒旅館"</string>
+    <string name="tcg_favonius_cathedral">"西風大聖堂"</string>
+    <string name="tcg_paimon">"パイモン"</string>
+    <string name="tcg_katheryne">"キャサリン"</string>
+    <string name="tcg_timaeus">"ティマイオス"</string>
+    <string name="tcg_wagner">"ワーグナー"</string>
+    <string name="tcg_chef_mao">"卯師匠"</string>
+    <string name="tcg_tubby">"マル"</string>
+    <string name="tcg_timmie">"ティミー"</string>
+    <string name="tcg_liben">"立本"</string>
+    <string name="tcg_chang_the_ninth">"常九"</string>
+    <string name="tcg_ellin">"エリン"</string>
+    <string name="tcg_iron_tongue_tian">"田饒舌"</string>
+    <string name="tcg_liu_su">"劉蘇"</string>
+    <string name="tcg_parametric_transformer">"参量物質変化器"</string>
+    <string name="tcg_nre">"携帯式栄養袋"</string>
+    <string name="tcg_elemental_resonance_woven_ice">"元素共鳴：交錯の氷"</string>
+    <string name="tcg_elemental_resonance_shattering_ice">"元素共鳴：粉砕の氷"</string>
+    <string name="tcg_elemental_resonance_woven_waters">"元素共鳴：交錯の水"</string>
+    <string name="tcg_elemental_resonance_soothing_water">"元素共鳴：治療の水"</string>
+    <string name="tcg_elemental_resonance_woven_flames">"元素共鳴：交錯の炎"</string>
+    <string name="tcg_elemental_resonance_fervent_flames">"元素共鳴：熱誠の炎"</string>
+    <string name="tcg_elemental_resonance_woven_thunder">"元素共鳴：交錯の雷"</string>
+    <string name="tcg_elemental_resonance_high_voltage">"元素共鳴：強権の雷"</string>
+    <string name="tcg_elemental_resonance_woven_winds">"元素共鳴：交錯の風"</string>
+    <string name="tcg_elemental_resonance_impetuous_winds">"元素共鳴：迅速の風"</string>
+    <string name="tcg_elemental_resonance_woven_stone">"元素共鳴：交錯の岩"</string>
+    <string name="tcg_elemental_resonance_enduring_rock">"元素共鳴：不動の岩"</string>
+    <string name="tcg_elemental_resonance_woven_weeds">"元素共鳴：交錯の草"</string>
+    <string name="tcg_elemental_resonance_sprawling_greenery">"元素共鳴：蔓生の草"</string>
+    <string name="tcg_the_bestest_travel_companion">"最高の仲間！"</string>
+    <string name="tcg_changing_shifts">"シフト交代の時間"</string>
+    <string name="tcg_toss_up">"乾坤一擲"</string>
+    <string name="tcg_strategize">"権謀術数"</string>
+    <string name="tcg_i_havent_lost_yet">"俺様はまだ負けちゃいねぇ！"</string>
+    <string name="tcg_leave_it_to_me">"お任せください！"</string>
+    <string name="tcg_when_the_crane_returned">"鶴の帰郷"</string>
+    <string name="tcg_starsigns">"星天の兆"</string>
+    <string name="tcg_calxs_arts">"白亜の術"</string>
+    <string name="tcg_master_of_weaponry">"武芸マスター"</string>
+    <string name="tcg_blessing_of_the_divine_relics_installation">"神宝遷宮祝詞"</string>
+    <string name="tcg_quick_knit">"迅速裁縫の術"</string>
+    <string name="tcg_send_off">"送ってあげよ～！"</string>
+    <string name="tcg_guardians_oath">"護法の誓い"</string>
+    <string name="tcg_abyssal_summons">"アビスの呼びかけ"</string>
+    <string name="tcg_jueyun_guoba">"絶雲お焦げ"</string>
+    <string name="tcg_adeptus_temptation">"仙跳牆"</string>
+    <string name="tcg_lotus_flower_crisp">"ハスの花パイ"</string>
+    <string name="tcg_northern_smoked_chicken">"北地のスモークチキン"</string>
+    <string name="tcg_sweet_madame">"鳥肉のスイートフラワー漬け焼き"</string>
+    <string name="tcg_mondstadt_hash_brown">"モンド風ハッシュドポテト"</string>
+    <string name="tcg_mushroom_pizza">"キノコピザ"</string>
+    <string name="tcg_minty_meat_rolls">"ミントの獣肉巻き"</string>
+    <string name="tcg_origin">"原初"</string>
+    <string name="tcg_mondstadt">"モンド"</string>
+    <string name="tcg_liyue">"璃月"</string>
+    <string name="tcg_inazuma">"稲妻"</string>
+    <string name="tcg_sumeru">"スメール"</string>
+    <string name="tcg_legend">"レジェンド"</string>
+    <string name="tcg_adept">"達人"</string>
+    <string name="tcg_hydro_crystal_chunk">"水晶の塊"</string>
+    <string name="tcg_magical_crystal_chunk">"魔晶の塊"</string>
+    <string name="tcg_amethyst_lump">"紫水晶の塊"</string>
+    <string name="tcg_flaming_flower_stamen">"烈焔花の花蕊"</string>
+    <string name="tcg_mist_flower_corolla">"霧氷花の花蕊"</string>
+    <string name="tcg_electro_crystal">"電気水晶"</string>
+    <string name="tcg_dandelion_seed">"蒲公英の種"</string>
+    <string name="tcg_cecilia">"セシリアの花"</string>
+    <string name="tcg_glaze_lily">"琉璃百合"</string>
+    <string name="tcg_dendrobium">"血石華"</string>
     <string name="tcg_type_char">アクションカード</string>
     <string name="tcg_type_equip">装備カード</string>
     <string name="tcg_type_support">支援カード</string>
     <string name="tcg_type_event">イベントカード</string>
-
+    <string name="tcg_type_backside">カードバック</string>
+    <string name="bow">弓</string>
     <string name="sword">片手剣</string>
     <string name="catalyst">法器</string>
-    <string name="bow">弓</string>
     <string name="polearm">長柄武器</string>
     <string name="claymore">両手剣</string>
     <string name="passive_atk">固有スキル</string>
-
+    <!-- add in 20221228 -->
     <string name="tcg_keyword_anemo">風元素</string>
     <string name="tcg_keyword_anemodmg">風元素ダメージ</string>
     <string name="tcg_keyword_combataction">戦闘アクション</string>
@@ -1364,30 +1320,44 @@
     <string name="tcg_keyword_shield">シールド</string>
     <string name="tcg_keyword_unalignedelement">無色元素</string>
     <string name="tcg_keyword_usages">使用可能回数</string>
+    <!--add in 20230118-->
     <string name="light_of_foliar_incision">萃光の裁葉</string>
     <string name="tcg_klee">クレー</string>
     <string name="tcg_beidou">北斗</string>
     <string name="tcg_lightning_storm">満天の霹靂</string>
     <string name="tcg_pounding_surprise">こんこんプレゼント</string>
+    <!--add in 20230215-->
+    <!--add in 20230225-->
     <string name="dehya">ディシア</string>
     <string name="mika">ミカ</string>
-    <string name="tcg_eula">エウルア</string>
-    <string name="tcg_sangonomiya_kokomi">珊瑚宮心海</string>
-    <string name="tcg_kujou_sara">九条裟羅</string>
+    <string name="beacon_of_the_reed_sea">葦海の標</string>
+    <string name="mailed_flower">鉄彩の花</string>
+    <string name="tcg_eula">"エウルア"</string>
+    <string name="tcg_sangonomiya_kokomi">"珊瑚宮心海"</string>
+    <string name="tcg_kujou_sara">"九条裟羅"</string>
+    <string name="tcg_wellspring_of_war_lust">戦意の表れ</string>
     <string name="tcg_tamanooyas_casket">葛籠の中の玉櫛</string>
     <string name="tcg_sin_of_pride">我界</string>
     <string name="tcg_ornate_kabuto">華飾の兜</string>
     <string name="tcg_generals_ancient_helm">将帥の兜</string>
-    <string name="tcg_wellspring_of_war_lust">戦意の表れ</string>
     <string name="asagiri_korise">朝霧 冰瀬</string>
     <string name="lazurite_swirl">ラピスラズリワール</string>
+    <string name="download_cancelled">Download Task has been cancelled, please try again</string>
+    <string name="last_update">Last Update</string>
+    <string name="from_game_display">From Game Display</string>
+    <string name="pls_wait">Please wait 10s</string>
+    <string name="login_dailymemo">Please login DailyMemo first</string>
+    <string name="affix">Affix</string>
+    <string name="weapon_stat_atk_base">Base ATK</string>
+    <string name="max_4_choice">Max 4 choices</string>
+    <string name="lvl">Lvl</string>
+    <string name="max_8_char">Max 8 Characters</string>
+    <!--add in 20230413-->
     <string name="baizhu">白朮</string>
-    <string name="beacon_of_the_reed_sea">葦海の標</string>
-    <string name="mailed_flower">鉄彩の花</string>
     <string name="kaveh">カーヴェ</string>
-    <string name="jadefalls_splendor">碧落の瓏</string>
-    <string name="nymphs_dream">水仙の夢</string>
-    <string name="vourukashas_glow">花海甘露の光</string>
+    <string name="jadefalls_splendor">"碧落の瓏"</string>
+    <string name="nymphs_dream">"水仙の夢"</string>
+    <string name="vourukashas_glow">"花海甘露の光"</string>
     <string name="kirara">綺良々</string>
     <string name="tcg_kamisato_ayato">神里綾人</string>
     <string name="tcg_arataki_itto">荒瀧一斗</string>
@@ -1397,153 +1367,163 @@
     <string name="tcg_arataki_ichiban">荒瀧第一</string>
     <string name="tcg_favonius_sword">西風剣</string>
     <string name="tcg_grand_narukami_shrine">鳴神大社</string>
+    <!-- Ver. 4.0.0 Update -->
+    <string name="memo_available_weekboss_change">Still have {%1} more</string>
+    <string name="event_list_available">{%1} Event(s) Available</string>
+    <string name="event_list_day">Day(s)</string>
+    <string name="event_list_title">Event List</string>
+    <string name="dailymemo_setting_login_title">Login via...</string>
+    <string name="dailymemo_setting_login_hoyoverse">Hoyoverse Account</string>
+    <string name="dailymemo_setting_login_third_party">Third-Part Login</string>
+    <string name="dailymemo_setting_hoyoverse_token">Open to Offical Login Page</string>
+    <string name="dailymemo_setting_confirm">Confirm</string>
+    <string name="char_occupation">Occupation</string>
+    <string name="char_constellation">Constellation</string>
     <string name="lynette">リネット</string>
     <string name="lyney">リネ</string>
     <string name="freminet">フレミネ</string>
-    <string name="wolf_fang">狼牙</string>
-    <string name="finale_of_the_deep">海淵のフィナーレ</string>
-    <string name="crossing_of_fleuve_cendre">サーンドルの渡し守</string>
-    <string name="talking_stick">話し合い棒</string>
-    <string name="tidal_shadow">波影段平</string>
-    <string name="ballad_of_the_fjords">峡湾高歌</string>
-    <string name="rightful_reward">公義の返報</string>
-    <string name="sacrificial_jade">古祠玉瓏</string>
-    <string name="flowing_purity">華やかな純水</string>
-    <string name="scion_of_the_blazing_sun">烈日の後嗣</string>
-    <string name="song_of_stillness">静謐なる曲</string>
-    <string name="the_first_great_magic">最初の大魔術</string>
+    <string name="wolf_fang">"狼牙"</string>
+    <string name="finale_of_the_deep">"海淵のフィナーレ"</string>
+    <string name="crossing_of_fleuve_cendre">"サーンドルの渡し守"</string>
+    <string name="talking_stick">"話し合い棒"</string>
+    <string name="tidal_shadow">"波影段平"</string>
+    <string name="ballad_of_the_fjords">"峡湾高歌"</string>
+    <string name="rightful_reward">"公義の返報"</string>
+    <string name="sacrificial_jade">"古祠玉瓏"</string>
+    <string name="flowing_purity">"華やかな純水"</string>
+    <string name="scion_of_the_blazing_sun">"烈日の後嗣"</string>
+    <string name="song_of_stillness">"静謐なる曲"</string>
+    <string name="the_first_great_magic">"最初の大魔術"</string>
     <string name="marechaussee_hunter">ファントムハンター</string>
     <string name="golden_troupe">黄金劇団</string>
-    <string name="tcg_amber">アンバー</string>
-    <string name="tcg_tartaglia">タルタリヤ</string>
-    <string name="tcg_hu_tao">胡桃</string>
-    <string name="tcg_raiden_shogun">雷電将軍</string>
-    <string name="tcg_yae_miko">八重神子</string>
-    <string name="tcg_venti">ウェンティ</string>
-    <string name="tcg_xiao">魈</string>
-    <string name="tcg_zhongli">鍾離</string>
-    <string name="tcg_nahida">ナヒーダ</string>
-    <string name="tcg_fatui_cryo_cicin_mage">ファデュイ·氷蛍術師</string>
-    <string name="tcg_abyss_lector_fathomless_flames">アビスの詠唱者·淵炎</string>
-    <string name="tcg_electro_hypostasis">無相の雷</string>
-    <string name="tcg_shenhe">申鶴</string>
-    <string name="tcg_bunny_triggered">一触即発</string>
-    <string name="tcg_embrace_of_winds">余風の抱擁</string>
-    <string name="tcg_conqueror_of_evil_guardian_yaksha">降魔·護法夜叉</string>
-    <string name="tcg_dominance_of_earth">贅沢な食饌</string>
-    <string name="tcg_absorbing_prism">エネルギー吸収プリズム</string>
-    <string name="tcg_mystical_abandon">忘玄</string>
-    <string name="tcg_abyssal_mayhem_hydrospout">淵の災い·復水放流</string>
-    <string name="tcg_sanguine_rouge">血のかまど</string>
-    <string name="tcg_wishes_unnumbered">千万の願望</string>
-    <string name="tcg_the_shrines_sacred_shade">神籬之御蔭</string>
-    <string name="tcg_the_seed_of_stored_knowledge">心識蘊蔵の種</string>
-    <string name="tcg_cicins_cold_glare">氷蛍寒光</string>
-    <string name="tcg_embers_rekindled">再び燃え盛る残火</string>
-    <string name="tcg_amos_bow">アモスの弓</string>
-    <string name="tcg_a_thousand_floating_dreams">千夜に浮かぶ夢</string>
-    <string name="tcg_elegy_for_the_end">終焉を嘆く詩</string>
-    <string name="tcg_skyward_pride">天空の傲</string>
-    <string name="tcg_the_bell">鐘の剣</string>
-    <string name="tcg_vortex_vanquisher">破天の槍</string>
-    <string name="tcg_engulfing_lightning">草薙の稲光</string>
-    <string name="tcg_skyward_blade">天空の刃</string>
-    <string name="tcg_emblem_of_severed_fate">絶縁の旗印</string>
-    <string name="tcg_tenacity_of_the_millelith">千岩牢固</string>
-    <string name="tcg_thundering_poise">虺雷の姿</string>
-    <string name="tcg_vermillion_hereafter">辰砂往生録</string>
-    <string name="tcg_capricious_visage">無常の面</string>
-    <string name="tcg_shimenawas_reminiscence">追憶のしめ縄</string>
-    <string name="tcg_tenshukaku">天守閣</string>
-    <string name="tcg_sangonomiya_shrine">珊瑚宮</string>
-    <string name="tcg_sumeru_city">スメールシティ</string>
-    <string name="tcg_vanarana">ヴァナラーナ</string>
-    <string name="tcg_chinju_forest">鎮守の森</string>
-    <string name="tcg_hanachirusato">花散里</string>
-    <string name="tcg_kid_kujirai">鯨井坊や</string>
-    <string name="tcg_xudong">旭東</string>
-    <string name="tcg_dunyarzad">ドニアザード</string>
-    <string name="tcg_rana">ラナ</string>
-    <string name="tcg_red_feather_fan">赤羽団扇</string>
-    <string name="tcg_treasure_seeking_seelie">宝探し仙霊</string>
-    <string name="tcg_wind_and_freedom">風と自由</string>
-    <string name="tcg_stone_and_contracts">岩と契約</string>
-    <string name="tcg_thunder_and_eternity">雷と永遠</string>
-    <string name="tcg_nature_and_wisdom">草と知恵</string>
-    <string name="tcg_fatui_conspiracy">ファデュイの悪巧み</string>
-    <string name="tcg_plunging_strike">落下斬り</string>
-    <string name="tcg_heavy_strike">重攻撃</string>
-    <string name="tcg_the_legend_of_vennessa">ヴァネッサの物語</string>
-    <string name="tcg_friendship_eternal">永遠なる友情</string>
-    <string name="tcg_teyvat_fried_egg">テイワット風目玉焼き</string>
-    <string name="tcg_sashimi_platter">刺身の盛り合わせ</string>
-    <string name="tcg_tandoori_roast_chicken">タンドリーチキン</string>
-    <string name="tcg_butter_crab">カニのバター添え</string>
-    <string name="tcg_treasures_of_the_deck">札にある秘宝</string>
-    <string name="tcg_candace">キャンディス</string>
-    <string name="tcg_yanfei">煙緋</string>
-    <string name="tcg_kaedehara_kazuha">楓原万葉</string>
-    <string name="tcg_the_overflow">満溢の潮汐</string>
-    <string name="tcg_right_of_final_interpretation">最終解釈権</string>
-    <string name="tcg_poetics_of_fuubutsu">風物の詩吟</string>
-    <string name="tcg_fruit_of_fulfillment">満悦の実</string>
-    <string name="tcg_master_zhang">章</string>
-    <string name="tcg_ancient_courtyard">旧時の庭園</string>
-    <string name="tcg_covenant_of_rock">磐岩の誓約</string>
-    <string name="tcg_rhythm_of_the_great_dream">大夢のメロディー</string>
-    <string name="tcg_albedo">アルベド</string>
-    <string name="tcg_qiqi">七七</string>
-    <string name="tcg_lisa">リサ</string>
-    <string name="tcg_descent_of_divinity">聖なる堕落</string>
-    <string name="tcg_rite_of_resurrection">起死回骸</string>
-    <string name="tcg_pulsating_witch">パルスの魔女</string>
-    <string name="tcg_kings_squire">王の近侍</string>
-    <string name="tcg_golden_house">黄金屋</string>
-    <string name="tcg_setaria">セタレ</string>
-    <string name="tcg_joyous_celebration">喜びのダンス</string>
-    <string name="tcg_where_is_the_unseen_razor">剣はいずこに</string>
-    <string name="tcg_fontaine">フォンテーヌ</string>
-
+    <string name="tcg_amber">"アンバー"</string>
+    <string name="tcg_tartaglia">"タルタリヤ"</string>
+    <string name="tcg_hu_tao">"胡桃"</string>
+    <string name="tcg_raiden_shogun">"雷電将軍"</string>
+    <string name="tcg_yae_miko">"八重神子"</string>
+    <string name="tcg_venti">"ウェンティ"</string>
+    <string name="tcg_xiao">"魈"</string>
+    <string name="tcg_zhongli">"鍾離"</string>
+    <string name="tcg_nahida">"ナヒーダ"</string>
+    <string name="tcg_fatui_cryo_cicin_mage">"ファデュイ·氷蛍術師"</string>
+    <string name="tcg_abyss_lector_fathomless_flames">"アビスの詠唱者·淵炎"</string>
+    <string name="tcg_electro_hypostasis">"無相の雷"</string>
+    <string name="tcg_shenhe">"申鶴"</string>
+    <string name="tcg_bunny_triggered">"一触即発"</string>
+    <string name="tcg_embrace_of_winds">"余風の抱擁"</string>
+    <string name="tcg_conqueror_of_evil_guardian_yaksha">"降魔·護法夜叉"</string>
+    <string name="tcg_dominance_of_earth">"贅沢な食饌"</string>
+    <string name="tcg_absorbing_prism">"エネルギー吸収プリズム"</string>
+    <string name="tcg_mystical_abandon">"忘玄"</string>
+    <string name="tcg_abyssal_mayhem_hydrospout">"淵の災い·復水放流"</string>
+    <string name="tcg_sanguine_rouge">"血のかまど"</string>
+    <string name="tcg_wishes_unnumbered">"千万の願望"</string>
+    <string name="tcg_the_shrines_sacred_shade">"神籬之御蔭"</string>
+    <string name="tcg_the_seed_of_stored_knowledge">"心識蘊蔵の種"</string>
+    <string name="tcg_cicins_cold_glare">"氷蛍寒光"</string>
+    <string name="tcg_embers_rekindled">"再び燃え盛る残火"</string>
+    <string name="tcg_amos_bow">"アモスの弓"</string>
+    <string name="tcg_a_thousand_floating_dreams">"千夜に浮かぶ夢"</string>
+    <string name="tcg_elegy_for_the_end">"終焉を嘆く詩"</string>
+    <string name="tcg_skyward_pride">"天空の傲"</string>
+    <string name="tcg_the_bell">"鐘の剣"</string>
+    <string name="tcg_vortex_vanquisher">"破天の槍"</string>
+    <string name="tcg_engulfing_lightning">"草薙の稲光"</string>
+    <string name="tcg_skyward_blade">"天空の刃"</string>
+    <string name="tcg_emblem_of_severed_fate">"絶縁の旗印"</string>
+    <string name="tcg_tenacity_of_the_millelith">"千岩牢固"</string>
+    <string name="tcg_thundering_poise">"虺雷の姿"</string>
+    <string name="tcg_vermillion_hereafter">"辰砂往生録"</string>
+    <string name="tcg_capricious_visage">"無常の面"</string>
+    <string name="tcg_shimenawas_reminiscence">"追憶のしめ縄"</string>
+    <string name="tcg_tenshukaku">"天守閣"</string>
+    <string name="tcg_sangonomiya_shrine">"珊瑚宮"</string>
+    <string name="tcg_sumeru_city">"スメールシティ"</string>
+    <string name="tcg_vanarana">"ヴァナラーナ"</string>
+    <string name="tcg_chinju_forest">"鎮守の森"</string>
+    <string name="tcg_hanachirusato">"花散里"</string>
+    <string name="tcg_kid_kujirai">"鯨井坊や"</string>
+    <string name="tcg_xudong">"旭東"</string>
+    <string name="tcg_dunyarzad">"ドニアザード"</string>
+    <string name="tcg_rana">"ラナ"</string>
+    <string name="tcg_red_feather_fan">"赤羽団扇"</string>
+    <string name="tcg_treasure_seeking_seelie">"宝探し仙霊"</string>
+    <string name="tcg_wind_and_freedom">"風と自由"</string>
+    <string name="tcg_stone_and_contracts">"岩と契約"</string>
+    <string name="tcg_thunder_and_eternity">"雷と永遠"</string>
+    <string name="tcg_nature_and_wisdom">"草と知恵"</string>
+    <string name="tcg_fatui_conspiracy">"ファデュイの悪巧み"</string>
+    <string name="tcg_plunging_strike">"落下斬り"</string>
+    <string name="tcg_heavy_strike">"重攻撃"</string>
+    <string name="tcg_the_legend_of_vennessa">"ヴァネッサの物語"</string>
+    <string name="tcg_friendship_eternal">"永遠なる友情"</string>
+    <string name="tcg_teyvat_fried_egg">"テイワット風目玉焼き"</string>
+    <string name="tcg_sashimi_platter">"刺身の盛り合わせ"</string>
+    <string name="tcg_tandoori_roast_chicken">"タンドリーチキン"</string>
+    <string name="tcg_butter_crab">"カニのバター添え"</string>
+    <string name="tcg_treasures_of_the_deck">"札にある秘宝"</string>
+    <string name="tcg_candace">"キャンディス"</string>
+    <string name="tcg_yanfei">"煙緋"</string>
+    <string name="tcg_kaedehara_kazuha">"楓原万葉"</string>
+    <string name="tcg_the_overflow">"満溢の潮汐"</string>
+    <string name="tcg_right_of_final_interpretation">"最終解釈権"</string>
+    <string name="tcg_poetics_of_fuubutsu">"風物の詩吟"</string>
+    <string name="tcg_fruit_of_fulfillment">"満悦の実"</string>
+    <string name="tcg_master_zhang">"章"</string>
+    <string name="tcg_ancient_courtyard">"旧時の庭園"</string>
+    <string name="tcg_covenant_of_rock">"磐岩の誓約"</string>
+    <string name="tcg_rhythm_of_the_great_dream">"大夢のメロディー"</string>
+    <string name="tcg_albedo">"アルベド"</string>
+    <string name="tcg_qiqi">"七七"</string>
+    <string name="tcg_lisa">"リサ"</string>
+    <string name="tcg_descent_of_divinity">"聖なる堕落"</string>
+    <string name="tcg_rite_of_resurrection">"起死回骸"</string>
+    <string name="tcg_pulsating_witch">"パルスの魔女"</string>
+    <string name="tcg_kings_squire">"王の近侍"</string>
+    <string name="tcg_golden_house">"黄金屋"</string>
+    <string name="tcg_setaria">"セタレ"</string>
+    <string name="tcg_joyous_celebration">"喜びのダンス"</string>
+    <string name="tcg_where_is_the_unseen_razor">"剣はいずこに"</string>
+    <string name="tcg_fontaine">"フォンテーヌ"</string>
     <!-- add in 20230814 - 3.7.0 -->
     <string name="ibis_piercer">"トキの嘴"</string>
-    <string name="teachings_of_equity">「公平」の教え</string>
-    <string name="teachings_of_justice">「正義」の教え</string>
-    <string name="teachings_of_order">「秩序」の教え</string>
-    <string name="guide_to_equity">「公平」の導き</string>
-    <string name="guide_to_justice">「正義」の導き</string>
-    <string name="guide_to_order">「秩序」の導き</string>
-    <string name="philosophies_of_equity">「公平」の哲学</string>
-    <string name="philosophies_of_justice">「正義」の哲学</string>
-    <string name="philosophies_of_order">「秩序」の哲学</string>
-    <string name="fragment_of_an_ancient_chord">悠久の弦の残章</string>
-    <string name="dross_of_pure_sacred_dewdrop">純聖な雫の濾滓</string>
-    <string name="broken_goblet_of_the_pristine_sea">無垢な海の苦杯</string>
-    <string name="chapter_of_an_ancient_chord">悠久の弦の断章</string>
-    <string name="sublimation_of_pure_sacred_dewdrop">純聖な雫の昇華</string>
-    <string name="wine_goblet_of_the_pristine_sea">無垢な海の酒盃</string>
-    <string name="movement_of_an_ancient_chord">悠久の弦の楽章</string>
-    <string name="spring_of_pure_sacred_dewdrop">純聖な雫の甘泉</string>
-    <string name="silver_goblet_of_the_pristine_sea">無垢な海の銀盃</string>
-    <string name="echo_of_an_ancient_chord">悠久の弦の響き</string>
-    <string name="essence_of_pure_sacred_dewdrop">純聖な雫の精髄</string>
-    <string name="golden_goblet_of_the_pristine_sea">無垢な海の金盃</string>
-    <string name="pale_forgotten_glory">蒼白の遺栄</string>
-    <string name="echoes_of_the_deep_tides">深潮の余韻</string>
-    <string name="wriothesley">リオセスリ</string>
-    <string name="neuvillette">ヌヴィレット</string>
-    <string name="charlotte">シャルロット</string>
-    <string name="furina">フリーナ</string>
-    <string name="the_dockhands_assistant">船渠剣</string>
-    <string name="portable_power_saw">携帯型チェーンソー</string>
-    <string name="prospectors_drill">プロスペクタードリル</string>
-    <string name="ballad_of_the_boundless_blue">果てなき紺碧の唄</string>
-    <string name="cashflow_supervision">凛流の監視者</string>
-    <string name="tome_of_the_eternal_flow">久遠流転の大典</string>
-    <string name="range_gauge">レンジゲージ</string>
-    <string name="sword_of_narzissenkreuz">水仙十字の剣</string>
-    <string name="splendor_of_still_waters">静水流転の輝き</string>
-    <string name="traveler_hydro">旅人 (水)</string>
-
+    <!-- add in 20230820 - New Talent Book-->
+    <string name="teachings_of_equity">"Teachings of Equity"</string>
+    <string name="teachings_of_justice">"Teachings of Justice"</string>
+    <string name="teachings_of_order">"Teachings of Order"</string>
+    <string name="guide_to_equity">"Guide to Equity"</string>
+    <string name="guide_to_justice">"Guide to Justice"</string>
+    <string name="guide_to_order">"Guide to Order"</string>
+    <string name="philosophies_of_equity">"Philosophies of Equity"</string>
+    <string name="philosophies_of_justice">"Philosophies of Justice"</string>
+    <string name="philosophies_of_order">"Philosophies of Order"</string>
+    <string name="fragment_of_an_ancient_chord">"Fragment of an Ancient Chord"</string>
+    <string name="dross_of_pure_sacred_dewdrop">"Dross of Pure Sacred Dewdrop"</string>
+    <string name="broken_goblet_of_the_pristine_sea">"Broken Goblet of the Pristine Sea"</string>
+    <string name="chapter_of_an_ancient_chord">"Chapter of an Ancient Chord"</string>
+    <string name="sublimation_of_pure_sacred_dewdrop">"Sublimation of Pure Sacred Dewdrop"</string>
+    <string name="wine_goblet_of_the_pristine_sea">"Wine Goblet of the Pristine Sea"</string>
+    <string name="movement_of_an_ancient_chord">"Movement of an Ancient Chord"</string>
+    <string name="spring_of_pure_sacred_dewdrop">"Spring of Pure Sacred Dewdrop"</string>
+    <string name="silver_goblet_of_the_pristine_sea">"Silver Goblet of the Pristine Sea"</string>
+    <string name="echo_of_an_ancient_chord">"Echo of an Ancient Chord"</string>
+    <string name="essence_of_pure_sacred_dewdrop">"Essence of Pure Sacred Dewdrop"</string>
+    <string name="golden_goblet_of_the_pristine_sea">"Golden Goblet of the Pristine Sea"</string>
+    <string name="pale_forgotten_glory">"Pale Forgotten Glory"</string>
+    <string name="echoes_of_the_deep_tides">"Echoes of the Deep Tides"</string>
+    <!-- add in 20230929 - 4.1 & 4.2 data -->
+    <string name="wriothesley">"Wriothesley"</string>
+    <string name="neuvillette">"Neuvillette"</string>
+    <string name="charlotte">"Charlotte"</string>
+    <string name="furina">"Furina"</string>
+    <string name="the_dockhands_assistant">"The Dockhand's Assistant"</string>
+    <string name="portable_power_saw">"Portable Power Saw"</string>
+    <string name="prospectors_drill">"Prospector's Drill"</string>
+    <string name="ballad_of_the_boundless_blue">"Ballad of the Boundless Blue"</string>
+    <string name="cashflow_supervision">"Cashflow Supervision"</string>
+    <string name="tome_of_the_eternal_flow">"Tome of the Eternal Flow"</string>
+    <string name="range_gauge">"Range Gauge"</string>
+    <string name="sword_of_narzissenkreuz">"Sword of Narzissenkreuz"</string>
+    <string name="splendor_of_still_waters">"Splendor of Still Waters"</string>
+    <string name="traveler_hydro">Traveler(Hydro)</string>
 </resources>
-
-

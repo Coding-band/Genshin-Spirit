@@ -475,17 +475,28 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ImageView
+
+    <LinearLayout
         android:id="@+id/info_char_img_gradient"
         android:layout_width="0dp"
-        android:layout_height="600dp"
-        android:layout_marginBottom="-300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-400dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/bg_radius_skill_2048" />
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            app:srcCompat="@drawable/bg_radius_skill_2048" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            app:srcCompat="@color/gradient_end" />
+    </LinearLayout>
 
     <com.voc.genshin_helper.util.CustomViewPager
         android:id="@+id/vp"

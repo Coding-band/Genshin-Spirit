@@ -42,9 +42,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/bg_2048_talent_card"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:padding="8dp">
 
 
                     <androidx.constraintlayout.widget.ConstraintLayout
@@ -59,7 +58,7 @@
                             android:fontFamily="@font/genshin_font"
                             android:singleLine="true"
                             android:text="@string/weapon_level"
-                            android:textColor="@color/dialog_subtitle_tv_color_2048"
+                            android:textColor="@color/tv_anti_color_2048"
                             android:textSize="20sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toStartOf="@+id/frameLayout2"

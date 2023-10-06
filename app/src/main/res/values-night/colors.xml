@@ -201,4 +201,9 @@
     <color name="buff_spinner_kwang">#D3BC8E</color>
 
     <color name="dialog_kwang">#33000000</color>
+
+    <color name="gradient_start">#00303030</color>
+    <color name="gradient_center">#4C4B49</color>
+    <color name="gradient_end">#4A4842</color>
+
 </resources>

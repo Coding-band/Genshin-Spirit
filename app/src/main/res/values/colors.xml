@@ -242,5 +242,9 @@
 
     <color name="dialog_kwang">#33FFFFFF</color>
 
+    <color name="gradient_start">#00E2E2E1</color>
+    <color name="gradient_center">#99E9E9E6</color>
+    <color name="gradient_end">#ECE5D8</color>
+
 
 </resources>

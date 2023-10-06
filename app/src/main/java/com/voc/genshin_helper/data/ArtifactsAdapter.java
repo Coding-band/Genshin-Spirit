@@ -132,6 +132,7 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
         Artifacts artifacts = this.artifactsList.get(i);
         int width = 0, height = 0;
+        viewHolder.isComing = artifacts.getIsComing();
         ItemRss itemRss = new ItemRss();
 
         artifactsA.add(artifacts);
@@ -654,6 +655,7 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
         public TextView artifact_desc_4_title;
         public CardView artifact_card;
         public LinearLayout artifact_cbg;
+        public int isComing = 0;
 
 
         public ViewHolder(View view, OnItemClickListener onItemClickListener) {
@@ -687,6 +689,7 @@ public class ArtifactsAdapter extends RecyclerView.Adapter<ArtifactsAdapter.View
                 @Override
                 public void onClick(View view) {
                     ImageView imageView;
+                    if (isComing == 1) {CustomToast.toast(context, view, context.getString(R.string.unreleased)); return;}
                     Log.wtf("is context instanceof MainActivity ?", ArtifactsAdapter.this.context.getPackageName());
                     if (ArtifactsAdapter.this.context instanceof MainActivity) {
                         Log.wtf("YES", "IT's");

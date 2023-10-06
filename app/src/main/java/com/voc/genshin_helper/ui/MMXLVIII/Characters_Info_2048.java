@@ -246,6 +246,8 @@ public class Characters_Info_2048 {
     public  String bookREQUIRE = "XPR";
     public  String t_bossREQUIRE = "XPR";
 
+    DisplayMetrics displayMetrics;
+
     /** https://stackoverflow.com/questions/45247927/how-to-parse-json-object-inside-json-object-in-java */
     public void JsonToStr (String str , String str_dps){
         if(!str.equals("")){
@@ -477,7 +479,7 @@ public class Characters_Info_2048 {
     public void show() {
         final Dialog dialog = new Dialog(context, R.style.PageDialogStyle_P);
         View view = View.inflate(context, R.layout.fragment_char_info_frame_2048, null);
-        DisplayMetrics displayMetrics = new DisplayMetrics();
+        displayMetrics = new DisplayMetrics();
         activity.getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
         int height = displayMetrics.heightPixels;
         int width = displayMetrics.widthPixels;
@@ -519,7 +521,6 @@ public class Characters_Info_2048 {
         ConstraintLayout info_char_bg = charDescPage.findViewById(R.id.info_char_bg);
         //ConstraintLayout char_bg = view.findViewById(R.id.info_char_bg);
         ImageView char_img = view.findViewById(R.id.info_char_img);
-        ImageView char_img_gradient = view.findViewById(R.id.info_char_img_gradient);
         //ImageView char_layer = view.findViewById(R.id.info_char_layer);
         TextView char_name = charDescPage.findViewById(R.id.info_char_name);
         TextView char_title = charDescPage.findViewById(R.id.info_char_title);
@@ -872,6 +873,15 @@ public class Characters_Info_2048 {
                         cs.clone(cl);
                         cs.setVerticalBias(R.id.info_char_img_gradient, (float) (1 - 0.5 * ((positionOffset+position-1))));
                         cs.applyTo(cl);
+
+                        if ((positionOffset+position-1)/2 > 0.98){
+                            view.findViewById(R.id.info_char_img).setAlpha(0);
+                        }else{
+                            view.findViewById(R.id.info_char_img).setAlpha(1);
+                        }
+
+
+
                     }
                 }else{
                     charSkillPage.findViewById(R.id.blankx).setVisibility(View.GONE);
@@ -912,6 +922,7 @@ public class Characters_Info_2048 {
                         //ViewGroup.LayoutParams layoutParams = char_img_gradient.getLayoutParams();
                         //layoutParams.height = ((int) ((info_talent_ll.getHeight() - info_detail.getHeight())*(positionOffset+position)+1));
                         //char_img_gradient.setLayoutParams(layoutParams);
+                        view.findViewById(R.id.info_char_img).setAlpha(1);
                     } else {
 
                         ConstraintLayout cl = (ConstraintLayout) view.findViewById(R.id.info_root);
@@ -919,6 +930,8 @@ public class Characters_Info_2048 {
                         cs.clone(cl);
                         cs.setVerticalBias(R.id.info_char_img_gradient, (float) (0));
                         cs.applyTo(cl);
+                        view.findViewById(R.id.info_char_img).setAlpha(0);
+
                     }
                 }else{
                     charSkillPage.findViewById(R.id.blankx).setVisibility(View.GONE);
@@ -2785,7 +2798,7 @@ public class Characters_Info_2048 {
 
     public void readSkillMaterialByBuff(LinearLayout talent_lvl_ll) {
         Spinner base_lvl_spinner = charAdvicePage.findViewById(R.id.talent_lvl_spinner);
-        String[] lvList = new String[]{"LV1","LV2","LV3","LV4","LV5","LV6","LV7","LV8","LV9","LV10"};
+        String[] lvList = new String[]{"LV1","LV1->2","LV2->3","LV3->4","LV4->5","LV5->6","LV6->7","LV7->8","LV8->9","LV9->10"};
         ArrayAdapter lv_aa = new ArrayAdapter(context,R.layout.spinner_item_anti_2048,lvList);
         lv_aa.setDropDownViewResource(R.layout.spinner_dropdown_item_anti_2048);
         base_lvl_spinner.setAdapter(lv_aa);

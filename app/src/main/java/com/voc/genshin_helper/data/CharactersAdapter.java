@@ -141,6 +141,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         this.Characters = charactersList.get(position);
+        holder.isComing = Characters.getIsComing();
         ItemRss item_rss = new ItemRss();
         int width = 0, height = 0;
         int count = 3;
@@ -731,6 +732,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
         public Characters select_char = null;
 
         public Character characterFinal = new Character();
+        public int isComing = 0;
 
         public ViewHolder(View itemView, final OnItemClickListener listener) {
             super(itemView);
@@ -766,6 +768,7 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
             char_press_mask.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    if (isComing == 1) {CustomToast.toast(context, view, context.getString(R.string.unreleased)); return;}
                     if (context instanceof MainActivity){
                         (((MainActivity) context)).startInfo(String.valueOf(char_base_name.getText()),activity);
                     }else if (context instanceof Desk2048){
