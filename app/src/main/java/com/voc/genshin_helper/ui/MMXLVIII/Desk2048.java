@@ -782,9 +782,9 @@ public class Desk2048 extends AppCompatActivity {
 
         LinearLayout paimon_ll = viewPager4.findViewById(R.id.paimon_ll);
         paimon_ll.removeAllViews();
-        int[] btnStr = new int[]{R.string.calculator, R.string.daily_login, R.string.map, R.string.title_settings, R.string.about, R.string.buff_calcluator};
-        int[] btnIMG = new int[]{R.drawable.ic_2048_cal, R.drawable.ic_2048_daily, R.drawable.ic_2048_map, R.drawable.ic_2048_setting, R.drawable.ic_2048_about, R.drawable.ic_2048_cal};
-        View.OnClickListener[] btnOnClick = new View.OnClickListener[]{paimon_cal, paimon_daily, paimon_map, paimon_setting, paimon_about, paimon_buff_cal};
+        int[] btnStr = new int[]{R.string.calculator, R.string.daily_login, R.string.map, R.string.title_settings, R.string.about};//, R.string.buff_calcluator};
+        int[] btnIMG = new int[]{R.drawable.ic_2048_cal, R.drawable.ic_2048_daily, R.drawable.ic_2048_map, R.drawable.ic_2048_setting, R.drawable.ic_2048_about};//, R.drawable.ic_2048_cal};
+        View.OnClickListener[] btnOnClick = new View.OnClickListener[]{paimon_cal, paimon_daily, paimon_map, paimon_setting, paimon_about};//, paimon_buff_cal};
 
         LinearLayout ll_main = new LinearLayout(context);
         for (int x = 0; x < btnStr.length ; x++){
