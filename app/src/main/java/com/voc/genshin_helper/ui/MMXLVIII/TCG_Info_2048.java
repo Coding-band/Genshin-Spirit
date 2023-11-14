@@ -555,6 +555,10 @@ public class TCG_Info_2048 extends AppCompatActivity {
 
                 case "GCG_COST_ENERGY":
                     diceNum[3] = playcost.getJSONObject(x).getInt("count");break;
+
+                case "GCG_COST_LEGEND":
+                    //秘傳
+                    break;
             }
         }
 

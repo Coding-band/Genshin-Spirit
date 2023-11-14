@@ -155,6 +155,10 @@ public class Material {
     public int  原初綠洲之初綻  = 0 ; // 阿佩普的綠洲守望者 Weekly Boss
     public int  生長天地之蕨草  = 0 ; // 阿佩普的綠洲守望者 Weekly Boss
     public int  亙古樹海之一瞬  = 0 ; // 阿佩普的綠洲守望者 Weekly Boss
+    //add in 20231114
+    public int  無光絲線  = 0 ; // 吞星之鯨 Weekly Boss
+    public int  無光渦眼  = 0 ; // 吞星之鯨 Weekly Boss
+    public int  無光質塊  = 0 ; // 吞星之鯨 Weekly Boss
 
 
     /** COMMON */ /**[牢固的箭簇,銳利的箭簇,歷戰的箭簇]*/
@@ -326,7 +330,8 @@ public class Material {
                 "熔毀之刻","灰燼之心","獄火之蝶",
                 "萬劫之真意","凶將之手眼","禍神之禊淚",
                 "傀儡的懸絲","無心的淵鏡","空行的虛鈴",
-                "原初綠洲之初綻","生長天地之蕨草","亙古樹海之一瞬"
+                "原初綠洲之初綻","生長天地之蕨草","亙古樹海之一瞬",
+                "無光絲線","無光渦眼","無光質塊"
 
         };
     }
@@ -340,7 +345,8 @@ public class Material {
                 熔毀之刻,灰燼之心,獄火之蝶,
                 萬劫之真意,凶將之手眼,禍神之禊淚,
                 傀儡的懸絲,無心的淵鏡,空行的虛鈴,
-                原初綠洲之初綻,生長天地之蕨草,亙古樹海之一瞬
+                原初綠洲之初綻,生長天地之蕨草,亙古樹海之一瞬,
+                無光絲線,無光渦眼,無光質塊
         };
     }
 
@@ -866,10 +872,14 @@ public class Material {
                 case "傀儡的懸絲": 傀儡的懸絲 = addCountIntoVar(傀儡的懸絲, temp_count, "T-BOSS"); break;
                 case "無心的淵鏡": 無心的淵鏡 = addCountIntoVar(無心的淵鏡, temp_count, "T-BOSS"); break;
                 case "空行的虛鈴": 空行的虛鈴 = addCountIntoVar(空行的虛鈴, temp_count, "T-BOSS"); break;
-                // add in 20221112
+                // add in 20230416
                 case "原初綠洲之初綻": 原初綠洲之初綻 = addCountIntoVar(原初綠洲之初綻, temp_count, "T-BOSS"); break;
                 case "生長天地之蕨草": 生長天地之蕨草 = addCountIntoVar(生長天地之蕨草, temp_count, "T-BOSS"); break;
                 case "亙古樹海之一瞬": 亙古樹海之一瞬 = addCountIntoVar(亙古樹海之一瞬, temp_count, "T-BOSS"); break;
+                // add in 20231114
+                case "無光絲線": 無光絲線 = addCountIntoVar(無光絲線, temp_count, "T-BOSS"); break;
+                case "無光絲線無光渦眼": 無光渦眼 = addCountIntoVar(無光渦眼, temp_count, "T-BOSS"); break;
+                case "無光質塊": 無光質塊 = addCountIntoVar(無光質塊, temp_count, "T-BOSS"); break;
 
             }
 

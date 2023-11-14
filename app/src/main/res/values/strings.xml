@@ -1621,6 +1621,35 @@
     <string name="splendor_of_still_waters">"Splendor of Still Waters"</string>
     <string name="traveler_hydro">Traveler(Hydro)</string>
 
+    <!-- add in 20231114 - 4.1 & 4.2 TCG -->
+    <string name="tcg_wanderer">"Wanderer"</string>
+    <string name="tcg_dehya">"Dehya"</string>
+    <string name="tcg_yaoyao">"Yaoyao"</string>
+    <string name="tcg_stalwart_and_true">"Stalwart and True"</string>
+    <string name="tcg_gales_of_reverie">"Gales of Reverie"</string>
+    <string name="tcg_beneficent">"Beneficent"</string>
+    <string name="tcg_moonpiercer">"Moonpiercer"</string>
+    <string name="tcg_crown_of_watatsumi">"Crown of Watatsumi"</string>
+    <string name="tcg_gandharva_ville">"Gandharva Ville"</string>
+    <string name="tcg_yayoi_nanatsuki">"Yayoi Nanatsuki"</string>
+    <string name="tcg_fresh_wind_of_freedom">"Fresh Wind of Freedom"</string>
+    <string name="tcg_pankration">"Pankration!"</string>
+    <string name="tcg_the_fortress_of_meropide">"The Fortress of Meropide"</string>
+    <string name="tcg_dragonspine_traces">"Dragonspine: Traces"</string>
+    <string name="tcg_dragonspine_crown">"Dragonspine: Crown"</string>
+    <string name="tcg_nilou">"Nilou"</string>
+    <string name="tcg_dori">"Dori"</string>
+    <string name="tcg_baizhu">"Baizhu"</string>
+    <string name="tcg_the_starry_skies_their_flowers_rain">"The Starry Skies Their Flowers Rain"</string>
+    <string name="tcg_discretionary_supplement">"Discretionary Supplement"</string>
+    <string name="tcg_all_things_are_of_the_earth">"All Things Are of the Earth"</string>
+    <string name="tcg_ocean_hued_clam">"Ocean-Hued Clam"</string>
+    <string name="tcg_shadow_of_the_sand_king">"Shadow of the Sand King"</string>
+    <string name="tcg_stormterrors_lair">"Stormterror's Lair"</string>
+    <string name="tcg_in_every_house_a_stove">"In Every House a Stove"</string>
+    <string name="tcg_lyresong">"Lyresong"</string>
+
+
 
 </resources>
 

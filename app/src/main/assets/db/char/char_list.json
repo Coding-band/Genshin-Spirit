@@ -1,6 +1,6 @@
 [
-  {"name":"Charlotte","element":"Cryo","rare":4,"weapon":"Catalyst","isComing":1,"nation":"Fontaine","sex":"Female","mainStat":"ATK","birth":"01/01"},
-  {"name":"Furina","element":"Hydro","rare":5,"weapon":"Sword","isComing":1,"nation":"Fontaine","sex":"Female","mainStat":"CritRate","birth":"01/01"},
+  {"name":"Charlotte","element":"Cryo","rare":4,"weapon":"Catalyst","isComing":0,"nation":"Fontaine","sex":"Female","mainStat":"ATK","birth":"04/10"},
+  {"name":"Furina","element":"Hydro","rare":5,"weapon":"Sword","isComing":0,"nation":"Fontaine","sex":"Female","mainStat":"CritRate","birth":"10/13"},
 
   {"name":"Neuvillette","element":"Hydro","rare":5,"weapon":"Catalyst","isComing":0,"nation":"Fontaine","sex":"Male","mainStat":"CritDMG","birth":"12/18"},
   {"name":"Wriothesley","element":"Cryo","rare":5,"weapon":"Catalyst","isComing":0,"nation":"Fontaine","sex":"Male","mainStat":"CritDMG","birth":"11/23"},

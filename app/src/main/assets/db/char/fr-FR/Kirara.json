@@ -11,7 +11,7 @@
   "battle_talent": {
     "normal_name": "Attaque normale : Ouvre-colis",
     "normal_img": "kirara_s1",
-    "normal_desc1": "Enchaîne jusqu'à 4 coups.",
+    "normal_desc1": "Enchaîne jusqu'à 4 attaques.",
     "normal_desc2": "Consomme de l'endurance pour déclencher trois coups de griffes rapides.",
     "normal_desc3": "Plonge depuis les airs pour frapper le sol, infligeant des DGT aux ennemis en chemin et des DGT de zone à l'impact.",
     "element_name": "Coup de patte miaou-téorite",

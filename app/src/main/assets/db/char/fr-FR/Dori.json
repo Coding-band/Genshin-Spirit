@@ -44,7 +44,7 @@
     "sof3_desc": "Niveau d'aptitude Méticulosité d'Alcazarzaray +3.\nNiveau max : 15",
     "sof4_name": "Supplément discrétionnaire",
     "sof4_img": "dori_c4",
-    "sof4_desc": "Le personnage relié au djinn obtient les bonus suivants selon ses PV et son énergie élémentaire :\n· Bonus de soins reçus de 50 % si les PV sont inférieurs à 50 %.<br>· Recharge d'énergie augmentée de 30 % si l'énergie élémentaire est inférieure à 50 %.",
+    "sof4_desc": "Le personnage relié au djinn obtient les bonus suivants selon ses PV et son énergie élémentaire :\n· Augmente le bonus de soins reçus de 50 % si les PV sont inférieurs à 50 %.<br>· Augmente la recharge d'énergie de 30 % si l'énergie élémentaire est inférieure à 50 %.",
     "sof5_name": "Rapport qualité-mora",
     "sof5_img": "dori_c5",
     "sof5_desc": "Niveau d'aptitude Lampe de protection : Canon pacificateur +3.\nNiveau max : 15",

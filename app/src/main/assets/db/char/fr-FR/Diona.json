@@ -50,6 +50,6 @@
     "sof5_desc": "Niveau d'aptitude Griffes Cryo +3.\nNiveau max : 15",
     "sof6_name": "Dernière tournée",
     "sof6_img": "diona_c6",
-    "sof6_desc": "Les personnages se trouvant dans le champ d'alcool de Cuvée spéciale bénéficient des effets suivants selon les PV qu'il leur reste :\n· Bonus de soins reçus de 30 % si les PV sont inférieurs ou égaux à 50 %.<br>· Maîtrise élémentaire augmentée de 200 si les PV sont supérieurs à 50 %."
+    "sof6_desc": "Les personnages se trouvant dans le champ d'alcool de Cuvée spéciale bénéficient des effets suivants selon les PV qu'il leur reste :\n· Augmente le bonus de soins reçus de 30 % si les PV sont inférieurs ou égaux à 50 %.<br>· Augmente la maîtrise élémentaire de 200 si les PV sont supérieurs à 50 %."
   }
 }

@@ -82,6 +82,6 @@
   {"name":"Wriothesley","rare": 5,"crystal":"哀敘冰玉","boss":"「圖比昂裝置」","local":"子探測單元","common":"奇械機芯齒輪","book":"「秩序」的哲學","t_boss":"原初綠洲之初綻"},
   {"name":"Neuvillette","rare": 5,"crystal":"滌淨青金","boss":"原海麟角","local":"幽光星星","common":"異色結晶石","book":"「公平」的哲學","t_boss":"亙古樹海之一瞬"},
  
-  {"name":"Charlotte","rare": 4,"crystal":"哀敘冰玉","boss":"「圖比昂裝置」","local":"蒼晶螺","common":"奇械機芯齒輪","book":"「正義」的哲學","t_boss":"未知周本BOSS跌落物1"},
-  {"name":"Furina","rare": 5,"crystal":"滌淨青金","boss":"未能達成超越之水","local":"湖光鈴蘭","common":"原素花蜜","book":"「正義」的哲學","t_boss":"未知周本BOSS跌落物1"}
+  {"name":"Charlotte","rare": 4,"crystal":"哀敘冰玉","boss":"「圖比昂裝置」","local":"蒼晶螺","common":"奇械機芯齒輪","book":"「正義」的哲學","t_boss":"無光絲線"},
+  {"name":"Furina","rare": 5,"crystal":"滌淨青金","boss":"未能達成超越之水","local":"湖光鈴蘭","common":"原素花蜜","book":"「正義」的哲學","t_boss":"無光質塊"}
 ]

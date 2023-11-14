@@ -1551,6 +1551,32 @@
     <string name="sword_of_narzissenkreuz">水仙十字之劍</string>
     <string name="splendor_of_still_waters">靜水流湧之輝</string>
     <string name="traveler_hydro">旅行者(水)</string>
+    <string name="tcg_wanderer">流浪者</string>
+    <string name="tcg_dehya">迪希雅</string>
+    <string name="tcg_yaoyao">瑤瑤</string>
+    <string name="tcg_stalwart_and_true">崇誠之真</string>
+    <string name="tcg_gales_of_reverie">夢跡一風</string>
+    <string name="tcg_beneficent">慈惠仁心</string>
+    <string name="tcg_moonpiercer">貫月矢</string>
+    <string name="tcg_crown_of_watatsumi">海祇之冠</string>
+    <string name="tcg_gandharva_ville">化城郭</string>
+    <string name="tcg_yayoi_nanatsuki">彌生七月</string>
+    <string name="tcg_fresh_wind_of_freedom">自由的新風</string>
+    <string name="tcg_pankration">拳力鬥技！</string>
+    <string name="tcg_the_fortress_of_meropide">梅洛彼得堡</string>
+    <string name="tcg_dragonspine_traces">龍脊雪山·尋跡</string>
+    <string name="tcg_dragonspine_crown">龍脊雪山·冠冕</string>
+    <string name="tcg_nilou">妮露</string>
+    <string name="tcg_dori">多莉</string>
+    <string name="tcg_baizhu">白朮</string>
+    <string name="tcg_the_starry_skies_their_flowers_rain">星天的花雨</string>
+    <string name="tcg_discretionary_supplement">酌盈劑虛</string>
+    <string name="tcg_all_things_are_of_the_earth">在地為化</string>
+    <string name="tcg_ocean_hued_clam">海染硨磲</string>
+    <string name="tcg_shadow_of_the_sand_king">沙王的投影</string>
+    <string name="tcg_stormterrors_lair">風龍廢墟</string>
+    <string name="tcg_in_every_house_a_stove">萬家灶火</string>
+    <string name="tcg_lyresong">琴音之詩</string>
 
 
 </resources>

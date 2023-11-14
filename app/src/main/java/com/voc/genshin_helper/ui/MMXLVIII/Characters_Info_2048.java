@@ -546,6 +546,11 @@ public class Characters_Info_2048 {
         ImageView info_talent3_value_btn = charSkillPage.findViewById(R.id.info_talent3_value_btn);
         ImageView info_char_base_value_btn = charDescPage.findViewById(R.id.info_char_base_value_btn);
 
+        info_talent1_value_btn.setVisibility(View.GONE);
+        info_talent2_value_btn.setVisibility(View.GONE);
+        info_talent3_value_btn.setVisibility(View.GONE);
+        info_char_base_value_btn.setVisibility(View.GONE);
+
         /** Method of battle_talent */
         ScrollView info_skill_scrollview = charSkillPage.findViewById(R.id.info_skill_scrollview);
         //CardView char_talent1_card = charSkillPage.findViewById(R.id.info_talent1_card);

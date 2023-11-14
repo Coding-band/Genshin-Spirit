@@ -1,13 +1,13 @@
 {
   "nick": "Œil pour la vérité",
-  "occupation": "???",
+  "occupation": "L'Oiseau de vapeur",
   "area": "Fontaine",
   "rare": "4",
   "weapon": "Catalyst",
   "element": "Cryo",
   "constellation": "Hualina Veritas",
-  "desc": "测试角色",
-  "birth": "01/01",
+  "desc": "Une infatigable journaliste de L'Oiseau de vapeur, en constante recherche de la « vérité ».",
+  "birth": "04/10",
   "battle_talent": {
     "normal_name": "Attaque normale : Phototype à froid",
     "normal_img": "charlotte_s1",
@@ -16,40 +16,40 @@
     "normal_desc3": "Plonge depuis les airs en concentrant ses pouvoirs Cryo, infligeant des DGT aux ennemis en chemin et des DGT Cryo de zone à l'impact.",
     "element_name": "Cadrage : Composition gelée",
     "element_img": "charlotte_s2",
-    "element_desc": "Grâce à son instinct de grande journaliste, Charlotte utilise ses compétences en photographie pour produire différents effets selon la méthode de déclenchement :<br><br>Appui simple<br>Prend un cliché net à l'aide de Monsieur Vérité, infligeant des DGT Cryo de zone aux ennemis en face ainsi que l'effet Silhouette instantanée à un maximum de 5 ennemis touchés. Pendant sa durée, l'effet Silhouette instantanée inflige des DGT Cryo aux ennemis de façon intermittente.<br><br>Appui long<br>En activant le mode visée de Monsieur Vérité, Charlotte entre dans l'état Composition et peut maintenir le bouton enfoncé pour agrandir le viseur jusqu'à atteindre la taille maximale. Dans cet état, Charlotte peut se déplacer et changer d'orientation.<br>Lorsque le mode visée se termine, Monsieur Vérité inflige des DGT Cryo aux ennemis verrouillés dans son viseur ainsi que le même effet Silhouette instantanée déclenché lors d'un appui simple. Si Charlotte met fin au mode visée après que le viseur a atteint la taille maximale, elle inflige à la place l'effet Impression ciblée, ce dernier durant plus longtemps et infligeant plus de DGT, bien qu'il prolongera le TdR de la compétence.<br>L'état Composition dure 15 s maximum et peut verrouiller un maximum de 5 ennemis.<br><br><i>« Les photos de presse nécessitent des clichés simples avec une thématique exceptionnelle, mais il faut surtout avoir le don de capturer l'instant présent ! »</i>",
-    "final_name": "Pause : Corroboration complète",
+    "element_desc": "Grâce à son instinct de grande journaliste, Charlotte utilise ses compétences en photographie pour produire différents effets selon la méthode de déclenchement :<br><br>Appui simple<br>Prend un cliché net à l'aide de Monsieur Vérité, infligeant des DGT Cryo de zone aux ennemis en face ainsi que l'effet Silhouette instantanée à un maximum de 5 ennemis touchés. Pendant sa durée, l'effet Silhouette instantanée inflige des DGT Cryo aux ennemis de façon intermittente.<br><br>Appui long<br>En activant le mode visée de Monsieur Vérité, Charlotte entre dans l'état Composition et le viseur peut s'agrandir jusqu'à atteindre le cadre de finition en maintenant l'appui long. Dans cet état, Charlotte peut se déplacer et changer d'orientation.<br>Lorsque le mode visée se termine, Monsieur Vérité inflige des DGT Cryo aux ennemis verrouillés dans son viseur ainsi que le même effet Silhouette instantanée déclenché lors d'un appui simple. Si Charlotte met fin au mode visée après que le viseur a atteint le cadre de finition, elle inflige à la place l'effet Impression ciblée, ce dernier durant plus longtemps et infligeant plus de DGT, bien qu'il prolongera le TdR de la compétence.<br>L'état Composition dure 15 s maximum et peut verrouiller un maximum de 5 ennemis.<br><br><i>« Les photos de presse nécessitent des clichés simples avec une thématique exceptionnelle, mais il faut surtout avoir le don de capturer l'instant présent ! »</i>",
+    "final_name": "Pose : Corroboration complète",
     "final_img": "charlotte_s3",
-    "final_desc": "En condensant de la glace pour créer l'emblème de L'Oiseau de vapeur, Charlotte crée une scène confirmée qui inflige des DGT Cryo de zone et restaure les PV de tous les personnages de l'équipe selon son ATQ.\n<br>Scène confirmée<br>· Tant qu'elle est active, Monsieur Vérité attaque les ennemis à l'intérieur de la scène de façon intermittente pour leur infliger des DGT Cryo.<br>· Lorsque le personnage déployé est à l'intérieur de la scène, ses PV sont restaurés de façon continue selon l'ATQ de Charlotte.<br><br><i>« Écouter des histoires sous plusieurs perspectives pour recréer ce qui s'est réellement passé est la clé d'un bon reportage... Je veux dire, c'est ainsi qu'on peut choisir le meilleur angle pour son article ! »</i>"
+    "final_desc": "En condensant de la glace pour créer l'emblème de L'Oiseau de vapeur, Charlotte crée un champ de flash info qui inflige des DGT Cryo de zone et restaure les PV de tous les personnages de l'équipe à proximité selon son ATQ.\n<br>Champ de flash info<br>· Tant qu'il est actif, Monsieur Vérité attaque les ennemis à l'intérieur de façon intermittente pour leur infliger des DGT Cryo.<br>· Lorsque le personnage déployé est à l'intérieur du champ, ses PV sont restaurés de façon continue selon l'ATQ de Charlotte.<br><br><i>« Écouter des histoires sous plusieurs perspectives pour recréer ce qui s'est réellement passé est la clé d'un bon reportage... Je veux dire, c'est ainsi qu'on peut choisir le meilleur angle pour son article ! »</i>"
   },
   "basic_talent": {
     "talent2_name": "Premier obturateur",
     "talent2_img": "charlotte_p2",
-    "talent2_desc": "Une fois que Charlotte a équipé son zoom d'analyse spéciale, l'appui long de sa compétence élémentaire « Cadrage : Composition gelée » ne peut plus déclencher les effets d'origine, mais elle peut désormais prendre des photos d'une manière spéciale...",
+    "talent2_desc": "Une fois que Charlotte a activé son zoom d'analyse spéciale, l'appui long de sa compétence élémentaire « Cadrage : Composition gelée » ne peut plus déclencher les effets d'origine, mais elle peut désormais prendre des photos d'une manière spéciale...",
     "talent3_name": "Moment d'impact",
     "talent3_img": "charlotte_p3",
     "talent3_desc": "Lorsqu'un ennemi affligé de l'effet Impression ciblée est éliminé, le TdR de Cadrage : Composition gelée diminue de 2 s. Le TdR peut être diminué 4 fois toutes les 12 s de cette manière.",
-    "talent1_name": "Sondage de diversité",
+    "talent1_name": "Enquête de diversité",
     "talent1_img": "charlotte_p1",
-    "talent1_desc": "Pour chaque personnage de Fontaine présent dans l'équipe (hormis Charlotte), Charlotte obtient un bonus de soins de 5 %. Pour chaque personnage non-fontainois présent dans l'équipe, Charlotte bénéficie d'un bonus de DGT Cryo de 5 %."
+    "talent1_desc": "Lorsque l'équipe contient 1, 2 ou 3 personnages fontainois (en plus de Charlotte), Charlotte obtient un bonus de soins de 5 %, 10 % ou 15 %, respectivement. Lorsque l'équipe contient 1, 2 ou 3 personnages non-fontainois, Charlotte bénéficie d'un bonus de DGT Cryo de 5 %, 10 % ou 15 %, respectivement."
   },
   "sof": {
     "sof1_name": "Une vérification des faits",
     "sof1_img": "charlotte_c1",
-    "sof1_desc": "Lorsque Pause : Corroboration complète a effectué un soin sur un personnage, ce dernier obtient une marque de vérification pendant 6 s, qui le soigne une fois toutes les 2 s pour une valeur équivalant à 80 % de l'ATQ de Charlotte.",
+    "sof1_desc": "Lorsque Pose : Corroboration complète a effectué un soin sur un personnage, ce dernier obtient une marque de vérification pendant 6 s, qui le soigne une fois toutes les 2 s pour une valeur équivalant à 80 % de l'ATQ de Charlotte.",
     "sof2_name": "Une poursuite de la vérité",
     "sof2_img": "charlotte_c2",
     "sof2_desc": "Lorsque Monsieur Vérité touche 1, 2, ou au moins 3 ennemis pendant Cadrage : Composition gelée, l'ATQ de Charlotte augmente respectivement de 10 %, 20 % ou 30 % pendant 12 s.",
     "sof3_name": "Une nécessité d'indépendance",
     "sof3_img": "charlotte_c3",
-    "sof3_desc": "Niveau d'aptitude Pause : Corroboration complète +3.\nNiveau max : 15",
+    "sof3_desc": "Niveau d'aptitude Pose : Corroboration complète +3.\nNiveau max : 15",
     "sof4_name": "Une responsabilité de surveillance",
     "sof4_img": "charlotte_c4",
-    "sof4_desc": "Lorsque Pause : Corroboration complète touche un ennemi affligé de l'effet Silhouette instantanée ou de l'effet Impression ciblée, les DGT infligés augmentent de 10 % et Charlotte récupère 2 pts d'énergie élémentaire. L'énergie élémentaire peut être restaurée 5 fois toutes les 20 s de cette manière.",
+    "sof4_desc": "Lorsque Pose : Corroboration complète touche un ennemi affligé de l'effet Silhouette instantanée ou de l'effet Impression ciblée, les DGT infligés augmentent de 10 % et Charlotte récupère 2 pts d'énergie élémentaire. L'énergie élémentaire peut être restaurée 5 fois toutes les 20 s de cette manière.",
     "sof5_name": "Un principe de conscience",
     "sof5_img": "charlotte_c5",
     "sof5_desc": "Niveau d'aptitude Cadrage : Composition gelée +3.\nNiveau max : 15",
     "sof6_name": "Un résumé de pertinence",
     "sof6_img": "charlotte_c6",
-    "sof6_desc": "Lorsqu'une attaque normale ou chargée du personnage déployé a touché un ennemi affligé de l'effet Impression ciblée de Cadrage : Composition gelée, Monsieur Vérité effectue une attaque subséquente qui inflige des DGT Cryo de zone d'une valeur équivalant à 180 % de l'ATQ de Charlotte et soigne les PV des personnages déployés à portée de l'attaque pour une valeur équivalant à 42 % de l'ATQ de Charlotte. Cet effet peut être déclenché une fois toutes les 6 s et les DGT et soins déclenchés de cette manière sont considérés comme provenant du déchaînement élémentaire de Charlotte."
+    "sof6_desc": "Lorsqu'une attaque normale ou chargée du personnage déployé a touché un ennemi affligé de l'effet Impression ciblée de Cadrage : Composition gelée, Monsieur Vérité effectue une attaque coordonnée qui inflige des DGT Cryo de zone d'une valeur équivalant à 180 % de l'ATQ de Charlotte et soigne les PV des personnages déployés à portée de l'attaque pour une valeur équivalant à 42 % de l'ATQ de Charlotte. Cet effet peut être déclenché une fois toutes les 6 s et les DGT et soins déclenchés de cette manière sont considérés comme provenant du déchaînement élémentaire de Charlotte."
   }
 }

@@ -35,27 +35,6 @@
             android:theme="@style/TCG_Info"
             android:exported="false" />
 
-        <service
-            android:name=".ui.MMXLVIII.DailyMemo2048Service"
-            android:enabled="true"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.appwidget.action.Click" />
-            </intent-filter>
-        </service>
-
-        <receiver
-            android:name=".ui.MMXLVIII.DailyMemo2048Widget"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.appwidget.provider"
-                android:resource="@xml/daily_memo_2048_widget_info" />
-        </receiver>
-
         <activity
             android:name=".ui.NotificationActivity"
             android:exported="false"
@@ -171,6 +150,8 @@
             android:theme="@style/NoTheme"
             android:windowSoftInputMode="adjustNothing" />
 
+
+        <!--
         <receiver android:name=".util.ReminderBroadcast" />
         <receiver
             android:name=".util.SampleBootReceiver"
@@ -180,6 +161,29 @@
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
+
+
+        <service
+            android:name=".ui.MMXLVIII.DailyMemo2048Service"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.Click" />
+            </intent-filter>
+        </service>
+
+        <receiver
+            android:name=".ui.MMXLVIII.DailyMemo2048Widget"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/daily_memo_2048_widget_info" />
+        </receiver>
+        -->
 
         <meta-data
             android:name="preloaded_fonts"

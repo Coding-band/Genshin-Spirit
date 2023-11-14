@@ -19,7 +19,7 @@
     "element_desc": "Beschwört lodernde Flammen und verursacht Pyro-Flächenschaden.<br>Bekommt beim Treffen von Gegnern die Höchstzahl an Flammensiegeln.<br><br><i>Der Pakt des Feuers beinhaltet nicht nur die geltenden Gesetze, sondern auch die von Yanfei selbst formulierten Klauseln, denn der Rat für Allgemeine Angelegenheiten allein ist nicht in der Lage, die Naturgesetze zu ändern.</i>",
     "final_name": "Pakt des flammenden Infernos",
     "final_img": "yanfei_s3",
-    "final_desc": "Beschwört Flammen des Infernos, greift Gegner in der Umgebung an und verursacht Pyro-Flächenschaden. Gibt dabei Yanfei die Höchstzahl an Flammensiegeln und den Effekt Sengende Hitze.\n<br>Sengende Hitze<br>Löst folgende Effekte aus:<br>· Gibt Yanfei in gleichen zeitlichen Abständen je ein Flammensiegel.<br>· Erhöht den Schaden heftiger Schläge.<br>Endet, wenn Yanfei ausgewechselt wird.<br><br><i>„Der Pakt zwischen uns von Leben und Tod ist nun vollständig. Demgemäß wirst du sterben und ich werde weiterleben.“</i>"
+    "final_desc": "Beschwört Flammen des Infernos, greift Gegner in der Umgebung an und verursacht Pyro-Flächenschaden. Gibt dabei Yanfei die Höchstzahl an Flammensiegeln und den Effekt Sengende Hitze.\n<br>Sengende Hitze<br>Löst folgende Effekte aus:<br>· Gibt Yanfei in gleichen zeitlichen Abständen je ein Flammensiegel.<br>· Erhöht den Schaden heftiger Schläge.<br>Endet, wenn Yanfei ausgewechselt oder besiegt wird.<br><br><i>„Der Pakt zwischen uns von Leben und Tod ist nun vollständig. Demgemäß wirst du sterben und ich werde weiterleben!“</i>"
   },
   "basic_talent": {
     "talent2_name": "Gelehrsamkeit",
@@ -35,7 +35,7 @@
   "sof": {
     "sof1_name": "Rechthaberei",
     "sof1_img": "yanfei_c1",
-    "sof1_desc": "Erhöht mit jedem Flammensiegel Yanfeis Unterbrechungs-WDS beim Aufladen, wenn sie einen heftigen Schlag ausführt, und verringert den Ausdauerverbrauch bei dem heftigen Schlag.",
+    "sof1_desc": "Erhöht mit jedem Flammensiegel Yanfeis Unterbrechungs-WDS beim Aufladen, wenn sie einen heftigen Schlag ausführt, und verringert den Ausdauerverbrauch für diesen heftigen Schlag zusätzlich um 10 %.",
     "sof2_name": "Endgültige Auslegung vorbehalten",
     "sof2_img": "yanfei_c2",
     "sof2_desc": "Erhöht die KT bei Yanfeis heftigen Schlägen gegenüber Gegnern mit weniger als 50 % LP um 20 %.",

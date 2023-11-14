@@ -1,12 +1,12 @@
 {
-  "localeName": "Reisende",
+  "localeName": "Reisender",
   "occupation": "——",
   "area": "Mainactor",
   "rare": "5",
   "weapon": "Sword",
   "element": "Multi",
-  "constellation": "Viatrix",
-  "desc": "Eine Reisende weit entfernt von der Heimat auf der Suche nach den Sieben, um ihren Bruder wiederzufinden.",
+  "constellation": "Viator",
+  "desc": "Ein Reisender weit entfernt von der Heimat auf der Suche nach den Sieben, um seine Schwester wiederzufinden.",
   "birth": "13/00",
   "battle_talent": {
     "normal_name": "Standardangriff: Stromschnellen aus der Fremde",

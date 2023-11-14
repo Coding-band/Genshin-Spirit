@@ -25,7 +25,7 @@
   "basic_talent": {
     "talent2_name": "Stratégie sans faille",
     "talent2_img": "sangonomiya_kokomi_p2",
-    "talent2_desc": "Kokomi obtient un bonus de soins de 25 %, mais son taux CRIT diminue de 100 %.",
+    "talent2_desc": "Le bonus de soins de Kokomi augmente de 25 %, mais son taux CRIT diminue de 100 %.",
     "talent3_name": "Princesse de Watatsumi",
     "talent3_img": "sangonomiya_kokomi_p3",
     "talent3_desc": "Diminue la consommation d'endurance de vos personnages dans l'équipe de 20 % lors de la nage.\nNe peut pas être cumulé avec d'autres aptitudes passives aux effets identiques.",

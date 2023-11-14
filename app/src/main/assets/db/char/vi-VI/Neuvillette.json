@@ -31,7 +31,7 @@
     "talent3_desc": "Nhân vật trong đội khi kích hoạt phản ứng Bốc Hơi, Đóng Băng, Điện Cảm, Sum Suê, Khuếch Tán Nguyên Tố Thủy hoặc Kết Tinh Nguyên Tố Thủy lên kẻ địch, sẽ khiến Neuvillette sản sinh hiệu quả \"Vinh Dự Của Rồng\" trong 30s, tối đa cộng dồn 3 tầng. Khiến sát thương Trọng Kích - Phán Quyết Công Bằng gây ra tăng 110%/125%/160% so với mức ban đầu.\n\"Vinh Dự Của Rồng\" sinh ra từ mỗi loại phản ứng nguyên tố sẽ tồn tại độc lập nhau.",
     "talent1_name": "Khuôn Phép Thẩm Phán Tối Cao",
     "talent1_img": "neuvillette_p1",
-    "talent1_desc": "Căn cứ vào 30% HP hiện tại vượt quá lượng HP tối đa, mỗi 1% khiến Neuvillette nhận được 0.6% buff sát thương nguyên tố Thủy. Tối đa tăng 30% bằng phương thức này."
+    "talent1_desc": "Mỗi 1% lượng HP hiện tại vượt qua mốc 30% HP tối đa sẽ khiến Neuvillette nhận được 0.6% buff sát thương nguyên tố Thủy. Tối đa tăng 30% bằng phương thức này."
   },
   "sof": {
     "sof1_name": "Khởi Đầu Của Tôn Quý",

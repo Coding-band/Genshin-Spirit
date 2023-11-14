@@ -28,7 +28,7 @@
     "talent2_desc": "Affiche l'emplacement des produits de Liyue sur la mini-carte.",
     "talent3_name": "Survie en milieu hostile",
     "talent3_img": "qiqi_p3",
-    "talent3_desc": "Lorsqu'un personnage sous l'effet d'Arcane d'Adepte : Héraut de givre déclenche une réaction élémentaire, il gagne un bonus de soins reçus de 20 % pendant 8 s.",
+    "talent3_desc": "Lorsqu'un personnage sous l'effet d'Arcane d'Adepte : Héraut de givre déclenche une réaction élémentaire, son bonus de soins reçus augmente de 20 % pendant 8 s.",
     "talent1_name": "Ouverture des arcanes",
     "talent1_img": "qiqi_p1",
     "talent1_desc": "Les attaques normales et chargées de Qiqi ont 50 % de chances de marquer l'ennemi touché d'un talisman de fortune pendant 6 s. Cet effet peut être déclenché une fois toutes les 30 s."

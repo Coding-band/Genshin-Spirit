@@ -1,13 +1,13 @@
 {
-  "nick": "朗镜索真",
-  "occupation": "???",
+  "nick": "Lens of Verity",
+  "occupation": "The Steambird",
   "area": "Fontaine",
   "rare": "4",
   "weapon": "Catalyst",
   "element": "Cryo",
-  "constellation": "真视镜座",
-  "desc": "测试角色",
-  "birth": "01/01",
+  "constellation": "Hualina Veritas",
+  "desc": "Indefatigable reporter of The Steambird, constantly on the hunt for the \"truth.\"",
+  "birth": "04/10",
   "battle_talent": {
     "normal_name": "Normal Attack: Cool-Color Capture",
     "normal_img": "charlotte_s1",
@@ -16,21 +16,21 @@
     "normal_desc3": "Gathering the power of Cryo, Charlotte plunges toward the ground, dealing DMG to all opponents in her path and dealing AoE Cryo DMG upon landing.",
     "element_name": "Framing: Freezing Point Composition",
     "element_img": "charlotte_s2",
-    "element_desc": "Using the keen instincts of an ace reporter, Charlotte uses her photography skills to produce different effects based on whether the ability is tapped or held.<br><br>Tap<br>Takes a snapshot using Monsieur Verite, dealing AoE Cryo DMG to opponents in front of her and applying Snappy Silhouette to a maximum of 5 opponents. During this effect's duration, it will deal Cryo DMG to affected opponents at intervals.<br><br>Hold<br>Popping Monsieur Verite's viewfinder open, Charlotte enters Composition Mode, and during this time, the viewfinder will expand as you hold until you reach a Finisher Frame state. In this state, Charlotte can move and change direction freely.<br>When the hold state ends, Monsieur Verite will deal Cryo DMG to all opponents locked on within the viewfinder, and apply the same Snappy Silhouette as Tap Mode does to them. If you unleash this ability only after reaching Finisher Frame, you will instead apply Focused Impression, which lasts longer and deals more DMG, although the Skill CD will be longer.<br>Composition Mode lasts a maximum of 15s and allows a maximum of 5 opponents to be selected.<br><br><i>\"Press photography requires simple shots with exceptional theming, but most of all, you need to have a knack for capturing the moment!\"</i>",
+    "element_desc": "Using the keen instincts of an ace reporter, Charlotte uses her photography skills to produce different effects based on whether the ability is Tapped or Held.<br><br>Tap<br>Takes a snapshot using Monsieur Verite, dealing AoE Cryo DMG to opponents in front of her and applying Snappy Silhouette to a maximum of 5 opponents. During this effect's duration, it will deal Cryo DMG to affected opponents at intervals.<br><br>Hold<br>Popping Monsieur Verite's viewfinder open, Charlotte enters Composition Mode, and during this time, the viewfinder will expand as you hold until you reach a Finisher Frame state. In this state, Charlotte can move and change direction freely.<br>When the hold state ends, Monsieur Verite will deal Cryo DMG to all opponents locked on within the viewfinder, and apply the same Snappy Silhouette as Tap Mode does to them. If you unleash this ability only after reaching Finisher Frame, you will instead apply Focused Impression, which lasts longer and deals more DMG, although the Skill CD will be longer.<br>Composition Mode lasts a maximum of 15s and allows a maximum of 5 opponents to be selected.<br><br><i>\"Press photography requires simple shots with exceptional theming, but most of all, you need to have a knack for capturing the moment!\"</i>",
     "final_name": "Still Photo: Comprehensive Confirmation",
     "final_img": "charlotte_s3",
-    "final_desc": "Condensing ice to create The Steambird's signature, Charlotte creates a Verified Scene that will deal AoE Cryo DMG and restores HP for all party members based on Charlotte's ATK.\nVerified Scene<br>·While the ability is active, Monsieur Verite will deal Cryo DMG at intervals to opponents within its AoE.<br>·Will continuously restore HP to your active character based on Charlotte's ATK.<br><br><i>\"Hearing stories from multiple perspectives to recreate what really happened is key to a good report... I mean, that's how you can pick the best angle for your article!\"</i>"
+    "final_desc": "Condensing ice to create The Steambird's signature, Charlotte creates a Newsflash Field that will deal AoE Cryo DMG and restores HP for all nearby party members based on Charlotte's ATK.\nNewsflash Field<br>·While the ability is active, Monsieur Verite will deal Cryo DMG at intervals to opponents within its AoE.<br>·Will continuously restore HP to active character(s) within its AoE based on Charlotte's ATK.<br><br><i>\"Hearing stories from multiple perspectives to recreate what really happened is key to a good report... I mean, that's how you can pick the best angle for your article!\"</i>"
   },
   "basic_talent": {
     "talent2_name": "First-Person Shutter",
     "talent2_img": "charlotte_p2",
-    "talent2_desc": "After equipping the Special Analysis Zoom Lens, Charlotte's \"Framing: Freezing Point Composition\"'s Hold Mode cannot trigger its original effects, but you can now take photos in a more special way...",
+    "talent2_desc": "After activating the Special Analysis Zoom Lens, Charlotte's \"Framing: Freezing Point Composition\" Hold Mode cannot trigger its original effects, but instead enables her to take photos in a rather unique manner...",
     "talent3_name": "Moment of Impact",
     "talent3_img": "charlotte_p3",
     "talent3_desc": "When opponents marked by \"Focused Impression\" are defeated, Framing: Freezing Point Composition's CD will be decreased by 2s. This CD decrease can be triggered 4 times every 12s.",
-    "talent1_name": "Diversity Survey",
+    "talent1_name": "Diversified Investigation",
     "talent1_img": "charlotte_p1",
-    "talent1_desc": "For each Fontainian party member other than herself, Charlotte gains a 5% Healing Bonus. For each non-Fontainian party member, Charlotte gains a 5% Cryo DMG Bonus."
+    "talent1_desc": "When the party contains 1/2/3 Fontainians other than herself, Charlotte gains a 5%/10%/15% Healing Bonus. When the party contains 1/2/3 non-Fontainians, Charlotte gains a 5%/10%/15% Cryo DMG Bonus."
   },
   "sof": {
     "sof1_name": "A Need to Verify Facts",
@@ -38,18 +38,18 @@
     "sof1_desc": "After Still Photo: Comprehensive Confirmation heals a character, it will mark them with Verification, which will heal them once every 2s for 80% of Charlotte's ATK. This effect lasts 6s.",
     "sof2_name": "A Duty to Pursue Truth",
     "sof2_img": "charlotte_c2",
-    "sof2_desc": "When using Framing: Freezing Point Composition, when Monsieur Verite hits 1/2/3 (or more) opponents, Charlotte's own attack will be increased by 10%/20%/30% for 12s.",
+    "sof2_desc": "When using Framing: Freezing Point Composition, when Monsieur Verite hits 1/2/3 (or more) opponents, Charlotte's own ATK will be increased by 10%/20%/30% for 12s.",
     "sof3_name": "An Imperative to Independence",
     "sof3_img": "charlotte_c3",
     "sof3_desc": "Increases the Level of Still Photo: Comprehensive Confirmation by 3.\nMaximum upgrade level is 15.",
     "sof4_name": "A Responsibility to Oversee",
     "sof4_img": "charlotte_c4",
-    "sof4_desc": "When Still Photo: Comprehensive Confirmation hits an opponent marked by Speedy Silhouette or Focused Impression, it will deal 10% more DMG and restore 2 Energy to Charlotte. This restoration can be triggered 5 times every 20s.",
+    "sof4_desc": "When Still Photo: Comprehensive Confirmation hits an opponent marked by Snappy Silhouette or Focused Impression, it will deal 10% more DMG and restore 2 Energy to Charlotte. This restoration can be triggered 5 times every 20s.",
     "sof5_name": "A Principle of Conscience",
     "sof5_img": "charlotte_c5",
     "sof5_desc": "Increases the Level of Framing: Freezing Point Composition by 3.\nMaximum upgrade level is 15.",
     "sof6_name": "A Summation of Interest",
     "sof6_img": "charlotte_c6",
-    "sof6_desc": "When the active character's Normal and Charged Attacks hit an opponent marked by Framing: Freezing Point Composition's Focused Impression, Monsieur Verite will initiate a follow-up attack that deals 180% of Charlotte's ATK as AoE Cryo DMG and heals active character(s) within the AoE for 42% of Charlotte's ATK. This effect can be triggered once every 6s, and both DMG and healing done this way will be considered as having been done by Charlotte's Elemental Burst."
+    "sof6_desc": "When the active character's Normal and Charged Attacks hit an opponent marked by Framing: Freezing Point Composition's Focused Impression, Monsieur Verite will initiate a coordinated attack that deals 180% of Charlotte's ATK as AoE Cryo DMG and heals active character(s) within the AoE for 42% of Charlotte's ATK. This effect can be triggered once every 6s and both DMG and healing dealt in this way will be considered as having been done by Charlotte's Elemental Burst."
   }
 }

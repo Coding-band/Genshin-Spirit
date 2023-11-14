@@ -38,7 +38,7 @@
     "sof1_desc": "Quando Yanfei realiza um Ataque Carregado, cada Insígnia de Chamas que ela possuir aumenta sua Resistência Contra Interrupção enquanto ataca, e também reduz o consumo de Stamina desse Ataque Carregado em 10%.",
     "sof2_name": "Direito de Interpretação Final",
     "sof2_img": "yanfei_c2",
-    "sof2_desc": "A Taxa CRIT de Yanfei aumenta em 20% contra inimigos com menos de 50% de Vida.",
+    "sof2_desc": "A Taxa CRIT dos Ataques Carregados de Yanfei aumenta em 20% contra inimigos com menos de 50% de Vida.",
     "sof3_name": "Selado sobre Fogo",
     "sof3_img": "yanfei_c3",
     "sof3_desc": "Aumenta o nível da Habilidade Édito Assinado em 3.\nO nível máximo é 15.",

@@ -1807,6 +1807,34 @@ public class ItemRss {
             case "Joyous Celebration" : return new int[]{R.drawable.tcg_joyous_celebration, R.string.tcg_joyous_celebration};
             case "Where Is the Unseen Razor?" : return new int[]{R.drawable.tcg_where_is_the_unseen_razor, R.string.tcg_where_is_the_unseen_razor};
             case "Fontaine" : return new int[]{R.drawable.tcg_fontaine, R.string.tcg_fontaine};
+            //add in 20231114 - 4.1.0
+            case "Wanderer" : return new int[]{R.drawable.tcg_wanderer,R.string.tcg_wanderer};
+            case "Dehya" : return new int[]{R.drawable.tcg_dehya,R.string.tcg_dehya};
+            case "Yaoyao" : return new int[]{R.drawable.tcg_yaoyao,R.string.tcg_yaoyao};
+            case "Stalwart and True" : return new int[]{R.drawable.tcg_stalwart_and_true,R.string.tcg_stalwart_and_true};
+            case "Gales of Reverie" : return new int[]{R.drawable.tcg_gales_of_reverie,R.string.tcg_gales_of_reverie};
+            case "Beneficent" : return new int[]{R.drawable.tcg_beneficent,R.string.tcg_beneficent};
+            case "Moonpiercer" : return new int[]{R.drawable.tcg_moonpiercer,R.string.tcg_moonpiercer};
+            case "Crown of Watatsumi" : return new int[]{R.drawable.tcg_crown_of_watatsumi,R.string.tcg_crown_of_watatsumi};
+            case "Gandharva Ville" : return new int[]{R.drawable.tcg_gandharva_ville,R.string.tcg_gandharva_ville};
+            case "Yayoi Nanatsuki" : return new int[]{R.drawable.tcg_yayoi_nanatsuki,R.string.tcg_yayoi_nanatsuki};
+            case "Fresh Wind of Freedom" : return new int[]{R.drawable.tcg_fresh_wind_of_freedom,R.string.tcg_fresh_wind_of_freedom};
+            case "Pankration!" : return new int[]{R.drawable.tcg_pankration,R.string.tcg_pankration};
+            case "The Fortress of Meropide" : return new int[]{R.drawable.tcg_the_fortress_of_meropide,R.string.tcg_the_fortress_of_meropide};
+            case "Dragonspine: Traces" : return new int[]{R.drawable.tcg_dragonspine_traces,R.string.tcg_dragonspine_traces};
+            case "Dragonspine: Crown" : return new int[]{R.drawable.tcg_dragonspine_crown,R.string.tcg_dragonspine_crown};
+            //add in 20231114 - 4.2.0
+            case "Nilou" : return new int[]{R.drawable.tcg_nilou,R.string.tcg_nilou};
+            case "Dori" : return new int[]{R.drawable.tcg_dori,R.string.tcg_dori};
+            case "Baizhu" : return new int[]{R.drawable.tcg_baizhu,R.string.tcg_baizhu};
+            case "The Starry Skies Their Flowers Rain" : return new int[]{R.drawable.tcg_the_starry_skies_their_flowers_rain,R.string.tcg_the_starry_skies_their_flowers_rain};
+            case "Discretionary Supplement" : return new int[]{R.drawable.tcg_discretionary_supplement,R.string.tcg_discretionary_supplement};
+            case "All Things Are of the Earth" : return new int[]{R.drawable.tcg_all_things_are_of_the_earth,R.string.tcg_all_things_are_of_the_earth};
+            case "Ocean-Hued Clam" : return new int[]{R.drawable.tcg_ocean_hued_clam,R.string.tcg_ocean_hued_clam};
+            case "Shadow of the Sand King" : return new int[]{R.drawable.tcg_shadow_of_the_sand_king,R.string.tcg_shadow_of_the_sand_king};
+            case "Stormterror's Lair" : return new int[]{R.drawable.tcg_stormterrors_lair,R.string.tcg_stormterrors_lair};
+            case "In Every House a Stove" : return new int[]{R.drawable.tcg_in_every_house_a_stove,R.string.tcg_in_every_house_a_stove};
+            case "Lyresong" : return new int[]{R.drawable.tcg_lyresong,R.string.tcg_lyresong};
 
             default: return new int[]{R.drawable.hu_tao_unknown, R.string.unknown};
         }
@@ -2371,6 +2399,13 @@ public class ItemRss {
                 return R.drawable.worldspan_fern;
             case "亙古樹海之一瞬":
                 return R.drawable.everamber;
+            //add in 20231114
+            case "無光絲線":
+                return R.drawable.lightless_silk_string;
+            case "無光渦眼":
+                return R.drawable.lightless_eye_of_the_maelstrom;
+            case "無光質塊":
+                return R.drawable.lightless_mass;
 
             /** Common*/
             case "牢固的箭簇":
