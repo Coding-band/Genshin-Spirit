@@ -1055,22 +1055,47 @@ public class DailyMemo {
 
                     System.out.println("cookies BASE : "+cookies);
                     if (cookies == null) return;
-                    if (cookies.contains("ltoken") && cookies.contains("ltuid")){
+                    if (cookies.contains("ltoken_v2") && cookies.contains("ltoken_v2")){
 
                         //System.out.println("HEY YOU ! WE SUCCESSED");
                         isBothHave = true;
                         cookies = "{\""+cookies+"\"}";
                         cookies = cookies.replace(" "," \"").replace("=","\":\"").replace(";","\",").replace(".","_");
-                        //System.out.println("cookies DONE : "+cookies);
+
                         try {
                             JSONObject jsonObject = new JSONObject(cookies);
-                            token_final = jsonObject.getString("ltoken");
-                            uid_final = jsonObject.getString("ltuid");
+                            System.out.println("cookies DONE : "+jsonObject);
+                            token_final = jsonObject.getString("ltoken_v2");
+                            uid_final = jsonObject.getString("ltuid_v2");
+                            account_id_v2 = jsonObject.getString("account_id_v2");
+                            cookie_token_v2 = jsonObject.getString("cookie_token_v2");
+                            account_mid_v2 = jsonObject.getString("account_mid_v2");
+                            ltmid_v2 = jsonObject.getString("ltmid_v2");
+
+                            editor.putString("hoyolab_ltoken",token_final);
+                            editor.putString("hoyolab_ltuid",uid_final);
+                            editor.putString("genshin_uid",genshin_uid_final);
+                            editor.putString("account_id_v2",account_id_v2);
+                            editor.putString("cookie_token_v2",cookie_token_v2);
+                            editor.putString("account_mid_v2",account_mid_v2);
+                            editor.putString("ltmid_v2",ltmid_v2);
+                            editor.apply();
+
 
                             new grabDataFromServer().execute(ItemRss.SERVER_REACT_ROOT+"dailyMemo_3.5/dailyMemoIdListPort.php?" +
-                                    "hoyoUID="+uid_final+
-                                    "&hoyoToken="+token_final
+                                    "hoyoUID="+sharedPreferences.getString("hoyolab_ltuid","N/A")+
+                                    "&hoyoToken="+sharedPreferences.getString("hoyolab_ltoken","N/A")+
+                                    "&account_id_v2="+sharedPreferences.getString("account_id_v2","N/A")+
+                                    "&cookie_token_v2="+sharedPreferences.getString("cookie_token_v2","N/A")+
+                                    "&account_mid_v2="+sharedPreferences.getString("account_mid_v2","N/A")+
+                                    "&ltmid_v2="+sharedPreferences.getString("ltmid_v2","N/A")
                             );
+                            System.out.println("WTT : "+ItemRss.SERVER_REACT_ROOT+"dailyMemo_3.5/dailyMemoIdListPort.php?" +"hoyoUID="+sharedPreferences.getString("hoyolab_ltuid","N/A")+
+                                    "&hoyoToken="+sharedPreferences.getString("hoyolab_ltoken","N/A")+
+                                    "&account_id_v2="+sharedPreferences.getString("account_id_v2","N/A")+
+                                    "&cookie_token_v2="+sharedPreferences.getString("cookie_token_v2","N/A")+
+                                    "&account_mid_v2="+sharedPreferences.getString("account_mid_v2","N/A")+
+                                    "&ltmid_v2="+sharedPreferences.getString("ltmid_v2","N/A"));
                         } catch (JSONException e) {
                             LogExport.export("DailyMemo","getCookiesFromLoginPage -> webview.setWebViewClient.onPageFinished", e.getMessage(), context, DAILYMEMO);
                         }
