@@ -4,6 +4,8 @@ package com.voc.genshin_helper.util.hoyolab.request;/*
  * Copyright © 2023 Xectorda 版權所有
  */
 
+import org.json.JSONObject;
+
 import java.util.Map;
 
 /*
@@ -15,23 +17,28 @@ public class HoyolabRequestType {
         GET,
         POST
     }
-    public class BaseType{
-        Map<String, Object> data;
 
-        public BaseType(Map<String, Object> data) {
-            this.data = data;
-        }
-    }
-
-    public class IResponse{
+    public static class IResponse{
         int retcode;
         String message;
-        Object data;
+        JSONObject data;
 
-        public IResponse(int retcode, String message, Object data) {
+        public IResponse(int retcode, String message, JSONObject data) {
             this.retcode = retcode;
             this.message = message;
             this.data = data;
+        }
+
+        public int getRetcode() {
+            return retcode;
+        }
+
+        public String getMessage() {
+            return message;
+        }
+
+        public JSONObject getData() {
+            return data;
         }
     }
 }

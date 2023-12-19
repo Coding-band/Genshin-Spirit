@@ -4,18 +4,39 @@ package com.voc.genshin_helper.util.hoyolab.request;/*
  * Copyright © 2023 Xectorda 版權所有
  */
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.util.Log;
+
 import com.voc.genshin_helper.util.hoyolab.GenerateDS;
 import com.voc.genshin_helper.util.hoyolab.language.Language;
 
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.FutureTask;
 
 import javax.net.ssl.HttpsURLConnection;
+
+import okhttp3.internal.http.HttpMethod;
 
 /*
  *  hoyolab.request.HoyolabRequest was refer from Dalufishe.
  */
 public class HoyolabRequest {
+    public enum HttpMethod{
+        GET, POST, PUT, DELETE
+    }
     /* Headers for the request. */
     private Map<String, Object> headers;
 
@@ -100,11 +121,79 @@ public class HoyolabRequest {
         return this;
     }
 
-    public HoyolabRequestType.IResponse send(String url, HoyolabRequestType.Method method){
+    public HoyolabRequestType.IResponse send(String url, Context context, HoyolabRequestType.Method method){
         if (this.ds){
             this.headers.put("DS", GenerateDS.generate());
         }
+
         //這邊用 HttpsURLConnection
-        return null;
+        HttpsCallable callable = new HttpsCallable(url,context,headers,method);
+        FutureTask<HoyolabRequestType.IResponse> futureTask = new FutureTask<>(callable);
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        executor.execute(futureTask);
+
+        try {
+            return futureTask.get();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+
+    class HttpsCallable implements Callable<HoyolabRequestType.IResponse> {
+        private String url;
+        private Context context;
+        private HoyolabRequestType.Method method;
+        private SharedPreferences sharedPreferences;
+        private Map<String,Object> headers;
+
+        public HttpsCallable(String url, Context context, Map<String,Object> headers, HoyolabRequestType.Method method) {
+            this.url = url;
+            this.context = context;
+            this.sharedPreferences = context.getSharedPreferences("user_info",Context.MODE_PRIVATE);
+            this.method = method;
+            this.headers = headers;
+        }
+
+        @Override
+        public HoyolabRequestType.IResponse call() {
+            try {
+                URL urlObj = new URL(url);
+                HttpsURLConnection connection = (HttpsURLConnection) urlObj.openConnection();
+                connection.setRequestMethod(method.name());
+                connection.setConnectTimeout(1000);
+                connection.setReadTimeout(1000);
+                connection.setRequestProperty("Content-Type", "application/json");
+                headers.forEach((key,obj) -> {connection.setRequestProperty(key,String.valueOf(obj));});
+
+                int responseCode = connection.getResponseCode();
+                if (responseCode != HttpURLConnection.HTTP_OK && responseCode != HttpURLConnection.HTTP_CREATED) {
+                    return new HoyolabRequestType.IResponse(
+                            responseCode,
+                            "[HTTPS] : "+connection.getResponseMessage(),
+                            null);
+                }else{
+                    BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
+                    StringBuilder response = new StringBuilder();
+                    String line;
+                    while ((line = reader.readLine()) != null) {
+                        response.append(line);
+                    }
+                    reader.close();
+                    JSONObject jsonObject = new JSONObject(response.toString());
+
+                    //轉譯
+                    return new HoyolabRequestType.IResponse(
+                            jsonObject.getInt("retcode"),
+                            jsonObject.getString("message"),
+                            jsonObject.getJSONObject("data")
+                    );
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            return new HoyolabRequestType.IResponse(-9999,"",null);
+        }
     }
 }
