@@ -44,11 +44,13 @@ public class HoyolabHooks {
     }
     public String genshinUUID(Context context) {
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",Context.MODE_PRIVATE);
-        HoyolabConstants.GAME_SERVERS userGameServer = HoyolabConstants.GAME_SERVERS.getEnumByIdName(sharedPreferences.getString(HOYOLAB_SERVER_ID,null));
+        HoyolabConstants.GAME_SERVERS userGameServer = HoyolabConstants.GAME_SERVERS.getEnumByIdName(sharedPreferences.getString(HOYOLAB_SERVER_ID,HoyolabConstants.GAME_SERVERS.GENSHIN_TW_HK_MO.getServerIdName()));
 
         if (userGameServer == null) return null;
 
+        System.out.println("jsonObject : ");
         JSONObject jsonObject = hoyolabGameRecord(context);
+        System.out.println(jsonObject);
         try {
             if (jsonObject != null && jsonObject.has("list")){
                 JSONArray jsonArray = jsonObject.getJSONArray("list");
@@ -75,7 +77,7 @@ public class HoyolabHooks {
     }
     public JSONObject genshinNoteData(Context context){
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",Context.MODE_PRIVATE);
-        HoyolabConstants.GAME_SERVERS hsrServerChosen = HoyolabConstants.GAME_SERVERS.getEnumByIdName(sharedPreferences.getString(HOYOLAB_SERVER_ID,null));
+        HoyolabConstants.GAME_SERVERS hsrServerChosen = HoyolabConstants.GAME_SERVERS.getEnumByIdName(sharedPreferences.getString(HOYOLAB_SERVER_ID,HoyolabConstants.GAME_SERVERS.GENSHIN_TW_HK_MO.getServerIdName()));
         if (hsrServerChosen == null) return null;
         return genshinCommonGetData(context, HoyolabConstants.GenshinNoteDataURL(genshinUUID(context), hsrServerChosen.getServerIdName()));
     }

@@ -53,9 +53,10 @@ public class HoyolabRequest {
         this.headers = new HashMap<>();
         this.headers.put("Content-Type", "application/json");
         this.headers.put("Host", "bbs-api-os.hoyolab.com");
-        this.headers.put("User-Agent", "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/109.0.0.0 Safari/537.36");
+        this.headers.put("User-Agent", "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36");
         this.headers.put("x-rpc-app_version", "4.3.0");
         this.headers.put("x-rpc-client_type", "5");
+        this.headers.put("x-rpc-lang", "zh-tw");
         this.body = new HashMap<>();
         this.params = new HashMap<>();
         this.ds = false;
@@ -124,6 +125,7 @@ public class HoyolabRequest {
     public HoyolabRequestType.IResponse send(String url, Context context, HoyolabRequestType.Method method){
         if (this.ds){
             this.headers.put("DS", GenerateDS.generate());
+            System.out.println("DXS : "+headers.get("DS"));
         }
 
         //這邊用 HttpsURLConnection
@@ -181,13 +183,14 @@ public class HoyolabRequest {
                         response.append(line);
                     }
                     reader.close();
+                    System.out.println(url+" -> response.toString() : "+response.toString());
                     JSONObject jsonObject = new JSONObject(response.toString());
 
                     //轉譯
                     return new HoyolabRequestType.IResponse(
                             jsonObject.getInt("retcode"),
                             jsonObject.getString("message"),
-                            jsonObject.getJSONObject("data")
+                            jsonObject.isNull("data") ? null : jsonObject.getJSONObject("data")
                     );
                 }
             } catch (Exception e) {

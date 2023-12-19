@@ -22,7 +22,7 @@ public class GenerateDS {
         final String characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         for(int x = 0 ; x < 6 ; x++){
             int randomIndex = (int) Math.floor(Math.random() * characters.length());
-            int randomChar = characters.charAt(randomIndex);
+            char randomChar = characters.charAt(randomIndex);
             random += randomChar;
         }
 
