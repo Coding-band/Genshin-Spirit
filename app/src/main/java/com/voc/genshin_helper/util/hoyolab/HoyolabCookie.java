@@ -52,6 +52,7 @@ public class HoyolabCookie {
             else if (Objects.equals(key, "ltoken_v2")){ltoken_v2 = (String) obj;}
             else if (Objects.equals(key, "ltmid_v2")){ltmid_v2 = (String) obj;}
             else if (Objects.equals(key, "ltuid_v2")){ltuid_v2 = (String) obj;}
+            System.out.println(key+" JAVA : "+obj);
         });
     }
 
@@ -93,6 +94,19 @@ public class HoyolabCookie {
             editor.putString(key, String.valueOf(obj));
         });
         editor.apply();
+        return true;
+    }
+
+    public static boolean updateCookie(Context context, String cookies){
+        SharedPreferences sharedPreferences = context.getSharedPreferences("user_info", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        String[] values = cookies.split(";");
+        for (String str : values){
+            String[] keyValueArr = str.split("=");
+            editor.putString(keyValueArr[0].trim(),keyValueArr[1].trim()).apply();
+            System.out.println(keyValueArr[0].trim()+" : "+keyValueArr[1].trim());
+        }
         return true;
     }
 

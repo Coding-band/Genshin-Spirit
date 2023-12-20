@@ -4,27 +4,24 @@ package com.voc.genshin_helper.util.hoyolab;/*
  * Copyright © 2023 Xectorda 版權所有
  */
 
+import com.voc.genshin_helper.R;
+
 import java.util.Objects;
 
 public class HoyolabConstants {
 
     public enum GAME_SERVERS{
-        //官服[天空島服] = "cn_gf01"
-        //B服[世界樹服] = "cn_qd01"
-        //Asia = "os_asia"
-        //Europe = "os_euro"
-        //America = "os_usa"
-        //TW,HK,MO = "os_cht"
-
-        GENSHIN_MIHOYO("天空島服","cn_gf01","CN"),
-        GENSHIN_BILIBILI("世界樹服","cn_qd01","CN"),
-        GENSHIN_ASIA("Asia","os_asia","OS"),
-        GENSHIN_EUROPE("Europe","os_euro","OS"),
-        GENSHIN_AMERICA("America","os_usa","OS"),
-        GENSHIN_TW_HK_MO("TW,HK,MO","os_cht","OS"),
+        GENSHIN_MIHOYO("天空島服", R.string.sky_land_ser,"cn_gf01","CN"),
+        GENSHIN_BILIBILI("世界樹服", R.string.world_tree,"cn_qd01","CN"),
+        GENSHIN_ASIA("Asia", R.string.asia_ser,"os_asia","OS"),
+        GENSHIN_EUROPE("Europe", R.string.europe_ser,"os_euro","OS"),
+        GENSHIN_AMERICA("America", R.string.america_ser,"os_usa","OS"),
+        GENSHIN_TW_HK_MO("TW,HK,MO", R.string.hk_tw_mo_ser,"os_cht","OS"),
+        UNKNOWN("UNKNOWN", R.string.unknown,"UNKNOWN","UNKNOWN"),
         ;
 
         private final String serverDevName;
+        private final int serverTranslateName;
         private final String serverIdName;
         private final String serverLocation;
 
@@ -34,9 +31,10 @@ public class HoyolabConstants {
          * @param serverIdName hoyolabGameRecord() 獲取 JSON data => data.list[x].region
          * @param serverLocation 分辨 國服 (CN) 和 國際服 (OS)
          */
-        GAME_SERVERS(String serverDevName, String serverIdName, String serverLocation) {
+        GAME_SERVERS(String serverDevName, int serverTranslateName, String serverIdName, String serverLocation) {
             this.serverDevName = serverDevName;
             this.serverIdName = serverIdName;
+            this.serverTranslateName = serverTranslateName;
             this.serverLocation = serverLocation;
         }
 
@@ -44,13 +42,17 @@ public class HoyolabConstants {
             for (GAME_SERVERS server : GAME_SERVERS.values()){
                 if (Objects.equals(server.serverIdName, serverIdName)) return server;
             }
-            return null;
+            return UNKNOWN;
         }
         public static GAME_SERVERS getEnumByDevName (String serverDevName){
             for (GAME_SERVERS server : GAME_SERVERS.values()){
                 if (Objects.equals(server.serverDevName, serverDevName)) return server;
             }
-            return null;
+            return UNKNOWN;
+        }
+
+        public int getServerTranslateName() {
+            return serverTranslateName;
         }
 
         public String getServerDevName() {
@@ -112,7 +114,7 @@ public class HoyolabConstants {
 
     // SharedPreference use
     public static final String HOYOLAB_SERVER_ID = "hoyolabServerId";
-
+    public static final String HOYOLAB_DAILYMEMO_EMPTY = "{\"current_resin\":0,\"max_resin\":160,\"resin_recovery_time\":\"0\",\"finished_task_num\":0,\"total_task_num\":4,\"is_extra_task_reward_received\":false,\"remain_resin_discount_num\":0,\"resin_discount_num_limit\":3,\"current_expedition_num\":0,\"max_expedition_num\":5,\"expeditions\":[{\"avatar_side_icon\":\"N/A\",\"status\":\"Idle\",\"remained_time\":\"-1\"},{\"avatar_side_icon\":\"N/A\",\"status\":\"Idle\",\"remained_time\":\"-1\"},{\"avatar_side_icon\":\"N/A\",\"status\":\"Idle\",\"remained_time\":\"-1\"},{\"avatar_side_icon\":\"N/A\",\"status\":\"Idle\",\"remained_time\":\"-1\"},{\"avatar_side_icon\":\"N/A\",\"status\":\"Idle\",\"remained_time\":\"-1\"}],\"current_home_coin\":0,\"max_home_coin\":300,\"home_coin_recovery_time\":\"0\",\"calendar_url\":\"\",\"transformer\":{\"obtained\":true,\"recovery_time\":{\"Day\":0,\"Hour\":0,\"Minute\":0,\"Second\":0,\"reached\":true},\"wiki\":\"\",\"noticed\":false,\"latest_job_id\":\"0\"},\"daily_task\":{\"total_num\":4,\"finished_num\":0,\"is_extra_task_reward_received\":false,\"task_rewards\":[{\"status\":\"N/A\"},{\"status\":\"N/A\"},{\"status\":\"N/A\"},{\"status\":\"N/A\"}],\"attendance_rewards\":[{\"status\":\"N/A\",\"progress\":0},{\"status\":\"N/A\",\"progress\":0},{\"status\":\"N/A\",\"progress\":0},{\"status\":\"N/A\",\"progress\":0}],\"attendance_visible\":true},\"archon_quest_progress\":{\"list\":[],\"is_open_archon_quest\":true,\"is_finish_all_mainline\":true,\"is_finish_all_interchapter\":true,\"wiki_url\":\"\"}}";
     /**
      * 獲取展示用戶Hoyolab帳戶 所有掛鉤的遊戲帳戶
      * @param hoyolabId 用戶Hoyolab帳戶的ID
@@ -123,21 +125,39 @@ public class HoyolabConstants {
     }
 
     /**
-     * 獲取指定原神帳戶的所有資訊
+     * 獲取指定原神帳戶的所有資訊 (戰績頁面)
      * @param uuid 用戶原神UID
      * @param server 用戶請求的伺服器
      * @return 展示指定原神帳戶所有資訊的 URL
      */
-    public static final String GenshinFullDataURL(String uuid, String server){
+    public static final String GenshinPlayerDataURL(String uuid, String server){
         return "https://bbs-api-os.hoyolab.com/game_record/genshin/api/index?server="+server+"&role_id="+uuid;
     }
     /**
-     * 獲取指定原神帳戶的每日便簽
+     * 獲取指定原神帳戶的每日便簽 (便簽頁面)
      * @param uuid 用戶原神UID
      * @param server 用戶請求的伺服器
      * @return 展示指定原神帳戶每日便簽的 URL
      */
     public static final String GenshinNoteDataURL(String uuid, String server){
         return "https://bbs-api-os.hoyolab.com/game_record/genshin/api/dailyNote?server="+server+"&role_id="+uuid;
+    }
+    /**
+     * 獲取原神官方活動資訊**内容** (活動頁面)
+     * @param language 語言 (zh-tw, ja-jp, zh-cn, etc...)
+     * @param server 用戶請求的伺服器
+     * @return 展示原神官方活動資訊**内容**的 URL
+     */
+    public static final String GenshinEventContentURL(String language, String server){
+        return "https://sg-hk4e-api.hoyoverse.com/common/hk4e_global/announcement/api/getAnnContent?bundle_id=hk4e_global&game=hk4e&game_biz=hk4e_global&lang="+language+"&level=43&platform=pc&region="+server+"&uid=100000000";
+    }
+    /**
+     * 獲取原神官方活動資訊**列表** (活動頁面)
+     * @param language 語言 (zh-tw, ja-jp, zh-cn, etc...)
+     * @param server 用戶請求的伺服器
+     * @return 展示原神官方活動資訊**列表**的 URL
+     */
+    public static final String GenshinEventListURL(String language, String server){
+        return "https://sg-hk4e-api.hoyoverse.com/common/hk4e_global/announcement/api/getAnnList?bundle_id=hk4e_global&game=hk4e&game_biz=hk4e_global&lang="+language+"&level=43&platform=pc&region="+server+"&uid=100000000";
     }
 }

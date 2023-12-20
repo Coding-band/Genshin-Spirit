@@ -44,13 +44,19 @@ import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.data.CalculatorDBAdapter;
 import com.voc.genshin_helper.data.CharactersAdapter;
 import com.voc.genshin_helper.data.ItemRss;
+import com.voc.genshin_helper.util.hoyolab.hooks.HoyolabHooks;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.time.OffsetDateTime;
+import java.time.OffsetTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -67,6 +73,84 @@ public class EventUtil {
 
     ArrayList<EventItem> eventItemArrayList = new ArrayList<>();
     View viewInDesk;
+
+    /*
+    DO NOT DELETE, this is a usable way but the connection got 404 in weird
+     */
+    public void initNEW(View viewInDesk, Context context, Activity activity){
+        this.context = context;
+        this.activity = activity;
+        this.viewInDesk = viewInDesk;
+        SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",Context.MODE_PRIVATE);
+        String lang = "zh-tw";
+
+        /**
+         * LANGS = {
+         *     "zh-cn": "简体中文",
+         *     "zh-tw": "繁體中文",
+         *     "de-de": "Deutsch",
+         *     "en-us": "English",
+         *     "es-es": "Español",
+         *     "fr-fr": "Français",
+         *     "id-id": "Indonesia",
+         *     "it-it": "Italiano",
+         *     "ja-jp": "日本語",
+         *     "ko-kr": "한국어",
+         *     "pt-pt": "Português",
+         *     "ru-ru": "Pусский",
+         *     "th-th": "ภาษาไทย",
+         *     "vi-vn": "Tiếng Việt",
+         *     "tr-tr": "Türkçe",
+         * }
+         */
+
+        switch (sharedPreferences.getString("curr_lang","en-US")){
+            case "zh-HK" : lang = "zh-tw";break;
+            case "zh-CN" : lang = "zh-cn";break;
+            case "en-US" : lang = "en-us";break;
+            case "ru-RU" : lang = "ru-ru";break;
+            case "ja-JP" : lang = "ja-jp";break;
+            case "fr-FR" : lang = "fr-fr";break;
+            case "pt-PT" : lang = "pt-pt";break;
+            case "de-DE" : lang = "de-de";break;
+
+            default : lang = "en-us";break;
+        }
+        eventItemArrayList = new ArrayList<>();
+
+        try {
+            JSONObject eventContentRoot = new HoyolabHooks().genshinEventContent(context,lang);
+            if (eventContentRoot == null)return;
+            JSONArray eventContent = eventContentRoot.getJSONArray("list");
+            Map<String, JSONObject> eventContentMap = new HashMap<>();
+            for (int x = 0 ; x < eventContent.length() ; x ++){
+                eventContentMap.put(eventContent.getJSONObject(x).getString("ann_id"), eventContent.getJSONObject(x));
+            }
+
+            //内容部分
+            JSONArray eventList = new HoyolabHooks().genshinEventList(context,lang).getJSONArray("list");
+            for (int x = 0 ; x < eventList.length() ; x++){
+                String titleX = eventList.getJSONObject(x).getString("title");
+                String[] titles = (titleX.contains("：") ?  titleX.split("：") : titleX.split(":"));
+                eventItemArrayList.add(new EventItem(
+                        titles[0],
+                        titles[titles.length-1],
+                        eventList.getJSONObject(x).getString("subtitle"),
+                        eventList.getJSONObject(x).getString("banner"),
+                        eventContentMap.get(eventList.getJSONObject(x).getString("ann_id")).getString("content"),
+                        dateTime2Unix(eventContentMap.get(eventList.getJSONObject(x).getString("ann_id")).getString("end_time")),
+                        remainTime(dateTime2Unix(eventContentMap.get(eventList.getJSONObject(x).getString("ann_id")).getString("end_time")))
+                ));
+            }
+        } catch (JSONException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        displayRefresh();
+
+    }
+
     public void init(View viewInDesk, Context context, Activity activity){
         this.context = context;
         this.activity = activity;
@@ -111,8 +195,77 @@ public class EventUtil {
 
     }
 
+    class grabDataFromServer extends AsyncTask<String,Integer,String>{
+        private static final int TIME_OUT = 5000;
+        protected void onPreExecute() {
+            jsonResult = null;
+        }
+        @Override
+        protected String doInBackground(String... url) {
+            // TODO Auto-generated method stub
+            // 再背景中處理的耗時工作
+            OkHttpClient client = new OkHttpClient();
+            Request request = new Request.Builder().url(url[0]).build();
+
+            System.out.println(url[0]);
+
+            try {
+                Response sponse = client.newCall(request).execute();
+                jsonResult = sponse.body().string();
+                if (jsonResult == null){
+                    LogExport.export("EventUtil", "init() -> jsonResult == null", "True", context, LogExport.EVENTLIST);
+                    return null;
+                }
+
+                JSONArray jsonArray = new JSONArray(jsonResult);
+                for (int x = 0 ; x < jsonArray.length() ; x++){
+                    JSONObject jsonObject = jsonArray.getJSONObject(x);
+                    eventItemArrayList.add(new EventItem(
+                            jsonObject.getString("title"),
+                            jsonObject.getString("title_detail"),
+                            jsonObject.getString("subtitle"),
+                            jsonObject.getString("banner"),
+                            jsonObject.getString("content"),
+                            jsonObject.getLong("end_time_unix"),
+                            jsonObject.getInt("end_time_days")
+                    ));
+                }
+
+            } catch (IOException | JSONException e) {
+                LogExport.export("EventUtil","grabDataFromServer.doInBackground", e.getMessage(), context, EVENTLIST);
+            }
+            return "DONE";
+        }
 
 
+
+        public void onPostExecute(String result )
+        { super.onPreExecute();
+            // 背景工作處理完"後"需作的事
+            displayRefresh();
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            // TODO Auto-generated method stub
+            super.onProgressUpdate(values);
+
+        }
+    }
+
+
+
+    public static long dateTime2Unix(String dateTime){
+        OffsetDateTime treatmentTime = OffsetDateTime.parse(dateTime, DateTimeFormatter.ofPattern ("yyyy-MM-dd HH:mm:ss"));
+        OffsetDateTime timeInLocale = treatmentTime.withOffsetSameInstant(OffsetTime.now().getOffset());
+        return timeInLocale.toInstant().toEpochMilli();
+    }
+
+    public static int remainTime(long unixFinal){
+        return (int) ((System.currentTimeMillis() - unixFinal) / 86400000);
+
+
+    }
 
     private void displayRefresh() {
         System.out.println("viewInDesk has home_eventlist ? "+(viewInDesk.findViewById(R.id.home_eventlist) != null));
@@ -239,64 +392,6 @@ public class EventUtil {
         lp.gravity = Gravity.CENTER;
         dialogWindow.setAttributes(lp);
         dialog.show();
-    }
-
-    class grabDataFromServer extends AsyncTask<String,Integer,String>{
-        private static final int TIME_OUT = 5000;
-        protected void onPreExecute() {
-            jsonResult = null;
-        }
-        @Override
-        protected String doInBackground(String... url) {
-            // TODO Auto-generated method stub
-            // 再背景中處理的耗時工作
-            OkHttpClient client = new OkHttpClient();
-            Request request = new Request.Builder().url(url[0]).build();
-
-            System.out.println(url[0]);
-
-            try {
-                Response sponse = client.newCall(request).execute();
-                jsonResult = sponse.body().string();
-                if (jsonResult == null){
-                    LogExport.export("EventUtil", "init() -> jsonResult == null", "True", context, LogExport.EVENTLIST);
-                    return null;
-                }
-
-                JSONArray jsonArray = new JSONArray(jsonResult);
-                for (int x = 0 ; x < jsonArray.length() ; x++){
-                    JSONObject jsonObject = jsonArray.getJSONObject(x);
-                    eventItemArrayList.add(new EventItem(
-                            jsonObject.getString("title"),
-                            jsonObject.getString("title_detail"),
-                            jsonObject.getString("subtitle"),
-                            jsonObject.getString("banner"),
-                            jsonObject.getString("content"),
-                            jsonObject.getLong("end_time_unix"),
-                            jsonObject.getInt("end_time_days")
-                    ));
-                }
-
-            } catch (IOException | JSONException e) {
-                LogExport.export("EventUtil","grabDataFromServer.doInBackground", e.getMessage(), context, EVENTLIST);
-            }
-            return "DONE";
-        }
-
-
-
-        public void onPostExecute(String result )
-        { super.onPreExecute();
-            // 背景工作處理完"後"需作的事
-            displayRefresh();
-        }
-
-        @Override
-        protected void onProgressUpdate(Integer... values) {
-            // TODO Auto-generated method stub
-            super.onProgressUpdate(values);
-
-        }
     }
 
 

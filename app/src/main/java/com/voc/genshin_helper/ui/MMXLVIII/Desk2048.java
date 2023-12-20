@@ -100,6 +100,7 @@ import com.voc.genshin_helper.util.ChangeLog;
 import com.voc.genshin_helper.util.CustomToast;
 import com.voc.genshin_helper.util.CustomViewPager;
 import com.voc.genshin_helper.util.DailyMemo;
+import com.voc.genshin_helper.util.DailyMemoV2;
 import com.voc.genshin_helper.util.Dialog2048;
 import com.voc.genshin_helper.util.DownloadAndUnzipTask;
 import com.voc.genshin_helper.util.EventUtil;
@@ -285,7 +286,7 @@ public class Desk2048 extends AppCompatActivity {
     String[] serverList ;
     String[] gridList ;
 
-    DailyMemo dailyMemo;
+    DailyMemoV2 dailyMemo;
 
     private ViewPager viewPager;
     private ArrayList<View> viewPager_List;
@@ -398,8 +399,8 @@ public class Desk2048 extends AppCompatActivity {
 
         check_spinner = 0;
 
-        dailyMemo = new DailyMemo();
-        dailyMemo.setup(context,activity,viewPager0,DailyMemo.GAME);
+        dailyMemo = new DailyMemoV2();
+        dailyMemo.setup(context,activity,viewPager0);
         viewPager0.findViewById(R.id.home_dailymemo).setVisibility(View.VISIBLE);
 
         eventUtil.init(viewPager0, context,activity);

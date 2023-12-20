@@ -40,5 +40,9 @@ public class HoyolabRequestType {
         public JSONObject getData() {
             return data;
         }
+
+        public String toString(){
+            return "{retcode:"+getRetcode()+", message:"+message+", data:"+getData()+"}";
+        }
     }
 }
