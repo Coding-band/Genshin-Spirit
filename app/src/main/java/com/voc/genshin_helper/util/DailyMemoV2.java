@@ -157,7 +157,9 @@ public class DailyMemoV2 {
     public static final int GAME = 2048;
     public static final int MATERIAL = 2022;
 
-    public static final int SEC_OF_CHECK_PEIROD = 300000;
+    public static final int SEC_OF_CHECK_PEIROD = 300000; // 5 mins per check
+    private Handler refreshRegular = new Handler();
+    private Runnable refreshRunnable = null;
 
     CustomTabsIntent customTabsIntent;
     public static final int CHROME_CUSTOM_TAB_REQUEST_CODE = 4196;
@@ -231,11 +233,20 @@ public class DailyMemoV2 {
 
         updateData();
 
-        //System.out.println("URL : "+url);
+        refreshRunnable = new Runnable() {
+            @Override
+            public void run() {
+                refreshData(new HoyolabHooks().genshinNoteData(context).toString());
+                refreshRegular.postDelayed(refreshRunnable, SEC_OF_CHECK_PEIROD);
+            }
+        };
+
         if (!sharedPreferences.getString("genshin_uid","-1").equals("-1")){
             if (System.currentTimeMillis() - sharedPreferences.getLong("dailyMemoUnix",0) >= SEC_OF_CHECK_PEIROD){
                 sharedPreferences.edit().putLong("dailyMemoUnix",System.currentTimeMillis()).apply();
                 refreshData(new HoyolabHooks().genshinNoteData(context).toString());
+                refreshRegular.removeCallbacks(refreshRunnable);
+                refreshRegular.postDelayed(refreshRunnable,SEC_OF_CHECK_PEIROD);
             }else{
                 refreshData(sharedPreferences.getString("dailyMemoDataTMP",HoyolabConstants.HOYOLAB_DAILYMEMO_EMPTY));
             }
@@ -487,6 +498,12 @@ public class DailyMemoV2 {
                     public void onClick(View v) {
                         Toast.makeText(context, "Refreshing !", Toast.LENGTH_SHORT).show();
                         refreshData(new HoyolabHooks().genshinNoteData(context).toString());
+
+                        if (!sharedPreferences.getString("genshin_uid","-1").equals("-1")) {
+                            refreshRegular.removeCallbacks(refreshRunnable);
+                            refreshRegular.postDelayed(refreshRunnable,SEC_OF_CHECK_PEIROD);
+                        }
+
                         if (dialogS.isShowing()) dialogS.dismiss();
                         if (dialog.isShowing()) dialog.dismiss();
                     }
