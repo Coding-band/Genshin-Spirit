@@ -25,6 +25,7 @@ import androidx.core.app.NotificationCompat;
 import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.ui.MMXLVIII.Desk2048;
 import com.voc.genshin_helper.ui.SplashActivity;
+import com.voc.genshin_helper.ui.SplashOldActivity;
 
 import org.apache.commons.io.FileUtils;
 import java.io.BufferedInputStream;
@@ -382,7 +383,7 @@ public class DownloadAndUnzipTask extends AsyncTask<Void, Integer, Void> {
         }
 
         if(context instanceof SplashActivity){
-            ((SplashActivity)context).checkStyleUI();
+            ((SplashOldActivity)context).checkStyleUI();
         } else if (context instanceof Desk2048) {
             ((Desk2048)context).refreshUI();
         }

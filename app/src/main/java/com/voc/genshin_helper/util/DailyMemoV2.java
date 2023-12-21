@@ -758,7 +758,6 @@ public class DailyMemoV2 {
     }
 
     public void refreshData(String str) {
-
         try {
             JSONObject jsonObject = new JSONObject(str);
 
@@ -816,8 +815,14 @@ public class DailyMemoV2 {
             expedition5_remain_time = jsonObject.getJSONArray("expeditions").getJSONObject(4).getInt("remained_time");
 
             updateData();
+
+            if (DailyMemo2048Service.dailyMemo2048Service != null){
+                DailyMemo2048Service.dailyMemo2048Service.refresh(str,nickname,server,icon,level);
+                LogExport.export("DailyMemoV2","dailyMemo2048Service.refresh", "Refresh now", context, DAILYMEMO);
+            }
+            isIdGetDone = true;
         }catch (JSONException e) {
-            LogExport.export("DailyMemo2048Service","grabIdFromServer.doInBackground => refreshData()", e.getMessage(), context, DAILYMEMO);
+            LogExport.export("DailyMemoV2","refreshData()", e.getMessage(), context, DAILYMEMO);
         }
     }
 

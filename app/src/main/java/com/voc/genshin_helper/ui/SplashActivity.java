@@ -119,9 +119,7 @@ public class SplashActivity extends AppCompatActivity {
         }
 
         sharedPreferences.edit().putBoolean("appStopped",false).apply();
-
-
-
+        
         LogExport.init(context);
         ((TextView) findViewById(R.id.splash_version)).setText(BuildConfig.VERSION_NAME);
 
@@ -178,29 +176,6 @@ public class SplashActivity extends AppCompatActivity {
             //((TextView) findViewById(R.id.splash_base_title)).setText("");
             //((TextView) findViewById(R.id.splash_base_subtitle)).setText("");
         }
-
-
-        PackageManager manager=getPackageManager();
-        manager.setComponentEnabledSetting(new ComponentName(SplashActivity.this,"com.voc.genshin_helper.ui.SplashActivity")
-                ,PackageManager.COMPONENT_ENABLED_STATE_ENABLED,PackageManager.DONT_KILL_APP);
-        manager.setComponentEnabledSetting(new ComponentName(SplashActivity.this,"com.voc.genshin_helper.ui.SplashActivityAlias")
-                ,PackageManager.COMPONENT_ENABLED_STATE_DISABLED,PackageManager.DONT_KILL_APP);
-        manager.setComponentEnabledSetting(new ComponentName(SplashActivity.this,"com.voc.genshin_helper.ui.SplashActivityUkraine")
-                ,PackageManager.COMPONENT_ENABLED_STATE_DISABLED,PackageManager.DONT_KILL_APP);
-
-        if(sharedPreferences.getBoolean("supportUkraine", false) == true) {
-            manager.setComponentEnabledSetting(new ComponentName(SplashActivity.this,"com.voc.genshin_helper.ui.SplashActivityUkraine")
-                    ,PackageManager.COMPONENT_ENABLED_STATE_ENABLED,PackageManager.DONT_KILL_APP);
-            manager.setComponentEnabledSetting(new ComponentName(SplashActivity.this,"com.voc.genshin_helper.ui.SplashActivity")
-                    ,PackageManager.COMPONENT_ENABLED_STATE_DISABLED,PackageManager.DONT_KILL_APP);
-            manager.setComponentEnabledSetting(new ComponentName(SplashActivity.this,"com.voc.genshin_helper.ui.SplashActivityAlias")
-                    ,PackageManager.COMPONENT_ENABLED_STATE_DISABLED,PackageManager.DONT_KILL_APP);
-        }
-
-        NotificationManager notificationManager = context.getSystemService(NotificationManager.class);
-        NotificationChannel channel = new NotificationChannel("download_noti", "Download Notification", NotificationManager.IMPORTANCE_LOW);
-        channel.setDescription("Download Notification");
-        notificationManager.createNotificationChannel(channel);
 
         String[] checkList = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE, Manifest.permission.EXPAND_STATUS_BAR};
         List<String> needRequestList = checkPermission(activity, checkList);
@@ -306,187 +281,6 @@ public class SplashActivity extends AppCompatActivity {
         }
     }
 
-    public String prettyByteCount(Number number) {
-        String[] suffix = {"B", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"};
-        long numValue = ((long) number.longValue());
-        int base = 0;
-        double tmp_val = numValue;
-        while (tmp_val > 1024) {
-            tmp_val = tmp_val / 1024;
-            base = base + 1;
-        }
-
-        sharedPreferences = getSharedPreferences("user_info", Context.MODE_PRIVATE);
-        int decimal_num = 2;//sharedPreferences.getInt("decimal_num", 0);
-        boolean decimal = sharedPreferences.getBoolean("decimal", false);
-        if (base < suffix.length) {
-            return new DecimalFormat("##.##").format(numValue / Math.pow(1024, base)) + suffix[base];
-            // Muility
-        } else {
-            return new DecimalFormat("#,###").format(numValue);
-        }
-    }
-
-    public long getRemoteFileSize(ArrayList<String> urlSTR){
-        CompletableFuture<Long> completableFuture = new CompletableFuture<>();
-
-        new AsyncTask<Void, Void, Long>() {
-            @Override
-            protected Long doInBackground(Void... params) {
-                long fileSize = 0;
-                try {
-                    for (int x = 0 ; x < urlSTR.size() ; x++){
-                        URL url = new URL(urlSTR.get(x));
-                        URLConnection conn = url.openConnection();
-                        conn.connect();
-                        fileSize = conn.getContentLengthLong();
-                        conn.getInputStream().close();
-
-                        System.out.println("HI THERE : "+fileSize);
-                    }
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                completableFuture.complete(fileSize);
-                return fileSize;
-            }
-        }.execute();
-
-        try {
-            return completableFuture.get(5000, TimeUnit.MILLISECONDS);
-        } catch (ExecutionException  e) {
-            LogExport.export("SplashActivity", "getRemoteFileSize()", "ExecutionException : "+e.getMessage(), context, LogExport.FETCH_FILE_FUTURE);
-            runDesk(sharedPreferences);
-            return -2;
-        } catch (InterruptedException e) {
-            LogExport.export("SplashActivity", "getRemoteFileSize()", "InterruptedException : "+e.getMessage(), context, LogExport.FETCH_FILE_FUTURE);
-            runDesk(sharedPreferences);
-            return -3;
-        } catch (TimeoutException e){
-            LogExport.export("SplashActivity", "getRemoteFileSize()", "TimeoutException : "+e.getMessage(), context, LogExport.FETCH_FILE_FUTURE);
-            return -4;
-        }
-    }
-
-
-    public void check_updates(long remoteFileSize) {
-        sharedPreferences = context.getSharedPreferences("user_info", MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-
-        if(remoteFileSize > 10000000){
-            OkHttpClient client = new OkHttpClient();
-            String url = ItemRss.SERVER_DOWNLOAD_ROOT+"update.json";
-            if (BuildConfig.FLAVOR.equals("dev")){
-                url = ItemRss.SERVER_DOWNLOAD_ROOT+"update_dev.json";
-            }
-
-            String finalUrl = url;
-            new AsyncTask<Void, Void, Void>() {
-                @Override
-                protected Void doInBackground(Void... params) {
-                    try {
-                        Request request = new Request.Builder().url(finalUrl).build();
-                        Response sponse = client.newCall(request).execute();
-                        String str = sponse.body().string();
-                        JSONArray array = new JSONArray(str);
-                        ArrayList<String> array_download = new ArrayList<String>();
-                        ArrayList<String> array_fileName = new ArrayList<String>();
-                        ArrayList<String> array_SfileName = new ArrayList<String>();
-                        for (int i = 0; i < array.length(); i++) {
-                            JSONObject object = array.getJSONObject(i);
-                            long release_unix = object.getLong("release_unix");
-                            String fileName = object.getString("fileName");
-
-                            long lastUnix = System.currentTimeMillis();
-                            if (i == 0) {
-                                lastUnix = release_unix;
-                            }
-
-                            if (release_unix > sharedPreferences.getLong("lastUpdateUnix", 1)) {
-                                array_download.add(ItemRss.SERVER_DOWNLOAD_ROOT + fileName);
-                                array_fileName.add(fileName);
-                                array_SfileName.add("/" + fileName);
-                            }
-                        }
-                        if (array_download.size() > 0) {
-                            ArrayList<String> arrayList = new ArrayList<>();
-                            arrayList.add(ItemRss.SERVER_DOWNLOAD_ROOT + baseFileName);
-                            if (getRemoteFileSize(arrayList) > getRemoteFileSize(array_download)) {
-
-                                Dialog2048 dialog2048 = new Dialog2048();
-                                dialog2048.setup(context, activity);
-                                dialog2048.updateMax(getRemoteFileSize(array_download));
-                                dialog2048.mode(Dialog2048.MODE_DOWNLOAD_UPDATE);
-                                dialog2048.show();
-
-                                dialog2048.getPositiveBtn().setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-
-                                        dialog2048.dismiss();
-                                        //DownloadTask downloadTask = new DownloadTask();
-                                        //downloadTask.startAWithRun(array_download, array_fileName, array_SfileName, context, activity, true);
-
-                                        new DownloadAndUnzipTask(context, activity, array_download, context.getFilesDir().getAbsolutePath()).execute();
-                                        editor.apply();
-                                    }
-                                });
-                                dialog2048.getNegativeBtn().setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-
-                                        dialog2048.dismiss();
-                                        runDesk(sharedPreferences);
-                                    }
-                                });
-
-
-                            } else {
-                                Dialog2048 dialog2048 = new Dialog2048();
-                                dialog2048.setup(context, activity);
-
-                                dialog2048.updateMax(getRemoteFileSize(arrayList));
-                                dialog2048.mode(Dialog2048.MODE_DOWNLOAD_BASE);
-                                dialog2048.show();
-
-                                dialog2048.getPositiveBtn().setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-                                        //DownloadTask downloadTask = new DownloadTask();
-                                        //downloadTask.start("https://vt.25u.com/genshin_spirit/base.zip", "base.zip", "/base.zip", context, activity);
-
-                                        ArrayList<String> downloadList = new ArrayList<>();
-                                        downloadList.add(ItemRss.SERVER_DOWNLOAD_ROOT + baseFileName);
-
-                                        new DownloadAndUnzipTask(context, activity, downloadList, context.getFilesDir().getAbsolutePath()).execute();
-                                    }
-                                });
-                                dialog2048.getNegativeBtn().setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-                                        runDesk(sharedPreferences);
-                                    }
-                                });
-                            }
-
-                        } else {
-                            //CustomToast.toast(context, this, context.getString(R.string.update_download_not_found_update));
-                            checkStyleUI();
-                        }
-                    }catch (JSONException e) {
-                        LogExport.export("SplashActivity", "getRemoteFileSize()", "JSONException : "+e.getMessage(), context, LogExport.FETCH_FILE_FUTURE);
-                    }catch (IOException e) {
-                        LogExport.export("SplashActivity", "getRemoteFileSize()", "IOException : "+e.getMessage(), context, LogExport.FETCH_FILE_FUTURE);
-                    }
-                    return null;
-                }
-            }.execute();
-        }else{
-            runDesk(sharedPreferences);
-        }
-    }
-
     private void runDesk(SharedPreferences sharedPreferences) {
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
@@ -522,83 +316,9 @@ public class SplashActivity extends AppCompatActivity {
                 SplashActivity.this.finish();
 
             }
-        }, 2000);
+        }, 500);
     }
 
-    public void checkStyleUI() {
-        if (sharedPreferences.getString("styleUI", "N/A").equals("N/A")) {
-
-            sharedPreferences.edit().putString("styleUI", choice).apply();
-            runDesk(sharedPreferences);
-            /*
-            final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
-            View view = View.inflate(context, R.layout.fragment_choose_style_ui, null);
-            WebView webView = view.findViewById(R.id.webView);
-            RadioButton style_Voc_rb = view.findViewById(R.id.ui_Voc_rb);
-            RadioButton style_2O48_rb = view.findViewById(R.id.ui_2O48_rb);
-            RadioButton style_SipTik_rb = view.findViewById(R.id.ui_SipTik_rb);
-            FrameLayout menu_ok = view.findViewById(R.id.menu_ok);
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            style_Voc_rb.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    style_Voc_rb.setChecked(true);
-                    style_2O48_rb.setChecked(false);
-                    style_SipTik_rb.setChecked(false);
-                    choice = "Voc";
-                }
-            });
-            style_2O48_rb.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    style_Voc_rb.setChecked(false);
-                    style_2O48_rb.setChecked(true);
-                    style_SipTik_rb.setChecked(false);
-                    choice = "2O48";
-                }
-            });
-            style_SipTik_rb.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    editor.putString("styleUI", "SipTik");
-                    editor.apply();
-                    style_Voc_rb.setChecked(false);
-                    style_2O48_rb.setChecked(false);
-                    style_SipTik_rb.setChecked(true);
-                    choice = "SipTik";
-                }
-            });
-            menu_ok.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (!choice.equals("N/A")) {
-                        editor.putString("styleUI", choice);
-                        //webView.loadUrl("https://vt.25u.com/genshin_spirit/dataCollection/styleInsert.php?unix="+System.currentTimeMillis()+"&style="+choice+"&record_location="+"Splash"+"&device_name="+Build.MODEL+"&app_version="+BuildConfig.VERSION_NAME+"&android_api="+String.valueOf(android.os.Build.VERSION.SDK_INT));
-                        //editor.putBoolean("firstCheck",true);
-                        editor.apply();
-                        dialog.dismiss();
-                        runDesk(sharedPreferences);
-                    }
-                }
-            });
-            dialog.setContentView(view);
-            dialog.setCanceledOnTouchOutside(true);
-            Window dialogWindow = dialog.getWindow();
-            WindowManager.LayoutParams lp = dialogWindow.getAttributes();
-            DisplayMetrics displayMetrics = new DisplayMetrics();
-            getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
-            int height = displayMetrics.heightPixels;
-            int width = displayMetrics.widthPixels;
-            lp.width = (int) (width * 0.9);
-            lp.height = WindowManager.LayoutParams.WRAP_CONTENT;
-            lp.gravity = Gravity.CENTER;
-            dialogWindow.setAttributes(lp);
-            dialog.show();
-             */
-        } else {
-            runDesk(sharedPreferences);
-        }
-    }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {

@@ -18,6 +18,7 @@ import com.voc.genshin_helper.R;
 import com.voc.genshin_helper.ui.CalculatorUI;
 import com.voc.genshin_helper.ui.MainActivity;
 import com.voc.genshin_helper.ui.SplashActivity;
+import com.voc.genshin_helper.ui.SplashOldActivity;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -172,7 +173,7 @@ public class UnzipManager {
                         ((SplashActivity) context).startActivity(new Intent(context, MainActivity.class));
                         ((SplashActivity) context).finish();
                          */
-                        ((SplashActivity)context).checkStyleUI();
+                        ((SplashOldActivity)context).checkStyleUI();
                     }
                 }
             }, 10);
@@ -286,7 +287,7 @@ public class UnzipManager {
                         ((SplashActivity) context).startActivity(new Intent(context, MainActivity.class));
                         ((SplashActivity) context).finish();
                          */
-                        ((SplashActivity)context).checkStyleUI();
+                        ((SplashOldActivity)context).checkStyleUI();
                     }
                 }
             }, 10);

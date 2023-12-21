@@ -200,7 +200,7 @@ public class ItemRss {
                 }else if(birthdayList.get(pos).getSumOfBirth() < sum){
                     min_pos = pos+1;
                 }else if(birthdayList.get(pos).getSumOfBirth() == sum){
-                    System.out.println("Founded Birthday Record");
+                    //System.out.println("Founded Birthday Record");
                     break;
                 }
                 pos = (int) min_pos + ((max_pos - min_pos)/2);
@@ -212,7 +212,7 @@ public class ItemRss {
                     pos = 0;
                 }
                 tmpBirthList.add(birthdayList.get(pos));
-                System.out.println("OK WO IN "+y+" : "+birthdayList.get(pos).getCharName());
+                //System.out.println("OK WO IN "+y+" : "+birthdayList.get(pos).getCharName());
                 pos ++;
             }
 

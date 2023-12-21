@@ -338,6 +338,11 @@ public class Desk2048 extends AppCompatActivity {
 
         setContentView(R.layout.activity_desk_2048);
 
+        /*
+        Intent serviceIntent = new Intent(this, DailyMemo2048Service.class);
+        startForegroundService(serviceIntent);
+         */
+
         //init
         tm = new Today_Material();
         css = new ItemRss();
@@ -2481,9 +2486,9 @@ public class Desk2048 extends AppCompatActivity {
         final int margin = 0;
         final Transformation transformation = new RoundedCornersTransformation(radius, margin);
 
-        System.out.println(birthday.upcomingBirthday(c).get(0).getSumOfBirth() + " : "+ ((moy+1)*100 + dom));
+        //System.out.println(birthday.upcomingBirthday(c).get(0).getSumOfBirth() + " : "+ ((moy+1)*100 + dom));
 
-        if(birthday.upcomingBirthday(c).get(0).getSumOfBirth() == ((moy+1)*100 + dom)){
+        if(birthdayList.get(0).getSumOfBirth() == ((moy+1)*100 + dom)){
             char_name = birthdayList.get(0).getCharName();
             birth_title_normal.setVisibility(View.GONE);
             birth_title_special.setVisibility(View.VISIBLE);
