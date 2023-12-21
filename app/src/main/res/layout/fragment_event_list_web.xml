@@ -92,15 +92,18 @@
 
             <TextView
                 android:id="@+id/info_title"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="75dp"
                 android:layout_weight="0"
-                android:text="「浪湧之瞬」祈願"
+                android:singleLine="true"
+                android:text="「浪湧之瞬」「浪湧之瞬」「浪湧之瞬」"
+                android:textAlignment="center"
                 android:textColor="@color/tv_color_2048_always"
                 android:textSize="20sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/info_blank"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/item_2048_blank" />
 

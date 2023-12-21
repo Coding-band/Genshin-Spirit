@@ -13,6 +13,7 @@ import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.text.Spannable;
@@ -364,6 +365,9 @@ public class EventUtil {
         String head = "<head><style>@font-face {font-family: 'SDK_SC_Web';src: url('file:///android_asset/genshin_font.ttf');}body {font-family: 'SDK_SC_Web';}</style></head><img src=\""+eventItem.getBanner()+"\" style='height: auto; width: 100%; object-fit: contain' >";
         event_web.loadDataWithBaseURL(null, head+eventItem.getContent().replace("&lt;","<").replace("&gt;",">").replace("<img","<img style='height: auto; width: 100%; object-fit: contain'"), "text/html", "utf-8", null);
         event_web.getSettings().setLoadWithOverviewMode(true);
+        event_web.setBackgroundColor(Color.TRANSPARENT);
+
+        BackgroundReload.BackgroundReload(context,view);
         //event_web.getSettings().setUseWideViewPort(true);
 
         System.out.println(head+eventItem.getContent().replace("&lt;","<").replace("&gt;",">"));

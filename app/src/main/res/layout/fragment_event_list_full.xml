@@ -29,7 +29,6 @@
         android:clipToPadding="false"
         android:overScrollMode="always"
         android:paddingTop="60dp"
-        android:paddingBottom="60dp"
         android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
