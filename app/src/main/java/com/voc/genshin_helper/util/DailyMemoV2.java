@@ -112,7 +112,7 @@ public class DailyMemoV2 {
 
     CardView memo_card, memo_card_ext;
     TextView memo_user_name, memo_user_server;
-    ImageView memo_user_icon, memo_ext_btn, memo_setting_btn;
+    ImageView memo_user_icon, memo_ext_btn, memo_setting_btn,memo_logout_btn;
     ImageView memo_item1_ico, memo_item2_ico, memo_item3_ico, memo_item4_ico;
     TextView memo_item1_curr, memo_item2_curr, memo_item3_curr, memo_item4_curr;
     TextView memo_item1_max, memo_item2_max, memo_item3_max, memo_item4_max;
@@ -177,6 +177,7 @@ public class DailyMemoV2 {
         memo_user_server = view.findViewById(R.id.memo_user_server);
         memo_user_icon = view.findViewById(R.id.memo_user_icon);
         memo_setting_btn = view.findViewById(R.id.memo_setting_btn);
+        memo_logout_btn = view.findViewById(R.id.memo_logout_btn);
         memo_item1_ico = view.findViewById(R.id.memo_item1_ico);
         memo_item2_ico = view.findViewById(R.id.memo_item2_ico);
         memo_item3_ico = view.findViewById(R.id.memo_item3_ico);
@@ -236,6 +237,7 @@ public class DailyMemoV2 {
         refreshRunnable = new Runnable() {
             @Override
             public void run() {
+                if (sharedPreferences.getString("genshin_uid","-1").equals("-1")) return;
                 refreshData(new HoyolabHooks().genshinNoteData(context).toString());
                 refreshRegular.postDelayed(refreshRunnable, SEC_OF_CHECK_PEIROD);
             }
@@ -260,21 +262,19 @@ public class DailyMemoV2 {
             return nickname;
         }else {return context.getString(R.string.unknown);}
     }
-    public String getServer(Context context){
-        switch (server){
-            case "cn_gf01" : return (context.getString(R.string.sky_land_ser));
-            case "cn_qd01" : return(context.getString(R.string.world_tree));
-            case "os_asia" : return(context.getString(R.string.asia_ser));
-            case "os_euro" : return(context.getString(R.string.europe_ser));
-            case "os_usa" : return(context.getString(R.string.america_ser));
-            case "os_cht" : return(context.getString(R.string.hk_tw_mo_ser));
-            default: return (context.getString(R.string.unknown));
-        }
+    public String getServerIdName(Context context){
+        return context.getSharedPreferences("user_info",Context.MODE_PRIVATE).getString(HoyolabConstants.HOYOLAB_SERVER_ID, HoyolabConstants.GAME_SERVERS.UNKNOWN.getServerIdName());
+    }
+    public String getServerLocaleName(Context context){
+        return context.getString(HoyolabConstants.GAME_SERVERS.getEnumByIdName(getServerIdName(context)).getServerTranslateName());
     }
     public String getLevel(Context context){
         if (level != 0){
             return String.valueOf(level);
         }else {return context.getString(R.string.unknown);}
+    }
+    public String getIcon(Context context){
+        return context.getSharedPreferences("user_info",Context.MODE_PRIVATE).getString("icon_name","N/A");
     }
 
     public void updateData(){
@@ -282,14 +282,11 @@ public class DailyMemoV2 {
         final int margin_circ_siptik_ico = 0;
         final com.squareup.picasso.Transformation transformation_circ_siptik_ico = new RoundedCornersTransformation(radius_circ_siptik_ico, margin_circ_siptik_ico);
 
+
         memo_user_name.setText(nickname);
         sharedPreferences.edit().putString("genshin_username",nickname).apply();
 
         memo_user_server.setText(sharedPreferences.getString("genshin_uid","-1")+" - Lv."+String.valueOf(level));
-
-        if (!sharedPreferences.getString("icon_name", "N/A").equals("N/A")){
-            icon = sharedPreferences.getString("icon_name", "N/A");
-        }
 
         memo_item1_curr.setText(String.valueOf(resin_curr));
         memo_item2_curr.setText(String.valueOf(currency_curr));
@@ -458,6 +455,18 @@ public class DailyMemoV2 {
                 setting_new();
             }
         });
+        memo_logout_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                cleanCookies(CookieManager.getInstance(),v);
+                editor.remove("icon_name").remove("genshin_uid").remove("genshin_username").remove("genshin_level").apply();
+                for (String key : HoyolabCookie.HOYOLAB_V2_KEY_GROUP){editor.remove(key).apply();}
+
+                sharedPreferences.edit().putString("dailyMemoDataTMP",HoyolabConstants.HOYOLAB_DAILYMEMO_EMPTY).apply();
+                refreshData(HoyolabConstants.HOYOLAB_DAILYMEMO_EMPTY);
+                System.out.println("WHERE ARE U ?");
+            }
+        });
 
         if (context instanceof Desk2048){
             ((Desk2048) context).refreshPaimon();
@@ -621,7 +630,10 @@ public class DailyMemoV2 {
 
                         ArrayList<String> tmpList = new ArrayList<>();
                         ArrayList<HoyolabUser> uuidList = new HoyolabHooks().fetchUUIDList(context);
-                        uuidList.forEach((user) -> {tmpList.add(user.getUsername()+" -- "+context.getString(user.getServer().getServerTranslateName())+" "+context.getString(R.string.lvl)+String.valueOf(user.getLevel()));});
+                        uuidList.forEach((user) -> {
+                            if (user.getServer().getServerTranslateName() == R.string.unknown) return;
+                            tmpList.add(user.getUsername()+" -- "+context.getString(user.getServer().getServerTranslateName())+" "+context.getString(R.string.lvl)+String.valueOf(user.getLevel()));
+                        });
 
 
                         ArrayAdapter server_aa = new ArrayAdapter(context, R.layout.spinner_item_2048_always, tmpList);
@@ -745,25 +757,32 @@ public class DailyMemoV2 {
         CustomToast.toast(context,view,context.getString(R.string.clean_cookies_already));
     }
 
-    private void refreshData(String str) {
-        if (sharedPreferences.getString("genshin_uid","-1").equals("-1")) return;
+    public void refreshData(String str) {
 
         try {
             JSONObject jsonObject = new JSONObject(str);
 
-            JSONObject playerInfoRoot = new HoyolabHooks().genshinPlayerData(context);
+            if(!sharedPreferences.getString("genshin_uid","-1").equals("-1")){
+                JSONObject playerInfoRoot = new HoyolabHooks().genshinPlayerData(context);
 
-            if (playerInfoRoot != null && playerInfoRoot.has("role")){
-                JSONObject playerInfo = playerInfoRoot.getJSONObject("role");
+                if (playerInfoRoot != null && playerInfoRoot.has("role")){
+                    JSONObject playerInfo = playerInfoRoot.getJSONObject("role");
 
-                nickname = playerInfo.getString("nickname");
-                level = playerInfo.getInt("level");
-                server = context.getString(
-                        HoyolabConstants.GAME_SERVERS.getEnumByIdName(
-                                context.getSharedPreferences("user_info",Context.MODE_PRIVATE).getString(HoyolabConstants.HOYOLAB_SERVER_ID,HoyolabConstants.GAME_SERVERS.UNKNOWN.getServerIdName())
-                        ).getServerTranslateName()
-                );
-                icon = playerInfo.getString("game_head_icon");
+                    nickname = playerInfo.getString("nickname");
+                    level = playerInfo.getInt("level");
+                    server = context.getString(
+                            HoyolabConstants.GAME_SERVERS.getEnumByIdName(
+                                    context.getSharedPreferences("user_info",Context.MODE_PRIVATE).getString(HoyolabConstants.HOYOLAB_SERVER_ID,HoyolabConstants.GAME_SERVERS.UNKNOWN.getServerIdName())
+                            ).getServerTranslateName()
+                    );
+                    icon = playerInfo.getString("game_head_icon");
+                }
+            }else{
+
+                icon = "N/A";
+                nickname = context.getString(R.string.unknown);
+                level = -1;
+                server = context.getString(HoyolabConstants.GAME_SERVERS.UNKNOWN.getServerTranslateName());
             }
 
             LogExport.export("DailyMemo2048Service","grabIdFromServer.[REGULAR]", jsonObject.toString(), context, DAILYMEMO);

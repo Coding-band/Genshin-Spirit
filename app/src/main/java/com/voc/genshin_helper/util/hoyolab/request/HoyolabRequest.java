@@ -125,7 +125,7 @@ public class HoyolabRequest {
     public HoyolabRequestType.IResponse send(String url, Context context, HoyolabRequestType.Method method){
         if (this.ds){
             this.headers.put("DS", GenerateDS.generate());
-            System.out.println("DXS : "+headers.get("DS"));
+            //System.out.println("DXS : "+headers.get("DS"));
         }
 
         //這邊用 HttpsURLConnection
@@ -183,7 +183,7 @@ public class HoyolabRequest {
                         response.append(line);
                     }
                     reader.close();
-                    System.out.println(url+" -> response.toString() : "+response.toString());
+                    //System.out.println(url+" -> response.toString() : "+response.toString());
                     JSONObject jsonObject = new JSONObject(response.toString());
 
                     //轉譯
@@ -196,7 +196,7 @@ public class HoyolabRequest {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-            return new HoyolabRequestType.IResponse(-9999,"",null);
+            return new HoyolabRequestType.IResponse(-9487,"",null);
         }
     }
 }

@@ -90,6 +90,31 @@
                         android:layout_marginRight="8dp">
 
                         <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:adjustViewBounds="true"
+                            app:srcCompat="@drawable/item_expand_bg_2048" />
+
+                        <ImageView
+                            android:id="@+id/memo_logout_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="24dp"
+                            android:layout_gravity="center"
+                            android:adjustViewBounds="true"
+                            android:padding="4dp"
+                            app:srcCompat="@drawable/baseline_exit_to_app_24"
+                            app:tint="@color/memo_item_deep_item" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="8dp">
+
+                        <ImageView
                             android:id="@+id/imageView2"
                             android:layout_width="wrap_content"
                             android:layout_height="24dp"

@@ -147,19 +147,9 @@ public class HoyolabHooks {
             Toast.makeText(context, "retcode "+response.getRetcode()+" : "+(response.getMessage() == null ? "null" : response.getMessage()), Toast.LENGTH_SHORT).show();
         }
 
-        WebView webView = new WebView(context);
-        webView.loadUrl(url);
-        webView.addJavascriptInterface(new ComJSInterface(), "comjs");
-        webView.loadUrl("javascript:comjs.loadHtmlContent(document.documentElement.outerHTML);void(0);");
-
         return response.getData();
     }
 
-    public class ComJSInterface{
-        public void loadHtmlContent(String content){
-            System.out.println("WTF : "+content);
-        }
-    }
 
     /*
     public JSONObject genshinPlayerData(Context context){

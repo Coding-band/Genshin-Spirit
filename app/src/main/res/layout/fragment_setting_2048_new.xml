@@ -149,7 +149,7 @@
                     android:layout_marginTop="8dp"
                     android:orientation="horizontal"
                     android:padding="8dp"
-                    android:visibility="visible">
+                    android:visibility="gone">
 
                     <ImageView
                         android:layout_width="wrap_content"
@@ -181,8 +181,9 @@
                     android:background="@drawable/bg_dialog_btn"
                     android:fontFamily="@font/genshin_font"
                     android:text="@string/custom_icon"
-                    app:backgroundTint="@color/tab_bg_2048"
-                    android:textColor="@color/tv_anti_color_2048" />
+                    android:textColor="@color/tv_anti_color_2048"
+                    android:visibility="gone"
+                    app:backgroundTint="@color/tab_bg_2048" />
 
                 <LinearLayout
                     android:layout_width="wrap_content"

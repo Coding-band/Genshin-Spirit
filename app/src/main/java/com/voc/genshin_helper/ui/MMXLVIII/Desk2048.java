@@ -109,6 +109,7 @@ import com.voc.genshin_helper.util.LocaleHelper;
 import com.voc.genshin_helper.util.MyViewPagerAdapter;
 import com.voc.genshin_helper.util.NumberPickerDialog;
 import com.voc.genshin_helper.util.RoundedCornersTransformation;
+import com.voc.genshin_helper.util.hoyolab.HoyolabConstants;
 import com.voc.genshin_helper.util.hoyolab.HoyolabCookie;
 import com.voc.genshin_helper.util.hoyolab.hooks.HoyolabHooks;
 
@@ -736,7 +737,7 @@ public class Desk2048 extends AppCompatActivity {
         TextView card_lvl_tv = viewPager4.findViewById(R.id.card_lvl_tv);
 
         card_username.setText(dailyMemo.getNickname(context));
-        card_userstat.setText(dailyMemo.getServer(context)+" - "+sharedPreferences.getString("genshin_uid","-1"));
+        card_userstat.setText(dailyMemo.getServerLocaleName(context)+" -- "+sharedPreferences.getString("genshin_uid","-1"));
         card_lvl_tv.setText(dailyMemo.getLevel(context));
     }
 
@@ -773,7 +774,7 @@ public class Desk2048 extends AppCompatActivity {
         card_bg.setImageResource(css.getCharByName(sharedPreferences.getString("card_name","Klee"),context)[4]);
 
         Picasso.get()
-                .load (css.getCharByName(sharedPreferences.getString("icon_name","Klee"),context)[3])
+                .load (dailyMemo.getIcon(context))
                 .transform(transformation)
                 .fit()
                 .error (R.drawable.paimon_lost)
@@ -892,31 +893,6 @@ public class Desk2048 extends AppCompatActivity {
     public View.OnClickListener paimon_about = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-
-            Map<String, Object> cookieTemp = new HashMap<>();
-            cookieTemp.put("_MHYUUID","8d2d4cd0-4b95-4c5a-9596-9252ac591a41");
-            cookieTemp.put("HYV_LOGIN_PLATFORM_OPTIONAL_AGREEMENT","{%22content%22:[]}");
-            cookieTemp.put("DEVICEFP_SEED_ID","b08334622d049e38");
-            cookieTemp.put("DEVICEFP_SEED_TIME","1702949307961");
-            cookieTemp.put("DEVICEFP","38d7f0007c549");
-            cookieTemp.put("_gid","GA1.2.1043661682.1702949309");
-            cookieTemp.put("cookie_token_v2","v2_CAQSDGNlMXRidXdiMDB6axokOGQyZDRjZDAtNGI5NS00YzVhLTk1OTYtOTI1MmFjNTkxYTQxIMHjg6wGKOuTyuYCMLjY-T5CC2hrNGVfZ2xvYmFs");
-            cookieTemp.put("account_mid_v2","1ixu9u26jj_hy");
-            cookieTemp.put("account_id_v2","132017208");
-            cookieTemp.put("ltoken_v2","v2_CAISDGNlMXRidXdiMDB6axokOGQyZDRjZDAtNGI5NS00YzVhLTk1OTYtOTI1MmFjNTkxYTQxIMHjg6wGKL2L4pkDMLjY-T5CC2hrNGVfZ2xvYmFs");
-            cookieTemp.put("ltmid_v2","1ixu9u26jj_hy");
-            cookieTemp.put("ltuid_v2","132017208");
-            cookieTemp.put("HYV_LOGIN_PLATFORM_LOAD_TIMEOUT","{}");
-            cookieTemp.put("mi18nLang","zh-tw");
-            cookieTemp.put("HYV_LOGIN_PLATFORM_TRACKING_MAP","{%22sourceValue%22:%22121%22}");
-            cookieTemp.put("_gat_gtag_UA_206868027_11","1");
-            cookieTemp.put("HYV_LOGIN_PLATFORM_LIFECYCLE_ID","{%22value%22:%22c87aeca8-a3a2-49cf-8bea-0a7efac14f84%22}");
-            cookieTemp.put("_ga_JTLS2F53NR","GS1.1.1702949309.1.1.1702950383.0.0.0");
-            cookieTemp.put("_ga_GFC5HN79FG","GS1.1.1702949309.1.1.1702950383.0.0.0");
-            cookieTemp.put("_ga","GA1.2.819091040.1702949309");
-            HoyolabCookie.updateCookie(context, cookieTemp);
-            System.out.println("XXTY : "+new HoyolabHooks().genshinNoteData(context));
-
             final Dialog dialog = new Dialog(context, R.style.NormalDialogStyle_N);
             View view = View.inflate(context, R.layout.fragment_about_2048, null);
             dialog.setContentView(view);
@@ -1058,6 +1034,12 @@ public class Desk2048 extends AppCompatActivity {
             public void onClick(View v) {
                 CookieManager cookieManager = CookieManager.getInstance();
                 dailyMemo.cleanCookies(cookieManager, view);
+                editor.remove("icon_name").remove("genshin_uid").remove("genshin_username").remove("genshin_level").apply();
+                for (String key : HoyolabCookie.HOYOLAB_V2_KEY_GROUP){editor.remove(key).apply();}
+
+                sharedPreferences.edit().putString("dailyMemoDataTMP", HoyolabConstants.HOYOLAB_DAILYMEMO_EMPTY).apply();
+                dailyMemo.refreshData(HoyolabConstants.HOYOLAB_DAILYMEMO_EMPTY);
+                System.out.println("WHERE ARE U ?");
             }
         });
 
@@ -1758,8 +1740,7 @@ public class Desk2048 extends AppCompatActivity {
         TextView card_lvl_tv = viewPager4.findViewById(R.id.card_lvl_tv);
 
         card_username.setText(dailyMemo.getNickname(context));
-        //card_userstat.setText(dailyMemo.getServer(context)+" - "+sharedPreferences.getString("genshin_uid","-1"));
-        card_userstat.setText(sharedPreferences.getString("genshin_uid","-1"));
+        card_userstat.setText(dailyMemo.getServerLocaleName(context)+" -- "+sharedPreferences.getString("genshin_uid","-1"));
         card_lvl_tv.setText(dailyMemo.getLevel(context));
         card_userstat.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -1784,7 +1765,7 @@ public class Desk2048 extends AppCompatActivity {
         card_bg.setScaleType(ImageView.ScaleType.CENTER_CROP);
 
         Picasso.get()
-                .load (item_rss.getCharByName(sharedPreferences.getString("icon_name","Klee"), context)[3])
+                .load (dailyMemo.getIcon(context))
                 .transform(transformation_circ)
                 .fit()
                 .error (R.drawable.paimon_lost)
@@ -1845,7 +1826,7 @@ public class Desk2048 extends AppCompatActivity {
             card_name_final = baseName;
         }else{
             Picasso.get()
-                    .load (item_rss.getCharByName(baseName, context)[3])
+                    .load (dailyMemo.getIcon(context))
                     .transform(transformation_circ)
                     .fit()
                     .error (R.drawable.paimon_lost)
@@ -1881,7 +1862,7 @@ public class Desk2048 extends AppCompatActivity {
                 ((ImageView) viewPager4.findViewById(R.id.card_bg)).setScaleType(ImageView.ScaleType.CENTER_CROP);
 
                 Picasso.get()
-                        .load (css.getCharByName(sharedPreferences.getString("icon_name","Klee"),context)[3])
+                        .load (dailyMemo.getIcon(context))
                         .transform(transformation_circ)
                         .fit()
                         .error (R.drawable.paimon_lost)
