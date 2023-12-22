@@ -246,7 +246,8 @@ public class DailyMemoV2 {
         if (!sharedPreferences.getString("genshin_uid","-1").equals("-1")){
             if (System.currentTimeMillis() - sharedPreferences.getLong("dailyMemoUnix",0) >= SEC_OF_CHECK_PEIROD){
                 sharedPreferences.edit().putLong("dailyMemoUnix",System.currentTimeMillis()).apply();
-                refreshData(new HoyolabHooks().genshinNoteData(context).toString());
+                JSONObject jsonObject = new HoyolabHooks().genshinNoteData(context);
+                refreshData((jsonObject == null ? sharedPreferences.getString("dailyMemoDataTMP",HoyolabConstants.HOYOLAB_DAILYMEMO_EMPTY) : jsonObject.toString()));
                 refreshRegular.removeCallbacks(refreshRunnable);
                 refreshRegular.postDelayed(refreshRunnable,SEC_OF_CHECK_PEIROD);
             }else{

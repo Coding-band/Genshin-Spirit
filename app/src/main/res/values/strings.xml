@@ -1649,6 +1649,56 @@
     <string name="tcg_in_every_house_a_stove">"In Every House a Stove"</string>
     <string name="tcg_lyresong">"Lyresong"</string>
 
+    <!-- add in 20231222 - 4.3 ALL -->
+    <string name="chevreuse">"Chevreuse"</string>
+    <string name="navia">"Navia"</string>
+    <string name="ultimate_overlords_mega_magic_sword">"Ultimate Overlord's Mega Magic Sword"</string>
+    <string name="verdict">"Verdict"</string>
+    <string name="song_of_days_past">"Song of Days Past"</string>
+    <string name="nighttime_whispers_in_the_echoing_woods">"Nighttime Whispers in the Echoing Woods"</string>
+    <string name="tcg_signora">"Signora"</string>
+    <string name="tcg_azhdaha">"Azhdaha"</string>
+    <string name="tcg_layla">"Layla"</string>
+    <string name="tcg_yelan">"Yelan"</string>
+    <string name="tcg_lyney">"Lyney"</string>
+    <string name="tcg_lynette">"Lynette"</string>
+    <string name="tcg_gorou">"Gorou"</string>
+    <string name="tcg_alhaitham">"Alhaitham"</string>
+    <string name="tcg_eremite_scorching_loremaster">"Eremite Scorching Loremaster"</string>
+    <string name="tcg_thunder_manifestation">"Thunder Manifestation"</string>
+    <string name="tcg_dvalin">"Dvalin"</string>
+    <string name="tcg_lights_remit">"Light's Remit"</string>
+    <string name="tcg_turn_control">"Turn Control"</string>
+    <string name="tcg_conclusive_ovation">"Conclusive Ovation"</string>
+    <string name="tcg_a_cold_blade_like_a_shadow">"A Cold Blade Like a Shadow"</string>
+    <string name="tcg_rushing_hound_swift_as_the_wind">"Rushing Hound: Swift as the Wind"</string>
+    <string name="tcg_structuration">"Structuration"</string>
+    <string name="tcg_pain_for_pain">"Pain for Pain"</string>
+    <string name="tcg_scorpocalypse">"Scorpocalypse"</string>
+    <string name="tcg_grieving_echo">"Grieving Echo"</string>
+    <string name="tcg_rending_vortex">"Rending Vortex"</string>
+    <string name="tcg_lunar_cycles_unending">"Lunar Cycles Unending"</string>
+    <string name="tcg_lost_prayer_to_the_sacred_winds">"Lost Prayer to the Sacred Winds"</string>
+    <string name="tcg_tulaytullahs_remembrance">"Tulaytullah's Remembrance"</string>
+    <string name="tcg_beacon_of_the_reed_sea">"Beacon of the Reed Sea"</string>
+    <string name="tcg_primordial_jade_winged_spear">"Primordial Jade Winged-Spear"</string>
+    <string name="tcg_light_of_foliar_incision">"Light of Foliar Incision"</string>
+    <string name="tcg_gilded_dreams">"Gilded Dreams"</string>
+    <string name="tcg_flowing_rings">"Flowing Rings"</string>
+    <string name="tcg_echoes_of_an_offering">"Echoes of an Offering"</string>
+    <string name="tcg_heart_of_khvarenas_brilliance">"Heart of Khvarena's Brilliance"</string>
+    <string name="tcg_vourukashas_glow">"Vourukasha's Glow"</string>
+    <string name="tcg_weeping_willow_of_the_lake">"Weeping Willow of the Lake"</string>
+    <string name="tcg_opera_epiclese">"Opera Epiclese"</string>
+    <string name="tcg_mamere">"Mamere"</string>
+    <string name="tcg_seed_dispensary">"Seed Dispensary"</string>
+    <string name="tcg_memento_lens">"Memento Lens"</string>
+    <string name="tcg_passing_of_judgment">"Passing of Judgment"</string>
+    <string name="tcg_the_boar_princess">"The Boar Princess"</string>
+    <string name="tcg_falls_and_fortune">"Falls and Fortune"</string>
+    <string name="tcg_flickering_four_leaf_sigil">"Flickering Four-Leaf Sigil"</string>
+    <string name="tcg_fish_and_chips">"Fish and Chips"</string>
+    <string name="tcg_the_chasm_solid_iron">"The Chasm: Solid Iron"</string>
 
 
 </resources>

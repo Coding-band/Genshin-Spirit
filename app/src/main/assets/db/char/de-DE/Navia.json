@@ -1,14 +1,14 @@
 {
   "localeName": "Navia",
-  "nick": "???",
-  "occupation": "???",
+  "nick": "Leiterin der leuchtenden Rose",
+  "occupation": "Spina di Rosula",
   "area": "Fontaine",
   "rare": "5",
   "weapon": "Claymore",
   "element": "Geo",
   "constellation": "Rosa Multiflora",
-  "desc": "测试角色",
-  "birth": "01/01",
+  "desc": "Die amtierende Präsidentin der Spina di Rosula, eine liebenswerte, pflichtbewusste und großartige Chefin.",
+  "birth": "08/16",
   "battle_talent": {
     "normal_name": "Standardangriff: Freimütige Verweigerung",
     "normal_img": "navia_s1",
@@ -18,9 +18,9 @@
     "element_name": "Zeremonieller Kristallschuss",
     "element_img": "navia_s2",
     "element_desc": "Wenn eine Figur in der Truppe einen Elementarsplitter erhält, der durch die Reaktion „Kristallisation“ erzeugt wurde, erhält Navia einen „kristallscharfen Splitter“. Navia kann bis zu 6 Splitter ansammeln. Bei jedem Auslösen wird die Wirkungsdauer der vorhandenen „kristallscharfen Splitter“ aktualisiert.<br>Wenn sie feuert, verbraucht Navia alle „kristallscharfen Splitter“ und öffnet ihren eleganten, aber tödlichen Musketenschirm, der mehrere Rosenkristallkugeln abfeuert, die Gegner durchdringen können und getroffenen Gegnern Geo-Schaden zufügen.<br>Wenn 0/1/2/3 oder mehr „kristallscharfe Splitter“ verbraucht sind, werden 5/7/9/11 Rosenkristallkugeln abgefeuert. Je mehr Rosenkristallkugeln einen Gegner treffen, desto höher ist der verursachte Schaden. Wenn alle 11 Rosenkristallkugeln ein einzelnes Ziel treffen, verursachen sie 200 % des ursprünglichen Schadens.<br>Wenn mehr als 3 „kristallscharfe Splitter“ verbraucht werden, erhöht jeder weitere „kristallscharfe Splitter“ den von diesem Schuss verursachten Schaden zusätzlich um 15 %.<br><br>Gedrückt halten<br>Tritt in den Zielmodus ein und sammelt fortlaufend Elementarsplitter in der Nähe ein, die durch die Reaktion „Kristallisation“ entstehen. Feuert beim Loslassen nach dem Gedrückthalten Rosenkristallkugeln mit demselben Effekt ab, wie wenn die Fähigkeit gedrückt wird.<br><br>Kann anfänglich 2-mal angewendet werden.<br><br>Arkhe: Ousia<br>Navia beschwört in regelmäßigen Abständen beim Schuss mit ihrem Musketenschirm eine Wogenklinge, die mit Ousia versehenen Geo-Schaden verursacht.<br><br><i>„Ein wesentlicher Bestandteil der Etikette ist es, den angemessenen Abstand zu denjenigen zu wahren, die auf Distanz gehalten werden sollen. Natürlich gibt es viele Möglichkeiten, dies zu tun ...“</i>",
-    "final_name": "Wie der sich über den klaren Himmel ausbreitende Salutschuss",
+    "final_name": "Wie die sich über den klaren Himmel ausbreitende Ehrensalve",
     "final_img": "navia_s3",
-    "final_desc": "Ruft als Präsidentin der Spina di Rosula einen prächtigen goldenen Salutschuss herbei. Entfesselt ein massives Bombardement auf die Gegner vor sich, das Geo-Flächenschaden verursacht und danach eine Zeit lang fortlaufend Feuerunterstützung bietet, die in regelmäßigen Abständen Geo-Schaden verursacht.\nWenn der Angriff des prächtigen goldenen Salutschusses einen Gegner trifft, erhält Navia 1 „kristallscharfen Splitter“, 2,4 s Abklingzeit.<br><br><i>„Der Salutschuss der Spina di Rosula ist eine Vorfeier des erfolgreichen Abschlusses unserer Verhandlungen und wird kurz vor Beginn der Gespräche abgefeuert. Bitte nicht falsch verstehen, er stellt in keiner Weise eine Drohung dar.“</i>"
+    "final_desc": "Schießt als Präsidentin der Spina di Rosula eine prächtige goldene Ehrensalve ab. Entfesselt ein massives Kanonenbombardement auf die Gegner vor sich, das Geo-Flächenschaden verursacht und danach eine Zeit lang fortlaufend Kanonenfeuerunterstützung bietet, die in regelmäßigen Abständen in der Nähe befindlichen Gegnern Geo-Schaden zufügt.\nWenn die Kanone einen Gegner trifft, erhält Navia 1 „kristallscharfen Splitter“, 2,4 s Abklingzeit.<br><br><i>„Die Ehrensalve der Spina di Rosula ist eine Vorfeier des erfolgreichen Abschlusses unserer Verhandlungen und wird kurz vor Beginn der Gespräche abgefeuert. Bitte nicht falsch verstehen, sie stellt in keiner Weise eine Drohung dar.“</i>"
   },
   "basic_talent": {
     "talent2_name": "Sorgfältig durchgeführte Transaktion",
@@ -36,21 +36,21 @@
   "sof": {
     "sof1_name": "Die Regeln einer Dame zur Aufrechterhaltung einer höflichen Distanz",
     "sof1_img": "navia_c1",
-    "sof1_desc": "Stellt Navria für jeden „kristallscharfen Splitter“, der während des Einsetzens von „Zeremonieller Kristallschuss“ verbraucht wird, 2 Punkte Elementarenergie wieder her und verringert die Abklingzeit von „Wie der sich über den klaren Himmel ausbreitende Salutschuss“ um 1 s. Bis zu 6 Punkte Elementarenergie können auf diese Weise gewonnen werden und die Abklingzeit von „Wie der sich über den klaren Himmel ausbreitende Salutschuss“ kann um bis zu 3 s verringert werden.",
+    "sof1_desc": "Stellt Navia für jeden „kristallscharfen Splitter“, der während des Einsetzens von „Zeremonieller Kristallschuss“ verbraucht wird, 3 Punkte Elementarenergie wieder her und verringert die Abklingzeit von „Wie die sich über den klaren Himmel ausbreitende Ehrensalve“ um 1 s. Bis zu 9 Punkte Elementarenergie können auf diese Weise gewonnen werden und die Abklingzeit von „Wie die sich über den klaren Himmel ausbreitende Ehrensalve“ kann um bis zu 3 s verringert werden.",
     "sof2_name": "Das Streben der Chefin nach dem Sieg",
     "sof2_img": "navia_c2",
-    "sof2_desc": "Erhöht für jeden „kristallscharfen Splitter“, der während des Einsetzens von „Zeremonieller Kristallschuss“ verbraucht wird, die KT des diesmaligen „Zeremonieller Kristallschuss“ um 8 %, aber höchstens um 24 %.\nLöst, wenn der Schuss von „Zeremonieller Kristallschuss“ einen Gegner trifft, zusätzlich einen Schuss der Feuerunterstützung von Wie der sich über den klaren Himmel ausbreitende Salutschuss in der Nähe des getroffenen Gegners aus. Höchstens eine solche Feuerunterstützung kann jedes Mal ausgelöst werden, wenn „Zeremonieller Kristallschuss“ verwendet wird, und der auf diese Weise durch „Feuerunterstützung“ verursachte Schaden wird als Schaden der Spezialfähigkeit betrachtet.",
+    "sof2_desc": "Erhöht für jeden „kristallscharfen Splitter“, der während des Einsetzens von „Zeremonieller Kristallschuss“ verbraucht wird, die KT für die diesmalige Anwendung von „Zeremonieller Kristallschuss“ um 12 %. Auf diese Weise können die KT um bis zu 36 % erhöht werden.\nLöst, wenn der Schuss von „Zeremonieller Kristallschuss“ einen Gegner trifft, zusätzlich einen Schuss der Kanonenfeuerunterstützung von „Wie die sich über den klaren Himmel ausbreitende Ehrensalve“ in der Nähe des getroffenen Gegners aus. Höchstens eine solche Kanonenfeuerunterstützung kann jedes Mal ausgelöst werden, wenn „Zeremonieller Kristallschuss“ verwendet wird, und der auf diese Weise durch „Kanonenfeuerunterstützung“ verursachte Schaden wird als Schaden der Spezialfähigkeit betrachtet.",
     "sof3_name": "Der weitreichende Horizont einer Geschäftsfrau",
     "sof3_img": "navia_c3",
     "sof3_desc": "Erhöht die Stufe der Fähigkeit Zeremonieller Kristallschuss um 3.\nHöchststufe 15.",
     "sof4_name": "Die Eidverpflichtete kapituliert nie",
     "sof4_img": "navia_c4",
-    "sof4_desc": "Verringert, wenn Wie der sich über den klaren Himmel ausbreitende Salutschuss einen Gegner trifft, dessen Geo-WDS 8 s lang um 20 %.",
+    "sof4_desc": "Verringert, wenn „Wie die sich über den klaren Himmel ausbreitende Ehrensalve“ einen Gegner trifft, dessen Geo-WDS 8 s lang um 20 %.",
     "sof5_name": "Entschlossene Verhandlungen der Unterhändlerin",
     "sof5_img": "navia_c5",
-    "sof5_desc": "Erhöht die Stufe der Fähigkeit Wie der sich über den klaren Himmel ausbreitende Salutschuss um 3.\nHöchststufe 15.",
+    "sof5_desc": "Erhöht die Stufe der Fähigkeit Wie die sich über den klaren Himmel ausbreitende Ehrensalve um 3.\nHöchststufe 15.",
     "sof6_name": "Die flexible Finesse der Chefin der Spina",
     "sof6_img": "navia_c6",
-    "sof6_desc": "Erhöht für jeden „kristallscharfen Splitter“ nach den ersten verbrauchten 3 Splittern, der während des Einsetzens des Zeremonieller Kristallschuss verbraucht wird, den KSCH des diesmaligen „Zeremonieller Kristallschuss“ um 35 %. Alle Splitter, die nach den ersten drei verbraucht werden, werden nach dem Einsetzen der Fähigkeit an Navia zurückgegeben."
+    "sof6_desc": "Erhöht für jeden „kristallscharfen Splitter“ nach den ersten 3 verbrauchten Splittern, der während des Einsetzens des Zeremonieller Kristallschuss verbraucht wird, den KSCH des diesmaligen „Zeremonieller Kristallschuss“ um 45 %. Alle Splitter, die nach den ersten drei verbraucht werden, werden nach dem Einsetzen der Fähigkeit an Navia zurückgegeben."
   }
 }

@@ -19,6 +19,8 @@ import java.util.Calendar;
  * Created & Develop by Voc-夜芷冰 , Programmer of Xectorda
  * Copyright © 2023 Xectorda 版權所有
  */
+
+@Deprecated
 public class ItemRssPNG {
 
     /** IMPORTANT !

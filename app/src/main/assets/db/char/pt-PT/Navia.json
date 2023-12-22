@@ -1,14 +1,14 @@
 {
   "localeName": "Navia",
-  "nick": "???",
-  "occupation": "???",
+  "nick": "Leme da Rosa Radiante",
+  "occupation": "Spina di Rosula",
   "area": "Fontaine",
   "rare": "5",
   "weapon": "Claymore",
   "element": "Geo",
-  "constellation": "Rosa Rudis",
-  "desc": "测试角色",
-  "birth": "01/01",
+  "constellation": "Rosa Multiflora",
+  "desc": "A atual Presidente da Spina di Rosula, é a patroa adorável e responsável.",
+  "birth": "08/16",
   "battle_talent": {
     "normal_name": "Ataque Normal: Desistência Franca",
     "normal_img": "navia_s1",
@@ -20,7 +20,7 @@
     "element_desc": "Quando um personagem da equipe obtém um Fragmento gerado por uma reação de Cristalização, fornecerá para Navia 1 Fragmento da Rachadura. É possível acumular até 6 Fragmentos da Rachadura. Cada vez que desencadear, redefinirá a duração dos Fragmentos da Rachadura possuídos.<br>Ao lançar, Navia consumirá todos os Fragmentos da Rachadura e revelará sua refinada arma guarda-chuva, disparando vários Projéteis Cristalinos Rosados que perfuram os inimigos, infligindo Dano Geo contra os inimigos que atingir.<br>Consumir 0/1/2/3 ou mais Fragmentos da Rachadura disparará 5/7/9/11 Projéteis Cristalinos Rosados respectivamente. Quanto mais Projéteis Cristalinos Rosados atingirem o mesmo inimigo, maior será o Dano causado contra esse inimigo. Se os 11 Projéteis Cristalinos Rosados atingirem, causará 200% do Dano original.<br>Além disso, quando consumir mais que três Fragmentos da Rachadura, para cada Fragmento da Rachadura excedente aumenta o Dano causado desse disparo em 15%.<br><br>Manter Pressionado<br>Entra no Modo de Mira, obtendo continuamente os fragmentos de Cristalização próximos, e quando acabar a duração, Manter Pressionado disparará um Projétil Cristalino Rosado igual ao de pressionar.<br><br>Inicialmente possui dois usos.<br><br>Arkhe: Ousia<br>Periodicamente quando Navia disparar sua arma guarda-chuva invocará uma Lâmina da Fluidez que causará Dano Geo com Ousia.<br><br><i>\"Manter distância de algumas pessoas que deve se ter distância é parte da etiqueta social. Mas, bem, há outras formas de também se manter essa distância...\"</i>",
     "final_name": "Como um Presente do Céu Claro",
     "final_img": "navia_s3",
-    "final_desc": "Como líder da Spina di Rosula, invoca uma fantástica \"Salva de Canhões Dourados\", ferozmente disparando contra os inimigos em frente, causando Dano Geo em AdE, e em seguida continuamente realiza uma Saraivada de Suporte, periodicamente causando Dano Geo.\nQuando um tiro da Salva de Canhões Dourados atingir um inimigo, concederá 1 Fragmento da Rachada a Navia. Esse efeito pode ser desencadeado uma vez a 2.4s.<br><br><i>\"Os canhões da Spina di Rosula não servem para ameaçar ninguém, são só disparados antes de uma negociação para celebrá-la com sucesso de antemão.\"</i>"
+    "final_desc": "Como líder da Spina di Rosula, invoca uma fantástica \"Salva de Canhões Dourados\", ferozmente disparando contra os inimigos em frente, causando Dano Geo em AdE, e em seguida continuamente realiza uma Saraivada de Suporte, periodicamente causando Dano Geo aos inimigos próximos.\nQuando um tiro atingir um inimigo, concederá 1 Fragmento da Rachadura a Navia. Esse efeito pode ser desencadeado uma vez a 2.4s.<br><br><i>\"Os canhões da Spina di Rosula não servem para ameaçar ninguém, são só disparados antes de uma negociação para celebrá-la com sucesso de antemão.\"</i>"
   },
   "basic_talent": {
     "talent2_name": "Transação Detalhada",
@@ -36,21 +36,21 @@
   "sof": {
     "sof1_name": "As Regras de uma Dama para Manter a Distância",
     "sof1_img": "navia_c1",
-    "sof1_desc": "Ao lançar Cerimônia Cristalina Flamejante consome 1 de Fragmento da Rachadura, regenera 2 de Energia Elemental para Navia e reduz a Recarga de Como um Presente do Céu Claro em 1s. É possível regenerar até 6 de Energia Elemental dessa forma, e reduzir a recarga de Como um Presente do Céu Claro em 3s.",
+    "sof1_desc": "Ao lançar Cerimônia Cristalina Flamejante consome 1 de Fragmento da Rachadura, regenera 3 de Energia Elemental para Navia e reduz a Recarga de Como um Presente do Céu Claro em 1s. É possível regenerar até 9 de Energia Elemental dessa forma, e reduzir a recarga de Como um Presente do Céu Claro em 3s.",
     "sof2_name": "Busca da Vitória da Presidente",
     "sof2_img": "navia_c2",
-    "sof2_desc": "Ao lançar Cerimônia Cristalina Flamejante consome 1 Fragmento da Rachadura e aumenta a Taxa CRIT dessa Cerimônia Cristalina Flamejante em 8%, é possível aumentar a Taxa CRIT em até 24% dessa forma.\nAlém disso, quando o disparo de Cerimônia Cristalina Flamejante atinge um inimigo, fará cair uma Saraivada de Suporte de Como um Presente do Céu Claro perto do inimigo atingido. Até uma instância de Saraivada de Suporte pode ser lançada por cada Cerimônia Cristalina Flamejante, o Dano causado pela Saraivada de Suporte é considerado Dano de Supremo.",
+    "sof2_desc": "Ao lançar Cerimônia Cristalina Flamejante consome 1 Fragmento da Rachadura e aumenta a Taxa CRIT dessa Cerimônia Cristalina Flamejante em 12%, é possível aumentar a Taxa CRIT em até 36% dessa forma.\nAlém disso, quando o disparo de Cerimônia Cristalina Flamejante atinge um inimigo, fará cair uma Saraivada de Suporte de Como um Presente do Céu Claro perto do inimigo atingido. Até uma instância de Saraivada de Suporte pode ser lançada por cada Cerimônia Cristalina Flamejante, o Dano causado pela Saraivada de Suporte é considerado Dano de Supremo.",
     "sof3_name": "Visão da Mulher de Negócios",
     "sof3_img": "navia_c3",
     "sof3_desc": "Aumenta o nível do Cerimônia Cristalina Flamejante em 3.\nO nível máximo de elevação é 15.",
     "sof4_name": "Aqueles que Juram Nunca Capitulam",
     "sof4_img": "navia_c4",
-    "sof4_desc": "Quando Como um Presente do Céu Claro atinge um inimigo, reduz a RES GEO desse inimigo em 20% por 8s.",
+    "sof4_desc": "Quando Como um Presente do Céu Claro atinge um inimigo, reduz a RES Geo desse inimigo em 20% por 8s.",
     "sof5_name": "Negociações Resolutas",
     "sof5_img": "navia_c5",
     "sof5_desc": "Aumenta o nível da Como um Presente do Céu Claro em 3.\nO nível máximo de elevação é 15.",
-    "sof6_name": "A Flexibilidade da Presidenta da Spina di Rosula",
+    "sof6_name": "A Flexibilidade da Presidente da Spina di Rosula",
     "sof6_img": "navia_c6",
-    "sof6_desc": "Ao lançar Cerimônia Cristalina Flamejante, se consumir mais do que três Fragmentos da Rachadura, cada Fragmento da Rachadura consumido a mais aumentará o Dano CRIT de Cerimônia Cristalina Flamejante em 35%, e os fragmentos acima de 3 consumidos serão devolvidos depois de lançada a habilidade."
+    "sof6_desc": "Ao lançar Cerimônia Cristalina Flamejante, se consumir mais do que 3 Fragmentos da Rachadura, cada Fragmento da Rachadura consumido a mais aumentará o Dano CRIT de Cerimônia Cristalina Flamejante em 45%, e os fragmentos acima de 3 consumidos serão devolvidos depois de lançada a habilidade."
   }
 }

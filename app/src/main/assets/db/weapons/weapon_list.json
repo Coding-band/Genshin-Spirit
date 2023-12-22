@@ -1,4 +1,7 @@
 [
+  {"name" : "Ultimate Overlord's Mega Magic Sword","rare" : 4,"weapon" : "Claymore","isComing" : 0,"stat_1" : "EnRech%"},
+  {"name" : "Verdict","rare" : 5,"weapon" : "Claymore","isComing" : 0,"stat_1" : "CritDMG%"},
+
   {"name" : "Sword of Narzissenkreuz","rare" : 4,"weapon" : "Sword","isComing" : 0,"stat_1" : "ATK%"},
   {"name" : "Splendor of Still Waters","rare" : 5,"weapon" : "Sword","isComing" : 0,"stat_1" : "CritDMG%"},
 

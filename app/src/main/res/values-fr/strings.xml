@@ -6,4 +6,10 @@
 
 <resources>
     <string name="app_name">Genshin Spirit</string>
+    <string name="song_of_days_past">Chanson des jours d\'antan</string>
+    <string name="nighttime_whispers_in_the_echoing_woods">Murmure nocturne en forêt d\'échos</string>
+    <string name="chevreuse">Chevreuse</string>
+    <string name="navia">Navia</string>
+    <string name="ultimate_overlords_mega_magic_sword">Méga épée magique du suzerain ultime</string>
+    <string name="verdict">Condamneur</string>
 </resources>

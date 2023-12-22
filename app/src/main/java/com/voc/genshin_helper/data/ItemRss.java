@@ -59,43 +59,45 @@ public class ItemRss {
     // INCLUDED 3.8 CHAR. => 20230819
     // INCLUDED 4.0 CHAR. => 20230819
     // INCLUDED 4.1 CHAR. => 20230929
+    // INCLUDED 4.2 CHAR. => 20231222
+    // INCLUDED 4.3 CHAR. => 20231222
     public String[] charBirthName = {
-            "Wanderer","Thoma","Diona","Rosaria","朝霧冰瀬",
+            "Wanderer","Thoma","Chevreuse","Diona","Rosaria","朝霧冰瀬",
             "Alhaitham","Beidou","Sangonomiya Kokomi","Bennett",
             "Qiqi","Yaoyao","Shenhe","Jean","Noelle","Kamisato Ayato",
-            "Aloy","Dehya","Xiao","Yelan","Baizhu","Diluc",
+            "Aloy","Dehya","Charlotte","Xiao","Yelan","Baizhu","Diluc",
             "Candace","Collei","Gorou","Yun Jin","Fischl",
             "Arataki Itto","Lisa","Venti","Yoimiya","Cyno","Raiden Shogun","Yae Miko","Kuki Shinobu",
             "Barbara","Kaveh","Kujou Sara","Hu Tao","Voc-夜芷冰","Tartaglia","Shikanoin Heizou","Klee","Yanfei",
-            "Amber","Mika","Faruzan","Ningguang","Mona",
+            "Amber","Mika","Faruzan","Navia","Ningguang","Mona",
             "Diona","Razor","Albedo","Kamisato Ayaka",
-            "Xingqiu","Xinyan","Sayu","Eula","Nahida","Kaedehara Kazuha",
+            "Xingqiu","Furina","Xinyan","Sayu","Eula","Nahida","Kaedehara Kazuha",
             "Xiangling","Keqing","Wriothesley","Sucrose","Kaeya",
             "Ganyu","Nilou","Neuvillette","Layla","Dori","Tighnari","Zhongli"};
     public int[] charBirthDay = {
-            3,9,18,24,26,
+            3,9,10,18,24,26,
             11,14,22,29,
             3,6,10,14,21,26,
-            4,7,17,20,25,30,
+            4,7,10,17,20,25,30,
             3,8,18,21,27,
             1,6,9,21,23,26,27,28,
             5,9,14,15,19,20,24,27,28,
-            10,11,20,26,31,
+            10,11,16,20,26,31,
             7,9,13,28,
-            9,16,19,25,27,29,
+            9,13,16,19,25,27,29,
             2,20,23,26,30,
             2,3,18,19,21,29,31};
     public int[] charBirthMonth = {
             0,0,0,0,0,
             1,1,1,1,
             2,2,2,2,2,2,
-            3,3,3,3,3,3,
+            3,3,3,3,3,3,3,
             4,4,4,4,4,
             5,5,5,5,5,5,5,5,
             6,6,6,6,6,6,6,6,6,
-            7,7,7,7,7,
+            7,7,7,7,7,7,
             8,8,8,8,
-            9,9,9,9,9,9,
+            9,9,9,9,9,9,9,
             10,10,10,10,10,
             11,11,11,11,11,11,11};
 
@@ -569,6 +571,8 @@ public class ItemRss {
     }
 
     // add in 20220207
+
+    @Deprecated
     public String getEnemyByFileName(String str){
         switch (str){
             case "pyro_slime" : return "Pyro Slime";
@@ -755,6 +759,10 @@ public class ItemRss {
 
     public int[] getWeaponByName(String str) {
         switch (str){
+            //Add in 20231222 - 4.3.0
+            case "Ultimate Overlord's Mega Magic Sword" : return new int[] {R.string.ultimate_overlords_mega_magic_sword,R.drawable.ultimate_overlords_mega_magic_sword};
+            case "Verdict" : return new int[] {R.string.verdict,R.drawable.verdict};
+
             //Add in 20230929 - 4.1.0 & 4.2.0
             case "The Dockhand's Assistant" : return new int[] {R.string.the_dockhands_assistant,R.drawable.the_dockhands_assistant};
             case "Portable Power Saw" : return new int[] {R.string.portable_power_saw,R.drawable.portable_power_saw};
@@ -1162,6 +1170,9 @@ public class ItemRss {
             case "Range Gauge" : return new int[] {R.string.range_gauge,R.drawable.range_gauge_gacha};
             case "Sword of Narzissenkreuz" : return new int[] {R.string.sword_of_narzissenkreuz,R.drawable.sword_of_narzissenkreuz_gacha};
             case "Splendor of Still Waters" : return new int[] {R.string.splendor_of_still_waters,R.drawable.splendor_of_still_waters_gacha};
+            //add in 20231222 - 4.3.0
+            case "Ultimate Overlord's Mega Magic Sword" : return new int[] {R.string.ultimate_overlords_mega_magic_sword,R.drawable.ultimate_overlords_mega_magic_sword_gacha};
+            case "Verdict" : return new int[] {R.string.verdict,R.drawable.verdict_gacha};
             default :
                 System.out.println("WEAPON+ NAME ERROR : "+str);
                 return new int[] {R.string.unknown,R.drawable.hu_tao_unknown};
@@ -1358,9 +1369,25 @@ public class ItemRss {
             case "song_of_stillness" : return "Song of Stillness";
             case "the_first_great_magic" : return "The First Great Magic";
 
+            //Add in 20230929 - 4.1.0 & 4.2.0
+            case "the_dockhands_assistant" : return "The Dockhand's Assistant";
+            case "portable_power_saw" : return "Portable Power Saw";
+            case "prospectors_drill" : return "Prospector's Drill";
+            case "ballad_of_the_boundless_blue_gacha" : return "Ballad of the Boundless Blue";
+            case "cashflow_supervision" : return "Cashflow Supervision";
+            case "tome_of_the_eternal_flow" : return "Tome of the Eternal Flow";
+            case "range_gauge" : return "Range Gauge";
+            case "sword_of_narzissenkreuz" : return "Sword of Narzissenkreuz";
+            case "splendor_of_still_waters" : return "Splendor of Still Waters";
+            //add in 20231222 - 4.3.0
+            case "ultimate_overlords_mega_magic_sword" : return "Ultimate Overlord's Mega Magic Sword";
+            case "verdict" : return "Verdict";
+
             default: return str;
         }
     }
+    //[4,2,1,5,3] [Flower,Plume, Goblet, Sand, Circlet]
+    //[1,2,3,4,5] [Goblet,Plume,Circlet,Flower,Sand]
     public int[] getArtifactByName (String str){
         switch (str){
             case "Adventurer" : return new int[] {R.string.adventurer,R.drawable.adventurer_1,R.drawable.adventurer_2,R.drawable.adventurer_3,R.drawable.adventurer_4,R.drawable.adventurer_5};
@@ -1416,6 +1443,9 @@ public class ItemRss {
             // add in 20230810 - 4.0.0
             case "Marechaussee Hunter" : return new int[] {R.string.marechaussee_hunter,R.drawable.marechaussee_hunter_1,R.drawable.marechaussee_hunter_2,R.drawable.marechaussee_hunter_3,R.drawable.marechaussee_hunter_4,R.drawable.marechaussee_hunter_5};
             case "Golden Troupe" : return new int[] {R.string.golden_troupe,R.drawable.golden_troupe_1,R.drawable.golden_troupe_2,R.drawable.golden_troupe_3,R.drawable.golden_troupe_4,R.drawable.golden_troupe_5};
+             // add in 20231222 - 4.3.0
+            case "Song of Days Past" : return new int[] {R.string.song_of_days_past,R.drawable.song_of_days_past_1,R.drawable.song_of_days_past_2,R.drawable.song_of_days_past_3,R.drawable.song_of_days_past_4,R.drawable.song_of_days_past_5};
+            case "Nighttime Whispers in the Echoing Woods" : return new int[] {R.string.nighttime_whispers_in_the_echoing_woods,R.drawable.nighttime_whispers_in_the_echoing_woods_1,R.drawable.nighttime_whispers_in_the_echoing_woods_2,R.drawable.nighttime_whispers_in_the_echoing_woods_3,R.drawable.nighttime_whispers_in_the_echoing_woods_4,R.drawable.nighttime_whispers_in_the_echoing_woods_5};
 
             default:
                 String upcoming = str.toLowerCase().replace(" ","_");
@@ -1479,6 +1509,9 @@ public class ItemRss {
             // add in 20230810
             case "marechaussee_hunter" : return "Marechaussee Hunter";
             case "golden_troupe" : return "Golden Troupe";
+            // add in 20230810
+            case "song_of_days_past" : return "Song of Days Past";
+            case "nighttime_whispers_in_the_echoing_woods" : return "Nighttime Whispers in the Echoing Woods";
 
             default: return str;
         }
@@ -1836,6 +1869,52 @@ public class ItemRss {
             case "In Every House a Stove" : return new int[]{R.drawable.tcg_in_every_house_a_stove,R.string.tcg_in_every_house_a_stove};
             case "Lyresong" : return new int[]{R.drawable.tcg_lyresong,R.string.tcg_lyresong};
 
+            //add in 20231222 - 4.3.0
+            case "Signora" : return new int[]{R.drawable.tcg_signora, R.string.tcg_signora};
+            case "Azhdaha" : return new int[]{R.drawable.tcg_azhdaha, R.string.tcg_azhdaha};
+            case "Layla" : return new int[]{R.drawable.tcg_layla, R.string.tcg_layla};
+            case "Yelan" : return new int[]{R.drawable.tcg_yelan, R.string.tcg_yelan};
+            case "Lyney" : return new int[]{R.drawable.tcg_lyney, R.string.tcg_lyney};
+            case "Lynette" : return new int[]{R.drawable.tcg_lynette, R.string.tcg_lynette};
+            case "Gorou" : return new int[]{R.drawable.tcg_gorou, R.string.tcg_gorou};
+            case "Alhaitham" : return new int[]{R.drawable.tcg_alhaitham, R.string.tcg_alhaitham};
+            case "Eremite Scorching Loremaster" : return new int[]{R.drawable.tcg_eremite_scorching_loremaster, R.string.tcg_eremite_scorching_loremaster};
+            case "Thunder Manifestation" : return new int[]{R.drawable.tcg_thunder_manifestation, R.string.tcg_thunder_manifestation};
+            case "Dvalin" : return new int[]{R.drawable.tcg_dvalin, R.string.tcg_dvalin};
+            case "Light's Remit" : return new int[]{R.drawable.tcg_lights_remit, R.string.tcg_lights_remit};
+            case "Turn Control" : return new int[]{R.drawable.tcg_turn_control, R.string.tcg_turn_control};
+            case "Conclusive Ovation" : return new int[]{R.drawable.tcg_conclusive_ovation, R.string.tcg_conclusive_ovation};
+            case "A Cold Blade Like a Shadow" : return new int[]{R.drawable.tcg_a_cold_blade_like_a_shadow, R.string.tcg_a_cold_blade_like_a_shadow};
+            case "Rushing Hound: Swift as the Wind" : return new int[]{R.drawable.tcg_rushing_hound_swift_as_the_wind, R.string.tcg_rushing_hound_swift_as_the_wind};
+            case "Structuration" : return new int[]{R.drawable.tcg_structuration, R.string.tcg_structuration};
+            case "Pain for Pain" : return new int[]{R.drawable.tcg_pain_for_pain, R.string.tcg_pain_for_pain};
+            case "Scorpocalypse" : return new int[]{R.drawable.tcg_scorpocalypse, R.string.tcg_scorpocalypse};
+            case "Grieving Echo" : return new int[]{R.drawable.tcg_grieving_echo, R.string.tcg_grieving_echo};
+            case "Rending Vortex" : return new int[]{R.drawable.tcg_rending_vortex, R.string.tcg_rending_vortex};
+            case "Lunar Cycles Unending" : return new int[]{R.drawable.tcg_lunar_cycles_unending, R.string.tcg_lunar_cycles_unending};
+            case "Lost Prayer to the Sacred Winds" : return new int[]{R.drawable.tcg_lost_prayer_to_the_sacred_winds, R.string.tcg_lost_prayer_to_the_sacred_winds};
+            case "Tulaytullah's Remembrance" : return new int[]{R.drawable.tcg_tulaytullahs_remembrance, R.string.tcg_tulaytullahs_remembrance};
+            case "Beacon of the Reed Sea" : return new int[]{R.drawable.tcg_beacon_of_the_reed_sea, R.string.tcg_beacon_of_the_reed_sea};
+            case "Primordial Jade Winged-Spear" : return new int[]{R.drawable.tcg_primordial_jade_winged_spear, R.string.tcg_primordial_jade_winged_spear};
+            case "Light of Foliar Incision" : return new int[]{R.drawable.tcg_light_of_foliar_incision, R.string.tcg_light_of_foliar_incision};
+            case "Gilded Dreams" : return new int[]{R.drawable.tcg_gilded_dreams, R.string.tcg_gilded_dreams};
+            case "Flowing Rings" : return new int[]{R.drawable.tcg_flowing_rings, R.string.tcg_flowing_rings};
+            case "Echoes of an Offering" : return new int[]{R.drawable.tcg_echoes_of_an_offering, R.string.tcg_echoes_of_an_offering};
+            case "Heart of Khvarena's Brilliance" : return new int[]{R.drawable.tcg_heart_of_khvarenas_brilliance, R.string.tcg_heart_of_khvarenas_brilliance};
+            case "Vourukasha's Glow" : return new int[]{R.drawable.tcg_vourukashas_glow, R.string.tcg_vourukashas_glow};
+            case "Weeping Willow of the Lake" : return new int[]{R.drawable.tcg_weeping_willow_of_the_lake, R.string.tcg_weeping_willow_of_the_lake};
+            case "Opera Epiclese" : return new int[]{R.drawable.tcg_opera_epiclese, R.string.tcg_opera_epiclese};
+            case "Mamere" : return new int[]{R.drawable.tcg_mamere, R.string.tcg_mamere};
+            case "Seed Dispensary" : return new int[]{R.drawable.tcg_seed_dispensary, R.string.tcg_seed_dispensary};
+            case "Memento Lens" : return new int[]{R.drawable.tcg_memento_lens, R.string.tcg_memento_lens};
+            case "Passing of Judgment" : return new int[]{R.drawable.tcg_passing_of_judgment, R.string.tcg_passing_of_judgment};
+            case "The Boar Princess" : return new int[]{R.drawable.tcg_the_boar_princess, R.string.tcg_the_boar_princess};
+            case "Falls and Fortune" : return new int[]{R.drawable.tcg_falls_and_fortune, R.string.tcg_falls_and_fortune};
+            case "Flickering Four-Leaf Sigil" : return new int[]{R.drawable.tcg_flickering_four_leaf_sigil, R.string.tcg_flickering_four_leaf_sigil};
+            case "Fish and Chips" : return new int[]{R.drawable.tcg_fish_and_chips, R.string.tcg_fish_and_chips};
+            case "The Chasm: Solid Iron" : return new int[]{R.drawable.tcg_the_chasm_solid_iron, R.string.tcg_the_chasm_solid_iron};
+
+
             default: return new int[]{R.drawable.hu_tao_unknown, R.string.unknown};
         }
     }
@@ -1877,6 +1956,9 @@ public class ItemRss {
 
     public int[] getCharByName_BASE(String name, Context context){
         switch (name) {
+            case "Chevreuse": return new int[]{R.drawable.chevreuse_full, R.string.chevreuse, R.drawable.chevreuse_gacha_splash, R.drawable.chevreuse_ico, R.drawable.unknown_card};
+            case "Navia": return new int[]{R.drawable.navia_full, R.string.navia, R.drawable.navia_gacha_splash, R.drawable.navia_ico, R.drawable.unknown_card};
+
             case "Charlotte": return new int[]{R.drawable.charlotte_full, R.string.charlotte, R.drawable.charlotte_gacha_splash, R.drawable.charlotte_ico, R.drawable.unknown_card};
             case "Furina": return new int[]{R.drawable.furina_full, R.string.furina, R.drawable.furina_gacha_splash, R.drawable.furina_ico, R.drawable.unknown_card};
 
@@ -2100,6 +2182,8 @@ public class ItemRss {
         else if(name.equals("Charlotte") || name.equals("夏洛蒂") || name.equals("夏洛蒂") || name.equals("シャルロット") || name.equals("Шарлотта")){ return "Charlotte";}
         else if(name.equals("Furina") || name.equals("芙宁娜") || name.equals("芙寧娜") || name.equals("フリーナ") || name.equals("Фурина")){ return "Furina";}
 
+        else if(name.equals("Chevreuse") || name.equals("夏沃蕾") || name.equals("夏沃蕾") || name.equals("シュヴルーズ") || name.equals("Шеврёз")){ return "Chevreuse";}
+        else if(name.equals("Navia") || name.equals("娜维娅") || name.equals("娜維婭") || name.equals("ナヴィア") || name.equals("Навия")){ return "Navia";}
 
         else if(name.equals("Traveler-Anemo") || name.equals("旅行者(風)") || name.equals("旅行者(风)") || name.equals("旅人 (風)") || name.equals("Путешественник(Анемо)")){ return "Traveler-Anemo";}
         else if(name.equals("Traveler-Electro") || name.equals("旅行者(岩)") || name.equals("旅行者(岩)") || name.equals("旅人 (岩)") || name.equals("Путешественник(Гео)")){ return "Traveler-Electro";}
@@ -2345,6 +2429,9 @@ public class ItemRss {
                 return R.drawable.beryl_conch;
             case "湖光鈴蘭":
                 return R.drawable.lakelight_lily;
+            //add in 20231222
+            case "初露之源":
+                return R.drawable.spring_of_the_first_dewdrop;
 
             /** T-Boss*/
             case "北風之環":
@@ -3049,6 +3136,7 @@ public class ItemRss {
         }else {return context.getString(R.string.unknown);}
     }
 
+    @Deprecated
     public String char_birth(int moy, int dom){
         String char_name = "EMPTY";
         switch (moy){

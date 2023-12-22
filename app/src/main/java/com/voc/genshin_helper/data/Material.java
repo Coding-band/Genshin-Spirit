@@ -123,6 +123,8 @@ public class Material {
     public int  幽光星星 = 0;
     public int  蒼晶螺 = 0;
     public int  湖光鈴蘭 = 0;
+    //add in 20231222
+    public int  初露之源 = 0;
 
     /** T-BOSS ASC*/
 
@@ -366,7 +368,7 @@ public class Material {
                 "帕蒂沙蘭","沙脂蛹","悼靈花",
                 "柔燈鈴","虹彩薔薇","海露花",
                 "子探測單元","幽光星星","蒼晶螺",
-                "湖光鈴蘭"
+                "湖光鈴蘭","初露之源"
         };
     }
     public int[] localCountList (){
@@ -384,7 +386,7 @@ public class Material {
                 帕蒂沙蘭,沙脂蛹,悼靈花,
                 柔燈鈴,虹彩薔薇,海露花,
                 子探測單元,幽光星星,蒼晶螺,
-                湖光鈴蘭
+                湖光鈴蘭,初露之源
         };
     }
 
@@ -791,6 +793,8 @@ public class Material {
                 case "幽光星星": 幽光星星 = addCountIntoVar(幽光星星, temp_count, "LOCAL"); break;
                 case "蒼晶螺": 蒼晶螺 = addCountIntoVar(蒼晶螺, temp_count, "LOCAL"); break;
                 case "湖光鈴蘭": 湖光鈴蘭 = addCountIntoVar(湖光鈴蘭, temp_count, "LOCAL"); break;
+                //add in 20231222
+                case "初露之源": 初露之源 = addCountIntoVar(初露之源, temp_count, "LOCAL"); break;
             }
 
         }
