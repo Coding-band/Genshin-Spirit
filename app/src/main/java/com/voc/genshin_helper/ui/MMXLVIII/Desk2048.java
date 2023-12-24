@@ -892,7 +892,9 @@ public class Desk2048 extends AppCompatActivity {
             lp.gravity = Gravity.CENTER;
             dialogWindow.setAttributes(lp);
 
-            dialog.show();
+            if (!dialog.isShowing()){
+                dialog.show();
+            }
         }
     };
     public View.OnClickListener paimon_about = new View.OnClickListener() {

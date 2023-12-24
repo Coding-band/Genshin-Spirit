@@ -4,6 +4,7 @@ package com.voc.genshin_helper.util.hoyolab.hooks;/*
  * Copyright © 2023 Xectorda 版權所有
  */
 
+import static com.voc.genshin_helper.util.LogExport.DAILYMEMOV2;
 import static com.voc.genshin_helper.util.hoyolab.HoyolabConstants.HOYOLAB_SERVER_ID;
 
 import android.annotation.SuppressLint;
@@ -13,6 +14,7 @@ import android.webkit.WebView;
 import android.widget.Toast;
 
 import com.voc.genshin_helper.R;
+import com.voc.genshin_helper.util.LogExport;
 import com.voc.genshin_helper.util.hoyolab.HoyolabConstants;
 import com.voc.genshin_helper.util.hoyolab.HoyolabCookie;
 import com.voc.genshin_helper.util.hoyolab.request.HoyolabRequest;
@@ -43,6 +45,7 @@ public class HoyolabHooks {
 
         if (response.getRetcode() != 0){
             Toast.makeText(context, "retcode "+response.getRetcode()+" : "+(response.getMessage() == null ? "null" : response.getMessage()), Toast.LENGTH_SHORT).show();
+            LogExport.export("HoyolabHooks","hoyolabGameRecord()", "retcode "+response.getRetcode()+" : "+(response.getMessage() == null ? "null" : response.getMessage()), context, DAILYMEMOV2);
         }
 
         return response.getData();
@@ -54,9 +57,7 @@ public class HoyolabHooks {
 
         if (userGameServer == null) return null;
 
-        System.out.println("jsonObject : ");
         JSONObject jsonObject = hoyolabGameRecord(context);
-        System.out.println(jsonObject);
         try {
             if (jsonObject != null && jsonObject.has("list")){
                 JSONArray jsonArray = jsonObject.getJSONArray("list");
@@ -71,6 +72,8 @@ public class HoyolabHooks {
                 }
             }
         } catch (JSONException e) {
+            LogExport.export("HoyolabHooks","fetchUUIDList() -> DATA VAR SHOWING", hoyolabGameRecord(context).toString(), context, DAILYMEMOV2);
+            LogExport.export("HoyolabHooks","genshinUUID()", e.getMessage(), context, DAILYMEMOV2);
             return "-2"; //JSON有錯
         }
         return "-1"; //找不到結果
@@ -94,12 +97,12 @@ public class HoyolabHooks {
                             jsonArray.getJSONObject(x).getInt("level")
                     ));
 
-                    System.out.println("uuidList[final]"+uuidList.get(uuidList.size()-1).printOut());
-
                 }
                 return uuidList;
             }
         } catch (JSONException e) {
+            LogExport.export("HoyolabHooks","fetchUUIDList() -> DATA VAR SHOWING", hoyolabGameRecord(context).toString(), context, DAILYMEMOV2);
+            LogExport.export("HoyolabHooks","fetchUUIDList()", e.getMessage(), context, DAILYMEMOV2);
             return new ArrayList<>(); //JSON有錯
         }
         return new ArrayList<>(); //找不到結果
@@ -128,11 +131,9 @@ public class HoyolabHooks {
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",Context.MODE_PRIVATE);
         HoyolabConstants.GAME_SERVERS hsrServerChosen = HoyolabConstants.GAME_SERVERS.getEnumByIdName(sharedPreferences.getString(HOYOLAB_SERVER_ID,HoyolabConstants.GAME_SERVERS.GENSHIN_TW_HK_MO.getServerIdName()));
         if (hsrServerChosen == null) hsrServerChosen = HoyolabConstants.GAME_SERVERS.GENSHIN_TW_HK_MO;
-        System.out.println(HoyolabConstants.GenshinEventContentURL(language, hsrServerChosen.getServerIdName()));
         return genshinCommonGetData(context, HoyolabConstants.GenshinEventContentURL(language, hsrServerChosen.getServerIdName()));
     }
 
-    @SuppressLint("JavascriptInterface")
     public JSONObject genshinCommonGetData(Context context,String url){
         String hoyolabCookie = HoyolabCookie.getCookiePlain(context, HoyolabCookie.HOYOLAB_V2_KEY_GROUP);
 
@@ -145,6 +146,7 @@ public class HoyolabHooks {
 
         if (response.getRetcode() != 0){
             Toast.makeText(context, "retcode "+response.getRetcode()+" : "+(response.getMessage() == null ? "null" : response.getMessage()), Toast.LENGTH_SHORT).show();
+            LogExport.export("HoyolabHooks","genshinCommonGetData()", "retcode "+response.getRetcode()+" : "+(response.getMessage() == null ? "null" : response.getMessage()), context, DAILYMEMOV2);
         }
 
         return response.getData();

@@ -105,7 +105,6 @@ public class HoyolabCookie {
         for (String str : values){
             String[] keyValueArr = str.split("=");
             editor.putString(keyValueArr[0].trim(),keyValueArr[1].trim()).apply();
-            System.out.println(keyValueArr[0].trim()+" : "+keyValueArr[1].trim());
         }
         return true;
     }

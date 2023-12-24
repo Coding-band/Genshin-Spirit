@@ -2,6 +2,7 @@ package com.voc.genshin_helper.util;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static com.voc.genshin_helper.util.LogExport.DAILYMEMO;
+import static com.voc.genshin_helper.util.LogExport.DAILYMEMOV2;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -282,7 +283,6 @@ public class DailyMemoV2 {
         final int radius_circ_siptik_ico = 120;
         final int margin_circ_siptik_ico = 0;
         final com.squareup.picasso.Transformation transformation_circ_siptik_ico = new RoundedCornersTransformation(radius_circ_siptik_ico, margin_circ_siptik_ico);
-
 
         memo_user_name.setText(nickname);
         sharedPreferences.edit().putString("genshin_username",nickname).apply();
@@ -718,7 +718,7 @@ public class DailyMemoV2 {
                             );
                             */
                             } catch (JSONException e) {
-                                LogExport.export("DailyMemo", "getCookiesFromLoginPage -> webview.setWebViewClient.onPageFinished", e.getMessage(), context, DAILYMEMO);
+                                LogExport.export("DAILYMEMOV2?", "getCookiesFromLoginPage -> webview.setWebViewClient.onPageFinished", e.getMessage(), context, DAILYMEMO);
                             }
                         }
 
@@ -819,11 +819,11 @@ public class DailyMemoV2 {
 
             if (DailyMemo2048Service.dailyMemo2048Service != null){
                 DailyMemo2048Service.dailyMemo2048Service.refresh(str,nickname,server,icon,level);
-                LogExport.export("DailyMemoV2","dailyMemo2048Service.refresh", "Refresh now", context, DAILYMEMO);
+                LogExport.export("DailyMemoV2","dailyMemo2048Service.refresh", "Refresh now", context, DAILYMEMOV2);
             }
             isIdGetDone = true;
         }catch (JSONException e) {
-            LogExport.export("DailyMemoV2","refreshData()", e.getMessage(), context, DAILYMEMO);
+            LogExport.export("DailyMemoV2","refreshData()", e.getMessage(), context, DAILYMEMOV2);
         }
     }
 
