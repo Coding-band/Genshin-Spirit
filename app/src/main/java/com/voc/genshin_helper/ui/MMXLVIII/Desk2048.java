@@ -355,6 +355,8 @@ public class Desk2048 extends AppCompatActivity {
         activity = this;
         serverList = new String[]{getString(R.string.america_ser),getString(R.string.europe_ser),getString(R.string.asia_ser),getString(R.string.hk_tw_mo_ser),getString(R.string.sky_land_ser),getString(R.string.world_tree)};
 
+        //System.out.println("UUID : "+HoyolabHooks.getDeviceId(context));
+
         viewPager = (ViewPager) findViewById(R.id.vp);
         desk_tablayout = findViewById(R.id.desk_tablayout);
         desk_tablayout_bg = findViewById(R.id.desk_tablayout_bg);

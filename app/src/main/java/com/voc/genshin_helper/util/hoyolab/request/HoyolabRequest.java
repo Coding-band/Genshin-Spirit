@@ -4,10 +4,13 @@ package com.voc.genshin_helper.util.hoyolab.request;/*
  * Copyright © 2023 Xectorda 版權所有
  */
 
+import static com.voc.genshin_helper.util.LogExport.DAILYMEMOV2;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
+import com.voc.genshin_helper.util.LogExport;
 import com.voc.genshin_helper.util.hoyolab.GenerateDS;
 import com.voc.genshin_helper.util.hoyolab.language.Language;
 
@@ -18,6 +21,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
+import java.net.SocketTimeoutException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,6 +29,7 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.FutureTask;
+import java.util.stream.Collectors;
 
 import javax.net.ssl.HttpsURLConnection;
 
@@ -54,7 +59,7 @@ public class HoyolabRequest {
         this.headers.put("Content-Type", "application/json");
         this.headers.put("Host", "bbs-api-os.hoyolab.com");
         this.headers.put("User-Agent", "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Mobile Safari/537.36");
-        this.headers.put("x-rpc-app_version", "4.3.0");
+        this.headers.put("x-rpc-app_version", "1.5.0");
         this.headers.put("x-rpc-client_type", "5");
         this.headers.put("x-rpc-lang", "zh-tw");
         this.body = new HashMap<>();
@@ -137,7 +142,7 @@ public class HoyolabRequest {
         try {
             return futureTask.get();
         } catch (Exception e) {
-            e.printStackTrace();
+            LogExport.export("HoyolabRequest","send() -> "+url, e.getMessage(), context, DAILYMEMOV2);
             return null;
         }
     }
@@ -164,8 +169,8 @@ public class HoyolabRequest {
                 URL urlObj = new URL(url);
                 HttpsURLConnection connection = (HttpsURLConnection) urlObj.openConnection();
                 connection.setRequestMethod(method.name());
-                connection.setConnectTimeout(1000);
-                connection.setReadTimeout(1000);
+                connection.setConnectTimeout(5000);
+                connection.setReadTimeout(5000);
                 connection.setRequestProperty("Content-Type", "application/json");
                 headers.forEach((key,obj) -> {connection.setRequestProperty(key,String.valueOf(obj));});
 
@@ -194,9 +199,9 @@ public class HoyolabRequest {
                     );
                 }
             } catch (Exception e) {
-                e.printStackTrace();
+                LogExport.export("HoyolabRequest","call(-9487) -> "+url, e.getMessage(), context, DAILYMEMOV2);
+                return new HoyolabRequestType.IResponse(-9487,"Please ask for help to our devs : [-9487] "+e.getMessage(),null);
             }
-            return new HoyolabRequestType.IResponse(-9487,"",null);
         }
     }
 }

@@ -506,8 +506,9 @@ public class DailyMemoV2 {
                 ok.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Toast.makeText(context, "Refreshing !", Toast.LENGTH_SHORT).show();
-                        refreshData(new HoyolabHooks().genshinNoteData(context).toString());
+                        String str = new HoyolabHooks().genshinNoteData(context).toString();
+                        //refreshData(new HoyolabHooks().genshinNoteData(context).toString());
+                        refreshData(str);
 
                         if (!sharedPreferences.getString("genshin_uid","-1").equals("-1")) {
                             refreshRegular.removeCallbacks(refreshRunnable);
@@ -626,7 +627,7 @@ public class DailyMemoV2 {
                     public void onClick(View v) {
                         CookieManager cookieManager = CookieManager.getInstance();
                         String cookies = cookieManager.getCookie("https://act.hoyolab.com/app/community-game-records-sea/index.html#/ys");
-                        Toast.makeText(context, "Please wait for 10s", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(context, "No need to wait anymore...", Toast.LENGTH_SHORT).show();
                         HoyolabCookie.updateCookie(context,cookies);
 
                         ArrayList<String> tmpList = new ArrayList<>();
@@ -759,11 +760,13 @@ public class DailyMemoV2 {
     }
 
     public void refreshData(String str) {
+        LogExport.export("DailyMemoV2.java","EXPORT_CODEX",str,context,DAILYMEMOV2);
         try {
             JSONObject jsonObject = new JSONObject(str);
 
             if(!sharedPreferences.getString("genshin_uid","-1").equals("-1")){
                 JSONObject playerInfoRoot = new HoyolabHooks().genshinPlayerData(context);
+                LogExport.export("DailyMemoV2.java","EXPORT_CODEG1",playerInfoRoot.toString(),context,DAILYMEMOV2);
 
                 if (playerInfoRoot != null && playerInfoRoot.has("role")){
                     JSONObject playerInfo = playerInfoRoot.getJSONObject("role");
@@ -785,7 +788,7 @@ public class DailyMemoV2 {
                 server = context.getString(HoyolabConstants.GAME_SERVERS.UNKNOWN.getServerTranslateName());
             }
 
-            LogExport.export("DailyMemo2048Service","grabIdFromServer.[REGULAR]", jsonObject.toString(), context, DAILYMEMO);
+            //LogExport.export("DailyMemo2048Service","grabIdFromServer.[REGULAR]", jsonObject.toString(), context, DAILYMEMO);
 
             editor.putString("dailyMemoDataTMP",jsonObject.toString()).apply();
 
@@ -804,25 +807,31 @@ public class DailyMemoV2 {
             transformer_recovery_time = (transformer.getInt("Day") * 86400 + transformer.getInt("Hour") * 3600 + transformer.getInt("Minute") * 60 + transformer.getInt("Second"));
             weekboss_30 = jsonObject.getInt("remain_resin_discount_num");
             weekboss_30_max = jsonObject.getInt("resin_discount_num_limit");
-            expedition1_name = jsonObject.getJSONArray("expeditions").getJSONObject(0).getString("avatar_side_icon");
-            expedition2_name = jsonObject.getJSONArray("expeditions").getJSONObject(1).getString("avatar_side_icon");
-            expedition3_name = jsonObject.getJSONArray("expeditions").getJSONObject(2).getString("avatar_side_icon");
-            expedition4_name = jsonObject.getJSONArray("expeditions").getJSONObject(3).getString("avatar_side_icon");
-            expedition5_name = jsonObject.getJSONArray("expeditions").getJSONObject(4).getString("avatar_side_icon");
-            expedition1_remain_time = jsonObject.getJSONArray("expeditions").getJSONObject(0).getInt("remained_time");
-            expedition2_remain_time = jsonObject.getJSONArray("expeditions").getJSONObject(1).getInt("remained_time");
-            expedition3_remain_time = jsonObject.getJSONArray("expeditions").getJSONObject(2).getInt("remained_time");
-            expedition4_remain_time = jsonObject.getJSONArray("expeditions").getJSONObject(3).getInt("remained_time");
-            expedition5_remain_time = jsonObject.getJSONArray("expeditions").getJSONObject(4).getInt("remained_time");
 
+            if (jsonObject.has("expeditions")) {
+                JSONArray array = jsonObject.getJSONArray("expeditions");
+                expedition1_name = (array.length() > 0 ? array.getJSONObject(0).getString("avatar_side_icon") : expedition1_name);
+                expedition2_name = (array.length() > 1 ? array.getJSONObject(1).getString("avatar_side_icon") : expedition2_name);
+                expedition3_name = (array.length() > 2 ? array.getJSONObject(2).getString("avatar_side_icon") : expedition3_name);
+                expedition4_name = (array.length() > 3 ? array.getJSONObject(3).getString("avatar_side_icon") : expedition4_name);
+                expedition5_name = (array.length() > 4 ? array.getJSONObject(4).getString("avatar_side_icon") : expedition5_name);
+                expedition1_remain_time = (array.length() > 0 ? array.getJSONObject(0).getInt("remained_time") : expedition1_remain_time);
+                expedition2_remain_time = (array.length() > 1 ? array.getJSONObject(1).getInt("remained_time") : expedition2_remain_time);
+                expedition3_remain_time = (array.length() > 2 ? array.getJSONObject(2).getInt("remained_time") : expedition3_remain_time);
+                expedition4_remain_time = (array.length() > 3 ? array.getJSONObject(3).getInt("remained_time") : expedition4_remain_time);
+                expedition5_remain_time = (array.length() > 4 ? array.getJSONObject(4).getInt("remained_time") : expedition5_remain_time);
+            }
             updateData();
 
+            /*
             if (DailyMemo2048Service.dailyMemo2048Service != null){
                 DailyMemo2048Service.dailyMemo2048Service.refresh(str,nickname,server,icon,level);
                 LogExport.export("DailyMemoV2","dailyMemo2048Service.refresh", "Refresh now", context, DAILYMEMOV2);
             }
+             */
             isIdGetDone = true;
         }catch (JSONException e) {
+            LogExport.export("DailyMemoV2","refreshData() -> DATA", str, context, DAILYMEMOV2);
             LogExport.export("DailyMemoV2","refreshData()", e.getMessage(), context, DAILYMEMOV2);
         }
     }

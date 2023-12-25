@@ -10,6 +10,7 @@ import static com.voc.genshin_helper.util.hoyolab.HoyolabConstants.HOYOLAB_SERVE
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.provider.Settings;
 import android.webkit.WebView;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 /*
  * Project Genshin Spirit (原神小幫手) was
@@ -88,14 +90,14 @@ public class HoyolabHooks {
                 JSONArray jsonArray = jsonObject.getJSONArray("list");
                 System.out.println("jsonArray LEN "+jsonArray);
                 for (int x = 0 ; x < jsonArray.length() ; x++){
-                    //if (!jsonArray.getJSONObject(x).has("game_id") || jsonArray.getJSONObject(x).getInt("game_id") != HoyolabConstants.GAME_LIST.GENSHIN_IMPACT.getGameId()) return new ArrayList<>();
-
-                    uuidList.add(new HoyolabUser(
-                            jsonArray.getJSONObject(x).getString("game_role_id"),
-                            jsonArray.getJSONObject(x).getString("nickname"),
-                            jsonArray.getJSONObject(x).getString("region"),
-                            jsonArray.getJSONObject(x).getInt("level")
-                    ));
+                    if (jsonArray.getJSONObject(x).has("game_id") && jsonArray.getJSONObject(x).getInt("game_id") == HoyolabConstants.GAME_LIST.GENSHIN_IMPACT.getGameId()) {
+                        uuidList.add(new HoyolabUser(
+                                jsonArray.getJSONObject(x).getString("game_role_id"),
+                                jsonArray.getJSONObject(x).getString("nickname"),
+                                jsonArray.getJSONObject(x).getString("region"),
+                                jsonArray.getJSONObject(x).getInt("level")
+                        ));
+                    }
 
                 }
                 return uuidList;
@@ -146,7 +148,7 @@ public class HoyolabHooks {
 
         if (response.getRetcode() != 0){
             Toast.makeText(context, "retcode "+response.getRetcode()+" : "+(response.getMessage() == null ? "null" : response.getMessage()), Toast.LENGTH_SHORT).show();
-            LogExport.export("HoyolabHooks","genshinCommonGetData()", "retcode "+response.getRetcode()+" : "+(response.getMessage() == null ? "null" : response.getMessage()), context, DAILYMEMOV2);
+            LogExport.export("HoyolabHooks","genshinCommonGetData() -> "+url, "retcode "+response.getRetcode()+" : "+(response.getMessage() == null ? "null" : response.getMessage()), context, DAILYMEMOV2);
         }
 
         return response.getData();
@@ -181,4 +183,11 @@ public class HoyolabHooks {
     }
 
      */
+
+    public static String getDeviceId(Context context){
+        String androidId = Settings.Secure.getString(context.getContentResolver(), Settings.System.ANDROID_ID);
+        UUID uuid = UUID.nameUUIDFromBytes(androidId.getBytes());
+        context.getSharedPreferences("user_info",Context.MODE_PRIVATE).edit().putString("device_uuid",uuid.toString()).apply();
+        return uuid.toString();
+    }
 }

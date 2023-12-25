@@ -31,7 +31,8 @@ public class ExampleUnitTest {
     /*
     For Hoyolab only
      */
-    public static String generate()  {
+    @Test
+    public void generate()  {
         final String salt = "6s25p5ox5y14umn1p61aqyyvbvvl3lrt";
         Date date = new Date();
         long time = (long) Math.floor(date.getTime()/1000);
@@ -46,7 +47,7 @@ public class ExampleUnitTest {
 
         String hash = DigestUtils.md5Hex("salt="+salt+"&t="+time+"&r="+random);
 
-        return String.valueOf(time)+","+random+","+hash;
+        System.out.println(String.valueOf(time)+","+random+","+hash);
     }
 
     /*
@@ -88,8 +89,8 @@ public class ExampleUnitTest {
 
         String body = "{\"role\": \"108289390\"}";
         //String[] preQuery = "uid=16299869".split("&"); //[IMPORTANT - NO DELETE gameRecordCard!]
-        //String[] preQuery = "server=prod_gf_cn&role_id=108289390".split("&"); //[IMPORTANT - NO DELETE STARRAIL!]
-        String[] preQuery = "server=cn_gf01&role_id=170422041".split("&"); //[IMPORTANT - NO DELETE GENSHIN!]
+        String[] preQuery = "server=prod_gf_cn&role_id=108289390".split("&"); //[IMPORTANT - NO DELETE STARRAIL!]
+        //String[] preQuery = "server=cn_gf01&role_id=170422041".split("&"); //[IMPORTANT - NO DELETE GENSHIN!]
         //String[] preQuery = "server=cn_gf01&role_id=170422041".split("&");
         Arrays.sort(preQuery);
         String query = "";
