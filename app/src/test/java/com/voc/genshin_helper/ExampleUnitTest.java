@@ -28,9 +28,34 @@ public class ExampleUnitTest {
         assertEquals(4, 2 + 2);
     }
 
+    /*
+    For Hoyolab only
+     */
+    public static String generate()  {
+        final String salt = "6s25p5ox5y14umn1p61aqyyvbvvl3lrt";
+        Date date = new Date();
+        long time = (long) Math.floor(date.getTime()/1000);
+
+        String random = "";
+        final String characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        for(int x = 0 ; x < 6 ; x++){
+            int randomIndex = (int) Math.floor(Math.random() * characters.length());
+            char randomChar = characters.charAt(randomIndex);
+            random += randomChar;
+        }
+
+        String hash = DigestUtils.md5Hex("salt="+salt+"&t="+time+"&r="+random);
+
+        return String.valueOf(time)+","+random+","+hash;
+    }
+
+    /*
+    米遊社!
+     */
     @Test
-    public void generate()  {
-        final String salt = "Za8pSfshqZn9URWnG2UoIA6X978y5lIK";
+    public void generateDS1()  {
+        //final String salt = "BIPaooxbWZW02fGHZL1If26mYCljPgst"; //2.63.1
+        final String salt = "Za8pSfshqZn9URWnG2UoIA6X978y5lIK"; //2.66.1
         Date date = new Date();
         long time = (long) Math.floor(date.getTime()/1000);
 
@@ -41,6 +66,9 @@ public class ExampleUnitTest {
             char randomChar = characters.charAt(randomIndex);
             random += randomChar;
         }
+
+        //random = "ab7njk"; //Successful case
+        //String target = "7aa04b477f4fb48a10cb92df462f6e8a";
 
         String hash = DigestUtils.md5Hex("salt="+salt+"&t="+time+"&r="+random);
 
@@ -59,9 +87,16 @@ public class ExampleUnitTest {
         long time = (long) Math.floor(date.getTime()/1000);
 
         String body = "{\"role\": \"108289390\"}";
-        String[] preQuery = "uid=16299869".split("&");
+        //String[] preQuery = "uid=16299869".split("&"); //[IMPORTANT - NO DELETE gameRecordCard!]
+        //String[] preQuery = "server=prod_gf_cn&role_id=108289390".split("&"); //[IMPORTANT - NO DELETE STARRAIL!]
+        String[] preQuery = "server=cn_gf01&role_id=170422041".split("&"); //[IMPORTANT - NO DELETE GENSHIN!]
+        //String[] preQuery = "server=cn_gf01&role_id=170422041".split("&");
         Arrays.sort(preQuery);
-        String query = preQuery[0];
+        String query = "";
+        for (int x = 0 ; x < preQuery.length ; x++){
+            query += preQuery[x] += (x+1 < preQuery.length ? "&" : "");
+        }
+        System.out.println(query);
         //query = "";
 
         body = "";
@@ -78,6 +113,7 @@ public class ExampleUnitTest {
 
     @Test
     public void generateK2Salt(){
+        //Za8pSfshqZn9URWnG2UoIA6X978y5lIK
         int[] f298361k = {126, -98, -4782969, 192, -84, 162, -116, 168, -114, 126, 186, -14348907, -86, 102, -88, 186, -72, -6561, -86, -112, -74, -66, -531441, 120, -14348907, -1594323, -4782969, -122, -177147, 180, -74, -76};
         System.out.println(f1(f298361k));
     }
