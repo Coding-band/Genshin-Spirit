@@ -105,12 +105,15 @@ public class SplashOldActivity extends AppCompatActivity {
         }
         ((TextView) findViewById(R.id.version_tv)).setText(BuildConfig.VERSION_NAME);
 
+        /*
+
         PackageManager manager=getPackageManager();
         manager.setComponentEnabledSetting(new ComponentName(SplashOldActivity.this,"com.voc.genshin_helper.ui.SplashActivity")
                 ,PackageManager.COMPONENT_ENABLED_STATE_ENABLED,PackageManager.DONT_KILL_APP);
         manager.setComponentEnabledSetting(new ComponentName(SplashOldActivity.this,"com.voc.genshin_helper.ui.SplashActivityAlias")
                 ,PackageManager.COMPONENT_ENABLED_STATE_DISABLED,PackageManager.DONT_KILL_APP);
 
+         */
         String[] checkList = new String[]{Manifest.permission.READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE, Manifest.permission.EXPAND_STATUS_BAR};
         List<String> needRequestList = checkPermission(activity, checkList);
 

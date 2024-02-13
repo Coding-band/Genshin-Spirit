@@ -1,4 +1,6 @@
 [
+  {"name" : "Crane's Echoing Call","rare" : 5,"type" : "Catalyst","copy1" : "霧海雲間的轉還","copy2" : "淵光鰭翅","common" : "禁咒繪卷"},
+
   {"name" : "Ultimate Overlord's Mega Magic Sword","rare" : 4,"type" : "Claymore","copy1" : "無垢之海的金杯","copy2" : "役人的時時刻刻","common" : "奇械機芯齒輪"},
   {"name" : "Verdict","rare" : 5,"type" : "Claymore","copy1" : "悠古弦音的迴響","copy2" : "異界生命核","common" : "奇械機芯齒輪"},
 
@@ -56,7 +58,8 @@
   {"name" : "Dark Iron Sword","type" : "Sword","rare" : 3,"copy1" : "孤雲寒林的神體","copy2" : "督察長祭刀","common" : "不祥的面具"},
   {"name" : "Dull Blade","type" : "Sword","rare" : 1,"copy1" : "高塔孤王的碎夢","copy2" : "黑晶號角","common" : "歷戰的箭簇"},
   {"name" : "Favonius Sword","type" : "Sword","rare" : 4,"copy1" : "高塔孤王的碎夢","copy2" : "黑晶號角","common" : "歷戰的箭簇"},
-  {"name" : "Festering Desire","type" : "Sword","rare" : 4,"copy1" : "獅牙鬥士的理想","copy2" : "黑晶號角","common" : "尉官的徽記"},  {"name" : "Fillet Blade","type" : "Sword","rare" : 3,"copy1" : "霧海雲間的轉還","copy2" : "霧虛燈芯","common" : "攫金鴉印"},
+  {"name" : "Festering Desire","type" : "Sword","rare" : 4,"copy1" : "獅牙鬥士的理想","copy2" : "黑晶號角","common" : "尉官的徽記"},
+  {"name" : "Fillet Blade","type" : "Sword","rare" : 3,"copy1" : "霧海雲間的轉還","copy2" : "霧虛燈芯","common" : "攫金鴉印"},
   {"name" : "Freedom Sworn","type" : "Sword","rare" : 5,"copy1" : "獅牙鬥士的理想","copy2" : "混沌爐心","common" : "禁咒繪卷"},
   {"name" : "Harbinger of Dawn","type" : "Sword","rare" : 3,"copy1" : "凜風奔狼的懷鄉","copy2" : "地脈的新芽","common" : "史萊姆原漿"},
   {"name" : "Iron Sting","type" : "Sword","rare" : 4,"copy1" : "漆黑隕鐵的一塊","copy2" : "石化的骨片","common" : "原素花蜜"},

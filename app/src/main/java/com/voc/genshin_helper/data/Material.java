@@ -74,6 +74,8 @@ public class Material {
     public int 圖比昂裝置 = 0;
     public int 未能達成超越之水 = 0;
     public int 原海麟角 = 0;
+    //add in 20240213
+    public int 凝雲鱗甲 = 0;
 
     /** LOCAL */
     public int  小燈草  = 0 ;
@@ -125,6 +127,8 @@ public class Material {
     public int  湖光鈴蘭 = 0;
     //add in 20231222
     public int  初露之源 = 0;
+    //add in 20240213
+    public int  清水玉 = 0;
 
     /** T-BOSS ASC*/
 
@@ -248,6 +252,8 @@ public class Material {
     public ArrayList<Integer> 	初生的濁水幻靈	 = new ArrayList<Integer>(Collections.nCopies(3, 0));
     //add in 20230929
     public ArrayList<Integer> 	役人的時時刻刻	 = new ArrayList<Integer>(Collections.nCopies(3, 0));
+    //add in 20240213
+    public ArrayList<Integer> 	淵光鰭翅	 = new ArrayList<Integer>(Collections.nCopies(3, 0));
 
     //-----------↑Method↑-----------↓Return↓-----------\\
 
@@ -302,7 +308,7 @@ public class Material {
                 "永續機芯","導光四面體","滅諍草蔓",
                 "蒼礫蕊羽","常暗圓環","奇械發條備件·歌裴莉婭",
                 "帝皇的決斷","奇械發條備件·科培琉司","「圖比昂裝置」",
-                "未能達成超越之水","原海麟角"
+                "未能達成超越之水","原海麟角","凝雲鱗甲"
         };
     }
     public int[] bossCountList (){
@@ -317,7 +323,7 @@ public class Material {
                 永續機芯,導光四面體,滅諍草蔓,
                 蒼礫蕊羽,常暗圓環,奇械發條備件_歌裴莉婭,
                 帝皇的決斷,奇械發條備件_科培琉司,圖比昂裝置,
-                未能達成超越之水,原海麟角
+                未能達成超越之水,原海麟角,凝雲鱗甲
         };
     }
 
@@ -368,7 +374,7 @@ public class Material {
                 "帕蒂沙蘭","沙脂蛹","悼靈花",
                 "柔燈鈴","虹彩薔薇","海露花",
                 "子探測單元","幽光星星","蒼晶螺",
-                "湖光鈴蘭","初露之源"
+                "湖光鈴蘭","初露之源","清水玉"
         };
     }
     public int[] localCountList (){
@@ -386,7 +392,7 @@ public class Material {
                 帕蒂沙蘭,沙脂蛹,悼靈花,
                 柔燈鈴,虹彩薔薇,海露花,
                 子探測單元,幽光星星,蒼晶螺,
-                湖光鈴蘭,初露之源
+                湖光鈴蘭,初露之源,清水玉
         };
     }
 
@@ -425,6 +431,7 @@ public class Material {
                 "隙間之核","外世突觸","異界生命核",
                 "濁水的一滴","濁水的一掬","初生的濁水幻靈",
                 "老舊的役人懷錶","役人的制式懷錶","役人的時時刻刻",
+                "羽狀鰭翅","月色鰭翅","淵光鰭翅",
 
         };
     }
@@ -463,7 +470,8 @@ public class Material {
                 異色結晶石.get(0),異色結晶石.get(1),異色結晶石.get(2),
                 異界生命核.get(0),異界生命核.get(1),異界生命核.get(2),
                 初生的濁水幻靈.get(0),初生的濁水幻靈.get(1),初生的濁水幻靈.get(2),
-                役人的時時刻刻.get(0),役人的時時刻刻.get(1),役人的時時刻刻.get(2)
+                役人的時時刻刻.get(0),役人的時時刻刻.get(1),役人的時時刻刻.get(2),
+                淵光鰭翅.get(0),淵光鰭翅.get(1),淵光鰭翅.get(2)
         };
     }
     public int[] commonRareList (){
@@ -742,6 +750,8 @@ public class Material {
                 case "「圖比昂裝置」": 圖比昂裝置 = addCountIntoVar(圖比昂裝置, temp_count, "BOSS"); break;
                 case "未能達成超越之水": 未能達成超越之水 = addCountIntoVar(未能達成超越之水, temp_count, "BOSS"); break;
                 case "原海麟角": 原海麟角 = addCountIntoVar(原海麟角, temp_count, "BOSS"); break;
+                //add in 20240213
+                case "凝雲鱗甲": 凝雲鱗甲 = addCountIntoVar(凝雲鱗甲, temp_count, "BOSS"); break;
             }
 
             /** LOCAL */
@@ -795,6 +805,8 @@ public class Material {
                 case "湖光鈴蘭": 湖光鈴蘭 = addCountIntoVar(湖光鈴蘭, temp_count, "LOCAL"); break;
                 //add in 20231222
                 case "初露之源": 初露之源 = addCountIntoVar(初露之源, temp_count, "LOCAL"); break;
+                //add in 20240213
+                case "清水玉": 清水玉 = addCountIntoVar(清水玉, temp_count, "LOCAL"); break;
             }
 
         }
@@ -939,6 +951,8 @@ public class Material {
             case "初生的濁水幻靈": addCountIntoVar(初生的濁水幻靈, temp_count, "COPY2"); break;
             //add in 4.1.0
             case "役人的時時刻刻": addCountIntoVar(役人的時時刻刻, temp_count, "COPY2"); break;
+            //add in 4.4.0
+            case "淵光鰭翅": addCountIntoVar(淵光鰭翅, temp_count, "COPY2"); break;
         }
 
 
@@ -1105,6 +1119,7 @@ public class Material {
             case "異界生命核" : return new String[]{"隙間之核","外世突觸","異界生命核"};
             case "初生的濁水幻靈" : return new String[]{"濁水的一滴","濁水的一掬","初生的濁水幻靈"};
             case "役人的時時刻刻" : return new String[]{"老舊的役人懷錶","役人的制式懷錶","役人的時時刻刻"};
+            case "淵光鰭翅" : return new String[]{"羽狀鰭翅","月色鰭翅","淵光鰭翅"};
             default: return new String[]{"N/A","N/A","N/A"};
         }
     }

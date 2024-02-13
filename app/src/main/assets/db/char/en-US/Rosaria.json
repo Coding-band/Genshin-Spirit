@@ -24,7 +24,7 @@
   "basic_talent": {
     "talent2_name": "Night Walk",
     "talent2_img": "rosaria_p2",
-    "talent2_desc": "At night (18:00–6:00), increases the Movement SPD of your own party members by 10%.\nDoes not take effect in Domains, Trounce Domains, or Spiral Abyss. Not stackable with Passive Talents that provide the exact same effects.",
+    "talent2_desc": "At night (18:00 – 06:00), your party members gain the Swift Stride effect: Movement SPD increased by 10%.\nDoes not take effect in Domains, Trounce Domains, or Spiral Abyss. Swift Stride does not stack.",
     "talent3_name": "Regina Probationum",
     "talent3_img": "rosaria_p3",
     "talent3_desc": "When Rosaria strikes an opponent from behind using Ravaging Confession, Rosaria's CRIT Rate increases by 12% for 5s.",

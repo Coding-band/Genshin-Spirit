@@ -27,7 +27,7 @@
     "talent2_desc": "Lors de la fabrication de décorations de type paysage, bâtiment ou enceinte, une partie des matériaux est récupérée.",
     "talent3_name": "Responsabilité d'un créateur",
     "talent3_img": "kaveh_p3",
-    "talent3_desc": "Lorsque des DGT infligés par un noyau Dendro (incluant Bourgeonnement et Exubérance) touchent Kaveh, il récupère des PV pour une valeur équivalant à 300 % de sa maîtrise élémentaire. Cet effet peut être déclenché une fois toutes les 0,5 s.",
+    "talent3_desc": "Lorsque des DGT infligés par un noyau Dendro (incluant Bourgeonnement et Exubérance) touchent Kaveh, il récupère des PV d'une valeur équivalant à 300 % de sa maîtrise élémentaire. Cet effet peut être déclenché une fois toutes les 0,5 s.",
     "talent1_name": "Extravagance d'un artisan",
     "talent1_img": "kaveh_p1",
     "talent1_desc": "Pendant la durée de Dôme peint, la maîtrise élémentaire de Kaveh augmente de 25 pts après avoir touché un ennemi avec une attaque normale, chargée ou plongeante. Cet effet peut être déclenché une fois toutes les 0,1 s et cumulé 4 fois maximum.\nCet effet est annulé lorsque les effets de Dôme peint prennent fin."

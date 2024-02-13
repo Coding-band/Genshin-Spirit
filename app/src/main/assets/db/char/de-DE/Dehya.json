@@ -25,7 +25,7 @@
   "basic_talent": {
     "talent2_name": "Weg sonniger Gerechtigkeit",
     "talent2_img": "dehya_p2",
-    "talent2_desc": "Erhöht die Bewegungs-GSW der eigenen Figuren in der Truppe tagsüber (6 bis 18 Uhr) um 10 %.\nDieser Effekt gilt nicht in Sphären, Gebietssäuberungen und im Gewundenen Abgrund und ist nicht mit passiven Talenten mit völlig gleichen Effekten stapelbar.",
+    "talent2_desc": "Verleiht den eigenen Figuren in der Truppe tagsüber (6 bis 18 Uhr) den Effekt „Schneller Schritt“: Erhöht die Bewegungs-GSW um 10 %.\nDieser Effekt gilt nicht in Sphären, Gebietssäuberungen oder im Gewundenen Abgrund und ist nicht stapelbar.",
     "talent3_name": "Unermüdlicher Beistand",
     "talent3_img": "dehya_p3",
     "talent3_desc": "Dehya erleidet, nachdem sie nach dem Auslösen von Inferno geschmolzenen Eisens – Loderndes Schwertfeld oder Flammender Löwenbiss Unzähmbares Schwertjoch zurückgeholt hat, 6 s lang 60 % weniger Schaden, der von Blut der Rotmähne stammt. 2 s Abklingzeit.\nDarüber hinaus gewährt Dehya nach dem Auslösen von Inferno geschmolzenen Eisens – Unzähmbare Flamme 9 s allen Truppenmitgliedern den Zustand „In Gold gegossener Körper“. Wenn sich Figuren im Zustand In Gold gegossener Körper im Feld des Unzähmbaren Schwertjochs befinden, erhalten sie zusätzlichen Unterbrechungs-WDS. Der Zustand In Gold gegossener Körper hat 18 s Abklingzeit.",

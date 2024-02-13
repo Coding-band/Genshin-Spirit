@@ -61,11 +61,12 @@ public class ItemRss {
     // INCLUDED 4.1 CHAR. => 20230929
     // INCLUDED 4.2 CHAR. => 20231222
     // INCLUDED 4.3 CHAR. => 20231222
+    // INCLUDED 4.4 CHAR. => 20240213
     public String[] charBirthName = {
             "Wanderer","Thoma","Chevreuse","Diona","Rosaria","朝霧冰瀬",
             "Alhaitham","Beidou","Sangonomiya Kokomi","Bennett",
             "Qiqi","Yaoyao","Shenhe","Jean","Noelle","Kamisato Ayato",
-            "Aloy","Dehya","Charlotte","Xiao","Yelan","Baizhu","Diluc",
+            "Aloy","Dehya","Xianyun","Charlotte","Xiao","Yelan","Baizhu","Diluc",
             "Candace","Collei","Gorou","Yun Jin","Fischl",
             "Arataki Itto","Lisa","Venti","Yoimiya","Cyno","Raiden Shogun","Yae Miko","Kuki Shinobu",
             "Barbara","Kaveh","Kujou Sara","Hu Tao","Voc-夜芷冰","Tartaglia","Shikanoin Heizou","Klee","Yanfei",
@@ -73,12 +74,12 @@ public class ItemRss {
             "Diona","Razor","Albedo","Kamisato Ayaka",
             "Xingqiu","Furina","Xinyan","Sayu","Eula","Nahida","Kaedehara Kazuha",
             "Xiangling","Keqing","Wriothesley","Sucrose","Kaeya",
-            "Ganyu","Nilou","Neuvillette","Layla","Dori","Tighnari","Zhongli"};
+            "Ganyu","Nilou","Neuvillette","Layla","Dori","Gaming","Tighnari","Zhongli"};
     public int[] charBirthDay = {
             3,9,10,18,24,26,
             11,14,22,29,
             3,6,10,14,21,26,
-            4,7,10,17,20,25,30,
+            4,7,11,10,17,20,25,30,
             3,8,18,21,27,
             1,6,9,21,23,26,27,28,
             5,9,14,15,19,20,24,27,28,
@@ -86,12 +87,12 @@ public class ItemRss {
             7,9,13,28,
             9,13,16,19,25,27,29,
             2,20,23,26,30,
-            2,3,18,19,21,29,31};
+            2,3,18,19,21,22,29,31};
     public int[] charBirthMonth = {
             0,0,0,0,0,
             1,1,1,1,
             2,2,2,2,2,2,
-            3,3,3,3,3,3,3,
+            3,3,3,3,3,3,3,3,
             4,4,4,4,4,
             5,5,5,5,5,5,5,5,
             6,6,6,6,6,6,6,6,6,
@@ -99,7 +100,7 @@ public class ItemRss {
             8,8,8,8,
             9,9,9,9,9,9,9,
             10,10,10,10,10,
-            11,11,11,11,11,11,11};
+            11,11,11,11,11,11,11,11};
 
 
     public static class Birthday implements Serializable {
@@ -359,11 +360,11 @@ public class ItemRss {
 
 
     public int getWeaponTypeIMG (String str, Context context){
-        if(str.equals("Bow") || str.equals(context.getString(R.string.bow))){return R.drawable.ico_bow;}
-        else if(str.equals("Catalyst") || str.equals(context.getString(R.string.catalyst))){return R.drawable.ico_catalyst;}
-        else if(str.equals("Claymore") || str.equals(context.getString(R.string.claymore))){return R.drawable.ico_claymore;}
-        else if(str.equals("Polearm") || str.equals(context.getString(R.string.polearm))){return R.drawable.ico_polearm;}
-        else if(str.equals("Sword") || str.equals(context.getString(R.string.sword))){return R.drawable.ico_sword;}
+        if(str.equals("Bow") || str.equals(context.getString(R.string.bow))|| str.equals("WEAPON_BOW")){return R.drawable.ico_bow;}
+        else if(str.equals("Catalyst") || str.equals(context.getString(R.string.catalyst)) || str.equals("WEAPON_CATALYST")){return R.drawable.ico_catalyst;}
+        else if(str.equals("Claymore") || str.equals(context.getString(R.string.claymore)) || str.equals("WEAPON_CLAYMORE")){return R.drawable.ico_claymore;}
+        else if(str.equals("Polearm") || str.equals(context.getString(R.string.polearm)) || str.equals("WEAPON_POLE")){return R.drawable.ico_polearm;}
+        else if(str.equals("Sword") || str.equals(context.getString(R.string.sword)) || str.equals("WEAPON_SWORD_ONE_HAND")){return R.drawable.ico_sword;}
         else {return R.drawable.hu_tao_unknown;}
     }
     public int getDistrictIMG (String str){
@@ -759,6 +760,9 @@ public class ItemRss {
 
     public int[] getWeaponByName(String str) {
         switch (str){
+            //Add in 20240213 - 4.4.0
+            case "Crane's Echoing Call" : return new int[] {R.string.cranes_echoing_call,R.drawable.cranes_echoing_call};
+
             //Add in 20231222 - 4.3.0
             case "Ultimate Overlord's Mega Magic Sword" : return new int[] {R.string.ultimate_overlords_mega_magic_sword,R.drawable.ultimate_overlords_mega_magic_sword};
             case "Verdict" : return new int[] {R.string.verdict,R.drawable.verdict};
@@ -1173,6 +1177,8 @@ public class ItemRss {
             //add in 20231222 - 4.3.0
             case "Ultimate Overlord's Mega Magic Sword" : return new int[] {R.string.ultimate_overlords_mega_magic_sword,R.drawable.ultimate_overlords_mega_magic_sword_gacha};
             case "Verdict" : return new int[] {R.string.verdict,R.drawable.verdict_gacha};
+            //Add in 20240213 - 4.4.0
+            case "Crane's Echoing Call" : return new int[] {R.string.cranes_echoing_call,R.drawable.cranes_echoing_call_gacha};
             default :
                 System.out.println("WEAPON+ NAME ERROR : "+str);
                 return new int[] {R.string.unknown,R.drawable.hu_tao_unknown};
@@ -1382,6 +1388,8 @@ public class ItemRss {
             //add in 20231222 - 4.3.0
             case "ultimate_overlords_mega_magic_sword" : return "Ultimate Overlord's Mega Magic Sword";
             case "verdict" : return "Verdict";
+            //add in 20240213 - 4.4.0
+            case "cranes_echoing_call" : return "Crane's Echoing Call";
 
             default: return str;
         }
@@ -1914,6 +1922,22 @@ public class ItemRss {
             case "Fish and Chips" : return new int[]{R.drawable.tcg_fish_and_chips, R.string.tcg_fish_and_chips};
             case "The Chasm: Solid Iron" : return new int[]{R.drawable.tcg_the_chasm_solid_iron, R.string.tcg_the_chasm_solid_iron};
 
+            //add in 20240213 - 4.4.0
+            case "Thoma" : return new int[]{R.drawable.tcg_thoma,R.string.tcg_thoma};
+            case "Sayu" : return new int[]{R.drawable.tcg_sayu,R.string.tcg_sayu};
+            case "Cryo Hypostasis" : return new int[]{R.drawable.tcg_cryo_hypostasis,R.string.tcg_cryo_hypostasis};
+            case "Millennial Pearl Seahorse" : return new int[]{R.drawable.tcg_millennial_pearl_seahorse,R.string.tcg_millennial_pearl_seahorse};
+            case "A Subordinate's Skills" : return new int[]{R.drawable.tcg_a_subordinates_skills,R.string.tcg_a_subordinates_skills};
+            case "Skiving: New and Improved" : return new int[]{R.drawable.tcg_skiving_new_and_improved,R.string.tcg_skiving_new_and_improved};
+            case "Sternfrost Prism" : return new int[]{R.drawable.tcg_sternfrost_prism,R.string.tcg_sternfrost_prism};
+            case "Pearl Solidification" : return new int[]{R.drawable.tcg_pearl_solidification,R.string.tcg_pearl_solidification};
+            case "Sapwood Blade" : return new int[]{R.drawable.tcg_sapwood_blade,R.string.tcg_sapwood_blade};
+            case "Veteran's Visage" : return new int[]{R.drawable.tcg_veterans_visage,R.string.tcg_veterans_visage};
+            case "Jeht" : return new int[]{R.drawable.tcg_jeht,R.string.tcg_jeht};
+            case "Silver and Melus" : return new int[]{R.drawable.tcg_silver_and_melus,R.string.tcg_silver_and_melus};
+            case "Machine Assembly Line" : return new int[]{R.drawable.tcg_machine_assembly_line,R.string.tcg_machine_assembly_line};
+            case "Sunyata Flower" : return new int[]{R.drawable.tcg_sunyata_flower,R.string.tcg_sunyata_flower};
+            case "Matsutake Meat Rolls" : return new int[]{R.drawable.tcg_matsutake_meat_rolls,R.string.tcg_matsutake_meat_rolls};
 
             default: return new int[]{R.drawable.hu_tao_unknown, R.string.unknown};
         }
@@ -1956,14 +1980,17 @@ public class ItemRss {
 
     public int[] getCharByName_BASE(String name, Context context){
         switch (name) {
-            case "Chevreuse": return new int[]{R.drawable.chevreuse_full, R.string.chevreuse, R.drawable.chevreuse_gacha_splash, R.drawable.chevreuse_ico, R.drawable.unknown_card};
-            case "Navia": return new int[]{R.drawable.navia_full, R.string.navia, R.drawable.navia_gacha_splash, R.drawable.navia_ico, R.drawable.unknown_card};
+            case "Xianyun": return new int[]{R.drawable.xianyun_full, R.string.xianyun, R.drawable.xianyun_gacha_splash, R.drawable.xianyun_ico, R.drawable.xiangling_card};
+            case "Gaming": return new int[]{R.drawable.gaming_full, R.string.gaming, R.drawable.gaming_gacha_splash, R.drawable.gaming_ico, R.drawable.gaming_card};
 
-            case "Charlotte": return new int[]{R.drawable.charlotte_full, R.string.charlotte, R.drawable.charlotte_gacha_splash, R.drawable.charlotte_ico, R.drawable.unknown_card};
-            case "Furina": return new int[]{R.drawable.furina_full, R.string.furina, R.drawable.furina_gacha_splash, R.drawable.furina_ico, R.drawable.unknown_card};
+            case "Chevreuse": return new int[]{R.drawable.chevreuse_full, R.string.chevreuse, R.drawable.chevreuse_gacha_splash, R.drawable.chevreuse_ico, R.drawable.chevreuse_card};
+            case "Navia": return new int[]{R.drawable.navia_full, R.string.navia, R.drawable.navia_gacha_splash, R.drawable.navia_ico, R.drawable.navia_card};
+
+            case "Charlotte": return new int[]{R.drawable.charlotte_full, R.string.charlotte, R.drawable.charlotte_gacha_splash, R.drawable.charlotte_ico, R.drawable.charlotte_card};
+            case "Furina": return new int[]{R.drawable.furina_full, R.string.furina, R.drawable.furina_gacha_splash, R.drawable.furina_ico, R.drawable.furina_card};
 
             case "Neuvillette": return new int[]{R.drawable.neuvillette_full, R.string.neuvillette, R.drawable.neuvillette_gacha_splash, R.drawable.neuvillette_ico, R.drawable.neuvillette_card};
-            case "Wriothesley": return new int[]{R.drawable.wriothesley_full, R.string.wriothesley, R.drawable.wriothesley_gacha_splash, R.drawable.wriothesley_ico, R.drawable.unknown_card};
+            case "Wriothesley": return new int[]{R.drawable.wriothesley_full, R.string.wriothesley, R.drawable.wriothesley_gacha_splash, R.drawable.wriothesley_ico, R.drawable.wriothesley_card};
 
             case "Lynette": return new int[]{R.drawable.lynette_full, R.string.lynette, R.drawable.lynette_gacha_splash, R.drawable.lynette_ico, R.drawable.lynette_card};
             case "Lyney": return new int[]{R.drawable.lyney_full, R.string.lyney, R.drawable.lyney_gacha_splash, R.drawable.lyney_ico, R.drawable.lyney_card};
@@ -2185,6 +2212,12 @@ public class ItemRss {
         else if(name.equals("Chevreuse") || name.equals("夏沃蕾") || name.equals("夏沃蕾") || name.equals("シュヴルーズ") || name.equals("Шеврёз")){ return "Chevreuse";}
         else if(name.equals("Navia") || name.equals("娜维娅") || name.equals("娜維婭") || name.equals("ナヴィア") || name.equals("Навия")){ return "Navia";}
 
+        else if(name.equals("Chevreuse") || name.equals("夏沃蕾") || name.equals("夏沃蕾") || name.equals("シュヴルーズ") || name.equals("Шеврёз")){ return "Chevreuse";}
+        else if(name.equals("Navia") || name.equals("娜维娅") || name.equals("娜維婭") || name.equals("ナヴィア") || name.equals("Навия")){ return "Navia";}
+
+        else if(name.equals("Xianyun") || name.equals("闲云") || name.equals("閒雲") || name.equals("閑雲") || name.equals("Сянь Юнь")){ return "Xianyun";}
+        else if(name.equals("Gaming") || name.equals("嘉明") || name.equals("嘉明") || name.equals("嘉明") || name.equals("Ка Мин")){ return "Gaming";}
+
         else if(name.equals("Traveler-Anemo") || name.equals("旅行者(風)") || name.equals("旅行者(风)") || name.equals("旅人 (風)") || name.equals("Путешественник(Анемо)")){ return "Traveler-Anemo";}
         else if(name.equals("Traveler-Electro") || name.equals("旅行者(岩)") || name.equals("旅行者(岩)") || name.equals("旅人 (岩)") || name.equals("Путешественник(Гео)")){ return "Traveler-Electro";}
         else if(name.equals("Traveler-Geo") || name.equals("旅行者(雷)") || name.equals("旅行者(雷)") || name.equals("旅人 (雷)") || name.equals("Путешественник(Электро)")){ return "Traveler-Geo";}
@@ -2341,6 +2374,9 @@ public class ItemRss {
                 return R.drawable.water_that_failed_to_transcend;
             case "原海麟角":
                 return R.drawable.fontemer_unihorn;
+            //add in 20240213
+            case "凝雲鱗甲":
+                return R.drawable.cloudseam_scale;
 
             /** Local*/
             case "小燈草":
@@ -2432,6 +2468,9 @@ public class ItemRss {
             //add in 20231222
             case "初露之源":
                 return R.drawable.spring_of_the_first_dewdrop;
+            //add in 20240213
+            case "清水玉":
+                return R.drawable.clearwater_jade;
 
             /** T-Boss*/
             case "北風之環":
@@ -2817,6 +2856,13 @@ public class ItemRss {
                 return R.drawable.servants_standard_pocket_watch;
             case "役人的時時刻刻":
                 return R.drawable.servants_constancy;
+            //add in 20240213
+            case "羽狀鰭翅":
+                return R.drawable.feathery_fin;
+            case "月色鰭翅":
+                return R.drawable.lunar_fin;
+            case "淵光鰭翅":
+                return R.drawable.chasmlight_fin;
 
             /** T-Book*/
             case "「自由」的教導":
@@ -3509,26 +3555,42 @@ public class ItemRss {
      * @param jsonObject : including KEY `effect`, also maybe include `r1`, `r2`, etc...
      * @return Combined Effect String
      */
-    public static String combineEffectStatus(JSONObject jsonObject, String effectKey) {
+    public static String combineEffectStatus(JSONObject jsonObject) {
         try{
             int rMax = 0;
             while (jsonObject.has("r"+String.valueOf(rMax+1))){
                 rMax++;
             }
 
-            String effect = jsonObject.getString(effectKey);
+            String effectKey = jsonObject.has("effectTemplateRaw") ? "effectTemplateRaw" : "effect";
+            String effect = jsonObject.has("effectTemplateRaw") ? jsonObject.getString("effectTemplateRaw") : jsonObject.getString("effect");
 
-            if (rMax >= 1){
-                for (int rPerLen = 0 ; rPerLen < jsonObject.getJSONArray("r1").length() ; rPerLen++){
-                    String tmpValueCombine = "";
-                    for (int x = 1 ;x <= rMax ; x++){
-                        tmpValueCombine += (jsonObject.getJSONArray("r"+String.valueOf(x)).get(rPerLen) + ((x < (rMax)) ? "/" : ""));
+            if(effectKey.equals("effectTemplateRaw")){
+                if (rMax >= 1){
+                    for (int rPerLen = 0 ; rPerLen < jsonObject.getJSONObject("r1").getJSONArray("values").length() ; rPerLen++){
+                        String tmpValueCombine = "";
+                        for (int x = 1 ;x <= rMax ; x++){
+                            tmpValueCombine += (jsonObject.getJSONObject("r"+String.valueOf(x)).getJSONArray("values").get(rPerLen) + ((x < (rMax)) ? "/" : ""));
+                        }
+                        effect = effect.replace("{"+String.valueOf(rPerLen)+"}", tmpValueCombine);
                     }
-                    effect = effect.replace("{"+String.valueOf(rPerLen)+"}", tmpValueCombine);
+                    return effect;
+                }else{
+                    return jsonObject.getString(jsonObject.getString(effectKey));
                 }
-                return effect;
             }else{
-                return jsonObject.getString(jsonObject.getString(effectKey));
+                if (rMax >= 1){
+                    for (int rPerLen = 0 ; rPerLen < jsonObject.getJSONArray("r1").length() ; rPerLen++){
+                        String tmpValueCombine = "";
+                        for (int x = 1 ;x <= rMax ; x++){
+                            tmpValueCombine += (jsonObject.getJSONArray("r"+String.valueOf(x)).get(rPerLen) + ((x < (rMax)) ? "/" : ""));
+                        }
+                        effect = effect.replace("{"+String.valueOf(rPerLen)+"}", tmpValueCombine);
+                    }
+                    return effect;
+                }else{
+                    return jsonObject.getString(jsonObject.getString(effectKey));
+                }
             }
         }catch (JSONException e) {
             throw new RuntimeException(e);

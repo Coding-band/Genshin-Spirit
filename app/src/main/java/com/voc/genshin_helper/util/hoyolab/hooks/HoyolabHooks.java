@@ -146,6 +146,7 @@ public class HoyolabHooks {
                 HoyolabRequestType.Method.GET
         );
 
+
         if (response.getRetcode() != 0){
             Toast.makeText(context, "retcode "+response.getRetcode()+" : "+(response.getMessage() == null ? "null" : response.getMessage()), Toast.LENGTH_SHORT).show();
             LogExport.export("HoyolabHooks","genshinCommonGetData() -> "+url, "retcode "+response.getRetcode()+" : "+(response.getMessage() == null ? "null" : response.getMessage()), context, DAILYMEMOV2);

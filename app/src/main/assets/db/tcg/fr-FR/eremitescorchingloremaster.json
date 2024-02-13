@@ -1,6 +1,7 @@
 {
 	"id": 2303,
 	"name": "Lettrée incandescente des Érémites",
+	"shareid": 285,
 	"hp": 10,
 	"maxenergy": 2,
 	"tags": [
@@ -84,6 +85,36 @@
 			"description": "(Passif) Lorsque le personnage a subi des DGT : Il obtient 1 charge s'il a 7 PV ou moins. (Limité à 1 fois par partie)",
 			"typetag": "GCG_SKILL_TAG_PASSIVE",
 			"type": "Capacité passive",
+			"playcost": []
+		},
+		{
+			"id": 23035,
+			"name": "",
+			"descriptionraw": "Le compteur du personnage est effacé au début de chaque manche.",
+			"descriptionreplaced": "Le compteur du personnage est effacé au début de chaque manche.",
+			"description": "Le compteur du personnage est effacé au début de chaque manche.",
+			"typetag": "GCG_SKILL_TAG_NONE",
+			"type": "",
+			"playcost": []
+		},
+		{
+			"id": 23036,
+			"name": "Scorpion ardent : Posture protectrice",
+			"descriptionraw": "Au début de chaque manche, le bouclier est actualisé si une ou plusieurs invocations sont sur le terrain.",
+			"descriptionreplaced": "Au début de chaque manche, le bouclier est actualisé si une ou plusieurs invocations sont sur le terrain.",
+			"description": "Au début de chaque manche, le bouclier est actualisé si une ou plusieurs invocations sont sur le terrain.",
+			"typetag": "GCG_SKILL_TAG_NONE",
+			"type": "",
+			"playcost": []
+		},
+		{
+			"id": 23037,
+			"name": "Scorpion ardent : Posture protectrice",
+			"descriptionraw": "Au début de chaque manche, le bouclier est actualisé si une ou plusieurs invocations sont sur le terrain. (aptitude)",
+			"descriptionreplaced": "Au début de chaque manche, le bouclier est actualisé si une ou plusieurs invocations sont sur le terrain. (aptitude)",
+			"description": "Au début de chaque manche, le bouclier est actualisé si une ou plusieurs invocations sont sur le terrain. (aptitude)",
+			"typetag": "GCG_SKILL_TAG_NONE",
+			"type": "",
 			"playcost": []
 		}
 	]

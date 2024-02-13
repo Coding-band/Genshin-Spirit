@@ -16,7 +16,7 @@
     "normal_desc3": "Schlägt beim Fallen aus der Luft auf den Boden, greift alle Gegner in der Bahn an und verursacht beim Aufkommen Flächenschaden.",
     "element_name": "Lampe des Dschinns – Sorgenbefreiende Kanone",
     "element_img": "dori_s2",
-    "element_desc": "Die Lampe feuert eine sorgenbefreiende Kanone auf Gegner ab und verursacht Elektro-Schaden.<br>Trifft die sorgenbefreiende Kanone, erzeugt sie 2 Kundendienst-Kanonen, die die Gegner automatisch verfolgen und Elektro-Schaden verursachen.<br><br><i>Es heißt, dass Dori jede Sorge nehmen kann ... für den richtigen Preis.</i>",
+    "element_desc": "Die Lampe feuert eine sorgenbefreiende Kanonenkugel auf Gegner ab und verursacht Elektro-Schaden.<br>Trifft die sorgenbefreiende Kanonenkugel, erzeugt sie 2 Kundendienst-Kanonenkugeln, die die Gegner automatisch verfolgen und Elektro-Schaden verursachen.<br><br><i>Es heißt, dass Dori jede Sorge nehmen kann ... für den richtigen Preis.</i>",
     "final_name": "Zuneigung von Alcazarzaray",
     "final_img": "dori_s3",
     "final_desc": "Beschwört den Flaschengeist herauf, um den Kunden verschiedenste Arten von Hilfe zu geben.\n<br>Flaschengeist<br>Verbindet sich mit der Figur in der Nähe:<br>· Stellt der damit verbundenen Figur fortlaufend LP auf Basis von Doris max. LP wieder her.<br>· Stellt dieser Figur fortlaufend Elementarenergie wieder her.<br>· Verleiht dieser Figur das Elektro-Attribut.<br><br>Berührt das Verbindungsstück zwischen dem Flaschengeist und der Figur die Gegner, fügt es diesen alle 0,4 s 1-mal Elektro-Schaden zu.<br><br>Gleichzeitig kann immer nur höchstens 1 Flaschengeist existieren.<br><br><i>„Hmm? Du willst diese Lampe? Dafür hast du aber einen richtig guten Geschmack! Leider ist sie unschätzbar und nicht zu verkaufen. Sagen wir mal so, du wirst das Maskottchen an deiner Seite auch um keinen Preis der Welt verkaufen, oder?“</i>"
@@ -30,12 +30,12 @@
     "talent3_desc": "Verringert die Abklingzeit der Fähigkeit Lampe des Dschinns – Sorgenbefreiende Kanone um 1 s, wenn die mit dem Flaschengeist verbundene Figur Reaktionen wie „Unter Strom“, „Supraleiter“, „Überladen“, „Urwuchs“, „Suprawuchs“, „Supraspross“, „Elektro-Verwirbelung“ und „Kristallisation mit Elektro-Kraft“ ausgelöst hat.\n3 s Abklingzeit.",
     "talent1_name": "Zinseszinsen",
     "talent1_img": "dori_p1",
-    "talent1_desc": "Stellt Dori pro 100 % Aufladerate, die sie besitzt, 5 Punkte Elementarenergie wieder her, wenn sorgenbefreiende Kanonen oder Kundendienst-Kanonen der Fähigkeit Lampe des Dschinns – Sorgenbefreiende Kanone Gegner treffen.\nBis zu 15 Punkte Elementarenergie können auf diese Weise höchstens einmal pro Lampe des Dschinns – Sorgenbefreiende Kanone wiederhergestellt werden."
+    "talent1_desc": "Stellt Dori pro 100 % Aufladerate, die sie besitzt, 5 Punkte Elementarenergie wieder her, wenn sorgenbefreiende Kanonenkugeln oder Kundendienst-Kanonenkugeln der Fähigkeit Lampe des Dschinns – Sorgenbefreiende Kanone Gegner treffen.\nBis zu 15 Punkte Elementarenergie können auf diese Weise höchstens einmal pro Lampe des Dschinns – Sorgenbefreiende Kanone wiederhergestellt werden."
   },
   "sof": {
     "sof1_name": "Zusatzinvestition",
     "sof1_img": "dori_c1",
-    "sof1_desc": "Erhöht die Anzahl der beim Treffen mit der sorgenbefreienden Kanone entstehenden Kundendienst-Kanonen um 1.",
+    "sof1_desc": "Erhöht die Anzahl der beim Treffen von sorgenbefreienden Kanonenkugeln entstehenden Kundendienst-Kanonenkugeln um 1.",
     "sof2_name": "Sonderfranchise",
     "sof2_img": "dori_c2",
     "sof2_desc": "Feuert während eines Kampfes von der Position der verbundenen Figur eine Dschinn-Kanone ab und verursacht Schaden in Höhe von 50 % ANG von Dori, wenn der Flaschengeist die mit ihm verbundene Figur heilt.",

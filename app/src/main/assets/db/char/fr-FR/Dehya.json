@@ -25,13 +25,13 @@
   "basic_talent": {
     "talent2_name": "Voie ensoleillée",
     "talent2_img": "dehya_p2",
-    "talent2_desc": "Augmente la VIT de déplacement de vos personnages dans l'équipe pendant la journée (06 h 00 - 18 h 00) de 10 %.\nCet effet ne s'applique ni dans les donjons, ni dans les Donjons de la conquête, ni dans les Profondeurs spiralées, et ne peut être cumulé avec d'autres aptitudes passives aux effets identiques.",
+    "talent2_desc": "La journée (06 h 00 - 18 h 00), vos personnages dans l'équipe obtiennent l'effet Foulée célère : augmente la VIT de déplacement de 10 %.\nCet effet ne s'applique pas dans les donjons, dans les Donjons de la conquête et dans les Profondeurs spiralées, et ne peut pas être cumulé.",
     "talent3_name": "Secours sans faille",
     "talent3_img": "dehya_p3",
     "talent3_desc": "Pendant 6 s après que Dehya récupère un sanctuaire ardent en utilisant Enfer en fusion : Champ flamboyant ou Morsure léonine, les DGT que Dehya subit du sang de crinière rouge diminuent de 60 %. Cet effet peut être déclenché une fois toutes les 2 s.\nDe plus, pendant 9 s après que Dehya déclenche Enfer en fusion : Flamme indomptable, elle accorde l'état Forgé d'or à tous les personnages de l'équipe : augmente davantage la RÉS à l'interruption des personnages à l'intérieur d'une zone de sanctuaire ardent. L'état Forgé d'or peut être déclenché une fois toutes les 18 s.",
     "talent1_name": "Rectitude",
     "talent1_img": "dehya_p1",
-    "talent1_desc": "Lorsque ses PV sont inférieurs à 40 %, Dehya les restaure pour une valeur équivalant à 20 % de ses PV max, puis 6 % de ses PV max toutes les 2 s pendant 10 s. Cet effet peut être déclenché une fois toutes les 20 s."
+    "talent1_desc": "Lorsque ses PV sont inférieurs à 40 %, Dehya les restaure d'une valeur équivalant à 20 % de ses PV max, puis 6 % de ses PV max toutes les 2 s pendant 10 s. Cet effet peut être déclenché une fois toutes les 20 s."
   },
   "sof": {
     "sof1_name": "Brillante flamme d'incandescence",
@@ -45,7 +45,7 @@
     "sof3_desc": "Niveau d'aptitude Morsure léonine +3.\nNiveau max : 15",
     "sof4_name": "Liant serment de respect",
     "sof4_img": "dehya_c4",
-    "sof4_desc": "Lorsqu'un poing de crinière enflammée ou un pied plongeant d'incinération de Morsure léonine touche un ennemi, Dehya récupère 1,5 pt d'énergie élémentaire et se soigne pour une valeur équivalant à 2,5 % de ses PV max. Cet effet peut être déclenché une fois toutes les 0,2 s.",
+    "sof4_desc": "Lorsqu'un poing de crinière enflammée ou un pied plongeant d'incinération de Morsure léonine touche un ennemi, Dehya récupère 1,5 pt d'énergie élémentaire et se soigne d'une valeur équivalant à 2,5 % de ses PV max. Cet effet peut être déclenché une fois toutes les 0,2 s.",
     "sof5_name": "Désinhibant alpha de liberté",
     "sof5_img": "dehya_c5",
     "sof5_desc": "Niveau d'aptitude Enfer en fusion +3.\nNiveau max : 15",

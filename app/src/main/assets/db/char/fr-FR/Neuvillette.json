@@ -51,6 +51,6 @@
     "sof5_desc": "Niveau d'aptitude Ô marées, je reviens +3.\nNiveau max : 15",
     "sof6_name": "Récompense du courroux",
     "sof6_img": "neuvillette_c6",
-    "sof6_desc": "En utilisant l'attaque chargée « Jugement équitable », Neuvillette peut aspirer les gouttes d'eau de source à portée. Chaque goutte absorbée permet de prolonger la durée de l'attaque chargée « Jugement équitable » de 1 s.\nDe plus, lorsque l'attaque chargée « Jugement équitable » touche un ennemi, 2 torrents supplémentaires sont libérés toutes les 2 s, chacun infligeant des DGT Hydro pour une valeur équivalant à 10 % des PV max de Neuvillette. Les DGT infligés de cette manière sont considérés comme des DGT de l'attaque chargée « Jugement équitable »."
+    "sof6_desc": "En utilisant l'attaque chargée « Jugement équitable », Neuvillette peut aspirer les gouttes d'eau de source à portée. Chaque goutte absorbée permet de prolonger la durée de l'attaque chargée « Jugement équitable » de 1 s.\nDe plus, lorsque l'attaque chargée « Jugement équitable » touche un ennemi, 2 torrents supplémentaires sont libérés toutes les 2 s, chacun infligeant des DGT Hydro d'une valeur équivalant à 10 % des PV max de Neuvillette. Les DGT infligés de cette manière sont considérés comme des DGT de l'attaque chargée « Jugement équitable »."
   }
 }

@@ -1,4 +1,7 @@
 [
+  {"name":"Gaming","element":"Pyro","rare":4,"weapon":"Claymore","isComing":0,"nation":"Liyue","sex":"Male","mainStat":"ATK","birth":"12/22"},
+  {"name":"Xianyun","element":"Anemo","rare":5,"weapon":"Catalyst","isComing":0,"nation":"Liyue","sex":"Female","mainStat":"ATK","birth":"04/11"},
+
   {"name":"Chevreuse","element":"Pyro","rare":4,"weapon":"Polearm","isComing":0,"nation":"Fontaine","sex":"Female","mainStat":"HP","birth":"01/10"},
   {"name":"Navia","element":"Geo","rare":5,"weapon":"Claymore","isComing":0,"nation":"Fontaine","sex":"Female","mainStat":"CritDMG","birth":"08/16"},
 

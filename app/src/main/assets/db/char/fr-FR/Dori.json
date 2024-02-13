@@ -50,6 +50,6 @@
     "sof5_desc": "Niveau d'aptitude Lampe de protection : Canon pacificateur +3.\nNiveau max : 15",
     "sof6_name": "Poids léger",
     "sof6_img": "dori_c6",
-    "sof6_desc": "Après avoir utilisé Lampe de protection : Canon pacificateur, Dori obtient les effets suivants pendant 3 s :\n· Enchantement Électro.<br>· Si une attaque normale touche un ennemi, tous les personnages de l'équipe à proximité récupèrent des PV pour une valeur équivalant à 4 % des PV max de Dori. Les PV peuvent être restaurés une fois toutes les 0,1 s de cette manière."
+    "sof6_desc": "Après avoir utilisé Lampe de protection : Canon pacificateur, Dori obtient les effets suivants pendant 3 s :\n· Enchantement Électro.<br>· Si une attaque normale touche un ennemi, tous les personnages de l'équipe à proximité récupèrent des PV d'une valeur équivalant à 4 % des PV max de Dori. Les PV peuvent être restaurés une fois toutes les 0,1 s de cette manière."
   }
 }

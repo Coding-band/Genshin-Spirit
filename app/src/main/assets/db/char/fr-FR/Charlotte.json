@@ -35,7 +35,7 @@
   "sof": {
     "sof1_name": "Une vérification des faits",
     "sof1_img": "charlotte_c1",
-    "sof1_desc": "Lorsque Pose : Corroboration complète a effectué un soin sur un personnage, ce dernier obtient une marque de vérification pendant 6 s, qui le soigne une fois toutes les 2 s pour une valeur équivalant à 80 % de l'ATQ de Charlotte.",
+    "sof1_desc": "Lorsque Pose : Corroboration complète a effectué un soin sur un personnage, ce dernier obtient une marque de vérification pendant 6 s, qui le soigne une fois toutes les 2 s d'une valeur équivalant à 80 % de l'ATQ de Charlotte.",
     "sof2_name": "Une poursuite de la vérité",
     "sof2_img": "charlotte_c2",
     "sof2_desc": "Lorsque Monsieur Vérité touche 1, 2, ou au moins 3 ennemis pendant Cadrage : Composition gelée, l'ATQ de Charlotte augmente respectivement de 10 %, 20 % ou 30 % pendant 12 s.",
@@ -50,6 +50,6 @@
     "sof5_desc": "Niveau d'aptitude Cadrage : Composition gelée +3.\nNiveau max : 15",
     "sof6_name": "Un résumé de pertinence",
     "sof6_img": "charlotte_c6",
-    "sof6_desc": "Lorsqu'une attaque normale ou chargée du personnage déployé a touché un ennemi affligé de l'effet Impression ciblée de Cadrage : Composition gelée, Monsieur Vérité effectue une attaque coordonnée qui inflige des DGT Cryo de zone d'une valeur équivalant à 180 % de l'ATQ de Charlotte et soigne les PV des personnages déployés à portée de l'attaque pour une valeur équivalant à 42 % de l'ATQ de Charlotte. Cet effet peut être déclenché une fois toutes les 6 s et les DGT et soins déclenchés de cette manière sont considérés comme provenant du déchaînement élémentaire de Charlotte."
+    "sof6_desc": "Lorsqu'une attaque normale ou chargée du personnage déployé a touché un ennemi affligé de l'effet Impression ciblée de Cadrage : Composition gelée, Monsieur Vérité effectue une attaque coordonnée qui inflige des DGT Cryo de zone d'une valeur équivalant à 180 % de l'ATQ de Charlotte et soigne les PV des personnages déployés à portée de l'attaque d'une valeur équivalant à 42 % de l'ATQ de Charlotte. Cet effet peut être déclenché une fois toutes les 6 s et les DGT et soins déclenchés de cette manière sont considérés comme provenant du déchaînement élémentaire de Charlotte."
   }
 }

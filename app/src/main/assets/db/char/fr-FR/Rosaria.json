@@ -24,7 +24,7 @@
   "basic_talent": {
     "talent2_name": "Balade nocturne",
     "talent2_img": "rosaria_p2",
-    "talent2_desc": "Augmente la VIT de déplacement de vos personnages dans l'équipe pendant la nuit (18 h 00 - 06 h 00) de 10 %.\nCet effet ne s'applique ni dans les donjons, ni dans les Donjons de la conquête, ni dans les Profondeurs spiralées, et ne peut être cumulé avec d'autres aptitudes passives aux effets identiques.",
+    "talent2_desc": "La nuit (18 h 00 - 06 h 00), vos personnages dans l'équipe obtiennent l'effet Foulée célère : augmente la VIT de déplacement de 10 %.\nCet effet ne s'applique pas dans les donjons, dans les Donjons de la conquête et dans les Profondeurs spiralées, et ne peut pas être cumulé.",
     "talent3_name": "Confession forcée",
     "talent3_img": "rosaria_p3",
     "talent3_desc": "Le taux CRIT de Rosalia augmente de 12 % pendant 5 s lorsqu'elle frappe un ennemi de dos avec Confession des péchés.",

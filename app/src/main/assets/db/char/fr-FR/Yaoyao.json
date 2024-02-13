@@ -30,7 +30,7 @@
     "talent3_desc": "Pendant l'état Héritage adeptal de Coucher de lune de jade, Yaoyao lance constamment des radis de jade blanc sur les ennemis proches lorsqu'elle sprinte, saute ou court. Un radis de jade blanc peut être lancé une fois toutes les 0,6 s de cette manière.",
     "talent1_name": "Empathie",
     "talent1_img": "yaoyao_p1",
-    "talent1_desc": "Lorsqu'un radis de jade blanc explose, les personnages déployés dans la zone d'effet récupèrent des PV pour une valeur équivalant à 0,8 % des PV max de Yaoyao toutes les secondes pendant 5 s."
+    "talent1_desc": "Lorsqu'un radis de jade blanc explose, les personnages déployés dans la zone d'effet récupèrent des PV d'une valeur équivalant à 0,8 % des PV max de Yaoyao toutes les secondes pendant 5 s."
   },
   "sof": {
     "sof1_name": "Tutelle",

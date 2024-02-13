@@ -86,5 +86,8 @@
   {"name":"Furina","rare": 5,"crystal":"滌淨青金","boss":"未能達成超越之水","local":"湖光鈴蘭","common":"原素花蜜","book":"「正義」的哲學","t_boss":"無光質塊"},
  
   {"name":"Chevreuse","rare": 4,"crystal":"燃願瑪瑙","boss":"原海麟角","local":"柔燈鈴","common":"奇械機芯齒輪","book":"「秩序」的哲學","t_boss":"無光渦眼"},
-  {"name":"Navia","rare": 5,"crystal":"堅牢黃玉","boss":"奇械發條備件·科培琉司","local":"初露之源","common":"異色結晶石","book":"「公平」的哲學","t_boss":"無光絲線"}
+  {"name":"Navia","rare": 5,"crystal":"堅牢黃玉","boss":"奇械發條備件·科培琉司","local":"初露之源","common":"異色結晶石","book":"「公平」的哲學","t_boss":"無光絲線"},
+
+  {"name":"Gaming","rare": 4,"crystal":"燃願瑪瑙","boss":"帝皇的決斷","local":"星螺","common":"史萊姆原漿","book":"「繁榮」的哲學","t_boss":"無光質塊"},
+  {"name":"Xianyun","rare": 5,"crystal":"自在松石","boss":"凝雲鱗甲","local":"清水玉","common":"禁咒繪卷","book":"「黃金」的哲學","t_boss":"無光渦眼"}
 ]

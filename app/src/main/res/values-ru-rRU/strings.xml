@@ -1601,4 +1601,22 @@
     <string name="tcg_flickering_four_leaf_sigil">Мерцающий четырёхлистный символ</string>
     <string name="tcg_fish_and_chips">Рыба с картофелем во фритюре</string>
     <string name="tcg_the_chasm_solid_iron">Разлом: Штурм</string>
+    <string name="xianyun">Сянь Юнь</string>
+    <string name="gaming">Ка Мин</string>
+    <string name="cranes_echoing_call">Звонкий клич журавля</string>
+    <string name="tcg_thoma">Тома</string>
+    <string name="tcg_sayu">Саю</string>
+    <string name="tcg_cryo_hypostasis">Крио гипостазис</string>
+    <string name="tcg_millennial_pearl_seahorse">Морской конёк тысячелетней жемчужины</string>
+    <string name="tcg_a_subordinates_skills">Проницательность слуги</string>
+    <string name="tcg_skiving_new_and_improved">Новая форма лени</string>
+    <string name="tcg_sternfrost_prism">Морозящая призма</string>
+    <string name="tcg_pearl_solidification">Твердеющий перламутр</string>
+    <string name="tcg_sapwood_blade">Деревянный клинок</string>
+    <string name="tcg_veterans_visage">Лик старого солдата</string>
+    <string name="tcg_jeht">Джехт</string>
+    <string name="tcg_silver_and_melus">Сильвер и Мелус</string>
+    <string name="tcg_machine_assembly_line">Линия по сборке меков</string>
+    <string name="tcg_sunyata_flower">Цветок шуньяты</string>
+    <string name="tcg_matsutake_meat_rolls">Голубцы с грибами</string>
 </resources>

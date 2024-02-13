@@ -24,7 +24,7 @@
   "basic_talent": {
     "talent2_name": "Dạ Hành",
     "talent2_img": "rosaria_p2",
-    "talent2_desc": "Buổi tối (18h đến 6h), tốc độ di chuyển của nhân vật trong đội của bản thân tăng 10%.\nHiệu quả này vô hiệu trong Bí Cảnh, Vùng Đất Thảo Phạt, La Hoàn Thâm Cảnh, không thể cộng dồn với thiên phú cố định có hiệu quả tương đồng.",
+    "talent2_desc": "Buổi tối (18h đến 6h), nhân vật trong đội của bản thân nhận hiệu ứng Tốc Hành: Tốc độ di chuyển tăng 10%.\nHiệu quả này vô hiệu trong Bí Cảnh, Vùng Đất Thảo Phạt, La Hoàn Thâm Cảnh. Hiệu quả Tốc Hành không thể cộng dồn.",
     "talent3_name": "Nghe U Ảnh Sám Hối",
     "talent3_img": "rosaria_p3",
     "talent3_desc": "Khi Lời Cáo Tội tấn công từ phía sau của mục tiêu, tỷ lệ bạo kích của Rosaria tăng 12%, kéo dài 5s.",

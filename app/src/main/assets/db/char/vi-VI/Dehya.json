@@ -25,7 +25,7 @@
   "basic_talent": {
     "talent2_name": "Hành Trình Nắng Nóng",
     "talent2_img": "dehya_p2",
-    "talent2_desc": "Vào ban ngày (6h đến 18h), tốc độ di chuyển của nhân vật trong đội của bản thân tăng 10%.\nHiệu quả này vô hiệu trong Bí Cảnh, Vùng Đất Thảo Phạt, La Hoàn Thâm Cảnh, không thể cộng dồn với thiên phú cố định có hiệu quả tương đồng.",
+    "talent2_desc": "Ban ngày (6h đến 18h), nhân vật trong đội của bản thân nhận hiệu ứng Tốc Hành: Tốc độ di chuyển tăng 10%.\nHiệu quả này vô hiệu trong Bí Cảnh, Vùng Đất Thảo Phạt, La Hoàn Thâm Cảnh. Hiệu quả Tốc Hành không thể cộng dồn.",
     "talent3_name": "Không Ngại Giúp Đỡ",
     "talent3_img": "dehya_p3",
     "talent3_desc": "Trong 6s sau khi Dehya thu hồi Thánh Địa Sôi Trào từ kỹ năng Địa Ngục Nóng Chảy - Lửa Thiêng Bùng Cháy hoặc Sư Tử Lửa Ngấu Nghiến, giảm 60% sát thương phải chịu từ Huyết Mạch Lửa Đỏ mà Dehya phải gánh chịu, hiệu quả này mỗi 2s tối đa kích hoạt một lần.\nNgoài ra, trong 9s sau khi Dehya thi triển Địa Ngục Nóng Chảy - Lửa Thiêng Bất Khuất sẽ khiến tất cả nhân vật trong đội nhận được trạng thái \"Thể Trạng Thép\". Nhân vật trong trạng thái Thể Trạng Thép khi ở trong khu vực Thánh Địa Sôi Trào sẽ nhận thêm khả năng kháng gián đoạn. Mỗi 18s tối đa sản sinh trạng thái Thể Trạng Thép một lần.",

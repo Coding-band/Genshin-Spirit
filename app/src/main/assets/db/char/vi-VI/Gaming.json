@@ -1,13 +1,13 @@
 {
-  "nick": "???",
-  "occupation": "???",
+  "nick": "Tuấn Nghê Ngẩng Đầu",
+  "occupation": "Kiếm Hạp Tiêu Cục",
   "area": "Liyue",
   "rare": "4",
   "weapon": "Claymore",
   "element": "Pyro",
   "constellation": "Cung Tỉnh Sư",
-  "desc": "测试角色",
-  "birth": "01/01",
+  "desc": "Tiêu sư của Kiếm Hạp Tiêu Cục, người ra quyết định của Đội Múa Thú Uy Vũ.",
+  "birth": "12/22",
   "battle_talent": {
     "normal_name": "Tấn Công Thường - Hái Sao",
     "normal_img": "gaming_s1",
@@ -16,26 +16,26 @@
     "normal_desc3": "Đáp xuống đất từ trên không, tấn công kẻ địch trên đường và gây sát thương phạm vi khi chạm đất.",
     "element_name": "Thụy Thú Thăng Thiên",
     "element_img": "gaming_s2",
-    "element_desc": "Dùng kỹ thuật múa thú lao về phía trước để tấn công, khi trúng sẽ nhảy lên cao.<br>Gaming khi nhảy lên không trung từ Kỹ Năng Nguyên Tố - Thụy Thú Thăng Thiên, nếu thực hiện Tấn Công Khi Đáp thì sẽ thi triển Tấn Công Khi Đáp - Đạp Vân Hiến Thụy mạnh mẽ hơn.<br><br>Tấn Công Khi Đáp - Đạp Vân Hiến Thụy<br>Sát thương gây ra từ Tấn Công Khi Đáp được thi triển bởi Kỹ Năng Nguyên Tố - Thụy Thú Thăng Thiên sẽ chuyển hóa thành Sát Thương Nguyên Tố Hỏa, đồng thời khi tiếp đất sẽ khiến Gaming tiêu hao một lượng HP nhất định, cách thức này khiến HP của Gaming tối đa giảm xuống đến 10%.<br>Sát thương của Đạp Vân Hiến Thụy sẽ được xem là sát thương Tấn Công Khi Đáp.<br><br><i>\"Thụy thú nhảy cao hái lộc, ngụ ý điềm lành gõ cửa. Chúc quý vị vạn sự như ý, làm ăn phát tài nhé!\"</i>",
+    "element_desc": "Dùng kỹ thuật múa thú lao về phía trước để tấn công, khi tiếp xúc với mục tiêu hoặc địa hình thì sẽ nhảy lên cao.<br>Gaming khi nhảy lên không trung từ Kỹ Năng Nguyên Tố - Thụy Thú Thăng Thiên, nếu thực hiện Tấn Công Khi Đáp ngay thì sẽ thi triển Tấn Công Khi Đáp - Đạp Vân Hiến Thụy mạnh mẽ hơn.<br><br>Tấn Công Khi Đáp - Đạp Vân Hiến Thụy<br>Sát thương gây ra từ Tấn Công Khi Đáp được thi triển bởi Kỹ Năng Nguyên Tố - Thụy Thú Thăng Thiên sẽ chuyển hóa thành Sát Thương Nguyên Tố Hỏa không thể thay thế, đồng thời khi tiếp đất sẽ khiến Gaming tiêu hao một lượng HP nhất định, cách thức này khiến HP của Gaming tối đa giảm xuống đến 10%.<br>Sát thương của Đạp Vân Hiến Thụy sẽ được xem là sát thương Tấn Công Khi Đáp.<br><br><i>\"Thụy thú nhảy cao hái lộc, ngụ ý điềm lành gõ cửa. Chúc quý vị vạn sự như ý, làm ăn phát tài nhé!\"</i>",
     "final_name": "Kim Nghê Vũ Bùng Cháy",
     "final_img": "gaming_s3",
-    "final_desc": "Gaming tiến vào Tư Thế Múa Thú, hồi phục một lượng HP nhất định, đồng thời triệu hồi Nghê Thú - A Văn tấn công kẻ địch, gây Sát Thương Phạm Vi Nguyên Tố Hỏa.\nNghê Thú - A Văn sau khi hoàn thành đòn tấn công sẽ lăn về phía xung quanh trước khi di chuyển đến vị trí của Gaming. Sau khi hội hợp với Gaming thì Nghê Thú - A Văn sẽ rời trận, đồng thời làm mới thời gian chờ Kỹ Năng Nguyên Tố - Thụy Thú Thăng Thiên của Gaming.<br>Trong thời gian duy trì Tư Thế Múa Thú, khi tiến hành Tấn Công Khi Đáp - Đạp Vân Hiến Thụy hoặc kết thúc đòn tấn công lao đến của kỹ năng Thụy Thú Thăng Thiên, nếu HP của Gaming cao hơn 50% thì sẽ triệu hồi lại Nghê Thú - A Văn.<br>Trong trận cùng lúc chỉ tồn tại một Nghê Thú - A Văn.<br><br><i>\"Kim nghê thổ tường, hỏa thụ kim hoa! Đó, vậy là may mắn cả năm nhé.\"</i>"
+    "final_desc": "Gaming tiến vào Tư Thế Múa Thú, khiến Gaming nhận ấn nguyên tố Hỏa trong thời gian ngắn, hồi phục một lượng HP nhất định, đồng thời triệu hồi Nghê Thú - A Văn tấn công kẻ địch, gây Sát Thương Phạm Vi Nguyên Tố Hỏa.\nNghê Thú - A Văn sau khi hoàn thành đòn tấn công sẽ lăn về phía xung quanh trước khi di chuyển đến vị trí của Gaming. Sau khi hội hợp với Gaming thì Nghê Thú - A Văn sẽ rời trận, đồng thời làm mới thời gian chờ Kỹ Năng Nguyên Tố - Thụy Thú Thăng Thiên của Gaming.<br>Trong thời gian duy trì Tư Thế Múa Thú sẽ tăng khả năng kháng gián đoạn của Gaming, khi Tấn Công Khi Đáp - Đạp Vân Hiến Thụy đáp đất hoặc kết thúc đòn tấn công lao đến của kỹ năng Thụy Thú Thăng Thiên, nếu HP của Gaming cao hơn 50% thì sẽ triệu hồi lại Nghê Thú - A Văn.<br>Trong trận cùng lúc chỉ tồn tại một Nghê Thú - A Văn của bản thân Gaming.<br>Hiệu quả sẽ bị xóa khi Gaming rời trận.<br><br><i>\"Kim nghê thổ tường, hỏa thụ kim hoa! Đó, vậy là may mắn cả năm nhé.\"</i>"
   },
   "basic_talent": {
     "talent2_name": "Tỉnh Sư Tung Hoành",
     "talent2_img": "gaming_p2",
-    "talent2_desc": "Vào ban ngày (6h đến 18h), tốc độ di chuyển của nhân vật trong đội của bản thân tăng 10%.\nHiệu quả này vô hiệu trong Bí Cảnh, Vùng Đất Thảo Phạt, La Hoàn Thâm Cảnh, không thể cộng dồn với thiên phú cố định có hiệu quả tương đồng.",
+    "talent2_desc": "Ban ngày (6h đến 18h), nhân vật trong đội của bản thân nhận hiệu ứng Tốc Hành: Tốc độ di chuyển tăng 10%.\nHiệu quả này vô hiệu trong Bí Cảnh, Vùng Đất Thảo Phạt, La Hoàn Thâm Cảnh. Hiệu quả Tốc Hành không thể cộng dồn.",
     "talent3_name": "Vũ Điệu Thái Bình",
     "talent3_img": "gaming_p3",
-    "talent3_desc": "Trong 1s sau khi Tấn Công Khi Đáp - Đạp Vân Hiến Thụy của Thụy Thú Thăng Thiên trúng kẻ địch, Gaming sẽ hồi phục 10% HP.",
+    "talent3_desc": "Sau khi Tấn Công Khi Đáp - Đạp Vân Hiến Thụy của Thụy Thú Thăng Thiên đánh trúng mục tiêu, mỗi 0.2s sẽ hồi phục 1 lần HP cho Gaming, lượng hồi phục tương đương 1.5% Giới Hạn HP của Gaming, kéo dài 0.8s.",
     "talent1_name": "Không Khí Thịnh Vượng",
     "talent1_img": "gaming_p1",
-    "talent1_desc": "Khi HP của Gaming thấp hơn 50%, sẽ tăng 20% trị liệu nhận được. Khi HP của Gaming cao hơn hoặc bằng 50%, sẽ tăng 20% buff Sát Thương Nguyên Tố Hỏa."
+    "talent1_desc": "Khi HP của Gaming thấp hơn 50%, sẽ tăng 20% trị liệu nhận được. Khi HP của Gaming cao hơn hoặc bằng 50%, sát thương gây ra từ Tấn Công Khi Đáp - Đạp Vân Hiến Thụy sẽ tăng 20%."
   },
   "sof": {
     "sof1_name": "Phù Hộ Bừng Sáng",
     "sof1_img": "gaming_c1",
-    "sof1_desc": "Khi Nghê Thú - A Văn của Kim Nghê Vũ Bùng Cháy thành công hội hợp với Gaming, sẽ hồi phục cho Gaming 25% HP.",
+    "sof1_desc": "Khi Nghê Thú - A Văn của Kim Nghê Vũ Bùng Cháy thành công hội hợp với Gaming, sẽ hồi phục cho Gaming 15% HP.",
     "sof2_name": "Bộ Đạp Mai Hoa",
     "sof2_img": "gaming_c2",
     "sof2_desc": "Khi Gaming nhận trị liệu, nếu lần hồi phục đó bị dư ra thì Tấn Công của Gaming sẽ tăng 20% trong 5s.",

@@ -119,6 +119,7 @@ public class SplashActivity extends AppCompatActivity {
         }
 
         sharedPreferences.edit().putBoolean("appStopped",false).apply();
+
         
         LogExport.init(context);
         ((TextView) findViewById(R.id.splash_version)).setText(BuildConfig.VERSION_NAME);

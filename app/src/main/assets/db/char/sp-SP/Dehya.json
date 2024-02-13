@@ -25,7 +25,7 @@
   "basic_talent": {
     "talent2_name": "The Sunlit Way",
     "talent2_img": "dehya_p2",
-    "talent2_desc": "Increases the Movement SPD of your own party members by 10% during the day (6:00 – 18:00).\nDoes not take effect in Domains, Trounce Domains, or Spiral Abyss. Not stackable with Passive Talents that provide the exact same effects.",
+    "talent2_desc": "During the day (06:00 – 18:00), your party members gain the Swift Stride effect: Movement SPD increased by 10%.\nDoes not take effect in Domains, Trounce Domains, or Spiral Abyss. Swift Stride does not stack.",
     "talent3_name": "Unstinting Succor",
     "talent3_img": "dehya_p3",
     "talent3_desc": "Within 6 seconds after Dehya retrieves the Fiery Sanctum field through Molten Inferno: Ranging Flame or Leonine Bite, she will take 60% less DMG when receiving DMG from Redmane's Blood. This effect can be triggered once every 2s.\nAdditionally, within 9s after Dehya unleashes Molten Inferno: Indomitable Flame, she will grant all party members the Gold-Forged Form state. This state will further increase a character's resistance to interruption when they are within the Fiery Sanctum field. Gold-Forged Form can be activated once every 18s.",

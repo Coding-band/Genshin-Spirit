@@ -29,7 +29,7 @@ public class InitCA {
             // (could be from a resource or ByteArrayInputStream or ...)
             CertificateFactory cf = CertificateFactory.getInstance("X.509");
             // From https://www.washington.edu/itconnect/security/ca/load-der.crt
-            InputStream caInput = context.getResources().openRawResource(R.raw.server_cert_20230410);
+            InputStream caInput = null;
             Certificate ca;
             try {
                 ca = cf.generateCertificate(caInput);

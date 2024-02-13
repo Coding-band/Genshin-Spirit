@@ -25,7 +25,7 @@
   "basic_talent": {
     "talent2_name": "Bienfait herbacé",
     "talent2_img": "baizhu_p2",
-    "talent2_desc": "Lorsque Baizhu fait partie de l'équipe, interagir avec certains objets récoltables soigne votre personnage déployé pour une valeur équivalant à 2,5 % des PV max de Baizhu.",
+    "talent2_desc": "Lorsque Baizhu fait partie de l'équipe, interagir avec certains objets récoltables soigne votre personnage déployé d'une valeur équivalant à 2,5 % des PV max de Baizhu.",
     "talent3_name": "Cinq fortunes perpétuelles",
     "talent3_img": "baizhu_p3",
     "talent3_desc": "Baizhu obtient différents effets selon les PV de votre personnage déployé :\n· Si les PV de ce dernier sont inférieurs à 50 %, Baizhu obtient un bonus de soins de 20 %.<br>· Si les PV de ce dernier sont supérieurs ou égaux à 50 %, Baizhu bénéficie d'un bonus de DGT Dendro de 25 %.",
@@ -39,7 +39,7 @@
     "sof1_desc": "Confère une utilisation supplémentaire de Diagnostic universel.",
     "sof2_name": "Discernement incisif",
     "sof2_img": "baizhu_c2",
-    "sof2_desc": "Lorsque votre personnage déployé touche un ennemi proche avec une attaque, Baizhu libère un esprit divisé de gaze.\nL'esprit divisé de gaze effectue 1 attaque avant de revenir, infligeant des DGT Dendro pour une valeur équivalant à 250 % de l'ATQ de Baizhu et soignant pour 20 % du soin de l'esprit de gaze de Diagnostic universel.<br>Les DGT infligés de cette manière sont considérés comme des DGT de compétence élémentaire.<br>Cet effet peut être déclenché une fois toutes les 5 s.",
+    "sof2_desc": "Lorsque votre personnage déployé touche un ennemi proche avec une attaque, Baizhu libère un esprit divisé de gaze.\nL'esprit divisé de gaze effectue 1 attaque avant de revenir, infligeant des DGT Dendro d'une valeur équivalant à 250 % de l'ATQ de Baizhu et soignant pour 20 % du soin de l'esprit de gaze de Diagnostic universel.<br>Les DGT infligés de cette manière sont considérés comme des DGT de compétence élémentaire.<br>Cet effet peut être déclenché une fois toutes les 5 s.",
     "sof3_name": "Stabilisation complète",
     "sof3_img": "baizhu_c3",
     "sof3_desc": "Niveau d'aptitude Reviviscence holistique +3.\nNiveau max : 15",

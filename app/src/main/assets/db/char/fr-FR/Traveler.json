@@ -44,7 +44,7 @@
     "sof2_desc": "Lors de l'utilisation de Sabre d'ondulation, le voyageur(la voyageuse) obtient un bouclier d'ondulations qui absorbe une quantité de DGT équivalant à 10 % de ses PV max. Le bouclier est efficace à 250 % contre les DGT Hydro et dure jusqu'à la fin de la capacité.\nUne fois toutes les 2 s, lorsqu'une goutte de rosée a touché un ennemi, si le voyageur est protégé(la voyageuse est protégée) par un bouclier d'ondulations, l'absorption du bouclier est restaurée à 10 % des PV max du voyageur(de la voyageuse) ; si le voyageur n'est pas protégé(la voyageuse n'est pas protégée) par un bouclier d'ondulations, un tel bouclier est généré.",
     "sof3_name": "Eau tournoyante de vortex",
     "sof3_img": "traveler_c3",
-    "sof3_desc": "Niveau de compétence Montée des eaux +3.\nNiveau max : 15",
+    "sof3_desc": "Niveau d'aptitude Montée des eaux +3.\nNiveau max : 15",
     "sof4_name": "Eau montante de justice",
     "sof4_img": "traveler_c4",
     "sof4_desc": "Lorsque le voyageur(la voyageuse) récupère une goutte d'eau de source, il(elle) restaure 6 % de PV max au personnage de l'équipe à proximité ayant le pourcentage de PV le plus bas.",

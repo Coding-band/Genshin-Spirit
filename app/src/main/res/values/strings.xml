@@ -1700,6 +1700,26 @@
     <string name="tcg_fish_and_chips">"Fish and Chips"</string>
     <string name="tcg_the_chasm_solid_iron">"The Chasm: Solid Iron"</string>
 
+    <!-- add in 20240213 - 4.4 ALL -->
+    <string name="xianyun">"Xianyun"</string>
+    <string name="gaming">"Gaming"</string>
+    <string name="cranes_echoing_call">"Crane's Echoing Call"</string>
+    <string name="tcg_thoma">"Thoma"</string>
+    <string name="tcg_sayu">"Sayu"</string>
+    <string name="tcg_cryo_hypostasis">"Cryo Hypostasis"</string>
+    <string name="tcg_millennial_pearl_seahorse">"Millennial Pearl Seahorse"</string>
+    <string name="tcg_a_subordinates_skills">"A Subordinate's Skills"</string>
+    <string name="tcg_skiving_new_and_improved">"Skiving: New and Improved"</string>
+    <string name="tcg_sternfrost_prism">"Sternfrost Prism"</string>
+    <string name="tcg_pearl_solidification">"Pearl Solidification"</string>
+    <string name="tcg_sapwood_blade">"Sapwood Blade"</string>
+    <string name="tcg_veterans_visage">"Veteran's Visage"</string>
+    <string name="tcg_jeht">"Jeht"</string>
+    <string name="tcg_silver_and_melus">"Silver and Melus"</string>
+    <string name="tcg_machine_assembly_line">"Machine Assembly Line"</string>
+    <string name="tcg_sunyata_flower">"Sunyata Flower"</string>
+    <string name="tcg_matsutake_meat_rolls">"Matsutake Meat Rolls"</string>
+
 
 </resources>
 

@@ -1,13 +1,13 @@
 {
-  "nick": "???",
-  "occupation": "???",
+  "nick": "Olhar Leonino",
+  "occupation": "Agência de Transporte Seguro Espada & Caixa",
   "area": "Liyue",
   "rare": "4",
   "weapon": "Claymore",
   "element": "Pyro",
-  "constellation": "醒狮座",
-  "desc": "测试角色",
-  "birth": "01/01",
+  "constellation": "Leo Expergiscens",
+  "desc": "Guarda de aluguel da Agência de Transporte Seguro Espada & Caixa, líder do grupo Bestas Místicas Poderosas.",
+  "birth": "12/22",
   "battle_talent": {
     "normal_name": "Ataque Normal: Lâmina Estelar",
     "normal_img": "gaming_s1",
@@ -16,26 +16,26 @@
     "normal_desc3": "Mergulha em pleno ar para golpear o chão, causando dano aos inimigos em seu caminho e infligindo Dano em uma AdE durante o impacto.",
     "element_name": "Ascensão Bestial",
     "element_img": "gaming_s2",
-    "element_desc": "Ataca para frente com as artes Wushou, saltando no ar quando é atingido.<br>Quando Gaming usar sua Habilidade Elemental, Ascensão Bestial, para ascender no ar, e se realizar um Ataque Imersivo, lançará um poderoso Ataque Imersivo: Caminhador das Nuvens.<br><br>Ataque Imersivo: Caminhador das Nuvens<br>O Dano do Ataque Imersivo da Habilidade Elemental Ascensão Bestial é convertido em Dano Pyro, e ao cair, consome uma certa quantidade da Vida de Gaming. É possível reduzir a Vida de Gaming em até 10% dessa forma.<br>O Dano de Caminhador das Nuvens é considerado Dano de Ataque Imersivo.<br><br><i>\"A besta salta e pega o verde, a prosperidade ao nosso redor. Que a riqueza e saúde venha para todos, e que sejamos abençoados!\"</i>",
+    "element_desc": "Ataca para frente com as artes Wushou, saltando no ar quando atingir o alvo ou o terreno.<br>Quando Gaming usar sua Habilidade Elemental, Ascensão Bestial, para ascender no ar, e se realizar um Ataque Imersivo imediatamente, lançará um poderoso Ataque Imersivo: Caminhador das Nuvens.<br><br>Ataque Imersivo: Caminhador das Nuvens<br>O Dano do Ataque Imersivo da Habilidade Elemental Ascensão Bestial é convertido em Dano Pyro que não pode ser substituído, e ao cair, consome uma certa quantidade da Vida de Gaming. É possível reduzir a Vida de Gaming até 10% dessa forma.<br>O Dano de Caminhador das Nuvens é considerado Dano de Ataque Imersivo.<br><br><i>\"A besta salta e pega o verde, a prosperidade ao nosso redor. Que a riqueza e saúde venha para todos, e que sejamos abençoados!\"</i>",
     "final_name": "Dança das Chamas Douradas",
     "final_img": "gaming_s3",
-    "final_desc": "Gaming entra na Postura Wushou, regenerando uma certa quantidade de Vida e invocando seu fiel companheiro, Leão de Chifres Man Chai para esmagar seu alvo, causando Dano Pyro em AdE.\nDepois de atacar seu alvo, Man Chai vai rolar até um local próximo antes de se mover na direção de Gaming. Ao se reunir com Gaming, Man Chai recuará, e redefinirá a recarga da Habilidade Elemental \"Ascensão Bestial\" de Gaming.<br>Na duração da Postura Wushou, realizar um Ataque Imersivo: Caminhador das Nuvens ou completar o ataque de Ascensão Bestial com mais de 50% de Vida invocará Man Chai novamente.<br>Só é possível haver 1 Man Chai ativo por vez.<br><i>\"A besta dourada traz a fortuna, luzes ofuscantes e paisagens brilhantes! Isso sim é uma vida abundante!\"</i>"
+    "final_desc": "Gaming entra na Postura Wushou, aplicando Pyro em Gaming por um curto tempo, regenerando uma certa quantidade de Vida e invocando seu fiel companheiro, o Suanni Man Chai para esmagar seu alvo, causando Dano Pyro em AdE.\nDepois de atacar seu alvo, Man Chai vai rolar até um local próximo antes de se mover na direção de Gaming. Ao se reunir com Gaming, Man Chai recuará, e redefinirá a recarga da Habilidade Elemental \"Ascensão Bestial\" de Gaming.<br>Na duração da Postura Wushou, aumenta a RES contra Interrupção de Gaming, e quando o Ataque Imersivo: Caminhador das Nuvens atingir o chão, ou completar o ataque frontal de Ascensão Bestial com mais de 50% de Vida, invocará Man Chai novamente.<br>Só é possível haver 1 Man Chai de Gaming ativo por vez.<br>Esse efeito será removido quando Gaming sair do campo.<br><br><i>\"A besta dourada traz a fortuna, luzes ofuscantes e paisagens brilhantes! Isso sim é uma vida abundante!\"</i>"
   },
   "basic_talent": {
     "talent2_name": "A Besta Caminhante",
     "talent2_img": "gaming_p2",
-    "talent2_desc": "Durante o dia (06:00 - 18:00), os personagens da equipe recebem um aumento da Veloc. Mov. de 10%.\nEsse efeito não se aplica em Domínios, Domínios Dizimados e Abismo do Espiral. Além disso, esse não é acumulado com Talentos Passivos de efeito igual.",
+    "talent2_desc": "Durante o dia (06:00 - 18:00), os membros do seu grupo ganham o efeito Passos Ágeis: Veloc. Mov. aumenta em 10%.\nNão tem efeito em Domínios, Domínios Dizimados ou Abismo Espiral. O efeito Passos Ágeis não se acumula.",
     "talent3_name": "Dança da Ascensão",
     "talent3_img": "gaming_p3",
-    "talent3_desc": "No 1s depois do Ataque Imersivo: Caminhador das Nuvens de Ascensão Bestial atingir um inimigo, regenera 10% da Vida de Gaming.",
+    "talent3_desc": "Depois que o Ataque Imersivo: Caminhador das Nuvens de Ascensão Bestial atingir o inimigo, regenera Vida para Gaming a cada 0.2s. A quantidade regenerada equivale a 1.5% da Vida Máxima de Gaming e dura 0.8s.",
     "talent1_name": "Ar da Prosperidade",
     "talent1_img": "gaming_p1",
-    "talent1_desc": "Quando a Vida de Gaming é inferior a 50%, obtém 20% de Bônus de Cura. Quando a Vida de Gaming é maior ou equivalente a 50%, obtém 20% de Bônus de Dano Pyro."
+    "talent1_desc": "Quando a Vida de Gaming é inferior a 50%, obtém 20% de Bônus de Cura. Quando a Vida de Gaming é maior ou equivalente a 50%, Ataque Imersivo: Caminhador das Nuvens causa 20% a mais de Dano."
   },
   "sof": {
     "sof1_name": "Abençoador",
     "sof1_img": "gaming_c1",
-    "sof1_desc": "Quando o Leão de Chifres Man Chai de Dança das Chamas Douradas reunir-se com Gaming, regenerará 25% da Vida de Gaming.",
+    "sof1_desc": "Quando o Suanni Man Chai de Dança das Chamas Douradas reunir-se com Gaming, regenerará 15% da Vida de Gaming.",
     "sof2_name": "As Ameixas Desabrocham Sob os Pés",
     "sof2_img": "gaming_c2",
     "sof2_desc": "Quando Gaming é curado, se essa cura sobrecurar, o ATQ de Gaming aumentará 20% por 5s.",
@@ -50,6 +50,6 @@
     "sof5_desc": "Aumenta o nível da Dança das Chamas Douradas em 3 níveis.\nSendo o nível máximo de elevação 15.",
     "sof6_name": "Domesticando Todas as Bestas",
     "sof6_img": "gaming_c6",
-    "sof6_desc": "Aumenta a Taxa CRIT do Ataque Imersivo: Caminhador das Nuvens de Ascensão Bestial em 20%, o Dano CRIT em 40% e a AdE de Ataque."
+    "sof6_desc": "Aumenta a Taxa CRIT do Ataque Imersivo: Caminhador das Nuvens de Ascensão Bestial em 20%, o Dano CRIT em 40%, e a AdE de Ataque."
   }
 }

@@ -158,12 +158,12 @@ public class Weapon_Info_2048 {
                 jsonObject = new JSONObject(str);
                 name = jsonObject.getString("name");
                 star = Integer.parseInt(jsonObject.getString("rarity"));
-                weapon = jsonObject.getString("weapontype");
+                weapon = jsonObject.getString("weaponType");
                 //isComing = jsonObject.getBoolean("isComingSoon");
                 desc = jsonObject.getString("description");
                 //obtain_way = jsonObject.getString("obtain_way");
                 //status = jsonObject.getString("second_status");
-                skill_name = jsonObject.getString("effectname");
+                skill_name = jsonObject.getString("effectName");
                 //skill_desc = jsonObject.getString("effect");
 
                 readWeaponAscData();
@@ -273,7 +273,7 @@ public class Weapon_Info_2048 {
         readWeaponMaterialByBuff(base_lvl_ll);
 
         weapon_talent_name.setText(skill_name);
-        weapon_talent_normal.setText(ItemRss.combineEffectStatus(jsonObject,"effect"));
+        weapon_talent_normal.setText(ItemRss.combineEffectStatus(jsonObject));
 
         /** THEME COLOR SET*/
         SharedPreferences sharedPreferences = context.getSharedPreferences("user_info",MODE_PRIVATE);
@@ -580,11 +580,11 @@ public class Weapon_Info_2048 {
         //Picasso.get().load(FileLoader.loadIMG(item_rss.getWeaponByName(name,context)[0],context)).centerCrop().into(weapon_img);
 
         switch (weapon){
-            case "Sword" :
-            case "Polearm" :
-            case "Claymore" : {weapon_img.setRotation(30);break;}
-            case "Bow" :
-            case "Catalyst" : {weapon_img.setRotation(0);break;}
+            case "WEAPON_SWORD_ONE_HAND" :
+            case "WEAPON_POLE" :
+            case "WEAPON_CLAYMORE" : {weapon_img.setRotation(30);break;}
+            case "WEAPON_BOW" :
+            case "WEAPON_CATALYST" : {weapon_img.setRotation(0);break;}
         }
 
         displayMetrics = new DisplayMetrics();

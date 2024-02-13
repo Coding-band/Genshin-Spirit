@@ -411,7 +411,7 @@ public class Desk2048 extends AppCompatActivity {
         dailyMemo.setup(context,activity,viewPager0);
         viewPager0.findViewById(R.id.home_dailymemo).setVisibility(View.VISIBLE);
 
-        eventUtil.init(viewPager0, context,activity);
+        //eventUtil.init(viewPager0, context,activity);
 
         tcg2048 = new TCG2048();
         team2048 = new Team2048();
@@ -648,8 +648,8 @@ public class Desk2048 extends AppCompatActivity {
         lang_setup();
         home();
         getDOW();
-        EventUtil eventUtil = new EventUtil();
-        eventUtil.init(viewPager0, context,activity);
+        //EventUtil eventUtil = new EventUtil();
+        //eventUtil.init(viewPager0, context,activity);
         //bday_reload();
         cbg();
         dbChar_reload();

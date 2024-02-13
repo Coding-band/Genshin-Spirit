@@ -1,6 +1,7 @@
 {
 	"id": 2303,
 	"name": "镀金旅团·炽沙叙事人",
+	"shareid": 285,
 	"hp": 10,
 	"maxenergy": 2,
 	"tags": [
@@ -84,6 +85,36 @@
 			"description": "【被动】此角色受到伤害后：如果此角色生命值不多于7，则获得1点充能。（整场牌局限制1次）",
 			"typetag": "GCG_SKILL_TAG_PASSIVE",
 			"type": "被动技能",
+			"playcost": []
+		},
+		{
+			"id": 23035,
+			"name": "",
+			"descriptionraw": "每回合开始将此角色计数器清零",
+			"descriptionreplaced": "每回合开始将此角色计数器清零",
+			"description": "每回合开始将此角色计数器清零",
+			"typetag": "GCG_SKILL_TAG_NONE",
+			"type": "",
+			"playcost": []
+		},
+		{
+			"id": 23036,
+			"name": "炎之魔蝎·守势",
+			"descriptionraw": "每回合开始如果场上存在召唤物刷新盾",
+			"descriptionreplaced": "每回合开始如果场上存在召唤物刷新盾",
+			"description": "每回合开始如果场上存在召唤物刷新盾",
+			"typetag": "GCG_SKILL_TAG_NONE",
+			"type": "",
+			"playcost": []
+		},
+		{
+			"id": 23037,
+			"name": "炎之魔蝎·守势",
+			"descriptionraw": "每回合开始如果场上存在召唤物刷新盾（天赋）",
+			"descriptionreplaced": "每回合开始如果场上存在召唤物刷新盾（天赋）",
+			"description": "每回合开始如果场上存在召唤物刷新盾（天赋）",
+			"typetag": "GCG_SKILL_TAG_NONE",
+			"type": "",
 			"playcost": []
 		}
 	]
