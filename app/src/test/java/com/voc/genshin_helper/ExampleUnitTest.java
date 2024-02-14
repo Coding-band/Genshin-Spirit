@@ -89,7 +89,7 @@ public class ExampleUnitTest {
 
         String body = "{\"role\": \"108289390\"}";
         //String[] preQuery = "uid=16299869".split("&"); //[IMPORTANT - NO DELETE gameRecordCard!]
-        String[] preQuery = "server=prod_gf_cn&role_id=108289390".split("&"); //[IMPORTANT - NO DELETE STARRAIL!]
+        String[] preQuery = "server=prod_official_cht&role_id=900033852".split("&"); //[IMPORTANT - NO DELETE STARRAIL!]
         //String[] preQuery = "server=cn_gf01&role_id=170422041".split("&"); //[IMPORTANT - NO DELETE GENSHIN!]
         //String[] preQuery = "server=cn_gf01&role_id=170422041".split("&");
         Arrays.sort(preQuery);

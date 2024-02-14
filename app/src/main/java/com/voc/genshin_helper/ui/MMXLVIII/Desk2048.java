@@ -856,8 +856,13 @@ public class Desk2048 extends AppCompatActivity {
     public View.OnClickListener paimon_map = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            Intent i = new Intent(context, AlarmUI.class);
-            startActivity(i);
+            String lang = "en-us";
+            switch (sharedPreferences.getString("curr_lang","en-US")){
+                case "zh-HK" : lang = "zh-tw";break;
+                default: lang = sharedPreferences.getString("curr_lang","en-US").toLowerCase();break;
+            }
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://act.hoyolab.com/ys/app/interactive-map/index.html?lang="+lang+"#/map/2"));
+            startActivity(browserIntent);
         }
     };
     public View.OnClickListener paimon_alarm = new View.OnClickListener() {
